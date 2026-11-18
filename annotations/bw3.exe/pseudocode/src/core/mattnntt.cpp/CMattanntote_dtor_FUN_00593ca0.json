@@ -2,17 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 41,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 6,
     "suspect_types": [
-      "negative_offset"
+      "extra_output",
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 91
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -36,7 +39,7 @@
     {
       "addr": "00410370",
       "is_variadic": false,
-      "name": "core_armour.cpp_FUN_00410370"
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_00410370"
     },
     {
       "addr": "0043f900",
@@ -46,7 +49,7 @@
     {
       "addr": "004a5930",
       "is_variadic": false,
-      "name": "core_firestff.cpp_FUN_004a5930"
+      "name": "core_firestff.cpp_CFlame_arrdtor12_FUN_004a5930"
     },
     {
       "addr": "0054bf80",
@@ -59,14 +62,14 @@
       "name": "crt_memory.c___vec_delete_FUN_005a308f"
     },
     {
-      "addr": "005a30b6",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30b6"
-    },
-    {
       "addr": "005a30c4",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a30c4"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005a30c4"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_free_FUN_005a30b6"
     }
   ],
   "globals": [
@@ -135,12 +138,52 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "pCVar1 = core_armour_cpp_CFlame_arrdtor50_FUN_00410370((CFlame *)(extraout_EAX + -0x985c),0);",
+      "type": "extra_output"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 20,
+      "match": "pCVar1[-4].",
+      "severity": "mild",
+      "text": "((CClothList *)((int)&pCVar1[-4].base.previous_transform_state.orientation + 4)",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&pCVar1[-4].base.previous_transform_state.orientation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)&pCVar1[-4].base.previous_transform_state.orientation",
+      "severity": "moderate",
+      "text": "((CClothList *)((int)&pCVar1[-4].base.previous_transform_state.orientation + 4)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 20,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CClothList *)((int)&pCVar1[-4].base.previous_transform_state.orientation + 4)",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDemonCamera *this_ptr)
 
 {
   uint uVar1;
   int iVar2;
   void **ppvVar3;
-  uint *puVar4;
+  byte **ppuVar4;
   byte bVar5;
   
   bVar5 = 0;
@@ -23,27 +21,27 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
     g_CurrentLineNumber = 1083;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
   }
-  _DAT_0140efa8 = _DAT_0140efa8 + 1;
-  if (_DAT_0140efa8 == 1) {
-    _DAT_0140efac = g_BitsPerPixel;
-    _DAT_0140efb0 = g_UseExternalRenderer;
+  g_BackgroundSceneDepth = g_BackgroundSceneDepth + 1;
+  if (g_BackgroundSceneDepth == 1) {
+    g_BackgroundSavedBitsPerPixel = g_BitsPerPixel;
+    g_BackgroundSavedUseExternalRenderer = g_UseExternalRenderer;
     ppvVar3 = g_ScreenBufferArray;
-    puVar4 = (uint *)&DAT_0140efb4;
+    ppuVar4 = g_ARRAY_PTR_0140efb4;
     for (uVar1 = g_WindowHeight & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *puVar4 = *ppvVar3;
+      *ppuVar4 = *ppvVar3;
       ppvVar3 = ppvVar3 + (uint)bVar5 * -2 + 1;
-      puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+      ppuVar4 = ppuVar4 + (uint)bVar5 * -2 + 1;
     }
     for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar4 = *(byte *)ppvVar3;
+      *(byte *)ppuVar4 = *(byte *)ppvVar3;
       ppvVar3 = (void **)((int)ppvVar3 + (uint)bVar5 * -2 + 1);
-      puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);
+      ppuVar4 = (byte **)((int)ppuVar4 + (uint)bVar5 * -2 + 1);
     }
-    _DAT_01410274 = g_RedBitPosition;
+    g_BackgroundSavedRedBitPosition = (int)g_RedBitPosition;
     g_BitsPerPixel = 0x20;
-    _DAT_01410278 = g_GreenBitPosition;
+    g_BackgroundSavedGreenBitPosition = (int)g_GreenBitPosition;
     g_UseExternalRenderer = 0;
-    _DAT_0141027c = g_BlueBitPosition;
+    g_BackgroundSavedBlueBitPosition = (int)g_BlueBitPosition;
     g_GreenBitPosition.dword = 8;
     g_BlueBitPosition.dword = 0;
     g_RedBitPosition.dword = 0x10;

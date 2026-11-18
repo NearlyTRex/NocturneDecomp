@@ -28,21 +28,21 @@
 ;   TerminatedCString s_CNetGame_syncPlayers_don_005ca725
 ;   TerminatedCString s_Syncing_stage_d_005ca75d
 ;   TerminatedCString s_Waiting_on_005ca76f
-;   undefined4 DAT_005ca77b
+;   TerminatedCString s_d_005ca77b
 ;   TerminatedCString s_Waiting_on_sync_code_d_f_005ca7bc
 ;   TerminatedCString s_core_netgame_cpp_005ca7e3
 ;   TerminatedCString s_CNetGame_syncPlayers_inv_005ca7f7
-;   undefined4 DAT_005ca821
-;   undefined4 DAT_005ca829
-;   undefined4 DAT_005ca831
-;   undefined4 DAT_00600284
-;   undefined4 DAT_01d70a78
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   double g_TimeoutScale = 0.0000152587890625
+;   double g_MaxTimeout = 30
+;   double g_SyncTimeout = 0.100000000000000
+;   CKeys* g_CKeysPtr = 01d70a78
+;   void* g_PTR_01d70a78
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70
 ;   core_netgame.cpp_CNetGame_send_FUN_00505870
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_00506320
@@ -82,10 +82,10 @@ section .text
     MOV EBX,0x12                        ; 005048c8
     SAR EDX,0x1f                        ; 005048cd
     IDIV EBX                            ; 005048d0
-    MOV ECX,dword ptr [0x01da6474]      ; 005048d2 | DAT_01da6474
+    MOV ECX,dword ptr [0x01da6474]      ; 005048d2 | g_LastPingTime
     MOV EDX,EAX                         ; 005048d8
     SUB EAX,ECX                         ; 005048da
-    MOV dword ptr [0x01da6474],EDX      ; 005048dc | DAT_01da6474
+    MOV dword ptr [0x01da6474],EDX      ; 005048dc | g_LastPingTime
     TEST EAX,EAX                        ; 005048e2
     JL 0x00504b41                       ; 005048e4
         ;   XREF to: 00504b41 (CONDITIONAL_JUMP)  ; LAB_00504b41
@@ -93,7 +93,7 @@ section .text
     JLE 0x005048f6                      ; 005048ef
         ;   XREF to: 005048f6 (CONDITIONAL_JUMP)  ; LAB_005048f6
     MOV EAX,0x20000                     ; 005048f1
-    MOV EBX,dword ptr [0x01da6478]      ; 005048f6 | DAT_01da6478
+    MOV EBX,dword ptr [0x01da6478]      ; 005048f6 | g_UINT_01da6478
         ;   Label: LAB_005048f6
     ADD EBX,EAX                         ; 005048fc
     MOV EAX,dword ptr [ESI + 0x124]     ; 005048fe
@@ -101,7 +101,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 00504907
     MOV dword ptr [ESI + EAX*0x1 + 0x5c],EDX ; 0050490a
     MOV EDI,dword ptr [ESI]             ; 0050490e
-    MOV dword ptr [0x01da6478],EBX      ; 00504910 | DAT_01da6478
+    MOV dword ptr [0x01da6478],EBX      ; 00504910 | g_UINT_01da6478
     CMP EDI,0x1                         ; 00504916
     JNZ 0x00504b56                      ; 00504919
         ;   XREF to: 00504b56 (CONDITIONAL_JUMP)  ; LAB_00504b56
@@ -163,7 +163,7 @@ section .text
     ADD ESP,0xc                         ; 005049c8
     MOV EAX,dword ptr [EDI + 0x5c]      ; 005049cb
     PUSH EAX                            ; 005049ce
-    PUSH 0x5ca77b                       ; 005049cf | DAT_005ca77b
+    PUSH 0x5ca77b                       ; 005049cf | = "%d"
     LEA EAX,[ESP + 0xc]                 ; 005049d4
     PUSH EAX                            ; 005049d8
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005049d9
@@ -196,12 +196,12 @@ section .text
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 ; 00504a27
         ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 00504a2c
-    MOV EAX,[0x01da6478]                ; 00504a2f | DAT_01da6478
+    MOV EAX,[0x01da6478]                ; 00504a2f | g_UINT_01da6478
     MOV EBX,dword ptr [ESP + 0x178]     ; 00504a34
     SUB EAX,EBX                         ; 00504a3b
     MOV dword ptr [ESP + 0x174],EAX     ; 00504a3d
     FILD dword ptr [ESP + 0x174]        ; 00504a44
-    FMUL double ptr [0x005ca821]        ; 00504a4b | DAT_005ca821
+    FMUL double ptr [0x005ca821]        ; 00504a4b | g_TimeoutScale
     FST float ptr [ESP]                 ; 00504a51
     FLDZ                                ; 00504a54
     FCOMPP                              ; 00504a56
@@ -213,7 +213,7 @@ section .text
     MOV dword ptr [ESP],EDI             ; 00504a5f
     FLD float ptr [ESP]                 ; 00504a62
         ;   Label: LAB_00504a62
-    FCOMP double ptr [0x005ca829]       ; 00504a65 | DAT_005ca829
+    FCOMP double ptr [0x005ca829]       ; 00504a65 | g_MaxTimeout
     FNSTSW AX                           ; 00504a6b
     SAHF                                ; 00504a6d
     JBE 0x00504a77                      ; 00504a6e
@@ -221,12 +221,12 @@ section .text
     MOV dword ptr [ESP],0x41f00000      ; 00504a70
     FLD float ptr [ESP]                 ; 00504a77
         ;   Label: LAB_00504a77
-    FCOMP double ptr [0x005ca831]       ; 00504a7a | DAT_005ca831
+    FCOMP double ptr [0x005ca831]       ; 00504a7a | g_SyncTimeout
     FNSTSW AX                           ; 00504a80
     SAHF                                ; 00504a82
     JBE 0x00504ae7                      ; 00504a83
         ;   XREF to: 00504ae7 (CONDITIONAL_JUMP)  ; LAB_00504ae7
-    MOV EAX,[0x01da6478]                ; 00504a85 | DAT_01da6478
+    MOV EAX,[0x01da6478]                ; 00504a85 | g_UINT_01da6478
     MOV dword ptr [ESP + 0x178],EAX     ; 00504a8a
     MOV AH,0x8                          ; 00504a91
     MOV EDX,0x9                         ; 00504a93
@@ -261,9 +261,9 @@ section .text
         ;   XREF to: 00504abb (CONDITIONAL_JUMP)  ; LAB_00504abb
     PUSH 0x1                            ; 00504ae7
         ;   Label: LAB_00504ae7
-    MOV EAX,[0x00600284]                ; 00504ae9 | DAT_00600284
-    PUSH EAX                            ; 00504aee | DAT_01d70a78
-    MOV EBX,dword ptr [EAX]             ; 00504aef | DAT_01d70a78
+    MOV EAX,[0x00600284]                ; 00504ae9 | g_CKeysPtr
+    PUSH EAX                            ; 00504aee | g_PTR_01d70a78
+    MOV EBX,dword ptr [EAX]             ; 00504aef | g_PTR_01d70a78
     CALL dword ptr [EBX + 0x4]          ; 00504af1
     ADD ESP,0x8                         ; 00504af4
     TEST EAX,EAX                        ; 00504af7
@@ -283,10 +283,10 @@ section .text
         ;   Label: LAB_00504b0d
     MOV EBX,0x337                       ; 00504b12
     PUSH 0x5ca725                       ; 00504b17 | = "CNetGame::syncPlayers - don't use 0!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00504b1c | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00504b22 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00504b28
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00504b1c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00504b22 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00504b28
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00504b2d
     JMP 0x005048b1                      ; 00504b30
         ;   XREF to: 005048b1 (UNCONDITIONAL_JUMP)  ; LAB_005048b1
@@ -320,7 +320,7 @@ section .text
     XOR EDI,EDI                         ; 00504b64
     MOV EDX,dword ptr [EBP + 0x18]      ; 00504b66
         ;   Label: LAB_00504b66
-    CMP EDX,dword ptr [0x01da6480]      ; 00504b69 | DAT_01da6480
+    CMP EDX,dword ptr [0x01da6480]      ; 00504b69 | g_RemoteSyncStage
     JLE 0x00504bf9                      ; 00504b6f
         ;   XREF to: 00504bf9 (CONDITIONAL_JUMP)  ; LAB_00504bf9
     CALL engine_special.cpp_clearScreen_FUN_00560d70 ; 00504b75
@@ -346,10 +346,10 @@ section .text
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 ; 00504bac
         ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 00504bb1
-    MOV EAX,[0x00600284]                ; 00504bb4 | DAT_00600284
+    MOV EAX,[0x00600284]                ; 00504bb4 | g_CKeysPtr
     PUSH 0x1                            ; 00504bb9
-    MOV EBX,dword ptr [EAX]             ; 00504bbb | DAT_01d70a78
-    PUSH EAX                            ; 00504bbd | DAT_01d70a78
+    MOV EBX,dword ptr [EAX]             ; 00504bbb | g_PTR_01d70a78
+    PUSH EAX                            ; 00504bbd | g_PTR_01d70a78
     CALL dword ptr [EBX + 0x4]          ; 00504bbe
     ADD ESP,0x8                         ; 00504bc1
     TEST EAX,EAX                        ; 00504bc4
@@ -368,10 +368,10 @@ section .text
         ;   Label: LAB_00504bd6
     MOV ECX,0x3c0                       ; 00504bdb
     PUSH 0x5ca7f7                       ; 00504be0 | = "CNetGame::syncPlayers - invalid mode"
-    MOV dword ptr [0x01d71de0],EDX      ; 00504be5 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00504beb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00504bf1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 00504be5 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00504beb | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00504bf1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00504bf6
     MOV EAX,0x1                         ; 00504bf9
         ;   Label: LAB_00504bf9

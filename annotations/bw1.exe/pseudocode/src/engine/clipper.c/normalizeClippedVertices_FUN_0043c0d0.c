@@ -11,43 +11,46 @@ void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_0043c0d0(void)
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
-  int iVar4;
+  int iVar3;
+  SRenderVertex *pSVar4;
   int iVar5;
+  int iVar6;
   
-  iVar4 = 0;
-  if (0 < DAT_007c7554) {
-    piVar3 = &DAT_007c7558;
+  iVar5 = 0;
+  if (0 < g_INT_007c7554) {
+    pSVar4 = g_SRenderVertex_ARRAY_007c7558;
     do {
-      if (piVar3[2] == 0) {
-        piVar3[2] = 1;
-        *piVar3 = 0;
-        piVar3[1] = 0;
+      if ((pSVar4->projected_vertex).transformed_z == 0) {
+        (pSVar4->projected_vertex).transformed_z = 1;
+        (pSVar4->projected_vertex).transformed_x = 0;
+        (pSVar4->projected_vertex).transformed_y = 0;
       }
       else {
-        iVar1 = piVar3[2];
-        if (iVar1 < *piVar3) {
-          *piVar3 = iVar1;
+        iVar1 = (pSVar4->projected_vertex).transformed_z;
+        if (iVar1 < (pSVar4->projected_vertex).transformed_x) {
+          (pSVar4->projected_vertex).transformed_x = iVar1;
         }
         else {
-          iVar5 = -iVar1;
-          if (-*piVar3 == iVar1 || iVar5 < *piVar3) {
-            iVar2 = piVar3[1];
-            if (piVar3[2] < iVar2) {
-              piVar3[1] = piVar3[2];
+          iVar2 = (pSVar4->projected_vertex).transformed_x;
+          iVar6 = -iVar1;
+          if (-iVar2 == iVar1 || iVar6 < iVar2) {
+            iVar2 = (pSVar4->projected_vertex).transformed_z;
+            iVar3 = (pSVar4->projected_vertex).transformed_y;
+            if (iVar2 < iVar3) {
+              (pSVar4->projected_vertex).transformed_y = iVar2;
             }
-            else if (-iVar2 != iVar1 && iVar2 <= iVar5) {
-              piVar3[1] = iVar5;
+            else if (-iVar3 != iVar1 && iVar3 <= iVar6) {
+              (pSVar4->projected_vertex).transformed_y = iVar6;
             }
           }
           else {
-            *piVar3 = iVar5;
+            (pSVar4->projected_vertex).transformed_x = iVar6;
           }
         }
       }
-      iVar4 = iVar4 + 1;
-      piVar3 = piVar3 + 0xc;
-    } while (iVar4 < DAT_007c7554);
+      iVar5 = iVar5 + 1;
+      pSVar4 = pSVar4 + 1;
+    } while (iVar5 < g_INT_007c7554);
   }
   return;
 }

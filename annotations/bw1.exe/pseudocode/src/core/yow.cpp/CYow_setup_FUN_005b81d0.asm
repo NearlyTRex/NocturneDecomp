@@ -15,13 +15,13 @@
 ;   TerminatedCString s_Bip01_Spine1_005fa216
 ;   TerminatedCString s_Bip01_Spine2_005fa223
 ;   TerminatedCString s_Bip01_Head_005fa230
-;   undefined4 DAT_005fa23b
-;   undefined4 DAT_005fa240
+;   TerminatedCString s_larm_005fa23b
+;   TerminatedCString s_rarm_005fa240
 ;   TerminatedCString s_l4arm_005fa245
 ;   TerminatedCString s_r4arm_005fa24b
 ;   TerminatedCString s_waist_005fa251
 ;   TerminatedCString s_torso_005fa257
-;   undefined4 DAT_005fa25d
+;   TerminatedCString s_head_005fa25d
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005b81e2
     PUSH 0x5fa1d6                       ; 005b81e5 | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 005b81ea | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 005b81ea | g_CEventListPtr
     PUSH EDX                            ; 005b81f0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 005b81f1
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -118,7 +118,7 @@ section .text
         ;   XREF to: 00569eb0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005b82bd
     PUSH 0x1                            ; 005b82c0
-    PUSH 0x5fa23b                       ; 005b82c2 | DAT_005fa23b
+    PUSH 0x5fa23b                       ; 005b82c2 | = "larm"
     PUSH EAX                            ; 005b82c7
     MOV ESI,EAX                         ; 005b82c8
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780 ; 005b82ca
@@ -127,7 +127,7 @@ section .text
     MOV dword ptr [EBX + 0xc284],EAX    ; 005b82d2
     POP EDI                             ; 005b82d8
     PUSH 0x1                            ; 005b82d9
-    PUSH 0x5fa240                       ; 005b82db | DAT_005fa240
+    PUSH 0x5fa240                       ; 005b82db | = "rarm"
     PUSH ESI                            ; 005b82e0
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780 ; 005b82e1
         ;   XREF to: 00565780 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
@@ -161,7 +161,7 @@ section .text
         ;   XREF to: 00565780 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 005b833e
     PUSH 0x1                            ; 005b8341
-    PUSH 0x5fa25d                       ; 005b8343 | DAT_005fa25d
+    PUSH 0x5fa25d                       ; 005b8343 | = "head"
     PUSH ESI                            ; 005b8348
     MOV dword ptr [EBX + 0xc298],EAX    ; 005b8349
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780 ; 005b834f

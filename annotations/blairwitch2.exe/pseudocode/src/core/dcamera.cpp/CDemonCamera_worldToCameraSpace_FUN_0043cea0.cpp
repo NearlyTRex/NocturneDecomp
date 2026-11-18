@@ -13,49 +13,47 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_00
   longlong lVar2;
   longlong lVar3;
   longlong lVar4;
-  int *piVar5;
-  int iStack_30;
-  int iStack_2c;
-  int iStack_28;
+  CVector3i *pCVar5;
+  CVector3i CStack_30;
   int iStack_24;
   int iStack_20;
   int iStack_18;
   int iStack_14;
   int iStack_10;
   
-  piVar5 = &iStack_30;
+  pCVar5 = &CStack_30;
   iStack_18 = input_vector->x - (this_ptr->camera_origin).x;
   iStack_14 = input_vector->y - (this_ptr->camera_origin).y;
   iStack_10 = input_vector->z - (this_ptr->camera_origin).z;
   lVar2 = (longlong)(this_ptr->source_matrix).m[0].z * (longlong)iStack_18;
   lVar3 = (longlong)(this_ptr->source_matrix).m[1].z * (longlong)iStack_14;
   lVar4 = (longlong)(this_ptr->source_matrix).m[2].z * (longlong)iStack_10;
-  iStack_28 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
-              ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-  if (0 < iStack_28) {
+  CStack_30.z = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+                ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+  if (0 < CStack_30.z) {
     lVar2 = (longlong)(this_ptr->source_matrix).m[0].x * (longlong)iStack_18;
     lVar3 = (longlong)(this_ptr->source_matrix).m[1].x * (longlong)iStack_14;
     lVar4 = (longlong)(this_ptr->source_matrix).m[2].x * (longlong)iStack_10;
-    iStack_30 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
-                ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-    if ((iStack_30 < iStack_28) && (-iStack_28 < iStack_30)) {
+    CStack_30.x = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+    if ((CStack_30.x < CStack_30.z) && (-CStack_30.z < CStack_30.x)) {
       lVar2 = (longlong)(this_ptr->source_matrix).m[0].y * (longlong)iStack_18;
       lVar3 = (longlong)(this_ptr->source_matrix).m[1].y * (longlong)iStack_14;
       lVar4 = (longlong)(this_ptr->source_matrix).m[2].y * (longlong)iStack_10;
-      iStack_2c = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
-                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-      if ((iStack_2c < iStack_28) && (-iStack_28 < iStack_2c)) goto LAB_0043cf21;
+      CStack_30.y = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+                    ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+                    ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+      if ((CStack_30.y < CStack_30.z) && (-CStack_30.z < CStack_30.y)) goto LAB_0043cf21;
     }
   }
-  piVar5 = (int *)&DAT_01468540;
+  pCVar5 = &g_CameraOutOfBoundsCoord;
 LAB_0043cf21:
-  iStack_24 = *piVar5;
-  iStack_20 = piVar5[1];
-  iVar1 = piVar5[2];
-  output_vector->x = *piVar5;
+  iStack_24 = pCVar5->x;
+  iStack_20 = pCVar5->y;
+  iVar1 = pCVar5->z;
+  output_vector->x = pCVar5->x;
   output_vector->y = iStack_20;
   output_vector->z = iVar1;
   return output_vector;

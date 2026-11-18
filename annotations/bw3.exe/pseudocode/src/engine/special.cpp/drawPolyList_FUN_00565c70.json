@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 74,
+    "complexity_score": 68,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 43,
     "suspect_count": 2,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 165
+    "total_lines": 164
   },
   "cross_references": [
     {
@@ -51,26 +50,26 @@
   "globals": [
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed3198",
-      "name": "DAT_01ed3198",
-      "type": "undefined4",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf6024",
-      "name": "DAT_02cf6024",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "02cf6028",
-      "name": "DAT_02cf6028",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolyList",
+      "type": "void*",
       "value": null
     }
   ],
@@ -252,19 +251,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (*(code *)g_APIDLL_drawPolyList)(vertex_buffer,polygons,polygon_count,render_flags);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (_DAT_02cf6028 != (code *)0x0) {",
+      "text": "(*(code *)g_APIDLL_drawPolygon2)(&local_20,(pSVar1->base).base.count,render_flags);",
       "type": "unresolved_funcptr"
     }
   ]

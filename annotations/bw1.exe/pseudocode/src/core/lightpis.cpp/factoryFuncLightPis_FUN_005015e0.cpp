@@ -11,7 +11,7 @@ CLightPis * __cdecl core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
 {
   CLightPis *pCVar1;
   
-  pCVar1 = (CLightPis *)operator_new(0x598);
+  pCVar1 = operator_new(0x598);
   if (pCVar1 == (CLightPis *)0x0) {
     return (CLightPis *)0x0;
   }

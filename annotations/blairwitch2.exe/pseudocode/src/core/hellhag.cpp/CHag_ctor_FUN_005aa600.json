@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 159,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "unnamed_field",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 233
   },
@@ -53,19 +52,19 @@
       "name": "core_hellhag.cpp_CHag_processStates_FUN_005aa970"
     },
     {
-      "addr": "0059d7f0",
+      "addr": "0059dc80",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d7f0"
+      "name": "core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80"
     },
     {
       "addr": "0059d990",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d990"
+      "name": "core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990"
     },
     {
-      "addr": "0059dc80",
+      "addr": "0059d7f0",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059dc80"
+      "name": "core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0"
     },
     {
       "addr": "005478b0",
@@ -76,9 +75,9 @@
   "globals": [
     {
       "addr": "00600a6c",
-      "name": "DAT_00600a6c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00600a6c",
+      "type": "float",
+      "value": "6"
     }
   ],
   "param_estimates": {
@@ -145,24 +144,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 24,
       "match": "field_0x2a8",
       "severity": "mild",
-      "text": "*(uint *)&(this_ptr_01->base).base.base.base.field_0x2a8 = 0x3dcccccd;",
+      "text": "*(uint *)&(this_ptr_02->base).base.base.base.field_0x2a8 = 0x3dcccccd;",
       "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -170,7 +161,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 54,
+      "line": 53,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -178,7 +169,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 65,
+      "line": 64,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -186,7 +177,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 76,
+      "line": 75,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

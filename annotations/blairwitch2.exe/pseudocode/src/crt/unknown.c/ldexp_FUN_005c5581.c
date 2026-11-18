@@ -47,7 +47,7 @@ double ldexp(void)
     }
     in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;
   }
-  if (DAT_0061ee9d != '\0') {
+  if (g_BYTE_0061ee9d != 0) {
     dVar6 = __BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) * __BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));
     if ((int)((ulonglong)dVar6 >> 0x20) == -0x80000000) {
       dVar6 = 0.0;

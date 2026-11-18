@@ -7,7 +7,7 @@
 ; HWND             Stack[0x4]:4   window_handle
 ;
 ; XREF[3]:
-;   wincore_winrun.cpp_FUN_00580a50 at 00580e03
+;   wincore_winrun.cpp_mainWindowProc_FUN_00580a50 at 00580e03
 ;   wincore_winvideo.cpp_openMovie_FUN_00582bb0 at 00582bcb
 ;   wincore_winvideo.cpp_playMovie_FUN_00582eb0 at 00582f2b
 ;
@@ -16,8 +16,8 @@
 ;   void* PTR_InvalidateRect_005b34c8 = 001b3b1c
 ;   void* PTR_UpdateWindow_005b3510 = 001b3c38
 ;   TerminatedCString s_close_mov_005d800c
-;   undefined4 DAT_02d22fac
-;   undefined4 DAT_02d22fb0
+;   int g_MovieHandle
+;   int g_MoviePlaying
 ;
 ; Called Functions:
 ;   InvalidateRect
@@ -28,7 +28,7 @@
 
 section .text
 
-    CMP dword ptr [0x02d22fb0],0x0      ; 00582b60 | DAT_02d22fb0
+    CMP dword ptr [0x02d22fb0],0x0      ; 00582b60 | g_MoviePlaying
         ;   Label: wincore_winvideo.cpp_closeMovie_FUN_00582b60
     JNZ 0x00582b6a                      ; 00582b67
         ;   XREF to: 00582b6a (CONDITIONAL_JUMP)  ; LAB_00582b6a
@@ -45,8 +45,8 @@ section .text
     PUSH ECX                            ; 00582b81
     MOV ESI,dword ptr [ESP + 0x10]      ; 00582b82
     PUSH ESI                            ; 00582b86
-    MOV dword ptr [0x02d22fac],ECX      ; 00582b87 | DAT_02d22fac
-    MOV dword ptr [0x02d22fb0],ECX      ; 00582b8d | DAT_02d22fb0
+    MOV dword ptr [0x02d22fac],ECX      ; 00582b87 | g_MovieHandle
+    MOV dword ptr [0x02d22fb0],ECX      ; 00582b8d | g_MoviePlaying
     CALL dword ptr CS:[0x5b34c8]        ; 00582b93 | PTR_InvalidateRect_005b34c8
     PUSH ESI                            ; 00582b9a
     CALL dword ptr CS:[0x5b3510]        ; 00582b9b | PTR_UpdateWindow_005b3510

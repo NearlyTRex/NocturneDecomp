@@ -15,13 +15,13 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057d976 = 0.0000152587890625
-;   undefined4 DAT_005ae6f4
-;   undefined4 DAT_005ae6f8
-;   undefined4 DAT_01b4d478
-;   undefined4 DAT_01b4d47c
-;   undefined4 DAT_01b4d480
-;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01bd1d84
+;   int g_DashLength = 0x1
+;   float g_DashAnimationThreshold = 0.1000000
+;   float g_DashAnimationAccumulator
+;   float g_DashAnimationOffset
+;   int g_DashAnimationLastFrame
+;   int g_GlobalDeltaTimeInt
+;   int g_AnimationTimerValue
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0
@@ -41,11 +41,11 @@ section .text
     MOV EBX,dword ptr [ESP + 0x40]      ; 0045c1eb
     MOV EBP,dword ptr [ESP + 0x44]      ; 0045c1ef
     MOV EDX,dword ptr [ESP + 0x48]      ; 0045c1f3
-    MOV EDI,dword ptr [0x01bd1d84]      ; 0045c1f7 | DAT_01bd1d84
-    CMP EDI,dword ptr [0x01b4d480]      ; 0045c1fd | DAT_01b4d480
+    MOV EDI,dword ptr [0x01bd1d84]      ; 0045c1f7 | g_AnimationTimerValue
+    CMP EDI,dword ptr [0x01b4d480]      ; 0045c1fd | g_DashAnimationLastFrame
     JNZ 0x0045c2db                      ; 0045c203
         ;   XREF to: 0045c2db (CONDITIONAL_JUMP)  ; LAB_0045c2db
-    FLD float ptr [0x01b4d47c]          ; 0045c209 | DAT_01b4d47c
+    FLD float ptr [0x01b4d47c]          ; 0045c209 | g_DashAnimationOffset
         ;   Label: LAB_0045c209
     MOV EDI,0x1                         ; 0045c20f
     MOV ECX,dword ptr [ESP + 0x38]      ; 0045c214
@@ -99,11 +99,11 @@ section .text
     XOR EAX,EDX                         ; 0045c286
     SUB EAX,EDX                         ; 0045c288
     MOV EDX,EAX                         ; 0045c28a
-    MOV ECX,dword ptr [0x005ae6f4]      ; 0045c28c | DAT_005ae6f4
+    MOV ECX,dword ptr [0x005ae6f4]      ; 0045c28c | g_DashLength
     SAR EDX,0x1f                        ; 0045c292
     ADD ECX,ECX                         ; 0045c295
     IDIV ECX                            ; 0045c297
-    CMP EDX,dword ptr [0x005ae6f4]      ; 0045c299 | DAT_005ae6f4
+    CMP EDX,dword ptr [0x005ae6f4]      ; 0045c299 | g_DashLength
     JL 0x0045c367                       ; 0045c29f
         ;   XREF to: 0045c367 (CONDITIONAL_JUMP)  ; LAB_0045c367
     TEST EDI,EDI                        ; 0045c2a5
@@ -134,39 +134,39 @@ section .text
     POP ESI                             ; 0045c2d8
     POP EBX                             ; 0045c2d9
     RET                                 ; 0045c2da
-    FILD dword ptr [0x01bd1d80]         ; 0045c2db | DAT_01bd1d80
+    FILD dword ptr [0x01bd1d80]         ; 0045c2db | g_GlobalDeltaTimeInt
         ;   Label: LAB_0045c2db
     FMUL double ptr [0x0057d976]        ; 0045c2e1 | DOUBLE_0057d976
-    FLD float ptr [0x01b4d478]          ; 0045c2e7 | DAT_01b4d478
+    FLD float ptr [0x01b4d478]          ; 0045c2e7 | g_DashAnimationAccumulator
     FXCH                                ; 0045c2ed
     FADD ST0,ST1                        ; 0045c2ef
-    MOV dword ptr [0x01b4d480],EDI      ; 0045c2f1 | DAT_01b4d480
+    MOV dword ptr [0x01b4d480],EDI      ; 0045c2f1 | g_DashAnimationLastFrame
     FSTP ST1                            ; 0045c2f7
-    FST float ptr [0x01b4d478]          ; 0045c2f9 | DAT_01b4d478
-    FCOMP float ptr [0x005ae6f8]        ; 0045c2ff | DAT_005ae6f8
+    FST float ptr [0x01b4d478]          ; 0045c2f9 | g_DashAnimationAccumulator
+    FCOMP float ptr [0x005ae6f8]        ; 0045c2ff | g_DashAnimationThreshold
     FNSTSW AX                           ; 0045c305
     SAHF                                ; 0045c307
     JBE 0x0045c209                      ; 0045c308
         ;   XREF to: 0045c209 (CONDITIONAL_JUMP)  ; LAB_0045c209
-    FLD float ptr [0x01b4d478]          ; 0045c30e | DAT_01b4d478
-    FDIV float ptr [0x005ae6f8]         ; 0045c314 | DAT_005ae6f8
-    MOV ECX,dword ptr [0x005ae6f4]      ; 0045c31a | DAT_005ae6f4
+    FLD float ptr [0x01b4d478]          ; 0045c30e | g_DashAnimationAccumulator
+    FDIV float ptr [0x005ae6f8]         ; 0045c314 | g_DashAnimationThreshold
+    MOV ECX,dword ptr [0x005ae6f4]      ; 0045c31a | g_DashLength
     ADD ECX,ECX                         ; 0045c320
     MOV dword ptr [ESP + 0x20],ECX      ; 0045c322
-    FADD float ptr [0x01b4d47c]         ; 0045c326 | DAT_01b4d47c
+    FADD float ptr [0x01b4d47c]         ; 0045c326 | g_DashAnimationOffset
     FILD dword ptr [ESP + 0x20]         ; 0045c32c
     FXCH                                ; 0045c330
-    FSTP float ptr [0x01b4d47c]         ; 0045c332 | DAT_01b4d47c
-    FCOMP float ptr [0x01b4d47c]        ; 0045c338 | DAT_01b4d47c
+    FSTP float ptr [0x01b4d47c]         ; 0045c332 | g_DashAnimationOffset
+    FCOMP float ptr [0x01b4d47c]        ; 0045c338 | g_DashAnimationOffset
     FNSTSW AX                           ; 0045c33e
     SAHF                                ; 0045c340
     JNC 0x0045c34a                      ; 0045c341
         ;   XREF to: 0045c34a (CONDITIONAL_JUMP)  ; LAB_0045c34a
     XOR EAX,EAX                         ; 0045c343
-    MOV [0x01b4d47c],EAX                ; 0045c345 | DAT_01b4d47c
+    MOV [0x01b4d47c],EAX                ; 0045c345 | g_DashAnimationOffset
     XOR ECX,ECX                         ; 0045c34a
         ;   Label: LAB_0045c34a
-    MOV dword ptr [0x01b4d478],ECX      ; 0045c34c | DAT_01b4d478
+    MOV dword ptr [0x01b4d478],ECX      ; 0045c34c | g_DashAnimationAccumulator
     JMP 0x0045c209                      ; 0045c352
         ;   XREF to: 0045c209 (UNCONDITIONAL_JUMP)  ; LAB_0045c209
     MOV EDI,0xffffffff                  ; 0045c357
@@ -199,11 +199,11 @@ section .text
     XOR EAX,EDX                         ; 0045c394
     SUB EAX,EDX                         ; 0045c396
     MOV EDX,EAX                         ; 0045c398
-    MOV ECX,dword ptr [0x005ae6f4]      ; 0045c39a | DAT_005ae6f4
+    MOV ECX,dword ptr [0x005ae6f4]      ; 0045c39a | g_DashLength
     SAR EDX,0x1f                        ; 0045c3a0
     ADD ECX,ECX                         ; 0045c3a3
     IDIV ECX                            ; 0045c3a5
-    CMP EDX,dword ptr [0x005ae6f4]      ; 0045c3a7 | DAT_005ae6f4
+    CMP EDX,dword ptr [0x005ae6f4]      ; 0045c3a7 | g_DashLength
     JL 0x0045c3e7                       ; 0045c3ad
         ;   XREF to: 0045c3e7 (CONDITIONAL_JUMP)  ; LAB_0045c3e7
     TEST EDI,EDI                        ; 0045c3af

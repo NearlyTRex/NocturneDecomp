@@ -34,12 +34,12 @@
 ;   TerminatedCString s_CShotgun_005ebd65
 ;   TerminatedCString s_CTrap_005ebd6e
 ;   TerminatedCString s_actionPending_d_stranger_005ebd74
-;   undefined4 DAT_005ebd9d
-;   undefined4 DAT_005ebda5
-;   undefined4 DAT_005fc1d4
-;   undefined4 DAT_005fc1d8
+;   double g_DOUBLE_005ebd9d = 25
+;   double g_DOUBLE_005ebda5 = 0.990000000000000
+;   float g_FLOAT_005fc1d4 = 10
+;   float g_FLOAT_005fc1d8 = 70
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 g_CDynamiteClassInfo.name_hash
 ;   undefined4 g_CMeleeClassInfo.name_hash
 ;   undefined4 DAT_01d182f0
@@ -47,7 +47,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a0c0
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042a620
@@ -55,9 +55,9 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047a1a0
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0047a150
-;   core_hero.cpp_FUN_004cff90
+;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0
-;   core_inv.cpp_FUN_004db8e0
+;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
@@ -224,8 +224,8 @@ section .text
         ;   XREF to: 0056dd20 (CONDITIONAL_JUMP)  ; LAB_0056dd20
     PUSH ESI                            ; 0056dd0c
     PUSH EBX                            ; 0056dd0d
-    CALL core_hero.cpp_FUN_004cff90     ; 0056dd0e
-        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004cff90()
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90 ; 0056dd0e
+        ;   XREF to: 004cff90 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004cff90(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 0056dd13
     MOV dword ptr [EBX + 0x256a4],0x0   ; 0056dd16
     MOV EAX,dword ptr [EBX + 0x2561c]   ; 0056dd20
@@ -240,12 +240,12 @@ section .text
     PUSH EAX                            ; 0056dd37
     MOV ESI,dword ptr [ESP + 0x58]      ; 0056dd38
     PUSH ESI                            ; 0056dd3c
-    CALL core_inv.cpp_FUN_004db8e0      ; 0056dd3d
-        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db8e0()
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004db8e0 ; 0056dd3d
+        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 0056dd42
     MOV EDI,dword ptr [EBX + 0x2561c]   ; 0056dd45
     PUSH EDI                            ; 0056dd4b
-    MOV EAX,[0x00618170]                ; 0056dd4c | DAT_00618170
+    MOV EAX,[0x00618170]                ; 0056dd4c | g_CDemonMission_PTR_00618170
     PUSH EAX                            ; 0056dd51 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 0056dd52
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)
@@ -257,7 +257,7 @@ section .text
     PUSH 0x1                            ; 0056dd65
     PUSH EBX                            ; 0056dd67
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 0056dd68
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 0056dd6d
     PUSH 0x5ebd6e                       ; 0056dd70 | = "CTrap"
     MOV ECX,dword ptr [EBX + 0x2561c]   ; 0056dd75
@@ -393,16 +393,16 @@ section .text
     MOV dword ptr [ESP + 0x64],EDI      ; 0056dedd
     FLD float ptr [ESP + 0x68]          ; 0056dee1
     ADD ESP,0x8                         ; 0056dee5
-    FCOMP double ptr [0x005ebda5]       ; 0056dee8 | DAT_005ebda5
+    FCOMP double ptr [0x005ebda5]       ; 0056dee8 | g_DOUBLE_005ebda5
     FNSTSW AX                           ; 0056deee
     SAHF                                ; 0056def0
     JBE 0x0056dbe2                      ; 0056def1
         ;   XREF to: 0056dbe2 (CONDITIONAL_JUMP)  ; LAB_0056dbe2
     FLD float ptr [EBP + 0x18]          ; 0056def7
-    FMUL double ptr [0x005ebd9d]        ; 0056defa | DAT_005ebd9d
+    FMUL double ptr [0x005ebd9d]        ; 0056defa | g_DOUBLE_005ebd9d
     FADD float ptr [EBX + 0x25650]      ; 0056df00
     FST float ptr [EBX + 0x25650]       ; 0056df06
-    FCOMP float ptr [0x005fc1d8]        ; 0056df0c | DAT_005fc1d8
+    FCOMP float ptr [0x005fc1d8]        ; 0056df0c | g_FLOAT_005fc1d8
     FNSTSW AX                           ; 0056df12
     SAHF                                ; 0056df14
     JA 0x0056df2e                       ; 0056df15
@@ -415,7 +415,7 @@ section .text
     MOV dword ptr [ESP + 0x5c],EAX      ; 0056df25
     JMP 0x0056dbe2                      ; 0056df29
         ;   XREF to: 0056dbe2 (UNCONDITIONAL_JUMP)  ; LAB_0056dbe2
-    MOV EAX,[0x005fc1d8]                ; 0056df2e | DAT_005fc1d8
+    MOV EAX,[0x005fc1d8]                ; 0056df2e | g_FLOAT_005fc1d8
         ;   Label: LAB_0056df2e
     MOV dword ptr [EBX + 0x25650],EAX   ; 0056df33
     JMP 0x0056df17                      ; 0056df39
@@ -674,8 +674,8 @@ section .text
     PUSH EBX                            ; 0056e17b
     LEA ESI,[ESP + 0x28]                ; 0056e17c
     LEA EDI,[ESP + 0x4]                 ; 0056e180
-    CALL core_stranger.cpp_FUN_0056da90 ; 0056e184
-        ;   XREF to: 0056da90 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_0056da90()
+    CALL core_stranger.cpp_CStranger_getThrowDirection_FUN_0056da90 ; 0056e184
+        ;   XREF to: 0056da90 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_getThrowDirection_FUN_0056da90(CStranger * this_ptr, CVector3f * out_direction)
     LEA ESI,[ESP + 0x28]                ; 0056e189
     ADD ESP,0x4                         ; 0056e18d
     MOVSD ES:EDI,ESI                    ; 0056e190
@@ -698,8 +698,8 @@ section .text
     PUSH EBX                            ; 0056e1b8
     LEA ESI,[ESP + 0x14]                ; 0056e1b9
     LEA EDI,[ESP + 0x20]                ; 0056e1bd
-    CALL core_actor.cpp_FUN_00408cf0    ; 0056e1c1
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 0056e1c1
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0056e1c6
     LEA ESI,[ESP + 0xc]                 ; 0056e1c9
     MOV EDX,dword ptr [ESP + 0x4c]      ; 0056e1cd
@@ -738,7 +738,7 @@ section .text
     ADD ESP,0xc                         ; 0056e233
     MOV dword ptr [EBX + 0x256a4],0x0   ; 0056e236
         ;   Label: LAB_0056e236
-    MOV EAX,[0x005fc1d4]                ; 0056e240 | DAT_005fc1d4
+    MOV EAX,[0x005fc1d4]                ; 0056e240 | g_FLOAT_005fc1d4
     MOV dword ptr [EBX + 0x25650],EAX   ; 0056e245
     FLD float ptr [EBX + 0x2d08]        ; 0056e24b
         ;   Label: LAB_0056e24b

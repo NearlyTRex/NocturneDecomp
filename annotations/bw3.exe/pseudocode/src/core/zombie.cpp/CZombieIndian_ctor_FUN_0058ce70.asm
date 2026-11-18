@@ -7,7 +7,7 @@
 ; CZombieIndian *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_0058ce40 at 0058ce53
+;   core_zombie.cpp_factoryFuncZombieIndian_FUN_0058ce40 at 0058ce53
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0

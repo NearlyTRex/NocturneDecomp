@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_0049cb50(CFireEffect *this_ptr,int render_mode,int render_completeness)
 
 {
@@ -16,36 +14,39 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_0049cb50(CFireEffect *th
   int iVar2;
   CStake *pCVar3;
   
-  core_fire_cpp_CBulletHole_setupRenderState_FUN_00493d50((CBulletHole *)&DAT_01c558e8);
+  core_fire_cpp_CBulletHole_setupRenderState_FUN_00493d50(g_BulletHolePool);
   if (render_mode == 0) {
     iVar2 = 0;
-    if (0 < _DAT_01c558e0) {
+    if (0 < g_BulletHoleActiveCount) {
       iVar1 = 0;
       do {
-        if (((*(int *)(iVar1 + 0x1c558f4) != 0) && (*(int *)(iVar1 + 0x1c558f8) == 0)) &&
-           (core_fire_cpp_CBulletHole_render_FUN_00493dd0((CBulletHole *)(&DAT_01c558e8 + iVar1)),
+        if (((*(int *)((int)&g_BulletHolePool[0].active + iVar1) != 0) &&
+            (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0)) &&
+           (core_fire_cpp_CBulletHole_render_FUN_00493dd0
+                      ((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1)),
            render_completeness != 0)) {
-          *(uint *)(iVar1 + 0x1c558f4) = 0;
+          *(uint *)((int)&g_BulletHolePool[0].active + iVar1) = 0;
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x3c;
-      } while (iVar2 < _DAT_01c558e0);
+      } while (iVar2 < g_BulletHoleActiveCount);
     }
   }
   else {
     iVar2 = 0;
-    if (0 < _DAT_01c558e0) {
+    if (0 < g_BulletHoleActiveCount) {
       iVar1 = 0;
       do {
-        if (*(int *)(iVar1 + 0x1c558f8) == 0) {
-          core_fire_cpp_CBulletHole_render_FUN_00493dd0((CBulletHole *)(&DAT_01c558e8 + iVar1));
+        if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0) {
+          core_fire_cpp_CBulletHole_render_FUN_00493dd0
+                    ((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x3c;
-      } while (iVar2 < _DAT_01c558e0);
+      } while (iVar2 < g_BulletHoleActiveCount);
     }
   }
-  if ((render_mode != 0) && (iVar2 = 0, 0 < _DAT_01c594e8)) {
+  if ((render_mode != 0) && (iVar2 = 0, 0 < g_StakeActiveCount)) {
     pCVar3 = g_StakePool;
     iVar1 = 0;
     do {
@@ -60,25 +61,26 @@ LAB_0049cbd5:
       iVar1 = iVar1 + 0x260;
       iVar2 = iVar2 + 1;
       pCVar3 = pCVar3 + 1;
-    } while (iVar2 < _DAT_01c594e8);
+    } while (iVar2 < g_StakeActiveCount);
   }
   if (render_mode == 0) {
     iVar2 = 0;
     do {
-      if ((*(int *)(iVar2 + 0x1c9c4d8) != 0) &&
-         (core_fire_cpp_CCrater_render_FUN_00499a00((CCrater *)(iVar2 + 0x1c9c4d4)),
+      if ((*(int *)((int)(g_CCrater_ARRAY_01c9c4d4[0].smoke_positions + -2) + iVar2) != 0) &&
+         (core_fire_cpp_CCrater_render_FUN_00499a00
+                    ((CCrater *)((int)g_CCrater_ARRAY_01c9c4d4[0].smoke_positions + iVar2 + -0x1c)),
          render_completeness != 0)) {
-        *(uint *)(iVar2 + 0x1c9c4d8) = 0;
+        *(uint *)((int)(g_CCrater_ARRAY_01c9c4d4[0].smoke_positions + -2) + iVar2) = 0;
       }
       iVar2 = iVar2 + 0x70;
     } while (iVar2 != 0x8c0);
   }
   else {
-    this_ptr_00 = (CCrater *)0x1c9c4d4;
+    this_ptr_00 = g_CCrater_ARRAY_01c9c4d4;
     do {
       core_fire_cpp_CCrater_render_FUN_00499a00(this_ptr_00);
       this_ptr_00 = this_ptr_00 + 1;
-    } while (this_ptr_00 != (CCrater *)&DAT_01c9cd94);
+    } while (this_ptr_00 != g_CCrater_ARRAY_01c9c4d4 + sizeof(g_CCrater_ARRAY_01c9c4d4) / sizeof(g_CCrater_ARRAY_01c9c4d4[0]));
   }
   return;
 }

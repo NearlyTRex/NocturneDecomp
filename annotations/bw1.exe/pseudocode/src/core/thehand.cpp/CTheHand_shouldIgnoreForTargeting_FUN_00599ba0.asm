@@ -7,7 +7,7 @@
 ; CTheHand *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_stand_005f7feb+1
+;   TerminatedCString s_stand_005f7fec
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c5a0
@@ -22,7 +22,7 @@ section .text
         ;   Label: core_thehand.cpp_CTheHand_shouldIgnoreForTargeting_FUN_00599ba0
     MOV EBP,ESP                         ; 00599ba1
     MOV EAX,dword ptr [EBP + 0x8]       ; 00599ba3
-    PUSH 0x5f7fec                       ; 00599ba6 | s_stand_005f7feb+1
+    PUSH 0x5f7fec                       ; 00599ba6 | = "stand"
     ADD EAX,0x158                       ; 00599bab
     PUSH EAX                            ; 00599bb0
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770 ; 00599bb1

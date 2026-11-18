@@ -13,8 +13,8 @@
 ;   TerminatedCString s_hit_points_3_2f_005ebd06
 ;   TerminatedCString s_stranger_die_wav_005ebd19
 ;   TerminatedCString s_stranger_hit_wav_005ebd2c
-;   undefined4 DAT_005ebd41
-;   undefined4 DAT_005fc1c8
+;   float g_FLOAT_005ebd41 = 50
+;   float g_FLOAT_005fc1c8 = 2
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
@@ -35,8 +35,8 @@
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
 ;   core_hero.cpp_CHero_stopNearbyInteraction_FUN_004cfad0
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -84,7 +84,7 @@ section .text
     CMP dword ptr [ESI + 0x30],0xb      ; 0056d0b9
     JG 0x0056d2d2                       ; 0056d0bd
         ;   XREF to: 0056d2d2 (CONDITIONAL_JUMP)  ; LAB_0056d2d2
-    FLD float ptr [0x005fc1c8]          ; 0056d0c3 | DAT_005fc1c8
+    FLD float ptr [0x005fc1c8]          ; 0056d0c3 | g_FLOAT_005fc1c8
         ;   Label: LAB_0056d0c3
     PUSH 0x5ebced                       ; 0056d0c9 | = "CBugs"
     FSTP float ptr [EBX + 0x10a60]      ; 0056d0ce
@@ -151,16 +151,16 @@ section .text
     CALL dword ptr [EAX + 0xf8]         ; 0056d196
     ADD ESP,0x4                         ; 0056d19c
     PUSH EDI                            ; 0056d19f
-    CALL core_motion.cpp_FUN_005035c0   ; 0056d1a0
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0056d1a0
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0056d1a5
     ADD ESP,0x4                         ; 0056d1a8
     CMP EAX,0x29                        ; 0056d1ab
     JZ 0x0056d245                       ; 0056d1ae
         ;   XREF to: 0056d245 (CONDITIONAL_JUMP)  ; LAB_0056d245
     PUSH EDI                            ; 0056d1b4
-    CALL core_motion.cpp_FUN_005035c0   ; 0056d1b5
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0056d1b5
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0056d1ba
     ADD ESP,0x4                         ; 0056d1bd
     CMP EAX,0x28                        ; 0056d1c0
@@ -291,7 +291,7 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 0056d30c
     ADD ESP,0x8                         ; 0056d30f
     FLD float ptr [EBP + -0x4]          ; 0056d312
-    FCOMP float ptr [0x005ebd41]        ; 0056d315 | DAT_005ebd41
+    FCOMP float ptr [0x005ebd41]        ; 0056d315 | g_FLOAT_005ebd41
     FNSTSW AX                           ; 0056d31b
     SAHF                                ; 0056d31d
     SETBE AL                            ; 0056d31e

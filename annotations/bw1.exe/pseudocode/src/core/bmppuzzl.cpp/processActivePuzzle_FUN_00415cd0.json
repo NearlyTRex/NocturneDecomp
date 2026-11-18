@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 233,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 19,
+    "pseudocode_lines": 30,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "unresolved_funcptr"
     ],
-    "total_lines": 104
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -46,32 +45,32 @@
     },
     {
       "addr": "007c3978",
-      "name": "DAT_007c3978",
-      "type": "undefined4",
+      "name": "g_CPuzzle_PTR_007c3978",
+      "type": "CPuzzle*",
       "value": null
     },
     {
       "addr": "007c3980",
-      "name": "DAT_007c3980",
-      "type": "undefined4",
+      "name": "g_INT_007c3980",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4353c",
-      "name": "DAT_01c4353c",
-      "type": "undefined4",
+      "name": "g_MouseX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c43540",
-      "name": "DAT_01c43540",
-      "type": "undefined4",
+      "name": "g_MouseY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c43544",
-      "name": "DAT_01c43544",
-      "type": "undefined4",
+      "name": "g_MouseButtonFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -163,156 +162,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "uVar1 = DAT_007c3980;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_007c3978",
-      "severity": "mild",
-      "text": "if (DAT_007c3978 != (int *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "while ((DAT_007c3980 = uVar2, _DAT_01c43544 = DAT_007c3980, DAT_007c3978 != (int *)0x0 &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "while ((DAT_007c3980 = uVar2, _DAT_01c43544 = DAT_007c3980, DAT_007c3978 != (int *)0x0 &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_007c3978",
-      "severity": "mild",
-      "text": "while ((DAT_007c3980 = uVar2, _DAT_01c43544 = DAT_007c3980, DAT_007c3978 != (int *)0x0 &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "((uVar2 = 1 << ((byte)iVar3 & 0x1f), (DAT_007c3980 & uVar2) == (uVar1 & uVar2) ||",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(code **)((int)g_CPuzzle_PTR_007c3978",
+      "severity": "moderate",
+      "text": "((**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x24))",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 17,
       "match": "code *",
       "severity": "moderate",
-      "text": "((**(code **)(*DAT_007c3978 + 0x24))",
+      "text": "((**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x24))",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_007c3978",
-      "severity": "mild",
-      "text": "((**(code **)(*DAT_007c3978 + 0x24))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_007c3978",
-      "severity": "mild",
-      "text": "(DAT_007c3978,_DAT_01c4353c,_DAT_01c43540,iVar3,(uVar2 & DAT_007c3980) != 0),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "(DAT_007c3978,_DAT_01c4353c,_DAT_01c43540,iVar3,(uVar2 & DAT_007c3980) != 0),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "uVar1 = DAT_007c3980, DAT_007c3978 != (int *)0x0))))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_007c3978",
-      "severity": "mild",
-      "text": "uVar1 = DAT_007c3980, DAT_007c3978 != (int *)0x0))))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "DAT_007c3980 = uVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "uVar1 = DAT_007c3980;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(code **)((int)g_CPuzzle_PTR_007c3978",
+      "severity": "moderate",
+      "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x20))",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 25,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*DAT_007c3978 + 0x20))(DAT_007c3978,g_CGamePtr->delta_time_float);",
+      "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x20))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_007c3978",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_007c3978 + 0x20))(DAT_007c3978,g_CGamePtr->delta_time_float);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_007c3978",
-      "severity": "mild",
-      "text": "(**(code **)(*DAT_007c3978 + 0x20))(DAT_007c3978,g_CGamePtr->delta_time_float);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_007c3980",
-      "severity": "mild",
-      "text": "DAT_007c3980 = uVar1;",
-      "type": "undefined_data"
     }
   ]
 }

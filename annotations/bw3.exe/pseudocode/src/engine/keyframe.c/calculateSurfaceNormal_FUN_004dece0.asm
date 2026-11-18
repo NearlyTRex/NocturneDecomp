@@ -26,7 +26,7 @@
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004df440 at 004df4a1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c66ed
+;   double g_NormalTo16BitScale2 = 65535
 ;
 ; *****************************************************************************
 
@@ -125,7 +125,7 @@ section .text
     FDIV float ptr [EBP + -0x10]        ; 004dedd1
     FLD float ptr [EBP + -0x1c]         ; 004dedd4
     FMUL ST1                            ; 004dedd7
-    FLD double ptr [0x005c66ed]         ; 004dedd9 | DAT_005c66ed
+    FLD double ptr [0x005c66ed]         ; 004dedd9 | g_NormalTo16BitScale2
     FXCH                                ; 004deddf
     FMUL ST1                            ; 004dede1
     FSTP float ptr [EBP + -0x1c]        ; 004dede3

@@ -2,27 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 565,
-    "complexity_score": 458,
+    "complexity_score": 308,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 233,
-    "suspect_count": 20,
+    "pseudocode_lines": 238,
+    "suspect_count": 5,
     "suspect_types": [
-      "extra_output",
-      "undefined_data",
+      "builtin_function",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 798
+    "total_lines": 803
   },
   "cross_references": [
     {
       "addr": "0056aa10",
       "from_addr": "0056aa5f",
-      "name": "engine_texture.cpp_FUN_0056aa10",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +41,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3120",
@@ -65,6 +64,11 @@
       "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
+      "addr": "00465660",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660"
+    },
+    {
       "addr": "00465f80",
       "is_variadic": false,
       "name": "engine_dosio.cpp_changeFileExtension_FUN_00465f80"
@@ -73,11 +77,6 @@
       "addr": "004656d0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_findFile_FUN_004656d0"
-    },
-    {
-      "addr": "00465660",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00465660"
     },
     {
       "addr": "00569670",
@@ -131,8 +130,8 @@
     },
     {
       "addr": "005d5ed4",
-      "name": "DAT_005d5ed4",
-      "type": "undefined4",
+      "name": "s_art_005d5ed4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -149,26 +148,26 @@
     },
     {
       "addr": "005d5f1e",
-      "name": "DAT_005d5f1e",
-      "type": "undefined4",
+      "name": "s_act_005d5f1e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5f23",
-      "name": "DAT_005d5f23",
-      "type": "undefined4",
+      "name": "s_art_005d5f23",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5f27",
-      "name": "DAT_005d5f27",
-      "type": "undefined4",
+      "name": "s_opa_005d5f27",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5f2c",
-      "name": "DAT_005d5f2c",
-      "type": "undefined4",
+      "name": "s_art_005d5f2c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -221,20 +220,20 @@
     },
     {
       "addr": "005d6025",
-      "name": "DAT_005d6025",
-      "type": "undefined4",
+      "name": "s_art_005d6025",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d6029",
-      "name": "DAT_005d6029",
-      "type": "undefined4",
+      "name": "s_art_005d6029",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d602d",
-      "name": "DAT_005d602d",
-      "type": "undefined4",
+      "name": "s_art_005d602d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -263,38 +262,38 @@
     },
     {
       "addr": "005d60b2",
-      "name": "DAT_005d60b2",
-      "type": "undefined4",
+      "name": "s_art_005d60b2",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d60b9",
-      "name": "DAT_005d60b9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d60b9",
+      "type": "float",
+      "value": "0.3000000"
     },
     {
       "addr": "005d60bd",
-      "name": "DAT_005d60bd",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d60bd",
+      "type": "float",
+      "value": "0.5900000"
     },
     {
       "addr": "005d60c1",
-      "name": "DAT_005d60c1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d60c1",
+      "type": "float",
+      "value": "0.1100000"
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
@@ -305,8 +304,8 @@
     },
     {
       "addr": "02cfd2dc",
-      "name": "DAT_02cfd2dc",
-      "type": "undefined4",
+      "name": "g_ULONG_02cfd2dc",
+      "type": "ulong",
       "value": null
     }
   ],
@@ -316,7 +315,7 @@
       {
         "call_addr": "0056aa5f",
         "call_type": "direct",
-        "caller": "engine_texture.cpp_FUN_0056aa10",
+        "caller": "engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -525,136 +524,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005d5ed4",
+      "description": "Ghidra builtin function",
+      "line": 227,
+      "match": "builtin_strncpy",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(0x2cfd0d8,&DAT_005d5ed4,texture_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_005d5f1e",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_changeFileExtension_FUN_00465f80(local_1dc,&DAT_005d5f1e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005d5f23",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(0x2cfd2ec,&DAT_005d5f23,local_1dc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_005d5f27",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_changeFileExtension_FUN_00465f80(local_15c,&DAT_005d5f27);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005d5f2c",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(0x2cfd500,&DAT_005d5f2c,local_15c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_005d60b2",
-      "severity": "mild",
-      "text": "(&local_5c,&DAT_005d60b2,texture_name,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 201,
-      "match": "DAT_005d6025",
-      "severity": "mild",
-      "text": "(&local_5c,&DAT_005d6025,local_1dc,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 206,
-      "match": "DAT_005d6029",
-      "severity": "mild",
-      "text": "(&local_5c,&DAT_005d6029,local_15c,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 212,
-      "match": "DAT_005d602d",
-      "severity": "mild",
-      "text": "(&local_5c,&DAT_005d602d,texture_name,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 228,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "*(uchar *)(extraout_ECX + extraout_EDX) = (uchar)local_20;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 228,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(uchar *)(extraout_ECX + extraout_EDX) = (uchar)local_20;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 229,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "pSVar5->palette_data[extraout_EDX + 1] = (uchar)local_20;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 230,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "iVar2 = extraout_EDX + 3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 231,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "pSVar5->palette_data[extraout_EDX + 2] = (uchar)local_20;",
-      "type": "extra_output"
+      "text": "builtin_strncpy(local_1dc,\"\u025bV\",4);",
+      "type": "builtin_function"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 75,
+      "line": 76,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -662,7 +541,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 89,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

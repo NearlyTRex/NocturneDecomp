@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_simbox_cpp_CSimBox_process_FUN_005473c0(CSimBox *this_ptr,float delta_time)
 
@@ -21,13 +20,13 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005473c0(CSimBox *this_ptr,floa
   float fStack_28;
   float fStack_24;
   float fStack_20;
-  float fStack_1c;
+  CVector3f CStack_1c;
   int iStack_10;
   
   bVar5 = 0;
   if ((this_ptr->type == 1) && ((this_ptr->physics_box).is_valid == 0)) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (0x01C6E360,this_ptr->trigger_event);
+                      (g_CEventListPtr,this_ptr->trigger_event);
     if (iVar3 != 0) {
       pCVar4 = &(this_ptr->physics_box).linear_velocity_local;
       (this_ptr->physics_box).is_valid = 1;
@@ -42,14 +41,14 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005473c0(CSimBox *this_ptr,floa
         (this_ptr->physics_box).angular_velocity.y = (this_ptr->init_rot_vel).y;
         (this_ptr->physics_box).angular_velocity.z = (this_ptr->init_rot_vel).z;
       }
-      core_dirmat_cpp_FUN_0045b800
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
                 (&(this_ptr->physics_box).rotation_matrix,
-                 &(this_ptr->physics_box).linear_velocity_local);
-      fStack_28 = fStack_1c;
+                 &(this_ptr->physics_box).linear_velocity_local,&CStack_1c);
+      fStack_28 = CStack_1c.x;
       (&stack0xffffffdc)[(uint)bVar5 * 0xfffffffe] =
-           (float)*(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);
+           (float)*(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4);
       *(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-           *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+           *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       pCVar4 = &(this_ptr->physics_box).linear_velocity;
       if (pCVar4 != (CVector3f *)&stack0xffffffd8) {
         pCVar4->x = fStack_28;
@@ -59,21 +58,22 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005473c0(CSimBox *this_ptr,floa
     }
   }
   if (this_ptr->type == 0) {
-    iVar3 = (**(code **)*0x01D70A78)(0x01D70A78,0x13);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_R);
     if (iVar3 != 0) {
       (this_ptr->base).location.position.x = (this_ptr->spawn_position).x;
       (this_ptr->base).location.position.y = (this_ptr->spawn_position).y;
       (this_ptr->base).location.position.z = (this_ptr->spawn_position).z;
       iStack_10 = rand();
       (this_ptr->base).orient.vec.x =
-           ((float)iStack_10 * _DAT_005d1592 + (float)_DAT_005d1596) * (float)_DAT_005d159e;
+           ((float)iStack_10 * 3.051851e-05f + (float)-0.5) *
+           (float)3.1415926535000001;
       iStack_10 = rand();
       (this_ptr->base).orient.vec.z =
-           (float)iStack_10 * _DAT_005d1592 * _DAT_005d15a6 * (float)_DAT_005d15ae;
+           (float)iStack_10 * 3.051851e-05f * 3.141593f * (float)2;
       iStack_10 = rand();
       pCVar2 = (this_ptr->base).vtable._ub;
       (this_ptr->base).orient.vec.y =
-           (float)iStack_10 * _DAT_005d1592 * _DAT_005d15a6 * (float)_DAT_005d15ae;
+           (float)iStack_10 * 3.051851e-05f * 3.141593f * (float)2;
       (*pCVar2->setup)(&this_ptr->base);
     }
   }

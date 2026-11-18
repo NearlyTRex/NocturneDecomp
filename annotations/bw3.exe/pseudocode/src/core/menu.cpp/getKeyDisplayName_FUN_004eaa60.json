@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 118,
+    "complexity_score": 102,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 2,
+    "pseudocode_lines": 87,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 324
+    "total_lines": 323
   },
   "cross_references": [
     {
       "addr": "004b51e0",
       "from_addr": "004b57b7",
-      "name": "core_game.cpp_FUN_004b51e0",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,13 +30,13 @@
     {
       "addr": "004da880",
       "from_addr": "004daac9",
-      "name": "core_inv.cpp_FUN_004da880",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eae80",
       "from_addr": "004ebd4c",
-      "name": "core_menu.cpp_FUN_004eae80",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,7 +61,7 @@
     {
       "addr": "00581360",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_00581360"
+      "name": "wincore_winrun.cpp_getKeyName_FUN_00581360"
     }
   ],
   "globals": [
@@ -200,14 +199,14 @@
     },
     {
       "addr": "01d737d8",
-      "name": "DAT_01d737d8",
-      "type": "undefined4",
+      "name": "g_INT_01d737d8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d76220",
-      "name": "DAT_01d76220",
-      "type": "undefined4",
+      "name": "g_StringBufferIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -217,7 +216,7 @@
       {
         "call_addr": "004b57b7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +227,7 @@
       {
         "call_addr": "004b588e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -239,7 +238,7 @@
       {
         "call_addr": "004b5977",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -250,7 +249,7 @@
       {
         "call_addr": "004b5a4e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -261,7 +260,7 @@
       {
         "call_addr": "004b5b23",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -272,7 +271,7 @@
       {
         "call_addr": "004b5bfa",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -283,7 +282,7 @@
       {
         "call_addr": "004b5ccf",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -294,7 +293,7 @@
       {
         "call_addr": "004b5da6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,7 +304,7 @@
       {
         "call_addr": "004b5e7b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,7 +315,7 @@
       {
         "call_addr": "004b5f52",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b51e0",
+        "caller": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -410,16 +409,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 80,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

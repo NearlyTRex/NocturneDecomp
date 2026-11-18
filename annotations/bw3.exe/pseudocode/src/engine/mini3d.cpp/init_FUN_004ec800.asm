@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d7f4f4
+;   float* g_FLOAT_PTR_01d7f4f4
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_allocVertexBuffer_FUN_004f0460
@@ -19,7 +19,7 @@ section .text
     CALL engine_mini3d.cpp_allocVertexBuffer_FUN_004f0460 ; 004ec805
         ;   XREF to: 004f0460 (UNCONDITIONAL_CALL)  ; void * engine_mini3d.cpp_allocVertexBuffer_FUN_004f0460(int vertex_count)
     ADD ESP,0x4                         ; 004ec80a
-    MOV [0x01d7f4f4],EAX                ; 004ec80d | DAT_01d7f4f4
+    MOV [0x01d7f4f4],EAX                ; 004ec80d | g_FLOAT_PTR_01d7f4f4
     XOR EAX,EAX                         ; 004ec812
     RET                                 ; 004ec814
 

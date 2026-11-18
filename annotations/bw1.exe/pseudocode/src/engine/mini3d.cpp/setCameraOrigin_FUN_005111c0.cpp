@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setCameraOrigin_FUN_005111c0(CVector3f *origin)
 
 {
-  _DAT_01d22514 = origin->y;
-  _DAT_01d22518 = origin->z;
-  _DAT_01d22510 = origin->x;
+  g_FLOAT_01d22514 = origin->y;
+  g_FLOAT_01d22518 = origin->z;
+  g_FLOAT_01d22510 = origin->x;
   return;
 }

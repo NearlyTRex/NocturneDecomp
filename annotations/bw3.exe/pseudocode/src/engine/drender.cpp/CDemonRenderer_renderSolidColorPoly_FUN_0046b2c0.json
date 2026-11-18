@@ -2,31 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 89,
+    "complexity_score": 63,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 4,
+    "pseudocode_lines": 33,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [
     {
       "addr": "00475090",
       "from_addr": "004754a4",
-      "name": "core_dtrace.cpp_FUN_00475090",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047aea0",
       "from_addr": "0047afdd",
-      "name": "core_dtri.cpp_FUN_0047aea0",
+      "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0047aea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,15 +35,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053f5d0",
-      "from_addr": "0053f6c6",
-      "name": "core_setdir.cpp_FUN_0053f5d0",
+      "addr": "0053f940",
+      "from_addr": "0054085b",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053f940",
-      "from_addr": "0054085b",
-      "name": "core_setdir.cpp_FUN_0053f940",
+      "addr": "0053f0f0",
+      "from_addr": "0053f6c6",
+      "name": "core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -87,32 +86,32 @@
   "globals": [
     {
       "addr": "01bdd818",
-      "name": "DAT_01bdd818",
-      "type": "undefined4",
+      "name": "g_VertexIndexBuffer",
+      "type": "int[16]",
       "value": null
     },
     {
       "addr": "01bdd81c",
-      "name": "DAT_01bdd81c",
+      "name": "g_VertexIndexBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "DAT_01c6b5cc",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -122,7 +121,7 @@
       {
         "call_addr": "0054085b",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +165,7 @@
       {
         "call_addr": "004754a4",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00475090",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +176,7 @@
       {
         "call_addr": "004754da",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00475090",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +187,7 @@
       {
         "call_addr": "00475515",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00475090",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +198,7 @@
       {
         "call_addr": "0047553b",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00475090",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +209,7 @@
       {
         "call_addr": "00475562",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00475090",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +220,7 @@
       {
         "call_addr": "00475590",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00475090",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -315,32 +314,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_01bdd818",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bdd818 + iVar2) = pSVar1->vertices[0].vertex_index;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01bdd818",
-      "severity": "mild",
-      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1->vertices[0].vertex_index;",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 20,
+      "line": 18,
       "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;",

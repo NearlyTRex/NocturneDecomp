@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_0056e7fc at 0056e836
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de5c14
-;   undefined4 DAT_02de5c18
+;   int g_INT_02de5c14
+;   void* g_PTR_02de5c18
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -23,30 +23,30 @@ section .text
     PUSH ESI                            ; 0056e325
     PUSH EDI                            ; 0056e326
     PUSH EBP                            ; 0056e327
-    MOV EDX,dword ptr [0x02de5c14]      ; 0056e328 | DAT_02de5c14
+    MOV EDX,dword ptr [0x02de5c14]      ; 0056e328 | g_INT_02de5c14
     XOR ESI,ESI                         ; 0056e32e
     TEST EDX,EDX                        ; 0056e330
     JLE 0x0056e365                      ; 0056e332
         ;   XREF to: 0056e365 (CONDITIONAL_JUMP)  ; LAB_0056e365
     XOR EBX,EBX                         ; 0056e334
-    MOV EAX,[0x02de5c18]                ; 0056e336 | DAT_02de5c18
+    MOV EAX,[0x02de5c18]                ; 0056e336 | g_PTR_02de5c18
         ;   Label: LAB_0056e336
     MOV ECX,dword ptr [EBX + EAX*0x1]   ; 0056e33b
     PUSH ECX                            ; 0056e33e
     CALL dword ptr CS:[0x5754a4]        ; 0056e33f
-    MOV EAX,[0x02de5c18]                ; 0056e346 | DAT_02de5c18
+    MOV EAX,[0x02de5c18]                ; 0056e346 | g_PTR_02de5c18
     MOV EDI,dword ptr [EBX + EAX*0x1]   ; 0056e34b
     PUSH EDI                            ; 0056e34e
     ADD EBX,0x4                         ; 0056e34f
     INC ESI                             ; 0056e352
     CALL crt_memory.c_free_FUN_005638d0 ; 0056e353
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
-    MOV EBP,dword ptr [0x02de5c14]      ; 0056e358 | DAT_02de5c14
+    MOV EBP,dword ptr [0x02de5c14]      ; 0056e358 | g_INT_02de5c14
     ADD ESP,0x4                         ; 0056e35e
     CMP ESI,EBP                         ; 0056e361
     JL 0x0056e336                       ; 0056e363
         ;   XREF to: 0056e336 (CONDITIONAL_JUMP)  ; LAB_0056e336
-    MOV EAX,[0x02de5c18]                ; 0056e365 | DAT_02de5c18
+    MOV EAX,[0x02de5c18]                ; 0056e365 | g_PTR_02de5c18
         ;   Label: LAB_0056e365
     TEST EAX,EAX                        ; 0056e36a
     JZ 0x0056e377                       ; 0056e36c

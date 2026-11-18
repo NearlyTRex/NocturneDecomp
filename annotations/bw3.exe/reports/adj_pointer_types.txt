@@ -1,7 +1,7 @@
-Scanning 539 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw3.exe/pseudocode/src...
+Scanning 550 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw3.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (179 files still need ADJ)
+UNFINISHED CTORS/DTORS (182 files still need ADJ)
 ======================================================================
 
   [core/ammo.cpp]
@@ -337,7 +337,7 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       CMirror_ctor @ this+0x21c (540) -> CGlass_ptr_540
       _arrinit @ this+0x3bc (956) -> CGlass_ptr_956
     CGlass_dtor_FUN_004cc5f0:
-      CDemonActor_dtor @ this+0x21c (540) -> CGlass_ptr_540
+      CMirror_dtor @ this+0x21c (540) -> CGlass_ptr_540
 
   [core/goggles.cpp]
     CGoggles_ctor_FUN_004cc6c0:
@@ -365,6 +365,12 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
     CHero_ctor_FUN_004d24b0:
       CPathMap_ctor @ this+0xce08 (52744) -> CHero_ptr_52744
       CInventory_ctor @ this+0x206e8 (132840) -> CHero_ptr_132840
+    CHero_dtor_FUN_004d2620:
+      CInventory_dtor @ this+0x206e8 (132840) -> CHero_ptr_132840
+      CPathMap_dtor @ this+0xce08 (52744) -> CHero_ptr_52744
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+      CDemonActor_dtor @ ??? (UNKNOWN)
 
   [core/hino.cpp]
     CHino_dtor_FUN_0059d660:
@@ -545,6 +551,10 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
     CDeformableModel_ctor_FUN_00548230:
       _arrinit @ this+0x2290 (8848) -> CDeformableModel_ptr_8848
       _arrinit @ this+0x274c (10060) -> CDeformableModel_ptr_10060
+    CSkeleton_ctor_FUN_005479f0:
+      CMotionList_ctor @ ??? (UNKNOWN)
+    CSkeleton_dtor_FUN_00547a50:
+      CMotionList_dtor @ ??? (UNKNOWN)
     SVert_ctor_FUN_00550520:
       _arrinit @ this+0x10 (16) -> SVert_ptr_16
 
@@ -622,6 +632,7 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       CMorph_ctor @ this+0x47b98 (293784) -> CStyler_ptr_293784
     CStyler_dtor_FUN_0059df60:
       CMorph_dtor @ this+0x47b98 (293784) -> CStyler_ptr_293784
+      CCloth_dtor @ this+0xd054 (53332) -> CStyler_ptr_53332
       CDemonActor_dtor @ this+0x47b98 (293784) -> CStyler_ptr_293784
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
@@ -942,7 +953,7 @@ NEEDED ADJ POINTER TYPES
 Total: 186 types across 132 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (125 calls with unknown offset)
+MANUAL REVIEW NEEDED (130 calls with unknown offset)
 ======================================================================
   CAsgaya_dtor_FUN_005a1b50.asm: CClothList_dtor
   CAsgaya_dtor_FUN_005a1b50.asm: CDeformableModelInstance_dtor
@@ -998,6 +1009,9 @@ MANUAL REVIEW NEEDED (125 calls with unknown offset)
   CGhoul_dtor_FUN_004c9ab0.asm: CDeformableModelInstance_dtor
   CHecaitomix_dtor_FUN_00598670.asm: CClothList_dtor
   CHecaitomix_dtor_FUN_00598670.asm: CDeformableModelInstance_dtor
+  CHero_dtor_FUN_004d2620.asm: CClothList_dtor
+  CHero_dtor_FUN_004d2620.asm: CDeformableModelInstance_dtor
+  CHero_dtor_FUN_004d2620.asm: CDemonActor_dtor
   CHino_dtor_FUN_0059d660.asm: CClothList_dtor
   CHino_dtor_FUN_0059d660.asm: CDeformableModelInstance_dtor
   CAngelDemon_dtor_FUN_004d6460.asm: CClothList_dtor
@@ -1034,6 +1048,8 @@ MANUAL REVIEW NEEDED (125 calls with unknown offset)
   CSpiritShadow_dtor_FUN_005460b0.asm: CDeformableModelInstance_dtor
   CShadowsc_dtor_FUN_00546f40.asm: CClothList_dtor
   CShadowsc_dtor_FUN_00546f40.asm: CDeformableModelInstance_dtor
+  CSkeleton_ctor_FUN_005479f0.asm: CMotionList_ctor
+  CSkeleton_dtor_FUN_00547a50.asm: CMotionList_dtor
   CSpiritBear_dtor_FUN_0059b540.asm: CClothList_dtor
   CSpiritBear_dtor_FUN_0059b540.asm: CDeformableModelInstance_dtor
   CSpiritEagle_dtor_FUN_00599e40.asm: CClothList_dtor

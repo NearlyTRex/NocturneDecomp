@@ -10,36 +10,17 @@ void __cdecl core_fire_cpp_CCrater_save_FUN_0049dd20(CCrater *this_ptr,_FILE *fi
 
 {
   CVector3f *pCVar1;
-  CVector3f *pCVar2;
-  CVector3f *pCVar3;
-  CCrater *pCVar4;
   
-  FUN_005a3140
-            (file_handle,"%d,%d,%f,%f\n",this_ptr->active,this_ptr->has_smoke,
-             (double)this_ptr->smoke_delay,(double)this_ptr->smoke_spawn_timer);
-  FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)(this_ptr->center_position).x,
-             (double)(this_ptr->center_position).y,(double)(this_ptr->center_position).z);
-  pCVar4 = this_ptr;
+  _fprintf(file_handle,"%d,%d,%f,%f\n");
+  pCVar1 = this_ptr->smoke_positions;
+  _fprintf(file_handle,"%f,%f,%f\n");
   do {
-    pCVar2 = pCVar4->smoke_positions;
-    pCVar3 = pCVar4->smoke_positions;
-    pCVar1 = pCVar4->smoke_positions;
-    pCVar4 = (CCrater *)&pCVar4->center_position;
-    FUN_005a3140
-              (file_handle,"%f,%f,%f\n",(double)pCVar1->x,(double)pCVar3->y,(double)pCVar2->z);
-  } while (pCVar4 != (CCrater *)&this_ptr->smoke_positions[0].z);
-  FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[0].x,
-             (double)this_ptr->corner_positions[0].y,(double)this_ptr->corner_positions[0].z);
-  FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[1].x,
-             (double)this_ptr->corner_positions[1].y,(double)this_ptr->corner_positions[1].z);
-  FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[2].x,
-             (double)this_ptr->corner_positions[2].y,(double)this_ptr->corner_positions[2].z);
-  FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[3].x,
-             (double)this_ptr->corner_positions[3].y,(double)this_ptr->corner_positions[3].z);
+    this_ptr = (CCrater *)&this_ptr->center_position;
+    _fprintf(file_handle,"%f,%f,%f\n");
+  } while (this_ptr != (CCrater *)&pCVar1->z);
+  _fprintf(file_handle,"%f,%f,%f\n");
+  _fprintf(file_handle,"%f,%f,%f\n");
+  _fprintf(file_handle,"%f,%f,%f\n");
+  _fprintf(file_handle,"%f,%f,%f\n");
   return;
 }

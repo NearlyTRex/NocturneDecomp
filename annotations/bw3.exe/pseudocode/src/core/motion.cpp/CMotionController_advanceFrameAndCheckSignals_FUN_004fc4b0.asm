@@ -22,9 +22,9 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004fc494 = 004fc578
-;   undefined4 DAT_005c9d6c
-;   undefined4 DAT_005c9d74
-;   undefined4 DAT_005c9d7c
+;   double g_DOUBLE_005c9d6c = -0.000100000000000000
+;   float g_FLOAT_005c9d74 = -1
+;   double g_DOUBLE_005c9d7c = 0.00100000000000000
 ;
 ; *****************************************************************************
 
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 004fc4f6 (CONDITIONAL_JUMP)  ; LAB_004fc4f6
     FILD dword ptr [EBX + 0x64]         ; 004fc517
         ;   Label: LAB_004fc517
-    FADD double ptr [0x005c9d6c]        ; 004fc51a | DAT_005c9d6c
+    FADD double ptr [0x005c9d6c]        ; 004fc51a | g_DOUBLE_005c9d6c
     FLD float ptr [ESP + 0xc]           ; 004fc520
     FCOMPP                              ; 004fc524
     FNSTSW AX                           ; 004fc526
@@ -125,7 +125,7 @@ section .text
     RET                                 ; 004fc58e
     FLD float ptr [ESP + 0xc]           ; 004fc58f
         ;   Label: LAB_004fc58f
-    FADD double ptr [0x005c9d7c]        ; 004fc593 | DAT_005c9d7c
+    FADD double ptr [0x005c9d7c]        ; 004fc593 | g_DOUBLE_005c9d7c
     FLD float ptr [ESP + 0x8]           ; 004fc599
     FSTP double ptr [ESP]               ; 004fc59d
     FCOMP double ptr [ESP]              ; 004fc5a0
@@ -134,7 +134,7 @@ section .text
     JC 0x004fc50c                       ; 004fc5a6
         ;   XREF to: 004fc50c (CONDITIONAL_JUMP)  ; LAB_004fc50c
     FLD double ptr [ESP]                ; 004fc5ac
-    FADD double ptr [0x005c9d7c]        ; 004fc5af | DAT_005c9d7c
+    FADD double ptr [0x005c9d7c]        ; 004fc5af | g_DOUBLE_005c9d7c
     MOV EDI,dword ptr [EDX + 0x80]      ; 004fc5b5
     FSTP float ptr [ESP + 0xc]          ; 004fc5bb
     JMP 0x004fc50c                      ; 004fc5bf
@@ -143,7 +143,7 @@ section .text
         ;   Label: default
     MOV dword ptr [ESP + 0x10],EAX      ; 004fc5c7
     FLD float ptr [ESP + 0x10]          ; 004fc5cb
-    FCOMP float ptr [0x005c9d74]        ; 004fc5cf | DAT_005c9d74
+    FCOMP float ptr [0x005c9d74]        ; 004fc5cf | g_FLOAT_005c9d74
     FNSTSW AX                           ; 004fc5d5
     SAHF                                ; 004fc5d7
     JZ 0x004fc5f1                       ; 004fc5d8

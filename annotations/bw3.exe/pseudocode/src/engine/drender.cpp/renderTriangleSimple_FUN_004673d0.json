@@ -1,0 +1,412 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 465,
+    "complexity_score": 320,
+    "cross_reference_count": 4,
+    "function_call_count": 5,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 225,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 690
+  },
+  "cross_references": [
+    {
+      "addr": "0046b160",
+      "from_addr": "0046b196",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046dbd0",
+      "from_addr": "0046ddb2",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046d960",
+      "from_addr": "0046da0d",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046d960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046de70",
+      "from_addr": "0046dfa4",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046de70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004673d0",
+    "address_range": [
+      [
+        "004673d0",
+        "004678c0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_renderTriangleSimple_FUN_004673d0",
+    "signature": "void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004673d0(CVector3i *vertex_indices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00515ac0",
+      "is_variadic": false,
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0"
+    },
+    {
+      "addr": "00515920",
+      "is_variadic": false,
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_00515920"
+    },
+    {
+      "addr": "00515a80",
+      "is_variadic": false,
+      "name": "engine_prim.c_replaceWWithDepth_FUN_00515a80"
+    },
+    {
+      "addr": "00565c40",
+      "is_variadic": false,
+      "name": "engine_special.cpp_drawPolygon2_FUN_00565c40"
+    },
+    {
+      "addr": "00563257",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderScanline_FUN_00563257"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060b014",
+      "name": "g_SRenderVertex_ARRAY_0060b014",
+      "type": "SRenderVertex[20000]",
+      "value": null
+    },
+    {
+      "addr": "0060b01c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.transformed_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b024",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.screen_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b028",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.screen_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303f4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "007303fc",
+      "name": "g_CullingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdcfd4",
+      "name": "g_RenderTriangleEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdcfd8",
+      "name": "g_SSoftwareEdge_ARRAY_01bdcfd8",
+      "type": "SSoftwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "01bdd028",
+      "name": "g_SSoftwareEdge_ARRAY_01bdcfd8[1].base.y_min",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd4d8",
+      "name": "g_RenderTriangleMinScanlineY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdd4dc",
+      "name": "g_RenderTriangleMaxScanlineY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdd520",
+      "name": "g_RasterizerDepthBias",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bdd814",
+      "name": "g_RenderAbortFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6cee8",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b8",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01ed3198",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.73224043715847,
+    "instruction_count": 366,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 71,
+      "BOOL_OR": 11,
+      "BRANCH": 9,
+      "CALL": 5,
+      "CBRANCH": 44,
+      "COPY": 297,
+      "INT_ADD": 143,
+      "INT_AND": 399,
+      "INT_CARRY": 30,
+      "INT_DIV": 1,
+      "INT_EQUAL": 260,
+      "INT_LEFT": 17,
+      "INT_LESS": 35,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 60,
+      "INT_OR": 63,
+      "INT_REM": 1,
+      "INT_RIGHT": 8,
+      "INT_SBORROW": 35,
+      "INT_SCARRY": 42,
+      "INT_SEXT": 30,
+      "INT_SLESS": 143,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 70,
+      "INT_XOR": 27,
+      "INT_ZEXT": 3,
+      "LOAD": 82,
+      "POPCOUNT": 123,
+      "RETURN": 2,
+      "STORE": 46,
+      "SUBPIECE": 22
+    },
+    "pcode_op_count": 2098
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004625f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0047ab00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004839f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00458080",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 128,
+    "local_size": 120,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_indices",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
+      "match": "(int)local_1c",
+      "severity": "moderate",
+      "text": "if ((local_14->base).y_max <= (int)local_1c) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 181,
+      "match": "(int)local_1c",
+      "severity": "moderate",
+      "text": "if ((local_18->base).y_max <= (int)local_1c) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 200,
+      "match": "(int)local_1c",
+      "severity": "moderate",
+      "text": "engine_special_cpp_renderScanline_FUN_00563257(local_18,local_14,(int)local_1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 209,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_1c = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CVector3i *)&pCVar9->y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 55,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CVector3i *)&pCVar9->y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_30->owner`). Replace `local_30->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 129,
+      "match": "local_30 = (T *)&local_30->FIELD",
+      "severity": "moderate",
+      "text": "local_30 = (CVector3i *)&local_30->y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `vertex_indices` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&vertex_indices->owner`). Replace `vertex_indices->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 220,
+      "match": "vertex_indices = (T *)&vertex_indices->FIELD",
+      "severity": "moderate",
+      "text": "vertex_indices = (CVector3i *)&vertex_indices->y;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

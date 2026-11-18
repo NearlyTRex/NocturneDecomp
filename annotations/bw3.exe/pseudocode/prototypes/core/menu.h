@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 004e76d0
 void __cdecl renderAudioSpectrumBar(int x_center,int y_top,int height_half);
 
-// Original: core_menu.cpp_FUN_004e7860
+// Original: core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860
 // Address: 004e7860
-int __cdecl FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
+int __cdecl renderMenuAndGetChoice(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
 
 // Original: core_menu.cpp_calibrateGamepad_FUN_004e7dc0
 // Address: 004e7dc0
@@ -33,25 +33,25 @@ void __cdecl showCalibrationTestPattern(char *message_text);
 // Address: 004e84d0
 void __cdecl showCalibrationTest(void);
 
-// Original: core_menu.cpp_FUN_004e85a0
+// Original: core_menu.cpp_configureGraphicsOptions_FUN_004e85a0
 // Address: 004e85a0
-void __cdecl FUN_004e85a0(void);
+void __cdecl configureGraphicsOptions(void);
 
-// Original: core_menu.cpp_FUN_004e8f30
+// Original: core_menu.cpp_checkAndCalibrateGamepad_FUN_004e8f30
 // Address: 004e8f30
-undefined4 FUN_004e8f30(void);
+int __cdecl checkAndCalibrateGamepad(void);
 
-// Original: core_menu.cpp_FUN_004e8f80
+// Original: core_menu.cpp_configureCustomKeys_FUN_004e8f80
 // Address: 004e8f80
-void __cdecl FUN_004e8f80(void);
+void __cdecl configureCustomKeys(void);
 
-// Original: core_menu.cpp_FUN_004e94f0
+// Original: core_menu.cpp_configureSoundOptions_FUN_004e94f0
 // Address: 004e94f0
-void __cdecl FUN_004e94f0(void);
+void __cdecl configureSoundOptions(void);
 
-// Original: core_menu.cpp_FUN_004ea280
+// Original: core_menu.cpp_showOptionsScreen_FUN_004ea280
 // Address: 004ea280
-void __cdecl FUN_004ea280(int initialize_systems);
+void __cdecl showOptionsScreen(int initialize_systems);
 
 // Original: core_menu.cpp_showMainGameMenu_FUN_004ea4d0
 // Address: 004ea4d0
@@ -69,10 +69,10 @@ char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 // Address: 004eacb0
 int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
 
-// Original: core_menu.cpp_FUN_004eadf0
+// Original: core_menu.cpp_getSinglePressedKey_FUN_004eadf0
 // Address: 004eadf0
-int FUN_004eadf0(void);
+int __cdecl getSinglePressedKey(void);
 
-// Original: core_menu.cpp_FUN_004eae80
+// Original: core_menu.cpp_configureCustomKeyBindings_FUN_004eae80
 // Address: 004eae80
-void FUN_004eae80(void);
+void __cdecl configureCustomKeyBindings(void);

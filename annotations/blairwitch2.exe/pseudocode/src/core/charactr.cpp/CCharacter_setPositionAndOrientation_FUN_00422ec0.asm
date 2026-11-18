@@ -13,7 +13,7 @@
 ;   core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_00567840 at 00567866
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f4084
+;   float g_FLOAT_005f4084 = 9999
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409e70
@@ -45,7 +45,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 00422efb
     MOV dword ptr [EAX],EDX             ; 00422efe
     LEA EAX,[EBX + 0x2b4]               ; 00422f00
-    FLD float ptr [0x005f4084]          ; 00422f06 | DAT_005f4084
+    FLD float ptr [0x005f4084]          ; 00422f06 | g_FLOAT_005f4084
     PUSH EAX                            ; 00422f0c
     FSTP float ptr [EBX + 0x2574]       ; 00422f0d
     PUSH dword ptr [EBX + 0x2574]       ; 00422f13

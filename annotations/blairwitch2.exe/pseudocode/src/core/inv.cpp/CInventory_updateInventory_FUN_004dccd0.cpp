@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *this_ptr)
 
 {
@@ -31,7 +29,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *th
     this_ptr->cached_ammo_count = this_ptr->selected_weapons[this_ptr->current_group]->ammo_count;
   }
   if ((g_CGamePtr->flashlight_active == 0) && (g_CGamePtr->goggles_active == 0)) {
-    local_1c = 1.0 / _DAT_005f9020;
+    local_1c = 1.0 / 15.0f;
     if (0 < this_ptr->item_count) {
       iVar4 = 0;
       pCVar5 = this_ptr;
@@ -45,7 +43,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *th
         pCVar5 = (CInventory *)&pCVar5->owner;
       } while (iVar4 < this_ptr->item_count);
     }
-    fVar2 = (float)_DAT_005db9ea;
+    fVar2 = (float)100;
     fVar1 = g_CGamePtr->delta_time_float * fVar2 * local_1c + this_ptr->battery_charge;
     this_ptr->battery_charge = fVar1;
     if (fVar2 < fVar1) {
@@ -54,7 +52,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *th
   }
   else {
     iVar4 = 0;
-    local_20 = 0x43FA0000;
+    local_20 = 500.0f;
     pCVar5 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
@@ -68,7 +66,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *th
       } while (iVar4 < this_ptr->item_count);
     }
     fVar1 = this_ptr->battery_charge -
-            (g_CGamePtr->delta_time_float * (float)_DAT_005db9ea) / local_20;
+            (g_CGamePtr->delta_time_float * (float)100) / local_20;
     this_ptr->battery_charge = fVar1;
     if (fVar1 < 0.0) {
       this_ptr->battery_charge = 0.0;

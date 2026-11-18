@@ -9,6 +9,7 @@
 void __cdecl engine_mini3d_cpp_loadTexture_FUN_004ed9d0(int arg1,int arg2,int arg3,int arg4,int arg5)
 
 {
-  engine_texture_cpp_FUN_0056aab0(arg1,arg2,arg3,arg4,arg5);
+  engine_texture_cpp_storePalettedTexture_FUN_0056aab0
+            ((SMRGLTextureBasic *)arg1,arg2,(uchar *)arg3,(uchar *)arg4,(uchar *)arg5);
   return;
 }

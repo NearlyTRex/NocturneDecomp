@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(CMimic *this_ptr,float delta_time)
 
 {
@@ -18,19 +16,20 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(CMimic *this_ptr,fl
   float local_18 [2];
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
-    _DAT_01d046a0 = "..\\core\\mimic.cpp";
-    _DAT_01d046a4 = 0x4c9;
-    core_main_c_FUN_004e4500("CMimic::processMorph - can't process morph unless we've started morph!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\mimic.cpp";
+    g_INT_01d046a4 = 0x4c9;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMimic::processMorph - can't process morph unless we've started morph!");
   }
-  fVar2 = delta_time / _DAT_005f9e84 + this_ptr->morph_blend;
+  fVar2 = delta_time / 1.0f + this_ptr->morph_blend;
   this_ptr->morph_blend = fVar2;
   if (1.0 <= fVar2) {
     core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0
-              (0x01D182F0,this_ptr->morph_target_actor);
+              (g_CDemonMission_PTR_00618170,this_ptr->morph_target_actor);
     core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
-              (0x01D182F0,this_ptr->morph_target_actor);
+              (g_CDemonMission_PTR_00618170,this_ptr->morph_target_actor);
     this_ptr->morph_target_actor = (CDemonActor *)0x0;
-    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,this_ptr,1);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
+              (g_CDemonMission_PTR_00618170,(CDemonActor *)this_ptr,1);
   }
   else {
     local_18[0] = delta_time;

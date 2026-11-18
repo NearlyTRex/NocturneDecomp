@@ -1,0 +1,473 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 447,
+    "complexity_score": 272,
+    "cross_reference_count": 7,
+    "function_call_count": 7,
+    "global_count": 32,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 167,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "signed_shift_global_idiom"
+    ],
+    "total_lines": 614
+  },
+  "cross_references": [
+    {
+      "addr": "004b7de0",
+      "from_addr": "004b7e0f",
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004b7de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b7ee0",
+      "from_addr": "004b7f0b",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e44e0",
+      "from_addr": "004e45e7",
+      "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401010",
+      "from_addr": "0040103d",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a2f0",
+      "from_addr": "0057a3b1",
+      "name": "wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_0057a2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a0e0",
+      "from_addr": "0057a244",
+      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_0057a0e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ab70",
+      "from_addr": "0057ac62",
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_0057ab70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00579bb0",
+    "address_range": [
+      [
+        "00579bb0",
+        "0057a0d1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0",
+    "signature": "int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int height,int bits_per_pixel)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugFree_FUN_005a3770"
+    },
+    {
+      "addr": "00401810",
+      "is_variadic": false,
+      "name": "engine_2d.c_setupViewportAndClipping_FUN_00401810"
+    },
+    {
+      "addr": "0057a770",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_0057a770"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d73f1",
+      "name": "s_wincore_wddvmem_cpp_005d73f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7408",
+      "name": "s_WDDVMEM_Fatal_out_of_fra_005d7408",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7434",
+      "name": "s_wincore_wddvmem_cpp_005d7434",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d744b",
+      "name": "s_WDDVMEM_Fatal_out_of_Z_b_005d744b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7473",
+      "name": "s_wincore_wddvmem_cpp_005d7473",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d748a",
+      "name": "s_setScreenResolution_Crea_005d748a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d74bb",
+      "name": "s_wincore_wddvmem_cpp_005d74bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d74d2",
+      "name": "s_Clear_of_back_buffer_fai_005d74d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d74ee",
+      "name": "s_wincore_wddvmem_cpp_005d74ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7505",
+      "name": "s_Unlock_of_back_buffer_cl_005d7505",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fba18",
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005fba1c",
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "005fba20",
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "0060b010",
+      "name": "g_PTR_0060b010",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "0072ffac",
+      "name": "g_SoftwareZBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "01c5faec",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01c5faf0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c60dac",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0bce0",
+      "name": "g_DirectDrawObject",
+      "type": "IDirectDraw*",
+      "value": null
+    },
+    {
+      "addr": "02d0bce4",
+      "name": "g_DirectDrawSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "02d0bce8",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "02d0bcec",
+      "name": "g_DirectDrawUnknown",
+      "type": "IUnknown*",
+      "value": null
+    },
+    {
+      "addr": "02d0bcf0",
+      "name": "g_PTR_02d0bcf0",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02d0bcf4",
+      "name": "g_FlipPending",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0bcfc",
+      "name": "g_INT_02d0bcfc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0bd00",
+      "name": "g_INT_02d0bd00",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0bd04",
+      "name": "g_INT_02d0bd04",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0bd08",
+      "name": "g_INT_02d0bd08",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0bd0c",
+      "name": "g_INT_02d0bd0c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0bd10",
+      "name": "g_INT_02d0bd10",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.905511811023622,
+    "instruction_count": 381,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 72,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 3,
+      "BRANCH": 1,
+      "CALL": 16,
+      "CALLIND": 12,
+      "CBRANCH": 26,
+      "COPY": 340,
+      "INT_ADD": 85,
+      "INT_AND": 345,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 197,
+      "INT_LEFT": 10,
+      "INT_LESS": 20,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 47,
+      "INT_OR": 57,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 27,
+      "INT_SEXT": 21,
+      "INT_SLESS": 101,
+      "INT_SRIGHT": 18,
+      "INT_SUB": 129,
+      "INT_XOR": 17,
+      "INT_ZEXT": 3,
+      "LOAD": 51,
+      "POPCOUNT": 91,
+      "RETURN": 3,
+      "STORE": 105,
+      "SUBPIECE": 14
+    },
+    "pcode_op_count": 1869
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00588a50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4679
+    },
+    "bw1.exe": {
+      "addr": "005ac300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ecef0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4569
+    },
+    "nocturne.exe": {
+      "addr": "00552e00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4679
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_pixel",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(byte **)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(byte **)((int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar4) = g_SoftwareZBuffer + iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `(g_PTR_02d0bcf0 + 0x10)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(uint)(g_PTR_02d0bcf0 + 0x10)",
+      "severity": "moderate",
+      "text": "g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02d0bcf0 + 0x10) & 0xfffffff0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 121,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 124,
+      "match": "(int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar4) = g_SoftwareZBuffer + iVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 51,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(((int)((g_INT_005fba20 + (g_INT_005fba20 >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 52,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_INT_005fba20 >> 0x1f) << 2 < 0)) >> 3) *",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 115,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar2 = g_INT_005fba20 >> 0x1f;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 146,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar4 = g_INT_02d0bd00 * g_INT_02d0bd08 >> 0x1f;",
+      "type": "signed_shift_global_idiom"
+    }
+  ]
+}

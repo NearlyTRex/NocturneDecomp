@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_moocow_cpp_CMooCow_process_FUN_004f8cc0(CMooCow *this_ptr,float delta_time)
 
 {
@@ -39,11 +37,11 @@ void __cdecl core_moocow_cpp_CMooCow_process_FUN_004f8cc0(CMooCow *this_ptr,floa
   float afStack_1c [3];
   
   bVar9 = 0;
-  iVar5 = core_charactr_cpp_FUN_0042cd70(this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042cd70(&this_ptr->base,delta_time);
   if (iVar5 == 0) {
     return;
   }
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,0);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330(&this_ptr->base,delta_time,0);
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;
@@ -56,7 +54,7 @@ void __cdecl core_moocow_cpp_CMooCow_process_FUN_004f8cc0(CMooCow *this_ptr,floa
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(&this_ptr->base,iVar5);
   }
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850(&this_ptr->base,delta_time);
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar1->base);
   iVar5 = pSVar6->state_index;
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660(&this_ptr->base,delta_time);
@@ -68,15 +66,16 @@ void __cdecl core_moocow_cpp_CMooCow_process_FUN_004f8cc0(CMooCow *this_ptr,floa
     case 3:
     case 4:
       pCVar1 = &(this_ptr->base).model;
-      afStack_1c[2] = core_motion_cpp_FUN_004fc930(&pCVar1->base);
-      if ((float)_DAT_005c91ec < afStack_1c[2]) {
+      afStack_1c[2] =
+           core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(&pCVar1->base);
+      if ((float)0.97999999999999998 < afStack_1c[2]) {
         iVar7 = 1;
         iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,iVar5,iVar7);
         iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,5);
         if ((iVar5 == 5) &&
            (iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
-                              (0x02CF5680,this_ptr->sfx_handle), iVar5 == 0)) {
+                              (g_CSound_PTR_006045f8,this_ptr->sfx_handle), iVar5 == 0)) {
           uVar8 = (*((this_ptr->base).base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"cow?.wav");
           this_ptr->sfx_handle = uVar8;
@@ -94,8 +93,10 @@ LAB_004f8d8c:
     }
     else {
 LAB_004f8f31:
-      afStack_1c[2] = core_motion_cpp_FUN_004fc930(&(this_ptr->base).model.base);
-      if (afStack_1c[2] <= (float)_DAT_005c91f4) goto LAB_004f8d9f;
+      afStack_1c[2] =
+           core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                     (&(this_ptr->base).model.base);
+      if (afStack_1c[2] <= (float)0.90000000000000002) goto LAB_004f8d9f;
       iVar7 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
     }
@@ -105,8 +106,9 @@ LAB_004f8f31:
   else {
     if (EVar4 < WALK_STATE_NO_PATH) goto LAB_004f8d8c;
     if (EVar4 != WALK_STATE_NO_PATH) goto LAB_004f8f31;
-    afStack_1c[2] = core_motion_cpp_FUN_004fc930(&pCVar1->base);
-    if ((float)_DAT_005c91f4 < afStack_1c[2]) {
+    afStack_1c[2] =
+         core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930(&pCVar1->base);
+    if ((float)0.90000000000000002 < afStack_1c[2]) {
       iVar7 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,iVar5,iVar7);
@@ -123,7 +125,7 @@ LAB_004f8d9f:
 switchD_004f9003_caseD_5:
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_0042ccf0(&this_ptr->base);
   if (iVar5 != 0) {
-    core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0(&this_ptr->base,delta_time);
     fStack_44 = (this_ptr->base).velocity.x * delta_time;
     fStack_40 = (this_ptr->base).velocity.y * delta_time;
     fStack_3c = (this_ptr->base).velocity.z * delta_time;
@@ -156,7 +158,7 @@ switchD_004f9003_caseD_5:
     (this_ptr->base).model.accumulated_root_motion.y =
          (this_ptr->base).model.accumulated_root_motion.z;
     pCVar3->x = (this_ptr->base).model.accumulated_root_motion.y;
-    core_charactr_cpp_FUN_0042c230(&this_ptr->base,&CStack_2c);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230(&this_ptr->base,&CStack_2c);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(this_ptr->base).model);

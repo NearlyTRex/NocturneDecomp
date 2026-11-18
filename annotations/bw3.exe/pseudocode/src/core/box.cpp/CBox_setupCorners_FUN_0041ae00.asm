@@ -11,19 +11,19 @@
 ; float            Stack[0x14]:4   volume
 ;
 ; XREF[7]:
-;   core_bodypart.cpp_FUN_00416970 at 00416b05
+;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00416970 at 00416b05
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041d480 at 0041d57b
-;   core_boxactor.cpp_FUN_0041f1e0 at 0041f346
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0 at 0041f346
 ;   core_fire.cpp_CStake_spawn_FUN_00497ac0 at 00497d12
 ;   core_fire.cpp_CToss_create_FUN_0049cee0 at 0049cfc3
 ;   core_simbox.cpp_CSimBox_setup_FUN_00547280 at 00547342
-;   core_weapon.cpp_FUN_0057ba10 at 0057bb4d
+;   core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_0057ba10 at 0057bb4d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7331
+;   double g_BoxHalfExtentMultiplier = 0.5
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041b1d0
+;   core_box.cpp_CBox_updateTransform_FUN_0041b1d0
 ;
 ; *****************************************************************************
 
@@ -46,87 +46,87 @@ section .text
     POP EBX                             ; 0041ae23
     FLD float ptr [EAX + 0xa4]          ; 0041ae24
         ;   Label: LAB_0041ae24
-    FMUL double ptr [0x005b7331]        ; 0041ae2a | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae2a | g_BoxHalfExtentMultiplier
     FLD float ptr [EAX + 0xac]          ; 0041ae30
-    FMUL double ptr [0x005b7331]        ; 0041ae36 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae36 | g_BoxHalfExtentMultiplier
     FLD float ptr [EAX + 0xac]          ; 0041ae3c
-    FMUL double ptr [0x005b7331]        ; 0041ae42 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae42 | g_BoxHalfExtentMultiplier
     FLD float ptr [EAX + 0xa4]          ; 0041ae48
-    FMUL double ptr [0x005b7331]        ; 0041ae4e | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae4e | g_BoxHalfExtentMultiplier
     FLD float ptr [EAX + 0xa4]          ; 0041ae54
-    FMUL double ptr [0x005b7331]        ; 0041ae5a | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae5a | g_BoxHalfExtentMultiplier
     FLD float ptr [EAX + 0xa8]          ; 0041ae60
-    FMUL double ptr [0x005b7331]        ; 0041ae66 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae66 | g_BoxHalfExtentMultiplier
     FLD float ptr [EAX + 0xa8]          ; 0041ae6c
     FCHS                                ; 0041ae72
     MOV dword ptr [EAX + 0xb0],0x8      ; 0041ae74
-    FMUL double ptr [0x005b7331]        ; 0041ae7e | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae7e | g_BoxHalfExtentMultiplier
     FXCH ST6                            ; 0041ae84
     FSTP float ptr [EAX + 0xb4]         ; 0041ae86
     FLD float ptr [EAX + 0xac]          ; 0041ae8c
-    FMUL double ptr [0x005b7331]        ; 0041ae92 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041ae92 | g_BoxHalfExtentMultiplier
     FXCH ST6                            ; 0041ae98
     FSTP float ptr [EAX + 0xb8]         ; 0041ae9a
     FLD float ptr [EAX + 0xa4]          ; 0041aea0
     FCHS                                ; 0041aea6
-    FMUL double ptr [0x005b7331]        ; 0041aea8 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041aea8 | g_BoxHalfExtentMultiplier
     FXCH ST5                            ; 0041aeae
     FSTP float ptr [EAX + 0xbc]         ; 0041aeb0
     FLD float ptr [EAX + 0xa8]          ; 0041aeb6
     FCHS                                ; 0041aebc
-    FMUL double ptr [0x005b7331]        ; 0041aebe | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041aebe | g_BoxHalfExtentMultiplier
     FXCH ST5                            ; 0041aec4
     FSTP float ptr [EAX + 0xe8]         ; 0041aec6
     FLD float ptr [EAX + 0xa8]          ; 0041aecc
-    FMUL double ptr [0x005b7331]        ; 0041aed2 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041aed2 | g_BoxHalfExtentMultiplier
     FXCH ST5                            ; 0041aed8
     FSTP float ptr [EAX + 0xec]         ; 0041aeda
     FLD float ptr [EAX + 0xa4]          ; 0041aee0
     FCHS                                ; 0041aee6
-    FMUL double ptr [0x005b7331]        ; 0041aee8 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041aee8 | g_BoxHalfExtentMultiplier
     FXCH ST4                            ; 0041aeee
     FSTP float ptr [EAX + 0xf0]         ; 0041aef0
     FLD float ptr [EAX + 0xa8]          ; 0041aef6
     FCHS                                ; 0041aefc
-    FMUL double ptr [0x005b7331]        ; 0041aefe | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041aefe | g_BoxHalfExtentMultiplier
     FXCH ST4                            ; 0041af04
     FSTP float ptr [EAX + 0x11c]        ; 0041af06
     FLD float ptr [EAX + 0xac]          ; 0041af0c
     FCHS                                ; 0041af12
-    FMUL double ptr [0x005b7331]        ; 0041af14 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041af14 | g_BoxHalfExtentMultiplier
     FXCH ST4                            ; 0041af1a
     FSTP float ptr [EAX + 0x120]        ; 0041af1c
     FLD float ptr [EAX + 0xa8]          ; 0041af22
     FCHS                                ; 0041af28
-    FMUL double ptr [0x005b7331]        ; 0041af2a | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041af2a | g_BoxHalfExtentMultiplier
     FXCH ST3                            ; 0041af30
     FSTP float ptr [EAX + 0x150]        ; 0041af32
     FLD float ptr [EAX + 0xac]          ; 0041af38
     FCHS                                ; 0041af3e
-    FMUL double ptr [0x005b7331]        ; 0041af40 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041af40 | g_BoxHalfExtentMultiplier
     FXCH ST2                            ; 0041af46
     FSTP float ptr [EAX + 0x184]        ; 0041af48
     FLD float ptr [EAX + 0xac]          ; 0041af4e
-    FMUL double ptr [0x005b7331]        ; 0041af54 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041af54 | g_BoxHalfExtentMultiplier
     FXCH                                ; 0041af5a
     FSTP float ptr [EAX + 0x188]        ; 0041af5c
     FLD float ptr [EAX + 0xa8]          ; 0041af62
-    FMUL double ptr [0x005b7331]        ; 0041af68 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041af68 | g_BoxHalfExtentMultiplier
     FXCH ST6                            ; 0041af6e
     FSTP float ptr [EAX + 0x18c]        ; 0041af70
     FLD float ptr [EAX + 0xa4]          ; 0041af76
     FCHS                                ; 0041af7c
-    FMUL double ptr [0x005b7331]        ; 0041af7e | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041af7e | g_BoxHalfExtentMultiplier
     FXCH ST5                            ; 0041af84
     FSTP float ptr [EAX + 0x1bc]        ; 0041af86
     FLD float ptr [EAX + 0xa4]          ; 0041af8c
     FCHS                                ; 0041af92
-    FMUL double ptr [0x005b7331]        ; 0041af94 | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041af94 | g_BoxHalfExtentMultiplier
     FXCH                                ; 0041af9a
     FSTP float ptr [EAX + 0x1c0]        ; 0041af9c
     FLD float ptr [EAX + 0xac]          ; 0041afa2
     FCHS                                ; 0041afa8
-    FMUL double ptr [0x005b7331]        ; 0041afaa | DAT_005b7331
+    FMUL double ptr [0x005b7331]        ; 0041afaa | g_BoxHalfExtentMultiplier
     FXCH ST6                            ; 0041afb0
     FSTP float ptr [EAX + 0x1f0]        ; 0041afb2
     FXCH ST3                            ; 0041afb8
@@ -138,7 +138,7 @@ section .text
     FSTP float ptr [EAX + 0x1b8]        ; 0041afd0
     FSTP float ptr [EAX + 0x1ec]        ; 0041afd6
     FSTP float ptr [EAX + 0x1f4]        ; 0041afdc
-    FLD double ptr [0x005b7331]         ; 0041afe2 | DAT_005b7331
+    FLD double ptr [0x005b7331]         ; 0041afe2 | g_BoxHalfExtentMultiplier
     FLD float ptr [EAX + 0xa4]          ; 0041afe8
     FMUL ST1                            ; 0041afee
     FLD float ptr [EAX + 0xa8]          ; 0041aff0
@@ -156,8 +156,8 @@ section .text
     FSTP float ptr [EAX + 0x224]        ; 0041b018
     PUSH EAX                            ; 0041b01e
     FSTP float ptr [EAX + 0x228]        ; 0041b01f
-    CALL core_box.cpp_FUN_0041b1d0      ; 0041b025
-        ;   XREF to: 0041b1d0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_FUN_0041b1d0(CBox * this_ptr, CVector3f * new_position, CVector3f * new_orientation, float speed)
+    CALL core_box.cpp_CBox_updateTransform_FUN_0041b1d0 ; 0041b025
+        ;   XREF to: 0041b1d0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_updateTransform_FUN_0041b1d0(CBox * this_ptr, CVector3f * new_position, CVector3f * new_orientation, float speed)
     ADD ESP,0x10                        ; 0041b02a
     RET                                 ; 0041b02d
 

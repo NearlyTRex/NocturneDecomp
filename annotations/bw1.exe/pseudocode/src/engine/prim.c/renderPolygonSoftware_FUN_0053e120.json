@@ -2,19 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 514,
-    "complexity_score": 338,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 223,
-    "suspect_count": 10,
+    "pseudocode_lines": 219,
+    "suspect_count": 2,
     "suspect_types": [
-      "sign_compare_idiom",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "sign_compare_idiom"
     ],
-    "total_lines": 737
+    "total_lines": 733
   },
   "cross_references": [
     {
@@ -75,7 +73,7 @@
     {
       "addr": "00580127",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00580127"
+      "name": "engine_special.cpp_renderScanline_FUN_00580127"
     }
   ],
   "globals": [
@@ -87,98 +85,98 @@
     },
     {
       "addr": "0061b4c0",
-      "name": "DAT_0061b4c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
     },
     {
       "addr": "00622a84",
-      "name": "DAT_00622a84",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxViewportScanline",
+      "type": "int",
+      "value": "0x4b0"
     },
     {
       "addr": "00713a74",
-      "name": "DAT_00713a74",
-      "type": "undefined4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00713a7c",
-      "name": "DAT_00713a7c",
-      "type": "undefined4",
+      "name": "g_CullingMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4eff8",
-      "name": "DAT_01c4eff8",
-      "type": "undefined4",
+      "name": "g_INT_01c4eff8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4effc",
-      "name": "DAT_01c4effc",
-      "type": "undefined4",
+      "name": "g_INT_01c4effc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f000",
-      "name": "DAT_01c4f000",
-      "type": "undefined4",
+      "name": "g_INT_01c4f000",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f004",
-      "name": "DAT_01c4f004",
-      "type": "undefined4",
+      "name": "g_INT_01c4f004",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d14",
-      "name": "DAT_01c51d14",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c51d18",
-      "name": "DAT_01c51d18",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e7d5b8",
-      "name": "DAT_01e7d5b8",
-      "type": "undefined4",
+      "name": "g_SoftwareEdgeCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e7d5bc",
-      "name": "DAT_01e7d5bc",
-      "type": "undefined4",
+      "name": "g_SSoftwareEdge_ARRAY_01e7d5bc",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "01e7dabc",
-      "name": "DAT_01e7dabc",
-      "type": "undefined4",
+      "name": "g_SoftwareMinScanline",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e7dac0",
-      "name": "DAT_01e7dac0",
-      "type": "undefined4",
+      "name": "g_SoftwareMaxScanline",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e7dac8",
-      "name": "DAT_01e7dac8",
-      "type": "undefined4",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -330,83 +328,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0061b4c0",
-      "severity": "mild",
-      "text": "if ((DAT_0061b4c0 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_00713a7c",
-      "severity": "mild",
-      "text": "if (DAT_00713a7c != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_00713a74",
-      "severity": "mild",
-      "text": "if ((_DAT_01c50948 != 0) && (DAT_00713a74 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_01e7d5bc",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e7d5bc + iVar3) = iVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 185,
-      "match": "DAT_00622a84",
-      "severity": "mild",
-      "text": "iVar9 = _DAT_01e7dabc - DAT_00622a84;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 186,
+      "line": 183,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar12 = SBORROW4(_DAT_01e7dabc,DAT_00622a84);",
+      "text": "bVar12 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);",
       "type": "sign_compare_idiom"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 186,
-      "match": "DAT_00622a84",
-      "severity": "mild",
-      "text": "bVar12 = SBORROW4(_DAT_01e7dabc,DAT_00622a84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 217,
-      "match": "DAT_00622a84",
-      "severity": "mild",
-      "text": "iVar6 = DAT_00622a84;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 223,
+      "line": 218,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar12 = SBORROW4(local_18,iVar6);",
+      "text": "bVar12 = SBORROW4(local_1c,iVar8);",
       "type": "sign_compare_idiom"
     }
   ]

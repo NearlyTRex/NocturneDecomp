@@ -8,9 +8,9 @@
 ; SHardwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c70f78
-;   undefined4 DAT_01c70f7c
-;   undefined4 DAT_01c70fb4
+;   int g_EdgeCount
+;   SHardwareEdge[16] g_HardwareEdgeTable
+;   undefined4 g_HardwareEdgeTable[1].y_min
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     PUSH EBX                            ; 00494220
         ;   Label: engine_fpoly.c_findHardwareEdgeByYMin_FUN_00494220
     PUSH ESI                            ; 00494221
-    MOV EBX,dword ptr [0x01c70f78]      ; 00494222 | DAT_01c70f78
+    MOV EBX,dword ptr [0x01c70f78]      ; 00494222 | g_EdgeCount
     MOV ECX,dword ptr [ESP + 0xc]       ; 00494228
     MOV ESI,dword ptr [ESP + 0x10]      ; 0049422c
     MOV EAX,0x1c70f7c                   ; 00494230
@@ -27,7 +27,7 @@ section .text
     TEST EBX,EBX                        ; 00494237
     JLE 0x0049424b                      ; 00494239
         ;   XREF to: 0049424b (CONDITIONAL_JUMP)  ; LAB_0049424b
-    CMP ECX,dword ptr [EAX]             ; 0049423b | DAT_01c70f7c | DAT_01c70fb4
+    CMP ECX,dword ptr [EAX]             ; 0049423b | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_0049423b
     JNZ 0x00494243                      ; 0049423d
         ;   XREF to: 00494243 (CONDITIONAL_JUMP)  ; LAB_00494243
@@ -36,13 +36,13 @@ section .text
         ;   XREF to: 0049424d (CONDITIONAL_JUMP)  ; LAB_0049424d
     INC EDX                             ; 00494243
         ;   Label: LAB_00494243
-    ADD EAX,0x38                        ; 00494244 | DAT_01c70fb4
+    ADD EAX,0x38                        ; 00494244 | g_HardwareEdgeTable[1].y_min
     CMP EDX,EBX                         ; 00494247
     JL 0x0049423b                       ; 00494249
         ;   XREF to: 0049423b (CONDITIONAL_JUMP)  ; LAB_0049423b
     XOR EAX,EAX                         ; 0049424b
         ;   Label: LAB_0049424b
-    MOV dword ptr [0x01c70f78],EBX      ; 0049424d | DAT_01c70f78
+    MOV dword ptr [0x01c70f78],EBX      ; 0049424d | g_EdgeCount
         ;   Label: LAB_0049424d
     POP ESI                             ; 00494253
     POP EBX                             ; 00494254

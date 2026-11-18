@@ -19,16 +19,16 @@
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30 at 00415e4a
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00416330 at 004163af
 ;   core_box.cpp_CBox_processPhysics_FUN_0041b470 at 0041b94c
-;   core_box.cpp_FUN_0041b1d0 at 0041b20a
+;   core_box.cpp_CBox_updateTransform_FUN_0041b1d0 at 0041b20a
 ;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420645
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 004228d1
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 00422358
-;   core_charactr.cpp_FUN_004300e0 at 00430375
-;   core_charactr.cpp_FUN_00434190 at 00434413
+;   core_charactr.cpp_CCharacter_dismember_FUN_004300e0 at 00430375
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_00434190 at 00434413
 ;   ... and 33 more
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045bef0
+;   core_dirmat.cpp_sinCos_FUN_0045bef0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH EAX                            ; 0045b562
     LEA EAX,[ESP + 0x8]                 ; 0045b563
     PUSH EAX                            ; 0045b567
-    CALL core_dirmat.cpp_FUN_0045bef0   ; 0045b568
-        ;   XREF to: 0045bef0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045bef0()
+    CALL core_dirmat.cpp_sinCos_FUN_0045bef0 ; 0045b568
+        ;   XREF to: 0045bef0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045bef0(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 0045b56d
     LEA EAX,[ESI + 0x8]                 ; 0045b570
     PUSH EAX                            ; 0045b573
@@ -54,8 +54,8 @@ section .text
     PUSH EAX                            ; 0045b578
     LEA EAX,[ESP + 0x10]                ; 0045b579
     PUSH EAX                            ; 0045b57d
-    CALL core_dirmat.cpp_FUN_0045bef0   ; 0045b57e
-        ;   XREF to: 0045bef0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045bef0()
+    CALL core_dirmat.cpp_sinCos_FUN_0045bef0 ; 0045b57e
+        ;   XREF to: 0045bef0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045bef0(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 0045b583
     LEA EAX,[ESI + 0x4]                 ; 0045b586
     PUSH EAX                            ; 0045b589
@@ -63,8 +63,8 @@ section .text
     PUSH EAX                            ; 0045b58e
     LEA EAX,[ESP + 0x18]                ; 0045b58f
     PUSH EAX                            ; 0045b593
-    CALL core_dirmat.cpp_FUN_0045bef0   ; 0045b594
-        ;   XREF to: 0045bef0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045bef0()
+    CALL core_dirmat.cpp_sinCos_FUN_0045bef0 ; 0045b594
+        ;   XREF to: 0045bef0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_sinCos_FUN_0045bef0(float * sin_out, float * cos_out, float * angle)
     ADD ESP,0xc                         ; 0045b599
     FLD float ptr [ESP + 0x10]          ; 0045b59c
     FMUL float ptr [ESP]                ; 0045b5a0

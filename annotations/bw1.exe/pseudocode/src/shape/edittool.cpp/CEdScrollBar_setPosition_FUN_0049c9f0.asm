@@ -16,11 +16,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc811
 ;   TerminatedCString s_CEdScrollBar_setPosition_005dc827
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -91,10 +91,10 @@ section .text
     MOV EDI,0x5dc811                    ; 0049ca75 | = "..\\shape\\edittool.cpp"
     MOV EBP,0x127c                      ; 0049ca7a
     PUSH 0x5dc827                       ; 0049ca7f | = "CEdScrollBar::setPosition - invalid d..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0049ca84 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0049ca8a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049ca90
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 0049ca84 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0049ca8a | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049ca90
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049ca95
     POP EDI                             ; 0049ca98
     POP EBP                             ; 0049ca99

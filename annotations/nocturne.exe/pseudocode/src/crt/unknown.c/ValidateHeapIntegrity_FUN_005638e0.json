@@ -2,22 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 370,
+    "complexity_score": 253,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 30,
+    "pseudocode_lines": 43,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "register_param",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 178
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -72,21 +70,21 @@
   "globals": [
     {
       "addr": "005c1680",
-      "name": "DAT_005c1680",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MainHeap",
+      "type": "Heap*",
+      "value": "00000000"
     },
     {
       "addr": "005c1684",
-      "name": "DAT_005c1684",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SecondaryHeap",
+      "type": "Heap*",
+      "value": "00000000"
     },
     {
       "addr": "005c1688",
-      "name": "DAT_005c1688",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1688",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005c1ad8",
@@ -102,14 +100,14 @@
     },
     {
       "addr": "02de4e10",
-      "name": "DAT_02de4e10",
-      "type": "undefined4",
+      "name": "g_INT_02de4e10",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de5460",
-      "name": "DAT_02de5460",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_02de5460",
+      "type": "char[16]",
       "value": null
     }
   ],
@@ -250,16 +248,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_DS",
       "severity": "mild",
       "text": "ushort in_DS;",
@@ -267,227 +257,147 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 10,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad8)();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(void *)(*_DAT_02de4e10 + (int)_DAT_02de4e10",
-      "severity": "moderate",
-      "text": "(piVar2 = _DAT_02de4e10, (void *)(*_DAT_02de4e10 + (int)_DAT_02de4e10) <= ptr)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(void *)(*piVar2 + (int)piVar2",
-      "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(void *)(*piVar2 + (int)piVar2",
-      "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c1680",
-      "severity": "mild",
-      "text": "((piVar1 = DAT_005c1680, DAT_005c1684 == (int *)0x0 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "((piVar1 = DAT_005c1680, DAT_005c1684 == (int *)0x0 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "((((ptr < DAT_005c1684 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(void *)(*DAT_005c1684 + (int)DAT_005c1684",
-      "severity": "moderate",
-      "text": "(piVar2 = DAT_005c1684, (void *)(*DAT_005c1684 + (int)DAT_005c1684) <= ptr)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "(piVar2 = DAT_005c1684, (void *)(*DAT_005c1684 + (int)DAT_005c1684) <= ptr)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "(piVar2 = DAT_005c1684, (void *)(*DAT_005c1684 + (int)DAT_005c1684) <= ptr)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "(piVar2 = DAT_005c1684, (void *)(*DAT_005c1684 + (int)DAT_005c1684) <= ptr)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "((piVar2 = (int *)DAT_005c1684[1], piVar2 == (int *)0x0 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(void *)(*piVar2 + (int)piVar2",
-      "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "((piVar2 = (int *)DAT_005c1684[2], piVar2 == (int *)0x0 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(void *)(*piVar2 + (int)piVar2",
-      "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))))))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(void *)(*piVar2 + (int)piVar2",
-      "severity": "moderate",
-      "text": "if ((piVar2 <= ptr) && (ptr < (void *)(*piVar2 + (int)piVar2))) goto LAB_0056399c;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred register parameter",
-      "line": 34,
+      "line": 36,
       "match": "in_DS",
       "severity": "mild",
-      "text": "CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)piVar2);",
+      "text": "CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);",
       "type": "register_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005c1684",
-      "severity": "mild",
-      "text": "if ((piVar2 < DAT_005c1684) && (DAT_005c1688 < (uint)piVar2[5])) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005c1688",
-      "severity": "mild",
-      "text": "if ((piVar2 < DAT_005c1684) && (DAT_005c1688 < (uint)piVar2[5])) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005c1688",
-      "severity": "mild",
-      "text": "DAT_005c1688 = piVar2[5];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_02de5460",
-      "severity": "mild",
-      "text": "DAT_02de5460 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
+      "line": 43,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0)();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 17,
-      "match": "(int)piVar2",
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))) &&",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
-      "match": "(int)piVar2",
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))))) &&",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_SecondaryHeap->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)&g_SecondaryHeap->heap_size",
+      "severity": "moderate",
+      "text": "(void *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= ptr)) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 24,
-      "match": "(int)piVar2",
+      "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))) &&",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 26,
-      "match": "(int)piVar2",
+      "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
-      "text": "((ptr < piVar2 || ((void *)(*piVar2 + (int)piVar2) <= ptr)))))))))) {",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))))",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
-      "match": "(int)piVar2",
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)&pHVar2->heap_size",
       "severity": "moderate",
-      "text": "if ((piVar2 <= ptr) && (ptr < (void *)(*piVar2 + (int)piVar2))) goto LAB_0056399c;",
+      "text": "if ((pHVar2 <= ptr) && (ptr < (void *)((int)&pHVar2->heap_size + pHVar2->heap_size)))",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `ushort` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
-      "match": "(ushort)piVar2",
+      "description": "Pointer value `pHVar2` truncated by cast to `ushort` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(ushort)pHVar2",
       "severity": "moderate",
-      "text": "CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)piVar2);",
+      "text": "CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pHVar2[1].next_heap_block` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)pHVar2[1].next_heap_block",
+      "severity": "moderate",
+      "text": "g_INT_005c1688 = (int)pHVar2[1].next_heap_block;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pHVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)pHVar2",
+      "severity": "moderate",
+      "text": "g_INT_02de4e10 = (int)pHVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 18,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(void *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= ptr)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((pHVar2 <= ptr) && (ptr < (void *)((int)&pHVar2->heap_size + pHVar2->heap_size)))",
+      "type": "pointer_cast"
     }
   ]
 }

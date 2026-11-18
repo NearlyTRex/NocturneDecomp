@@ -12,7 +12,7 @@ void __cdecl core_litecone_cpp_CLightCone_archive_FUN_004c82e0(CLightCone *this_
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->fov,"fov");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->falloff,"falloff");
-  if (INT_005bacf8 < 2) {
+  if (g_CLightConeClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->state,"state");

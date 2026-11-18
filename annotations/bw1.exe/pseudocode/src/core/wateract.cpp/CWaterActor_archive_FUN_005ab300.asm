@@ -7,7 +7,7 @@
 ; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f9322
+;   TerminatedCString s_size_005f9322
 ;   TerminatedCString s_opacity_005f9327
 ;   TerminatedCString s_heightDelta_005f932f
 ;   TerminatedCString s_timeToMove_005f933b
@@ -42,7 +42,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 005ab306
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005ab30b
-    PUSH 0x5f9322                       ; 005ab30e | DAT_005f9322
+    PUSH 0x5f9322                       ; 005ab30e | = "size"
     LEA EAX,[EBX + 0x158]               ; 005ab313
     PUSH EAX                            ; 005ab319
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 005ab31a
@@ -175,20 +175,20 @@ section .text
     ADD ESP,0x8                         ; 005ab4ac
     JMP 0x005ab345                      ; 005ab4af
         ;   XREF to: 005ab345 (UNCONDITIONAL_JUMP)  ; LAB_005ab345
-    PUSH 0x5f93dc                       ; 005ab4b4 | DAT_005f93dc
+    PUSH 0x5f93dc                       ; 005ab4b4 | = "colR"
         ;   Label: LAB_005ab4b4
     LEA EAX,[EBX + 0x28c]               ; 005ab4b9
     PUSH EAX                            ; 005ab4bf
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 005ab4c0
         ;   XREF to: 0040b670 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b670(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ab4c5
-    PUSH 0x5f93e1                       ; 005ab4c8 | DAT_005f93e1
+    PUSH 0x5f93e1                       ; 005ab4c8 | = "colG"
     LEA EAX,[EBX + 0x290]               ; 005ab4cd
     PUSH EAX                            ; 005ab4d3
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 005ab4d4
         ;   XREF to: 0040b670 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b670(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ab4d9
-    PUSH 0x5f93e6                       ; 005ab4dc | DAT_005f93e6
+    PUSH 0x5f93e6                       ; 005ab4dc | = "colB"
     ADD EBX,0x294                       ; 005ab4e1
     PUSH EBX                            ; 005ab4e7
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 005ab4e8

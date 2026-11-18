@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_3d_c_drawLine2DFromIndices_FUN_00407ab0(int param_1,int param_2)
+; void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407ab0(int vertex_index1,int vertex_index2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   vertex_index1
+; int              Stack[0x8]:4   vertex_index2
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407b30

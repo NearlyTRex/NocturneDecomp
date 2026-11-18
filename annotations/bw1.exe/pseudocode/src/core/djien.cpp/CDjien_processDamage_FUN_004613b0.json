@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 88,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 214
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 57,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 213
   },
   "cross_references": [],
   "function": {
@@ -45,6 +42,11 @@
       "name": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70"
     },
     {
+      "addr": "00525020",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020"
+    },
+    {
       "addr": "00524770",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
@@ -53,18 +55,13 @@
       "addr": "005247c0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
-    },
-    {
-      "addr": "00525020",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00525020"
     }
   ],
   "globals": [
     {
       "addr": "005d8e6c",
-      "name": "DAT_005d8e6c",
-      "type": "undefined4",
+      "name": "s_CGun_005d8e6c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -105,21 +102,21 @@
     },
     {
       "addr": "005d8ed8",
-      "name": "DAT_005d8ed8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d8ed8",
+      "type": "double",
+      "value": "0.950000000000000"
     },
     {
       "addr": "005fea28",
-      "name": "DAT_005fea28",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fea28",
+      "type": "float",
+      "value": "3.666000"
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     }
   ],
   "param_estimates": {
@@ -189,24 +186,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005d8e6c",
-      "severity": "mild",
-      "text": "iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->attacker,&DAT_005d8e6c);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

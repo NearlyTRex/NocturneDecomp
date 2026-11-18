@@ -11,33 +11,33 @@ char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004cf9a0(EGroundType type)
 {
   switch(type) {
   case GROUND_TYPE_NONE:
-    return &DAT_005c486c;
+    return "no";
   case GROUND_TYPE_CONCRETE:
-    return &DAT_005c486f;
+    return "ct";
   case GROUND_TYPE_DIRT:
-    return &DAT_005c4872;
+    return "dt";
   case GROUND_TYPE_GRASS:
-    return &DAT_005c4875;
+    return "dt";
   case GROUND_TYPE_METAL:
-    return &DAT_005c4878;
+    return "mt";
   case GROUND_TYPE_WATER:
-    return &DAT_005c487b;
+    return "wt";
   case GROUND_TYPE_WOOD:
-    return &DAT_005c487e;
+    return "wd";
   case GROUND_TYPE_MARBLE:
-    return &DAT_005c4881;
+    return "mb";
   case GROUND_TYPE_MUD:
-    return &DAT_005c4884;
+    return "md";
   case GROUND_TYPE_CARPET:
-    return &DAT_005c4887;
+    return "cp";
   case GROUND_TYPE_BLOOD:
-    return &DAT_005c488a;
+    return "bd";
   case GROUND_TYPE_GLASS:
-    return &DAT_005c488d;
+    return "gl";
   case GROUND_TYPE_GRAVEL:
-    return &DAT_005c4890;
+    return "gr";
   case GROUND_TYPE_GLASS|GROUND_TYPE_CONCRETE:
-    return &DAT_005c4893;
+    return "dt";
   default:
     return &DAT_005c4896;
   }

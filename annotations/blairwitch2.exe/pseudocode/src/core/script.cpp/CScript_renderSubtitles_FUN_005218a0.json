@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 144,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 14,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 74,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 300
   },
   "cross_references": [
     {
       "addr": "004b5190",
       "from_addr": "004b566c",
-      "name": "core_game.cpp_FUN_004b5190",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,7 +36,7 @@
     {
       "addr": "0042bff0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042bff0"
+      "name": "core_charactr.cpp_getGameDeltaTime_FUN_0042bff0"
     },
     {
       "addr": "00521840",
@@ -57,6 +54,11 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406da0"
     },
     {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004a8df0"
+    },
+    {
       "addr": "004ab560",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
@@ -67,34 +69,29 @@
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
     },
     {
-      "addr": "004a8df0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a8df0"
-    },
-    {
       "addr": "004ab2b0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab2b0"
+      "name": "engine_font.cpp_CBitFont_wrapTextToLines_FUN_004ab2b0"
     }
   ],
   "globals": [
     {
       "addr": "005e2eb3",
-      "name": "DAT_005e2eb3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e2eb3",
+      "type": "float",
+      "value": "0.3500000"
     },
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00616494",
@@ -104,32 +101,32 @@
     },
     {
       "addr": "01511cb8",
-      "name": "DAT_01511cb8",
-      "type": "undefined4",
+      "name": "g_MediumFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01511cbc",
-      "name": "DAT_01511cbc",
-      "type": "undefined4",
+      "name": "g_TinyFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01511cc4",
-      "name": "DAT_01511cc4",
-      "type": "undefined4",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01511ccc",
-      "name": "DAT_01511ccc",
-      "type": "undefined4",
+      "name": "g_MicroFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c35e4c",
-      "name": "DAT_01c35e4c",
-      "type": "undefined4",
+      "name": "g_INT_01c35e4c",
+      "type": "int",
       "value": null
     },
     {
@@ -146,20 +143,20 @@
     },
     {
       "addr": "01d63250",
-      "name": "DAT_01d63250",
-      "type": "undefined4",
+      "name": "g_UseOSFonts",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e620f0",
-      "name": "DAT_01e620f0",
-      "type": "undefined4",
+      "name": "g_PreviousLetterboxMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e65900",
-      "name": "DAT_01e65900",
-      "type": "undefined4",
+      "name": "g_ScriptTimeScale",
+      "type": "float",
       "value": null
     }
   ],
@@ -169,7 +166,7 @@
       {
         "call_addr": "004b566c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b5190",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b5190",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -320,54 +317,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "iVar8 = DAT_006141bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "iVar1 = DAT_006141b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "if (DAT_006141bc < 0x1e0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "if ((DAT_006141bc < 0x180) && (this_ptr_00 = _DAT_01511ccc, _DAT_01d63250 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "(DAT_006141b8 * 9) / 10);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

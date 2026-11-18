@@ -17,6 +17,6 @@ int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_00519be0(CMirro
     return 0;
   }
   iVar2 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
-                    (DAT_00612560,&(this_ptr->clip_primitive).base);
+                    (g_CDemonRenderer_PTR_00612560,&(this_ptr->clip_primitive).base);
   return iVar2;
 }

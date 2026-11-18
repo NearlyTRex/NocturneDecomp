@@ -50,7 +50,7 @@ section .text
     SUB ESP,0x78                        ; 00494952
     MOV ESI,dword ptr [ESP + 0x84]      ; 00494955
     MOV EAX,dword ptr [ESI + 0x154]     ; 0049495c
-    MOV [0x01c71340],EAX                ; 00494962 | DAT_01c71340
+    MOV [0x01c71340],EAX                ; 00494962 | g_FLOAT_01c71340
     CALL core_frankgen.cpp_findLeader_FUN_00495240 ; 00494967
         ;   XREF to: 00495240 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_findLeader_FUN_00495240()
     CMP EAX,ESI                         ; 0049496c
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 00494c93 (CONDITIONAL_JUMP)  ; LAB_00494c93
     MOV EDX,dword ptr [EAX + 0x154]     ; 00494974
     MOV dword ptr [ESI + 0x154],EDX     ; 0049497a
-    FLD float ptr [0x01c71340]          ; 00494980 | DAT_01c71340
+    FLD float ptr [0x01c71340]          ; 00494980 | g_FLOAT_01c71340
         ;   Label: LAB_00494980
     FCOMP float ptr [ESI + 0x154]       ; 00494986
     FNSTSW AX                           ; 0049498c
@@ -66,8 +66,8 @@ section .text
     JBE 0x004949a3                      ; 0049498f
         ;   XREF to: 004949a3 (CONDITIONAL_JUMP)  ; LAB_004949a3
     FLD float ptr [0x0059db70]          ; 00494991 | FLOAT_0059db70
-    FSUBR float ptr [0x01c71340]        ; 00494997 | DAT_01c71340
-    FSTP float ptr [0x01c71340]         ; 0049499d | DAT_01c71340
+    FSUBR float ptr [0x01c71340]        ; 00494997 | g_FLOAT_01c71340
+    FSTP float ptr [0x01c71340]         ; 0049499d | g_FLOAT_01c71340
     PUSH ESI                            ; 004949a3
         ;   Label: LAB_004949a3
     CALL core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0 ; 004949a4
@@ -186,7 +186,7 @@ section .text
     LEA EAX,[ESP + 0x68]                ; 00494b27
     FSTP float ptr [ESP]                ; 00494b2b
     PUSH EAX                            ; 00494b2e
-    MOV EBP,dword ptr [0x005b80f0]      ; 00494b2f | g_CFireEffect_PTR_005b80f0
+    MOV EBP,dword ptr [0x005b80f0]      ; 00494b2f | g_CFireEffectPtr
     PUSH EBP                            ; 00494b35
     INC EBX                             ; 00494b36
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00494b37
@@ -254,7 +254,7 @@ section .text
     PUSH 0x0                            ; 00494c03
     LEA EAX,[ESP + 0x64]                ; 00494c05
     PUSH EAX                            ; 00494c09
-    MOV ECX,dword ptr [0x005b80f0]      ; 00494c0a | g_CFireEffect_PTR_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 00494c0a | g_CFireEffectPtr
     PUSH ECX                            ; 00494c10
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00494c11
         ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

@@ -6,25 +6,23 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl __freefp(_FILE *file_handle)
 
 {
-  uint *puVar1;
-  uint *puVar2;
+  FileListNode *pFVar1;
+  FileListNode *pFVar2;
   
-  puVar1 = (uint *)&DAT_02de4e20;
+  pFVar1 = (FileListNode *)&g_AllocatedListHead;
   do {
-    puVar2 = puVar1;
-    puVar1 = (uint *)*puVar2;
-    if (puVar1 == (uint *)0x0) {
+    pFVar2 = pFVar1;
+    pFVar1 = pFVar2->next;
+    if (pFVar1 == (FileListNode *)0x0) {
       return;
     }
-  } while (file_handle != (_FILE *)puVar1[1]);
-  *(byte *)&file_handle->_flag = (byte)((_FILE *)puVar1[1])->_flag | 3;
-  *puVar2 = *puVar1;
-  *puVar1 = _DAT_02de4e24;
-  _DAT_02de4e24 = puVar1;
+  } while (file_handle != pFVar1->file_struct);
+  *(byte *)&file_handle->_flag = (byte)pFVar1->file_struct->_flag | 3;
+  pFVar2->next = pFVar1->next;
+  pFVar1->next = g_FreeListHeadPointer;
+  g_FreeListHeadPointer = pFVar1;
   return;
 }

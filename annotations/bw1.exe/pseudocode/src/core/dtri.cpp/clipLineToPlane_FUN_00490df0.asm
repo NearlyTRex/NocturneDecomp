@@ -14,19 +14,22 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
-; XREF[3]:
+; XREF[6]:
+;   core_dtri.cpp_clipPolygonToBottom_FUN_004910f0 at 004911d2
 ;   core_dtri.cpp_clipPolygonToFar_FUN_00491690 at 00491772
+;   core_dtri.cpp_clipPolygonToNear_FUN_00491520 at 00491602
 ;   core_dtri.cpp_clipPolygonToRight_FUN_00491260 at 0049133a
+;   core_dtri.cpp_clipPolygonToTop_FUN_00490f90 at 0049106c
 ;   core_dtri.cpp_clipTriangleToBounds_FUN_00491850 at 00491e63
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtri_cpp_005dbbfc
 ;   TerminatedCString s_Bad_clip_005dbc0d
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -190,10 +193,10 @@ section .text
         ;   Label: LAB_00490f46
     MOV EDX,0x457                       ; 00490f4b
     PUSH 0x5dbc0d                       ; 00490f50 | = "Bad clip!"
-    MOV [0x01d1d400],EAX                ; 00490f55 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00490f5a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00490f60
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 00490f55 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00490f5a | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00490f60
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00490f65
     JMP 0x00490e3c                      ; 00490f68
         ;   XREF to: 00490e3c (UNCONDITIONAL_JUMP)  ; LAB_00490e3c

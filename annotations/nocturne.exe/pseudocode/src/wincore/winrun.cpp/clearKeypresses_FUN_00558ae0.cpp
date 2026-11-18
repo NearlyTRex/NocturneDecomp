@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_clearKeypresses_FUN_00558ae0(void)
 
 {
-  _DAT_02de084c = 0;
-  _DAT_02de0848 = 0;
-  _DAT_02de0850 = 0;
+  g_InputWriteIndex = 0;
+  g_InputReadIndex = 0;
+  g_InputCountOld = 0;
   return;
 }

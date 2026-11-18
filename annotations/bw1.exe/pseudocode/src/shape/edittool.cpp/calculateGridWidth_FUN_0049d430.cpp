@@ -9,5 +9,5 @@
 int __cdecl shape_edittool_cpp_calculateGridWidth_FUN_0049d430(void)
 
 {
-  return DAT_0061b498 / 0x30;
+  return g_INT_0061b498 / 0x30;
 }

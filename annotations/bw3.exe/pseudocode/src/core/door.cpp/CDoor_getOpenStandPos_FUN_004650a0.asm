@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_004650a0(CDoor *this_ptr,float *param_2,undefined4 param_3)
+; CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_004650a0(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; CVector3f *      Stack[0x8]:4   direction
+; CVector3f *      Stack[0xc]:4   actor_pos
 ; Local Variables:
 ; undefined        Stack[-0xb8]:1  local_b8
 ; undefined4       Stack[-0xac]:4  local_ac
@@ -52,13 +52,13 @@
 ;   undefined1* switchdataD_0046508c = 004650e9
 ;   TerminatedCString s_core_door_cpp_005bbf12
 ;   TerminatedCString s_CDoor_getOpenStandPos_in_005bbf23
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408bf0
-;   core_main.c_FUN_004e4330
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     PUSH ESI                            ; 004650f0
     LEA ESI,[ESP + 0x50]                ; 004650f1
     LEA EDI,[ESP + 0x74]                ; 004650f5
-    CALL core_actor.cpp_FUN_00408bf0    ; 004650f9
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 004650f9
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x50]                ; 004650fe
     ADD ESP,0x8                         ; 00465102
     FLDZ                                ; 00465105
@@ -120,8 +120,8 @@ section .text
     PUSH EAX                            ; 00465128
     LEA ESI,[ESP + 0x8]                 ; 00465129
     LEA EDI,[ESP + 0x98]                ; 0046512d
-    CALL core_actor.cpp_FUN_00408b00    ; 00465134
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00465134
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x8]                 ; 00465139
     ADD ESP,0x8                         ; 0046513d
     MOVSD ES:EDI,ESI                    ; 00465140
@@ -212,8 +212,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x10]      ; 00465246
     PUSH EDI                            ; 00465249
     LEA ESI,[ESP + 0x44]                ; 0046524a
-    CALL core_actor.cpp_FUN_00408b00    ; 0046524e
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0046524e
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA EDI,[ESP + 0x5c]                ; 00465253
     LEA ESI,[ESP + 0x44]                ; 00465257
     ADD ESP,0x8                         ; 0046525b
@@ -269,10 +269,10 @@ section .text
         ;   Label: default
     MOV ECX,0x37e                       ; 00465301
     PUSH 0x5bbf23                       ; 00465306 | = "CDoor::getOpenStandPos - invalid door..."
-    MOV dword ptr [0x01d71de0],EDX      ; 0046530b | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00465311 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00465317
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 0046530b | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00465311 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00465317
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046531c
     JMP 0x00465190                      ; 0046531f
         ;   XREF to: 00465190 (UNCONDITIONAL_JUMP)  ; LAB_00465190

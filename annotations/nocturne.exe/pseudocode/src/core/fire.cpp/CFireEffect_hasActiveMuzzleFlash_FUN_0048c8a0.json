@@ -39,7 +39,7 @@
   "globals": [
     {
       "addr": "01c4e958",
-      "name": "g_CMuzzleFlash_ARRAY_01c4e958",
+      "name": "g_MuzzleFlashPool",
       "type": "CMuzzleFlash[20]",
       "value": null
     }
@@ -132,11 +132,11 @@
   },
   "suspects": [
     {
-      "description": "Pointer value `&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_MuzzleFlashPool[1].frames_remaining` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 15,
-      "match": "(int)&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining",
+      "match": "(int)&g_MuzzleFlashPool[1].frames_remaining",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining + iVar2);",
+      "text": "iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining + iVar2);",
       "type": "pointer_truncation"
     },
     {
@@ -144,7 +144,7 @@
       "line": 15,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)&g_CMuzzleFlash_ARRAY_01c4e958[1].frames_remaining + iVar2);",
+      "text": "iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining + iVar2);",
       "type": "pointer_cast"
     }
   ]

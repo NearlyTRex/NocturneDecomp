@@ -14,21 +14,9 @@
   },
   "cross_references": [
     {
-      "addr": "004625f0",
-      "from_addr": "00462967",
-      "name": "core_dpart.cpp_FUN_004625f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004a70b0",
       "from_addr": "004a749b",
       "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059a0b0",
-      "from_addr": "0059a3d7",
-      "name": "core_zombie.cpp_FUN_0059a0b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,9 +38,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051da80",
-      "from_addr": "0051ddf5",
-      "name": "engine_prim.c_FUN_0051da80",
+      "addr": "004625f0",
+      "from_addr": "00462967",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -65,6 +53,18 @@
       "addr": "0051cb20",
       "from_addr": "0051cd84",
       "name": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051da80",
+      "from_addr": "0051ddf5",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a0b0",
+      "from_addr": "0059a3d7",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,7 +88,7 @@
       {
         "call_addr": "00462967",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_004625f0",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +110,7 @@
       {
         "call_addr": "0059a3d7",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0059a0b0",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -121,7 +121,7 @@
       {
         "call_addr": "0051ddf5",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0051da80",
+        "caller": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

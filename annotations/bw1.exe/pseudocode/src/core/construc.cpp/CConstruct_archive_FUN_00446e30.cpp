@@ -22,7 +22,7 @@ void __cdecl core_construc_cpp_CConstruct_archive_FUN_00446e30(CConstruct *this_
   CVector3f *pCStack_c;
   
   core_enemy_cpp_CEnemy_archive_FUN_004a0520(&this_ptr->base);
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&(this_ptr->base).speed,"@speed" + 1);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&(this_ptr->base).speed,"speed");
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0(model_ptr,"modelName");
   core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");

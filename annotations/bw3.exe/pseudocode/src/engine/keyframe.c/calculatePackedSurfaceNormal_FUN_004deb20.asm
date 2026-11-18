@@ -24,7 +24,7 @@
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004df440 at 004df519
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c66e5
+;   double g_NormalTo16BitScale1 = 65535
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -132,7 +132,7 @@ section .text
     FMULP ST3                           ; 004dec43
     LEA EAX,[ECX*0x4 + 0x0]             ; 004dec45
     FXCH                                ; 004dec4c
-    FLD double ptr [0x005c66e5]         ; 004dec4e | DAT_005c66e5
+    FLD double ptr [0x005c66e5]         ; 004dec4e | g_NormalTo16BitScale1
     FXCH                                ; 004dec54
     FMUL ST1                            ; 004dec56
     SUB EAX,ECX                         ; 004dec58
@@ -159,13 +159,13 @@ section .text
     FLD float ptr [ESP + 0x20]          ; 004dec97
     FXCH ST2                            ; 004dec9b
     CALL crt_math.c_round_FUN_005a3120  ; 004dec9d
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 004deca2
     CALL crt_math.c_round_FUN_005a3120  ; 004deca4
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH ST2                            ; 004deca9
     CALL crt_math.c_round_FUN_005a3120  ; 004decab
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 004decb0
     FISTP dword ptr [EDX + 0x8]         ; 004decb2
     FXCH                                ; 004decb5
@@ -173,7 +173,7 @@ section .text
     FISTP dword ptr [EDX + 0x10]        ; 004decba
     FADDP                               ; 004decbd
     CALL crt_math.c_round_FUN_005a3120  ; 004decbf
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [EDX + 0x14]        ; 004decc4
     ADD ESP,0x3c                        ; 004decc7
     POP EBP                             ; 004decca

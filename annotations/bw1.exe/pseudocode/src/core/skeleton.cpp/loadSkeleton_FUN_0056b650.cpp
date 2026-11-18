@@ -6,43 +6,49 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_0056b650(char *filename)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  char *str1;
+  char *pcVar4;
   
   iVar3 = 0;
-  str1 = g_SkeletonPool[0].loaded_filename;
+  pcVar4 = g_SkeletonPool[0].loaded_filename;
   do {
-    iVar1 = _stricmp(str1,filename);
+    iVar1 = _stricmp(pcVar4,filename);
     if (iVar1 == 0) {
-      *(uint *)(&DAT_02c5fc1c + iVar3 * 4) = 1;
+      pcVar4 = g_CHAR_ARRAY_02c5fc1c + iVar3 * 4;
+      pcVar4[0] = '\x01';
+      pcVar4[1] = '\0';
+      pcVar4[2] = '\0';
+      pcVar4[3] = '\0';
       return g_SkeletonPool + iVar3;
     }
     iVar3 = iVar3 + 1;
-    str1 = str1 + 0x1ec9c;
+    pcVar4 = pcVar4 + 0x1ec9c;
   } while (iVar3 < 0x28);
   iVar2 = 0;
   iVar1 = 0;
-  iVar3 = _DAT_02c5fc1c;
+  iVar3 = g_CHAR_ARRAY_02c5fc1c._0_4_;
   while( true ) {
     if (iVar3 == 0) {
       core_skeleton_cpp_CSkeleton_load_FUN_00563000(g_SkeletonPool + iVar2,filename);
-      *(uint *)(&DAT_02c5fc1c + iVar1) = 1;
+      pcVar4 = g_CHAR_ARRAY_02c5fc1c + iVar1;
+      pcVar4[0] = '\x01';
+      pcVar4[1] = '\0';
+      pcVar4[2] = '\0';
+      pcVar4[3] = '\0';
       return g_SkeletonPool + iVar2;
     }
     iVar2 = iVar2 + 1;
     if (0x9f < iVar1 + 4) break;
-    iVar3 = *(int *)(iVar1 + 0x2c5fc20);
+    iVar3 = *(int *)(g_CHAR_ARRAY_02c5fc1c + iVar1 + 4);
     iVar1 = iVar1 + 4;
   }
-  _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-  _DAT_01d1d404 = 0x10b5;
-  core_main_c_FUN_005030e0("Can't load %s because skeleton manager is full.  (Size is %d)",filename,0x28);
+  g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+  g_INT_01d1d404 = 0x10b5;
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Can't load %s because skeleton manager is full.  (Size is %d)");
   return (CSkeleton *)0x0;
 }

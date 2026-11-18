@@ -19,14 +19,14 @@
 ;   TerminatedCString s_s_is_carrying_s_but_s_th_005ccad7
 ;   TerminatedCString s_bip01_head_005ccb12
 ;   TerminatedCString s_shadow_dfm_005ccb1d
-;   undefined4 DAT_005f4084
-;   undefined4 DAT_007bdadc
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   float g_FLOAT_005f4084 = 9999
+;   CKeyFramedModelInstance g_StakeModelInstance
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
-;   core_actor.cpp_FUN_00408a50
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a3d0
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_00425bb0
@@ -35,7 +35,7 @@
 ;   core_cloth.cpp_CClothList_setup_FUN_005b1740
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
@@ -59,15 +59,15 @@ section .text
     ADD ESP,0x4                         ; 00422942
     MOV EAX,dword ptr [EBP + 0x14]      ; 00422945
     PUSH 0x5ccab6                       ; 00422948 | = "stake_b.kfm"
-    FLD float ptr [0x005f4084]          ; 0042294d | DAT_005f4084
-    PUSH 0x7bdadc                       ; 00422953 | DAT_007bdadc
+    FLD float ptr [0x005f4084]          ; 0042294d | g_FLOAT_005f4084
+    PUSH 0x7bdadc                       ; 00422953 | g_StakeModelInstance
     FSTP float ptr [EAX + 0x2574]       ; 00422958
     MOV dword ptr [EAX + 0x3448],0x0    ; 0042295e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70 ; 00422968
         ;   XREF to: 0044fd70 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0042296d
     MOV ESI,dword ptr [EBP + 0x14]      ; 00422970
-    PUSH 0x7bdadc                       ; 00422973 | DAT_007bdadc
+    PUSH 0x7bdadc                       ; 00422973 | g_StakeModelInstance
     LEA EDI,[ESI + 0xf0]                ; 00422978
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00 ; 0042297e
         ;   XREF to: 0044fd00 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(CKeyFramedModelInstance * this_ptr)
@@ -249,10 +249,10 @@ section .text
     MOV EDX,0x5ccac2                    ; 00422b53 | = "..\\core\\charactr.cpp"
     MOV ECX,0x151                       ; 00422b58
     PUSH 0x5ccad7                       ; 00422b5d | = "%s is carrying %s, but %s thinks it i..."
-    MOV dword ptr [0x01d046a0],EDX      ; 00422b62 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00422b68 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00422b6e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00422b62 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00422b68 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00422b6e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x14                        ; 00422b73
     JMP 0x00422994                      ; 00422b76
         ;   XREF to: 00422994 (UNCONDITIONAL_JUMP)  ; LAB_00422994
@@ -268,8 +268,8 @@ section .text
     PUSH EAX                            ; 00422b94
         ;   Label: LAB_00422b94
     MOV EDI,dword ptr [EBP + 0x14]      ; 00422b95
-    CALL core_actor.cpp_FUN_00408a50    ; 00422b98
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 00422b98
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00422b9d
     LEA ESI,[EAX + 0x1]                 ; 00422ba0
     ADD EDI,0x25b4                      ; 00422ba3

@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004a6c20(CFlame *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_flame_cpp_CFlame_getBoundingBox_FUN_004a6c20(CFlame *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0bfc
-;   undefined4 DAT_005c0c04
+;   double g_DOUBLE_005c0bfc = 0.5
+;   double g_DOUBLE_005c0c04 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -20,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 004a6c21
     MOV EDX,dword ptr [ESP + 0x20]      ; 004a6c24
     MOV EAX,ESI                         ; 004a6c28
-    FLD double ptr [0x005c0bfc]         ; 004a6c2a | DAT_005c0bfc
+    FLD double ptr [0x005c0bfc]         ; 004a6c2a | g_DOUBLE_005c0bfc
     FLD float ptr [EDX + 0x158]         ; 004a6c30
     FMUL ST1                            ; 004a6c36
     FLD float ptr [EDX + 0x160]         ; 004a6c38
@@ -36,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 004a6c5f
     MOV ESI,ESP                         ; 004a6c61
     MOV dword ptr [ESP + 0x4],ECX       ; 004a6c63
-    FADD double ptr [0x005c0c04]        ; 004a6c67 | DAT_005c0c04
+    FADD double ptr [0x005c0c04]        ; 004a6c67 | g_DOUBLE_005c0c04
     FXCH ST3                            ; 004a6c6d
     FSTP float ptr [ESP + 0xc]          ; 004a6c6f
     FXCH ST2                            ; 004a6c73

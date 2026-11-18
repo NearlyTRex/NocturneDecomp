@@ -11,7 +11,7 @@ CHostage * __cdecl core_hostage_cpp_factoryFuncHostage_FUN_004d12a0(void)
 {
   CHostage *pCVar1;
   
-  pCVar1 = (CHostage *)operator_new(0x24730);
+  pCVar1 = operator_new(0x24730);
   if (pCVar1 == (CHostage *)0x0) {
     return (CHostage *)0x0;
   }

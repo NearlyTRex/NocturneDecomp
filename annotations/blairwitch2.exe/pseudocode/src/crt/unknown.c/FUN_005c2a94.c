@@ -9,9 +9,9 @@
 void FUN_005c2a94(void)
 
 {
-  if (DAT_0061f2a0 != -1) {
-    TlsFree(DAT_0061f2a0);
-    DAT_0061f2a0 = -1;
+  if (g_INT_0061f2a0 != -1) {
+    TlsFree(g_INT_0061f2a0);
+    g_INT_0061f2a0 = -1;
   }
   return;
 }

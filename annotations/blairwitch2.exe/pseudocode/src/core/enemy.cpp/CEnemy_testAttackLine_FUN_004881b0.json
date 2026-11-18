@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 39,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -50,15 +50,15 @@
   "globals": [
     {
       "addr": "005d2db9",
-      "name": "DAT_005d2db9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d2db9",
+      "type": "double",
+      "value": "1.20000000000000"
     },
     {
       "addr": "005d2dc1",
-      "name": "DAT_005d2dc1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d2dc1",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "006167e0",
@@ -216,12 +216,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Raw hex address 0x48821e assigned to bare local `blood_type`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `blood_type` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 17,
+      "match": "0x48821e",
+      "severity": "moderate",
+      "text": "blood_type = 0x48821e;",
+      "type": "raw_address_constant"
     }
   ]
 }

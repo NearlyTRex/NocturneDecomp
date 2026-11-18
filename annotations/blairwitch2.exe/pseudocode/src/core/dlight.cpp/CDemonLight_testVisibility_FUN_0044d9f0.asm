@@ -8,9 +8,9 @@
 ; CVector3i *      Stack[0x8]:4   corners
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -30,13 +30,13 @@ section .text
     MOV EDX,0x4                         ; 0044d9f7
     PUSH 0x1                            ; 0044d9fc
     MOV ESI,0x2                         ; 0044d9fe
-    MOV EBP,dword ptr [0x0060b280]      ; 0044da03 | DAT_0060b280
+    MOV EBP,dword ptr [0x0060b280]      ; 0044da03 | g_CDemonRenderer_PTR_0060b280
     XOR ECX,ECX                         ; 0044da09
     XOR EBX,EBX                         ; 0044da0b
     MOV dword ptr [ESP + 0x8],EDX       ; 0044da0d
     MOV dword ptr [ESP + 0x18],ECX      ; 0044da11
     MOV dword ptr [ESP + 0x14],ECX      ; 0044da15
-    PUSH EBP                            ; 0044da19 | DAT_01ba5c50
+    PUSH EBP                            ; 0044da19 | g_CDemonRenderer_01ba5c50
     MOV dword ptr [ESP + 0x14],ECX      ; 0044da1a
     MOV dword ptr [ESP + 0x10],ECX      ; 0044da1e
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880 ; 0044da22
@@ -62,8 +62,8 @@ section .text
         ;   Label: LAB_0044da5a
     PUSH 0x0                            ; 0044da5f
         ;   Label: LAB_0044da5f
-    MOV EAX,[0x0060b280]                ; 0044da61 | DAT_0060b280
-    PUSH EAX                            ; 0044da66 | DAT_01ba5c50
+    MOV EAX,[0x0060b280]                ; 0044da61 | g_CDemonRenderer_PTR_0060b280
+    PUSH EAX                            ; 0044da66 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880 ; 0044da67
         ;   XREF to: 0046b880 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 0044da6c

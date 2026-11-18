@@ -15,7 +15,7 @@ section .text
     PUSH 0x10bb4                        ; 00412af0
         ;   Label: core_batman.cpp_factoryFuncBatman_FUN_00412af0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00412af5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 00412afa
     TEST EAX,EAX                        ; 00412afd
     JNZ 0x00412b02                      ; 00412aff

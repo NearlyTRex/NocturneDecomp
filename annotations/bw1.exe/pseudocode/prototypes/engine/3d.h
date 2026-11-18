@@ -61,9 +61,9 @@ SMRGLHeaderExtended * __cdecl renderPolygonTexturedLitOp7(SMRGLHeaderPrimitive *
 // Address: 00403d30
 SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedWrappedOp8(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_FUN_00403dd0
+// Original: engine_3d.c_skipOldFuncOp_FUN_00403dd0
 // Address: 00403dd0
-undefined4 FUN_00403dd0(void);
+SMRGLHeaderExtended * __cdecl skipOldFuncOp(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_processPolygonColor_FUN_00403de0
 // Address: 00403de0
@@ -99,7 +99,11 @@ void __cdecl setActiveRenderColor(void);
 
 // Original: engine_3d.c_drawLineStrip2D_FUN_00404440
 // Address: 00404440
-int __cdecl drawLineStrip2D(int param_1);
+SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
+
+// Original: engine_3d.c_drawLineStrip3D_FUN_004044d0
+// Address: 004044d0
+SMRGLHeaderExtended * __cdecl drawLineStrip3D(SLineStrip *line_strip);
 
 // Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560
 // Address: 00404560
@@ -168,6 +172,10 @@ SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit2(SMRGLHeaderP
 // Original: engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360
 // Address: 00405360
 SMRGLHeaderExtended * __cdecl renderPolygonAlphaTexturedNormalizedLit(SMRGLHeaderPrimitive *prim);
+
+// Original: engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400
+// Address: 00405400
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0
 // Address: 004054e0
@@ -313,21 +321,21 @@ void __cdecl renderPolygonWithRenderFlags(SMRGLHeaderPrimitive *primitive,int re
 // Address: 00407570
 void __cdecl renderPolygonWithRenderFlagsUV(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 
-// Original: engine_3d.c_FUN_004076c0
+// Original: engine_3d.c_setProcessorType_FUN_004076c0
 // Address: 004076c0
-void FUN_004076c0(undefined4 param_1);
+void __cdecl setProcessorType(int processor_type);
 
-// Original: engine_3d.c_FUN_004076d0
+// Original: engine_3d.c_setRenderingQuality_FUN_004076d0
 // Address: 004076d0
-void FUN_004076d0(undefined4 param_1);
+void __cdecl setRenderingQuality(int quality);
 
-// Original: engine_3d.c_FUN_004076e0
+// Original: engine_3d.c_dispatchMRGLBlockChain_FUN_004076e0
 // Address: 004076e0
-void FUN_004076e0(int *param_1);
+void __cdecl dispatchMRGLBlockChain(SMRGLHeaderExtended *chain);
 
-// Original: engine_3d.c_FUN_00407720
+// Original: engine_3d.c_renderPrim_FUN_00407720
 // Address: 00407720
-void FUN_00407720(void);
+void __cdecl renderPrim(SMRGLHeaderPrimitive *primitive);
 
 // Original: engine_3d.c_flushRenderQueue_FUN_004077b0
 // Address: 004077b0
@@ -347,7 +355,7 @@ void __cdecl clipAndDrawLine2D(SRenderVertex vertex1,SRenderVertex vertex2);
 
 // Original: engine_3d.c_drawLine3DFromIndices_FUN_00407d70
 // Address: 00407d70
-void drawLine3DFromIndices(int param_1,int param_2);
+void __cdecl drawLine3DFromIndices(int vertex_index1,int vertex_index2);
 
 // Original: engine_3d.c_clipAndDrawLine3D_FUN_00407df0
 // Address: 00407df0

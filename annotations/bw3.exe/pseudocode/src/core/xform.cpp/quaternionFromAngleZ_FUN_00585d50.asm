@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionFromAngleZ_FUN_00585d50(float param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_00585d50(float angle_radians,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -10,12 +12,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_0042cd70 at 0042cf5b
-;   core_prye.cpp_FUN_0051c1c0 at 0051e012
-;   core_prye.cpp_FUN_0051ee10 at 0051ee77
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042cf5b
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 at 0051ee77
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051e012
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d81af
+;   float g_FLOAT_005d81af = 0.5
 ;
 ; *****************************************************************************
 
@@ -26,7 +28,7 @@ section .text
     SUB ESP,0x18                        ; 00585d51
     MOV EDX,ESI                         ; 00585d54
     FLD float ptr [ESP + 0x20]          ; 00585d56
-    FMUL float ptr [0x005d81af]         ; 00585d5a | DAT_005d81af
+    FMUL float ptr [0x005d81af]         ; 00585d5a | g_FLOAT_005d81af
     FLD ST0                             ; 00585d60
     FCOS                                ; 00585d62
     FXCH                                ; 00585d64

@@ -1,22 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,float lifetime,float alpha_start,float alpha_end,float size_start,float size_end,float red,float green,float blue,CVector3f *position_offset,CVector3f *velocity,CVector3f *acceleration,int texture_index)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; undefined4       Stack[0x14]:4   param_5
-; undefined4       Stack[0x18]:4   param_6
-; undefined4       Stack[0x1c]:4   param_7
-; undefined4       Stack[0x20]:4   param_8
-; undefined4       Stack[0x24]:4   param_9
-; float *          Stack[0x28]:4   param_10
-; undefined4 *     Stack[0x2c]:4   param_11
-; undefined4 *     Stack[0x30]:4   param_12
-; undefined4       Stack[0x34]:4   param_13
+; float            Stack[0x8]:4   lifetime
+; float            Stack[0xc]:4   alpha_start
+; float            Stack[0x10]:4   alpha_end
+; float            Stack[0x14]:4   size_start
+; float            Stack[0x18]:4   size_end
+; float            Stack[0x1c]:4   red
+; float            Stack[0x20]:4   green
+; float            Stack[0x24]:4   blue
+; CVector3f *      Stack[0x28]:4   position_offset
+; CVector3f *      Stack[0x2c]:4   velocity
+; CVector3f *      Stack[0x30]:4   acceleration
+; int              Stack[0x34]:4   texture_index
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -28,20 +28,20 @@
 ; XREF[13]:
 ;   core_ammo.cpp_CAmmo_process_FUN_0040ded0 at 0040e0db
 ;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a066c
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0eef
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0eef
 ;   core_cross.cpp_CCross_process_FUN_005a6ed0 at 005a7343
-;   core_doc.cpp_FUN_00450c60 at 00451949
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451949
 ;   core_health.cpp_CHealthItem_process_FUN_004cdb60 at 004cdd8d
+;   core_hellhag.cpp_CHag_processAI_FUN_005ab260 at 005ab59c
 ;   core_hellhag.cpp_CHag_processBurnState_FUN_005aae80 at 005ab14c
-;   core_hellhag.cpp_FUN_005ab260 at 005ab59c
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c960
 ;   core_hpbox.cpp_CParticleBox_process_FUN_005ac960 at 005acb38
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0265370c
-;   undefined4 DAT_02653710
-;   undefined4 DAT_02653714
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; *****************************************************************************
 
@@ -183,12 +183,12 @@ section .text
     POP ESI                             ; 005a844a
     POP EBX                             ; 005a844b
     RET                                 ; 005a844c
-    MOV EAX,[0x0265370c]                ; 005a844d | DAT_0265370c
+    MOV EAX,[0x0265370c]                ; 005a844d | g_ZeroVector
         ;   Label: LAB_005a844d
     MOV dword ptr [EDX],EAX             ; 005a8452
-    MOV EAX,[0x02653710]                ; 005a8454 | DAT_02653710
+    MOV EAX,[0x02653710]                ; 005a8454 | g_ZeroVector.y
     MOV dword ptr [EDX + 0x4],EAX       ; 005a8459
-    MOV EAX,[0x02653714]                ; 005a845c | DAT_02653714
+    MOV EAX,[0x02653714]                ; 005a845c | g_ZeroVector.z
     MOV dword ptr [EDX + 0x8],EAX       ; 005a8461
     JMP 0x005a8329                      ; 005a8464
         ;   XREF to: 005a8329 (UNCONDITIONAL_JUMP)  ; LAB_005a8329

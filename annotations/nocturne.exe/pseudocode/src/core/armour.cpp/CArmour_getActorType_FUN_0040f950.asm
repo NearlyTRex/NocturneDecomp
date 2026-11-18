@@ -7,13 +7,13 @@
 ; CArmour *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonActorType g_CArmourActorType_00764270
+;   CDemonActorType g_CArmourClassInfo
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x764270                    ; 0040f950 | g_CArmourActorType_00764270
+    MOV EAX,0x764270                    ; 0040f950 | g_CArmourClassInfo
         ;   Label: core_armour.cpp_CArmour_getActorType_FUN_0040f950
     RET                                 ; 0040f955
 

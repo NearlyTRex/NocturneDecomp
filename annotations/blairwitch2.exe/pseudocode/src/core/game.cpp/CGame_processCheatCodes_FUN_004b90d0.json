@@ -1,0 +1,2235 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2804,
+    "complexity_score": 2652,
+    "cross_reference_count": 1,
+    "function_call_count": 36,
+    "global_count": 117,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 1437,
+    "suspect_count": 116,
+    "suspect_types": [
+      "concat_reconstruction",
+      "nonstandard_int",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "unresolved_funcptr",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_type_propagation",
+      "wrong_global"
+    ],
+    "total_lines": 4241
+  },
+  "cross_references": [
+    {
+      "addr": "004bd570",
+      "from_addr": "004bd971",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b90d0",
+    "address_range": [
+      [
+        "004b90d0",
+        "004bb047"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
+    "signature": "void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004b90d0(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c5a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c5a0"
+    },
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
+    },
+    {
+      "addr": "0040ddb0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0"
+    },
+    {
+      "addr": "0040e240",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240"
+    },
+    {
+      "addr": "004222d0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0"
+    },
+    {
+      "addr": "00443240",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00443240"
+    },
+    {
+      "addr": "00441e80",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80"
+    },
+    {
+      "addr": "0048e340",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_0048e340"
+    },
+    {
+      "addr": "004894f0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004894f0"
+    },
+    {
+      "addr": "0048e3e0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_validateCommands_FUN_0048e3e0"
+    },
+    {
+      "addr": "004b31a0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004b31a0"
+    },
+    {
+      "addr": "004b8e10",
+      "is_variadic": false,
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004b8e10"
+    },
+    {
+      "addr": "004b9060",
+      "is_variadic": false,
+      "name": "core_game.cpp_scaleBoneRecursive_FUN_004b9060"
+    },
+    {
+      "addr": "004dadb0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0"
+    },
+    {
+      "addr": "004db830",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_findItemByName_FUN_004db830"
+    },
+    {
+      "addr": "004fcda0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0"
+    },
+    {
+      "addr": "0052e910",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    },
+    {
+      "addr": "0055ae30",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playSound_FUN_0055ae30"
+    },
+    {
+      "addr": "0058b470",
+      "is_variadic": false,
+      "name": "core_weather.cpp_CWeather_setWeatherType_FUN_0058b470"
+    },
+    {
+      "addr": "005b8e40",
+      "is_variadic": false,
+      "name": "crt_ctype.c_toupper_FUN_005b8e40"
+    },
+    {
+      "addr": "005b8be2",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005b8be2"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "004dfea0",
+      "is_variadic": false,
+      "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0"
+    },
+    {
+      "addr": "0047d800",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_0047d800"
+    },
+    {
+      "addr": "0047d730",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_0047d730"
+    },
+    {
+      "addr": "0047db10",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_0047db10"
+    },
+    {
+      "addr": "0047be40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
+    },
+    {
+      "addr": "0047bda0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0"
+    },
+    {
+      "addr": "0047dae0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0"
+    },
+    {
+      "addr": "0050ff00",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_decryptMessage_FUN_0050ff00"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    },
+    {
+      "addr": "0058eb70",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_enqueueInput_FUN_0058eb70"
+    },
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
+    },
+    {
+      "addr": "0058eb40",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_0058eb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d7217",
+      "name": "s_Enter_Movie_FPS_005d7217",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7227",
+      "name": "s_Enter_number_of_frames_t_005d7227",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7271",
+      "name": "s_Enter_image_width_005d7271",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7283",
+      "name": "s_Enter_image_height_005d7283",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7296",
+      "name": "s_Press_CTRL_V_to_begin_re_005d7296",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a56",
+      "name": "s_headOfHorror_005d7a56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a63",
+      "name": "s_The_horror_has_been_unle_005d7a63",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a82",
+      "name": "s_Enter_cheat_code_005d7a82",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a93",
+      "name": "g_CheatStr_DebugMode",
+      "type": "char[54]",
+      "value": null
+    },
+    {
+      "addr": "005d7ac7",
+      "name": "g_CheatStr_DebugMode+0x34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7b01",
+      "name": "s_anon_005d7b01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7b05",
+      "name": "g_CHAR_005d7b05",
+      "type": "char",
+      "value": "\u0001"
+    },
+    {
+      "addr": "005d7b39",
+      "name": "s_FPS_3_2lf_005d7b39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7b45",
+      "name": "g_CHAR_005d7b45",
+      "type": "char",
+      "value": "@"
+    },
+    {
+      "addr": "005d7b7a",
+      "name": "g_CheatStr_EventDebug",
+      "type": "char[51]",
+      "value": null
+    },
+    {
+      "addr": "005d7bad",
+      "name": "s_Event_debug_on_005d7bad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7bbc",
+      "name": "s_Event_debug_off_005d7bbc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7bcc",
+      "name": "g_CheatStr_MemoryDebug",
+      "type": "char[52]",
+      "value": null
+    },
+    {
+      "addr": "005d7c00",
+      "name": "s_Script_debug_on_005d7c00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7c10",
+      "name": "s_Script_debug_off_005d7c10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7c21",
+      "name": "g_CheatStr_ManualAim",
+      "type": "char[52]",
+      "value": null
+    },
+    {
+      "addr": "005d7c55",
+      "name": "s_Memory_debugging_on_005d7c55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7c69",
+      "name": "s_Memory_debugging_off_005d7c69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7c7e",
+      "name": "g_CHAR_005d7c7e",
+      "type": "char",
+      "value": "}"
+    },
+    {
+      "addr": "005d7cb2",
+      "name": "s_Manual_aim_enabled_005d7cb2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7cc5",
+      "name": "g_CheatStr_MovieRecording",
+      "type": "char[51]",
+      "value": null
+    },
+    {
+      "addr": "005d7cf7",
+      "name": "g_CheatStr_MovieRecording+0x32",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7d08",
+      "name": "g_CHAR_005d7d08",
+      "type": "char",
+      "value": "o"
+    },
+    {
+      "addr": "005d7d3b",
+      "name": "g_CheatStr_CollisionDebug",
+      "type": "char[55]",
+      "value": null
+    },
+    {
+      "addr": "005d7d72",
+      "name": "g_CheatStr_SkeletonKey",
+      "type": "char[57]",
+      "value": null
+    },
+    {
+      "addr": "005d7dab",
+      "name": "s_Skeleton_key_005d7dab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7db8",
+      "name": "s_CKeyActor_005d7db8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7dc2",
+      "name": "s_Skeleton_key_005d7dc2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7dc3",
+      "name": "s_keleton_key_005d7dc2+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7dc4",
+      "name": "s_eleton_key_005d7dc2+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7dc5",
+      "name": "s_leton_key_005d7dc2+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7dcf",
+      "name": "s_You_have_the_skeleton_ke_005d7dcf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7de9",
+      "name": "g_CheatStr_FreezeEnemies",
+      "type": "char[53]",
+      "value": null
+    },
+    {
+      "addr": "005d7e1f",
+      "name": "s_God_mode_enabled_005d7e1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e30",
+      "name": "s_God_mode_disabled_005d7e30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e42",
+      "name": "g_CHAR_005d7e42",
+      "type": "char",
+      "value": "\u00d1"
+    },
+    {
+      "addr": "005d7e77",
+      "name": "s_Enemies_frozen_005d7e77",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e86",
+      "name": "s_Enemies_thawed_005d7e86",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e95",
+      "name": "g_CheatStr_AllWeapons",
+      "type": "char[54]",
+      "value": null
+    },
+    {
+      "addr": "005d7ecb",
+      "name": "s_CGun_005d7ecb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7ed0",
+      "name": "s_CMelee_005d7ed0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7ed7",
+      "name": "s_CMeleeAxe_005d7ed7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7ee1",
+      "name": "s_CCross_005d7ee1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7ee8",
+      "name": "s_Lantern_005d7ee8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7ef0",
+      "name": "s_CBoxActor_005d7ef0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7efa",
+      "name": "s_CGun_005d7efa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7eff",
+      "name": "g_CheatStr_MoreAmmo",
+      "type": "char[54]",
+      "value": null
+    },
+    {
+      "addr": "005d7f32",
+      "name": "g_CheatStr_MoreAmmo+0x33",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7f41",
+      "name": "g_CheatStr_KillNearby",
+      "type": "char[53]",
+      "value": null
+    },
+    {
+      "addr": "005d7f76",
+      "name": "g_CheatStr_Dismemberment",
+      "type": "char[54]",
+      "value": null
+    },
+    {
+      "addr": "005d7fac",
+      "name": "s_Gratuitous_dismemberment_005d7fac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7fcd",
+      "name": "s_Gratuitous_dismemberment_005d7fcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7fef",
+      "name": "g_CheatStr_TimeFactor",
+      "type": "char[50]",
+      "value": null
+    },
+    {
+      "addr": "005d8021",
+      "name": "s_Enter_time_factor_005d8021",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8033",
+      "name": "g_CheatStr_NoD3D",
+      "type": "char[51]",
+      "value": null
+    },
+    {
+      "addr": "005d8066",
+      "name": "g_CHAR_005d8066",
+      "type": "char",
+      "value": "\u0005"
+    },
+    {
+      "addr": "005d8099",
+      "name": "g_CheatStr_ToggleRenderMode",
+      "type": "char[51]",
+      "value": null
+    },
+    {
+      "addr": "005d80d3",
+      "name": "s_Flaming_ammo_disabled_005d80d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d80e9",
+      "name": "s_CCrossbow_005d80e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d80f3",
+      "name": "s_You_can_only_use_flaming_005d80f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8122",
+      "name": "s_Flaming_ammo_enabled_005d8122",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8138",
+      "name": "g_CheatStr_ClearFramebuffer",
+      "type": "char[51]",
+      "value": null
+    },
+    {
+      "addr": "005d816b",
+      "name": "g_CheatStr_ResetEffects",
+      "type": "char[50]",
+      "value": null
+    },
+    {
+      "addr": "005d819d",
+      "name": "g_CheatStr_SingleStep",
+      "type": "char[50]",
+      "value": null
+    },
+    {
+      "addr": "005d81cf",
+      "name": "s_Single_step_enabled_005d81cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d81e3",
+      "name": "s_Single_step_disabled_005d81e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d81f8",
+      "name": "g_CheatStr_RestoreBattery",
+      "type": "char[54]",
+      "value": null
+    },
+    {
+      "addr": "005d822e",
+      "name": "s_Flashlight_battery_resto_005d822e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d824a",
+      "name": "g_CHAR_005d824a",
+      "type": "char",
+      "value": "\u00f9"
+    },
+    {
+      "addr": "005d8284",
+      "name": "g_CHAR_005d8284",
+      "type": "char",
+      "value": "["
+    },
+    {
+      "addr": "005d82bb",
+      "name": "g_CheatStr_WeatherSnow",
+      "type": "char[55]",
+      "value": null
+    },
+    {
+      "addr": "005d82f0",
+      "name": "g_CheatStr_WeatherSnow+0x35",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d82fa",
+      "name": "s_burp1_wav_005d82fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8304",
+      "name": "s_Bip01_head_005d8304",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d830f",
+      "name": "s_bipltit02_005d830f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8319",
+      "name": "s_biprtit02_005d8319",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8323",
+      "name": "g_CheatStr_GeometryDebug",
+      "type": "char[52]",
+      "value": null
+    },
+    {
+      "addr": "005d8357",
+      "name": "g_CheatStr_GasMask",
+      "type": "char[53]",
+      "value": null
+    },
+    {
+      "addr": "005d838b",
+      "name": "g_CheatStr_GasMask+0x34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d839c",
+      "name": "g_CheatStr_LithiumAmmo",
+      "type": "char[50]",
+      "value": null
+    },
+    {
+      "addr": "005d83d3",
+      "name": "g_DOUBLE_005d83d3",
+      "type": "double",
+      "value": "0.0555555555555556"
+    },
+    {
+      "addr": "005d83db",
+      "name": "g_DOUBLE_005d83db",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "005d83e3",
+      "name": "g_DOUBLE_005d83e3",
+      "type": "double",
+      "value": "50"
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "006141bc",
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "006141f0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
+    },
+    {
+      "addr": "00616430",
+      "name": "g_EventCommandBuffer",
+      "type": "char[100]",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "006164a0",
+      "name": "g_MovieRecordingTargetFPS",
+      "type": "float",
+      "value": "30"
+    },
+    {
+      "addr": "006164a4",
+      "name": "g_MovieRecordingWidth",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "006164a8",
+      "name": "g_MovieRecordingHeight",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "00617dd4",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
+    },
+    {
+      "addr": "00618170",
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "0061c068",
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
+    },
+    {
+      "addr": "0061e8f4",
+      "name": "g_CWeatherPtr",
+      "type": "CWeather*",
+      "value": "02661f80"
+    },
+    {
+      "addr": "01cb6b30",
+      "name": "g_CGameInstance.head_of_horror_cheat",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7788",
+      "name": "g_INT_01cb7788",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb80d0",
+      "name": "g_MovieRecordingArmed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb80d4",
+      "name": "g_MovieRecordingActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb80d8",
+      "name": "g_MovieRecordingMaxFrames",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb80dc",
+      "name": "g_MovieRecordingFrameCounter",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb80e4",
+      "name": "g_SoundDebugEnabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cb80f8",
+      "name": "g_BYTE_01cb80f8",
+      "type": "byte",
+      "value": null
+    },
+    {
+      "addr": "01cb8109",
+      "name": "DAT_01cb8109",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb810a",
+      "name": "DAT_01cb810a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb810b",
+      "name": "DAT_01cb810b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cedef4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d02f84",
+      "name": "g_PTR_01d02f84",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "01fb3308",
+      "name": "g_CDemonSetInstance.min_ambient_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb5260",
+      "name": "g_CDemonSetInstance.character_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb71a4",
+      "name": "g_CDemonSetInstance.enemy_count",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bd971",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.307522123893805,
+    "instruction_count": 2260,
+    "opcode_distribution": {
+      "BOOL_AND": 33,
+      "BOOL_NEGATE": 154,
+      "BOOL_OR": 38,
+      "BRANCH": 23,
+      "CALL": 148,
+      "CALLIND": 6,
+      "CBRANCH": 257,
+      "COPY": 1830,
+      "FLOAT2FLOAT": 27,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 8,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 2,
+      "INT_2COMP": 32,
+      "INT_ADD": 818,
+      "INT_AND": 1781,
+      "INT_CARRY": 199,
+      "INT_EQUAL": 1733,
+      "INT_LEFT": 10,
+      "INT_LESS": 198,
+      "INT_MULT": 51,
+      "INT_NEGATE": 32,
+      "INT_NOTEQUAL": 81,
+      "INT_OR": 20,
+      "INT_SBORROW": 327,
+      "INT_SCARRY": 270,
+      "INT_SLESS": 837,
+      "INT_SUB": 826,
+      "INT_XOR": 153,
+      "INT_ZEXT": 61,
+      "LOAD": 551,
+      "POPCOUNT": 831,
+      "RETURN": 1,
+      "STORE": 646
+    },
+    "pcode_op_count": 11995
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d27b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3374
+    },
+    "bw3.exe": {
+      "addr": "004bb100",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4018
+    },
+    "nocedit.exe": {
+      "addr": "004ddaf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3716
+    },
+    "nocturne.exe": {
+      "addr": "004a0550",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3921
+    }
+  },
+  "stack_frame": {
+    "frame_size": 880,
+    "local_size": 876,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_368",
+        "offset": -872,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b0",
+        "offset": -432,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a8",
+        "offset": -424,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a4",
+        "offset": -420,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a0",
+        "offset": -416,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_19c",
+        "offset": -412,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_198",
+        "offset": -408,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_194",
+        "offset": -404,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_190",
+        "offset": -400,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18c",
+        "offset": -396,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_188",
+        "offset": -392,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_184",
+        "offset": -388,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_180",
+        "offset": -384,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_17c",
+        "offset": -380,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_178",
+        "offset": -376,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_174",
+        "offset": -372,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_170",
+        "offset": -368,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_16c",
+        "offset": -364,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_168",
+        "offset": -360,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_164",
+        "offset": -356,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c",
+        "offset": -300,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004b90dc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 26,
+      "match": "afStackY_11b0",
+      "severity": "moderate",
+      "text": "float afStackY_11b0 [907];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 179,
+      "match": "int3",
+      "severity": "mild",
+      "text": "iVar5 = CONCAT31((int3)((uint)iVar8 >> 8),bVar1);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 847,
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_64);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 861,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x110))(iVar5,&SStack_204);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 1020,
+      "match": "(EAmmoType *)((int)(&actor_ptr->physics_box + 1) +",
+      "severity": "moderate",
+      "text": "if (*(EAmmoType *)((int)(&actor_ptr->physics_box + 1) + 0xc) == AMMO_TYPE_FLAMING) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 1022,
+      "match": "(EAmmoType *)((int)(&actor_ptr->physics_box + 1) +",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)((int)(&actor_ptr->physics_box + 1) + 0xc) = AMMO_TYPE_GENERIC;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 1035,
+      "match": "(EAmmoType *)((int)(&actor_ptr->physics_box + 1) +",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)((int)(&actor_ptr->physics_box + 1) + 0xc) = AMMO_TYPE_FLAMING;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1275,
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)g_CDemonSetPtr->characters + iStack_30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Scalar global g_BYTE_01cb80f8 accessed via (&g_BYTE_01cb80f8)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_IrisFadeRadius (at 0x01cb810c, +20 bytes).",
+      "line": 178,
+      "match": "g_BYTE_01cb80f8",
+      "severity": "moderate",
+      "text": "(&g_BYTE_01cb80f8)[iVar13] = bVar1;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 177,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 198,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 232,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 258,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 301,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 335,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 375,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 424,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 463,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 495,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 529,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 577,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 606,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 658,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 698,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 736,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 787,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 834,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 881,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 920,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 950,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 978,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1006,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&actor_ptr->physics_box + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1020,
+      "match": "(int)(&actor_ptr->physics_box + 1)",
+      "severity": "moderate",
+      "text": "if (*(EAmmoType *)((int)(&actor_ptr->physics_box + 1) + 0xc) == AMMO_TYPE_FLAMING) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&actor_ptr->physics_box + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1022,
+      "match": "(int)(&actor_ptr->physics_box + 1)",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)((int)(&actor_ptr->physics_box + 1) + 0xc) = AMMO_TYPE_GENERIC;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&actor_ptr->physics_box + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1035,
+      "match": "(int)(&actor_ptr->physics_box + 1)",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)((int)(&actor_ptr->physics_box + 1) + 0xc) = AMMO_TYPE_FLAMING;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1060,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1091,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1123,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1162,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1194,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1222,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1250,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1363,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1392,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1424,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 626,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 179,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "iVar5 = CONCAT31((int3)((uint)iVar8 >> 8),bVar1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 177,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 198,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 232,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 258,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 301,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 335,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 375,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 424,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 463,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 495,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 529,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 577,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 606,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 658,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 698,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 736,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 787,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 834,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 881,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 920,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 950,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 978,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1006,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1060,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1091,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1123,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1162,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1194,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1222,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1250,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1363,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1392,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_18 = (uint)*(byte *)((int)&g_HelpCharWidth + iVar13 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1424,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar15->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1297,
+      "match": "pCVar15 = (T *)((pCVar15->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "pCVar15 = (CSkeleton *)((pCVar15->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar15->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1318,
+      "match": "pCVar15 = (T *)((pCVar15->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "pCVar15 = (CSkeleton *)((pCVar15->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar15->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1339,
+      "match": "pCVar15 = (T *)((pCVar15->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "pCVar15 = (CSkeleton *)((pCVar15->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 187,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 220,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 247,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 289,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 324,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 364,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 413,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 452,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 484,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 518,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 566,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 595,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 647,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 687,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 725,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 775,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 822,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 870,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 909,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 939,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 967,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 995,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1048,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1079,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1111,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1151,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1183,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1211,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1239,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1352,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1381,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1412,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

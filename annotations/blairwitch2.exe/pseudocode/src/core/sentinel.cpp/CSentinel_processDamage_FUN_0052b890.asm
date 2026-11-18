@@ -14,8 +14,8 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 0052b91f (CONDITIONAL_JUMP)  ; LAB_0052b91f
     PUSH ESI                            ; 0052b8b9
     MOV dword ptr [EBX + 0x25a8],0x0    ; 0052b8ba
-    CALL core_motion.cpp_FUN_005035c0   ; 0052b8c4
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0052b8c4
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0052b8c9
     ADD ESP,0x4                         ; 0052b8cc
     CMP EAX,0x8                         ; 0052b8cf

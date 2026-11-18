@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_005501a0(CVector3d *position_source_ptr)
 
 {
   int iVar1;
   
-  iVar1 = _DAT_0264161c * 0x60;
-  *(uint *)(iVar1 + 0x2641640) = 2;
-  *(CVector3d **)(iVar1 + 0x264163c) = position_source_ptr;
+  iVar1 = g_SfxLastSlot;
+  g_CSfxOptions_ARRAY_02641620[g_SfxLastSlot].position_format = 2;
+  g_CSfxOptions_ARRAY_02641620[iVar1].position_source_ptr = position_source_ptr;
   return;
 }

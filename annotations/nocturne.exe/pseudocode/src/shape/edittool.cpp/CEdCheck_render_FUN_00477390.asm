@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bcd070
+;   CBitFont* g_CBitFont_PTR_01bcd070
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
@@ -62,7 +62,7 @@ section .text
     LEA EAX,[EBX + 0x24]                ; 004773d7
     PUSH EAX                            ; 004773da
     MOV dword ptr [ESP + 0x8],EDX       ; 004773db
-    MOV EDX,dword ptr [0x01bcd070]      ; 004773df | DAT_01bcd070
+    MOV EDX,dword ptr [0x01bcd070]      ; 004773df | g_CBitFont_PTR_01bcd070
     PUSH EDX                            ; 004773e5
     MOV dword ptr [ESP + 0x8],EAX       ; 004773e6
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 004773ea
@@ -87,7 +87,7 @@ section .text
     PUSH EAX                            ; 00477415
     MOV EAX,dword ptr [ESP + 0x10]      ; 00477416
     PUSH EAX                            ; 0047741a
-    MOV EDX,dword ptr [0x01bcd070]      ; 0047741b | DAT_01bcd070
+    MOV EDX,dword ptr [0x01bcd070]      ; 0047741b | g_CBitFont_PTR_01bcd070
     PUSH EDX                            ; 00477421
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00477422
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

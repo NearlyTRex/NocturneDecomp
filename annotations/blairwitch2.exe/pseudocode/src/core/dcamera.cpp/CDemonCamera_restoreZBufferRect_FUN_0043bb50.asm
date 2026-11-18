@@ -11,10 +11,10 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0043bc30 at 0043bebd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_01c2b64c
-;   undefined4 DAT_01c37788
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_INT_01c37788
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_00470201
@@ -47,7 +47,7 @@ section .text
     CMP EBP,dword ptr [ESI + 0x8]       ; 0043bb8e
     JLE 0x0043bc00                      ; 0043bb91
         ;   XREF to: 0043bc00 (CONDITIONAL_JUMP)  ; LAB_0043bc00
-    CMP dword ptr [0x01c37788],0x0      ; 0043bb97 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 0043bb97 | g_INT_01c37788
     JNZ 0x0043bc05                      ; 0043bb9e
         ;   XREF to: 0043bc05 (CONDITIONAL_JUMP)  ; LAB_0043bc05
     MOV EDX,dword ptr [ESI + 0xc]       ; 0043bba0
@@ -58,7 +58,7 @@ section .text
     LEA EBP,[EDI*0x4 + 0x0]             ; 0043bbaa
     MOV ECX,dword ptr [ESI]             ; 0043bbb1
         ;   Label: LAB_0043bbb1
-    MOV EAX,dword ptr [EBP + 0x1c2b64c] ; 0043bbb3 | DAT_01c2b64c
+    MOV EAX,dword ptr [EBP + 0x1c2b64c] ; 0043bbb3 | g_ZBufferScanlineArray
     SHL ECX,0x2                         ; 0043bbb9
     ADD ECX,EAX                         ; 0043bbbc
     MOV EAX,dword ptr [ESP + 0x14]      ; 0043bbbe
@@ -93,11 +93,11 @@ section .text
     POP ESI                             ; 0043bc02
     POP EBX                             ; 0043bc03
     RET                                 ; 0043bc04
-    MOV EAX,[0x006141bc]                ; 0043bc05 | DAT_006141bc
+    MOV EAX,[0x006141bc]                ; 0043bc05 | g_INT_006141bc
         ;   Label: LAB_0043bc05
     DEC EAX                             ; 0043bc0a
     PUSH EAX                            ; 0043bc0b
-    MOV EAX,[0x006141b8]                ; 0043bc0c | DAT_006141b8
+    MOV EAX,[0x006141b8]                ; 0043bc0c | g_INT_006141b8
     DEC EAX                             ; 0043bc11
     PUSH EAX                            ; 0043bc12
     PUSH 0x0                            ; 0043bc13

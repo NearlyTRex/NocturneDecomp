@@ -12,6 +12,6 @@ CFireball * __cdecl core_fire_cpp_CFireball_ctor_FUN_0049ee80(CFireball *this_pt
   CFireball *pCVar1;
   
   pCVar1 = (CFireball *)core_particle_cpp_CParticle_ctor_FUN_00510dd0(&this_ptr->base);
-  (pCVar1->base).vtable = (CParticle_vtable *)&g_CFireballVTable;
+  (pCVar1->base).vtable = &g_CFireballVTable;
   return pCVar1;
 }

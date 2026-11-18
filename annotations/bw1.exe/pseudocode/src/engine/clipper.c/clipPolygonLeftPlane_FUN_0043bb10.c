@@ -1,78 +1,73 @@
 // Name: engine_clipper.c_clipPolygonLeftPlane_FUN_0043bb10
 // Address: 0043bb10
-// Address Range: [[0043bb10, 0043bb64] [0043bb6a, 0043bb8f]]
-// Convention: unknown
-// Signature: int engine_clipper_c_clipPolygonLeftPlane_FUN_0043bb10(void)
+// Address Range: [[0043bb10, 0043bc3b]]
+// Convention: __cdecl
+// Signature: int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_0043bb10(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-int engine_clipper_c_clipPolygonLeftPlane_FUN_0043bb10(void)
+int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_0043bb10(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 
 {
   SRenderVertex *v2;
-  byte bVar1;
-  int iVar2;
-  int iVar3;
+  int iVar1;
+  byte bVar2;
+  SRenderVertex *pSVar3;
+  int iVar4;
+  int iVar5;
   SRenderVertex *v1;
-  uint *in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   int iStack_18;
-  uint *puStack_14;
+  SRenderVertex **ppSStack_14;
   
-  iVar3 = 0;
+  iVar4 = 0;
   iStack_18 = 0;
-  if (0 < in_stack_0000000c) {
-    puStack_14 = in_stack_00000004;
-    v1 = (SRenderVertex *)in_stack_00000004[in_stack_0000000c + -1];
+  if (0 < vertex_count) {
+    ppSStack_14 = input_vertices;
+    iVar5 = iVar4;
+    v1 = input_vertices[vertex_count + -1];
     do {
-      iVar2 = DAT_007c841c;
-      v2 = (SRenderVertex *)*puStack_14;
-      bVar1 = (v1->projected_vertex).transformed_x <= -(v1->projected_vertex).transformed_z;
+      iVar1 = g_ClipperTempCount;
+      v2 = *ppSStack_14;
+      bVar2 = (v1->projected_vertex).transformed_x <= -(v1->projected_vertex).transformed_z;
       if ((v2->projected_vertex).transformed_x <= -(v2->projected_vertex).transformed_z) {
-        bVar1 = bVar1 | 2;
+        bVar2 = bVar2 | 2;
       }
-      switch(bVar1) {
+      iVar4 = iVar5;
+      switch(bVar2) {
       case 0:
-        iVar3 = iVar3 + 1;
-        *(SRenderVertex **)(in_stack_00000008 + -4 + iVar3 * 4) = v1;
+        iVar4 = iVar5 + 1;
+        output_vertices[iVar5] = v1;
         break;
       case 1:
-        if (0xb < DAT_007c841c) {
-          _DAT_01d1d400 = "..\\engine\\clipper.c";
-          _DAT_01d1d404 = 0x5e;
-          core_main_c_FUN_005030e0("Ran out of clipped verts!");
+        if (0xb < g_ClipperTempCount) {
+          g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
+          g_INT_01d1d404 = 0x5e;
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
         }
-        iVar2 = DAT_007c841c * 0x30;
-        iVar3 = iVar3 + 1;
-        DAT_007c841c = DAT_007c841c + 1;
-        *(SRenderVertex **)(in_stack_00000008 + -4 + iVar3 * 4) =
-             (SRenderVertex *)(&DAT_007c81dc + iVar2);
-        engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0
-                  (v2,v1,(SRenderVertex *)(&DAT_007c81dc + iVar2));
+        pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
+        iVar4 = iVar5 + 1;
+        g_ClipperTempCount = g_ClipperTempCount + 1;
+        output_vertices[iVar5] = pSVar3;
+        engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(v2,v1,pSVar3);
         break;
       case 2:
-        *(SRenderVertex **)(in_stack_00000008 + -4 + (iVar3 + 1) * 4) = v1;
-        if (0xb < iVar2) {
-          _DAT_01d1d400 = "..\\engine\\clipper.c";
-          _DAT_01d1d404 = 0x5e;
-          core_main_c_FUN_005030e0("Ran out of clipped verts!");
+        output_vertices[iVar5] = v1;
+        if (0xb < iVar1) {
+          g_CHAR_PTR_01d1d400 = "..\\engine\\clipper.c";
+          g_INT_01d1d404 = 0x5e;
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Ran out of clipped verts!");
         }
-        iVar2 = DAT_007c841c * 0x30;
-        iVar3 = iVar3 + 2;
-        DAT_007c841c = DAT_007c841c + 1;
-        *(SRenderVertex **)(in_stack_00000008 + -4 + iVar3 * 4) =
-             (SRenderVertex *)(&DAT_007c81dc + iVar2);
-        engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0
-                  (v1,v2,(SRenderVertex *)(&DAT_007c81dc + iVar2));
+        pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
+        iVar4 = iVar5 + 2;
+        g_ClipperTempCount = g_ClipperTempCount + 1;
+        output_vertices[iVar5 + 1] = pSVar3;
+        engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(v1,v2,pSVar3);
       }
-      puStack_14 = puStack_14 + 1;
+      ppSStack_14 = ppSStack_14 + 1;
       iStack_18 = iStack_18 + 1;
+      iVar5 = iVar4;
       v1 = v2;
-    } while (iStack_18 < in_stack_0000000c);
+    } while (iStack_18 < vertex_count);
   }
-  return iVar3;
+  return iVar4;
 }

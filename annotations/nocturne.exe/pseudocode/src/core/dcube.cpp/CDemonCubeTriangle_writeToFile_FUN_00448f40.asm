@@ -9,9 +9,9 @@
 ; CVector3f *      Stack[0xc]:4   vertex_buffer_base
 ;
 ; Referenced Globals:
-;   undefined4 DAT_014b8a0c
-;   undefined4 DAT_014b8a10
-;   undefined4 DAT_014b8a14
+;   uint[3] g_TempTriangleIndices
+;   undefined4 g_TempTriangleIndices[1]
+;   undefined4 g_TempTriangleIndices[2]
 ;
 ; Called Functions:
 ;   crt_stdio.c_fwrite_FUN_00563a50
@@ -30,12 +30,12 @@ section .text
     XOR EDX,EDX                         ; 00448f51
     SUB EAX,ESI                         ; 00448f53
     DIV ECX                             ; 00448f55
-    MOV [0x014b8a0c],EAX                ; 00448f57 | DAT_014b8a0c
+    MOV [0x014b8a0c],EAX                ; 00448f57 | g_TempTriangleIndices
     MOV EAX,dword ptr [EBX + 0x4]       ; 00448f5c
     XOR EDX,EDX                         ; 00448f5f
     SUB EAX,ESI                         ; 00448f61
     DIV ECX                             ; 00448f63
-    MOV [0x014b8a10],EAX                ; 00448f65 | DAT_014b8a10
+    MOV [0x014b8a10],EAX                ; 00448f65 | g_TempTriangleIndices[1]
     MOV EAX,dword ptr [EBX + 0x8]       ; 00448f6a
     XOR EDX,EDX                         ; 00448f6d
     SUB EAX,ESI                         ; 00448f6f
@@ -44,8 +44,8 @@ section .text
     PUSH EDX                            ; 00448f77
     PUSH 0x4                            ; 00448f78
     PUSH 0x3                            ; 00448f7a
-    PUSH 0x14b8a0c                      ; 00448f7c | DAT_014b8a0c
-    MOV [0x014b8a14],EAX                ; 00448f81 | DAT_014b8a14
+    PUSH 0x14b8a0c                      ; 00448f7c | g_TempTriangleIndices
+    MOV [0x014b8a14],EAX                ; 00448f81 | g_TempTriangleIndices[2]
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 00448f86
         ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00448f8b

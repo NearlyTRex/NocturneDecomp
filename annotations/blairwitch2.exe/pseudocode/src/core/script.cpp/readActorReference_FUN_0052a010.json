@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 72,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 3,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
-    "total_lines": 72
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -62,9 +61,9 @@
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "0061b468",
@@ -74,13 +73,13 @@
     },
     {
       "addr": "0061b470",
-      "name": "DAT_0061b470",
-      "type": "undefined4",
+      "name": "g_ActorRefDefaultBuffer",
+      "type": "char[200]",
       "value": null
     },
     {
       "addr": "0061b474",
-      "name": "DAT_0061b474",
+      "name": "g_ActorRefDefaultBuffer+4",
       "type": "undefined4",
       "value": null
     }
@@ -201,14 +200,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061b470",
-      "severity": "mild",
-      "text": "puVar4 = &DAT_0061b470;",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 16,

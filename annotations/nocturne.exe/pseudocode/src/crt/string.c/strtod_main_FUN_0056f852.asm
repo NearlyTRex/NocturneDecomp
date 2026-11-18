@@ -11,8 +11,8 @@
 ;   crt_unknown.c__strtod_FUN_0056a189 at 0056a195
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4b78
-;   undefined4 DAT_005a4b7c
+;   double g_DOUBLE_005a4b78 = +Infinity
+;   undefined4 g_DOUBLE_005a4b78+4
 ;
 ; Called Functions:
 ;   crt_math.c_set_range_error_errno_FUN_00568e9c
@@ -59,15 +59,15 @@ section .text
     TEST byte ptr [EBP + -0x27],0x80    ; 0056f897
     JZ 0x0056f8ad                       ; 0056f89b
         ;   XREF to: 0056f8ad (CONDITIONAL_JUMP)  ; LAB_0056f8ad
-    FLD double ptr [0x005a4b78]         ; 0056f89d | DAT_005a4b78
+    FLD double ptr [0x005a4b78]         ; 0056f89d | g_DOUBLE_005a4b78
     FCHS                                ; 0056f8a3
     FSTP double ptr [EBP + -0x24]       ; 0056f8a5
     JMP 0x0056f92d                      ; 0056f8a8
         ;   XREF to: 0056f92d (UNCONDITIONAL_JUMP)  ; LAB_0056f92d
-    MOV EAX,[0x005a4b78]                ; 0056f8ad | DAT_005a4b78
+    MOV EAX,[0x005a4b78]                ; 0056f8ad | g_DOUBLE_005a4b78
         ;   Label: LAB_0056f8ad
     MOV dword ptr [EBP + -0x24],EAX     ; 0056f8b2
-    MOV EAX,[0x005a4b7c]                ; 0056f8b5 | DAT_005a4b7c
+    MOV EAX,[0x005a4b7c]                ; 0056f8b5 | g_DOUBLE_005a4b78+4
     JMP 0x0056f878                      ; 0056f8ba
         ;   XREF to: 0056f878 (UNCONDITIONAL_JUMP)  ; LAB_0056f878
     CMP EAX,0x3bcd                      ; 0056f8bc

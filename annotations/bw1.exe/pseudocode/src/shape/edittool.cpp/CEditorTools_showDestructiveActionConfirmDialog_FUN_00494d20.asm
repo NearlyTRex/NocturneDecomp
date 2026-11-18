@@ -16,8 +16,8 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d00ec
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dbdd6
-;   undefined4 DAT_005dbddb
+;   TerminatedCString s_Yes_005dbdd6
+;   TerminatedCString s_No_005dbddb
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
@@ -51,13 +51,13 @@ section .text
     CALL shape_edittool.cpp_CStrList_ctor_FUN_00499380 ; 00494d63
         ;   XREF to: 00499380 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_ctor_FUN_00499380(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00494d68
-    PUSH 0x5dbdd6                       ; 00494d6b | DAT_005dbdd6
+    PUSH 0x5dbdd6                       ; 00494d6b | = "^Yes"
     LEA EAX,[ESP + 0x404]               ; 00494d70
     PUSH EAX                            ; 00494d77
     CALL shape_edittool.cpp_CStrList_add_FUN_004994d0 ; 00494d78
         ;   XREF to: 004994d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004994d0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00494d7d
-    PUSH 0x5dbddb                       ; 00494d80 | DAT_005dbddb
+    PUSH 0x5dbddb                       ; 00494d80 | = "^No"
     LEA EAX,[ESP + 0x404]               ; 00494d85
     PUSH EAX                            ; 00494d8c
     CALL shape_edittool.cpp_CStrList_add_FUN_004994d0 ; 00494d8d

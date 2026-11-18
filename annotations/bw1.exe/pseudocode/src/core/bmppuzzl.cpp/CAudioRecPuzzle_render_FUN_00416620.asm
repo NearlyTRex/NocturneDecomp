@@ -7,10 +7,10 @@
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d3f42
+;   double g_DOUBLE_005d3f42 = 0.300000000000000
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01c4353c
-;   undefined4 DAT_01c43540
+;   int g_MouseX
+;   int g_MouseY
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
@@ -78,7 +78,7 @@ section .text
     INC EAX                             ; 00416690
     FLD float ptr [EDX + 0x294]         ; 00416691
     MOV dword ptr [ESP + 0x8],EAX       ; 00416697
-    FMUL double ptr [0x005d3f42]        ; 0041669b | DAT_005d3f42
+    FMUL double ptr [0x005d3f42]        ; 0041669b | g_DOUBLE_005d3f42
     FILD dword ptr [ESP + 0x8]          ; 004166a1
     FMULP                               ; 004166a5
     LEA EAX,[EDI + 0x5c]                ; 004166a7
@@ -93,7 +93,7 @@ section .text
     INC EAX                             ; 004166bd
     FLD float ptr [EDX + 0x294]         ; 004166be
     MOV dword ptr [ESP + 0x8],EAX       ; 004166c4
-    FMUL double ptr [0x005d3f42]        ; 004166c8 | DAT_005d3f42
+    FMUL double ptr [0x005d3f42]        ; 004166c8 | g_DOUBLE_005d3f42
     FILD dword ptr [ESP + 0x8]          ; 004166ce
     FMULP                               ; 004166d2
     LEA EAX,[EDI + 0x5c]                ; 004166d4
@@ -140,13 +140,13 @@ section .text
     CALL dword ptr [EAX + 0x3c]         ; 00416739
     MOV EDX,dword ptr [EDI + 0x18]      ; 0041673c
     ADD ESP,0x14                        ; 0041673f
-    MOV EAX,[0x01c43540]                ; 00416742 | DAT_01c43540
+    MOV EAX,[0x01c43540]                ; 00416742 | g_MouseY
     MOV ECX,dword ptr [EDI + EDX*0x4 + 0xc00] ; 00416747
     PUSH 0xffff                         ; 0041674e
     SUB EAX,ECX                         ; 00416753
     MOV EBX,dword ptr [EDI + EDX*0x4 + 0xbf0] ; 00416755
     PUSH EAX                            ; 0041675c
-    MOV EAX,[0x01c4353c]                ; 0041675d | DAT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 0041675d | g_MouseX
     SUB EAX,EBX                         ; 00416762
     PUSH EAX                            ; 00416764
     LEA EAX,[EDX*0x4 + 0x0]             ; 00416765

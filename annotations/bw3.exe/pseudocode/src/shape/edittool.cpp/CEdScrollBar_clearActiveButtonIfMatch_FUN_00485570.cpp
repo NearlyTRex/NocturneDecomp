@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_00485570(CEdScrollBar *this_ptr)
 
 {
-  if (this_ptr != _DAT_01c5bb78) {
+  if (this_ptr != (CEdScrollBar *)g_ActiveControl) {
     return;
   }
-  _DAT_01c5bb78 = (CEdScrollBar *)0x0;
+  g_ActiveControl = (byte *)0x0;
   return;
 }

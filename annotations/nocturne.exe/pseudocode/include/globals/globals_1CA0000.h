@@ -7,24 +7,25 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CGround.h"
 #include "types/classes/CHero.h"
+#include "types/classes/CIni.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CA0000
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CGraveActorType_01cadf44;
-extern CDemonActorType g_CGunActorType_01cadfdc;
-extern CDemonActorType g_CHaystackActorType_01cae05c;
-extern CDemonActorType g_CHealthItemActorType_01cae098;
-extern CDemonActorType g_CHeroActorType_01cae0ec;
-extern CDemonActorType g_CHeroPlaceholderActorType_01cae128;
-extern CDemonActorType g_CHiramActorType_01cae164;
-extern CDemonActorType g_CHostageActorType_01cae1a4;
-extern CDemonActorType g_CHotDemonActorType_01cae210;
-extern CDemonActorType g_CHighPriestOfGardathActorType_01cae24c;
-extern CDemonActorType g_CIcePickActorType_01cae2d0;
-extern CDemonActorType g_CImpActorType_01cae33c;
+extern CDemonActorType g_CGraveClassInfo;
+extern CDemonActorType g_CGunClassInfo;
+extern CDemonActorType g_CHaystackClassInfo;
+extern CDemonActorType g_CHealthItemClassInfo;
+extern CDemonActorType g_CHeroClassInfo;
+extern CDemonActorType g_CHeroPlaceholderClassInfo;
+extern CDemonActorType g_CHiramClassInfo;
+extern CDemonActorType g_CHostageClassInfo;
+extern CDemonActorType g_CHotDemonClassInfo;
+extern CDemonActorType g_CHighPriestOfGardathClassInfo;
+extern CDemonActorType g_CIcePickClassInfo;
+extern CDemonActorType g_CImpClassInfo;
 
 // CGround
 extern CGround g_CGroundInstance;
@@ -32,9 +33,31 @@ extern CGround g_CGroundInstance;
 // CHero*[4]
 extern CHero* g_HeroActors[4];
 
+// CIni
+extern CIni g_CIniInstance;
+
+// char[10][256]
+extern char g_InventoryWrappedTextLines[10][256];
+extern char g_InventoryWrappedTextLines2[10][256];
+extern char g_InventoryWrappedTextLines3[10][256];
+
 // char[256]
+extern char g_CHAR_ARRAY_01cae380[256];
 extern char g_CHAR_ARRAY_01cae480[256];
 
 // int
+extern int g_HeroCount;
 extern int g_LocalHeroIndex;
+extern int g_HostageGunUpMotionIndex;
+extern int g_FirstTimeFlag;
+
+// int[12]
+extern int g_HotDemonIndices[12];
+extern int g_ImpIndices[12];
+
+// int[17]
+extern int g_HaystackIndices[17];
+
+// int[18]
+extern int g_IcePickIndices[18];
 

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 110,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 39,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 95,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 352
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 94,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 351
   },
   "cross_references": [],
   "function": {
@@ -252,49 +250,49 @@
     },
     {
       "addr": "01bc0d34",
-      "name": "DAT_01bc0d34",
-      "type": "undefined4",
+      "name": "g_DraculaBrideIndices",
+      "type": "int[8]",
       "value": null
     },
     {
       "addr": "01bc0d38",
-      "name": "DAT_01bc0d38",
+      "name": "g_DraculaBrideIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc0d3c",
-      "name": "DAT_01bc0d3c",
+      "name": "g_DraculaBrideIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc0d40",
-      "name": "DAT_01bc0d40",
+      "name": "g_DraculaBrideIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc0d44",
-      "name": "DAT_01bc0d44",
+      "name": "g_DraculaBrideIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc0d48",
-      "name": "DAT_01bc0d48",
+      "name": "g_DraculaBrideIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc0d4c",
-      "name": "DAT_01bc0d4c",
+      "name": "g_DraculaBrideIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc0d50",
-      "name": "DAT_01bc0d50",
+      "name": "g_DraculaBrideIndices[7]",
       "type": "undefined4",
       "value": null
     },
@@ -376,16 +374,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

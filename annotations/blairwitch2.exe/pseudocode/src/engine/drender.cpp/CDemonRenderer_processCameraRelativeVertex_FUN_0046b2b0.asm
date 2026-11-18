@@ -19,13 +19,13 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bcc9
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 at 0041c5e0
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 at 0041c6c8
-;   core_bwspart.cpp_FUN_005a86a0 at 005a8731
-;   core_crate.cpp_FUN_0043a130 at 0043a145
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a8731
+;   core_crate.cpp_CCrate_renderOpaque_FUN_0043a130 at 0043a145
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0 at 004468d5
 ;   ... and 55 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1583
+;   double g_WorldToCameraScale = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -38,21 +38,21 @@ section .text
     SUB ESP,0x10                        ; 0046b2b0
         ;   Label: engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
     MOV EAX,dword ptr [ESP + 0x18]      ; 0046b2b3
-    FLD double ptr [0x005d1583]         ; 0046b2b7 | DAT_005d1583
+    FLD double ptr [0x005d1583]         ; 0046b2b7 | g_WorldToCameraScale
     FLD float ptr [EAX]                 ; 0046b2bd
     FMUL ST1                            ; 0046b2bf
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b2c1
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0046b2c6
     FLD float ptr [EAX + 0x4]           ; 0046b2ca
     FMUL ST1                            ; 0046b2cd
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b2cf
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0046b2d4
     FMUL float ptr [EAX + 0x8]          ; 0046b2d8
     MOV EAX,ESP                         ; 0046b2db
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046b2dd
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EAX                            ; 0046b2e2
     FISTP dword ptr [ESP + 0x10]        ; 0046b2e3
     CALL engine_3d.c_processCameraRelativePoint_FUN_00403830 ; 0046b2e7

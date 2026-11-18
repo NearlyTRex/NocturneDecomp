@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005d9194
 ;   TerminatedCString s_CDemonLight_allocateFilt_005d91a7
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
@@ -39,10 +39,10 @@ section .text
     MOV ECX,0x5d9194                    ; 00463dfd | = "..\\core\\dlight.cpp"
     MOV EBX,0x544                       ; 00463e02
     PUSH 0x5d91a7                       ; 00463e07 | = "CDemonLight::allocateFilter - Out of ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00463e0c | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00463e12 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00463e18
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00463e0c | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00463e12 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00463e18
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00463e1d
     POP EBX                             ; 00463e20
     RET                                 ; 00463e21

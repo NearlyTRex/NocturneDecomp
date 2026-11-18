@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireball_process_FUN_004ae300(CFireball *this_ptr)
 
 {
@@ -27,7 +25,7 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004ae300(CFireball *this_ptr)
     this_ptr->spawn_timer = 0;
   }
   else {
-    lVar2 = (longlong)this_ptr->fade_rate * (longlong)_DAT_01c43530;
+    lVar2 = (longlong)this_ptr->fade_rate * (longlong)g_GlobalDeltaTimeInt;
     iVar3 = this_ptr->timer - ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     this_ptr->timer = iVar3;
     if (iVar3 < 0) {
@@ -35,12 +33,12 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004ae300(CFireball *this_ptr)
       this_ptr->timer = 0;
     }
   }
-  core_particle_cpp_FUN_00532250(this_ptr);
-  iVar3 = _DAT_01c43530 / 2;
+  core_particle_cpp_CParticle_process_FUN_00532250(&this_ptr->base);
+  iVar3 = g_GlobalDeltaTimeInt / 2;
   this_ptr->rotation_angle1 =
        this_ptr->rotation_angle1 +
-       ((int)((_DAT_01c43530 + (_DAT_01c43530 >> 0x1f) * -4) -
-             (uint)((_DAT_01c43530 >> 0x1f) << 1 < 0)) >> 2);
+       ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+             (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
   this_ptr->rotation_angle2 = this_ptr->rotation_angle2 + iVar3;
   if (this_ptr->lighting_active == 0) {
     this_ptr_00 = &this_ptr->light_globe;
@@ -55,21 +53,21 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004ae300(CFireball *this_ptr)
     this_ptr_02 = g_CDemonSetPtr;
     (this_ptr->light_globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(this_ptr_02,this_ptr_00);
-    iVar3 = this_ptr->spawn_timer + _DAT_01c43530;
+    iVar3 = this_ptr->spawn_timer + g_GlobalDeltaTimeInt;
     this_ptr->spawn_timer = iVar3;
-    this_ptr_01 = 0x01C57074;
+    this_ptr_01 = g_CFireEffectPtr;
     if (0x1000 < iVar3) {
       this_ptr->spawn_timer = iVar3 + -0x1000;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
                 (this_ptr_01,(CVector3f *)this_ptr,2.0,(CVector3f *)0x0,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
     }
   }
   if (this_ptr->lighting_active == 0) {

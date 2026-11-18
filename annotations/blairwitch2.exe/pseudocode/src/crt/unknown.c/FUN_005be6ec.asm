@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005be628 at 005be64e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f6f0
+;   int g_HeapFlags = 0x10000
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
         ;   XREF to: 005be708 (CONDITIONAL_JUMP)  ; LAB_005be708
     XOR EAX,EAX                         ; 005be705
     RET                                 ; 005be707
-    MOV ECX,dword ptr [0x0061f6f0]      ; 005be708 | DAT_0061f6f0
+    MOV ECX,dword ptr [0x0061f6f0]      ; 005be708 | g_HeapFlags
         ;   Label: LAB_005be708
     CMP EAX,ECX                         ; 005be70e
     JNC 0x005be716                      ; 005be710

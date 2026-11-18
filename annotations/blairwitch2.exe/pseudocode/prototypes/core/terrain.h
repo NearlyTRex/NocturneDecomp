@@ -21,6 +21,6 @@ void __cdecl CTerrain::render(CTerrain *this_ptr,int render_pass);
 // Address: 0057b970
 void __cdecl CTerrain::process(CTerrain *this_ptr);
 
-// Original: core_terrain.cpp_FUN_0057b9e0
+// Original: core_terrain.cpp_CInStream_copy_FUN_0057b9e0
 // Address: 0057b9e0
-void FUN_0057b9e0(void);
+CInStream * __cdecl CInStream::copy(CInStream *this_ptr);

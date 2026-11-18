@@ -2,21 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 482,
-    "complexity_score": 402,
+    "complexity_score": 317,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 187,
-    "suspect_count": 18,
+    "suspect_count": 11,
     "suspect_types": [
       "dropped_fyl2x",
-      "pointer_truncation",
-      "raw_address_pointer_store",
       "sub84_truncation",
       "unknown_field",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 669
   },
@@ -176,8 +173,8 @@
     },
     {
       "addr": "02dc9220",
-      "name": "DAT_02dc9220",
-      "type": "undefined4",
+      "name": "g_DirectSound3DListener",
+      "type": "IDirectSound3DListener*",
       "value": null
     }
   ],
@@ -231,14 +228,6 @@
       "TRUNC": 2
     },
     "pcode_op_count": 1917
-  },
-  "siblings": {
-    "nocedit.exe": {
-      "addr": "005af750",
-      "by": "name",
-      "class": "operand-change",
-      "ratio": 1.0
-    }
   },
   "stack_frame": {
     "frame_size": 3296,
@@ -352,32 +341,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 41,
-      "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
-      "severity": "moderate",
-      "text": "local_20 = *(int **)(iVar1 * 4 + 0x2dc92a8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 43,
-      "match": "*(int **)(iVar1 * 4 + 0x2dc9324",
-      "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar1 * 4 + 0x2dc9324);",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
+      "line": 58,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar7 = (**(code **)(*piVar2 + 0x4c))",
@@ -385,7 +350,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
+      "line": 71,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x50))",
@@ -393,7 +358,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 89,
+      "line": 88,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_38._4_4_ = SUB84(__BITCAST_UINT64(dVar8),0);",
@@ -401,7 +366,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 89,
+      "line": 88,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_38._4_4_ = SUB84(__BITCAST_UINT64(dVar8),0);",
@@ -409,15 +374,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 108,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*local_20 + 0x3c))(local_20);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 122,
+      "line": 121,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*local_24 + 0x44))(local_24,(uint)uStack_38);",
@@ -425,7 +382,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 136,
+      "line": 135,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x48))(piVar2,uVar5);",
@@ -433,7 +390,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 150,
+      "line": 149,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x44))(piVar2,local_2c);",
@@ -441,7 +398,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 159,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_38._4_4_ = (uint)((ulonglong)lVar3 >> 0x20);",
@@ -449,7 +406,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 161,
+      "line": 160,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x40))(piVar2,uStack_38._4_4_,1);",
@@ -457,39 +414,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 161,
+      "line": 160,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x40))(piVar2,uStack_38._4_4_,1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 176,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*_DAT_02dc9220 + 0x44))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
-      "match": "(int)local_20",
-      "severity": "moderate",
-      "text": "if ((int)local_20 < 1) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 94,
-      "match": "(int)local_20",
-      "severity": "moderate",
-      "text": "if ((int)local_20 < -10000) goto LAB_0052b3c8;",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "x87 log constant multiplied by `dVar8` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
-      "line": 88,
+      "line": 87,
       "match": "dVar8 = floor(dVar8 * 0.6931471805599453 * 868.58900000000006);",
       "severity": "major",
       "text": "dVar8 = floor(dVar8 * 0.6931471805599453 * 868.58900000000006);",

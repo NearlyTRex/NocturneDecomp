@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_inv_cpp_setupItems_FUN_004dcad0(int param_1)
+; void __cdecl core_inv_cpp_setupItems_FUN_004dcad0(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_setup_FUN_004d26b0 at 004d26de
@@ -10,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_inv_cpp_005c64ee
 ;   TerminatedCString s_CInventory_setupItems_we_005c64fe
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -60,10 +62,10 @@ section .text
         ;   Label: LAB_004dcb15
     MOV EBX,0x75c                       ; 004dcb1a
     PUSH 0x5c64fe                       ; 004dcb1f | = "CInventory::setupItems - we should ow..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004dcb24 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004dcb2a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004dcb30
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004dcb24 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 004dcb2a | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004dcb30
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004dcb35
     JMP 0x004dcae1                      ; 004dcb38
         ;   XREF to: 004dcae1 (UNCONDITIONAL_JUMP)  ; LAB_004dcae1

@@ -35,9 +35,9 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_xform.cpp_FUN_00583260
 ;   core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0
 ;   core_xform.cpp_setRotationScaleIdentity_FUN_00583660
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     PUSH EAX                            ; 0054da4b
     LEA ESI,[ESP + 0xa4]                ; 0054da4c
     LEA EDI,[ESP + 0x98]                ; 0054da53
-    CALL core_xform.cpp_FUN_00583260    ; 0054da5a
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0054da5a
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0xa4]                ; 0054da5f
     ADD ESP,0x8                         ; 0054da66
     MOVSD ES:EDI,ESI                    ; 0054da69

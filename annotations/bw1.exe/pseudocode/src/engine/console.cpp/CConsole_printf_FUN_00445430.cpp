@@ -10,40 +10,40 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00445430(CConsole *this_ptr,
 
 {
   char cVar1;
-  _FILE *p_Var2;
-  uint uVar3;
-  int iVar4;
-  char *pcVar5;
-  byte bVar6;
+  _FILE *file;
+  uint uVar2;
+  int iVar3;
+  char *pcVar4;
+  byte bVar5;
   char local_1014 [4096];
   byte *local_14;
   
-  bVar6 = 0;
+  bVar5 = 0;
   local_14 = &stack0x0000000c;
   _vsprintf(local_1014,format,(va_list_t)&local_14);
-  iVar4 = 0;
+  iVar3 = 0;
   local_14 = (byte *)0x0;
-  uVar3 = 0xffffffff;
-  pcVar5 = local_1014;
+  uVar2 = 0xffffffff;
+  pcVar4 = local_1014;
   do {
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
-  if (0 < (int)(~uVar3 - 1)) {
+  if (0 < (int)(~uVar2 - 1)) {
     do {
-      pcVar5 = local_1014 + iVar4;
-      iVar4 = iVar4 + 1;
-      engine_console_cpp_CConsole_writeChar_FUN_00445500(this_ptr,*pcVar5);
-    } while (iVar4 < (int)(~uVar3 - 1));
+      pcVar4 = local_1014 + iVar3;
+      iVar3 = iVar3 + 1;
+      engine_console_cpp_CConsole_writeChar_FUN_00445500(this_ptr,*pcVar4);
+    } while (iVar3 < (int)(~uVar2 - 1));
   }
   engine_console_cpp_CConsole_writeChar_FUN_00445500(this_ptr,'\0');
   if (this_ptr->file_logging_enabled != 0) {
-    p_Var2 = _fopen("console.txt",&DAT_005d6cf7);
-    if (p_Var2 != (_FILE *)0x0) {
-      FUN_005c03c0(p_Var2,&DAT_005d6cfa,local_1014);
-      _fclose(p_Var2);
+    file = _fopen("console.txt","at");
+    if (file != (_FILE *)0x0) {
+      _fprintf(file,"%s");
+      _fclose(file);
       return;
     }
   }

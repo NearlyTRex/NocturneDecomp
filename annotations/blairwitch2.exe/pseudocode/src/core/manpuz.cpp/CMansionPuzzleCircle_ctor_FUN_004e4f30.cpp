@@ -28,9 +28,9 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_004
                      ((void *)((int)pvVar4 + 0x8a0),2,&g_SReflectorTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar4 + -0x11ec) = &g_CMansionPuzzleCircleVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)((int)pvVar4 + -0x11e8),(char *)0x5dc4b6);
+            ((CKeyFramedModelInstance *)((int)pvVar4 + -0x11e8),"doorpuzz.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)((int)pvVar4 + -0x106c),(char *)0x5dc4c3);
+            ((CKeyFramedModelInstance *)((int)pvVar4 + -0x106c),"puzz-rec.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)((int)pvVar4 + -0xef0),"mirrhack.kfm");
   pcVar5 = "headlite.raw";

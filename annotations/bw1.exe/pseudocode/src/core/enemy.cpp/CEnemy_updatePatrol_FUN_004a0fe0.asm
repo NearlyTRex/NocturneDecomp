@@ -7,7 +7,7 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ;
-; XREF[23]:
+; XREF[24]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411d54
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413516
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c52a
@@ -18,16 +18,16 @@
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a4c0
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 00476d02
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047c4b8
-;   ... and 13 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Capture_005dcba3
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00433f10
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;
 ; *****************************************************************************
@@ -42,7 +42,7 @@ section .text
     JNZ 0x004a100b                      ; 004a0ff1
         ;   XREF to: 004a100b (CONDITIONAL_JUMP)  ; LAB_004a100b
     PUSH 0x5dcba3                       ; 004a0ff3 | = "Capture"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004a0ff8 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004a0ff8 | g_CEventListPtr
     PUSH ECX                            ; 004a0ffe
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004a0fff
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_004a100b
     PUSH dword ptr [ESP + 0x10]         ; 004a100d
     PUSH EBX                            ; 004a1011
-    CALL core_charactr.cpp_FUN_00433f10 ; 004a1012
-        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433f10()
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10 ; 004a1012
+        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004a1017
     POP EBX                             ; 004a101a
     RET                                 ; 004a101b
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 004a1022
     PUSH dword ptr [ESP + 0x10]         ; 004a1023
     PUSH EBX                            ; 004a1027
-    CALL core_charactr.cpp_FUN_00433f10 ; 004a1028
-        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433f10()
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10 ; 004a1028
+        ;   XREF to: 00433f10 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_00433f10(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004a102d
     POP EBX                             ; 004a1030
     RET                                 ; 004a1031

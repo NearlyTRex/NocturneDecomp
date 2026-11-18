@@ -10,8 +10,8 @@
     "pseudocode_lines": 35,
     "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "flattened_array_index",
+      "pointer_cast"
     ],
     "total_lines": 92
   },
@@ -19,7 +19,7 @@
     {
       "addr": "004b90d0",
       "from_addr": "004ba6fd",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,25 +39,25 @@
   "globals": [
     {
       "addr": "01326d20",
-      "name": "DAT_01326d20",
-      "type": "undefined4",
+      "name": "g_CameraPlaneWorkBuffer",
+      "type": "SFogImagePlane",
       "value": null
     },
     {
       "addr": "01326d21",
-      "name": "DAT_01326d21",
+      "name": "g_CameraPlaneWorkBuffer.pixels[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01326e60",
-      "name": "DAT_01326e60",
+      "name": "g_CameraPlaneWorkBuffer.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01339a60",
-      "name": "DAT_01339a60",
+      "name": "g_CameraImageDecompressBuffer+0x140",
       "type": "undefined4",
       "value": null
     }
@@ -68,7 +68,7 @@
       {
         "call_addr": "004ba6fd",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,12 +171,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "'g_CameraPlaneWorkBuffer.pixels[0][iVar3]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar3 is multiplied by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 31,
-      "match": "DAT_01326d20",
-      "severity": "mild",
-      "text": "(&DAT_01326d20)[iVar3] = 0;",
-      "type": "undefined_data"
+      "severity": "major",
+      "text": "g_CameraPlaneWorkBuffer.pixels[0][iVar3] = '\\0';",
+      "type": "flattened_array_index"
     }
   ]
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_xform_cpp_slerpQuaternion_FUN_00593df0(float *param_1,float *param_2,float param_3)
+; CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_00593df0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat1_in
+; CQuaternion4f *  Stack[0x8]:4   quat2_in
+; float            Stack[0xc]:4   t
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined        Stack[-0x5c]:1  local_5c
@@ -18,21 +22,21 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[18]:
+; XREF[19]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004188b3
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429bf9
 ;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437067
-;   core_course.cpp_FUN_00438cf0 at 00438e8a
+;   core_course.cpp_CCourse_interpolate_FUN_00438cf0 at 00438e8a
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 at 004564ec
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455927
-;   core_doc.cpp_FUN_00455d10 at 00455f3d
-;   core_doc.cpp_FUN_004562a0 at 004564ec
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00455f3d
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afcea
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310 at 00518426
-;   core_scat.cpp_FUN_00520140 at 005202b9
-;   ... and 8 more
+;   core_scat.cpp_CScat_blendAimBones_FUN_00520140 at 005202b9
+;   ... and 9 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eeda6
+;   float g_FLOAT_005eeda6 = 0.9999900
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_005b9989
@@ -94,7 +98,7 @@ section .text
     FLD float ptr [ESP]                 ; 00593e6f
     FXCH                                ; 00593e72
     FSTP float ptr [ESP + 0x48]         ; 00593e74
-    FCOMP float ptr [0x005eeda6]        ; 00593e78 | DAT_005eeda6
+    FCOMP float ptr [0x005eeda6]        ; 00593e78 | g_FLOAT_005eeda6
     FNSTSW AX                           ; 00593e7e
     SAHF                                ; 00593e80
     JBE 0x00593f58                      ; 00593e81
@@ -192,7 +196,7 @@ section .text
     FLD ST2                             ; 00593f67
     FXCH                                ; 00593f69
     CALL crt_math.c_atan2_FUN_005b9989  ; 00593f6b
-        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005b9989()
+        ;   XREF to: 005b9989 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005b9989(float10 y, float10 x)
     FSTP ST2                            ; 00593f70
     FLD float ptr [ESP + 0x48]          ; 00593f72
     FMUL ST2                            ; 00593f76

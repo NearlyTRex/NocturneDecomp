@@ -17,11 +17,11 @@
 ;   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60 at 00539e93
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c3490f
-;   undefined4 DAT_01c35e60
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141bc = 0xc8
+;   int g_INT_006141c0 = 0x8
+;   undefined4 g_ColorCubeLookup+0x7fff
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
@@ -46,18 +46,18 @@ section .text
     JL 0x00538bd8                       ; 00538a7d
         ;   XREF to: 00538bd8 (CONDITIONAL_JUMP)  ; LAB_00538bd8
     MOV ECX,dword ptr [EBX]             ; 00538a83
-    MOV ESI,dword ptr [0x006141b8]      ; 00538a85 | DAT_006141b8
+    MOV ESI,dword ptr [0x006141b8]      ; 00538a85 | g_INT_006141b8
     ADD EDX,ECX                         ; 00538a8b
     CMP EDX,ESI                         ; 00538a8d
     JGE 0x00538bd8                      ; 00538a8f
         ;   XREF to: 00538bd8 (CONDITIONAL_JUMP)  ; LAB_00538bd8
     MOV EDX,dword ptr [EBX + 0x4]       ; 00538a95
-    MOV EDI,dword ptr [0x006141bc]      ; 00538a98 | DAT_006141bc
+    MOV EDI,dword ptr [0x006141bc]      ; 00538a98 | g_INT_006141bc
     ADD EDX,EAX                         ; 00538a9e
     CMP EDX,EDI                         ; 00538aa0
     JGE 0x00538bd8                      ; 00538aa2
         ;   XREF to: 00538bd8 (CONDITIONAL_JUMP)  ; LAB_00538bd8
-    CMP dword ptr [0x006141c0],0x20     ; 00538aa8 | DAT_006141c0
+    CMP dword ptr [0x006141c0],0x20     ; 00538aa8 | g_INT_006141c0
     JNZ 0x00538b4a                      ; 00538aaf
         ;   XREF to: 00538b4a (CONDITIONAL_JUMP)  ; LAB_00538b4a
     SHL EAX,0x2                         ; 00538ab5
@@ -166,9 +166,9 @@ section .text
     SHL EDX,0xa                         ; 00538bad
     SHL ECX,0x5                         ; 00538bb0
     ADD EDX,ECX                         ; 00538bb3
-    MOV AL,byte ptr [EDX + EAX*0x1 + 0x1c2c910] ; 00538bb5 | DAT_01c3490f
+    MOV AL,byte ptr [EDX + EAX*0x1 + 0x1c2c910] ; 00538bb5 | g_ColorCubeLookup+0x7fff
     AND EAX,0xff                        ; 00538bbc
-    MOV [0x01c35e60],EAX                ; 00538bc1 | DAT_01c35e60
+    MOV [0x01c35e60],EAX                ; 00538bc1 | g_INT_01c35e60
     MOV EAX,dword ptr [ESP + 0x8]       ; 00538bc6
     PUSH EAX                            ; 00538bca
     PUSH EDI                            ; 00538bcb

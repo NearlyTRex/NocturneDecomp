@@ -8,20 +8,20 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_s_4_batman_die_wav_005cbbec+2
+;   TerminatedCString s_batman_die_wav_005cbbee
 ;   TerminatedCString s_batman_hurt_wav_005cbbfd
-;   undefined4 DAT_005cbc0e
-;   undefined4 DAT_00614d30
+;   double g_DOUBLE_005cbc0e = 2
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00413f40
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -74,8 +74,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004142fe
     PUSH EBP                            ; 004142ff
     LEA ESI,[ESP + 0x20]                ; 00414300
-    CALL core_actor.cpp_FUN_00408d70    ; 00414304
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00414304
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00414309
     PUSH 0x0                            ; 0041430c
     PUSH 0x41200000                     ; 0041430e
@@ -173,15 +173,15 @@ section .text
         ;   Label: LAB_004143df
     ADD EAX,0x1c                        ; 004143e2
     FLD ST0                             ; 004143e5
-    FMUL double ptr [0x005cbc0e]        ; 004143e7 | DAT_005cbc0e
+    FMUL double ptr [0x005cbc0e]        ; 004143e7 | g_DOUBLE_005cbc0e
     PUSH EAX                            ; 004143ed
     LEA ESI,[ESP + 0x28]                ; 004143ee
     LEA EDI,[ESP + 0x4]                 ; 004143f2
     PUSH EBP                            ; 004143f6
     FSTP ST1                            ; 004143f7
     FSTP float ptr [EAX + -0x18]        ; 004143f9
-    CALL core_actor.cpp_FUN_00408d70    ; 004143fc
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004143fc
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x2c]                ; 00414401
     ADD ESP,0x8                         ; 00414405
     XOR EBX,EBX                         ; 00414408
@@ -197,7 +197,7 @@ section .text
     PUSH ESI                            ; 0041441f
     LEA EAX,[ESP + 0x14]                ; 00414420
     PUSH EAX                            ; 00414424
-    MOV EDI,dword ptr [0x00614d30]      ; 00414425 | DAT_00614d30
+    MOV EDI,dword ptr [0x00614d30]      ; 00414425 | g_CFireEffectPtr
     PUSH EDI                            ; 0041442b
     INC EBX                             ; 0041442c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 0041442d
@@ -211,8 +211,8 @@ section .text
     PUSH EBX                            ; 0041443f
         ;   Label: LAB_0041443f
     MOV dword ptr [EBP + 0x25a8],0x0    ; 00414440
-    CALL core_motion.cpp_FUN_005035c0   ; 0041444a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0041444a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0041444f
     ADD ESP,0x4                         ; 00414452
     CMP EAX,0x7                         ; 00414455
@@ -232,7 +232,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00551050 ; 0041447b
         ;   XREF to: 00551050 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00551050(uint sfx_handle)
     ADD ESP,0x4                         ; 00414480
-    PUSH 0x5cbbee                       ; 00414483 | s_s_4_batman_die_wav_005cbbec+2
+    PUSH 0x5cbbee                       ; 00414483 | = "batman-die.wav"
     MOV EAX,dword ptr [EBP + 0x2b0]     ; 00414488
     PUSH EBP                            ; 0041448e
     CALL dword ptr [EAX + 0x34]         ; 0041448f

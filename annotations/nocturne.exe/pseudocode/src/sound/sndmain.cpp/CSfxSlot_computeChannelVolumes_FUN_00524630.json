@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 137,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 7,
+    "pseudocode_lines": 51,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 187
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -70,9 +68,9 @@
     },
     {
       "addr": "005bea68",
-      "name": "DAT_005bea68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "01cc4800",
@@ -88,8 +86,8 @@
     },
     {
       "addr": "02dc84bc",
-      "name": "DAT_02dc84bc",
-      "type": "undefined4",
+      "name": "g_SoundLockCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -269,48 +267,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005bea68",
-      "severity": "mild",
-      "text": "if (0 < DAT_005bea68) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005bea68",
-      "severity": "mild",
-      "text": "} while (iVar2 < DAT_005bea68);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005bea68",
-      "severity": "mild",
-      "text": "if (0 < DAT_005bea68) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_005bea68",
-      "severity": "mild",
-      "text": "} while (iVar2 < DAT_005bea68);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 41,
+      "line": 39,
       "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CSfxSlot *)&(pCVar3->options).position;",
@@ -318,7 +276,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 51,
+      "line": 49,
       "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "this_ptr = (CSfxSlot *)&(this_ptr->options).position;",

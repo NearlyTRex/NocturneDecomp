@@ -18,18 +18,18 @@
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005940b7
 ;   TerminatedCString s_create_DirectSound_objec_0059480f
 ;   TerminatedCString s_Querry_DirectSound_capab_00594829
-;   undefined4 DAT_005bed40
-;   undefined4 DAT_02dc83a8
-;   undefined4 DAT_02dc83ac
-;   undefined4 DAT_02dc83b0
-;   undefined4 DAT_02dc83b4
-;   undefined4 DAT_02dc83b8
-;   undefined4 DAT_02dc83bc
-;   undefined4 DAT_02dc83bd
-;   undefined4 DAT_02dc83be
-;   undefined4 DAT_02dc83bf
-;   undefined4 DAT_02dc84bc
-;   undefined4 DAT_02dc84c0
+;   int g_DirectSoundDeviceCount = -0x1
+;   undefined4 g_ChannelSecondaryBuffersB[1]
+;   undefined4 g_ChannelSecondaryBuffersB[2]
+;   undefined4 g_ChannelSecondaryBuffersB[3]
+;   undefined4 g_ChannelSecondaryBuffersB[4]
+;   undefined4 g_ChannelSecondaryBuffersB[5]
+;   undefined4 g_ChannelSecondaryBuffersB[6]
+;   undefined4 g_ChannelSecondaryBuffersB[6]+1
+;   undefined4 g_ChannelSecondaryBuffersB[6]+2
+;   undefined4 g_ChannelSecondaryBuffersB[6]+3
+;   int g_SoundLockCount
+;   int g_SoundStartTime
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
@@ -48,7 +48,7 @@ section .text
     PUSH EBP                            ; 0052bbd2
     SUB ESP,0x384                       ; 0052bbd3
     MOV ESI,dword ptr [ESP + 0x394]     ; 0052bbd9
-    CMP dword ptr [0x005bed40],0xc      ; 0052bbe0 | DAT_005bed40
+    CMP dword ptr [0x005bed40],0xc      ; 0052bbe0 | g_DirectSoundDeviceCount
     JL 0x0052bbf7                       ; 0052bbe7
         ;   XREF to: 0052bbf7 (CONDITIONAL_JUMP)  ; LAB_0052bbf7
     XOR EAX,EAX                         ; 0052bbe9
@@ -140,7 +140,7 @@ section .text
         ;   Label: LAB_0052bcde
     JZ 0x0052bc1d                       ; 0052bce0
         ;   XREF to: 0052bc1d (CONDITIONAL_JUMP)  ; LAB_0052bc1d
-    MOV EDX,dword ptr [0x005bed40]      ; 0052bce6 | DAT_005bed40
+    MOV EDX,dword ptr [0x005bed40]      ; 0052bce6 | g_DirectSoundDeviceCount
     LEA EAX,[EDX*0x8 + 0x0]             ; 0052bcec
     ADD EAX,EDX                         ; 0052bcf3
     SHL EAX,0x3                         ; 0052bcf5
@@ -152,23 +152,23 @@ section .text
     PUSH EBX                            ; 0052bd05
     XOR EBX,EBX                         ; 0052bd06
     LEA EDI,[EAX + 0x2dc84c8]           ; 0052bd08
-    MOV dword ptr [EAX + 0x2dc84c4],EBX ; 0052bd0e | DAT_02dc83a8
-    MOVSD ES:EDI,ESI                    ; 0052bd14 | DAT_02dc83ac
-    MOVSD ES:EDI,ESI                    ; 0052bd15 | DAT_02dc83b0
-    MOVSD ES:EDI,ESI                    ; 0052bd16 | DAT_02dc83b4
-    MOVSD ES:EDI,ESI                    ; 0052bd17 | DAT_02dc83b8
+    MOV dword ptr [EAX + 0x2dc84c4],EBX ; 0052bd0e | g_ChannelSecondaryBuffersB[1]
+    MOVSD ES:EDI,ESI                    ; 0052bd14 | g_ChannelSecondaryBuffersB[2]
+    MOVSD ES:EDI,ESI                    ; 0052bd15 | g_ChannelSecondaryBuffersB[3]
+    MOVSD ES:EDI,ESI                    ; 0052bd16 | g_ChannelSecondaryBuffersB[4]
+    MOVSD ES:EDI,ESI                    ; 0052bd17 | g_ChannelSecondaryBuffersB[5]
     POP EBX                             ; 0052bd18
     TEST byte ptr [ESP + 0x324],0x20    ; 0052bd19
         ;   Label: LAB_0052bd19
     SETNZ AL                            ; 0052bd21
-    MOV EDX,dword ptr [0x005bed40]      ; 0052bd24 | DAT_005bed40
+    MOV EDX,dword ptr [0x005bed40]      ; 0052bd24 | g_DirectSoundDeviceCount
     MOVZX ESI,AL                        ; 0052bd2a
     LEA EAX,[EDX*0x8 + 0x0]             ; 0052bd2d
     ADD EAX,EDX                         ; 0052bd34
     SHL EAX,0x3                         ; 0052bd36
     SUB EAX,EDX                         ; 0052bd39
     MOV EDI,dword ptr [ESP + 0x338]     ; 0052bd3b
-    MOV dword ptr [EAX*0x4 + 0x2dc85d8],ESI ; 0052bd42 | DAT_02dc84bc
+    MOV dword ptr [EAX*0x4 + 0x2dc85d8],ESI ; 0052bd42 | g_SoundLockCount
     TEST EDI,EDI                        ; 0052bd49
     SETA AL                             ; 0052bd4b
     MOV ESI,EAX                         ; 0052bd4e
@@ -178,20 +178,20 @@ section .text
     SUB EAX,EDX                         ; 0052bd5c
     SHL EAX,0x2                         ; 0052bd5e
     AND ESI,0xff                        ; 0052bd61
-    MOV dword ptr [EAX + 0x2dc85dc],ESI ; 0052bd67 | DAT_02dc84c0
+    MOV dword ptr [EAX + 0x2dc85dc],ESI ; 0052bd67 | g_SoundStartTime
     ADD EAX,0x2dc84c4                   ; 0052bd6d
     MOV ESI,dword ptr [ESP + 0x398]     ; 0052bd72
     LEA EDI,[EAX + 0x14]                ; 0052bd79
     PUSH EDI                            ; 0052bd7c
     MOV AL,byte ptr [ESI]               ; 0052bd7d
         ;   Label: LAB_0052bd7d
-    MOV byte ptr [EDI],AL               ; 0052bd7f | DAT_02dc83bc | DAT_02dc83be
+    MOV byte ptr [EDI],AL               ; 0052bd7f | g_ChannelSecondaryBuffersB[6] | g_ChannelSecondaryBuffersB[6]+2
     CMP AL,0x0                          ; 0052bd81
     JZ 0x0052bd95                       ; 0052bd83
         ;   XREF to: 0052bd95 (CONDITIONAL_JUMP)  ; LAB_0052bd95
     MOV AL,byte ptr [ESI + 0x1]         ; 0052bd85
     ADD ESI,0x2                         ; 0052bd88
-    MOV byte ptr [EDI + 0x1],AL         ; 0052bd8b | DAT_02dc83bd | DAT_02dc83bf
+    MOV byte ptr [EDI + 0x1],AL         ; 0052bd8b | g_ChannelSecondaryBuffersB[6]+1 | g_ChannelSecondaryBuffersB[6]+3
     ADD EDI,0x2                         ; 0052bd8e
     CMP AL,0x0                          ; 0052bd91
     JNZ 0x0052bd7d                      ; 0052bd93
@@ -199,7 +199,7 @@ section .text
     POP EDI                             ; 0052bd95
         ;   Label: LAB_0052bd95
     MOV EAX,0x1                         ; 0052bd96
-    ADD dword ptr [0x005bed40],EAX      ; 0052bd9b | DAT_005bed40
+    ADD dword ptr [0x005bed40],EAX      ; 0052bd9b | g_DirectSoundDeviceCount
     ADD ESP,0x384                       ; 0052bda1
     POP EBP                             ; 0052bda7
     POP EDI                             ; 0052bda8
@@ -226,7 +226,7 @@ section .text
     XOR EAX,EAX                         ; 0052bdd9
     JMP 0x0052bcbb                      ; 0052bddb
         ;   XREF to: 0052bcbb (UNCONDITIONAL_JUMP)  ; LAB_0052bcbb
-    MOV dword ptr [EAX + 0x2dc84c4],0x1 ; 0052bde0 | DAT_02dc83a8
+    MOV dword ptr [EAX + 0x2dc84c4],0x1 ; 0052bde0 | g_ChannelSecondaryBuffersB[1]
         ;   Label: LAB_0052bde0
     JMP 0x0052bd19                      ; 0052bdea
         ;   XREF to: 0052bd19 (UNCONDITIONAL_JUMP)  ; LAB_0052bd19

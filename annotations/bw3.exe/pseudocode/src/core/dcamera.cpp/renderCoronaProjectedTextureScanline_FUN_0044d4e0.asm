@@ -9,13 +9,13 @@
 ; int              Stack[0xc]:4   x_end
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00b9e54c
-;   undefined4 DAT_00b9e550
-;   undefined4 DAT_01340584
-;   undefined4 DAT_01340590
-;   undefined4 DAT_0134059c
-;   undefined4 DAT_013405a8
-;   undefined4 DAT_013405b0
+;   int g_CoronaMaxDepth
+;   int g_CoronaDepthShift
+;   CDemonLight* g_CurrentLightForCorona
+;   undefined4 g_CoronaCameraRotationMatrix.m[0].z
+;   undefined4 g_CoronaCameraRotationMatrix.m[1].z
+;   undefined4 g_CoronaCameraRotationMatrix.m[2].z
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
@@ -59,7 +59,7 @@ section .text
     ADD EAX,0x14fba80                   ; 0044d53c
     MOV dword ptr [ESP + 0x1c],ECX      ; 0044d541
     ADD EAX,EDX                         ; 0044d545
-    MOV CL,byte ptr [0x013405b0]        ; 0044d547 | DAT_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044d547 | g_CameraDownscaleIterations
     MOV dword ptr [ESP + 0x24],EAX      ; 0044d54d
     MOV EDX,EDI                         ; 0044d551
     MOV EAX,dword ptr [EBP + 0x18]      ; 0044d553
@@ -84,12 +84,12 @@ section .text
     JBE 0x0044d68e                      ; 0044d58c
         ;   XREF to: 0044d68e (CONDITIONAL_JUMP)  ; LAB_0044d68e
     FLD float ptr [EBX + 0x4]           ; 0044d592
-    FMUL float ptr [0x0134059c]         ; 0044d595 | DAT_0134059c
+    FMUL float ptr [0x0134059c]         ; 0044d595 | g_CoronaCameraRotationMatrix.m[1].z
     FLD float ptr [EBX]                 ; 0044d59b
-    FMUL float ptr [0x01340590]         ; 0044d59d | DAT_01340590
+    FMUL float ptr [0x01340590]         ; 0044d59d | g_CoronaCameraRotationMatrix.m[0].z
     FADDP                               ; 0044d5a3
     FLD float ptr [EBX + 0x8]           ; 0044d5a5
-    FMUL float ptr [0x013405a8]         ; 0044d5a8 | DAT_013405a8
+    FMUL float ptr [0x013405a8]         ; 0044d5a8 | g_CoronaCameraRotationMatrix.m[2].z
     FADDP                               ; 0044d5ae
     FLDZ                                ; 0044d5b0
     FCOMPP                              ; 0044d5b2
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 0044d68e (CONDITIONAL_JUMP)  ; LAB_0044d68e
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0044d5bd
     PUSH EDI                            ; 0044d5c1
-    MOV EAX,[0x01340584]                ; 0044d5c2 | DAT_01340584
+    MOV EAX,[0x01340584]                ; 0044d5c2 | g_CurrentLightForCorona
     PUSH EAX                            ; 0044d5c7
     LEA ESI,[ESP + 0x14]                ; 0044d5c8
     LEA EDI,[ESP + 0x8]                 ; 0044d5cc
@@ -114,7 +114,7 @@ section .text
     JLE 0x0044d68e                      ; 0044d5e4
         ;   XREF to: 0044d68e (CONDITIONAL_JUMP)  ; LAB_0044d68e
     MOV ESI,dword ptr [ESP + 0x4]       ; 0044d5ea
-    MOV EAX,[0x01340584]                ; 0044d5ee | DAT_01340584
+    MOV EAX,[0x01340584]                ; 0044d5ee | g_CurrentLightForCorona
     SAR ESI,0x10                        ; 0044d5f3
     IMUL ESI,dword ptr [EAX + 0x1cc0]   ; 0044d5f6
     MOV EDX,dword ptr [ESP]             ; 0044d5fd
@@ -122,7 +122,7 @@ section .text
     ADD EDX,ESI                         ; 0044d603
     MOV ESI,dword ptr [EAX + 0x2f94]    ; 0044d605
     MOV DX,word ptr [ESI + EDX*0x2]     ; 0044d60b
-    MOV ESI,dword ptr [0x00b9e54c]      ; 0044d60f | DAT_00b9e54c
+    MOV ESI,dword ptr [0x00b9e54c]      ; 0044d60f | g_CoronaMaxDepth
     AND EDX,0xffff                      ; 0044d615
     CMP EDX,ESI                         ; 0044d61b
     JGE 0x0044d68e                      ; 0044d61d
@@ -148,11 +148,11 @@ section .text
     MOV EAX,dword ptr [EAX + 0x1c54]    ; 0044d662
     ADD ESI,EDI                         ; 0044d668
     MOVZX ESI,byte ptr [ESI + EAX*0x1]  ; 0044d66a
-    MOV EAX,[0x00b9e54c]                ; 0044d66e | DAT_00b9e54c
+    MOV EAX,[0x00b9e54c]                ; 0044d66e | g_CoronaMaxDepth
     SUB EAX,EDX                         ; 0044d673
     MOV EDX,EAX                         ; 0044d675
     IMUL EDX,ESI                        ; 0044d677
-    MOV CL,byte ptr [0x00b9e550]        ; 0044d67a | DAT_00b9e550
+    MOV CL,byte ptr [0x00b9e550]        ; 0044d67a | g_CoronaDepthShift
     SAR EDX,CL                          ; 0044d680
     MOV ECX,dword ptr [ESP + 0x28]      ; 0044d682
     XOR EAX,EAX                         ; 0044d686
@@ -164,7 +164,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 0044d693
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0044d697
     MOV EDX,dword ptr [EBP + 0x18]      ; 0044d69b
-    MOV CL,byte ptr [0x013405b0]        ; 0044d69e | DAT_013405b0
+    MOV CL,byte ptr [0x013405b0]        ; 0044d69e | g_CameraDownscaleIterations
     ADD EBX,0xc                         ; 0044d6a4
     ADD ESI,0x4                         ; 0044d6a7
     ADD EDI,0xc                         ; 0044d6aa

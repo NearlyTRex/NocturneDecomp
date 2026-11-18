@@ -16,11 +16,11 @@
 ;   core_stranger.cpp_CStranger_ctor_FUN_005627f0 at 00562a1a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -77,10 +77,10 @@ section .text
         ;   Label: LAB_0042a39e
     MOV ESI,0x11a0                      ; 0042a3a3
     PUSH 0x5cd1b2                       ; 0042a3a8
-    MOV dword ptr [0x01d046a0],ECX      ; 0042a3ad | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0042a3b3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042a3b9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0042a3ad | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0042a3b3 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042a3b9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042a3be
     JMP 0x0042a340                      ; 0042a3c1
         ;   XREF to: 0042a340 (UNCONDITIONAL_JUMP)  ; LAB_0042a340

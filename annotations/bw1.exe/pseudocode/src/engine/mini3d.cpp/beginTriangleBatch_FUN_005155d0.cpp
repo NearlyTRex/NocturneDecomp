@@ -6,13 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_beginTriangleBatch_FUN_005155d0(int base_vertex)
 
 {
-  _DAT_01d25f4c = 0;
-  _DAT_01d25f50 = 0;
-  _DAT_01d25f48 = base_vertex;
+  g_INT_01d25f4c = 0;
+  g_SHORT_ARRAY_01d25f50[0] = 0;
+  g_SHORT_ARRAY_01d25f50[1] = 0;
+  g_INT_01d25f48 = base_vertex;
   return;
 }

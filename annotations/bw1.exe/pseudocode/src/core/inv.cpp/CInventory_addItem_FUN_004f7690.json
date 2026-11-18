@@ -1,0 +1,1927 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2217,
+    "complexity_score": 2836,
+    "cross_reference_count": 10,
+    "function_call_count": 20,
+    "global_count": 66,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 1286,
+    "suspect_count": 152,
+    "suspect_types": [
+      "derived_field_index_pun",
+      "pointer_cast",
+      "shadow_pointer_walk",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 3503
+  },
+  "cross_references": [
+    {
+      "addr": "0040e210",
+      "from_addr": "0040e234",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d329b",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2600",
+      "from_addr": "004d2680",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2540",
+      "from_addr": "004d25c4",
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004d2540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec2c0",
+      "from_addr": "004ec2ec",
+      "name": "core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eafd0",
+      "from_addr": "004eb037",
+      "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed890",
+      "from_addr": "004edbf1",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004ed890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8b70",
+      "from_addr": "004f8c27",
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00540d50",
+      "from_addr": "00540d9a",
+      "name": "core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "00545d04",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f7690",
+    "address_range": [
+      [
+        "004f7690",
+        "004f8b6c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
+    "signature": "int __cdecl core_inv_cpp_CInventory_addItem_FUN_004f7690(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830"
+    },
+    {
+      "addr": "0040c2b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c2b0"
+    },
+    {
+      "addr": "00408560",
+      "is_variadic": false,
+      "name": "core_actor.cpp_deleteActor_FUN_00408560"
+    },
+    {
+      "addr": "0040c550",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c550"
+    },
+    {
+      "addr": "0040ddd0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0"
+    },
+    {
+      "addr": "004cc190",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004cc190"
+    },
+    {
+      "addr": "004f8dc0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0"
+    },
+    {
+      "addr": "004f6350",
+      "is_variadic": false,
+      "name": "core_inv.cpp_getItemDescription_FUN_004f6350"
+    },
+    {
+      "addr": "004f62e0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004f62e0"
+    },
+    {
+      "addr": "0050d220",
+      "is_variadic": false,
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_0050d220"
+    },
+    {
+      "addr": "0051bd60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
+    },
+    {
+      "addr": "0051b740",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740"
+    },
+    {
+      "addr": "0051b1d0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0"
+    },
+    {
+      "addr": "005c0f80",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005c0f80"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00445430",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
+    },
+    {
+      "addr": "00531090",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e61d7",
+      "name": "s_You_ve_found_005e61d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e61e7",
+      "name": "s_d_005e61e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e61eb",
+      "name": "s_CHealthItem_005e61eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e61f7",
+      "name": "s_Press_005e61f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e61fe",
+      "name": "s_and_005e61fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6204",
+      "name": "s_to_cycle_through_your_in_005e6204",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e622e",
+      "name": "s_to_use_this_item_to_rest_005e622e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6258",
+      "name": "s_CGasMask_005e6258",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6261",
+      "name": "s_Press_005e6261",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6268",
+      "name": "s_and_005e6268",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e626e",
+      "name": "s_to_cycle_through_your_in_005e626e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6298",
+      "name": "s_to_put_on_and_off_the_go_005e6298",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e62b8",
+      "name": "s_CGoggles_005e62b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e62c1",
+      "name": "s_Press_005e62c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e62c8",
+      "name": "s_and_005e62c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e62ce",
+      "name": "s_to_cycle_through_your_in_005e62ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e62f8",
+      "name": "s_to_put_on_and_off_the_go_005e62f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6318",
+      "name": "s_CKeyActor_005e6318",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6322",
+      "name": "s_With_your_guns_put_away_005e6322",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6342",
+      "name": "s_to_open_a_previously_loc_005e6342",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6365",
+      "name": "s_CBoxActor_005e6365",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e636f",
+      "name": "s_Press_005e636f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6376",
+      "name": "s_and_005e6376",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e637c",
+      "name": "s_to_cycle_through_your_in_005e637c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63a6",
+      "name": "s_to_use_this_item_005e63a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63b9",
+      "name": "s_CAmmo_005e63b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63bf",
+      "name": "s_This_ammo_is_for_your_005e63bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63d6",
+      "name": "s_Select_your_005e63d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63e6",
+      "name": "s_with_005e63e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63ed",
+      "name": "s_and_005e63ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63f3",
+      "name": "s_anon_005e63f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63f5",
+      "name": "s_CWeapon_005e63f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e63fd",
+      "name": "s_Select_your_005e63fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e640a",
+      "name": "s_with_005e640a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6411",
+      "name": "s_and_005e6411",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6417",
+      "name": "s_anon_005e6417",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6419",
+      "name": "s_Found_existing_ammo_but_005e6419",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e643d",
+      "name": "s_Found_weapon_to_put_this_005e643d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6461",
+      "name": "s_Found_new_type_of_ammo_f_005e6461",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e64a8",
+      "name": "s_CDynamite_005e64a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e64b2",
+      "name": "s_CDynamite_005e64b2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e64bc",
+      "name": "s_Found_dynamite_Creating_005e64bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e64e6",
+      "name": "s_Found_same_weapon_increa_005e64e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e650f",
+      "name": "s_Converting_existing_ammo_005e650f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6540",
+      "name": "g_DOUBLE_005e6540",
+      "type": "double",
+      "value": "0.0250000000000000"
+    },
+    {
+      "addr": "00611100",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007db5f0"
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "0061f650",
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
+    },
+    {
+      "addr": "007c33a4",
+      "name": "g_CAmmoClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007db5f0",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "0152d248",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01ccf390",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01ccf3d8",
+      "name": "g_CGameInstance.key_fire",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf3dc",
+      "name": "g_CGameInstance.key_use_item",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf420",
+      "name": "g_CGameInstance.key_next_weapon",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf424",
+      "name": "g_CGameInstance.key_prev_weapon",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf428",
+      "name": "g_CGameInstance.key_next_item",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf42c",
+      "name": "g_CGameInstance.key_prev_item",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf5d4",
+      "name": "g_CGameInstance.letterbox_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0d40",
+      "name": "g_CGasMaskClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0e38",
+      "name": "g_CGogglesClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "g_INT_01d06ab4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d1e2dc",
+      "name": "g_CMeleeClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c900",
+      "name": "DAT_01d2c900",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ad44",
+      "name": "g_CTommyGunClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99770",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.911764705882353,
+    "instruction_count": 1802,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 113,
+      "BOOL_OR": 7,
+      "BRANCH": 2,
+      "CALL": 113,
+      "CALLIND": 13,
+      "CBRANCH": 238,
+      "COPY": 1183,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 729,
+      "INT_AND": 1209,
+      "INT_CARRY": 249,
+      "INT_EQUAL": 1216,
+      "INT_LESS": 204,
+      "INT_MULT": 46,
+      "INT_NOTEQUAL": 13,
+      "INT_SBORROW": 288,
+      "INT_SCARRY": 257,
+      "INT_SLESS": 587,
+      "INT_SUB": 750,
+      "INT_XOR": 7,
+      "INT_ZEXT": 42,
+      "LOAD": 472,
+      "POPCOUNT": 587,
+      "RETURN": 9,
+      "STORE": 513
+    },
+    "pcode_op_count": 8851
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dadb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1734
+    },
+    "bw3.exe": {
+      "addr": "004da880",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1252
+    },
+    "nocedit.exe": {
+      "addr": "004fd600",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6066
+    },
+    "nocturne.exe": {
+      "addr": "004bf360",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9369
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "item_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "show_tutorial_message",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004f778d",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004f77d2",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004f77fd",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 52,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 75,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 97,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 111,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 132,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 153,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 174,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 196,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 217,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 239,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 253,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 274,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 295,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 316,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 338,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 359,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 381,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 395,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 416,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 437,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 458,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 480,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 501,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 523,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 538,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 559,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 581,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 595,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 616,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 637,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 658,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 680,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 701,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 722,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 739,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 760,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 781,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 802,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 823,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 844,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 865,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 886,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 907,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 925,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 946,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 967,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 988,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 1009,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 1030,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 1051,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 1064,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1136,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(*(EAmmoType *)(pCVar5[4].actor_name + 0xc) == pCStack_24->ammo_type)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1162,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)(pCVar5[4].actor_name + 0xc) = pCStack_24->ammo_type;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1210,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(*(int *)(pCVar10[4].actor_name + 0xc) == *(int *)(pCVar5[4].actor_name + 0xc))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1249,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar10[2].validation_magic;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar12->owner`). Replace `pCVar12->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1101,
+      "match": "pCVar12 = (T *)&pCVar12->FIELD",
+      "severity": "moderate",
+      "text": "pCVar12 = (CInventory *)&pCVar12->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar12->owner`). Replace `pCVar12->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1119,
+      "match": "pCVar12 = (T *)&pCVar12->FIELD",
+      "severity": "moderate",
+      "text": "pCVar12 = (CInventory *)&pCVar12->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar12->owner`). Replace `pCVar12->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1154,
+      "match": "pCVar12 = (T *)&pCVar12->FIELD",
+      "severity": "moderate",
+      "text": "pCVar12 = (CInventory *)&pCVar12->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_20` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_20->owner`). Replace `pCStack_20->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1228,
+      "match": "pCStack_20 = (T *)&pCStack_20->FIELD",
+      "severity": "moderate",
+      "text": "pCStack_20 = (CInventory *)&pCStack_20->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_18->owner`). Replace `pCStack_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1260,
+      "match": "pCStack_18 = (T *)&pCStack_18->FIELD",
+      "severity": "moderate",
+      "text": "pCStack_18 = (CInventory *)&pCStack_18->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 66,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 87,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 123,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 144,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 165,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 187,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 208,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 230,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 265,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 286,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 307,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 329,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 350,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 372,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 407,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 428,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 449,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 471,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 492,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 514,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 550,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 572,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 607,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 628,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 649,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 671,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 692,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 713,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 751,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 772,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 793,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 814,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 835,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 856,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 877,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 898,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 937,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 958,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 979,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1000,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1021,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1042,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 66,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 87,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 123,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 144,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 165,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 187,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 208,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 230,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 265,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 286,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 307,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 329,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 350,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 372,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 407,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 428,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 449,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 471,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 492,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 514,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 550,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 572,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 607,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 628,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 649,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 671,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 692,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 713,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 751,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 772,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 793,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 814,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 835,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 856,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 877,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 898,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 937,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 958,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 979,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 1000,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 1021,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 1042,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "'(char *)&pCVar5[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar5)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CAnvil::drop_condition, CBattery::carrier also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 735,
+      "severity": "moderate",
+      "text": "pCVar5 = core_actor_cpp_createActorByName_FUN_0040c2b0((char *)&pCVar5[2].location.position.y)",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(char *)&pCVar5[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar5)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CAnvil::drop_condition, CBattery::carrier also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1091,
+      "severity": "moderate",
+      "text": "(pcStack_2c,(char *)&pCVar5[2].location.position.y), iVar7 == 0)) &&",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar5[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar5)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1136,
+      "severity": "moderate",
+      "text": "(*(EAmmoType *)(pCVar5[4].actor_name + 0xc) == pCStack_24->ammo_type)) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar5[4].actor_name + 8' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x568, which is exactly offsetof(CChain, dampen). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar5)->dampen (\u00a7de-pun/\u00a712). Ambiguous: CWeapon::ammo_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1140,
+      "severity": "moderate",
+      "text": "if ((pCVar5 != (CDemonActor *)0x0) && (200 < *(int *)(pCVar5[4].actor_name + 8))) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar10[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar10)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1210,
+      "severity": "moderate",
+      "text": "(*(int *)(pCVar10[4].actor_name + 0xc) == *(int *)(pCVar5[4].actor_name + 0xc))) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar5[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar5)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1210,
+      "severity": "moderate",
+      "text": "(*(int *)(pCVar10[4].actor_name + 0xc) == *(int *)(pCVar5[4].actor_name + 0xc))) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar5[4].actor_name + 8' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x568, which is exactly offsetof(CChain, dampen). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar5)->dampen (\u00a7de-pun/\u00a712). Ambiguous: CWeapon::ammo_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1214,
+      "severity": "moderate",
+      "text": "if ((pCVar5 != (CDemonActor *)0x0) && (200 < *(int *)(pCVar5[4].actor_name + 8))) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(char *)&pCVar10[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar10)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CAnvil::drop_condition, CBattery::carrier also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1241,
+      "severity": "moderate",
+      "text": "((char *)&pCVar10[2].location.position.y,pcVar13);",
+      "type": "derived_field_index_pun"
+    }
+  ]
+}

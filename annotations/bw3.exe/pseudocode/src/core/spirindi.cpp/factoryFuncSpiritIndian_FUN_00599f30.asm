@@ -15,7 +15,7 @@ section .text
     PUSH 0x34da4                        ; 00599f30
         ;   Label: core_spirindi.cpp_factoryFuncSpiritIndian_FUN_00599f30
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00599f35
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00599f3a
     TEST EAX,EAX                        ; 00599f3d
     JNZ 0x00599f42                      ; 00599f3f

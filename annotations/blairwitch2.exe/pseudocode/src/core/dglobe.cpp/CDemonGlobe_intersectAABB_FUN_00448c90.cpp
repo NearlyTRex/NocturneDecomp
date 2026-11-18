@@ -11,39 +11,38 @@ int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00448c90(CDemonGlobe *
 {
   byte bVar1;
   float afStackY_1028 [1016];
-  float local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
+  CVector3f local_40;
+  CVector3f local_34;
   float local_28;
   float local_24;
   float local_20;
-  float local_1c;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
   
   bVar1 = 0;
   local_28 = (this_ptr->position).x - reference_position->x;
   local_24 = (this_ptr->position).y - reference_position->y;
   local_20 = (this_ptr->position).z - reference_position->z;
-  local_1c = local_28;
-  local_18 = local_24;
-  local_14 = local_20;
-  core_dirmat_cpp_FUN_004495a0(rotation_matrix,&local_1c);
-  local_40 = local_34;
-  *(uint *)((int)&stack0xffffffc4 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffd0 + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if (&local_1c != &stack0xffffffc0) {
-    local_1c = local_40;
-    local_18 = local_3c;
-    local_14 = local_38;
+  local_1c.x = local_28;
+  local_1c.y = local_24;
+  local_1c.z = local_20;
+  core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
+            (rotation_matrix,&local_1c,&local_34);
+  local_40.x = local_34.x;
+  *(uint *)((int)&local_40 + (uint)bVar1 * -8 + 4) =
+       *(uint *)((int)&local_34 + (uint)bVar1 * -8 + 4);
+  *(uint *)((int)&local_40 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
+       *(uint *)((int)&local_34 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  if (&local_1c != &local_40) {
+    local_1c.x = local_40.x;
+    local_1c.y = local_40.y;
+    local_1c.z = local_40.z;
   }
-  if ((((aabb_min->x <= local_1c + this_ptr->radius) && (aabb_min->y <= local_18 + this_ptr->radius)
-       ) && (aabb_min->z <= local_14 + this_ptr->radius)) &&
-     (((local_1c - this_ptr->radius <= aabb_max->x && (local_18 - this_ptr->radius <= aabb_max->y))
-      && (local_14 - this_ptr->radius <= aabb_max->z)))) {
+  if ((((aabb_min->x <= local_1c.x + this_ptr->radius) &&
+       (aabb_min->y <= local_1c.y + this_ptr->radius)) &&
+      (aabb_min->z <= local_1c.z + this_ptr->radius)) &&
+     (((local_1c.x - this_ptr->radius <= aabb_max->x &&
+       (local_1c.y - this_ptr->radius <= aabb_max->y)) &&
+      (local_1c.z - this_ptr->radius <= aabb_max->z)))) {
     return 1;
   }
   return 0;

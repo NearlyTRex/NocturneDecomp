@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 33,
-    "cross_reference_count": 67,
+    "complexity_score": 8,
+    "cross_reference_count": 68,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 27
   },
   "cross_references": [
@@ -312,13 +310,19 @@
     {
       "addr": "0053f940",
       "from_addr": "005405b1",
-      "name": "core_setdir.cpp_FUN_0053f940",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f0f0",
+      "from_addr": "0053f416",
+      "name": "core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00545710",
       "from_addr": "005457fa",
-      "name": "core_shadow.cpp_FUN_00545710",
+      "name": "core_shadow.cpp_CShadow_renderTransparent_FUN_00545710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -445,14 +449,14 @@
   "globals": [
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -495,7 +499,7 @@
       {
         "call_addr": "005405b1",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -638,22 +642,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&(this_ptr->location).position);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,&(this_ptr->orient).vec,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

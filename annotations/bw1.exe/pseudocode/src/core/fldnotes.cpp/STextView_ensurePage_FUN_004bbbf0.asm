@@ -13,12 +13,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005dfb1a
 ;   TerminatedCString s_Out_of_memory_005dfb2f
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_STextPage_init_FUN_004bb070
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;
 ; *****************************************************************************
@@ -51,10 +51,10 @@ section .text
     MOV EDX,0x5dfb1a                    ; 004bbc1d | = "..\\core\\fldnotes.cpp"
     MOV ECX,0x686                       ; 004bbc22
     PUSH 0x5dfb2f                       ; 004bbc27 | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EDX      ; 004bbc2c | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004bbc32 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004bbc38
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 004bbc2c | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004bbc32 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bbc38
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bbc3d
     IMUL EAX,dword ptr [EBX + 0x38],0x144 ; 004bbc40
         ;   Label: LAB_004bbc40

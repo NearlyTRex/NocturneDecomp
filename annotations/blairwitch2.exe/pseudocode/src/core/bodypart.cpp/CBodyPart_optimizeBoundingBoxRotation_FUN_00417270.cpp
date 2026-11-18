@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417270(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max)
 
 {
@@ -15,164 +13,193 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041727
   longlong lVar2;
   longlong lVar3;
   longlong lVar4;
-  int iVar5;
-  int iVar6;
-  int iVar7;
-  int iVar8;
-  int iVar9;
-  int *piVar10;
-  byte bVar11;
-  float10 fVar12;
-  float10 fVar13;
-  float10 fVar14;
-  float10 fVar15;
-  float10 fVar16;
-  float10 fVar17;
-  float10 fVar18;
-  int aiStackY_1078 [1006];
-  CMatrix3x3f local_b8;
-  int local_90;
-  int aiStack_8c [5];
-  CVector3f local_78;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  int iVar11;
+  int unaff_EBX;
+  float fVar12;
+  int iVar13;
+  int iVar14;
+  int iVar15;
+  byte bVar16;
+  double dVar17;
+  double dVar18;
+  double dVar19;
+  double dVar20;
+  double dVar21;
+  double dVar22;
+  double dVar23;
+  float afStackY_109c [12];
+  int aiStackY_106c [994];
+  uint uStack_d8;
+  uint uStack_d4;
+  uint uStack_d0;
+  uint uStack_cc;
+  uint uStack_c8;
+  uint uStack_c4;
+  byte local_b8 [32];
+  float local_98;
+  uint uStack_94;
+  float local_90;
+  float fStack_8c;
+  uint uStack_88;
+  float local_84;
+  int aiStack_80 [2];
+  float local_78;
+  int local_74 [2];
   CVector3f local_6c;
   int local_60;
-  int local_5c [7];
+  int local_5c;
+  int local_58;
+  int local_54;
+  int local_50;
+  int local_4c;
+  int local_48;
+  int local_44;
   int local_40;
   int local_3c;
   int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
   int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
+  CBodyPart *local_20;
+  float *local_1c;
+  float *local_18;
   int local_14;
   
-  bVar11 = 0;
+  bVar16 = 0;
   local_40 = 0x7fffffff;
-  local_5c[5] = 0;
+  local_48 = 0;
   do {
-    local_5c[6] = local_5c[5];
+    local_44 = local_48;
     local_3c = 0;
     do {
-      local_14 = local_5c[6];
-      local_6c.x = (float)local_3c * _DAT_005cbf6e * _DAT_005cbf72;
-      local_6c.y = (float)local_5c[6] * _DAT_005cbf6e * _DAT_005cbf72;
+      local_14 = local_44;
+      local_6c.x = (float)local_3c * 3.141593f * 0.08333334f;
+      local_6c.y = (float)local_44 * 3.141593f * 0.08333334f;
       local_6c.z = 0.0;
-      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&local_b8,&local_6c);
-      fVar12 = (float10)local_b8.m[0].x * (float10)_DAT_005cbf76;
-      fVar13 = (float10)local_b8.m[0].y * (float10)_DAT_005cbf76;
-      fVar14 = (float10)local_b8.m[0].z * (float10)_DAT_005cbf76;
-      fVar15 = (float10)local_b8.m[1].x * (float10)_DAT_005cbf76;
-      fVar16 = (float10)local_b8.m[1].y * (float10)_DAT_005cbf76;
-      fVar17 = (float10)local_b8.m[1].z * (float10)_DAT_005cbf76;
-      fVar18 = (float10)local_b8.m[2].x * (float10)_DAT_005cbf76;
-      round();
-      local_20 = (int)ROUND(fVar12);
-      fVar12 = (float10)local_b8.m[2].y * (float10)_DAT_005cbf76;
-      round();
-      local_1c = (int)ROUND(fVar13);
-      fVar13 = (float10)local_b8.m[2].z * (float10)_DAT_005cbf76;
-      iVar7 = 0;
-      local_5c[1] = 0x7fffffff;
-      local_5c[0] = 0x7fffffff;
+      uStack_c4 = 0x4172f4;
+      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
+                ((CMatrix3x3f *)local_b8,&local_6c);
+      fVar12 = (float)local_b8._4_4_ * 65536.0f;
+      fVar5 = (float)local_b8._8_4_ * 65536.0f;
+      fVar6 = (float)local_b8._12_4_ * 65536.0f;
+      fVar7 = (float)local_b8._16_4_ * 65536.0f;
+      fVar8 = (float)local_b8._20_4_ * 65536.0f;
+      fVar9 = (float)local_b8._24_4_ * 65536.0f;
+      dVar17 = round((double)((float)local_b8._0_4_ * 65536.0f));
+      local_24 = (int)ROUND(dVar17);
+      fVar10 = (float)local_b8._24_4_ * 65536.0f;
+      dVar17 = round((double)fVar12);
+      local_24 = (int)ROUND(dVar17);
+      fVar12 = (float)local_b8._24_4_ * 65536.0f;
+      iVar13 = 0;
       local_60 = 0x7fffffff;
-      local_5c[4] = -0x7fffffff;
-      local_5c[3] = -0x7fffffff;
-      local_5c[2] = -0x7fffffff;
-      iVar9 = this_ptr->vertex_count;
-      round();
-      round();
-      round();
-      round();
-      round();
-      round();
-      round();
-      local_30 = (int)ROUND(fVar14);
-      local_2c = (int)ROUND(fVar15);
-      local_28 = (int)ROUND(fVar16);
-      local_24 = (int)ROUND(fVar17);
-      local_34 = (int)ROUND(fVar18);
-      local_38 = (int)ROUND(fVar12);
-      local_18 = (int)ROUND(fVar13);
-      if (0 < iVar9) {
-        iVar9 = 0;
+      local_6c.z = NAN;
+      local_6c.y = NAN;
+      local_54 = 0x80000001;
+      local_58 = 0x80000001;
+      local_5c = 0x80000001;
+      iVar15 = *(int *)(unaff_EBX + 0x2d0);
+      uStack_c4 = 0x4173a6;
+      dVar17 = round((double)fVar5);
+      uStack_c8 = 0x4173ad;
+      dVar18 = round((double)fVar6);
+      uStack_cc = 0x4173b4;
+      dVar19 = round((double)fVar7);
+      uStack_d0 = 0x4173bb;
+      dVar20 = round((double)fVar8);
+      uStack_d4 = 0x4173c2;
+      dVar21 = round((double)fVar9);
+      uStack_d8 = 0x4173c9;
+      dVar22 = round((double)fVar10);
+      local_b8._0_4_ = 6.010853e-39;
+      dVar23 = round((double)fVar12);
+      local_54 = (int)ROUND(dVar17);
+      local_50 = (int)ROUND(dVar18);
+      local_4c = (int)ROUND(dVar19);
+      local_48 = (int)ROUND(dVar20);
+      local_58 = (int)ROUND(dVar21);
+      local_5c = (int)ROUND(dVar22);
+      local_3c = (int)ROUND(dVar23);
+      if (0 < iVar15) {
+        iVar15 = 0;
         do {
-          pCVar1 = this_ptr->vertices;
-          lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&pCVar1->x + iVar9);
-          lVar3 = (longlong)(int)ROUND(fVar15) * (longlong)*(int *)((int)&pCVar1->y + iVar9);
-          lVar4 = (longlong)(int)ROUND(fVar18) * (longlong)*(int *)((int)&pCVar1->z + iVar9);
-          iVar6 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
-                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-          lVar2 = (longlong)local_1c * (longlong)*(int *)((int)&pCVar1->x + iVar9);
-          lVar3 = (longlong)(int)ROUND(fVar16) * (longlong)*(int *)((int)&pCVar1->y + iVar9);
-          lVar4 = (longlong)(int)ROUND(fVar12) * (longlong)*(int *)((int)&pCVar1->z + iVar9);
-          iVar8 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
-                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-          lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)*(int *)((int)&pCVar1->x + iVar9);
-          lVar3 = (longlong)(int)ROUND(fVar17) * (longlong)*(int *)((int)&pCVar1->y + iVar9);
-          local_14 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+          pCVar1 = local_20->vertices;
+          lVar2 = (longlong)local_44 * (longlong)*(int *)((int)&pCVar1->x + iVar15);
+          lVar3 = (longlong)(int)ROUND(dVar18) * (longlong)*(int *)((int)&pCVar1->y + iVar15);
+          lVar4 = (longlong)(int)ROUND(dVar21) * (longlong)*(int *)((int)&pCVar1->z + iVar15);
+          fVar12 = (float)(((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+                           ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+                          ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10));
+          lVar2 = (longlong)local_40 * (longlong)*(int *)((int)&pCVar1->x + iVar15);
+          lVar3 = (longlong)(int)ROUND(dVar19) * (longlong)*(int *)((int)&pCVar1->y + iVar15);
+          lVar4 = (longlong)(int)ROUND(dVar22) * (longlong)*(int *)((int)&pCVar1->z + iVar15);
+          iVar14 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+                   ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+                   ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+          lVar2 = (longlong)(int)ROUND(dVar17) * (longlong)*(int *)((int)&pCVar1->x + iVar15);
+          lVar3 = (longlong)(int)ROUND(dVar20) * (longlong)*(int *)((int)&pCVar1->y + iVar15);
+          local_38 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                      ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-          lVar2 = (longlong)(int)ROUND(fVar13) * (longlong)*(int *)((int)&pCVar1->z + iVar9);
-          iVar5 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + local_14;
-          if (iVar6 < local_60) {
-            local_60 = iVar6;
+          lVar2 = (longlong)(int)ROUND(dVar23) * (longlong)*(int *)((int)&pCVar1->z + iVar15);
+          iVar11 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + local_38;
+          if ((int)fVar12 < (int)local_84) {
+            local_84 = fVar12;
           }
-          if (local_5c[2] < iVar6) {
-            local_5c[2] = iVar6;
+          if ((int)local_78 < (int)fVar12) {
+            local_78 = fVar12;
           }
-          if (iVar8 < local_5c[0]) {
-            local_5c[0] = iVar8;
+          if (iVar14 < aiStack_80[0]) {
+            aiStack_80[0] = iVar14;
           }
-          if (local_5c[3] < iVar8) {
-            local_5c[3] = iVar8;
+          if (local_74[0] < iVar14) {
+            local_74[0] = iVar14;
           }
-          if (iVar5 < local_5c[1]) {
-            local_5c[1] = iVar5;
+          if (iVar11 < aiStack_80[1]) {
+            aiStack_80[1] = iVar11;
           }
-          if (local_5c[4] < iVar5) {
-            local_5c[4] = iVar5;
+          if (local_74[1] < iVar11) {
+            local_74[1] = iVar11;
           }
-          iVar7 = iVar7 + 1;
-          iVar9 = iVar9 + 0xc;
-        } while (iVar7 < this_ptr->vertex_count);
+          iVar13 = iVar13 + 1;
+          iVar15 = iVar15 + 0xc;
+        } while (iVar13 < local_20->vertex_count);
       }
-      iVar9 = local_5c[2] - local_60;
-      if (local_5c[2] - local_60 < local_5c[3] - local_5c[0]) {
-        iVar9 = local_5c[3] - local_5c[0];
+      fVar12 = (float)((int)local_78 - (int)local_84);
+      if ((int)local_78 - (int)local_84 < local_74[0] - aiStack_80[0]) {
+        fVar12 = (float)(local_74[0] - aiStack_80[0]);
       }
-      if (iVar9 < local_40) {
-        local_90 = local_60;
-        aiStack_8c[(uint)bVar11 * -2] = local_5c[(uint)bVar11 * -2];
-        aiStack_8c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-             local_5c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        local_40 = iVar9;
-        aiStack_8c[2] = local_5c[2];
-        aiStack_8c[(uint)bVar11 * -2 + 3] = local_5c[(uint)bVar11 * -2 + 3];
-        aiStack_8c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
-             local_5c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-        if (&local_78 != &local_6c) {
-          local_78.x = local_6c.x;
-          local_78.y = local_6c.y;
-          local_78.z = local_6c.z;
+      if ((int)fVar12 < (int)local_6c.z) {
+        local_b8._4_4_ = local_84;
+        *(int *)(local_b8 + (uint)bVar16 * -8 + 8) = aiStack_80[(uint)bVar16 * -2];
+        *(int *)(local_b8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 0xc) =
+             aiStack_80[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
+        local_6c.z = fVar12;
+        local_b8._16_4_ = local_78;
+        *(int *)(local_b8 + (uint)bVar16 * -8 + 0x14) = local_74[(uint)bVar16 * -2];
+        *(int *)(local_b8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 0x18) =
+             local_74[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
+        if ((float *)(local_b8 + 0x1c) != &local_90) {
+          local_b8._28_4_ = local_90;
+          local_98 = fStack_8c;
+          uStack_94 = uStack_88;
         }
       }
-      local_3c = local_3c + 2;
-    } while (local_3c != 0x18);
-    local_5c[5] = local_5c[5] + 2;
-  } while (local_5c[5] != 0x18);
-  piVar10 = (int *)((int)out_bbox_min + (uint)bVar11 * -8 + 4);
-  out_bbox_min->x = local_90;
-  *piVar10 = aiStack_8c[(uint)bVar11 * -2];
-  piVar10[(uint)bVar11 * -2 + 1] = aiStack_8c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-  piVar10 = (int *)((int)out_bbox_max + (uint)bVar11 * -8 + 4);
-  out_bbox_max->x = aiStack_8c[2];
-  *piVar10 = aiStack_8c[(uint)bVar11 * -2 + 3];
-  piVar10[(uint)bVar11 * -2 + 1] = aiStack_8c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-  core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(this_ptr,&local_78);
+      local_60 = local_60 + 2;
+    } while (local_60 != 0x18);
+    local_6c.x = (float)((int)local_6c.x + 2);
+  } while (local_6c.x != 3.36312e-44);
+  *local_1c = (float)local_b8._4_4_;
+  local_1c[(uint)bVar16 * -2 + 1] = *(float *)(local_b8 + (uint)bVar16 * -8 + 8);
+  (local_1c + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1] =
+       *(float *)(local_b8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 0xc);
+  *local_18 = (float)local_b8._16_4_;
+  local_18[(uint)bVar16 * -2 + 1] = *(float *)(local_b8 + (uint)bVar16 * -8 + 0x14);
+  (local_18 + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1] =
+       *(float *)(local_b8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 0x18);
+  core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(local_20,(CVector3f *)(local_b8 + 0x1c));
   return;
 }

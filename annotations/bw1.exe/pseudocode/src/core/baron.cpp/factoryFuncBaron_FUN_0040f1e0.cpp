@@ -11,7 +11,7 @@ CBaron * __cdecl core_baron_cpp_factoryFuncBaron_FUN_0040f1e0(void)
 {
   CBaron *pCVar1;
   
-  pCVar1 = (CBaron *)operator_new(0x200ac);
+  pCVar1 = operator_new(0x200ac);
   if (pCVar1 == (CBaron *)0x0) {
     return (CBaron *)0x0;
   }

@@ -6,33 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setColor4f_FUN_004f8d40(float alpha,float red,float green,float blue)
 
 {
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  ulonglong uVar4;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  double dVar4;
+  double dVar5;
+  double dVar6;
+  double dVar7;
   
-  _DAT_01d0d2d8 = red;
-  _DAT_01d0d2dc = green;
-  _DAT_01d0d2e0 = blue;
-  if (_DAT_01d09860 != alpha) {
-    _DAT_01d09860 = alpha;
-    if ((_DAT_0264bc78 != (code *)0x0) && (_DAT_01c37788 != 0)) {
-      (*_DAT_0264bc78)(_DAT_01d098e4,_DAT_01d098e8,_DAT_01d098ec,alpha);
+  g_FLOAT_01d0d2d8 = red;
+  g_FLOAT_01d0d2dc = green;
+  g_FLOAT_01d0d2e0 = blue;
+  if (g_FLOAT_01d09860 != alpha) {
+    g_FLOAT_01d09860 = alpha;
+    if ((g_PTR_0264bc78 != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+      (*(code *)g_PTR_0264bc78)(g_FLOAT_01d098e4,g_INT_01d098e8,g_INT_01d098ec,alpha);
     }
   }
-  fVar1 = (float10)_DAT_005ddfe8;
-  fVar2 = (float10)red * fVar1;
-  fVar3 = (float10)green * fVar1;
-  fVar1 = (float10)blue * fVar1;
-  round();
-  round();
-  round();
-  uVar4 = round((int)ROUND(fVar2),(int)ROUND(fVar3));
-  _DAT_01d0d2e4 = (int)ROUND(fVar1) | (int)uVar4 << 8 | (uint)((ulonglong)uVar4 >> 0x20);
+  fVar1 = green * 255.0f;
+  fVar2 = blue * 255.0f;
+  fVar3 = alpha * 255.0f;
+  dVar4 = round((double)(red * 255.0f));
+  dVar5 = round((double)fVar1);
+  dVar6 = round((double)fVar3);
+  dVar7 = round((double)fVar2);
+  g_INT_01d0d2e4 =
+       (int)ROUND(dVar7) |
+       (int)ROUND(dVar5) << 8 | (int)ROUND(dVar4) << 0x10 | (int)ROUND(dVar6) << 0x18;
   return;
 }

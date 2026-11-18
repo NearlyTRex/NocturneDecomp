@@ -7,7 +7,7 @@
 ; CFilmReel *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c03f3
+;   double g_DOUBLE_005c03f3 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
@@ -47,7 +47,7 @@ section .text
     FXCH                                ; 0049622d
     FSUB float ptr [ESP + 0x8]          ; 0049622f
     FXCH                                ; 00496233
-    FLD double ptr [0x005c03f3]         ; 00496235 | DAT_005c03f3
+    FLD double ptr [0x005c03f3]         ; 00496235 | g_DOUBLE_005c03f3
     FXCH                                ; 0049623b
     FMUL ST1                            ; 0049623d
     FXCH ST2                            ; 0049623f

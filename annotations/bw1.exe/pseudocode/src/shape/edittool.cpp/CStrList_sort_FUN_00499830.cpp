@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00499830(CStrList *this_ptr,int start_index,int end_index)
 
 {
   if (start_index < end_index) {
     if ((start_index < 0) || (this_ptr->item_count <= end_index)) {
-      _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-      _DAT_01d1d404 = 0xca3;
-      core_main_c_FUN_005030e0("CStrList::sort - invalid range!");
+      g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+      g_INT_01d1d404 = 0xca3;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CStrList::sort - invalid range!");
     }
     _qsort
               (this_ptr->data_array + start_index,(end_index - start_index) + 1,4,

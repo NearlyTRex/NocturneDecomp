@@ -11,7 +11,7 @@ CPatrolPoint * __cdecl core_hpatrol_cpp_factoryFuncPatrolPoint_FUN_0059c5b0(void
 {
   CPatrolPoint *pCVar1;
   
-  pCVar1 = (CPatrolPoint *)operator_new(0x6bc);
+  pCVar1 = operator_new(0x6bc);
   if (pCVar1 == (CPatrolPoint *)0x0) {
     return (CPatrolPoint *)0x0;
   }

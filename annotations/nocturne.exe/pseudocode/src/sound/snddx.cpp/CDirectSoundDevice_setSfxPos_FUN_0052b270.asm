@@ -239,7 +239,7 @@ section .text
     TEST EAX,EAX                        ; 0052b49a
     JNZ 0x0052b752                      ; 0052b49c
         ;   XREF to: 0052b752 (CONDITIONAL_JUMP)  ; LAB_0052b752
-    CMP dword ptr [0x02dc9220],0x0      ; 0052b4a2 | DAT_02dc9220
+    CMP dword ptr [0x02dc9220],0x0      ; 0052b4a2 | g_DirectSound3DListener
         ;   Label: LAB_0052b4a2
     JNZ 0x0052b4cd                      ; 0052b4a9
         ;   XREF to: 0052b4cd (CONDITIONAL_JUMP)  ; LAB_0052b4cd
@@ -251,7 +251,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052b4c5
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0052b4ca
-    MOV EAX,[0x02dc9220]                ; 0052b4cd | DAT_02dc9220
+    MOV EAX,[0x02dc9220]                ; 0052b4cd | g_DirectSound3DListener
         ;   Label: LAB_0052b4cd
     PUSH EAX                            ; 0052b4d2
     MOV EBX,dword ptr [EAX]             ; 0052b4d3

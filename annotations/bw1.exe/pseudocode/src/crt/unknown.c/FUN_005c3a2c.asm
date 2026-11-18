@@ -10,7 +10,7 @@
 ;   crt_unknown.c_FUN_005c3c08 at 005c3e76
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c9e48
+;   crt_unknown.c_IntegerToString_FUN_005c9e48
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH EBX                            ; 005c3a62
     MOV AX,word ptr [ESP + 0xa]         ; 005c3a63
     PUSH EAX                            ; 005c3a68
-    CALL crt_unknown.c_FUN_005c9e48     ; 005c3a69
-        ;   XREF to: 005c9e48 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c9e48()
+    CALL crt_unknown.c_IntegerToString_FUN_005c9e48 ; 005c3a69
+        ;   XREF to: 005c9e48 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_IntegerToString_FUN_005c9e48(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005c3a6e
     MOV AH,byte ptr [EBX]               ; 005c3a71
     MOV ECX,EBX                         ; 005c3a73

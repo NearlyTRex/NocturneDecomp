@@ -73,14 +73,14 @@ int __cdecl CTrigger::acceptsDamageFrom(CTrigger *this_ptr,CDemonActor *actor);
 // Address: 005785b0
 void __cdecl CTrigger::applyDamage(CTrigger *this_ptr,float hit_points);
 
-// Original: core_trigger.cpp_FUN_00578650
+// Original: core_trigger.cpp_CTrigger_calculateTestRadius_FUN_00578650
 // Address: 00578650
-void FUN_00578650(int param_1);
+void __cdecl CTrigger::calculateTestRadius(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_getTargetPoints_FUN_00578720
 // Address: 00578720
 int __cdecl CTrigger::getTargetPoints(CTrigger *this_ptr,CVector3f *out_points_array);
 
-// Original: core_trigger.cpp_FUN_00578800
+// Original: core_trigger.cpp_CTrigger_containsActor_FUN_00578800
 // Address: 00578800
-undefined4 FUN_00578800(int param_1,CDemonActor *param_2);
+int __cdecl CTrigger::containsActor(CTrigger *this_ptr,CDemonActor *actor);

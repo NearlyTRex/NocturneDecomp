@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_flame_cpp_CFlame_getActorType_FUN_0048cf50(CFlame *this_ptr)
 
 {
-  return &g_CFlameActorType_01c70618;
+  return &g_CFlameClassInfo;
 }

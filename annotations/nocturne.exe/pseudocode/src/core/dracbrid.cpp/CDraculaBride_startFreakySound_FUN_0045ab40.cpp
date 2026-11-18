@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(CDraculaBride *this_ptr,char *sound_name,float volume)
 
 {
@@ -47,11 +45,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(CDrac
   this_ptr->freaky_timer = local_14;
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
   if (iVar1 != 0) {
-    pSVar5 = g_SFreaky_ARRAY_01b4d280;
+    pSVar5 = g_FreakySounds;
     iVar1 = 0;
     do {
       iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(pSVar5->sfx_handle);
-      bone_index = _DAT_01b4d260;
+      bone_index = g_DraculaBrideIndices[0];
       if (iVar2 == 0) {
         pSVar5->t = 0.0;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380

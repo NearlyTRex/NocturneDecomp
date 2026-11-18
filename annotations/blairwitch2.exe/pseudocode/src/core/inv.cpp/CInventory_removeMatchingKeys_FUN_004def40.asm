@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_inv.cpp_FUN_004db8e0
+;   core_inv.cpp_CInventory_removeItem_FUN_004db8e0
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 004def77
     PUSH EAX                            ; 004def7a
     PUSH EDI                            ; 004def7b
-    CALL core_inv.cpp_FUN_004db8e0      ; 004def7c
-        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004db8e0()
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004db8e0 ; 004def7c
+        ;   XREF to: 004db8e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004db8e0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 004def81
     CMP ESI,dword ptr [EDI + 0x10]      ; 004def84
     JL 0x004def57                       ; 004def87

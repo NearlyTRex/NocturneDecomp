@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix)
 
@@ -141,7 +140,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   local_14 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   local_18 = output_matrix;
   local_180.x = (float)core_actor_cpp_castToClassHash_FUN_0040d890
-                                 (carried_actor,g_CWeaponActorType_02ddf970.name_hash);
+                                 (carried_actor,g_CWeaponClassInfo.name_hash);
   if ((CDemonActor *)local_180.x != (CDemonActor *)0x0) {
     fVar1 = (((CDemonActor *)((int)local_180.x + 0x2a0))->orient).vec.z;
     pCVar6 = (this_ptr->base).base.model.bone_transform.bone_model_matrices + local_14;
@@ -291,7 +290,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else if (hand_index == 0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                (&local_75c,&CVector3f_02dc9f40,&g_ZeroVector.f);
+                (&local_75c,&g_StrangerWeaponEulerMinusX,&g_ZeroVector.f);
       pCVar10 = &local_75c;
       core_xform_cpp_buildRotationX_FUN_0055c730(1.5707964,&local_66c);
       pCVar9 = &local_c6c;
@@ -331,7 +330,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                (&local_aec,&CVector3f_02dc9f34,&g_ZeroVector.f);
+                (&local_aec,&g_StrangerWeaponEulerPlusX,&g_ZeroVector.f);
       pCVar10 = &local_aec;
       core_xform_cpp_buildRotationX_FUN_0055c730(1.5707964,&local_72c);
       pCVar9 = &local_36c;
@@ -382,11 +381,11 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     pCVar3 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                        (&local_d8,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                        _DAT_02dc9f88);
+                        g_StrangerIndices[0xe]);
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                        (&local_90,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                        _DAT_02dc9f84);
+                        g_StrangerIndices[0xd]);
     local_198 = pCVar4->x + pCVar3->x;
     local_194 = pCVar4->y + pCVar3->y;
     local_108 = local_198 * 0.5f;
@@ -427,7 +426,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     goto LAB_0053a8f6;
   }
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (carried_actor,g_CLightActorActorType_00764a9c.name_hash);
+                     (carried_actor,g_CLightActorClassInfo.name_hash);
   if (pCVar2 != (CDemonActor *)0x0) {
     (*((carried_actor->vtable)._ub)->getBoundingBox)(carried_actor,&local_21c);
     local_138 = local_21c.min.x + local_21c.max.x;

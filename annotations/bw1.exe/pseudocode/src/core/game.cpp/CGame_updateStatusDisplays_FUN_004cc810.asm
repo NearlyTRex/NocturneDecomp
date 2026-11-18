@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfa79
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cd0aec
+;   float g_OverlayDisplayTimer
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005c25d0
@@ -46,8 +46,8 @@ section .text
         ;   XREF to: 004cc8ef (CONDITIONAL_JUMP)  ; LAB_004cc8ef
     FLD float ptr [EBX + 0x294]         ; 004cc83e
         ;   Label: LAB_004cc83e
-    FSUBR float ptr [0x01cd0aec]        ; 004cc844 | DAT_01cd0aec
-    FST float ptr [0x01cd0aec]          ; 004cc84a | DAT_01cd0aec
+    FSUBR float ptr [0x01cd0aec]        ; 004cc844 | g_OverlayDisplayTimer
+    FST float ptr [0x01cd0aec]          ; 004cc84a | g_OverlayDisplayTimer
     FLDZ                                ; 004cc850
     FCOMPP                              ; 004cc852
     FNSTSW AX                           ; 004cc854
@@ -55,7 +55,7 @@ section .text
     JBE 0x004cc861                      ; 004cc857
         ;   XREF to: 004cc861 (CONDITIONAL_JUMP)  ; LAB_004cc861
     XOR EDX,EDX                         ; 004cc859
-    MOV dword ptr [0x01cd0aec],EDX      ; 004cc85b | DAT_01cd0aec
+    MOV dword ptr [0x01cd0aec],EDX      ; 004cc85b | g_OverlayDisplayTimer
     MOV ECX,dword ptr [EBX + 0x3bc]     ; 004cc861
         ;   Label: LAB_004cc861
     XOR ESI,ESI                         ; 004cc867

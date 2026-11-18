@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   end_index
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0049c3e0 at 0049c459
+;   shape_edittool.cpp_CPickList_sort_FUN_0049c3e0 at 0049c459
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc48f
 ;   TerminatedCString s_CStrList_sort_invalid_ra_005dc4a5
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdlib.c__qsort_FUN_005bfc68
 ;
 ; *****************************************************************************
@@ -45,10 +45,10 @@ section .text
     MOV ECX,0x5dc48f                    ; 0049984b | = "..\\shape\\edittool.cpp"
     MOV EDI,0xca3                       ; 00499850
     PUSH 0x5dc4a5                       ; 00499855 | = "CStrList::sort - invalid range!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0049985a | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00499860 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00499866
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0049985a | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00499860 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00499866
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049986b
     POP EDI                             ; 0049986e
     MOV EAX,ESI                         ; 0049986f

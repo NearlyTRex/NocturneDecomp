@@ -73,10 +73,11 @@ def decompose_render_flags_value(value):
     return '(' + ' | '.join(names) + ')'
 
 
-_INT_LITERAL = r'(?:0x[0-9a-fA-F]+|\d+)'
+_INT_LITERAL = r'(?:0x[0-9a-fA-F]+|\d+)(?![\w.])'
 # Match the .dword form only. Bare g_RenderStateFlags (struct-to-struct assigns)
-# and .bytes[N] (byte-sliced) are deliberately excluded.
-_GLOBAL_DWORD = r'g_RenderStateFlags\.dword'
+# and .bytes[N] (byte-sliced) are deliberately excluded. The lookbehind keeps a
+# longer name ending in g_RenderStateFlags (or a member of that name) out.
+_GLOBAL_DWORD = r'(?<![\w.>])g_RenderStateFlags\.dword'
 
 # Operator alternation. Longer operators MUST come first so that e.g. '==' wins
 # over '=' and '|=' wins over '|'.
@@ -98,17 +99,34 @@ _BINOP_LITERAL_FIRST = re.compile(
     r'(' + _GLOBAL_DWORD + r')'
 )
 
-# Byte-sliced access: g_RenderStateFlags.bytes[N]. Only read-bit-ops are safe to
-# rewrite — the byte access gets normalized to the equivalent .dword expression
-# with the mask shifted into the right position. Writes and equality tests on
-# .bytes[N] are deliberately NOT handled (they'd need wider rewrites that could
-# change semantics; leave them as literals for manual cleanup).
-_GLOBAL_BYTES = r'g_RenderStateFlags\.bytes\[(\d+)\]'
+# An assignment to the global whose value ORs a literal into another flags word:
+# GLOBAL = x | LITERAL.
+_ASSIGN_OR_LITERAL = re.compile(
+    r'(' + _GLOBAL_DWORD + r'\s*=\s*[\w.]+(?:->\w+)*\s*\|\s*)'
+    r'(' + _INT_LITERAL + r')'
+)
+
+# Byte-sliced access: g_RenderStateFlags.bytes[N] & MASK. Only `&` with a mask
+# that fits the byte keeps its value when the byte is widened to the dword:
+# bytes[N] & M == (dword & (M << 8N)) >> 8N. `|` and `^` would pull the other
+# three bytes into the result, so they, writes and equality tests on .bytes[N]
+# stay as literals for manual cleanup.
+_GLOBAL_BYTES = r'(?<![\w.>])g_RenderStateFlags\.bytes\[(\d+)\]'
 _BINOP_BYTES_BITOP = re.compile(
     _GLOBAL_BYTES
-    + r'(\s*[&|^]\s*)'
+    + r'(\s*&\s*)'
     + r'(' + _INT_LITERAL + r')'
 )
+
+
+# `(bytes[N] & M) != 0` and `== 0` only ask whether a bit is set, which the
+# shift back down cannot change, so those keep the plain dword test.
+_ZERO_TEST_AFTER = re.compile(r'\s*\)\s*[!=]=\s*0(?![\w.])')
+
+
+def _is_zero_test(m):
+    return (m.string[:m.start()].rstrip().endswith('(')
+            and _ZERO_TEST_AFTER.match(m.string, m.end()) is not None)
 
 
 def _parse_int(literal):
@@ -136,17 +154,24 @@ def transform_render_state_flags(code):
         value = _parse_int(literal)
         return decompose_render_flags_value(value) + operator + global_expr
 
+    def repl_assign_or(m):
+        return m.group(1) + decompose_render_flags_value(_parse_int(m.group(2)))
+
     def repl_bytes_bitop(m):
         byte_idx = int(m.group(1))
         operator = m.group(2)
-        literal = m.group(3)
-        if byte_idx > 3:
-            # Out of range for a 32-bit dword; leave as-is for manual review.
+        mask = _parse_int(m.group(3))
+        if byte_idx > 3 or mask > 0xFF:
+            # Past the dword, or a mask wider than the byte: leave for manual review.
             return m.group(0)
-        shifted = _parse_int(literal) << (byte_idx * 8)
-        return 'g_RenderStateFlags.dword' + operator + decompose_render_flags_value(shifted)
+        masked = ('g_RenderStateFlags.dword' + operator
+                  + decompose_render_flags_value(mask << (byte_idx * 8)))
+        if byte_idx == 0 or _is_zero_test(m):
+            return masked
+        return '((%s) >> %d)' % (masked, byte_idx * 8)
 
     result = _BINOP_GLOBAL_FIRST.sub(repl_global_first, code)
     result = _BINOP_LITERAL_FIRST.sub(repl_literal_first, result)
+    result = _ASSIGN_OR_LITERAL.sub(repl_assign_or, result)
     result = _BINOP_BYTES_BITOP.sub(repl_bytes_bitop, result)
     return result

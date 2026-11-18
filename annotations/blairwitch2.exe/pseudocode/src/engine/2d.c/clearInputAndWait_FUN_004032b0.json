@@ -2,25 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 53,
+    "complexity_score": 28,
     "cross_reference_count": 27,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 28,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 72
   },
   "cross_references": [
-    {
-      "addr": "00446f50",
-      "from_addr": "00446f63",
-      "name": "core_dcube.cpp_FUN_00446f50",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "004bdfb0",
       "from_addr": "004be074",
@@ -48,37 +40,37 @@
     {
       "addr": "004bcbf0",
       "from_addr": "004bcfaa",
-      "name": "core_game.cpp_FUN_004bcbf0",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e45e0",
       "from_addr": "004e45e9",
-      "name": "core_main.c_FUN_004e45e0",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_004e45e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eba50",
       "from_addr": "004ebabd",
-      "name": "core_menu.cpp_FUN_004eba50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ebf10",
-      "from_addr": "004ec9b8",
-      "name": "core_menu.cpp_FUN_004ebf10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004eed60",
-      "from_addr": "004efdd9",
-      "name": "core_menu.cpp_FUN_004eed60",
+      "name": "core_menu.cpp_adjustFixedPointSlider_FUN_004eba50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eb7c0",
       "from_addr": "004eb82d",
       "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eed60",
+      "from_addr": "004efdd9",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebf10",
+      "from_addr": "004ec9b8",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004ebf10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -130,6 +122,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00446f50",
+      "from_addr": "00446f63",
+      "name": "shape_design.c_showHelpFile_FUN_00446f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047d270",
       "from_addr": "0047d65b",
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270",
@@ -148,15 +146,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047c0f0",
-      "from_addr": "0047c486",
-      "name": "shape_edittool.cpp_FUN_0047c0f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047b800",
       "from_addr": "0047b9a9",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c0f0",
+      "from_addr": "0047c486",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -168,7 +166,7 @@
     {
       "addr": "0058ed90",
       "from_addr": "0058eeae",
-      "name": "wincore_winrun.cpp_FUN_0058ed90",
+      "name": "wincore_winrun.cpp_mainWindowProc_FUN_0058ed90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -210,8 +208,8 @@
   "globals": [
     {
       "addr": "01c37790",
-      "name": "DAT_01c37790",
-      "type": "undefined4",
+      "name": "g_KeyboardState",
+      "type": "char[4952]",
       "value": null
     }
   ],
@@ -277,22 +275,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "(&DAT_01c37790)[iVar2] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "(&DAT_01c37790)[iVar2] = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_set_cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0(CDemonSet *this_ptr)
 
@@ -52,14 +51,14 @@ void __cdecl core_set_cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0(CDemonS
   core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(this_ptr);
   iVar5 = 0;
   core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCameraInstance,0);
-  if (0 < _DAT_01fb9b54) {
+  if (0 < g_INT_01fb9b54) {
     iVar6 = 0;
     do {
-      puVar2 = (uint *)(&DAT_01fb9b58 + iVar6);
+      puVar2 = (uint *)((int)g_CDemonLight_PTR_ARRAY_01fb9b58 + iVar6);
       iVar6 = iVar6 + 4;
       iVar5 = iVar5 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970((CDemonLight *)*puVar2);
-    } while (iVar5 < _DAT_01fb9b54);
+    } while (iVar5 < g_INT_01fb9b54);
   }
   return;
 }

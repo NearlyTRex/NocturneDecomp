@@ -10,7 +10,8 @@ void __cdecl core_demnfolk_cpp_staticInit_FUN_00454750(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            (&g_CDemnfolkClassInfo,"BCDemnfolk" + 1,core_demnfolk_cpp_FUN_00454b30,
-             &g_CDemnfolkClassVersion,0xc,&g_CEnemyClassInfo);
+            (&g_CDemnfolkClassInfo,"CDemnfolk",
+             core_demnfolk_cpp_factoryFuncDemnfolk_FUN_00454b30,&g_CDemnfolkClassVersion,0xc,
+             &g_CEnemyClassInfo);
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRecPuzzle *this_ptr,int x,int y,float angle,int draw_reel)
 
 {
@@ -42,10 +40,10 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRec
   pCVar1 = g_CDemonSetPtr;
   bVar6 = 0;
   width = 0xfc;
-  if (0x280 < DAT_006141b8) {
-    x = (x * 0x280) / DAT_006141b8;
-    y = (y * 0x1e0) / DAT_006141bc;
-    width = (int)(0x27600 / (longlong)DAT_006141b8);
+  if (0x280 < g_INT_006141b8) {
+    x = (x * 0x280) / g_INT_006141b8;
+    y = (y * 0x1e0) / g_INT_006141bc;
+    width = (int)(0x27600 / (longlong)g_INT_006141b8);
   }
   g_CDemonSetPtr->rendering_mode = 1;
   (pCVar1->light_direction).x = -0x482b;
@@ -62,17 +60,19 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRec
     pCVar4 = (CBoundingBox3D *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
     pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
   }
-  engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046b710(DAT_0060b280,x,y,width,width);
+  engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046b710
+            (g_CDemonRenderer_PTR_0060b280,x,y,width,width);
   CStack_4c.z = -2.0;
   CStack_4c.x = 0.0;
   CStack_4c.y = 0.0;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
-            (DAT_0060b280,&CStack_4c);
-  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(DAT_0060b280,36.0);
+            (g_CDemonRenderer_PTR_0060b280,&CStack_4c);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
+            (g_CDemonRenderer_PTR_0060b280,36.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
-            (DAT_0060b280,(CVector3f *)&DAT_0265370c);
+            (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,(CVector3f *)&DAT_0265370c);
+            (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector);
   afStack_3c[2] = fStack_70 + fStack_64;
   afStack_3c[3] = fStack_6c + fStack_60;
   fStack_2c = fStack_68 + fStack_5c;
@@ -83,19 +83,19 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRec
   translation = (CVector3f *)0x0;
   CStack_1c.z = angle;
   euler_angles = &CStack_1c;
-  _DAT_01c38aec = 0;
-  fStack_40 = fStack_28 * _DAT_005ef5a4;
-  afStack_3c[0] = fStack_24 * _DAT_005ef5a4;
-  afStack_3c[1] = fStack_20 * _DAT_005ef5a4;
-  CStack_58.x = fStack_28 * _DAT_005ef5a4;
+  g_PerspectiveReciprocal = 0;
+  fStack_40 = fStack_28 * -0.5f;
+  afStack_3c[0] = fStack_24 * -0.5f;
+  afStack_3c[1] = fStack_20 * -0.5f;
+  CStack_58.x = fStack_28 * -0.5f;
   *(float *)((int)&CStack_58 + (uint)bVar6 * -8 + 4) = afStack_3c[(uint)bVar6 * -2];
-  this_ptr_00 = DAT_0060b280;
+  this_ptr_00 = g_CDemonRenderer_PTR_0060b280;
   *(float *)((int)&CStack_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
        afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (this_ptr_00,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,(CVector3f *)&DAT_0265370c,&CStack_58);
+            (g_CDemonRenderer_PTR_0060b280,&g_ZeroVector,&CStack_58);
   if (draw_reel == 0) {
     this_ptr_01 = &this_ptr->reel_shadow_model;
   }

@@ -34,6 +34,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
+#include "types/structs/SActorRayHit.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
@@ -41,6 +42,7 @@
 #include "types/structs/SInteractionInfo.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SLineStrip.h"
 #include "types/structs/SMRGLAnimatedTexture.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -57,18 +59,18 @@ void __cdecl engine_2d_c_plotPixel_FUN_00401130(int x,int y);
 void __cdecl engine_2d_c_drawLine_FUN_004011a0(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401280(int x_coord,int y_coord,uint depth_value);
 void __cdecl engine_2d_c_drawLine3D_FUN_00401310(int x1,int y1,uint z1,int x2,int y2,uint z2);
-int __cdecl engine_2d_c_FUN_00401450(int red,int green,int blue,int start_index,int end_index);
-void engine_2d_c_FUN_00401590(char *param_1);
+int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401450(int red,int green,int blue,int start_index,int end_index);
+void __cdecl engine_2d_c_loadPaletteFile_FUN_00401590(char *filename);
 int __cdecl engine_2d_c_drawCharacter_FUN_00401620(int char_code,int x_pos,int y_pos);
 void __cdecl engine_2d_c_project3DPointToScreen_FUN_00401780(int x_3d,int y_3d,int z_depth);
 void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401810(int left,int top,int right,int bottom);
 int __cdecl engine_2d_c_getStringWidth_FUN_004018b0(char *text);
-int engine_2d_c_drawCharacterMasked_FUN_00401910(void);
+int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos);
 int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int x_pos,int y_pos,int color);
 int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b80(int char_code,int x_pos,int y_pos);
 void __cdecl engine_2d_c_drawTextWrapped_FUN_00401c70(char *text,int x_start,int y_start,int x_max,int y_max);
 void __cdecl engine_2d_c_drawTextMultiline_FUN_00401d00(char *text,int x_start,int y_start,int x_max,int y_max);
-void engine_2d_c_wrapTextToWidth_FUN_00401d90(void);
+void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d90(char *input_text,int max_width,char *output_buffer);
 void __cdecl engine_2d_c_drawTextWrappedColor_FUN_00401ec0(char *text,int x_start,int y_start,int x_max,int y_max,int color);
 void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00401f50(char *text,int x_start,int y_start,int x_max,int y_max,int color);
 void __cdecl engine_2d_c_drawText_FUN_00401fe0(char *text,int x,int y);
@@ -80,17 +82,17 @@ void __cdecl engine_2d_c_drawTextRightAlignedColor_FUN_00402540(char *text,int x
 void __cdecl engine_2d_c_drawTextCenteredAtColor_FUN_00402600(char *text,int x,int y);
 void __cdecl engine_2d_c_drawTextCenteredColor_FUN_004026d0(char *text,int left_x,int right_x,int y);
 void __cdecl engine_2d_c_drawTextCenteredXYColor_FUN_00402710(int left_x,int right_x,int y,char *text);
-int __cdecl engine_2d_c_FUN_00402800(void);
-void __cdecl engine_2d_c_FUN_00402810(int enabled);
-void __cdecl engine_2d_c_FUN_00402830(void);
-int __cdecl engine_2d_c_FUN_00402840(void);
-void __cdecl engine_2d_c_FUN_00402850(int color);
-void engine_2d_c_FUN_00402860(void);
+int __cdecl engine_2d_c_getTextWrapEnabled_FUN_00402800(void);
+void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402810(int enabled);
+void __cdecl engine_2d_c_disableTextWrap_FUN_00402830(void);
+int __cdecl engine_2d_c_getTextColor_FUN_00402840(void);
+void __cdecl engine_2d_c_setTextColor_FUN_00402850(int color);
+void __cdecl engine_2d_c_resetTextColor_FUN_00402860(void);
 void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402880(void);
 void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename);
 void __cdecl engine_2d_c_resetGraphicsSystem_FUN_00402ac0(void);
 void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402ad0(void);
-void engine_2d_c_draw320x200SizeDot_FUN_00402ae0(void);
+void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00402ae0(int x_3d,int y_3d,int z_depth);
 int __cdecl engine_2d_c_computeOutcode_FUN_00402c60(int x,int y,int x_min,int y_min,int x_max,int y_max);
 void __cdecl engine_2d_c_clipLineGlobal_FUN_00402ca0(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402cf0(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max);
@@ -100,7 +102,7 @@ void __cdecl engine_2d_c_drawRect_FUN_00403170(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_fillRectColor_FUN_004031c0(int x1,int y1,int x2,int y2,int color);
 void __cdecl engine_2d_c_fillRectWithBorder_FUN_00403250(int x1,int y1,int x2,int y2,int fill_color,int border_color);
 void __cdecl engine_2d_c_clearInputAndWait_FUN_004032b0(void);
-uint engine_2d_c_getInputWithPrompt_FUN_00403310(void);
+int __cdecl engine_2d_c_getInputWithPrompt_FUN_00403310(char *buffer,int max_length,int x,int y,char *prompt);
 void __cdecl engine_2d_c_setSolidColor_FUN_004033f0(int red_component,int green_component,int blue_component);
 int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403480(void *frame_buffer,int width,int height,int bits_per_pixel,int stride);
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_004036a0(void);
@@ -119,7 +121,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogColorOp6_FUN_00403b70(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403c90(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00403d30(SMRGLHeaderPrimitive *primitive);
-undefined4 engine_3d_c_FUN_00403dd0(void);
+SMRGLHeaderExtended * __cdecl engine_3d_c_skipOldFuncOp_FUN_00403dd0(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00403de0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70(SMRGLHeaderPrimitive *prim);
 void * __cdecl engine_3d_c_renderPolygonTexturedUVLitPlaneMasked_FUN_00403f70(SMRGLHeaderPrimitive *prim);
@@ -128,7 +130,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_0
 SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404320(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_00404370(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404410(void);
-int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1);
+SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(SLineStrip *line_strip);
+SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_004044d0(SLineStrip *line_strip);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_004048e0(SMRGLHeaderPrimitive *prim);
@@ -146,6 +149,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDestReadBlendOp33_FUN_004
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLit_FUN_004051a0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLit_FUN_00405400(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_00405720(SMRGLHeaderPrimitive *prim);
@@ -182,52 +186,52 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_F
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_004072c0(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_00407470(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags);
 void __cdecl engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00407570(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
-void engine_3d_c_FUN_004076c0(undefined4 param_1);
-void engine_3d_c_FUN_004076d0(undefined4 param_1);
-void engine_3d_c_FUN_004076e0(int *param_1);
-void engine_3d_c_FUN_00407720(void);
+void __cdecl engine_3d_c_setProcessorType_FUN_004076c0(int processor_type);
+void __cdecl engine_3d_c_setRenderingQuality_FUN_004076d0(int quality);
+void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_004076e0(SMRGLHeaderExtended *chain);
+void __cdecl engine_3d_c_renderPrim_FUN_00407720(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_flushRenderQueue_FUN_004077b0(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407820(SMRGLHeaderExtended *mrgl);
 void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407a70(int vertex_index1,int vertex_index2);
 void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1,SRenderVertex vertex2);
-void engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int param_1,int param_2);
+void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407d70(int vertex_index1,int vertex_index2);
 void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407df0(SRenderVertex vertex1,SRenderVertex vertex2);
 void __cdecl core_actor_cpp_staticInit_FUN_004080a0(void);
-float core_actor_cpp_FUN_004080c0(int param_1,float *param_2,float *param_3,float *param_4);
-void core_actor_cpp_FUN_00408560(int param_1);
+float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_004080c0(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
+void __cdecl core_actor_cpp_deleteActor_FUN_00408560(CDemonActor *actor_ptr);
 CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408580(CDemonActorTransformState *transform_cache);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004085c0(CDemonActor *this_ptr);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408730(CDemonActor *this_ptr,uint flags);
 void __cdecl core_actor_cpp_CDemonActor_process_FUN_00408760(CDemonActor *this_ptr,float delta_time);
-undefined4 core_actor_cpp_FUN_00408790(void);
+int __cdecl core_actor_cpp_CDemonActor_renderTransparent_FUN_00408790(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_004087a0(CDemonActor *this_ptr,int layer_flag);
 void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(CDemonActor *this_ptr);
 CDemonActorType * __cdecl core_actor_cpp_CDemonActor_getActorType_FUN_00408800(CDemonActor *this_ptr);
 char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408850(CDemonActor *this_ptr);
-void core_actor_cpp_FUN_00408890(void);
+void __cdecl core_actor_cpp_CDemonActor_markResourcesInUse_FUN_00408890(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(CDemonActor *this_ptr);
-CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408910(CDemonActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408910(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_00408950(CDemonActor *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408960(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408990(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_004089c0(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height );
-undefined4 core_actor_cpp_FUN_004089f0(void);
+EGroundType __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_004089f0(CDemonActor *this_ptr);
 float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408a00(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
-void core_actor_cpp_FUN_00408ac0(int param_1,undefined4 param_2);
-void core_actor_cpp_FUN_00408b00(int param_1,undefined4 param_2);
-void core_actor_cpp_FUN_00408b40(int param_1,undefined4 param_2);
-void core_actor_cpp_FUN_00408bb0(int param_1,float *param_2);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor *this_ptr,CVector3f *input,CVector3f *output);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor *this_ptr,CVector3f *input_vector,CVector3f *output_vector);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor *this_ptr,CVector3f *input_local_point,CVector3f *output_world_point);
+CVector3f * __stack2_esi core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor *this_ptr,CVector3f *input_world_point,CVector3f *output_local_point);
 uint __cdecl core_actor_cpp_CDemonActor_playSound_FUN_00408c20(CDemonActor *this_ptr,char *sound_name);
 uint __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408c40(CDemonActor *this_ptr,char *sound_name);
 uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408c60(CDemonActor *this_ptr,char *sound_name,float delay);
 uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408c90(CDemonActor *this_ptr,char *sound_name,float delay);
-void core_actor_cpp_FUN_00408cc0(void);
+void __cdecl core_actor_cpp_CDemonActor_pickup_FUN_00408cc0(CDemonActor *this_ptr,CDemonActor *carrier);
 int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408cd0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408d60(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
-undefined4 * core_actor_cpp_FUN_00408ec0(int param_1,int param_2,uint param_3);
-float core_actor_cpp_FUN_00409170(int param_1,CBoundingBox3D *param_2,float *param_3,float *param_4,int param_5,uint param_6,CBoundingBox3D *param_7);
+CBoundingBox3D * __stack3_esi core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00408ec0(CDemonActor *this_ptr,SCollisionInfo *collision_info,int bounding_box_type,CBoundingBox3D *output_bbox);
+float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409170(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096a0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_plotPixelWithBoundsCheck_FUN_004096b0(int x,int y);
@@ -300,23 +304,23 @@ void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040cf00(uint *crc_state,byte
 void __cdecl core_actor_cpp_crc32ProcessInt_FUN_0040cf40(uint *crc_state,int value);
 void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040cf60(uint *crc_state,CVector3f *vector);
 void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040cf80(uint *crc_state,char *string);
-float core_actor_cpp_FUN_0040cfc0(float *param_1);
+float __cdecl core_actor_cpp_sqrtFloatRef_FUN_0040cfc0(float *value);
 CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(CVector3f *this_ptr);
-void core_actor_cpp_FUN_0040cff0(undefined4 *param_1,undefined4 *param_2);
-float core_actor_cpp_FUN_0040d010(float *param_1);
+void __cdecl core_actor_cpp_copyVector_FUN_0040cff0(CVector3f *dst_ptr,CVector3f *src_ptr);
+float __cdecl core_actor_cpp_CVector3f_length_FUN_0040d010(CVector3f *this_ptr);
 void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_0040d060(CVector3f *this_ptr,CVector3i *other);
 CVector3f * __cdecl core_actor_cpp_CVector3f_dtor_FUN_0040d090(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(CAlphaBitmap *this_ptr,uint flags);
-void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap *this_ptr,int param_2,int param_3);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap *this_ptr,int width,int height);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap *this_ptr);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap *this_ptr,char *filename,int width,int height);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(CAlphaBitmap *this_ptr,int x,int y,int alpha);
-void engine_alphabit_cpp_FUN_0040d660(CAlphaBitmap *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040d660(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040d910(CAlphaBitmap *this_ptr);
-void engine_alphabit_cpp_FUN_0040d970(int param_1,int param_2);
-void engine_alphabit_cpp_FUN_0040d9a0(CAlphaBitmap *param_1);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040d970(CAlphaBitmap *this_ptr,int value);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_displayFullScreen_FUN_0040d9a0(CAlphaBitmap *this_ptr);
 void __cdecl core_ammo_cpp_staticInit_FUN_0040db60(void);
 CAmmo * __cdecl core_ammo_cpp_factoryFuncAmmo_FUN_0040db90(void);
 CDemonActorType * __cdecl core_ammo_cpp_CAmmo_getActorType_FUN_0040dbb0(CAmmo *this_ptr);
@@ -324,7 +328,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040dbc0(CAmmo *this_ptr);
 void __cdecl core_ammo_cpp_CAmmo_setup_FUN_0040dc50(CAmmo *this_ptr);
 void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040dc70(CAmmo *this_ptr,float delta_time);
 int __cdecl core_ammo_cpp_CAmmo_renderOpaque_FUN_0040dc80(CAmmo *this_ptr);
-CBoundingBox3D * __cdecl core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040dd00(CAmmo *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040dd00(CAmmo *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ammo_cpp_CAmmo_archive_FUN_0040dd40(CAmmo *this_ptr);
 ECollisionType __cdecl core_ammo_cpp_CAmmo_getCollisionType_FUN_0040dda0(CAmmo *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(CAmmo *this_ptr,char *weapon_class_name);
@@ -340,7 +344,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_0040e190(CAmmoBox *this_ptr,f
 void __cdecl core_ammobox_cpp_CAmmoBox_openBox_FUN_0040e1a0(CAmmoBox *this_ptr,float open_pct);
 void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e210(CAmmoBox *this_ptr,CInventory *inventory);
 int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_0040e320(CAmmoBox *this_ptr);
-CBoundingBox3D * __cdecl core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040e3c0(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040e3c0(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040e400(CAmmoBox *this_ptr);
 ECollisionType __cdecl core_ammobox_cpp_CAmmoBox_getCollisionType_FUN_0040e4d0(CAmmoBox *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_0040e4f0(CAmmoBox *this_ptr,CDemonActor *carrier);
@@ -354,7 +358,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_0040e680(CAnvil *this_ptr,float d
 int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_0040e7b0(CAnvil *this_ptr);
 void __cdecl core_anvil_cpp_CAnvil_archive_FUN_0040e860(CAnvil *this_ptr);
 ECollisionType __cdecl core_anvil_cpp_CAnvil_getCollisionType_FUN_0040e8e0(CAnvil *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_anvil_cpp_CAnvil_getBoundingBox_FUN_0040e8f0(CAnvil *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_anvil_cpp_CAnvil_getBoundingBox_FUN_0040e8f0(CAnvil *this_ptr,CBoundingBox3D *out_box);
 CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_0040e930(CAnvil *this_ptr,uint flags);
 void __cdecl core_armour_cpp_staticInit_FUN_0040e980(void);
 CArmour * __cdecl core_armour_cpp_factoryFuncArmour_FUN_0040e9b0(void);
@@ -369,7 +373,7 @@ ECollisionType __cdecl core_armour_cpp_CArmour_getCollisionType_FUN_0040eca0(CAr
 CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_0040ecc0(CArmour *this_ptr,uint flags);
 CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040ed50(CEnemy *this_ptr,uint flags);
 CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_0040ede0(CFlame *this_ptr,uint flags);
-void core_armour_cpp_FUN_0040ee30(void *param_1);
+CFlame * __cdecl core_armour_cpp_CFlame_arrdtor50_FUN_0040ee30(CFlame *this_ptr,uint flags);
 void __cdecl core_backgnd_cpp_staticInit_FUN_0040ee50(void);
 CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_0040ee80(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040eea0(CBackgroundActor *this_ptr);
@@ -378,7 +382,7 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ef20(CBackgroundAct
 void __cdecl core_backgnd_cpp_CBackgroundActor_process_FUN_0040ef60(CBackgroundActor *this_ptr,float delta_time);
 void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_0040ef70(CBackgroundActor *this_ptr,int layer_flag);
 int __cdecl core_backgnd_cpp_CBackgroundActor_renderOpaque_FUN_0040f000(CBackgroundActor *this_ptr);
-CBoundingBox3D * __cdecl core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040f010(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_0040f010(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_backgnd_cpp_CBackgroundActor_archive_FUN_0040f050(CBackgroundActor *this_ptr);
 ECollisionType __cdecl core_backgnd_cpp_CBackgroundActor_getCollisionType_FUN_0040f0e0(CBackgroundActor *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_backgnd_cpp_CBackgroundActor_getGroundType_FUN_0040f120(CBackgroundActor *this_ptr);

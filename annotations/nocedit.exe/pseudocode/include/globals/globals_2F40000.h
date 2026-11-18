@@ -33,8 +33,8 @@ extern double g_Mp3AntiAliasCA[8];
 extern float g_MpegSynthesisDctTable[64][32];
 
 // int
-extern int INT_02f43974;
-extern int INT_02f43978;
+extern int g_MorphReverseWinding;
+extern int g_RenderMotionDebug;
 extern int g_HuffmanTablesInitialized;
 extern int g_MpegRequantTablesInitialized;
 

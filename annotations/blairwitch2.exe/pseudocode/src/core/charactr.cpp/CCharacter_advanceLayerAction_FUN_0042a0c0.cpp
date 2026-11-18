@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0(CCharacter *this_ptr,float *remaining_time,int target_bone_index)
 
 {
@@ -22,9 +20,9 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0(CCharac
   
   if ((this_ptr->layer_action_index < 0) ||
      (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
-    _DAT_01d046a0 = "..\\core\\charactr.cpp";
-    _DAT_01d046a4 = 0x114a;
-    core_main_c_FUN_004e4500("CCharacter::advanceLayerAction - invalid layerActionIndex");
+    g_CHAR_PTR_01d046a0 = "..\\core\\charactr.cpp";
+    g_INT_01d046a4 = 0x114a;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }
   pSVar6 = this_ptr->layer_actions + this_ptr->layer_action_index;
   if (this_ptr->layer_action_t < 0.0) {

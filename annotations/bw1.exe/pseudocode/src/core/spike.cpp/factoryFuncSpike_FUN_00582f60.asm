@@ -15,7 +15,7 @@ section .text
     PUSH 0x560                          ; 00582f60
         ;   Label: core_spike.cpp_factoryFuncSpike_FUN_00582f60
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00582f65
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 00582f6a
     TEST EAX,EAX                        ; 00582f6d
     JNZ 0x00582f72                      ; 00582f6f

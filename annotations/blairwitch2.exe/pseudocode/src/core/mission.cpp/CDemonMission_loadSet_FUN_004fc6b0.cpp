@@ -28,6 +28,6 @@ void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0(CDemonMission *
     iVar3 = iVar3 + 4;
     (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x58))(iVar1);
   }
-  core_game_cpp_FUN_004bfa70(g_CGamePtr);
+  core_game_cpp_CGame_onSetLoaded_FUN_004bfa70(g_CGamePtr);
   return;
 }

@@ -21,17 +21,17 @@
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dda7
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00 at 0042aa62
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439626
+;   core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40 at 0045ae07
+;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0 at 0045a2b6
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30 at 0045ceee
-;   core_doc.cpp_CDoc_setup_FUN_00450620 at 00450875
-;   core_doc.cpp_FUN_00453250 at 004532f5
-;   core_doc.cpp_FUN_00453cc0 at 00453ce2
-;   core_doc.cpp_FUN_00453d80 at 00453ece
+;   core_doc.cpp_CDoc_getHandsMidpoint_FUN_00453cc0 at 00453ce2
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 at 004532f5
 ;   ... and 33 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_xform.cpp_FUN_00591530
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -116,8 +116,8 @@ section .text
     PUSH EBP                            ; 00546a6e
     LEA ESI,[ESP + 0x74]                ; 00546a6f
     LEA EDI,[ESP + 0x80]                ; 00546a73
-    CALL core_xform.cpp_FUN_00591530    ; 00546a7a
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 00546a7a
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x74]                ; 00546a7f
     ADD ESP,0x8                         ; 00546a83
     JMP 0x005469c7                      ; 00546a86

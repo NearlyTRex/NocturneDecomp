@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 596,
+    "complexity_score": 224,
     "cross_reference_count": 47,
     "function_call_count": 0,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 116,
-    "suspect_count": 46,
+    "pseudocode_lines": 119,
+    "suspect_count": 9,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 288
+    "total_lines": 291
   },
   "cross_references": [
     {
@@ -317,128 +316,128 @@
   "globals": [
     {
       "addr": "0061c314",
-      "name": "DAT_0061c314",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScanlinePixelCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061c350",
-      "name": "DAT_0061c350",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StartTextureU",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061c354",
-      "name": "DAT_0061c354",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StartTextureV",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061c35c",
-      "name": "DAT_0061c35c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StartDepthW",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061c378",
-      "name": "DAT_0061c378",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentScreenPtr",
+      "type": "int*",
+      "value": "00000000"
     },
     {
       "addr": "0061c37c",
-      "name": "DAT_0061c37c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentZBufferPtr",
+      "type": "int*",
+      "value": "00000000"
     },
     {
       "addr": "0061c780",
-      "name": "DAT_0061c780",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HardwareDeltaTextureU",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061c784",
-      "name": "DAT_0061c784",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HardwareDeltaTextureV",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061c788",
-      "name": "DAT_0061c788",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HardwareDeltaDepthZ",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "0061c868",
-      "name": "DAT_0061c868",
-      "type": "undefined1",
-      "value": null
+      "name": "g_TextureShift1",
+      "type": "qword",
+      "value": "0x10"
     },
     {
       "addr": "0061c888",
-      "name": "DAT_0061c888",
-      "type": "undefined1",
-      "value": null
+      "name": "g_TextureShift2",
+      "type": "qword",
+      "value": "0x8"
     },
     {
       "addr": "0061c8a8",
-      "name": "DAT_0061c8a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_TextureMask1",
+      "type": "qword",
+      "value": "0xff"
     },
     {
       "addr": "0061c8c8",
-      "name": "DAT_0061c8c8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_TextureMask2",
+      "type": "qword",
+      "value": "0xff00"
     },
     {
       "addr": "01c2a38c",
-      "name": "DAT_01c2a38c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c2b64c",
-      "name": "DAT_01c2b64c",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "01c35e60",
-      "name": "DAT_01c35e60",
-      "type": "undefined4",
+      "name": "g_INT_01c35e60",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e74",
-      "name": "DAT_01c35e74",
+      "name": "g_ReciprocalLookupTable[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c37770",
-      "name": "DAT_01c37770",
-      "type": "undefined4",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
       "value": null
     },
     {
       "addr": "01c37774",
-      "name": "DAT_01c37774",
-      "type": "undefined4",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b58",
-      "name": "DAT_01c38b58",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -555,347 +554,51 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0061c378",
-      "severity": "mild",
-      "text": "DAT_0061c378 = *(int *)(&DAT_01c2a38c + scanline_y * 4) + uVar3 * 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "DAT_0061c378 = *(int *)(&DAT_01c2a38c + scanline_y * 4) + uVar3 * 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "DAT_0061c314 = iVar4 * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01c2b64c",
-      "severity": "mild",
-      "text": "piVar8 = (int *)(*(int *)(&DAT_01c2b64c + scanline_y * 4) + uVar3 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0061c37c",
-      "severity": "mild",
-      "text": "DAT_0061c37c = piVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01c35e74",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "uVar9 = DAT_0061c314;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0061c35c",
-      "severity": "mild",
-      "text": "DAT_0061c35c = iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_0061c788",
-      "severity": "mild",
-      "text": "DAT_0061c788 = iVar6;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_0061c350",
-      "severity": "mild",
-      "text": "DAT_0061c350 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_0061c350",
-      "severity": "mild",
-      "text": "(longlong)(left_vertex->base).depth_current) - DAT_0061c350) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_01c35e74",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_0061c354",
-      "severity": "mild",
-      "text": "DAT_0061c354 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_0061c354",
-      "severity": "mild",
-      "text": "(longlong)(left_vertex->base).depth_current) - DAT_0061c354) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_01c35e74",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_0061c350",
-      "severity": "mild",
-      "text": "DAT_0061c350 = (pSVar7->base).u_current;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_0061c350",
-      "severity": "mild",
-      "text": "((longlong)(int)((left_vertex->base).u_current - DAT_0061c350) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_01c35e74",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_0061c354",
-      "severity": "mild",
-      "text": "DAT_0061c354 = (pSVar7->base).v_current;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_0061c354",
-      "severity": "mild",
-      "text": "((longlong)(int)((left_vertex->base).v_current - DAT_0061c354) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_01c35e74",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_0061c788",
-      "severity": "mild",
-      "text": "DAT_0061c788 = (int)((ulonglong)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_01c35e74",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c35e74 + DAT_0061c314)) >> 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_0061c35c",
-      "severity": "mild",
-      "text": "DAT_0061c35c = iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_0061c354",
-      "severity": "mild",
-      "text": "(uVar5 = DAT_0061c354, uVar3 = DAT_0061c350, (_DAT_01c38b54 & 2) == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
-      "match": "DAT_0061c350",
-      "severity": "mild",
-      "text": "(uVar5 = DAT_0061c354, uVar3 = DAT_0061c350, (_DAT_01c38b54 & 2) == 0)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(int *)(uVar9 + (int)DAT_0061c37c",
+      "line": 98,
+      "match": "(int *)(uVar10 + (int)g_CurrentZBufferPtr",
       "severity": "moderate",
-      "text": "if (((_DAT_01c38b54 & 0x40) == 0) || (*(int *)(uVar9 + (int)DAT_0061c37c) <= iVar4)) {",
+      "text": "(*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_0061c37c",
-      "severity": "mild",
-      "text": "if (((_DAT_01c38b54 & 0x40) == 0) || (*(int *)(uVar9 + (int)DAT_0061c37c) <= iVar4)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 101,
-      "match": "DAT_0061c868",
-      "severity": "mild",
-      "text": "((uint)*(byte *)((uVar3 >> (DAT_0061c868 & 0x1f) & _DAT_0061c8a8) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_0061c888",
-      "severity": "mild",
-      "text": "(uVar5 >> (DAT_0061c888 & 0x1f) & _DAT_0061c8c8)) * 2 +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_0061c378",
-      "severity": "mild",
-      "text": "*(ushort *)((uVar9 >> 1) + DAT_0061c378) = uVar2;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 108,
-      "match": "(int *)((int)DAT_0061c37c",
+      "line": 110,
+      "match": "(int *)((int)g_CurrentZBufferPtr",
       "severity": "moderate",
-      "text": "*(int *)((int)DAT_0061c37c + uVar9) = iVar4;",
+      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `g_CurrentZBufferPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)g_CurrentZBufferPtr",
+      "severity": "moderate",
+      "text": "(*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentScreenPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 108,
-      "match": "DAT_0061c37c",
-      "severity": "mild",
-      "text": "*(int *)((int)DAT_0061c37c + uVar9) = iVar4;",
-      "type": "undefined_data"
+      "match": "(int)g_CurrentScreenPtr",
+      "severity": "moderate",
+      "text": "*(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) = uVar2;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_0061c314",
-      "severity": "mild",
-      "text": "if (DAT_0061c314 <= uVar9) break;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_0061c788",
-      "severity": "mild",
-      "text": "iVar4 = iVar4 + DAT_0061c788;",
-      "type": "undefined_data"
+      "description": "Pointer value `g_CurrentZBufferPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)g_CurrentZBufferPtr",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 54,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "DAT_0061c350 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "concat_reconstruction"
     },
     {
@@ -903,23 +606,23 @@
       "line": 60,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "(int)((int)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 64,
+      "line": 65,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "DAT_0061c354 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "(int)((int)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "concat_reconstruction"
     }
   ]

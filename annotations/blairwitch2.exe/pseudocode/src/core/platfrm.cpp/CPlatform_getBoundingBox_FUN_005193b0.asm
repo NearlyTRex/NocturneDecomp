@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_005193b0(CPlatform *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_platfrm_cpp_CPlatform_getBoundingBox_FUN_005193b0(CPlatform *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20

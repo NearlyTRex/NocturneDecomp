@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 83,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 14,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 53,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 180
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 175
   },
   "cross_references": [
     {
       "addr": "004fce00",
       "from_addr": "004fcee7",
-      "name": "core_mission.cpp_FUN_004fce00",
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004fce00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,7 +41,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005299b0",
@@ -120,26 +117,26 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e650f8",
-      "name": "DAT_01e650f8",
-      "type": "undefined4",
+      "name": "g_ScriptEventsEnabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e65904",
-      "name": "DAT_01e65904",
-      "type": "undefined4",
+      "name": "g_INT_01e65904",
+      "type": "int",
       "value": null
     }
   ],
@@ -149,7 +146,7 @@
       {
         "call_addr": "004fcee7",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fce00",
+        "caller": "core_mission.cpp_CDemonMission_startMission_FUN_004fce00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -249,22 +246,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01e65100",
-      "severity": "mild",
-      "text": "this_ptr->parsed_lines[iVar1].text,&DAT_01e65100);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

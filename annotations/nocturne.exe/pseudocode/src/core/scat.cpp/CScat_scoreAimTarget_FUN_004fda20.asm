@@ -23,7 +23,7 @@
 ;   float FLOAT_0058dfa6 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
+;   undefined4 g_CEnemyClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.collision_actor
 ;
@@ -52,7 +52,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004fda2c
     MOV EDI,dword ptr [EBP + 0x14]      ; 004fda2f
     MOV ESI,dword ptr [EBP + 0x18]      ; 004fda32
-    MOV EDX,dword ptr [0x01bcdef4]      ; 004fda35 | g_CEnemyActorType_01bcdebc.name_hash
+    MOV EDX,dword ptr [0x01bcdef4]      ; 004fda35 | g_CEnemyClassInfo.name_hash
     PUSH EDX                            ; 004fda3b
     PUSH ESI                            ; 004fda3c
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004fda3d

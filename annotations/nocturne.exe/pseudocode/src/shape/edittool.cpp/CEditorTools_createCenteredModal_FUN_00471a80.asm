@@ -26,9 +26,9 @@
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcd9b8
-;   undefined4 DAT_01bcd9bc
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_EditorFontMaxCharWidth
+;   int g_INT_01bcd9bc
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -49,7 +49,7 @@ section .text
     PUSH EBP                            ; 00471a83
     MOV EBX,dword ptr [ESP + 0x18]      ; 00471a84
     MOV ESI,dword ptr [ESP + 0x20]      ; 00471a88
-    CMP dword ptr [0x01bcd070],0x0      ; 00471a8c | DAT_01bcd070
+    CMP dword ptr [0x01bcd070],0x0      ; 00471a8c | g_CBitFont_PTR_01bcd070
     JNZ 0x00471ab8                      ; 00471a93
         ;   XREF to: 00471ab8 (CONDITIONAL_JUMP)  ; LAB_00471ab8
     MOV ECX,0x57e4fa                    ; 00471a95 | = "..\\shape\\edittool.cpp"
@@ -60,16 +60,16 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00471ab0
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00471ab5
-    MOV EAX,[0x01bcd070]                ; 00471ab8 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00471ab8 | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_00471ab8
     PUSH 0x6a                           ; 00471abd
     MOV EDX,dword ptr [EAX + 0x3168]    ; 00471abf
     PUSH EAX                            ; 00471ac5
-    MOV dword ptr [0x01bcd9b8],EDX      ; 00471ac6 | DAT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EDX      ; 00471ac6 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00471acc
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00471ad1
-    MOV [0x01bcd9bc],EAX                ; 00471ad4 | DAT_01bcd9bc
+    MOV [0x01bcd9bc],EAX                ; 00471ad4 | g_INT_01bcd9bc
     TEST ESI,ESI                        ; 00471ad9
     JNZ 0x00471b31                      ; 00471adb
         ;   XREF to: 00471b31 (CONDITIONAL_JUMP)  ; LAB_00471b31
@@ -111,7 +111,7 @@ section .text
     RET                                 ; 00471b30
     PUSH ESI                            ; 00471b31
         ;   Label: LAB_00471b31
-    MOV EBP,dword ptr [0x01bcd070]      ; 00471b32 | DAT_01bcd070
+    MOV EBP,dword ptr [0x01bcd070]      ; 00471b32 | g_CBitFont_PTR_01bcd070
     PUSH EBP                            ; 00471b38
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00471b39
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)

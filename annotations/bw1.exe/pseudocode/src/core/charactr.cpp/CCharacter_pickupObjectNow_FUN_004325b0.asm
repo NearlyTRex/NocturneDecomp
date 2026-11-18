@@ -1,22 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5)
+; void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time,CMatrix3x4f *carry_offset)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; undefined4       Stack[0x14]:4   param_5
+; int              Stack[0x8]:4   hand_index
+; CDemonActor *    Stack[0xc]:4   object
+; float            Stack[0x10]:4   blend_time
+; CMatrix3x4f *    Stack[0x14]:4   carry_offset
 ;
 ; XREF[12]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bf47
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429051
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 004596e2
-;   core_doc.cpp_FUN_00474400 at 004746d3
-;   core_event.cpp_FUN_004a1d00 at 004a2915
-;   core_hero.cpp_FUN_004ec280 at 004ec2a0
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_00474400 at 004746d3
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a2915
+;   core_hero.cpp_CHero_executeObjectPickup_FUN_004ec280 at 004ec2a0
 ;   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f2340 at 004f23fe
 ;   core_mobster.cpp_CMobster_process_FUN_0051ce40 at 0051d104
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 005909b8
@@ -28,12 +28,12 @@
 ;   TerminatedCString s_CCharacter_pickupObjectN_005d5bc2
 ;   TerminatedCString s_core_charactr_cpp_005d5bf3
 ;   TerminatedCString s_CCharacter_pickupObjectN_005d5c08
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00432690
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -57,10 +57,10 @@ section .text
         ;   Label: LAB_004325c9
     MOV ECX,0xdba                       ; 004325ce
     PUSH 0x5d5bc2                       ; 004325d3 | = "CCharacter::pickupObjectNow - invalid..."
-    MOV dword ptr [0x01d1d400],EDX      ; 004325d8 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004325de | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004325e4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 004325d8 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004325de | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004325e4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004325e9
     TEST EBP,EBP                        ; 004325ec
         ;   Label: LAB_004325ec
@@ -99,10 +99,10 @@ section .text
     MOV EAX,0x5d5bf3                    ; 00432634 | = "..\\core\\charactr.cpp"
     MOV EDX,0xdd2                       ; 00432639
     PUSH 0x5d5c08                       ; 0043263e | = "CCharacter::pickupObjectNow - invalid..."
-    MOV [0x01d1d400],EAX                ; 00432643 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00432648 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0043264e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 00432643 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00432648 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0043264e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00432653
     PUSH ESI                            ; 00432656
         ;   Label: LAB_00432656
@@ -117,7 +117,7 @@ section .text
     PUSH ESI                            ; 00432671
     MOV dword ptr [EBX + 0x8],EBP       ; 00432672
     CALL core_charactr.cpp_CCharacter_computePickup_FUN_00432690 ; 00432675
-        ;   XREF to: 00432690 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00432690(CCharacter * this_ptr, int param_2, float param_3, int * param_4)
+        ;   XREF to: 00432690 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00432690(CCharacter * this_ptr, int hand_index, float blend_time, CMatrix3x4f * carry_offset)
     ADD ESP,0x10                        ; 0043267a
     POP EBP                             ; 0043267d
     POP EDI                             ; 0043267e

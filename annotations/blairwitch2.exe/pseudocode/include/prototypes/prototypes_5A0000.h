@@ -7,7 +7,6 @@
 #include "types/classes/CBasicEnemy.h"
 #include "types/classes/CBasicNPC.h"
 #include "types/classes/CBelling.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CConfederate.h"
 #include "types/classes/CConfederateZombie.h"
@@ -16,12 +15,10 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDog.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CGhostChild.h"
 #include "types/classes/CGrandma.h"
 #include "types/classes/CHag.h"
 #include "types/classes/CHand.h"
-#include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CNecklace.h"
 #include "types/classes/CParticleBox.h"
@@ -44,9 +41,9 @@
 // FUNCTION PROTOTYPES - Range 0x5A0000
 // =============================================================================
 
-void core_basicene_cpp_FUN_005a01a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void core_basicene_cpp_FUN_005a01d0(int param_1,undefined4 *param_2);
-void core_basicene_cpp_FUN_005a0240(int param_1);
+void __cdecl core_basicene_cpp_CBasicEnemy_setFade_FUN_005a01a0(CBasicEnemy *this_ptr,float fade_start,float fade_end,float fade_time);
+void __cdecl core_basicene_cpp_CBasicEnemy_initFlinch_FUN_005a01d0(CBasicEnemy *this_ptr,int *flinch_info);
+void __cdecl core_basicene_cpp_CBasicEnemy_resetInitialPos_FUN_005a0240(CBasicEnemy *this_ptr);
 void __cdecl core_basicene_cpp_CBasicEnemy_startBurn_FUN_005a0270(CBasicEnemy *this_ptr,CVector3f *direction,float strength);
 void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicEnemy *this_ptr,float delta_time);
 void __cdecl core_basicene_cpp_CBasicEnemy_dtor_FUN_005a0780(CBasicEnemy *this_ptr);
@@ -57,19 +54,19 @@ CConfederate * __cdecl core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfede
 CConfederate * __cdecl core_confedrt_cpp_CConfederate_dtor_FUN_005a09c0(CConfederate *this_ptr,uint flags);
 void __cdecl core_confedrt_cpp_CConfederate_setup_FUN_005a0a90(CConfederate *this_ptr);
 void __cdecl core_confedrt_cpp_CConfederate_processStates_FUN_005a0b20(CConfederate *this_ptr,float delta_time,int mode);
-void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2);
+void __cdecl core_confedrt_cpp_CConfederate_processAI_FUN_005a0bd0(CConfederate *this_ptr,float delta_time);
 void __cdecl core_confedrt_cpp_CConfederate_processAnimationState_FUN_005a0fd0(CConfederate *this_ptr,float delta_time);
 void __cdecl core_confedrt_cpp_CConfederate_processDeathState_FUN_005a1000(CConfederate *this_ptr,float delta_time);
-void core_confedrt_cpp_FUN_005a1030(CCharacter *param_1);
-void core_confedrt_cpp_FUN_005a1180(CCharacter *param_1);
+void __cdecl core_confedrt_cpp_CConfederate_processRangeAttackState_FUN_005a1030(CConfederate *this_ptr,float delta_time);
+void __cdecl core_confedrt_cpp_CConfederate_processMeleeAttackState_FUN_005a1180(CConfederate *this_ptr,float delta_time);
 EDeathState __cdecl core_confedrt_cpp_CConfederate_getDeathState_FUN_005a12d0(CConfederate *this_ptr);
 void __cdecl core_confedrt_cpp_CConfederate_processMotionEvent_FUN_005a1350(CConfederate *this_ptr,int event_id);
 int __cdecl core_confedrt_cpp_CConfederate_renderOpaque_FUN_005a1490(CConfederate *this_ptr);
 int __cdecl core_confedrt_cpp_CConfederate_renderTransparent_FUN_005a14a0(CConfederate *this_ptr);
 void __cdecl core_confedrt_cpp_CConfederate_archive_FUN_005a14d0(CConfederate *this_ptr);
-void core_confedrt_cpp_FUN_005a14e0(CDemonActor *param_1);
+void __cdecl core_confedrt_cpp_CConfederate_fireShotgun_FUN_005a14e0(CConfederate *this_ptr);
 void __cdecl core_confedrt_cpp_CConfederate_processDamage_FUN_005a1a70(CConfederate *this_ptr,SDamageInfo *damage_info);
-float core_confedrt_cpp_FUN_005a1ab0(float *param_1,float *param_2);
+float __cdecl core_confedrt_cpp_getDistanceXZ_FUN_005a1ab0(CVector3f *point_a,CVector3f *point_b);
 void __cdecl core_confzomb_cpp_staticInit_FUN_005a1ae0(void);
 CConfederateZombie * __cdecl core_confzomb_cpp_factoryFuncConfederateZombie_FUN_005a1b10(void);
 CDemonActorType * __cdecl core_confzomb_cpp_CConfederateZombie_getActorType_FUN_005a1b30(CConfederateZombie *this_ptr);
@@ -80,7 +77,7 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processStates_FUN_005a1e10(CCo
 void __cdecl core_confzomb_cpp_CConfederateZombie_processDeathState_FUN_005a1ed0(CConfederateZombie *this_ptr,float delta_time);
 void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40(CConfederateZombie *this_ptr,float delta_time);
 void __cdecl core_confzomb_cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130(CConfederateZombie *this_ptr,float delta_time);
-void core_confzomb_cpp_FUN_005a2240(int param_1,float param_2);
+void __cdecl core_confzomb_cpp_CConfederateZombie_processAI_FUN_005a2240(CConfederateZombie *this_ptr,float delta_time);
 EDeathState __cdecl core_confzomb_cpp_CConfederateZombie_getDeathState_FUN_005a24a0(CConfederateZombie *this_ptr);
 void __cdecl core_confzomb_cpp_CConfederateZombie_processMotionEvent_FUN_005a2520(CConfederateZombie *this_ptr,int event_id);
 int __cdecl core_confzomb_cpp_CConfederateZombie_getTargetPoints_FUN_005a2600(CConfederateZombie *this_ptr,CVector3f *out_points_array);
@@ -92,9 +89,9 @@ CDemonActorType * __cdecl core_fforest_cpp_CTwigZombie_getActorType_FUN_005a26c0
 CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr);
 void __cdecl core_fforest_cpp_CTwigZombie_setup_FUN_005a2820(CTwigZombie *this_ptr);
 void __cdecl core_fforest_cpp_CTwigZombie_processStates_FUN_005a28a0(CTwigZombie *this_ptr,float delta_time,int mode);
-void core_fforest_cpp_FUN_005a2910(int param_1,float param_2);
+void __cdecl core_fforest_cpp_CTwigZombie_processAI_FUN_005a2910(CTwigZombie *this_ptr,float delta_time);
 void __cdecl core_fforest_cpp_CTwigZombie_processDeathState_FUN_005a2a90(CTwigZombie *this_ptr,float delta_time);
-void core_fforest_cpp_FUN_005a2ac0(CEnemy *param_1);
+void __cdecl core_fforest_cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0(CTwigZombie *this_ptr);
 EDeathState __cdecl core_fforest_cpp_CTwigZombie_getDeathState_FUN_005a2dc0(CTwigZombie *this_ptr);
 void __cdecl core_fforest_cpp_CTwigZombie_processMotionEvent_FUN_005a2e30(CTwigZombie *this_ptr,int event_id);
 void __cdecl core_fforest_cpp_CTwigZombie_processDamage_FUN_005a2e90(CTwigZombie *this_ptr,SDamageInfo *damage_info);
@@ -108,7 +105,7 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processStates_FUN_005a31c0(CSchnell
 void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280(CSchnellGeist *this_ptr,float delta_time);
 void __cdecl core_schngeis_cpp_CSchnellGeist_processLeapAttackState_FUN_005a33b0(CSchnellGeist *this_ptr,float delta_time);
 void __cdecl core_schngeis_cpp_CSchnellGeist_processMotionEvent_FUN_005a3420(CSchnellGeist *this_ptr,int event_id);
-void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2);
+void __cdecl core_schngeis_cpp_CSchnellGeist_processAI_FUN_005a3560(CSchnellGeist *this_ptr,float delta_time);
 void __cdecl core_schngeis_cpp_CSchnellGeist_processDeathState_FUN_005a3b10(CSchnellGeist *this_ptr,float delta_time);
 EDeathState __cdecl core_schngeis_cpp_CSchnellGeist_getDeathState_FUN_005a3b30(CSchnellGeist *this_ptr);
 void __cdecl core_schngeis_cpp_CSchnellGeist_processDamage_FUN_005a3ba0(CSchnellGeist *this_ptr,SDamageInfo *damage_info);
@@ -124,7 +121,7 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processStates_FUN_005a3fc0(CUnionZom
 void __cdecl core_unionzom_cpp_CUnionZombie_processDeathState_FUN_005a4080(CUnionZombie *this_ptr,float delta_time);
 void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0(CUnionZombie *this_ptr,float delta_time);
 void __cdecl core_unionzom_cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220(CUnionZombie *this_ptr,float delta_time);
-void core_unionzom_cpp_FUN_005a4330(int param_1,float param_2);
+void __cdecl core_unionzom_cpp_CUnionZombie_processAI_FUN_005a4330(CUnionZombie *this_ptr,float delta_time);
 EDeathState __cdecl core_unionzom_cpp_CUnionZombie_getDeathState_FUN_005a4580(CUnionZombie *this_ptr);
 void __cdecl core_unionzom_cpp_CUnionZombie_processMotionEvent_FUN_005a4600(CUnionZombie *this_ptr,int event_id);
 int __cdecl core_unionzom_cpp_CUnionZombie_getTargetPoints_FUN_005a46e0(CUnionZombie *this_ptr,CVector3f *out_points_array);
@@ -137,7 +134,7 @@ CBasicNPC * __cdecl core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(CBasicNPC *thi
 void __cdecl core_basicnpc_cpp_CBasicNPC_setup_FUN_005a4870(CBasicNPC *this_ptr);
 void __cdecl core_basicnpc_cpp_CBasicNPC_processStates_FUN_005a4880(CBasicNPC *this_ptr,float delta_time,int mode);
 void __cdecl core_basicnpc_cpp_CBasicNPC_processDeathState_FUN_005a48a0(CBasicNPC *this_ptr,float delta_time);
-void core_basicnpc_cpp_FUN_005a48d0(int param_1);
+void __cdecl core_basicnpc_cpp_CBasicNPC_processAI_FUN_005a48d0(CBasicNPC *this_ptr,float delta_time);
 void __cdecl core_basicnpc_cpp_CBasicNPC_processMotionEvent_FUN_005a48f0(CBasicNPC *this_ptr,int event_id);
 int __cdecl core_basicnpc_cpp_CBasicNPC_renderOpaque_FUN_005a4920(CBasicNPC *this_ptr);
 void __cdecl core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930(CBasicNPC *this_ptr);
@@ -150,16 +147,16 @@ CDemonActorType * __cdecl core_union_cpp_CUnion_getActorType_FUN_005a4a70(CUnion
 CUnion * __cdecl core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr);
 void __cdecl core_union_cpp_CUnion_setup_FUN_005a4c00(CUnion *this_ptr);
 void __cdecl core_union_cpp_CUnion_processStates_FUN_005a4c50(CUnion *this_ptr,float delta_time,int mode);
-void core_union_cpp_FUN_005a4d50(int param_1);
+void __cdecl core_union_cpp_CUnion_processAI_FUN_005a4d50(CUnion *this_ptr);
 void __cdecl core_union_cpp_CUnion_processDeathState_FUN_005a4e60(CUnion *this_ptr,float delta_time);
-void core_union_cpp_FUN_005a4e90(CCharacter *param_1);
-void core_union_cpp_FUN_005a4fe0(CCharacter *param_1);
-void core_union_cpp_FUN_005a5130(CCharacter *param_1,float param_2);
+void __cdecl core_union_cpp_CUnion_processRangeAttackState_FUN_005a4e90(CUnion *this_ptr);
+void __cdecl core_union_cpp_CUnion_processMeleeAttackState_FUN_005a4fe0(CUnion *this_ptr);
+void __cdecl core_union_cpp_CUnion_processSupportStandState_FUN_005a5130(CUnion *this_ptr,float delta_time);
 EDeathState __cdecl core_union_cpp_CUnion_getDeathState_FUN_005a5280(CUnion *this_ptr);
 void __cdecl core_union_cpp_CUnion_processMotionEvent_FUN_005a5300(CUnion *this_ptr,int event_id);
 int __cdecl core_union_cpp_CUnion_renderOpaque_FUN_005a5440(CUnion *this_ptr);
 void __cdecl core_union_cpp_CUnion_archive_FUN_005a5450(CUnion *this_ptr);
-void core_union_cpp_FUN_005a5460(CDemonActor *param_1);
+void __cdecl core_union_cpp_CUnion_fireShotgun_FUN_005a5460(CUnion *this_ptr);
 void __cdecl core_union_cpp_CUnion_processDamage_FUN_005a59f0(CUnion *this_ptr,SDamageInfo *damage_info);
 CUnion * __cdecl core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags);
 void __cdecl core_villain_cpp_staticInit_FUN_005a5ae0(void);
@@ -168,7 +165,7 @@ CDemonActorType * __cdecl core_villain_cpp_CSteuben_getActorType_FUN_005a5b30(CS
 CSteuben * __cdecl core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_ptr);
 void __cdecl core_villain_cpp_CSteuben_setup_FUN_005a5c10(CSteuben *this_ptr);
 void __cdecl core_villain_cpp_CSteuben_processStates_FUN_005a5c20(CSteuben *this_ptr,float delta_time,int mode);
-void core_villain_cpp_FUN_005a5c40(int param_1,float param_2);
+void __cdecl core_villain_cpp_CSteuben_processAI_FUN_005a5c40(CSteuben *this_ptr,float delta_time);
 void __cdecl core_villain_cpp_CSteuben_processDeathState_FUN_005a5d10(CSteuben *this_ptr,float delta_time);
 EDeathState __cdecl core_villain_cpp_CSteuben_getDeathState_FUN_005a5d30(CSteuben *this_ptr);
 void __cdecl core_villain_cpp_CSteuben_processMotionEvent_FUN_005a5d40(CSteuben *this_ptr,int event_id);
@@ -183,7 +180,7 @@ CRobin * __cdecl core_weaver_cpp_CRobin_dtor_FUN_005a5f50(CRobin *this_ptr,uint 
 void __cdecl core_weaver_cpp_CRobin_setup_FUN_005a6030(CRobin *this_ptr);
 void __cdecl core_weaver_cpp_CRobin_processStates_FUN_005a60d0(CRobin *this_ptr,float delta_time,int mode);
 void __cdecl core_weaver_cpp_CRobin_processMeleeAttackState_FUN_005a6140(CRobin *this_ptr,float delta_time);
-void core_weaver_cpp_FUN_005a61f0(int param_1,float param_2);
+void __cdecl core_weaver_cpp_CRobin_processAI_FUN_005a61f0(CRobin *this_ptr,float delta_time);
 void __cdecl core_weaver_cpp_CRobin_processDeathState_FUN_005a6720(CRobin *this_ptr,float delta_time);
 void __cdecl core_weaver_cpp_CRobin_processMotionEvent_FUN_005a6740(CRobin *this_ptr,int event_id);
 void __cdecl core_weaver_cpp_CRobin_archive_FUN_005a6750(CRobin *this_ptr);
@@ -197,9 +194,9 @@ CCross * __cdecl core_cross_cpp_CCross_dtor_FUN_005a6b30(CCross *this_ptr,uint f
 void __cdecl core_cross_cpp_CCross_setup_FUN_005a6b90(CCross *this_ptr);
 int __cdecl core_cross_cpp_CCross_renderOpaque_FUN_005a6ba0(CCross *this_ptr);
 int __cdecl core_cross_cpp_CCross_renderTransparent_FUN_005a6bc0(CCross *this_ptr);
-void core_cross_cpp_FUN_005a6cf0(CDemonActor *param_1);
+void __cdecl core_cross_cpp_CCross_activate_FUN_005a6cf0(CCross *this_ptr);
 void __cdecl core_cross_cpp_CCross_process_FUN_005a6ed0(CCross *this_ptr,float delta_time);
-void core_cross_cpp_FUN_005a7950(void);
+CSimpleCross * __cdecl core_cross_cpp_factoryFuncSimpleCross_FUN_005a7950(void);
 CDemonActorType * __cdecl core_cross_cpp_CSimpleCross_getActorType_FUN_005a7970(CSimpleCross *this_ptr);
 CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *this_ptr);
 CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_ptr,uint flags);
@@ -209,7 +206,7 @@ CDemonActorType * __cdecl core_bwgrndma_cpp_CGrandma_getActorType_FUN_005a7b00(C
 CGrandma * __cdecl core_bwgrndma_cpp_CGrandma_ctor_FUN_005a7b10(CGrandma *this_ptr);
 void __cdecl core_bwgrndma_cpp_CGrandma_setup_FUN_005a7be0(CGrandma *this_ptr);
 void __cdecl core_bwgrndma_cpp_CGrandma_processStates_FUN_005a7c20(CGrandma *this_ptr,float delta_time,int mode);
-void core_bwgrndma_cpp_FUN_005a7c40(int param_1);
+void __cdecl core_bwgrndma_cpp_CGrandma_processAI_FUN_005a7c40(CGrandma *this_ptr,float delta_time);
 void __cdecl core_bwgrndma_cpp_CGrandma_processDeathState_FUN_005a7c90(CGrandma *this_ptr,float delta_time);
 EDeathState __cdecl core_bwgrndma_cpp_CGrandma_getDeathState_FUN_005a7cb0(CGrandma *this_ptr);
 void __cdecl core_bwgrndma_cpp_CGrandma_processMotionEvent_FUN_005a7cc0(CGrandma *this_ptr,int event_id);
@@ -217,33 +214,33 @@ int __cdecl core_bwgrndma_cpp_CGrandma_renderOpaque_FUN_005a7cd0(CGrandma *this_
 void __cdecl core_bwgrndma_cpp_CGrandma_archive_FUN_005a7ce0(CGrandma *this_ptr);
 CMatrix3x4f * __stack2_esi core_bwgrndma_cpp_CGrandma_getCarryObjToBodyXForm_FUN_005a7cf0(CGrandma *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 CGrandma * __cdecl core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint flags);
-void core_bwgrndma_cpp_FUN_005a7eb0(void);
-bool core_bwgrndma_cpp_FUN_005a7ed0(void);
+void __cdecl core_bwgrndma_cpp_staticInit_FUN_005a7eb0(void);
+int __cdecl core_bwgrndma_cpp_shouldSpawnParticle_FUN_005a7ed0(void);
 CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0(CSimpleParticleSystem *this_ptr);
-int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2);
+CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int max_particles);
 CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags);
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem *this_ptr,int param_2);
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2);
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem *this_ptr,int param_2);
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int param_2);
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem *this_ptr,int max_particles);
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *owner);
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem *this_ptr,int fade_in);
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int fade_out);
 int __cdecl core_bwspart_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(CSimpleParticleSystem *this_ptr);
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setFade_FUN_005a8140(CSimpleParticleSystem *this_ptr,float param_2,float param_3,float param_4);
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setFade_FUN_005a8140(CSimpleParticleSystem *this_ptr,float fade_start,float fade_end,float fade_duration);
 void __cdecl core_bwspart_cpp_CSimpleParticleSystem_resetFade_FUN_005a8160(CSimpleParticleSystem *this_ptr);
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem *this_ptr,float param_2);
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem *this_ptr,float delta_time);
 void __cdecl core_bwspart_cpp_CSimpleParticleSystem_release_FUN_005a8220(CSimpleParticleSystem *this_ptr);
 float __cdecl core_bwspart_cpp_CSimpleParticleSystem_updateFade_FUN_005a8250(CSimpleParticleSystem *this_ptr);
 void __cdecl core_bwspart_cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem *this_ptr);
-void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13);
-void core_bwspart_cpp_FUN_005a84c0(undefined4 *param_1);
-void core_bwspart_cpp_FUN_005a85c0(int *param_1,float param_2);
-int core_bwspart_cpp_FUN_005a86a0(int param_1);
+void __cdecl core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,float lifetime,float alpha_start,float alpha_end,float size_start,float size_end,float red,float green,float blue,CVector3f *position_offset,CVector3f *velocity,CVector3f *acceleration,int texture_index);
+void __cdecl core_bwspart_cpp_initSimpleParticle_FUN_005a84c0(void *particle);
+void __cdecl core_bwspart_cpp_processSimpleParticle_FUN_005a85c0(void *particle,float delta_time);
+void __cdecl core_bwspart_cpp_renderSimpleParticle_FUN_005a86a0(void *particle);
 void __cdecl core_bwsearch_cpp_staticInit_FUN_005a8c90(void);
 CSearchParty * __cdecl core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(void);
 CDemonActorType * __cdecl core_bwsearch_cpp_CSearchParty_getActorType_FUN_005a8ce0(CSearchParty *this_ptr);
 CSearchParty * __cdecl core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *this_ptr);
 void __cdecl core_bwsearch_cpp_CSearchParty_setup_FUN_005a8da0(CSearchParty *this_ptr);
 void __cdecl core_bwsearch_cpp_CSearchParty_processStates_FUN_005a8db0(CSearchParty *this_ptr,float delta_time,int mode);
-void core_bwsearch_cpp_FUN_005a8dd0(int param_1);
+void __cdecl core_bwsearch_cpp_CSearchParty_processAI_FUN_005a8dd0(CSearchParty *this_ptr);
 void __cdecl core_bwsearch_cpp_CSearchParty_processDeathState_FUN_005a8e20(CSearchParty *this_ptr,float delta_time);
 EDeathState __cdecl core_bwsearch_cpp_CSearchParty_getDeathState_FUN_005a8e40(CSearchParty *this_ptr);
 void __cdecl core_bwsearch_cpp_CSearchParty_processMotionEvent_FUN_005a8e50(CSearchParty *this_ptr,int event_id);
@@ -256,7 +253,7 @@ CDemonActorType * __cdecl core_belling_cpp_CBelling_getActorType_FUN_005a8f70(CB
 CBelling * __cdecl core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr);
 void __cdecl core_belling_cpp_CBelling_setup_FUN_005a9050(CBelling *this_ptr);
 void __cdecl core_belling_cpp_CBelling_processStates_FUN_005a9060(CBelling *this_ptr,float delta_time,int mode);
-void core_belling_cpp_FUN_005a9080(int param_1);
+void __cdecl core_belling_cpp_CBelling_processAI_FUN_005a9080(CBelling *this_ptr);
 void __cdecl core_belling_cpp_CBelling_processDeathState_FUN_005a90d0(CBelling *this_ptr,float delta_time);
 EDeathState __cdecl core_belling_cpp_CBelling_getDeathState_FUN_005a90f0(CBelling *this_ptr);
 void __cdecl core_belling_cpp_CBelling_processMotionEvent_FUN_005a9100(CBelling *this_ptr,int event_id);
@@ -272,7 +269,7 @@ void __cdecl core_ghostchi_cpp_CGhostChild_setup_FUN_005a9440(CGhostChild *this_
 void __cdecl core_ghostchi_cpp_CGhostChild_processStates_FUN_005a94c0(CGhostChild *this_ptr,float delta_time,int mode);
 void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(CGhostChild *this_ptr,float delta_time);
 void __cdecl core_ghostchi_cpp_CGhostChild_processSleepState_FUN_005a9770(CGhostChild *this_ptr,float delta_time);
-void core_ghostchi_cpp_FUN_005a9890(int param_1,float param_2);
+void __cdecl core_ghostchi_cpp_CGhostChild_processAI_FUN_005a9890(CGhostChild *this_ptr,float delta_time);
 void __cdecl core_ghostchi_cpp_CGhostChild_processDeathState_FUN_005a9980(CGhostChild *this_ptr,float delta_time);
 int __cdecl core_ghostchi_cpp_CGhostChild_getTargetPoints_FUN_005a99f0(CGhostChild *this_ptr,CVector3f *out_points_array);
 EDeathState __cdecl core_ghostchi_cpp_CGhostChild_getDeathState_FUN_005a9a80(CGhostChild *this_ptr);
@@ -288,7 +285,7 @@ void __cdecl core_hand_cpp_CHand_setup_FUN_005a9dd0(CHand *this_ptr);
 void __cdecl core_hand_cpp_CHand_processStates_FUN_005a9e10(CHand *this_ptr,float delta_time,int mode);
 void __cdecl core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0(CHand *this_ptr,float delta_time);
 void __cdecl core_hand_cpp_CHand_processSleepingState_FUN_005a9ff0(CHand *this_ptr,float delta_time);
-void core_hand_cpp_FUN_005aa1a0(int param_1);
+void __cdecl core_hand_cpp_CHand_processAI_FUN_005aa1a0(CHand *this_ptr);
 void __cdecl core_hand_cpp_CHand_processDamage_FUN_005aa1f0(CHand *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_hand_cpp_CHand_processDeathState_FUN_005aa230(CHand *this_ptr,float delta_time);
 EDeathState __cdecl core_hand_cpp_CHand_getDeathState_FUN_005aa260(CHand *this_ptr);
@@ -309,7 +306,7 @@ void __cdecl core_hellhag_cpp_CHag_processMeleeAttackState_FUN_005aab50(CHag *th
 void __cdecl core_hellhag_cpp_CHag_processHealingState_FUN_005aaca0(CHag *this_ptr,float delta_time);
 void __cdecl core_hellhag_cpp_CHag_startBurn_FUN_005aad70(CHag *this_ptr,CVector3f *direction,float strength);
 void __cdecl core_hellhag_cpp_CHag_processBurnState_FUN_005aae80(CHag *this_ptr,float delta_time);
-void core_hellhag_cpp_FUN_005ab260(int param_1,float param_2);
+void __cdecl core_hellhag_cpp_CHag_processAI_FUN_005ab260(CHag *this_ptr,float delta_time);
 void __cdecl core_hellhag_cpp_CHag_processDeathState_FUN_005ab760(CHag *this_ptr,float delta_time);
 int __cdecl core_hellhag_cpp_CHag_renderTransparent_FUN_005ab790(CHag *this_ptr);
 void __cdecl core_hellhag_cpp_CHag_processDamage_FUN_005ab7d0(CHag *this_ptr,SDamageInfo *damage_info);
@@ -326,7 +323,7 @@ void __cdecl core_helldog_cpp_CDog_processStates_FUN_005abe90(CDog *this_ptr,flo
 void __cdecl core_helldog_cpp_CDog_processMeleeAttackState_FUN_005abfa0(CDog *this_ptr,float delta_time);
 void __cdecl core_helldog_cpp_CDog_processChaseFoodState_FUN_005ac0c0(CDog *this_ptr,float delta_time);
 void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *this_ptr,float delta_time);
-void core_helldog_cpp_FUN_005ac2f0(int param_1,float param_2);
+void __cdecl core_helldog_cpp_CDog_processAI_FUN_005ac2f0(CDog *this_ptr,float delta_time);
 void __cdecl core_helldog_cpp_CDog_processDeathState_FUN_005ac520(CDog *this_ptr,float delta_time);
 EDeathState __cdecl core_helldog_cpp_CDog_getDeathState_FUN_005ac5a0(CDog *this_ptr);
 void __cdecl core_helldog_cpp_CDog_processMotionEvent_FUN_005ac610(CDog *this_ptr,int event_id);
@@ -349,7 +346,7 @@ void __cdecl core_mine_cpp_CSpiritMine_setup_FUN_005ad4f0(CSpiritMine *this_ptr)
 void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_ptr,float delta_time);
 int __cdecl core_mine_cpp_CSpiritMine_renderOpaque_FUN_005ad900(CSpiritMine *this_ptr);
 int __cdecl core_mine_cpp_CSpiritMine_renderTransparent_FUN_005ad910(CSpiritMine *this_ptr);
-void core_mine_cpp_FUN_005ad940(int param_1);
+void __cdecl core_mine_cpp_CSpiritMine_updateGlobe_FUN_005ad940(CSpiritMine *this_ptr);
 void __cdecl core_mine_cpp_CSpiritMine_archive_FUN_005ad9f0(CSpiritMine *this_ptr);
 void __cdecl core_necklace_cpp_staticInit_FUN_005ada50(void);
 CNecklace * __cdecl core_necklace_cpp_factoryFuncNecklace_FUN_005ada80(void);
@@ -357,13 +354,13 @@ CDemonActorType * __cdecl core_necklace_cpp_CNecklace_getActorType_FUN_005adaa0(
 CNecklace * __cdecl core_necklace_cpp_CNecklace_ctor_FUN_005adab0(CNecklace *this_ptr);
 void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_ptr,float delta_time);
 CNecklace * __cdecl core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags);
-int core_necklace_cpp_FUN_005adda0(CKeyFramedModel *param_1);
-void core_necklace_cpp_FUN_005ade00(CCloth *param_1);
+CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_005adda0(CCloth *this_ptr);
+CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_005ade00(CCloth *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_005ade20(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_free_FUN_005ade80(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_005adeb0(CCloth *this_ptr,char *filename);
-void __cdecl core_cloth_cpp_FUN_005ae420(CCloth *this_ptr);
-void __cdecl core_cloth_cpp_FUN_005ae680(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
+void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_005ae420(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_setup_FUN_005ae680(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_005af200(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_005af3b0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_005af530(CCloth *this_ptr,SClothVertex *vertex);

@@ -10,9 +10,9 @@
 ;   core_ghoul.cpp_factoryFuncGhoul_FUN_004c15b0 at 004c15c3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8e97
-;   undefined4 DAT_005f78d0
-;   undefined4 DAT_005f78d4
+;   double g_DOUBLE_005d8e97 = 65536
+;   float g_FLOAT_005f78d0 = 50
+;   float g_FLOAT_005f78d4 = 100
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -48,11 +48,11 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004c161c
     FLD float ptr [ESP + 0x8]           ; 004c1620
     ADD ESP,0x8                         ; 004c1624
-    FMUL double ptr [0x005d8e97]        ; 004c1627 | DAT_005d8e97
+    FMUL double ptr [0x005d8e97]        ; 004c1627 | g_DOUBLE_005d8e97
     PUSH 0x41200000                     ; 004c162d
     PUSH 0x40800000                     ; 004c1632
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c1637
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [EBX + 0x10afc]     ; 004c163c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 004c1642
         ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
@@ -60,13 +60,13 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004c1651
     MOV dword ptr [EBX + 0x10b08],0xffffffff ; 004c1655
     FLD float ptr [ESP + 0x8]           ; 004c165f
-    FMUL double ptr [0x005d8e97]        ; 004c1663 | DAT_005d8e97
+    FMUL double ptr [0x005d8e97]        ; 004c1663 | g_DOUBLE_005d8e97
     MOV dword ptr [EBX + 0x10b0c],0x0   ; 004c1669
     ADD ESP,0x8                         ; 004c1673
     MOV dword ptr [EBX + 0x10b18],0x2   ; 004c1676
     PUSH 0x3                            ; 004c1680
     CALL crt_math.c_round_FUN_005b7ff0  ; 004c1682
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH 0x1                            ; 004c1687
     FISTP dword ptr [EBX + 0x10b00]     ; 004c1689
     CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c168f
@@ -78,9 +78,9 @@ section .text
     MOV dword ptr [EBX + 0x10b5c],0x0   ; 004c16bc
     MOV dword ptr [EBX + 0x10b60],0x0   ; 004c16c6
     MOV dword ptr [EBX + 0x10b64],0x0   ; 004c16d0
-    FLD float ptr [0x005f78d0]          ; 004c16da | DAT_005f78d0
+    FLD float ptr [0x005f78d0]          ; 004c16da | g_FLOAT_005f78d0
     MOV dword ptr [EBX + 0x259c],0x3fc90fdb ; 004c16e0
-    FLD float ptr [0x005f78d4]          ; 004c16ea | DAT_005f78d4
+    FLD float ptr [0x005f78d4]          ; 004c16ea | g_FLOAT_005f78d4
     MOV dword ptr [EBX + 0x10b14],EAX   ; 004c16f0
     ADD ESP,0x8                         ; 004c16f6
     FXCH                                ; 004c16f9

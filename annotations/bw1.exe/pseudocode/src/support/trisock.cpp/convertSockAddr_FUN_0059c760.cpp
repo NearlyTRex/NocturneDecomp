@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_0059c760(SNetworkAddr *dest_addr,SOCKADDR *src_addr)
 
 {
@@ -16,9 +14,9 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_0059c760(SNetworkA
   uint uStack_c;
   
   if (src_addr->sin_family != 2) {
-    _DAT_01d1d400 = "..\\support\\trisock.cpp";
-    _DAT_01d1d404 = 0xd8;
-    core_main_c_FUN_005030e0("sockaddr is not of AF_INET family!");
+    g_CHAR_PTR_01d1d400 = "..\\support\\trisock.cpp";
+    g_INT_01d1d404 = 0xd8;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("sockaddr is not of AF_INET family!");
   }
   uVar1 = ntohs(src_addr->sin_port);
   dest_addr->port = uVar1;

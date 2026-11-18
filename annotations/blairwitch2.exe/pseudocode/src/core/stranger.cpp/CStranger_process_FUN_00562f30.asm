@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00562edc = 00562f4e
-;   undefined4 DAT_005eb49d
+;   double g_DOUBLE_005eb49d = 0.25
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.delta_time_float
@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_game.cpp_CGame_slamDT_FUN_004bd460
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060
 ;
 ; *****************************************************************************
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00562ff2 (CONDITIONAL_JUMP)  ; LAB_00562ff2
     FLD float ptr [ESP + 0x18]          ; 00562f60
         ;   Label: LAB_00562f60
-    FMUL double ptr [0x005eb49d]        ; 00562f64 | DAT_005eb49d
+    FMUL double ptr [0x005eb49d]        ; 00562f64 | g_DOUBLE_005eb49d
     FSTP float ptr [ESP + 0x4]          ; 00562f6a
     PUSH dword ptr [ESP + 0x4]          ; 00562f6e
     PUSH EBX                            ; 00562f72
@@ -87,8 +87,8 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00562fc7
     PUSH EAX                            ; 00562fcd
     FSTP float ptr [ESP + 0xc]          ; 00562fce
-    CALL core_motion.cpp_FUN_005035c0   ; 00562fd2
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00562fd2
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00562fd7
     XOR ESI,ESI                         ; 00562fda
     SUB EAX,0x7                         ; 00562fdc

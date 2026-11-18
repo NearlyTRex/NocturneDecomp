@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00460fa0(CFileFinder *this_ptr,byte *param_2)
+; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00460fa0(CFileFinder *this_ptr,byte *find_data)
 ;
 ; Parameters:
 ; CFileFinder *    Stack[0x4]:4   this_ptr
-; byte *           Stack[0x8]:4   param_2
+; byte *           Stack[0x8]:4   find_data
 ;
 ; XREF[2]:
 ;   engine_dosio.cpp_CFileFinder_findNext_FUN_00460ed0 at 00460f26
@@ -14,14 +14,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_dosio_c_005d0c95
 ;   TerminatedCString s_CFileFinder_convertStruc_005d0ca7
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_string.c__strncpy_FUN_005b9cf0
-;   crt_unknown.c_FUN_005b9d26
+;   crt_unknown.c___I8D_FUN_005b9d26
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 0046101f
     MOV EDX,dword ptr [EBX + 0x18]      ; 00461022
     MOV EBX,0x989680                    ; 00461025
-    CALL crt_unknown.c_FUN_005b9d26     ; 0046102a
-        ;   XREF to: 005b9d26 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b9d26()
+    CALL crt_unknown.c___I8D_FUN_005b9d26 ; 0046102a
+        ;   XREF to: 005b9d26 (UNCONDITIONAL_CALL)  ; longlong crt_unknown.c___I8D_FUN_005b9d26(longlong dividend, longlong divisor)
     SUB EAX,0xb61082f0                  ; 0046102f
     MOV dword ptr [ESI + 0x108],EAX     ; 00461034
     POP EBP                             ; 0046103a
@@ -99,10 +99,10 @@ section .text
         ;   Label: LAB_00461048
     MOV EBP,0x2ff                       ; 0046104d
     PUSH 0x5d0ca7                       ; 00461052 | = "CFileFinder::convertStruct - file too..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00461057 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0046105d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00461063
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 00461057 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0046105d | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00461063
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00461068
     JMP 0x00461014                      ; 0046106b
         ;   XREF to: 00461014 (UNCONDITIONAL_JUMP)  ; LAB_00461014

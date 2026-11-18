@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMachine *this_ptr,float delta_time)
 
 {
@@ -29,7 +27,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFranke
   float local_10;
   float fStack_c;
   
-  _DAT_01c71340 = this_ptr->master_frame;
+  g_FLOAT_01c71340 = this_ptr->master_frame;
   pCVar2 = (CFrankenstienMachine *)core_frankgen_cpp_findLeader_FUN_00495240();
   if (pCVar2 == this_ptr) {
     fVar1 = delta_time * 30.0f + this_ptr->master_frame;
@@ -41,8 +39,8 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFranke
   else {
     this_ptr->master_frame = pCVar2->master_frame;
   }
-  if (this_ptr->master_frame < _DAT_01c71340) {
-    _DAT_01c71340 = _DAT_01c71340 - 2300.0f;
+  if (this_ptr->master_frame < g_FLOAT_01c71340) {
+    g_FLOAT_01c71340 = g_FLOAT_01c71340 - 2300.0f;
   }
   core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0(this_ptr);
   switch(this_ptr->which_part) {
@@ -86,7 +84,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFranke
           fStack_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.5,1.5);
           iVar5 = iVar5 + 1;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                    (g_CFireEffect_PTR_005b80f0,&CStack_2c,fStack_c,pCVar4,alpha_value);
+                    (g_CFireEffectPtr,&CStack_2c,fStack_c,pCVar4,alpha_value);
         } while (iVar5 < iVar3);
       }
     }
@@ -107,7 +105,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFranke
         CStack_38.z = pCVar4->z;
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-                (g_CFireEffect_PTR_005b80f0,&CStack_38,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_38,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
     }
     core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30
               (this_ptr,1.0,"frankx-bed1.wav");

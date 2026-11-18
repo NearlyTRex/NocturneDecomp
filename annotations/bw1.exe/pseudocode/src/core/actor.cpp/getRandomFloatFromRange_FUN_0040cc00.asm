@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[156]:
+; XREF[158]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c9fe
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f6df
 ;   core_bat.cpp_CBat_process_FUN_00410d80 at 00410f52
@@ -23,11 +23,11 @@
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ab20 at 0041ac3a
 ;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041af50 at 0041af7b
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90 at 0041a178
-;   ... and 146 more
+;   ... and 148 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2e95
-;   undefined4 DAT_005d2e99
+;   float g_RandToFloatMultiplier = 0.00003051851
+;   float g_GenRandToFloatMultiplier = 5.960465E-8
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.is_processing
 ;
@@ -53,7 +53,7 @@ section .text
         ;   XREF to: 0040cb90 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040cb90()
     MOV dword ptr [ESP + 0xc],EAX       ; 0040cc23
     FILD dword ptr [ESP + 0xc]          ; 0040cc27
-    FMUL float ptr [0x005d2e99]         ; 0040cc2b | DAT_005d2e99
+    FMUL float ptr [0x005d2e99]         ; 0040cc2b | g_GenRandToFloatMultiplier
     FSTP float ptr [ESP + 0x8]          ; 0040cc31
         ;   Label: LAB_0040cc31
     FLD float ptr [ESP + 0x8]           ; 0040cc35
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0040cc4b
     MOV dword ptr [ESP + 0xc],EAX       ; 0040cc50
     FILD dword ptr [ESP + 0xc]          ; 0040cc54
-    FMUL float ptr [0x005d2e95]         ; 0040cc58 | DAT_005d2e95
+    FMUL float ptr [0x005d2e95]         ; 0040cc58 | g_RandToFloatMultiplier
     JMP 0x0040cc31                      ; 0040cc5e
         ;   XREF to: 0040cc31 (UNCONDITIONAL_JUMP)  ; LAB_0040cc31
 

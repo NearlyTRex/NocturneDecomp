@@ -7,14 +7,14 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[52]:
-;   core_actor.cpp_FUN_004093a0 at 004097dc
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0 at 004097dc
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_004116f0 at 00411880
 ;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412d70
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0 at 0041a0f2
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_004184c0 at 00418632
 ;   core_bride.cpp_CBride_setup_FUN_0041d9c0 at 0041dacc
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10 at 00421bcb
-;   core_bugs.cpp_FUN_00420e90 at 0042119b
+;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00420e90 at 0042119b
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360 at 004273a4
 ;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00425a70 at 00425a7f
 ;   ... and 42 more
@@ -24,11 +24,11 @@
 ;   TerminatedCString s_CDeformableModelInstance_005e740c
 ;   TerminatedCString s_core_skeleton_cpp_005e745a
 ;   TerminatedCString s_Tried_to_do_something_wi_005e746f
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -48,10 +48,10 @@ section .text
     MOV EDI,0x5e73f7                    ; 00547829 | = "..\\core\\skeleton.cpp"
     MOV EBP,0xde0                       ; 0054782e
     PUSH 0x5e740c                       ; 00547833 | = "CDeformableModelInstance::getModelPtr..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00547838 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 0054783e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00547844
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 00547838 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 0054783e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00547844
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00547849
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 0054784c
         ;   Label: LAB_0054784c
@@ -66,10 +66,10 @@ section .text
     MOV ECX,0x5e745a                    ; 0054785e | = "..\\core\\skeleton.cpp"
     MOV ESI,0xde2                       ; 00547863
     PUSH 0x5e746f                       ; 00547868 | = "Tried to do something with model %s, ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0054786d | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00547873 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00547879
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0054786d | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00547873 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00547879
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054787e
     POP ESI                             ; 00547881
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 00547882

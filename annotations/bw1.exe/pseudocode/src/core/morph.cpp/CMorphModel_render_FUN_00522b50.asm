@@ -12,7 +12,7 @@
 ;   core_morph.cpp_CMorph_render_FUN_005237e0 at 0052381d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ea892
+;   double g_DOUBLE_005ea892 = 0.0100000000000000
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_00522dd0
@@ -24,7 +24,7 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 00522b50
         ;   Label: core_morph.cpp_CMorphModel_render_FUN_00522b50
-    FCOMP double ptr [0x005ea892]       ; 00522b54 | DAT_005ea892
+    FCOMP double ptr [0x005ea892]       ; 00522b54 | g_DOUBLE_005ea892
     FNSTSW AX                           ; 00522b5a
     SAHF                                ; 00522b5c
     JNC 0x00522b60                      ; 00522b5d

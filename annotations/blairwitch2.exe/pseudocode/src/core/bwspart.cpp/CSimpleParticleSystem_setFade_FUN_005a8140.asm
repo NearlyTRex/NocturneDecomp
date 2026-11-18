@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setFade_FUN_005a8140(CSimpleParticleSystem *this_ptr,float param_2,float param_3,float param_4)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_setFade_FUN_005a8140(CSimpleParticleSystem *this_ptr,float fade_start,float fade_end,float fade_duration)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
+; float            Stack[0x8]:4   fade_start
+; float            Stack[0xc]:4   fade_end
+; float            Stack[0x10]:4   fade_duration
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040cea0 at 0040cec7
+;   core_actor.cpp_CDemonActor_setParticleSystemFade_FUN_0040cea0 at 0040cec7
 ;
 ; *****************************************************************************
 

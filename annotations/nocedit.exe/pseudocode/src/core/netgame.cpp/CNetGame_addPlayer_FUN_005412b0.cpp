@@ -51,7 +51,7 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr,
   uVar5 = uVar5 - 0x1e0000;
   dest->last_ping_sent = uVar5;
   dest->last_ping_response = uVar5;
-  iVar4 = INT_02f7c8c4;
+  iVar4 = g_NetNextPlayerId;
   dest->last_update_time = uVar5;
   dest->player_id = iVar4 + -1;
   return iVar2;

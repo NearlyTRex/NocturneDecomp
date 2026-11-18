@@ -6,41 +6,38 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040aff0(CDemonActor *this_ptr,_FILE *file_handle)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  char *pcVar4;
+  _FILE *p_Var1;
+  int iVar2;
+  CDemonActor *pCVar3;
   
   core_actor_cpp_syncActorTypeIDs_FUN_0040c870();
-  pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(this_ptr);
+  core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(this_ptr);
   if (this_ptr->actor_name[0] == '\0') {
-    _DAT_01d71de0 = "..\\core\\actor.cpp";
-    _DAT_01d71de4 = 0x7e9;
-    core_main_c_FUN_004e4330("CDemonActor::save - tried to save actor of class %s with no name",pcVar4);
+    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+    g_INT_01d71de4 = 0x7e9;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonActor::save - tried to save actor of class %s with no name");
   }
-  FUN_005a3140(file_handle,"%s{ %s \"%s\"\n",&DAT_005f0990,pcVar4,this_ptr);
-  uVar3 = DAT_007df9bc;
-  uVar2 = DAT_007df9b8;
-  uVar1 = DAT_007df9b4;
-  DAT_007df9b4 = file_handle;
-  DAT_007df9bc = this_ptr;
-  DAT_007df9b8 = 2;
+  _fprintf(file_handle,"%s{ %s \"%s\"\n");
+  pCVar3 = g_CurrentActorBeingProcessed;
+  iVar2 = g_ActorReadingMode;
+  p_Var1 = g_ActorDataFile;
+  g_ActorDataFile = file_handle;
+  g_CurrentActorBeingProcessed = this_ptr;
+  g_ActorReadingMode = 2;
   core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(1);
   (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(-1);
-  FUN_005a3140(file_handle,"%s} %s \"%s\"\n",&DAT_005f0990,pcVar4,this_ptr);
+  _fprintf(file_handle,"%s} %s \"%s\"\n");
   if ((file_handle->_flag & 0x20) != 0) {
-    _DAT_01d71de0 = "..\\core\\actor.cpp";
-    _DAT_01d71de4 = 0x80b;
-    core_main_c_FUN_004e4330("IO Error after writing actor of type %s",pcVar4);
+    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
+    g_INT_01d71de4 = 0x80b;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("IO Error after writing actor of type %s");
   }
-  DAT_007df9b4 = (_FILE *)uVar1;
-  DAT_007df9bc = (CDemonActor *)uVar3;
-  DAT_007df9b8 = uVar2;
+  g_ActorDataFile = p_Var1;
+  g_CurrentActorBeingProcessed = pCVar3;
+  g_ActorReadingMode = iVar2;
   return;
 }

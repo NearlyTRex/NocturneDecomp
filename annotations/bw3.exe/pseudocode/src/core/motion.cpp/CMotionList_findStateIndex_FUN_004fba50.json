@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 16,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 87
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -24,7 +22,7 @@
     {
       "addr": "00410030",
       "from_addr": "00410075",
-      "name": "core_bird.cpp_FUN_00410030",
+      "name": "core_bird.cpp_setRandomMotionVariant_FUN_00410030",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,7 +40,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "00490485",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -90,7 +88,7 @@
     {
       "addr": "00599c80",
       "from_addr": "00599cc5",
-      "name": "core_spireagl.cpp_FUN_00599c80",
+      "name": "core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -108,7 +106,7 @@
     {
       "addr": "0058cc20",
       "from_addr": "0058cc3c",
-      "name": "core_zombie.cpp_FUN_0058cc20",
+      "name": "core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -128,7 +126,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3260",
@@ -151,14 +149,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -168,7 +166,7 @@
       {
         "call_addr": "00490485",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,7 +177,7 @@
       {
         "call_addr": "0058cc3c",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058cc20",
+        "caller": "core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,7 +210,7 @@
       {
         "call_addr": "00410075",
         "call_type": "direct",
-        "caller": "core_bird.cpp_FUN_00410030",
+        "caller": "core_bird.cpp_setRandomMotionVariant_FUN_00410030",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -223,7 +221,7 @@
       {
         "call_addr": "004100af",
         "call_type": "direct",
-        "caller": "core_bird.cpp_FUN_00410030",
+        "caller": "core_bird.cpp_setRandomMotionVariant_FUN_00410030",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -365,14 +363,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

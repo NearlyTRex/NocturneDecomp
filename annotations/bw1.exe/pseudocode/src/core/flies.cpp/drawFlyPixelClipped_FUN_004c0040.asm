@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   z_depth
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
 ;
 ; Called Functions:
 ;   core_flies.cpp_drawFlyPixel_FUN_004bffb0
@@ -25,13 +25,13 @@ section .text
     TEST EDX,EDX                        ; 004c0048
     JL 0x004c0060                       ; 004c004a
         ;   XREF to: 004c0060 (CONDITIONAL_JUMP)  ; LAB_004c0060
-    CMP EDX,dword ptr [0x0061b498]      ; 004c004c | DAT_0061b498
+    CMP EDX,dword ptr [0x0061b498]      ; 004c004c | g_INT_0061b498
     JGE 0x004c0060                      ; 004c0052
         ;   XREF to: 004c0060 (CONDITIONAL_JUMP)  ; LAB_004c0060
     TEST EAX,EAX                        ; 004c0054
     JL 0x004c0060                       ; 004c0056
         ;   XREF to: 004c0060 (CONDITIONAL_JUMP)  ; LAB_004c0060
-    CMP EAX,dword ptr [0x0061b49c]      ; 004c0058 | DAT_0061b49c
+    CMP EAX,dword ptr [0x0061b49c]      ; 004c0058 | g_INT_0061b49c
     JL 0x004c0061                       ; 004c005e
         ;   XREF to: 004c0061 (CONDITIONAL_JUMP)  ; LAB_004c0061
     RET                                 ; 004c0060

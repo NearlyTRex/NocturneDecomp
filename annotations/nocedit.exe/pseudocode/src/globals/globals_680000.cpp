@@ -70,11 +70,138 @@ EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup = nullptr;
 // EXCEPTION_FILTER_FUNC*
 EXCEPTION_FILTER_FUNC* g_UserExceptionFilter = nullptr;
 
+// FileDescriptor*
+FileDescriptor* g_FileDescriptors = (FileDescriptor*)&g_FileDescriptorTable;
+
+// FileDescriptor[20]
+FileDescriptor g_FileDescriptorTable[20] = {
+    {
+        .file_type = 0x01,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x02,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x02,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x03,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x02,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    },
+    {
+        .file_type = 0x00,
+        .device_flags = 0x00,
+        .access_flags = 0x00,
+        .extended_flags = 0x00
+    }
+};
+
 // GUID
 GUID g_IID_IKsPropertySet = {0x31EFAC30, 0x515C, 0x11D0, {0xA9, 0xAA, 0x00, 0xAA, 0x00, 0x61, 0xBE, 0x93}};
-GUID g_KSPROPSETID_DirectSound3DListener = {0x62A69BAE, 0xDF9D, 0x11D1, {0x99, 0xA6, 0x00, 0xC0, 0x4F, 0xC9, 0x9D, 0x46}};
-GUID GUID_00681df0 = {0x4A4E6FC1, 0xC341, 0x11D1, {0xB7, 0x3A, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00}};
-GUID GUID_00686d58 = {0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
+GUID g_DSPROPSETID_VoiceManager = {0x62A69BAE, 0xDF9D, 0x11D1, {0x99, 0xA6, 0x00, 0xC0, 0x4F, 0xC9, 0x9D, 0x46}};
+GUID g_DSPROPSETID_EAX_ReverbProperties = {0x4A4E6FC1, 0xC341, 0x11D1, {0xB7, 0x3A, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00}};
+GUID g_IID_IDirectSound3DListener = {0x279AFA84, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
 GUID g_IID_IDirectSound3DBuffer = {0x279AFA86, 0x4981, 0x11CE, {0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60}};
 
 // HANDLE
@@ -3145,7 +3272,7 @@ SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6] = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic SMRGLTextureBasic_00680bb0 = {
+SMRGLTextureBasic g_PathMapTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
@@ -3157,15 +3284,15 @@ SMRGLTextureBasic g_SolidWhiteTexture = {
     .base = {.type = 0x00000000, .count = 0x00000000},
     .texture_name = "bbwhite.raw"
 };
-SMRGLTextureBasic SMRGLTextureBasic_006817fc = {
+SMRGLTextureBasic g_VolumetricSphereTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_006819e4 = {
+SMRGLTextureBasic g_ViewModelTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "MENUCLD2.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_00684178 = {
+SMRGLTextureBasic g_StairsTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
@@ -3173,7 +3300,7 @@ SMRGLTextureBasic DAT_0068423C = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0068434c = {
+SMRGLTextureBasic g_TriggerTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
@@ -3193,7 +3320,7 @@ SMRGLTextureBasic g_SnowflakeTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SNOWFLKE.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0068495c = {
+SMRGLTextureBasic g_WerewolfEyeGlowTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
@@ -3265,7 +3392,7 @@ SMRGLTextureBasic g_WaterTextures[16] = {
         .texture_name = "WATER15.RAW"
     }
 };
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_006846f0[16] = {
+SMRGLTextureBasic g_WaterActorTextures[16] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "WATER0.RAW"
@@ -3353,222 +3480,222 @@ SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr = nullptr;
 // SRenderVertex[20000]
 SRenderVertex g_RenderVertexBuffer[20000] = {};
 
-// SSoundModeEntry[27]
-SSoundModeEntry g_SoundModeTable[27] = {
+// SReverbPreset[27]
+SReverbPreset g_ReverbPresetTable[27] = {
     {
         .name = (char *)s_OFF_00652855,
-        .listener_orient = {
-            .x = 0.0f,
-            .y = 0.0f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.0f,
+            .decay_time = 0.0f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_GENERIC_00652859,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 1.493f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 1.493f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_PADDEDCELL_00652861,
-        .listener_orient = {
-            .x = 0.25f,
-            .y = 0.1f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.25f,
+            .decay_time = 0.1f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_ROOM_0065286c,
-        .listener_orient = {
-            .x = 0.417f,
-            .y = 0.40000001f,
-            .z = 0.66600001f
+        .reverb = {
+            .volume = 0.417f,
+            .decay_time = 0.40000001f,
+            .damping = 0.66600001f
         }
     },
     {
         .name = (char *)s_BATHROOM_00652871,
-        .listener_orient = {
-            .x = 0.653f,
-            .y = 1.499f,
-            .z = 0.16599999f
+        .reverb = {
+            .volume = 0.653f,
+            .decay_time = 1.499f,
+            .damping = 0.16599999f
         }
     },
     {
         .name = (char *)s_LIVINGROOM_0065287a,
-        .listener_orient = {
-            .x = 0.208f,
-            .y = 0.47799999f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.208f,
+            .decay_time = 0.47799999f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_STONEROOM_00652885,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 2.309f,
-            .z = 0.88800001f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 2.309f,
+            .damping = 0.88800001f
         }
     },
     {
         .name = (char *)s_AUDITORIUM_0065288f,
-        .listener_orient = {
-            .x = 0.403f,
-            .y = 4.2789998f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 0.403f,
+            .decay_time = 4.2789998f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_CONCERTHALL_0065289a,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 3.961f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 3.961f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_CAVE_006528a6,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 2.8859999f,
-            .z = 1.304f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 2.8859999f,
+            .damping = 1.304f
         }
     },
     {
         .name = (char *)s_ARENA_006528ab,
-        .listener_orient = {
-            .x = 0.361f,
-            .y = 7.2839999f,
-            .z = 0.33199999f
+        .reverb = {
+            .volume = 0.361f,
+            .decay_time = 7.2839999f,
+            .damping = 0.33199999f
         }
     },
     {
         .name = (char *)s_HANGAR_006528b1,
-        .listener_orient = {
-            .x = 0.5f,
-            .y = 10.0f,
-            .z = 0.30000001f
+        .reverb = {
+            .volume = 0.5f,
+            .decay_time = 10.0f,
+            .damping = 0.30000001f
         }
     },
     {
         .name = (char *)s_CARPETEDHALLWAY_006528b8,
-        .listener_orient = {
-            .x = 0.153f,
-            .y = 0.259f,
-            .z = 2.0f
+        .reverb = {
+            .volume = 0.153f,
+            .decay_time = 0.259f,
+            .damping = 2.0f
         }
     },
     {
         .name = (char *)s_HALLWAY_006528c8,
-        .listener_orient = {
-            .x = 0.361f,
-            .y = 1.493f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 0.361f,
+            .decay_time = 1.493f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_STONECORRIDOR_006528d0,
-        .listener_orient = {
-            .x = 0.44400001f,
-            .y = 2.697f,
-            .z = 0.63800001f
+        .reverb = {
+            .volume = 0.44400001f,
+            .decay_time = 2.697f,
+            .damping = 0.63800001f
         }
     },
     {
         .name = (char *)s_ALLEY_006528de,
-        .listener_orient = {
-            .x = 0.25f,
-            .y = 1.752f,
-            .z = 0.77600002f
+        .reverb = {
+            .volume = 0.25f,
+            .decay_time = 1.752f,
+            .damping = 0.77600002f
         }
     },
     {
         .name = (char *)s_FOREST_006528e4,
-        .listener_orient = {
-            .x = 0.111f,
-            .y = 3.145f,
-            .z = 0.472f
+        .reverb = {
+            .volume = 0.111f,
+            .decay_time = 3.145f,
+            .damping = 0.472f
         }
     },
     {
         .name = (char *)s_CITY_006528eb,
-        .listener_orient = {
-            .x = 0.111f,
-            .y = 2.767f,
-            .z = 0.22400001f
+        .reverb = {
+            .volume = 0.111f,
+            .decay_time = 2.767f,
+            .damping = 0.22400001f
         }
     },
     {
         .name = (char *)s_MOUNTAINS_006528f0,
-        .listener_orient = {
-            .x = 0.19400001f,
-            .y = 7.8410001f,
-            .z = 0.472f
+        .reverb = {
+            .volume = 0.19400001f,
+            .decay_time = 7.8410001f,
+            .damping = 0.472f
         }
     },
     {
         .name = (char *)s_QUARRY_006528fa,
-        .listener_orient = {
-            .x = 1.0f,
-            .y = 1.499f,
-            .z = 0.5f
+        .reverb = {
+            .volume = 1.0f,
+            .decay_time = 1.499f,
+            .damping = 0.5f
         }
     },
     {
         .name = (char *)s_PLAIN_00652901,
-        .listener_orient = {
-            .x = 0.097000003f,
-            .y = 2.767f,
-            .z = 0.22400001f
+        .reverb = {
+            .volume = 0.097000003f,
+            .decay_time = 2.767f,
+            .damping = 0.22400001f
         }
     },
     {
         .name = (char *)s_PARKINGLOT_00652907,
-        .listener_orient = {
-            .x = 0.208f,
-            .y = 1.652f,
-            .z = 1.5f
+        .reverb = {
+            .volume = 0.208f,
+            .decay_time = 1.652f,
+            .damping = 1.5f
         }
     },
     {
         .name = (char *)s_SEWERPIPE_00652912,
-        .listener_orient = {
-            .x = 0.65200001f,
-            .y = 2.8859999f,
-            .z = 0.25f
+        .reverb = {
+            .volume = 0.65200001f,
+            .decay_time = 2.8859999f,
+            .damping = 0.25f
         }
     },
     {
         .name = (char *)s_UNDERWATER_0065291c,
-        .listener_orient = {
-            .x = 1.0f,
-            .y = 1.499f,
-            .z = 0.0f
+        .reverb = {
+            .volume = 1.0f,
+            .decay_time = 1.499f,
+            .damping = 0.0f
         }
     },
     {
         .name = (char *)s_DRUGGED_00652927,
-        .listener_orient = {
-            .x = 0.875f,
-            .y = 8.3920002f,
-            .z = 1.388f
+        .reverb = {
+            .volume = 0.875f,
+            .decay_time = 8.3920002f,
+            .damping = 1.388f
         }
     },
     {
         .name = (char *)s_DIZZY_0065292f,
-        .listener_orient = {
-            .x = 0.139f,
-            .y = 17.233999f,
-            .z = 0.66600001f
+        .reverb = {
+            .volume = 0.139f,
+            .decay_time = 17.233999f,
+            .damping = 0.66600001f
         }
     },
     {
         .name = (char *)s_PSYCHOTIC_00652935,
-        .listener_orient = {
-            .x = 0.486f,
-            .y = 7.5630002f,
-            .z = 0.80599999f
+        .reverb = {
+            .volume = 0.486f,
+            .decay_time = 7.5630002f,
+            .damping = 0.80599999f
         }
     }
 };
@@ -3757,6 +3884,15 @@ WatcomStaticDestructorNode g_CWaterDestructorNode = {
 WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 
 // _FILE
+_FILE g_StaticFilePoolStart = {
+    ._ptr = nullptr,
+    ._cnt = 0x00000000,
+    ._link = nullptr,
+    ._flag = 0x00000001,
+    ._handle = 0x00000000,
+    ._bufsize = 0x00000000,
+    ._ungotten = 0x0000
+};
 _FILE g_StdoutLogFile = {
     ._ptr = nullptr,
     ._cnt = 0x00000000,
@@ -3776,8 +3912,8 @@ _FILE g_StderrLogFile = {
     ._ungotten = 0x0000
 };
 
-// _FILE*
-_FILE* g_StaticFilePoolStart = nullptr;
+// _FILE[17]
+_FILE g_StaticFilePoolRest[17] = {};
 
 // _MMX_INTEGER
 _MMX_INTEGER g_VertexRedStart = {};
@@ -3940,10 +4076,10 @@ float FLOAT_00680818 = 1e+10f;
 float g_MaxSoftwareLatency = 0.5f;
 
 // int
-int INT_00680648 = -1;
+int g_LastImportActorTypeChoice = -1;
 int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
-int INT_00680a04 = 0x1;
+int g_NetLobbyStateChanged = 0x1;
 int g_CNPCClassVersion = 0x4;
 int g_CPassengerClassVersion = 0x6;
 int g_CPendulumClassVersion = 0x8;
@@ -3957,7 +4093,7 @@ int g_CShotgunClassVersion = 0x1;
 int g_CShovelClassVersion = 0x1;
 int g_CSimBoxClassVersion = 0x3;
 int g_CSkeletonVersion = 0x3;
-int INT_00681864 = 0x7;
+int g_MaxDeformableModelVersion = 0x7;
 int g_CSmileyClassVersion = 0x1;
 int g_SfxPlaybackStateCounter = 0x1;
 int g_MaxSoundChannels = 0x20;
@@ -4020,7 +4156,7 @@ int g_CTVBatClassVersion = 0x5;
 int g_CVampireBossVersion = 0x4;
 int g_CVehicleClassVersion = 0x3;
 int g_CCryptVesselClassVersion = 0x4;
-int INT_006844f4 = 0x2000;
+int g_WaterFrameDuration = 0x2000;
 int g_CWaterActorVersion = 0x6;
 int g_CWayPointClassVersion = 0x2;
 int g_CWeaponClassVersion = 0x7;
@@ -4031,8 +4167,6 @@ int g_ForceMessagePump = 0x1;
 int g_PreviousActiveState = -1;
 int g_CZombieClassVersion = 0xB;
 int g_MaxErrnoValue = 0x28;
-int DAT_00684CCC = 0;
-int INT_00684cd0 = 0x1;
 int INT_00684ed0 = 0x100;
 int INT_00684edc = 0;
 int g_SpecialExitHandler = 0;
@@ -4052,7 +4186,6 @@ int INT_006850b8 = 0;
 int g_TimezoneOffset = 0x4650;
 int g_DaylightSavingActive = 0x1;
 int g_DaylightSavingOffset = 0xE10;
-int INT_00685210 = -16709626;
 int g_CurrentHandleCount = 0;
 int g_FakeHandleCounter = -2147483648;
 int INT_00685280 = 0;

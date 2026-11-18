@@ -13,15 +13,15 @@
 ;   core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00447c60 at 00447cfd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b5d00
-;   undefined4 DAT_005b64f8
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
 ;   _MMX_INTEGER g_TotalDitherShift
 ;   _MMX_INTEGER g_GreenBlueDitherShift
 ;   _MMX_INTEGER g_BlueBitShift
-;   undefined4 DAT_00b0e1fc
+;   uint[256] g_UINT_ARRAY_00b0e1fc
 ;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
@@ -44,17 +44,17 @@ section .text
     PSLLW MM5,0x6                       ; 004668a5
     MOVZX EDX,byte ptr [EBX]            ; 004668a9
     MOVD MM0,dword ptr [ESI]            ; 004668ac
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb0e1fc] ; 004668af | DAT_00b0e1fc
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb0e1fc] ; 004668af | g_UINT_ARRAY_00b0e1fc
     MOVZX EAX,byte ptr [EBP]            ; 004668b7
     PUNPCKLBW MM0,MM7                   ; 004668bb
     SHR EDX,0x1                         ; 004668be
     PUNPCKLBW MM2,MM7                   ; 004668c0
     ADD EAX,EDX                         ; 004668c3
     PMULLW MM0,MM2                      ; 004668c5
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004668c8 | DAT_005b5d00
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x5b5d00] ; 004668c8 | g_LightmapData
     MOVQ MM2,MM3                        ; 004668d0
     MOVQ MM4,MM5                        ; 004668d3
-    PXOR MM2,qword ptr [0x005b64f8]     ; 004668d6 | DAT_005b64f8
+    PXOR MM2,qword ptr [0x005b64f8]     ; 004668d6 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 004668dd
     PMULHW MM4,MM3                      ; 004668e0
     PADDW MM0,MM4                       ; 004668e3

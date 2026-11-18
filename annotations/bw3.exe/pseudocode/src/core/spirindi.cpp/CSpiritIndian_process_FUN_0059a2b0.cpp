@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_spirindi_cpp_CSpiritIndian_process_FUN_0059a2b0(CSpiritIndian *this_ptr,float delta_time)
 
@@ -29,38 +28,37 @@ void __cdecl core_spirindi_cpp_CSpiritIndian_process_FUN_0059a2b0(CSpiritIndian 
   CGore *this_ptr_02;
   CVector3f *pCVar12;
   char *pcVar13;
-  float *pfVar14;
   EBloodType blood_type;
   float fStack_b0;
   float fStack_ac;
   float fStack_a8;
   float fStack_a4;
-  float fStack_a0;
+  CVector3f CStack_a0;
   CVector3f CStack_94;
   float fStack_88;
   float afStack_84 [4];
   float fStack_74;
   CVector3f CStack_70;
   float fStack_64;
-  float afStack_60 [5];
+  float afStack_60 [2];
+  CVector3f CStack_58;
   float fStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float afStack_40 [3];
+  float afStack_48 [2];
+  CVector3f CStack_40;
   CVector3f CStack_34;
   float fStack_28;
   float afStack_24 [4];
-  uint uStack_14;
+  int iStack_14;
   
   bVar11 = 0;
-  core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60((CCharacter *)this_ptr,delta_time);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   fStack_b0 = delta_time * this_ptr->speed;
-  uStack_14 = 1;
+  iStack_14 = 1;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < fStack_b0) {
     iVar9 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar2->base,&stack0xffffff50);
@@ -72,27 +70,30 @@ void __cdecl core_spirindi_cpp_CSpiritIndian_process_FUN_0059a2b0(CSpiritIndian 
      ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
               (pCVar2,0,&CStack_34);
-    pfVar14 = afStack_60 + 8;
-    afStack_40[0] = CStack_34.x;
-    afStack_60[(uint)bVar11 * -2 + 9] = *(float *)((int)&CStack_34 + (uint)bVar11 * -8 + 4);
-    afStack_60[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10] =
-         *(float *)((int)&CStack_34 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-    core_actor_cpp_FUN_00408b80(this_ptr,pfVar14);
+    pCVar12 = &CStack_40;
+    CStack_40.x = CStack_34.x;
+    *(uint *)((int)&CStack_40 + (uint)bVar11 * -8 + 4) =
+         *(uint *)((int)&CStack_34 + (uint)bVar11 * -8 + 4);
+    *(uint *)((int)&CStack_40 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+         *(uint *)((int)&CStack_34 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+              ((CDemonActor *)this_ptr,pCVar12,&CStack_a0);
     blood_type = BLOOD_TYPE_RED;
     pCVar12 = &CStack_70;
-    CStack_70.x = fStack_a0;
+    CStack_70.x = CStack_a0.x;
     *(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + 4) =
-         *(uint *)(&stack0xffffff64 + (uint)bVar11 * -8);
+         *(uint *)((int)&CStack_a0 + (uint)bVar11 * -8 + 4);
     this_ptr_02 = g_CGorePtr;
     *(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-         *(uint *)(&stack0xffffff68 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+         *(uint *)((int)&CStack_a0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
     core_gore_cpp_CGore_createBloodPool_FUN_004cec40(this_ptr_02,pCVar12,blood_type);
     this_ptr->pool_me = 1;
-    uStack_14 = 1;
+    iStack_14 = 1;
   }
   fVar4 = this_ptr->speed;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar4);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar4);
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
@@ -105,22 +106,25 @@ void __cdecl core_spirindi_cpp_CSpiritIndian_process_FUN_0059a2b0(CSpiritIndian 
     this_ptr->current_motion_type = iVar9;
     if (((iVar9 == 0x91) || (iVar9 == 0x92)) &&
        ((this_ptr->current_motion_type == 0x92 &&
-        ((fVar4 = delta_time * (float)_DAT_005d9ab9 + this_ptr->morph_time,
+        ((fVar4 = delta_time * (float)0.5 + this_ptr->morph_time,
          this_ptr->morph_time = fVar4, 1.0 <= fVar4 && (this_ptr->morph_actor != (CPryeMorph *)0x0))
         )))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                (0x01D81080,(CDemonActor *)this_ptr->morph_actor);
-      this_ptr_00 = 0x01D81080;
+                (g_CDemonMission_PTR_00600530,(CDemonActor *)this_ptr->morph_actor);
+      this_ptr_00 = g_CDemonMission_PTR_00600530;
       this_ptr->morph_actor = (CPryeMorph *)0x0;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_00,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                (this_ptr_00,(CDemonActor *)this_ptr,1);
     }
     if (this_ptr->current_motion_type != 0) {
-      core_actor_cpp_FUN_00408b00(this_ptr,&(this_ptr->base).base.model.accumulated_root_motion);
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+                ((CDemonActor *)this_ptr,&(this_ptr->base).base.model.accumulated_root_motion,
+                 &CStack_58);
       pCVar1 = &(this_ptr->base).base.base.location;
-      afStack_84[2] = afStack_60[2];
-      afStack_84[(uint)bVar11 * -2 + 3] = afStack_60[(uint)bVar11 * -2 + 3];
+      afStack_84[2] = CStack_58.x;
+      afStack_84[(uint)bVar11 * -2 + 3] = *(float *)((int)&CStack_58 + (uint)bVar11 * -8 + 4);
       afStack_84[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
-           afStack_60[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+           *(float *)((int)&CStack_58 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
       fVar4 = (this_ptr->base).base.base.location.position.y;
       fVar5 = (this_ptr->base).base.base.location.position.z;
       (pCVar1->position).x = (pCVar1->position).x + afStack_84[2];
@@ -145,7 +149,7 @@ void __cdecl core_spirindi_cpp_CSpiritIndian_process_FUN_0059a2b0(CSpiritIndian 
   if (EVar6 < 2) {
     if (EVar6 == WALK_STATE_WALKING) {
 LAB_0059a405:
-      pcVar13 = &DAT_005d9aac;
+      pcVar13 = "WALK";
     }
     else {
 LAB_0059a5da:
@@ -156,7 +160,7 @@ LAB_0059a5da:
   }
   else if (EVar6 < WALK_STATE_NO_PATH) {
     iVar9 = 0;
-    pcVar13 = &DAT_005d9aa8;
+    pcVar13 = "RUN";
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&pCVar2->base);
     iVar9 = core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(this_ptr_01,pcVar13,iVar9);
     if (iVar9 < 0) goto LAB_0059a405;
@@ -175,7 +179,7 @@ LAB_0059a5da:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_0059a433:
-  core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
   fStack_88 = (this_ptr->base).base.velocity.x * delta_time;
   afStack_84[0] = (this_ptr->base).base.velocity.y * delta_time;
   afStack_84[1] = (this_ptr->base).base.velocity.z * delta_time;
@@ -185,12 +189,12 @@ LAB_0059a433:
        afStack_84[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
   pCVar12 = &(this_ptr->base).base.position_delta;
   fStack_4c = fStack_ac + pCVar12->x;
-  fStack_48 = fStack_a8 + (this_ptr->base).base.position_delta.y;
-  fStack_44 = fStack_a4 + (this_ptr->base).base.position_delta.z;
+  afStack_48[0] = fStack_a8 + (this_ptr->base).base.position_delta.y;
+  afStack_48[1] = fStack_a4 + (this_ptr->base).base.position_delta.z;
   fStack_28 = fStack_4c;
-  afStack_24[(uint)bVar11 * -2] = afStack_60[(uint)bVar11 * -2 + 6];
+  afStack_24[(uint)bVar11 * -2] = afStack_48[(uint)bVar11 * -2];
   afStack_24[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-       afStack_60[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
+       afStack_48[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
   pCVar3 = &(this_ptr->base).base.model.accumulated_root_motion;
   fStack_64 = fStack_28 + pCVar3->x;
   afStack_60[0] = afStack_24[0] + (this_ptr->base).base.model.accumulated_root_motion.y;
@@ -206,11 +210,12 @@ LAB_0059a433:
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar3->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_94);
+  core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_94);
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,uStack_14);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+            ((CCharacter *)this_ptr,delta_time,iStack_14);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);
   return;
 }

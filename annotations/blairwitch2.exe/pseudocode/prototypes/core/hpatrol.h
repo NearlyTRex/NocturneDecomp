@@ -41,6 +41,6 @@ int __cdecl CPatrolPoint::renderOpaque(CPatrolPoint *this_ptr);
 // Address: 0059c9a0
 int __cdecl CPatrolPoint::renderTransparent(CPatrolPoint *this_ptr);
 
-// Original: core_hpatrol.cpp_FUN_0059c9c0
+// Original: core_hpatrol.cpp_findNextPatrolPoint_FUN_0059c9c0
 // Address: 0059c9c0
-CDemonActor * FUN_0059c9c0(char *param_1,uint *param_2);
+CPatrolPoint * __cdecl findNextPatrolPoint(char *current_name,int *direction);

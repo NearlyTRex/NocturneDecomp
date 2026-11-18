@@ -10,24 +10,19 @@ void __cdecl core_fire_cpp_loadDebrisAssets_FUN_004b1630(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)0x1c57e1c,"debris01.kfm");
+            (g_CFireEffectDebrisModels,"debris01.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)0x1c57f98,"debris02.kfm");
+            (g_CFireEffectDebrisModels + 1,"debris02.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)0x1c58114,"debris03.kfm");
+            (g_CFireEffectDebrisModels + 2,"debris03.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)0x1c58290,"debris04.kfm");
+            (g_CFireEffectDebrisModels + 3,"debris04.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)0x1c5840c,"debris05.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)0x1c57e1c);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)0x1c57f98);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)0x1c58114);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)0x1c58290);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)0x1c5840c);
+            (g_CFireEffectDebrisModels + 4,"debris05.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(g_CFireEffectDebrisModels);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(g_CFireEffectDebrisModels + 1);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(g_CFireEffectDebrisModels + 2);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(g_CFireEffectDebrisModels + 3);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(g_CFireEffectDebrisModels + 4);
   return;
 }

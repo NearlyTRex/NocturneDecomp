@@ -48,7 +48,7 @@ section .text
     PUSH EBX                            ; 00513640
     PUSH ESI                            ; 00513641
     CALL core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670 ; 00513642
-        ;   XREF to: 00513670 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet * this_ptr, char * param_2)
+        ;   XREF to: 00513670 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_writeThumbs_FUN_00513670(CDemonSet * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00513647
     POP ESI                             ; 0051364a
     POP EBX                             ; 0051364b

@@ -6,31 +6,30 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_0043a580(CCrossbow *this_ptr,float delta_time)
 
 {
   byte bVar1;
   float in_stack_00000014;
   float afStackY_101c [1014];
-  uint *puVar2;
+  CVector3f *input_local_point;
   float fStack_30;
   float fStack_2c;
-  uint uStack_28;
-  uint uStack_1c;
+  float fStack_28;
+  CVector3f CStack_1c;
   float fStack_10;
   
   bVar1 = 0;
   core_weapon_cpp_CWeapon_process_FUN_00589c80(&this_ptr->base,delta_time);
   (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-  puVar2 = &stack0xffffffe4;
-  uStack_1c = uStack_28;
-  *(uint *)((int)&stack0xffffffe8 + (uint)bVar1 * 0xfffffffe * 4) =
+  input_local_point = &CStack_1c;
+  CStack_1c.x = fStack_28;
+  *(uint *)((int)&CStack_1c + (uint)bVar1 * -8 + 4) =
        *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
-  *(uint *)(&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
+  *(uint *)((int)&CStack_1c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
        *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  core_actor_cpp_FUN_00408d70(this_ptr,puVar2);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+            ((CDemonActor *)this_ptr,input_local_point,(CVector3f *)&fStack_10);
   *(uint *)((int)&stack0xffffffd0 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xfffffff4 + (uint)bVar1 * -8);
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =

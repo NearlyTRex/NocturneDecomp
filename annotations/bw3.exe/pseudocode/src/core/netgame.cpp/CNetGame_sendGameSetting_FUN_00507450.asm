@@ -11,14 +11,14 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505faf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01da6474
-;   undefined4 DAT_01da6478
-;   undefined4 DAT_01da6484
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_LastPingTime
+;   uint g_UINT_01da6478
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_send_FUN_00505870
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
@@ -45,10 +45,10 @@ section .text
         ;   Label: LAB_0050746d
     MOV ESI,0x8a8                       ; 00507472
     PUSH 0x5cae84                       ; 00507477
-    MOV dword ptr [0x01d71de0],EBX      ; 0050747c | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00507482 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00507488
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBX      ; 0050747c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00507482 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00507488
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050748d
     MOV EDI,dword ptr [ESP + 0xd0]      ; 00507490
         ;   Label: LAB_00507490
@@ -63,10 +63,10 @@ section .text
         ;   Label: LAB_005074a7
     MOV EDX,0x8ae                       ; 005074ac
     PUSH 0x5caee6                       ; 005074b1
-    MOV [0x01d71de0],EAX                ; 005074b6 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 005074bb | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005074c1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 005074b6 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 005074bb | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005074c1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005074c6
     PUSH 0x5e2d40                       ; 005074c9
         ;   Label: LAB_005074c9
@@ -83,7 +83,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xcc]      ; 005074ec
     MOV EAX,dword ptr [EAX + 0x17c]     ; 005074f3
     MOV dword ptr [ESP + 0x9],EAX       ; 005074f9
-    MOV EAX,[0x01da6484]                ; 005074fd | DAT_01da6484
+    MOV EAX,[0x01da6484]                ; 005074fd | g_NetNextPlayerId
     MOV dword ptr [ESP + 0x5],EAX       ; 00507502
     MOV EAX,dword ptr [ESP + 0xcc]      ; 00507506
     LEA EDI,[ESP + 0xd]                 ; 0050750d
@@ -176,10 +176,10 @@ section .text
     MOV ECX,0x12                        ; 00507602
     SAR EDX,0x1f                        ; 00507607
     IDIV ECX                            ; 0050760a
-    MOV EDI,dword ptr [0x01da6474]      ; 0050760c | DAT_01da6474
+    MOV EDI,dword ptr [0x01da6474]      ; 0050760c | g_LastPingTime
     MOV EDX,EAX                         ; 00507612
     SUB EDX,EDI                         ; 00507614
-    MOV [0x01da6474],EAX                ; 00507616 | DAT_01da6474
+    MOV [0x01da6474],EAX                ; 00507616 | g_LastPingTime
     TEST EDX,EDX                        ; 0050761b
     JL 0x0050765b                       ; 0050761d
         ;   XREF to: 0050765b (CONDITIONAL_JUMP)  ; LAB_0050765b
@@ -187,14 +187,14 @@ section .text
     JLE 0x0050762c                      ; 00507625
         ;   XREF to: 0050762c (CONDITIONAL_JUMP)  ; LAB_0050762c
     MOV EDX,0x20000                     ; 00507627
-    MOV EBP,dword ptr [0x01da6478]      ; 0050762c | DAT_01da6478
+    MOV EBP,dword ptr [0x01da6478]      ; 0050762c | g_UINT_01da6478
         ;   Label: LAB_0050762c
     ADD EBP,EDX                         ; 00507632
     MOV EDX,dword ptr [ESP + 0xd0]      ; 00507634
     MOV EAX,dword ptr [ESP + 0xcc]      ; 0050763b
     SHL EDX,0x7                         ; 00507642
     ADD EDX,EAX                         ; 00507645
-    MOV dword ptr [0x01da6478],EBP      ; 00507647 | DAT_01da6478
+    MOV dword ptr [0x01da6478],EBP      ; 00507647 | g_UINT_01da6478
     MOV dword ptr [EDX + 0x58],EBP      ; 0050764d
     ADD ESP,0xb8                        ; 00507650
     POP EBP                             ; 00507656

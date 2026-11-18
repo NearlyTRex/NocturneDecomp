@@ -1,5 +1,5 @@
 {
-  "count":369,
+  "count":404,
   "switch_tables":[
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x417228]",
@@ -211,7 +211,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4287f4]",
       "function_addr":"00428810",
-      "function_name":"core_carved.cpp_FUN_00428810",
+      "function_name":"core_carved.cpp_CCarved_processDismemberment_FUN_00428810",
       "switch_addr":"00428846",
       "target_count":6,
       "targets":[
@@ -287,6 +287,81 @@
         },
         {
           "addr":"004396ab",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x439708]",
+      "function_addr":"00439720",
+      "function_name":"engine_clipper.c_clipPolygonLeftPlane_FUN_00439720",
+      "switch_addr":"0043976e",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00439775",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043977a",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004397a0",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004397f1",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x439988]",
+      "function_addr":"004399a0",
+      "function_name":"engine_clipper.c_clipPolygonBottomPlane_FUN_004399a0",
+      "switch_addr":"004399f0",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"004399f7",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004399fc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00439a22",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00439a73",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x439ad0]",
+      "function_addr":"00439ae0",
+      "function_name":"engine_clipper.c_clipPolygonFarPlane_FUN_00439ae0",
+      "switch_addr":"00439bd9",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00439be0",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00439c25",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00439c3c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00439c66",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -417,9 +492,34 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x43ad78]",
+      "function_addr":"0043ad90",
+      "function_name":"engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043ad90",
+      "switch_addr":"0043adea",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0043adf1",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043ae1b",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043ae37",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043ae5d",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x43aeb4]",
       "function_addr":"0043aed0",
-      "function_name":"engine_clipper.c_FUN_0043aed0",
+      "function_name":"engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043aed0",
       "switch_addr":"0043af30",
       "target_count":4,
       "targets":[
@@ -437,6 +537,156 @@
         },
         {
           "addr":"0043afa7",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x43b000]",
+      "function_addr":"0043b010",
+      "function_name":"engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043b010",
+      "switch_addr":"0043b06b",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0043b072",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b09c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b0bc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b0e2",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x43b138]",
+      "function_addr":"0043b150",
+      "function_name":"engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043b150",
+      "switch_addr":"0043b1b1",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0043b1b8",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b1e2",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b202",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b228",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x43b2ec]",
+      "function_addr":"0043b330",
+      "function_name":"engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043b330",
+      "switch_addr":"0043b5a5",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0043b5ac",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b5d6",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b83d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b866",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x43b2fc]",
+      "function_addr":"0043b330",
+      "function_name":"engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043b330",
+      "switch_addr":"0043b653",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0043b65a",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b684",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b8bc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b8e5",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x43b30c]",
+      "function_addr":"0043b330",
+      "function_name":"engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043b330",
+      "switch_addr":"0043b6fd",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0043b704",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b72e",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b93b",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b964",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x43b31c]",
+      "function_addr":"0043b330",
+      "function_name":"engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043b330",
+      "switch_addr":"0043b7ad",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0043b7b4",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b7de",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b9ba",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0043b9e3",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -662,6 +912,56 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x451740]",
+      "function_addr":"00451750",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00451750",
+      "switch_addr":"004517bc",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"004517c3",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004517e1",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004517fc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0045183c",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x4518a0]",
+      "function_addr":"004518b0",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMinY_FUN_004518b0",
+      "switch_addr":"00451924",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0045192b",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00451949",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00451964",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004519a2",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x451a04]",
       "function_addr":"00451a20",
       "function_name":"core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00451a20",
@@ -687,6 +987,31 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x451cd0]",
+      "function_addr":"00451ce0",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00451ce0",
+      "switch_addr":"00451d54",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00451d5b",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00451d79",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00451d94",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00451dd2",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x451e34]",
       "function_addr":"00451e50",
       "function_name":"core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00451e50",
@@ -707,6 +1032,156 @@
         },
         {
           "addr":"00451f42",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x4531c8]",
+      "function_addr":"00453230",
+      "function_name":"core_dcube.cpp_clipTriangleToAABB_FUN_00453230",
+      "switch_addr":"0045348e",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00453495",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004534bc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453816",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0045385b",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x4531d8]",
+      "function_addr":"00453230",
+      "function_name":"core_dcube.cpp_clipTriangleToAABB_FUN_00453230",
+      "switch_addr":"00453530",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00453537",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0045355e",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004538ca",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0045390c",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x4531e8]",
+      "function_addr":"00453230",
+      "function_name":"core_dcube.cpp_clipTriangleToAABB_FUN_00453230",
+      "switch_addr":"004535d3",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"004535da",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453601",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453978",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004539bd",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x4531f8]",
+      "function_addr":"00453230",
+      "function_name":"core_dcube.cpp_clipTriangleToAABB_FUN_00453230",
+      "switch_addr":"00453676",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0045367d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004536a4",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453a2c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453a6f",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x453208]",
+      "function_addr":"00453230",
+      "function_name":"core_dcube.cpp_clipTriangleToAABB_FUN_00453230",
+      "switch_addr":"0045371c",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00453723",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0045374a",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453adc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453b1f",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x453218]",
+      "function_addr":"00453230",
+      "function_name":"core_dcube.cpp_clipTriangleToAABB_FUN_00453230",
+      "switch_addr":"004537c2",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"004537c9",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004537f0",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453b8c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00453bcf",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -771,7 +1246,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x458664]",
       "function_addr":"00458680",
-      "function_name":"core_demnfolk.cpp_FUN_00458680",
+      "function_name":"core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_00458680",
       "switch_addr":"004586b6",
       "target_count":6,
       "targets":[
@@ -1047,6 +1522,56 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x479b00]",
+      "function_addr":"00479b10",
+      "function_name":"core_dtri.cpp_clipPolygonToTop_FUN_00479b10",
+      "switch_addr":"00479b7c",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00479b83",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00479ba1",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00479bbc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00479bfc",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x479c60]",
+      "function_addr":"00479c70",
+      "function_name":"core_dtri.cpp_clipPolygonToBottom_FUN_00479c70",
+      "switch_addr":"00479ce4",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00479ceb",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00479d09",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00479d24",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00479d62",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x479dc4]",
       "function_addr":"00479de0",
       "function_name":"core_dtri.cpp_clipPolygonToRight_FUN_00479de0",
@@ -1067,6 +1592,31 @@
         },
         {
           "addr":"00479eca",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [ECX*0x4 + 0x47a090]",
+      "function_addr":"0047a0a0",
+      "function_name":"core_dtri.cpp_clipPolygonToNear_FUN_0047a0a0",
+      "switch_addr":"0047a114",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0047a11b",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0047a139",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0047a154",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0047a192",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -1352,7 +1902,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x48c238]",
       "function_addr":"0048c2e0",
-      "function_name":"core_event.cpp_FUN_0048c2e0",
+      "function_name":"core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "switch_addr":"0048cb59",
       "target_count":3,
       "targets":[
@@ -1373,7 +1923,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x48c258]",
       "function_addr":"0048c2e0",
-      "function_name":"core_event.cpp_FUN_0048c2e0",
+      "function_name":"core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "switch_addr":"0048d081",
       "target_count":3,
       "targets":[
@@ -1394,7 +1944,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x48c278]",
       "function_addr":"0048c2e0",
-      "function_name":"core_event.cpp_FUN_0048c2e0",
+      "function_name":"core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "switch_addr":"0048dc20",
       "target_count":3,
       "targets":[
@@ -1415,7 +1965,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x48c298]",
       "function_addr":"0048c2e0",
-      "function_name":"core_event.cpp_FUN_0048c2e0",
+      "function_name":"core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "switch_addr":"0048de3c",
       "target_count":3,
       "targets":[
@@ -1436,7 +1986,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x48c2b8]",
       "function_addr":"0048c2e0",
-      "function_name":"core_event.cpp_FUN_0048c2e0",
+      "function_name":"core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "switch_addr":"0049102b",
       "target_count":2,
       "targets":[
@@ -1748,6 +2298,27 @@
         },
         {
           "addr":"004a2353",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x4a25b8]",
+      "function_addr":"004a25f0",
+      "function_name":"core_fire.cpp_CFireEffect_createStake_FUN_004a25f0",
+      "switch_addr":"004a2609",
+      "target_count":3,
+      "targets":[
+        {
+          "addr":"004a2610",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004a26fb",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004a2703",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -2066,7 +2637,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4cc960]",
       "function_addr":"004cc970",
-      "function_name":"core_gore.cpp_FUN_004cc970",
+      "function_name":"core_gore.cpp_getBloodColorParams_FUN_004cc970",
       "switch_addr":"004cc986",
       "target_count":4,
       "targets":[
@@ -2149,6 +2720,71 @@
         },
         {
           "addr":"004cf9ff",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x4cfa0c]",
+      "function_addr":"004cfa50",
+      "function_name":"core_ground.cpp_getGroundTypeName_FUN_004cfa50",
+      "switch_addr":"004cfa5a",
+      "target_count":14,
+      "targets":[
+        {
+          "addr":"004cfa61",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa67",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa6d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa73",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa79",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa7f",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa85",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa8b",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa91",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa97",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfa9d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfaa3",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfaa9",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004cfaaf",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -2246,7 +2882,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4d4800]",
       "function_addr":"004d4840",
-      "function_name":"core_hero.cpp_FUN_004d4840",
+      "function_name":"core_hero.cpp_CHero_canDoHeroAction_FUN_004d4840",
       "switch_addr":"004d4890",
       "target_count":4,
       "targets":[
@@ -2389,6 +3025,35 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x4e2028]",
+      "function_addr":"004e2050",
+      "function_name":"core_lightsta.cpp_CLightStaff_process_FUN_004e2050",
+      "switch_addr":"004e2b87",
+      "target_count":5,
+      "targets":[
+        {
+          "addr":"004e2b8e",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e2f52",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e311c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e32e6",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e34b0",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4e203c]",
       "function_addr":"004e2050",
       "function_name":"core_lightsta.cpp_CLightStaff_process_FUN_004e2050",
@@ -2414,9 +3079,38 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x4e7520]",
+      "function_addr":"004e7540",
+      "function_name":"core_melee.cpp_dumpHeap_FUN_004e7540",
+      "switch_addr":"004e756d",
+      "target_count":5,
+      "targets":[
+        {
+          "addr":"004e7574",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e75bc",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e75d1",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e75e6",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004e75fb",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EBX*0x4 + 0x4e8580]",
       "function_addr":"004e85a0",
-      "function_name":"core_menu.cpp_FUN_004e85a0",
+      "function_name":"core_menu.cpp_configureGraphicsOptions_FUN_004e85a0",
       "switch_addr":"004e8a04",
       "target_count":8,
       "targets":[
@@ -2457,7 +3151,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x4e8f54]",
       "function_addr":"004e8f80",
-      "function_name":"core_menu.cpp_FUN_004e8f80",
+      "function_name":"core_menu.cpp_configureCustomKeys_FUN_004e8f80",
       "switch_addr":"004e9030",
       "target_count":4,
       "targets":[
@@ -2482,7 +3176,7 @@
     {
       "assembly":"JMP dword ptr [EBX*0x4 + 0x4e8f64]",
       "function_addr":"004e8f80",
-      "function_name":"core_menu.cpp_FUN_004e8f80",
+      "function_name":"core_menu.cpp_configureCustomKeys_FUN_004e8f80",
       "switch_addr":"004e9277",
       "target_count":7,
       "targets":[
@@ -2519,7 +3213,7 @@
     {
       "assembly":"JMP dword ptr [EBX*0x4 + 0x4e94c0]",
       "function_addr":"004e94f0",
-      "function_name":"core_menu.cpp_FUN_004e94f0",
+      "function_name":"core_menu.cpp_configureSoundOptions_FUN_004e94f0",
       "switch_addr":"004e9bf4",
       "target_count":9,
       "targets":[
@@ -2564,7 +3258,7 @@
     {
       "assembly":"JMP dword ptr [EBX*0x4 + 0x4ea26c]",
       "function_addr":"004ea280",
-      "function_name":"core_menu.cpp_FUN_004ea280",
+      "function_name":"core_menu.cpp_showOptionsScreen_FUN_004ea280",
       "switch_addr":"004ea3d2",
       "target_count":4,
       "targets":[
@@ -2614,7 +3308,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4eae68]",
       "function_addr":"004eae80",
-      "function_name":"core_menu.cpp_FUN_004eae80",
+      "function_name":"core_menu.cpp_configureCustomKeyBindings_FUN_004eae80",
       "switch_addr":"004ec2c7",
       "target_count":2,
       "targets":[
@@ -2779,9 +3473,30 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x4f7d94]",
+      "function_addr":"004f7ea0",
+      "function_name":"engine_model.c_byteswapMRGLData_FUN_004f7ea0",
+      "switch_addr":"004f7ec6",
+      "target_count":3,
+      "targets":[
+        {
+          "addr":"004f7ecd",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004f7ed8",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"004f7ee4",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4f861c]",
       "function_addr":"004f8730",
-      "function_name":"engine_model.c_FUN_004f8730",
+      "function_name":"engine_model.c_getMRGLSize_FUN_004f8730",
       "switch_addr":"004f8748",
       "target_count":19,
       "targets":[
@@ -3057,7 +3772,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50adc4]",
       "function_addr":"0050ae20",
-      "function_name":"core_path.cpp_FUN_0050ae20",
+      "function_name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "switch_addr":"0050aed7",
       "target_count":4,
       "targets":[
@@ -3082,7 +3797,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50add4]",
       "function_addr":"0050ae20",
-      "function_name":"core_path.cpp_FUN_0050ae20",
+      "function_name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "switch_addr":"0050aeef",
       "target_count":4,
       "targets":[
@@ -3107,7 +3822,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50ade4]",
       "function_addr":"0050ae20",
-      "function_name":"core_path.cpp_FUN_0050ae20",
+      "function_name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "switch_addr":"0050af38",
       "target_count":8,
       "targets":[
@@ -3148,7 +3863,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50add4]",
       "function_addr":"0050ae20",
-      "function_name":"core_path.cpp_FUN_0050ae20",
+      "function_name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "switch_addr":"0050af69",
       "target_count":4,
       "targets":[
@@ -3173,7 +3888,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50add4]",
       "function_addr":"0050ae20",
-      "function_name":"core_path.cpp_FUN_0050ae20",
+      "function_name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "switch_addr":"0050af90",
       "target_count":4,
       "targets":[
@@ -3198,7 +3913,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50add4]",
       "function_addr":"0050ae20",
-      "function_name":"core_path.cpp_FUN_0050ae20",
+      "function_name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "switch_addr":"0050afac",
       "target_count":4,
       "targets":[
@@ -3223,7 +3938,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50ae04]",
       "function_addr":"0050ae20",
-      "function_name":"core_path.cpp_FUN_0050ae20",
+      "function_name":"core_path.cpp_CPathMap_getDirection_FUN_0050ae20",
       "switch_addr":"0050b0f8",
       "target_count":4,
       "targets":[
@@ -3419,6 +4134,27 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x517d20]",
+      "function_addr":"00517d50",
+      "function_name":"core_prye.cpp_getWeaponInteractionType_FUN_00517d50",
+      "switch_addr":"00517d65",
+      "target_count":3,
+      "targets":[
+        {
+          "addr":"00517d6c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00517d79",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00517db2",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x518a74]",
       "function_addr":"00518ab0",
       "function_name":"core_prye.cpp_CPrye_process_FUN_00518ab0",
@@ -3483,7 +4219,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x52486c]",
       "function_addr":"00524940",
-      "function_name":"core_prye.cpp_FUN_00524940",
+      "function_name":"core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "switch_addr":"00524e67",
       "target_count":9,
       "targets":[
@@ -3528,7 +4264,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5248a8]",
       "function_addr":"00524940",
-      "function_name":"core_prye.cpp_FUN_00524940",
+      "function_name":"core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "switch_addr":"00524f26",
       "target_count":3,
       "targets":[
@@ -3549,7 +4285,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5248cc]",
       "function_addr":"00524940",
-      "function_name":"core_prye.cpp_FUN_00524940",
+      "function_name":"core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "switch_addr":"00524f8d",
       "target_count":3,
       "targets":[
@@ -3570,7 +4306,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5248f0]",
       "function_addr":"00524940",
-      "function_name":"core_prye.cpp_FUN_00524940",
+      "function_name":"core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "switch_addr":"00525735",
       "target_count":3,
       "targets":[
@@ -3591,7 +4327,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x524914]",
       "function_addr":"00524940",
-      "function_name":"core_prye.cpp_FUN_00524940",
+      "function_name":"core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "switch_addr":"00525799",
       "target_count":3,
       "targets":[
@@ -3716,7 +4452,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x526380]",
       "function_addr":"005263c0",
-      "function_name":"core_prye.cpp_FUN_005263c0",
+      "function_name":"core_prye.cpp_CPrye_handleFireButton_FUN_005263c0",
       "switch_addr":"0052644e",
       "target_count":10,
       "targets":[
@@ -3765,7 +4501,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x52636c]",
       "function_addr":"005263c0",
-      "function_name":"core_prye.cpp_FUN_005263c0",
+      "function_name":"core_prye.cpp_CPrye_handleFireButton_FUN_005263c0",
       "switch_addr":"005265a3",
       "target_count":2,
       "targets":[
@@ -3926,7 +4662,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x54366c]",
       "function_addr":"00543680",
-      "function_name":"core_shadow.cpp_FUN_00543680",
+      "function_name":"core_shadow.cpp_CShadow_setup_FUN_00543680",
       "switch_addr":"005437f7",
       "target_count":3,
       "targets":[
@@ -3947,7 +4683,7 @@
     {
       "assembly":"JMP dword ptr [EBX*0x4 + 0x543870]",
       "function_addr":"005438d0",
-      "function_name":"core_shadow.cpp_FUN_005438d0",
+      "function_name":"core_shadow.cpp_CShadow_process_FUN_005438d0",
       "switch_addr":"00544f80",
       "target_count":7,
       "targets":[
@@ -3984,7 +4720,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x545bc0]",
       "function_addr":"00545bd0",
-      "function_name":"core_shadow.cpp_FUN_00545bd0",
+      "function_name":"core_shadow.cpp_CShadow_getDeathState_FUN_00545bd0",
       "switch_addr":"00545c07",
       "target_count":2,
       "targets":[
@@ -4028,6 +4764,27 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EDX*0x4 + 0x55f694]",
+      "function_addr":"0055f6b0",
+      "function_name":"core_sound.cpp_processTrainSounds_FUN_0055f6b0",
+      "switch_addr":"0055fbf5",
+      "target_count":3,
+      "targets":[
+        {
+          "addr":"0055f97d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0055fa61",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0055fb4f",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x55ff2c]",
       "function_addr":"0055ff40",
       "function_name":"core_sound.cpp_CSound_process_FUN_0055ff40",
@@ -4051,13 +4808,54 @@
     {
       "assembly":"JMP dword ptr [0x01c6b5cc]",
       "function_addr":"00563257",
-      "function_name":"engine_special.cpp_FUN_00563257",
+      "function_name":"engine_special.cpp_renderScanline_FUN_00563257",
       "switch_addr":"00563257",
       "target_count":1,
       "targets":[
         {
           "addr":"01c6b5cc",
           "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x56e1f8]",
+      "function_addr":"0056e230",
+      "function_name":"core_trigger.cpp_CTrigger_process_FUN_0056e230",
+      "switch_addr":"0056e260",
+      "target_count":8,
+      "targets":[
+        {
+          "addr":"0056e267",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0056e35b",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0056e40a",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0056e5b6",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0056e5d8",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0056e62d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0056e6a4",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0056e71f",
+          "ref_type":"COMPUTED_JUMP"
         }
       ]
     },
@@ -4085,7 +4883,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x56ee98]",
       "function_addr":"0056eed0",
-      "function_name":"core_trigger.cpp_FUN_0056eed0",
+      "function_name":"core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0056eed0",
       "switch_addr":"0056eeee",
       "target_count":2,
       "targets":[
@@ -4100,9 +4898,34 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x5712f8]",
+      "function_addr":"00571340",
+      "function_name":"support_trisock.cpp_httpRequestUpdate_FUN_00571340",
+      "switch_addr":"00571363",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0057136a",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"005714de",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00571723",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0057182e",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x571308]",
       "function_addr":"00571340",
-      "function_name":"support_trisock.cpp_FUN_00571340",
+      "function_name":"support_trisock.cpp_httpRequestUpdate_FUN_00571340",
       "switch_addr":"00571439",
       "target_count":7,
       "targets":[
@@ -4271,6 +5094,31 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x578660]",
+      "function_addr":"00578670",
+      "function_name":"core_wateract.cpp_CWaterActor_process_FUN_00578670",
+      "switch_addr":"00578737",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"0057873e",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00578767",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00578773",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0057879c",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5864a8]",
       "function_addr":"00586500",
       "function_name":"core_yow.cpp_CYow_process_FUN_00586500",
@@ -4325,6 +5173,31 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x5877b0]",
+      "function_addr":"005877c0",
+      "function_name":"core_xform.cpp_clipPolygonStage2_FUN_005877c0",
+      "switch_addr":"00587820",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00587827",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0058786c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"0058788c",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"005878b2",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x587924]",
       "function_addr":"00587940",
       "function_name":"core_xform.cpp_clipPolygonStage3_FUN_00587940",
@@ -4345,6 +5218,31 @@
         },
         {
           "addr":"00587a2d",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [EAX*0x4 + 0x587aa0]",
+      "function_addr":"00587ab0",
+      "function_name":"core_xform.cpp_clipPolygonStage4_FUN_00587ab0",
+      "switch_addr":"00587b11",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"00587b18",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00587b5d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00587b7d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"00587ba3",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -4625,7 +5523,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x58f614]",
       "function_addr":"0058f630",
-      "function_name":"core_zombiepriest.cpp_FUN_0058f630",
+      "function_name":"core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630",
       "switch_addr":"0058f669",
       "target_count":6,
       "targets":[
@@ -5084,7 +5982,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5a046c]",
       "function_addr":"005a0480",
-      "function_name":"core_styldemo.cpp_FUN_005a0480",
+      "function_name":"core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480",
       "switch_addr":"005a05a1",
       "target_count":4,
       "targets":[
@@ -5135,6 +6033,31 @@
         },
         {
           "addr":"005a269d",
+          "ref_type":"COMPUTED_JUMP"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr CS:[EAX*0x4 + 0x5a73b4]",
+      "function_addr":"005a73c8",
+      "function_name":"crt_unknown.c_FUN_005a73c8",
+      "switch_addr":"005a7456",
+      "target_count":4,
+      "targets":[
+        {
+          "addr":"005a745e",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"005a746f",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"005a748d",
+          "ref_type":"COMPUTED_JUMP"
+        },
+        {
+          "addr":"005a749d",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -7847,5 +8770,5 @@
       ]
     }
   ],
-  "total_targets":1131
+  "total_targets":1283
 }

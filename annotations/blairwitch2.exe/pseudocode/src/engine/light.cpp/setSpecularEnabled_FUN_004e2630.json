@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [],
@@ -31,9 +29,9 @@
   "globals": [
     {
       "addr": "00617e44",
-      "name": "DAT_00617e44",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SpecularEnabled",
+      "type": "int",
+      "value": "0x1"
     }
   ],
   "param_estimates": {
@@ -59,6 +57,12 @@
   "siblings": {
     "bw1.exe": {
       "addr": "004ffac0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e0b80",
       "by": "name",
       "class": "identical",
       "ratio": 1.0
@@ -92,14 +96,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_00617e44",
-      "severity": "mild",
-      "text": "DAT_00617e44 = enabled;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

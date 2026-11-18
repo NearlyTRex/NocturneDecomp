@@ -5726,10 +5726,10 @@ static_assert(__builtin_offsetof(CPodAuditRecord, original_timestamp) == 296,
               "offsetof(CPodAuditRecord, original_timestamp) != 296");
 static_assert(__builtin_offsetof(CPodAuditRecord, original_file_size) == 300,
               "offsetof(CPodAuditRecord, original_file_size) != 300");
-static_assert(__builtin_offsetof(CPodAuditRecord, file_offset) == 304,
-              "offsetof(CPodAuditRecord, file_offset) != 304");
-static_assert(__builtin_offsetof(CPodAuditRecord, compressed_size) == 308,
-              "offsetof(CPodAuditRecord, compressed_size) != 308");
+static_assert(__builtin_offsetof(CPodAuditRecord, new_timestamp) == 304,
+              "offsetof(CPodAuditRecord, new_timestamp) != 304");
+static_assert(__builtin_offsetof(CPodAuditRecord, new_file_size) == 308,
+              "offsetof(CPodAuditRecord, new_file_size) != 308");
 
 // ---- CPodDependencyRecord (264 bytes) ----
 static_assert(sizeof(CPodDependencyRecord) == 264,
@@ -5782,8 +5782,8 @@ static_assert(__builtin_offsetof(CPodFile, file_data_buffer) == 1048,
               "offsetof(CPodFile, file_data_buffer) != 1048");
 static_assert(__builtin_offsetof(CPodFile, audit_count) == 1052,
               "offsetof(CPodFile, audit_count) != 1052");
-static_assert(__builtin_offsetof(CPodFile, total_file_size) == 1056,
-              "offsetof(CPodFile, total_file_size) != 1056");
+static_assert(__builtin_offsetof(CPodFile, audit_records_offset) == 1056,
+              "offsetof(CPodFile, audit_records_offset) != 1056");
 static_assert(__builtin_offsetof(CPodFile, dependency_count) == 1060,
               "offsetof(CPodFile, dependency_count) != 1060");
 static_assert(__builtin_offsetof(CPodFile, dependency_records_offset) == 1064,
@@ -6426,8 +6426,8 @@ static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, set3DListenerVelocity)
               "offsetof(CSoundDeviceFull_vtable, set3DListenerVelocity) != 32");
 static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, set3DListenerDistanceFactor) == 36,
               "offsetof(CSoundDeviceFull_vtable, set3DListenerDistanceFactor) != 36");
-static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, commitDeferredSettings) == 40,
-              "offsetof(CSoundDeviceFull_vtable, commitDeferredSettings) != 40");
+static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, setReverb) == 40,
+              "offsetof(CSoundDeviceFull_vtable, setReverb) != 40");
 static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, allocateSample) == 44,
               "offsetof(CSoundDeviceFull_vtable, allocateSample) != 44");
 static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, freeSample) == 48,
@@ -6438,8 +6438,8 @@ static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, unlockSample) == 56,
               "offsetof(CSoundDeviceFull_vtable, unlockSample) != 56");
 static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, allocateSfx) == 60,
               "offsetof(CSoundDeviceFull_vtable, allocateSfx) != 60");
-static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, setSfxPos) == 64,
-              "offsetof(CSoundDeviceFull_vtable, setSfxPos) != 64");
+static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, applySfxChanges) == 64,
+              "offsetof(CSoundDeviceFull_vtable, applySfxChanges) != 64");
 static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, getSfxPlaybackPos) == 68,
               "offsetof(CSoundDeviceFull_vtable, getSfxPlaybackPos) != 68");
 static_assert(__builtin_offsetof(CSoundDeviceFull_vtable, startSfx) == 72,
@@ -8093,18 +8093,6 @@ static_assert(__builtin_offsetof(SConditionVariable, next) == 0,
 static_assert(__builtin_offsetof(SConditionVariable, name_hash) == 4,
               "offsetof(SConditionVariable, name_hash) != 4");
 
-// ---- SCorona (78724 bytes) ----
-static_assert(sizeof(SCorona) == 78724,
-              "sizeof(SCorona) != 78724");
-static_assert(__builtin_offsetof(SCorona, globe) == 0,
-              "offsetof(SCorona, globe) != 0");
-static_assert(__builtin_offsetof(SCorona, row_min_x) == 4,
-              "offsetof(SCorona, row_min_x) != 4");
-static_assert(__builtin_offsetof(SCorona, row_max_x) == 964,
-              "offsetof(SCorona, row_max_x) != 964");
-static_assert(__builtin_offsetof(SCorona, intensity) == 1924,
-              "offsetof(SCorona, intensity) != 1924");
-
 // ---- SCoronaLightCache (629796 bytes) ----
 static_assert(sizeof(SCoronaLightCache) == 629796,
               "sizeof(SCoronaLightCache) != 629796");
@@ -9738,6 +9726,8 @@ static_assert(__builtin_offsetof(SPod1Header, file_count) == 0,
               "offsetof(SPod1Header, file_count) != 0");
 static_assert(__builtin_offsetof(SPod1Header, description) == 4,
               "offsetof(SPod1Header, description) != 4");
+static_assert(__builtin_offsetof(SPod1Header, checksum) == 80,
+              "offsetof(SPod1Header, checksum) != 80");
 
 // ---- SPod2Header (96 bytes) ----
 static_assert(sizeof(SPod2Header) == 96,
@@ -9764,14 +9754,14 @@ static_assert(__builtin_offsetof(SPod3Header, copyright) == 172,
               "offsetof(SPod3Header, copyright) != 172");
 static_assert(__builtin_offsetof(SPod3Header, file_count) == 252,
               "offsetof(SPod3Header, file_count) != 252");
-static_assert(__builtin_offsetof(SPod3Header, data_start_offset) == 256,
-              "offsetof(SPod3Header, data_start_offset) != 256");
+static_assert(__builtin_offsetof(SPod3Header, directory_offset) == 256,
+              "offsetof(SPod3Header, directory_offset) != 256");
 static_assert(__builtin_offsetof(SPod3Header, unk1) == 260,
               "offsetof(SPod3Header, unk1) != 260");
 static_assert(__builtin_offsetof(SPod3Header, mount_priority) == 264,
               "offsetof(SPod3Header, mount_priority) != 264");
-static_assert(__builtin_offsetof(SPod3Header, total_file_size) == 268,
-              "offsetof(SPod3Header, total_file_size) != 268");
+static_assert(__builtin_offsetof(SPod3Header, name_table_size) == 268,
+              "offsetof(SPod3Header, name_table_size) != 268");
 static_assert(__builtin_offsetof(SPod3Header, dependency_count) == 272,
               "offsetof(SPod3Header, dependency_count) != 272");
 static_assert(__builtin_offsetof(SPod3Header, unk2) == 276,
@@ -10055,6 +10045,24 @@ static_assert(__builtin_offsetof(SResolutionEntry, width) == 0,
 static_assert(__builtin_offsetof(SResolutionEntry, height) == 4,
               "offsetof(SResolutionEntry, height) != 4");
 
+// ---- SReverbPreset (16 bytes) ----
+static_assert(sizeof(SReverbPreset) == 16,
+              "sizeof(SReverbPreset) != 16");
+static_assert(__builtin_offsetof(SReverbPreset, name) == 0,
+              "offsetof(SReverbPreset, name) != 0");
+static_assert(__builtin_offsetof(SReverbPreset, reverb) == 4,
+              "offsetof(SReverbPreset, reverb) != 4");
+
+// ---- SReverbSettings (12 bytes) ----
+static_assert(sizeof(SReverbSettings) == 12,
+              "sizeof(SReverbSettings) != 12");
+static_assert(__builtin_offsetof(SReverbSettings, volume) == 0,
+              "offsetof(SReverbSettings, volume) != 0");
+static_assert(__builtin_offsetof(SReverbSettings, decay_time) == 4,
+              "offsetof(SReverbSettings, decay_time) != 4");
+static_assert(__builtin_offsetof(SReverbSettings, damping) == 8,
+              "offsetof(SReverbSettings, damping) != 8");
+
 // ---- SRoom (68 bytes) ----
 static_assert(sizeof(SRoom) == 68,
               "sizeof(SRoom) != 68");
@@ -10246,14 +10254,6 @@ static_assert(__builtin_offsetof(SSoundDeviceInfo, is_primary_device) == 272,
               "offsetof(SSoundDeviceInfo, is_primary_device) != 272");
 static_assert(__builtin_offsetof(SSoundDeviceInfo, is_emulated) == 276,
               "offsetof(SSoundDeviceInfo, is_emulated) != 276");
-
-// ---- SSoundModeEntry (16 bytes) ----
-static_assert(sizeof(SSoundModeEntry) == 16,
-              "sizeof(SSoundModeEntry) != 16");
-static_assert(__builtin_offsetof(SSoundModeEntry, name) == 0,
-              "offsetof(SSoundModeEntry, name) != 0");
-static_assert(__builtin_offsetof(SSoundModeEntry, listener_orient) == 4,
-              "offsetof(SSoundModeEntry, listener_orient) != 4");
 
 // ---- SSpatialGrid (16388 bytes) ----
 static_assert(sizeof(SSpatialGrid) == 16388,

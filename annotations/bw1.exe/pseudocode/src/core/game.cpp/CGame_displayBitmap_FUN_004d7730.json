@@ -2,25 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 191,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 15,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 81
+    "total_lines": 80
   },
   "cross_references": [
     {
       "addr": "004a1d00",
       "from_addr": "004a3004",
-      "name": "core_event.cpp_FUN_004a1d00",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -34,13 +32,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_CGame_displayBitmap_FUN_004d7730",
-    "signature": "void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5)"
+    "signature": "void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *filename,int width,int height,float display_time)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     }
   ],
   "globals": [
@@ -58,20 +56,20 @@
     },
     {
       "addr": "01cd0b3c",
-      "name": "DAT_01cd0b3c",
-      "type": "undefined4",
+      "name": "g_INT_01cd0b3c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -81,7 +79,7 @@
       {
         "call_addr": "004a3004",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -163,150 +161,38 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "filename",
         "offset": 8,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "width",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "height",
         "offset": 16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "display_time",
         "offset": 20,
         "size": 4,
-        "type": "uint"
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004d7730(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"CGame::displayBitmap - tried to queue %s, but %s already queued!\",param_2,this_ptr->bitmap_filename);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->bitmap_width = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->bitmap_height = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "this_ptr->bitmap_display_time = (float)param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "_DAT_01cd0b3c = (uint)((param_5 & 0x7fffffff) == 0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 16,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

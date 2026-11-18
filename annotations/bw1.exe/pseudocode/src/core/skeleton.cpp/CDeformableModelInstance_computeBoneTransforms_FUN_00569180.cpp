@@ -17,7 +17,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
   float local_48;
   float local_44;
   float local_40;
-  float local_3c;
+  CVector3f local_3c;
   CSkeleton *local_30;
   CMatrix3x4f *local_2c;
   CSkeleton *local_28;
@@ -84,12 +84,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
              (this_ptr->bone_transform).pose_data.root_position.z;
       }
       else {
-        core_xform_cpp_FUN_005b5080((int)&local_18->x + local_1c,local_2c + iVar1);
-        local_48 = local_3c;
+        core_xform_cpp_transformVector3x4_FUN_005b5080
+                  ((CVector3f *)((int)&local_18->x + local_1c),local_2c + iVar1,&local_3c);
+        local_48 = local_3c.x;
         *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8) =
-             *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);
+             *(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4);
         *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-             *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+             *(uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
         (pCVar3->bone_transform).bone_model_matrices[0].m[0].z = local_48;
         (pCVar3->bone_transform).bone_model_matrices[0].m[1].z = local_44;
         (pCVar3->bone_transform).bone_model_matrices[0].m[2].z = local_40;

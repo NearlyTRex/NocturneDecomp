@@ -10,8 +10,8 @@
 ;   core_mimic.cpp_factoryFuncMimic_FUN_0050f090 at 0050f0a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006039cc
-;   undefined4 DAT_006039d0
+;   float g_FLOAT_006039cc = 50
+;   float g_FLOAT_006039d0 = 100
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
@@ -44,9 +44,9 @@ section .text
     MOV dword ptr [EDX + 0x2fec],0x3f000000 ; 0050f0f8
     MOV ESI,0x5e87cf                    ; 0050f102
     MOV dword ptr [EDX + 0x2ff0],0x3f800000 ; 0050f107
-    FLD float ptr [0x006039cc]          ; 0050f111 | DAT_006039cc
+    FLD float ptr [0x006039cc]          ; 0050f111 | g_FLOAT_006039cc
     MOV byte ptr [EDX + 0xc268],0x0     ; 0050f117
-    FLD float ptr [0x006039d0]          ; 0050f11e | DAT_006039d0
+    FLD float ptr [0x006039d0]          ; 0050f11e | g_FLOAT_006039d0
     MOV byte ptr [EDX + 0xc2cc],0x0     ; 0050f124
     ADD ESP,0x4                         ; 0050f12b
     FXCH                                ; 0050f12e

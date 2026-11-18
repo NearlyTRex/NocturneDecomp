@@ -16,7 +16,7 @@ extern CDemonActorType g_CPendulumClassInfo;
 extern CDemonActorType g_CPlatformClassInfo;
 
 // SMRGLPrimitiveQuad
-extern SMRGLPrimitiveQuad SMRGLPrimitiveQuad_030d4fd0;
+extern SMRGLPrimitiveQuad g_PathMapQuad;
 
 // char[101][100]
 extern char g_PathfindingVisited[101][100];

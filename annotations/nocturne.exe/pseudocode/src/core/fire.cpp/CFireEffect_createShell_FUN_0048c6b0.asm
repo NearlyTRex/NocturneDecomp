@@ -17,7 +17,7 @@
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_00545c30 at 00546042
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c684dc
+;   int g_ShellAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CShell_setup_FUN_00489640
@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 0048c6b2
     MOV EDX,dword ptr [ESP + 0x20]      ; 0048c6b3
     PUSH EDX                            ; 0048c6b7
-    MOV EDX,dword ptr [0x01c684dc]      ; 0048c6b8 | DAT_01c684dc
+    MOV EDX,dword ptr [0x01c684dc]      ; 0048c6b8 | g_ShellAllocIndex
     MOV ECX,dword ptr [ESP + 0x20]      ; 0048c6be
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048c6c2
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0048c6c9
@@ -48,10 +48,10 @@ section .text
     PUSH EAX                            ; 0048c6e3
     CALL core_fire.cpp_CShell_setup_FUN_00489640 ; 0048c6e4
         ;   XREF to: 00489640 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CShell_setup_FUN_00489640(CShell * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
-    MOV EDI,dword ptr [0x01c684dc]      ; 0048c6e9 | DAT_01c684dc
+    MOV EDI,dword ptr [0x01c684dc]      ; 0048c6e9 | g_ShellAllocIndex
     INC EDI                             ; 0048c6ef
     ADD ESP,0x14                        ; 0048c6f0
-    MOV dword ptr [0x01c684dc],EDI      ; 0048c6f3 | DAT_01c684dc
+    MOV dword ptr [0x01c684dc],EDI      ; 0048c6f3 | g_ShellAllocIndex
     CMP EDI,0x32                        ; 0048c6f9
     JGE 0x0048c702                      ; 0048c6fc
         ;   XREF to: 0048c702 (CONDITIONAL_JUMP)  ; LAB_0048c702
@@ -61,7 +61,7 @@ section .text
     RET                                 ; 0048c701
     XOR EAX,EAX                         ; 0048c702
         ;   Label: LAB_0048c702
-    MOV [0x01c684dc],EAX                ; 0048c704 | DAT_01c684dc
+    MOV [0x01c684dc],EAX                ; 0048c704 | g_ShellAllocIndex
     POP EDI                             ; 0048c709
     POP ESI                             ; 0048c70a
     POP EBX                             ; 0048c70b

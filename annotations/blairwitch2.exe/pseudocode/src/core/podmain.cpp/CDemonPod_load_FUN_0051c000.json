@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 66,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 31,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 134
   },
   "cross_references": [],
@@ -72,8 +70,8 @@
   "globals": [
     {
       "addr": "005e2992",
-      "name": "DAT_005e2992",
-      "type": "undefined4",
+      "name": "s_rt_005e2992",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -90,14 +88,14 @@
     },
     {
       "addr": "005e29a3",
-      "name": "DAT_005e29a3",
-      "type": "undefined4",
+      "name": "s_d_005e29a3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e29a7",
-      "name": "DAT_005e29a7",
-      "type": "undefined4",
+      "name": "s_s_005e29a7",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -139,6 +137,18 @@
     "pcode_op_count": 367
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "0053d580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.78
+    },
+    "bw3.exe": {
+      "addr": "005152e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.78
+    },
     "nocedit.exe": {
       "addr": "005519c0",
       "by": "name",
@@ -168,32 +178,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005e2992",
-      "severity": "mild",
-      "text": "file = _fopen(\"pod.ini\",&DAT_005e2992);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005e29a3",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e29a3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005e29a7",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005e29a7);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

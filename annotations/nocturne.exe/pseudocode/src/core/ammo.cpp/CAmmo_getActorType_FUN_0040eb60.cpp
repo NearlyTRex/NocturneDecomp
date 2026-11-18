@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_ammo_cpp_CAmmo_getActorType_FUN_0040eb60(CAmmo *this_ptr)
 
 {
-  return &g_CAmmoActorType_007641bc;
+  return &g_CAmmoClassInfo;
 }

@@ -11,11 +11,11 @@
 ;   core_vessel.cpp_CCryptVessel_setup_FUN_005a8c60 at 005a8d9c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_0061cdc0
-;   undefined4 DAT_0061cdd8
-;   undefined4 DAT_0061ce80
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   SMRGLTextureBasic[40] g_FlameFrameTextures
+;   undefined4 g_FlameFrameTextures[1].base.type
+;   undefined4 g_FlameFrameTextures[8].base.type
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
@@ -33,7 +33,7 @@ section .text
     PUSH EBP                            ; 004b7b23
     MOV EDX,dword ptr [ESP + 0x14]      ; 004b7b24
     PUSH EDX                            ; 004b7b28
-    MOV EBP,0x61cdc0                    ; 004b7b29 | DAT_0061cdc0
+    MOV EBP,0x61cdc0                    ; 004b7b29 | g_FlameFrameTextures
     XOR EDI,EDI                         ; 004b7b2e
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 004b7b30
         ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
@@ -42,11 +42,11 @@ section .text
     IMUL EBX,EDI,0xc0                   ; 004b7b3e
         ;   Label: LAB_004b7b3e
     MOV ESI,EBP                         ; 004b7b44
-    ADD EBX,0x61cdc0                    ; 004b7b46 | DAT_0061cdc0
-    PUSH EBX                            ; 004b7b4c | DAT_0061cdc0 | DAT_0061cdd8 | DAT_0061ce80
+    ADD EBX,0x61cdc0                    ; 004b7b46 | g_FlameFrameTextures
+    PUSH EBX                            ; 004b7b4c | g_FlameFrameTextures | g_FlameFrameTextures[1].base.type | g_FlameFrameTextures[8].base.type
         ;   Label: LAB_004b7b4c
-    MOV ECX,dword ptr [0x00612560]      ; 004b7b4d | DAT_00612560
-    PUSH ECX                            ; 004b7b53 | DAT_01bc120c
+    MOV ECX,dword ptr [0x00612560]      ; 004b7b4d | g_CDemonRenderer_PTR_00612560
+    PUSH ECX                            ; 004b7b53 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004b7b54
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004b7b59

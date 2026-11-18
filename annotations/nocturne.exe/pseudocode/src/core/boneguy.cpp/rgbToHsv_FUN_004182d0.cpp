@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CColor3f * __cdecl core_boneguy_cpp_rgbToHsv_FUN_004182d0(CColor3f *out_hsv,CColor3f *in_rgb)
 
 {
@@ -47,19 +45,19 @@ CColor3f * __cdecl core_boneguy_cpp_rgbToHsv_FUN_004182d0(CColor3f *out_hsv,CCol
     local_34 = 0.0;
   }
   else {
-    local_38 = local_38 * (float)_DAT_0057914e;
+    local_38 = local_38 * (float)255;
     if (fVar1 == local_30) {
       local_20 = (fVar2 - fVar3) / local_20;
     }
     else if (fVar2 == local_30) {
-      local_20 = (float)_DAT_0057915e - (fVar3 - fVar1) / local_20;
+      local_20 = (float)2 - (fVar3 - fVar1) / local_20;
     }
     else {
-      local_20 = (fVar1 - fVar2) / local_20 + (float)_DAT_00579156;
+      local_20 = (fVar1 - fVar2) / local_20 + (float)4;
     }
-    local_34 = local_20 * (float)_DAT_00579166;
+    local_34 = local_20 * (float)42.5;
     if (local_34 < 0.0) {
-      local_34 = local_34 + _DAT_0057916e;
+      local_34 = local_34 + 255.0f;
     }
   }
   out_hsv->r = local_34;

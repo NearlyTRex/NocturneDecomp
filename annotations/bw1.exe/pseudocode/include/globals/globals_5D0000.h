@@ -9,6 +9,13 @@
 // GLOBAL VARIABLES - Range 0x5D0000
 // =============================================================================
 
+// char
+extern char g_CHAR_005d5061;
+extern char g_CHAR_005dbeaf;
+extern char g_CHAR_005dc4f9;
+extern char g_CHAR_005dc604;
+extern char g_DefaultButtonText;
+
 // dword
 extern dword DWORD_005d0000;
 extern dword DAT_005D0004;
@@ -30,8 +37,5 @@ extern dword DAT_005D0094;
 
 // undefined1
 extern undefined1 DAT_005d7eef;
-extern undefined1 DAT_005dbed3;
 extern undefined1 DAT_005dc269;
-extern undefined1 DAT_005dc4f9;
-extern undefined1 DAT_005dcac4;
 

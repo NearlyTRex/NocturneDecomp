@@ -8,25 +8,25 @@
 ; CDemonCamera *   Stack[0x8]:4   camera
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d6af
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e3b1
-;   core_set.cpp_FUN_0052d3c0 at 0052d6af
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005e6181
 ;   TerminatedCString s_C3DSCamera_apply_shouldn_005e6195
 ;   TerminatedCString s_Ambient_set_low_by_scrip_005e61d8
 ;   TerminatedCString s_Ambient_set_ridiculously_005e61f3
-;   undefined4 DAT_005e6219
+;   double g_MaxRecommendedAmbient = 0.25
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   undefined4 g_CDemonSetInstance.min_ambient_value
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
@@ -100,7 +100,7 @@ section .text
     ADD ESP,0x8                         ; 0053adc4
     FLD float ptr [EBX + 0x148]         ; 0053adc7
         ;   Label: LAB_0053adc7
-    FCOMP double ptr [0x005e6219]       ; 0053adcd | DAT_005e6219
+    FCOMP double ptr [0x005e6219]       ; 0053adcd | g_MaxRecommendedAmbient
     FNSTSW AX                           ; 0053add3
     SAHF                                ; 0053add5
     JA 0x0053ae06                       ; 0053add6
@@ -115,10 +115,10 @@ section .text
     MOV ECX,0x5e6181                    ; 0053adde | = "..\\core\\setutil.cpp"
     MOV ESI,0xf7                        ; 0053ade3
     PUSH 0x5e6195                       ; 0053ade8 | = "C3DSCamera::apply - shouldn't ever do..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0053aded | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0053adf3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0053adf9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0053aded | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0053adf3 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0053adf9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0053adfe
     JMP 0x0053ad39                      ; 0053ae01
         ;   XREF to: 0053ad39 (UNCONDITIONAL_JUMP)  ; LAB_0053ad39

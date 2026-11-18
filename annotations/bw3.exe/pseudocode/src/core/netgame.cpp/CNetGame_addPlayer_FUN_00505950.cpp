@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(CNetGame *this_ptr,SNetworkAddr *addr,char *name,int hero_number,int aim_mode)
 
 {
@@ -21,9 +19,9 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(CNetGame *this_ptr,
   
   bVar6 = 0;
   if (1 < this_ptr->player_count) {
-    _DAT_01d71de0 = "..\\core\\netgame.cpp";
-    _DAT_01d71de4 = 0x5ff;
-    core_main_c_FUN_004e4330("CNetGame::addPlayer - too many players!");
+    g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
+    g_INT_01d71de4 = 0x5ff;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::addPlayer - too many players!");
   }
   iVar2 = this_ptr->player_count;
   this_ptr->player_count = iVar2 + 1;
@@ -47,12 +45,12 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(CNetGame *this_ptr,
   dest->local_sync_stage = 0;
   dest->hero_number = hero_number;
   dest->aim_mode = aim_mode;
-  uVar4 = _DAT_01da6478;
-  dest->last_arrival_time = _DAT_01da6478;
+  uVar4 = g_UINT_01da6478;
+  dest->last_arrival_time = g_UINT_01da6478;
   uVar4 = uVar4 - 0x1e0000;
   dest->last_ping_sent = uVar4;
   dest->last_ping_response = uVar4;
-  iVar3 = _DAT_01da6484;
+  iVar3 = g_NetNextPlayerId;
   dest->last_update_time = uVar4;
   dest->player_id = iVar3 + -1;
   return iVar2;

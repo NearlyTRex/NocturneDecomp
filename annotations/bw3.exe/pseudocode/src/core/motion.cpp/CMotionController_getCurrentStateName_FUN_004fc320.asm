@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a111f
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431000 at 00431011
-;   core_motion.cpp_FUN_004fcdc0 at 004fcefc
+;   core_motion.cpp_CMotionController_render_FUN_004fcdc0 at 004fcefc
 ;   core_npc.cpp_CNPC_process_FUN_00509120 at 00509489
 ;
 ; Called Functions:

@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 85,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 93
@@ -72,9 +71,9 @@
     },
     {
       "addr": "00607b1c",
-      "name": "DAT_00607b1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SpecialDeviceCleanupFunc",
+      "type": "void*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -190,27 +189,11 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 17,
       "match": "code *",
       "severity": "moderate",
-      "text": "if (DAT_00607b1c != (code *)0x0) {",
+      "text": "(*(code *)g_SpecialDeviceCleanupFunc)(iVar1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00607b1c",
-      "severity": "mild",
-      "text": "if (DAT_00607b1c != (code *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00607b1c",
-      "severity": "mild",
-      "text": "(*DAT_00607b1c)(iVar1);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

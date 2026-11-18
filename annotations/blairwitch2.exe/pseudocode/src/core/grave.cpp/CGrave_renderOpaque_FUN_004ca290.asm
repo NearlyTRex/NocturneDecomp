@@ -7,13 +7,13 @@
 ; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 DAT_01d192f8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;
 ; *****************************************************************************
@@ -27,7 +27,7 @@ section .text
     CMP dword ptr [EBX + 0x438],0x0     ; 004ca298
     JNZ 0x004ca32e                      ; 004ca29f
         ;   XREF to: 004ca32e (CONDITIONAL_JUMP)  ; LAB_004ca32e
-    MOV EAX,[0x00618170]                ; 004ca2a5 | DAT_00618170
+    MOV EAX,[0x00618170]                ; 004ca2a5 | g_CDemonMission_PTR_00618170
     CMP dword ptr [EAX + 0x1008],0x0    ; 004ca2aa | DAT_01d192f8
     JNZ 0x004ca2c5                      ; 004ca2b1
         ;   XREF to: 004ca2c5 (CONDITIONAL_JUMP)  ; LAB_004ca2c5
@@ -56,8 +56,8 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 004ca2f0
     PUSH EAX                            ; 004ca2f4
     MOVSD.REP ES:EDI,ESI                ; 004ca2f5
-    CALL core_box.cpp_FUN_0041a840      ; 004ca2f7
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 004ca2f7
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 004ca2fc
     MOV ESI,EAX                         ; 004ca2ff
     TEST EAX,EAX                        ; 004ca301

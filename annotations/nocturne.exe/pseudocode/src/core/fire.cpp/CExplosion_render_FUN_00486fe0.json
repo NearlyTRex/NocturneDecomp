@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 163,
+    "complexity_score": 188,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 98,
-    "suspect_count": 5,
+    "suspect_count": 8,
     "suspect_types": [
       "raw_address_constant",
-      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 355
@@ -134,14 +133,14 @@
     },
     {
       "addr": "005b858c",
-      "name": "DAT_005b858c",
-      "type": "undefined4",
+      "name": "g_FireEffectExplosionTextures",
+      "type": "SMRGLTextureBasic[54]",
       "value": null
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -464,14 +463,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005b858c",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)(&DAT_005b858c + local_20 * 0x30));",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 41,
       "match": "._0_4_",
@@ -494,6 +485,38 @@
       "severity": "mild",
       "text": "local_5c._4_4_ = (uint)ROUND(local_40 * 256.0f);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 85,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 87,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 88,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+5052920 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 90,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 0xfe0000;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex address 0x487015 assigned to bare local `iStack_98`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_98` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

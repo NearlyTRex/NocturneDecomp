@@ -1220,7 +1220,8 @@ def _is_effectively_clean(func):
     """Check if a function is clean for reporting purposes.
 
     A function is effectively clean if it has zero suspects, or if all its
-    suspects are safe decompiler intrinsics (e.g. ADJ, ROUND).
+    suspects are safe decompiler intrinsics (e.g. ADJ, ROUND) or benign Ghidra
+    warnings (an inlined callee, a removed unreachable block).
     """
     suspects = func.get('suspects', [])
     if func.get('complexity', {}).get('suspect_count', 0) == 0:

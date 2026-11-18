@@ -14,14 +14,14 @@ void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040c630(void)
   int iVar3;
   
   iVar2 = 0;
-  if (0 < DAT_007c3044) {
+  if (0 < g_NumActorClassTypes) {
     iVar3 = 0;
     do {
-      piVar1 = (int *)((int)&DAT_007c3048 + iVar3);
+      piVar1 = (int *)((int)g_ActorClassRegistrations + iVar3);
       iVar3 = iVar3 + 4;
       iVar2 = iVar2 + 1;
       **(uint **)(*piVar1 + 0x30) = *(uint *)(*piVar1 + 0x34);
-    } while (iVar2 < DAT_007c3044);
+    } while (iVar2 < g_NumActorClassTypes);
   }
   return;
 }

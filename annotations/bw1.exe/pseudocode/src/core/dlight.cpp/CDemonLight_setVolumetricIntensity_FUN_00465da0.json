@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 65,
+    "complexity_score": 75,
     "cross_reference_count": 8,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "warning_overlapping_globals",
+      "raw_address_constant",
       "wrong_global"
     ],
     "total_lines": 70
@@ -25,25 +25,25 @@
     {
       "addr": "00500090",
       "from_addr": "00500148",
-      "name": "core_lightgun.cpp_FUN_00500090",
+      "name": "core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005017f0",
       "from_addr": "005018a8",
-      "name": "core_lightpis.cpp_FUN_005017f0",
+      "name": "core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00550da0",
       "from_addr": "00550ec3",
-      "name": "core_set.cpp_FUN_00550da0",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00551170",
       "from_addr": "005512b6",
-      "name": "core_set.cpp_FUN_00551170",
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -92,15 +92,15 @@
   "globals": [
     {
       "addr": "005d929c",
-      "name": "DAT_005d929c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_VolumetricFilterScaleLowRes",
+      "type": "double",
+      "value": "7"
     },
     {
       "addr": "005d92a4",
-      "name": "DAT_005d92a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_VolumetricFilterScaleHighRes",
+      "type": "double",
+      "value": "3"
     },
     {
       "addr": "00611328",
@@ -121,7 +121,7 @@
       {
         "call_addr": "00550ec3",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550da0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +132,7 @@
       {
         "call_addr": "005512b6",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00551170",
+        "caller": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +165,7 @@
       {
         "call_addr": "00500148",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_00500090",
+        "caller": "core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00500090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       {
         "call_addr": "005018a8",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_005017f0",
+        "caller": "core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -301,28 +301,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Scalar global g_PlayerFilters accessed via (&g_PlayerFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilterCachePtr (at 0x00611358, +16 bytes).",
-      "line": 19,
+      "line": 17,
       "match": "g_PlayerFilters",
       "severity": "moderate",
-      "text": "(pCVar1,(&g_PlayerFilters)[(int)ROUND(fVar2)],0,iVar3,iVar4);",
+      "text": "(this_ptr,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
       "type": "wrong_global"
     },
     {
       "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x00611348, +32 bytes).",
-      "line": 27,
+      "line": 26,
       "match": "g_GlobalFilters",
       "severity": "moderate",
-      "text": "(pCVar1,(&g_GlobalFilters)[(int)ROUND(fVar2)],0,iVar3,iVar4);",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
       "type": "wrong_global"
+    },
+    {
+      "description": "Raw hex address 0x465dd3 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 12,
+      "match": "0x465dd3",
+      "severity": "moderate",
+      "text": "iVar2 = 0x465dd3;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x465e08 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 21,
+      "match": "0x465e08",
+      "severity": "moderate",
+      "text": "iVar2 = 0x465e08;",
+      "type": "raw_address_constant"
     }
   ]
 }

@@ -7,7 +7,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006b0260
+;   int g_CurrentPolygonColor
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00405140
         ;   Label: engine_3d.c_processPolygonColor_FUN_00405140
     MOV EAX,dword ptr [ECX + 0x4]       ; 00405144
-    MOV [0x006b0260],EAX                ; 00405147 | DAT_006b0260
+    MOV [0x006b0260],EAX                ; 00405147 | g_CurrentPolygonColor
     MOV AH,byte ptr [ECX + 0x7]         ; 0040514c
     TEST AH,0x80                        ; 0040514f
     JZ 0x00405159                       ; 00405152
@@ -63,9 +63,9 @@ section .text
     MOV AL,byte ptr [EDI + EAX*0x1 + 0x1bf7720] ; 004051b6
     AND EAX,0xff                        ; 004051bd
     MOV EDX,EAX                         ; 004051c2
-    MOV [0x006b0260],EAX                ; 004051c4 | DAT_006b0260
+    MOV [0x006b0260],EAX                ; 004051c4 | g_CurrentPolygonColor
     NEG EDX                             ; 004051c9
-    MOV dword ptr [0x006b0260],EDX      ; 004051cb | DAT_006b0260
+    MOV dword ptr [0x006b0260],EDX      ; 004051cb | g_CurrentPolygonColor
     POP EBX                             ; 004051d1
     POP ESI                             ; 004051d2
     POP EDI                             ; 004051d3

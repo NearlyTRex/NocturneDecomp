@@ -9,16 +9,16 @@
 int __cdecl sound_sndmain_cpp_countActiveSfx_FUN_00556f80(void)
 
 {
-  byte *puVar1;
+  CSfxSlot *pCVar1;
   int iVar2;
   
-  puVar1 = (byte *)0x2ce721c;
+  pCVar1 = g_CSfxSlot_ARRAY_02ce721c;
   iVar2 = 0;
   do {
-    if ((*(int *)(puVar1 + 0x68) != 0) && (*(int *)(puVar1 + 100) != 0)) {
+    if ((pCVar1->sample != (CSfxSample *)0x0) && (pCVar1->playback_state != 0)) {
       iVar2 = iVar2 + 1;
     }
-    puVar1 = puVar1 + 0x11c;
-  } while (puVar1 != &DAT_02ceb91c);
+    pCVar1 = pCVar1 + 1;
+  } while (pCVar1 != g_CSfxSlot_ARRAY_02ce721c + sizeof(g_CSfxSlot_ARRAY_02ce721c) / sizeof(g_CSfxSlot_ARRAY_02ce721c[0]));
   return iVar2;
 }

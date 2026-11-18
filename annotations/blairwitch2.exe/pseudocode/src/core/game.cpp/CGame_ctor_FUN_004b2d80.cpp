@@ -9,7 +9,7 @@
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b2d80(CGame *this_ptr)
 
 {
-  this_ptr->vtable = (void *)0x5f7574;
+  this_ptr->vtable = g_ARRAY_PTR_005f7574;
   this_ptr->game_pixx = 0x280;
   this_ptr->game_pixy = 0x1e0;
   this_ptr->game_bpp = 0x20;
@@ -69,9 +69,9 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b2d80(CGame *this_ptr)
   this_ptr->act_completion_state = 0;
   this_ptr->puzzle_difficulty_mode = 0;
   this_ptr->combat_difficulty_mode = 0;
-  DAT_01cb7b50 = 0;
+  g_CurrentSaveFile[0] = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';
-  core_game_cpp_FUN_004bb500(this_ptr,0,0x3f800000,0x40a00000,0,0,0,0);
+  core_game_cpp_CGame_setAlphaFade_FUN_004bb500(this_ptr,0.0,1.0,5.0,0.0,0.0,0.0,0);
   this_ptr->alpha_fade_active = 0;
   return this_ptr;
 }

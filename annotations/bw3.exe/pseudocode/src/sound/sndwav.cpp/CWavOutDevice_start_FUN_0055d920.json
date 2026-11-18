@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 115,
+    "complexity_score": 155,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 6,
+    "suspect_count": 10,
     "suspect_types": [
       "bitcast_double_pair",
-      "raw_address_pointer_store",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "signed_shift_global_idiom",
+      "unaffected_reg"
     ],
     "total_lines": 112
   },
@@ -50,38 +50,38 @@
   "globals": [
     {
       "addr": "005d4fc8",
-      "name": "DAT_005d4fc8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d4fc8",
+      "type": "double",
+      "value": "0.333333333333333"
     },
     {
       "addr": "02cf54f0",
-      "name": "DAT_02cf54f0",
-      "type": "undefined4",
+      "name": "g_WaveOutBitsPerSample",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf54f4",
-      "name": "DAT_02cf54f4",
-      "type": "undefined4",
+      "name": "g_WaveOutChannels",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf54f8",
-      "name": "DAT_02cf54f8",
-      "type": "undefined4",
+      "name": "g_WaveOutSampleRate",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf54fc",
-      "name": "DAT_02cf54fc",
-      "type": "undefined4",
+      "name": "g_WaveOutBufferSize",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf5500",
-      "name": "DAT_02cf5500",
-      "type": "undefined4",
+      "name": "g_WaveOutNumBuffers",
+      "type": "int",
       "value": null
     }
   ],
@@ -178,40 +178,56 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "uint unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
-      "match": "*(void **)(iVar2 + 0x2cf5490",
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(void **)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "memset(*(void **)(iVar2 + 0x2cf5490),0,0x20);",
-      "type": "raw_address_pointer_store"
+      "text": "memset(*(void **)((int)g_WaveOutHeaders + iVar2),0,0x20);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 17,
-      "match": "*(uint **)(iVar2 + 0x2cf5490",
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint **)((int)g_WaveOutHeaders",
       "severity": "moderate",
-      "text": "**(uint **)(iVar2 + 0x2cf5490) = *(uint *)(iVar2 + 0x2cf54d0);",
-      "type": "raw_address_pointer_store"
+      "text": "**(uint **)((int)g_WaveOutHeaders + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)g_WaveOutBuffers",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_WaveOutBuffers + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)g_WaveOutHeaders",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0xc) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_WaveOutHeaders",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 4) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 29,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(unaff_EDI,",
@@ -219,11 +235,27 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 30,
+      "line": 29,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(unaff_EDI,",
       "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 20,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 21,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveOutBufferSize;",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "vtable_info": {

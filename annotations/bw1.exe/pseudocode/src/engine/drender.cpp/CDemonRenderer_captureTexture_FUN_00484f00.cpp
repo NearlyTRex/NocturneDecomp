@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture)
 
 {
@@ -16,18 +14,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemo
   char *pcVar3;
   char *pcVar4;
   
-  engine_texture_cpp_FUN_00597a20(texture);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00597a20(texture);
   if (this_ptr->texture_capture_enabled != 0) {
-    _DAT_01bc1284 = _DAT_01bc1284 + 1;
-    if (100 < _DAT_01bc1284) {
-      _DAT_01d1d400 = "..\\engine\\drender.cpp";
-      _DAT_01d1d404 = 0xbf3;
-      core_main_c_FUN_005030e0("CDR::texture - Too many captured textures");
+    g_CaptureTextureCount = g_CaptureTextureCount + 1;
+    if (100 < g_CaptureTextureCount) {
+      g_CHAR_PTR_01d1d400 = "..\\engine\\drender.cpp";
+      g_INT_01d1d404 = 0xbf3;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CDR::texture - Too many captured textures");
     }
-    iVar2 = _DAT_01bc1284 * 0x48;
-    *(int *)(iVar2 + 0x1bed1ac) = (texture->base).count;
+    iVar2 = g_CaptureTextureCount;
+    g_CapturedTextureArray[g_CaptureTextureCount * 3].base.count = (texture->base).count;
     pcVar3 = texture->texture_name;
-    pcVar4 = (char *)(iVar2 + 0x1bed1b0);
+    pcVar4 = g_CapturedTextureArray[iVar2 * 3].texture_name;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;

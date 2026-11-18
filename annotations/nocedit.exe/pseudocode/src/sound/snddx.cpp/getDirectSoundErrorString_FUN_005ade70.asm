@@ -9,6 +9,7 @@
 ; XREF[19]:
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40 at 005af0ef
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410 at 005af671
+;   sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_005af750 at 005afb82
 ;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 at 005afe31
 ;   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660 at 005ae795
 ;   sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_005afcc0 at 005afd2b
@@ -16,7 +17,6 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_005af220 at 005af2e5
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50 at 005aedd6
 ;   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0 at 005ae5c6
-;   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830 at 005aec6f
 ;   ... and 9 more
 ;
 ; Referenced Globals:

@@ -10,18 +10,18 @@
 ; CVector3f *      Stack[0x10]:4   transform_vector
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_0053de10 at 0053e239
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_0053de10 at 0053e239
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005bb964
 ;   TerminatedCString s_Tried_to_call_CKeyFramed_005bb977
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_00479050
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -67,10 +67,10 @@ section .text
     MOV EAX,0x5bb964                    ; 00461e50 | = "..\\core\\dmodel.cpp"
     MOV EDX,0x40e                       ; 00461e55
     PUSH 0x5bb977                       ; 00461e5a | = "Tried to call CKeyFramedModel::inters..."
-    MOV [0x01d71de0],EAX                ; 00461e5f | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00461e64 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00461e6a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 00461e5f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 00461e64 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461e6a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00461e6f
     MOV ESI,dword ptr [EDI + 0x354]     ; 00461e72
         ;   Label: LAB_00461e72

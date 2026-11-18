@@ -11,7 +11,7 @@ CCarved * __cdecl core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
 {
   CCarved *pCVar1;
   
-  pCVar1 = (CCarved *)operator_new(0xc2f4);
+  pCVar1 = operator_new(0xc2f4);
   if (pCVar1 == (CCarved *)0x0) {
     return (CCarved *)0x0;
   }

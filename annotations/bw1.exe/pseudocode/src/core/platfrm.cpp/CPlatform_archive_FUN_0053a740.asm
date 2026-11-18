@@ -40,7 +40,7 @@
 ;   core_actor.cpp_archiveString_FUN_0040b440
 ;   core_actor.cpp_archiveVector_FUN_0040b1c0
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 0053a934
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0053a935
         ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
-    MOV ECX,dword ptr [0x007c3038]      ; 0053a93a | DAT_007c3038
+    MOV ECX,dword ptr [0x007c3038]      ; 0053a93a | g_ActorReadingMode
     ADD ESP,0x8                         ; 0053a940
     CMP ECX,0x1                         ; 0053a943
     JZ 0x0053aa65                       ; 0053a946
@@ -331,10 +331,10 @@ section .text
     MOV EBP,0x5ed588                    ; 0053aa7d | = "..\\core\\platfrm.cpp"
     MOV EAX,0x316                       ; 0053aa82
     PUSH 0x5ed59c                       ; 0053aa87 | = "CPlatform::archive - too many attache..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0053aa8c | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0053aa92 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053aa97
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBP      ; 0053aa8c | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0053aa92 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053aa97
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053aa9c
     MOV EDX,dword ptr [ESP]             ; 0053aa9f
         ;   Label: LAB_0053aa9f

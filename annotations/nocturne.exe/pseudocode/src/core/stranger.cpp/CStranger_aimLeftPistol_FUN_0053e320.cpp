@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *this_ptr)
 
 {
@@ -44,7 +42,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *t
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)
             ((CCharacter *)this_ptr->weapon);
-  bone_index = _DAT_02dc9f5c;
+  bone_index = g_StrangerIndices[3];
   fStack_24 = -1.3089969;
   fStack_2c = 0.5235988;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

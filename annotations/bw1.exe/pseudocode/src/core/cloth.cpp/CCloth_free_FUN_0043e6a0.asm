@@ -8,10 +8,10 @@
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_0043e640 at 0043e646
-;   core_cloth.cpp_FUN_0043e620 at 0043e625
+;   core_cloth.cpp_CCloth_dtor_FUN_0043e620 at 0043e625
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0336
+;   crt_unknown.c_free_FUN_005c0336
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     RET                                 ; 0043e6b0
     PUSH EDX                            ; 0043e6b1
         ;   Label: LAB_0043e6b1
-    CALL crt_unknown.c_FUN_005c0336     ; 0043e6b2
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0043e6b2
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 0043e6b7
     MOV dword ptr [EBX + 0x3aafc],0x0   ; 0043e6ba
     POP EBX                             ; 0043e6c4

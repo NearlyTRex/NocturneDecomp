@@ -6,24 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int * __cdecl engine_mini3d_cpp_findScanEdge_FUN_004f7220(int y,int *exclude)
 
 {
-  int *piVar1;
+  SSoftwareEdge *pSVar1;
   int iVar2;
   
-  piVar1 = (int *)&DAT_01d17ab8;
+  pSVar1 = &g_SSoftwareEdge_01d17ab8;
   iVar2 = 0;
-  if (0 < _DAT_01d17ab4) {
+  if (0 < g_INT_01d17ab4) {
     do {
-      if ((y == *piVar1) && (piVar1 != exclude)) {
-        return piVar1;
+      if ((y == (pSVar1->base).y_min) && (pSVar1 != (SSoftwareEdge *)exclude)) {
+        return (int *)pSVar1;
       }
       iVar2 = iVar2 + 1;
-      piVar1 = piVar1 + 0x14;
-    } while (iVar2 < _DAT_01d17ab4);
+      pSVar1 = pSVar1 + 1;
+    } while (iVar2 < g_INT_01d17ab4);
   }
   return (int *)0x0;
 }

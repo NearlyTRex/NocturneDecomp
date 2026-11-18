@@ -22,8 +22,8 @@
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0 at 004a3708
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c068c
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005c068c = 30
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -112,11 +112,11 @@ section .text
     IDIV ECX                            ; 0049c7fa
     IMUL EDX,EDX,0x17c                  ; 0049c7fc
     FXCH ST2                            ; 0049c802
-    FMUL float ptr [0x005c068c]         ; 0049c804 | DAT_005c068c
+    FMUL float ptr [0x005c068c]         ; 0049c804 | g_FLOAT_005c068c
     FXCH                                ; 0049c80a
-    FMUL float ptr [0x005c068c]         ; 0049c80c | DAT_005c068c
+    FMUL float ptr [0x005c068c]         ; 0049c80c | g_FLOAT_005c068c
     FXCH ST2                            ; 0049c812
-    FMUL float ptr [0x005c068c]         ; 0049c814 | DAT_005c068c
+    FMUL float ptr [0x005c068c]         ; 0049c814 | g_FLOAT_005c068c
     FXCH                                ; 0049c81a
     FMUL ST3                            ; 0049c81c
     FXCH ST2                            ; 0049c81e
@@ -145,7 +145,7 @@ section .text
     PUSH EAX                            ; 0049c85b
     LEA EAX,[ESP + 0x10]                ; 0049c85c
     PUSH EAX                            ; 0049c860
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0049c861 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0049c861 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 0049c867
     INC EBX                             ; 0049c868
     CALL core_fire.cpp_CFireEffect_createRock_FUN_004a28e0 ; 0049c869

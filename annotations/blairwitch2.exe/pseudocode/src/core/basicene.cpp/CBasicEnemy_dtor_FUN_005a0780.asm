@@ -8,9 +8,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_armour.cpp_FUN_0040f2b0
+;   core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
-;   core_muzzle.cpp_FUN_0059df70
+;   core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;
 ; *****************************************************************************
@@ -22,14 +22,14 @@ section .text
     PUSH 0x0                            ; 005a0784
     ADD EAX,0x3a20                      ; 005a0786
     PUSH EAX                            ; 005a078b
-    CALL core_armour.cpp_FUN_0040f2b0   ; 005a078c
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0 ; 005a078c
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a0791
     PUSH 0x0                            ; 005a0794
     SUB EAX,0x9c8                       ; 005a0796
     PUSH EAX                            ; 005a079b
-    CALL core_muzzle.cpp_FUN_0059df70   ; 005a079c
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70 ; 005a079c
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; SFollowFormation * core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70(SFollowFormation * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a07a1
     PUSH 0x0                            ; 005a07a4
     SUB EAX,0x34c                       ; 005a07a6

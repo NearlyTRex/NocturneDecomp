@@ -41,15 +41,15 @@
 ;   TerminatedCString s_ric_s_wav_005c098d
 ;   TerminatedCString s_ric_s_wav_005c099a
 ;   TerminatedCString s_ric_s_wav_005c09a7
-;   undefined4 DAT_005c09b8
-;   undefined4 DAT_005fdbf8
-;   undefined2 DAT_005fdbfc
-;   undefined4 DAT_006045f8
-;   undefined4 DAT_01c74e9c
-;   undefined4 DAT_01c74ea0
-;   undefined4 DAT_01c8aea0
-;   undefined4 DAT_01c8aea8
-;   undefined4 DAT_01c8aeac
+;   double g_DOUBLE_005c09b8 = 0.0578000000000000
+;   char[60] g_DefaultRicochetSound
+;   undefined4 g_DefaultRicochetSound+4
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
+;   int g_SmokeParticleAllocIndex
+;   CSmokeParticle[2048] g_SmokeParticlePool
+;   int g_INT_01c8aea0
+;   CBulletHole[256] g_CBulletHole_ARRAY_01c8aea8
+;   undefined4 g_CBulletHole_ARRAY_01c8aea8[0].position.y
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -92,7 +92,7 @@ section .text
     TEST EDX,EDX                        ; 004a20ca
     JNZ 0x004a2236                      ; 004a20cc
         ;   XREF to: 004a2236 (CONDITIONAL_JUMP)  ; LAB_004a2236
-    CMP dword ptr [0x01c8aea0],0x0      ; 004a20d2 | DAT_01c8aea0
+    CMP dword ptr [0x01c8aea0],0x0      ; 004a20d2 | g_INT_01c8aea0
     JLE 0x004a2236                      ; 004a20d9
         ;   XREF to: 004a2236 (CONDITIONAL_JUMP)  ; LAB_004a2236
     FLD float ptr [EBX]                 ; 004a20df
@@ -103,11 +103,11 @@ section .text
     LEA EDI,[ESP + 0x40]                ; 004a20eb
     LEA ESI,[ESP + 0x34]                ; 004a20ef
     FXCH ST2                            ; 004a20f3
-    FSUB float ptr [EAX]                ; 004a20f5 | DAT_01c8aea8 | DAT_01c8aee8
+    FSUB float ptr [EAX]                ; 004a20f5 | g_CBulletHole_ARRAY_01c8aea8 | g_CBulletHole_ARRAY_01c8aea8[1].position.x
     FXCH                                ; 004a20f7
-    FSUB float ptr [EAX + 0x4]          ; 004a20f9 | DAT_01c8aeac | DAT_01c8aeec
+    FSUB float ptr [EAX + 0x4]          ; 004a20f9 | g_CBulletHole_ARRAY_01c8aea8[0].position.y | g_CBulletHole_ARRAY_01c8aea8[1].position.y
     FXCH ST2                            ; 004a20fc
-    FSUB float ptr [EAX + 0x8]          ; 004a20fe | DAT_01c8aeb0 | DAT_01c8aef0
+    FSUB float ptr [EAX + 0x8]          ; 004a20fe | g_CBulletHole_ARRAY_01c8aea8[0].position.z | g_CBulletHole_ARRAY_01c8aea8[1].position.z
     FXCH ST2                            ; 004a2101
     FSTP float ptr [ESP + 0x38]         ; 004a2103
     FXCH                                ; 004a2107
@@ -136,7 +136,7 @@ section .text
     FLD float ptr [ESP + 0x54]          ; 004a2146
     FMUL ST0                            ; 004a214a
     FADDP                               ; 004a214c
-    FCOMP double ptr [0x005c09b8]       ; 004a214e | DAT_005c09b8
+    FCOMP double ptr [0x005c09b8]       ; 004a214e | g_DOUBLE_005c09b8
     FNSTSW AX                           ; 004a2154
     SAHF                                ; 004a2156
     JNC 0x004a221c                      ; 004a2157
@@ -152,23 +152,23 @@ section .text
     JZ 0x004a21d0                       ; 004a2172
         ;   XREF to: 004a21d0 (CONDITIONAL_JUMP)  ; caseD_9
     XOR ESI,ESI                         ; 004a2174
-    MOV EDI,dword ptr [0x01c74e9c]      ; 004a2176 | DAT_01c74e9c
+    MOV EDI,dword ptr [0x01c74e9c]      ; 004a2176 | g_SmokeParticleAllocIndex
         ;   Label: LAB_004a2176
     IMUL EAX,EDI,0x2c                   ; 004a217c
     LEA EDX,[EDI + 0x1]                 ; 004a217f
     ADD EAX,0x1c74ea0                   ; 004a2182
-    MOV dword ptr [0x01c74e9c],EDX      ; 004a2187 | DAT_01c74e9c
+    MOV dword ptr [0x01c74e9c],EDX      ; 004a2187 | g_SmokeParticleAllocIndex
     CMP EDX,0x800                       ; 004a218d
     JL 0x004a219d                       ; 004a2193
         ;   XREF to: 004a219d (CONDITIONAL_JUMP)  ; LAB_004a219d
     XOR EDI,EDI                         ; 004a2195
-    MOV dword ptr [0x01c74e9c],EDI      ; 004a2197 | DAT_01c74e9c
+    MOV dword ptr [0x01c74e9c],EDI      ; 004a2197 | g_SmokeParticleAllocIndex
     PUSH 0xffff                         ; 004a219d
         ;   Label: LAB_004a219d
     PUSH 0x0                            ; 004a21a2
     PUSH 0x3e99999a                     ; 004a21a4
     PUSH EBX                            ; 004a21a9
-    PUSH EAX                            ; 004a21aa | DAT_01c74ea0
+    PUSH EAX                            ; 004a21aa | g_SmokeParticlePool
     INC ESI                             ; 004a21ab
     CALL core_fire.cpp_CSmokeParticle_init_FUN_00496d60 ; 004a21ac
         ;   XREF to: 00496d60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_init_FUN_00496d60(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
@@ -185,9 +185,9 @@ section .text
     MOV ECX,0xc                         ; 004a21d0
         ;   Label: caseD_0
     MOV EDI,ESP                         ; 004a21d5
-    MOV ESI,0x5fdbf8                    ; 004a21d7 | DAT_005fdbf8
-    MOVSD.REP ES:EDI,ESI                ; 004a21dc | DAT_005fdbf8 | DAT_005fdbfc
-    MOVSW ES:EDI,ESI                    ; 004a21de | DAT_005fdbfc
+    MOV ESI,0x5fdbf8                    ; 004a21d7 | g_DefaultRicochetSound
+    MOVSD.REP ES:EDI,ESI                ; 004a21dc | g_DefaultRicochetSound | g_DefaultRicochetSound+4
+    MOVSW ES:EDI,ESI                    ; 004a21de | g_DefaultRicochetSound+4
     MOV ECX,dword ptr [EBP + 0x20]      ; 004a21e0
     CMP ECX,0x9                         ; 004a21e3
     JA 0x004a21f1                       ; 004a21e6
@@ -217,7 +217,7 @@ section .text
         ;   XREF to: 004a215d (UNCONDITIONAL_JUMP)  ; LAB_004a215d
     MOV ESI,dword ptr [ESP + 0x5c]      ; 004a221c
         ;   Label: LAB_004a221c
-    MOV EDI,dword ptr [0x01c8aea0]      ; 004a2220 | DAT_01c8aea0
+    MOV EDI,dword ptr [0x01c8aea0]      ; 004a2220 | g_INT_01c8aea0
     ADD ESI,0x40                        ; 004a2226
     INC EDX                             ; 004a2229
     MOV dword ptr [ESP + 0x5c],ESI      ; 004a222a
@@ -381,7 +381,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004a2398
     PUSH EAX                            ; 004a239c
     PUSH 0x0                            ; 004a239d
-    MOV EBX,dword ptr [0x006045f8]      ; 004a239f | DAT_006045f8
+    MOV EBX,dword ptr [0x006045f8]      ; 004a239f | g_CSound_PTR_006045f8
     PUSH EBX                            ; 004a23a5
     CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004a23a6
         ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)

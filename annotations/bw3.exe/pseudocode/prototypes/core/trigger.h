@@ -35,7 +35,7 @@ int __cdecl CTrigger::renderTransparent(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_getBoundingBox_FUN_0056e8c0
 // Address: 0056e8c0
-CBoundingBox3D * __cdecl CTrigger::getBoundingBox(CTrigger *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTrigger::getBoundingBox(CTrigger *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_trigger.cpp_CTrigger_archive_FUN_0056e940
 // Address: 0056e940
@@ -69,17 +69,17 @@ int __cdecl CTrigger::acceptsDamageFrom(CTrigger *this_ptr,CDemonActor *actor);
 // Address: 0056ee20
 void __cdecl CTrigger::applyDamage(CTrigger *this_ptr,float hit_points);
 
-// Original: core_trigger.cpp_FUN_0056eed0
+// Original: core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0056eed0
 // Address: 0056eed0
-void FUN_0056eed0(int param_1);
+void __cdecl CTrigger::calculateTestRadius(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_getTargetPoints_FUN_0056efa0
 // Address: 0056efa0
 int __cdecl CTrigger::getTargetPoints(CTrigger *this_ptr,CVector3f *out_points_array);
 
-// Original: core_trigger.cpp_FUN_0056f080
+// Original: core_trigger.cpp_CTrigger_containsActor_FUN_0056f080
 // Address: 0056f080
-undefined4 FUN_0056f080(int param_1,CDemonActor *param_2);
+int __cdecl CTrigger::containsActor(CTrigger *this_ptr,CDemonActor *actor);
 
 // Original: core_trigger.cpp_CTrigger_dtor_FUN_0056f410
 // Address: 0056f410

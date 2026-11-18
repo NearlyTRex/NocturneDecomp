@@ -6,28 +6,26 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(CDemonRenderer *this_ptr)
 
 {
   int *piVar1;
   int iVar2;
   int iVar3;
-  byte *puVar4;
+  SFace *pSVar4;
   int iVar5;
   int iVar6;
   code *compar;
   
   if (this_ptr->shadow_pass_active == 0) {
-    if (0 < (int)_DAT_01b4d7ac) {
-      puVar4 = &DAT_01b4d7b4;
-      iVar6 = _DAT_01b4d7ac * 4;
+    if (0 < g_CaptureFaceCount) {
+      pSVar4 = g_CapturedFaces;
+      iVar6 = g_CaptureFaceCount * 4;
       iVar3 = 0;
       do {
-        *(byte **)(iVar3 + 0x1b748b4) = puVar4;
+        *(SFace **)((int)g_CapturedFacePointers + iVar3) = pSVar4;
         iVar3 = iVar3 + 4;
-        puVar4 = puVar4 + 0x20;
+        pSVar4 = pSVar4 + 1;
       } while (iVar3 < iVar6);
     }
     if (this_ptr->texture_capture_enabled == 1) {
@@ -36,28 +34,28 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
     else {
       compar = engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50;
     }
-    _qsort((void *)0x1b748b4,_DAT_01b4d7ac,4,compar);
+    _qsort(g_CapturedFacePointers,g_CaptureFaceCount,4,compar);
     this_ptr->texture_capture_enabled = 0;
     if (this_ptr->face_capture_enabled != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(this_ptr,1);
     }
     iVar6 = -1;
     iVar3 = 0;
-    if (0 < (int)_DAT_01b4d7ac) {
+    if (0 < g_CaptureFaceCount) {
       iVar5 = 0;
       do {
-        iVar2 = **(int **)(iVar5 + 0x1b748b4);
+        iVar2 = **(int **)((int)g_CapturedFacePointers + iVar5);
         if (iVar6 != iVar2) {
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-                    (this_ptr,(SMRGLTextureBasic *)(iVar2 * 0x48 + 0x1b796d4));
+                    (this_ptr,g_CapturedTextureArray + iVar2 * 3);
           iVar6 = iVar2;
         }
-        piVar1 = (int *)(iVar5 + 0x1b748b4);
+        piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);
         iVar5 = iVar5 + 4;
         iVar3 = iVar3 + 1;
         engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0
                   (this_ptr,(SInputFace *)(*piVar1 + 0xc),*(int *)(*piVar1 + 4));
-      } while (iVar3 < (int)_DAT_01b4d7ac);
+      } while (iVar3 < g_CaptureFaceCount);
     }
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(this_ptr,0);
   }

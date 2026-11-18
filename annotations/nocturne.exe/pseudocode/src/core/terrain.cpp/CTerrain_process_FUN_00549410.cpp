@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_terrain_cpp_CTerrain_process_FUN_00549410(CTerrain *this_ptr)
 
 {
   int iVar1;
   
   iVar1 = this_ptr->animation_counter +
-          ((uint)((longlong)_DAT_01bd1d80 * 0x6270) >> 0x10 |
-          (int)((ulonglong)((longlong)_DAT_01bd1d80 * 0x6270) >> 0x20) << 0x10);
+          ((uint)((longlong)g_GlobalDeltaTimeInt * 0x6270) >> 0x10 |
+          (int)((ulonglong)((longlong)g_GlobalDeltaTimeInt * 0x6270) >> 0x20) << 0x10);
   this_ptr->animation_counter = iVar1;
   if (iVar1 < 0x8000001) {
     return;

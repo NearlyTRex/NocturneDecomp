@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 152,
+    "complexity_score": 97,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 8,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -69,25 +68,25 @@
     {
       "addr": "00550da0",
       "from_addr": "00551011",
-      "name": "core_set.cpp_FUN_00550da0",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00551170",
       "from_addr": "005513e4",
-      "name": "core_set.cpp_FUN_00551170",
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00551480",
       "from_addr": "00551597",
-      "name": "core_set.cpp_FUN_00551480",
+      "name": "core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00551480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005516c0",
       "from_addr": "005517d4",
-      "name": "core_set.cpp_FUN_005516c0",
+      "name": "core_set.cpp_CDemonSet_renderTransparentActors_FUN_005516c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,14 +112,14 @@
   "globals": [
     {
       "addr": "0202a840",
-      "name": "DAT_0202a840",
-      "type": "undefined4",
+      "name": "g_LightingSystemDirty",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0202a844",
-      "name": "DAT_0202a844",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a844",
+      "type": "float",
       "value": null
     },
     {
@@ -131,14 +130,14 @@
     },
     {
       "addr": "0202a84c",
-      "name": "DAT_0202a84c",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a84c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0202a850",
-      "name": "DAT_0202a850",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a850",
+      "type": "float",
       "value": null
     },
     {
@@ -149,14 +148,14 @@
     },
     {
       "addr": "0202a858",
-      "name": "DAT_0202a858",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a858",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0202a85c",
-      "name": "DAT_0202a85c",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a85c",
+      "type": "float",
       "value": null
     },
     {
@@ -167,14 +166,14 @@
     },
     {
       "addr": "0202a864",
-      "name": "DAT_0202a864",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a864",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0202a868",
-      "name": "DAT_0202a868",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a868",
+      "type": "float",
       "value": null
     },
     {
@@ -185,61 +184,61 @@
     },
     {
       "addr": "0202a870",
-      "name": "DAT_0202a870",
-      "type": "undefined4",
+      "name": "g_FLOAT_0202a870",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0202a874",
-      "name": "DAT_0202a874",
-      "type": "undefined4",
+      "name": "g_LightingRotationMatrix",
+      "type": "CMatrix3x3f",
       "value": null
     },
     {
       "addr": "0202a878",
-      "name": "DAT_0202a878",
+      "name": "g_LightingRotationMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0202a87c",
-      "name": "DAT_0202a87c",
+      "name": "g_LightingRotationMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0202a880",
-      "name": "DAT_0202a880",
+      "name": "g_LightingRotationMatrix.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0202a884",
-      "name": "DAT_0202a884",
+      "name": "g_LightingRotationMatrix.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0202a888",
-      "name": "DAT_0202a888",
+      "name": "g_LightingRotationMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0202a88c",
-      "name": "DAT_0202a88c",
+      "name": "g_LightingRotationMatrix.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0202a890",
-      "name": "DAT_0202a890",
+      "name": "g_LightingRotationMatrix.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0202a894",
-      "name": "DAT_0202a894",
+      "name": "g_LightingRotationMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -294,7 +293,7 @@
       {
         "call_addr": "00551011",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00550da0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,7 +304,7 @@
       {
         "call_addr": "005513e4",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00551170",
+        "caller": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,7 +315,7 @@
       {
         "call_addr": "00551597",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00551480",
+        "caller": "core_set.cpp_CDemonSet_renderOpaqueActors_FUN_00551480",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -327,7 +326,7 @@
       {
         "call_addr": "005517d4",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005516c0",
+        "caller": "core_set.cpp_CDemonSet_renderTransparentActors_FUN_005516c0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -476,46 +475,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0202a844",
-      "severity": "mild",
-      "text": "if (position != (CVector3f *)&DAT_0202a844) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0202a850",
-      "severity": "mild",
-      "text": "if (orientation != (UOrientationVector *)&DAT_0202a850) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0202a85c",
-      "severity": "mild",
-      "text": "if (aabb_min != (CVector3f *)&DAT_0202a85c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0202a868",
-      "severity": "mild",
-      "text": "if (aabb_max != (CVector3f *)&DAT_0202a868) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0202a874",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)&DAT_0202a874;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(CMatrix3x3f *)((int)rotation_matrix",
@@ -528,7 +487,7 @@
       "line": 52,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00551ccb: MOVSD.REP ES:EDI,ESI  ; DAT_0202a874 | DAT_0202a878",
+      "text": "// 00551ccb: MOVSD.REP ES:EDI,ESI  ; g_LightingRotationMatrix | g_LightingRotationMatrix.m[0].y",
       "type": "unrolled_memcpy"
     }
   ]

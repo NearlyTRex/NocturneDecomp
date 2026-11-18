@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 63,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 2,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "fast_inv_sqrt_inline",
-      "warning_overlapping_globals"
+      "fast_inv_sqrt_inline"
     ],
-    "total_lines": 138
+    "total_lines": 137
   },
   "cross_references": [],
   "function": {
@@ -32,9 +31,9 @@
   "globals": [
     {
       "addr": "0059063a",
-      "name": "DAT_0059063a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_0059063a",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "01c70710",
@@ -181,19 +180,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
-      "line": 31,
+      "line": 29,
       "match": "fVar2 = (float)(g_FastInvSqrtMagic - ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar",
       "severity": "moderate",
-      "text": "fVar2 = (float)(g_FastInvSqrtMagic - ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) >> 1)) * (float)_DAT_0059063a",
+      "text": "fVar2 = (float)(g_FastInvSqrtMagic - ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) >> 1)) * (float)65535;",
       "type": "fast_inv_sqrt_inline"
     }
   ]

@@ -74,8 +74,8 @@
     },
     {
       "addr": "00681efc",
-      "name": "g_SoundModeTable",
-      "type": "SSoundModeEntry[27]",
+      "name": "g_ReverbPresetTable",
+      "type": "SReverbPreset[27]",
       "value": null
     },
     {
@@ -145,12 +145,12 @@
   },
   "resolved_suspects": [
     {
-      "description": "Pointer value `&g_SoundModeTable[0].name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_ReverbPresetTable[0].name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 13,
-      "match": "(int)&g_SoundModeTable[0].name",
+      "match": "(int)&g_ReverbPresetTable[0].name",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&g_SoundModeTable[0].name + iVar2);",
+      "text": "puVar1 = (uint *)((int)&g_ReverbPresetTable[0].name + iVar2);",
       "type": "pointer_truncation"
     },
     {
@@ -159,7 +159,7 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&g_SoundModeTable[0].name + iVar2);",
+      "text": "puVar1 = (uint *)((int)&g_ReverbPresetTable[0].name + iVar2);",
       "type": "pointer_cast"
     }
   ],

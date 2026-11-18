@@ -8,10 +8,10 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c70f78
-;   undefined4 DAT_01c70f7c
-;   undefined4 DAT_01c712fc
-;   undefined4 DAT_01c71300
+;   int g_EdgeCount
+;   SHardwareEdge[16] g_HardwareEdgeTable
+;   int g_EdgeListMinY
+;   int g_EdgeListMaxY
 ;
 ; *****************************************************************************
 
@@ -41,25 +41,25 @@ section .text
     MOV EDX,EBX                         ; 0049410e
     MOV EBX,EAX                         ; 00494110
     MOV EAX,EDX                         ; 00494112
-    MOV ECX,dword ptr [0x01c70f78]      ; 00494114 | DAT_01c70f78
+    MOV ECX,dword ptr [0x01c70f78]      ; 00494114 | g_EdgeCount
         ;   Label: LAB_00494114
     SHL ECX,0x3                         ; 0049411a
     MOV EDX,ECX                         ; 0049411d
     SHL ECX,0x3                         ; 0049411f
     SUB ECX,EDX                         ; 00494122
     ADD ECX,0x1c70f7c                   ; 00494124
-    MOV dword ptr [ECX],EBX             ; 0049412a | DAT_01c70f7c
-    MOV EBP,dword ptr [0x01c712fc]      ; 0049412c | DAT_01c712fc
+    MOV dword ptr [ECX],EBX             ; 0049412a | g_HardwareEdgeTable
+    MOV EBP,dword ptr [0x01c712fc]      ; 0049412c | g_EdgeListMinY
     MOV dword ptr [ECX + 0x4],EAX       ; 00494132
     CMP EBX,EBP                         ; 00494135
     JGE 0x0049413f                      ; 00494137
         ;   XREF to: 0049413f (CONDITIONAL_JUMP)  ; LAB_0049413f
-    MOV dword ptr [0x01c712fc],EBX      ; 00494139 | DAT_01c712fc
-    CMP EAX,dword ptr [0x01c71300]      ; 0049413f | DAT_01c71300
+    MOV dword ptr [0x01c712fc],EBX      ; 00494139 | g_EdgeListMinY
+    CMP EAX,dword ptr [0x01c71300]      ; 0049413f | g_EdgeListMaxY
         ;   Label: LAB_0049413f
     JLE 0x0049414c                      ; 00494145
         ;   XREF to: 0049414c (CONDITIONAL_JUMP)  ; LAB_0049414c
-    MOV [0x01c71300],EAX                ; 00494147 | DAT_01c71300
+    MOV [0x01c71300],EAX                ; 00494147 | g_EdgeListMaxY
     MOV EAX,dword ptr [ESI + 0x10]      ; 0049414c
         ;   Label: LAB_0049414c
     MOV dword ptr [ECX + 0x8],EAX       ; 0049414f
@@ -120,10 +120,10 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004941e9
     MOV EBP,dword ptr [ECX + 0x20]      ; 004941ed
     ADD EBP,EAX                         ; 004941f0
-    MOV EAX,[0x01c70f78]                ; 004941f2 | DAT_01c70f78
+    MOV EAX,[0x01c70f78]                ; 004941f2 | g_EdgeCount
     INC EAX                             ; 004941f7
     MOV dword ptr [ECX + 0x20],EBP      ; 004941f8
-    MOV [0x01c70f78],EAX                ; 004941fb | DAT_01c70f78
+    MOV [0x01c70f78],EAX                ; 004941fb | g_EdgeCount
     POP EBP                             ; 00494200
         ;   Label: LAB_00494200
     POP EDI                             ; 00494201

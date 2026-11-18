@@ -11,7 +11,7 @@ CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_00540aa0(void)
 {
   CScat *pCVar1;
   
-  pCVar1 = (CScat *)operator_new(0x1ffd8);
+  pCVar1 = operator_new(0x1ffd8);
   if (pCVar1 == (CScat *)0x0) {
     return (CScat *)0x0;
   }

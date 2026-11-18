@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_voicusummon_wav_00597229
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CDripActorType_01b7b2f4.name_hash
+;   undefined4 g_CDripClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -48,7 +48,7 @@ section .text
     POP ESI                             ; 0054e0de
     POP EBX                             ; 0054e0df
     RET                                 ; 0054e0e0
-    MOV ECX,dword ptr [0x01b7b32c]      ; 0054e0e1 | g_CDripActorType_01b7b2f4.name_hash
+    MOV ECX,dword ptr [0x01b7b32c]      ; 0054e0e1 | g_CDripClassInfo.name_hash
         ;   Label: LAB_0054e0e1
     PUSH ECX                            ; 0054e0e7
     MOV EBP,dword ptr [EDI + EBX*0x1 + 0x14cd70] ; 0054e0e8 | g_CDemonSetInstance.actors[0]

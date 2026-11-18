@@ -10,7 +10,7 @@
 ;
 ; XREF[12]:
 ;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425bd8
-;   core_charactr.cpp_FUN_0042d500 at 0042d6ce
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500 at 0042d6ce
 ;   core_construc.cpp_CConstruct_setup_FUN_004425f0 at 0044278a
 ;   core_cow.cpp_CZombieCow_setup_FUN_00444fd0 at 00445039
 ;   core_demnfolk.cpp_CDemnfolk_setup_FUN_00454d20 at 00454e4b
@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1d22
 ;   TerminatedCString s_Can_t_find_part_s_in_mod_005d1d37
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
@@ -87,10 +87,10 @@ section .text
     MOV ESI,0x5d1d22                    ; 0054a36a | = "..\\core\\skeleton.cpp"
     MOV EAX,0x5d8                       ; 0054a36f
     PUSH 0x5d1d37                       ; 0054a374 | = "Can't find part %s in model %s"
-    MOV dword ptr [0x01d71de0],ESI      ; 0054a379 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 0054a37f | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054a384
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 0054a379 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 0054a37f | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054a384
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0054a389
     MOV EAX,0xffffffff                  ; 0054a38c
     POP EBP                             ; 0054a391

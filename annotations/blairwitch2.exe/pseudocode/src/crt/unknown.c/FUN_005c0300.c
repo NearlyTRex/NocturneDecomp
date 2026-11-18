@@ -27,7 +27,7 @@ uint FUN_005c0300(uint param_1)
     if (0x13 < param_1) {
       param_1 = 0x13;
     }
-    error_code = *(int *)(&DAT_0061f469 + param_1) >> 0x18;
+    error_code = *(int *)((int)&g_DOUBLE_0061f464 + param_1 + 5) >> 0x18;
   }
   setErrno(error_code);
   return 0xffffffff;

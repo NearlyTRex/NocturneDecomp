@@ -10,7 +10,7 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_00581910 at 0058274f
 ;
 ; Referenced Globals:
-;   undefined4 s_voicusummon_wav_005edb7f+1
+;   TerminatedCString s_voicusummon_wav_005edb80
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -30,7 +30,7 @@ section .text
     PUSH ESI                            ; 005834b1
     PUSH EDI                            ; 005834b2
     MOV EBX,dword ptr [ESP + 0x10]      ; 005834b3
-    PUSH 0x5edb80                       ; 005834b7 | s_voicusummon_wav_005edb7f+1
+    PUSH 0x5edb80                       ; 005834b7 | = "voicusummon.wav"
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 005834bc
     PUSH EBX                            ; 005834c2
     XOR ESI,ESI                         ; 005834c3

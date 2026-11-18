@@ -37,8 +37,8 @@
 ;   void* PTR_SelectObject_005d0424 = 001d0874
 ;   void* PTR_SetBkColor_005d0428 = 001d0884
 ;   void* PTR_SetBkMode_005d042c = 001d0892
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b4a0
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b4a0 = 0x8
 ;
 ; Called Functions:
 ;   CreateBrushIndirect
@@ -86,7 +86,7 @@ section .text
     MOVZX EBP,DL                        ; 005b1ed3
     MOV ECX,dword ptr [EBX + 0x6b6c]    ; 005b1ed6
     OR EAX,EBP                          ; 005b1edc
-    CMP ECX,dword ptr [0x0061b4a0]      ; 005b1ede | DAT_0061b4a0
+    CMP ECX,dword ptr [0x0061b4a0]      ; 005b1ede | g_INT_0061b4a0
     SETNZ DL                            ; 005b1ee4
     MOVZX EBP,DL                        ; 005b1ee7
     OR EAX,EBP                          ; 005b1eea
@@ -100,7 +100,7 @@ section .text
     POP ESI                             ; 005b1ef8
     POP EBX                             ; 005b1ef9
     RET                                 ; 005b1efa
-    MOV EDI,dword ptr [0x0061b498]      ; 005b1efb | DAT_0061b498
+    MOV EDI,dword ptr [0x0061b498]      ; 005b1efb | g_INT_0061b498
         ;   Label: LAB_005b1efb
     JMP 0x005b1ea7                      ; 005b1f01
         ;   XREF to: 005b1ea7 (UNCONDITIONAL_JUMP)  ; LAB_005b1ea7
@@ -134,7 +134,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EDI       ; 005b1f51
     MOV dword ptr [ESP + 0x8],ESI       ; 005b1f55
     NEG ECX                             ; 005b1f59
-    MOV AX,[0x0061b4a0]                 ; 005b1f5b | DAT_0061b4a0
+    MOV AX,[0x0061b4a0]                 ; 005b1f5b | g_INT_0061b4a0
     XOR EBP,EBP                         ; 005b1f61
     MOV dword ptr [ESP + 0x8],ECX       ; 005b1f63
     PUSH EBP                            ; 005b1f67
@@ -202,7 +202,7 @@ section .text
     MOV dword ptr [EBX + 0x6a54],EAX    ; 005b204a
     MOV dword ptr [EBX + 0x6b64],EDI    ; 005b2050
     MOV dword ptr [EBX + 0x6b68],ESI    ; 005b2056
-    MOV EAX,[0x0061b4a0]                ; 005b205c | DAT_0061b4a0
+    MOV EAX,[0x0061b4a0]                ; 005b205c | g_INT_0061b4a0
     MOV EDX,dword ptr [EBX + 0x6a48]    ; 005b2061
     MOV dword ptr [EBX + 0x6b6c],EAX    ; 005b2067
     TEST EDX,EDX                        ; 005b206d

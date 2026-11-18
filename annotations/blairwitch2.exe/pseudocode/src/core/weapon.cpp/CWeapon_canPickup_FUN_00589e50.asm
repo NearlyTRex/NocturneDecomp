@@ -11,7 +11,7 @@
 ;   core_turret.cpp_CTurret_canPickup_FUN_005801e0 at 005801fc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ee52a
+;   double g_DOUBLE_005ee52a = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c840
@@ -45,7 +45,7 @@ section .text
     FMUL ST0                            ; 00589e89
     FADDP                               ; 00589e8b
     FSQRT                               ; 00589e8d
-    FCOMP double ptr [0x005ee52a]       ; 00589e8f | DAT_005ee52a
+    FCOMP double ptr [0x005ee52a]       ; 00589e8f | g_DOUBLE_005ee52a
     FNSTSW AX                           ; 00589e95
     SAHF                                ; 00589e97
     JA 0x00589ea3                       ; 00589e98

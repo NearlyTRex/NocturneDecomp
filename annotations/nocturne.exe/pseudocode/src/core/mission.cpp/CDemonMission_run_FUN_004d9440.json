@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 117,
+    "complexity_score": 66,
     "cross_reference_count": 3,
     "function_call_count": 20,
     "global_count": 17,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 261
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 66,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 260
   },
   "cross_references": [
     {
@@ -194,7 +191,7 @@
     },
     {
       "addr": "005baca0",
-      "name": "g_CLevelLoader_PTR_005baca0",
+      "name": "g_CLevelLoaderPtr",
       "type": "CLevelLoader*",
       "value": "01cc3160"
     },
@@ -206,7 +203,7 @@
     },
     {
       "addr": "014b9900",
-      "name": "g_CBitFont_PTR_014b9900",
+      "name": "g_ThemeFont",
       "type": "CBitFont*",
       "value": null
     },
@@ -224,8 +221,8 @@
     },
     {
       "addr": "01cae0d4",
-      "name": "DAT_01cae0d4",
-      "type": "undefined4",
+      "name": "g_HeroCount",
+      "type": "int",
       "value": null
     },
     {
@@ -248,8 +245,8 @@
     },
     {
       "addr": "01ccbbf0",
-      "name": "DAT_01ccbbf0",
-      "type": "undefined4",
+      "name": "g_PendingMissionName",
+      "type": "char[8100]",
       "value": null
     }
   ],
@@ -367,38 +364,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_01ccbbf0",
-      "severity": "mild",
-      "text": "DAT_01ccbbf0 = '\\0';",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01ccbbf0",
-      "severity": "mild",
-      "text": "if ((iVar1 == 0) || (DAT_01ccbbf0 == '\\0')) break;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_01ccbbf0",
-      "severity": "mild",
-      "text": "core_mission_cpp_CDemonMission_load_FUN_004d7ee0(this_ptr,&DAT_01ccbbf0,0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

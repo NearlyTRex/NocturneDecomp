@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0(void)
 
 {
@@ -24,6 +22,7 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0(void)
   int aiStackY_1008 [3];
   float afStackY_ffc [979];
   CBoundingBox3D *in_stack_ffffff54;
+  CVector3f *input_local_point;
   float fStack_a4;
   float fStack_a0;
   float fStack_9c;
@@ -36,11 +35,11 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0(void)
   int iStack_5c;
   int aiStack_58 [2];
   float fStack_50;
-  float afStack_4c [5];
+  float afStack_4c [2];
+  CVector3f CStack_44;
   float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  float afStack_34 [2];
+  CVector3f CStack_2c;
   CVector3i CStack_20;
   float fStack_14;
   
@@ -56,27 +55,29 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0(void)
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
     fStack_38 = fStack_a4 + fStack_98;
-    fStack_34 = fStack_a0 + fStack_94;
-    fStack_30 = fStack_9c + fStack_90;
+    afStack_34[0] = fStack_a0 + fStack_94;
+    afStack_34[1] = fStack_9c + fStack_90;
     fStack_14 = fStack_a4 + fStack_98;
-    *(float *)(&stack0xfffffff0 + (uint)bVar4 * -8) = afStack_4c[(uint)bVar4 * -2 + 6];
+    *(float *)(&stack0xfffffff0 + (uint)bVar4 * -8) = afStack_34[(uint)bVar4 * -2];
     *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    fStack_50 = fStack_14 * _DAT_005d83eb;
-    afStack_4c[0] = unaff_EBP * _DAT_005d83eb;
-    afStack_4c[1] = unaff_EDI * _DAT_005d83eb;
-    afStack_4c[2] = fStack_14 * _DAT_005d83eb;
-    afStack_4c[(uint)bVar4 * -2 + 3] = afStack_4c[(uint)bVar4 * -2];
-    afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+         afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    input_local_point = &CStack_44;
+    fStack_50 = fStack_14 * 0.5f;
+    afStack_4c[0] = unaff_EBP * 0.5f;
+    afStack_4c[1] = unaff_EDI * 0.5f;
+    CStack_44.x = fStack_14 * 0.5f;
+    *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + 4) = afStack_4c[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408d70();
-    fStack_68 = fStack_2c;
-    afStack_64[(uint)bVar4 * -2] = afStack_4c[(uint)bVar4 * -2 + 9];
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+              (g_CScriptPtr->focus_actor,input_local_point,&CStack_2c);
+    fStack_68 = CStack_2c.x;
+    afStack_64[(uint)bVar4 * -2] = *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
     afStack_64[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
-    CStack_74.x = (int)ROUND(fStack_68 * _DAT_005f7550);
-    CStack_74.y = (int)ROUND(afStack_64[0] * _DAT_005f7550);
-    CStack_74.z = (int)ROUND(afStack_64[1] * _DAT_005f7550);
+         *(float *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    CStack_74.x = (int)ROUND(fStack_68 * 256.0f);
+    CStack_74.y = (int)ROUND(afStack_64[0] * 256.0f);
+    CStack_74.z = (int)ROUND(afStack_64[1] * 256.0f);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0043cbe0
               (&g_CDemonCameraInstance,&CStack_74,&CStack_20);
     iStack_5c = CStack_20.x;
@@ -84,15 +85,15 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0(void)
     aiStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          *(int *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     if (aiStack_58[1] != 0) {
-      _DAT_01cb8110 =
+      g_IrisFadeCenterX =
            (int)((iStack_5c + (iStack_5c >> 0x1f) * -0x10000) -
                 (uint)((iStack_5c >> 0x1f) << 0xf < 0)) >> 0x10;
-      _DAT_01cb8114 =
+      g_IrisFadeCenterY =
            (int)((aiStack_58[0] + (aiStack_58[0] >> 0x1f) * -0x10000) -
                 (uint)((aiStack_58[0] >> 0x1f) << 0xf < 0)) >> 0x10;
-      if (0x1e0 < DAT_006141bc) {
-        _DAT_01cb8110 = (_DAT_01cb8110 * DAT_006141b8) / 0x280;
-        _DAT_01cb8114 = (_DAT_01cb8114 * DAT_006141bc) / 0x1e0;
+      if (0x1e0 < g_INT_006141bc) {
+        g_IrisFadeCenterX = (g_IrisFadeCenterX * g_INT_006141b8) / 0x280;
+        g_IrisFadeCenterY = (g_IrisFadeCenterY * g_INT_006141bc) / 0x1e0;
         return;
       }
     }

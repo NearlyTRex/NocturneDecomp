@@ -2,11 +2,11 @@
 // Address: 00490210
 // Address Range: [[00490210, 00490417]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *param_2)
+// Signature: void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *font_path)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *param_2)
+void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_ptr,char *font_path)
 
 {
   _FILE *stream;
@@ -21,7 +21,7 @@ void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_00490210(CBitFont *this_p
   int local_14;
   int local_10;
   
-  stream = engine_dosio_cpp_getFile_FUN_00456a60("art",param_2,"rt");
+  stream = engine_dosio_cpp_getFile_FUN_00456a60("art",font_path,"rt");
   if (stream == (_FILE *)0x0) {
     return;
   }

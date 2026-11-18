@@ -14,9 +14,10 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004fd750(CLadder 
   float *pfVar3;
   byte bVar4;
   float afStackY_1024 [967];
+  CVector3f *in_stack_ffffff04;
   float local_f0;
-  uint local_e0;
-  uint local_d0;
+  float local_e0;
+  float local_d0;
   CMatrix3x4f local_cc;
   CMatrix3x4f local_9c;
   CMatrix3x4f local_6c;
@@ -24,17 +25,17 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004fd750(CLadder 
   float afStack_38 [4];
   float local_28;
   float local_24;
-  uint local_20;
-  uint local_1c;
+  float local_20;
+  float local_1c;
   float local_18;
   float local_14;
   float local_10;
   
   bVar4 = 0;
   if (this_ptr->master_actor != (CDemonActor *)0x0) {
-    core_xform_cpp_FUN_005b5760
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
               (&local_cc,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
-    core_xform_cpp_FUN_005b5620
+    core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
               (&local_9c,&(this_ptr->master_actor->location).position,
                &(this_ptr->master_actor->orient).vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_cc,&local_9c,&local_6c);
@@ -57,7 +58,8 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004fd750(CLadder 
       (this_ptr->relative_position).y = afStack_38[3];
       (this_ptr->relative_position).z = local_28;
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff04);
+    core_xform_cpp_matrixToEulerAngles_FUN_005b5930
+              ((CMatrix3x4f *)&stack0xffffff04,in_stack_ffffff04);
     local_18 = local_3c;
     afStack_38[(uint)bVar4 * -2 + 9] = afStack_38[(uint)bVar4 * -2];
     afStack_38[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =

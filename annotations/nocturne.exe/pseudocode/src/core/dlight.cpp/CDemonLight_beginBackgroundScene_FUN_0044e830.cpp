@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemonLight *this_ptr)
 
 {
@@ -15,7 +13,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
   int iVar2;
   int iVar3;
   void **ppvVar4;
-  uint *puVar5;
+  byte **ppuVar5;
   byte bVar6;
   
   bVar6 = 0;
@@ -24,19 +22,19 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
     g_CurrentLineNumber = 431;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonLight::beginBackgroundScene - Scene not open");
   }
-  _DAT_01ab99f0 = _DAT_01ab99f0 + 1;
-  if (_DAT_01ab99f0 == 1) {
+  g_BackgroundSceneNestingCount = g_BackgroundSceneNestingCount + 1;
+  if (g_BackgroundSceneNestingCount == 1) {
     ppvVar4 = g_ScreenBufferArray;
-    puVar5 = (uint *)&DAT_01ab99f4;
+    ppuVar5 = g_SavedScreenBufferArray;
     for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *puVar5 = *ppvVar4;
+      *ppuVar5 = *ppvVar4;
       ppvVar4 = ppvVar4 + (uint)bVar6 * -2 + 1;
-      puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+      ppuVar5 = ppuVar5 + (uint)bVar6 * -2 + 1;
     }
     for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar5 = *(byte *)ppvVar4;
+      *(byte *)ppuVar5 = *(byte *)ppvVar4;
       ppvVar4 = (void **)((int)ppvVar4 + (uint)bVar6 * -2 + 1);
-      puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
+      ppuVar5 = (byte **)((int)ppuVar5 + (uint)bVar6 * -2 + 1);
     }
     if (this_ptr->master_zbuffer == (void *)0x0) {
       g_CurrentFilename = "..\\core\\dlight.cpp";

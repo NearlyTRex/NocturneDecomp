@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35814
-;   undefined4 DAT_01c35820
-;   undefined4 DAT_01c3582c
+;   int g_INT_006141c0 = 0x8
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     PUSH ESI                            ; 004d0c91
     PUSH EDI                            ; 004d0c92
     PUSH EBP                            ; 004d0c93
-    MOV EBP,dword ptr [0x006141c0]      ; 004d0c94 | DAT_006141c0
+    MOV EBP,dword ptr [0x006141c0]      ; 004d0c94 | g_INT_006141c0
     XOR EDX,EDX                         ; 004d0c9a
     XOR EAX,EAX                         ; 004d0c9c
     MOVZX ESI,byte ptr [EAX + 0x1c35839] ; 004d0c9e
@@ -30,11 +30,11 @@ section .text
     CMP EBP,0x20                        ; 004d0cb4
     JNZ 0x004d0d01                      ; 004d0cb7
         ;   XREF to: 004d0d01 (CONDITIONAL_JUMP)  ; LAB_004d0d01
-    MOV CL,byte ptr [0x01c35814]        ; 004d0cb9 | DAT_01c35814
+    MOV CL,byte ptr [0x01c35814]        ; 004d0cb9 | g_RedBitPosition
     SHL EDI,CL                          ; 004d0cbf
-    MOV CL,byte ptr [0x01c35820]        ; 004d0cc1 | DAT_01c35820
+    MOV CL,byte ptr [0x01c35820]        ; 004d0cc1 | g_GreenBitPosition
     SHL ESI,CL                          ; 004d0cc7
-    MOV CL,byte ptr [0x01c3582c]        ; 004d0cc9 | DAT_01c3582c
+    MOV CL,byte ptr [0x01c3582c]        ; 004d0cc9 | g_BlueBitPosition
     SHL EBX,CL                          ; 004d0ccf
     OR EDI,ESI                          ; 004d0cd1
     MOV ECX,EBX                         ; 004d0cd3
@@ -46,7 +46,7 @@ section .text
     CMP EDX,0x400                       ; 004d0ce3
     JNZ 0x004d0c9e                      ; 004d0ce9
         ;   XREF to: 004d0c9e (CONDITIONAL_JUMP)  ; LAB_004d0c9e
-    MOV dword ptr [0x006141c0],EBP      ; 004d0ceb | DAT_006141c0
+    MOV dword ptr [0x006141c0],EBP      ; 004d0ceb | g_INT_006141c0
     POP EBP                             ; 004d0cf1
     POP EDI                             ; 004d0cf2
     POP ESI                             ; 004d0cf3

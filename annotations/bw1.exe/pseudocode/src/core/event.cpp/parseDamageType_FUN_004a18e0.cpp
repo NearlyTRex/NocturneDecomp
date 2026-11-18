@@ -21,7 +21,7 @@ int __cdecl core_event_cpp_parseDamageType_FUN_004a18e0(char *type_name,int *out
     *out_type_id = 0x65;
     return 1;
   }
-  iVar1 = _stricmp(type_name,&DAT_005dcd6d);
+  iVar1 = _stricmp(type_name,"Fire");
   if (iVar1 == 0) {
     *out_type_id = 0x66;
     return 1;
@@ -36,7 +36,7 @@ int __cdecl core_event_cpp_parseDamageType_FUN_004a18e0(char *type_name,int *out
     *out_type_id = 0x68;
     return 1;
   }
-  iVar1 = _stricmp(type_name,&DAT_005dcd7e);
+  iVar1 = _stricmp(type_name,"Gas");
   if (iVar1 == 0) {
     *out_type_id = 0x69;
     return 1;

@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_moloch_cpp_CMoloch_getActorType_FUN_004dd920(CMoloch *this_ptr)
 
 {
-  return &g_CMolochActorType_01ccdc14;
+  return &g_CMolochClassInfo;
 }

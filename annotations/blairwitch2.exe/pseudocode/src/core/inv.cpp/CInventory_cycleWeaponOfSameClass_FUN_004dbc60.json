@@ -2,29 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 74,
+    "complexity_score": 75,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 60,
     "suspect_count": 1,
     "suspect_types": [
       "shadow_pointer_walk"
     ],
-    "total_lines": 190
+    "total_lines": 191
   },
   "cross_references": [
     {
       "addr": "004b76c0",
       "from_addr": "004b7ac4",
-      "name": "core_game.cpp_FUN_004b76c0",
+      "name": "core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004be8a0",
       "from_addr": "004bebc0",
-      "name": "core_game.cpp_FUN_004be8a0",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,7 +49,7 @@
     {
       "addr": "00408a50",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408a50"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50"
     },
     {
       "addr": "004dd270",
@@ -81,7 +81,7 @@
       {
         "call_addr": "004b7ac4",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b76c0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004b76c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,7 +92,7 @@
       {
         "call_addr": "004bebc0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004be8a0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,6 +146,12 @@
       "class": "logic-change",
       "ratio": 0.9588
     },
+    "bw3.exe": {
+      "addr": "004dbd80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9588
+    },
     "nocedit.exe": {
       "addr": "004fed10",
       "by": "name",
@@ -191,11 +197,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 23,
-      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "match": "pCVar4 = (T *)&pCVar4->FIELD",
       "severity": "moderate",
-      "text": "pCVar5 = (CInventory *)&pCVar5->owner;",
+      "text": "pCVar4 = (CInventory *)&pCVar4->owner;",
       "type": "shadow_pointer_walk"
     }
   ]

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360(CPathMap *this_ptr,CVector3f *source_position,int force_update)
 
 {
@@ -21,7 +19,7 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360(CPathMap *this_p
   
   bVar5 = 0;
   if (force_update == 0) {
-    iVar2 = this_ptr->update_timer - _DAT_01bd1d80;
+    iVar2 = this_ptr->update_timer - g_GlobalDeltaTimeInt;
     this_ptr->update_timer = iVar2;
     if (iVar2 < 0) {
       this_ptr->update_timer = iVar2 + 0x4000;

@@ -54,14 +54,14 @@ LAB_0051d5ec:
       if (render_mode != 2) goto LAB_0051d5ec;
       shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,1);
     }
-    if (INT_02f3123c != 0) {
+    if (g_LodPreviewShowEdges != 0) {
       shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(this_ptr,1);
     }
-    if (INT_02f31234 != 0) {
+    if (g_LodPreviewShowVertexLabels != 0) {
       shape_meshlod_cpp_CLodMesh_drawVertexLabels_FUN_0051ed30(this_ptr);
     }
-    if (-1 < INT_0067d390) {
-      shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(this_ptr,INT_0067d390);
+    if (-1 < g_LodPreviewLabelVertex) {
+      shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(this_ptr,g_LodPreviewLabelVertex);
     }
     if (g_LodMeshHighlightVertices != (CQuaternion4f *)0x0) {
       g_ActiveRenderColor =
@@ -69,7 +69,7 @@ LAB_0051d5ec:
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,(CVector3f *)g_LodMeshHighlightVertices,4);
     }
-    if ((INT_02f31238 != 0) && (this_ptr->next_lod != (CLodMesh *)0x0)) {
+    if ((g_LodPreviewShowNextLod != 0) && (this_ptr->next_lod != (CLodMesh *)0x0)) {
       shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(this_ptr->next_lod);
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0xff,0,0xff);
       shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(this_ptr->next_lod);
@@ -115,7 +115,7 @@ LAB_0051d5ec:
         local_18 = 0;
 LAB_0051d915:
         engine_2d_c_clearInputAndWait_FUN_00403260();
-        INT_0067d390 = -1;
+        g_LodPreviewLabelVertex = -1;
         g_LodMeshProgressBuffer[0] = '\0';
         return local_18;
       }
@@ -129,15 +129,15 @@ LAB_0051d915:
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V);
     if (iVar2 != 0) {
-      INT_02f31234 = (int)(INT_02f31234 == 0);
+      g_LodPreviewShowVertexLabels = (int)(g_LodPreviewShowVertexLabels == 0);
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
     if (iVar2 != 0) {
-      INT_02f31238 = (int)(INT_02f31238 == 0);
+      g_LodPreviewShowNextLod = (int)(g_LodPreviewShowNextLod == 0);
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_E);
     if (iVar2 != 0) {
-      INT_02f3123c = (int)(INT_02f3123c == 0);
+      g_LodPreviewShowEdges = (int)(g_LodPreviewShowEdges == 0);
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SPACE);
     if ((iVar2 != 0) ||

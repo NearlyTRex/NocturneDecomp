@@ -9,5 +9,5 @@
 struct CSoundDevice;
 
 // Function Definition: CSoundDevice_set3DListenerOrient
-typedef void CSoundDevice_set3DListenerOrient(struct CSoundDevice* this_ptr, double x_front, double y_front, double z_front, double x_top, double y_top, double z_top, double x_right, double y_right, double z_right);
+typedef void CSoundDevice_set3DListenerOrient(struct CSoundDevice* this_ptr, float x_front, float y_front, float z_front, float x_top, float y_top, float z_top, float x_right, float y_right, float z_right);
 

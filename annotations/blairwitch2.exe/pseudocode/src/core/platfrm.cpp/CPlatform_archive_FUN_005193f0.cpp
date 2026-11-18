@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr)
 
 {
@@ -18,8 +16,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr
   int local_14;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60
-            (&this_ptr->model,"?modelName" + 1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60(&this_ptr->model,"modelName");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->to_start_event,"toStartEvent");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->to_end_event,"toEndEvent");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->stop_event,"stopEvent");
@@ -69,12 +66,12 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr
     core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->goal_param,"goalParam");
     core_actor_cpp_archiveFloat_FUN_0040b8e0
               (&this_ptr->current_movement_rate,"currentMovementRate");
-    if (DAT_007bc038 == 1) {
+    if (g_ActorReadingMode == 1) {
       core_actor_cpp_archiveInteger_FUN_0040b960(&local_1c,"attachCount");
       if (10 < local_1c) {
-        _DAT_01d046a0 = "..\\core\\platfrm.cpp";
-        _DAT_01d046a4 = 0x316;
-        core_main_c_FUN_004e4500("CPlatform::archive - too many attached actors.");
+        g_CHAR_PTR_01d046a0 = "..\\core\\platfrm.cpp";
+        g_INT_01d046a4 = 0x316;
+        core_main_c_displayErrorAndQuit_FUN_004e4500("CPlatform::archive - too many attached actors.");
       }
       iVar2 = 0;
       pCVar1 = this_ptr;

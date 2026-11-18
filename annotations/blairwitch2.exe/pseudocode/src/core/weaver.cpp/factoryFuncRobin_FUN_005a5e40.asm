@@ -15,7 +15,7 @@ section .text
     PUSH 0x11858                        ; 005a5e40
         ;   Label: core_weaver.cpp_factoryFuncRobin_FUN_005a5e40
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a5e45
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005a5e4a
     TEST EAX,EAX                        ; 005a5e4d
     JNZ 0x005a5e52                      ; 005a5e4f

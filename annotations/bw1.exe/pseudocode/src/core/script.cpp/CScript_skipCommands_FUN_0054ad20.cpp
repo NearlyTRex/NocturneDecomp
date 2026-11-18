@@ -34,9 +34,9 @@ int __cdecl core_script_cpp_CScript_skipCommands_FUN_0054ad20(CScript *this_ptr,
         iVar3 = iVar3 + -1;
       }
       else if (((iVar3 < 1) && (!bVar1)) ||
-              (iVar2 = _strnicmp(str1,&DAT_005efe14,2), iVar2 != 0)) {
+              (iVar2 = _strnicmp(str1,"if",2), iVar2 != 0)) {
         if (((iVar3 < 1) && (count == 0)) ||
-           (iVar2 = _strnicmp(str1,&DAT_005efe17,4), iVar2 != 0)) {
+           (iVar2 = _strnicmp(str1,"else",4), iVar2 != 0)) {
           if (iVar3 == 0) {
             if (!bVar1) {
               return direction;

@@ -15,7 +15,8 @@ ECollisionType __cdecl core_barrier_cpp_CBarrier_getCollisionType_FUN_00410e20(C
     return COLLISION_TYPE_NONE;
   }
   if (this_ptr->effect_class_name_list[0] != '\0') {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(DAT_007bbff4,this_ptr->effect_class_name_list);
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c840
+                      (g_CurrentProcessingActor,this_ptr->effect_class_name_list);
     if (iVar1 == 0) {
       return COLLISION_TYPE_NONE;
     }

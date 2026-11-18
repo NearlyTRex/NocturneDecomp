@@ -13,7 +13,7 @@
 ;   int g_CLightActorClassVersion = 0x2
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CBoxActorClassInfo
-;   CDemonFilter[8] CDemonFilter_ARRAY_008229ec
+;   CDemonFilter[8] g_LightActorFilters
 ;   CDemonActorType g_CLightActorClassInfo
 ;
 ; Called Functions:
@@ -37,7 +37,7 @@ section .text
     ADD ESP,0x18                        ; 00421670
     PUSH 0x65b390                       ; 00421673 | g_CDemonFilterTypeInfo
     PUSH 0x8                            ; 00421678
-    PUSH 0x8229ec                       ; 0042167a | CDemonFilter_ARRAY_008229ec
+    PUSH 0x8229ec                       ; 0042167a | g_LightActorFilters
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 0042167f
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00421684

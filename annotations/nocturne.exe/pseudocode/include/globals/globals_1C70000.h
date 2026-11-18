@@ -12,7 +12,12 @@
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SHardwareEdge.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C70000
@@ -22,20 +27,20 @@
 extern CBloodParticle g_BloodParticles[256];
 
 // CBloodSplat[2000]
-extern CBloodSplat g_CBloodSplat_ARRAY_01c7ccf4[2000];
+extern CBloodSplat g_BloodSplats[2000];
 
 // CDemonActorType
-extern CDemonActorType g_CFlameActorType_01c70618;
-extern CDemonActorType g_CFlameCanActorType_01c70654;
-extern CDemonActorType g_CFlameThrowerActorType_01c70690;
-extern CDemonActorType g_CFlashlightActorType_01c706cc;
-extern CDemonActorType g_CFliesActorType_01c70718;
-extern CDemonActorType g_CFrankenstienMachineActorType_01c71304;
-extern CDemonActorType g_CGabriellaActorType_01c713e8;
-extern CDemonActorType g_CGargoyleActorType_01c78b48;
-extern CDemonActorType g_CGasMaskActorType_01c78b84;
-extern CDemonActorType g_CGhoulActorType_01c78bd8;
-extern CDemonActorType g_CGlassActorType_01c78c40;
+extern CDemonActorType g_CFlameClassInfo;
+extern CDemonActorType g_CFlameCanClassInfo;
+extern CDemonActorType g_CFlameThrowerClassInfo;
+extern CDemonActorType g_CFlashlightClassInfo;
+extern CDemonActorType g_CFliesClassInfo;
+extern CDemonActorType g_CFrankenstienMachineClassInfo;
+extern CDemonActorType g_CGabriellaClassInfo;
+extern CDemonActorType g_CGargoyleClassInfo;
+extern CDemonActorType g_CGasMaskClassInfo;
+extern CDemonActorType g_CGhoulClassInfo;
+extern CDemonActorType g_CGlassClassInfo;
 
 // CDemonLight
 extern CDemonLight g_CDemonLightInstance;
@@ -52,18 +57,133 @@ extern CGore g_CGoreInstance;
 // CPickList
 extern CPickList g_CPickList;
 
+// CQuaternion4f
+extern CQuaternion4f g_CQuaternion4f_01c71344;
+
 // CVector3f
-extern CVector3f CVector3f_01c71364;
-extern CVector3f CVector3f_01c71370;
-extern CVector3f CVector3f_01c7137c;
+extern CVector3f g_GabriellaWeaponEuler;
+extern CVector3f g_GabriellaWeaponAttachEuler;
+extern CVector3f g_GabriellaWeaponAttachOffset;
 extern CVector3f CVector3f_01c71388;
-extern CVector3f CVector3f_01c78bc0;
-extern CVector3f CVector3f_01c78bcc;
+extern CVector3f g_GhoulOffsetMinusX;
+extern CVector3f g_GhoulOffsetPlusX;
+
+// CVector3i
+extern CVector3i g_ParticleCameraRotation;
+extern CVector3i g_BloodParticleViewDirection;
+
+// SHardwareEdge[16]
+extern SHardwareEdge g_HardwareEdgeTable[16];
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c78cc0;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive;
+
+// byte
+extern byte g_BYTE_01c71354;
+
+// char
+extern char g_CHAR_01c73240;
+
+// char[10][256]
+extern char g_WrappedTextBuffer[10][256];
+
+// char[20]
+extern char g_InputHistory[20];
+
+// char[256]
+extern char g_ScreenshotFilename[256];
+extern char g_CurrentSaveFile[256];
+extern char g_ChapterDisplayName[256];
+
+// char[5120]
+extern char g_ActStatsTextBuffer1[5120];
+
+// char[600]
+extern char g_PrevKeyboardState[600];
+
+// double
+extern double g_DOUBLE_01c71e30;
 
 // float
 extern float g_FastSqrtMagicSeedOne;
+extern float g_FLOAT_01c71340;
+extern float g_FLOAT_01c71358;
+extern float g_FLOAT_01c7135c;
+extern float g_FLOAT_01c71360;
+extern float g_FLOAT_01c71394;
+extern float g_OverlayDisplayTimer;
+extern float g_IrisFadeRadius;
+
+// float[64][8]
+extern float g_SplineBasisTable[64][8];
 
 // int
 extern int g_FastSqrtMagic;
 extern int g_FastInvSqrtMagic;
+extern int g_FliesInitialized;
+extern int g_ShadowColor32;
+extern int g_ShadowColorRed;
+extern int g_ShadowColorGreen;
+extern int g_ShadowColorBlue;
+extern int g_DefaultTextColor;
+extern int g_EdgeCount;
+extern int g_EdgeListMinY;
+extern int g_EdgeListMaxY;
+extern int g_INT_01c71e38;
+extern int g_ScreenshotIndex;
+extern int g_InputResetFlag;
+extern int g_StoredCameraValue;
+extern int g_ModalDialogActive;
+extern int g_HasSavedLightState;
+extern int g_ChapterDisplayYear;
+extern int g_MovieRecordingArmed;
+extern int g_MovieRecordingActive;
+extern int g_MovieRecordingMaxFrames;
+extern int g_MovieRecordingFrameCounter;
+extern int g_SoundDebugEnabled;
+extern int g_HelpCursorX;
+extern int g_HelpCursorY;
+extern int g_HelpLineHeight;
+extern int g_HelpCharWidth;
+extern int g_IrisFadeType;
+extern int g_IrisFadeCenterX;
+extern int g_IrisFadeCenterY;
+extern int g_ProfileStartTime;
+extern int g_INT_01c78b18;
+extern int g_INT_01c78b20;
+extern int g_INT_01c78b2c;
+extern int g_INT_01c78b30;
+extern int g_INT_01c78b3c;
+extern int g_INT_01c78b44;
+extern int g_INT_01c78c14;
+extern int g_INT_01c78c18;
+extern int g_INT_01c78c1c;
+extern int g_INT_01c78c20;
+extern int g_INT_01c78c24;
+extern int g_INT_01c78c28;
+extern int g_INT_01c78c2c;
+extern int g_INT_01c78c38;
+extern int g_INT_01c78c3c;
+extern int g_BloodParticleIndex;
+extern int g_BloodSplatIndex;
+extern int g_BloodSplatCount;
+
+// int[201]
+extern int g_MasterLightStateSaveBuffer[201];
+
+// int[20]
+extern int g_GabriellaIndices[20];
+
+// uchar
+extern uchar g_ShadowColor8;
+
+// uint
+extern uint g_FlyBlendColor;
+extern uint g_FlyInvBlendColor;
+
+// ushort
+extern ushort g_ShadowColor16;
 

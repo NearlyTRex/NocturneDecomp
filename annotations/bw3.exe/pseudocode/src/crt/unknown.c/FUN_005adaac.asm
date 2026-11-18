@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_005adaac(int param_1)
+; void * crt_unknown_c_FUN_005adaac(void *param_1)
 ;
 ;
 ; XREF[2]:
@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005adb48 at 005adb5d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00607e78
+;   ulong g_RuntimeBufferSize = 0xf4
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_005a4b20
@@ -25,17 +25,17 @@ section .text
     TEST EBX,EBX                        ; 005adab1
     JNZ 0x005adadc                      ; 005adab3
         ;   XREF to: 005adadc (CONDITIONAL_JUMP)  ; LAB_005adadc
-    MOV EDX,dword ptr [0x00607e78]      ; 005adab5 | DAT_00607e78
+    MOV EDX,dword ptr [0x00607e78]      ; 005adab5 | g_RuntimeBufferSize
     PUSH EDX                            ; 005adabb
     PUSH 0x1                            ; 005adabc
     CALL crt_memory.c_calloc_FUN_005a4b20 ; 005adabe
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005a4b20(uint count, uint size)
     ADD ESP,0x8                         ; 005adac3
     MOV EBX,EAX                         ; 005adac6
     TEST EAX,EAX                        ; 005adac8
     JZ 0x005adadc                       ; 005adaca
         ;   XREF to: 005adadc (CONDITIONAL_JUMP)  ; LAB_005adadc
-    MOV EDX,dword ptr [0x00607e78]      ; 005adacc | DAT_00607e78
+    MOV EDX,dword ptr [0x00607e78]      ; 005adacc | g_RuntimeBufferSize
     MOV byte ptr [EAX + 0x52],0x1       ; 005adad2
     MOV dword ptr [EAX + 0xf0],EDX      ; 005adad6
     PUSH EBX                            ; 005adadc

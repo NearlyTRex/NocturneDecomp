@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxVolume_FUN_005728e0(float volume)
 
 {
-  *(float *)(_DAT_02c78cec * 0x60 + 0x2c78d28) = volume;
+  g_CSfxOptions_ARRAY_02c78cf0[g_SfxLastSlot].current_volume = volume;
   return;
 }

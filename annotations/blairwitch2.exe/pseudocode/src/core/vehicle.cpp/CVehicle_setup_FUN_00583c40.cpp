@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_00583c40(CVehicle *this_ptr)
 
@@ -76,7 +75,7 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_00583c40(CVehicle *this_ptr)
     (this_ptr->bound_size).y = fStack_18;
     (this_ptr->bound_size).z = fStack_14;
   }
-  fVar7 = this_ptr->mass * (float)_DAT_005edc77;
+  fVar7 = this_ptr->mass * (float)0.03125;
   fVar1 = (this_ptr->bound_size).y;
   fVar2 = (this_ptr->bound_size).x;
   fVar3 = (this_ptr->bound_size).x;
@@ -84,7 +83,7 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_00583c40(CVehicle *this_ptr)
   fVar5 = (this_ptr->bound_size).z;
   fVar6 = (this_ptr->bound_size).y;
   this_ptr->scaled_mass = fVar7;
-  fVar8 = (float)_DAT_005edc7f;
+  fVar8 = (float)0.083333333333333301;
   this_ptr->inertia_yz = fVar7 * fVar8 * (fVar4 * fVar4 + fVar1 * fVar1);
   this_ptr->inertia_xz = this_ptr->scaled_mass * fVar8 * (fVar5 * fVar5 + fVar2 * fVar2);
   this_ptr->inertia_xy = (fVar6 * fVar6 + fVar3 * fVar3) * this_ptr->scaled_mass * fVar8;

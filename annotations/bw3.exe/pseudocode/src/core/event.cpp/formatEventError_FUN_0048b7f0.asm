@@ -10,10 +10,10 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00494169
-;   core_event.cpp_FUN_0048c2e0 at 0048c447
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c447
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c734b0
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005a2898
@@ -30,7 +30,7 @@ section .text
     PUSH EAX                            ; 0048b7fc
     MOV EDX,dword ptr [ESP + 0xc]       ; 0048b7fd
     PUSH EDX                            ; 0048b801
-    PUSH 0x1c734b0                      ; 0048b802 | DAT_01c734b0
+    PUSH 0x1c734b0                      ; 0048b802 | g_EventErrorMessageBuffer
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0048b807
         ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0048b80c

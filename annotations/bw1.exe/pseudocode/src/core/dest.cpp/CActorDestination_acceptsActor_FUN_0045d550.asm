@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_dest.cpp_CActorDestination_process_FUN_0045d2a0 at 0045d36b
-;   core_doc.cpp_FUN_004712b0 at 004713c1
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_004712b0 at 004713c1
 ;   core_hero.cpp_CHero_findItemUseTarget_FUN_004ebeb0 at 004ebf30
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0058d910 at 0058dad2
 ;

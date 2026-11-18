@@ -7,22 +7,22 @@
 ; CFileFinder *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_podmain.cpp_FUN_005152e0 at 00515351
+;   core_podmain.cpp_CDemonPod_load_FUN_005152e0 at 00515351
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20 at 0047de31
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70 at 00482bfe
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70 at 00482dfd
-;   shape_edittool.cpp_FUN_0047dd20 at 0047de31
-;   shape_edittool.cpp_FUN_00482ea0 at 00482f34
-;   shape_edittool.cpp_FUN_00483020 at 0048310f
+;   shape_edittool.cpp_CStrList_populateRecursive_FUN_00482ea0 at 00482f34
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00483020 at 0048310f
 ;
 ; Referenced Globals:
 ;   void* PTR_FindNextFileA_005b355c = 001b3d82
 ;   TerminatedCString s_engine_dosio_c_005bbfcc
 ;   TerminatedCString s_CFileFinder_open_search_005bbfde
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00465cf0
 ;   engine_dosio.cpp_CFileFinder_reset_FUN_00465ce0
 ;   FindNextFileA
@@ -43,10 +43,10 @@ section .text
     MOV ECX,0x5bbfcc                    ; 00465c39 | = "..\\engine\\dosio.c"
     MOV ESI,0x28e                       ; 00465c3e
     PUSH 0x5bbfde                       ; 00465c43 | = "CFileFinder::open - search not opened!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00465c48 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00465c4e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00465c54
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00465c48 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00465c4e | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00465c54
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00465c59
     POP ESI                             ; 00465c5c
     MOV EAX,ESP                         ; 00465c5d

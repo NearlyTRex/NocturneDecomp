@@ -68,7 +68,7 @@ section .text
     PUSH EAX                            ; 00419d19
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 00419d1a
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
-    MOV ECX,dword ptr [0x005ad054]      ; 00419d1f | g_INT_005ad054
+    MOV ECX,dword ptr [0x005ad054]      ; 00419d1f | g_CBoneGuyClassVersion
     ADD ESP,0x8                         ; 00419d25
     CMP ECX,0x4                         ; 00419d28
     JL 0x00419ee8                       ; 00419d2b
@@ -80,7 +80,7 @@ section .text
     PUSH EBX                            ; 00419d40
     CALL core_actor.cpp_archiveMotionState_FUN_0040cb00 ; 00419d41
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040cb00(CMotionController * motion_controller, char * property_name)
-    MOV ESI,dword ptr [0x005ad054]      ; 00419d46 | g_INT_005ad054
+    MOV ESI,dword ptr [0x005ad054]      ; 00419d46 | g_CBoneGuyClassVersion
     ADD ESP,0x8                         ; 00419d4c
     CMP ESI,0x2                         ; 00419d4f
     JL 0x00419ed0                       ; 00419d52
@@ -199,7 +199,7 @@ section .text
     LEA EAX,[EAX]                       ; 00419ec3
     LEA EDX,[EDX]                       ; 00419ec9
     NOP                                 ; 00419ecf
-    MOV ECX,dword ptr [0x005ad054]      ; 00419ed0 | g_INT_005ad054
+    MOV ECX,dword ptr [0x005ad054]      ; 00419ed0 | g_CBoneGuyClassVersion
         ;   Label: LAB_00419ed0
     CMP ECX,0x3                         ; 00419ed6
     JL 0x00419ee0                       ; 00419ed9

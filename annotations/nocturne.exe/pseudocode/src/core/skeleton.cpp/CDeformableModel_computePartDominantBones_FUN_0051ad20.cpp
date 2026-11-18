@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20(CDeformableModel *this_ptr)
 
 {
@@ -114,17 +112,17 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
             puVar15 = (ushort *)
                       ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_1c);
             pCVar8 = local_20->skinned_vertices_buffer + *puVar15;
-            local_4c = (float)pCVar8->x * _DAT_005a1eb0;
-            local_48 = (float)pCVar8->y * _DAT_005a1eb0;
-            local_44 = (float)pCVar8->z * _DAT_005a1eb0;
+            local_4c = (float)pCVar8->x * 0.00390625f;
+            local_48 = (float)pCVar8->y * 0.00390625f;
+            local_44 = (float)pCVar8->z * 0.00390625f;
             pCVar8 = local_20->skinned_vertices_buffer + puVar15[1];
-            local_70 = (float)pCVar8->x * _DAT_005a1eb0;
-            local_6c = (float)pCVar8->y * _DAT_005a1eb0;
-            local_68 = (float)pCVar8->z * _DAT_005a1eb0;
+            local_70 = (float)pCVar8->x * 0.00390625f;
+            local_6c = (float)pCVar8->y * 0.00390625f;
+            local_68 = (float)pCVar8->z * 0.00390625f;
             pCVar8 = local_20->skinned_vertices_buffer + puVar15[2];
-            local_40 = (float)pCVar8->x * _DAT_005a1eb0;
-            local_3c = (float)pCVar8->y * _DAT_005a1eb0;
-            local_38 = (float)pCVar8->z * _DAT_005a1eb0;
+            local_40 = (float)pCVar8->x * 0.00390625f;
+            local_3c = (float)pCVar8->y * 0.00390625f;
+            local_38 = (float)pCVar8->z * 0.00390625f;
             local_58 = local_40 - local_70;
             local_54 = local_3c - local_6c;
             local_50 = local_38 - local_68;

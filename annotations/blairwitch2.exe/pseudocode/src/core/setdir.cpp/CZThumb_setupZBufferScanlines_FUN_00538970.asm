@@ -11,7 +11,7 @@
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 at 00538581
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2b64c
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
 
@@ -33,7 +33,7 @@ section .text
     MOV ESI,dword ptr [ECX + 0x24]      ; 00538986
     SHL EBX,0x2                         ; 00538989
     ADD EBX,ESI                         ; 0053898c
-    MOV dword ptr [EDX + 0x1c2b64c],EBX ; 0053898e | DAT_01c2b64c
+    MOV dword ptr [EDX + 0x1c2b64c],EBX ; 0053898e | g_ZBufferScanlineArray
     INC EAX                             ; 00538994
     MOV EBX,dword ptr [ECX + 0x4]       ; 00538995
     ADD EDX,0x4                         ; 00538998

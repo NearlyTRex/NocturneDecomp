@@ -13,14 +13,14 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0051b0b0(CPod *this_ptr,uint flags)
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CPodTypeInfo);
-    FUN_005b7fce(ptr);
+    free(ptr);
     return this_ptr;
   }
-  this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_0051b0b0_005fad64;
+  this_ptr->vtable = &g_CPod_vtable_005fad64;
   engine_pod_cpp_CPod_cleanup_FUN_0051b370(this_ptr);
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005b7fdc(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

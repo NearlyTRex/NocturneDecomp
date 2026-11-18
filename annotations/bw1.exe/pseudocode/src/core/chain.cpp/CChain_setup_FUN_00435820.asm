@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
-;   core_chain.cpp_FUN_004357a0
+;   core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_004357a0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
         ;   Label: LAB_00435893
     LEA ESI,[ESP + 0x4]                 ; 00435894
     LEA EDI,[ESP + 0x1c]                ; 00435898
-    CALL core_chain.cpp_FUN_004357a0    ; 0043589c
-        ;   XREF to: 004357a0 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_004357a0()
+    CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_004357a0 ; 0043589c
+        ;   XREF to: 004357a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_004357a0(CChain * this_ptr, CVector3f * out_point)
     LEA ESI,[ESP + 0x4]                 ; 004358a1
     ADD ESP,0x4                         ; 004358a5
     MOVSD ES:EDI,ESI                    ; 004358a8

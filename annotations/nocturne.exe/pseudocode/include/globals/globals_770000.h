@@ -17,20 +17,25 @@
 extern CConsole g_CConsoleInstance;
 
 // CDemonActorType
-extern CDemonActorType g_CColonelActorType_0077acd0;
-extern CDemonActorType g_CConveyorActorType_0077bcc8;
-extern CDemonActorType g_CZombieCowActorType_0077bd04;
-extern CDemonActorType g_CCrateActorType_0077bd40;
-extern CDemonActorType g_CCrossbowActorType_0077bd7c;
-extern CDemonActorType g_CCurtainActorType_0077d20c;
+extern CDemonActorType g_CColonelClassInfo;
+extern CDemonActorType g_CConveyorClassInfo;
+extern CDemonActorType g_CZombieCowClassInfo;
+extern CDemonActorType g_CCrateClassInfo;
+extern CDemonActorType g_CCrossbowClassInfo;
+extern CDemonActorType g_CCurtainClassInfo;
 
 // CVector3f[100]
-extern CVector3f g_CVector3f_ARRAY_0077bdbc[100];
+extern CVector3f g_CurtainCollisionPositions[100];
 
 // SCollisionInfo[100]
-extern SCollisionInfo g_SCollisionInfo_ARRAY_0077c26c[100];
+extern SCollisionInfo g_CurtainCollisionInfos[100];
 
-// undefined4
-extern undefined4 DAT_0077ac8c;
-extern undefined4 DAT_0077bdb8;
+// char[145328]
+extern char g_CHAR_ARRAY_0077d250[145328];
+
+// int
+extern int g_INT_0077bdb8;
+
+// int[17]
+extern int g_ColonelIndices[17];
 

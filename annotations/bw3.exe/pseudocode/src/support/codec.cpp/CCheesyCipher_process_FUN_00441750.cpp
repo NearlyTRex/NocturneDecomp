@@ -2,11 +2,11 @@
 // Address: 00441750
 // Address Range: [[00441750, 004417c8]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,int *param_2,int *param_3)
+// Signature: int __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,void *istream,void *ostream)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,int *param_2,int *param_3)
+int __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,void *istream,void *ostream)
 
 {
   int iVar1;
@@ -14,15 +14,15 @@ uint __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher 
   int iVar3;
   
   while( true ) {
-    iVar1 = (**(code **)(*param_2 + 4))(param_2);
+    iVar1 = (**(code **)(*(int *)istream + 4))(istream);
     if (iVar1 == -1) {
       return 1;
     }
     if (iVar1 < 0) break;
     uVar2 = support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(this_ptr,(byte)iVar1);
-    iVar1 = (**(code **)(*param_3 + 4))(param_3,uVar2 & 0xff);
+    iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,uVar2 & 0xff);
     if (iVar1 < 0) {
-      iVar3 = (**(code **)(*param_2 + 8))(param_2,uVar2 & 0xff);
+      iVar3 = (**(code **)(*(int *)istream + 8))(istream,uVar2 & 0xff);
       if ((iVar3 != 0) && (iVar1 == -1)) {
         return 2;
       }

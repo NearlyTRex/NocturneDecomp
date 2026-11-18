@@ -9,18 +9,18 @@
 CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00562380(CStairs *this_ptr,uint flags)
 
 {
-  CStairs *pCVar1;
-  void *ptr;
+  CStairs *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CStairsTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CStairsTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CStairs *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
+  ptr = (CStairs *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

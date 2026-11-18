@@ -143,7 +143,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
       ((this_ptr->base).ladder_to_climb == (CLadder *)0x0)) &&
      ((this_ptr->ladder_to_descend == (CLadder *)0x0 && (this_ptr->action_pending == 0)))) {
     pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (damage_info->attacker,g_CTommyGunActorType_02dd0fd0.name_hash);
+                       (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
     if (pCVar7 != (CDemonActor *)0x0) {
       iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0.333);
       if (iVar3 == 0) goto LAB_0053ec87;

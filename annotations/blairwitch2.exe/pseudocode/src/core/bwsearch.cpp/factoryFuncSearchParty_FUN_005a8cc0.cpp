@@ -11,7 +11,7 @@ CSearchParty * __cdecl core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(voi
 {
   CSearchParty *pCVar1;
   
-  pCVar1 = (CSearchParty *)operator_new(0x11850);
+  pCVar1 = operator_new(0x11850);
   if (pCVar1 == (CSearchParty *)0x0) {
     return (CSearchParty *)0x0;
   }

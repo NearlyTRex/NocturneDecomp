@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2054 = 0056fcd0
-;   undefined4 DAT_02de4e30
+;   int g_EmergencyExitFlag
 ;
 ; Called Functions:
 ;   crt_exit.c_FinalExitHandler_FUN_0056fd00
@@ -25,7 +25,7 @@ section .text
 
     CALL dword ptr [0x005c2054]         ; 0056fcd4 | PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2054
         ;   Label: crt_startup.c_ExitApplication_FUN_0056fcd4
-    CMP byte ptr [0x02de4e30],0x0       ; 0056fcda | DAT_02de4e30
+    CMP byte ptr [0x02de4e30],0x0       ; 0056fcda | g_EmergencyExitFlag
     JNZ 0x0056fcf2                      ; 0056fce1
         ;   XREF to: 0056fcf2 (CONDITIONAL_JUMP)  ; LAB_0056fcf2
     MOV EDX,0xff                        ; 0056fce3

@@ -10,13 +10,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_hotdemon_die_wav_005c53f6
 ;   TerminatedCString s_hotdemon_hurt_wav_005c5407
-;   undefined4 DAT_005c5421
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005c5421 = 2
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
-;   core_enemy.cpp_FUN_0048a1b0
+;   core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -56,8 +56,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x30]      ; 004d601c
     PUSH dword ptr [EAX + 0x4]          ; 004d6020
     PUSH EBP                            ; 004d6023
-    CALL core_enemy.cpp_FUN_0048a1b0    ; 004d6024
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0 ; 004d6024
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0(CEnemy * this_ptr, float damage)
     ADD ESP,0x8                         ; 004d6029
     TEST EAX,EAX                        ; 004d602c
     JZ 0x004d6058                       ; 004d602e
@@ -105,15 +105,15 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004d6085
     ADD EAX,0x1c                        ; 004d6088
     FLD ST0                             ; 004d608b
-    FMUL double ptr [0x005c5421]        ; 004d608d | DAT_005c5421
+    FMUL double ptr [0x005c5421]        ; 004d608d | g_DOUBLE_005c5421
     PUSH EAX                            ; 004d6093
     LEA ESI,[ESP + 0x18]                ; 004d6094
     LEA EDI,[ESP + 0xc]                 ; 004d6098
     PUSH EBP                            ; 004d609c
     FSTP ST1                            ; 004d609d
     FSTP float ptr [EAX + -0x18]        ; 004d609f
-    CALL core_actor.cpp_FUN_00408b80    ; 004d60a2
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004d60a2
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x1c]                ; 004d60a7
     ADD ESP,0x8                         ; 004d60ab
     XOR EBX,EBX                         ; 004d60ae
@@ -129,7 +129,7 @@ section .text
     PUSH ESI                            ; 004d60c5
     LEA EAX,[ESP + 0x1c]                ; 004d60c6
     PUSH EAX                            ; 004d60ca
-    MOV EDI,dword ptr [0x005fc5a0]      ; 004d60cb | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 004d60cb | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 004d60d1
     INC EBX                             ; 004d60d2
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 004d60d3

@@ -7,13 +7,13 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b836a
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b67d9
-;   core_game.cpp_FUN_004b82e0 at 004b836a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264bad4
-;   undefined4 DAT_0264bb98
-;   undefined4 DAT_0264bb9c
+;   int g_SoundAudioInitialized
+;   uint g_TrainRailNoiseHandle
+;   uint g_TrainExteriorAmbientHandle
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 0055a361
     XOR EDX,EDX                         ; 0055a362
     XOR EBX,EBX                         ; 0055a364
-    MOV dword ptr [0x0264bad4],EDX      ; 0055a366 | DAT_0264bad4
+    MOV dword ptr [0x0264bad4],EDX      ; 0055a366 | g_SoundAudioInitialized
     MOV ECX,dword ptr [EBX + 0x264baf0] ; 0055a36c
         ;   Label: LAB_0055a36c
     PUSH ECX                            ; 0055a372
@@ -39,12 +39,12 @@ section .text
     CMP EBX,0xa0                        ; 0055a37e
     JNZ 0x0055a36c                      ; 0055a384
         ;   XREF to: 0055a36c (CONDITIONAL_JUMP)  ; LAB_0055a36c
-    MOV EBX,dword ptr [0x0264bb98]      ; 0055a386 | DAT_0264bb98
+    MOV EBX,dword ptr [0x0264bb98]      ; 0055a386 | g_TrainRailNoiseHandle
     PUSH EBX                            ; 0055a38c
     CALL sound_sndmain.cpp_killSfx_FUN_00551050 ; 0055a38d
         ;   XREF to: 00551050 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00551050(uint sfx_handle)
     ADD ESP,0x4                         ; 0055a392
-    MOV ESI,dword ptr [0x0264bb9c]      ; 0055a395 | DAT_0264bb9c
+    MOV ESI,dword ptr [0x0264bb9c]      ; 0055a395 | g_TrainExteriorAmbientHandle
     PUSH ESI                            ; 0055a39b
     CALL sound_sndmain.cpp_killSfx_FUN_00551050 ; 0055a39c
         ;   XREF to: 00551050 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00551050(uint sfx_handle)

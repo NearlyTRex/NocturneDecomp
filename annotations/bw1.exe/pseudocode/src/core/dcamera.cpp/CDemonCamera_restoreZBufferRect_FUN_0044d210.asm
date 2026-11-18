@@ -11,11 +11,11 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044d2f0 at 0044d57d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
-;   undefined4 DAT_01c4480c
-;   undefined4 DAT_01c44810
-;   undefined4 DAT_01c50948
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
+;   uint*[1200] g_ZBufferScanlineArray
+;   undefined4 g_ZBufferScanlineArray[1]
+;   int g_INT_01c50948
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_004886f1
@@ -48,7 +48,7 @@ section .text
     CMP EBP,dword ptr [ESI + 0x8]       ; 0044d24e
     JLE 0x0044d2c0                      ; 0044d251
         ;   XREF to: 0044d2c0 (CONDITIONAL_JUMP)  ; LAB_0044d2c0
-    CMP dword ptr [0x01c50948],0x0      ; 0044d257 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 0044d257 | g_INT_01c50948
     JNZ 0x0044d2c5                      ; 0044d25e
         ;   XREF to: 0044d2c5 (CONDITIONAL_JUMP)  ; LAB_0044d2c5
     MOV EDX,dword ptr [ESI + 0xc]       ; 0044d260
@@ -59,7 +59,7 @@ section .text
     LEA EBP,[EDI*0x4 + 0x0]             ; 0044d26a
     MOV ECX,dword ptr [ESI]             ; 0044d271
         ;   Label: LAB_0044d271
-    MOV EAX,dword ptr [EBP + 0x1c4480c] ; 0044d273 | DAT_01c4480c | DAT_01c44810
+    MOV EAX,dword ptr [EBP + 0x1c4480c] ; 0044d273 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     SHL ECX,0x2                         ; 0044d279
     ADD ECX,EAX                         ; 0044d27c
     MOV EAX,dword ptr [ESP + 0x14]      ; 0044d27e
@@ -94,11 +94,11 @@ section .text
     POP ESI                             ; 0044d2c2
     POP EBX                             ; 0044d2c3
     RET                                 ; 0044d2c4
-    MOV EAX,[0x0061b49c]                ; 0044d2c5 | DAT_0061b49c
+    MOV EAX,[0x0061b49c]                ; 0044d2c5 | g_INT_0061b49c
         ;   Label: LAB_0044d2c5
     DEC EAX                             ; 0044d2ca
     PUSH EAX                            ; 0044d2cb
-    MOV EAX,[0x0061b498]                ; 0044d2cc | DAT_0061b498
+    MOV EAX,[0x0061b498]                ; 0044d2cc | g_INT_0061b498
     DEC EAX                             ; 0044d2d1
     PUSH EAX                            ; 0044d2d2
     PUSH 0x0                            ; 0044d2d3

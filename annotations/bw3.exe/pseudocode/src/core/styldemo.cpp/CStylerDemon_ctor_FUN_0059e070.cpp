@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
 
 {
   SMRGLTextureModel *pSVar1;
-  int iVar2;
-  int iVar3;
+  float fVar2;
+  float fVar3;
   CEnemy *pCVar4;
   CMorph *pCVar5;
   
@@ -36,15 +34,15 @@ CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerD
   pCVar5[1].models[0].part_count = 0;
   pCVar5[1].models[0].parts[0].vertex_count = 0;
   pCVar5[1].models[0].parts[0].start_vertex = 0;
-  iVar2 = _DAT_005e84e0;
+  fVar2 = 50.0f;
   pCVar5[-1].rescale_enabled = 0;
-  iVar3 = _DAT_005e84e4;
+  fVar3 = 100.0f;
   pCVar5[-0xffffffff00000001].dead[0x14] = '\0';
   pCVar5[-0xffffffff00000001].dead[0x15] = '\0';
   pCVar5[-0xffffffff00000001].dead[0x16] = '\0';
   pCVar5[-0xffffffff00000001].dead[0x17] = '\0';
   pCVar5[1].models[0].parts[0].start_face = 0;
-  pCVar5[-0xd].models[0].parts[4].start_vertex = iVar2;
-  pCVar5[-0xd].models[0].parts[4].start_face = iVar3;
+  pCVar5[-0xd].models[0].parts[4].start_vertex = (int)fVar2;
+  pCVar5[-0xd].models[0].parts[4].start_face = (int)fVar3;
   return (CStylerDemon *)(pCVar5[-0x12].models[1].textures[0xf].texture_name + 4);
 }

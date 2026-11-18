@@ -14,10 +14,10 @@
 ; undefined1       Stack[-0x13]:1  local_13
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b5c05
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5c05
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c35e60
+;   int g_INT_01c35e60
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004011a0
@@ -115,7 +115,7 @@ section .text
     PUSH EDI                            ; 00436a5c
     MOV ECX,0xf8                        ; 00436a5d
     PUSH ESI                            ; 00436a62
-    MOV dword ptr [0x01c35e60],ECX      ; 00436a63 | DAT_01c35e60
+    MOV dword ptr [0x01c35e60],ECX      ; 00436a63 | g_INT_01c35e60
     CALL engine_2d.c_drawLine_FUN_004011a0 ; 00436a69
         ;   XREF to: 004011a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004011a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00436a6e

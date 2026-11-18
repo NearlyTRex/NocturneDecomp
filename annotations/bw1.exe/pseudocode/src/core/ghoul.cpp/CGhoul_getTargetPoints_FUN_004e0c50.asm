@@ -9,14 +9,14 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004e0c34 = 004e0cdb
-;   undefined4 DAT_005e3e09
-;   undefined4 DAT_005e3e11
-;   undefined4 DAT_005e3e19
-;   undefined4 DAT_01cd0d98
-;   undefined4 DAT_01cd0dac
-;   undefined4 DAT_01cd0db0
-;   undefined4 DAT_01cd0dbc
-;   undefined4 DAT_01cd0dc0
+;   double g_DOUBLE_005e3e09 = 0.5
+;   double g_DOUBLE_005e3e11 = 0.700000000000000
+;   double g_DOUBLE_005e3e19 = 0.300000000000000
+;   int[11] g_GhoulIndices
+;   undefined4 g_GhoulIndices[5]
+;   undefined4 g_GhoulIndices[6]
+;   undefined4 g_GhoulIndices[9]
+;   undefined4 g_GhoulIndices[10]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -33,7 +33,7 @@ section .text
     MOV EBP,ESP                         ; 004e0c54
     SUB ESP,0x8c                        ; 004e0c56
     AND ESP,0xfffffff8                  ; 004e0c5c
-    MOV EDX,dword ptr [0x01cd0dbc]      ; 004e0c5f | DAT_01cd0dbc
+    MOV EDX,dword ptr [0x01cd0dbc]      ; 004e0c5f | g_GhoulIndices[9]
     MOV EAX,dword ptr [EBP + 0x14]      ; 004e0c65
     PUSH EDX                            ; 004e0c68
     ADD EAX,0x158                       ; 004e0c69
@@ -81,7 +81,7 @@ section .text
     CMP dword ptr [EAX + 0x2298],0x0    ; 004e0cec
     JZ 0x004e0d9e                       ; 004e0cf3
         ;   XREF to: 004e0d9e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cd0dac]      ; 004e0cf9 | DAT_01cd0dac
+    MOV ESI,dword ptr [0x01cd0dac]      ; 004e0cf9 | g_GhoulIndices[5]
     PUSH ESI                            ; 004e0cff
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004e0d00
     PUSH EDI                            ; 004e0d07
@@ -108,15 +108,15 @@ section .text
         ;   Label: LAB_004e0d3f
     IMUL EDX,EBX,0xc                    ; 004e0d43
         ;   Label: LAB_004e0d43
-    FLD double ptr [0x005e3e09]         ; 004e0d46 | DAT_005e3e09
+    FLD double ptr [0x005e3e09]         ; 004e0d46 | g_DOUBLE_005e3e09
     FLD float ptr [ESP + 0x30]          ; 004e0d4c
     FMUL ST1                            ; 004e0d50
     FLD float ptr [ESP + 0x34]          ; 004e0d52
-    FMUL double ptr [0x005e3e11]        ; 004e0d56 | DAT_005e3e11
+    FMUL double ptr [0x005e3e11]        ; 004e0d56 | g_DOUBLE_005e3e11
     FLD float ptr [ESP + 0x24]          ; 004e0d5c
     FMULP ST3                           ; 004e0d60
     FLD float ptr [ESP + 0x28]          ; 004e0d62
-    FMUL double ptr [0x005e3e19]        ; 004e0d66 | DAT_005e3e19
+    FMUL double ptr [0x005e3e19]        ; 004e0d66 | g_DOUBLE_005e3e19
     MOV EAX,dword ptr [EBP + 0x18]      ; 004e0d6c
     FADDP                               ; 004e0d6f
     FXCH ST2                            ; 004e0d71
@@ -170,7 +170,7 @@ section .text
     CMP dword ptr [EAX + 0x2298],0x0    ; 004e0de9
     JZ 0x004e0d9e                       ; 004e0df0
         ;   XREF to: 004e0d9e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cd0db0]      ; 004e0df2 | DAT_01cd0db0
+    MOV ESI,dword ptr [0x01cd0db0]      ; 004e0df2 | g_GhoulIndices[6]
     PUSH ESI                            ; 004e0df8
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004e0df9
     PUSH EDI                            ; 004e0e00
@@ -204,7 +204,7 @@ section .text
     CMP dword ptr [EAX + 0x2298],0x0    ; 004e0e52
     JZ 0x004e0d9e                       ; 004e0e59
         ;   XREF to: 004e0d9e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cd0d98]      ; 004e0e5f | DAT_01cd0d98
+    MOV ESI,dword ptr [0x01cd0d98]      ; 004e0e5f | g_GhoulIndices
     PUSH ESI                            ; 004e0e65
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004e0e66
     PUSH EDI                            ; 004e0e6d
@@ -240,7 +240,7 @@ section .text
     CMP dword ptr [EAX + 0x2298],0x0    ; 004e0ec1
     JZ 0x004e0d9e                       ; 004e0ec8
         ;   XREF to: 004e0d9e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cd0dc0]      ; 004e0ece | DAT_01cd0dc0
+    MOV ESI,dword ptr [0x01cd0dc0]      ; 004e0ece | g_GhoulIndices[10]
     PUSH ESI                            ; 004e0ed4
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004e0ed5
     PUSH EDI                            ; 004e0edc

@@ -9,8 +9,8 @@
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_00574ea0 at 00574ebe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c81038
-;   undefined4 DAT_02c8103c
+;   CSoundDevice* g_RecordingDeviceInterface
+;   int isRecordingStarted
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
@@ -23,7 +23,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00575b70
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
         ;   Label: sound_sndmain.cpp_stopRecordingDevice_FUN_00575b70
-    MOV EDX,dword ptr [0x02c81038]      ; 00575b75 | DAT_02c81038
+    MOV EDX,dword ptr [0x02c81038]      ; 00575b75 | g_RecordingDeviceInterface
     TEST EDX,EDX                        ; 00575b7b
     JZ 0x00575b8e                       ; 00575b7d
         ;   XREF to: 00575b8e (CONDITIONAL_JUMP)  ; LAB_00575b8e
@@ -37,7 +37,7 @@ section .text
         ;   XREF to: 00575ba1 (CONDITIONAL_JUMP)  ; LAB_00575ba1
     XOR ECX,ECX                         ; 00575b8e
         ;   Label: LAB_00575b8e
-    MOV dword ptr [0x02c8103c],ECX      ; 00575b90 | DAT_02c8103c
+    MOV dword ptr [0x02c8103c],ECX      ; 00575b90 | isRecordingStarted
     CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00575b96
         ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,0x1                         ; 00575b9b

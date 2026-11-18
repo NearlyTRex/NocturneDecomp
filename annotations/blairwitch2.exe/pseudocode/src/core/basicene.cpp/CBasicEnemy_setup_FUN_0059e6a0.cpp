@@ -30,10 +30,10 @@ void __cdecl core_basicene_cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy *this_
                       (this_ptr->skeleton,"Bip01 Spine1",1);
     this_ptr->flinch_bone = iVar2;
   }
-  if ((this_ptr->can_flinch != 0) && (*(int *)(0x01D182F0 + 0x1008) == 0)) {
-    core_basicene_cpp_FUN_005a01d0(this_ptr,&this_ptr->flinch_active);
+  if ((this_ptr->can_flinch != 0) && (g_CDemonMission_PTR_00618170->is_in_editor == 0)) {
+    core_basicene_cpp_CBasicEnemy_initFlinch_FUN_005a01d0(this_ptr,&this_ptr->flinch_active);
   }
-  core_muzzle_cpp_FUN_0059da70(&this_ptr->state_machine);
+  core_muzzle_cpp_SStateMachine_applyNextState_FUN_0059da70(&this_ptr->state_machine);
   core_cloth_cpp_CClothList_process_FUN_005b1780
             (&(this_ptr->base).base.cloth_list,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,10.0,

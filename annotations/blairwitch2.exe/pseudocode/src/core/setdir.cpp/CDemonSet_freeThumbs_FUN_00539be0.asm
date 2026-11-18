@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_clear_FUN_0052c090 at 0052c0d5
-;   core_setdir.cpp_FUN_005398d0 at 005398e1
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_005398d0 at 005398e1
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_free_FUN_005386a0

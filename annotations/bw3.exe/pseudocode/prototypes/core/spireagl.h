@@ -45,9 +45,9 @@ int __cdecl CSpiritEagle::renderTransparent(CSpiritEagle *this_ptr);
 // Address: 00599bc0
 void __cdecl CSpiritEagle::archive(CSpiritEagle *this_ptr);
 
-// Original: core_spireagl.cpp_FUN_00599c80
+// Original: core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80
 // Address: 00599c80
-undefined4 FUN_00599c80(CMotionController *param_1,char *param_2);
+int __cdecl playRandomMotionVariant(CMotionController *controller,char *motion_name);
 
 // Original: core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60
 // Address: 00599d60

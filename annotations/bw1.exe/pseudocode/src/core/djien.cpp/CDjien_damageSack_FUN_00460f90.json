@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 67,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 133
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 132
   },
   "cross_references": [],
   "function": {
@@ -76,21 +73,21 @@
     },
     {
       "addr": "005d8e60",
-      "name": "DAT_005d8e60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d8e60",
+      "type": "double",
+      "value": "7"
     },
     {
       "addr": "00612270",
-      "name": "DAT_00612270",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00612270",
+      "type": "int",
+      "value": "0x14"
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     }
   ],
   "param_estimates": {
@@ -163,24 +160,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex address 0x1c51d80 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 34,
-      "match": "0x1c51d80",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01C51D80;",
-      "type": "raw_address_constant"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

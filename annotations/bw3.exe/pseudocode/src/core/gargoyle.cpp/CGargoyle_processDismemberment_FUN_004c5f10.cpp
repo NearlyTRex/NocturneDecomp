@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004c5f10(CGargoyle *this_ptr,SDamageInfo *damage_info)
 
@@ -92,16 +91,16 @@ switchD_004c5f46_default:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
         damage_info->damage_amount = 9999.0;
       }
-      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005c3fe8;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
   iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[10]) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005c3ff8;
+    damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
     return;
   }
   if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005c3ff0;
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
   damage_info->damage_amount = damage_info->damage_amount;

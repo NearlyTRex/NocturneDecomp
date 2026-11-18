@@ -7,7 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   condition_expression
 ;
-; XREF[75]:
+; XREF[76]:
 ;   core_anvil.cpp_CAnvil_process_FUN_0040e680 at 0040e696
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb7b
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f4ff
@@ -18,15 +18,15 @@
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0 at 00416407
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004198cc
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bb63
-;   ... and 65 more
+;   ... and 66 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005de189
-;   undefined4 DAT_005de18e
+;   TerminatedCString s_none_005de189
+;   TerminatedCString s_s_005de18e
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01c56ecc
-;   undefined4 DAT_01c56ed0
+;   int g_EventDryRun
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10
@@ -51,7 +51,7 @@ section .text
     POP EBX                             ; 004a6c40
         ;   Label: LAB_004a6c40
     RET                                 ; 004a6c41
-    PUSH 0x5de189                       ; 004a6c42 | DAT_005de189
+    PUSH 0x5de189                       ; 004a6c42 | = "none"
         ;   Label: LAB_004a6c42
     PUSH EBX                            ; 004a6c47
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 004a6c48
@@ -64,15 +64,15 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 004a6c55
     XOR EDX,EDX                         ; 004a6c59
     PUSH ECX                            ; 004a6c5b
-    MOV dword ptr [0x01c56ecc],EDX      ; 004a6c5c | DAT_01c56ecc
+    MOV dword ptr [0x01c56ecc],EDX      ; 004a6c5c | g_EventDryRun
     CALL core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10 ; 004a6c62
         ;   XREF to: 004a6d10 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 004a6c67
     TEST EAX,EAX                        ; 004a6c6a
     JGE 0x004a6c40                      ; 004a6c6c
         ;   XREF to: 004a6c40 (CONDITIONAL_JUMP)  ; LAB_004a6c40
-    PUSH 0x1c56ed0                      ; 004a6c6e | DAT_01c56ed0
-    PUSH 0x5de18e                       ; 004a6c73 | DAT_005de18e
+    PUSH 0x1c56ed0                      ; 004a6c6e | g_EventErrorMessageBuffer
+    PUSH 0x5de18e                       ; 004a6c73 | = "%s\n"
     MOV EBX,dword ptr [0x00611100]      ; 004a6c78 | g_CConsolePtr
     PUSH EBX                            ; 004a6c7e | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004a6c7f

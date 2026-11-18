@@ -6,27 +6,23 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00567450(CDeformableModelInstance *this_ptr)
 
 {
-  int iVar1;
-  CDeformableModel *pCVar2;
-  CVector3i *pCVar3;
+  CDeformableModel *pCVar1;
+  CVector3i *pCVar2;
   
   core_skeleton_cpp_CDeformableModelInstance_free_FUN_005674d0(this_ptr);
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr);
-  iVar1 = pCVar2->vertex_count[0];
-  pCVar3 = (CVector3i *)operator_new_array(iVar1 * 0xc);
-  this_ptr->skinned_vertices_buffer = pCVar3;
-  if (pCVar3 != (CVector3i *)0x0) {
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr);
+  pCVar2 = operator_new_array(pCVar1->vertex_count[0] * 0xc);
+  this_ptr->skinned_vertices_buffer = pCVar2;
+  if (pCVar2 != (CVector3i *)0x0) {
     this_ptr->cached_skinned_lod_index = -1;
     return;
   }
-  _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-  _DAT_01d1d404 = 0x919;
-  core_main_c_FUN_005030e0("CDeformableModelInstance::allocPointList out of memory for %d points!",iVar1);
+  g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+  g_INT_01d1d404 = 0x919;
+  core_main_c_displayErrorAndQuit_FUN_005030e0("CDeformableModelInstance::allocPointList out of memory for %d points!");
   this_ptr->cached_skinned_lod_index = -1;
   return;
 }

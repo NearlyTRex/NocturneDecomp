@@ -9,8 +9,8 @@
 CPuzzle * __cdecl core_bmppuzzl_cpp_CPuzzle_ctor_FUN_00415ba0(CPuzzle *this_ptr)
 
 {
-  DAT_007c394c = DAT_007c394c + 1;
-  this_ptr->vtable = &PTR_core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0_005fc944;
-  (&DAT_007c394c)[DAT_007c394c] = (int)this_ptr;
+  g_INT_ARRAY_007c394c[0] = g_INT_ARRAY_007c394c[0] + 1;
+  this_ptr->vtable = g_ARRAY_PTR_005fc944;
+  g_INT_ARRAY_007c394c[g_INT_ARRAY_007c394c[0]] = (int)this_ptr;
   return this_ptr;
 }

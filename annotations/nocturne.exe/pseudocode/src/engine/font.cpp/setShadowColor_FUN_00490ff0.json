@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 74,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 142
+    "total_lines": 141
   },
   "cross_references": [],
   "function": {
@@ -93,38 +91,38 @@
     },
     {
       "addr": "01c70f5c",
-      "name": "DAT_01c70f5c",
-      "type": "undefined4",
+      "name": "g_ShadowColor8",
+      "type": "uchar",
       "value": null
     },
     {
       "addr": "01c70f5e",
-      "name": "DAT_01c70f5e",
-      "type": "undefined4",
+      "name": "g_ShadowColor16",
+      "type": "ushort",
       "value": null
     },
     {
       "addr": "01c70f60",
-      "name": "DAT_01c70f60",
-      "type": "undefined4",
+      "name": "g_ShadowColor32",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c70f64",
-      "name": "DAT_01c70f64",
-      "type": "undefined4",
+      "name": "g_ShadowColorRed",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c70f68",
-      "name": "DAT_01c70f68",
-      "type": "undefined4",
+      "name": "g_ShadowColorGreen",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c70f6c",
-      "name": "DAT_01c70f6c",
-      "type": "undefined4",
+      "name": "g_ShadowColorBlue",
+      "type": "int",
       "value": null
     },
     {
@@ -269,22 +267,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004910f9) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_01c70f5c",
-      "severity": "mild",
-      "text": "DAT_01c70f5c = g_ColorCubeLookup",
-      "type": "undefined_data"
     }
   ]
 }

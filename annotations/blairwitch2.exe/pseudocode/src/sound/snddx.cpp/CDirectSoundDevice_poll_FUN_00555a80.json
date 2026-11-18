@@ -1,0 +1,195 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 95,
+    "complexity_score": 41,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 136
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00555a80",
+    "address_range": [
+      [
+        "00555a80",
+        "00555b52"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_00555a80",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_00555a80(CDirectSoundDevice *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00554c80",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_fillStreamBuffer_FUN_00554c80"
+    },
+    {
+      "addr": "00554ad0",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0"
+    },
+    {
+      "addr": "00552b30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    },
+    {
+      "addr": "00554510",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_00554510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a3b",
+      "name": "s_DirectSux_Unable_to_s_s_005e9a3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9bb6",
+      "name": "s_Get_position_of_secondar_005e9bb6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0264a5cc",
+      "name": "g_DirectSoundSecondaryBuffer",
+      "type": "IDirectSoundBuffer*",
+      "value": null
+    },
+    {
+      "addr": "0264a5e8",
+      "name": "g_StreamBlockSizeBytes",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0264a5ec",
+      "name": "g_StreamBlockCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0264a5f0",
+      "name": "g_StreamCurrentBlock",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.414285714285715,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 55,
+      "INT_ADD": 22,
+      "INT_AND": 42,
+      "INT_CARRY": 7,
+      "INT_DIV": 1,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 1,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 1,
+      "INT_REM": 1,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 19,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "INT_ZEXT": 3,
+      "LOAD": 12,
+      "POPCOUNT": 19,
+      "RETURN": 4,
+      "STORE": 18,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 309
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005784b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055b620",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005aed50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9565
+    },
+    "nocturne.exe": {
+      "addr": "0052a970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9565
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 16,
+        "vtable_addr": "005fbcbc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

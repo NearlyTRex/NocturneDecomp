@@ -9,18 +9,18 @@
 CLightPis * __cdecl core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags)
 
 {
-  CLightPis *pCVar1;
-  void *ptr;
+  CLightPis *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CLightPisTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CLightPisTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CLightPis *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
+  ptr = (CLightPis *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005c0344(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

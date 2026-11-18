@@ -29,10 +29,10 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(CGabriella *t
         (float)0.90000000000000002 < this_ptr->draw_blend)) &&
        ((pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
                             (&((this_ptr->base).inventory.selected_weapon)->base,
-                             g_CDynamiteActorType_01bca088.name_hash), pCVar5 == (CDemonActor *)0x0
-        || (fVar1 = pCVar5[4].orient.vec.z, fVar2 = pCVar5[4].orient.vec.y,
-           fVar3 = pCVar5[4].orient_matrix.m[0].x,
-           0.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1))))) {
+                             g_CDynamiteClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
+        (fVar1 = pCVar5[4].orient.vec.z, fVar2 = pCVar5[4].orient.vec.y,
+        fVar3 = pCVar5[4].orient_matrix.m[0].x,
+        0.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1))))) {
       this_ptr_01 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
       (*(((this_ptr_01->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_01);
       return iVar4;

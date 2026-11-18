@@ -42,13 +42,13 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
   this_ptr_00->dual_wield_side = 0;
   this_ptr_00->melee_attack_index = 0;
   this_ptr_00->interact_blend = 0.0;
-  fVar2 = 0x41200000;
+  fVar2 = 10.0f;
   (this_ptr_00->carry_object_bbox).max.x = -1e+30;
   (this_ptr_00->left_arm_aim).aim_yaw = fVar1;
   this_ptr_00->aim_speed_factor = fVar2;
   (this_ptr_00->carry_object_world_center).x = -1e+30;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            (&(this_ptr_00->base).base.model,(char *)0x5d98a4);
+            (&(this_ptr_00->base).base.model,"newdoc.dfm");
   (this_ptr_00->base).base.layer_action_index = 0;
   this_ptr_00->weapon = (CWeapon *)0x0;
   this_ptr_00->turn_angle = 0.0;

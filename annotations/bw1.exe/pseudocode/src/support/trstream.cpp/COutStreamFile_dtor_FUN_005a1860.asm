@@ -9,19 +9,19 @@
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610 at 00453be6
-;   core_game.cpp_FUN_004d6420 at 004d681c
-;   core_game.cpp_FUN_004d6990 at 004d6d6f
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6d6f
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d681c
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a77
-;   support_codec.cpp_FUN_00442e10 at 00442ea6
+;   support_codec.cpp_CCodec_processFiles_FUN_00442e10 at 00442ea6
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamFileTypeInfo
-;   undefined1* g_COutStreamFileVTable = 005a1860
+;   void*[10] g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005c030f
-;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
+;   crt_unknown.c_free_FUN_005c0336
 ;   support_trstream.cpp_COutStream_dtor_FUN_005a14b0
 ;   support_trstream.cpp_COutStreamFile_close_FUN_005a19b0
 ;
@@ -60,16 +60,16 @@ section .text
         ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005a18a0
     PUSH EAX                            ; 005a18a3
-    CALL crt_unknown.c_FUN_005c0336     ; 005a18a4
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 005a18a4
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 005a18a9
     MOV EAX,EBX                         ; 005a18ac
     POP EBX                             ; 005a18ae
     RET                                 ; 005a18af
     PUSH EAX                            ; 005a18b0
         ;   Label: LAB_005a18b0
-    CALL crt_unknown.c_FUN_005c0344     ; 005a18b1
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 005a18b1
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 005a18b6
     MOV EAX,EBX                         ; 005a18b9
     POP EBX                             ; 005a18bb

@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_00523140(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)
+; void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_00523140(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list)
 ;
 ; Parameters:
 ; CMorph *         Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; CVector3i *      Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
-; SMRGLHeaderPrimitive * Stack[0x18]:4   param_6
-; SMRGLTextureModel * Stack[0x1c]:4   param_7
-; int *            Stack[0x20]:4   param_8
+; int              Stack[0x8]:4   model_index
+; int              Stack[0xc]:4   vertex_count
+; CVector3i *      Stack[0x10]:4   vertex_data
+; int              Stack[0x14]:4   poly_count
+; SMRGLHeaderPrimitive * Stack[0x18]:4   poly_data
+; SMRGLTextureModel * Stack[0x1c]:4   texture_list
+; int *            Stack[0x20]:4   texture_index_list
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_005221d0

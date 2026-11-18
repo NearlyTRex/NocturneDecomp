@@ -15,7 +15,7 @@ section .text
     PUSH 0x72c                          ; 00510dc0
         ;   Label: core_minecar.cpp_factoryFuncMineCar_FUN_00510dc0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00510dc5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 00510dca
     TEST EAX,EAX                        ; 00510dcd
     JNZ 0x00510dd2                      ; 00510dcf

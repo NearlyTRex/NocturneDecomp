@@ -8,7 +8,7 @@
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090 at 0045f169
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4d764
+;   int g_INT_01b4d764
 ;   void*[1200] g_ScreenBufferArray
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   uint[1600] g_ReciprocalLookupTable
@@ -47,7 +47,7 @@ section .text
     MOV EBX,EBP                         ; 004640b8
     DEC ECX                             ; 004640ba
     MOV ESI,dword ptr [ESI + 0x28]      ; 004640bb
-    MOV EAX,[0x01b4d764]                ; 004640be | DAT_01b4d764
+    MOV EAX,[0x01b4d764]                ; 004640be | g_INT_01b4d764
     SUB ECX,0x4                         ; 004640c3
         ;   Label: LAB_004640c3
     JL 0x004641c8                       ; 004640c6
@@ -175,7 +175,7 @@ section .text
     SHR EBP,0x8                         ; 004641ee
     CMP EBP,dword ptr [EBX + 0x8]       ; 004641f1
     SBB EAX,-0x1                        ; 004641f4
-    MOV [0x01b4d764],EAX                ; 004641f7 | DAT_01b4d764
+    MOV [0x01b4d764],EAX                ; 004641f7 | g_INT_01b4d764
         ;   Label: LAB_004641f7
     POP EBP                             ; 004641fc
         ;   Label: LAB_004641fc

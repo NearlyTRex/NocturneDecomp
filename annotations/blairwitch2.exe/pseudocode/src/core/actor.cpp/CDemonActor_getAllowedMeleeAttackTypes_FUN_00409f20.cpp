@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409f20(CDemonActor *this_ptr)
 
 {
@@ -49,14 +47,15 @@ int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409f20(C
   *(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
        *(uint *)((int)&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
   uVar2 = 0;
-  if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) && ((float)_DAT_005ca66e < unaff_EDI)) &&
-     (((unaff_EDI < (float)_DAT_005ca676 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))) {
+  if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) && ((float)2 < unaff_EDI)) &&
+     (((unaff_EDI < (float)6 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI))
+     )) {
     uVar2 = 2;
   }
   if (((fStack_14 < 1.0) && (unaff_EBP < 1.0)) &&
      ((1.0 < unaff_EDI &&
-      (((unaff_EDI < (float)_DAT_005ca66e && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))))
-     ) {
+      (((unaff_EDI < (float)2 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)
+       ))))) {
     uVar2 = uVar2 | 4;
   }
   return uVar2;

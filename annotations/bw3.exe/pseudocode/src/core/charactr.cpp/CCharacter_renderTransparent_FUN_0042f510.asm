@@ -29,27 +29,27 @@
 ;   core_zombie.cpp_CZombie_renderTransparent_FUN_0058beb0 at 0058c042
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b837a
-;   undefined4 DAT_005b837e
+;   float g_FLOAT_005b837a = 0.5
+;   float g_FLOAT_005b837e = 3
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_007e2af0
-;   undefined4 DAT_007e2b0c
-;   undefined4 DAT_007e2b10
-;   undefined4 DAT_007e2b2c
-;   undefined1 DAT_007e2b30
-;   undefined4 DAT_007e2cb0
+;   CDemonGlobe g_CDemonGlobe_007e2af0
+;   undefined4 g_CDemonGlobe_007e2af0.intensity
+;   undefined4 g_CDemonGlobe_007e2af0.corona_mode
+;   undefined4 g_CDemonGlobe_007e2af0.intensity_multiplier
+;   byte g_BYTE_007e2b30
+;   float g_FLOAT_007e2cb0
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0
-;   core_charactr.cpp_FUN_0042d8e0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
-;   core_set.cpp_FUN_00537320
+;   core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00537320
 ;
 ; *****************************************************************************
 
@@ -62,7 +62,7 @@ section .text
     PUSH EBP                            ; 0042f513
     SUB ESP,0x64                        ; 0042f514
     MOV EBX,dword ptr [ESP + 0x78]      ; 0042f517
-    MOV AH,byte ptr [0x007e2b30]        ; 0042f51b | DAT_007e2b30
+    MOV AH,byte ptr [0x007e2b30]        ; 0042f51b | g_BYTE_007e2b30
     TEST AH,0x1                         ; 0042f521
     JZ 0x0042f6c9                       ; 0042f524
         ;   XREF to: 0042f6c9 (CONDITIONAL_JUMP)  ; LAB_0042f6c9
@@ -75,9 +75,9 @@ section .text
     CMP dword ptr [EBX + 0x30cc],0x0    ; 0042f53a
     JNZ 0x0042f639                      ; 0042f541
         ;   XREF to: 0042f639 (CONDITIONAL_JUMP)  ; LAB_0042f639
-    FLD float ptr [0x007e2cb0]          ; 0042f547 | DAT_007e2cb0
-    FADD float ptr [0x005b837a]         ; 0042f54d | DAT_005b837a
-    FST float ptr [0x007e2cb0]          ; 0042f553 | DAT_007e2cb0
+    FLD float ptr [0x007e2cb0]          ; 0042f547 | g_FLOAT_007e2cb0
+    FADD float ptr [0x005b837a]         ; 0042f54d | g_FLOAT_005b837a
+    FST float ptr [0x007e2cb0]          ; 0042f553 | g_FLOAT_007e2cb0
     FLD ST0                             ; 0042f559
     FSIN                                ; 0042f55b
     FXCH                                ; 0042f55d
@@ -104,7 +104,7 @@ section .text
     FXCH                                ; 0042f5a3
     FSTP float ptr [ESP + 0x48]         ; 0042f5a5
     FXCH                                ; 0042f5a9
-    FADD float ptr [0x005b837e]         ; 0042f5ab | DAT_005b837e
+    FADD float ptr [0x005b837e]         ; 0042f5ab | g_FLOAT_005b837e
     FXCH                                ; 0042f5b1
     FSTP float ptr [ESP + 0x50]         ; 0042f5b3
     FSTP float ptr [ESP + 0x4c]         ; 0042f5b7
@@ -125,24 +125,24 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 0042f5e2
         ;   Label: LAB_0042f5e2
     PUSH EAX                            ; 0042f5e6
-    PUSH 0x7e2af0                       ; 0042f5e7 | DAT_007e2af0
+    PUSH 0x7e2af0                       ; 0042f5e7 | g_CDemonGlobe_007e2af0
     CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0 ; 0042f5ec
         ;   XREF to: 0045aae0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0042f5f1
     MOV EDI,0xafc8                      ; 0042f5f4
     PUSH 0x40400000                     ; 0042f5f9
     MOV DH,0x2b                         ; 0042f5fe
-    PUSH 0x7e2af0                       ; 0042f600 | DAT_007e2af0
-    MOV dword ptr [0x007e2b2c],EDI      ; 0042f605 | DAT_007e2b2c
-    MOV byte ptr [0x007e2b0c],DH        ; 0042f60b | DAT_007e2b0c
+    PUSH 0x7e2af0                       ; 0042f600 | g_CDemonGlobe_007e2af0
+    MOV dword ptr [0x007e2b2c],EDI      ; 0042f605 | g_CDemonGlobe_007e2af0.intensity_multiplier
+    MOV byte ptr [0x007e2b0c],DH        ; 0042f60b | g_CDemonGlobe_007e2af0.intensity
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30 ; 0042f611
         ;   XREF to: 0045ab30 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 0042f616
-    PUSH 0x7e2af0                       ; 0042f619 | DAT_007e2af0
+    PUSH 0x7e2af0                       ; 0042f619 | g_CDemonGlobe_007e2af0
     MOV EAX,[0x00603b28]                ; 0042f61e | g_CDemonSetPtr
     XOR EBP,EBP                         ; 0042f623
     PUSH EAX                            ; 0042f625 | g_CDemonSetInstance
-    MOV dword ptr [0x007e2b10],EBP      ; 0042f626 | DAT_007e2b10
+    MOV dword ptr [0x007e2b10],EBP      ; 0042f626 | g_CDemonGlobe_007e2af0.corona_mode
     MOV EBP,0x1                         ; 0042f62c
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0 ; 0042f631
         ;   XREF to: 005372f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(CDemonSet * this_ptr, CDemonGlobe * globe)
@@ -164,16 +164,16 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0042f662
     PUSH EAX                            ; 0042f666
     MOVSD.REP ES:EDI,ESI                ; 0042f667
-    CALL core_box.cpp_FUN_0041daf0      ; 0042f669
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 0042f669
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0042f66e
     TEST EAX,EAX                        ; 0042f671
     JZ 0x0042f688                       ; 0042f673
         ;   XREF to: 0042f688 (CONDITIONAL_JUMP)  ; LAB_0042f688
     PUSH EBX                            ; 0042f675
     MOV dword ptr [EBX + 0x27bc],0x1    ; 0042f676
-    CALL core_charactr.cpp_FUN_0042d8e0 ; 0042f680
-        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d8e0()
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 ; 0042f680
+        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042f685
     PUSH EBX                            ; 0042f688
         ;   Label: LAB_0042f688
@@ -183,11 +183,11 @@ section .text
     TEST EBP,EBP                        ; 0042f691
     JZ 0x0042f6a9                       ; 0042f693
         ;   XREF to: 0042f6a9 (CONDITIONAL_JUMP)  ; LAB_0042f6a9
-    PUSH 0x7e2af0                       ; 0042f695 | DAT_007e2af0
+    PUSH 0x7e2af0                       ; 0042f695 | g_CDemonGlobe_007e2af0
     MOV EDX,dword ptr [0x00603b28]      ; 0042f69a | g_CDemonSetPtr
     PUSH EDX                            ; 0042f6a0 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00537320      ; 0042f6a1
-        ;   XREF to: 00537320 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_00537320()
+    CALL core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00537320 ; 0042f6a1
+        ;   XREF to: 00537320 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00537320(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 0042f6a6
     CMP dword ptr [EBX + 0x33a0],0x0    ; 0042f6a9
         ;   Label: LAB_0042f6a9
@@ -207,7 +207,7 @@ section .text
     MOV DL,AH                           ; 0042f6c9
         ;   Label: LAB_0042f6c9
     OR DL,0x1                           ; 0042f6cb
-    MOV byte ptr [0x007e2b30],DL        ; 0042f6ce | DAT_007e2b30
+    MOV byte ptr [0x007e2b30],DL        ; 0042f6ce | g_BYTE_007e2b30
     JMP 0x0042f52a                      ; 0042f6d4
         ;   XREF to: 0042f52a (UNCONDITIONAL_JUMP)  ; LAB_0042f52a
     PUSH EBX                            ; 0042f6d9

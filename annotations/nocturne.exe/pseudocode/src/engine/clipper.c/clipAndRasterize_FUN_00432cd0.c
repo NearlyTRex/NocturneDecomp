@@ -7,28 +7,31 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004335a5) */
-/* WARNING: Type propagation algorithm not settling */
 
 void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int *vertex_indices)
 
 {
   longlong lVar1;
   longlong lVar2;
-  byte bVar3;
-  int iVar4;
-  int *piVar5;
-  char cVar6;
-  int iVar8;
-  longlong *plVar9;
-  uint *puVar10;
-  SRenderVertex *pSVar11;
-  int iVar12;
+  longlong lVar3;
+  longlong lVar4;
+  uint uVar5;
+  longlong *plVar6;
+  int iVar7;
+  byte bVar8;
+  int *piVar9;
+  int iVar10;
+  char cVar11;
   int iVar13;
-  longlong *plVar14;
-  SRenderVertex *pSVar15;
-  longlong *plVar16;
-  longlong *plVar17;
-  byte bVar18;
+  SRenderVertex *pSVar14;
+  uint *puVar15;
+  int iVar16;
+  int iVar17;
+  longlong *plVar18;
+  SRenderVertex *pSVar19;
+  SRenderVertex *pSVar20;
+  SRenderVertex *pSVar21;
+  byte bVar22;
   uint local_150 [31];
   uint auStack_d4 [33];
   int *local_50;
@@ -47,551 +50,574 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
   uint *local_1c;
   int local_18;
   int local_14;
-  uint uVar7;
+  uint uVar12;
   
-  bVar18 = 0;
-  if (INT_005b7644 == 0) {
+  bVar22 = 0;
+  if (g_VertexProcessingEnabled == 0) {
     engine_prim_c_renderIndexedPolygonSoftware_FUN_004fa2e0(vertex_indices,vertex_count);
   }
   else {
-    uVar7 = 0xffffffff;
-    cVar6 = -1;
+    uVar12 = 0xffffffff;
+    cVar11 = -1;
     local_50 = vertex_indices;
-    iVar12 = 0;
-    iVar8 = 0;
-    piVar5 = vertex_indices;
+    iVar16 = 0;
+    iVar13 = 0;
+    piVar9 = vertex_indices;
     if (0 < vertex_count) {
       do {
-        iVar13 = *piVar5;
-        if (((&DAT_005c5024)[iVar13 * 0xc] & 0x80000000) != 0) {
-          iVar12 = iVar12 + 1;
+        uVar5 = g_SRenderVertex_ARRAY_005c5014[*piVar9].projected_vertex.screen_x;
+        if ((uVar5 & 0x80000000) != 0) {
+          iVar16 = iVar16 + 1;
         }
-        piVar5 = piVar5 + 1;
-        iVar8 = iVar8 + 1;
-        uVar7 = uVar7 & (&DAT_005c5024)[iVar13 * 0xc];
-        cVar6 = (char)uVar7;
-      } while (iVar8 < vertex_count);
+        piVar9 = piVar9 + 1;
+        iVar13 = iVar13 + 1;
+        uVar12 = uVar12 & uVar5;
+        cVar11 = (char)uVar12;
+      } while (iVar13 < vertex_count);
     }
-    if ((iVar12 == vertex_count) && (cVar6 != '\0')) {
-      DAT_00766c70 = 0;
+    if ((iVar16 == vertex_count) && (cVar11 != '\0')) {
+      g_ClippedVertexCount = 0;
     }
     else {
-      if (iVar12 == 0) {
+      if (iVar16 == 0) {
         if ((g_UseExternalRenderer != 0) && (g_TexturesDisabled == 0)) {
-          iVar8 = 0;
+          iVar13 = 0;
           if (0 < vertex_count) {
             do {
-              iVar12 = *vertex_indices;
-              iVar8 = iVar8 + 1;
+              iVar16 = *vertex_indices;
+              iVar13 = iVar13 + 1;
               vertex_indices = vertex_indices + 1;
-              *(uint **)(iVar8 * 4 + 0x767270) = &DAT_005c5014 + iVar12 * 0xc;
-            } while (iVar8 < vertex_count);
+              g_INT_ARRAY_00767270[iVar13] = (int)(g_SRenderVertex_ARRAY_005c5014 + iVar16);
+            } while (iVar13 < vertex_count);
           }
-          if (DAT_006b0280 != 0) {
+          if (g_CullingMode != 0) {
             if (vertex_count < 4) {
-              iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
-                                (DAT_00767274,DAT_00767278,DAT_0076727c);
-              if (iVar8 == 0) {
+              iVar13 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+                                 (g_SRenderVertex_PTR_00767274,g_SRenderVertex_PTR_00767278,
+                                  g_SRenderVertex_PTR_0076727c);
+              if (iVar13 == 0) {
                 return;
               }
             }
             else {
               local_28 = vertex_count + -2;
-              iVar12 = 0;
-              iVar8 = local_28 * 4;
-              iVar13 = 0;
-              if (0 < iVar8) {
+              iVar16 = 0;
+              iVar13 = local_28 * 4;
+              iVar17 = 0;
+              if (0 < iVar13) {
                 do {
-                  iVar4 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
-                                    (DAT_00767274,*(SRenderVertex **)((int)&DAT_00767278 + iVar12),
-                                     *(SRenderVertex **)((int)&DAT_0076727c + iVar12));
-                  if (iVar4 == 0) {
-                    iVar13 = iVar13 + 1;
+                  iVar10 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+                                     (g_SRenderVertex_PTR_00767274,
+                                      *(SRenderVertex **)
+                                       ((int)&g_SRenderVertex_PTR_00767278 + iVar16),
+                                      *(SRenderVertex **)
+                                       ((int)&g_SRenderVertex_PTR_0076727c + iVar16));
+                  if (iVar10 == 0) {
+                    iVar17 = iVar17 + 1;
                   }
-                  iVar12 = iVar12 + 4;
-                } while (iVar12 < iVar8);
+                  iVar16 = iVar16 + 4;
+                } while (iVar16 < iVar13);
               }
-              if (iVar13 == local_28) {
+              if (iVar17 == local_28) {
                 return;
               }
             }
           }
           g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
           engine_special_cpp_drawPolygon2_FUN_00532650
-                    (&DAT_00767274,vertex_count,g_RenderStateFlags.dword);
+                    (&g_SRenderVertex_PTR_00767274,vertex_count,g_RenderStateFlags.dword);
           return;
         }
-        DAT_00766c70 = vertex_count;
+        g_ClippedVertexCount = vertex_count;
         local_18 = 0;
         if (0 < vertex_count) {
-          plVar9 = (longlong *)&DAT_00766c74;
+          pSVar14 = g_ClippedVertexBuffer;
           do {
-            iVar8 = 0x30;
-            plVar17 = (longlong *)(&DAT_005c5014 + *vertex_indices * 0xc);
-            plVar14 = plVar9;
-            if (((uint)plVar9 & 7) != 0) {
-              plVar14 = (longlong *)((int)plVar9 + 4);
-              plVar17 = (longlong *)(&DAT_005c5018 + *vertex_indices * 0xc);
-              *(int *)plVar9 = (int)*(longlong *)(&DAT_005c5014 + *vertex_indices * 0xc);
-              iVar8 = 0x2c;
+            iVar13 = 0x30;
+            pSVar19 = g_SRenderVertex_ARRAY_005c5014 + *vertex_indices;
+            pSVar21 = pSVar14;
+            if (((uint)pSVar14 & 7) != 0) {
+              pSVar21 = (SRenderVertex *)&(pSVar14->projected_vertex).transformed_y;
+              pSVar19 = (SRenderVertex *)
+                        &g_SRenderVertex_ARRAY_005c5014[*vertex_indices].projected_vertex.
+                         transformed_y;
+              (pSVar14->projected_vertex).transformed_x =
+                   g_SRenderVertex_ARRAY_005c5014[*vertex_indices].projected_vertex.transformed_x;
+              iVar13 = 0x2c;
             }
-            while (7 < iVar8) {
-              lVar1 = *plVar17;
-              plVar17 = plVar17 + 1;
-              *plVar14 = (longlong)ROUND((float10)lVar1);
-              plVar14 = plVar14 + 1;
-              iVar8 = iVar8 + -8;
+            while (7 < iVar13) {
+              lVar1._0_4_ = (pSVar19->projected_vertex).transformed_x;
+              lVar1._4_4_ = (pSVar19->projected_vertex).transformed_y;
+              pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
+              (pSVar21->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);
+              (pSVar21->projected_vertex).transformed_y =
+                   (int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);
+              pSVar21 = (SRenderVertex *)&(pSVar21->projected_vertex).transformed_z;
+              iVar13 = iVar13 + -8;
             }
-            if (iVar8 != 0 && -9 < iVar8 + -8) {
-              *(int *)plVar14 = (int)*plVar17;
-              if (4 < iVar8) {
-                *(uint *)((int)plVar14 + 4) = *(uint *)((int)plVar17 + 4);
+            if (iVar13 != 0 && -9 < iVar13 + -8) {
+              (pSVar21->projected_vertex).transformed_x = (pSVar19->projected_vertex).transformed_x;
+              if (4 < iVar13) {
+                (pSVar21->projected_vertex).transformed_y =
+                     (pSVar19->projected_vertex).transformed_y;
               }
             }
             vertex_indices = vertex_indices + 1;
             local_18 = local_18 + 1;
-            plVar9 = plVar9 + 6;
+            pSVar14 = pSVar14 + 1;
           } while (local_18 < vertex_count);
         }
       }
       else {
-        iVar8 = 0;
+        iVar13 = 0;
         if (0 < vertex_count) {
           do {
-            iVar12 = *vertex_indices;
-            iVar8 = iVar8 + 1;
+            iVar16 = *vertex_indices;
+            iVar13 = iVar13 + 1;
             vertex_indices = vertex_indices + 1;
-            auStack_d4[iVar8] = &DAT_005c5014 + iVar12 * 0xc;
-          } while (iVar8 < vertex_count);
+            auStack_d4[iVar13] = g_SRenderVertex_ARRAY_005c5014 + iVar16;
+          } while (iVar13 < vertex_count);
         }
-        DAT_00766c70 = vertex_count;
+        g_ClippedVertexCount = vertex_count;
         local_48 = vertex_count;
-        iVar8 = 0;
-        DAT_00767b38 = 0;
+        iVar13 = 0;
+        g_ClipperTempCount = 0;
         local_4c = (byte *)local_150;
         local_44 = 0;
         if (0 < vertex_count) {
-          puVar10 = auStack_d4;
-          pSVar11 = (SRenderVertex *)auStack_d4[vertex_count];
+          puVar15 = auStack_d4;
+          pSVar14 = (SRenderVertex *)auStack_d4[vertex_count];
           do {
-            iVar12 = DAT_00767b38;
-            puVar10 = puVar10 + 1;
-            pSVar15 = (SRenderVertex *)*puVar10;
-            bVar3 = (pSVar11->projected_vertex).transformed_z <=
-                    (pSVar11->projected_vertex).transformed_x;
-            if ((pSVar15->projected_vertex).transformed_z <=
-                (pSVar15->projected_vertex).transformed_x) {
-              bVar3 = bVar3 | 2;
+            iVar16 = g_ClipperTempCount;
+            puVar15 = puVar15 + 1;
+            pSVar19 = (SRenderVertex *)*puVar15;
+            bVar8 = (pSVar14->projected_vertex).transformed_z <=
+                    (pSVar14->projected_vertex).transformed_x;
+            if ((pSVar19->projected_vertex).transformed_z <=
+                (pSVar19->projected_vertex).transformed_x) {
+              bVar8 = bVar8 | 2;
             }
-            switch(bVar3) {
+            switch(bVar8) {
             case 0:
-              iVar12 = iVar8 * 4;
-              iVar8 = iVar8 + 1;
-              *(SRenderVertex **)(local_4c + iVar12) = pSVar11;
+              iVar16 = iVar13 * 4;
+              iVar13 = iVar13 + 1;
+              *(SRenderVertex **)(local_4c + iVar16) = pSVar14;
               break;
             case 1:
-              if (0xb < DAT_00767b38) {
+              if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar13 = DAT_00767b38 * 0x30;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              iVar12 = iVar8 * 4;
-              iVar8 = iVar8 + 1;
-              *(SRenderVertex **)(local_4c + iVar12) = (SRenderVertex *)(&DAT_007678f8 + iVar13);
-              engine_clipper_c_interpolateVertexRightClip_FUN_00431530
-                        (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar13));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              iVar16 = iVar13 * 4;
+              iVar13 = iVar13 + 1;
+              *(SRenderVertex **)(local_4c + iVar16) = pSVar21;
+              engine_clipper_c_interpolateVertexRightClip_FUN_00431530(pSVar19,pSVar14,pSVar21);
               break;
             case 2:
-              iVar13 = iVar8 + 1;
-              *(SRenderVertex **)(local_4c + iVar8 * 4) = pSVar11;
-              if (0xb < iVar12) {
+              iVar17 = iVar13 + 1;
+              *(SRenderVertex **)(local_4c + iVar13 * 4) = pSVar14;
+              if (0xb < iVar16) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar12 = DAT_00767b38 * 0x30;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              iVar8 = iVar8 + 2;
-              *(SRenderVertex **)(local_4c + iVar13 * 4) = (SRenderVertex *)(&DAT_007678f8 + iVar12)
-              ;
-              engine_clipper_c_interpolateVertexRightClip_FUN_00431530
-                        (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar12));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              iVar13 = iVar13 + 2;
+              *(SRenderVertex **)(local_4c + iVar17 * 4) = pSVar21;
+              engine_clipper_c_interpolateVertexRightClip_FUN_00431530(pSVar14,pSVar19,pSVar21);
             }
             local_44 = local_44 + 1;
-            pSVar11 = pSVar15;
+            pSVar14 = pSVar19;
           } while (local_44 < local_48);
         }
-        if (iVar8 < 3) {
-          DAT_00766c70 = iVar8;
+        if (iVar13 < 3) {
+          g_ClippedVertexCount = iVar13;
           return;
         }
-        iVar12 = 0;
-        local_40 = iVar8;
+        iVar16 = 0;
+        local_40 = iVar13;
         local_3c = 0;
-        pSVar11 = (SRenderVertex *)local_150[iVar8 + -1];
-        DAT_00766c70 = iVar8;
-        puVar10 = local_150;
-        if (0 < iVar8) {
+        pSVar14 = (SRenderVertex *)local_150[iVar13 + -1];
+        g_ClippedVertexCount = iVar13;
+        puVar15 = local_150;
+        if (0 < iVar13) {
           do {
-            local_24 = puVar10;
-            pSVar15 = (SRenderVertex *)*local_24;
-            bVar3 = (pSVar11->projected_vertex).transformed_x <=
-                    -(pSVar11->projected_vertex).transformed_z;
-            if ((pSVar15->projected_vertex).transformed_x <=
-                -(pSVar15->projected_vertex).transformed_z) {
-              bVar3 = bVar3 | 2;
+            local_24 = puVar15;
+            pSVar19 = (SRenderVertex *)*local_24;
+            bVar8 = (pSVar14->projected_vertex).transformed_x <=
+                    -(pSVar14->projected_vertex).transformed_z;
+            if ((pSVar19->projected_vertex).transformed_x <=
+                -(pSVar19->projected_vertex).transformed_z) {
+              bVar8 = bVar8 | 2;
             }
-            switch(bVar3) {
+            switch(bVar8) {
             case 0:
-              iVar12 = iVar12 + 1;
-              auStack_d4[iVar12] = pSVar11;
+              iVar16 = iVar16 + 1;
+              auStack_d4[iVar16] = pSVar14;
               break;
             case 1:
-              if (0xb < DAT_00767b38) {
+              if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar8 = DAT_00767b38 * 0x30;
-              iVar12 = iVar12 + 1;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              auStack_d4[iVar12] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
-                        (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar8));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              iVar16 = iVar16 + 1;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              auStack_d4[iVar16] = pSVar21;
+              engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(pSVar19,pSVar14,pSVar21);
               break;
             case 2:
-              auStack_d4[iVar12 + 1] = pSVar11;
-              if (0xb < DAT_00767b38) {
+              auStack_d4[iVar16 + 1] = pSVar14;
+              if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar8 = DAT_00767b38 * 0x30;
-              iVar12 = iVar12 + 2;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              auStack_d4[iVar12] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
-                        (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar8));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              iVar16 = iVar16 + 2;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              auStack_d4[iVar16] = pSVar21;
+              engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(pSVar14,pSVar19,pSVar21);
             }
             local_3c = local_3c + 1;
             local_24 = local_24 + 1;
-            pSVar11 = pSVar15;
-            puVar10 = local_24;
+            pSVar14 = pSVar19;
+            puVar15 = local_24;
           } while (local_3c < local_40);
         }
-        if (iVar12 < 3) {
-          DAT_00766c70 = iVar12;
+        if (iVar16 < 3) {
+          g_ClippedVertexCount = iVar16;
           return;
         }
-        iVar8 = 0;
-        local_38 = iVar12;
+        iVar13 = 0;
+        local_38 = iVar16;
         local_34 = 0;
-        pSVar11 = (SRenderVertex *)auStack_d4[iVar12];
-        iVar13 = iVar8;
-        DAT_00766c70 = iVar12;
-        puVar10 = auStack_d4 + 1;
-        if (0 < iVar12) {
+        pSVar14 = (SRenderVertex *)auStack_d4[iVar16];
+        iVar17 = iVar13;
+        g_ClippedVertexCount = iVar16;
+        puVar15 = auStack_d4 + 1;
+        if (0 < iVar16) {
           do {
-            local_20 = puVar10;
-            pSVar15 = (SRenderVertex *)*local_20;
-            bVar3 = (pSVar11->projected_vertex).transformed_z <=
-                    (pSVar11->projected_vertex).transformed_y;
-            if ((pSVar15->projected_vertex).transformed_z <=
-                (pSVar15->projected_vertex).transformed_y) {
-              bVar3 = bVar3 | 2;
+            local_20 = puVar15;
+            pSVar19 = (SRenderVertex *)*local_20;
+            bVar8 = (pSVar14->projected_vertex).transformed_z <=
+                    (pSVar14->projected_vertex).transformed_y;
+            if ((pSVar19->projected_vertex).transformed_z <=
+                (pSVar19->projected_vertex).transformed_y) {
+              bVar8 = bVar8 | 2;
             }
-            iVar8 = iVar13;
-            switch(bVar3) {
+            iVar13 = iVar17;
+            switch(bVar8) {
             case 0:
-              iVar8 = iVar13 + 1;
-              local_150[iVar13] = pSVar11;
+              iVar13 = iVar17 + 1;
+              local_150[iVar17] = pSVar14;
               break;
             case 1:
-              if (0xb < DAT_00767b38) {
+              if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar12 = DAT_00767b38 * 0x30;
-              iVar8 = iVar13 + 1;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              local_150[iVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar12);
-              engine_clipper_c_interpolateVertexTopClip_FUN_00431730
-                        (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar12));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              iVar13 = iVar17 + 1;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              local_150[iVar17] = pSVar21;
+              engine_clipper_c_interpolateVertexTopClip_FUN_00431730(pSVar19,pSVar14,pSVar21);
               break;
             case 2:
-              local_150[iVar13] = pSVar11;
-              if (0xb < DAT_00767b38) {
+              local_150[iVar17] = pSVar14;
+              if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar12 = DAT_00767b38 * 0x30;
-              iVar8 = iVar13 + 2;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              local_150[iVar13 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar12);
-              engine_clipper_c_interpolateVertexTopClip_FUN_00431730
-                        (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar12));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              iVar13 = iVar17 + 2;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              local_150[iVar17 + 1] = pSVar21;
+              engine_clipper_c_interpolateVertexTopClip_FUN_00431730(pSVar14,pSVar19,pSVar21);
             }
             local_34 = local_34 + 1;
             local_20 = local_20 + 1;
-            iVar13 = iVar8;
-            pSVar11 = pSVar15;
-            puVar10 = local_20;
+            iVar17 = iVar13;
+            pSVar14 = pSVar19;
+            puVar15 = local_20;
           } while (local_34 < local_38);
         }
-        if (iVar8 < 3) {
-          DAT_00766c70 = iVar8;
+        if (iVar13 < 3) {
+          g_ClippedVertexCount = iVar13;
           return;
         }
-        uVar7 = 0;
-        local_30 = iVar8;
+        iVar16 = 0;
+        local_30 = iVar13;
         local_2c = 0;
-        pSVar11 = (SRenderVertex *)local_150[iVar8 + -1];
-        DAT_00766c70 = iVar8;
-        puVar10 = local_150;
-        if (0 < iVar8) {
+        pSVar14 = (SRenderVertex *)local_150[iVar13 + -1];
+        g_ClippedVertexCount = iVar13;
+        puVar15 = local_150;
+        if (0 < iVar13) {
           do {
-            local_1c = puVar10;
-            pSVar15 = (SRenderVertex *)*local_1c;
-            bVar3 = (pSVar11->projected_vertex).transformed_y <=
-                    -(pSVar11->projected_vertex).transformed_z;
-            if ((pSVar15->projected_vertex).transformed_y <=
-                -(pSVar15->projected_vertex).transformed_z) {
-              bVar3 = bVar3 | 2;
+            local_1c = puVar15;
+            pSVar19 = (SRenderVertex *)*local_1c;
+            bVar8 = (pSVar14->projected_vertex).transformed_y <=
+                    -(pSVar14->projected_vertex).transformed_z;
+            if ((pSVar19->projected_vertex).transformed_y <=
+                -(pSVar19->projected_vertex).transformed_z) {
+              bVar8 = bVar8 | 2;
             }
-            switch(bVar3) {
+            switch(bVar8) {
             case 0:
-              uVar7 = uVar7 + 1;
-              auStack_d4[uVar7] = pSVar11;
+              iVar16 = iVar16 + 1;
+              auStack_d4[iVar16] = pSVar14;
               break;
             case 1:
-              if (0xb < DAT_00767b38) {
+              if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar8 = DAT_00767b38 * 0x30;
-              uVar7 = uVar7 + 1;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              auStack_d4[uVar7] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431830
-                        (pSVar15,pSVar11,(SRenderVertex *)(&DAT_007678f8 + iVar8));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              iVar16 = iVar16 + 1;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              auStack_d4[iVar16] = pSVar21;
+              engine_clipper_c_interpolateVertexBottomClip_FUN_00431830(pSVar19,pSVar14,pSVar21);
               break;
             case 2:
-              auStack_d4[uVar7 + 1] = pSVar11;
-              if (0xb < DAT_00767b38) {
+              auStack_d4[iVar16 + 1] = pSVar14;
+              if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 94;
                 core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
-              iVar8 = DAT_00767b38 * 0x30;
-              uVar7 = uVar7 + 2;
-              DAT_00767b38 = DAT_00767b38 + 1;
-              auStack_d4[uVar7] = (SRenderVertex *)(&DAT_007678f8 + iVar8);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431830
-                        (pSVar11,pSVar15,(SRenderVertex *)(&DAT_007678f8 + iVar8));
+              pSVar21 = g_ClipperTempBuffer + g_ClipperTempCount;
+              iVar16 = iVar16 + 2;
+              g_ClipperTempCount = g_ClipperTempCount + 1;
+              auStack_d4[iVar16] = pSVar21;
+              engine_clipper_c_interpolateVertexBottomClip_FUN_00431830(pSVar14,pSVar19,pSVar21);
             }
             local_2c = local_2c + 1;
             local_1c = local_1c + 1;
-            pSVar11 = pSVar15;
-            puVar10 = local_1c;
+            pSVar14 = pSVar19;
+            puVar15 = local_1c;
           } while (local_2c < local_30);
         }
-        if ((int)uVar7 < 3) {
-          DAT_00766c70 = uVar7;
+        if (iVar16 < 3) {
+          g_ClippedVertexCount = iVar16;
           return;
         }
-        iVar8 = 0;
-        DAT_00766c70 = uVar7;
-        if (0 < (int)uVar7) {
-          plVar9 = (longlong *)&DAT_00766c74;
-          iVar12 = 0;
+        iVar13 = 0;
+        g_ClippedVertexCount = iVar16;
+        if (0 < iVar16) {
+          pSVar14 = g_ClippedVertexBuffer;
+          iVar16 = 0;
           do {
-            plVar17 = *(longlong **)((int)auStack_d4 + iVar12 + 4);
-            iVar13 = 0x30;
-            plVar14 = plVar17;
-            plVar16 = plVar9;
-            if (((uint)plVar9 & 7) != 0) {
-              plVar16 = (longlong *)((int)plVar9 + (uint)bVar18 * -8 + 4);
-              plVar14 = (longlong *)((int)plVar17 + (uint)bVar18 * -8 + 4);
-              *(int *)plVar9 = (int)*plVar17;
-              iVar13 = 0x2c;
+            plVar6 = *(longlong **)((int)auStack_d4 + iVar16 + 4);
+            iVar17 = 0x30;
+            plVar18 = plVar6;
+            pSVar19 = pSVar14;
+            if (((uint)pSVar14 & 7) != 0) {
+              pSVar19 = (SRenderVertex *)((int)pSVar14 + (uint)bVar22 * -8 + 4);
+              plVar18 = (longlong *)((int)plVar6 + (uint)bVar22 * -8 + 4);
+              (pSVar14->projected_vertex).transformed_x = (int)*plVar6;
+              iVar17 = 0x2c;
             }
+            while (7 < iVar17) {
+              lVar2 = *plVar18;
+              plVar18 = plVar18 + 1;
+              (pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);
+              (pSVar19->projected_vertex).transformed_y =
+                   (int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);
+              pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
+              iVar17 = iVar17 + -8;
+            }
+            if (iVar17 != 0 && -9 < iVar17 + -8) {
+              (pSVar19->projected_vertex).transformed_x = (int)*plVar18;
+              if (4 < iVar17) {
+                *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =
+                     *(uint *)((int)plVar18 + (uint)bVar22 * -8 + 4);
+              }
+            }
+            iVar16 = iVar16 + 4;
+            iVar13 = iVar13 + 1;
+            pSVar14 = pSVar14 + 1;
+          } while (iVar13 < g_ClippedVertexCount);
+        }
+        iVar13 = 0;
+        if (g_FarPlaneDistance != 0) {
+          if (0 < g_ClippedVertexCount) {
+            iVar16 = 0;
+            do {
+              iVar17 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +
+                               iVar16);
+              if (iVar13 < iVar17) {
+                iVar13 = iVar17;
+              }
+              iVar16 = iVar16 + 0x30;
+            } while (iVar16 < g_ClippedVertexCount * 0x30);
+          }
+          if (g_FarPlaneDistance <= iVar13) {
+            pSVar14 = g_ClippedVertexBuffer;
+            g_SecondaryClipVertexCount = g_ClippedVertexCount;
+            pSVar19 = g_SecondaryClipVertexBuffer;
+            local_14 = 0;
+            iVar13 = g_ClippedVertexCount * 0x30;
             while (7 < iVar13) {
-              lVar1 = *plVar14;
-              plVar14 = plVar14 + 1;
-              *plVar16 = (longlong)ROUND((float10)lVar1);
-              plVar16 = plVar16 + 1;
+              lVar2._0_4_ = (pSVar14->projected_vertex).transformed_x;
+              lVar2._4_4_ = (pSVar14->projected_vertex).transformed_y;
+              pSVar14 = (SRenderVertex *)&(pSVar14->projected_vertex).transformed_z;
+              (pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);
+              (pSVar19->projected_vertex).transformed_y =
+                   (int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);
+              pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
               iVar13 = iVar13 + -8;
             }
             if (iVar13 != 0 && -9 < iVar13 + -8) {
-              *(int *)plVar16 = (int)*plVar14;
+              (pSVar19->projected_vertex).transformed_x = (pSVar14->projected_vertex).transformed_x;
               if (4 < iVar13) {
-                *(uint *)((int)plVar16 + (uint)bVar18 * -8 + 4) =
-                     *(uint *)((int)plVar14 + (uint)bVar18 * -8 + 4);
+                *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =
+                     *(uint *)((int)pSVar14 + (uint)bVar22 * -8 + 4);
               }
             }
-            iVar12 = iVar12 + 4;
-            iVar8 = iVar8 + 1;
-            plVar9 = plVar9 + 6;
-          } while (iVar8 < (int)DAT_00766c70);
-        }
-        iVar8 = 0;
-        if (g_FarPlaneDistance != 0) {
-          if (0 < (int)DAT_00766c70) {
-            iVar12 = 0;
-            do {
-              if (iVar8 < *(int *)((int)&DAT_00766c7c + iVar12)) {
-                iVar8 = *(int *)((int)&DAT_00766c7c + iVar12);
-              }
-              iVar12 = iVar12 + 0x30;
-            } while (iVar12 < (int)(DAT_00766c70 * 0x30));
-          }
-          if (g_FarPlaneDistance <= iVar8) {
-            plVar9 = (longlong *)&DAT_00766c74;
-            DAT_007672f4 = DAT_00766c70;
-            plVar17 = (longlong *)&DAT_007672f8;
-            local_14 = 0;
-            iVar8 = DAT_00766c70 * 0x30;
-            while (7 < iVar8) {
-              lVar1 = *plVar9;
-              plVar9 = plVar9 + 1;
-              *plVar17 = (longlong)ROUND((float10)lVar1);
-              plVar17 = plVar17 + 1;
-              iVar8 = iVar8 + -8;
-            }
-            if (iVar8 != 0 && -9 < iVar8 + -8) {
-              *(int *)plVar17 = (int)*plVar9;
-              if (4 < iVar8) {
-                *(uint *)((int)plVar17 + (uint)bVar18 * -8 + 4) =
-                     *(uint *)((int)plVar9 + (uint)bVar18 * -8 + 4);
-              }
-            }
-            DAT_00766c70 = 0;
-            if (0 < (int)DAT_007672f4) {
-              pSVar11 = (SRenderVertex *)&DAT_007672f8;
+            g_ClippedVertexCount = 0;
+            if (0 < g_SecondaryClipVertexCount) {
+              pSVar14 = g_SecondaryClipVertexBuffer;
               do {
-                uVar7 = local_14 + 1;
-                if (uVar7 == DAT_007672f4) {
-                  uVar7 = uVar7 ^ DAT_007672f4;
+                uVar12 = local_14 + 1;
+                if (uVar12 == g_SecondaryClipVertexCount) {
+                  uVar12 = uVar12 ^ g_SecondaryClipVertexCount;
                 }
-                bVar3 = g_FarPlaneDistance <= (pSVar11->projected_vertex).transformed_z;
-                if (g_FarPlaneDistance <= (int)(&DAT_00767300)[uVar7 * 0xc]) {
-                  bVar3 = bVar3 | 2;
+                bVar8 = g_FarPlaneDistance <= (pSVar14->projected_vertex).transformed_z;
+                if (g_FarPlaneDistance <=
+                    g_SecondaryClipVertexBuffer[uVar12].projected_vertex.transformed_z) {
+                  bVar8 = bVar8 | 2;
                 }
-                switch(bVar3) {
+                switch(bVar8) {
                 case 0:
-                  plVar17 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
-                  iVar8 = 0x30;
-                  pSVar15 = pSVar11;
-                  plVar9 = plVar17;
-                  if (((uint)plVar17 & 7) != 0) {
-                    plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);
-                    pSVar15 = (SRenderVertex *)((int)pSVar11 + (uint)bVar18 * -8 + 4);
-                    *(int *)plVar17 = (pSVar11->projected_vertex).transformed_x;
-                    iVar8 = 0x2c;
+                  pSVar20 = g_ClippedVertexBuffer + g_ClippedVertexCount;
+                  iVar13 = 0x30;
+                  pSVar19 = pSVar14;
+                  pSVar21 = pSVar20;
+                  if (((uint)pSVar20 & 7) != 0) {
+                    pSVar21 = (SRenderVertex *)
+                              (g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar22 * -8);
+                    pSVar19 = (SRenderVertex *)((int)pSVar14 + (uint)bVar22 * -8 + 4);
+                    (pSVar20->projected_vertex).transformed_x =
+                         (pSVar14->projected_vertex).transformed_x;
+                    iVar13 = 0x2c;
                   }
-                  while (7 < iVar8) {
-                    lVar2._0_4_ = (pSVar15->projected_vertex).transformed_x;
-                    lVar2._4_4_ = (pSVar15->projected_vertex).transformed_y;
-                    pSVar15 = (SRenderVertex *)&(pSVar15->projected_vertex).transformed_z;
-                    *plVar9 = (longlong)ROUND((float10)lVar2);
-                    plVar9 = plVar9 + 1;
-                    iVar8 = iVar8 + -8;
+                  while (7 < iVar13) {
+                    lVar3._0_4_ = (pSVar19->projected_vertex).transformed_x;
+                    lVar3._4_4_ = (pSVar19->projected_vertex).transformed_y;
+                    pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
+                    (pSVar21->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar3)
+                    ;
+                    (pSVar21->projected_vertex).transformed_y =
+                         (int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);
+                    pSVar21 = (SRenderVertex *)&(pSVar21->projected_vertex).transformed_z;
+                    iVar13 = iVar13 + -8;
                   }
-                  if (iVar8 != 0 && -9 < iVar8 + -8) {
-                    *(int *)plVar9 = (pSVar15->projected_vertex).transformed_x;
-                    if (4 < iVar8) {
-                      *(uint *)((int)plVar9 + (uint)bVar18 * -8 + 4) =
-                           *(uint *)((int)pSVar15 + (uint)bVar18 * -8 + 4);
+                  if (iVar13 != 0 && -9 < iVar13 + -8) {
+                    (pSVar21->projected_vertex).transformed_x =
+                         (pSVar19->projected_vertex).transformed_x;
+                    if (4 < iVar13) {
+                      *(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =
+                           *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
                     }
                   }
-                  DAT_00766c70 = DAT_00766c70 + 1;
+                  g_ClippedVertexCount = g_ClippedVertexCount + 1;
                   break;
                 case 1:
                   engine_clipper_c_interpolateVertexFarClip_FUN_00431930
-                            ((SRenderVertex *)(&DAT_007672f8 + uVar7 * 0xc),pSVar11,
-                             (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-                  DAT_00766c70 = DAT_00766c70 + 1;
+                            (g_SecondaryClipVertexBuffer + uVar12,pSVar14,
+                             g_ClippedVertexBuffer + g_ClippedVertexCount);
+                  g_ClippedVertexCount = g_ClippedVertexCount + 1;
                   break;
                 case 2:
-                  plVar17 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
-                  iVar8 = 0x30;
-                  pSVar15 = pSVar11;
-                  plVar9 = plVar17;
-                  if (((uint)plVar17 & 7) != 0) {
-                    plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);
-                    pSVar15 = (SRenderVertex *)((int)pSVar11 + (uint)bVar18 * -8 + 4);
-                    *(int *)plVar17 = (pSVar11->projected_vertex).transformed_x;
-                    iVar8 = 0x2c;
+                  pSVar20 = g_ClippedVertexBuffer + g_ClippedVertexCount;
+                  iVar13 = 0x30;
+                  pSVar19 = pSVar14;
+                  pSVar21 = pSVar20;
+                  if (((uint)pSVar20 & 7) != 0) {
+                    pSVar21 = (SRenderVertex *)
+                              (g_ClippedVertexCount * 0x30 + 0x766c78 + (uint)bVar22 * -8);
+                    pSVar19 = (SRenderVertex *)((int)pSVar14 + (uint)bVar22 * -8 + 4);
+                    (pSVar20->projected_vertex).transformed_x =
+                         (pSVar14->projected_vertex).transformed_x;
+                    iVar13 = 0x2c;
                   }
-                  while (7 < iVar8) {
-                    lVar1._0_4_ = (pSVar15->projected_vertex).transformed_x;
-                    lVar1._4_4_ = (pSVar15->projected_vertex).transformed_y;
-                    pSVar15 = (SRenderVertex *)&(pSVar15->projected_vertex).transformed_z;
-                    *plVar9 = (longlong)ROUND((float10)lVar1);
-                    plVar9 = plVar9 + 1;
-                    iVar8 = iVar8 + -8;
+                  while (7 < iVar13) {
+                    lVar4._0_4_ = (pSVar19->projected_vertex).transformed_x;
+                    lVar4._4_4_ = (pSVar19->projected_vertex).transformed_y;
+                    pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
+                    (pSVar21->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar4)
+                    ;
+                    (pSVar21->projected_vertex).transformed_y =
+                         (int)((ulonglong)(longlong)ROUND((float10)lVar4) >> 0x20);
+                    pSVar21 = (SRenderVertex *)&(pSVar21->projected_vertex).transformed_z;
+                    iVar13 = iVar13 + -8;
                   }
-                  if (iVar8 != 0 && -9 < iVar8 + -8) {
-                    *(int *)plVar9 = (pSVar15->projected_vertex).transformed_x;
-                    if (4 < iVar8) {
-                      *(uint *)((int)plVar9 + (uint)bVar18 * -8 + 4) =
-                           *(uint *)((int)pSVar15 + (uint)bVar18 * -8 + 4);
+                  if (iVar13 != 0 && -9 < iVar13 + -8) {
+                    (pSVar21->projected_vertex).transformed_x =
+                         (pSVar19->projected_vertex).transformed_x;
+                    if (4 < iVar13) {
+                      *(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =
+                           *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
                     }
                   }
-                  DAT_00766c70 = DAT_00766c70 + 1;
+                  g_ClippedVertexCount = g_ClippedVertexCount + 1;
                   engine_clipper_c_interpolateVertexFarClip_FUN_00431930
-                            (pSVar11,(SRenderVertex *)(&DAT_007672f8 + uVar7 * 0xc),
-                             (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
-                  DAT_00766c70 = DAT_00766c70 + 1;
+                            (pSVar14,g_SecondaryClipVertexBuffer + uVar12,
+                             g_ClippedVertexBuffer + g_ClippedVertexCount);
+                  g_ClippedVertexCount = g_ClippedVertexCount + 1;
                 }
                 local_14 = local_14 + 1;
-                pSVar11 = pSVar11 + 1;
-              } while (local_14 < (int)DAT_007672f4);
+                pSVar14 = pSVar14 + 1;
+              } while (local_14 < g_SecondaryClipVertexCount);
             }
           }
         }
-        if ((int)DAT_00766c70 < 3) {
+        if (g_ClippedVertexCount < 3) {
           return;
         }
-        iVar8 = 0;
-        if (0 < (int)DAT_00766c70) {
-          piVar5 = &DAT_00766c74;
+        iVar13 = 0;
+        if (0 < g_ClippedVertexCount) {
+          pSVar14 = g_ClippedVertexBuffer;
           do {
-            iVar12 = piVar5[2];
-            if (iVar12 == 0) {
-              piVar5[2] = 1;
-              *piVar5 = 0;
-              piVar5[1] = 0;
+            iVar16 = (pSVar14->projected_vertex).transformed_z;
+            if (iVar16 == 0) {
+              (pSVar14->projected_vertex).transformed_z = 1;
+              (pSVar14->projected_vertex).transformed_x = 0;
+              (pSVar14->projected_vertex).transformed_y = 0;
             }
             else {
-              iVar13 = *piVar5;
-              iVar4 = iVar12;
-              if ((iVar12 < iVar13) || (iVar4 = -iVar12, -iVar13 != iVar12 && iVar13 <= iVar4)) {
-                *piVar5 = iVar4;
+              iVar17 = (pSVar14->projected_vertex).transformed_x;
+              iVar10 = iVar16;
+              if ((iVar16 < iVar17) || (iVar10 = -iVar16, -iVar17 != iVar16 && iVar17 <= iVar10)) {
+                (pSVar14->projected_vertex).transformed_x = iVar10;
               }
               else {
-                iVar13 = piVar5[1];
-                if (piVar5[2] < iVar13) {
-                  piVar5[1] = piVar5[2];
+                iVar17 = (pSVar14->projected_vertex).transformed_z;
+                iVar7 = (pSVar14->projected_vertex).transformed_y;
+                if (iVar17 < iVar7) {
+                  (pSVar14->projected_vertex).transformed_y = iVar17;
                 }
-                else if (-iVar13 != iVar12 && iVar13 <= iVar4) {
-                  piVar5[1] = iVar4;
+                else if (-iVar7 != iVar16 && iVar7 <= iVar10) {
+                  (pSVar14->projected_vertex).transformed_y = iVar10;
                 }
               }
             }
-            iVar8 = iVar8 + 1;
-            piVar5 = piVar5 + 0xc;
-          } while (iVar8 < (int)DAT_00766c70);
+            iVar13 = iVar13 + 1;
+            pSVar14 = pSVar14 + 1;
+          } while (iVar13 < g_ClippedVertexCount);
         }
       }
-      if (2 < (int)DAT_00766c70) {
-        engine_prim_c_renderPolygonSoftware_FUN_004f9dd0
-                  ((SRenderVertex *)&DAT_00766c74,DAT_00766c70);
+      if (2 < g_ClippedVertexCount) {
+        engine_prim_c_renderPolygonSoftware_FUN_004f9dd0(g_ClippedVertexBuffer,g_ClippedVertexCount)
+        ;
         return;
       }
     }

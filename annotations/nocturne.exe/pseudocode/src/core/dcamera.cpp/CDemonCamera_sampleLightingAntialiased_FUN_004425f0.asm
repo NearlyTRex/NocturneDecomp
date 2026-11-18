@@ -25,14 +25,14 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057b813 = 0.00390625
-;   undefined4 DAT_01410280
-;   undefined4 DAT_01410282
-;   undefined4 DAT_01410284
-;   undefined4 DAT_01410286
-;   undefined4 DAT_01410288
-;   undefined4 DAT_02de5d80
-;   undefined4 DAT_02de5d84
-;   undefined4 DAT_02de5d88
+;   CVector3i g_CameraOutOfBoundsCoord
+;   undefined4 g_CameraOutOfBoundsCoord.x+2
+;   undefined4 g_CameraOutOfBoundsCoord.y
+;   undefined4 g_CameraOutOfBoundsCoord.y+2
+;   undefined4 g_CameraOutOfBoundsCoord.z
+;   int g_INT_02de5d80
+;   int g_INT_02de5d84
+;   int g_INT_02de5d88
 ;
 ; *****************************************************************************
 
@@ -77,7 +77,7 @@ section .text
     IMUL EDX                            ; 00442660
     SHRD EAX,EDX,0x10                   ; 00442662
     ADD EBX,EAX                         ; 00442666
-    MOV dword ptr [0x02de5d88],EBX      ; 00442668 | DAT_02de5d88
+    MOV dword ptr [0x02de5d88],EBX      ; 00442668 | g_INT_02de5d88
     TEST EBX,EBX                        ; 0044266e
     JLE 0x004426b5                      ; 00442670
         ;   XREF to: 004426b5 (CONDITIONAL_JUMP)  ; LAB_004426b5
@@ -96,22 +96,22 @@ section .text
     IMUL EDX                            ; 0044269d
     SHRD EAX,EDX,0x10                   ; 0044269f
     ADD EBX,EAX                         ; 004426a3
-    MOV EDI,dword ptr [0x02de5d88]      ; 004426a5 | DAT_02de5d88
-    MOV dword ptr [0x02de5d80],EBX      ; 004426ab | DAT_02de5d80
+    MOV EDI,dword ptr [0x02de5d88]      ; 004426a5 | g_INT_02de5d88
+    MOV dword ptr [0x02de5d80],EBX      ; 004426ab | g_INT_02de5d80
     CMP EBX,EDI                         ; 004426b1
     JL 0x0044270f                       ; 004426b3
         ;   XREF to: 0044270f (CONDITIONAL_JUMP)  ; LAB_0044270f
     MOV EAX,0x1410280                   ; 004426b5
         ;   Label: LAB_004426b5
-    CMP dword ptr [EAX + 0x8],0x0       ; 004426ba | DAT_01410288 | DAT_02de5d88
+    CMP dword ptr [EAX + 0x8],0x0       ; 004426ba | g_CameraOutOfBoundsCoord.z | g_INT_02de5d88
         ;   Label: LAB_004426ba
     JLE 0x00442706                      ; 004426be
         ;   XREF to: 00442706 (CONDITIONAL_JUMP)  ; LAB_00442706
-    MOV EDX,dword ptr [EAX + 0x4]       ; 004426c0 | DAT_01410284 | DAT_02de5d84
+    MOV EDX,dword ptr [EAX + 0x4]       ; 004426c0 | g_CameraOutOfBoundsCoord.y | g_INT_02de5d84
     MOV EBX,dword ptr [ESI + 0x1cc0]    ; 004426c3
     SAR EDX,0x10                        ; 004426c9
     IMUL EBX,EDX                        ; 004426cc
-    MOV EDX,dword ptr [EAX]             ; 004426cf | DAT_01410280 | DAT_02de5d80
+    MOV EDX,dword ptr [EAX]             ; 004426cf | g_CameraOutOfBoundsCoord | g_INT_02de5d80
     SAR EDX,0x10                        ; 004426d1
     ADD EDX,EBX                         ; 004426d4
     MOV EBX,dword ptr [ESI + 0x2f94]    ; 004426d6
@@ -119,7 +119,7 @@ section .text
     AND EDX,0xffff                      ; 004426e0
     JZ 0x00442706                       ; 004426e6
         ;   XREF to: 00442706 (CONDITIONAL_JUMP)  ; LAB_00442706
-    FILD dword ptr [EAX + 0x8]          ; 004426e8 | DAT_01410288 | DAT_02de5d88
+    FILD dword ptr [EAX + 0x8]          ; 004426e8 | g_CameraOutOfBoundsCoord.z | g_INT_02de5d88
     FMUL double ptr [0x0057b813]        ; 004426eb | DOUBLE_0057b813
     FSTP float ptr [EBP + -0x10]        ; 004426f1
     FLD float ptr [EBP + -0x10]         ; 004426f4
@@ -157,8 +157,8 @@ section .text
     IMUL EDX                            ; 00442742
     SHRD EAX,EDX,0x10                   ; 00442744
     ADD EBX,EAX                         ; 00442748
-    MOV ECX,dword ptr [0x02de5d88]      ; 0044274a | DAT_02de5d88
-    MOV dword ptr [0x02de5d84],EBX      ; 00442750 | DAT_02de5d84
+    MOV ECX,dword ptr [0x02de5d88]      ; 0044274a | g_INT_02de5d88
+    MOV dword ptr [0x02de5d84],EBX      ; 00442750 | g_INT_02de5d84
     CMP EBX,ECX                         ; 00442756
     JGE 0x004426b5                      ; 00442758
         ;   XREF to: 004426b5 (CONDITIONAL_JUMP)  ; LAB_004426b5
@@ -167,22 +167,22 @@ section .text
     CMP EAX,EBX                         ; 00442762
     JGE 0x004426b5                      ; 00442764
         ;   XREF to: 004426b5 (CONDITIONAL_JUMP)  ; LAB_004426b5
-    MOV EAX,[0x02de5d80]                ; 0044276a | DAT_02de5d80
+    MOV EAX,[0x02de5d80]                ; 0044276a | g_INT_02de5d80
     MOV EBX,ECX                         ; 0044276f
     MOV EDX,dword ptr [ESI + 0x1c0]     ; 00442771
     IMUL EDX                            ; 00442777
     IDIV EBX                            ; 00442779
     MOV EDX,dword ptr [ESI + 0x1c8]     ; 0044277b
     ADD EAX,EDX                         ; 00442781
-    MOV EBX,dword ptr [0x02de5d88]      ; 00442783 | DAT_02de5d88
-    MOV [0x02de5d80],EAX                ; 00442789 | DAT_02de5d80
+    MOV EBX,dword ptr [0x02de5d88]      ; 00442783 | g_INT_02de5d88
+    MOV [0x02de5d80],EAX                ; 00442789 | g_INT_02de5d80
     MOV EDX,dword ptr [ESI + 0x1c4]     ; 0044278e
-    MOV EAX,[0x02de5d84]                ; 00442794 | DAT_02de5d84
+    MOV EAX,[0x02de5d84]                ; 00442794 | g_INT_02de5d84
     IMUL EDX                            ; 00442799
     IDIV EBX                            ; 0044279b
     MOV EDX,dword ptr [ESI + 0x1cc]     ; 0044279d
     ADD EAX,EDX                         ; 004427a3
-    MOV [0x02de5d84],EAX                ; 004427a5 | DAT_02de5d84
+    MOV [0x02de5d84],EAX                ; 004427a5 | g_INT_02de5d84
     MOV EAX,0x2de5d80                   ; 004427aa
     JMP 0x004426ba                      ; 004427af
         ;   XREF to: 004426ba (UNCONDITIONAL_JUMP)  ; LAB_004426ba
@@ -233,7 +233,7 @@ section .text
     IMUL EDX                            ; 0044283f
     SHRD EAX,EDX,0x10                   ; 00442841
     ADD EBX,EAX                         ; 00442845
-    MOV dword ptr [0x02de5d88],EBX      ; 00442847 | DAT_02de5d88
+    MOV dword ptr [0x02de5d88],EBX      ; 00442847 | g_INT_02de5d88
     TEST EBX,EBX                        ; 0044284d
     JLE 0x0044289a                      ; 0044284f
         ;   XREF to: 0044289a (CONDITIONAL_JUMP)  ; LAB_0044289a
@@ -252,26 +252,26 @@ section .text
     IMUL EDX                            ; 0044287c
     SHRD EAX,EDX,0x10                   ; 0044287e
     ADD EBX,EAX                         ; 00442882
-    MOV dword ptr [0x02de5d80],EBX      ; 00442884 | DAT_02de5d80
+    MOV dword ptr [0x02de5d80],EBX      ; 00442884 | g_INT_02de5d80
     MOV EAX,EBX                         ; 0044288a
-    MOV EBX,dword ptr [0x02de5d88]      ; 0044288c | DAT_02de5d88
+    MOV EBX,dword ptr [0x02de5d88]      ; 0044288c | g_INT_02de5d88
     CMP EAX,EBX                         ; 00442892
     JL 0x00442b4c                       ; 00442894
         ;   XREF to: 00442b4c (CONDITIONAL_JUMP)  ; LAB_00442b4c
     MOV EAX,0x1410280                   ; 0044289a
         ;   Label: LAB_0044289a
-    MOV EDI,dword ptr [EAX + 0x8]       ; 0044289f | DAT_01410288 | DAT_02de5d88
+    MOV EDI,dword ptr [EAX + 0x8]       ; 0044289f | g_CameraOutOfBoundsCoord.z | g_INT_02de5d88
         ;   Label: LAB_0044289f
     MOV EBX,EAX                         ; 004428a2
     TEST EDI,EDI                        ; 004428a4
     JLE 0x00442706                      ; 004428a6
         ;   XREF to: 00442706 (CONDITIONAL_JUMP)  ; LAB_00442706
     MOV dword ptr [EBP + -0x8],0x1      ; 004428ac
-    MOV EDX,dword ptr [EAX + 0x4]       ; 004428b3 | DAT_01410284 | DAT_02de5d84
+    MOV EDX,dword ptr [EAX + 0x4]       ; 004428b3 | g_CameraOutOfBoundsCoord.y | g_INT_02de5d84
     MOV ECX,dword ptr [ESI + 0x1cc0]    ; 004428b6
     SAR EDX,0x10                        ; 004428bc
     IMUL ECX,EDX                        ; 004428bf
-    MOV EDX,dword ptr [EAX]             ; 004428c2 | DAT_01410280 | DAT_02de5d80
+    MOV EDX,dword ptr [EAX]             ; 004428c2 | g_CameraOutOfBoundsCoord | g_INT_02de5d80
     SAR EDX,0x10                        ; 004428c4
     ADD EDX,ECX                         ; 004428c7
     MOV ECX,dword ptr [ESI + 0x2f94]    ; 004428c9
@@ -280,20 +280,20 @@ section .text
     XOR EDI,EDI                         ; 004428d3
     MOV DX,word ptr [EDX]               ; 004428d5
     AND EDX,0xffff                      ; 004428d8
-    MOV ECX,dword ptr [EAX + 0x8]       ; 004428de | DAT_01410288
+    MOV ECX,dword ptr [EAX + 0x8]       ; 004428de | g_CameraOutOfBoundsCoord.z
     ADD EDX,0x90                        ; 004428e1
     CMP EDX,ECX                         ; 004428e7
     JG 0x00442bfb                       ; 004428e9
         ;   XREF to: 00442bfb (CONDITIONAL_JUMP)  ; LAB_00442bfb
-    INC word ptr [EBX + 0x2]            ; 004428ef | DAT_01410282
+    INC word ptr [EBX + 0x2]            ; 004428ef | g_CameraOutOfBoundsCoord.x+2
         ;   Label: LAB_004428ef
-    MOV EAX,dword ptr [EBX]             ; 004428f3 | DAT_01410280
+    MOV EAX,dword ptr [EBX]             ; 004428f3 | g_CameraOutOfBoundsCoord
     MOV EDX,dword ptr [ESI + 0x1cc0]    ; 004428f5
     SAR EAX,0x10                        ; 004428fb
     CMP EAX,EDX                         ; 004428fe
     JGE 0x0044297a                      ; 00442900
         ;   XREF to: 0044297a (CONDITIONAL_JUMP)  ; LAB_0044297a
-    MOV EDX,dword ptr [EBX + 0x4]       ; 00442902 | DAT_01410284
+    MOV EDX,dword ptr [EBX + 0x4]       ; 00442902 | g_CameraOutOfBoundsCoord.y
     MOV ECX,dword ptr [ESI + 0x1cc0]    ; 00442905
     SAR EDX,0x10                        ; 0044290b
     IMUL EDX,ECX                        ; 0044290e
@@ -301,18 +301,18 @@ section .text
     MOV EDX,dword ptr [ESI + 0x2f94]    ; 00442913
     MOV AX,word ptr [EDX + EAX*0x2]     ; 00442919
     AND EAX,0xffff                      ; 0044291d
-    MOV EDX,dword ptr [EBX + 0x8]       ; 00442922 | DAT_01410288
+    MOV EDX,dword ptr [EBX + 0x8]       ; 00442922 | g_CameraOutOfBoundsCoord.z
     ADD EAX,0x90                        ; 00442925
     CMP EAX,EDX                         ; 0044292a
     JLE 0x00442977                      ; 0044292c
         ;   XREF to: 00442977 (CONDITIONAL_JUMP)  ; LAB_00442977
-    MOV EAX,dword ptr [EBX]             ; 0044292e | DAT_01410280
+    MOV EAX,dword ptr [EBX]             ; 0044292e | g_CameraOutOfBoundsCoord
     MOV CL,byte ptr [ESI + 0x1cc8]      ; 00442930
     MOV EDX,dword ptr [ESI + 0x1c68]    ; 00442936
     SAR EAX,CL                          ; 0044293c
     MOV CL,byte ptr [ESI + 0x1ccc]      ; 0044293e
     AND EDX,EAX                         ; 00442944
-    MOV EAX,dword ptr [EBX + 0x4]       ; 00442946 | DAT_01410284
+    MOV EAX,dword ptr [EBX + 0x4]       ; 00442946 | g_CameraOutOfBoundsCoord.y
     SAR EAX,CL                          ; 00442949
     AND EAX,dword ptr [ESI + 0x1c68]    ; 0044294b
     MOV CL,byte ptr [ESI + 0x1c60]      ; 00442951
@@ -328,16 +328,16 @@ section .text
     ADD EDI,EAX                         ; 00442975
     INC dword ptr [EBP + -0x8]          ; 00442977
         ;   Label: LAB_00442977
-    MOV EDX,dword ptr [EBX]             ; 0044297a | DAT_01410280
+    MOV EDX,dword ptr [EBX]             ; 0044297a | g_CameraOutOfBoundsCoord
         ;   Label: LAB_0044297a
     SUB EDX,0x20000                     ; 0044297c
     MOV EAX,EDX                         ; 00442982
     SAR EAX,0x10                        ; 00442984
-    MOV dword ptr [EBX],EDX             ; 00442987 | DAT_01410280
+    MOV dword ptr [EBX],EDX             ; 00442987 | g_CameraOutOfBoundsCoord
     TEST EAX,EAX                        ; 00442989
     JLE 0x00442a0c                      ; 0044298b
         ;   XREF to: 00442a0c (CONDITIONAL_JUMP)  ; LAB_00442a0c
-    MOV EDX,dword ptr [EBX + 0x4]       ; 00442991 | DAT_01410284
+    MOV EDX,dword ptr [EBX + 0x4]       ; 00442991 | g_CameraOutOfBoundsCoord.y
     MOV ECX,dword ptr [ESI + 0x1cc0]    ; 00442994
     SAR EDX,0x10                        ; 0044299a
     IMUL EDX,ECX                        ; 0044299d
@@ -346,18 +346,18 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2f94]    ; 004429a5
     MOV AX,word ptr [EDX + EAX*0x1]     ; 004429ab
     AND EAX,0xffff                      ; 004429af
-    MOV EDX,dword ptr [EBX + 0x8]       ; 004429b4 | DAT_01410288
+    MOV EDX,dword ptr [EBX + 0x8]       ; 004429b4 | g_CameraOutOfBoundsCoord.z
     ADD EAX,0x90                        ; 004429b7
     CMP EAX,EDX                         ; 004429bc
     JLE 0x00442a09                      ; 004429be
         ;   XREF to: 00442a09 (CONDITIONAL_JUMP)  ; LAB_00442a09
-    MOV EAX,dword ptr [EBX]             ; 004429c0 | DAT_01410280
+    MOV EAX,dword ptr [EBX]             ; 004429c0 | g_CameraOutOfBoundsCoord
     MOV CL,byte ptr [ESI + 0x1cc8]      ; 004429c2
     MOV EDX,dword ptr [ESI + 0x1c68]    ; 004429c8
     SAR EAX,CL                          ; 004429ce
     MOV CL,byte ptr [ESI + 0x1ccc]      ; 004429d0
     AND EDX,EAX                         ; 004429d6
-    MOV EAX,dword ptr [EBX + 0x4]       ; 004429d8 | DAT_01410284
+    MOV EAX,dword ptr [EBX + 0x4]       ; 004429d8 | g_CameraOutOfBoundsCoord.y
     SAR EAX,CL                          ; 004429db
     AND EAX,dword ptr [ESI + 0x1c68]    ; 004429dd
     MOV CL,byte ptr [ESI + 0x1c60]      ; 004429e3
@@ -373,14 +373,14 @@ section .text
     ADD EDI,EAX                         ; 00442a07
     INC dword ptr [EBP + -0x8]          ; 00442a09
         ;   Label: LAB_00442a09
-    MOV AX,word ptr [EBX + 0x6]         ; 00442a0c | DAT_01410286
+    MOV AX,word ptr [EBX + 0x6]         ; 00442a0c | g_CameraOutOfBoundsCoord.y+2
         ;   Label: LAB_00442a0c
-    MOV CX,word ptr [EBX + 0x2]         ; 00442a10 | DAT_01410282
+    MOV CX,word ptr [EBX + 0x2]         ; 00442a10 | g_CameraOutOfBoundsCoord.x+2
     INC EAX                             ; 00442a14
     INC ECX                             ; 00442a15
-    MOV word ptr [EBX + 0x6],AX         ; 00442a16 | DAT_01410286
-    MOV word ptr [EBX + 0x2],CX         ; 00442a1a | DAT_01410282
-    MOV EAX,dword ptr [EBX + 0x4]       ; 00442a1e | DAT_01410284
+    MOV word ptr [EBX + 0x6],AX         ; 00442a16 | g_CameraOutOfBoundsCoord.y+2
+    MOV word ptr [EBX + 0x2],CX         ; 00442a1a | g_CameraOutOfBoundsCoord.x+2
+    MOV EAX,dword ptr [EBX + 0x4]       ; 00442a1e | g_CameraOutOfBoundsCoord.y
     MOV EDX,dword ptr [ESI + 0x1cc4]    ; 00442a21
     SAR EAX,0x10                        ; 00442a27
     CMP EAX,EDX                         ; 00442a2a
@@ -388,25 +388,25 @@ section .text
         ;   XREF to: 00442ab1 (CONDITIONAL_JUMP)  ; LAB_00442ab1
     MOV EDX,dword ptr [ESI + 0x1cc0]    ; 00442a32
     IMUL EDX,EAX                        ; 00442a38
-    MOV EAX,dword ptr [EBX]             ; 00442a3b | DAT_01410280
+    MOV EAX,dword ptr [EBX]             ; 00442a3b | g_CameraOutOfBoundsCoord
     SAR EAX,0x10                        ; 00442a3d
     ADD EAX,EDX                         ; 00442a40
     MOV EDX,dword ptr [ESI + 0x2f94]    ; 00442a42
     MOV AX,word ptr [EDX + EAX*0x2]     ; 00442a48
     AND EAX,0xffff                      ; 00442a4c
-    MOV ECX,dword ptr [EBX + 0x8]       ; 00442a51 | DAT_01410288
+    MOV ECX,dword ptr [EBX + 0x8]       ; 00442a51 | g_CameraOutOfBoundsCoord.z
     ADD EAX,0x90                        ; 00442a54
     CMP EAX,ECX                         ; 00442a59
     JLE 0x00442aae                      ; 00442a5b
         ;   XREF to: 00442aae (CONDITIONAL_JUMP)  ; LAB_00442aae
-    MOV EAX,dword ptr [EBX]             ; 00442a5d | DAT_01410280
+    MOV EAX,dword ptr [EBX]             ; 00442a5d | g_CameraOutOfBoundsCoord
     MOV CL,byte ptr [ESI + 0x1cc8]      ; 00442a5f
     MOV EDX,dword ptr [ESI + 0x1c68]    ; 00442a65
     SAR EAX,CL                          ; 00442a6b
     AND EDX,EAX                         ; 00442a6d
     MOV CL,byte ptr [ESI + 0x1ccc]      ; 00442a6f
     MOV dword ptr [EBP + -0xc],EDX      ; 00442a75
-    MOV EAX,dword ptr [EBX + 0x4]       ; 00442a78 | DAT_01410284
+    MOV EAX,dword ptr [EBX + 0x4]       ; 00442a78 | g_CameraOutOfBoundsCoord.y
     MOV EDX,dword ptr [ESI + 0x1c68]    ; 00442a7b
     SAR EAX,CL                          ; 00442a81
     MOV CL,byte ptr [ESI + 0x1c60]      ; 00442a83
@@ -424,33 +424,33 @@ section .text
     ADD EDI,EAX                         ; 00442aac
     INC dword ptr [EBP + -0x8]          ; 00442aae
         ;   Label: LAB_00442aae
-    MOV EDX,dword ptr [EBX + 0x4]       ; 00442ab1 | DAT_01410284
+    MOV EDX,dword ptr [EBX + 0x4]       ; 00442ab1 | g_CameraOutOfBoundsCoord.y
         ;   Label: LAB_00442ab1
     SUB EDX,0x20000                     ; 00442ab4
-    MOV dword ptr [EBX + 0x4],EDX       ; 00442aba | DAT_01410284
+    MOV dword ptr [EBX + 0x4],EDX       ; 00442aba | g_CameraOutOfBoundsCoord.y
     TEST EDX,EDX                        ; 00442abd
     JLE 0x00442b39                      ; 00442abf
         ;   XREF to: 00442b39 (CONDITIONAL_JUMP)  ; LAB_00442b39
     SAR EDX,0x10                        ; 00442ac1
     IMUL EDX,dword ptr [ESI + 0x1cc0]   ; 00442ac4
-    MOV EAX,dword ptr [EBX]             ; 00442acb | DAT_01410280
+    MOV EAX,dword ptr [EBX]             ; 00442acb | g_CameraOutOfBoundsCoord
     SAR EAX,0x10                        ; 00442acd
     ADD EAX,EDX                         ; 00442ad0
     MOV EDX,dword ptr [ESI + 0x2f94]    ; 00442ad2
     MOV AX,word ptr [EDX + EAX*0x2]     ; 00442ad8
     AND EAX,0xffff                      ; 00442adc
-    MOV EDX,dword ptr [EBX + 0x8]       ; 00442ae1 | DAT_01410288
+    MOV EDX,dword ptr [EBX + 0x8]       ; 00442ae1 | g_CameraOutOfBoundsCoord.z
     ADD EAX,0x90                        ; 00442ae4
     CMP EAX,EDX                         ; 00442ae9
     JLE 0x00442b36                      ; 00442aeb
         ;   XREF to: 00442b36 (CONDITIONAL_JUMP)  ; LAB_00442b36
-    MOV EAX,dword ptr [EBX]             ; 00442aed | DAT_01410280
+    MOV EAX,dword ptr [EBX]             ; 00442aed | g_CameraOutOfBoundsCoord
     MOV CL,byte ptr [ESI + 0x1cc8]      ; 00442aef
     MOV EDX,dword ptr [ESI + 0x1c68]    ; 00442af5
     SAR EAX,CL                          ; 00442afb
     MOV CL,byte ptr [ESI + 0x1ccc]      ; 00442afd
     AND EDX,EAX                         ; 00442b03
-    MOV EAX,dword ptr [EBX + 0x4]       ; 00442b05 | DAT_01410284
+    MOV EAX,dword ptr [EBX + 0x4]       ; 00442b05 | g_CameraOutOfBoundsCoord.y
     SAR EAX,CL                          ; 00442b08
     AND EAX,dword ptr [ESI + 0x1c68]    ; 00442b0a
     MOV CL,byte ptr [ESI + 0x1c60]      ; 00442b10
@@ -480,7 +480,7 @@ section .text
     RET                                 ; 00442b4b
     MOV EAX,EBX                         ; 00442b4c
         ;   Label: LAB_00442b4c
-    MOV EDI,dword ptr [0x02de5d80]      ; 00442b4e | DAT_02de5d80
+    MOV EDI,dword ptr [0x02de5d80]      ; 00442b4e | g_INT_02de5d80
     NEG EAX                             ; 00442b54
     CMP EAX,EDI                         ; 00442b56
     JGE 0x0044289a                      ; 00442b58
@@ -500,8 +500,8 @@ section .text
     IMUL EDX                            ; 00442b89
     SHRD EAX,EDX,0x10                   ; 00442b8b
     ADD EBX,EAX                         ; 00442b8f
-    MOV EDX,dword ptr [0x02de5d88]      ; 00442b91 | DAT_02de5d88
-    MOV dword ptr [0x02de5d84],EBX      ; 00442b97 | DAT_02de5d84
+    MOV EDX,dword ptr [0x02de5d88]      ; 00442b91 | g_INT_02de5d88
+    MOV dword ptr [0x02de5d84],EBX      ; 00442b97 | g_INT_02de5d84
     CMP EBX,EDX                         ; 00442b9d
     JGE 0x0044289a                      ; 00442b9f
         ;   XREF to: 0044289a (CONDITIONAL_JUMP)  ; LAB_0044289a
@@ -510,30 +510,30 @@ section .text
     CMP EAX,EBX                         ; 00442ba9
     JGE 0x0044289a                      ; 00442bab
         ;   XREF to: 0044289a (CONDITIONAL_JUMP)  ; LAB_0044289a
-    MOV EAX,[0x02de5d80]                ; 00442bb1 | DAT_02de5d80
+    MOV EAX,[0x02de5d80]                ; 00442bb1 | g_INT_02de5d80
     MOV EBX,EDX                         ; 00442bb6
     MOV EDX,dword ptr [ESI + 0x1c0]     ; 00442bb8
     IMUL EDX                            ; 00442bbe
     IDIV EBX                            ; 00442bc0
     MOV EDX,dword ptr [ESI + 0x1c8]     ; 00442bc2
     ADD EAX,EDX                         ; 00442bc8
-    MOV EBX,dword ptr [0x02de5d88]      ; 00442bca | DAT_02de5d88
-    MOV [0x02de5d80],EAX                ; 00442bd0 | DAT_02de5d80
+    MOV EBX,dword ptr [0x02de5d88]      ; 00442bca | g_INT_02de5d88
+    MOV [0x02de5d80],EAX                ; 00442bd0 | g_INT_02de5d80
     MOV EDX,dword ptr [ESI + 0x1c4]     ; 00442bd5
-    MOV EAX,[0x02de5d84]                ; 00442bdb | DAT_02de5d84
+    MOV EAX,[0x02de5d84]                ; 00442bdb | g_INT_02de5d84
     IMUL EDX                            ; 00442be0
     IDIV EBX                            ; 00442be2
     MOV EDX,dword ptr [ESI + 0x1cc]     ; 00442be4
     ADD EAX,EDX                         ; 00442bea
-    MOV [0x02de5d84],EAX                ; 00442bec | DAT_02de5d84
+    MOV [0x02de5d84],EAX                ; 00442bec | g_INT_02de5d84
     MOV EAX,0x2de5d80                   ; 00442bf1
     JMP 0x0044289f                      ; 00442bf6
         ;   XREF to: 0044289f (UNCONDITIONAL_JUMP)  ; LAB_0044289f
-    MOV EDI,dword ptr [EAX]             ; 00442bfb | DAT_01410280
+    MOV EDI,dword ptr [EAX]             ; 00442bfb | g_CameraOutOfBoundsCoord
         ;   Label: LAB_00442bfb
     MOV CL,byte ptr [ESI + 0x1cc8]      ; 00442bfd
     MOV EDX,dword ptr [ESI + 0x1c68]    ; 00442c03
-    MOV EAX,dword ptr [EAX + 0x4]       ; 00442c09 | DAT_01410284
+    MOV EAX,dword ptr [EAX + 0x4]       ; 00442c09 | g_CameraOutOfBoundsCoord.y
     SAR EDI,CL                          ; 00442c0c
     MOV CL,byte ptr [ESI + 0x1ccc]      ; 00442c0e
     AND EDX,EDI                         ; 00442c14

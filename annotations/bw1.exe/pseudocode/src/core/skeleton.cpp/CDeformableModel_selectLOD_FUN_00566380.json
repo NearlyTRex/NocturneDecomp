@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 87,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 4,
-    "suspect_types": [
-      "extra_output",
-      "undefined_data"
-    ],
-    "total_lines": 116
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -45,7 +42,7 @@
     {
       "addr": "00420dc0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_00420dc0"
+      "name": "core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420dc0"
     },
     {
       "addr": "005c03a0",
@@ -61,9 +58,9 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061d95c",
@@ -73,8 +70,8 @@
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -211,38 +208,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "iVar1 = extraout_ECX + -1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "piVar3 = &this_ptr->lod_info[extraout_ECX + -2].shadow_only_flag;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

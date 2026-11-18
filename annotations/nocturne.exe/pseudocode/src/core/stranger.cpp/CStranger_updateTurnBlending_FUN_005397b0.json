@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 120,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 90,
-    "suspect_count": 2,
+    "pseudocode_lines": 89,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 343
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -76,13 +75,13 @@
     },
     {
       "addr": "02dc9fa0",
-      "name": "DAT_02dc9fa0",
+      "name": "g_StrangerIndices[20]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9fa4",
-      "name": "DAT_02dc9fa4",
+      "name": "g_StrangerIndices[21]",
       "type": "undefined4",
       "value": null
     }
@@ -150,6 +149,18 @@
     "pcode_op_count": 1565
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00567530",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0058a010",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "005bf800",
       "by": "name",
@@ -262,16 +273,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 12,
+      "line": 10,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_velocity).z = 0.0;",

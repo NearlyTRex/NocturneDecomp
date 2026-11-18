@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 57,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
-    "total_lines": 117
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -49,9 +47,9 @@
   "globals": [
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     }
   ],
   "param_estimates": {
@@ -142,16 +140,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex address 0x1d2c900 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 10,
-      "match": "0x1d2c900",
-      "severity": "moderate",
-      "text": "iVar3 = 0x01D2C900;",
-      "type": "raw_address_constant"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

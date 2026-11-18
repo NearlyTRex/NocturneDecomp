@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 181,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 11,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy",
@@ -34,7 +34,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005c6c7c",
-    "signature": "undefined1 * crt_unknown_c_FUN_005c6c7c(void)"
+    "signature": "char * crt_unknown_c_FUN_005c6c7c(void)"
   },
   "function_calls": [
     {
@@ -56,25 +56,25 @@
   "globals": [
     {
       "addr": "005fab90",
-      "name": "DAT_005fab90",
-      "type": "undefined1",
+      "name": "g_EmptyStringBuffer+4",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005fab94",
-      "name": "DAT_005fab94",
-      "type": "undefined1",
+      "name": "g_EmptyStringBuffer+8",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00626650",
-      "name": "PTR_DAT_00626650",
+      "name": "PTR_g_EmptyStringBuffer+4_00626650",
       "type": "void*",
       "value": "005fab90"
     },
     {
       "addr": "00626654",
-      "name": "PTR_DAT_00626654",
+      "name": "PTR_g_EmptyStringBuffer+8_00626654",
       "type": "void*",
       "value": "005fab94"
     },
@@ -86,26 +86,26 @@
     },
     {
       "addr": "00626664",
-      "name": "DAT_00626664",
-      "type": "undefined1",
+      "name": "g_TempDirectoryBuffer",
+      "type": "char[260]",
       "value": null
     },
     {
       "addr": "00626665",
-      "name": "DAT_00626665",
-      "type": "undefined1",
+      "name": "g_TempDirectoryBuffer+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00626666",
-      "name": "DAT_00626666",
-      "type": "undefined1",
+      "name": "g_TempDirectoryBuffer+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00626667",
-      "name": "DAT_00626667",
-      "type": "undefined1",
+      "name": "g_TempDirectoryBuffer+3",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -200,66 +200,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00626664",
-      "severity": "mild",
-      "text": "if (DAT_00626664 == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_00626664",
-      "severity": "mild",
-      "text": "_fullpath(&DAT_00626664,pcVar2,0x103);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00626664",
-      "severity": "mild",
-      "text": "if (DAT_00626664 == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00626664",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_00626664;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_00626664",
-      "severity": "mild",
-      "text": "pcVar2 = &DAT_00626664;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 54,
       "match": "DAT_00626663",
       "severity": "mild",
       "text": "(&DAT_00626663)[uVar3] = 0x5c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00626664",
-      "severity": "mild",
-      "text": "(&DAT_00626664)[uVar3] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_00626664",
-      "severity": "mild",
-      "text": "return &DAT_00626664;",
       "type": "undefined_data"
     },
     {

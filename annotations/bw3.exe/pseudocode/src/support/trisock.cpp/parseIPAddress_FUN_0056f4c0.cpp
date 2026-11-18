@@ -6,20 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_0056f4c0(uint *result_ptr,char *dotted_decimal_string)
 
 {
   int iVar1;
-  uint in_stack_00000010;
   
   iVar1 = support_trisock_cpp_parseIPComponents_FUN_0056f5c0(result_ptr,dotted_decimal_string);
   if (iVar1 != 0) {
     return result_ptr;
   }
-  _DAT_01d71de0 = "..\\support\\trisock.cpp";
-  _DAT_01d71de4 = 0x57;
-  core_main_c_FUN_004e4330("Invalid dotted decimal string: %s",in_stack_00000010);
+  g_CHAR_PTR_01d71de0 = "..\\support\\trisock.cpp";
+  g_INT_01d71de4 = 0x57;
+  core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid dotted decimal string: %s");
   return result_ptr;
 }

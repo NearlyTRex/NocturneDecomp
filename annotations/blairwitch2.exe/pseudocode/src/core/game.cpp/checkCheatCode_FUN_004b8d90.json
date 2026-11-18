@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 62,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strlen"
     ],
     "total_lines": 96
@@ -38,8 +39,8 @@
   "globals": [
     {
       "addr": "01cb80f8",
-      "name": "DAT_01cb80f8",
-      "type": "undefined4",
+      "name": "g_BYTE_01cb80f8",
+      "type": "byte",
       "value": null
     }
   ],
@@ -128,12 +129,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01cb80f8",
-      "severity": "mild",
-      "text": "DAT_01cb80f8 = 0;",
-      "type": "undefined_data"
+      "description": "Pointer value `&g_HelpCharWidth` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)&g_HelpCharWidth",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

@@ -7,14 +7,15 @@
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 10,
+    "pseudocode_lines": 61,
+    "suspect_count": 9,
     "suspect_types": [
+      "raw_address_constant",
       "stack_alignment_array",
-      "undefined_data",
+      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 154
+    "total_lines": 159
   },
   "cross_references": [],
   "function": {
@@ -46,11 +47,6 @@
       "name": "CreateThread"
     },
     {
-      "addr": "005c9e48",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c9e48"
-    },
-    {
       "addr": "005cac7c",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005cac7c"
@@ -59,6 +55,11 @@
       "addr": "005cadb4",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005cadb4"
+    },
+    {
+      "addr": "005c9e48",
+      "is_variadic": false,
+      "name": "crt_unknown.c_IntegerToString_FUN_005c9e48"
     },
     {
       "addr": "EXTERNAL:00000069",
@@ -115,27 +116,27 @@
     },
     {
       "addr": "005fb2bc",
-      "name": "DAT_005fb2bc",
-      "type": "undefined4",
+      "name": "s_bgnthd_005fb2bc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005fb2c0",
-      "name": "DAT_005fb2c0",
+      "name": "s_bgnthd_005fb2bc+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005fb2c4",
-      "name": "DAT_005fb2c4",
-      "type": "undefined1",
+      "name": "s_bgnthd_005fb2bc+8",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "006265f8",
-      "name": "DAT_006265f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006265f8",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -249,22 +250,14 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 9,
-      "match": "aCStackY_1034",
+      "match": "acStackY_1034",
       "severity": "moderate",
-      "text": "CHAR aCStackY_1034 [4048];",
+      "text": "char acStackY_1034 [4048];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_006265f8",
-      "severity": "mild",
-      "text": "if (DAT_006265f8 == -1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_2c = param_1;",
@@ -272,35 +265,35 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 33,
       "match": "param_3",
       "severity": "mild",
       "text": "uStack_28 = param_3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005fb2c0",
-      "severity": "mild",
-      "text": "(&uStack_48)[(uint)bVar3 * -2] = (&DAT_005fb2c0)[(uint)bVar3 * -2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005fb2c4",
-      "severity": "mild",
-      "text": "(&DAT_005fb2c4)[(uint)bVar3 * -8 + (uint)bVar3 * -8];",
-      "type": "undefined_data"
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0xffffffb4",
+      "severity": "moderate",
+      "text": "pvStack_20 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex literal 0xfffff0 matches address of g_LightBufferPool (+4711240 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 48,
+      "match": "0xfffff0",
+      "severity": "moderate",
+      "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",
+      "type": "raw_address_constant"
     }
   ],
   "vtable_info": {

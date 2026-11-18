@@ -1059,7 +1059,7 @@
         "offset":36
       },
       {
-        "name":"commitDeferredSettings",
+        "name":"setReverb",
         "offset":40
       },
       {
@@ -1083,7 +1083,7 @@
         "offset":60
       },
       {
-        "name":"setSfxPos",
+        "name":"applySfxChanges",
         "offset":64
       },
       {
@@ -1121,6 +1121,51 @@
         "type":{
           "kind":"builtin",
           "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_setReverb",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"decay_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damping",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
           "ptr":0
         }
       }

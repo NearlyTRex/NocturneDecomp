@@ -7,12 +7,12 @@
 ; COutStreamFile * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004d6420 at 004d66e0
-;   core_game.cpp_FUN_004d6990 at 004d6c05
+;   core_game.cpp_CGame_loadGame_FUN_004d6990 at 004d6c05
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d66e0
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029f6
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamFileVTable = 005a1860
+;   void*[10] g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_005a14b0

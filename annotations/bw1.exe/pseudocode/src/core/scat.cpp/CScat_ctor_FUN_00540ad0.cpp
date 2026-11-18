@@ -15,7 +15,7 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00540ad0(CScat *this_ptr)
   (this_ptr_00->base).base.base.vtable._ub = &g_CScatVTable._ub;
   this_ptr_00->guns_drawn = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            (&(this_ptr_00->base).base.model,(char *)0x5edcc3);
+            (&(this_ptr_00->base).base.model,"scat.dfm");
   this_ptr_00->head_blend_weight = 1.0;
   (this_ptr_00->head_euler_angles).z = 0.0;
   (this_ptr_00->head_euler_angles).y = (this_ptr_00->head_euler_angles).z;

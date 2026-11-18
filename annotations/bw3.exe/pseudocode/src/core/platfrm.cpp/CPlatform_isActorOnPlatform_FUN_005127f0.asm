@@ -13,14 +13,14 @@
 ;   core_platfrm.cpp_CPlatform_process_FUN_005114f0 at 00511e07
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cc483
-;   undefined4 DAT_005cc48b
+;   double g_DOUBLE_005cc483 = 0.0100000000000000
+;   float g_FLOAT_005cc48b = -1
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-;   core_dmodel.cpp_FUN_004618a0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80
 ;
 ; *****************************************************************************
@@ -82,14 +82,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa0]      ; 00512871
     MOV dword ptr [EBX + 0x38],EAX      ; 00512878
     ADD ESP,0x4                         ; 0051287b
-    FCOMP double ptr [0x005cc483]       ; 0051287e | DAT_005cc483
+    FCOMP double ptr [0x005cc483]       ; 0051287e | g_DOUBLE_005cc483
     FNSTSW AX                           ; 00512884
     SAHF                                ; 00512886
     JA 0x00512808                       ; 00512887
         ;   XREF to: 00512808 (CONDITIONAL_JUMP)  ; LAB_00512808
     FLD float ptr [EBX + 0x38]          ; 0051288d
     FABS                                ; 00512890
-    FCOMP double ptr [0x005cc483]       ; 00512892 | DAT_005cc483
+    FCOMP double ptr [0x005cc483]       ; 00512892 | g_DOUBLE_005cc483
     FNSTSW AX                           ; 00512898
     SAHF                                ; 0051289a
     JA 0x00512808                       ; 0051289b
@@ -109,8 +109,8 @@ section .text
     PUSH EBX                            ; 005128c8
     LEA ESI,[ESP + 0x68]                ; 005128c9
     LEA EDI,[ESP + 0x98]                ; 005128cd
-    CALL core_actor.cpp_FUN_00408bf0    ; 005128d4
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 005128d4
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x68]                ; 005128d9
     ADD ESP,0x8                         ; 005128dd
     MOVSD ES:EDI,ESI                    ; 005128e0
@@ -192,7 +192,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005129cf
     MOVSD ES:EDI,ESI                    ; 005129d0
     PUSH EAX                            ; 005129d1
-    FADD float ptr [0x005cc48b]         ; 005129d2 | DAT_005cc48b
+    FADD float ptr [0x005cc48b]         ; 005129d2 | g_FLOAT_005cc48b
     MOV ESI,0x3f800000                  ; 005129d8
     PUSH ECX                            ; 005129dd
     FADD float ptr [ESP + 0x98]         ; 005129de
@@ -203,8 +203,8 @@ section .text
         ;   XREF to: 004625a0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005129f9
     PUSH EAX                            ; 005129fc
-    CALL core_dmodel.cpp_FUN_004618a0   ; 005129fd
-        ;   XREF to: 004618a0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_004618a0()
+    CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0 ; 005129fd
+        ;   XREF to: 004618a0 (UNCONDITIONAL_CALL)  ; float core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0(CKeyFramedModel * this_ptr, int frame_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
     MOV dword ptr [ESP + 0xb0],EAX      ; 00512a02
     FLD float ptr [ESP + 0xb0]          ; 00512a09
     ADD ESP,0x14                        ; 00512a10

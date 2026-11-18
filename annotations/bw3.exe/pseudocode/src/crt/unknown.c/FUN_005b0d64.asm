@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_crt_unknown.c_FUN_005b1840_00607f14 = 005b1840
+;   void* g_PTR_00607f14 = 005b1840
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
     PUSH ECX                            ; 005b0d74
     MOV ESI,dword ptr [ESP + 0x18]      ; 005b0d75
     PUSH ESI                            ; 005b0d79
-    CALL dword ptr [0x00607f14]         ; 005b0d7a | PTR_crt_unknown.c_FUN_005b1840_00607f14
+    CALL dword ptr [0x00607f14]         ; 005b0d7a | g_PTR_00607f14
     ADD ESP,0x10                        ; 005b0d80
     POP ESI                             ; 005b0d83
     POP EBX                             ; 005b0d84

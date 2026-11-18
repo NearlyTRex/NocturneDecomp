@@ -7,8 +7,8 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b02c
-;   undefined4 DAT_0060b030
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].v
 ;
 ; *****************************************************************************
 
@@ -29,12 +29,12 @@ section .text
     ADD ESI,EAX                         ; 00403a65
     IMUL ESI,ESI,0x30                   ; 00403a67
     MOV EBX,dword ptr [EDX]             ; 00403a6a
-    MOV dword ptr [ESI + 0x60b02c],EBX  ; 00403a6c | DAT_0060b02c
+    MOV dword ptr [ESI + 0x60b02c],EBX  ; 00403a6c | g_SRenderVertex_ARRAY_0060b014[0].u
     MOV EBX,dword ptr [ECX + 0x4]       ; 00403a72
     ADD EBX,EAX                         ; 00403a75
     IMUL ESI,EBX,0x30                   ; 00403a77
     MOV EBX,dword ptr [EDX + 0x4]       ; 00403a7a
-    MOV dword ptr [ESI + 0x60b030],EBX  ; 00403a7d | DAT_0060b030
+    MOV dword ptr [ESI + 0x60b030],EBX  ; 00403a7d | g_SRenderVertex_ARRAY_0060b014[0].v
     INC EAX                             ; 00403a83
     MOV ESI,dword ptr [ECX + 0x8]       ; 00403a84
     ADD EDX,0x8                         ; 00403a87

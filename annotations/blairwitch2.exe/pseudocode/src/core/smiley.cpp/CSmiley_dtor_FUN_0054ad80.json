@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 41,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 91
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -36,7 +36,7 @@
     {
       "addr": "0040f2b0",
       "is_variadic": false,
-      "name": "core_armour.cpp_FUN_0040f2b0"
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0"
     },
     {
       "addr": "005b1480",
@@ -46,7 +46,7 @@
     {
       "addr": "0059df70",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059df70"
+      "name": "core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70"
     },
     {
       "addr": "00544d50",
@@ -59,14 +59,14 @@
       "name": "crt_memory.c___vec_delete_FUN_005b7fa7"
     },
     {
-      "addr": "005b7fce",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7fce"
-    },
-    {
       "addr": "005b7fdc",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7fdc"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005b7fdc"
+    },
+    {
+      "addr": "005b7fce",
+      "is_variadic": false,
+      "name": "crt_unknown.c_free_FUN_005b7fce"
     }
   ],
   "globals": [
@@ -156,17 +156,33 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
-      "match": "pCVar3[-1].",
+      "line": 19,
+      "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
+      "text": "((SFollowFormation *)&pCVar1[-3].base.particle_systems[3].max_particles,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pSVar2[-1].",
+      "severity": "mild",
+      "text": "((CClothList *)&pSVar2[-1].slots[2].offset.y,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
       "type": "negative_offset"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 216,
         "vtable_addr": "005fba74"
       },

@@ -31,7 +31,7 @@ int __cdecl CBarrier::renderTransparent(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_getBoundingBox_FUN_0040eb50
 // Address: 0040eb50
-CBoundingBox3D * __cdecl CBarrier::getBoundingBox(CBarrier *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBarrier::getBoundingBox(CBarrier *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_barrier.cpp_CBarrier_archive_FUN_0040ebd0
 // Address: 0040ebd0

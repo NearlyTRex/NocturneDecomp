@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_carved_cpp_CCarved_getTargetPoints_FUN_0042ba40(CCarved *this_ptr,CVector3f *out_points_array)
 
@@ -63,8 +62,10 @@ int __cdecl core_carved_cpp_CCarved_getTargetPoints_FUN_0042ba40(CCarved *this_p
           CStack_70.y = CStack_40.y;
           CStack_70.z = CStack_40.z;
         }
-        CStack_70.y = CStack_7c.y * (float)_DAT_005d569d + CStack_70.y * (float)_DAT_005d5695;
-        CStack_70.x = CStack_7c.x * (float)_DAT_005d568d + CStack_70.x * (float)_DAT_005d568d;
+        CStack_70.y = CStack_7c.y * (float)0.29999999999999999 +
+                      CStack_70.y * (float)0.69999999999999996;
+        CStack_70.x = CStack_7c.x * (float)0.5 +
+                      CStack_70.x * (float)0.5;
 LAB_0042bb6f:
         pCVar2 = out_points_array + iStack_14;
         if (pCVar2 != &CStack_70) {
@@ -91,8 +92,10 @@ LAB_0042bb8b:
           CStack_70.y = CStack_94.y;
           CStack_70.z = CStack_94.z;
         }
-        CStack_70.y = CStack_7c.y * (float)_DAT_005d569d + CStack_70.y * (float)_DAT_005d5695;
-        CStack_70.x = CStack_7c.x * (float)_DAT_005d568d + CStack_70.x * (float)_DAT_005d568d;
+        CStack_70.y = CStack_7c.y * (float)0.29999999999999999 +
+                      CStack_70.y * (float)0.69999999999999996;
+        CStack_70.x = CStack_7c.x * (float)0.5 +
+                      CStack_70.x * (float)0.5;
         goto LAB_0042bb6f;
       }
       break;

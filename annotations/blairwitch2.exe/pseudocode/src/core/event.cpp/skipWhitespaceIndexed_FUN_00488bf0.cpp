@@ -9,7 +9,7 @@
 int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_00488bf0(char *expression,int *parse_position)
 
 {
-  while (((&DAT_0061ed94)[(byte)(expression[*parse_position] + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(expression[*parse_position] + 1)] & 2) != 0) {
     *parse_position = *parse_position + 1;
   }
   return parse_position;

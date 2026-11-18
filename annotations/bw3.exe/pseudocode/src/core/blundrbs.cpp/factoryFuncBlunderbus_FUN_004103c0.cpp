@@ -11,7 +11,7 @@ CBlunderbus * __cdecl core_blundrbs_cpp_factoryFuncBlunderbus_FUN_004103c0(void)
 {
   CBlunderbus *pCVar1;
   
-  pCVar1 = (CBlunderbus *)operator_new(0x598);
+  pCVar1 = operator_new(0x598);
   if (pCVar1 == (CBlunderbus *)0x0) {
     return (CBlunderbus *)0x0;
   }

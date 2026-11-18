@@ -7,7 +7,6 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPrye.h"
 #include "types/classes/CPryeMorph.h"
@@ -22,30 +21,30 @@
 // FUNCTION PROTOTYPES - Range 0x520000
 // =============================================================================
 
-void core_prye_cpp_FUN_00520d20(int param_1);
-void core_prye_cpp_FUN_00520da0(int param_1);
-undefined4 core_prye_cpp_FUN_00520df0(void);
-undefined4 core_prye_cpp_FUN_00521880(CCharacter *param_1);
+void __cdecl core_prye_cpp_CPrye_processPickupComplete_FUN_00520d20(CPrye *this_ptr);
+void __cdecl core_prye_cpp_CPrye_dropRightHandObject_FUN_00520da0(CPrye *this_ptr);
+int __cdecl core_prye_cpp_CPrye_tryClimbLadder_FUN_00520df0(CPrye *this_ptr);
+int __cdecl core_prye_cpp_CPrye_tryPlaceObject_FUN_00521880(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_archive_FUN_00521f40(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_renderTransparent_FUN_00522880(CPrye *this_ptr);
-void core_prye_cpp_FUN_005228c0(void);
-float * core_prye_cpp_FUN_00522950(void);
-void core_prye_cpp_FUN_00522b00(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl core_prye_cpp_adjustAimAngleForOffset_FUN_005228c0(float *angle,float distance,float offset);
+CVector3f * __stack2_esi core_prye_cpp_calculateAimAnglesWithOffset_FUN_00522950(CVector3f *direction,float *offset_pair,CVector3f *out_angles);
+void __cdecl core_prye_cpp_CPrye_autoAimAtThreat_FUN_00522b00(CPrye *this_ptr,int hand_index,float delta_time);
 void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_ptr,float delta_time,int is_weapon_active);
 CMatrix3x4f * __stack2_esi core_prye_cpp_CPrye_getCarryObjToBodyXForm_FUN_005247b0(CPrye *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-void core_prye_cpp_FUN_00524800(int param_1);
-void core_prye_cpp_FUN_00524940(CHero *param_1,float param_2);
-void core_prye_cpp_FUN_00525930(int param_1);
+CVector3f * __stack_esi core_prye_cpp_CPrye_getThrowDirection_FUN_00524800(CPrye *this_ptr,CVector3f *out_direction);
+void __cdecl core_prye_cpp_CPrye_updateWeaponLayerActions_FUN_00524940(CPrye *this_ptr,float delta_time);
+void __cdecl core_prye_cpp_CPrye_handleActionButton_FUN_00525930(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_doHeroAction_FUN_00525a20(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int action_type);
-undefined4 core_prye_cpp_FUN_005262f0(int param_1);
-void core_prye_cpp_FUN_005263c0(CPrye *param_1);
+int __cdecl core_prye_cpp_CPrye_tryThrowDynamite_FUN_005262f0(CPrye *this_ptr);
+void __cdecl core_prye_cpp_CPrye_handleFireButton_FUN_005263c0(CPrye *this_ptr,float delta_time);
 int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
-void core_prye_cpp_FUN_00526cf0(int param_1);
-void core_prye_cpp_FUN_00526dc0(int param_1,undefined4 param_2);
+void __cdecl core_prye_cpp_CPrye_updateClothSimulation_FUN_00526cf0(CPrye *this_ptr);
+void __cdecl core_prye_cpp_CPrye_processWeaponTick_FUN_00526dc0(CPrye *this_ptr,float delta_time);
 int __cdecl core_prye_cpp_CPrye_isWeaponDrawn_FUN_00526df0(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_drawWeapon_FUN_00526e00(CPrye *this_ptr,int drawn);
 int __cdecl core_prye_cpp_CPrye_getGrabbed_FUN_00526e30(CPrye *this_ptr,CDemonActor *grabber,int grab_type);
@@ -54,9 +53,9 @@ EDeathState __cdecl core_prye_cpp_CPrye_getDeathState_FUN_00526fc0(CPrye *this_p
 void __cdecl core_prye_cpp_CPrye_dropCarriedObject_FUN_00526ff0(CPrye *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_prye_cpp_CPrye_drop_FUN_00527050(CPrye *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 void __cdecl core_prye_cpp_CPrye_toggleGoggles_FUN_005270a0(CPrye *this_ptr);
-undefined4 core_prye_cpp_FUN_00527110(int param_1);
-void core_prye_cpp_FUN_005271d0(float *param_1,float *param_2);
-void core_prye_cpp_FUN_00527200(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl core_prye_cpp_CPrye_isPerformingAction_FUN_00527110(CPrye *this_ptr);
+void __cdecl core_prye_cpp_divideVectorByScalar_FUN_005271d0(CVector3f *vector,float *divisor);
+CVector3f * __stack3_esi core_prye_cpp_makeVector_FUN_00527200(float x,float y,float z,CVector3f *out);
 CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags);
 void __cdecl core_pryemorp_cpp_staticInit_FUN_00527350(void);
 CPryeMorph * __cdecl core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void);
@@ -97,9 +96,9 @@ void __cdecl core_script_cpp_CScript_process_FUN_00528e00(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00528f60(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00528fc0(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_renderEditor_FUN_00529210(CScript *this_ptr,int left,int top,int right,int bottom);
-undefined4 core_script_cpp_FUN_00529410(CScript *param_1,char *param_2);
+int __cdecl core_script_cpp_CScript_loadScript_FUN_00529410(CScript *this_ptr,char *filename);
 void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_005295e0(CScript *this_ptr);
-undefined * core_script_cpp_FUN_00529710(CScript *param_1,int *param_2,int param_3);
+char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_00529710(CScript *this_ptr,int *error_line_out,int min_error_line);
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_005297a0(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_step_FUN_00529a70(CScript *this_ptr,float *time_remaining);

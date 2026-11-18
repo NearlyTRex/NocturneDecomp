@@ -12,12 +12,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_processHotkeys_FUN_004b82e0 at 004b869d
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6477
-;   core_game.cpp_FUN_004b82e0 at 004b869d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e5bca
-;   undefined4 DAT_005e5bd2
+;   double g_DOUBLE_005e5bca = 0.0000152587890625
+;   double g_DOUBLE_005e5bd2 = 65536
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00443180
@@ -43,7 +43,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 0053459b
     MOV dword ptr [ESP + 0x8],EAX       ; 0053459e
     FILD dword ptr [ESP + 0x8]          ; 005345a2
-    FMUL double ptr [0x005e5bca]        ; 005345a6 | DAT_005e5bca
+    FMUL double ptr [0x005e5bca]        ; 005345a6 | g_DOUBLE_005e5bca
     MOV ESI,0x100                       ; 005345ac
     XOR EDX,EDX                         ; 005345b1
     XOR ECX,ECX                         ; 005345b3
@@ -51,14 +51,14 @@ section .text
     MOV dword ptr [ESP + 0x8],EDX       ; 005345b8
         ;   Label: LAB_005345b8
     FILD dword ptr [ESP + 0x8]          ; 005345bc
-    FMUL double ptr [0x005e5bca]        ; 005345c0 | DAT_005e5bca
+    FMUL double ptr [0x005e5bca]        ; 005345c0 | g_DOUBLE_005e5bca
     FLD float ptr [ESP]                 ; 005345c6
     FXCH                                ; 005345c9
     CALL crt_math.c_pow_FUN_005b9484    ; 005345cb
-        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_005b9484()
-    FMUL double ptr [0x005e5bd2]        ; 005345d0 | DAT_005e5bd2
+        ;   XREF to: 005b9484 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005b9484(float10 base, float10 exp)
+    FMUL double ptr [0x005e5bd2]        ; 005345d0 | g_DOUBLE_005e5bd2
     CALL crt_math.c_round_FUN_005b7ff0  ; 005345d6
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x4]         ; 005345db
     CMP dword ptr [ESP + 0x4],0x100     ; 005345df
     JL 0x00534604                       ; 005345e7

@@ -13,20 +13,16 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590(CCh
   SFire *pSVar2;
   CCharacter *pCVar3;
   int iVar4;
-  CMatrix3x4f *pCVar5;
-  float *pfVar6;
+  float *pfVar5;
+  CMatrix3x4f *pCVar6;
   byte bVar7;
-  float afStackY_1050 [15];
-  CMatrix3x4f *apCStackY_1014 [975];
+  float afStackY_1050 [990];
   CBodyPart *this_ptr_00;
   char *model_name;
   CVector3f *position_offset;
   CVector3f *euler_angles;
-  CMatrix3x4f local_c8;
-  float local_98 [3];
-  float local_8c;
-  float local_7c;
-  uint local_6c;
+  CVector3f *in_stack_ffffff38;
+  CMatrix3x4f local_98;
   float local_68;
   float afStack_64 [2];
   CVector3f local_5c;
@@ -34,8 +30,9 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590(CCh
   float local_4c [2];
   CVector3f local_44;
   CVector3f local_38;
-  float local_2c;
-  CMatrix3x4f *apCStack_28 [4];
+  CVector3f local_2c;
+  CMatrix3x4f *local_20;
+  CMatrix3x4f *local_1c;
   int local_18;
   int local_14;
   
@@ -46,30 +43,31 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590(CCh
               (&this_ptr->model,body_part,part_index);
     local_18 = 0;
     if (0 < this_ptr->damage_decal_count) {
-      apCStack_28[2] = (this_ptr->model).bone_transform.bone_model_matrices;
+      local_20 = (this_ptr->model).bone_transform.bone_model_matrices;
       pSVar1 = this_ptr->damage_decals;
       do {
         if (part_index == pSVar1->part_index) {
           core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-                    (&pSVar1->transform,apCStack_28[2] + pSVar1->bone_index,&local_c8);
-          pCVar5 = &local_c8;
-          pfVar6 = local_98;
+                    (&pSVar1->transform,local_20 + pSVar1->bone_index,
+                     (CMatrix3x4f *)&stack0xffffff38);
+          pfVar5 = (float *)&stack0xffffff38;
+          pCVar6 = &local_98;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *pfVar6 = pCVar5->m[0].w;
-            pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-            pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
+            pCVar6->m[0].w = *pfVar5;
+            pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
+            pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
           }
-          core_xform_cpp_matrixToEulerAngles_FUN_00583b10(local_98);
+          core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&local_98,in_stack_ffffff38);
           euler_angles = &local_5c;
-          local_50 = local_8c;
-          local_4c[0] = local_7c;
-          local_4c[1] = (float)local_6c;
+          local_50 = local_98.m[0].z;
+          local_4c[0] = local_98.m[1].z;
+          local_4c[1] = local_98.m[2].z;
           position_offset = &local_44;
           local_5c.x = local_68;
           *(float *)((int)&local_5c + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2];
           *(float *)((int)&local_5c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
                afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-          model_name = &DAT_007e2bac;
+          model_name = g_StakeModelInstance.model_name;
           local_44.x = local_50;
           *(float *)((int)&local_44 + (uint)bVar7 * -8 + 4) = local_4c[(uint)bVar7 * -2];
           this_ptr_00 = body_part;
@@ -84,15 +82,17 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590(CCh
     }
     local_14 = 0;
     if (0 < this_ptr->fire_count) {
-      apCStack_28[3] = (this_ptr->model).bone_transform.bone_model_matrices;
+      local_1c = (this_ptr->model).bone_transform.bone_model_matrices;
       pSVar2 = this_ptr->fires;
       do {
         if ((part_index == pSVar2->bone_part) && (-1 < pSVar2->bone_index)) {
-          core_xform_cpp_FUN_00583260(&pSVar2->offset,apCStack_28[3] + pSVar2->bone_index);
-          local_38.x = local_2c;
-          *(CMatrix3x4f **)((int)&local_38 + (uint)bVar7 * -8 + 4) = apCStack_28[(uint)bVar7 * -2];
-          *(CMatrix3x4f **)((int)&local_38 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-               apCStack_28[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+          core_xform_cpp_transformVector3x4_FUN_00583260
+                    (&pSVar2->offset,local_1c + pSVar2->bone_index,&local_2c);
+          local_38.x = local_2c.x;
+          *(uint *)((int)&local_38 + (uint)bVar7 * -8 + 4) =
+               *(uint *)((int)&local_2c + (uint)bVar7 * -8 + 4);
+          *(uint *)((int)&local_38 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+               *(uint *)((int)&local_2c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
           core_bodypart_cpp_CBodyPart_addFire_FUN_00416750(body_part,&local_38);
         }
         pSVar2 = pSVar2 + 1;

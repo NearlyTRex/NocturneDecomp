@@ -1,0 +1,303 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 229,
+    "complexity_score": 82,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 82,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 311
+  },
+  "cross_references": [
+    {
+      "addr": "00454360",
+      "from_addr": "0045439a",
+      "name": "core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00454360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00452e20",
+      "from_addr": "0045305f",
+      "name": "core_dcube.cpp_triangleCylinderCollision_FUN_00452e20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00452240",
+    "address_range": [
+      [
+        "00452240",
+        "0045248c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240",
+    "signature": "float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00452240(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0045439a",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_00454360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0045305f",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_triangleCylinderCollision_FUN_00452e20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00453168",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_triangleCylinderCollision_FUN_00452e20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.394230769230769,
+    "instruction_count": 208,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 11,
+      "BRANCH": 3,
+      "CBRANCH": 10,
+      "COPY": 923,
+      "FLOAT2FLOAT": 97,
+      "FLOAT_ADD": 9,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 17,
+      "FLOAT_NAN": 12,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 20,
+      "INT2FLOAT": 6,
+      "INT_ADD": 102,
+      "INT_AND": 42,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 24,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 30,
+      "INT_OR": 30,
+      "INT_SBORROW": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_ZEXT": 24,
+      "LOAD": 96,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 1538
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00444a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004560f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00455460",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9298
+    },
+    "nocturne.exe": {
+      "addr": "00449150",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9298
+    }
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCubeTriangle *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00452247",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_0052aa40(CDirectSoundDevice *this_ptr)
 
 {
-  return (uint)(_DAT_02dc9220 != 0);
+  return (uint)(g_DirectSound3DListener != (IDirectSound3DListener *)0x0);
 }

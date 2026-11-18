@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005aceb0 at 005aceb2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d252a0
+;   FileListNode* g_AllocatedListHead
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a3ad4
@@ -29,7 +29,7 @@ section .text
     MOV EDI,0x607678                    ; 005acee1
     ADD EAX,EAX                         ; 005acee6
     ADD EDI,EAX                         ; 005acee8
-    MOV EAX,[0x02d252a0]                ; 005aceea | DAT_02d252a0
+    MOV EAX,[0x02d252a0]                ; 005aceea | g_AllocatedListHead
     XOR EBX,EBX                         ; 005aceef
     TEST EAX,EAX                        ; 005acef1
     JZ 0x005acf2a                       ; 005acef3

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material)
 
 {
@@ -39,22 +37,22 @@ int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(C
   }
   if (-1 < iVar7) {
     pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[0];
-    if (pCVar3 != (CVector3f *)&DAT_014b89e8) {
-      _DAT_014b89e8 = pCVar3->x;
-      _DAT_014b89f0 = pCVar3->z;
-      _DAT_014b89ec = pCVar3->y;
+    if (pCVar3 != (CVector3f *)&g_FLOAT_014b89e8) {
+      g_FLOAT_014b89e8 = pCVar3->x;
+      g_FLOAT_014b89f0 = pCVar3->z;
+      g_INT_014b89ec = (int)pCVar3->y;
     }
     pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[1];
-    if (pCVar3 != (CVector3f *)&DAT_014b89f4) {
-      _DAT_014b89f4 = pCVar3->x;
-      _DAT_014b89fc = pCVar3->z;
-      _DAT_014b89f8 = pCVar3->y;
+    if (pCVar3 != (CVector3f *)&g_FLOAT_014b89f4) {
+      g_FLOAT_014b89f4 = pCVar3->x;
+      g_FLOAT_014b89fc = pCVar3->z;
+      g_INT_014b89f8 = (int)pCVar3->y;
     }
     pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[2];
-    if (pCVar3 != (CVector3f *)&DAT_014b8a00) {
-      _DAT_014b8a00 = pCVar3->x;
-      _DAT_014b8a08 = pCVar3->z;
-      _DAT_014b8a04 = pCVar3->y;
+    if (pCVar3 != (CVector3f *)&g_FLOAT_014b8a00) {
+      g_FLOAT_014b8a00 = pCVar3->x;
+      g_FLOAT_014b8a08 = pCVar3->z;
+      g_INT_014b8a04 = (int)pCVar3->y;
     }
     *output_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + iVar7);
     pCVar4 = this_ptr->triangle_buffer;

@@ -18,7 +18,7 @@
 ;   core_fire.cpp_CFireEffect_createToss_FUN_004a3920 at 004a3955
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cf61d0
+;   int g_INT_01cf61d0
 ;
 ; Called Functions:
 ;   core_fire.cpp_CToss_create_FUN_0049cee0
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 004a3a32
     PUSH EBP                            ; 004a3a33
     PUSH dword ptr [ESP + 0x28]         ; 004a3a34
-    MOV EBX,dword ptr [0x01cf61d0]      ; 004a3a38 | DAT_01cf61d0
+    MOV EBX,dword ptr [0x01cf61d0]      ; 004a3a38 | g_INT_01cf61d0
     MOV EDX,dword ptr [ESP + 0x28]      ; 004a3a3e
     LEA EAX,[EBX*0x4 + 0x0]             ; 004a3a42
     MOV ECX,dword ptr [ESP + 0x24]      ; 004a3a49
@@ -54,10 +54,10 @@ section .text
     PUSH EAX                            ; 004a3a6f
     CALL core_fire.cpp_CToss_create_FUN_0049cee0 ; 004a3a70
         ;   XREF to: 0049cee0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_create_FUN_0049cee0(CToss * this_ptr, int toss_type, CVector3f * position, UOrientationVector * orientation, ...)
-    MOV EBP,dword ptr [0x01cf61d0]      ; 004a3a75 | DAT_01cf61d0
+    MOV EBP,dword ptr [0x01cf61d0]      ; 004a3a75 | g_INT_01cf61d0
     INC EBP                             ; 004a3a7b
     ADD ESP,0x18                        ; 004a3a7c
-    MOV dword ptr [0x01cf61d0],EBP      ; 004a3a7f | DAT_01cf61d0
+    MOV dword ptr [0x01cf61d0],EBP      ; 004a3a7f | g_INT_01cf61d0
     CMP EBP,0x14                        ; 004a3a85
     JGE 0x004a3a91                      ; 004a3a88
         ;   XREF to: 004a3a91 (CONDITIONAL_JUMP)  ; LAB_004a3a91
@@ -69,7 +69,7 @@ section .text
     RET                                 ; 004a3a90
     XOR EDX,EDX                         ; 004a3a91
         ;   Label: LAB_004a3a91
-    MOV dword ptr [0x01cf61d0],EDX      ; 004a3a93 | DAT_01cf61d0
+    MOV dword ptr [0x01cf61d0],EDX      ; 004a3a93 | g_INT_01cf61d0
     MOV EAX,EBX                         ; 004a3a99
     POP EBP                             ; 004a3a9b
     POP EDI                             ; 004a3a9c

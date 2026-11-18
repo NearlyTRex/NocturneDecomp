@@ -6,48 +6,51 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* WARNING: Type propagation algorithm not settling */
 
 void __cdecl core_anvil_cpp_CAnvil_process_FUN_0040eae0(CAnvil *this_ptr,float delta_time)
 
 {
-  int iVar1;
+  CHero *pCVar1;
   float fVar2;
   int iVar3;
+  int iVar4;
   SDamageInfo SStack_48;
   
-  iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (0x01C38BC0,this_ptr->drop_condition);
-  iVar1 = _DAT_01cedef4;
-  if (iVar3 != 0) {
+  iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
+                    (g_CEventListPtr,this_ptr->drop_condition);
+  iVar3 = g_INT_01cedef4;
+  if (iVar4 != 0) {
     this_ptr->triggered = 1;
-    iVar1 = *(int *)(iVar1 * 4 + 0x1cedee4);
-    (this_ptr->base).location.position.x = *(float *)(iVar1 + 0x20);
-    (this_ptr->base).location.position.y = *(float *)(iVar1 + 0x24);
-    (this_ptr->base).location.position.z = *(float *)(iVar1 + 0x28);
-    (this_ptr->base).location.area_id = *(int *)(iVar1 + 0x2c);
+    pCVar1 = g_CHero_PTR_ARRAY_01cedee4[iVar3];
+    (this_ptr->base).location.position.x = (pCVar1->base).base.location.position.x;
+    (this_ptr->base).location.position.y = (pCVar1->base).base.location.position.y;
+    (this_ptr->base).location.position.z = (pCVar1->base).base.location.position.z;
+    (this_ptr->base).location.area_id = (pCVar1->base).base.location.area_id;
     (this_ptr->base).location.position.y =
          this_ptr->drop_height + (this_ptr->base).location.position.y;
   }
   if (this_ptr->triggered != 0) {
-    fVar2 = this_ptr->yvel - delta_time * (float)_DAT_005cb314;
+    fVar2 = this_ptr->yvel - delta_time * (float)32;
     this_ptr->yvel = fVar2;
-    iVar1 = _DAT_01cedef4;
+    iVar3 = g_INT_01cedef4;
     (this_ptr->base).location.position.y = fVar2 + (this_ptr->base).location.position.y;
-    iVar1 = *(int *)(iVar1 * 4 + 0x1cedee4);
-    if ((this_ptr->base).location.position.y < *(float *)(iVar1 + 0x24)) {
-      (this_ptr->base).location.position.y = *(float *)(iVar1 + 0x24);
+    if ((this_ptr->base).location.position.y <
+        (g_CHero_PTR_ARRAY_01cedee4[iVar3]->base).base.location.position.y) {
+      (this_ptr->base).location.position.y =
+           (g_CHero_PTR_ARRAY_01cedee4[iVar3]->base).base.location.position.y;
       this_ptr->yvel = 0.0;
     }
     if ((this_ptr->base).location.position.y <
-        *(float *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24) + (float)_DAT_005cb31c) {
+        (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.location.position.y +
+        (float)6) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_48);
       SStack_48.damage_amount = 9999.9;
       SStack_48.damage_type = DAMAGE_TYPE_CRUSHED;
       SStack_48.attacker = &this_ptr->base;
-      iVar1 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
       SStack_48.wielder = &this_ptr->base;
-      (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x110))(iVar1,&SStack_48);
+      (*(((g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.vtable._uc)->_uc).processDamage)
+                (&g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base,&SStack_48);
       return;
     }
   }

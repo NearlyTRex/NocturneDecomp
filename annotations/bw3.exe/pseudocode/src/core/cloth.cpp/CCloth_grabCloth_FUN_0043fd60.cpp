@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043fd60(CCloth *this_ptr,char *bone_name,int vertex_index)
 
 {
@@ -26,9 +24,9 @@ void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043fd60(CCloth *this_ptr,char 
     } while (iVar2 < this_ptr->collide_bone_count);
   }
   if (iVar2 == this_ptr->collide_bone_count) {
-    _DAT_01d71de0 = "..\\core\\cloth.cpp";
-    _DAT_01d71de4 = 0xab4;
-    core_main_c_FUN_004e4330("CCloth::grabCloth - Can't find bone %s",bone_name);
+    g_CHAR_PTR_01d71de0 = "..\\core\\cloth.cpp";
+    g_INT_01d71de4 = 0xab4;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CCloth::grabCloth - Can't find bone %s");
   }
   this_ptr->vertices[vertex_index].locked = 1;
   this_ptr->vertices[vertex_index].collide_bone_index = iVar2;

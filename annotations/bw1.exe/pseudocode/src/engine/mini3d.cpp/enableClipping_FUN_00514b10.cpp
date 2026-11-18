@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_enableClipping_FUN_00514b10(void)
 
 {
-  _DAT_01d25000 = 1;
-  if ((_DAT_02c83494 != (code *)0x0) && (_DAT_01c50948 != 0)) {
-    (*_DAT_02c83494)(1);
+  g_INT_01d25000 = 1;
+  if ((g_PTR_02c83494 != (byte *)0x0) && (g_INT_01c50948 != 0)) {
+    (*(code *)g_PTR_02c83494)(1);
     return;
   }
   return;

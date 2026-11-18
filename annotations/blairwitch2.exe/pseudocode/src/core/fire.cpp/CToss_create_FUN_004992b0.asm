@@ -24,11 +24,11 @@
 ;   core_fire.cpp_CFireEffect_allocateToss_FUN_0049e5d0 at 0049e5fe
 ;
 ; Referenced Globals:
-;   undefined4 s_dynamitestick_kfm_005d5547+3
+;   TerminatedCString s_dynamitestick_kfm_005d554a
 ;   TerminatedCString s_core_fire_cpp_005d555c
 ;   TerminatedCString s_CToss_create_invalid_tos_005d556d
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_005b1c80
@@ -36,7 +36,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -61,10 +61,10 @@ section .text
     MOV EDX,0x5d555c                    ; 004992df | = "..\\core\\fire.cpp"
     MOV ECX,0xd76                       ; 004992e4
     PUSH 0x5d556d                       ; 004992e9 | = "CToss::create - invalid toss type."
-    MOV dword ptr [0x01d046a0],EDX      ; 004992ee | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004992f4 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004992fa
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 004992ee | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004992f4 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004992fa
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004992ff
     FLD float ptr [EBX + 0x3dc]         ; 00499302
         ;   Label: LAB_00499302
@@ -137,7 +137,7 @@ section .text
     POP ESI                             ; 004993bf
     POP EBX                             ; 004993c0
     RET                                 ; 004993c1
-    PUSH 0x5d554a                       ; 004993c2 | s_dynamitestick_kfm_005d5547+3
+    PUSH 0x5d554a                       ; 004993c2 | = "dynamitestick.kfm"
         ;   Label: LAB_004993c2
     LEA EAX,[EBX + 0x4]                 ; 004993c7
     PUSH EAX                            ; 004993ca

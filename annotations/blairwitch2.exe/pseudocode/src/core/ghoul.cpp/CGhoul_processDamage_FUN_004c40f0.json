@@ -2,22 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 226,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
+    "pseudocode_lines": 142,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
+      "raw_address_constant",
       "shadow_pointer_walk",
-      "unresolved_funcptr",
+      "suspect_float",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 481
+    "total_lines": 487
   },
   "cross_references": [],
   "function": {
@@ -65,6 +65,11 @@
       "name": "core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c3e30"
     },
     {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
+    },
+    {
       "addr": "00503860",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getMotionList_FUN_00503860"
@@ -78,11 +83,6 @@
       "addr": "00502f10",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10"
-    },
-    {
-      "addr": "005035c0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
     },
     {
       "addr": "005b7ff0",
@@ -113,8 +113,8 @@
   "globals": [
     {
       "addr": "005d91ff",
-      "name": "s_go_berzerk_005d91fe+1",
-      "type": "undefined4",
+      "name": "s_go_berzerk_005d91ff",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -137,9 +137,9 @@
     },
     {
       "addr": "005d9247",
-      "name": "DAT_005d9247",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d9247",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "00609ed0",
@@ -264,24 +264,24 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
+      "description": "Likely misinterpreted integer as float",
+      "line": 106,
+      "match": "7.00649e-44",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "spawn_radius = 7.00649e-44;",
+      "type": "suspect_float"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 104,
-      "match": "code *",
+      "description": "Raw hex address 0x4c42a9 assigned to bare local `iVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 107,
+      "match": "0x4c42a9",
       "severity": "moderate",
-      "text": "(**(code **)(iVar5 + 0xb0))(this_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "iVar9 = 0x4c42a9;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 31,
+      "line": 34,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->prev_position).x = (pCVar1->position).x;",
@@ -289,25 +289,25 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 87,
+      "line": 90,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar4 = (CGhoul *)((int)&(pCVar4->base).base.base.orient + 8);",
+      "text": "pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 87,
-      "match": "pCVar4 = (T *)((int)&(pCVar4->FIELD).SUBFIELD + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 90,
+      "match": "pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
-      "text": "pCVar4 = (CGhoul *)((int)&(pCVar4->base).base.base.orient + 8);",
+      "text": "pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);",
       "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 272,
         "vtable_addr": "005f78e4"
       }

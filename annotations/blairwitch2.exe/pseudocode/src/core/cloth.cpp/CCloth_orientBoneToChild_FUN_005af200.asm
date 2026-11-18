@@ -21,20 +21,20 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_005ae680 at 005aecd8
+;   core_cloth.cpp_CCloth_setup_FUN_005ae680 at 005aecd8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f10ac
 ;   TerminatedCString s_Can_t_orient_bone_with_n_005f10be
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
-;   core_xform.cpp_FUN_00591ad0
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
@@ -101,10 +101,10 @@ section .text
     MOV ESI,0x5f10ac                    ; 005af29d | = "..\\core\\cloth.cpp"
     MOV EDI,0x2bf                       ; 005af2a2
     PUSH 0x5f10be                       ; 005af2a7 | = "Can't orient bone with no children!"
-    MOV dword ptr [0x01d046a0],ESI      ; 005af2ac | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005af2b2 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005af2b8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 005af2ac | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 005af2b2 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005af2b8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005af2bd
     MOV ECX,dword ptr [EBP + 0x6e]      ; 005af2c0
         ;   Label: LAB_005af2c0
@@ -117,7 +117,7 @@ section .text
     PUSH EAX                            ; 005af2da
     LEA ESI,[EBP + 0x52]                ; 005af2db
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 005af2de
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 005af2e3
     LEA EAX,[EBP + 0x5e]                ; 005af2e6
     LEA EDI,[EBP + 0x5e]                ; 005af2e9
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 005af301
     LEA ESI,[EBX + 0x48]                ; 005af302
     PUSH ESI                            ; 005af305
-    CALL core_xform.cpp_FUN_00591ad0    ; 005af306
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 005af306
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005af30b
     LEA EAX,[EBX + 0x28]                ; 005af30e
     PUSH EAX                            ; 005af311
@@ -143,8 +143,8 @@ section .text
     PUSH EAX                            ; 005af315
     LEA EAX,[EBP + -0x1a]               ; 005af316
     PUSH EAX                            ; 005af319
-    CALL core_xform.cpp_FUN_00591ad0    ; 005af31a
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 005af31a
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005af31f
     LEA EAX,[EBP + -0x1a]               ; 005af322
     PUSH EAX                            ; 005af325

@@ -7,15 +7,25 @@
 #include "system/watcom.h"
 #include "types/classes/CBasicEnemy_full_vtable.h"
 #include "types/classes/CBoneGuy_full_vtable.h"
+#include "types/classes/CCameraView_vtable.h"
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CConfederateZombie_full_vtable.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CFont_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CMobster_full_vtable.h"
+#include "types/classes/CParticle_vtable.h"
+#include "types/classes/CPickList_full_vtable.h"
+#include "types/classes/CPod_vtable.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRobin_full_vtable.h"
 #include "types/classes/CSchnellGeist_full_vtable.h"
 #include "types/classes/CSmiley_full_vtable.h"
+#include "types/classes/CSoundDeviceBasic_vtable.h"
+#include "types/classes/CSoundDeviceFull_vtable.h"
+#include "types/classes/CStrList_vtable.h"
 #include "types/classes/CUnionZombie_full_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 
@@ -24,6 +34,7 @@
 // =============================================================================
 
 // CBasicEnemy_full_vtable
+extern CBasicEnemy_full_vtable g_CBasicEnemyVTable;
 extern CBasicEnemy_full_vtable g_CConfederateVTable;
 extern CBasicEnemy_full_vtable g_CTwigZombieVTable;
 extern CBasicEnemy_full_vtable g_CBasicNPCVTable;
@@ -32,6 +43,11 @@ extern CBasicEnemy_full_vtable g_CSteubenVTable;
 
 // CBoneGuy_full_vtable
 extern CBoneGuy_full_vtable g_CBoneGuyVTable;
+
+// CCameraView_vtable
+extern CCameraView_vtable g_CCameraView_vtable_005f4024;
+extern CCameraView_vtable g_CDemonCameraVTable;
+extern CCameraView_vtable g_CCameraView_vtable_005f5074;
 
 // CCharacter_full_vtable
 extern CCharacter_full_vtable g_CCharacterVTable;
@@ -45,6 +61,10 @@ extern CCharacter_full_vtable g_CDrummerVTable;
 
 // CConfederateZombie_full_vtable
 extern CConfederateZombie_full_vtable g_CConfederateZombieVTable;
+
+// CDemonActor*
+extern CDemonActor* g_ActorNameSentinel;
+extern CDemonActor* g_ScriptSentinelActor;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;
@@ -130,6 +150,9 @@ extern CEnemy_full_vtable g_CVampireBossVTable;
 extern CEnemy_full_vtable g_CWerewolfVTable;
 extern CEnemy_full_vtable g_CZombieVTable;
 
+// CFont_vtable
+extern CFont_vtable g_CFont_vtable_005fe274;
+
 // CHero_full_vtable
 extern CHero_full_vtable g_CBaronVTable;
 extern CHero_full_vtable g_CColonelVTable;
@@ -145,6 +168,26 @@ extern CHero_full_vtable g_CSvetlanaVTable;
 // CMobster_full_vtable
 extern CMobster_full_vtable g_CMobsterVTable;
 
+// CParticle_vtable
+extern CParticle_vtable g_CRainDropVTable;
+extern CParticle_vtable g_CPopcornVTable;
+extern CParticle_vtable g_CShellVTable;
+extern CParticle_vtable g_CGlassParticleVTable;
+extern CParticle_vtable g_CRockVTable;
+extern CParticle_vtable g_CFireballVTable;
+extern CParticle_vtable g_CSparkVTable;
+extern CParticle_vtable g_CBloodParticleVTable;
+extern CParticle_vtable g_CParticle_vtable_005fa8ec;
+
+// CPickList_full_vtable
+extern CPickList_full_vtable g_CPickListVTable;
+
+// CPod_vtable
+extern CPod_vtable g_CPod_vtable_005fad64;
+
+// CQuaternion4f
+extern CQuaternion4f g_IdentityQuaternion;
+
 // CRobin_full_vtable
 extern CRobin_full_vtable g_CRobinVTable;
 
@@ -153,6 +196,16 @@ extern CSchnellGeist_full_vtable g_CSchnellGeistVTable;
 
 // CSmiley_full_vtable
 extern CSmiley_full_vtable g_CSmileyVTable;
+
+// CSoundDeviceBasic_vtable
+extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
+
+// CSoundDeviceFull_vtable
+extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
+extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
+
+// CStrList_vtable
+extern CStrList_vtable g_CStrListVTable;
 
 // CUnionZombie_full_vtable
 extern CUnionZombie_full_vtable g_CUnionZombieVTable;
@@ -176,6 +229,10 @@ extern CWeapon_full_vtable g_CLanternVTable;
 extern CWeapon_full_vtable g_CMeleeAxeVTable;
 extern CWeapon_full_vtable g_CCrossVTable;
 extern CWeapon_full_vtable g_CSimpleCrossVTable;
+
+// TerminatedCString
+extern TerminatedCString g_CAsciiUnarmorVTable;
+extern TerminatedCString g_CInStreamPipeVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_005F39F0;
@@ -531,33 +588,14 @@ extern WatcomTypeInfo g_CUnionTypeInfo;
 extern WatcomTypeInfo g_CSteubenTypeInfo;
 extern WatcomTypeInfo g_CRobinTypeInfo;
 
-// undefined1
-extern undefined1 DAT_005f211c;
+// char
+extern char g_SpaceCharacter;
 
-// undefined1*
-extern undefined1* g_CAsciiArmorVTable;
-extern undefined1* g_CAsciiUnarmorVTable;
-extern undefined1* g_CInStreamPipeVTable;
-extern undefined1* g_CDemonCameraVTable;
-extern undefined1* g_CStrListVTable;
-extern undefined1* g_CPickListVTable;
-extern undefined1* g_CRainDropVTable;
-extern undefined1* g_CPopcornVTable;
-extern undefined1* g_CShellVTable;
-extern undefined1* g_CGlassParticleVTable;
-extern undefined1* g_CLeafVTable;
-extern undefined1* g_CRockVTable;
-extern undefined1* g_CFireballVTable;
-extern undefined1* g_CFireflyVTable;
-extern undefined1* g_CSparkVTable;
-extern undefined1* g_CBloodParticleVTable;
-extern undefined1* g_CDemonPodVTable;
-extern undefined1* g_CInStreamFileVTable;
-extern undefined1* g_CInStreamMemoryVTable;
-extern undefined1* g_COutStreamFileVTable;
-extern undefined1* g_COutStreamMemoryVTable;
-extern undefined1* g_COutStreamDebugVTable;
-extern undefined1* g_CAudioRecPuzzleVTable;
+// int
+extern int g_INT_005f192c;
+extern int g_INT_005f193c;
+extern int g_INT_005f1940;
+extern int g_INT_005f1944;
 
 // void*
 extern void* g_CCodecVTable;
@@ -568,4 +606,47 @@ extern void* g_SPageResourceTwanaCharacterVTable;
 extern void* g_SPageResourceTwanaEntryVTable;
 extern void* g_SPageResourceMapVTable;
 extern void* g_CDeformableModelInstanceVTable;
+
+// void*[10]
+extern void* g_COutStreamFileVTable[10];
+extern void* g_ARRAY_PTR_005fe4f4[10];
+extern void* g_CExamplePuzzleVTable[10];
+
+// void*[12]
+extern void* g_CInStreamMemoryVTable[12];
+
+// void*[13]
+extern void* g_CInStreamFileVTable[13];
+
+// void*[22]
+extern void* g_CAudioRecPuzzleVTable[22];
+
+// void*[2]
+extern void* g_ARRAY_PTR_005f7574[2];
+
+// void*[3]
+extern void* g_ARRAY_PTR_005f915c[3];
+
+// void*[4]
+extern void* g_CLeafVTable[4];
+extern void* g_CFireflyVTable[4];
+
+// void*[5]
+extern void* g_ARRAY_PTR_005fa8bc[5];
+extern void* g_ARRAY_PTR_005fd464[5];
+extern void* g_COutStreamDebugVTable[5];
+
+// void*[6]
+extern void* g_CDemonPodVTable[6];
+
+// void*[7]
+extern void* g_COutStreamMemoryVTable[7];
+
+// void*[92]
+extern void* g_ARRAY_PTR_005f8274[92];
+
+// void*[9]
+extern void* g_ARRAY_PTR_005f4284[9];
+extern void* g_CAsciiArmorVTable[9];
+extern void* g_ARRAY_PTR_005fd3b4[9];
 

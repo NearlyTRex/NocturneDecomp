@@ -1,0 +1,585 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 514,
+    "complexity_score": 375,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 43,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 250,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 764
+  },
+  "cross_references": [
+    {
+      "addr": "0050c990",
+      "from_addr": "0050cc03",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050b470",
+    "address_range": [
+      [
+        "0050b470",
+        "0050ba10"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_configureCustomKeys_FUN_0050b470",
+    "signature": "void __cdecl core_menu_cpp_configureCustomKeys_FUN_0050b470(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004cbf10",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004cbf10"
+    },
+    {
+      "addr": "004cbf20",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_updateDT_FUN_004cbf20"
+    },
+    {
+      "addr": "0050a5e0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0"
+    },
+    {
+      "addr": "0050a2b0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0"
+    },
+    {
+      "addr": "0050d640",
+      "is_variadic": false,
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640"
+    },
+    {
+      "addr": "00509e20",
+      "is_variadic": false,
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20"
+    },
+    {
+      "addr": "00521e40",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_render_FUN_00521e40"
+    },
+    {
+      "addr": "00555770",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_00555770"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00531090",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
+    },
+    {
+      "addr": "005acff0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005acff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0050b434",
+      "name": "switchdataD_0050b434",
+      "type": "void*",
+      "value": "0050b528"
+    },
+    {
+      "addr": "0050b444",
+      "name": "switchdataD_0050b444",
+      "type": "void*",
+      "value": "0050b7a2"
+    },
+    {
+      "addr": "005e7e89",
+      "name": "s_Control_Keyboard_005e7e89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7e9c",
+      "name": "s_Control_Keyboard_Mouse_005e7e9c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7eb5",
+      "name": "s_Control_Gamepad_005e7eb5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7ec7",
+      "name": "s_Control_Point_Click_005e7ec7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7edf",
+      "name": "s_Customize_Keys_005e7edf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7eee",
+      "name": "s_Always_run_ON_005e7eee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7efe",
+      "name": "s_Always_run_OFF_005e7efe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f0f",
+      "name": "s_Aiming_Auto_005e7f0f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f1d",
+      "name": "s_Aiming_Kindof_auto_005e7f1d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f32",
+      "name": "s_Aiming_Manual_005e7f32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f42",
+      "name": "s_Auto_use_health_On_005e7f42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f57",
+      "name": "s_Auto_use_health_Off_005e7f57",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f6d",
+      "name": "s_X_axis_sensitivity_005e7f6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f83",
+      "name": "s_s_5_2f_005e7f83",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f89",
+      "name": "s_Y_axis_sensitivity_005e7f89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f9f",
+      "name": "s_s_5_2f_005e7f9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7fa5",
+      "name": "s_Invert_Y_Axis_ON_005e7fa5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7fb8",
+      "name": "s_Invert_Y_Axis_OFF_005e7fb8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7fcc",
+      "name": "s_Calibrate_005e7fcc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7fd6",
+      "name": "s_Control_Options_005e7fd6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7fe6",
+      "name": "s_Adjust_X_Axis_sensitivit_005e7fe6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8000",
+      "name": "s_Adjust_Y_Axis_sensitivit_005e8000",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e801a",
+      "name": "g_DOUBLE_005e801a",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "0061f2a4",
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01ccf390",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01ccf438",
+      "name": "g_CGameInstance.invert_mouse_y_axis",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf43c",
+      "name": "g_CGameInstance.always_run",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf440",
+      "name": "g_CGameInstance.x_mouse_sensitivity",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf444",
+      "name": "g_CGameInstance.y_mouse_sensitivity",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf448",
+      "name": "g_CGameInstance.x_center",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf460",
+      "name": "g_CGameInstance.game_control",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf468",
+      "name": "g_CGameInstance.aim_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf46c",
+      "name": "g_CGameInstance.auto_use_health",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "g_INT_01d06ab4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d1bca0",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "01d1ee8c",
+      "name": "g_MenuLeftRightPressed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fdcfec",
+      "name": "g_CDemonSetInstance.rendering_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fdcffc",
+      "name": "g_CDemonSetInstance.ambient_base_quick",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050cc03",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
+        "estimated_params": 0,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.293963254593176,
+    "instruction_count": 381,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 63,
+      "BOOL_OR": 4,
+      "BRANCH": 22,
+      "BRANCHIND": 2,
+      "CALL": 32,
+      "CALLIND": 1,
+      "CBRANCH": 35,
+      "COPY": 269,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 120,
+      "INT_AND": 346,
+      "INT_CARRY": 50,
+      "INT_EQUAL": 249,
+      "INT_LEFT": 18,
+      "INT_LESS": 36,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 45,
+      "INT_SBORROW": 40,
+      "INT_SCARRY": 58,
+      "INT_SLESS": 137,
+      "INT_SUB": 152,
+      "INT_XOR": 12,
+      "INT_ZEXT": 2,
+      "LOAD": 46,
+      "POPCOUNT": 119,
+      "RETURN": 1,
+      "STORE": 126
+    },
+    "pcode_op_count": 2017
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ecc70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9684
+    },
+    "bw3.exe": {
+      "addr": "004e8f80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8564
+    },
+    "nocedit.exe": {
+      "addr": "00511890",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8995
+    },
+    "nocturne.exe": {
+      "addr": "004d0d20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8995
+    }
+  },
+  "stack_frame": {
+    "frame_size": 288,
+    "local_size": 288,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_113",
+        "offset": -275,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0050b67a",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0050b6fc",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&g_CHAR_PTR_01d1ffe0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)&g_CHAR_PTR_01d1ffe0",
+      "severity": "moderate",
+      "text": "*(char **)((int)&g_CHAR_PTR_01d1ffe0 + iVar4) = pcVar7;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 95,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 116,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 127,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 149,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char **)((int)&g_CHAR_PTR_01d1ffe0 + iVar4) = pcVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 107,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 140,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 107,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 140,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ]
+}

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 35,
+    "complexity_score": 19,
     "cross_reference_count": 64,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 79
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -54,13 +52,19 @@
     {
       "addr": "00420840",
       "from_addr": "00420bf4",
-      "name": "core_bugs.cpp_FUN_00420840",
+      "name": "core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00429420",
       "from_addr": "00429aca",
       "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428260",
+      "from_addr": "00428445",
+      "name": "core_charactr.cpp_CCharacter_followActor_FUN_00428260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,12 +83,6 @@
       "addr": "00423000",
       "from_addr": "00423324",
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00428260",
-      "from_addr": "00428445",
-      "name": "core_charactr.cpp_FUN_00428260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,21 +110,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00450c60",
-      "from_addr": "00451386",
-      "name": "core_doc.cpp_FUN_00450c60",
+      "addr": "0045ab40",
+      "from_addr": "0045b0a2",
+      "name": "core_doc.cpp_CDoc_aimLeftPistol_FUN_0045ab40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00459ff0",
       "from_addr": "0045a976",
-      "name": "core_doc.cpp_FUN_00459ff0",
+      "name": "core_doc.cpp_CDoc_autoAimAtThreat_FUN_00459ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045ab40",
-      "from_addr": "0045b0a2",
-      "name": "core_doc.cpp_FUN_0045ab40",
+      "addr": "00450c60",
+      "from_addr": "00451386",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -139,6 +137,12 @@
       "addr": "00462ff0",
       "from_addr": "00464247",
       "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aeb00",
+      "from_addr": "004aecd9",
+      "name": "core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -160,15 +164,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004aeb00",
-      "from_addr": "004aecd9",
-      "name": "core_gabriela.cpp_FUN_004aeb00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004be8a0",
       "from_addr": "004bf33d",
-      "name": "core_game.cpp_FUN_004be8a0",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -180,7 +178,7 @@
     {
       "addr": "004bfea0",
       "from_addr": "004bfff3",
-      "name": "core_gargoyle.cpp_FUN_004bfea0",
+      "name": "core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004bfea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -204,7 +202,7 @@
     {
       "addr": "004cf4e0",
       "from_addr": "004cf7ee",
-      "name": "core_hero.cpp_FUN_004cf4e0",
+      "name": "core_hero.cpp_CHero_tryPushNearbyBox_FUN_004cf4e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -306,7 +304,7 @@
     {
       "addr": "005203c0",
       "from_addr": "00520482",
-      "name": "core_scat.cpp_FUN_005203c0",
+      "name": "core_scat.cpp_CScat_updateAiming_FUN_005203c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -334,6 +332,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0056bf00",
+      "from_addr": "0056c83e",
+      "name": "core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0056bf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00563060",
       "from_addr": "005638ae",
       "name": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
@@ -342,19 +346,13 @@
     {
       "addr": "0056bcc0",
       "from_addr": "0056bd2c",
-      "name": "core_stranger.cpp_FUN_0056bcc0",
+      "name": "core_stranger.cpp_adjustAimAngleForOffset_FUN_0056bcc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056bd50",
       "from_addr": "0056be3a",
-      "name": "core_stranger.cpp_FUN_0056bd50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056bf00",
-      "from_addr": "0056c83e",
-      "name": "core_stranger.cpp_FUN_0056bf00",
+      "name": "core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0056bd50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -422,39 +420,39 @@
   "globals": [
     {
       "addr": "005caf3e",
-      "name": "DAT_005caf3e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005caf3e",
+      "type": "float",
+      "value": "-3.141593"
     },
     {
       "addr": "005caf42",
-      "name": "DAT_005caf42",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005caf42",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005caf46",
-      "name": "DAT_005caf46",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005caf46",
+      "type": "double",
+      "value": "0.159154943096444"
     },
     {
       "addr": "005caf4e",
-      "name": "DAT_005caf4e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005caf4e",
+      "type": "double",
+      "value": "-6.28318530700000"
     },
     {
       "addr": "005caf56",
-      "name": "DAT_005caf56",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005caf56",
+      "type": "double",
+      "value": "-0.159154943096444"
     },
     {
       "addr": "005caf5e",
-      "name": "DAT_005caf5e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005caf5e",
+      "type": "double",
+      "value": "6.28318530700000"
     }
   ],
   "param_estimates": {
@@ -496,7 +494,7 @@
       {
         "call_addr": "004bf33d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004be8a0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -507,7 +505,7 @@
       {
         "call_addr": "004bf45d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004be8a0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -677,14 +675,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -14,18 +14,20 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00403de0(SMRGL
   uint uVar3;
   uint uVar4;
   
-  DAT_007303dc = (prim->base).count;
+  g_CurrentPolygonColor = (prim->base).count;
   iVar1 = (prim->base).count;
   if (((int)(iVar1 & -0x80000000) != 0) && ((iVar1 & 0x40000000) == 0)) {
     uVar4 = (prim->base).count & 0xff;
     uVar2 = (prim->base).count >> 8 & 0xff;
     uVar3 = (prim->base).count >> 0x10 & 0xff;
-    if (DAT_005fba20 != 0x20) {
-      DAT_007303dc = uVar4 << 0x10 | uVar2 << 8 | uVar3;
+    if (g_INT_005fba20 != 0x20) {
+      g_CurrentPolygonColor = uVar4 << 0x10 | uVar2 << 8 | uVar3;
       return (SMRGLHeaderExtended *)&prim->surface_normal;
     }
-    DAT_007303dc = uVar3 << (DAT_01c6af8c & 0x1f) |
-                   uVar2 << (DAT_01c6af80 & 0x1f) | uVar4 << (DAT_01c6af74 & 0x1f);
+    g_CurrentPolygonColor =
+         uVar3 << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
+         uVar2 << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f) |
+         uVar4 << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f);
   }
   return (SMRGLHeaderExtended *)&prim->surface_normal;
 }

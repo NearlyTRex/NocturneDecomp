@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 17
   },
   "cross_references": [
@@ -50,8 +48,8 @@
   "globals": [
     {
       "addr": "005c5014",
-      "name": "DAT_005c5014",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_005c5014",
+      "type": "SRenderVertex[20000]",
       "value": null
     }
   ],
@@ -190,14 +188,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_005c5014",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(&DAT_005c5014 + cacheIndex * 0xc));",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

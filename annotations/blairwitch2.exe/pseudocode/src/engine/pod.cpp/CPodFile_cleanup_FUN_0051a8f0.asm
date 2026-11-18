@@ -9,10 +9,10 @@
 ; XREF[3]:
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00519ec0 at 00519ec6
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 00519f1b
-;   engine_pod.cpp_FUN_0051b6e0 at 0051b755
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0051b6e0 at 0051b755
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -47,16 +47,16 @@ section .text
     RET                                 ; 0051a95d
     PUSH EDX                            ; 0051a95e
         ;   Label: LAB_0051a95e
-    CALL crt_unknown.c_FUN_005b86a0     ; 0051a95f
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0051a95f
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 0051a964
     MOV dword ptr [EBX + 0x414],0x0     ; 0051a967
     JMP 0x0051a90a                      ; 0051a971
         ;   XREF to: 0051a90a (UNCONDITIONAL_JUMP)  ; LAB_0051a90a
     PUSH ESI                            ; 0051a973
         ;   Label: LAB_0051a973
-    CALL crt_unknown.c_FUN_005b86a0     ; 0051a974
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 0051a974
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 0051a979
     MOV dword ptr [EBX + 0x418],0x0     ; 0051a97c
     JMP 0x0051a928                      ; 0051a986

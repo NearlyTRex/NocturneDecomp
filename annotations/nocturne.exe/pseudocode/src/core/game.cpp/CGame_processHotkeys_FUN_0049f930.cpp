@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
 
 {
@@ -27,7 +25,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
   float fStack_188;
   char acStack_ac [156];
   
-  if (_DAT_01c78420 != 0) {
+  if (g_ModalDialogActive != 0) {
     return;
   }
   if (this_ptr->cinematic_skip_in_progress == 0) {
@@ -75,7 +73,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
       engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
     }
     else {
-      _DAT_01bd1d94 = 0;
+      g_MouseButtonFlags.dword = 0;
       core_sound_cpp_CSound_shutdown_FUN_0052df90(g_CSound_PTR_005bed68);
       engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
     }
@@ -98,7 +96,7 @@ LAB_0049f9d8:
   if ((iVar4 != 0) &&
      (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_M),
      iVar4 != 0)) {
-    _DAT_01cd4318 = (uint)(_DAT_01cd4318 == 0);
+    g_RenderMotionDebug = (int)(g_RenderMotionDebug == 0);
   }
   if (((this_ptr->subtitle_system_enabled == 0) &&
       (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F5),
@@ -131,7 +129,7 @@ LAB_0049f9d8:
     core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0
               (g_CDemonSetPtr,clear_enabled,clear_enabled,iVar4);
   }
-  if (((this_ptr->developer_mode_enabled != 0) && (_DAT_01c78ac8 == 0)) &&
+  if (((this_ptr->developer_mode_enabled != 0) && (g_MovieRecordingArmed == 0)) &&
      ((iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL),
       iVar4 != 0 &&
       ((iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_V),

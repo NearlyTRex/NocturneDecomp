@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CExplosion_activate_FUN_0049c730(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier,int explosion_type)
 
 {
@@ -50,9 +48,9 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_0049c730(CExplosion *this_ptr
       fVar5 = (float10)fcos((float10)local_18);
       fVar6 = (float10)fsin((float10)local_c);
       fVar7 = (float10)fsin((float10)local_18);
-      local_3c[0].y = (float)(fVar7 * (float10)_DAT_005c068c);
-      local_3c[0].x = (float)(fVar4 * (float10)_DAT_005c068c * fVar5);
-      local_3c[0].z = (float)(fVar6 * (float10)_DAT_005c068c * fVar5);
+      local_3c[0].y = (float)(fVar7 * (float10)30.0f);
+      local_3c[0].x = (float)(fVar4 * (float10)30.0f * fVar5);
+      local_3c[0].z = (float)(fVar6 * (float10)30.0f * fVar5);
       puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 4);
       local_48.x = (this_ptr->position).x;
       *(uint *)((int)local_3c + (uint)bVar3 * -8 + -8) = *puVar2;
@@ -60,9 +58,10 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_0049c730(CExplosion *this_ptr
            puVar2[(uint)bVar3 * -2 + 1];
       local_48.y = local_48.y + 1.0;
       model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-                            ((CKeyFramedModelInstance *)((iVar1 % 5) * 0x17c + 0x1c743fc));
+                            (g_CFireEffectDebrisModels + iVar1 % 5);
       iVar1 = iVar1 + 1;
-      core_fire_cpp_CFireEffect_createRock_FUN_004a28e0(0x01C73654,&local_48,local_3c,model_ptr);
+      core_fire_cpp_CFireEffect_createRock_FUN_004a28e0
+                (g_CFireEffect_PTR_005fc5a0,&local_48,local_3c,model_ptr);
     } while (iVar1 < 10);
   }
   return;

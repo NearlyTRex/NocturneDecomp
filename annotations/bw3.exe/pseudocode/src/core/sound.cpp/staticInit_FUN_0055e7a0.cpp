@@ -9,9 +9,9 @@
 void __cdecl core_sound_cpp_staticInit_FUN_0055e7a0(void)
 
 {
-  core_sound_cpp_CSound_ctor_FUN_0055fc40((CSound *)0x2cf5680);
+  core_sound_cpp_CSound_ctor_FUN_0055fc40(&g_CSoundInstance);
   shape_edittool_cpp_CStrList_ctor_FUN_00481f20(&g_CStrListInstance);
   _atexit(&WatcomStaticDestructorNode_006045e0);
-  __arrinit(&DAT_02cf5ed4,10,&g_STrainNoiseTypeInfo);
+  __arrinit(g_TrainNoiseArray,10,&g_STrainNoiseTypeInfo);
   return;
 }

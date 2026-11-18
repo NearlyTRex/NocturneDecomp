@@ -16,9 +16,9 @@ byte DrainConsoleInputAndSetup(void)
   HANDLE hConsoleHandle;
   DWORD DStack_c;
   
-  iVar2 = DAT_005c1cf8;
-  if (DAT_005c1cf8 == 0) {
-    if (DAT_005c1d88 == (code *)0x0) {
+  iVar2 = g_ConsoleInitializationFlag;
+  if (g_ConsoleInitializationFlag == 0) {
+    if (g_SpecialConsoleInputHandler == (byte *)0x0) {
       (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(0);
       hConsoleHandle = GetConsoleInputHandle();
       GetConsoleMode(hConsoleHandle,&DStack_c);
@@ -28,12 +28,12 @@ byte DrainConsoleInputAndSetup(void)
       (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(0);
     }
     else {
-      uVar1 = (*DAT_005c1d54)(0);
-      iVar2 = (*DAT_005c1d88)(uVar1);
+      uVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(0);
+      iVar2 = (*(code *)g_SpecialConsoleInputHandler)(uVar1);
     }
   }
   else {
-    DAT_005c1cf8 = 0;
+    g_ConsoleInitializationFlag = 0;
   }
   return (char)iVar2;
 }

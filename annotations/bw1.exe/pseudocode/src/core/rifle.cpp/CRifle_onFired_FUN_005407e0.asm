@@ -7,17 +7,17 @@
 ; CRifle *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_rifbullet_kfm_005edc7d+2
+;   TerminatedCString s_rifbullet_kfm_005edc7f
 ;   TerminatedCString s_shotgun_cock_wav_3_005edc8d
-;   undefined4 DAT_0061c010
-;   undefined4 DAT_006236b8
-;   undefined4 DAT_01d06ab4
+;   CFireEffect* g_CFireEffectPtr = 01c57074
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dmodel.cpp_loadModel_FUN_00468780
 ;   core_fire.cpp_CFireEffect_createShell_FUN_004b7270
 ;   core_sound.cpp_CSound_playActorSound_FUN_0057d8a0
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 00540881
     LEA ESI,[ESP + 0x50]                ; 00540882
     LEA EDI,[ESP + 0x5c]                ; 00540886
-    CALL core_dirmat.cpp_FUN_0045f690   ; 0054088a
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 0054088a
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0054088f
     LEA EAX,[ESP + 0x54]                ; 00540892
     LEA ESI,[ESP + 0x48]                ; 00540896
@@ -90,8 +90,8 @@ section .text
     PUSH EBX                            ; 0054089e
     LEA ESI,[ESP + 0x38]                ; 0054089f
     LEA EDI,[ESP + 0x74]                ; 005408a3
-    CALL core_actor.cpp_FUN_00408ac0    ; 005408a7
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 005408a7
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x38]                ; 005408ac
     ADD ESP,0x8                         ; 005408b0
     MOVSD ES:EDI,ESI                    ; 005408b3
@@ -108,7 +108,7 @@ section .text
     MOV dword ptr [ESP + 0x40],EAX      ; 005408ce
     MOV EAX,dword ptr [ESP + 0x74]      ; 005408d2
     MOV dword ptr [ESP + 0x44],EAX      ; 005408d6
-    PUSH 0x5edc7f                       ; 005408da | s_rifbullet_kfm_005edc7d+2
+    PUSH 0x5edc7f                       ; 005408da | = "rifbullet.kfm"
         ;   Label: LAB_005408da
     CALL core_dmodel.cpp_loadModel_FUN_00468780 ; 005408df
         ;   XREF to: 00468780 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00468780(char * filename)
@@ -120,18 +120,18 @@ section .text
     PUSH EAX                            ; 005408f0
     LEA EAX,[EBX + 0x20]                ; 005408f1
     PUSH EAX                            ; 005408f4
-    MOV EAX,[0x0061c010]                ; 005408f5 | DAT_0061c010
+    MOV EAX,[0x0061c010]                ; 005408f5 | g_CFireEffectPtr
     PUSH EAX                            ; 005408fa
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004b7270 ; 005408fb
         ;   XREF to: 004b7270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004b7270(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
-    MOV EAX,[0x01d06ab4]                ; 00540900 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 00540900 | g_INT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 00540905
     ADD ESP,0x14                        ; 0054090c
     ADD EAX,0x20                        ; 0054090f
     PUSH EAX                            ; 00540912
     PUSH 0x5edc8d                       ; 00540913 | = "shotgun-cock.wav @ .3"
     PUSH EBX                            ; 00540918
-    MOV EDX,dword ptr [0x006236b8]      ; 00540919 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 00540919 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 0054091f
     CALL core_sound.cpp_CSound_playActorSound_FUN_0057d8a0 ; 00540920
         ;   XREF to: 0057d8a0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0057d8a0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

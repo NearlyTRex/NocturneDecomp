@@ -6,42 +6,40 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_processFudge_FUN_004cc9c0(CGame *this_ptr)
 
 {
   int iVar1;
   float fStack_18;
   
-  iVar1 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);
+  iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LCONTROL);
   if ((iVar1 != 0) && (this_ptr->debug_fudge_target != (CVector3f *)0x0)) {
     fStack_18 = this_ptr->debug_fudge_step;
-    iVar1 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x38);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LMENU);
     if (iVar1 != 0) {
-      fStack_18 = fStack_18 * (float)_DAT_005e13bc;
+      fStack_18 = fStack_18 * (float)0.10000000000000001;
     }
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD4);
     if (iVar1 != 0) {
       this_ptr->debug_fudge_target->x = this_ptr->debug_fudge_target->x - fStack_18;
     }
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD6);
     if (iVar1 != 0) {
       this_ptr->debug_fudge_target->x = this_ptr->debug_fudge_target->x + fStack_18;
     }
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD8);
     if (iVar1 != 0) {
       this_ptr->debug_fudge_target->z = this_ptr->debug_fudge_target->z - fStack_18;
     }
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_NUMPAD2);
     if (iVar1 != 0) {
       this_ptr->debug_fudge_target->z = this_ptr->debug_fudge_target->z + fStack_18;
     }
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1e);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_A);
     if (iVar1 != 0) {
       this_ptr->debug_fudge_target->y = this_ptr->debug_fudge_target->y - fStack_18;
     }
-    iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x10);
+    iVar1 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_Q);
     if (iVar1 != 0) {
       this_ptr->debug_fudge_target->y = this_ptr->debug_fudge_target->y + fStack_18;
       return;

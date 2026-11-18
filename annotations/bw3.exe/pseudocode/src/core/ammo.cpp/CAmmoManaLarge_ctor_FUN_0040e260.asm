@@ -7,7 +7,7 @@
 ; CAmmoManaLarge * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_ammo.cpp_FUN_0040e230 at 0040e243
+;   core_ammo.cpp_factoryFuncAmmoManaLarge_FUN_0040e230 at 0040e243
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mana_lg_kfm_005b6111

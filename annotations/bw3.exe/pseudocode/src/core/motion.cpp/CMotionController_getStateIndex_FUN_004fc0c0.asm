@@ -1,0 +1,21 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl core_motion_cpp_CMotionController_getStateIndex_FUN_004fc0c0(CMotionController *this_ptr)
+;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+;
+; XREF[2]:
+;   core_prye.cpp_CPrye_isPerformingAction_FUN_00527110 at 00527163
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 0051924d
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 004fc0c0
+        ;   Label: core_motion.cpp_CMotionController_getStateIndex_FUN_004fc0c0
+    MOV EAX,dword ptr [EAX + 0x28]      ; 004fc0c4
+    RET                                 ; 004fc0c7
+

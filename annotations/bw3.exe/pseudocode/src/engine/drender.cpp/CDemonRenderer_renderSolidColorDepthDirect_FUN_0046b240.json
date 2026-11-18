@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 36,
-    "cross_reference_count": 4,
+    "complexity_score": 20,
+    "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 75
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -36,7 +34,13 @@
     {
       "addr": "0053f940",
       "from_addr": "005409d3",
-      "name": "core_setdir.cpp_FUN_0053f940",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f0f0",
+      "from_addr": "0053f821",
+      "name": "core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -67,25 +71,25 @@
   "globals": [
     {
       "addr": "01c6b5cc",
-      "name": "DAT_01c6b5cc",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 9,
+    "call_site_count": 15,
     "call_sites": [
       {
         "call_addr": "0053ad56",
@@ -112,7 +116,7 @@
       {
         "call_addr": "005409d3",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,7 +127,7 @@
       {
         "call_addr": "00540a1a",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -134,7 +138,7 @@
       {
         "call_addr": "00540a61",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +149,7 @@
       {
         "call_addr": "00540aa8",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +160,7 @@
       {
         "call_addr": "00540aef",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,7 +171,7 @@
       {
         "call_addr": "00540b26",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -182,6 +186,17 @@
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053f821",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
@@ -268,14 +283,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

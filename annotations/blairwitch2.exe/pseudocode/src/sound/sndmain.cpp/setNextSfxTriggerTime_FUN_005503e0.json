@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 24,
+    "complexity_score": 8,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 21
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
   },
   "cross_references": [
     {
@@ -54,7 +52,7 @@
     {
       "addr": "005ab260",
       "from_addr": "005ab46b",
-      "name": "core_hellhag.cpp_FUN_005ab260",
+      "name": "core_hellhag.cpp_CHag_processAI_FUN_005ab260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -80,8 +78,8 @@
   "globals": [
     {
       "addr": "0264161c",
-      "name": "DAT_0264161c",
-      "type": "undefined4",
+      "name": "g_SfxLastSlot",
+      "type": "int",
       "value": null
     }
   ],
@@ -146,7 +144,7 @@
       {
         "call_addr": "005ab46b",
         "call_type": "direct",
-        "caller": "core_hellhag.cpp_FUN_005ab260",
+        "caller": "core_hellhag.cpp_CHag_processAI_FUN_005ab260",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,14 +255,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

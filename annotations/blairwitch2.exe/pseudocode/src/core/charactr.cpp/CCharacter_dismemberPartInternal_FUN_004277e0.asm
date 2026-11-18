@@ -42,15 +42,15 @@
 ;   ... and 5 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007bdb54
+;   undefined4 g_StakeModelInstance.model_name[0]
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417610
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_00417690
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_00548130
-;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -195,7 +195,7 @@ section .text
     PUSH EAX                            ; 00427964
     LEA ESI,[EBP + 0x1a]                ; 00427965
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 00427968
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x4                         ; 0042796d
     LEA EAX,[EBP + 0x26]                ; 00427970
     PUSH EAX                            ; 00427973
@@ -213,7 +213,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00427991
     PUSH EAX                            ; 00427992
     LEA EDI,[EBP + 0x3e]                ; 00427993
-    PUSH 0x7bdb54                       ; 00427996 | DAT_007bdb54
+    PUSH 0x7bdb54                       ; 00427996 | g_StakeModelInstance.model_name[0]
     MOV EAX,dword ptr [EBP + 0x8a]      ; 0042799b
     LEA ESI,[EBP + 0x32]                ; 004279a1
     PUSH EAX                            ; 004279a4
@@ -237,8 +237,8 @@ section .text
     PUSH EAX                            ; 004279ca
     LEA ESI,[EBP + 0x56]                ; 004279cb
     LEA EDI,[EBP + 0x4a]                ; 004279ce
-    CALL core_xform.cpp_FUN_00591530    ; 004279d1
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004279d1
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0x56]                ; 004279d6
     LEA EAX,[EBP + 0x4a]                ; 004279d9
     ADD ESP,0x8                         ; 004279dc

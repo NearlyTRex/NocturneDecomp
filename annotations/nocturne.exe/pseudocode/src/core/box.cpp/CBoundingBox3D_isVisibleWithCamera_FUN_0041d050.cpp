@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundingBox3D *this_ptr)
 
 {
@@ -37,18 +35,19 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
   local_14 = 0;
   do {
     core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(this_ptr,&local_2c,corner_index);
-    local_20.x = (int)ROUND(local_2c.x * _DAT_0059aa80);
-    local_20.y = (int)ROUND(local_2c.y * _DAT_0059aa80);
-    local_20.z = (int)ROUND(local_2c.z * _DAT_0059aa80);
+    local_20.x = (int)ROUND(local_2c.x * 256.0f);
+    local_20.y = (int)ROUND(local_2c.y * 256.0f);
+    local_20.z = (int)ROUND(local_2c.z * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + iVar3),&local_20);
+              ((SProjectedVertex *)(*(int *)PTR_g_CDemonRenderer_01b4d738_005ae700 + iVar3),
+               &local_20);
     if ((*(byte *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
                          screen_x + iVar3 + 3) & 0x80) == 0) {
       uVar2 = 0;
     }
     else {
       local_14 = 1;
-      uVar2 = uVar2 & *(uint *)(iVar3 + 0x10 + *(int *)PTR_DAT_005ae700);
+      uVar2 = uVar2 & *(uint *)(iVar3 + 0x10 + *(int *)PTR_g_CDemonRenderer_01b4d738_005ae700);
     }
     corner_index = corner_index + 1;
     iVar3 = iVar3 + 0x30;
@@ -61,13 +60,13 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
   SStack_6c.base.count = 4;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
             (g_CDemonRenderer_PTR_005ae704,0);
-  local_38 = (int)ROUND((this_ptr->min).x * _DAT_0059aa80);
-  local_34 = (int)ROUND((this_ptr->min).y * _DAT_0059aa80);
-  local_30 = (int)ROUND((this_ptr->min).z * _DAT_0059aa80);
+  local_38 = (int)ROUND((this_ptr->min).x * 256.0f);
+  local_34 = (int)ROUND((this_ptr->min).y * 256.0f);
+  local_30 = (int)ROUND((this_ptr->min).z * 256.0f);
   iVar3 = 1;
-  local_44 = (int)ROUND((this_ptr->max).x * _DAT_0059aa80);
-  local_40.i = (int)ROUND((this_ptr->max).y * _DAT_0059aa80);
-  local_3c.i = (int)ROUND((this_ptr->max).z * _DAT_0059aa80);
+  local_44 = (int)ROUND((this_ptr->max).x * 256.0f);
+  local_40.i = (int)ROUND((this_ptr->max).y * 256.0f);
+  local_3c.i = (int)ROUND((this_ptr->max).z * 256.0f);
   SStack_6c.surface_normal.B.i = 0;
   SStack_6c.surface_normal.C.i = 0;
   iVar4 = 1;

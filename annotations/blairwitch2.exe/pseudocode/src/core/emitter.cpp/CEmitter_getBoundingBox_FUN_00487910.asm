@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(CEmitter *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_emitter_cpp_CEmitter_getBoundingBox_FUN_00487910(CEmitter *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2bfe
-;   undefined4 DAT_005d2c06
+;   double g_DOUBLE_005d2bfe = 0.5
+;   double g_DOUBLE_005d2c06 = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -20,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 00487911
     MOV EDX,dword ptr [ESP + 0x20]      ; 00487914
     MOV EAX,ESI                         ; 00487918
-    FLD double ptr [0x005d2bfe]         ; 0048791a | DAT_005d2bfe
+    FLD double ptr [0x005d2bfe]         ; 0048791a | g_DOUBLE_005d2bfe
     FLD float ptr [EDX + 0x2b8]         ; 00487920
     FMUL ST1                            ; 00487926
     FLD float ptr [EDX + 0x2c0]         ; 00487928
@@ -36,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 0048794f
     MOV ESI,ESP                         ; 00487951
     MOV dword ptr [ESP + 0x4],ECX       ; 00487953
-    FADD double ptr [0x005d2c06]        ; 00487957 | DAT_005d2c06
+    FADD double ptr [0x005d2c06]        ; 00487957 | g_DOUBLE_005d2c06
     FXCH ST3                            ; 0048795d
     FSTP float ptr [ESP + 0xc]          ; 0048795f
     FXCH ST2                            ; 00487963

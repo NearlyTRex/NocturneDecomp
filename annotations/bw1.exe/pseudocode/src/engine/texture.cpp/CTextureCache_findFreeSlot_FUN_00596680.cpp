@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureCache *this_ptr)
 
 {
@@ -23,12 +21,12 @@ int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureC
     this_ptr->current_texture_count = iVar5 + 1;
     if (0x3ff < iVar5 + 1) {
       this_ptr->wrap_indicator = 1;
-      iVar4 = _DAT_02c8a684;
+      iVar4 = g_INT_02c8a684;
       this_ptr->current_texture_count = 0x400;
       if (iVar4 != 0) {
-        _DAT_01d1d400 = "..\\engine\\texture.cpp";
-        _DAT_01d1d404 = 0xbc;
-        core_main_c_FUN_005030e0("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
+        g_CHAR_PTR_01d1d400 = "..\\engine\\texture.cpp";
+        g_INT_01d1d404 = 0xbc;
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
       }
     }
   }
@@ -49,16 +47,16 @@ int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureC
   }
   dest = this_ptr->entries + iVar5;
   if (dest->texture_data != (uchar *)0x0) {
-    FUN_005c09f0(dest->texture_data);
+    debugFree(dest->texture_data);
   }
   if (dest->opacity_data != (uchar *)0x0) {
-    FUN_005c09f0(dest->opacity_data);
+    debugFree(dest->opacity_data);
   }
   if (dest->palette_data != (uchar *)0x0) {
-    FUN_005c09f0(dest->palette_data);
+    debugFree(dest->palette_data);
   }
   if (dest->true_color_data != (uchar *)0x0) {
-    FUN_005c09f0(dest->true_color_data);
+    debugFree(dest->true_color_data);
     memset(dest,0,0x60);
     return iVar5;
   }

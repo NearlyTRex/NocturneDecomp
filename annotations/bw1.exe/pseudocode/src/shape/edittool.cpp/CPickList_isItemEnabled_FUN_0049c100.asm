@@ -10,19 +10,19 @@
 ; XREF[6]:
 ;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_0049add0 at 0049ae0f
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0 at 0049a9e7
+;   shape_edittool.cpp_CPickList_insert_FUN_0049c290 at 0049c2b9
+;   shape_edittool.cpp_CPickList_remove_FUN_0049c310 at 0049c33f
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049bc9c
-;   shape_edittool.cpp_FUN_0049c290 at 0049c2b9
-;   shape_edittool.cpp_FUN_0049c310 at 0049c33f
-;   shape_edittool.cpp_FUN_0049c470 at 0049c48d
+;   shape_edittool.cpp_CPickList_swap_FUN_0049c470 at 0049c48d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc730
 ;   TerminatedCString s_CPickList_isItemEnabled_005dc746
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -44,10 +44,10 @@ section .text
     MOV ECX,0x5dc730                    ; 0049c113 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x1185                      ; 0049c118
     PUSH 0x5dc746                       ; 0049c11d | = "CPickList::isItemEnabled - invalid index"
-    MOV dword ptr [0x01d1d400],ECX      ; 0049c122 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0049c128 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049c12e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0049c122 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0049c128 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049c12e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049c133
     POP EDI                             ; 0049c136
     CMP EBX,dword ptr [ESI + 0x1ac]     ; 0049c137

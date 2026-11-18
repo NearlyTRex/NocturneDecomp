@@ -12,13 +12,13 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408730
-;   core_armour.cpp_FUN_0040ee30
+;   core_armour.cpp_CFlame_arrdtor50_FUN_0040ee30
 ;   core_cloth.cpp_CClothList_dtor_FUN_00441ca0
 ;   core_morph.cpp_CMorph_dtor_FUN_00522fc0
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0
 ;   crt_memory.c___vec_delete_FUN_005c030f
-;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
+;   crt_unknown.c_free_FUN_005c0336
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH 0x0                            ; 00592d21
     SUB EAX,0x8c8c                      ; 00592d23
     PUSH EAX                            ; 00592d28
-    CALL core_armour.cpp_FUN_0040ee30   ; 00592d29
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040ee30()
+    CALL core_armour.cpp_CFlame_arrdtor50_FUN_0040ee30 ; 00592d29
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor50_FUN_0040ee30(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00592d2e
     PUSH 0x0                            ; 00592d31
     SUB EAX,0x93c                       ; 00592d33
@@ -87,16 +87,16 @@ section .text
         ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00592d7c
     PUSH EAX                            ; 00592d7f
-    CALL crt_unknown.c_FUN_005c0336     ; 00592d80
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 00592d80
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 00592d85
     MOV EAX,EBX                         ; 00592d88
     POP EBX                             ; 00592d8a
     RET                                 ; 00592d8b
     PUSH EAX                            ; 00592d8c
         ;   Label: LAB_00592d8c
-    CALL crt_unknown.c_FUN_005c0344     ; 00592d8d
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 00592d8d
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 00592d92
     MOV EAX,EBX                         ; 00592d95
     POP EBX                             ; 00592d97

@@ -8,13 +8,13 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d4ab0 at 004d4ac3
-;   core_mission.cpp_FUN_004f7a20 at 004f7b03
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b03
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005c50eb
-;   undefined1 DAT_005c50ec
-;   undefined1 DAT_005c50ed
-;   undefined1 DAT_005c50ee
+;   TerminatedCString s_CPrye_005c50eb
+;   undefined4 s_Prye_005c50eb+1
+;   undefined4 s_rye_005c50eb+2
+;   undefined4 s_ye_005c50eb+3
 ;   CDemonActor_vtable g_CHeroPlaceholderVTable
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     PUSH EDI                            ; 004d4ae1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d4ae2
     PUSH EDX                            ; 004d4ae6
-    MOV ESI,0x5c50eb                    ; 004d4ae7 | DAT_005c50eb
+    MOV ESI,0x5c50eb                    ; 004d4ae7 | = "CPrye"
     CALL core_actor.cpp_CDemonActor_ctor_FUN_00408600 ; 004d4aec
         ;   XREF to: 00408600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00408600(CDemonActor * this_ptr)
     MOV EDX,EAX                         ; 004d4af1
@@ -39,13 +39,13 @@ section .text
     LEA EDI,[EAX + 0x15c]               ; 004d4b0a
     MOV dword ptr [EAX + 0x158],0x0     ; 004d4b10
     PUSH EDI                            ; 004d4b1a
-    MOV AL,byte ptr [ESI]               ; 004d4b1b | DAT_005c50eb | DAT_005c50ed
+    MOV AL,byte ptr [ESI]               ; 004d4b1b | = "CPrye" | s_rye_005c50eb+2
         ;   Label: LAB_004d4b1b
     MOV byte ptr [EDI],AL               ; 004d4b1d
     CMP AL,0x0                          ; 004d4b1f
     JZ 0x004d4b33                       ; 004d4b21
         ;   XREF to: 004d4b33 (CONDITIONAL_JUMP)  ; LAB_004d4b33
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d4b23 | DAT_005c50ec | DAT_005c50ee
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d4b23 | s_Prye_005c50eb+1 | s_ye_005c50eb+3
     ADD ESI,0x2                         ; 004d4b26
     MOV byte ptr [EDI + 0x1],AL         ; 004d4b29
     ADD EDI,0x2                         ; 004d4b2c

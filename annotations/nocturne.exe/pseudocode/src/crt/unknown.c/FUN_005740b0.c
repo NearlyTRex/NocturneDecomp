@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005740b0(wchar_t *param_1)
 
 {
@@ -52,7 +50,7 @@ int FUN_005740b0(wchar_t *param_1)
     if (iVar2 == 0) {
       return -1;
     }
-    if (_DAT_02de54a8 == 0) {
+    if (g_EnvironInitialized == 0) {
       FUN_00574680();
     }
     iVar2 = FUN_00574264(param_1);

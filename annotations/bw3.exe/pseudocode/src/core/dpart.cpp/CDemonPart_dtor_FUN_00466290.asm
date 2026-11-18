@@ -11,7 +11,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_00473530 at 0047358b
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_004663b0
+;   core_dpart.cpp_CDemonPart_free_FUN_004663b0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_dpart.cpp_CDemonPart_dtor_FUN_00466290
     MOV EBX,dword ptr [ESP + 0x8]       ; 00466291
     PUSH EBX                            ; 00466295
-    CALL core_dpart.cpp_FUN_004663b0    ; 00466296
-        ;   XREF to: 004663b0 (UNCONDITIONAL_CALL)  ; undefined core_dpart.cpp_FUN_004663b0()
+    CALL core_dpart.cpp_CDemonPart_free_FUN_004663b0 ; 00466296
+        ;   XREF to: 004663b0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_free_FUN_004663b0(CDemonPart * this_ptr)
     ADD ESP,0x4                         ; 0046629b
     MOV EAX,EBX                         ; 0046629e
     POP EBX                             ; 004662a0

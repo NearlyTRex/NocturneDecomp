@@ -2,35 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 38,
+    "complexity_score": 50,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 72
+    "total_lines": 74
   },
   "cross_references": [
     {
       "addr": "004e94f0",
       "from_addr": "004e9e11",
-      "name": "core_menu.cpp_FUN_004e94f0",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fd30",
+      "from_addr": "0055fdd6",
+      "name": "core_sound.cpp_CSound_init_FUN_0055fd30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055ff40",
       "from_addr": "005601a1",
       "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055fd30",
-      "from_addr": "0055fdd6",
-      "name": "core_sound.cpp_FUN_0055fd30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,7 +68,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "00555270",
@@ -101,19 +101,19 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02ce7338",
-      "name": "DAT_02ce7338",
+      "name": "g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index",
       "type": "undefined4",
       "value": null
     }
@@ -135,7 +135,7 @@
       {
         "call_addr": "0055fdd6",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055fd30",
+        "caller": "core_sound.cpp_CSound_init_FUN_0055fd30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +146,7 @@
       {
         "call_addr": "0055fed2",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055fd30",
+        "caller": "core_sound.cpp_CSound_init_FUN_0055fd30",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -179,7 +179,7 @@
       {
         "call_addr": "004e9e11",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +190,7 @@
       {
         "call_addr": "004e9e61",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,7 +201,7 @@
       {
         "call_addr": "004e9ec7",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,7 +212,7 @@
       {
         "call_addr": "004e9f3d",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -223,7 +223,7 @@
       {
         "call_addr": "004e9f6a",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -315,12 +315,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02ce721c",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CSfxSlot_ARRAY_02ce721c[0].options.userdata + iVar1 + -0x44)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CSfxSlot *)((int)g_CSfxSlot_ARRAY_02ce721c",
+      "severity": "moderate",
+      "text": "((CSfxSlot *)((int)g_CSfxSlot_ARRAY_02ce721c[0].options.userdata + iVar1 + -0x44))",
+      "type": "pointer_cast"
     }
   ]
 }

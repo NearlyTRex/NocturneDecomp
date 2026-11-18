@@ -13,7 +13,7 @@ int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(CTempleStone *thi
   int iVar2;
   
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (this_ptr->dest_actor,g_CActorDestinationActorType_014b8a1c.name_hash);
+                     (this_ptr->dest_actor,g_CActorDestinationClassInfo.name_hash);
   if ((pCVar1 != (CDemonActor *)0x0) && (pCVar1[1].location.area_id != 0)) {
     return 0;
   }

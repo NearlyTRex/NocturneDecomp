@@ -7,7 +7,7 @@
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b02c
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].u
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     IMUL EBX,EBX,0x30                   ; 004050d7
     MOV ESI,dword ptr [EDX]             ; 004050da
     SHL ESI,0x10                        ; 004050dc
-    MOV dword ptr [EBX + 0x60b02c],ESI  ; 004050df | DAT_0060b02c
+    MOV dword ptr [EBX + 0x60b02c],ESI  ; 004050df | g_SRenderVertex_ARRAY_0060b014[0].u
     INC EAX                             ; 004050e5
     MOV ESI,dword ptr [ECX + 0x8]       ; 004050e6
     ADD EDX,0x4                         ; 004050e9

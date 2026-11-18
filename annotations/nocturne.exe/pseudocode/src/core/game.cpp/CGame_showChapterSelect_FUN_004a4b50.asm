@@ -88,12 +88,12 @@ section .text
     MOV dword ptr [EAX + 0x250],0x0     ; 004a4ba9
     PUSH 0x583dcd                       ; 004a4bb3 | = "rt"
     MOV dword ptr [EAX + 0x234],0x0     ; 004a4bb8
-    MOV EAX,[0x01bcd070]                ; 004a4bc2 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 004a4bc2 | g_CBitFont_PTR_01bcd070
     PUSH 0x583dd0                       ; 004a4bc7 | = "pod.ini"
     MOV dword ptr [ESP + 0x4a0],EAX     ; 004a4bcc
-    MOV EAX,[0x014b9900]                ; 004a4bd3 | g_CBitFont_PTR_014b9900
+    MOV EAX,[0x014b9900]                ; 004a4bd3 | g_ThemeFont
     XOR EBX,EBX                         ; 004a4bd8
-    MOV [0x01bcd070],EAX                ; 004a4bda | DAT_01bcd070
+    MOV [0x01bcd070],EAX                ; 004a4bda | g_CBitFont_PTR_01bcd070
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004a4bdf
         ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004a4be4
@@ -252,25 +252,25 @@ section .text
     ADD ESP,0x4                         ; 004a4deb
     MOV EBX,dword ptr [EBP*0x4 + 0x5b9554] ; 004a4dee | g_ChapterDisplayYears
     MOV ESI,dword ptr [ESP + EBP*0x4 + 0x474] ; 004a4df5
-    MOV dword ptr [0x01c78ac0],EBX      ; 004a4dfc | DAT_01c78ac0
-    PUSH EDI                            ; 004a4e02 | DAT_01c789c0
+    MOV dword ptr [0x01c78ac0],EBX      ; 004a4dfc | g_ChapterDisplayYear
+    PUSH EDI                            ; 004a4e02 | g_ChapterDisplayName
     MOV AL,byte ptr [ESI]               ; 004a4e03
         ;   Label: LAB_004a4e03
-    MOV byte ptr [EDI],AL               ; 004a4e05 | DAT_01c789c0 | DAT_01c789c2
+    MOV byte ptr [EDI],AL               ; 004a4e05 | g_ChapterDisplayName | g_ChapterDisplayName+2
     CMP AL,0x0                          ; 004a4e07
     JZ 0x004a4e1b                       ; 004a4e09
         ;   XREF to: 004a4e1b (CONDITIONAL_JUMP)  ; LAB_004a4e1b
     MOV AL,byte ptr [ESI + 0x1]         ; 004a4e0b
     ADD ESI,0x2                         ; 004a4e0e
-    MOV byte ptr [EDI + 0x1],AL         ; 004a4e11 | DAT_01c789c1 | DAT_01c789c3
+    MOV byte ptr [EDI + 0x1],AL         ; 004a4e11 | g_ChapterDisplayName+1 | g_ChapterDisplayName+3
     ADD EDI,0x2                         ; 004a4e14
     CMP AL,0x0                          ; 004a4e17
     JNZ 0x004a4e03                      ; 004a4e19
         ;   XREF to: 004a4e03 (CONDITIONAL_JUMP)  ; LAB_004a4e03
     POP EDI                             ; 004a4e1b
         ;   Label: LAB_004a4e1b
-    MOV dword ptr [0x01c78ac4],ECX      ; 004a4e1c | DAT_01c78ac4
-    MOV EDX,dword ptr [0x005b7650]      ; 004a4e22 | DAT_005b7650
+    MOV dword ptr [0x01c78ac4],ECX      ; 004a4e1c | g_OverlayDisplayTimer
+    MOV EDX,dword ptr [0x005b7650]      ; 004a4e22 | g_CEventListPtr
         ;   Label: LAB_004a4e22
     PUSH EDX                            ; 004a4e28
     CALL core_event.cpp_CEventList_resetGameFlags_FUN_00480410 ; 004a4e29
@@ -291,13 +291,13 @@ section .text
     PUSH EDI                            ; 004a4e5b
     MOV AL,byte ptr [ESI]               ; 004a4e5c
         ;   Label: LAB_004a4e5c
-    MOV byte ptr [EDI],AL               ; 004a4e5e | DAT_01c78598 | DAT_01c7859a
+    MOV byte ptr [EDI],AL               ; 004a4e5e | g_CurrentSaveFile | g_CurrentSaveFile+2
     CMP AL,0x0                          ; 004a4e60
     JZ 0x004a4e74                       ; 004a4e62
         ;   XREF to: 004a4e74 (CONDITIONAL_JUMP)  ; LAB_004a4e74
     MOV AL,byte ptr [ESI + 0x1]         ; 004a4e64
     ADD ESI,0x2                         ; 004a4e67
-    MOV byte ptr [EDI + 0x1],AL         ; 004a4e6a | DAT_01c78599 | DAT_01c7859b
+    MOV byte ptr [EDI + 0x1],AL         ; 004a4e6a | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD EDI,0x2                         ; 004a4e6d
     CMP AL,0x0                          ; 004a4e70
     JNZ 0x004a4e5c                      ; 004a4e72
@@ -309,7 +309,7 @@ section .text
         ;   Label: LAB_004a4e77
     PUSH 0x0                            ; 004a4e78
     PUSH 0xa                            ; 004a4e7a
-    MOV ECX,dword ptr [0x005baca0]      ; 004a4e7c | g_CLevelLoader_PTR_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004a4e7c | g_CLevelLoaderPtr
     PUSH ECX                            ; 004a4e82
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004a4e83
         ;   XREF to: 004c5640 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_show_FUN_004c5640(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)
@@ -356,7 +356,7 @@ section .text
     ADD ESP,0xc                         ; 004a4f02
     MOV EAX,dword ptr [ESP + 0x498]     ; 004a4f05
         ;   Label: LAB_004a4f05
-    MOV [0x01bcd070],EAX                ; 004a4f0c | DAT_01bcd070
+    MOV [0x01bcd070],EAX                ; 004a4f0c | g_CBitFont_PTR_01bcd070
     ADD ESP,0x4a4                       ; 004a4f11
         ;   Label: LAB_004a4f11
     POP EBP                             ; 004a4f17
@@ -1124,10 +1124,10 @@ section .text
         ;   XREF to: 004a4f11 (CONDITIONAL_JUMP)  ; LAB_004a4f11
     XOR EAX,EAX                         ; 004a571f
     XOR EDX,EDX                         ; 004a5721
-    MOV [0x01c78ac0],EAX                ; 004a5723 | DAT_01c78ac0
+    MOV [0x01c78ac0],EAX                ; 004a5723 | g_ChapterDisplayYear
     XOR AH,AH                           ; 004a5728
-    MOV dword ptr [0x01c78ac4],EDX      ; 004a572a | DAT_01c78ac4
-    MOV byte ptr [0x01c789c0],AH        ; 004a5730 | DAT_01c789c0
+    MOV dword ptr [0x01c78ac4],EDX      ; 004a572a | g_OverlayDisplayTimer
+    MOV byte ptr [0x01c789c0],AH        ; 004a5730 | g_ChapterDisplayName
     JMP 0x004a4e22                      ; 004a5736
         ;   XREF to: 004a4e22 (UNCONDITIONAL_JUMP)  ; LAB_004a4e22
 

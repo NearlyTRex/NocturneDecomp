@@ -26,7 +26,7 @@
 ;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc2db
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e533c0
+;   undefined4 g_ScatIndices[14]
 ;
 ; Called Functions:
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
@@ -81,7 +81,7 @@ section .text
     MOV dword ptr [EBP + 0x6e],ESI      ; 004fdd64
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 004fdd67
         ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x01e533c0]      ; 004fdd6c | DAT_01e533c0
+    MOV ESI,dword ptr [0x01e533c0]      ; 004fdd6c | g_ScatIndices[14]
     LEA EAX,[ESI*0x4 + 0x0]             ; 004fdd72
     SUB EAX,ESI                         ; 004fdd79
     MOV ESI,EAX                         ; 004fdd7b

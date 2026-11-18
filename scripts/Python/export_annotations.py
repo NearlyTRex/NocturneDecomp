@@ -225,6 +225,47 @@ def maybe_write_function_reports(exported_names, categories, enabled):
             print("[reports] WARNING: %s exited %d" % (name, rc))
 
 
+# The builds the struct report documents, in its column order
+RESEARCH_STRUCT_PROGRAMS = ("nocedit.exe", "nocturne.exe", "bw1.exe", "blairwitch2.exe", "bw3.exe")
+
+
+def research_commands(here, root):
+    """The generators a full export refreshes: the struct report, then the itinerary."""
+    struct_report = [sys.executable, "-u", os.path.join(here, "struct_layout_report.py"),
+                     "--out-dir", os.path.join(root, "research", "23-game_structs")]
+    for program in RESEARCH_STRUCT_PROGRAMS:
+        struct_report += ["--program", program]
+    return [struct_report, [sys.executable, "-u", os.path.join(here, "recreation_itinerary.py")]]
+
+
+def maybe_refresh_research(all_programs, categories, exit_code, enabled):
+    """Regenerate research/23-game_structs and docs/recreation-itinerary.md.
+
+    Both read several programs' exports, so they run only after a full export of
+    every program, and not when one of those exports failed: a report half from
+    stale trees is worse than one that is plainly old. Subprocesses once the JVM
+    is done; a failure only warns.
+    """
+    if not enabled or not all_programs or list(categories) != CATEGORY_NAMES:
+        return
+    if exit_code:
+        print("\n[research] an export failed; struct report and itinerary not refreshed")
+        return
+    here = os.path.dirname(os.path.abspath(__file__))
+    root = os.path.dirname(os.path.dirname(here))
+    print("\n[research] struct layout report, recreation itinerary...")
+    sys.stdout.flush()
+    for command in research_commands(here, root):
+        name = os.path.basename(command[2])
+        try:
+            rc = subprocess.call(command)
+        except Exception as exc:
+            print("[research] WARNING: could not launch %s: %s" % (name, exc))
+            continue
+        if rc:
+            print("[research] WARNING: %s exited %d" % (name, rc))
+
+
 def run_export(currentProgram, output_folder, categories, options=None):
     """Export the categories (from parse_categories) of one program to output_folder.
 
@@ -398,6 +439,10 @@ Available categories:
                         help="skip regenerating reports/unnamed_functions.txt, "
                              "uncommitted_signatures.txt and bad_instructions.txt after a "
                              "functions export.")
+    parser.add_argument("--no-refresh-research", action="store_true",
+                        help="skip regenerating research/23-game_structs and "
+                             "docs/recreation-itinerary.md after a full --all-programs "
+                             "export.")
     return parser
 
 
@@ -510,6 +555,7 @@ def main():
     maybe_refresh_sibling_mapping(exported_ok, not args.no_refresh_mapping)
     maybe_refresh_function_siblings(exported_ok, categories, not args.no_refresh_siblings)
     maybe_write_function_reports(exported_ok, categories, not args.no_function_reports)
+    maybe_refresh_research(args.all_programs, categories, exit_code, not args.no_refresh_research)
 
     # Force exit - JVM shutdown can hang
     sys.stdout.flush()

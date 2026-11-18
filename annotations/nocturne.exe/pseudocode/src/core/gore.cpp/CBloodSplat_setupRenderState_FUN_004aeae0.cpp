@@ -6,24 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(CBloodSplat *this_ptr)
 
 {
-  _DAT_01c78c84 = 4;
-  _DAT_01c78c98 = 0;
-  _DAT_01c78c9c = 1;
-  _DAT_01c78ca0 = 2;
-  _DAT_01c78ca4 = 3;
-  DAT_005c502c = 0x80000;
-  _DAT_005c5030 = 0xf80000;
-  _DAT_005c505c = 0xf80000;
-  _DAT_005c5060 = 0xf80000;
-  _DAT_005c508c = 0xf80000;
-  _DAT_005c5090 = 0x80000;
-  _DAT_005c50bc = 0x80000;
-  _DAT_005c50c0 = 0x80000;
+  g_GoreQuadPrimitive.base.base.count = 4;
+  g_GoreQuadPrimitive.vertices[0] = 0;
+  g_GoreQuadPrimitive.vertices[1] = 1;
+  g_GoreQuadPrimitive.vertices[2] = 2;
+  g_GoreQuadPrimitive.vertices[3] = 3;
+  g_SRenderVertex_ARRAY_005c5014[0].u = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[0].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[1].u = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[1].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[2].u = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[2].v = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[3].u = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[3].v = 0x80000;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0xffff);
   return;

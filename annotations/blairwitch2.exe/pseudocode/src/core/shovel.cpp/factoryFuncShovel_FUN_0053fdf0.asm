@@ -15,7 +15,7 @@ section .text
     PUSH 0x6d4                          ; 0053fdf0
         ;   Label: core_shovel.cpp_factoryFuncShovel_FUN_0053fdf0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0053fdf5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0053fdfa
     TEST EAX,EAX                        ; 0053fdfd
     JNZ 0x0053fe02                      ; 0053fdff

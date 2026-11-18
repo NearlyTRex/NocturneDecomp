@@ -2,31 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 96,
-    "cross_reference_count": 95,
+    "complexity_score": 71,
+    "cross_reference_count": 97,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 130
   },
   "cross_references": [
     {
-      "addr": "0040a050",
-      "from_addr": "0040a6c1",
-      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
+      "addr": "00408a50",
+      "from_addr": "00408a62",
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00408a50",
-      "from_addr": "00408a62",
-      "name": "core_actor.cpp_FUN_00408a50",
+      "addr": "0040a050",
+      "from_addr": "0040a6c1",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -90,6 +89,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00428260",
+      "from_addr": "004283a0",
+      "name": "core_charactr.cpp_CCharacter_followActor_FUN_00428260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042abe0",
+      "from_addr": "0042b105",
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042abe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004287f0",
       "from_addr": "00428a90",
       "name": "core_charactr.cpp_CCharacter_processWalking_FUN_004287f0",
@@ -99,18 +110,6 @@
       "addr": "00423000",
       "from_addr": "004234ab",
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00428260",
-      "from_addr": "004283a0",
-      "name": "core_charactr.cpp_FUN_00428260",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042abe0",
-      "from_addr": "0042b105",
-      "name": "core_charactr.cpp_FUN_0042abe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -134,7 +133,7 @@
     {
       "addr": "0043a350",
       "from_addr": "0043a372",
-      "name": "core_crate.cpp_FUN_0043a350",
+      "name": "core_crate.cpp_CCrate_explode_FUN_0043a350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -164,13 +163,25 @@
     {
       "addr": "00450c60",
       "from_addr": "00450f0c",
-      "name": "core_doc.cpp_FUN_00450c60",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00450c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004583f0",
       "from_addr": "00458918",
-      "name": "core_doc.cpp_FUN_004583f0",
+      "name": "core_doc.cpp_CDoc_tryClimbLadder_FUN_004583f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458930",
+      "from_addr": "00458cdd",
+      "name": "core_doc.cpp_CDoc_tryDescendLadder_FUN_00458930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458e80",
+      "from_addr": "00459386",
+      "name": "core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -194,7 +205,7 @@
     {
       "addr": "004658e0",
       "from_addr": "00465baf",
-      "name": "core_dracbrid.cpp_FUN_004658e0",
+      "name": "core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004658e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -234,6 +245,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004b5190",
+      "from_addr": "004b5496",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bd570",
       "from_addr": "004bd645",
       "name": "core_game.cpp_CGame_process_FUN_004bd570",
@@ -243,12 +260,6 @@
       "addr": "004b6170",
       "from_addr": "004b61a4",
       "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b5190",
-      "from_addr": "004b5496",
-      "name": "core_game.cpp_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -308,7 +319,7 @@
     {
       "addr": "004cf440",
       "from_addr": "004cf454",
-      "name": "core_hero.cpp_FUN_004cf440",
+      "name": "core_hero.cpp_CHero_toggleLeverNow_FUN_004cf440",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -336,21 +347,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004dadb0",
+      "from_addr": "004db4b2",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004df010",
       "from_addr": "004df072",
       "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dadb0",
-      "from_addr": "004db4b2",
-      "name": "core_inv.cpp_FUN_004dadb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004db8e0",
       "from_addr": "004db8f9",
-      "name": "core_inv.cpp_FUN_004db8e0",
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004db8e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -432,15 +443,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052ef80",
-      "from_addr": "0052f28d",
-      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80",
+      "addr": "0052f2a0",
+      "from_addr": "0052f8c0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052f2a0",
-      "from_addr": "0052f8c0",
-      "name": "core_set.cpp_FUN_0052f2a0",
+      "addr": "0052ef80",
+      "from_addr": "0052f28d",
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -450,15 +461,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053c500",
-      "from_addr": "0053d568",
-      "name": "core_shadow.cpp_CShadow_process_FUN_0053c500",
+      "addr": "0053ece0",
+      "from_addr": "0053ede1",
+      "name": "core_shadow.cpp_CShadow_processChainConstraint_FUN_0053ece0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053ece0",
-      "from_addr": "0053ede1",
-      "name": "core_shadow.cpp_FUN_0053ece0",
+      "addr": "0053c500",
+      "from_addr": "0053d568",
+      "name": "core_shadow.cpp_CShadow_process_FUN_0053c500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -536,7 +547,7 @@
     {
       "addr": "0057f0b0",
       "from_addr": "0057f2b9",
-      "name": "core_turret.cpp_FUN_0057f0b0",
+      "name": "core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -546,15 +557,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058b950",
-      "from_addr": "0058be1e",
-      "name": "core_werewolf.cpp_CWerewolf_process_FUN_0058b950",
+      "addr": "0058dd00",
+      "from_addr": "0058de01",
+      "name": "core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_0058dd00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058dd00",
-      "from_addr": "0058de01",
-      "name": "core_werewolf.cpp_FUN_0058dd00",
+      "addr": "0058b950",
+      "from_addr": "0058be1e",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_0058b950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -572,7 +583,7 @@
     {
       "addr": "00556290",
       "from_addr": "0055640f",
-      "name": "sound_snddx.cpp_FUN_00556290",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00556290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -612,14 +623,14 @@
       "name": "crt_stdio.c_fopen_FUN_005b910c"
     },
     {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005b8010"
+    },
+    {
       "addr": "005b7768",
       "is_variadic": false,
       "name": "crt_stdio.c_vsprintf_FUN_005b7768"
-    },
-    {
-      "addr": "005b8010",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8010"
     },
     {
       "addr": "004367e0",
@@ -630,14 +641,14 @@
   "globals": [
     {
       "addr": "005cdc35",
-      "name": "DAT_005cdc35",
-      "type": "undefined4",
+      "name": "s_at_005cdc35",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cdc38",
-      "name": "DAT_005cdc38",
-      "type": "undefined4",
+      "name": "s_s_005cdc38",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -653,7 +664,7 @@
       {
         "call_addr": "00408a62",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_00408a50",
+        "caller": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -741,7 +752,7 @@
       {
         "call_addr": "004b5496",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b5190",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b5190",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -868,22 +879,6 @@
       "severity": "moderate",
       "text": "local_14 = &stack0x0000000c;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005cdc35",
-      "severity": "mild",
-      "text": "p_Var2 = _fopen(\"console.txt\",&DAT_005cdc35);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005cdc38",
-      "severity": "mild",
-      "text": "FUN_005b8010(p_Var2,&DAT_005cdc38,local_1014);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

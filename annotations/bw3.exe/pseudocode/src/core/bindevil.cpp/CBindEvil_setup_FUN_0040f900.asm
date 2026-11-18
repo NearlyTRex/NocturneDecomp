@@ -7,7 +7,7 @@
 ; CBindEvil *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0040f924
     PUSH 0x1                            ; 0040f927
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0040f929 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0040f929 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 0040f92f
     CALL core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340 ; 0040f930
         ;   XREF to: 004a4340 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340(CFireEffect * this_ptr, int toss_type)

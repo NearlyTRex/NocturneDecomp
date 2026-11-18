@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_00552f80(int bits_per_sample,int channels,int sample_rate,int signed_samples)
 
 {
@@ -15,17 +13,18 @@ int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_00552f80(int bits_per_sampl
   
   iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_00552f60();
   if (iVar1 != 0) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x16f6;
-    core_main_c_FUN_004e4500("setRecordingFormat - can't do this while recording active!");
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x16f6;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("setRecordingFormat - can't do this while recording active!");
   }
-  _DAT_0061bcd0 = bits_per_sample;
-  _DAT_0061bcd4 = channels;
-  _DAT_0061bcd8 = sample_rate;
-  _DAT_02649870 = (uint)(signed_samples != 0);
-  if (_DAT_02649868 != (int *)0x0) {
-    iVar1 = (**(code **)(*_DAT_02649868 + 0xc))
-                      (_DAT_02649868,bits_per_sample,channels,sample_rate,_DAT_02649870);
+  g_RecordingBitsPerSample = bits_per_sample;
+  g_RecordingChannelCount = channels;
+  g_RecordingSampleRate = sample_rate;
+  g_RecordingSamplesSigned = (int)(signed_samples != 0);
+  if (g_RecordingDeviceInterface != (CSoundDevice *)0x0) {
+    iVar1 = (*g_RecordingDeviceInterface->vtable->setMode)
+                      (g_RecordingDeviceInterface,bits_per_sample,channels,sample_rate,
+                       (int *)g_RecordingSamplesSigned);
     if (iVar1 == 0) {
       return 0;
     }

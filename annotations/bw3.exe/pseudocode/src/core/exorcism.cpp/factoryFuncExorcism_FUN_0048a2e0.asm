@@ -15,7 +15,7 @@ section .text
     PUSH 0x62c                          ; 0048a2e0
         ;   Label: core_exorcism.cpp_factoryFuncExorcism_FUN_0048a2e0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0048a2e5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0048a2ea
     TEST EAX,EAX                        ; 0048a2ed
     JNZ 0x0048a2f2                      ; 0048a2ef

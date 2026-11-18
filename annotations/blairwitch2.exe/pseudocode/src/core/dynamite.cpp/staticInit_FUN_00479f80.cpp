@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dynamite_cpp_staticInit_FUN_00479f80(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CDynamiteClassInfo,"p@CDynamite" + 2,
+            (&g_CDynamiteClassInfo,"CDynamite",
              core_dynamite_cpp_factoryFuncDynamite_FUN_00479fc0,&g_CDynamiteClassVersion,1,
              &g_CWeaponClassInfo);
-  _DAT_01c225dc = 0;
-  _DAT_01c225e0 = 0xc2000000;
-  _DAT_01c225e4 = 0;
+  g_CVector3f_01c225dc.x = 0.0;
+  g_CVector3f_01c225dc.y = -32.0;
+  g_CVector3f_01c225dc.z = 0.0;
   return;
 }

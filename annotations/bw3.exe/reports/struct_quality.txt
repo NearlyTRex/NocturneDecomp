@@ -4,28 +4,25 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              475
-Fully clean structs:        464
-Structs with issues:        11
-Unreferenced structs:       13
+Total structs:              504
+Fully clean structs:        492
+Structs with issues:        12
+Unreferenced structs:       10
 
-Total fields:               3721
-Clean fields:               3708
+Total fields:               3837
+Clean fields:               3823
 Unknown (unk*) fields:      9
 Padding (pad*) fields:      2
 Reserved (reserved*) fields:2
-Default (field_*) fields:   0
-Overall field quality:      99.7%
+Default (field_*) fields:   1
+Overall field quality:      99.6%
 
 ======================================================================
-UNREFERENCED STRUCTS (13)
+UNREFERENCED STRUCTS (10)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
   CP2D                                      /Nocturne/Class/Game
-  CPickList_full_vtable                     /Nocturne/Class/Game
-  SLineStrip                                /Nocturne/Struct/Game
-  SMRGLModelBounds                          /Nocturne/Struct/Game
   SNetPacket_ChatMessage                    /Nocturne/Struct/Game
   SNetPacket_GameSettings                   /Nocturne/Struct/Game
   SNetPacket_PlayerAnnounce                 /Nocturne/Struct/Game
@@ -37,7 +34,7 @@ These structs are not referenced in any source or header file.
   SPod3Header                               /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (11)
+STRUCTS WITH PROBLEMATIC FIELDS (12)
 ----------------------------------------------------------------------
 
 SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
@@ -64,6 +61,10 @@ CBurncross                                 87.5% complete  (7/8 fields clean)
   Issues: 1 unknown
   Fields: unknown_598
 
+CConsole                                   88.9% complete  (8/9 fields clean)
+  Issues: 1 default
+  Fields: field_0x4
+
 CExternalRenderer                          90.0% complete  (9/10 fields clean)
   Issues: 1 reserved
   Fields: reserved
@@ -85,7 +86,7 @@ STextView                                  94.7% complete  (18/19 fields clean)
   Fields: unknown_0x30
 
 ======================================================================
-FULLY CLEAN STRUCTS (464)
+FULLY CLEAN STRUCTS (492)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -140,7 +141,6 @@ FULLY CLEAN STRUCTS (464)
   CCodec
   CColor3f
   CColor3i
-  CConsole
   CConstructBone
   CConstructRed
   CConstruct_full_vtable
@@ -258,6 +258,7 @@ FULLY CLEAN STRUCTS (464)
   CLaserBeam
   CLava
   CLeaf
+  CLevelLoader
   CLever
   CLightActor
   CLightCone
@@ -297,12 +298,15 @@ FULLY CLEAN STRUCTS (464)
   CParticle_vtable
   CPassenger
   CPathMap
+  CPathQueueNode
   CPendulum
   CPickList
   CPickList_full_vtable
   CPickList_vtable
   CPlatform
   CPod
+  CPodAuditRecord
+  CPodDependencyRecord
   CPodDirectoryEntry
   CPodFile
   CPodSearchContext
@@ -339,6 +343,7 @@ FULLY CLEAN STRUCTS (464)
   CSocket
   CSound
   CSoundDevice
+  CSoundDeviceBasic_vtable
   CSoundDeviceFull_vtable
   CSpark
   CSpawner
@@ -376,6 +381,7 @@ FULLY CLEAN STRUCTS (464)
   CVector3d
   CVector3f
   CVector3i
+  CVector4i
   CWater
   CWaterActor
   CWavInDevice
@@ -400,8 +406,10 @@ FULLY CLEAN STRUCTS (464)
   CZombiePriest_full_vtable
   CZombiePriest_vtable
   CZombieSpirit
+  SActorRayHit
   SActorVarBlock
   SArmAimData
+  SAudioFormatDescriptor
   SBitBuffer
   SBodyPartFire
   SBodyPartModel
@@ -410,15 +418,18 @@ FULLY CLEAN STRUCTS (464)
   SBug
   SButtonStruct
   SCPUInfo
+  SCameraEdge
   SCameraViewportState
   SCarryHand
   SChainVertex
   SChatHistory
+  SChatOutMessage
   SClipPlane
   SClothBone
   SClothVertex
   SCollisionInfo
   SCollisionReturnInfo
+  SCoronaLightCache
   SCoronaLightEntry
   SCounterBlock
   SCurtainMeshData
@@ -426,9 +437,11 @@ FULLY CLEAN STRUCTS (464)
   SDamageDecal
   SDamageInfo
   SDialogEntry
+  SDirectSoundDeviceInfo
   SDisplayListSortEntry
   SDynamicLight
   SEdge
+  SEdgeList
   SEventNameBlock
   SFace
   SFire
@@ -436,11 +449,14 @@ FULLY CLEAN STRUCTS (464)
   SFog
   SFogGrid
   SFogGridPlane
+  SFogImagePlane
+  SFontGlyph
   SFoundFileInfo
   SGameSettingsPlayer
   SGroundCell
   SHardwareEdge
   SHuffmanTable
+  SHuffmanTableSource
   SInputFace
   SInteractionInfo
   SIntersectXZCylinder
@@ -448,19 +464,25 @@ FULLY CLEAN STRUCTS (464)
   SIpAddr
   SLaserInfo
   SLayerAction
+  SLightGlowParams
+  SLightGlowSprite
+  SLightGlowTable
   SLineStrip
   SLod
   SMRGLAnimatedTexture
   SMRGLHeaderBasic
+  SMRGLHeaderBasicCountOnly
   SMRGLHeaderExtended
   SMRGLHeaderPrimitive
   SMRGLKeyframe
   SMRGLKeyframeModel
+  SMRGLLightPrimitive
   SMRGLModelBounds
   SMRGLPoint
   SMRGLPrimitivePoly
   SMRGLPrimitivePolyIndex
   SMRGLPrimitiveQuad
+  SMRGLPrimitiveQuadIndex
   SMRGLPrimitiveTriangle
   SMRGLPrimitiveTriangleIndex
   SMRGLTextureBasic
@@ -475,6 +497,7 @@ FULLY CLEAN STRUCTS (464)
   SMovieFrame
   SMpegAllocationEntry
   SMpegFrame
+  SMpegLayer3BandIndex
   SMpegLayer3GranuleInfo
   SMpegLayer3ScalefactorGranule
   SMpegLayer3SideInfo
@@ -518,12 +541,16 @@ FULLY CLEAN STRUCTS (464)
   SPoseData
   SProjectedVertex
   SProjectionParams
+  SQuadVertices
   SRGBColor
   SRGBColorPalette
   SRayQueryState
   SRaytraceState
   SRecordingDeviceInfo
+  SRenderBufferEntry
   SRenderVertex
+  SReverbPreset
+  SReverbSettings
   SRoom
   SScrape
   SScriptLine
@@ -551,3 +578,5 @@ FULLY CLEAN STRUCTS (464)
   SVoxelGrid
   SWaterVertex
   SWayPointAdjacency
+  SWindow
+  SWindowRect

@@ -776,7 +776,7 @@ section .text
     SUB ESP,0x4                         ; 00508143
     FSTP float ptr [ESP]                ; 00508146
     MOV EDI,dword ptr [ESI + 0x66ef9c]  ; 00508149 | g_GlobalFilters | g_GlobalFilters[1]
-    PUSH EDI                            ; 0050814f | CDemonFilter_ARRAY_020a4878 | CDemonFilter_ARRAY_020a4878[1].size
+    PUSH EDI                            ; 0050814f | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     ADD ESI,0x4                         ; 00508150
     INC EBX                             ; 00508153
     CALL core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 ; 00508154
@@ -792,16 +792,16 @@ section .text
         ;   Label: LAB_0050816a
     MOV EAX,dword ptr [EBX + 0x66efbc]  ; 00508171 | g_PlayerFilters | g_PlayerFilters[1]
     FILD dword ptr [ESP + 0x714]        ; 00508177
-    MOV dword ptr [EAX],EDI             ; 0050817e | CDemonFilter_ARRAY_020a4878 | CDemonFilter_ARRAY_020a4878[1].size
+    MOV dword ptr [EAX],EDI             ; 0050817e | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     FMUL double ptr [0x006355de]        ; 00508180 | DOUBLE_006355de
     MOV EAX,dword ptr [EBX + 0x66efbc]  ; 00508186 | g_PlayerFilters | g_PlayerFilters[1]
     PUSH 0x0                            ; 0050818c
-    MOV dword ptr [EAX + 0x4],EDI       ; 0050818e | CDemonFilter_ARRAY_020a4878[0].count | CDemonFilter_ARRAY_020a4878[1].count
+    MOV dword ptr [EAX + 0x4],EDI       ; 0050818e | g_PlayerFilterPool[0].count | g_PlayerFilterPool[1].count
     FADD double ptr [0x006355de]        ; 00508191 | DOUBLE_006355de
     SUB ESP,0x4                         ; 00508197
     FSTP float ptr [ESP]                ; 0050819a
-    MOV EAX,dword ptr [EBX + 0x66efbc]  ; 0050819d | CDemonFilter_ARRAY_020a4878 | CDemonFilter_ARRAY_020a4878[1].size | g_PlayerFilters
-    PUSH EAX                            ; 005081a3 | CDemonFilter_ARRAY_020a4878 | CDemonFilter_ARRAY_020a4878[1].size
+    MOV EAX,dword ptr [EBX + 0x66efbc]  ; 0050819d | g_PlayerFilterPool | g_PlayerFilterPool[1].size | g_PlayerFilters
+    PUSH EAX                            ; 005081a3 | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     ADD EBX,0x4                         ; 005081a4
     INC ESI                             ; 005081a7
     CALL core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 ; 005081a8

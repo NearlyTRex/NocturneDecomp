@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 269,
+    "complexity_score": 284,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 18,
+    "suspect_count": 20,
     "suspect_types": [
       "bitcast_double_pair",
       "concat_reconstruction",
       "param_count_too_few",
-      "undefined_data",
       "unknown_field",
       "unnamed_param"
     ],
@@ -61,13 +60,13 @@
   "globals": [
     {
       "addr": "00608560",
-      "name": "DAT_00608560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_00608560",
+      "type": "double",
+      "value": "+Infinity"
     },
     {
       "addr": "00608564",
-      "name": "DAT_00608564",
+      "name": "g_DOUBLE_00608560+4",
       "type": "undefined4",
       "value": null
     }
@@ -257,28 +256,44 @@
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_00608560",
+      "description": "Unknown/mangled field access",
+      "line": 29,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "uVar1 = DAT_00608560;",
-      "type": "undefined_data"
+      "text": "uVar5 = INFINITY._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "uVar1 = INFINITY._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
+      "type": "unknown_field"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
       "line": 32,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "return -__BITCAST_DOUBLE(CONCAT44(0x7FF00000,DAT_00608560));",
+      "text": "return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
       "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00608560",
-      "severity": "mild",
-      "text": "return -__BITCAST_DOUBLE(CONCAT44(0x7FF00000,DAT_00608560));",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

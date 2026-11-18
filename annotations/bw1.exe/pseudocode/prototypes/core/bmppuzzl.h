@@ -77,9 +77,9 @@ void __cdecl CAudioRecPuzzle::process(CAudioRecPuzzle *this_ptr,float delta_time
 // Address: 00416cf0
 int __cdecl CAudioRecPuzzle::isButtonHovered(CAudioRecPuzzle *this_ptr,int button);
 
-// Original: core_bmppuzzl.cpp_FUN_00416d50
+// Original: core_bmppuzzl.cpp_doNothing_FUN_00416d50
 // Address: 00416d50
-void __cdecl FUN_00416d50(CAudioRecPuzzle *this_ptr);
+void __cdecl doNothing(void);
 
 // Original: core_bmppuzzl.cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00416d60
 // Address: 00416d60

@@ -13,24 +13,24 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[16]:
-;   core_flashlit.cpp_FUN_004a7bb0 at 004a7bfb
+;   core_flashlit.cpp_drawTooltip_FUN_004a7bb0 at 004a7bfb
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac178
 ;   core_game.cpp_CGame_renderIrisFade_FUN_004bd7d0 at 004bd8b8
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b4c88
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c0568
 ;   core_game.cpp_drawHealthBar_FUN_004b4730 at 004b47ba
-;   core_level.cpp_FUN_004e0000 at 004e007a
+;   core_level.cpp_CLevelLoader_update_FUN_004e0000 at 004e007a
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0 at 004e8265
 ;   core_script.cpp_CScript_renderSubtitles_FUN_00528fc0 at 0052906c
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250 at 0040326c
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5ac
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
-;   undefined4 DAT_01c6b5c0
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5ac
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
+;   int g_INT_01c6b5c0
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00402f30
@@ -49,12 +49,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004031cb
     MOV EDI,dword ptr [ESP + 0x20]      ; 004031cf
     MOV ESI,dword ptr [ESP + 0x24]      ; 004031d3
-    MOV EDX,dword ptr [0x01c6b5a8]      ; 004031d7 | DAT_01c6b5a8
+    MOV EDX,dword ptr [0x01c6b5a8]      ; 004031d7 | g_INT_01c6b5a8
     CMP EBP,EDX                         ; 004031dd
     JGE 0x004031e3                      ; 004031df
         ;   XREF to: 004031e3 (CONDITIONAL_JUMP)  ; LAB_004031e3
     MOV EBP,EDX                         ; 004031e1
-    MOV ECX,dword ptr [0x01c6b5b0]      ; 004031e3 | DAT_01c6b5b0
+    MOV ECX,dword ptr [0x01c6b5b0]      ; 004031e3 | g_INT_01c6b5b0
         ;   Label: LAB_004031e3
     CMP EDI,ECX                         ; 004031e9
     JLE 0x004031ef                      ; 004031eb
@@ -64,12 +64,12 @@ section .text
         ;   Label: LAB_004031ef
     JG 0x00403248                       ; 004031f1
         ;   XREF to: 00403248 (CONDITIONAL_JUMP)  ; LAB_00403248
-    MOV EAX,[0x01c6b5ac]                ; 004031f3 | DAT_01c6b5ac
+    MOV EAX,[0x01c6b5ac]                ; 004031f3 | g_INT_01c6b5ac
     CMP EBX,EAX                         ; 004031f8
     JGE 0x004031fe                      ; 004031fa
         ;   XREF to: 004031fe (CONDITIONAL_JUMP)  ; LAB_004031fe
     MOV EBX,EAX                         ; 004031fc
-    MOV EDX,dword ptr [0x01c6b5b4]      ; 004031fe | DAT_01c6b5b4
+    MOV EDX,dword ptr [0x01c6b5b4]      ; 004031fe | g_INT_01c6b5b4
         ;   Label: LAB_004031fe
     CMP ESI,EDX                         ; 00403204
     JLE 0x0040320a                      ; 00403206
@@ -79,10 +79,10 @@ section .text
         ;   Label: LAB_0040320a
     JG 0x00403248                       ; 0040320c
         ;   XREF to: 00403248 (CONDITIONAL_JUMP)  ; LAB_00403248
-    MOV EAX,[0x01c6b5c0]                ; 0040320e | DAT_01c6b5c0
+    MOV EAX,[0x01c6b5c0]                ; 0040320e | g_INT_01c6b5c0
     MOV dword ptr [ESP],EAX             ; 00403213
     MOV EAX,dword ptr [ESP + 0x28]      ; 00403216
-    MOV [0x01c6b5c0],EAX                ; 0040321a | DAT_01c6b5c0
+    MOV [0x01c6b5c0],EAX                ; 0040321a | g_INT_01c6b5c0
     JG 0x00403240                       ; 0040321f
         ;   XREF to: 00403240 (CONDITIONAL_JUMP)  ; LAB_00403240
     PUSH EDI                            ; 00403221
@@ -101,7 +101,7 @@ section .text
     LEA EAX,[EAX]                       ; 0040323d
     MOV EAX,dword ptr [ESP]             ; 00403240
         ;   Label: LAB_00403240
-    MOV [0x01c6b5c0],EAX                ; 00403243 | DAT_01c6b5c0
+    MOV [0x01c6b5c0],EAX                ; 00403243 | g_INT_01c6b5c0
     ADD ESP,0x4                         ; 00403248
         ;   Label: LAB_00403248
     POP EBP                             ; 0040324b

@@ -80,14 +80,40 @@
       "00516060",
       "005168c0"
     ],
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "instructions":322,
-    "method":"FUN_0057eeac",
-    "name":"engine_special.cpp_FUN_0057eeac",
+    "method":"renderMMXPerspectiveScanlineTrueColor32",
+    "name":"engine_special.cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0057eeac",
+    "params":[
+      {
+        "name":"left_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -207,16 +233,13 @@
       "0057bef0",
       "0059c5d0",
       "0059d4b0",
-      "0059d9d0"
+      "0059d9d0",
+      "0059e350"
     ],
     "calls":[
       "005c2c70"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "0059e92d",
-      "0059ea81"
-    ],
     "instructions":15,
     "method":"sscanf",
     "name":"crt_stdio.c_sscanf_FUN_005c2cac",

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_clipBatchTriangle_FUN_00515850(float *v0,float *v1,float *v2)
 
 {
@@ -25,45 +23,45 @@ void __cdecl engine_mini3d_cpp_clipBatchTriangle_FUN_00515850(float *v0,float *v
       engine_mini3d_cpp_addBatchTriangle_FUN_005155f0(v0,v1,v2);
       return;
     }
-    _DAT_01d227e8 = 3;
-    pfVar6 = (float *)&DAT_01d22ffc;
+    g_INT_01d227e8 = 3;
+    pfVar6 = &g_FLOAT_01d22ffc;
     for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {
       *pfVar6 = *v0;
       v0 = v0 + 1;
       pfVar6 = pfVar6 + 1;
     }
-    _DAT_01d227ec = 0;
-    pfVar6 = (float *)&DAT_01d2303c;
+    g_INT_01d227ec = 0;
+    pfVar6 = &g_FLOAT_01d2303c;
     for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {
       *pfVar6 = *v1;
       v1 = v1 + 1;
       pfVar6 = pfVar6 + 1;
     }
-    _DAT_01d227f0 = 0;
-    _DAT_01d227f4 = 0;
-    _DAT_01d227f8 = 0;
-    pfVar6 = (float *)&DAT_01d2307c;
+    g_INT_01d227f0 = 0;
+    g_INT_01d227f4 = 0;
+    g_INT_01d227f8 = 0;
+    pfVar6 = &g_FLOAT_01d2307c;
     for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {
       *pfVar6 = *v2;
       v2 = v2 + 1;
       pfVar6 = pfVar6 + 1;
     }
     engine_mini3d_cpp_clipAgainstPlane0_FUN_00515080();
-    if ((((2 < _DAT_01d227ec) &&
-         (engine_mini3d_cpp_clipAgainstPlane1_FUN_005151b0(), 2 < _DAT_01d227f0)) &&
-        (engine_mini3d_cpp_clipAgainstPlane2_FUN_005152e0(), 2 < _DAT_01d227f4)) &&
-       (engine_mini3d_cpp_clipAgainstPlane3_FUN_00515410(), 2 < _DAT_01d227f8)) {
+    if ((((2 < g_INT_01d227ec) &&
+         (engine_mini3d_cpp_clipAgainstPlane1_FUN_005151b0(), 2 < g_INT_01d227f0)) &&
+        (engine_mini3d_cpp_clipAgainstPlane2_FUN_005152e0(), 2 < g_INT_01d227f4)) &&
+       (engine_mini3d_cpp_clipAgainstPlane3_FUN_00515410(), 2 < g_INT_01d227f8)) {
       engine_mini3d_cpp_clampClippedPolygon_FUN_00515530();
-      fVar4 = _DAT_01d224e8;
-      fVar3 = _DAT_01d224e4;
-      fVar2 = _DAT_01d224dc;
+      fVar4 = g_FLOAT_01d224e8;
+      fVar3 = g_FLOAT_01d224e4;
+      fVar2 = g_FLOAT_01d224dc;
       iVar7 = 0;
-      if (0 < _DAT_01d227f8) {
-        pfVar6 = (float *)&DAT_01d247fc;
+      if (0 < g_INT_01d227f8) {
+        pfVar6 = &g_FLOAT_01d247fc;
         do {
-          fVar1 = pfVar6[1] * _DAT_01d224e0;
+          fVar1 = pfVar6[1] * g_FLOAT_01d224e0;
           pfVar6[3] = 1.0 / pfVar6[2];
-          iVar5 = _DAT_01d227f8;
+          iVar5 = g_INT_01d227f8;
           iVar7 = iVar7 + 1;
           pfVar6[5] = fVar3 + *pfVar6 * fVar2 * pfVar6[3];
           pfVar6[6] = fVar4 + fVar1 * pfVar6[3];
@@ -72,8 +70,8 @@ void __cdecl engine_mini3d_cpp_clipBatchTriangle_FUN_00515850(float *v0,float *v
       }
       v1_00 = (float *)&DAT_01d2483c;
       pfVar6 = (float *)0x1d2487c;
-      for (iVar7 = 0; iVar7 < _DAT_01d227f8 + -2; iVar7 = iVar7 + 1) {
-        engine_mini3d_cpp_addBatchTriangle_FUN_005155f0((float *)&DAT_01d247fc,v1_00,pfVar6);
+      for (iVar7 = 0; iVar7 < g_INT_01d227f8 + -2; iVar7 = iVar7 + 1) {
+        engine_mini3d_cpp_addBatchTriangle_FUN_005155f0(&g_FLOAT_01d247fc,v1_00,pfVar6);
         v1_00 = v1_00 + 0x10;
         pfVar6 = pfVar6 + 0x10;
       }

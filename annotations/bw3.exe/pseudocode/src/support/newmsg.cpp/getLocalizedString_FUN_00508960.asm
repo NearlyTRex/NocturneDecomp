@@ -12,16 +12,16 @@
 ;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950 at 004a9b02
 ;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfc8d
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c0023
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be458
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb15c
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b78e7
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004bacb9
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bfa40 at 004bfae5
-;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b88fb
-;   core_game.cpp_FUN_004b51e0 at 004b524c
 ;   ... and 30 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01dd4894
-;   undefined4 DAT_01dd4898
+;   int g_LocalizationLoaded
+;   int g_INT_01dd4898
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005a3d00
@@ -35,12 +35,12 @@ section .text
         ;   Label: support_newmsg.cpp_getLocalizedString_FUN_00508960
     PUSH EBP                            ; 00508961
     MOV EDI,dword ptr [ESP + 0xc]       ; 00508962
-    CMP dword ptr [0x01dd4894],0x0      ; 00508966 | DAT_01dd4894
+    CMP dword ptr [0x01dd4894],0x0      ; 00508966 | g_LocalizationLoaded
     JZ 0x00508983                       ; 0050896d
         ;   XREF to: 00508983 (CONDITIONAL_JUMP)  ; LAB_00508983
     PUSH ESI                            ; 0050896f
     PUSH EBX                            ; 00508970
-    MOV EBX,dword ptr [0x01dd4898]      ; 00508971 | DAT_01dd4898
+    MOV EBX,dword ptr [0x01dd4898]      ; 00508971 | g_INT_01dd4898
     DEC EBX                             ; 00508977
     TEST EBX,EBX                        ; 00508978
     JGE 0x00508988                      ; 0050897a

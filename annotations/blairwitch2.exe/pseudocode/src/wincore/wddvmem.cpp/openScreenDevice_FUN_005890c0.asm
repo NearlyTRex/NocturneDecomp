@@ -7,25 +7,25 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004b5190 at 004b5265
-;   core_game.cpp_FUN_004bcbf0 at 004bcddd
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5265
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0 at 004bcddd
 ;   engine_special.cpp_presentToExternalRenderer_FUN_0055ff40 at 0055ffaf
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560 at 005895ab
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005ee2b0
 ;   TerminatedCString s_openScreenDevice_Unable_005ee2c7
-;   undefined4 DAT_006141bc
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c2a390
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_02661ae8
-;   undefined4 DAT_02661afc
+;   int g_INT_006141bc = 0xc8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_INT_01c37788
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   IDirectDrawSurface* g_SoftwareRenderSurface
+;   int g_Display24BitFallback
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
@@ -36,11 +36,11 @@ section .text
         ;   Label: wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0
     PUSH EBP                            ; 005890c1
     SUB ESP,0x6c                        ; 005890c2
-    MOV EDX,dword ptr [0x02661afc]      ; 005890c5 | DAT_02661afc
+    MOV EDX,dword ptr [0x02661afc]      ; 005890c5 | g_Display24BitFallback
     TEST EDX,EDX                        ; 005890cb
     JNZ 0x005890e0                      ; 005890cd
         ;   XREF to: 005890e0 (CONDITIONAL_JUMP)  ; LAB_005890e0
-    CMP dword ptr [0x01c37788],0x0      ; 005890cf | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 005890cf | g_INT_01c37788
     JZ 0x005890e6                       ; 005890d6
         ;   XREF to: 005890e6 (CONDITIONAL_JUMP)  ; LAB_005890e6
     LEA EAX,[EAX]                       ; 005890d8
@@ -63,7 +63,7 @@ section .text
     LEA ECX,[ESP + 0x8]                 ; 005890fa
     MOV EBX,0x6c                        ; 005890fe
     PUSH ECX                            ; 00589103
-    MOV EAX,[0x02661ae8]                ; 00589104 | DAT_02661ae8
+    MOV EAX,[0x02661ae8]                ; 00589104 | g_SoftwareRenderSurface
     MOV dword ptr [ESP + 0xc],EBX       ; 00589109
     PUSH 0x0                            ; 0058910d
     MOV EDX,dword ptr [EAX]             ; 0058910f
@@ -77,14 +77,14 @@ section .text
     MOV ESI,0x5ee2b0                    ; 0058911b | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x23b                       ; 00589120
     PUSH 0x5ee2c7                       ; 00589125 | = "openScreenDevice - Unable to lock scr..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0058912a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00589130 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00589136
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 0058912a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00589130 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00589136
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0058913b
     POP ESI                             ; 0058913e
     POP EDI                             ; 0058913f
-    MOV EBP,dword ptr [0x006141bc]      ; 00589140 | DAT_006141bc
+    MOV EBP,dword ptr [0x006141bc]      ; 00589140 | g_INT_006141bc
         ;   Label: LAB_00589140
     MOV EDX,dword ptr [ESP + 0x24]      ; 00589146
     TEST EBP,EBP                        ; 0058914a
@@ -93,7 +93,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0058914e
     LEA ECX,[EBP*0x4 + 0x0]             ; 00589152
     XOR EAX,EAX                         ; 00589159
-    MOV dword ptr [EAX + 0x1c2a38c],EDX ; 0058915b | DAT_01c2a38c | DAT_01c2a390
+    MOV dword ptr [EAX + 0x1c2a38c],EDX ; 0058915b | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0058915b
     ADD EAX,0x4                         ; 00589161
     ADD EDX,EBX                         ; 00589164

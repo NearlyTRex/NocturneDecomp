@@ -9,13 +9,13 @@
 // Address: 00417d30
 void __cdecl staticInit(void);
 
-// Original: core_boneguy.cpp_FUN_00417d60
+// Original: core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00417d60
 // Address: 00417d60
-void FUN_00417d60(int param_1);
+CVector3f * __stack_esi getLocalBoundingBoxCenter(CDemonActor *actor,CVector3f *out);
 
 // Original: core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00417e20
 // Address: 00417e20
-void getWorldBoundingBoxCenter(int param_1);
+CVector3f * __stack_esi getWorldBoundingBoxCenter(CDemonActor *actor,CVector3f *out);
 
 // Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417f20
 // Address: 00417f20
@@ -27,11 +27,11 @@ CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_rgbToHsv_FUN_00417f50
 // Address: 00417f50
-void rgbToHsv(void);
+CColor3f * __stack_esi rgbToHsv(CColor3f *in_rgb,CColor3f *out_hsv);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_00418110
 // Address: 00418110
-void hsvToRgb(float *param_1);
+CColor3f * __stack_esi hsvToRgb(CColor3f *in_hsv,CColor3f *out_rgb);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0
 // Address: 004182d0

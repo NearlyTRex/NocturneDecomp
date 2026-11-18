@@ -13,12 +13,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005bb314
 ;   TerminatedCString s_CDemonLight_blitZBuffer_005bb327
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_00471271
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -92,10 +92,10 @@ section .text
         ;   Label: LAB_0045c7b5
     MOV EBX,0x147                       ; 0045c7ba
     PUSH 0x5bb327                       ; 0045c7bf | = "CDemonLight::blitZBuffer - No master ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0045c7c4 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0045c7ca | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0045c7d0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 0045c7c4 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0045c7ca | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0045c7d0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0045c7d5
     JMP 0x0045c739                      ; 0045c7d8
         ;   XREF to: 0045c739 (UNCONDITIONAL_JUMP)  ; LAB_0045c739

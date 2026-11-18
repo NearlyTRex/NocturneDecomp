@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 92,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 65
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0",
-    "signature": "void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004d93d0(CDemonMission *this_ptr,char *param_2)"
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004d93d0(CDemonMission *this_ptr,char *set_name)"
   },
   "function_calls": [
     {
@@ -86,6 +85,18 @@
       "class": "logic-change",
       "ratio": 0.9459
     },
+    "bw1.exe": {
+      "addr": "0051ba60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9459
+    },
+    "bw3.exe": {
+      "addr": "004f7230",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9459
+    },
     "nocedit.exe": {
       "addr": "005243a0",
       "by": "name",
@@ -109,7 +120,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "set_name",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -117,46 +128,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004d93d0(CDemonMission *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 10,

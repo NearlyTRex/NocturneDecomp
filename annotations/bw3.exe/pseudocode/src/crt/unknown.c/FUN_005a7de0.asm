@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006075c0
-;   undefined4 DAT_006075c1
+;   byte g_BYTE_006075c0 = 0x0
+;   byte g_BYTE_006075c1 = 0x0
 ;   undefined4 DAT_00607978
 ;
 ; Called Functions:
@@ -18,11 +18,11 @@ section .text
 
     PUSH EBX                            ; 005a7de0
         ;   Label: crt_unknown.c_FUN_005a7de0
-    MOV AH,byte ptr [0x006075c0]        ; 005a7de1 | DAT_006075c0
+    MOV AH,byte ptr [0x006075c0]        ; 005a7de1 | g_BYTE_006075c0
     TEST AH,AH                          ; 005a7de7
     JNZ 0x005a7e22                      ; 005a7de9
         ;   XREF to: 005a7e22 (CONDITIONAL_JUMP)  ; LAB_005a7e22
-    MOV byte ptr [0x006075c1],AH        ; 005a7deb | DAT_006075c1
+    MOV byte ptr [0x006075c1],AH        ; 005a7deb | g_BYTE_006075c1
     XOR BH,BH                           ; 005a7df1
     SUB EAX,EAX                         ; 005a7df3
     PUSH EAX                            ; 005a7df5
@@ -42,8 +42,8 @@ section .text
         ;   Label: LAB_005a7e0d
     JNZ 0x005a7e22                      ; 005a7e14
         ;   XREF to: 005a7e22 (CONDITIONAL_JUMP)  ; LAB_005a7e22
-    MOV byte ptr [0x006075c0],BH        ; 005a7e16 | DAT_006075c0
-    MOV byte ptr [0x006075c1],BL        ; 005a7e1c | DAT_006075c1
+    MOV byte ptr [0x006075c0],BH        ; 005a7e16 | g_BYTE_006075c0
+    MOV byte ptr [0x006075c1],BL        ; 005a7e1c | g_BYTE_006075c1
     POP EBX                             ; 005a7e22
         ;   Label: LAB_005a7e22
     RET                                 ; 005a7e23

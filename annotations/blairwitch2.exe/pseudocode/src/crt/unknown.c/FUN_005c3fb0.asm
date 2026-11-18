@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_005bfdd4 at 005bffa6
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c43e0
+;   crt_unknown.c__mktime_FUN_005c43e0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH EAX                            ; 005c400c
     MOV dword ptr [ESP + 0x10],EBX      ; 005c400d
     MOV dword ptr [ESP + 0x24],EDX      ; 005c4011
-    CALL crt_unknown.c_FUN_005c43e0     ; 005c4015
-        ;   XREF to: 005c43e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c43e0()
+    CALL crt_unknown.c__mktime_FUN_005c43e0 ; 005c4015
+        ;   XREF to: 005c43e0 (UNCONDITIONAL_CALL)  ; time_t crt_unknown.c__mktime_FUN_005c43e0(_tm * timeptr)
     ADD ESP,0x4                         ; 005c401a
     ADD ESP,0x24                        ; 005c401d
     POP EBX                             ; 005c4020

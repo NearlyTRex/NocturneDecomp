@@ -9,35 +9,26 @@
 void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size)
 
 {
+  int iVar1;
   uint error_code;
-  char *pcVar1;
+  char *pcVar2;
   CSfxSample *in_stack_00000014;
-  int *piStack_1b8;
-  int iStack_1b4;
-  int iStack_1b0;
-  void **ppvStack_1ac;
-  uint *puStack_1a8;
-  void **ppvStack_1a4;
-  uint *puStack_1a0;
+  char acStack_198 [400];
   
-  if (((0 < buffer_id) && (buffer_id < 0x19)) && (*(int *)(&DAT_02dc9244 + buffer_id * 4) != 0)) {
-    puStack_1a0 = (uint *)0x52adfa;
-    iStack_1b4 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000014);
-    puStack_1a0 = &in_stack_00000014->locked_bytes2;
-    ppvStack_1a4 = &in_stack_00000014->locked_ptr2;
-    puStack_1a8 = &in_stack_00000014->locked_bytes1;
-    ppvStack_1ac = &in_stack_00000014->locked_ptr1;
-    iStack_1b0 = size * iStack_1b4;
-    iStack_1b4 = iStack_1b4 * offset;
-    piStack_1b8 = *(int **)(&DAT_02dc9244 + buffer_id * 4);
-    error_code = (**(code **)(*piStack_1b8 + 0x2c))();
+  if (((0 < buffer_id) && (buffer_id < 0x19)) &&
+     (g_DirectSoundSampleBuffers[buffer_id] != (IDirectSoundBuffer *)0x0)) {
+    iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000014);
+    error_code = (*g_DirectSoundSampleBuffers[buffer_id]->vtable->Lock)
+                           (g_DirectSoundSampleBuffers[buffer_id],iVar1 * offset,size * iVar1,
+                            &in_stack_00000014->locked_ptr1,&in_stack_00000014->locked_bytes1,
+                            &in_stack_00000014->locked_ptr2,&in_stack_00000014->locked_bytes2,0);
     if (error_code == 0) {
       return in_stack_00000014->locked_ptr1;
     }
-    pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
-    _sprintf((char *)&piStack_1b8,"DirectSux: Unable to %s.  (%s)",
-               "Lock hw sample buffer",pcVar1);
-    sound_sndmain_cpp_logSoundError_FUN_00529980((char *)&piStack_1b8);
+    pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
+    _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)","Lock hw sample buffer",
+               pcVar2);
+    sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_198);
     return (void *)0x0;
   }
   return (void *)0x0;

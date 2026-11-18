@@ -12,8 +12,8 @@ void __cdecl core_simbox_cpp_CSimBox_archive_FUN_00517010(CSimBox *this_ptr)
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(&this_ptr->model,"modelName");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->weight,"weight");
-  if (g_INT_005be964 < 2) {
-    if (g_INT_005be964 < 3) {
+  if (g_CSimBoxClassVersion < 2) {
+    if (g_CSimBoxClassVersion < 3) {
       return;
     }
   }
@@ -22,7 +22,7 @@ void __cdecl core_simbox_cpp_CSimBox_archive_FUN_00517010(CSimBox *this_ptr)
               (&this_ptr->initial_velocity,"initialVelocity");
     core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->init_rot_vel,"initRotVel");
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->trigger_event,"triggerEvent");
-    if (g_INT_005be964 < 3) {
+    if (g_CSimBoxClassVersion < 3) {
       return;
     }
   }

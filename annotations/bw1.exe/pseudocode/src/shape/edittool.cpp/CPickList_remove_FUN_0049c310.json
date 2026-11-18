@@ -1,0 +1,158 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 69
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0049c310",
+    "address_range": [
+      [
+        "0049c310",
+        "0049c36a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_remove_FUN_0049c310",
+    "signature": "void __cdecl shape_edittool_cpp_CPickList_remove_FUN_0049c310(CPickList *this_ptr,int start_index,int end_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049c030",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_enableItem_FUN_0049c030"
+    },
+    {
+      "addr": "0049c230",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_getItemHotKey_FUN_0049c230"
+    },
+    {
+      "addr": "0049c100",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_0049c100"
+    },
+    {
+      "addr": "0049c160",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_setItemHotKey_FUN_0049c160"
+    },
+    {
+      "addr": "00499730",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_remove_FUN_00499730"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.214285714285714,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 29,
+      "INT_ADD": 17,
+      "INT_AND": 18,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 9,
+      "INT_SUB": 22,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 177
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00483cb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00484eb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a56f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4935
+    },
+    "nocturne.exe": {
+      "addr": "00476100",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5429
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "start_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPickList",
+        "offset": 4,
+        "vtable_addr": "005ff834"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

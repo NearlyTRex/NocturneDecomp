@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_marquee_cpp_freeTrigTables_FUN_004e86a0(void)
+;
+;
+; XREF[1]:
+;   core_main.c_finalizeGameSystems_FUN_004e4e20 at 004e4e73
+;
+; *****************************************************************************
+
+section .text
+
+    RET                                 ; 004e86a0
+        ;   Label: core_marquee.cpp_freeTrigTables_FUN_004e86a0
+

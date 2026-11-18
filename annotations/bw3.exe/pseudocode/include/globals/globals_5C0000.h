@@ -9,27 +9,32 @@
 // GLOBAL VARIABLES - Range 0x5C0000
 // =============================================================================
 
+// char
+extern char g_CHAR_005c2d63;
+extern char g_CHAR_005c2e22;
+extern char g_CHAR_005c2e58;
+extern char g_CHAR_005c2f87;
+extern char g_CHAR_005c33d4;
+extern char g_CHAR_005c37de;
+extern char g_CHAR_005c5fe1;
+extern char g_CHAR_005caa40;
+extern char g_CHAR_005cb309;
+extern char g_CHAR_005cb30d;
+extern char g_CHAR_005cc4c6;
+extern char g_CHAR_005ce0e7;
+extern char g_CHAR_005ce170;
+extern char g_CHAR_005ce17f;
+extern char g_CHAR_005ce18f;
+extern char g_CHAR_005ce41c;
+
 // undefined1
 extern undefined1 DAT_005c1299;
 extern undefined1 DAT_005c20be;
-extern undefined1 DAT_005c3ac3;
-extern undefined1 DAT_005c3ae3;
-extern undefined1 DAT_005c3b2d;
-extern undefined1 DAT_005c3b53;
-extern undefined1 DAT_005c49b5;
-extern undefined1 DAT_005c49c1;
 extern undefined1 DAT_005c6d09;
 extern undefined1 DAT_005c6d3f;
 extern undefined1 DAT_005c6d73;
 extern undefined1 DAT_005c6d8f;
 extern undefined1 DAT_005c6ded;
 extern undefined1 DAT_005c6e21;
-extern undefined1 DAT_005ce0e7;
-extern undefined1 DAT_005ce170;
-extern undefined1 DAT_005ce17f;
-extern undefined1 DAT_005ce18f;
-extern undefined1 DAT_005ce41c;
-extern undefined1 DAT_005cec22;
-extern undefined1 DAT_005cec5d;
 extern undefined1 DAT_005cf827;
 

@@ -12,11 +12,11 @@
 ;   void* PTR_TlsSetValue_005d066c = 001d1274
 ;   TerminatedCString s_Unable_to_resize_thread_005fb1b4
 ;   TerminatedCString s_Unable_to_resize_thread_005fb1dc
-;   undefined4 DAT_006265f8
+;   int g_INT_006265f8 = -0x1
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626628 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_0062662c = 005c50d4
-;   undefined4 DAT_00626ad4
-;   undefined4 DAT_02c9ffa0
+;   ulong g_RuntimeBufferSize = 0xf4
+;   void* g_PTR_02c9ffa0
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_005c1cb0
@@ -37,7 +37,7 @@ section .text
     PUSH EBP                            ; 005ccd8b
     CALL dword ptr [0x00626628]         ; 005ccd8c | PTR_crt_unknown.c_FUN_005c50d4_00626628
     CALL dword ptr CS:[0x5d0590]        ; 005ccd92 | PTR_GetCurrentThreadId_005d0590
-    MOV EBX,dword ptr [0x02c9ffa0]      ; 005ccd99 | DAT_02c9ffa0
+    MOV EBX,dword ptr [0x02c9ffa0]      ; 005ccd99 | g_PTR_02c9ffa0
     TEST EBX,EBX                        ; 005ccd9f
     JZ 0x005ccdae                       ; 005ccda1
         ;   XREF to: 005ccdae (CONDITIONAL_JUMP)  ; LAB_005ccdae
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_005ccdae
     JZ 0x005ccdde                       ; 005ccdb2
         ;   XREF to: 005ccdde (CONDITIONAL_JUMP)  ; LAB_005ccdde
-    MOV EDI,dword ptr [0x00626ad4]      ; 005ccdb4 | DAT_00626ad4
+    MOV EDI,dword ptr [0x00626ad4]      ; 005ccdb4 | g_RuntimeBufferSize
     PUSH EDI                            ; 005ccdba
     MOV EBP,dword ptr [EBX + 0x8]       ; 005ccdbb
     PUSH EBP                            ; 005ccdbe
@@ -71,12 +71,12 @@ section .text
     ADD ESP,0x8                         ; 005ccdd9
     JMP 0x005cce2c                      ; 005ccddc
         ;   XREF to: 005cce2c (UNCONDITIONAL_JUMP)  ; LAB_005cce2c
-    MOV ESI,dword ptr [0x00626ad4]      ; 005ccdde | DAT_00626ad4
+    MOV ESI,dword ptr [0x00626ad4]      ; 005ccdde | g_RuntimeBufferSize
         ;   Label: LAB_005ccdde
     PUSH ESI                            ; 005ccde4
     PUSH 0x1                            ; 005ccde5
     CALL crt_memory.c_calloc_FUN_005c1cb0 ; 005ccde7
-        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005c1cb0()
+        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005c1cb0(uint count, uint size)
     ADD ESP,0x8                         ; 005ccdec
     MOV EBP,EAX                         ; 005ccdef
     TEST EAX,EAX                        ; 005ccdf1
@@ -106,10 +106,10 @@ section .text
     MOV dword ptr [EBX + 0xc],0x1       ; 005cce25
     MOV dword ptr [EBX + 0x8],EBP       ; 005cce2c
         ;   Label: LAB_005cce2c
-    MOV EAX,[0x00626ad4]                ; 005cce2f | DAT_00626ad4
+    MOV EAX,[0x00626ad4]                ; 005cce2f | g_RuntimeBufferSize
     PUSH EBP                            ; 005cce34
     MOV dword ptr [EBP + 0xf0],EAX      ; 005cce35
-    MOV EAX,[0x006265f8]                ; 005cce3b | DAT_006265f8
+    MOV EAX,[0x006265f8]                ; 005cce3b | g_INT_006265f8
     MOV byte ptr [EBP + 0x52],0x1       ; 005cce40
     PUSH EAX                            ; 005cce44
     MOV byte ptr [EBP + 0x53],0x0       ; 005cce45

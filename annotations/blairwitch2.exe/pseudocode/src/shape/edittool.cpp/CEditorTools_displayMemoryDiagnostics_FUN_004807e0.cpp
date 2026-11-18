@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0(CEditorTools *this_ptr,char *output_buffer)
 
 {
@@ -44,7 +42,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807
   case 4:
     if (0 < iVar3) {
       local_18 = iVar6;
-      _sprintf(output_buffer,"?Blocks: %d Total: %.1fk Max: %.1fk" + 1);
+      _sprintf(output_buffer,"Blocks: %d Total: %.1fk Max: %.1fk");
       return;
     }
   case 1:

@@ -1155,7 +1155,7 @@ section .text
     TEST EAX,EAX                        ; 00579964
     JNZ 0x005799c3                      ; 00579966
         ;   XREF to: 005799c3 (CONDITIONAL_JUMP)  ; LAB_005799c3
-    CMP dword ptr [0x03365cb8],0x0      ; 00579968 | INT_03365cb8
+    CMP dword ptr [0x03365cb8],0x0      ; 00579968 | g_S3DAppendWarningShown
     JZ 0x0057999b                       ; 0057996f
         ;   XREF to: 0057999b (CONDITIONAL_JUMP)  ; LAB_0057999b
     XOR ECX,ECX                         ; 00579971
@@ -1181,7 +1181,7 @@ section .text
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 005799b3
     ADD ESP,0xc                         ; 005799b8
-    MOV dword ptr [0x03365cb8],EDX      ; 005799bb | INT_03365cb8
+    MOV dword ptr [0x03365cb8],EDX      ; 005799bb | g_S3DAppendWarningShown
     JMP 0x00579971                      ; 005799c1
         ;   XREF to: 00579971 (UNCONDITIONAL_JUMP)  ; LAB_00579971
     PUSH 0x0                            ; 005799c3

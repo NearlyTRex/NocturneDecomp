@@ -222,7 +222,7 @@
         "offset":4
       },
       {
-        "name":"vfunc2",
+        "name":"releaseResources",
         "offset":8
       },
       {
@@ -760,6 +760,43 @@
     "size":53580
   },
   {
+    "kind":"funcdef",
+    "name":"ColorConversionFunc",
+    "params":[
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"enum",
     "name":"EAmmoBoxType",
     "size":4,
@@ -833,6 +870,11 @@
     "kind":"struct",
     "name":"SLaserInfo",
     "size":84
+  },
+  {
+    "kind":"struct",
+    "name":"SLightGlowTable",
+    "size":480
   },
   {
     "kind":"struct",

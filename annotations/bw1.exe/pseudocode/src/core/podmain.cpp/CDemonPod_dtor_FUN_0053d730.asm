@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005c030f
-;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
+;   crt_unknown.c_free_FUN_005c0336
 ;   engine_pod.cpp_CPod_dtor_FUN_0053c5f0
 ;
 ; *****************************************************************************
@@ -46,16 +46,16 @@ section .text
         ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0053d761
     PUSH EAX                            ; 0053d764
-    CALL crt_unknown.c_FUN_005c0336     ; 0053d765
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0053d765
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 0053d76a
     MOV EAX,EBX                         ; 0053d76d
     POP EBX                             ; 0053d76f
     RET                                 ; 0053d770
     PUSH EAX                            ; 0053d771
         ;   Label: LAB_0053d771
-    CALL crt_unknown.c_FUN_005c0344     ; 0053d772
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0053d772
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0053d777
     MOV EAX,EBX                         ; 0053d77a
     POP EBX                             ; 0053d77c

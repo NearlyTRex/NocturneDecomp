@@ -4,35 +4,43 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x6B0000
 // =============================================================================
 
+// SRenderBufferEntry[256]
+SRenderBufferEntry g_RenderBufferPool[256] = {};
+
 // int
+int g_StoredWindowWidth = {};
+int g_StoredWindowHeight = {};
+int g_StoredClipLeft = {};
+int g_StoredClipTop = {};
+int g_StoredClipRight = {};
+int g_StoredClipBottom = {};
+int g_StoredBitsPerPixel = {};
+int g_ScreenBufferStride = {};
+int g_CurrentPolygonColor = {};
+int g_PlaneTestCount = {};
+int g_BypassClipping = {};
+int g_INT_006b0274 = {};
 int g_TexturesDisabled = {};
+int g_INT_006b027c = {};
+int g_CullingMode = {};
+int g_CurrentInvertedColor = {};
+int g_RenderResult = {};
 int g_StoredX = {};
 int g_StoredY = {};
 int g_StoredZ = {};
+int g_RenderBufferEnabled = {};
+int g_RenderBufferCount = {};
 
-// undefined4
-undefined4 DAT_006b023c = {};
-undefined4 DAT_006b0240 = {};
-undefined4 DAT_006b0244 = {};
-undefined4 DAT_006b0248 = {};
-undefined4 DAT_006b024c = {};
-undefined4 DAT_006b0250 = {};
-undefined4 DAT_006b0254 = {};
-undefined4 DAT_006b0258 = {};
-undefined4 DAT_006b025c = {};
-undefined4 DAT_006b0260 = {};
-undefined4 DAT_006b0264 = {};
-undefined4 DAT_006b0268 = {};
-undefined4 DAT_006b026c = {};
-undefined4 DAT_006b0270 = {};
-undefined4 DAT_006b0274 = {};
-undefined4 DAT_006b027c = {};
-undefined4 DAT_006b0280 = {};
-undefined4 DAT_006b0288 = {};
-undefined4 DAT_006b029c = {};
-undefined4 DAT_006b02a0 = {};
-undefined4 DAT_006b415c = {};
-undefined4 DAT_006b4160 = {};
-undefined4 DAT_006b494c = {};
-undefined4 DAT_006b4950 = {};
+// int[24]
+int g_ProcessedVertexIndices[24] = {};
+
+// int[508]
+int g_INT_ARRAY_006b415c[508] = {};
+
+// uint
+uint g_ProcessedVertexOffset = {};
+uint g_ProcessedVertexBackupOffset = {};
+
+// void*
+void* g_StoredMappedFrameBuffer = {};
 

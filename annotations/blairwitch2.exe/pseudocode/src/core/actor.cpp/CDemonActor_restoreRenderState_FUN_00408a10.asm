@@ -11,7 +11,7 @@
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e780 at 0040e7c7
 ;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 at 0040f45a
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 0041082c
-;   core_basicene.cpp_FUN_0059fae0 at 0059fbf4
+;   core_basicene.cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0 at 0059fbf4
 ;   core_bat.cpp_CBat_renderOpaque_FUN_004113f0 at 00411439
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 at 00413d6b
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 at 00415224
@@ -20,8 +20,8 @@
 ;   ... and 60 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   engine_drender.cpp_pop_FUN_0046b4a0
@@ -30,9 +30,9 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x0060b280]      ; 00408a10 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 00408a10 | g_CDemonRenderer_PTR_0060b280
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
-    PUSH EDX                            ; 00408a16 | DAT_01ba5c50
+    PUSH EDX                            ; 00408a16 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 00408a17
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 00408a1c

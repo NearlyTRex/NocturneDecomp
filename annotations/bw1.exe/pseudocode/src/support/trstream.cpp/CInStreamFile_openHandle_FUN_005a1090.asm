@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005f88d3
 ;   TerminatedCString s_Hey_we_re_using_windows_005f88eb
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fseek_FUN_005c170c
 ;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_005a0e10
 ;
@@ -32,10 +32,10 @@ section .text
     MOV EDX,0x5f88d3                    ; 005a1097 | = "..\\support\\trstream.cpp"
     MOV ECX,0x714                       ; 005a109c
     PUSH 0x5f88eb                       ; 005a10a1 | = "Hey, we're using windows handles for ..."
-    MOV dword ptr [0x01d1d400],EDX      ; 005a10a6 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005a10ac | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005a10b2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 005a10a6 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 005a10ac | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a10b2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a10b7
     MOV EAX,dword ptr [EBX]             ; 005a10ba
     PUSH EBX                            ; 005a10bc

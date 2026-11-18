@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFirefly_process_FUN_00494ec0(CFirefly *this_ptr)
 
 {
@@ -28,7 +26,7 @@ void __cdecl core_fire_cpp_CFirefly_process_FUN_00494ec0(CFirefly *this_ptr)
     this_ptr->first_update_flag = 1;
   }
   else {
-    lVar6 = (longlong)_DAT_01c2a370 * (longlong)this_ptr->time_scale;
+    lVar6 = (longlong)g_GlobalDeltaTimeInt * (longlong)this_ptr->time_scale;
     lVar6 = (longlong)this_ptr->fade_rate *
             (longlong)(int)((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
     iVar10 = this_ptr->intensity - ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
@@ -39,17 +37,20 @@ void __cdecl core_fire_cpp_CFirefly_process_FUN_00494ec0(CFirefly *this_ptr)
     }
   }
   delta_time = g_CGamePtr->delta_time_float;
-  lVar6 = (longlong)this_ptr->time_scale * (longlong)_DAT_01c2a370;
+  lVar6 = (longlong)this_ptr->time_scale * (longlong)g_GlobalDeltaTimeInt;
   core_game_cpp_CGame_slamDT_FUN_004bd460
             (g_CGamePtr,
              (float)(int)((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) *
-             (float)_DAT_005d53b2);
-  core_particle_cpp_FUN_00510ef0(this_ptr);
-  fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,this_ptr->jitter * _DAT_005d53ba);
+             (float)1.52587890625e-05);
+  core_particle_cpp_CParticle_process_FUN_00510ef0(&this_ptr->base);
+  fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                    (0.0,this_ptr->jitter * 2.0f);
   fVar1 = this_ptr->jitter;
-  fVar8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,this_ptr->jitter * _DAT_005d53ba);
+  fVar8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                    (0.0,this_ptr->jitter * 2.0f);
   fVar2 = this_ptr->jitter;
-  fVar9 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,this_ptr->jitter * _DAT_005d53ba);
+  fVar9 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                    (0.0,this_ptr->jitter * 2.0f);
   this_ptr_00 = g_CGamePtr;
   fVar3 = (this_ptr->base).velocity.y;
   fVar4 = (this_ptr->base).velocity.z;

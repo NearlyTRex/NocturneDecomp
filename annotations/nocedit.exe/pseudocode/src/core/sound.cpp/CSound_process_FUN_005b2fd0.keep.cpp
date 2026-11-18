@@ -35,24 +35,24 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
   fVar7 = g_CGamePtr->delta_time_float;
   fVar3 = fVar7 * (float)0.5;
   core_sound_cpp_updateListeners_FUN_005b1870();
-  local_24 = CVector3f_03f6af7c.x - CVector3f_03f6af7c.y;
-  if (CVector3f_03f6af7c.x - CVector3f_03f6af7c.y < -fVar3) {
+  local_24 = g_WindVolume.x - g_WindVolume.y;
+  if (g_WindVolume.x - g_WindVolume.y < -fVar3) {
     local_24 = -fVar3;
   }
   if (fVar3 < local_24) {
     local_24 = fVar3;
   }
-  CVector3f_03f6af7c.y = CVector3f_03f6af7c.y + local_24;
-  if (CVector3f_03f6af7c.y <= (float)0.001) {
+  g_WindVolume.y = g_WindVolume.y + local_24;
+  if (g_WindVolume.y <= (float)0.001) {
     core_sound_cpp_CSound_killSound_FUN_005b3b90(this_ptr,g_WindSoundHandle);
-    CVector3f_03f6af7c.y = 0.0;
+    g_WindVolume.y = 0.0;
   }
   else {
     iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(this_ptr,g_WindSoundHandle);
     if (iVar4 == 0) {
       g_WindSoundHandle = sound_sndmain_cpp_startSfx_FUN_005a8e90("wind-ctl.wav");
     }
-    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(g_WindSoundHandle,CVector3f_03f6af7c.y);
+    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(g_WindSoundHandle,g_WindVolume.y);
   }
   local_138 = 0.0;
   if (((0.0 < g_CWaterPtr->visible_area_sqft) &&
@@ -62,24 +62,24 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
                   (float)0.20000000000000001, (float)0.69999999999999996 < local_138)) {
     local_138 = 0.7;
   }
-  local_28 = local_138 - CVector3f_03f6af7c.z;
-  if (local_138 - CVector3f_03f6af7c.z < -fVar3) {
+  local_28 = local_138 - g_WindVolume.z;
+  if (local_138 - g_WindVolume.z < -fVar3) {
     local_28 = -fVar3;
   }
   if (fVar3 < local_28) {
     local_28 = fVar3;
   }
-  CVector3f_03f6af7c.z = CVector3f_03f6af7c.z + local_28;
-  if (CVector3f_03f6af7c.z <= (float)0.001) {
+  g_WindVolume.z = g_WindVolume.z + local_28;
+  if (g_WindVolume.z <= (float)0.001) {
     core_sound_cpp_CSound_killSound_FUN_005b3b90(this_ptr,g_WaterSoundHandle);
-    CVector3f_03f6af7c.z = 0.0;
+    g_WindVolume.z = 0.0;
   }
   else {
     iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(this_ptr,g_WaterSoundHandle);
     if (iVar6 == 0) {
       g_WaterSoundHandle = sound_sndmain_cpp_startSfx_FUN_005a8e90("water-2.wav");
     }
-    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(g_WaterSoundHandle,CVector3f_03f6af7c.z);
+    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(g_WaterSoundHandle,g_WindVolume.z);
   }
   if (g_VolumeFadeTimeRemaining <= fVar7) {
     g_CurrentVolumeMultiplier = g_TargetVolumeMultiplier;

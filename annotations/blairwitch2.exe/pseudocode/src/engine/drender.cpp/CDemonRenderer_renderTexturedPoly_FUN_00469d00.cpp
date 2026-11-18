@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly,int render_flags)
 
 {
@@ -34,7 +32,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(C
               this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2->vertices[0].texture_u;
               this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2->vertices[0].texture_v;
             }
-            *(int *)(&DAT_01ba5c84 + iVar4) = iVar1;
+            *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
             pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
             iVar3 = iVar3 + 1;
             iVar4 = iVar4 + 4;
@@ -47,7 +45,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(C
           iVar4 = 0;
           pSVar2 = poly;
           do {
-            *(int *)(&DAT_01ba5c84 + iVar4) = pSVar2->vertices[0].vertex_index;
+            *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar2->vertices[0].vertex_index;
             iVar4 = iVar4 + 4;
             iVar3 = iVar3 + 1;
             pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
@@ -55,22 +53,22 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(C
         }
       }
       if (this_ptr->shadow_pass_active == 0) {
-        if (DAT_006141c0 == 0x20) {
-          _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
+        if (g_INT_006141c0 == 0x20) {
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1;
         }
         else {
-          _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
         }
-        _DAT_01c38b54 = render_flags;
-        _DAT_01c38b58 = 6;
+        g_RenderStateFlags.dword = render_flags;
+        g_VertexPreprocessMode = 6;
       }
       else {
-        _DAT_01c38b54 = 0;
-        _DAT_01c38b58 = 0;
-        _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
-                (this_ptr,(poly->base).base.count,(int *)&DAT_01ba5c84);
+                (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
     }
     return;
   }

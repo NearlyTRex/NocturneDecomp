@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 60
@@ -78,15 +77,15 @@
     },
     {
       "addr": "005c1f54",
-      "name": "DAT_005c1f54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     },
     {
       "addr": "005c1f90",
-      "name": "DAT_005c1f90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
     }
   ],
   "pcode_summary": {
@@ -168,14 +167,6 @@
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file_handle_index);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "BVar1 = FlushFileBuffers(*(HANDLE *)(DAT_005c1f54 + file_handle_index * 4));",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

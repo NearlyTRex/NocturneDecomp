@@ -15,7 +15,7 @@ section .text
     PUSH 0x6e0                          ; 00575730
         ;   Label: core_tommygun.cpp_factoryFuncTommyGun_FUN_00575730
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00575735
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0057573a
     TEST EAX,EAX                        ; 0057573d
     JNZ 0x00575742                      ; 0057573f

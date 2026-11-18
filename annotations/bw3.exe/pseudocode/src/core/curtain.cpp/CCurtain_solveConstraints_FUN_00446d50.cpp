@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00446d50(CCurtain *this_ptr,SCurtainVertex *vertex)
 
 {
@@ -45,24 +43,30 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00446d50(CCurtain *t
     vertex->has_collision = 1;
   }
   iStack_1c = 0;
-  if (0 < _DAT_007f8fcc) {
+  if (0 < g_CurtainCollisionCount) {
     pCVar1 = &vertex->world_position;
     pSVar11 = &this_ptr->mesh;
     pCVar2 = &vertex->velocity;
     iStack_28 = 0;
-    pfStack_34 = (float *)0x7f949c;
+    pfStack_34 = &g_CurtainCollisionInfos[0].cylinder_radius;
     do {
-      if ((float)_DAT_005b9a69 <= (vertex->velocity).y) {
+      if ((float)-0.5 <= (vertex->velocity).y) {
 LAB_00447357:
-        if (*(float *)(iStack_28 + 0x7f8fd4) <= (vertex->world_position).y) {
-          fVar10 = *(float *)(iStack_28 + 0x7f8fd4) + *(float *)(iStack_1c * 0x28 + 0x7f9498);
+        if (*(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].y + iStack_28) <=
+            (vertex->world_position).y) {
+          fVar10 = *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].y + iStack_28) +
+                   g_CurtainCollisionInfos[iStack_1c].cylinder_top_y;
           if ((vertex->world_position).y <= fVar10) {
-            afStack_dc[0] = (vertex->world_position).x - *(float *)(iStack_28 + 0x7f8fd0);
-            fStack_d4 = (vertex->world_position).z - *(float *)(iStack_28 + 0x7f8fd8);
+            afStack_dc[0] =
+                 (vertex->world_position).x -
+                 *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].x + iStack_28);
+            fStack_d4 = (vertex->world_position).z -
+                        *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].z + iStack_28);
             fVar5 = SQRT(afStack_dc[0] * afStack_dc[0] + fStack_d4 * fStack_d4);
-            if (fVar5 <= *(float *)(iStack_1c * 0x28 + 0x7f949c)) {
+            if (fVar5 <= g_CurtainCollisionInfos[iStack_1c].cylinder_radius) {
               if ((vertex->last_world_position).y < fVar10) {
-                if (*(float *)(iStack_28 + 0x7f8fd4) < (vertex->last_world_position).y) {
+                if (*(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].y + iStack_28) <
+                    (vertex->last_world_position).y) {
                   if (fVar5 <= 0.0) {
                     afStack_dc[0] = 0.0;
                     fStack_d4 = 0.0;
@@ -71,9 +75,11 @@ LAB_00447357:
                     afStack_dc[0] = afStack_dc[0] * (1.0 / fVar5);
                     fStack_d4 = fStack_d4 * (1.0 / fVar5);
                   }
-                  fVar7 = afStack_dc[0] * *pfStack_34 + *(float *)(iStack_28 + 0x7f8fd0);
+                  fVar7 = afStack_dc[0] * *pfStack_34 +
+                          *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].x + iStack_28);
                   fVar6 = (vertex->world_position).y;
-                  fVar8 = fStack_d4 * *pfStack_34 + *(float *)(iStack_28 + 0x7f8fd8);
+                  fVar8 = fStack_d4 * *pfStack_34 +
+                          *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].z + iStack_28);
                   fVar10 = (vertex->world_position).y;
                   fVar5 = (vertex->world_position).z;
                   fVar3 = pSVar11->inv_delta_time;
@@ -91,7 +97,7 @@ LAB_00447357:
                 else {
                   fVar6 = (vertex->world_position).x;
                   fVar7 = (vertex->world_position).z;
-                  fVar8 = *(float *)(iStack_28 + 0x7f8fd4);
+                  fVar8 = *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].y + iStack_28);
                   fVar10 = (vertex->world_position).z;
                   fVar5 = (vertex->world_position).y;
                   fVar3 = pSVar11->inv_delta_time;
@@ -127,13 +133,17 @@ LAB_00447357:
         }
       }
       else {
-        fVar10 = *(float *)(iStack_28 + 0x7f8fd4) + *(float *)(iStack_1c * 0x28 + 0x7f9498);
+        fVar10 = *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].y + iStack_28) +
+                 g_CurtainCollisionInfos[iStack_1c].cylinder_top_y;
         if ((fVar10 <= (vertex->world_position).y) ||
-           ((vertex->world_position).y <= *(float *)(iStack_28 + 0x7f8fd4))) goto LAB_00447357;
-        fVar5 = (vertex->world_position).x - *(float *)(iStack_28 + 0x7f8fd0);
-        fVar3 = (vertex->world_position).z - *(float *)(iStack_28 + 0x7f8fd8);
-        if (*(float *)(iStack_1c * 0x28 + 0x7f949c) <= SQRT(fVar3 * fVar3 + fVar5 * fVar5))
-        goto LAB_00447357;
+           ((vertex->world_position).y <=
+            *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].y + iStack_28))) goto LAB_00447357;
+        fVar5 = (vertex->world_position).x -
+                *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].x + iStack_28);
+        fVar3 = (vertex->world_position).z -
+                *(float *)((int)&g_CVector3f_ARRAY_007f8fd0[0].z + iStack_28);
+        if (g_CurtainCollisionInfos[iStack_1c].cylinder_radius <=
+            SQRT(fVar3 * fVar3 + fVar5 * fVar5)) goto LAB_00447357;
         (vertex->velocity).y = 0.0;
         vertex->has_collision = 1;
         (vertex->world_position).y = fVar10;
@@ -141,7 +151,7 @@ LAB_00447357:
       iStack_28 = iStack_28 + 0xc;
       pfStack_34 = pfStack_34 + 10;
       iStack_1c = iStack_1c + 1;
-    } while (iStack_1c < _DAT_007f8fcc);
+    } while (iStack_1c < g_CurtainCollisionCount);
   }
   iStack_14 = 0;
   if (0 < vertex->neighbor_count) {
@@ -174,7 +184,7 @@ LAB_00447357:
         (vertex->velocity).y = (vertex->velocity).y - fVar8 * fVar3;
         (vertex->velocity).z = (vertex->velocity).z - fVar6 * fVar4;
       }
-      if ((fVar5 < fVar10) && ((float)_DAT_005b9a71 < fVar5)) {
+      if ((fVar5 < fVar10) && ((float)0.01 < fVar5)) {
         fVar10 = fVar10 - fVar5;
         fVar5 = 1.0 / fVar5;
         fVar3 = fStack_94 * fVar10 * fVar5 * *pfVar12;

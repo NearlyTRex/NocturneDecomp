@@ -6,16 +6,17 @@
 ; Parameters:
 ; SProjectedVertex * Stack[0x4]:4   point
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100 at 004b891e
-;   core_setdir.cpp_FUN_00559f80 at 0055aaef
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055aaef
+;   core_setdir.cpp_calculateActorVisibility_FUN_00559730 at 00559946
 ;   engine_matrix.c_projectCachedPoint_FUN_00507b30 at 00507b46
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4eff8
-;   undefined4 DAT_01c4effc
-;   undefined4 DAT_01c4f000
-;   undefined4 DAT_01c4f004
+;   int g_INT_01c4eff8
+;   int g_INT_01c4effc
+;   int g_INT_01c4f000
+;   int g_INT_01c4f004
 ;
 ; *****************************************************************************
 
@@ -73,20 +74,20 @@ section .text
     SAR EDX,0x1f                        ; 00507ba4
     IDIV ECX                            ; 00507ba7
     MOV EBX,ECX                         ; 00507ba9
-    MOV EDX,dword ptr [0x01c4eff8]      ; 00507bab | DAT_01c4eff8
+    MOV EDX,dword ptr [0x01c4eff8]      ; 00507bab | g_INT_01c4eff8
     MOV dword ptr [ESI + 0xc],EAX       ; 00507bb1
     MOV EAX,EDI                         ; 00507bb4
     IMUL EDX                            ; 00507bb6
     IDIV EBX                            ; 00507bb8
-    MOV EDX,dword ptr [0x01c4f000]      ; 00507bba | DAT_01c4f000
+    MOV EDX,dword ptr [0x01c4f000]      ; 00507bba | g_INT_01c4f000
     MOV EBX,ECX                         ; 00507bc0
     ADD EAX,EDX                         ; 00507bc2
-    MOV EDX,dword ptr [0x01c4effc]      ; 00507bc4 | DAT_01c4effc
+    MOV EDX,dword ptr [0x01c4effc]      ; 00507bc4 | g_INT_01c4effc
     MOV dword ptr [ESI + 0x10],EAX      ; 00507bca
     MOV EAX,EBP                         ; 00507bcd
     IMUL EDX                            ; 00507bcf
     IDIV EBX                            ; 00507bd1
-    MOV EDX,dword ptr [0x01c4f004]      ; 00507bd3 | DAT_01c4f004
+    MOV EDX,dword ptr [0x01c4f004]      ; 00507bd3 | g_INT_01c4f004
     ADD EAX,EDX                         ; 00507bd9
     MOV dword ptr [ESI + 0x14],EAX      ; 00507bdb
     POP EBX                             ; 00507bde

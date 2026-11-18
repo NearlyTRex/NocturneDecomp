@@ -7,15 +7,15 @@
 ; CDemonImage *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dimage.cpp_FUN_0045f190 at 0045f207
+;   core_dimage.cpp_CDemonImage_load_FUN_0045f190 at 0045f207
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dimage.cpp_CDemonImage_freeMemory_FUN_0045f100
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
@@ -46,10 +46,10 @@ section .text
     MOV EBX,0x5d891b                    ; 0045f0d1
     MOV ESI,0x31                        ; 0045f0d6
     PUSH 0x5d892e                       ; 0045f0db
-    MOV dword ptr [0x01d1d400],EBX      ; 0045f0e0 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0045f0e6 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0045f0ec
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 0045f0e0 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0045f0e6 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0045f0ec
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0045f0f1
     POP ESI                             ; 0045f0f4
     POP EBX                             ; 0045f0f5

@@ -27,7 +27,7 @@
 ;   core_vehicle.cpp_CVehicle_process_FUN_00583f20 at 00583f77
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00438cf0
+;   core_course.cpp_CCourse_interpolate_FUN_00438cf0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
 ;
@@ -48,8 +48,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa0]      ; 00438c5d
     PUSH dword ptr [ESP + 0xa4]         ; 00438c64
     PUSH ECX                            ; 00438c6b
-    CALL core_course.cpp_FUN_00438cf0   ; 00438c6c
-        ;   XREF to: 00438cf0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00438cf0(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
+    CALL core_course.cpp_CCourse_interpolate_FUN_00438cf0 ; 00438c6c
+        ;   XREF to: 00438cf0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_interpolate_FUN_00438cf0(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
     ADD ESP,0x10                        ; 00438c71
     LEA EAX,[ESP + 0x60]                ; 00438c74
     PUSH EAX                            ; 00438c78
@@ -66,7 +66,7 @@ section .text
     LEA ESI,[ESP + 0x74]                ; 00438c99
     LEA EDI,[ESP + 0x80]                ; 00438c9d
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 00438ca4
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00591de0(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x74]                ; 00438ca9
     ADD ESP,0x4                         ; 00438cad
     LEA EAX,[ESP + 0x7c]                ; 00438cb0

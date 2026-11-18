@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 189,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
-    "suspect_count": 6,
+    "pseudocode_lines": 103,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 284
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -58,15 +57,15 @@
   "globals": [
     {
       "addr": "005e73f3",
-      "name": "DAT_005e73f3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e73f3",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "005fb9a0",
-      "name": "DAT_005fb9a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fb9a0",
+      "type": "float",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -325,16 +324,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
+      "line": 18,
       "match": "aiStackY_1040",
       "severity": "moderate",
       "text": "int aiStackY_1040 [6];",
@@ -342,7 +333,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
+      "line": 19,
       "match": "afStackY_1028",
       "severity": "moderate",
       "text": "float afStackY_1028 [1006];",
@@ -350,7 +341,7 @@
     },
     {
       "description": "Pointer value `&this_ptr->skinned_vertices_buffer->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "(int)&this_ptr->skinned_vertices_buffer->x",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar7);",
@@ -358,7 +349,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar7);",

@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 416,
+    "complexity_score": 364,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 181,
-    "suspect_count": 21,
+    "pseudocode_lines": 179,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 572
+    "total_lines": 570
   },
   "cross_references": [
     {
@@ -86,13 +84,13 @@
     },
     {
       "addr": "005a1eb0",
-      "name": "DAT_005a1eb0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005a1eb0",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "005b80f0",
-      "name": "g_CFireEffect_PTR_005b80f0",
+      "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
       "value": "01c08d04"
     },
@@ -110,44 +108,44 @@
     },
     {
       "addr": "02684234",
-      "name": "g_CVector3f_ARRAY_02684234",
+      "name": "g_ShatterVertexArray",
       "type": "CVector3f[3000]",
       "value": null
     },
     {
       "addr": "02684238",
-      "name": "g_CVector3f_ARRAY_02684234[0].y",
+      "name": "g_ShatterVertexArray[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0268423c",
-      "name": "g_CVector3f_ARRAY_02684234[0].z",
+      "name": "g_ShatterVertexArray[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02684240",
-      "name": "g_CVector3f_ARRAY_02684234[1].x",
+      "name": "g_ShatterVertexArray[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02684244",
-      "name": "g_CVector3f_ARRAY_02684234[1].y",
+      "name": "g_ShatterVertexArray[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02684248",
-      "name": "g_CVector3f_ARRAY_02684234[1].z",
+      "name": "g_ShatterVertexArray[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0268ced4",
-      "name": "DAT_0268ced4",
-      "type": "undefined4",
+      "name": "g_ShatterVertexArrayInitialized",
+      "type": "uchar",
       "value": null
     }
   ],
@@ -512,40 +510,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_0268ced4",
-      "severity": "mild",
-      "text": "if ((DAT_0268ced4 & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0268ced4",
-      "severity": "mild",
-      "text": "DAT_0268ced4 = DAT_0268ced4 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0268ced4",
-      "severity": "mild",
-      "text": "DAT_0268ced4 = DAT_0268ced4 | 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&local_94.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 107,
+      "line": 104,
       "match": "(int)&local_94.x",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_94.x + iVar9) = (uint)puVar4[3];",
@@ -553,7 +519,7 @@
     },
     {
       "description": "Pointer value `&local_88.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 111,
+      "line": 108,
       "match": "(int)&local_88.x",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_88.x + iVar9) = (uint)*puVar1;",
@@ -561,7 +527,7 @@
     },
     {
       "description": "Pointer value `&local_94.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 158,
+      "line": 155,
       "match": "(int)&local_94.x",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_94.x + iVar6) = (uint)puVar4[3] << 8;",
@@ -569,7 +535,7 @@
     },
     {
       "description": "Pointer value `&local_88.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 163,
+      "line": 160,
       "match": "(int)&local_88.x",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_88.x + iVar6) = (uint)*puVar1 << 8;",
@@ -577,7 +543,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 69,
+      "line": 66,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar7->x = local_7c.x;",
@@ -585,23 +551,23 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 102,
+      "line": 99,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar7->x = g_CVector3f_ARRAY_02684234[uVar2].x;",
+      "text": "pCVar7->x = g_ShatterVertexArray[uVar2].x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 154,
+      "line": 151,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar7->x = g_CVector3f_ARRAY_02684234[uVar2].x;",
+      "text": "pCVar7->x = g_ShatterVertexArray[uVar2].x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 107,
+      "line": 104,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_94.x + iVar9) = (uint)puVar4[3];",
@@ -609,7 +575,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 111,
+      "line": 108,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_88.x + iVar9) = (uint)*puVar1;",
@@ -617,7 +583,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 158,
+      "line": 155,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_94.x + iVar6) = (uint)puVar4[3] << 8;",
@@ -625,7 +591,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 163,
+      "line": 160,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_88.x + iVar6) = (uint)*puVar1 << 8;",
@@ -633,7 +599,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 59,
+      "line": 56,
       "match": "(int *)(local_5c + 0x2c)",
       "severity": "moderate",
       "text": "if (0 < *(int *)(local_5c + 0x2c)) {",
@@ -641,7 +607,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 76,
+      "line": 73,
       "match": "(int *)(local_5c + 0x2c)",
       "severity": "moderate",
       "text": "} while (iVar6 < *(int *)(local_5c + 0x2c));",
@@ -649,7 +615,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 89,
+      "line": 86,
       "match": "(int *)(local_54 + 0xc24)",
       "severity": "moderate",
       "text": "local_40 = *(int *)(local_54 + 0xc24) + local_24;",
@@ -657,7 +623,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 96,
+      "line": 93,
       "match": "(int *)(local_38 + 0x7c)",
       "severity": "moderate",
       "text": "puVar4 = (ushort *)(*(int *)(local_38 + 0x7c) + iVar8);",
@@ -665,7 +631,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 137,
+      "line": 134,
       "match": "(int *)(local_50 + 0xc38)",
       "severity": "moderate",
       "text": "iVar6 = *(int *)(local_50 + 0xc38) + local_24;",
@@ -673,7 +639,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 169,
+      "line": 166,
       "match": "(int *)(local_30 + 0x90)",
       "severity": "moderate",
       "text": "(local_28->textures + *(int *)(*(int *)(local_30 + 0x90) + local_14)),",

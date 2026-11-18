@@ -1,23 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005c0a00(int *param_1)
+; void crt_unknown_c_FUN_005c0a00(Heap *param_1)
 ;
 ;
 ; XREF[4]:
-;   crt_unknown.c_FUN_005c09f0 at 005c09f5
 ;   crt_unknown.c_FUN_005c10e8 at 005c110b
 ;   crt_unknown.c_FUN_005c68f8 at 005c6996
 ;   crt_unknown.c_FUN_005c7018 at 005c71c0
+;   crt_unknown.c_debugFree_FUN_005c09f0 at 005c09f5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626220
-;   undefined4 DAT_00626224
-;   undefined4 DAT_00626228
+;   Heap* g_MainHeap = 00000000
+;   Heap* g_SecondaryHeap = 00000000
+;   int g_INT_00626228 = 0x0
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626618 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626620 = 005c50d4
-;   undefined4 DAT_02c9f040
-;   undefined4 DAT_02c9f690
+;   int g_INT_02c9f040
+;   char[16] g_CHAR_ARRAY_02c9f690
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c50d4
@@ -36,7 +36,7 @@ section .text
     JZ 0x005c0b02                       ; 005c0a09
         ;   XREF to: 005c0b02 (CONDITIONAL_JUMP)  ; LAB_005c0b02
     CALL dword ptr [0x00626618]         ; 005c0a0f | PTR_crt_unknown.c_FUN_005c50d4_00626618
-    MOV ESI,dword ptr [0x02c9f040]      ; 005c0a15 | DAT_02c9f040
+    MOV ESI,dword ptr [0x02c9f040]      ; 005c0a15 | g_INT_02c9f040
     TEST ESI,ESI                        ; 005c0a1b
     JZ 0x005c0a5f                       ; 005c0a1d
         ;   XREF to: 005c0a5f (CONDITIONAL_JUMP)  ; LAB_005c0a5f
@@ -75,7 +75,7 @@ section .text
     CMP EAX,EDI                         ; 005c0a57
     JA 0x005c0abc                       ; 005c0a59
         ;   XREF to: 005c0abc (CONDITIONAL_JUMP)  ; LAB_005c0abc
-    MOV ESI,dword ptr [0x00626224]      ; 005c0a5f | DAT_00626224
+    MOV ESI,dword ptr [0x00626224]      ; 005c0a5f | g_SecondaryHeap
         ;   Label: LAB_005c0a5f
     TEST ESI,ESI                        ; 005c0a65
     JZ 0x005c0a9d                       ; 005c0a67
@@ -115,7 +115,7 @@ section .text
     CMP EAX,EDI                         ; 005c0a99
     JA 0x005c0abc                       ; 005c0a9b
         ;   XREF to: 005c0abc (CONDITIONAL_JUMP)  ; LAB_005c0abc
-    MOV ESI,dword ptr [0x00626220]      ; 005c0a9d | DAT_00626220
+    MOV ESI,dword ptr [0x00626220]      ; 005c0a9d | g_MainHeap
         ;   Label: LAB_005c0a9d
     TEST ESI,ESI                        ; 005c0aa3
     JZ 0x005c0afc                       ; 005c0aa5
@@ -136,7 +136,7 @@ section .text
         ;   XREF to: 005c0aa7 (CONDITIONAL_JUMP)  ; LAB_005c0aa7
     JMP 0x005c0afc                      ; 005c0aba
         ;   XREF to: 005c0afc (UNCONDITIONAL_JUMP)  ; LAB_005c0afc
-    MOV EAX,0x626220                    ; 005c0abc | DAT_00626220
+    MOV EAX,0x626220                    ; 005c0abc | g_MainHeap
         ;   Label: LAB_005c0abc
     MOV DX,DS                           ; 005c0ac1
     AND EDX,0xffff                      ; 005c0ac3
@@ -144,20 +144,20 @@ section .text
     MOV EAX,EDI                         ; 005c0acb
     CALL crt_unknown.c_FUN_005c6750     ; 005c0acd
         ;   XREF to: 005c6750 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c6750()
-    MOV EDX,dword ptr [0x00626224]      ; 005c0ad2 | DAT_00626224
-    MOV dword ptr [0x02c9f040],ESI      ; 005c0ad8 | DAT_02c9f040
+    MOV EDX,dword ptr [0x00626224]      ; 005c0ad2 | g_SecondaryHeap
+    MOV dword ptr [0x02c9f040],ESI      ; 005c0ad8 | g_INT_02c9f040
     CMP ESI,EDX                         ; 005c0ade
     JNC 0x005c0af4                      ; 005c0ae0
         ;   XREF to: 005c0af4 (CONDITIONAL_JUMP)  ; LAB_005c0af4
-    MOV EBX,dword ptr [0x00626228]      ; 005c0ae2 | DAT_00626228
+    MOV EBX,dword ptr [0x00626228]      ; 005c0ae2 | g_INT_00626228
     MOV EAX,dword ptr [ESI + 0x14]      ; 005c0ae8
     CMP EAX,EBX                         ; 005c0aeb
     JBE 0x005c0af4                      ; 005c0aed
         ;   XREF to: 005c0af4 (CONDITIONAL_JUMP)  ; LAB_005c0af4
-    MOV [0x00626228],EAX                ; 005c0aef | DAT_00626228
+    MOV [0x00626228],EAX                ; 005c0aef | g_INT_00626228
     XOR AH,AH                           ; 005c0af4
         ;   Label: LAB_005c0af4
-    MOV byte ptr [0x02c9f690],AH        ; 005c0af6 | DAT_02c9f690
+    MOV byte ptr [0x02c9f690],AH        ; 005c0af6 | g_CHAR_ARRAY_02c9f690
     CALL dword ptr [0x00626620]         ; 005c0afc | PTR_crt_unknown.c_FUN_005c50d4_00626620
         ;   Label: LAB_005c0afc
     POP EDI                             ; 005c0b02

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010(CTentacle *this_ptr,char *class_name)
 
@@ -46,7 +45,7 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010(CTentacle 
              *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8);
         *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
              *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-        local_3c = local_3c * (float)_DAT_005ec53a;
+        local_3c = local_3c * (float)3;
         if (SQRT(local_38 * local_38 + local_40 * local_40 + local_3c * local_3c) <
             (this_ptr->base).guard_distance) {
           (this_ptr->base).victim = (CCharacter *)actor_ptr;

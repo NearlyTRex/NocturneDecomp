@@ -9,21 +9,24 @@
 // GLOBAL VARIABLES - Range 0x5D0000
 // =============================================================================
 
+// char
+extern char g_CHAR_005d2111;
+extern char g_CHAR_005d2760;
+extern char g_CHAR_005d286b;
+extern char g_DefaultButtonText;
+extern char g_CHAR_005d2ffe;
+extern char g_CHAR_005d7b05;
+extern char g_CHAR_005d7b45;
+extern char g_CHAR_005d7c7e;
+extern char g_CHAR_005d7d08;
+extern char g_CHAR_005d7e42;
+extern char g_CHAR_005d8066;
+extern char g_CHAR_005d824a;
+extern char g_CHAR_005d8284;
+extern char g_CHAR_005d8690;
+extern char g_CHAR_005db526;
+
 // undefined1
-extern undefined1 DAT_005d2135;
 extern undefined1 DAT_005d24d0;
-extern undefined1 DAT_005d2760;
-extern undefined1 DAT_005d2d2b;
 extern undefined1 DAT_005d6a27;
-extern undefined1 DAT_005d7a00;
-extern undefined1 DAT_005d89e7;
-extern undefined1 DAT_005d8a0d;
-extern undefined1 DAT_005d979c;
-extern undefined1 DAT_005d97a8;
-extern undefined1 DAT_005dc2f5;
-extern undefined1 DAT_005dc326;
-extern undefined1 DAT_005dc35a;
-extern undefined1 DAT_005dc376;
-extern undefined1 DAT_005dc3d4;
-extern undefined1 DAT_005dc403;
 

@@ -55,7 +55,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(CEnemy *this_ptr)
   pCVar3[-0xffffffff00000001].model_name[0x11] = '\0';
   pCVar3[-0xffffffff00000001].model_name[0x12] = -0x38;
   pCVar3[-0xffffffff00000001].model_name[0x13] = 'B';
-  pcVar5 = (char *)0x5bdb7e;
+  pcVar5 = "ene";
   pCVar3[-0xffffffff00000001].model_name[0x14] = '\0';
   pCVar3[-0xffffffff00000001].model_name[0x15] = '\0';
   pCVar3[-0xffffffff00000001].model_name[0x16] = '\0';

@@ -14,13 +14,13 @@ void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *
   if (activate == 0) {
     return;
   }
-  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(10,DAT_006141b8 + -0x14);
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(10,g_INT_006141b8 + -0x14);
   this_ptr->rect_left = iVar1;
-  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(10,DAT_006141bc + -0x14);
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(10,g_INT_006141bc + -0x14);
   this_ptr->rect_top = iVar1;
-  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(this_ptr->rect_left + 5,DAT_006141b8 + -10);
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(this_ptr->rect_left + 5,g_INT_006141b8 + -10);
   this_ptr->rect_right = iVar1;
-  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(this_ptr->rect_top + 5,DAT_006141bc + -10);
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(this_ptr->rect_top + 5,g_INT_006141bc + -10);
   this_ptr->rect_bottom = iVar1;
   return;
 }

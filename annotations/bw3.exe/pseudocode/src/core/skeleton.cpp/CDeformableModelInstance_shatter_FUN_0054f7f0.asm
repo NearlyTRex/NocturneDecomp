@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   desired_lod_index
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042ff70 at 0042ffa4
+;   core_charactr.cpp_CCharacter_shatter_FUN_0042ff70 at 0042ffa4
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_shatter_FUN_0054afb0

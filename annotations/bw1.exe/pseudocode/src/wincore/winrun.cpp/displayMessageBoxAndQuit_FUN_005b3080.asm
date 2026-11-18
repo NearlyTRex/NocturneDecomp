@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   message
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005030e0 at 00503168
+;   core_main.c_displayErrorAndQuit_FUN_005030e0 at 00503168
 ;
 ; Referenced Globals:
 ;   void* PTR_MessageBoxA_005d04dc = 001d0b66
@@ -15,10 +15,10 @@
 ;   TerminatedCString s_s_File_s_Line_d_005f9c7a
 ;   TerminatedCString s_Nocturne_005f9e9d
 ;   void* PTR_s_Nocturne_006260dc = 005f9e9d
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c9a630
-;   undefined4 DAT_02c9be68
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   char[6000] g_CHAR_ARRAY_02c9a630
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -33,9 +33,9 @@ section .text
         ;   Label: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080
     PUSH ESI                            ; 005b3081
     PUSH EDI                            ; 005b3082
-    MOV EDX,dword ptr [0x01d1d404]      ; 005b3083 | DAT_01d1d404
+    MOV EDX,dword ptr [0x01d1d404]      ; 005b3083 | g_INT_01d1d404
     PUSH EDX                            ; 005b3089
-    MOV ECX,dword ptr [0x01d1d400]      ; 005b308a | DAT_01d1d400
+    MOV ECX,dword ptr [0x01d1d400]      ; 005b308a | g_CHAR_PTR_01d1d400
     PUSH ECX                            ; 005b3090
     MOV EBX,dword ptr [ESP + 0x18]      ; 005b3091
     PUSH EBX                            ; 005b3095
@@ -47,8 +47,8 @@ section .text
     PUSH 0x30                           ; 005b30a8
     MOV ESI,dword ptr [0x006260dc]      ; 005b30aa | PTR_s_Nocturne_006260dc
     PUSH ESI                            ; 005b30b0 | = "Nocturne"
-    PUSH 0x2c9a630                      ; 005b30b1 | DAT_02c9a630
-    MOV EDI,dword ptr [0x02c9be68]      ; 005b30b6 | DAT_02c9be68
+    PUSH 0x2c9a630                      ; 005b30b1 | g_CHAR_ARRAY_02c9a630
+    MOV EDI,dword ptr [0x02c9be68]      ; 005b30b6 | g_MainWindowHandle
     PUSH EDI                            ; 005b30bc
     CALL dword ptr CS:[0x5d04dc]        ; 005b30bd | PTR_MessageBoxA_005d04dc
     PUSH 0x1                            ; 005b30c4

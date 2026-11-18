@@ -28,11 +28,11 @@
 ;   TerminatedCString s_No_data_chunk_found_005f2be7
 ;   TerminatedCString s_sound_sndmain_cpp_005f2bfd
 ;   TerminatedCString s_Hell_froze_005f2c12
-;   undefined4 DAT_01d1d400
+;   char* g_CHAR_PTR_01d1d400
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
@@ -292,10 +292,10 @@ section .text
     MOV EDI,0x5f2bfd                    ; 0056dd88 | = "..\\sound\\sndmain.cpp"
     MOV EBP,0x236                       ; 0056dd8d
     PUSH 0x5f2c12                       ; 0056dd92 | = "Hell froze"
-    MOV dword ptr [0x01d1d400],EDI      ; 0056dd97 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0056dd9d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056dda3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 0056dd97 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0056dd9d | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056dda3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056dda8
     MOV EDX,dword ptr [ESP + 0x94]      ; 0056ddab
         ;   Label: LAB_0056ddab
@@ -391,10 +391,10 @@ section .text
         ;   Label: LAB_0056dec1
     MOV EDX,0x211                       ; 0056dec6
     PUSH 0x5f2bdc                       ; 0056decb | = "Hell froze"
-    MOV [0x01d1d400],EAX                ; 0056ded0 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0056ded5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0056dedb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 0056ded0 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0056ded5 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056dedb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056dee0
     JMP 0x0056dcfd                      ; 0056dee3
         ;   XREF to: 0056dcfd (UNCONDITIONAL_JUMP)  ; LAB_0056dcfd

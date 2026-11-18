@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[005b0c10, 005b0c88]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice *this_ptr)
 
 {
   int iVar1;

@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4)
+; void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *file_handle,ulong buffer_size,int stream_length)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr
-; _FILE *          Stack[0x8]:4   param_2
-; ulong            Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; _FILE *          Stack[0x8]:4   file_handle
+; ulong            Stack[0xc]:4   buffer_size
+; int              Stack[0x10]:4   stream_length
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b567
 ;   TerminatedCString s_Out_of_memory_File_s_0058b578
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd8b28
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -98,7 +98,7 @@ section .text
     MOV dword ptr [EBX],0x0             ; 004e2943
     JMP 0x004e28b4                      ; 004e2949
         ;   XREF to: 004e28b4 (UNCONDITIONAL_JUMP)  ; LAB_004e28b4
-    PUSH 0x1cd8b28                      ; 004e294e | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e294e | g_CurrentMp3Filename
         ;   Label: LAB_004e294e
     MOV ESI,0x58b567                    ; 004e2953 | = "..\\sound\\mp3.cpp"
     MOV EDI,0x1ff                       ; 004e2958

@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_drawTextColor_FUN_00402440(char *text,int x,int y)
 
 {
-  if (DAT_0060936c != 0) {
-    engine_2d_c_drawTextWrappedColor_FUN_00401ec0(text,x,y,_DAT_01c35e50,_DAT_01c35e54,DAT_00609370)
-    ;
+  if (g_TextWrapEnabled != 0) {
+    engine_2d_c_drawTextWrappedColor_FUN_00401ec0
+              (text,x,y,g_ClipRight,g_INT_01c35e54,g_CurrentTextColor);
     return;
   }
-  engine_2d_c_drawTextMultilineColor_FUN_00401f50(text,x,y,_DAT_01c35e50,_DAT_01c35e54,DAT_00609370)
-  ;
+  engine_2d_c_drawTextMultilineColor_FUN_00401f50
+            (text,x,y,g_ClipRight,g_INT_01c35e54,g_CurrentTextColor);
   return;
 }

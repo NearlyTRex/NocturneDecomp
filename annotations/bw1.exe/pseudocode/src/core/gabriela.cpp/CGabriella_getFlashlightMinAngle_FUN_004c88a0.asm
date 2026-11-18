@@ -13,7 +13,7 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8ae0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c5330
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 004c88a0
         ;   Label: core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004c88a0
     SUB ESP,0x4                         ; 004c88a1
-    MOV EDX,dword ptr [0x007c5330]      ; 004c88a4 | DAT_007c5330
+    MOV EDX,dword ptr [0x007c5330]      ; 004c88a4 | g_CLightActorClassInfo.name_hash
     MOV EAX,dword ptr [ESP + 0xc]       ; 004c88aa
     PUSH EDX                            ; 004c88ae
     MOV ECX,dword ptr [EAX + 0x25b0]    ; 004c88af

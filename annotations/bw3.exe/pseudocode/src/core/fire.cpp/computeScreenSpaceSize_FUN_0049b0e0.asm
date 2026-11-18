@@ -21,18 +21,18 @@
 ;   core_fire.cpp_CLaserBeam_render_FUN_0049b1d0 at 0049bafe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c05e8
-;   undefined4 DAT_005c05f0
-;   undefined4 DAT_005c05f8
-;   undefined4 DAT_005df8e4
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fba44
-;   undefined4 DAT_01bdd7e4
-;   undefined4 DAT_01c6b598
-;   undefined4 DAT_01c6b59c
+;   double g_DOUBLE_005c05e8 = 0.00390625
+;   double g_DOUBLE_005c05f0 = 0.0000152587890625
+;   float g_FLOAT_005c05f8 = 0.2000000
+;   float g_FLOAT_005df8e4 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   int g_ProjectionScale = 0x10000
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
+;   int g_INT_01c6b598
+;   int g_INT_01c6b59c
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_005632a3
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;
 ; *****************************************************************************
 
@@ -48,41 +48,41 @@ section .text
     MOV dword ptr [ESP + 0x10],EDX      ; 0049b0f0
     MOV dword ptr [ESP + 0x14],EAX      ; 0049b0f4
     LEA EAX,[ESP + 0xc]                 ; 0049b0f8
-    MOV EDX,dword ptr [0x005f2afc]      ; 0049b0fc | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 0049b0fc | g_CDemonRenderer_PTR_005f2afc
     FLD float ptr [EAX]                 ; 0049b102
-    FMUL float ptr [0x005df8e4]         ; 0049b104 | DAT_005df8e4
+    FMUL float ptr [0x005df8e4]         ; 0049b104 | g_FLOAT_005df8e4
     FISTP dword ptr [EBX]               ; 0049b10a
     FLD float ptr [EAX + 0x4]           ; 0049b10c
-    FMUL float ptr [0x005df8e4]         ; 0049b10f | DAT_005df8e4
+    FMUL float ptr [0x005df8e4]         ; 0049b10f | g_FLOAT_005df8e4
     FISTP dword ptr [EBX + 0x4]         ; 0049b115
     FLD float ptr [EAX + 0x8]           ; 0049b118
-    FMUL float ptr [0x005df8e4]         ; 0049b11b | DAT_005df8e4
+    FMUL float ptr [0x005df8e4]         ; 0049b11b | g_FLOAT_005df8e4
     FISTP dword ptr [EBX + 0x8]         ; 0049b121
     MOV EAX,ESP                         ; 0049b124
     PUSH EAX                            ; 0049b126
-    MOV EAX,dword ptr [EDX]             ; 0049b127 | DAT_01bdd7e4
+    MOV EAX,dword ptr [EDX]             ; 0049b127 | g_CDemonRenderer_01bdd7e4
     PUSH EAX                            ; 0049b129
-    CALL engine_special.cpp_FUN_005632a3 ; 0049b12a
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005f2afc]                ; 0049b12f | DAT_005f2afc
-    MOV EAX,dword ptr [EAX]             ; 0049b134 | DAT_01bdd7e4
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0049b12a
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    MOV EAX,[0x005f2afc]                ; 0049b12f | g_CDemonRenderer_PTR_005f2afc
+    MOV EAX,dword ptr [EAX]             ; 0049b134 | g_CDemonRenderer_01bdd7e4
     FILD dword ptr [EAX + 0x8]          ; 0049b136
-    FMUL double ptr [0x005c05e8]        ; 0049b139 | DAT_005c05e8
-    FLD double ptr [0x005c05f0]         ; 0049b13f | DAT_005c05f0
-    FILD dword ptr [0x005fba44]         ; 0049b145 | DAT_005fba44
+    FMUL double ptr [0x005c05e8]        ; 0049b139 | g_DOUBLE_005c05e8
+    FLD double ptr [0x005c05f0]         ; 0049b13f | g_DOUBLE_005c05f0
+    FILD dword ptr [0x005fba44]         ; 0049b145 | g_ProjectionScale
     FMUL ST1                            ; 0049b14b
     FDIVP ST2,ST0                       ; 0049b14d
-    FILD dword ptr [0x01c6b598]         ; 0049b14f | DAT_01c6b598
+    FILD dword ptr [0x01c6b598]         ; 0049b14f | g_INT_01c6b598
     FMUL ST1                            ; 0049b155
     ADD ESP,0x8                         ; 0049b157
     FXCH ST2                            ; 0049b15a
-    FMUL float ptr [0x005c05f8]         ; 0049b15c | DAT_005c05f8
+    FMUL float ptr [0x005c05f8]         ; 0049b15c | g_FLOAT_005c05f8
     FXCH ST2                            ; 0049b162
     FDIVR ST0,ST2                       ; 0049b164
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0049b166
     MOV dword ptr [ESP + 0x2c],EAX      ; 0049b16a
     FABS                                ; 0049b16e
-    FILD dword ptr [0x01c6b59c]         ; 0049b170 | DAT_01c6b59c
+    FILD dword ptr [0x01c6b59c]         ; 0049b170 | g_INT_01c6b59c
     FMULP ST2                           ; 0049b176
     FXCH                                ; 0049b178
     FDIVP ST2,ST0                       ; 0049b17a

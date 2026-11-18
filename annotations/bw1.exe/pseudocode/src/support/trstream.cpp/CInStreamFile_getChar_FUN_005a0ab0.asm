@@ -25,7 +25,7 @@ section .text
     PUSH EDX                            ; 005a0aba
     PUSH EBX                            ; 005a0abb
     CALL support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0 ; 005a0abc
-        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int param_2)
+        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int position)
     ADD ESP,0x8                         ; 005a0ac1
     MOV ESI,EAX                         ; 005a0ac4
     TEST EAX,EAX                        ; 005a0ac6
@@ -52,7 +52,7 @@ section .text
     PUSH EBX                            ; 005a0ae4
     MOV ESI,0xa                         ; 005a0ae5
     CALL support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0 ; 005a0aea
-        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int param_2)
+        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int position)
     ADD ESP,0x8                         ; 005a0aef
     CMP EAX,ESI                         ; 005a0af2
     JNZ 0x005a0add                      ; 005a0af4

@@ -11,7 +11,7 @@ CSpiritEagle * __cdecl core_spireagl_cpp_factoryFuncSpiritEagle_FUN_005991a0(voi
 {
   CSpiritEagle *pCVar1;
   
-  pCVar1 = (CSpiritEagle *)operator_new(0x214ac);
+  pCVar1 = operator_new(0x214ac);
   if (pCVar1 == (CSpiritEagle *)0x0) {
     return (CSpiritEagle *)0x0;
   }

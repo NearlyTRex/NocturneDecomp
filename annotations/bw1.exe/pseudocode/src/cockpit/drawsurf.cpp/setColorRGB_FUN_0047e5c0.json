@@ -1,0 +1,283 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 55,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 40,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_unreachable"
+    ],
+    "total_lines": 169
+  },
+  "cross_references": [
+    {
+      "addr": "00481090",
+      "from_addr": "0048113a",
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047e5c0",
+    "address_range": [
+      [
+        "0047e5c0",
+        "0047e71f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_setColorRGB_FUN_0047e5c0",
+    "signature": "void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_0047e5c0(int red,int green,int blue)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4a0",
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "01bc11e4",
+      "name": "g_CurrentDrawColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bc11e8",
+      "name": "g_PaletteColorIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01bc11f0",
+      "name": "g_UseRGBConversion",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4e9d4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c4e9d8",
+      "name": "g_RedScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4e9e0",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c4e9e4",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4e9ec",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f0",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "g_INT_01d1d404",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0048113a",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00481399",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004813f9",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004814a5",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048179b",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.9743589743589745,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 68,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 129,
+      "INT_ADD": 41,
+      "INT_AND": 229,
+      "INT_CARRY": 8,
+      "INT_DIV": 3,
+      "INT_EQUAL": 95,
+      "INT_LEFT": 23,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 29,
+      "INT_OR": 71,
+      "INT_REM": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 61,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 24,
+      "INT_XOR": 15,
+      "INT_ZEXT": 9,
+      "LOAD": 32,
+      "POPCOUNT": 41,
+      "RETURN": 5,
+      "STORE": 10,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 933
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004660b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00467c80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00487220",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045b800",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047e6d1) */",
+      "type": "warning_unreachable"
+    }
+  ]
+}

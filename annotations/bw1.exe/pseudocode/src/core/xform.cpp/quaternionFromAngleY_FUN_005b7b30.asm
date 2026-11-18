@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(float param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_005b7b30(float angle_radians,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -11,10 +13,10 @@
 ;
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30 at 00433b91
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 at 0046f244
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_0046e630 at 0046e6d1
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046f003
-;   core_doc.cpp_FUN_0046caa0 at 0046cde5
-;   core_doc.cpp_FUN_0046e630 at 0046e6d1
-;   core_doc.cpp_FUN_0046f200 at 0046f244
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046cde5
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8b7f
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0 at 0051e204
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 005422b6
@@ -23,7 +25,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa180
+;   float g_FLOAT_005fa180 = 0.5
 ;
 ; *****************************************************************************
 
@@ -34,7 +36,7 @@ section .text
     SUB ESP,0x18                        ; 005b7b31
     MOV EDX,ESI                         ; 005b7b34
     FLD float ptr [ESP + 0x20]          ; 005b7b36
-    FMUL float ptr [0x005fa180]         ; 005b7b3a | DAT_005fa180
+    FMUL float ptr [0x005fa180]         ; 005b7b3a | g_FLOAT_005fa180
     FLD ST0                             ; 005b7b40
     FCOS                                ; 005b7b42
     FXCH                                ; 005b7b44

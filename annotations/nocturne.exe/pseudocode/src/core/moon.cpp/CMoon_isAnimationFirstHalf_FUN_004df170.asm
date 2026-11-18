@@ -11,13 +11,13 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058a966 = 30
-;   undefined4 DAT_01ccdec4
+;   float g_MoonAnimationTimer
 ;
 ; *****************************************************************************
 
 section .text
 
-    FLD float ptr [0x01ccdec4]          ; 004df170 | DAT_01ccdec4
+    FLD float ptr [0x01ccdec4]          ; 004df170 | g_MoonAnimationTimer
         ;   Label: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170
     FCOMP double ptr [0x0058a966]       ; 004df176 | DOUBLE_0058a966
     FNSTSW AX                           ; 004df17c

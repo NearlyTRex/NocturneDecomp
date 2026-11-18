@@ -11,7 +11,7 @@ CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_005a8ad0(void)
 {
   CCryptVessel *pCVar1;
   
-  pCVar1 = (CCryptVessel *)operator_new(0x7f4);
+  pCVar1 = operator_new(0x7f4);
   if (pCVar1 == (CCryptVessel *)0x0) {
     return (CCryptVessel *)0x0;
   }

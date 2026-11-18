@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b5190 at 004b5997
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5997
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_skeletons_d_bytes_d_mo_005e75ed

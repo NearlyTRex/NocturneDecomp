@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00465270(CDraculaBride *this_ptr,CVector3f *out_points_array)
 
 {
@@ -27,7 +25,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00465270(CDracul
   }
   iStack_c = 3;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-            (&(this_ptr->base).base.model,_DAT_01ba5778,&CStack_30);
+            (&(this_ptr->base).base.model,g_DraculaBrideIndices[0],&CStack_30);
   CStack_54.x = CStack_30.x;
   *(uint *)((int)&CStack_54 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_30 + (uint)bVar1 * -8 + 4);
@@ -39,7 +37,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00465270(CDracul
     out_points_array->z = CStack_54.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-            (&(this_ptr->base).base.model,_DAT_01ba578c,&CStack_24);
+            (&(this_ptr->base).base.model,g_DraculaBrideIndices[5],&CStack_24);
   CStack_18.x = CStack_24.x;
   *(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + 4);
@@ -51,7 +49,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00465270(CDracul
     out_points_array[1].z = CStack_18.z;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
-            (&(this_ptr->base).base.model,_DAT_01ba5794,&CStack_3c);
+            (&(this_ptr->base).base.model,g_DraculaBrideIndices[7],&CStack_3c);
   CStack_48.x = CStack_3c.x;
   *(uint *)((int)&CStack_48 + (uint)bVar1 * -8 + 4) =
        *(uint *)((int)&CStack_3c + (uint)bVar1 * -8 + 4);

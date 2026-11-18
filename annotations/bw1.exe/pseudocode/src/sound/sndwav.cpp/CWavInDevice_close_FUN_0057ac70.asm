@@ -13,8 +13,8 @@
 ;   void* PTR_waveInClose_005d0460 = 001d0954
 ;   void* PTR_GlobalFree_005d05e0 = 001d0fd8
 ;   TerminatedCString s_waveInClose_failed_005f5822
-;   undefined4 DAT_02c828d8
-;   undefined4 DAT_02c829cc
+;   int g_WaveInHandle
+;   int[20] g_WaveInBuffers
 ;
 ; Called Functions:
 ;   GlobalFree
@@ -52,7 +52,7 @@ section .text
     MOV dword ptr [EBX + 0x2c8297c],EDI ; 0057aca0
     MOV EBP,dword ptr [EBX + 0x2c828dc] ; 0057aca6
         ;   Label: LAB_0057aca6
-    MOV dword ptr [EBX + 0x2c829cc],EDI ; 0057acac | DAT_02c829cc
+    MOV dword ptr [EBX + 0x2c829cc],EDI ; 0057acac | g_WaveInBuffers
     CMP EDI,EBP                         ; 0057acb2
     JZ 0x0057acc4                       ; 0057acb4
         ;   XREF to: 0057acc4 (CONDITIONAL_JUMP)  ; LAB_0057acc4
@@ -65,7 +65,7 @@ section .text
     CMP EBX,0x50                        ; 0057accd
     JNZ 0x0057ac8e                      ; 0057acd0
         ;   XREF to: 0057ac8e (CONDITIONAL_JUMP)  ; LAB_0057ac8e
-    MOV EDX,dword ptr [0x02c828d8]      ; 0057acd2 | DAT_02c828d8
+    MOV EDX,dword ptr [0x02c828d8]      ; 0057acd2 | g_WaveInHandle
     TEST EDX,EDX                        ; 0057acd8
     JNZ 0x0057ace7                      ; 0057acda
         ;   XREF to: 0057ace7 (CONDITIONAL_JUMP)  ; LAB_0057ace7
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x4                         ; 0057acff
     XOR EBX,EBX                         ; 0057ad02
         ;   Label: LAB_0057ad02
-    MOV dword ptr [0x02c828d8],EBX      ; 0057ad04 | DAT_02c828d8
+    MOV dword ptr [0x02c828d8],EBX      ; 0057ad04 | g_WaveInHandle
     MOV EAX,ESI                         ; 0057ad0a
     POP EBP                             ; 0057ad0c
     POP EDI                             ; 0057ad0d

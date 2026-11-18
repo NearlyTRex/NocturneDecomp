@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   depth_reciprocal
 ;
 ; Referenced Globals:
-;   undefined4 DAT_015484cc
-;   undefined4 DAT_015484d0
-;   undefined4 DAT_015484d4
-;   undefined4 DAT_015484d8
+;   int g_CoronaVisibilityEnabled
+;   int g_CoronaTargetX
+;   int g_CoronaTargetY
+;   int g_CoronaTargetDepth
 ;
 ; *****************************************************************************
 
@@ -23,16 +23,16 @@ section .text
     PUSH EBP                            ; 0044dff1
     SUB ESP,0x10                        ; 0044dff2
     MOV ESI,dword ptr [ESP + 0x24]      ; 0044dff5
-    CMP dword ptr [0x015484cc],0x0      ; 0044dff9 | DAT_015484cc
+    CMP dword ptr [0x015484cc],0x0      ; 0044dff9 | g_CoronaVisibilityEnabled
     JZ 0x0044e0b6                       ; 0044e000
         ;   XREF to: 0044e0b6 (CONDITIONAL_JUMP)  ; LAB_0044e0b6
     PUSH EDI                            ; 0044e006
     PUSH EBX                            ; 0044e007
-    MOV EDI,dword ptr [0x015484d0]      ; 0044e008 | DAT_015484d0
+    MOV EDI,dword ptr [0x015484d0]      ; 0044e008 | g_CoronaTargetX
     XOR ECX,ECX                         ; 0044e00e
-    MOV EBX,dword ptr [0x015484d8]      ; 0044e010 | DAT_015484d8
+    MOV EBX,dword ptr [0x015484d8]      ; 0044e010 | g_CoronaTargetDepth
     MOV dword ptr [ESP + 0x8],ECX       ; 0044e016
-    MOV ECX,dword ptr [0x015484d4]      ; 0044e01a | DAT_015484d4
+    MOV ECX,dword ptr [0x015484d4]      ; 0044e01a | g_CoronaTargetY
     TEST ESI,ESI                        ; 0044e020
     JZ 0x0044e0bd                       ; 0044e022
         ;   XREF to: 0044e0bd (CONDITIONAL_JUMP)  ; LAB_0044e0bd

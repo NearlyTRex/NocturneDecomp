@@ -7,7 +7,7 @@
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[68]:
-;   core_actor.cpp_FUN_004091b0 at 004095a7
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_004091b0 at 004095a7
 ;   core_ammo.cpp_CAmmoManaLarge_process_FUN_0040e2b0 at 0040e2c1
 ;   core_ammo.cpp_CAmmoMana_process_FUN_0040e140 at 0040e151
 ;   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dfc0 at 0040dfd5
@@ -22,11 +22,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005bbb16
 ;   TerminatedCString s_Tried_to_do_something_wi_005bbb29
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -48,10 +48,10 @@ section .text
     MOV ECX,0x5bbb16                    ; 004625bb | = "..\\core\\dmodel.cpp"
     MOV ESI,0x52d                       ; 004625c0
     PUSH 0x5bbb29                       ; 004625c5 | = "Tried to do something with model %s, ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004625ca | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004625d0 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004625d6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004625ca | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004625d0 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004625d6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004625db
     POP ESI                             ; 004625de
     MOV EAX,dword ptr [EBX + 0x178]     ; 004625df

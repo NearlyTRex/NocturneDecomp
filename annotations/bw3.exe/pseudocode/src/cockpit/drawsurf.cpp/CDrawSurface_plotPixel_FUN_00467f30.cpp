@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00467f30(CDrawSurface *this_ptr,int x,int y)
 
 {
@@ -23,51 +21,50 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00467f30(CDrawSurfa
     return;
   }
   iVar2 = iVar3 * 2;
-  iVar4 = iVar4 * 4;
   iVar1 = iVar3 * 4;
-  if (_DAT_01bdd7c8 == 0) {
-    if (DAT_005fba20 < 0x10) {
-      if (DAT_005fba20 == 8) {
-        *(byte *)(iVar3 + *(int *)(&DAT_01c5faec + iVar4)) = DAT_01bdd7bc;
+  if (g_UseRGBConversion == 0) {
+    if ((uint)g_INT_005fba20 < 0x10) {
+      if (g_INT_005fba20 == 8) {
+        g_ScreenBufferArray[iVar4][iVar3] = (byte)g_CurrentDrawColor;
         return;
       }
     }
     else {
-      if (DAT_005fba20 < 0x11) {
-        *(ushort *)(iVar2 + *(int *)(&DAT_01c5faec + iVar4)) = _DAT_01bdd7bc;
+      if ((uint)g_INT_005fba20 < 0x11) {
+        *(ushort *)(g_ScreenBufferArray[iVar4] + iVar2) = (ushort)g_CurrentDrawColor;
         return;
       }
-      if (DAT_005fba20 == 0x20) {
-        *(uint *)(iVar1 + *(int *)(&DAT_01c5faec + iVar4)) = _DAT_01bdd7bc;
+      if (g_INT_005fba20 == 0x20) {
+        *(int *)(g_ScreenBufferArray[iVar4] + iVar1) = g_CurrentDrawColor;
         return;
       }
     }
-    _DAT_01d71de0 = "..\\cockpit\\drawsurf.cpp";
-    _DAT_01d71de4 = 0x18e;
-    core_main_c_FUN_004e4330("Invalid bitsPerPixel!");
+    g_CHAR_PTR_01d71de0 = "..\\cockpit\\drawsurf.cpp";
+    g_INT_01d71de4 = 0x18e;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel!");
     return;
   }
-  if (DAT_005fba20 < 0x10) {
-    if (DAT_005fba20 == 8) {
+  if ((uint)g_INT_005fba20 < 0x10) {
+    if (g_INT_005fba20 == 8) {
       return;
     }
   }
   else {
-    if (DAT_005fba20 < 0x11) {
-      *(ushort *)(iVar2 + *(int *)(&DAT_01c5faec + iVar4)) =
-           *(ushort *)(iVar2 + *(int *)(&DAT_01c5faec + iVar4)) >> (DAT_01bdd7cc & 0x1f) &
-           (ushort)_DAT_01bdd7dc;
+    if ((uint)g_INT_005fba20 < 0x11) {
+      *(ushort *)(g_ScreenBufferArray[iVar4] + iVar2) =
+           *(ushort *)(g_ScreenBufferArray[iVar4] + iVar2) >> ((byte)g_OriginalColorValue & 0x1f) &
+           (ushort)g_PackedPixelColor;
       return;
     }
-    if (DAT_005fba20 == 0x20) {
-      *(uint *)(*(int *)(&DAT_01c5faec + iVar4) + iVar1) =
-           *(uint *)(*(int *)(&DAT_01c5faec + iVar4) + iVar1) >> (DAT_01bdd7cc & 0x1f) &
-           _DAT_01bdd7dc;
+    if (g_INT_005fba20 == 0x20) {
+      *(uint *)(g_ScreenBufferArray[iVar4] + iVar1) =
+           *(uint *)(g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f) &
+           g_PackedPixelColor;
       return;
     }
   }
-  _DAT_01d71de0 = "..\\cockpit\\drawsurf.cpp";
-  _DAT_01d71de4 = 0x19f;
-  core_main_c_FUN_004e4330("Invalid bitsPerPixel!");
+  g_CHAR_PTR_01d71de0 = "..\\cockpit\\drawsurf.cpp";
+  g_INT_01d71de4 = 0x19f;
+  core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid bitsPerPixel!");
   return;
 }

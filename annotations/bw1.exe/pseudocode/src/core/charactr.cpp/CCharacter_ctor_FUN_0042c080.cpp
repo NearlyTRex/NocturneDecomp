@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_0042c080(CCharacter *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   CDemonActor *pCVar2;
   CDeformableModelInstance *pCVar3;
   CClothList *pCVar4;
@@ -147,8 +145,8 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_0042c080(CCharacter *
   *(uint *)((int)pvVar5 + 0x8bb0) = 0;
   *(uint *)((int)pvVar5 + 0x8bbc) = 0;
   *(uint *)((int)pvVar5 + 0x8bb4) = 0;
-  uVar1 = _DAT_005fd618;
+  fVar1 = 6.0f;
   *(uint *)((int)pvVar5 + 0x8bc0) = 0xfffffffe;
-  *(uint *)((int)pvVar5 + 0x8bb8) = uVar1;
+  *(float *)((int)pvVar5 + 0x8bb8) = fVar1;
   return (CCharacter *)((int)pvVar5 + -0x35dc);
 }

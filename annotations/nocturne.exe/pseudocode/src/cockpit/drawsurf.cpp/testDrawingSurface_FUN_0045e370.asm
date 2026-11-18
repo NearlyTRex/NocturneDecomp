@@ -399,7 +399,7 @@ section .text
     PUSH EAX                            ; 0045e714
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 ; 0045e715
         ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-    MOV EAX,[0x005ae6fc]                ; 0045e71a | DAT_005ae6fc
+    MOV EAX,[0x005ae6fc]                ; 0045e71a | = "A+A"
     ADD ESP,0x14                        ; 0045e71f
     MOV dword ptr [ESP + 0xa8],EAX      ; 0045e722
     MOV EAX,[0x005b761c]                ; 0045e729 | g_WindowWidth

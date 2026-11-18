@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_01cd0c38
-;   undefined4 DAT_01cd0c3c
-;   undefined4 DAT_01cd0c44
+;   int g_MovieRecordingArmed
+;   int g_MovieRecordingActive
+;   int g_MovieRecordingFrameCounter
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00495e70
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [0x0061abc0]      ; 004cb88c | g_CEditorToolsPtr
     XOR EDX,EDX                         ; 004cb892
     PUSH EBX                            ; 004cb894
-    MOV dword ptr [0x01cd0c3c],EDX      ; 004cb895 | DAT_01cd0c3c
-    MOV dword ptr [0x01cd0c44],EDX      ; 004cb89b | DAT_01cd0c44
+    MOV dword ptr [0x01cd0c3c],EDX      ; 004cb895 | g_MovieRecordingActive
+    MOV dword ptr [0x01cd0c44],EDX      ; 004cb89b | g_MovieRecordingFrameCounter
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00495e70 ; 004cb8a1
         ;   XREF to: 00495e70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00495e70(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004cb8a6
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 004942e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 004cb93a
     ADD ESP,0x8                         ; 004cb93f
-    MOV dword ptr [0x01cd0c38],EDX      ; 004cb942 | DAT_01cd0c38
+    MOV dword ptr [0x01cd0c38],EDX      ; 004cb942 | g_MovieRecordingArmed
     POP EBP                             ; 004cb948
     POP EDI                             ; 004cb949
     POP ESI                             ; 004cb94a

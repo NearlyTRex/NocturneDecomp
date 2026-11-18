@@ -1,12 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples)
+; int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr
-; short *          Stack[0x8]:4   output_buffer
-; int              Stack[0xc]:4   num_samples
 ; Local Variables:
 ; char[400]        Stack[-0x19c]:400  acStack_19c
 ; uint             Stack[-0xc]:4  local_c

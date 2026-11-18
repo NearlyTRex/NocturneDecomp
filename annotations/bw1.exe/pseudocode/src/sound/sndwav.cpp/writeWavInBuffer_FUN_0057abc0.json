@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 55,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
     "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 98
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -85,26 +84,26 @@
     },
     {
       "addr": "02c828d8",
-      "name": "DAT_02c828d8",
-      "type": "undefined4",
+      "name": "g_WaveInHandle",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c82a1c",
-      "name": "DAT_02c82a1c",
-      "type": "undefined4",
+      "name": "g_WaveInBitsPerSample",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c82a20",
-      "name": "DAT_02c82a20",
-      "type": "undefined4",
+      "name": "g_WaveInChannels",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c82a2c",
-      "name": "DAT_02c82a2c",
-      "type": "undefined4",
+      "name": "g_WaveInBufferSizeSamples",
+      "type": "int",
       "value": null
     }
   ],
@@ -214,20 +213,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 12,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_02c829cc",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_02c829cc + iVar2) == 0) || (*(int *)(iVar2 + 0x2c8292c) == 0)) {",
-      "type": "undefined_data"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 13,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples;",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

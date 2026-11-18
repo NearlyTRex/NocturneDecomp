@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_removeChatOut_FUN_0052c240(int index)
 
 {
-  if ((index < 0) || (_DAT_01d6dfb8 <= index)) {
-    _DAT_01d1d400 = "..\\core\\netgame.cpp";
-    _DAT_01d1d404 = 0x107;
-    core_main_c_FUN_005030e0("removeChatOut - invalid index");
+  if ((index < 0) || (g_ChatOutCount <= index)) {
+    g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
+    g_INT_01d1d404 = 0x107;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("removeChatOut - invalid index");
   }
-  _DAT_01d6dfb8 = _DAT_01d6dfb8 + -1;
+  g_ChatOutCount = g_ChatOutCount + -1;
   memmove
-            (&DAT_01d6dfbc + index * 0x114,&DAT_01d6dfbc + (index + 1) * 0x114,
-             (_DAT_01d6dfb8 - index) * 0x114);
+            (g_ChatOutMessages + index,g_ChatOutMessages + index + 1,
+             (g_ChatOutCount - index) * 0x114);
   return;
 }

@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   grab_type
 ;
 ; Referenced Globals:
-;   undefined4 s_CPrye_startGettingGrabbe_005cd9a9+2
+;   TerminatedCString s_CPrye_startGettingGrabbe_005cd9ab
 ;   TerminatedCString s_current_motion_is_s_005cd9d6
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   undefined4 DAT_007e1a50
+;   undefined4 g_CDemonActorType_007e1a18.name_hash
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_00526e47
     PUSH EDX                            ; 00526e4b
     PUSH ESI                            ; 00526e4c
-    PUSH 0x5cd9ab                       ; 00526e4d | s_CPrye_startGettingGrabbe_005cd9a9+2
+    PUSH 0x5cd9ab                       ; 00526e4d | = "CPrye::startGettingGrabbed by %s, typ..."
     MOV ECX,dword ptr [0x005f1690]      ; 00526e52 | g_CConsolePtr
     PUSH ECX                            ; 00526e58 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00526e59
@@ -115,7 +115,7 @@ section .text
     CMP EAX,EDX                         ; 00526eef
     JZ 0x00526f07                       ; 00526ef1
         ;   XREF to: 00526f07 (CONDITIONAL_JUMP)  ; LAB_00526f07
-    MOV ECX,dword ptr [0x007e1a50]      ; 00526ef3 | DAT_007e1a50
+    MOV ECX,dword ptr [0x007e1a50]      ; 00526ef3 | g_CDemonActorType_007e1a18.name_hash
     PUSH ECX                            ; 00526ef9
     PUSH EAX                            ; 00526efa
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00526efb

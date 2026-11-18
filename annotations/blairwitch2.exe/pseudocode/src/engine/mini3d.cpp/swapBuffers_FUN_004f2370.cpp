@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_swapBuffers_FUN_004f2370(void)
 
 {
-  if (_DAT_01c37788 != 0) {
+  if (g_INT_01c37788 != 0) {
     engine_special_cpp_presentToExternalRenderer_FUN_0055ff40(1);
     wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
-    _DAT_01d0d2d4 = _DAT_005fa164;
+    g_FLOAT_01d0d2d4 = 3.0f;
     return;
   }
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-  _DAT_01d0d2d4 = _DAT_005fa164;
+  g_FLOAT_01d0d2d4 = 3.0f;
   return;
 }

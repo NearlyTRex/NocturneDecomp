@@ -11,7 +11,7 @@ CAnvil * __cdecl core_anvil_cpp_factoryFuncAnvil_FUN_0040ea00(void)
 {
   CAnvil *pCVar1;
   
-  pCVar1 = (CAnvil *)operator_new(0x4a0);
+  pCVar1 = operator_new(0x4a0);
   if (pCVar1 == (CAnvil *)0x0) {
     return (CAnvil *)0x0;
   }

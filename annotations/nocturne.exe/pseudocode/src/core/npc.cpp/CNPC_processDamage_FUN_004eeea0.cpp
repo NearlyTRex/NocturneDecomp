@@ -16,7 +16,7 @@ void __cdecl core_npc_cpp_CNPC_processDamage_FUN_004eeea0(CNPC *this_ptr,SDamage
   int iVar4;
   
   pCVar3 = (*((this_ptr->base).base.vtable._ub)->getActorType)((CDemonActor *)this_ptr);
-  if (pCVar3 == &g_CNPCActorType_01d46820) {
+  if (pCVar3 == &g_CNPCClassInfo) {
     fVar2 = (this_ptr->base).hit_points - damage_info->damage_amount;
     this_ptr_00 = &(this_ptr->base).model;
     (this_ptr->base).hit_points = fVar2;

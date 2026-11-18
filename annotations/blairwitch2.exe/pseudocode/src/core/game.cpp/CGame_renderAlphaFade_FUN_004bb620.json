@@ -1,0 +1,347 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 180,
+    "complexity_score": 231,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 91,
+    "suspect_count": 12,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "suspect_float",
+      "undefined_data"
+    ],
+    "total_lines": 271
+  },
+  "cross_references": [
+    {
+      "addr": "0052f2a0",
+      "from_addr": "0052f7dc",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bb620",
+    "address_range": [
+      [
+        "004bb620",
+        "004bb88d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_renderAlphaFade_FUN_004bb620",
+    "signature": "void __cdecl core_game_cpp_CGame_renderAlphaFade_FUN_004bb620(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "0046ca00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00"
+    },
+    {
+      "addr": "0046ad70",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderOverlayDirect_FUN_0046ad70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d8403",
+      "name": "g_FLOAT_005d8403",
+      "type": "float",
+      "value": "65535"
+    },
+    {
+      "addr": "0060b280",
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
+    },
+    {
+      "addr": "006141b8",
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "006141bc",
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "006164ac",
+      "name": "DAT_006164ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052f7dc",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.024096385542169,
+    "instruction_count": 166,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 26,
+      "CALL": 9,
+      "CBRANCH": 2,
+      "COPY": 281,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_MULT": 7,
+      "INT_ADD": 84,
+      "INT_AND": 92,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 41,
+      "INT_LEFT": 10,
+      "INT_LESS": 4,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 25,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 28,
+      "INT_SUB": 27,
+      "INT_XOR": 7,
+      "LOAD": 55,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "ROUND": 7,
+      "STORE": 65,
+      "TRUNC": 7
+    },
+    "pcode_op_count": 834
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 31,
+      "match": "6.9532e-39",
+      "severity": "mild",
+      "text": "SStack_58.surface_normal.D.f = 6.9532e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 35,
+      "match": "6.953236e-39",
+      "severity": "mild",
+      "text": "SStack_58.surface_normal.C.f = 6.953236e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 39,
+      "match": "6.953272e-39",
+      "severity": "mild",
+      "text": "SStack_58.surface_normal.B.f = 6.953272e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 43,
+      "match": "6.95331e-39",
+      "severity": "mild",
+      "text": "SStack_58.surface_normal.A.f = 6.95331e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 58,
+      "match": "6.953448e-39",
+      "severity": "mild",
+      "text": "SStack_58.surface_normal.A.f = 6.953448e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_006164ac",
+      "severity": "mild",
+      "text": "(pCVar3,(SMRGLTextureBasic *)(&DAT_006164ac + this_ptr->alpha_fade_texture * 0x18));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&pSVar1->r",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->r + iVar4) = (int)ROUND(dVar7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)&pSVar1->g",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->g + iVar4) = (int)ROUND(dVar7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)&pSVar1->b",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->b + iVar4) = (int)ROUND(dVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->r + iVar4) = (int)ROUND(dVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->g + iVar4) = (int)ROUND(dVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 61,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->b + iVar4) = (int)ROUND(dVar8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

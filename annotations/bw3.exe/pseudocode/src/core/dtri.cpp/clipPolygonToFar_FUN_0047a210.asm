@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_0047a1f8 = 0047a2c4
 ;   undefined1* PTR_caseD_3_0047a200 = 0047a2a9
-;   undefined4 DAT_01c59db0
-;   undefined4 DAT_01c59e74
+;   int g_ClipBuffer5VertexCount
+;   int g_ClipOutputVertexCount
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_00479970
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 0047a214
     SUB ESP,0x8                         ; 0047a216
     AND ESP,0xfffffff8                  ; 0047a219
-    MOV EBX,dword ptr [0x01c59e74]      ; 0047a21c | DAT_01c59e74
+    MOV EBX,dword ptr [0x01c59e74]      ; 0047a21c | g_ClipOutputVertexCount
     MOV EDX,dword ptr [EBP + 0x14]      ; 0047a222
     MOV dword ptr [ESP],EDX             ; 0047a225
-    MOV EDX,dword ptr [0x01c59db0]      ; 0047a228 | DAT_01c59db0
+    MOV EDX,dword ptr [0x01c59db0]      ; 0047a228 | g_ClipBuffer5VertexCount
     XOR EDI,EDI                         ; 0047a22e
     TEST EDX,EDX                        ; 0047a230
     JLE 0x0047a2b7                      ; 0047a232
         ;   XREF to: 0047a2b7 (CONDITIONAL_JUMP)  ; LAB_0047a2b7
     MOV ESI,0x1c59db4                   ; 0047a238
-    MOV EAX,[0x01c59db0]                ; 0047a23d | DAT_01c59db0
+    MOV EAX,[0x01c59db0]                ; 0047a23d | g_ClipBuffer5VertexCount
         ;   Label: LAB_0047a23d
     LEA ECX,[EDI + 0x1]                 ; 0047a242
     CMP ECX,EAX                         ; 0047a245
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 0047a2a5
     INC EBX                             ; 0047a2a8
         ;   Label: LAB_0047a2a8
-    MOV ECX,dword ptr [0x01c59db0]      ; 0047a2a9 | DAT_01c59db0
+    MOV ECX,dword ptr [0x01c59db0]      ; 0047a2a9 | g_ClipBuffer5VertexCount
         ;   Label: caseD_3
     INC EDI                             ; 0047a2af
     ADD ESI,0xc                         ; 0047a2b0
     CMP EDI,ECX                         ; 0047a2b3
     JL 0x0047a23d                       ; 0047a2b5
         ;   XREF to: 0047a23d (CONDITIONAL_JUMP)  ; LAB_0047a23d
-    MOV dword ptr [0x01c59e74],EBX      ; 0047a2b7 | DAT_01c59e74
+    MOV dword ptr [0x01c59e74],EBX      ; 0047a2b7 | g_ClipOutputVertexCount
         ;   Label: LAB_0047a2b7
     MOV ESP,EBP                         ; 0047a2bd
     POP EBP                             ; 0047a2bf
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 0047a2e6
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0047a2e7
     PUSH EAX                            ; 0047a2eb
-    MOV dword ptr [0x01c59e74],EBX      ; 0047a2ec | DAT_01c59e74
+    MOV dword ptr [0x01c59e74],EBX      ; 0047a2ec | g_ClipOutputVertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047a2f2
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59e74]      ; 0047a2f7 | DAT_01c59e74
+    MOV EBX,dword ptr [0x01c59e74]      ; 0047a2f7 | g_ClipOutputVertexCount
     ADD ESP,0x2c                        ; 0047a2fd
     JMP 0x0047a2a8                      ; 0047a300
         ;   XREF to: 0047a2a8 (UNCONDITIONAL_JUMP)  ; LAB_0047a2a8
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 0047a342
     PUSH ECX                            ; 0047a346
     PUSH EDX                            ; 0047a347
-    MOV dword ptr [0x01c59e74],EBX      ; 0047a348 | DAT_01c59e74
+    MOV dword ptr [0x01c59e74],EBX      ; 0047a348 | g_ClipOutputVertexCount
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047a34e
         ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
-    MOV EBX,dword ptr [0x01c59e74]      ; 0047a353 | DAT_01c59e74
+    MOV EBX,dword ptr [0x01c59e74]      ; 0047a353 | g_ClipOutputVertexCount
     ADD ESP,0x2c                        ; 0047a359
     JMP 0x0047a2a8                      ; 0047a35c
         ;   XREF to: 0047a2a8 (UNCONDITIONAL_JUMP)  ; LAB_0047a2a8

@@ -11,7 +11,7 @@
 ;   wincore_winrun.cpp_winMain_FUN_005b2e00 at 005b304a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e70d2
+;   TerminatedCString s_rb_005e70d2
 ;   TerminatedCString s_stderr_txt_005e70d5
 ;   TerminatedCString s_stderr_txt_005e70e0
 ;   TerminatedCString s_core_main_c_005e70eb
@@ -31,16 +31,16 @@
 ; Called Functions:
 ;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30
-;   core_dfont.cpp_FUN_0045e000
-;   core_flattn.cpp_FUN_004bf770
+;   core_dfont.cpp_initFonts_FUN_0045e000
+;   core_flattn.cpp_doNothing_FUN_004bf770
 ;   core_inivar.cpp_readIniData_FUN_004f4f50
-;   core_main.c_FUN_005030e0
-;   core_marquee.cpp_FUN_005072c0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
+;   core_marquee.cpp_initializeTrigTables_FUN_005072c0
 ;   core_menu.cpp_showCalibrationTest_FUN_0050a9c0
-;   core_mission.cpp_FUN_0051a2d0
+;   core_mission.cpp_CDemonMission_reset_FUN_0051a2d0
 ;   core_mmx.c_detectCPUFeatures_FUN_0051c450
 ;   core_netgame.cpp_CNetGame_init_FUN_0052c520
-;   core_sound.cpp_FUN_0057cb30
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30
 ;   crt_io.c__chmod_FUN_005c1dc0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
@@ -59,34 +59,34 @@ section .text
     SUB ESP,0x718                       ; 005032a6
     AND ESP,0xfffffff8                  ; 005032ac
     MOV ECX,0x10000                     ; 005032af
-    PUSH 0x5e70d2                       ; 005032b4 | DAT_005e70d2
+    PUSH 0x5e70d2                       ; 005032b4 | = "rb"
     MOV EBX,0x1                         ; 005032b9
     XOR EDX,EDX                         ; 005032be
     PUSH 0x5e70d5                       ; 005032c0 | = "stderr.txt"
-    MOV dword ptr [0x01c51d10],EDX      ; 005032c5 | DAT_01c51d10
-    MOV dword ptr [0x006258dc],ECX      ; 005032cb | DAT_006258dc
-    MOV dword ptr [0x006258d0],EBX      ; 005032d1 | DAT_006258d0
+    MOV dword ptr [0x01c51d10],EDX      ; 005032c5 | g_ProcessorType
+    MOV dword ptr [0x006258dc],ECX      ; 005032cb | g_FullScreenQuadDepth
+    MOV dword ptr [0x006258d0],EBX      ; 005032d1 | g_INT_006258d0
     CALL crt_stdio.c_fopen_FUN_005c157c ; 005032d7
         ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 005032dc
     TEST EAX,EAX                        ; 005032df
     JNZ 0x005039b1                      ; 005032e1
         ;   XREF to: 005039b1 (CONDITIONAL_JUMP)  ; LAB_005039b1
-    PUSH 0x626308                       ; 005032e7 | DAT_00626308
+    PUSH 0x626308                       ; 005032e7 | g_FILE_00626308
         ;   Label: LAB_005032e7
     PUSH 0x5e7122                       ; 005032ec | = "wt"
     PUSH 0x5e7125                       ; 005032f1 | = "stderr.txt"
     CALL crt_stdio.c_freopen_FUN_005c1614 ; 005032f6
         ;   XREF to: 005c1614 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_005c1614(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 005032fb
-    CALL core_flattn.cpp_FUN_004bf770   ; 005032fe
-        ;   XREF to: 004bf770 (UNCONDITIONAL_CALL)  ; undefined core_flattn.cpp_FUN_004bf770()
+    CALL core_flattn.cpp_doNothing_FUN_004bf770 ; 005032fe
+        ;   XREF to: 004bf770 (UNCONDITIONAL_CALL)  ; void core_flattn.cpp_doNothing_FUN_004bf770()
     CALL core_inivar.cpp_readIniData_FUN_004f4f50 ; 00503303
         ;   XREF to: 004f4f50 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004f4f50()
     MOV EDX,dword ptr [0x00622a6c]      ; 00503308 | g_CDemonPodPtr
     MOV EAX,0x2                         ; 0050330e
     PUSH EDX                            ; 00503313
-    MOV [0x02c8337c],EAX                ; 00503314 | DAT_02c8337c
+    MOV [0x02c8337c],EAX                ; 00503314 | g_INT_02c8337c
     CALL engine_pod.cpp_CPod_init_FUN_0053c8a0 ; 00503319
         ;   XREF to: 0053c8a0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_init_FUN_0053c8a0(CPod * this_ptr)
     ADD ESP,0x4                         ; 0050331e
@@ -104,23 +104,23 @@ section .text
     ADD ESP,0x4                         ; 00503345
     CALL core_mmx.c_detectCPUFeatures_FUN_0051c450 ; 00503348
         ;   XREF to: 0051c450 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectCPUFeatures_FUN_0051c450()
-    CMP dword ptr [0x01c51d00],0x0      ; 0050334d | DAT_01c51d00
+    CMP dword ptr [0x01c51d00],0x0      ; 0050334d | g_MMXSupported
     JNZ 0x00503382                      ; 00503354
         ;   XREF to: 00503382 (CONDITIONAL_JUMP)  ; LAB_00503382
     MOV EBX,0x5e713c                    ; 00503356 | = "..\\core\\main.c"
     MOV ESI,0x3dd                       ; 0050335b
     PUSH 0x5e714b                       ; 00503360 | = "This CPU does not have an MMX unit."
-    MOV dword ptr [0x01d1d400],EBX      ; 00503365 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0050336b | DAT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 00503365 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0050336b | g_INT_01d1d404
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 00503371
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 00503376
     PUSH EAX                            ; 00503379
-    CALL core_main.c_FUN_005030e0       ; 0050337a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050337a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050337f
-    CALL core_marquee.cpp_FUN_005072c0  ; 00503382
-        ;   XREF to: 005072c0 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_005072c0()
+    CALL core_marquee.cpp_initializeTrigTables_FUN_005072c0 ; 00503382
+        ;   XREF to: 005072c0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_initializeTrigTables_FUN_005072c0()
         ;   Label: LAB_00503382
     CALL engine_3d.c_initTextureCache_FUN_00403790 ; 00503387
         ;   XREF to: 00403790 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_initTextureCache_FUN_00403790()
@@ -133,8 +133,8 @@ section .text
     PUSH 0x20                           ; 0050339b
     PUSH 0x1e0                          ; 0050339d
     PUSH 0x280                          ; 005033a2
-    CALL wincore_wddvmem.cpp_FUN_005ac300 ; 005033a7
-        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_005ac300()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300 ; 005033a7
+        ;   XREF to: 005ac300 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ac300(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005033ac
     TEST EAX,EAX                        ; 005033af
     JNZ 0x005033d5                      ; 005033b1
@@ -142,15 +142,15 @@ section .text
     MOV EDI,0x5e716f                    ; 005033b3 | = "..\\core\\main.c"
     MOV EAX,0x3f5                       ; 005033b8
     PUSH 0x5e717e                       ; 005033bd | = "Unable to set 640x480x32bpp.  Please ..."
-    MOV dword ptr [0x01d1d400],EDI      ; 005033c2 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 005033c8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005033cd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 005033c2 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 005033c8 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005033cd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005033d2
-    CALL core_dfont.cpp_FUN_0045e000    ; 005033d5
-        ;   XREF to: 0045e000 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0045e000()
+    CALL core_dfont.cpp_initFonts_FUN_0045e000 ; 005033d5
+        ;   XREF to: 0045e000 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_0045e000()
         ;   Label: LAB_005033d5
-    CMP dword ptr [0x02c9be78],0x3c00000 ; 005033da | DAT_02c9be78
+    CMP dword ptr [0x02c9be78],0x3c00000 ; 005033da | g_TotalPhysicalMemory
     JGE 0x00503658                      ; 005033e4
         ;   XREF to: 00503658 (CONDITIONAL_JUMP)  ; LAB_00503658
     PUSH 0x5e720f                       ; 005033ea | = "Windows is reporting "
@@ -175,8 +175,8 @@ section .text
         ;   XREF to: 00503401 (CONDITIONAL_JUMP)  ; LAB_00503401
     POP EDI                             ; 00503419
         ;   Label: LAB_00503419
-    FILD dword ptr [0x02c9be78]         ; 0050341a | DAT_02c9be78
-    FMUL float ptr [0x005e73d1]         ; 00503420 | DAT_005e73d1
+    FILD dword ptr [0x02c9be78]         ; 0050341a | g_TotalPhysicalMemory
+    FMUL float ptr [0x005e73d1]         ; 00503420 | g_FLOAT_005e73d1
     SUB ESP,0x8                         ; 00503426
     FSTP double ptr [ESP]               ; 00503429
     PUSH 0x5e7225                       ; 0050342c | = "%.1f"
@@ -439,10 +439,10 @@ section .text
     PUSH EAX                            ; 00503648
     MOV ECX,dword ptr [0x0061abc0]      ; 00503649 | g_CEditorToolsPtr
     PUSH ECX                            ; 0050364f
-    CALL shape_edittool.cpp_FUN_00494340 ; 00503650
-        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00494340()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 00503650
+        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00503655
-    CMP dword ptr [0x02c9be7c],0xc800000 ; 00503658 | DAT_02c9be7c
+    CMP dword ptr [0x02c9be7c],0xc800000 ; 00503658 | g_AvailableSwapSpace
         ;   Label: LAB_00503658
     JGE 0x005037e2                      ; 00503662
         ;   XREF to: 005037e2 (CONDITIONAL_JUMP)  ; LAB_005037e2
@@ -468,8 +468,8 @@ section .text
         ;   XREF to: 0050367a (CONDITIONAL_JUMP)  ; LAB_0050367a
     POP EDI                             ; 00503692
         ;   Label: LAB_00503692
-    FILD dword ptr [0x02c9be7c]         ; 00503693 | DAT_02c9be7c
-    FMUL float ptr [0x005e73d1]         ; 00503699 | DAT_005e73d1
+    FILD dword ptr [0x02c9be7c]         ; 00503693 | g_AvailableSwapSpace
+    FMUL float ptr [0x005e73d1]         ; 00503699 | g_FLOAT_005e73d1
     SUB ESP,0x8                         ; 0050369f
     FSTP double ptr [ESP]               ; 005036a2
     PUSH 0x5e72fa                       ; 005036a5 | = "%.1f"
@@ -632,10 +632,10 @@ section .text
     PUSH EAX                            ; 005037d2
     MOV ESI,dword ptr [0x0061abc0]      ; 005037d3 | g_CEditorToolsPtr
     PUSH ESI                            ; 005037d9
-    CALL shape_edittool.cpp_FUN_00494340 ; 005037da
-        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00494340()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340 ; 005037da
+        ;   XREF to: 00494340 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_00494340(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 005037df
-    CMP dword ptr [0x01d06d68],0x0      ; 005037e2 | DAT_01d06d68
+    CMP dword ptr [0x01d06d68],0x0      ; 005037e2 | g_INT_01d06d68
         ;   Label: LAB_005037e2
     JNZ 0x005039fc                      ; 005037e9
         ;   XREF to: 005039fc (CONDITIONAL_JUMP)  ; LAB_005039fc
@@ -671,13 +671,13 @@ section .text
         ;   Label: LAB_00503835
     LEA EAX,[ESP + 0x500]               ; 00503836
     PUSH EAX                            ; 0050383d
-    MOV ECX,dword ptr [0x0152d244]      ; 0050383e | DAT_0152d244
+    MOV ECX,dword ptr [0x0152d244]      ; 0050383e | g_ThemeFont
     PUSH ECX                            ; 00503844
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 00503845
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0050384a
     PUSH 0x58                           ; 0050384d
-    MOV EBX,dword ptr [0x0152d244]      ; 0050384f | DAT_0152d244
+    MOV EBX,dword ptr [0x0152d244]      ; 0050384f | g_ThemeFont
     PUSH EBX                            ; 00503855
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 00503856
         ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
@@ -711,24 +711,24 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0 ; 005038b5
         ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005038ba
-    MOV ESI,dword ptr [0x006236b8]      ; 005038bd | DAT_006236b8
+    MOV ESI,dword ptr [0x006236b8]      ; 005038bd | g_CSound_PTR_006236b8
     PUSH ESI                            ; 005038c3
-    CALL core_sound.cpp_FUN_0057cb30    ; 005038c4
-        ;   XREF to: 0057cb30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057cb30(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30 ; 005038c4
+        ;   XREF to: 0057cb30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30(CSound * this_ptr)
     ADD ESP,0x4                         ; 005038c9
-    MOV EDI,dword ptr [0x0061f650]      ; 005038cc | DAT_0061f650
+    MOV EDI,dword ptr [0x0061f650]      ; 005038cc | g_CDemonMission_PTR_0061f650
     PUSH EDI                            ; 005038d2 | DAT_01d2c900
     XOR EBX,EBX                         ; 005038d3
     XOR ESI,ESI                         ; 005038d5
-    CALL core_mission.cpp_FUN_0051a2d0  ; 005038d7
-        ;   XREF to: 0051a2d0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051a2d0()
+    CALL core_mission.cpp_CDemonMission_reset_FUN_0051a2d0 ; 005038d7
+        ;   XREF to: 0051a2d0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_reset_FUN_0051a2d0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005038dc
     MOV dword ptr [ESP + 0x714],EBX     ; 005038df
         ;   Label: LAB_005038df
     FILD dword ptr [ESP + 0x714]        ; 005038e6
-    FMUL double ptr [0x005e73d5]        ; 005038ed | DAT_005e73d5
+    FMUL double ptr [0x005e73d5]        ; 005038ed | g_DOUBLE_005e73d5
     PUSH 0x0                            ; 005038f3
-    FADD double ptr [0x005e73d5]        ; 005038f5 | DAT_005e73d5
+    FADD double ptr [0x005e73d5]        ; 005038f5 | g_DOUBLE_005e73d5
     SUB ESP,0x4                         ; 005038fb
     FSTP float ptr [ESP]                ; 005038fe
     MOV EAX,dword ptr [ESI + 0x611328]  ; 00503901 | g_GlobalFilters | DAT_0061132c
@@ -747,16 +747,16 @@ section .text
         ;   Label: LAB_0050391d
     MOV EAX,dword ptr [EBX + 0x611348]  ; 00503924 | g_PlayerFilters | DAT_0061134c
     FILD dword ptr [ESP + 0x714]        ; 0050392a
-    MOV dword ptr [EAX],0x100           ; 00503931 | CDemonFilter_ARRAY_0152c39c | CDemonFilter_ARRAY_0152c39c[1].size
-    FMUL double ptr [0x005e73dd]        ; 00503937 | DAT_005e73dd
+    MOV dword ptr [EAX],0x100           ; 00503931 | g_PlayerFilterPool | g_PlayerFilterPool[1].size
+    FMUL double ptr [0x005e73dd]        ; 00503937 | g_DOUBLE_005e73dd
     MOV EAX,dword ptr [EBX + 0x611348]  ; 0050393d | g_PlayerFilters | DAT_0061134c
     PUSH 0x0                            ; 00503943
-    MOV dword ptr [EAX + 0x4],0x100     ; 00503945 | CDemonFilter_ARRAY_0152c39c[0].count | CDemonFilter_ARRAY_0152c39c[1].count
-    FADD double ptr [0x005e73dd]        ; 0050394c | DAT_005e73dd
+    MOV dword ptr [EAX + 0x4],0x100     ; 00503945 | g_PlayerFilterPool[0].count | g_PlayerFilterPool[1].count
+    FADD double ptr [0x005e73dd]        ; 0050394c | g_DOUBLE_005e73dd
     SUB ESP,0x4                         ; 00503952
     FSTP float ptr [ESP]                ; 00503955
     MOV EDX,dword ptr [EBX + 0x611348]  ; 00503958 | g_PlayerFilters | DAT_0061134c
-    PUSH EDX                            ; 0050395e | CDemonFilter_ARRAY_0152c39c | CDemonFilter_ARRAY_0152c39c[1].size
+    PUSH EDX                            ; 0050395e | g_PlayerFilterPool | g_PlayerFilterPool[1].size
     ADD EBX,0x4                         ; 0050395f
     INC ESI                             ; 00503962
     CALL core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30 ; 00503963
@@ -792,7 +792,7 @@ section .text
     PUSH EAX                            ; 005039b1
         ;   Label: LAB_005039b1
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 005039b2
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 005039b7
     PUSH 0x1c0                          ; 005039ba
     PUSH 0x5e70e0                       ; 005039bf | = "stderr.txt"
@@ -805,21 +805,21 @@ section .text
     MOV ESI,0x5e70eb                    ; 005039d4 | = "..\\core\\main.c"
     MOV EDI,0x3b8                       ; 005039d9
     PUSH 0x5e70fa                       ; 005039de | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01d1d400],ESI      ; 005039e3 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 005039e9 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005039ef
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 005039e3 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 005039e9 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005039ef
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005039f4
     JMP 0x005032e7                      ; 005039f7
         ;   XREF to: 005032e7 (UNCONDITIONAL_JUMP)  ; LAB_005032e7
     XOR EAX,EAX                         ; 005039fc
         ;   Label: LAB_005039fc
-    MOV [0x01d06d68],EAX                ; 005039fe | DAT_01d06d68
+    MOV [0x01d06d68],EAX                ; 005039fe | g_INT_01d06d68
     MOV EAX,[0x0061d95c]                ; 00503a03 | g_CGamePtr
     MOV dword ptr [EAX],0x280           ; 00503a08 | g_CGameInstance
     XOR EDX,EDX                         ; 00503a0e
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00503a10 | g_CGameInstance.game_pixy
-    MOV dword ptr [0x02c83370],EDX      ; 00503a17 | DAT_02c83370
+    MOV dword ptr [0x02c83370],EDX      ; 00503a17 | g_INT_02c83370
     MOV dword ptr [EAX + 0x8],0x20      ; 00503a1d | g_CGameInstance.game_bpp
     CALL core_menu.cpp_showCalibrationTest_FUN_0050a9c0 ; 00503a24
         ;   XREF to: 0050a9c0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTest_FUN_0050a9c0()

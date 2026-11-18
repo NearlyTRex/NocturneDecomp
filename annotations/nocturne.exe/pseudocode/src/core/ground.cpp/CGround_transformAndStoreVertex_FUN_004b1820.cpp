@@ -23,19 +23,20 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(CGroun
                     [(row & this_ptr->height_minus_1) * this_ptr->width +
                      (column & this_ptr->width_minus_1)].height;
   engine_special_cpp_transformPoint_FUN_00530a25
-            ((SProjectedVertex *)(&DAT_005c5014 + iVar1 * 0xc),&local_1c);
-  (&DAT_005c5034)[iVar1 * 0xc] = 0x3fff;
-  (&DAT_005c5038)[iVar1 * 0xc] = 0x3fff;
-  (&DAT_005c503c)[iVar1 * 0xc] = 0x3fff;
-  if ((int)(&DAT_005c501c)[iVar1 * 0xc] < 0) {
-    (&DAT_005c5040)[iVar1 * 0xc] = 0;
+            (&g_SRenderVertex_ARRAY_005c5014[iVar1].projected_vertex,&local_1c);
+  g_SRenderVertex_ARRAY_005c5014[iVar1].r = 0x3fff;
+  g_SRenderVertex_ARRAY_005c5014[iVar1].g = 0x3fff;
+  iVar2 = g_SRenderVertex_ARRAY_005c5014[iVar1].projected_vertex.transformed_z;
+  g_SRenderVertex_ARRAY_005c5014[iVar1].b = 0x3fff;
+  if (iVar2 < 0) {
+    g_SRenderVertex_ARRAY_005c5014[iVar1].a = 0;
   }
   else {
-    iVar2 = (int)((&DAT_005c501c)[iVar1 * 0xc] << 8) /
+    iVar2 = (g_SRenderVertex_ARRAY_005c5014[iVar1].projected_vertex.transformed_z << 8) /
             (this_ptr->grid_width * this_ptr->vertical_scale);
-    (&DAT_005c5040)[iVar1 * 0xc] = iVar2;
+    g_SRenderVertex_ARRAY_005c5014[iVar1].a = iVar2;
     if (0xffff < iVar2) {
-      (&DAT_005c5040)[iVar1 * 0xc] = 0xffff;
+      g_SRenderVertex_ARRAY_005c5014[iVar1].a = 0xffff;
       return;
     }
   }

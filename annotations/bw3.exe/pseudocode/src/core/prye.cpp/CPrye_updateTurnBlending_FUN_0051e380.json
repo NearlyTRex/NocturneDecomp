@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 119,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 2,
+    "pseudocode_lines": 90,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "unrolled_memset"
     ],
-    "total_lines": 342
+    "total_lines": 343
   },
   "cross_references": [
     {
       "addr": "00518cd0",
       "from_addr": "0051992b",
-      "name": "core_prye.cpp_FUN_00518cd0",
+      "name": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,49 +39,49 @@
     {
       "addr": "004fc350",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fc350"
+      "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350"
     }
   ],
   "globals": [
     {
       "addr": "005cd3cf",
-      "name": "DAT_005cd3cf",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cd3cf",
+      "type": "double",
+      "value": "10"
     },
     {
       "addr": "005cd3d7",
-      "name": "DAT_005cd3d7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cd3d7",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "005cd3df",
-      "name": "DAT_005cd3df",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cd3df",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005cd3e7",
-      "name": "DAT_005cd3e7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005cd3e7",
+      "type": "float",
+      "value": "0.3183099"
     },
     {
       "addr": "005cd3ef",
-      "name": "DAT_005cd3ef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cd3ef",
+      "type": "double",
+      "value": "0.00100000000000000"
     },
     {
       "addr": "01ed373c",
-      "name": "DAT_01ed373c",
+      "name": "g_StrangerIndices[20]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ed3740",
-      "name": "DAT_01ed3740",
+      "name": "g_StrangerIndices[21]",
       "type": "undefined4",
       "value": null
     }
@@ -93,7 +92,7 @@
       {
         "call_addr": "0051992b",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_00518cd0",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -254,16 +253,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 12,
+      "line": 10,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_velocity).z = 0.0;",

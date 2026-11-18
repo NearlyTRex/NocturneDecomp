@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_hsvToRgb_FUN_00417240(float *param_1)
+; CColor3f * __stack_esi core_boneguy_cpp_hsvToRgb_FUN_00417240(CColor3f *in_hsv,CColor3f *out_rgb)
 ;
+; Parameters:
+; CColor3f *       Stack[0x4]:4   in_hsv
 ; Local Variables:
 ; undefined8       Stack[-0x68]:8  local_68
 ; undefined8       Stack[-0x60]:8  local_60
@@ -25,12 +27,12 @@
 ;
 ; XREF[2]:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 004175a1
-;   core_gore.cpp_FUN_004cc970 at 004cca2a
+;   core_gore.cpp_getBloodColorParams_FUN_004cc970 at 004cca2a
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00417228 = 004172b2
-;   undefined4 DAT_005b6d6a
-;   undefined4 DAT_005b6d72
+;   double g_DOUBLE_005b6d6a = 0.00392156862745098
+;   double g_DOUBLE_005b6d72 = 0.0235294117647059
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005a3600
@@ -136,10 +138,10 @@ section .text
         ;   XREF to: 00417285 (UNCONDITIONAL_JUMP)  ; LAB_00417285
     FLD double ptr [ESP]                ; 0041733f
         ;   Label: LAB_0041733f
-    FMUL double ptr [0x005b6d6a]        ; 00417342 | DAT_005b6d6a
+    FMUL double ptr [0x005b6d6a]        ; 00417342 | g_DOUBLE_005b6d6a
     FLD float ptr [ESP + 0x8]           ; 00417348
     FLD ST0                             ; 0041734c
-    FMUL double ptr [0x005b6d72]        ; 0041734e | DAT_005b6d72
+    FMUL double ptr [0x005b6d72]        ; 0041734e | g_DOUBLE_005b6d72
     FXCH ST2                            ; 00417354
     FSTP float ptr [ESP + 0x30]         ; 00417356
     FXCH                                ; 0041735a
@@ -154,7 +156,7 @@ section .text
     FLD double ptr [ESP + 0x28]         ; 00417375
     ADD ESP,0x8                         ; 00417379
     CALL crt_math.c_round_FUN_005a3120  ; 0041737c
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x2c]        ; 00417381
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00417385
     MOV dword ptr [ESP + 0x48],EAX      ; 00417389

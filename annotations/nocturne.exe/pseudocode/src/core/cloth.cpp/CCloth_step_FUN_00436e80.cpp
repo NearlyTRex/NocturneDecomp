@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr)
 
 {
@@ -217,7 +215,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   if (0.0 < local_18) {
     local_1e0 = 0.0;
   }
-  local_d8.z = local_1e0 * (float)_DAT_0057ae35;
+  local_d8.z = local_1e0 * (float)-1;
   local_d8.x = (g_CDemonSetPtr->active_fog).scroll.x * local_d8.z;
   local_d8.y = (g_CDemonSetPtr->active_fog).scroll.y * local_d8.z;
   local_d8.z = (g_CDemonSetPtr->active_fog).scroll.z * local_d8.z;
@@ -408,9 +406,9 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
     do {
       piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar7);
       iVar6 = iVar6 + 1;
-      *piVar8 = (int)ROUND((pSVar11->position).x * _DAT_0059b360);
-      piVar8[1] = (int)ROUND((pSVar11->position).y * _DAT_0059b360);
-      piVar8[2] = (int)ROUND((pSVar11->position).z * _DAT_0059b360);
+      *piVar8 = (int)ROUND((pSVar11->position).x * 256.0f);
+      piVar8[1] = (int)ROUND((pSVar11->position).y * 256.0f);
+      piVar8[2] = (int)ROUND((pSVar11->position).z * 256.0f);
       pSVar11 = pSVar11 + 1;
       iVar7 = iVar7 + 0xc;
     } while (iVar6 < (this_ptr->model).vertex_count);

@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 byte FUN_005cf390(uint param_1)
 
 {
-  if (_DAT_02c9f6e0 != 0) {
-    if (DAT_00626ad8 == 0x3a4) {
-      return (&DAT_00626c09)[param_1 & 0xff] & 8;
+  if (g_MultibyteLocaleActive != 0) {
+    if (g_CodePage == 0x3a4) {
+      return g_ShiftJIS_TrailByteTable[param_1 & 0xff] & 8;
     }
     if (param_1 != 0) {
       return 1;

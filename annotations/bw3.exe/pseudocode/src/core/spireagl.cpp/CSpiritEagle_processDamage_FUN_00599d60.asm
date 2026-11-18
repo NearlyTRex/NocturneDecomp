@@ -8,13 +8,13 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9a11
-;   undefined4 DAT_005d9a15
+;   TerminatedCString s_DIE_005d9a11
+;   TerminatedCString s_DIE_005d9a15
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60
-;   core_spireagl.cpp_FUN_00599c80
+;   core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80
 ;
 ; *****************************************************************************
 
@@ -53,11 +53,11 @@ section .text
     CMP dword ptr [EBX + 0x26fc],0x0    ; 00599dac
     JNZ 0x00599dc3                      ; 00599db3
         ;   XREF to: 00599dc3 (CONDITIONAL_JUMP)  ; LAB_00599dc3
-    PUSH 0x5d9a15                       ; 00599db5 | DAT_005d9a15
+    PUSH 0x5d9a15                       ; 00599db5 | = "DIE"
     PUSH ESI                            ; 00599dba
         ;   Label: LAB_00599dba
-    CALL core_spireagl.cpp_FUN_00599c80 ; 00599dbb
-        ;   XREF to: 00599c80 (UNCONDITIONAL_CALL)  ; undefined core_spireagl.cpp_FUN_00599c80()
+    CALL core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80 ; 00599dbb
+        ;   XREF to: 00599c80 (UNCONDITIONAL_CALL)  ; int core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80(CMotionController * controller, char * motion_name)
     ADD ESP,0x8                         ; 00599dc0
     PUSH EDI                            ; 00599dc3
         ;   Label: LAB_00599dc3
@@ -81,7 +81,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0 ; 00599df3
         ;   XREF to: 00431ce0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00599df8
-    PUSH 0x5d9a11                       ; 00599dfb | DAT_005d9a11
+    PUSH 0x5d9a11                       ; 00599dfb | = "DIE"
     JMP 0x00599dba                      ; 00599e00
         ;   XREF to: 00599dba (UNCONDITIONAL_JUMP)  ; LAB_00599dba
 

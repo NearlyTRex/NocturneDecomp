@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_disableBodyPartDamage_00579070
 ;   double DOUBLE_0057908a = 3
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonSet g_CDemonSetInstance
 ;   UVector3 g_ZeroVector
@@ -200,7 +200,7 @@ section .text
     JBE 0x0041694f                      ; 00416a6c
         ;   XREF to: 0041694f (CONDITIONAL_JUMP)  ; LAB_0041694f
     PUSH 0x579070                       ; 00416a72 | = "disableBodyPartDamage"
-    MOV ECX,dword ptr [0x005b7650]      ; 00416a77 | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 00416a77 | g_CEventListPtr
     PUSH ECX                            ; 00416a7d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00416a7e
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

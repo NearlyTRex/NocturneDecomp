@@ -6,39 +6,43 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr)
 
 {
-  uint uVar1;
-  int iVar2;
+  float fVar1;
+  CHero *pCVar2;
+  CCloth *pCVar3;
   
-  iVar2 = core_hero_cpp_FUN_004ce240(this_ptr);
-  iVar2 = core_necklace_cpp_FUN_005adda0(iVar2 + 0x25680);
-  *(CHero_full_vtable **)(iVar2 + -0x253d0) = &g_CGabriellaVTable;
-  *(uint *)(iVar2 + -0x40) = 0;
-  *(uint *)(iVar2 + -0x3c) = 0;
-  *(uint *)(iVar2 + -0x38) = 0;
-  *(uint *)(iVar2 + -0x34) = 0;
-  *(uint *)(iVar2 + -0x1c) = 0;
-  *(uint *)(iVar2 + -0x30) = 0;
-  *(uint *)(iVar2 + -0x2c) = 0xbf060a92;
-  *(uint *)(iVar2 + -8) = 0;
-  *(uint *)(iVar2 + -0x10) = 0;
-  *(uint *)(iVar2 + -0x18) = 0;
-  *(uint *)(iVar2 + -4) = 0;
-  uVar1 = _DAT_005f736c;
-  *(uint *)(iVar2 + -0x28) = 0;
-  *(uint *)(iVar2 + 0x3ab30) = uVar1;
-  *(uint *)(iVar2 + -0x24) = 0;
-  *(uint *)(iVar2 + -0x20) = 0;
-  *(uint *)(iVar2 + -0xc) = *(uint *)(iVar2 + -0x10);
-  *(uint *)(iVar2 + -0x14) = *(uint *)(iVar2 + -0x18);
+  pCVar2 = core_hero_cpp_CHero_ctor_FUN_004ce240(&this_ptr->base);
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_005adda0
+                     ((CCloth *)&pCVar2[1].base.base.orient_matrix.m[0].y);
+  pCVar3[-1].vertices[0x132].connected_indices[7] = (int)&g_CGabriellaVTable;
+  pCVar3[-1].locked_vertex_indices[0x381] = 0;
+  pCVar3[-1].locked_vertex_indices[0x382] = 0;
+  pCVar3[-1].locked_vertex_indices[899] = 0;
+  pCVar3[-1].vertex_sort_buffer = (int *)0x0;
+  pCVar3[-1].last_euler.x = 0.0;
+  pCVar3[-1].inv_delta_time = 0.0;
+  pCVar3[-1].floor_y = -0.5235988;
+  pCVar3[-1].wind_velocity.y = 0.0;
+  pCVar3[-1].version_num = 0;
+  pCVar3[-1].last_euler.y = 0.0;
+  pCVar3[-1].wind_velocity.z = 0.0;
+  fVar1 = 10.0f;
+  pCVar3[-1].last_position.x = 0.0;
+  *(float *)pCVar3[1].model.model_filename = fVar1;
+  pCVar3[-1].last_position.y = 0.0;
+  pCVar3[-1].last_position.z = 0.0;
+  fVar1 = pCVar3[-1].last_euler.y;
+  pCVar3[-1].wind_velocity.x = (float)pCVar3[-1].version_num;
+  pCVar3[-1].last_euler.z = fVar1;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)(iVar2 + -0x253cc),"?gabriela.dfm" + 1);
+            ((CDeformableModelInstance *)(pCVar3[-1].vertices[0x132].connected_indices + 8),
+             "gabriela.dfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)
-             (*(int *)(iVar2 + -0xcf4 + *(int *)(iVar2 + -0xe9c) * 4) + 0x2b4),(char *)0x5d6dd0);
-  return (CGabriella *)(iVar2 + -0x25680);
+             (*(int *)((int)pCVar3 +
+                      (int)pCVar3[-1].collide_bones[0x31].world_matrix.m[1].w * 4 + -0xcf4) + 0x2b4)
+             ,"gabgun.kfm");
+  return (CGabriella *)&pCVar3[-1].vertices[0x12f].bone_positions[0].z;
 }

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 87,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 49,
     "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
+      "stack_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 160
+    "total_lines": 162
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "00468900",
@@ -78,9 +78,9 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     }
   ],
   "param_estimates": {
@@ -160,27 +160,27 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&(this_ptr->base).base.location.position);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffc0;",
+      "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&(this_ptr->home_orient).vec,(CVector3f *)0x0);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_2c + 2),in_stack_ffffffc0);",
+      "type": "stack_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 21,
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     }
   ],

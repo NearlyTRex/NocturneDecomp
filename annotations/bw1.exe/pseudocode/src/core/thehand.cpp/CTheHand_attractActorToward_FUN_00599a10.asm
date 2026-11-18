@@ -9,10 +9,10 @@
 ; CVector3f *      Stack[0xc]:4   target_local_point
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00433d50
-;   core_thehand.cpp_FUN_00599be0
-;   core_xform.cpp_FUN_005b5760
-;   core_xform.cpp_FUN_005b6270
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50
+;   core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+;   core_xform.cpp_getTranslation_FUN_005b6270
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005b72c0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
@@ -43,7 +43,7 @@ section .text
     PUSH EAX                            ; 00599a4c
     LEA ESI,[ESP + 0x134]               ; 00599a4d
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005b72c0 ; 00599a54
-        ;   XREF to: 005b72c0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_lerpMatrix3x4_FUN_005b72c0()
+        ;   XREF to: 005b72c0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005b72c0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     ADD ESP,0xc                         ; 00599a59
     LEA EAX,[EBX + 0x30]                ; 00599a5c
     LEA EDI,[ESP + 0x68]                ; 00599a5f
@@ -55,16 +55,16 @@ section .text
     LEA ESI,[ESP + 0x130]               ; 00599a74
     PUSH EAX                            ; 00599a7b
     MOVSD.REP ES:EDI,ESI                ; 00599a7c
-    CALL core_xform.cpp_FUN_005b5760    ; 00599a7e
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 00599a7e
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00599a83
     LEA EAX,[ESP + 0x98]                ; 00599a86
     PUSH EAX                            ; 00599a8d
     PUSH EBX                            ; 00599a8e
     LEA ESI,[ESP + 0x40]                ; 00599a8f
     LEA EDI,[ESP + 0x100]               ; 00599a93
-    CALL core_thehand.cpp_FUN_00599be0  ; 00599a9a
-        ;   XREF to: 00599be0 (UNCONDITIONAL_CALL)  ; undefined core_thehand.cpp_FUN_00599be0()
+    CALL core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0 ; 00599a9a
+        ;   XREF to: 00599be0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_thehand.cpp_CTheHand_getHandBoneMatrix_FUN_00599be0(CTheHand * this_ptr, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 00599a9f
     ADD ESP,0x4                         ; 00599aa4
     LEA EAX,[ESP + 0xfc]                ; 00599aa7
@@ -95,8 +95,8 @@ section .text
     PUSH EAX                            ; 00599b0b
     LEA ESI,[ESP + 0x1e0]               ; 00599b0c
     LEA EDI,[ESP + 0x1c8]               ; 00599b13
-    CALL core_xform.cpp_FUN_005b6270    ; 00599b1a
-        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b6270()
+    CALL core_xform.cpp_getTranslation_FUN_005b6270 ; 00599b1a
+        ;   XREF to: 005b6270 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005b6270(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA ESI,[ESP + 0x1e0]               ; 00599b1f
     ADD ESP,0x4                         ; 00599b26
     MOVSD ES:EDI,ESI                    ; 00599b29
@@ -114,7 +114,7 @@ section .text
     LEA ESI,[ESP + 0x1d4]               ; 00599b58
     LEA EDI,[ESP + 0x1bc]               ; 00599b5f
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 00599b66
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005b5930(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA ESI,[ESP + 0x1d4]               ; 00599b6b
     ADD ESP,0x4                         ; 00599b72
     LEA EAX,[ESP + 0x1b8]               ; 00599b75
@@ -124,8 +124,8 @@ section .text
     PUSH EAX                            ; 00599b7f
     MOV ECX,dword ptr [EBX + 0xc1e8]    ; 00599b80
     PUSH ECX                            ; 00599b86
-    CALL core_charactr.cpp_FUN_00433d50 ; 00599b87
-        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433d50()
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50 ; 00599b87
+        ;   XREF to: 00433d50 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_00433d50(CCharacter * this_ptr, UOrientationVector * orientation)
     MOV EAX,0x1                         ; 00599b8c
     ADD ESP,0x8                         ; 00599b91
     POP ESI                             ; 00599b94

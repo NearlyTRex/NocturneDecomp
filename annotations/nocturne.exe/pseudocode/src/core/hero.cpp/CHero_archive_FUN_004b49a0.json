@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 213,
-    "complexity_score": 107,
+    "complexity_score": 72,
     "cross_reference_count": 9,
     "function_call_count": 11,
     "global_count": 20,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 72,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 285
   },
   "cross_references": [
@@ -244,20 +242,20 @@
     },
     {
       "addr": "005ba940",
-      "name": "g_INT_005ba940",
+      "name": "g_CHeroClassVersion",
       "type": "int",
       "value": "0xc"
     },
     {
       "addr": "00763e84",
-      "name": "DAT_00763e84",
-      "type": "undefined4",
+      "name": "g_ActorDataFile",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "00763e88",
-      "name": "DAT_00763e88",
-      "type": "undefined4",
+      "name": "g_ActorReadingMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -460,32 +458,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "if (DAT_00763e88 != 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "core_inv_cpp_CInventory_save_FUN_004c0fa0(&this_ptr->inventory,DAT_00763e84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "core_inv_cpp_CInventory_load_FUN_004c1190(&this_ptr->inventory,DAT_00763e84);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

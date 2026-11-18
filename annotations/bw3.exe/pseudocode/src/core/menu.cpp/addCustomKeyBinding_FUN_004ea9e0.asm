@@ -8,12 +8,12 @@
 ; char *           Stack[0x8]:4   key_name
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d75c98
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_CustomKeyCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -22,10 +22,10 @@ section .text
     PUSH ESI                            ; 004ea9e0
         ;   Label: core_menu.cpp_addCustomKeyBinding_FUN_004ea9e0
     PUSH EDI                            ; 004ea9e1
-    CMP dword ptr [0x01d75c98],0x20     ; 004ea9e2 | DAT_01d75c98
+    CMP dword ptr [0x01d75c98],0x20     ; 004ea9e2 | g_CustomKeyCount
     JGE 0x004eaa33                      ; 004ea9e9
         ;   XREF to: 004eaa33 (CONDITIONAL_JUMP)  ; LAB_004eaa33
-    MOV EAX,[0x01d75c98]                ; 004ea9eb | DAT_01d75c98
+    MOV EAX,[0x01d75c98]                ; 004ea9eb | g_CustomKeyCount
         ;   Label: LAB_004ea9eb
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ea9f0
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EDX ; 004ea9f4
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 004eaa11 (CONDITIONAL_JUMP)  ; LAB_004eaa11
     POP EDI                             ; 004eaa29
         ;   Label: LAB_004eaa29
-    INC dword ptr [0x01d75c98]          ; 004eaa2a | DAT_01d75c98
+    INC dword ptr [0x01d75c98]          ; 004eaa2a | g_CustomKeyCount
     POP EDI                             ; 004eaa30
     POP ESI                             ; 004eaa31
     RET                                 ; 004eaa32
@@ -61,10 +61,10 @@ section .text
     MOV ECX,0x5c7955                    ; 004eaa34
     MOV EBX,0x8f5                       ; 004eaa39
     PUSH 0x5c7966                       ; 004eaa3e
-    MOV dword ptr [0x01d71de0],ECX      ; 004eaa43 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004eaa49 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004eaa4f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004eaa43 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 004eaa49 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004eaa4f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004eaa54
     POP EBX                             ; 004eaa57
     JMP 0x004ea9eb                      ; 004eaa58

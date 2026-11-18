@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_isOfClass_FUN_0040c840
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -174,10 +174,10 @@ section .text
     MOV EDX,0x5db39a                    ; 004d9edb | = "..\\core\\inv.cpp"
     MOV ECX,0xa3                        ; 004d9ee0
     PUSH 0x5db3aa                       ; 004d9ee5 | = "getModel - Can't classify : %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 004d9eea | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004d9ef0 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004d9ef6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 004d9eea | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004d9ef0 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d9ef6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004d9efb
     XOR EAX,EAX                         ; 004d9efe
     POP EBP                             ; 004d9f00

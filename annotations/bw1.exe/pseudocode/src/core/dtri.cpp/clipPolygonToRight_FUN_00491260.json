@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 199,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 200
+    "total_lines": 196
   },
   "cross_references": [],
   "function": {
@@ -51,14 +50,14 @@
     },
     {
       "addr": "01c3d5c8",
-      "name": "DAT_01c3d5c8",
-      "type": "undefined4",
+      "name": "g_ClipBuffer2VertexCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3d68c",
-      "name": "DAT_01c3d68c",
-      "type": "undefined4",
+      "name": "g_ClipBuffer3VertexCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -172,108 +171,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 27,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c3d5cc",
-      "severity": "mild",
-      "text": "point1_ptr = (CVector3f *)&DAT_01c3d5cc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c3d5cc",
-      "severity": "mild",
-      "text": "point2_ptr = (CVector3f *)(&DAT_01c3d5cc + uVar2 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c3d690",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c3d690 + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01c3d690",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c3d690 + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01c3d694",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d694 + iVar3) = point1_ptr->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01c3d698",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d698 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01c3d690",
-      "severity": "mild",
-      "text": "(point2_ptr,point1_ptr,(CVector3f *)(&DAT_01c3d690 + _DAT_01c3d68c * 0xc),1.0,0.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c3d690",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01c3d690 + iVar3) != point1_ptr) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01c3d690",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01c3d690 + iVar3))->x = point1_ptr->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_01c3d694",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d694 + iVar3) = point1_ptr->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_01c3d698",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01c3d698 + iVar3) = point1_ptr->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_01c3d690",
-      "severity": "mild",
-      "text": "(point1_ptr,point2_ptr,(CVector3f *)(&DAT_01c3d690 + _DAT_01c3d68c * 0xc),1.0,0.0,",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 39,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

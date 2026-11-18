@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 39,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 124
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 126
   },
   "cross_references": [],
   "function": {
@@ -31,26 +29,26 @@
   "globals": [
     {
       "addr": "005e8e83",
-      "name": "DAT_005e8e83",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e8e83",
+      "type": "float",
+      "value": "1.333000"
     },
     {
       "addr": "01d22528",
-      "name": "DAT_01d22528",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22528",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d22574",
-      "name": "DAT_01d22574",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22574",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2257c",
-      "name": "DAT_01d2257c",
-      "type": "undefined4",
+      "name": "g_PTR_01d2257c",
+      "type": "void*",
       "value": null
     }
   ],
@@ -138,14 +136,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

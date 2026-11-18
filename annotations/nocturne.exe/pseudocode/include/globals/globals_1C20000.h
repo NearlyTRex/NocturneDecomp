@@ -12,8 +12,14 @@
 // =============================================================================
 
 // CBulletHole[256]
-extern CBulletHole g_CBulletHole_ARRAY_01c20148[256];
+extern CBulletHole g_BulletHolePool[256];
 
 // CStake[256]
 extern CStake g_StakePool[256];
+
+// int
+extern int g_BulletHoleActiveCount;
+extern int g_BulletHoleAllocIndex;
+extern int g_StakeActiveCount;
+extern int g_StakeAllocIndex;
 

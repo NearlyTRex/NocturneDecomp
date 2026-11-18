@@ -22,15 +22,15 @@
 ;   TerminatedCString s_Error_reading_actor_poin_005de5bc
 ;   TerminatedCString s_anon_005de5f4
 ;   TerminatedCString s_WARNING_Can_t_find_actor_005de5fa
-;   undefined4 DAT_005de654
+;   TerminatedCString s_x_005de654
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   TerminatedCString s_none_006182b0
-;   undefined4 DAT_0061ed94
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   uchar[257] g_CharacterClassificationTable
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
@@ -68,7 +68,7 @@ section .text
     ADD ESP,0x4                         ; 004fc079
     INC DL                              ; 004fc07c
     AND EDX,0xff                        ; 004fc07e
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 004fc084 | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 004fc084 | g_CharacterClassificationTable
     JNZ 0x004fc071                      ; 004fc08b
         ;   XREF to: 004fc071 (CONDITIONAL_JUMP)  ; LAB_004fc071
     CMP EAX,0x22                        ; 004fc08d
@@ -87,10 +87,10 @@ section .text
     MOV EAX,0x5de5a8                    ; 004fc0a6 | = "..\\core\\mission.cpp"
     MOV EDX,0x231                       ; 004fc0ab
     PUSH 0x5de5bc                       ; 004fc0b0 | = "Error reading actor pointer.\nOwner: ..."
-    MOV [0x01d046a0],EAX                ; 004fc0b5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004fc0ba | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004fc0c0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV [0x01d046a0],EAX                ; 004fc0b5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 004fc0ba | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc0c0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004fc0c5
     PUSH EBX                            ; 004fc0c8
         ;   Label: LAB_004fc0c8
@@ -178,7 +178,7 @@ section .text
     ADD ESP,0x8                         ; 004fc171
     LEA EAX,[ESP + 0xc8]                ; 004fc174
     PUSH EAX                            ; 004fc17b
-    PUSH 0x5de654                       ; 004fc17c | DAT_005de654
+    PUSH 0x5de654                       ; 004fc17c | = "%x"
     PUSH EBX                            ; 004fc181
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004fc182
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)

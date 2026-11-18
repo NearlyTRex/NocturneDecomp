@@ -7,12 +7,12 @@
 ; char *           Stack[0x4]:4   model_filename
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00422be0 at 00422c02
+;   core_charactr.cpp_CCharacter_markResourcesInUse_FUN_00422be0 at 00422c02
 ;
 ; Referenced Globals:
 ;   undefined4 g_DeformableModelPool[0].model_filename[0]
-;   undefined4 DAT_02177ff4
-;   undefined4 DAT_02628554
+;   char[256] g_CHAR_ARRAY_02177ff4
+;   char[188] g_CHAR_ARRAY_02628554
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130
@@ -58,7 +58,7 @@ section .text
     MOV ESI,0x21780f4                   ; 00549257
     ADD EDI,0x2a1c                      ; 0054925c
     ADD ESI,0x1d1a8                     ; 00549262
-    MOV dword ptr [EBX*0x4 + 0x2177ff4],ECX ; 00549268 | DAT_02177ff4
+    MOV dword ptr [EBX*0x4 + 0x2177ff4],ECX ; 00549268 | g_CHAR_ARRAY_02177ff4
     XOR EBX,EBX                         ; 0054926f
     PUSH ESI                            ; 00549271
         ;   Label: LAB_00549271
@@ -79,7 +79,7 @@ section .text
     POP ESI                             ; 0054928d
     POP EBX                             ; 0054928e
     RET                                 ; 0054928f
-    MOV dword ptr [EBX*0x4 + 0x2628554],0x1 ; 00549290 | DAT_02628554
+    MOV dword ptr [EBX*0x4 + 0x2628554],0x1 ; 00549290 | g_CHAR_ARRAY_02628554
         ;   Label: LAB_00549290
     POP EBP                             ; 0054929b
     POP EDI                             ; 0054929c

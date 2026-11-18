@@ -7,11 +7,11 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[9]:
-;   core_event.cpp_FUN_0048c2e0 at 0048f22d
-;   core_game.cpp_FUN_004c4a60 at 004c4af6
-;   core_menu.cpp_FUN_004e94f0 at 004e9698
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048f22d
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4af6
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9698
+;   core_sound.cpp_CSound_init_FUN_0055fd30 at 0055fdc2
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0056018d
-;   core_sound.cpp_FUN_0055fd30 at 0055fdc2
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcd0 at 0055fcd5
 ;   sound_sndmain.cpp_readIni_FUN_00559220 at 00559465
 ;   sound_sndmain.cpp_startSfx_FUN_00556240 at 005562d6
@@ -20,11 +20,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3959
 ;   TerminatedCString s_isSfxChannelEnabled_inva_005d396e
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -47,10 +47,10 @@ section .text
     MOV EDX,0x5d3959                    ; 00556e48 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0x1147                      ; 00556e4d
     PUSH 0x5d396e                       ; 00556e52 | = "isSfxChannelEnabled - invalid channel..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00556e57 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00556e5d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00556e63
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 00556e57 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00556e5d | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00556e63
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00556e68
     MOV EAX,dword ptr [EBX*0x4 + 0x2cf2940] ; 00556e6b
     POP EBX                             ; 00556e72

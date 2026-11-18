@@ -945,23 +945,28 @@
   },
   {
    "a": "00434650",
-   "b": "00437c0e",
+   "b": "00437c10",
    "note": "isLineBlendingDisabled_FUN_00434650. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.50x), so the slot is sound: logic-change d=0.429 (15/10 B)."
   },
   {
    "a": "00434670",
-   "b": "00437c20",
+   "b": "00437c30",
    "note": "setLineBlendingDisabled_FUN_00434670. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.50x), so the slot is sound: logic-change d=0.200 (12/8 B)."
   },
   {
    "a": "00434680",
-   "b": "00437c2c",
+   "b": "00437c40",
    "note": "setLineClippingDisabled_FUN_00434680. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.33x), so the slot is sound: logic-change d=0.143 (12/16 B)."
   },
   {
-   "a": "00434870",
+   "a": "00434690",
    "b": "00437c50",
-   "note": "rotateBitmap_FUN_00434870. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.07x), so the slot is sound: logic-change d=0.639 (480/447 B)."
+   "note": "loadRotatedBitmapFile_FUN_00434690. Was paired with rotateBitmap by position; the body opens the file with getFile/fgetc like blairwitch2's loadRotatedBitmapFile."
+  },
+  {
+   "a": "00434870",
+   "b": "00437e10",
+   "note": "rotateBitmap_FUN_00434870. Same 446-byte body as blairwitch2's rotateBitmap (malloc, then a size-check error); sits after loadRotatedBitmapFile."
   },
   {
    "a": "00434af0",
@@ -970,8 +975,13 @@
   },
   {
    "a": "00435730",
+   "b": "00438ca0",
+   "note": "generateTransparencySpans_FUN_00435730. Same 139 instructions and struct offsets as nocedit; sits right after flipEdgeArrayHorizontally."
+  },
+  {
+   "a": "00431870",
    "b": "00438ef0",
-   "note": "generateTransparencySpans_FUN_00435730. TU-positional anchor in cockpit/ckptutil.c between verified neighbours; bodies drifted but sizes agree (1.42x), so the slot is sound: logic-change d=0.630 (591/415 B)."
+   "note": "readBitmapFile_FUN_00431870. Was paired with generateTransparencySpans by position; it opens a CInStreamFile and matches blairwitch2's readBitmapFile."
   },
   {
    "a": "004359f0",
@@ -1029,9 +1039,14 @@
    "note": "resetBitBuffer_FUN_0043e510. TU-size anchor in support/codec.cpp between verified neighbours; corroborated by reloc-masked bytes: identical d=0.000 (32/32 B)."
   },
   {
-   "a": "0043e6c0",
+   "a": "0043e530",
    "b": "004400f0",
-   "note": "writeBitsToStream_FUN_0043e6c0. TU-size anchor in support/codec.cpp between verified neighbours; bodies drifted but sizes agree (1.00x), so the slot is sound: logic-change d=0.629 (288/288 B)."
+   "note": "readBitsFromStream_FUN_0043e530. Read by hand: follows resetBitBuffer as in nocedit, reads bytes through the stream's vtable +4 and returns the bits; callers are readCodeFromStream and CAsciiArmor_encode. Was paired with writeBitsToStream."
+  },
+  {
+   "a": "0043e6c0",
+   "b": "00440260",
+   "note": "writeBitsToStream_FUN_0043e6c0. Read by hand: called by writeCodeBits and CAsciiUnarmor_decode, takes (buffer, bit_count, bit_value, stream) and returns an error code; drains whole bytes through a new helper first."
   },
   {
    "a": "0043ea00",
@@ -1300,7 +1315,7 @@
   },
   {
    "a": "00471ad0",
-   "b": "0045b2fe",
+   "b": "0045b300",
    "note": "CDemonImage_load_FUN_00471ad0. TU-positional anchor in core/dimage.cpp between verified neighbours; bodies drifted but sizes agree (1.03x), so the slot is sound: logic-change d=0.015 (596/581 B)."
   },
   {
@@ -1350,7 +1365,7 @@
   },
   {
    "a": "00475210",
-   "b": "0045e69e",
+   "b": "0045e6a0",
    "note": "CDemonLight_renderRadialVolumetricScattering_FUN_00475210. TU-positional anchor in core/dlight.cpp between verified neighbours; bodies drifted but sizes agree (1.01x), so the slot is sound: logic-change d=0.095 (1724/1742 B)."
   },
   {
@@ -1755,12 +1770,12 @@
   },
   {
    "a": "0049e870",
-   "b": "0047d09e",
+   "b": "0047d0a0",
    "note": "CEditorTools_drawWindowStatusMessage_FUN_0049e870. TU-positional anchor in shape/edittool.cpp between verified neighbours; bodies drifted but sizes agree (1.21x), so the slot is sound: logic-change d=0.095 (208/252 B)."
   },
   {
    "a": "0049e940",
-   "b": "0047d19e",
+   "b": "0047d1a0",
    "note": "CEditorTools_createCenteredDialog_FUN_0049e940. TU-positional anchor in shape/edittool.cpp between verified neighbours; bodies drifted but sizes agree (1.01x), so the slot is sound: logic-change d=0.011 (143/145 B)."
   },
   {
@@ -2030,12 +2045,12 @@
   },
   {
    "a": "004b1680",
-   "b": "00495b4e",
+   "b": "00495b50",
    "note": "CRuleList_insert_FUN_004b1680. TU-positional anchor in core/event.cpp between verified neighbours; bodies drifted but sizes agree (1.00x), so the slot is sound: logic-change d=0.018 (320/319 B)."
   },
   {
    "a": "004b17c0",
-   "b": "00495c8e",
+   "b": "00495c90",
    "note": "CRuleList_remove_FUN_004b17c0. TU-positional anchor in core/event.cpp between verified neighbours; bodies drifted but sizes agree (1.01x), so the slot is sound: logic-change d=0.007 (208/210 B)."
   },
   {
@@ -2600,7 +2615,7 @@
   },
   {
    "a": "004d8890",
-   "b": "004b503e",
+   "b": "004b5040",
    "note": "drawCreditsLine_FUN_004d8890. TU-positional anchor in core/game.cpp between verified neighbours; bodies drifted but sizes agree (1.37x), so the slot is sound: logic-change d=0.250 (128/175 B)."
   },
   {
@@ -2660,7 +2675,7 @@
   },
   {
    "a": "004e0bb0",
-   "b": "004bd8ee",
+   "b": "004bd8f0",
    "note": "CGame_resetWeaponSwitchTimers_FUN_004e0bb0. TU-positional anchor in core/game.cpp between verified neighbours; bodies drifted but sizes agree (1.06x), so the slot is sound: logic-change d=0.053 (31/33 B)."
   },
   {
@@ -3645,7 +3660,7 @@
   },
   {
    "a": "0053f860",
-   "b": "00503efc",
+   "b": "00503f00",
    "note": "CNetGame_initializeNetworkToHost_FUN_0053f860. TU-positional anchor in core/netgame.cpp between verified neighbours; bodies drifted but sizes agree (1.09x), so the slot is sound: logic-change d=0.094 (160/175 B)."
   },
   {
@@ -3945,7 +3960,7 @@
   },
   {
    "a": "00550230",
-   "b": "00513d1e",
+   "b": "00513d20",
    "note": "CPodFile_verifyChecksum_FUN_00550230. TU-positional anchor in engine/pod.cpp between verified neighbours; bodies drifted but sizes agree (1.20x), so the slot is sound: logic-change d=0.343 (863/717 B)."
   },
   {
@@ -4135,7 +4150,7 @@
   },
   {
    "a": "0056a470",
-   "b": "00533e5e",
+   "b": "00533e60",
    "note": "CDemonSet_precomputeLightVisibility_FUN_0056a470. TU-positional anchor in core/set.cpp between verified neighbours; bodies drifted but sizes agree (1.02x), so the slot is sound: logic-change d=0.031 (1439/1473 B)."
   },
   {
@@ -6597,6 +6612,1416 @@
    "a": "00610a70",
    "b": "005b2120",
    "note": "crt_locale.c_istrailbyte_FUN_00610a70. Body match, layout tier: unique 16-instruction body."
+  },
+  {
+   "a": "00401460",
+   "b": "00401450",
+   "note": "findBestPaletteMatch_FUN_00401460. Ranked residue, mutual best: score 0.99, margin 0.94."
+  },
+  {
+   "a": "00408340",
+   "b": "00408100",
+   "note": "rayCylinderIntersect_FUN_00408340. Ranked residue, mutual best: score 0.91, margin 0.91."
+  },
+  {
+   "a": "00408e80",
+   "b": "00408b00",
+   "note": "CDemonActor_transformVector_FUN_00408e80. Ranked residue, mutual best: score 0.66, margin 0.46."
+  },
+  {
+   "a": "00408ea0",
+   "b": "00408b40",
+   "note": "CDemonActor_inverseTransformVector_FUN_00408ea0. Ranked residue, mutual best: score 0.68, margin 0.48."
+  },
+  {
+   "a": "00409270",
+   "b": "00408f00",
+   "note": "CDemonActor_getWorldBoundingBox_FUN_00409270. Ranked residue, mutual best: score 0.79, margin 0.79."
+  },
+  {
+   "a": "00420840",
+   "b": "0041e100",
+   "note": "CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840. Ranked residue, mutual best: score 0.74, margin 0.63."
+  },
+  {
+   "a": "00420940",
+   "b": "0041e220",
+   "note": "CBoundingBox3D_doesRayIntersect_FUN_00420940. Ranked residue, mutual best: score 0.94, margin 0.78."
+  },
+  {
+   "a": "00421010",
+   "b": "0041e910",
+   "note": "CBoundingBox3D_doesBoxIntersect_FUN_00421010. Ranked residue, mutual best: score 0.98, margin 0.98."
+  },
+  {
+   "a": "00421550",
+   "b": "0041ee30",
+   "note": "CBoundingBox3D_clampPoint_FUN_00421550. Ranked residue, mutual best: score 0.83, margin 0.46."
+  },
+  {
+   "a": "004276c0",
+   "b": "00423fb0",
+   "note": "CBugs_applySwarmTranslation_FUN_004276c0. Ranked residue, mutual best: score 0.60, margin 0.51."
+  },
+  {
+   "a": "00427a60",
+   "b": "004241c0",
+   "note": "normalizeVector_FUN_00427a60. Ranked residue, mutual best: score 0.92, margin 0.83."
+  },
+  {
+   "a": "00428f40",
+   "b": "0042c230",
+   "note": "CCharacter_moveAndCollide_FUN_00428f40. Ranked residue, mutual best: score 0.87, margin 0.75."
+  },
+  {
+   "a": "00429aa0",
+   "b": "0042d8e0",
+   "note": "CCharacter_renderCharacter_FUN_00429aa0. Ranked residue, mutual best: score 0.68, margin 0.56."
+  },
+  {
+   "a": "00429b40",
+   "b": "0042d9f0",
+   "note": "CCharacter_renderCollision_FUN_00429b40. Ranked residue, mutual best: score 0.65, margin 0.48."
+  },
+  {
+   "a": "0042a830",
+   "b": "0042e8c0",
+   "note": "CCharacter_processFire_FUN_0042a830. Ranked residue, mutual best: score 0.72, margin 0.46."
+  },
+  {
+   "a": "0042ad00",
+   "b": "0042f010",
+   "note": "CCharacter_renderBurn_FUN_0042ad00. Ranked residue, mutual best: score 0.96, margin 0.74."
+  },
+  {
+   "a": "0042af60",
+   "b": "0042f310",
+   "note": "CCharacter_renderEthereal_FUN_0042af60. Ranked residue, mutual best: score 0.63, margin 0.40."
+  },
+  {
+   "a": "00431760",
+   "b": "00434e80",
+   "note": "getColorConversionFunction_FUN_00431760. Ranked residue, mutual best: score 0.64, margin 0.64."
+  },
+  {
+   "a": "004331f0",
+   "b": "004367e0",
+   "note": "loadEdgeListFile_FUN_004331f0. Ranked residue, mutual best: score 0.62, margin 0.33."
+  },
+  {
+   "a": "00437840",
+   "b": "0043aed0",
+   "note": "clipPolygonLeftPlaneGlobal_FUN_00437840. Ranked residue, mutual best: score 0.80, margin 0.65."
+  },
+  {
+   "a": "004394e0",
+   "b": "0043c8a0",
+   "note": "CCloth_initializeConnections_FUN_004394e0. Ranked residue, mutual best: score 0.77, margin 0.68."
+  },
+  {
+   "a": "00439710",
+   "b": "0043cb00",
+   "note": "CCloth_setup_FUN_00439710. Ranked residue, mutual best: score 0.88, margin 0.77."
+  },
+  {
+   "a": "0043eb30",
+   "b": "00440970",
+   "note": "CCodec_processFromBuffer_FUN_0043eb30. Ranked residue, mutual best: score 0.72, margin 0.30."
+  },
+  {
+   "a": "004427a0",
+   "b": "00444b70",
+   "note": "CCourse_interpolate_FUN_004427a0. Ranked residue, mutual best: score 0.86, margin 0.86."
+  },
+  {
+   "a": "0044edf0",
+   "b": "0044bb00",
+   "note": "CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0. Ranked residue, mutual best: score 0.85, margin 0.85."
+  },
+  {
+   "a": "00455460",
+   "b": "00452240",
+   "note": "CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460. Ranked residue, mutual best: score 0.96, margin 0.96."
+  },
+  {
+   "a": "00457b60",
+   "b": "004545f0",
+   "note": "CDemonCube_testCylinderGroundCollision_FUN_00457b60. Ranked residue, mutual best: score 0.92, margin 0.91."
+  },
+  {
+   "a": "004709a0",
+   "b": "00459f50",
+   "note": "initFonts_FUN_004709a0. Ranked residue, mutual best: score 0.83, margin 0.72."
+  },
+  {
+   "a": "00481f80",
+   "b": "00465eb0",
+   "note": "ensureTrailingSlash_FUN_00481f80. Ranked residue, mutual best: score 0.70, margin 0.70."
+  },
+  {
+   "a": "0049b2f0",
+   "b": "004795c0",
+   "note": "rayTriangleFloorTest_FUN_0049b2f0. Ranked residue, mutual best: score 0.94, margin 0.94."
+  },
+  {
+   "a": "0049d190",
+   "b": "0047b510",
+   "note": "plotPixelWithClipping_FUN_0049d190. Ranked residue, mutual best: score 0.89, margin 0.37."
+  },
+  {
+   "a": "0049d1f0",
+   "b": "0047b580",
+   "note": "initEditorFontMetrics_FUN_0049d1f0. Ranked residue, mutual best: score 0.67, margin 0.30."
+  },
+  {
+   "a": "0049d290",
+   "b": "0047b5e0",
+   "note": "drawDashedLine_FUN_0049d290. Ranked residue, mutual best: score 0.86, margin 0.51."
+  },
+  {
+   "a": "004a0f80",
+   "b": "0047fa80",
+   "note": "CEditorTools_paintCurrentWindow_FUN_004a0f80. Ranked residue, mutual best: score 0.74, margin 0.53."
+  },
+  {
+   "a": "004a1ca0",
+   "b": "00480f00",
+   "note": "CEditorTools_draw3DAxisLabels_FUN_004a1ca0. Ranked residue, mutual best: score 0.70, margin 0.47."
+  },
+  {
+   "a": "004a1e90",
+   "b": "00481150",
+   "note": "CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90. Ranked residue, mutual best: score 0.77, margin 0.59."
+  },
+  {
+   "a": "004a1f40",
+   "b": "00481200",
+   "note": "draw3DInterpolatedLine_FUN_004a1f40. Ranked residue, mutual best: score 0.77, margin 0.46."
+  },
+  {
+   "a": "004a2050",
+   "b": "00481350",
+   "note": "CEditorTools_draw3DWireframeCube_FUN_004a2050. Ranked residue, mutual best: score 0.78, margin 0.42."
+  },
+  {
+   "a": "004a39e0",
+   "b": "00483020",
+   "note": "CStrList_populateWithFullPaths_FUN_004a39e0. Ranked residue, mutual best: score 0.93, margin 0.33."
+  },
+  {
+   "a": "004a58f0",
+   "b": "004850a0",
+   "note": "draw3DBorder_FUN_004a58f0. Ranked residue, mutual best: score 0.64, margin 0.24."
+  },
+  {
+   "a": "004a59a0",
+   "b": "004852f0",
+   "note": "draw3DInsetBorder_FUN_004a59a0. Ranked residue, mutual best: score 0.78, margin 0.37."
+  },
+  {
+   "a": "004a6c00",
+   "b": "00486810",
+   "note": "CEdCheck_render_FUN_004a6c00. Ranked residue, mutual best: score 0.91, margin 0.91."
+  },
+  {
+   "a": "004aa0f0",
+   "b": "0048a130",
+   "note": "CEnemy_countSameClassAttackingHero_FUN_004aa0f0. Ranked residue, mutual best: score 0.92, margin 0.83."
+  },
+  {
+   "a": "004cad90",
+   "b": "004a6dd0",
+   "note": "CFlame_updateGlobe_FUN_004cad90. Ranked residue, mutual best: score 0.92, margin 0.83."
+  },
+  {
+   "a": "004d0010",
+   "b": "004b2ef0",
+   "note": "CBitFont_wrapText_FUN_004d0010. Ranked residue, mutual best: score 0.72, margin 0.23."
+  },
+  {
+   "a": "004dc3e0",
+   "b": "004b9960",
+   "note": "CGame_processKeyboardControls_FUN_004dc3e0. Ranked residue, mutual best: score 0.83, margin 0.70."
+  },
+  {
+   "a": "004e0920",
+   "b": "004bd620",
+   "note": "CGame_beginFadeIn_FUN_004e0920. Ranked residue, mutual best: score 0.83, margin 0.72."
+  },
+  {
+   "a": "004e0cd0",
+   "b": "004bda10",
+   "note": "CGame_saveGame_FUN_004e0cd0. Ranked residue, mutual best: score 0.78, margin 0.44."
+  },
+  {
+   "a": "004e12b0",
+   "b": "004bdfb0",
+   "note": "CGame_loadGame_FUN_004e12b0. Ranked residue, mutual best: score 0.82, margin 0.50."
+  },
+  {
+   "a": "004e2910",
+   "b": "004bec20",
+   "note": "CGame_showFullscreenBitmap_FUN_004e2910. Ranked residue, mutual best: score 0.85, margin 0.85."
+  },
+  {
+   "a": "004f3120",
+   "b": "004d3500",
+   "note": "CHero_tryPushNearbyBox_FUN_004f3120. Ranked residue, mutual best: score 0.69, margin 0.58."
+  },
+  {
+   "a": "004f3890",
+   "b": "004d4160",
+   "note": "CHero_executeObjectPickup_FUN_004f3890. Ranked residue, mutual best: score 0.88, margin 0.81."
+  },
+  {
+   "a": "004fba70",
+   "b": "004d8a20",
+   "note": "CIniFile_ctor_FUN_004fba70. Ranked residue, mutual best: score 0.92, margin 0.49."
+  },
+  {
+   "a": "004fbc30",
+   "b": "004d8c30",
+   "note": "CIniFile_getInteger_FUN_004fbc30. Ranked residue, mutual best: score 0.66, margin 0.13."
+  },
+  {
+   "a": "004fbc90",
+   "b": "004d8c90",
+   "note": "CIniFile_setInteger_FUN_004fbc90. Ranked residue, mutual best: score 0.60, margin 0.21."
+  },
+  {
+   "a": "004fbcd0",
+   "b": "004d8cd0",
+   "note": "CIniFile_getFloat_FUN_004fbcd0. Ranked residue, mutual best: score 0.63, margin 0.14."
+  },
+  {
+   "a": "004fcda0",
+   "b": "004d9d20",
+   "note": "getItemModel_FUN_004fcda0. Ranked residue, mutual best: score 0.78, margin 0.56."
+  },
+  {
+   "a": "004fd600",
+   "b": "004da880",
+   "note": "CInventory_addItem_FUN_004fd600. Ranked residue, mutual best: score 0.80, margin 0.77."
+  },
+  {
+   "a": "00503dc0",
+   "b": "004dfc50",
+   "note": "CLevelLoader_show_FUN_00503dc0. Ranked residue, mutual best: score 0.67, margin 0.59."
+  },
+  {
+   "a": "00505080",
+   "b": "004e0a30",
+   "note": "CLever_isAccessibleFrom_FUN_00505080. Ranked residue, mutual best: score 0.91, margin 0.91."
+  },
+  {
+   "a": "00510000",
+   "b": "004e7860",
+   "note": "renderMenuAndGetChoice_FUN_00510000. Ranked residue, mutual best: score 0.64, margin 0.64."
+  },
+  {
+   "a": "00510c80",
+   "b": "004e85a0",
+   "note": "configureGraphicsOptions_FUN_00510c80. Ranked residue, mutual best: score 0.71, margin 0.44."
+  },
+  {
+   "a": "00511890",
+   "b": "004e8f80",
+   "note": "configureCustomKeys_FUN_00511890. Ranked residue, mutual best: score 0.71, margin 0.41."
+  },
+  {
+   "a": "00511e50",
+   "b": "004e94f0",
+   "note": "configureSoundOptions_FUN_00511e50. Ranked residue, mutual best: score 0.67, margin 0.48."
+  },
+  {
+   "a": "00512d30",
+   "b": "004ea280",
+   "note": "showOptionsScreen_FUN_00512d30. Ranked residue, mutual best: score 0.76, margin 0.52."
+  },
+  {
+   "a": "00513860",
+   "b": "004eadf0",
+   "note": "getSinglePressedKey_FUN_00513860. Ranked residue, mutual best: score 0.84, margin 0.77."
+  },
+  {
+   "a": "005138e0",
+   "b": "004eae80",
+   "note": "configureCustomKeyBindings_FUN_005138e0. Ranked residue, mutual best: score 0.80, margin 0.58."
+  },
+  {
+   "a": "00523fb0",
+   "b": "004f6de0",
+   "note": "CDemonMission_loadSet_FUN_00523fb0. Ranked residue, mutual best: score 0.65, margin 0.53."
+  },
+  {
+   "a": "00524760",
+   "b": "004f7590",
+   "note": "CDemonMission_startMission_FUN_00524760. Ranked residue, mutual best: score 0.89, margin 0.89."
+  },
+  {
+   "a": "00524c20",
+   "b": "004f7a20",
+   "note": "CDemonMission_ensureHeroPlaceholder_FUN_00524c20. Ranked residue, mutual best: score 0.96, margin 0.81."
+  },
+  {
+   "a": "00528140",
+   "b": "004f8170",
+   "note": "getMRGLBounds_FUN_00528140. Ranked residue, mutual best: score 0.73, margin 0.52."
+  },
+  {
+   "a": "00528700",
+   "b": "004f8730",
+   "note": "getMRGLSize_FUN_00528700. Ranked residue, mutual best: score 0.92, margin 0.68."
+  },
+  {
+   "a": "00528970",
+   "b": "004f89a0",
+   "note": "loadModelChunk_FUN_00528970. Ranked residue, mutual best: score 0.86, margin 0.53."
+  },
+  {
+   "a": "0052cd10",
+   "b": "004fb180",
+   "note": "CMorphModel_arrdtor2_FUN_0052cd10. Ranked residue, mutual best: score 1.00, margin 0.75."
+  },
+  {
+   "a": "0052e1d0",
+   "b": "004fc850",
+   "note": "CMotionController_advanceTween_FUN_0052e1d0. Ranked residue, mutual best: score 0.88, margin 0.63."
+  },
+  {
+   "a": "0052e2b0",
+   "b": "004fc930",
+   "note": "CMotionController_frameToMarkerPosition_FUN_0052e2b0. Ranked residue, mutual best: score 0.73, margin 0.50."
+  },
+  {
+   "a": "0052e700",
+   "b": "004fcdc0",
+   "note": "CMotionController_render_FUN_0052e700. Ranked residue, mutual best: score 0.93, margin 0.83."
+  },
+  {
+   "a": "0054bb40",
+   "b": "00510430",
+   "note": "loadPBGFile_FUN_0054bb40. Ranked residue, mutual best: score 0.65, margin 0.59."
+  },
+  {
+   "a": "0054c1e0",
+   "b": "00510a90",
+   "note": "CPackedBitmapSet_reload_FUN_0054c1e0. Ranked residue, mutual best: score 0.64, margin 0.63."
+  },
+  {
+   "a": "0054e320",
+   "b": "00512be0",
+   "note": "CPlatform_updateAttachedActors_FUN_0054e320. Ranked residue, mutual best: score 0.83, margin 0.83."
+  },
+  {
+   "a": "00550af0",
+   "b": "005144b0",
+   "note": "CPod_remount_FUN_00550af0. Ranked residue, mutual best: score 0.73, margin 0.51."
+  },
+  {
+   "a": "00551ba0",
+   "b": "00515510",
+   "note": "setupBasicSoftwareEdge_FUN_00551ba0. Ranked residue, mutual best: score 1.00, margin 1.00."
+  },
+  {
+   "a": "0056c1a0",
+   "b": "00535da0",
+   "note": "CDemonSet_renderScene_FUN_0056c1a0. Ranked residue, mutual best: score 0.69, margin 0.38."
+  },
+  {
+   "a": "0056e3e0",
+   "b": "005386d0",
+   "note": "CDemonSet_computeVertexOmniLighting_FUN_0056e3e0. Ranked residue, mutual best: score 0.67, margin 0.67."
+  },
+  {
+   "a": "00571230",
+   "b": "0053b7f0",
+   "note": "CDemonSet_loadStateInfo_FUN_00571230. Ranked residue, mutual best: score 0.73, margin 0.52."
+  },
+  {
+   "a": "00573140",
+   "b": "0053da90",
+   "note": "CDemonSet_testOBBCylinderCollision_FUN_00573140. Ranked residue, mutual best: score 0.92, margin 0.92."
+  },
+  {
+   "a": "005a20b0",
+   "b": "005505e0",
+   "note": "CSlew_processInput_FUN_005a20b0. Ranked residue, mutual best: score 0.93, margin 0.93."
+  },
+  {
+   "a": "005ade70",
+   "b": "0055a670",
+   "note": "getDirectSoundErrorString_FUN_005ade70. Ranked residue, mutual best: score 0.85, margin 0.75."
+  },
+  {
+   "a": "005ae1c0",
+   "b": "0055a9f0",
+   "note": "releaseSfxHardwareBuffers_FUN_005ae1c0. Ranked residue, mutual best: score 0.66, margin 0.57."
+  },
+  {
+   "a": "005ae4b0",
+   "b": "0055ae40",
+   "note": "CDirectSoundDevice_reset_FUN_005ae4b0. Ranked residue, mutual best: score 0.72, margin 0.35."
+  },
+  {
+   "a": "005ae830",
+   "b": "0055b100",
+   "note": "CDirectSoundDevice_setMode_FUN_005ae830. Ranked residue, mutual best: score 0.95, margin 0.67."
+  },
+  {
+   "a": "005aed50",
+   "b": "0055b620",
+   "note": "CDirectSoundDevice_poll_FUN_005aed50. Ranked residue, mutual best: score 0.95, margin 0.49."
+  },
+  {
+   "a": "005b2770",
+   "b": "0055f6b0",
+   "note": "processTrainSounds_FUN_005b2770. Ranked residue, mutual best: score 0.62, margin 0.58."
+  },
+  {
+   "a": "005b4031",
+   "b": "00560f31",
+   "note": "renderMMXPerspectiveScanline32_FUN_005b4031. Ranked residue, mutual best: score 0.98, margin 0.97."
+  },
+  {
+   "a": "005b575c",
+   "b": "005632a3",
+   "note": "transformAndProjectPoint_FUN_005b575c. Ranked residue, mutual best: score 0.99, margin 0.24."
+  },
+  {
+   "a": "005b5a25",
+   "b": "0056356c",
+   "note": "transformPoint_FUN_005b5a25. Ranked residue, mutual best: score 1.00, margin 0.25."
+  },
+  {
+   "a": "005b7280",
+   "b": "005658b0",
+   "note": "beginScene_FUN_005b7280. Ranked residue, mutual best: score 1.00, margin 0.33."
+  },
+  {
+   "a": "005b72a0",
+   "b": "005658d0",
+   "note": "endScene_FUN_005b72a0. Ranked residue, mutual best: score 1.00, margin 0.33."
+  },
+  {
+   "a": "005b90a0",
+   "b": "00567630",
+   "note": "computeSplineBasis_FUN_005b90a0. Ranked residue, mutual best: score 0.94, margin 0.94."
+  },
+  {
+   "a": "005dd200",
+   "b": "0056a130",
+   "note": "CTextureCache_setupTexture_FUN_005dd200. Ranked residue, mutual best: score 0.76, margin 0.51."
+  },
+  {
+   "a": "005e0ba0",
+   "b": "0056eed0",
+   "note": "CTrigger_calculateTestRadius_FUN_005e0ba0. Ranked residue, mutual best: score 0.70, margin 0.70."
+  },
+  {
+   "a": "005eb040",
+   "b": "00578570",
+   "note": "CWaterActor_updateLocalPositions_FUN_005eb040. Ranked residue, mutual best: score 0.68, margin 0.68."
+  },
+  {
+   "a": "005ec320",
+   "b": "00579430",
+   "note": "CWayPoint_findNearestReachable_FUN_005ec320. Ranked residue, mutual best: score 0.74, margin 0.74."
+  },
+  {
+   "a": "005ecc10",
+   "b": "005798f0",
+   "note": "initializeGraphicsSystem_FUN_005ecc10. Ranked residue, mutual best: score 0.94, margin 0.72."
+  },
+  {
+   "a": "005eead0",
+   "b": "0057bd80",
+   "note": "CWeather_ctor_FUN_005eead0. Ranked residue, mutual best: score 0.66, margin 0.55."
+  },
+  {
+   "a": "005eeaf0",
+   "b": "0057bda0",
+   "note": "CWeather_update_FUN_005eeaf0. Ranked residue, mutual best: score 0.83, margin 0.47."
+  },
+  {
+   "a": "005eeeb0",
+   "b": "0057c2e0",
+   "note": "CWeather_createLightningStrike_FUN_005eeeb0. Ranked residue, mutual best: score 0.66, margin 0.34."
+  },
+  {
+   "a": "005ef940",
+   "b": "0057d1a0",
+   "note": "CWeather_setOriginAndRotation_FUN_005ef940. Ranked residue, mutual best: score 0.88, margin 0.67."
+  },
+  {
+   "a": "005f3150",
+   "b": "00580a50",
+   "note": "mainWindowProc_FUN_005f3150. Ranked residue, mutual best: score 0.94, margin 0.85."
+  },
+  {
+   "a": "005f35e0",
+   "b": "00580f70",
+   "note": "processWindowMessages_FUN_005f35e0. Ranked residue, mutual best: score 0.91, margin 0.82."
+  },
+  {
+   "a": "005f3980",
+   "b": "00581360",
+   "note": "getKeyName_FUN_005f3980. Ranked residue, mutual best: score 0.64, margin 0.56."
+  },
+  {
+   "a": "005f5390",
+   "b": "00583800",
+   "note": "buildMatrixFromEulerAndPosition_FUN_005f5390. Ranked residue, mutual best: score 0.68, margin 0.24."
+  },
+  {
+   "a": "005f6110",
+   "b": "00584450",
+   "note": "getTranslation_FUN_005f6110. Ranked residue, mutual best: score 0.76, margin 0.60."
+  },
+  {
+   "a": "005f6140",
+   "b": "00584490",
+   "note": "invertAndGetTranslation_FUN_005f6140. Ranked residue, mutual best: score 0.75, margin 0.62."
+  },
+  {
+   "a": "005f6690",
+   "b": "00584b00",
+   "note": "orthonormalizeMatrix3x3_FUN_005f6690. Ranked residue, mutual best: score 0.81, margin 0.81."
+  },
+  {
+   "a": "005fca10",
+   "b": "0058cc20",
+   "note": "CZombie_resetChaseState_FUN_005fca10. Ranked residue, mutual best: score 0.72, margin 0.56."
+  },
+  {
+   "a": "00427d60",
+   "b": "00425530",
+   "note": "CCameraView_testVisibility_FUN_00427d60. Slot contract: vtable 005dcef4 slot 3, as 0065b7d4's; 1 table(s) agree, class checked."
+  },
+  {
+   "a": "0043ea10",
+   "b": "00440860",
+   "note": "CCodec_process_FUN_0043ea10. Slot contract: vtable 005dd434 slot 2, as 0065bbc4's; 1 table(s) agree, class checked."
+  },
+  {
+   "a": "005aee20",
+   "b": "0055b700",
+   "note": "CDirectSoundDevice_hasHardware3D_FUN_005aee20. Slot contract: vtable 005e48dc slot 5, as 00663204's; 1 table(s) agree."
+  },
+  {
+   "a": "005aee30",
+   "b": "0055b7b0",
+   "note": "CDirectSoundDevice_set3DListenerPos_FUN_005aee30. Slot contract: vtable 005e48dc slot 7, as 00663204's; 1 table(s) agree."
+  },
+  {
+   "a": "005aee70",
+   "b": "0055b7f0",
+   "note": "CDirectSoundDevice_set3DListenerOrient_FUN_005aee70. Slot contract: vtable 005e48dc slot 8, as 00663204's; 1 table(s) agree."
+  },
+  {
+   "a": "005aeed0",
+   "b": "0055b820",
+   "note": "CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0. Slot contract: vtable 005e48dc slot 9, as 00663204's; 1 table(s) agree."
+  },
+  {
+   "a": "005b1650",
+   "b": "0055e680",
+   "note": "CWavOutDevice_hasHardware3D_FUN_005b1650. Slot contract: vtable 005e4950 slot 5, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b1660",
+   "b": "0055e6a0",
+   "note": "CWavOutDevice_set3DListenerPos_FUN_005b1660. Slot contract: vtable 005e4950 slot 7, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b1670",
+   "b": "0055e6b0",
+   "note": "CWavOutDevice_set3DListenerOrient_FUN_005b1670. Slot contract: vtable 005e4950 slot 8, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b1680",
+   "b": "0055e6c0",
+   "note": "CWavOutDevice_set3DListenerVelocity_FUN_005b1680. Slot contract: vtable 005e4950 slot 9, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b1690",
+   "b": "0055e6d0",
+   "note": "CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690. Slot contract: vtable 005e4950 slot 10, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b16a0",
+   "b": "0055e6e0",
+   "note": "CWavOutDevice_commitDeferredSettings_FUN_005b16a0. Slot contract: vtable 005e4950 slot 11, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b16b0",
+   "b": "0055e6f0",
+   "note": "CWavOutDevice_allocateSample_FUN_005b16b0. Slot contract: vtable 005e4950 slot 12, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b16c0",
+   "b": "0055e700",
+   "note": "CWavOutDevice_freeSample_FUN_005b16c0. Slot contract: vtable 005e4950 slot 13, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b16d0",
+   "b": "0055e710",
+   "note": "CWavOutDevice_lockSample_FUN_005b16d0. Slot contract: vtable 005e4950 slot 14, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b16e0",
+   "b": "0055e720",
+   "note": "CWavOutDevice_unlockSample_FUN_005b16e0. Slot contract: vtable 005e4950 slot 15, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b16f0",
+   "b": "0055e730",
+   "note": "CWavOutDevice_allocateSfx_FUN_005b16f0. Slot contract: vtable 005e4950 slot 16, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "005b1700",
+   "b": "0055e740",
+   "note": "CWavOutDevice_setSfxPos_FUN_005b1700. Slot contract: vtable 005e4950 slot 17, as 00663284's; 1 table(s) agree."
+  },
+  {
+   "a": "004015a0",
+   "b": "00401590",
+   "note": "loadPaletteFile_FUN_004015a0. Ranked residue, mutual best: score 0.45, margin 0.45; body and context corroborate."
+  },
+  {
+   "a": "0041dbe0",
+   "b": "0041acc0",
+   "note": "modelStructNotSupported4_FUN_0041dbe0. Ranked residue, mutual best: score 0.43, margin 0.43; body and context corroborate."
+  },
+  {
+   "a": "00433480",
+   "b": "00436a50",
+   "note": "saveEdgeListFile_FUN_00433480. Ranked residue, mutual best: score 0.57, margin 0.57; body and context corroborate."
+  },
+  {
+   "a": "004569b0",
+   "b": "00453ec0",
+   "note": "CDemonCube_freeMemory_FUN_004569b0. Ranked residue, mutual best: score 0.54, margin 0.54; body and context corroborate."
+  },
+  {
+   "a": "00481a50",
+   "b": "004659c0",
+   "note": "getFile_FUN_00481a50. Ranked residue, mutual best: score 0.56, margin 0.56; body and context corroborate."
+  },
+  {
+   "a": "004822b0",
+   "b": "004663b0",
+   "note": "CDemonPart_free_FUN_004822b0. Ranked residue, mutual best: score 0.54, margin 0.42; body and context corroborate."
+  },
+  {
+   "a": "00488630",
+   "b": "00469080",
+   "note": "CDrawSurface_drawSolidRectangle_FUN_00488630. Ranked residue, mutual best: score 0.60, margin 0.60; body and context corroborate."
+  },
+  {
+   "a": "00494450",
+   "b": "00473670",
+   "note": "CDemonRaytrace_consolidateTriList_FUN_00494450. Ranked residue, mutual best: score 0.57, margin 0.49; body and context corroborate."
+  },
+  {
+   "a": "00494690",
+   "b": "00473860",
+   "note": "CDemonRaytrace_freeTriList_FUN_00494690. Ranked residue, mutual best: score 0.38, margin 0.14; body and context corroborate."
+  },
+  {
+   "a": "004f35b0",
+   "b": "004d3b20",
+   "note": "CHero_findItemUseTarget_FUN_004f35b0. Ranked residue, mutual best: score 0.47, margin 0.17; body and context corroborate."
+  },
+  {
+   "a": "004fe900",
+   "b": "004db8d0",
+   "note": "CInventory_createAmmoFromWeapon_FUN_004fe900. Ranked residue, mutual best: score 0.57, margin 0.42; body and context corroborate."
+  },
+  {
+   "a": "00506f10",
+   "b": "004e4330",
+   "note": "displayErrorAndQuit_FUN_00506f10. Ranked residue, mutual best: score 0.46, margin 0.33; body and context corroborate."
+  },
+  {
+   "a": "0052ecf0",
+   "b": "004fd3c0",
+   "note": "CFileBitStream_init_FUN_0052ecf0. Ranked residue, mutual best: score 0.56, margin 0.56; body and context corroborate."
+  },
+  {
+   "a": "0054f490",
+   "b": "00512e70",
+   "note": "crc32ComputeFileRange_FUN_0054f490. Ranked residue, mutual best: score 0.36, margin 0.36; body and context corroborate."
+  },
+  {
+   "a": "0056c990",
+   "b": "005365c0",
+   "note": "CDemonSet_renderGogglesView_FUN_0056c990. Ranked residue, mutual best: score 0.68, margin 0.12."
+  },
+  {
+   "a": "005751d0",
+   "b": "0053f940",
+   "note": "CDemonSet_evaluateVirtualDirector_FUN_005751d0. Ranked residue, mutual best: score 0.39, margin 0.27; body and context corroborate."
+  },
+  {
+   "a": "00575e40",
+   "b": "00540c40",
+   "note": "CDemonSet_writeThumbs_FUN_00575e40. Ranked residue, mutual best: score 0.40, margin 0.18; body and context corroborate."
+  },
+  {
+   "a": "00575f70",
+   "b": "00540eb0",
+   "note": "CDemonSet_renderVirtualDirectors_FUN_00575f70. Ranked residue, mutual best: score 0.52, margin 0.38; body and context corroborate."
+  },
+  {
+   "a": "005dd180",
+   "b": "0056a0a0",
+   "note": "CTextureCache_findTexture_FUN_005dd180. Ranked residue, mutual best: score 0.59, margin 0.42; body and context corroborate."
+  },
+  {
+   "a": "0043f510",
+   "b": "00441390",
+   "note": "CLZWDecompress_process_FUN_0043f510. CLZWDecompress vtable slot 8; reads codes from the input stream and emits each through slot 0xc."
+  },
+  {
+   "a": "0043f590",
+   "b": "004413f0",
+   "note": "CLZWDecompress_finalize_FUN_0043f590. CLZWDecompress vtable slot 0xc; writes the pending current_code to the output stream."
+  },
+  {
+   "a": "00434660",
+   "b": "00437c20",
+   "note": "isLineClippingDisabled_FUN_00434660. Read by hand: the four ckptutil line helpers are getter/getter/setter/setter over the blending (bss) and clipping (data)..."
+  },
+  {
+   "a": "004027f0",
+   "b": "00402800",
+   "note": "getTextWrapEnabled_FUN_004027f0. Read by hand (high): Global getter in engine/2d.c in the same slot, shifted +0x10 like its neighbours (buildColorLookupTable..."
+  },
+  {
+   "a": "00402800",
+   "b": "00402810",
+   "note": "setTextWrapEnabled_FUN_00402800. Read by hand (high): Same layout as bw1: 00402810 stores its arg into DAT_005f076c, and 00402800 returns it. BW change: gett..."
+  },
+  {
+   "a": "00402820",
+   "b": "00402830",
+   "note": "disableTextWrap_FUN_00402820. Read by hand (high): Body is push 0; call FUN_00402810 (the setTextWrapEnabled equivalent); ret, identical to nocedit. The only..."
+  },
+  {
+   "a": "00402830",
+   "b": "00402840",
+   "note": "getTextColor_FUN_00402830. Read by hand (high): Returns the global that the following setter (FUN_00402850, the setTextColor slot) writes and drawTextColor r..."
+  },
+  {
+   "a": "00402840",
+   "b": "00402850",
+   "note": "setTextColor_FUN_00402840. Read by hand (high): Stores the arg into DAT_005f0770, the global returned by the getter at 00402840. It sits right before buildCo..."
+  },
+  {
+   "a": "00407870",
+   "b": "00407700",
+   "note": "setProcessorType_FUN_00407870. Read by hand (high): Global setter whose DAT_01c6e2b0 is read by initializeGameSystems, loadExternalRenderer and prim.c render..."
+  },
+  {
+   "a": "00407880",
+   "b": "00407710",
+   "note": "setRenderingQuality_FUN_00407880. Read by hand (high): Single-global setter. Its global is in initialised data and is read by loadExternalRenderer, as in noc..."
+  },
+  {
+   "a": "00408820",
+   "b": "004085a0",
+   "note": "deleteActor_FUN_00408820. Read by hand (high): Null-check then vtable dtor call with flag 2 on the actor (slot 0xd0, as in bw1, where that slot is CDemonActo..."
+  },
+  {
+   "a": "0041b4e0",
+   "b": "00416bd0",
+   "note": "scaleVector_FUN_0041b4e0. Read by hand (medium): x/y/z each multiplied by *scalar (3 FMULs). Same TU (bodypart.cpp) and same call sites as the nocedit helper..."
+  },
+  {
+   "a": "0041b510",
+   "b": "00416c10",
+   "note": "subtractVector_FUN_0041b510. Read by hand (medium): Same body as bw1 0041afe0 (a-b per component) in the same bodypart.cpp vector-helper position. BW change:..."
+  },
+  {
+   "a": "0041b540",
+   "b": "00416c50",
+   "note": "addVector_FUN_0041b540. Read by hand (medium): Same three callers: CBoneGuy_updatePickupBehavior, CMobster_processWeaponPickup, CZombie_processPickup. Same c..."
+  },
+  {
+   "a": "0041df50",
+   "b": "0041b030",
+   "note": "CBox_setupN_FUN_0041df50. Read by hand (high): Same 'CBox::setupN - Too many scrape points' error, the same 999/-999 min/max scan and the same tail call to C..."
+  },
+  {
+   "a": "00428670",
+   "b": "0042b970",
+   "note": "clampNormalizedAngle_FUN_00428670. Read by hand (high): Identical body: normalizeAngleToPi(angle), then clamp to [-limit, limit]."
+  },
+  {
+   "a": "00429870",
+   "b": "0042cd70",
+   "note": "CCharacter_processCharacter_FUN_00429870. Read by hand (high): Same core sequence: sound_cooldown decay, processFire, advanceGesture, speech_timer -> CScript..."
+  },
+  {
+   "a": "0042d5a0",
+   "b": "00432330",
+   "note": "CCharacter_findSomethingToLookAt_FUN_0042d5a0. Read by hand (high): Has look_at_search_timer/look_at_target/look_at_candidate/look_at_weight, the 5.5 eye off..."
+  },
+  {
+   "a": "0042ea40",
+   "b": "00433c60",
+   "note": "CCharacter_processSmoking_FUN_0042ea40. Read by hand (high): Same was_rendered_opaque gate, fog temperature check, smoke_emit_timer/smoke_check_timer, \"Bip01..."
+  },
+  {
+   "a": "0042f9e0",
+   "b": "00434b00",
+   "note": "getGameDeltaTime_FUN_0042f9e0. Read by hand (high): Same getter, with the same two callers (CScript_process and CScript_renderSubtitles) passing g_CGamePtr...."
+  },
+  {
+   "a": "00432df0",
+   "b": "00436400",
+   "note": "generateScrollHeightMap_FUN_00432df0. Read by hand (high): Same error strings ('Invalid height array size.', 'No room for scroll bitmap height table.') and t..."
+  },
+  {
+   "a": "004336e0",
+   "b": "00436ca0",
+   "note": "rasterizeEdgeEndpoints_FUN_004336e0. Read by hand (high): Only function in ckptutil.c with 'Edge out of range: edge %d'. It writes 0xfb at both edge endpoint..."
+  },
+  {
+   "a": "0043b790",
+   "b": "0043f110",
+   "note": "CCloth_renderCollisionBones_FUN_0043b790. Read by hand (high): Identical: setCurrentPolygonColor(0xff) followed by a renderBone loop over collide_bone_count."
+  },
+  {
+   "a": "0043b7e0",
+   "b": "0043f160",
+   "note": "CCloth_renderBone_FUN_0043b7e0. Read by hand (high): Same callee set and counts (getEulerAngles, applyScaledTransform, 2x transformAndProjectPoint, 3x clipAn..."
+  },
+  {
+   "a": "0043e7e0",
+   "b": "00440440",
+   "note": "flushBitBuffer_FUN_0043e7e0. Read by hand (high), found while rejecting the mapper's CLZWDictionary_writeCodeBits: Byte-for-byte the same as bw1 004427e0: a..."
+  },
+  {
+   "a": "0043f170",
+   "b": "00440ef0",
+   "note": "CLZWDictionary_writeCodeBits_FUN_0043f170. Read by hand (high), found while rejecting the mapper's flushBitBuffer: Same body as bw1 00443290: bit-by-bit code..."
+  },
+  {
+   "a": "00448a70",
+   "b": "004461c0",
+   "note": "CCrate_explode_FUN_00448a70. Read by hand (high): Same body: ACTOR_CREATED check, the '%s exploding!' print, createExplosion, markActorToDelete, ACTOR_DESTRO..."
+  },
+  {
+   "a": "00456400",
+   "b": "00453230",
+   "note": "clipTriangleToAABB_FUN_00456400. Read by hand (high): Same 2572-byte body as bw1: 3-vertex copy into the cube input buffer (count=3), then 6-bit outcodes aga..."
+  },
+  {
+   "a": "00473a20",
+   "b": "0045d530",
+   "note": "CDemonLight_renderLightBloomQuad_FUN_00473a20. Read by hand (high): Same callee sequence: setBlendMode x2, 4x transformAndProjectPoint, camera getters, captu..."
+  },
+  {
+   "a": "00473f90",
+   "b": "0045d560",
+   "note": "CDemonLight_renderLightGlowSprites_FUN_00473f90. Read by hand (high): Called from the same renderScene call site and the same mirror loop as nocedit. BW chan..."
+  },
+  {
+   "a": "00483370",
+   "b": "00466d50",
+   "note": "renderTriangleTextured_FUN_00483370. Read by hand (high): Same winding-order cull, triangle counter, min-scanline init 0x4b0 (=GAME_SCREEN_MAX_HEIGHT), fixed..."
+  },
+  {
+   "a": "004839f0",
+   "b": "004673d0",
+   "note": "renderTriangleSimple_FUN_004839f0. Read by hand (high): Same four callers, the same size (1265 bytes) and the same prepareDepthBuffer, calculateTriangleWindi..."
+  },
+  {
+   "a": "00488990",
+   "b": "004693b0",
+   "note": "CDrawSurface_drawAnimatedFullSurface_FUN_00488990. Read by hand (high): Byte-identical: pushes height-1, width-1, 0, 0 and calls the already-named CDrawSurfa..."
+  },
+  {
+   "a": "00496220",
+   "b": "00474400",
+   "note": "CDemonRaytrace_rayVoxelGridTest_FUN_00496220. Read by hand (high): Only caller is CDemonSet_testLineOcclusion with g_CDemonRaytraceInstance, the same as noce..."
+  },
+  {
+   "a": "00496e70",
+   "b": "00475090",
+   "note": "CDemonRaytrace_renderGridCube_FUN_00496e70. Read by hand (high): Same body: cell_size, copyAndTransform3DPoint, 8x transformAndProjectPoint, setCurrentPolygo..."
+  },
+  {
+   "a": "004973b0",
+   "b": "004755c0",
+   "note": "CDemonRaytrace_renderVoxelGrid_FUN_004973b0. Read by hand (high): Triple 8x8x8 loop over voxel bytes masked by the Y-bit-mask table, position = idx*cell_size..."
+  },
+  {
+   "a": "00499ba0",
+   "b": "00477dd0",
+   "note": "CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0. Read by hand (high): Same division of the cube index by grid y*z and then by z, scaled by cell_size (..."
+  },
+  {
+   "a": "004a2510",
+   "b": "00481920",
+   "note": "CEditorTools_drawCenteredWireframeCube_FUN_004a2510. Read by hand (high): Builds +dim*0.5 and -dim*0.5 vectors, then calls CEditorTools_draw3DWireframeCube(t..."
+  },
+  {
+   "a": "004a6530",
+   "b": "00486070",
+   "note": "CEdButton_clearActiveButtonIfMatch_FUN_004a6530. Read by hand (high): Clears the active-control global if it equals this. Called from the CEdButton dtor, as..."
+  },
+  {
+   "a": "004a6a60",
+   "b": "00486670",
+   "note": "CEdCheck_setupWithText_FUN_004a6a60. Read by hand (high): Same 'gEdFont must be set by the application.' check and font metrics. Then calls the named CEdChec..."
+  },
+  {
+   "a": "004a6b50",
+   "b": "00486760",
+   "note": "CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50. Read by hand (high): Same 17-byte shape comparing [ESP+4] against the active-control global. It sits just bef..."
+  },
+  {
+   "a": "004a6ed0",
+   "b": "00486af0",
+   "note": "CStrList_getItemCount_FUN_004a6ed0. Read by hand (high): A getter of field 0. CScript_buildParsedLines calls it at the same +0x20 offset; loadScript and rend..."
+  },
+  {
+   "a": "004a9a50",
+   "b": "00489600",
+   "note": "CEnemy_canSeeTarget_FUN_004a9a50. Read by hand (high): Same sequence: null-target check, getTargetPoint vcall, localToWorldPoint, target getBoundingBox vcall..."
+  },
+  {
+   "a": "004aacc0",
+   "b": "0048c2e0",
+   "note": "CEventList_executeCommand_FUN_004aacc0. Read by hand (high): Giant string dispatch with the same command names in the same order (advanceLightFilter, createE..."
+  },
+  {
+   "a": "004ce7a0",
+   "b": "004b1460",
+   "note": "CBitFont_drawCharacter_FUN_004ce7a0. Read by hand (high): Same opening as bw1: char_positions/char_widths checks, recursive shadow draw at shadow_offset_x/y,..."
+  },
+  {
+   "a": "004dbbc0",
+   "b": "004b8e60",
+   "note": "CGame_restoreDefaultControls_FUN_004dbbc0. Read by hand (high): Same default key table (0x150, 0x2a, 0x38, 0x2c, 0x2d, 0x14d, 0x14b, 0x39 ...), mouse sensiti..."
+  },
+  {
+   "a": "004dc2d0",
+   "b": "004b9850",
+   "note": "rampControlAxis_FUN_004dc2d0. Read by hand (high): Identical logic to nocedit and bw1."
+  },
+  {
+   "a": "004dc370",
+   "b": "004b98f0",
+   "note": "dampControlAxis_FUN_004dc370. Read by hand (high): Identical body: rate = delta_time_float*arg3/arg2, then decay *axis toward 0 from either sign and clamp at 0."
+  },
+  {
+   "a": "004e1cb0",
+   "b": "004be8d0",
+   "note": "CGame_showChapterSelect_FUN_004e1cb0. Read by hand (high): Same skeleton: pod probe, counter reset, font swap, pod.ini, Act1Code and the 'Select mission to p..."
+  },
+  {
+   "a": "004eb950",
+   "b": "004cc970",
+   "note": "getBloodColorParams_FUN_004eb950. Read by hand (high): Same out_light/out_color/out_fog triple: the default gives 0x2000/0/0, type 1 gives 0/0x7f80/0 and typ..."
+  },
+  {
+   "a": "004ed3c0",
+   "b": "004ce310",
+   "note": "CFootstep_render_FUN_004ed3c0. Read by hand (high): Same 4-vertex primitive setup, UVs 0x80000/0xf80000, setRenderAlpha(alpha), surface normal cleared, captu..."
+  },
+  {
+   "a": "004f2a30",
+   "b": "004d2cd0",
+   "note": "CHero_createDefaultWeapon_FUN_004f2a30. Read by hand (medium): Called from CHero_ctor at the same point as nocedit. It only calls CInventory_initialize on th..."
+  },
+  {
+   "a": "004f3760",
+   "b": "004d3c90",
+   "note": "CHero_tryUseSelectedItem_FUN_004f3760. Read by hand (high): Same flow: null selected_item returns 0; isOfClass 'CHealthItem' goes to CInventory_select. Other..."
+  },
+  {
+   "a": "004f3960",
+   "b": "004d4230",
+   "note": "CHero_closestEnemy_FUN_004f3960. Read by hand (high): Same 9999.9 initial distance, loop over g_CDemonSetPtr->enemies, getDeathState/shouldIgnoreForTargeting..."
+  },
+  {
+   "a": "004fe9d0",
+   "b": "004db990",
+   "note": "CInventory_findItemByName_FUN_004fe9d0. Read by hand (high): Identical stricmp loop over items[]->actor_name. bw1 has the same four callers: CEventList_evalu..."
+  },
+  {
+   "a": "004ffe10",
+   "b": "004dd2d0",
+   "note": "CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10. Read by hand (high): Same null check on the selected weapon, then copies weapon+0x568/+0x56c into am..."
+  },
+  {
+   "a": "004ffe70",
+   "b": "004dd310",
+   "note": "CInventory_isWeaponInCategory_FUN_004ffe70. Read by hand (medium): Sits right before resetWeaponSwitchTimers as in nocedit, and has the same 'category==5 ->..."
+  },
+  {
+   "a": "005073a0",
+   "b": "004e4400",
+   "note": "showDeveloperToolsMenu_FUN_005073a0. Read by hand (high): Same debug menu loop: '1. Play a mission' goes to the chapter select, 'Z. Display memory usage info..."
+  },
+  {
+   "a": "00508570",
+   "b": "004e4c70",
+   "note": "finalizeGameSystems_FUN_00508570. Read by hand (high): Same shutdown call sequence as bw1. BW change: same edits as bw1"
+  },
+  {
+   "a": "0050c5c0",
+   "b": "004e4d90",
+   "note": "interpolatedSin_FUN_0050c5c0. Read by hand (high): Interpolated lookup on the lower table (0x1d71e3c). The next function, 004e4dd0, uses the +0x404 cos table..."
+  },
+  {
+   "a": "0050c600",
+   "b": "004e4dd0",
+   "note": "interpolatedCos_FUN_0050c600. Read by hand (high): Its table is the sin twin's table +0x404 (1d72240 vs 1d71e3c), matching g_CosTable = g_SinTable+0x404. It..."
+  },
+  {
+   "a": "00511840",
+   "b": "004e8f30",
+   "note": "checkAndCalibrateGamepad_FUN_00511840. Read by hand (high): Same entry stub (game_control==2 && x_center==0) that jumps into a code-cave body. That body has..."
+  },
+  {
+   "a": "005213e0",
+   "b": "004f3fe0",
+   "note": "CMirror_dtor_FUN_005213e0. Read by hand (high): Only caller is CGlass_dtor, at the same point as nocedit's CMirror_dtor call. The body is 'return this'. BW c..."
+  },
+  {
+   "a": "0052d170",
+   "b": "004fb6b0",
+   "note": "CMotionList_save_FUN_0052d170. Read by hand (high): Same fprintf sequence of motion-list version, state list, motion count, per-motion lines, transitions, si..."
+  },
+  {
+   "a": "0053f550",
+   "b": "00503bf0",
+   "note": "findSimFrame_FUN_0053f550. Read by hand (high): Linear search of the sim-frame history for a sequence number, returns -1 if none. Same shape and globals patt..."
+  },
+  {
+   "a": "00544eb0",
+   "b": "00509b90",
+   "note": "CFont_ctor_FUN_00544eb0. Read by hand (high): The only caller is CWinFont_ctor (+6, same call site as nocedit). It stores the CFont vtable pointer into the o..."
+  },
+  {
+   "a": "00544ec0",
+   "b": "00509bb0",
+   "note": "CFont_dtor_FUN_00544ec0. Read by hand (high): Stores the CFont vtable into this. The only caller is CWinFont_dtor, after CWinFont_reset, as in nocedit. BW ch..."
+  },
+  {
+   "a": "00545ab0",
+   "b": "0050a3e0",
+   "note": "CParticle_onCollision_FUN_00545ab0. Read by hand (high): `mov eax,1; ret`, listed in BW3's CParticle vtable right after CParticle_render (0050a3b0)."
+  },
+  {
+   "a": "0054bf40",
+   "b": "00510810",
+   "note": "CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40. Read by hand (high): All four 'CPackedBitmapSet::loadJoinedRAW' error strings and the same callee chain. BW chan..."
+  },
+  {
+   "a": "005507f0",
+   "b": "00514220",
+   "note": "CPodFile_computeFileCRC_FUN_005507f0. Read by hand (high): Same \"CPodFile::computeOneFileCRC - invalid index\" / \"can't open %s\" errors, then fseek to the dir..."
+  },
+  {
+   "a": "00550a10",
+   "b": "005143b0",
+   "note": "CPod_mount_FUN_00550a10. Read by hand (high): Same CPodFile alloc, ctor and mountFromFile, the same 'Out of memory' and 'Too many PODs already mounted' strin..."
+  },
+  {
+   "a": "00551000",
+   "b": "005149c0",
+   "note": "CPod_computeAndStoreCRC_FUN_00551000. Read by hand (high): Same strings and CRC loop as bw1."
+  },
+  {
+   "a": "00551280",
+   "b": "00514bb0",
+   "note": "CPod_verifyIntegrity_FUN_00551280. Read by hand (high): CPodFile ctor, mountFromFile, verify callee, dtor, return result: same as nocedit and the bw1 match...."
+  },
+  {
+   "a": "00551b90",
+   "b": "00515500",
+   "note": "setCullingMode_FUN_00551b90. Read by hand (high): Stores the param into a global that the rasterizer and dpart code read. Same shape and slot as the bw1 match."
+  },
+  {
+   "a": "005711b0",
+   "b": "0053b6e0",
+   "note": "CDemonSet_saveStateInfo_FUN_005711b0. Read by hand (high): Same strings and loop as bw1. BW change: version 3, adds ambient light and camera group sections"
+  },
+  {
+   "a": "005742b0",
+   "b": "0053ed10",
+   "note": "CDemonSet_notifyDamageListeners_FUN_005742b0. Read by hand (high): Loops over character_count, copies the 15-dword SDamageInfo and calls the character's test..."
+  },
+  {
+   "a": "00575df0",
+   "b": "00541a60",
+   "note": "CDemonSet_freeThumbs_FUN_00575df0. Read by hand (medium): A single `ret`. Its only caller is CDemonSet_clear_FUN_00532b30 at +0x45, the same offset where noc..."
+  },
+  {
+   "a": "00575f60",
+   "b": "00540cf0",
+   "note": "CDemonSet_saveThumbsNoFile_FUN_00575f60. Read by hand (medium): BW refreshThumbs calls this exactly where nocedit calls saveThumbsNoFile (file missing, so ge..."
+  },
+  {
+   "a": "005b26f0",
+   "b": "0055f610",
+   "note": "resetTrainSounds_FUN_005b26f0. Read by hand (high): Same body: stack-address compare against the train-noise global, velocity = -active_fog.scroll, last came..."
+  },
+  {
+   "a": "005b5710",
+   "b": "00563257",
+   "note": "renderScanline_FUN_005b5710. Read by hand (high): Single JMP [global] thunk, the only one in special.cpp, called from the same software polygon rasterizers."
+  },
+  {
+   "a": "005b72c0",
+   "b": "005658f0",
+   "note": "selectTexture_FUN_005b72c0. Read by hand (high): Same 5-arg APIDLL select call with fixed globals, at setMipMapLevel pointer -0x10. It is the first wrapper a..."
+  },
+  {
+   "a": "005b7300",
+   "b": "00565930",
+   "note": "updateTexture_FUN_005b7300. Read by hand (high): Same shape as nocedit: gate on the use-external-renderer flag, then push 5 args (param, texture dimension, t..."
+  },
+  {
+   "a": "005b7340",
+   "b": "00565970",
+   "note": "selectTextureFromPalette_FUN_005b7340. Read by hand (high): Same 5-argument APIDLL select call that passes the caller's palette, in the same sibling-wrapper..."
+  },
+  {
+   "a": "005b7380",
+   "b": "005659b0",
+   "note": "updateTextureFromPalette_FUN_005b7380. Read by hand (high), found while rejecting the mapper's selectTextureBGRA: Calls the 'APIDLLupdateTexture' pointer wit..."
+  },
+  {
+   "a": "005b7400",
+   "b": "00565a30",
+   "note": "updateTextureBGRA_FUN_005b7400. Read by hand (high): Function pointer comes from getProcAddress(...,'APIDLLupdateTextureBGRA'), called behind the external-re..."
+  },
+  {
+   "a": "005b7440",
+   "b": "00565a70",
+   "note": "setMipMapLevel_FUN_005b7440. Read by hand (high): Same one-arg APIDLL wrapper through the selectTexture pointer +0x10, the same layout as bw1's APIDLLsetMipM..."
+  },
+  {
+   "a": "005b7df0",
+   "b": "00566440",
+   "note": "lockHoldBuffer_FUN_005b7df0. Read by hand (high): Null-checked call through an APIDLL slot. The only caller is CDemonCamera_lockAndRenderToBuffer at +0x41, t..."
+  },
+  {
+   "a": "005b7e10",
+   "b": "00566460",
+   "note": "unlockHoldBuffer_FUN_005b7e10. Read by hand (high): Same null-checked APIDLL call. The only caller, CDemonCamera_lockAndRenderToBuffer, calls it at the same..."
+  },
+  {
+   "a": "005b7e30",
+   "b": "00566480",
+   "note": "lockTexture_FUN_005b7e30. Read by hand (high): Same 1-arg APIDLL null-checked wrapper, between buildCardList (00566400) and setVideoModeX (005664e0) in the s..."
+  },
+  {
+   "a": "005b7e50",
+   "b": "005664a0",
+   "note": "unlockTexture_FUN_005b7e50. Read by hand (high): if (ptr==0) return 0; else call ptr. The pointer is the one loadExternalRenderer fills from 'APIDLLunlockTex..."
+  },
+  {
+   "a": "005b7e70",
+   "b": "005664c0",
+   "note": "getTextureInfo_FUN_005b7e70. Read by hand (high): Function pointer comes from getProcAddress(...,'APIDLLgetTextureInfo'), behind the external-renderer flag."
+  },
+  {
+   "a": "005be480",
+   "b": "0051c0f0",
+   "note": "getDefaultAimPitch_FUN_005be480. Read by hand (high): Identical bytes (`mov edx,0x3fc80fc6; mov eax,edx; ret`). It sits between the getCarryLightIntensity-eq..."
+  },
+  {
+   "a": "005c37e0",
+   "b": "00522950",
+   "note": "calculateAimAnglesWithOffset_FUN_005c37e0. Read by hand (high): Same convertDirectionVectorToEulerAngles, then length, 0.01 threshold, acos(sqrt(len^2-off^2)..."
+  },
+  {
+   "a": "005dcb30",
+   "b": "005695c0",
+   "note": "CTextureCache_freeTextures_FUN_005dcb30. Read by hand (high): Resets current_texture_count, frees each entry's texture/opacity/palette buffers and clears wra..."
+  },
+  {
+   "a": "005dd930",
+   "b": "0056ac80",
+   "note": "loadAndUpdateTexture_FUN_005dd930. Read by hand (high): ensureTextureLoaded(arg), then a texture-update call. The only caller, CDemonRenderer_updateTexture,..."
+  },
+  {
+   "a": "005dd990",
+   "b": "0056ace0",
+   "note": "renderTextureAtlas_FUN_005dd990. Read by hand (medium): Same 16-byte wrapper calling the cache-wide routine (0056a8f0) with the texture cache global. BW chan..."
+  },
+  {
+   "a": "005e1ec0",
+   "b": "00571ea0",
+   "note": "startupWinsock_FUN_005e1ec0. Read by hand (high): Same code as the bw1 match: WSAStartup(0x101), plus the BW mutex creation. BW change: adds 'initSockets' de..."
+  },
+  {
+   "a": "005e1ee0",
+   "b": "00571f10",
+   "note": "cleanupWinsock_FUN_005e1ee0. Read by hand (medium): Ends in WSACleanup and is reached from CNetGame_shutdown (callsite 0053f830). BW change: prepends a 'kill..."
+  },
+  {
+   "a": "005f2b70",
+   "b": "00580450",
+   "note": "CWinFont_getLineSpacing_FUN_005f2b70. Read by hand (high): `XOR EAX,EAX; RET` in CWinFont vtable slot 4, after dtor/drawText/getStringWidth/getStringHeight,..."
+  },
+  {
+   "a": "005f6f40",
+   "b": "00585270",
+   "note": "buildYFlipMatrix_FUN_005f6f40. Read by hand (high): An identity 3x4 matrix with m[1][1]=-1 and ty=y*k, copied out through ESI. It sits between the X-flip and..."
+  },
+  {
+   "a": "005f7ac0",
+   "b": "00585de0",
+   "note": "quaternionToEulerAngles_FUN_005f7ac0. Read by hand (medium): Same rewritten function as the bw1 match. It shares the caller CBoneGuy_process with nocedit and..."
+  },
+  {
+   "a": "005f7af0",
+   "b": "00585f40",
+   "note": "quaternionToEulerAnglesZYX_FUN_005f7af0. Read by hand (medium): Same 353-byte closed-form quat-to-euler as bw1 005b7d60, in the same order slot after quatern..."
+  },
+  {
+   "a": "005f7b20",
+   "b": "005860b0",
+   "note": "eulerToQuaternion_FUN_005f7b20. Read by hand (medium): Same position (axisAngle, 00585de0 toEuler, 00585f40, this, then the Indirect twin 005861d0) and same..."
+  },
+  {
+   "a": "005f8d30",
+   "b": "00588590",
+   "note": "getObjectGrabPointLocal_FUN_005f8d30. Read by hand (high): Same getBoundingBox vtable call, bbox-centre and min.z+const output shape, and the same position i..."
+  },
+  {
+   "a": "005fcd20",
+   "b": "005a1c00",
+   "note": "addRasterizerEdge_FUN_005fcd20. Read by hand (high): Same relaxed-shape hash and size as bw1 (bucketed into asgaya.cpp)."
+  },
+  {
+   "a": "005fcfc0",
+   "b": "005a1ea0",
+   "note": "rasterizeTriangle_FUN_005fcfc0. Read by hand (high): Same size, same two callers (clipAndFillPoly, renderGeometryBatch) and the same callee chain as nocedit...."
+  },
+  {
+   "a": "00407920",
+   "b": "00407760",
+   "note": "renderPrim_FUN_00407920. Read by hand: Both read prim->opcode, bounds-check it 0..0x43 and dispatch through the MRGL block handler table [EAX*4+table]. BW has the null-pointer and 'Bad prim' error paths removed. Same..."
+  },
+  {
+   "a": "00412720",
+   "b": "00410370",
+   "note": "CFlame_arrdtor50_FUN_00412720. Read by hand: BW is an arrdtor: PUSH g_CFlameTypeInfo; PUSH 0x32; __arrfini, which matches nocedit core_armour CFlame_arrdtor50 (00412720). getCollisionType forwards to CCharacter_getCollisio..."
+  },
+  {
+   "a": "0041b590",
+   "b": "00416cb0",
+   "note": "boundingBoxExtent_FUN_0041b590. Read by hand: BW computes max-min (FSUB of [src+0xc..] minus [src..]), which is nocedit boundingBoxExtent (0041b590). nocedit boundingBoxCenter does (min+max)*0.5."
+  },
+  {
+   "a": "0041b6b0",
+   "b": "00416dc0",
+   "note": "SBodyPartFire_arrdtor2_FUN_0041b6b0. Read by hand: BW is PUSH g_SBodyPartFireTypeInfo; PUSH 2; __arrfini, which matches nocedit SBodyPartFire_arrdtor2 (0041b6b0). staticInit registers the CBodyPart class."
+  },
+  {
+   "a": "0041b700",
+   "b": "00416e90",
+   "note": "getLocalBoundingBoxCenter_FUN_0041b700. Read by hand: Both get the bbox via actor vtable (BW +0x1c, shifted from +0x14), compute (min+max)*0.5, then set z = min.z + a double constant. Same slot right after the boneguy staticInit an..."
+  },
+  {
+   "a": "0043f030",
+   "b": "00440e10",
+   "note": "CLZWDictionary_readCodeFromStream_FUN_0043f030. Read by hand: Same mask = 1<<(this+8 - 1) loop, which reads one bit per step (callee 004400f0, mislabelled writeBitsToStream in BW) and ORs it into the code, checking against this+0xc - 1. Sa..."
+  },
+  {
+   "a": "0043f200",
+   "b": "00440fd0",
+   "note": "CLZWDictionary_writeCodeSequence_FUN_0043f200. Read by hand: Both are recursive self-calls on the parent code (node table this+0x10, code<<4, parent at +4), then emit the node's byte. Same slot after writeCodeBits."
+  },
+  {
+   "a": "004a8d20",
+   "b": "00488ea0",
+   "note": "CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20. Read by hand: BW gets the bbox via vtable +0x1c, takes three getRandomFloatFromRange picks between min and max, then localToWorldPoint, written out via ESI. Called from CEmitter_process. That..."
+  },
+  {
+   "a": "004b1970",
+   "b": "00495e60",
+   "note": "getSelectedCameraIndex_FUN_004b1970. Read by hand: BW returns set->[0x15aeb8] (selected_camera_index), which is getSelectedCameraIndex. Nocedit staticInit constructs g_CEventListInstance."
+  },
+  {
+   "a": "004cbce0",
+   "b": "004ad4c0",
+   "note": "doNothing_FUN_004cbce0. Read by hand: Single RET, directly after core_flattn staticInit in both builds (the only stub in that slot)."
+  },
+  {
+   "a": "004ffab0",
+   "b": "004dcda0",
+   "note": "CInventory_getActiveLightGun_FUN_004ffab0. Read by hand: Tiny stub that always returns 0 (XOR EAX,EAX; RET). It sits in the same slot in both builds, between CInventory_select and updateInventory, and BW has no light gun, so the gette..."
+  },
+  {
+   "a": "004ffad0",
+   "b": "004dcdb0",
+   "note": "CInventory_updateInventory_FUN_004ffad0. Read by hand: Same timer-decrement-and-clamp blocks on the +0x338.. range (delta_time_float), the goggles_active check, castToClassHash and a resetWeaponSwitchTimers call. Called from CPrye_p..."
+  },
+  {
+   "a": "00522c00",
+   "b": "004f5a70",
+   "note": "SClipPlane_dtor_FUN_00522c00. Read by hand: Trivial dtor directly after SClipPlane_ctor at the end of core_mirror in both builds. Nocedit only loads EAX=this. Accepted on position."
+  },
+  {
+   "a": "00522c80",
+   "b": "004f5aa0",
+   "note": "CDemonMission_reset_FUN_00522c80. Read by hand: Same reset pattern: zero a few ints, set one to -1, zero a 3-dword block by chained copy from +8 (LEA X,[this+N]; [X+8]=0; [X+4]=[X+8]; [X]=[X+4]), clear a name byte and a globa..."
+  },
+  {
+   "a": "00544f00",
+   "b": "00509e00",
+   "note": "CFont_getLineSpacing_FUN_00544f00. Read by hand: Identical XOR EAX,EAX; RET, the last engine_palette CFont function before the next unit in both builds. Accepted on position."
+  },
+  {
+   "a": "00546310",
+   "b": "0050ab80",
+   "note": "resetPathfindingQueue_FUN_00546310. Read by hand: BW zeroes three globals at +0, +4, +0x2780. That is the same layout as nocedit core_path resetPathfindingQueue (head 0x030d284c, tail +4, nodesExpanded +0x2780). The next functi..."
+  },
+  {
+   "a": "0056cd60",
+   "b": "00536c90",
+   "note": "CDemonSet_renderOpaqueActors_FUN_0056cd60. Read by hand: Same callee set: setupMirrorRendering, restoreCameraAfterMirror, setLightingParameters, 2x setFlatColor, 2x enableFaceCapture, and setRenderAlpha (only the opaque pass has it)...."
+  },
+  {
+   "a": "0056cf00",
+   "b": "00536f90",
+   "note": "CDemonSet_renderTransparentActors_FUN_0056cf00. Read by hand: Same callees as the opaque pass but without setRenderAlpha, which matches nocedit renderTransparentActors. It is the second call from renderScene, directly followed by addDynami..."
+  },
+  {
+   "a": "005dcab0",
+   "b": "00569550",
+   "note": "CTextureCache_ctor_FUN_005dcab0. Read by hand: BW zeroes +0, +0x18004 and +0x18008, memsets +4 for 0x18000 bytes, and returns this. +0x18004 is the texture count bounds-checked in selectTextureByHandle. It sits just before C..."
+  },
+  {
+   "a": "005dd8e0",
+   "b": "0056ac20",
+   "note": "clearTextureCache_FUN_005dd8e0. Read by hand: Both push the global texture-cache instance and call CTextureCache_freeTextures. BW also zeroes the global next to it (cache+4). Both sit right after loadTextureAndGetData and b..."
+  },
+  {
+   "a": "005ecac0",
+   "b": "005797d0",
+   "note": "allocateRenderBuffers_FUN_005ecac0. Read by hand: Same width*height*(bpp/8) malloc into the back buffer, the same out-of-memory displayErrorAndQuit, and the same width*height*4+0x40 buffer aligned to 16 for the z-buffer. Same s..."
+  },
+  {
+   "a": "005ecba0",
+   "b": "005798a0",
+   "note": "freeRenderBuffers_FUN_005ecba0. Read by hand: Frees the same two globals (back buffer, frame buffer) and zeroes the back buffer and z-buffer pointers. Identical branch shape. BW uses plain free where nocedit uses debugFree."
+  },
+  {
+   "a": "005f1e40",
+   "b": "0057fad0",
+   "note": "CWerewolf_processChainConstraint_FUN_005f1e40. Read by hand: Same callees: 2x CCharacter_moveAndCollide, worldToLocalPoint, transformVector3x4 and a CConsole_printf. Same paired field use (+0xd080/+0xd084 vs +0xbee8/+0xbeec) and +0xfd8. C..."
   }
  ]
 }

@@ -1,0 +1,354 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 136,
+    "complexity_score": 85,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 2,
+    "suspect_types": [
+      "self_copy_guard",
+      "warning_type_propagation"
+    ],
+    "total_lines": 191
+  },
+  "cross_references": [
+    {
+      "addr": "0042a930",
+      "from_addr": "0042ade5",
+      "name": "core_carved.cpp_CCarved_processPickup_FUN_0042a930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428ae0",
+      "from_addr": "00429bf3",
+      "name": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042be20",
+    "address_range": [
+      [
+        "0042be20",
+        "0042bf4b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_carved.cpp_CCarved_resetChaseState_FUN_0042be20",
+    "signature": "void __cdecl core_carved_cpp_CCarved_resetChaseState_FUN_0042be20(CCarved *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fd46c",
+      "name": "g_FLOAT_005fd46c",
+      "type": "float",
+      "value": "5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 17,
+    "call_sites": [
+      {
+        "call_addr": "00429bf3",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00429c40",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00429c76",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00429dff",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00429e92",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042ade5",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_processPickup_FUN_0042a930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042af9d",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_processPickup_FUN_0042a930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042a30c",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042a322",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042a4a3",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.20353982300885,
+    "instruction_count": 113,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 7,
+      "CBRANCH": 5,
+      "COPY": 205,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 51,
+      "INT_AND": 44,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 36,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 18,
+      "INT_SUB": 40,
+      "INT_ZEXT": 10,
+      "LOAD": 28,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 40
+    },
+    "pcode_op_count": 588
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00429090",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9068
+    }
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCarved *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0042be29",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "0042be51",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_2c != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 32,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_2c != &local_38) {",
+      "type": "self_copy_guard"
+    }
+  ]
+}

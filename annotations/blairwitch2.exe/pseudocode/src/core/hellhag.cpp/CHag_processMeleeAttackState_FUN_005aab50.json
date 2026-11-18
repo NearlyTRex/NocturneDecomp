@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 89,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 2,
+    "pseudocode_lines": 61,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 199
+    "total_lines": 201
   },
   "cross_references": [],
   "function": {
@@ -35,29 +34,29 @@
       "name": "core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850"
     },
     {
+      "addr": "00503e60",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
+    },
+    {
       "addr": "00503620",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
     },
     {
-      "addr": "005035c0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
-    },
-    {
-      "addr": "00503e60",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503e60"
-    },
-    {
       "addr": "0059d8e0",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d8e0"
+      "name": "core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0"
     },
     {
       "addr": "0059dcb0",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059dcb0"
+      "name": "core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0"
     }
   ],
   "globals": [
@@ -75,21 +74,21 @@
     },
     {
       "addr": "005f0bde",
-      "name": "DAT_005f0bde",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f0bde",
+      "type": "double",
+      "value": "0.800000000000000"
     },
     {
       "addr": "00600a6c",
-      "name": "DAT_00600a6c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00600a6c",
+      "type": "float",
+      "value": "6"
     },
     {
       "addr": "00600a70",
-      "name": "DAT_00600a70",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00600a70",
+      "type": "float",
+      "value": "4"
     }
   ],
   "param_estimates": {
@@ -172,20 +171,12 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 388,
         "vtable_addr": "00600a84"
       }

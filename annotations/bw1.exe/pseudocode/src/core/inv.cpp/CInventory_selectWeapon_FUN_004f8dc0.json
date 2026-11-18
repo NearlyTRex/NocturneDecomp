@@ -2,35 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 71,
+    "complexity_score": 73,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 58,
     "suspect_count": 1,
     "suspect_types": [
       "shadow_pointer_walk"
     ],
-    "total_lines": 187
+    "total_lines": 189
   },
   "cross_references": [
     {
       "addr": "00469550",
       "from_addr": "0046bbc5",
-      "name": "core_doc.cpp_FUN_00469550",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d0ee0",
       "from_addr": "004d11e0",
-      "name": "core_game.cpp_FUN_004d0ee0",
+      "name": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d9260",
       "from_addr": "004d9492",
-      "name": "core_game.cpp_FUN_004d9260",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,15 +40,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f9bd0",
-      "from_addr": "004f9cec",
-      "name": "core_inv.cpp_CInventory_select_FUN_004f9bd0",
+      "addr": "004f7690",
+      "from_addr": "004f8809",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f7690",
-      "from_addr": "004f8809",
-      "name": "core_inv.cpp_FUN_004f7690",
+      "addr": "004f9bd0",
+      "from_addr": "004f9cec",
+      "name": "core_inv.cpp_CInventory_select_FUN_004f9bd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -83,6 +83,11 @@
       "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
     },
     {
+      "addr": "004fa540",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_isWeaponInCategory_FUN_004fa540"
+    },
+    {
       "addr": "004fa6c0",
       "is_variadic": false,
       "name": "core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0"
@@ -91,11 +96,6 @@
       "addr": "004fa4e0",
       "is_variadic": false,
       "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0"
-    },
-    {
-      "addr": "004fa540",
-      "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004fa540"
     }
   ],
   "globals": [
@@ -112,7 +112,7 @@
       {
         "call_addr": "004f8809",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f7690",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004f7690",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -134,7 +134,7 @@
       {
         "call_addr": "004d11e0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d0ee0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +145,7 @@
       {
         "call_addr": "004d121a",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d0ee0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "004d1322",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d0ee0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,7 +167,7 @@
       {
         "call_addr": "004d135b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d0ee0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,7 +178,7 @@
       {
         "call_addr": "004d1394",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d0ee0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,7 +189,7 @@
       {
         "call_addr": "004d13cd",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d0ee0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +200,7 @@
       {
         "call_addr": "004d1406",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d0ee0",
+        "caller": "core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,7 +211,7 @@
       {
         "call_addr": "004d9492",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d9260",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,6 +257,12 @@
     "pcode_op_count": 468
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004db9d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8571
+    },
     "bw3.exe": {
       "addr": "004dbb40",
       "by": "name",
@@ -322,11 +328,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 23,
-      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "match": "pCVar4 = (T *)&pCVar4->FIELD",
       "severity": "moderate",
-      "text": "pCVar5 = (CInventory *)&pCVar5->owner;",
+      "text": "pCVar4 = (CInventory *)&pCVar4->owner;",
       "type": "shadow_pointer_walk"
     }
   ]

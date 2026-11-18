@@ -18,7 +18,7 @@
 ;   TerminatedCString s_d_d_d_005ce75e
 ;   TerminatedCString s_f_f_f_005ce768
 ;   TerminatedCString s_f_f_005ce772
-;   undefined4 DAT_005ce779
+;   TerminatedCString s_f_005ce779
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_005b9600
@@ -89,7 +89,7 @@ section .text
     ADD EBX,0x20                        ; 0044349d
         ;   Label: LAB_0044349d
     PUSH EBX                            ; 004434a0
-    PUSH 0x5ce779                       ; 004434a1 | DAT_005ce779
+    PUSH 0x5ce779                       ; 004434a1 | = "%f\n"
     PUSH ESI                            ; 004434a6
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004434a7
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)

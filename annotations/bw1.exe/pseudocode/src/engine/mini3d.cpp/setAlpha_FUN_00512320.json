@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 63,
+    "complexity_score": 33,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 59
   },
@@ -24,9 +22,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00498360",
+      "from_addr": "00498579",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494500",
+      "from_addr": "0049458e",
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_00494500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496ee0",
+      "from_addr": "0049721e",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004958d0",
       "from_addr": "00495a4a",
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004962b0",
+      "from_addr": "00496375",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004934b0",
+      "from_addr": "004934f6",
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_004934b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,45 +64,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00492e40",
-      "from_addr": "00492e66",
-      "name": "shape_edittool.cpp_FUN_00492e40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004934b0",
-      "from_addr": "004934f6",
-      "name": "shape_edittool.cpp_FUN_004934b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00494500",
-      "from_addr": "0049458e",
-      "name": "shape_edittool.cpp_FUN_00494500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004962b0",
-      "from_addr": "00496375",
-      "name": "shape_edittool.cpp_FUN_004962b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00496ee0",
-      "from_addr": "0049721e",
-      "name": "shape_edittool.cpp_FUN_00496ee0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00498360",
-      "from_addr": "00498579",
-      "name": "shape_edittool.cpp_FUN_00498360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00493d40",
       "from_addr": "00493f4c",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00492e40",
+      "from_addr": "00492e66",
+      "name": "shape_edittool.cpp_editorSetAlpha_FUN_00492e40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -100,62 +98,62 @@
   "globals": [
     {
       "addr": "005e8c83",
-      "name": "DAT_005e8c83",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005e8c83",
+      "type": "double",
+      "value": "255"
     },
     {
       "addr": "005e8c8b",
-      "name": "DAT_005e8c8b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e8c8b",
+      "type": "float",
+      "value": "255"
     },
     {
       "addr": "0061b4b8",
-      "name": "DAT_0061b4b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d224c0",
-      "name": "DAT_01d224c0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d224c0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d22548",
-      "name": "DAT_01d22548",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d22548",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d2254c",
-      "name": "DAT_01d2254c",
-      "type": "undefined4",
+      "name": "g_INT_01d2254c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22550",
-      "name": "DAT_01d22550",
-      "type": "undefined4",
+      "name": "g_INT_01d22550",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d25f44",
-      "name": "DAT_01d25f44",
-      "type": "undefined4",
+      "name": "g_INT_01d25f44",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c83448",
-      "name": "DAT_02c83448",
-      "type": "undefined4",
+      "name": "g_PTR_02c83448",
+      "type": "void*",
       "value": null
     }
   ],
@@ -176,7 +174,7 @@
       {
         "call_addr": "0049721e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00496ee0",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +218,7 @@
       {
         "call_addr": "004934f6",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004934b0",
+        "caller": "shape_edittool.cpp_CInputString_draw_FUN_004934b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -231,7 +229,7 @@
       {
         "call_addr": "00496375",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004962b0",
+        "caller": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -242,7 +240,7 @@
       {
         "call_addr": "00496710",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004962b0",
+        "caller": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -264,7 +262,7 @@
       {
         "call_addr": "00498579",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00498360",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -352,28 +350,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 12,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_02c83448 != (code *)0x0) && (_DAT_01c50948 != 0)) {",
+      "text": "(*(code *)g_PTR_02c83448)(g_FLOAT_01d22548,g_INT_01d2254c,g_INT_01d22550,alpha);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0061b4b8",
-      "severity": "mild",
-      "text": "DAT_0061b4b8 = (int)ROUND(fVar2);",
-      "type": "undefined_data"
     }
   ]
 }

@@ -1,0 +1,168 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 28,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "00407860",
+      "from_addr": "0040790e",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004df050",
+      "from_addr": "004df3d1",
+      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004df050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00407720",
+    "address_range": [
+      [
+        "00407720",
+        "00407754"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_00407720",
+    "signature": "void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407720(SMRGLHeaderExtended *chain)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005f07c4",
+      "name": "g_ARRAY_PTR_005f07c4",
+      "type": "void*[67]",
+      "value": null
+    },
+    {
+      "addr": "005fba40",
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004df3d1",
+        "call_type": "direct",
+        "caller": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004df050",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040790e",
+        "call_type": "direct",
+        "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9473684210526314,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 14,
+      "INT_ADD": 4,
+      "INT_AND": 13,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 3,
+      "LOAD": 4,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 75
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004078b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9444
+    },
+    "bw1.exe": {
+      "addr": "004076e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00407890",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4746
+    },
+    "nocturne.exe": {
+      "addr": "00408e80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9444
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "chain",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "chain = (SMRGLHeaderExtended *)(*(code *)g_ARRAY_PTR_005f07c4[iVar1])(chain);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

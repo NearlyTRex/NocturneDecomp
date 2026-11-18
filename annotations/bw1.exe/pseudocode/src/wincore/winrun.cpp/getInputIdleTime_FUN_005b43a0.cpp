@@ -1,0 +1,27 @@
+// Name: wincore_winrun.cpp_getInputIdleTime_FUN_005b43a0
+// Address: 005b43a0
+// Address Range: [[005b43a0, 005b43fc]]
+// Convention: __cdecl
+// Signature: float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_005b43a0(void)
+
+#include "nocturne.h"
+
+float __cdecl wincore_winrun_cpp_getInputIdleTime_FUN_005b43a0(void)
+
+{
+  int *piVar1;
+  float fStack_4;
+  
+  fStack_4 = g_FLOAT_02c9c7e0;
+  if (g_FLOAT_02c9c7e4 < g_FLOAT_02c9c7e0) {
+    fStack_4 = g_FLOAT_02c9c7e4;
+  }
+  piVar1 = (int *)0x2c9cf14;
+  do {
+    if ((*piVar1 != 0) && ((float)piVar1[0x2a] < fStack_4)) {
+      fStack_4 = (float)piVar1[0x2a];
+    }
+    piVar1 = piVar1 + 0x2b;
+  } while (piVar1 != g_INT_ARRAY_02c9d1c4);
+  return fStack_4;
+}

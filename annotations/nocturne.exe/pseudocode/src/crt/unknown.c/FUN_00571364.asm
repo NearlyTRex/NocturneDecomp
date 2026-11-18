@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005713d0 at 005713d0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de5d70
+;   void* g_PTR_02de5d70
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -20,7 +20,7 @@ section .text
     PUSH EBX                            ; 00571364
         ;   Label: crt_unknown.c_FUN_00571364
     PUSH ESI                            ; 00571365
-    MOV EBX,dword ptr [0x02de5d70]      ; 00571366 | DAT_02de5d70
+    MOV EBX,dword ptr [0x02de5d70]      ; 00571366 | g_PTR_02de5d70
     TEST EBX,EBX                        ; 0057136c
     JZ 0x00571394                       ; 0057136e
         ;   XREF to: 00571394 (CONDITIONAL_JUMP)  ; LAB_00571394

@@ -9,5 +9,5 @@
 int __cdecl cockpit_ckptutil_c_isLineBlendingDisabled_FUN_004301d0(void)
 
 {
-  return DAT_00766c6c;
+  return g_LineBlendingDisabled;
 }

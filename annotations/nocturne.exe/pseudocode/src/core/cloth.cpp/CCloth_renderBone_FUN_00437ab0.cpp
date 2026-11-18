@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_00437ab0(CCloth *this_ptr,int bone_index,int show_labels)
 
 {
@@ -54,9 +52,9 @@ void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_00437ab0(CCloth *this_ptr,int 
                       transformed_x + local_1c),(CVector3i *)&stack0xffffff9c);
     local_38 = this_ptr->collide_bones[bone_index].child_distance;
     local_28 = vertex_index1 + 0xd;
-    local_4c.x = (int)ROUND(local_40 * _DAT_0059b360);
-    local_4c.y = (int)ROUND(local_3c * _DAT_0059b360);
-    local_4c.z = (int)ROUND(local_38 * _DAT_0059b360);
+    local_4c.x = (int)ROUND(local_40 * 256.0f);
+    local_4c.y = (int)ROUND(local_3c * 256.0f);
+    local_4c.z = (int)ROUND(local_38 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).

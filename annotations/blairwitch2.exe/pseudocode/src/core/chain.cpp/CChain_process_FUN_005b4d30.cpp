@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float delta_time)
 
@@ -39,32 +38,23 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
   float fStack_124;
   float fStack_120;
   float fStack_11c;
-  float fStack_118;
+  CVector3f CStack_118;
   uint uStack_10c;
   float fStack_108;
   uint uStack_104;
   float fStack_100;
-  float fStack_fc;
-  float fStack_f8;
-  float fStack_f4;
-  float fStack_f0;
+  float afStack_fc [4];
   float fStack_ec;
-  float fStack_e8;
+  CVector3f CStack_e8;
   float fStack_dc;
-  float fStack_d8;
-  float fStack_d4;
-  float fStack_d0;
-  float fStack_cc;
+  float afStack_d8 [4];
   float fStack_c8;
   byte auStack_c4 [28];
   float afStack_a8 [4];
   float fStack_98;
-  float fStack_94;
+  CVector3f CStack_94;
   float fStack_88;
-  float fStack_84;
-  float fStack_80;
-  float fStack_7c;
-  float fStack_78;
+  float afStack_84 [4];
   float fStack_74;
   float fStack_70;
   float fStack_6c;
@@ -90,7 +80,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
   float fStack_18;
   
   bVar7 = 0;
-  if (this_ptr->cached_distance < _DAT_005f1434) {
+  if (this_ptr->cached_distance < -9900.0f) {
     fStack_18 = (float)(*this_ptr->vtable->playAmbientSoundWithDelay)
                                  ((CDemonActor *)this_ptr,(char *)0x3dcccccd,0.0);
     this_ptr->cached_distance = fStack_18;
@@ -103,9 +93,9 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
       fStack_6c = pSVar6[-1].position.y - (pSVar6->position).y;
       fStack_68 = pSVar6[-1].position.z - (pSVar6->position).z;
       fStack_13c = fStack_70;
-      *(float *)((int)&stack0xfffffec8 + (uint)bVar7 * -8) = afStack_a8[(uint)bVar7 * -2 + 0xf];
+      *(float *)((int)&stack0xfffffec8 + (uint)bVar7 * -8) = afStack_84[(uint)bVar7 * -2 + 6];
       *(float *)((int)&stack0xfffffecc + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
+           afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
       in_stack_fffffe9c =
            (SChainVertex *)
            (SQRT(fStack_134 * fStack_134 + fStack_13c * fStack_13c + fStack_138 * fStack_138) +
@@ -116,13 +106,14 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
   pfVar5 = (float *)((int)(this_ptr->vertices + this_ptr->vertex_count + -1) + (uint)bVar7 * -8 + 4)
   ;
   fStack_88 = this_ptr->vertices[this_ptr->vertex_count + -1].position.x;
-  afStack_a8[(uint)bVar7 * -2 + 9] = *pfVar5;
-  afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] = pfVar5[(uint)bVar7 * -2 + 1];
-  core_chain_cpp_FUN_005b4860(this_ptr);
-  fStack_124 = fStack_94;
-  (&stack0xfffffee0)[(uint)bVar7 * 0xfffffffe] = afStack_a8[(uint)bVar7 * -2 + 6];
-  *(float *)((int)&stack0xfffffee4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-       afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
+  afStack_84[(uint)bVar7 * -2] = *pfVar5;
+  afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] = pfVar5[(uint)bVar7 * -2 + 1];
+  core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860(this_ptr,&CStack_94);
+  fStack_124 = CStack_94.x;
+  (&stack0xfffffee0)[(uint)bVar7 * 0xfffffffe] =
+       (float)*(uint *)((int)&CStack_94 + (uint)bVar7 * -8 + 4);
+  afStack_fc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -8] =
+       *(float *)((int)&CStack_94 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   pSVar6 = this_ptr->vertices + this_ptr->vertex_count + -1;
   if (pSVar6 != (SChainVertex *)&stack0xfffffedc) {
     (pSVar6->position).x = fStack_124;
@@ -152,21 +143,20 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     pCStack_3c->x = *pfStack_48 * pCStack_3c->x;
     pCStack_3c->y = *pfStack_48 * pCStack_3c->y;
     pCStack_3c->z = *pfStack_48 * pCStack_3c->z;
-    fStack_58 = this_ptr->weight * (float)_DAT_005f1438;
+    fStack_58 = this_ptr->weight * (float)0.03125;
     fStack_108 = 0.0 - this_ptr->weight;
     fVar8 = 1.0 / fStack_58;
     fStack_dc = fVar8 * 0.0;
     uStack_104 = 0;
     uStack_10c = 0;
     pSStack_34 = pSStack_5c + iStack_40;
-    fStack_d8 = fStack_108 * fVar8;
-    fStack_d4 = fStack_dc;
+    afStack_d8[0] = fStack_108 * fVar8;
+    afStack_d8[1] = fStack_dc;
     fStack_148 = fStack_dc;
-    (&stack0xfffffebc)[(uint)bVar7 * 0xfffffffe] =
-         (float)*(uint *)(auStack_c4 + (uint)bVar7 * -8 + -0x14);
+    (&stack0xfffffebc)[(uint)bVar7 * 0xfffffffe] = afStack_d8[(uint)bVar7 * -2];
     pSVar6 = pSStack_34;
-    *(uint *)((int)&stack0xfffffec0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-         *(uint *)(auStack_c4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + -0x10);
+    *(float *)((int)&stack0xfffffec0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
+         afStack_d8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
     if (&stack0xfffffeac != &stack0xfffffeb8) {
       fStack_154 = fStack_148;
       fStack_150 = fStack_144;
@@ -185,13 +175,12 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     fVar8 = (pSVar6->velocity).z + fStack_98;
     (pSVar6->velocity).y = fVar1;
     (pSVar6->velocity).z = fVar8;
-    fStack_fc = fVar1 * delta_time;
-    fStack_f8 = fVar8 * delta_time;
+    afStack_fc[0] = fVar1 * delta_time;
+    afStack_fc[1] = fVar8 * delta_time;
     fStack_130 = fStack_100;
-    *(float *)((int)&stack0xfffffed4 + (uint)bVar7 * -8) =
-         (&stack0xffffff04)[(uint)bVar7 * 0xfffffffe];
-    *(uint *)((int)&stack0xfffffed8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-         *(uint *)((int)&stack0xffffff08 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+    *(float *)((int)&stack0xfffffed4 + (uint)bVar7 * -8) = afStack_fc[(uint)bVar7 * -2];
+    *(float *)((int)&stack0xfffffed8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
+         afStack_fc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
     (pSVar6->position).x = (pSVar6->position).x + fStack_130;
     (pSVar6->position).y = (pSVar6->position).y + fStack_12c;
     (pSVar6->position).z = (pSVar6->position).z + fStack_128;
@@ -210,12 +199,12 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
   pSStack_64 = this_ptr->vertices + 2;
   pSStack_60 = this_ptr->vertices + 1;
   do {
-    core_chain_cpp_FUN_005b4860(this_ptr);
-    auStack_c4._0_4_ = fStack_118;
+    core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860(this_ptr,&CStack_118);
+    auStack_c4._0_4_ = CStack_118.x;
     *(uint *)(auStack_c4 + (uint)bVar7 * -8 + 4) =
-         *(uint *)(&stack0xfffffeec + (uint)bVar7 * -8);
+         *(uint *)((int)&CStack_118 + (uint)bVar7 * -8 + 4);
     *(uint *)(auStack_c4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         *(uint *)(&stack0xfffffef0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+         *(uint *)((int)&CStack_118 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     pSVar6 = pSStack_2c + this_ptr->vertex_count + -1;
     if (pSVar6 != (SChainVertex *)auStack_c4) {
       (pSVar6->position).x = (float)auStack_c4._0_4_;
@@ -243,11 +232,11 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
       core_chain_cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(this_ptr,pSVar6,pSStack_1c);
       pSVar6 = pSVar6 + 1;
     }
-    core_chain_cpp_FUN_005b4860(this_ptr);
-    auStack_c4._24_4_ = fStack_e8;
-    afStack_a8[(uint)bVar7 * -2] = *(float *)(auStack_c4 + (uint)bVar7 * -8 + -0x20);
+    core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_005b4860(this_ptr,&CStack_e8);
+    auStack_c4._24_4_ = CStack_e8.x;
+    afStack_a8[(uint)bVar7 * -2] = *(float *)((int)&CStack_e8 + (uint)bVar7 * -8 + 4);
     afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         *(float *)(auStack_c4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + -0x1c);
+         *(float *)((int)&CStack_e8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     pSVar6 = pSStack_2c + this_ptr->vertex_count + -1;
     if (pSVar6 != (SChainVertex *)(auStack_c4 + 0x18)) {
       (pSVar6->position).x = (float)auStack_c4._24_4_;
@@ -285,34 +274,35 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
   iStack_54 = 0;
   pSStack_1c = (SChainVertex *)0x0;
   if (this_ptr->is_visible != 0) {
-    if ((float)in_stack_fffffe9c < this_ptr->chain_length * (float)_DAT_005f1440) {
+    if ((float)in_stack_fffffe9c < this_ptr->chain_length * (float)0.90000000000000002) {
       pSVar6 = this_ptr->vertices;
       fVar8 = 0.0;
       for (iVar3 = 0; pSVar6 = pSVar6 + 1, iVar3 < this_ptr->vertex_count + -1; iVar3 = iVar3 + 1) {
-        fStack_f4 = pSVar6[-1].position.x - (pSVar6->position).x;
-        fStack_f0 = pSVar6[-1].position.y - (pSVar6->position).y;
+        afStack_fc[2] = pSVar6[-1].position.x - (pSVar6->position).x;
+        afStack_fc[3] = pSVar6[-1].position.y - (pSVar6->position).y;
         fStack_ec = pSVar6[-1].position.z - (pSVar6->position).z;
-        fStack_7c = fStack_f4;
-        afStack_a8[(uint)bVar7 * -2 + 0xc] = *(float *)((int)&stack0xffffff10 + (uint)bVar7 * -8);
-        afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =
-             *(float *)((int)&stack0xffffff14 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-        fVar8 = SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78) + fVar8;
+        afStack_84[2] = afStack_fc[2];
+        afStack_84[(uint)bVar7 * -2 + 3] = afStack_fc[(uint)bVar7 * -2 + 3];
+        afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
+             afStack_fc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+        fVar8 = SQRT(fStack_74 * fStack_74 +
+                     afStack_84[2] * afStack_84[2] + afStack_84[3] * afStack_84[3]) + fVar8;
       }
-      if (this_ptr->chain_length * (float)_DAT_005f1440 < fVar8) {
+      if (this_ptr->chain_length * (float)0.90000000000000002 < fVar8) {
         pSStack_1c = (SChainVertex *)0x1;
       }
     }
     iVar3 = this_ptr->vertex_count;
     auStack_c4._12_4_ = fStack_88 - this_ptr->vertices[iVar3 + -1].position.x;
-    auStack_c4._16_4_ = fStack_84 - this_ptr->vertices[iVar3 + -1].position.y;
-    auStack_c4._20_4_ = fStack_80 - this_ptr->vertices[iVar3 + -1].position.z;
-    fStack_d0 = (float)auStack_c4._12_4_;
-    *(uint *)(auStack_c4 + (uint)bVar7 * -8 + -8) =
-         *(uint *)(auStack_c4 + (uint)bVar7 * -8 + 0x10);
-    afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -8] =
+    auStack_c4._16_4_ = afStack_84[0] - this_ptr->vertices[iVar3 + -1].position.y;
+    auStack_c4._20_4_ = afStack_84[1] - this_ptr->vertices[iVar3 + -1].position.z;
+    afStack_d8[2] = (float)auStack_c4._12_4_;
+    afStack_d8[(uint)bVar7 * -2 + 3] = *(float *)(auStack_c4 + (uint)bVar7 * -8 + 0x10);
+    afStack_d8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
          *(float *)(auStack_c4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0x14);
-    if (delta_time * (float)_DAT_005f1448 <
-        SQRT(fStack_c8 * fStack_c8 + fStack_d0 * fStack_d0 + fStack_cc * fStack_cc)) {
+    if (delta_time * (float)0.10000000000000001 <
+        SQRT(fStack_c8 * fStack_c8 + afStack_d8[2] * afStack_d8[2] + afStack_d8[3] * afStack_d8[3]))
+    {
       iStack_54 = 1;
     }
   }
@@ -321,7 +311,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->pull_wav_handle);
     if (iVar3 == 0) {
       uVar2 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0055ae80
-                        (0x0264B290,(CDemonActor *)this_ptr,this_ptr->pull_wav_name,
+                        (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,this_ptr->pull_wav_name,
                          &this_ptr->vertices[this_ptr->vertex_count + -1].position);
       this_ptr->move_wav_handle = uVar2;
     }
@@ -340,7 +330,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_005b4d30(CChain *this_ptr,float d
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(this_ptr->move_wav_handle);
     if (iVar3 == 0) {
       uVar2 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0055ae80
-                        (0x0264B290,(CDemonActor *)this_ptr,this_ptr->move_wav_name,
+                        (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,this_ptr->move_wav_name,
                          &this_ptr->vertices[this_ptr->vertex_count + -1].position);
       this_ptr->move_wav_handle = uVar2;
     }

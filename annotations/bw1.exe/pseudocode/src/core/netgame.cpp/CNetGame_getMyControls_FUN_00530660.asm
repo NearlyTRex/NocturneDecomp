@@ -8,17 +8,17 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_playerControls_FUN_004d0860 at 004d093c
-;   core_game.cpp_FUN_004d19d0 at 004d19db
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 at 004d19db
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005ec371
 ;   TerminatedCString s_CNetGame_getMyControls_I_005ec385
-;   undefined4 DAT_01d06ab4
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_01d06ab4
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -45,7 +45,7 @@ section .text
     ADD EAX,0x4c                        ; 0053068a
     POP EBX                             ; 0053068d
     RET                                 ; 0053068e
-    MOV EAX,[0x01d06ab4]                ; 0053068f | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0053068f | g_INT_01d06ab4
         ;   Label: LAB_0053068f
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 00530694
     ADD EAX,0xc1d8                      ; 0053069b
@@ -57,10 +57,10 @@ section .text
     MOV ESI,0x5ec371                    ; 005306a4 | = "..\\core\\netgame.cpp"
     MOV EDI,0xa0f                       ; 005306a9
     PUSH 0x5ec385                       ; 005306ae | = "CNetGame::getMyControls - I'm not in ..."
-    MOV dword ptr [0x01d1d400],ESI      ; 005306b3 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 005306b9 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005306bf
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 005306b3 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 005306b9 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005306bf
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005306c4
     POP ESI                             ; 005306c7
     POP EDI                             ; 005306c8

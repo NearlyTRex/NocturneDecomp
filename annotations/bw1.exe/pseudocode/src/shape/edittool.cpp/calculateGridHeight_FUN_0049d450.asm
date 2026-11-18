@@ -9,8 +9,8 @@
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049b931
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_calculateGridWidth_FUN_0049d430
@@ -22,9 +22,9 @@ section .text
     CALL shape_edittool.cpp_calculateGridWidth_FUN_0049d430 ; 0049d450
         ;   XREF to: 0049d430 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateGridWidth_FUN_0049d430()
         ;   Label: shape_edittool.cpp_calculateGridHeight_FUN_0049d450
-    MOV EDX,dword ptr [0x0061b49c]      ; 0049d455 | DAT_0061b49c
+    MOV EDX,dword ptr [0x0061b49c]      ; 0049d455 | g_INT_0061b49c
     IMUL EDX,EAX                        ; 0049d45b
-    MOV ECX,dword ptr [0x0061b498]      ; 0049d45e | DAT_0061b498
+    MOV ECX,dword ptr [0x0061b498]      ; 0049d45e | g_INT_0061b498
     MOV EAX,EDX                         ; 0049d464
     SAR EDX,0x1f                        ; 0049d466
     IDIV ECX                            ; 0049d469

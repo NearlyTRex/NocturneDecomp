@@ -2,26 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 138,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 261
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 87,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 270
   },
   "cross_references": [
     {
       "addr": "0041daf0",
       "from_addr": "0041dcb1",
-      "name": "core_box.cpp_FUN_0041daf0",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -47,44 +42,44 @@
   "globals": [
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "01549b10",
-      "name": "DAT_01549b10",
-      "type": "undefined4",
+      "name": "g_CurrentShadowLight",
+      "type": "CDemonLight*",
       "value": null
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c6b598",
-      "name": "DAT_01c6b598",
-      "type": "undefined4",
+      "name": "g_INT_01c6b598",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b59c",
-      "name": "DAT_01c6b59c",
-      "type": "undefined4",
+      "name": "g_INT_01c6b59c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a0",
-      "name": "DAT_01c6b5a0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a4",
-      "name": "DAT_01c6b5a4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -94,7 +89,7 @@
       {
         "call_addr": "0041dcb1",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041daf0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,38 +233,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "piVar2 = (int *)*DAT_005f2afc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(byte *)((int)piVar2",
-      "severity": "moderate",
-      "text": "if ((*(byte *)((int)piVar2 + 0x13) & 0x80) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
-      "match": "(int)piVar2",
-      "severity": "moderate",
-      "text": "if ((*(byte *)((int)piVar2 + 0x13) & 0x80) == 0) {",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

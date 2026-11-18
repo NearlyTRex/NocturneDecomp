@@ -2,20 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 143,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 10,
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 56
+    "total_lines": 53
   },
   "cross_references": [],
   "function": {
@@ -26,9 +23,9 @@
         "005604b4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_special.cpp_switchRenderer_FUN_00560470",
-    "signature": "void engine_special_cpp_switchRenderer_FUN_00560470(void)"
+    "signature": "int __cdecl engine_special_cpp_switchRenderer_FUN_00560470(char *new_dll_name,int card_index)"
   },
   "function_calls": [
     {
@@ -45,14 +42,14 @@
   "globals": [
     {
       "addr": "0264bba4",
-      "name": "DAT_0264bba4",
-      "type": "undefined4",
+      "name": "g_INT_0264bba4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bcf0",
-      "name": "DAT_0264bcf0",
-      "type": "undefined4",
+      "name": "g_StoredWindowHandle",
+      "type": "HWND",
       "value": null
     }
   ],
@@ -60,9 +57,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -116,89 +113,32 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "new_dll_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "card_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0061e180",
-      "severity": "mild",
-      "text": "pcVar2 = &DAT_0061e180;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_DAT_0264bba4 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "cVar1 = *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_00000004[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + 2;",
-      "type": "stack_param"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 16,
+      "line": 12,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

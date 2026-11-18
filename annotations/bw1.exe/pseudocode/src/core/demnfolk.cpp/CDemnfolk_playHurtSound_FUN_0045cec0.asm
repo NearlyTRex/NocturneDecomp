@@ -7,14 +7,14 @@
 ; CDemnfolk *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005d82f3
-;   undefined1 DAT_005d82f4
-;   undefined1 DAT_005d82f5
-;   undefined1 DAT_005d82f6
-;   undefined1 DAT_005d82f9
-;   undefined1 DAT_005d82fa
-;   undefined1 DAT_005d82fb
-;   TerminatedCString s_rt_wav_2_005d82fc
+;   TerminatedCString s_demn_005d82f3
+;   undefined4 s_demn_005d82f3+1
+;   undefined4 s_demn_005d82f3+2
+;   undefined4 s_demn_005d82f3+3
+;   TerminatedCString s_hurt_wav_2_005d82f9
+;   undefined4 s_hurt_wav_2_005d82f9+1
+;   undefined4 s_hurt_wav_2_005d82f9+2
+;   undefined4 s_hurt_wav_2_005d82f9+3
 ;   undefined4 DAT_0152c320
 ;   undefined4 DAT_0152c321
 ;   undefined4 DAT_0152c322
@@ -32,16 +32,16 @@ section .text
     PUSH ESI                            ; 0045cec1
     PUSH EDI                            ; 0045cec2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0045cec3
-    MOV ESI,0x5d82f3                    ; 0045cec7 | DAT_005d82f3
+    MOV ESI,0x5d82f3                    ; 0045cec7 | = "demn_"
     MOV EDI,0x152c320                   ; 0045cecc
     PUSH EDI                            ; 0045ced1 | DAT_0152c320
-    MOV AL,byte ptr [ESI]               ; 0045ced2 | DAT_005d82f3 | DAT_005d82f5
+    MOV AL,byte ptr [ESI]               ; 0045ced2 | = "demn_" | s_demn_005d82f3+2
         ;   Label: LAB_0045ced2
     MOV byte ptr [EDI],AL               ; 0045ced4 | DAT_0152c320 | DAT_0152c322
     CMP AL,0x0                          ; 0045ced6
     JZ 0x0045ceea                       ; 0045ced8
         ;   XREF to: 0045ceea (CONDITIONAL_JUMP)  ; LAB_0045ceea
-    MOV AL,byte ptr [ESI + 0x1]         ; 0045ceda | DAT_005d82f4 | DAT_005d82f6
+    MOV AL,byte ptr [ESI + 0x1]         ; 0045ceda | s_demn_005d82f3+1 | s_demn_005d82f3+3
     ADD ESI,0x2                         ; 0045cedd
     MOV byte ptr [EDI + 0x1],AL         ; 0045cee0 | DAT_0152c321 | DAT_0152c323
     ADD EDI,0x2                         ; 0045cee3
@@ -72,20 +72,20 @@ section .text
         ;   XREF to: 0045cefa (CONDITIONAL_JUMP)  ; LAB_0045cefa
     POP EDI                             ; 0045cf12
         ;   Label: LAB_0045cf12
-    MOV ESI,0x5d82f9                    ; 0045cf13 | DAT_005d82f9
+    MOV ESI,0x5d82f9                    ; 0045cf13 | = "_hurt?.wav @ 2"
     PUSH EDI                            ; 0045cf18 | DAT_0152c320
     SUB ECX,ECX                         ; 0045cf19
     DEC ECX                             ; 0045cf1b
     MOV AL,0x0                          ; 0045cf1c
     SCASB.REPNE ES:EDI                  ; 0045cf1e | DAT_0152c320 | DAT_0152c321
     DEC EDI                             ; 0045cf20
-    MOV AL,byte ptr [ESI]               ; 0045cf21 | DAT_005d82f9 | DAT_005d82fb
+    MOV AL,byte ptr [ESI]               ; 0045cf21 | = "_hurt?.wav @ 2" | s_hurt_wav_2_005d82f9+2
         ;   Label: LAB_0045cf21
     MOV byte ptr [EDI],AL               ; 0045cf23 | DAT_0152c320 | DAT_0152c322 | DAT_0152c321
     CMP AL,0x0                          ; 0045cf25
     JZ 0x0045cf39                       ; 0045cf27
         ;   XREF to: 0045cf39 (CONDITIONAL_JUMP)  ; LAB_0045cf39
-    MOV AL,byte ptr [ESI + 0x1]         ; 0045cf29 | DAT_005d82fa | = "rt?.wav @ 2"
+    MOV AL,byte ptr [ESI + 0x1]         ; 0045cf29 | s_hurt_wav_2_005d82f9+1 | s_hurt_wav_2_005d82f9+3
     ADD ESI,0x2                         ; 0045cf2c
     MOV byte ptr [EDI + 0x1],AL         ; 0045cf2f | DAT_0152c321 | DAT_0152c323 | DAT_0152c322
     ADD EDI,0x2                         ; 0045cf32

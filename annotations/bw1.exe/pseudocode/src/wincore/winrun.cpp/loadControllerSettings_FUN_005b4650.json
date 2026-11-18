@@ -1,0 +1,246 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 209,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 16,
+    "suspect_types": [
+      "stack_ref",
+      "unaffected_reg"
+    ],
+    "total_lines": 168
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b4650",
+    "address_range": [
+      [
+        "005b4650",
+        "005b47cb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_loadControllerSettings_FUN_005b4650",
+    "signature": "void __cdecl wincore_winrun_cpp_loadControllerSettings_FUN_005b4650(CIniFile *ini)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "004f4d10",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004f4d10"
+    },
+    {
+      "addr": "005b41c0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_initController_FUN_005b41c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.353982300884955,
+    "instruction_count": 113,
+    "opcode_distribution": {
+      "CALL": 11,
+      "CBRANCH": 2,
+      "COPY": 85,
+      "INT_ADD": 53,
+      "INT_AND": 52,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 52,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 20,
+      "INT_SEXT": 3,
+      "INT_SLESS": 26,
+      "INT_SUB": 54,
+      "INT_XOR": 3,
+      "LOAD": 16,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 58,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 492
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00590b10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00582830",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ini",
+        "offset": 4,
+        "size": 4,
+        "type": "CIniFile *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffedc,\"Controller_%d_type\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(ini,&stack0xfffffedc,&iStack_24);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffedc,\"Controller_%d_pc_port\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(ini,&stack0xfffffedc,(int *)auStack_20);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "value_ptr = (int *)(unaff_EBP + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "value_ptr_00 = (int *)(unaff_EBP + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffedc,\"Controller_%d_axis_%d_min\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "(ini,&stack0xfffffedc,(int *)(iVar1 * 0xc + unaff_EBP));",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(ini,&stack0xfffffedc,(int *)(iVar1 * 0xc + unaff_EBP));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffedc,\"Controller_%d_axis_%d_max\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(ini,&stack0xfffffedc,value_ptr_00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffedc,\"Controller_%d_axis_%d_center\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xfffffedc",
+      "severity": "moderate",
+      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004f4d10(ini,&stack0xfffffedc,value_ptr);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBP + 0x30;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBP + 0x30;",
+      "type": "unaffected_reg"
+    }
+  ]
+}

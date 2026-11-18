@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * FUN_00570ce0(char *param_1,char *param_2,ulong param_3)
 
 {
@@ -19,8 +17,8 @@ char * FUN_00570ce0(char *param_1,char *param_2,ulong param_3)
     *dest = *param_2;
     dest = dest + 1;
   }
-  if ((((*param_2 != '\0') && (param_1 < dest)) && (_DAT_02de5c30 != 0)) &&
-     ((*(byte *)((byte)param_2[-1] + 0x2de5c41) & 1) != 0)) {
+  if ((((*param_2 != '\0') && (param_1 < dest)) && (g_MultibyteLocaleActive != 0)) &&
+     ((g_LeadByteTable[(byte)param_2[-1]] & 1U) != 0)) {
     dest[-1] = '\0';
   }
   if (param_3 != 0) {

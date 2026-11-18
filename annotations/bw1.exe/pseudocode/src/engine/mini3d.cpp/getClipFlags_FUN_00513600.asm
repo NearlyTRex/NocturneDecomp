@@ -7,9 +7,9 @@
 ; CVector3f *      Stack[0x4]:4   point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d2253c
-;   undefined4 DAT_01d22574
-;   undefined4 DAT_01d2257c
+;   float g_FLOAT_01d2253c
+;   float g_FLOAT_01d22574
+;   void* g_PTR_01d2257c
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
     SUB ESP,0x18                        ; 00513600
         ;   Label: engine_mini3d.cpp_getClipFlags_FUN_00513600
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00513603
-    MOV EAX,[0x01d2257c]                ; 00513607 | DAT_01d2257c
+    MOV EAX,[0x01d2257c]                ; 00513607 | g_PTR_01d2257c
     FLD float ptr [EDX + 0x4]           ; 0051360c
     FSUB float ptr [EAX + 0x28]         ; 0051360f
     FLD ST0                             ; 00513612
@@ -96,7 +96,7 @@ section .text
     OR DL,0x8                           ; 005136b3
     FLD float ptr [ESP + 0x14]          ; 005136b6
         ;   Label: LAB_005136b6
-    FCOMP float ptr [0x01d2253c]        ; 005136ba | DAT_01d2253c
+    FCOMP float ptr [0x01d2253c]        ; 005136ba | g_FLOAT_01d2253c
     FNSTSW AX                           ; 005136c0
     SAHF                                ; 005136c2
     JA 0x005136c8                       ; 005136c3
@@ -104,7 +104,7 @@ section .text
     OR DL,0x10                          ; 005136c5
     FLD float ptr [ESP + 0x14]          ; 005136c8
         ;   Label: LAB_005136c8
-    FCOMP float ptr [0x01d22574]        ; 005136cc | DAT_01d22574
+    FCOMP float ptr [0x01d22574]        ; 005136cc | g_FLOAT_01d22574
     FNSTSW AX                           ; 005136d2
     SAHF                                ; 005136d4
     JC 0x005136da                       ; 005136d5

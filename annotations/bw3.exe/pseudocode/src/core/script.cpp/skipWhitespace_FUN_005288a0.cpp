@@ -9,7 +9,7 @@
 char * __cdecl core_script_cpp_skipWhitespace_FUN_005288a0(char *str)
 
 {
-  while (((&DAT_006074b8)[(byte)(*str + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*str + 1)] & 2) != 0) {
     str = str + 1;
   }
   return str;

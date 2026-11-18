@@ -24,7 +24,7 @@ void __cdecl core_moocow_cpp_CMooCow_setup_FUN_004f8bb0(CMooCow *this_ptr)
   core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(&this_ptr->base);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                    (this_ptr_02,&DAT_005c918f,1);
+                    (this_ptr_02,"head",1);
   this_ptr->part_indices[0] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"lforearm",1);

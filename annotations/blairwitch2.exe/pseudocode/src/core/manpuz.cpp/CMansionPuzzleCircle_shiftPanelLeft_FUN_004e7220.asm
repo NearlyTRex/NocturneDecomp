@@ -11,13 +11,13 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40 at 004e6f0d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570
-;   core_manpuz.cpp_FUN_004e6240
+;   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170
@@ -66,10 +66,10 @@ section .text
         ;   Label: LAB_004e727a
     MOV ECX,0x554                       ; 004e727f
     PUSH 0x5dc608                       ; 004e7284
-    MOV dword ptr [0x01d046a0],EDX      ; 004e7289 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004e728f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004e7295
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 004e7289 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004e728f | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e7295
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e729a
     MOV EAX,ESI                         ; 004e729d
         ;   Label: LAB_004e729d
@@ -148,8 +148,8 @@ section .text
     MOV dword ptr [ESI + 0x4],0x3f800000 ; 004e7357
     PUSH EBP                            ; 004e735e
     MOV dword ptr [ESI + 0x8],0xbf800000 ; 004e735f
-    CALL core_manpuz.cpp_FUN_004e6240   ; 004e7366
-        ;   XREF to: 004e6240 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004e6240()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240 ; 004e7366
+        ;   XREF to: 004e6240 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004e736b
     ADD ESI,0x58                        ; 004e736e
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00550450 ; 004e7371

@@ -7,7 +7,7 @@
 ; CBatman *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d3ae0+1
+;   TerminatedCString s_speed_005d3ae1
 ;   TerminatedCString s_modelName_005d3ae7
 ;   TerminatedCString s_motion_state_005d3af1
 ;   TerminatedCString s_fallEvent_005d3afe
@@ -37,7 +37,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004a0520 ; 00413b67
         ;   XREF to: 004a0520 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004a0520(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00413b6c
-    PUSH 0x5d3ae1                       ; 00413b6f | s_speed_005d3ae0+1
+    PUSH 0x5d3ae1                       ; 00413b6f | = "speed"
     LEA ESI,[EBX + 0xc1d0]              ; 00413b74
     PUSH ESI                            ; 00413b7a
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00413b7b

@@ -25,7 +25,7 @@ int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_0057b930(CWeapon *this_ptr
       if ((this_ptr->ammo_type == AMMO_TYPE_MANA) &&
          (*(int *)(pCVar1[0x185].create_event + 0x50) < this_ptr->ammo_per_shot)) {
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                  (0x02CF5680,&this_ptr->base,"=wp_nomana.wav" + 1,
+                  (g_CSound_PTR_006045f8,&this_ptr->base,"wp_nomana.wav",
                    &(this_ptr->base).location.position);
         this_ptr->fire_cooldown_timer = 1.0;
         return 0;

@@ -2,20 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 92,
+    "complexity_score": 10,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "unknown_field",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 38
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
   },
   "cross_references": [
     {
@@ -41,26 +36,26 @@
   "globals": [
     {
       "addr": "005bea80",
-      "name": "DAT_005bea80",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Cached3DDistanceFactor",
+      "type": "double",
+      "value": "1"
     },
     {
       "addr": "005bea84",
-      "name": "DAT_005bea84",
+      "name": "g_Cached3DDistanceFactor+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005bea88",
-      "name": "DAT_005bea88",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Cached3DDistanceFactorInverse",
+      "type": "double",
+      "value": "1"
     },
     {
       "addr": "02dc8318",
-      "name": "DAT_02dc8318",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -152,54 +147,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 8,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "DAT_005bea80 = distance_in_feet._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_005bea80",
-      "severity": "mild",
-      "text": "DAT_005bea80 = distance_in_feet._0_4_;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 9,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "DAT_005bea84 = distance_in_feet._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005bea84",
-      "severity": "mild",
-      "text": "DAT_005bea84 = distance_in_feet._4_4_;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc8318 + 0x24))(_DAT_02dc8318,distance_in_feet);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

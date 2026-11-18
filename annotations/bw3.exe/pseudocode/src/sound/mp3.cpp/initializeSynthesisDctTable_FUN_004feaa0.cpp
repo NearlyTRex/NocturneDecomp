@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_004feaa0(float *output_dct_table)
 
 {
@@ -30,23 +28,24 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_004feaa0(float *outpu
     pfVar4 = pfStack_1c;
     do {
       fVar5 = (float10)fcos((float10)iVar3 *
-                            ((float10)iStack_28 * (float10)_DAT_005ca067 + (float10)_DAT_005ca07f));
-      *pfVar2 = (float)(fVar5 * (float10)_DAT_005ca06f);
+                            ((float10)iStack_28 * (float10)0.049087385211999998 +
+                            (float10)0.78539816339699997));
+      *pfVar2 = (float)(fVar5 * (float10)1000000000);
       iStack_18 = iVar3;
       if (0.0 <= *pfVar2) {
         dStack_30 = (double)*pfVar2;
-        modf((double)(*pfVar2 + (float)_DAT_005ca08f),&dStack_30);
+        modf((double)(*pfVar2 + (float)0.5),&dStack_30);
         dVar1 = dStack_30;
       }
       else {
         dStack_38 = (double)*pfVar2;
-        modf((double)(*pfVar2 + (float)_DAT_005ca087),&dStack_38);
+        modf((double)(*pfVar2 + (float)-0.5),&dStack_38);
         dVar1 = dStack_38;
       }
       *pfVar2 = (float)dVar1;
       pfVar2 = pfVar2 + 1;
       iVar3 = iVar3 + 2;
-      *pfVar4 = *pfVar4 * (float)_DAT_005ca077;
+      *pfVar4 = *pfVar4 * (float)1.0000000000000001e-09;
       pfVar4 = pfVar4 + 1;
     } while (iVar3 != 0x41);
     iStack_28 = iStack_28 + 1;

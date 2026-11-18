@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "prototypes/prototypes_4D0000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -22,11 +23,11 @@ static undefined1* DAT_004D4504 = (undefined1*)0x004D453A; // caseD_0
 static undefined1* DAT_004D4508 = (undefined1*)0x004D47A1; // caseD_a
 static undefined1* DAT_004D450C = (undefined1*)0x004D453A; // caseD_0
 static undefined1* DAT_004D4510 = (undefined1*)0x004D453A; // caseD_0
-static undefined1* DAT_004D4804 = (undefined1*)caseD_1;
-static undefined1* DAT_004D4808 = (undefined1*)caseD_1;
-static undefined1* DAT_004D480C = (undefined1*)caseD_1;
+static undefined1* DAT_004D4804 = (undefined1*)core_hero_cpp_CHero_isInvulnerable_FUN_004d2ab0;
+static undefined1* DAT_004D4808 = (undefined1*)core_hero_cpp_CHero_isInvulnerable_FUN_004d2ab0;
+static undefined1* DAT_004D480C = (undefined1*)core_hero_cpp_CHero_isInvulnerable_FUN_004d2ab0;
 static undefined1* DAT_004D4810 = (undefined1*)0x004D4897; // caseD_0
-static undefined1* DAT_004D4814 = (undefined1*)0x004D48B0; // caseD_5
+static undefined1* DAT_004D4814 = (undefined1*)core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004d48b0;
 static undefined1* DAT_004D4818 = (undefined1*)0x004D4897; // caseD_0
 static undefined1* DAT_004D481C = (undefined1*)0x004D4897; // caseD_0
 static undefined1* DAT_004D4820 = (undefined1*)0x004D4897; // caseD_0

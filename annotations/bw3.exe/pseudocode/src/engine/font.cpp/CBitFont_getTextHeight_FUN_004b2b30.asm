@@ -8,14 +8,14 @@
 ; char *           Stack[0x8]:4   text_string
 ;
 ; XREF[9]:
-;   core_flashlit.cpp_FUN_004a7a70 at 004a7b18
-;   core_menu.cpp_FUN_004e7860 at 004e7a76
+;   core_flashlit.cpp_updateTooltip_FUN_004a7a70 at 004a7b18
+;   core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860 at 004e7a76
+;   shape_edittool.cpp_CEdButton_paint_FUN_00486120 at 0048617b
+;   shape_edittool.cpp_CEdCheck_render_FUN_00486810 at 0048686a
+;   shape_edittool.cpp_CEdCheck_setupWithText_FUN_00486670 at 004866e5
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0 at 0047f657
-;   shape_edittool.cpp_FUN_0047fa80 at 0047fe1f
-;   shape_edittool.cpp_FUN_00486120 at 0048617b
-;   shape_edittool.cpp_FUN_00486580 at 00486603
-;   shape_edittool.cpp_FUN_00486670 at 004866e5
-;   shape_edittool.cpp_FUN_00486810 at 0048686a
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80 at 0047fe1f
+;   shape_edittool.cpp_calculateButtonHeight_FUN_00486580 at 00486603
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047c9ac
 ;
 ; Called Functions:

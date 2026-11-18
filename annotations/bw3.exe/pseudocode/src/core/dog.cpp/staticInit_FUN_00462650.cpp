@@ -14,13 +14,16 @@ void __cdecl core_dog_cpp_staticInit_FUN_00462650(void)
              core_dog_cpp_factoryFuncZombieDog_FUN_004626e0,&g_CZombieDogClassVersion,2,
              &g_CEnemyClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)0x1b85088,"CDog_Forest",core_dog_cpp_FUN_00463650,
-             (int *)0x5f2a60,1,&g_CZombieDogClassInfo);
+            (&g_CDemonActorType_01b85088,"CDog_Forest",
+             core_dog_cpp_factoryFuncDogForest_FUN_00463650,&g_INT_005f2a60,1,&g_CZombieDogClassInfo
+            );
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)0x1b850c4,"CDemonDog",core_dog_cpp_FUN_004636e0,
-             (int *)0x5f2a64,1,&g_CZombieDogClassInfo);
+            (&g_CDemonActorType_01b850c4,"CDemonDog",
+             core_dog_cpp_factoryFuncDemonDog_FUN_004636e0,&g_INT_005f2a64,1,&g_CZombieDogClassInfo)
+  ;
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            ((CDemonActorType *)0x1b85100,"CEtherealDog",core_dog_cpp_FUN_00463780,
-             (int *)0x5f2a68,1,&g_CZombieDogClassInfo);
+            (&g_CDemonActorType_01b85100,"CEtherealDog",
+             core_dog_cpp_factoryFuncEtherealDog_FUN_00463780,&g_INT_005f2a68,1,
+             &g_CZombieDogClassInfo);
   return;
 }

@@ -7,7 +7,7 @@
 ; CPatrolPoint *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
@@ -16,7 +16,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x0060b280]      ; 0059c980 | DAT_0060b280
+    MOV EDX,dword ptr [0x0060b280]      ; 0059c980 | g_CDemonRenderer_PTR_0060b280
         ;   Label: core_hpatrol.cpp_CPatrolPoint_renderOpaque_FUN_0059c980
     PUSH EDX                            ; 0059c986
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 0059c987

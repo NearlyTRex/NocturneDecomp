@@ -4,59 +4,149 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x760000
 // =============================================================================
 
+// CDemonActor*
+extern CDemonActor* g_CurrentProcessingActor;
+extern CDemonActor* g_CurrentActorBeingProcessed;
+extern CDemonActor* g_LastCollisionActor;
+
 // CDemonActorType
-extern CDemonActorType g_CDemonActorActorType_00763e48;
-extern CDemonActorType g_CAmmoActorType_007641bc;
-extern CDemonActorType g_CAmmoBoxActorType_007641f8;
-extern CDemonActorType g_CAnvilActorType_00764234;
-extern CDemonActorType g_CArmourActorType_00764270;
-extern CDemonActorType g_CBackgroundActorActorType_007642ac;
-extern CDemonActorType g_CBaronActorType_00764330;
-extern CDemonActorType g_CBaronWeaponActorType_007644e8;
-extern CDemonActorType g_CBarrierActorType_00764524;
-extern CDemonActorType g_CBatActorType_00764560;
-extern CDemonActorType g_CBatCreatureActorType_007645cc;
-extern CDemonActorType g_CBatmanActorType_00764638;
-extern CDemonActorType g_CBatteryActorType_00764674;
-extern CDemonActorType g_CBeastActorType_007646b0;
-extern CDemonActorType g_CBiggsActorType_0076471c;
-extern CDemonActorType g_CBodyPartActorType_00764758;
-extern CDemonActorType g_CBoneGuyActorType_007647c0;
-extern CDemonActorType g_CBoxActorActorType_00764800;
-extern CDemonActorType g_CLightActorActorType_00764a9c;
-extern CDemonActorType g_CBrideActorType_00764af0;
-extern CDemonActorType g_CBugsActorType_00765888;
-extern CDemonActorType g_CCharacterActorType_00765a60;
-extern CDemonActorType g_CChainActorType_00765c30;
+extern CDemonActorType g_CDemonActorClassInfo;
+extern CDemonActorType g_CAmmoClassInfo;
+extern CDemonActorType g_CAmmoBoxClassInfo;
+extern CDemonActorType g_CAnvilClassInfo;
+extern CDemonActorType g_CArmourClassInfo;
+extern CDemonActorType g_CBackgroundActorClassInfo;
+extern CDemonActorType g_CBaronClassInfo;
+extern CDemonActorType g_CBaronWeaponClassInfo;
+extern CDemonActorType g_CBarrierClassInfo;
+extern CDemonActorType g_CBatClassInfo;
+extern CDemonActorType g_CBatCreatureClassInfo;
+extern CDemonActorType g_CBatmanClassInfo;
+extern CDemonActorType g_CBatteryClassInfo;
+extern CDemonActorType g_CBeastClassInfo;
+extern CDemonActorType g_CBiggsClassInfo;
+extern CDemonActorType g_CBodyPartClassInfo;
+extern CDemonActorType g_CBoneGuyClassInfo;
+extern CDemonActorType g_CBoxActorClassInfo;
+extern CDemonActorType g_CLightActorClassInfo;
+extern CDemonActorType g_CBrideClassInfo;
+extern CDemonActorType g_CBugsClassInfo;
+extern CDemonActorType g_CCharacterClassInfo;
+extern CDemonActorType g_CChainClassInfo;
+
+// CDemonActorType*[200]
+extern CDemonActorType* g_ActorClassRegistrations[200];
 
 // CDemonFilter[8]
-extern CDemonFilter g_CDemonFilter_ARRAY_0076483c[8];
+extern CDemonFilter g_LightActorFilters[8];
+
+// CKeyFramedModelInstance
+extern CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance;
+extern CKeyFramedModelInstance g_StakeModelInstance;
 
 // CVector3f
-extern CVector3f CVector3f_00764ad8;
-extern CVector3f CVector3f_00764ae4;
+extern CVector3f g_BrideOffsetMinusX;
+extern CVector3f g_BrideOffsetPlusX;
 
-// undefined1
-extern undefined1 DAT_00763e14;
-extern undefined1 DAT_00764b5c;
-extern undefined1 DAT_007658cc;
-extern undefined1 DAT_007658cd;
-extern undefined1 DAT_007658ce;
-extern undefined1 DAT_007658cf;
-extern undefined1 DAT_00766c78;
-extern undefined1 DAT_00767b50;
-extern undefined1 DAT_00768150;
-extern undefined1 DAT_00768180;
-extern undefined1 DAT_00768750;
-extern undefined1 DAT_00768d50;
+// SMRGLHeaderPrimitive*[2000]
+extern SMRGLHeaderPrimitive* g_RenderFaceArray[2000];
+
+// SMRGLPrimitiveQuad[1000]
+extern SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000];
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_007658c4;
+
+// SRenderVertex*
+extern SRenderVertex* g_SRenderVertex_PTR_00767274;
+extern SRenderVertex* g_SRenderVertex_PTR_00767278;
+extern SRenderVertex* g_SRenderVertex_PTR_0076727c;
+
+// SRenderVertex[12]
+extern SRenderVertex g_ClipperTempBuffer[12];
+
+// SRenderVertex[16]
+extern SRenderVertex g_ClippedVertexBuffer[16];
+extern SRenderVertex g_SecondaryClipVertexBuffer[16];
+extern SRenderVertex g_ClipperOutputBuffer[16];
+extern SRenderVertex g_ClipperInputBuffer[16];
+extern SRenderVertex g_ClipperWorkingBuffer[16];
+extern SRenderVertex g_ClipperIntermediateBuffer[16];
+
+// _FILE*
+extern _FILE* g_ActorDataFile;
+
+// char[52]
+extern char g_ActorDebugBuffer[52];
+
+// float
+extern float g_FLOAT_0076432c;
+
+// float[100]
+extern float g_BoneBurnIntensity[100];
+
+// float[12][12]
+extern float g_BugsGroundHeightGridTemp[12][12];
+
+// int
+extern int g_RenderFaceCount;
+extern int g_ActorReadingMode;
+extern int g_IncludeCommentsWhenWriting;
+extern int g_NumActorClassTypes;
+extern int g_INT_007642e8;
+extern int g_INT_0076431c;
+extern int g_INT_00764320;
+extern int g_INT_0076459c;
+extern int g_INT_007645a4;
+extern int g_INT_007645b0;
+extern int g_INT_007645b4;
+extern int g_INT_007645c0;
+extern int g_INT_007645c8;
+extern int g_INT_00764608;
+extern int g_INT_00764610;
+extern int g_INT_0076461c;
+extern int g_INT_00764620;
+extern int g_INT_0076462c;
+extern int g_INT_00764634;
+extern int g_INT_007647fc;
+extern int g_EtherealUVScroll;
+extern int g_EtherealBoltFrame;
+extern int g_LineBlendingDisabled;
+extern int g_ClippedVertexCount;
+extern int g_SecondaryClipVertexCount;
+extern int g_ClipperTempCount;
+extern int g_InputVertexCount;
+extern int g_OutputVertexCount;
+extern int g_TempVertexCount;
+extern int g_IntermediateVertexCount;
+
+// int[11]
+extern int g_BoneGuyIndices[11];
+extern int g_BrideIndices[11];
+
+// int[1]
+extern int g_INT_ARRAY_00767270[1];
+
+// int[700]
+extern int g_BugsSortedVertexIndices[700];
+
+// uint
+extern uint g_RandomSeedValue;
 
 // undefined2
 extern undefined2 DAT_00765c6c;
@@ -69,103 +159,5 @@ extern undefined2 DAT_00765c78;
 extern undefined2 DAT_00765c7a;
 
 // undefined4
-extern undefined4 DAT_00761ec4;
-extern undefined4 DAT_00761ec8;
-extern undefined4 DAT_00761ecc;
-extern undefined4 DAT_00763e10;
-extern undefined4 DAT_00763e44;
-extern undefined4 DAT_00763e84;
-extern undefined4 DAT_00763e88;
-extern undefined4 DAT_00763e8c;
-extern undefined4 DAT_00763e90;
-extern undefined4 DAT_00763e94;
-extern undefined4 DAT_00763e98;
-extern undefined4 DAT_00763e9c;
-extern undefined4 DAT_007641b8;
-extern undefined4 DAT_007642e8;
-extern undefined4 DAT_0076431c;
-extern undefined4 DAT_00764320;
-extern undefined4 DAT_0076432c;
-extern undefined4 DAT_0076459c;
-extern undefined4 DAT_007645a4;
-extern undefined4 DAT_00764608;
-extern undefined4 DAT_00764610;
-extern undefined4 DAT_0076462c;
-extern undefined4 DAT_00764634;
-extern undefined4 DAT_00764794;
-extern undefined4 DAT_00764798;
-extern undefined4 DAT_0076479c;
-extern undefined4 DAT_007647a8;
-extern undefined4 DAT_007647ac;
-extern undefined4 DAT_007647b8;
-extern undefined4 DAT_007647bc;
-extern undefined4 DAT_007647fc;
-extern undefined4 DAT_00764b2c;
-extern undefined4 DAT_00764b30;
-extern undefined4 DAT_00764b34;
-extern undefined4 DAT_00764b38;
-extern undefined4 DAT_00764b3c;
-extern undefined4 DAT_00764b40;
-extern undefined4 DAT_00764b44;
-extern undefined4 DAT_00764b50;
-extern undefined4 DAT_00764b58;
-extern undefined4 DAT_00764d98;
-extern undefined4 DAT_00764d9c;
-extern undefined4 DAT_00764da0;
-extern undefined4 DAT_007658dc;
-extern undefined4 DAT_00765a9c;
-extern undefined4 DAT_00765aa0;
-extern undefined4 DAT_00765aa4;
-extern undefined4 DAT_00766c6c;
-extern undefined4 DAT_00766c70;
-extern undefined4 DAT_00766c74;
-extern undefined4 DAT_00766c7c;
-extern undefined4 DAT_00766c80;
-extern undefined4 DAT_00766c84;
-extern undefined4 DAT_00766ca4;
-extern undefined4 DAT_00766ca8;
-extern undefined4 DAT_00766cac;
-extern undefined4 DAT_00767274;
-extern undefined4 DAT_00767278;
-extern undefined4 DAT_0076727c;
 extern undefined4 DAT_00767280;
-extern undefined4 DAT_007672f4;
-extern undefined4 DAT_007672f8;
-extern undefined4 DAT_00767300;
-extern undefined4 DAT_00767330;
-extern undefined4 DAT_00767334;
-extern undefined4 DAT_00767338;
-extern undefined4 DAT_00767b38;
-extern undefined4 DAT_00767b3c;
-extern undefined4 DAT_00767b40;
-extern undefined4 DAT_00767b44;
-extern undefined4 DAT_00767b48;
-extern undefined4 DAT_00767b4c;
-extern undefined4 DAT_00767b54;
-extern undefined4 DAT_00767b7c;
-extern undefined4 DAT_00767b84;
-extern undefined4 DAT_0076814c;
-extern undefined4 DAT_00768154;
-extern undefined4 DAT_0076817c;
-extern undefined4 DAT_00768184;
-extern undefined4 DAT_0076874c;
-extern undefined4 DAT_00768754;
-extern undefined4 DAT_0076877c;
-extern undefined4 DAT_00768780;
-extern undefined4 DAT_00768784;
-extern undefined4 DAT_00768d4c;
-extern undefined4 DAT_00768d54;
-extern undefined4 DAT_00768d80;
-extern undefined4 DAT_00768d84;
-extern undefined4 DAT_00769350;
-extern undefined4 DAT_00769364;
-extern undefined4 DAT_00769368;
-extern undefined4 DAT_0076936c;
-extern undefined4 DAT_00769370;
-extern undefined4 DAT_00769374;
-extern undefined4 DAT_00769378;
-extern undefined4 DAT_00769398;
-
-// undefined8
-extern undefined8 DAT_00767328;
 

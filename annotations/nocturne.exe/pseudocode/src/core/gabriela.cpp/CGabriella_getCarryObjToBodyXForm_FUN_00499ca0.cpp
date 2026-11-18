@@ -49,8 +49,7 @@ CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_F
   local_1c.z = 0.0;
   local_1c.y = 0.0;
   local_1c.x = 0.0;
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (actor_ptr,g_CLightActorActorType_00764a9c.name_hash);
+  pCVar1 = (CLightActor *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,g_CLightActorClassInfo.name_hash);
   if (pCVar1 == (CDemonActor *)0x0) goto LAB_00499d1a;
   (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,&local_a0);
   fStack_28 = local_a0.min.x + local_a0.max.x;

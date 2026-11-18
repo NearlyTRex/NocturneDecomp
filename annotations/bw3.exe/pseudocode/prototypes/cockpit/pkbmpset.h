@@ -17,25 +17,37 @@ void __cdecl CPackedBitmapSet::init(CPackedBitmapSet *this_ptr);
 // Address: 00510670
 void __cdecl CPackedBitmapSet::reset(CPackedBitmapSet *this_ptr);
 
-// Original: cockpit_pkbmpset.cpp_FUN_005106a0
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005106a0
 // Address: 005106a0
-void __cdecl FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count);
+void __cdecl CPackedBitmapSet::alloc(CPackedBitmapSet *this_ptr,int bitmap_count);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740
 // Address: 00510740
-void __cdecl CPackedBitmapSet::loadBitmapSetFromRange(CPackedBitmapSet *this_ptr,undefined4 param_2,undefined4 param_3,char *param_4,int param_5,int param_6,int param_7,int param_8,int param_9,int param_10);
+void __cdecl CPackedBitmapSet::loadBitmapSetFromRange(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int start_index,int end_index,int transparency_color,int apply_palette_flag);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00510810
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810
 // Address: 00510810
-void FUN_00510810(void);
+void __cdecl CPackedBitmapSet::loadJoinedRAW(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00510a90
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00510a90
 // Address: 00510a90
-void FUN_00510a90(CPackedBitmapSet *param_1,int param_2,int param_3);
+void __cdecl CPackedBitmapSet::reload(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00510de0
-// Address: 00510de0
-void FUN_00510de0(void);
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70
+// Address: 00510c70
+void __cdecl CPackedBitmapSet::loadPBMFileRange(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00510d20
+// Address: 00510d20
+void __cdecl CPackedBitmapSet::loadPBGFileComplete(CPackedBitmapSet *this_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00510d70
+// Address: 00510d70
+void __cdecl CPackedBitmapSet::reloadStoredPBGFile(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_00510da0
+// Address: 00510da0
+void __cdecl CPackedBitmapSet::loadByFilenameAndIndex(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00510e70
 // Address: 00510e70

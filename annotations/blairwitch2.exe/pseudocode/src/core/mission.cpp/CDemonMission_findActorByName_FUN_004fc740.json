@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 32,
     "complexity_score": 15,
-    "cross_reference_count": 10,
+    "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -16,7 +16,7 @@
     {
       "addr": "0059ee00",
       "from_addr": "0059ef52",
-      "name": "core_basicene.cpp_FUN_0059ee00",
+      "name": "core_basicene.cpp_CBasicEnemy_processPatrolState_FUN_0059ee00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,7 +28,7 @@
     {
       "addr": "004bbf70",
       "from_addr": "004bc5ac",
-      "name": "core_game.cpp_FUN_004bbf70",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,7 +40,13 @@
     {
       "addr": "0059c9c0",
       "from_addr": "0059cb01",
-      "name": "core_hpatrol.cpp_FUN_0059c9c0",
+      "name": "core_hpatrol.cpp_findNextPatrolPoint_FUN_0059c9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd280",
+      "from_addr": "004fd320",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,12 +62,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fd280",
-      "from_addr": "004fd320",
-      "name": "core_mission.cpp_FUN_004fd280",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00521290",
       "from_addr": "005213b9",
       "name": "core_script.cpp_getActor_FUN_00521290",
@@ -71,6 +71,12 @@
       "addr": "0052a010",
       "from_addr": "0052a076",
       "name": "core_script.cpp_readActorReference_FUN_0052a010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005779d0",
+      "from_addr": "00577b14",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_005779d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -95,12 +101,12 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 10,
+    "call_site_count": 11,
     "call_sites": [
       {
         "call_addr": "004bc5ac",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,7 +139,7 @@
       {
         "call_addr": "004fd320",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fd280",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,6 +162,17 @@
         "call_addr": "0052a076",
         "call_type": "direct",
         "caller": "core_script.cpp_readActorReference_FUN_0052a010",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00577b14",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_process_FUN_005779d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,18 +205,7 @@
       {
         "call_addr": "0059ef52",
         "call_type": "direct",
-        "caller": "core_basicene.cpp_FUN_0059ee00",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "0059cb01",
-        "call_type": "direct",
-        "caller": "core_hpatrol.cpp_FUN_0059c9c0",
+        "caller": "core_basicene.cpp_CBasicEnemy_processPatrolState_FUN_0059ee00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 65,
+    "complexity_score": 34,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 122
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -23,15 +20,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f53b0",
-      "from_addr": "004f53d9",
-      "name": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0",
+      "addr": "004f5480",
+      "from_addr": "004f55e6",
+      "name": "core_mirror.cpp_CMirror_renderMirrorQuad_FUN_004f5480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f5480",
-      "from_addr": "004f55e6",
-      "name": "core_mirror.cpp_FUN_004f5480",
+      "addr": "004f53b0",
+      "from_addr": "004f53d9",
+      "name": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,44 +76,44 @@
   "globals": [
     {
       "addr": "005f2b00",
-      "name": "DAT_005f2b00",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RenderPixelBudget",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "01bdd810",
-      "name": "DAT_01bdd810",
-      "type": "undefined4",
+      "name": "g_RenderPixelCounter",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "DAT_01c6b5cc",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed3198",
-      "name": "DAT_01ed3198",
-      "type": "undefined4",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -225,7 +222,7 @@
       {
         "call_addr": "004f55e6",
         "call_type": "direct",
-        "caller": "core_mirror.cpp_FUN_004f5480",
+        "caller": "core_mirror.cpp_CMirror_renderMirrorQuad_FUN_004f5480",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -315,22 +312,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005f2b00",
-      "severity": "mild",
-      "text": "return (uint)(DAT_005f2b00 <= _DAT_01bdd810);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

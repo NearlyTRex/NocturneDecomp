@@ -1,0 +1,435 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 32,
+    "cross_reference_count": 25,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "00408b40",
+      "from_addr": "00408b5a",
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00408bf0",
+      "from_addr": "00408c3a",
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415e30",
+      "from_addr": "0041614f",
+      "name": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004157c0",
+      "from_addr": "00415d6d",
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041b470",
+      "from_addr": "0041b5e2",
+      "name": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041d790",
+      "from_addr": "0041d7ce",
+      "name": "core_box.cpp_CBox_setupVelocities_FUN_0041d790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043e2a0",
+      "from_addr": "0043e7f8",
+      "name": "core_cloth.cpp_CCloth_step_FUN_0043e2a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446c60",
+      "from_addr": "00446cfa",
+      "name": "core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00446c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00450e10",
+      "from_addr": "00451092",
+      "name": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00450e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044bc50",
+      "from_addr": "0044bd39",
+      "name": "core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044bc50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045af60",
+      "from_addr": "0045afb5",
+      "name": "core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0045af60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045d170",
+      "from_addr": "0045d364",
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ed70",
+      "from_addr": "0045eef2",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045ed70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045dea0",
+      "from_addr": "0045df48",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004618a0",
+      "from_addr": "00461c4f",
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004618a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004642f0",
+      "from_addr": "00464748",
+      "name": "core_door.cpp_CDoor_process_FUN_004642f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b1d0",
+      "from_addr": "0049be1d",
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_0049b1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050df70",
+      "from_addr": "0050e160",
+      "name": "core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_0050df70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005376e0",
+      "from_addr": "0053794a",
+      "name": "core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00539dd0",
+      "from_addr": "00539e57",
+      "name": "core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00539dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541350",
+      "from_addr": "005413b5",
+      "name": "core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00541350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541470",
+      "from_addr": "00541606",
+      "name": "core_setdir.cpp_testOBBIntersection_FUN_00541470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005420b0",
+      "from_addr": "00542102",
+      "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578570",
+      "from_addr": "0057860c",
+      "name": "core_wateract.cpp_CWaterActor_updateLocalPositions_FUN_00578570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057b500",
+      "from_addr": "0057b55a",
+      "name": "core_weapon.cpp_CWeapon_onDropped_FUN_0057b500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045b870",
+    "address_range": [
+      [
+        "0045b870",
+        "0045b8de"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870",
+    "signature": "CVector3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f *this_ptr,CVector3f *input,CVector3f *output)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 36,
+    "call_sites": [
+      {
+        "call_addr": "00408c3a",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041b5e2",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041b7a7",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041be87",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041c268",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041c5d4",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041cb19",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041cf64",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041d41a",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_processPhysics_FUN_0041b470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00415d6d",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.413043478260869,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "COPY": 209,
+      "FLOAT2FLOAT": 21,
+      "FLOAT_ADD": 6,
+      "FLOAT_MULT": 9,
+      "INT_ADD": 27,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "INT_ZEXT": 6,
+      "LOAD": 25,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 341
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004495a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045f700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00472030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5128
+    },
+    "nocturne.exe": {
+      "addr": "0044daa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5128
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0045b8be",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

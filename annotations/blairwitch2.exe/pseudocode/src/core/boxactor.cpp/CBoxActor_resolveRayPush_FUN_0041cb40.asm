@@ -19,19 +19,19 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00450c60 at 00451aa2
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451aa2
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ade21
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00563d9a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cc671
+;   double g_DOUBLE_005cc671 = 1.01000000000000
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d30
-;   core_actor.cpp_FUN_00408de0
-;   core_box.cpp_FUN_0041af70
-;   core_boxactor.cpp_FUN_0041bf10
-;   core_boxactor.cpp_FUN_0041cda0
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
+;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH EDX                            ; 0041cb55
     PUSH EBX                            ; 0041cb56
     LEA ESI,[ESP + 0x58]                ; 0041cb57
-    CALL core_actor.cpp_FUN_00408de0    ; 0041cb5b
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 0041cb5b
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 0041cb60
     LEA EDI,[ESP + 0x5c]                ; 0041cb63
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0041cb67
@@ -63,8 +63,8 @@ section .text
     PUSH EBX                            ; 0041cb72
     LEA ESI,[ESP + 0x70]                ; 0041cb73
     LEA EDI,[ESP + 0x40]                ; 0041cb77
-    CALL core_actor.cpp_FUN_00408d30    ; 0041cb7b
-        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d30()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30 ; 0041cb7b
+        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x70]                ; 0041cb80
     ADD ESP,0x8                         ; 0041cb84
     MOVSD ES:EDI,ESI                    ; 0041cb87
@@ -109,8 +109,8 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 0041cbe3
     PUSH EAX                            ; 0041cbe7
     MOVSD.REP ES:EDI,ESI                ; 0041cbe8
-    CALL core_box.cpp_FUN_0041af70      ; 0041cbea
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 0041cbea
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0xa0],EAX      ; 0041cbef
     FLD float ptr [ESP + 0xa0]          ; 0041cbf6
     ADD ESP,0x10                        ; 0041cbfd
@@ -128,7 +128,7 @@ section .text
     SAHF                                ; 0041cc16
     JBE 0x0041cbaf                      ; 0041cc17
         ;   XREF to: 0041cbaf (CONDITIONAL_JUMP)  ; LAB_0041cbaf
-    FLD double ptr [0x005cc671]         ; 0041cc19 | DAT_005cc671
+    FLD double ptr [0x005cc671]         ; 0041cc19 | g_DOUBLE_005cc671
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0041cc1f
     FSUB double ptr [ESP]               ; 0041cc22
     FLD float ptr [EAX]                 ; 0041cc25
@@ -164,12 +164,12 @@ section .text
     FXCH                                ; 0041cc95
     FSTP float ptr [EAX + 0x4]          ; 0041cc97
     FSTP float ptr [EAX + 0x8]          ; 0041cc9a
-    CALL core_boxactor.cpp_FUN_0041bf10 ; 0041cc9d
-        ;   XREF to: 0041bf10 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_0041bf10()
+    CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10 ; 0041cc9d
+        ;   XREF to: 0041bf10 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041bf10(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041cca2
     PUSH EBX                            ; 0041cca5
-    CALL core_boxactor.cpp_FUN_0041cda0 ; 0041cca6
-        ;   XREF to: 0041cda0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_0041cda0()
+    CALL core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0 ; 0041cca6
+        ;   XREF to: 0041cda0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_0041cda0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041ccab
     MOV ESP,EBP                         ; 0041ccae
     POP EBP                             ; 0041ccb0

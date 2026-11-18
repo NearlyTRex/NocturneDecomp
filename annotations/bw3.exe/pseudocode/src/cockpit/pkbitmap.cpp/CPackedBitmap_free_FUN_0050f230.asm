@@ -15,8 +15,8 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0050f200
-;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
+;   crt_unknown.c_free_FUN_005a30b6
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0x20]      ; 0050f23d
         ;   Label: LAB_0050f23d
     PUSH ESI                            ; 0050f240
-    CALL crt_unknown.c_FUN_005a30b6     ; 0050f241
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 0050f241
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 0050f246
     PUSH EBX                            ; 0050f249
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0050f200 ; 0050f24a
@@ -45,8 +45,8 @@ section .text
     RET                                 ; 0050f254
     PUSH EDX                            ; 0050f255
         ;   Label: LAB_0050f255
-    CALL crt_unknown.c_FUN_005a3770     ; 0050f256
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 0050f256
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 0050f25b
     JMP 0x0050f23d                      ; 0050f25e
         ;   XREF to: 0050f23d (UNCONDITIONAL_JUMP)  ; LAB_0050f23d

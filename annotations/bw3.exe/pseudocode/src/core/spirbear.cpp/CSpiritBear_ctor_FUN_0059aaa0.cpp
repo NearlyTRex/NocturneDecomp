@@ -38,11 +38,11 @@ CSpiritBear * __cdecl core_spirbear_cpp_CSpiritBear_ctor_FUN_0059aaa0(CSpiritBea
   pSVar9[6].texture_name[0x12] = 'y';
   pSVar9[6].texture_name[0x13] = -0x3c;
   fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.9,1.1);
-  pcVar8 = (char *)0x5d9b12;
+  pcVar8 = "bwp3_prcth.cth";
   *(float *)(pCVar6[-1].dead + 0x10) = fVar7;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             ((CDeformableModelInstance *)(pCVar6[-0x45].models[1].textures[4].texture_name + 0x28),
-             (char *)0x5d9b04);
+             "bwp3_bear.dfm");
   pSVar9 = pCVar6[-1].models[1].textures + 0xe;
   pSVar2 = pCVar6[-1].models[1].textures;
   pSVar2[0xd].texture_name[0x3c] = '\x01';

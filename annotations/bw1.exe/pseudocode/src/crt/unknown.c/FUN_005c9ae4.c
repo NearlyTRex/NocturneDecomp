@@ -15,60 +15,62 @@ uint FUN_005c9ae4(int param_1)
   int iVar4;
   int iVar5;
   int iVar6;
-  uint *puVar7;
+  int *piVar7;
   uint uVar8;
-  uint *puVar9;
+  dst_rule *pdVar9;
   int local_14;
   
   uVar8 = 0;
-  if (*PTR_DAT_00626994 == '\0') goto LAB_005c9dab;
-  uVar1 = FUN_005c9a88(&DAT_00626844,&DAT_00626868,*(uint *)(param_1 + 0x14));
+  if (*PTR_s_EDT_00626994 == '\0') goto LAB_005c9dab;
+  uVar1 = FUN_005c9a88
+                    (&g_DstStartRule,&g_DstTransitionSecond,*(uint *)(param_1 + 0x14));
   if (uVar1 == 0) {
-    puVar7 = (uint *)&DAT_00626844;
-    puVar9 = &DAT_00626868;
+    piVar7 = &g_DstStartRule.seconds;
+    pdVar9 = (dst_rule *)&g_DstTransitionSecond;
   }
   else {
-    puVar7 = &DAT_00626868;
-    puVar9 = (uint *)&DAT_00626844;
+    piVar7 = &g_DstTransitionSecond;
+    pdVar9 = &g_DstStartRule;
   }
-  iVar4 = *(int *)(param_1 + 0x10);
+  iVar5 = *(int *)(param_1 + 0x10);
   iVar2 = FUN_005c9950(*(int *)(param_1 + 0x14) + 0x76c);
-  iVar6 = iVar4 * 2;
   if (iVar2 == 0) {
-    iVar2 = *(int *)(&DAT_0060852c + iVar6);
-    iVar6 = *(int *)(&DAT_0060852a + iVar6);
+    iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);
+    iVar4 = *(int *)((int)&g_DefaultStreamBufferSize + iVar5 * 2 + 2);
   }
   else {
-    iVar2 = *(int *)(&DAT_00608546 + iVar6);
-    iVar6 = *(int *)(&DAT_00608544 + iVar6);
+    iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);
+    iVar4 = *(int *)(&g_SHORT_00608544 + iVar5);
   }
-  iVar6 = (iVar2 >> 0x10) - (iVar6 >> 0x10);
-  if (puVar7[8] == 0) {
-    if ((int)puVar7[4] < iVar4) {
+  iVar2 = (iVar2 >> 0x10) - (iVar4 >> 0x10);
+  if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {
+    if (((dst_rule *)piVar7)->month < iVar5) {
       uVar8 = 1;
     }
-    else if (iVar4 == puVar7[4]) {
-      iVar2 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - puVar7[6]) % 7;
-      iVar5 = (*(int *)(param_1 + 0xc) + -1) - ((*(int *)(param_1 + 0x18) + 6) - puVar7[6]) % 7;
-      if (puVar7[3] == 5) {
-        iVar3 = iVar6 + -7;
-        if ((iVar3 < iVar2) && (uVar8 = 1, iVar5 <= iVar3)) {
+    else if (iVar5 == ((dst_rule *)piVar7)->month) {
+      iVar4 = *(int *)(param_1 + 0xc) -
+              ((*(int *)(param_1 + 0x18) + 7) - ((dst_rule *)piVar7)->day_of_year) % 7;
+      iVar6 = (*(int *)(param_1 + 0xc) + -1) -
+              ((*(int *)(param_1 + 0x18) + 6) - ((dst_rule *)piVar7)->day_of_year) % 7;
+      if (((dst_rule *)piVar7)->day == 5) {
+        iVar3 = iVar2 + -7;
+        if ((iVar3 < iVar4) && (uVar8 = 1, iVar6 <= iVar3)) {
 LAB_005c9c85:
-          iVar2 = FUN_005c9db8(param_1,puVar7);
-          uVar8 = (uint)(iVar2 == 0);
+          iVar4 = FUN_005c9db8(param_1,piVar7);
+          uVar8 = (uint)(iVar4 == 0);
         }
       }
       else {
-        iVar3 = (puVar7[3] + -1) * 7 + 1;
-        if ((iVar3 <= iVar2) && (uVar8 = 1, iVar5 < iVar3)) goto LAB_005c9c85;
+        iVar3 = (((dst_rule *)piVar7)->day + -1) * 7 + 1;
+        if ((iVar3 <= iVar4) && (uVar8 = 1, iVar6 < iVar3)) goto LAB_005c9c85;
       }
     }
   }
   else {
-    local_14 = puVar7[7];
-    if (puVar7[8] == 1) {
-      iVar2 = FUN_005c9950(*(int *)(param_1 + 0x14) + 0x76c);
-      if ((iVar2 != 0) && (0x003B001F >> 0x10 < local_14)) {
+    local_14 = ((dst_rule *)piVar7)->rule_type;
+    if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {
+      iVar4 = FUN_005c9950(*(int *)(param_1 + 0x14) + 0x76c);
+      if ((iVar4 != 0) && (g_INT_0060852e >> 0x10 < local_14)) {
         local_14 = local_14 + 1;
       }
       local_14 = local_14 + -1;
@@ -82,20 +84,21 @@ LAB_005c9c85:
     }
     goto LAB_005c9dab;
   }
-  if (puVar9[8] == 0) {
-    if ((int)puVar9[4] < iVar4) {
+  if (pdVar9[1].seconds == 0) {
+    if (pdVar9->month < iVar5) {
       uVar8 = 0;
     }
-    else if (iVar4 == puVar9[4]) {
-      iVar2 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - puVar9[6]) % 7;
+    else if (iVar5 == pdVar9->month) {
+      iVar4 = *(int *)(param_1 + 0xc) - ((*(int *)(param_1 + 0x18) + 7) - pdVar9->day_of_year) % 7;
       uVar8 = 0;
-      iVar4 = (*(int *)(param_1 + 0xc) + -1) - ((*(int *)(param_1 + 0x18) + 6) - puVar9[6]) % 7;
-      if (puVar9[3] == 5) {
-        iVar6 = iVar6 + -7;
-        if (iVar6 < iVar2) {
-          if (iVar4 <= iVar6) {
+      iVar5 = (*(int *)(param_1 + 0xc) + -1) -
+              ((*(int *)(param_1 + 0x18) + 6) - pdVar9->day_of_year) % 7;
+      if (pdVar9->day == 5) {
+        iVar2 = iVar2 + -7;
+        if (iVar2 < iVar4) {
+          if (iVar5 <= iVar2) {
 LAB_005c9d93:
-            uVar8 = FUN_005c9db8(param_1,puVar9);
+            uVar8 = FUN_005c9db8(param_1,pdVar9);
           }
         }
         else {
@@ -103,24 +106,24 @@ LAB_005c9d93:
         }
       }
       else {
-        iVar6 = (puVar9[3] + -1) * 7 + 1;
-        if (iVar2 < iVar6) {
+        iVar2 = (pdVar9->day + -1) * 7 + 1;
+        if (iVar4 < iVar2) {
           uVar8 = 1;
         }
-        else if (iVar4 < iVar6) goto LAB_005c9d93;
+        else if (iVar5 < iVar2) goto LAB_005c9d93;
       }
     }
   }
   else {
-    iVar4 = puVar9[7];
-    if (puVar9[8] == 1) {
-      iVar6 = FUN_005c9950(*(int *)(param_1 + 0x14) + 0x76c);
-      if ((iVar6 != 0) && (0x003B001F >> 0x10 < iVar4)) {
-        iVar4 = iVar4 + 1;
+    iVar5 = pdVar9->rule_type;
+    if (pdVar9[1].seconds == 1) {
+      iVar2 = FUN_005c9950(*(int *)(param_1 + 0x14) + 0x76c);
+      if ((iVar2 != 0) && (g_INT_0060852e >> 0x10 < iVar5)) {
+        iVar5 = iVar5 + 1;
       }
-      iVar4 = iVar4 + -1;
+      iVar5 = iVar5 + -1;
     }
-    if ((iVar4 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 0, iVar4 == *(int *)(param_1 + 0x1c)))
+    if ((iVar5 <= *(int *)(param_1 + 0x1c)) && (uVar8 = 0, iVar5 == *(int *)(param_1 + 0x1c)))
     goto LAB_005c9d93;
   }
   if (uVar1 != 0) {

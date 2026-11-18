@@ -19,7 +19,7 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_004f94a0(CMoon *this_ptr)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (&CAlphaBitmap_01d883a8,"bwp3_menu_scroll",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
-            (&CAlphaBitmap_01d88614,PTR_s_BWP3_mainmenu_005c9283_2_006006f8,0x280,0x1e0);
+            (&CAlphaBitmap_01d88614,PTR_s_BWP3_mainmenu_006006f8,0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (&CAlphaBitmap_01d88628,"bwp3_hand",0x200,0x200);
   this_ptr->scroll_x[0] = 0x140;

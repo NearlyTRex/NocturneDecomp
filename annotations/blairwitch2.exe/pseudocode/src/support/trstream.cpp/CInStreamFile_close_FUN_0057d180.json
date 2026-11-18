@@ -14,33 +14,27 @@
   },
   "cross_references": [
     {
-      "addr": "0042c520",
-      "from_addr": "0042c5b3",
-      "name": "cockpit_ckptutil.c_FUN_0042c520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042c780",
       "from_addr": "0042c89f",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bb9b0",
-      "from_addr": "004bbd64",
-      "name": "core_game.cpp_FUN_004bb9b0",
+      "addr": "0042c520",
+      "from_addr": "0042c5b3",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bbf70",
       "from_addr": "004bc2cc",
-      "name": "core_game.cpp_FUN_004bbf70",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401590",
-      "from_addr": "004015d3",
-      "name": "engine_2d.c_FUN_00401590",
+      "addr": "004bb9b0",
+      "from_addr": "004bbd64",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,21 +50,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00401590",
+      "from_addr": "004015d3",
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a7d00",
       "from_addr": "004a7f1c",
       "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a7fd0",
-      "from_addr": "004a817e",
-      "name": "engine_font.cpp_FUN_004a7fd0",
+      "addr": "004a85a0",
+      "from_addr": "004a87a3",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a85a0",
-      "from_addr": "004a87a3",
-      "name": "engine_font.cpp_FUN_004a85a0",
+      "addr": "004a7fd0",
+      "from_addr": "004a817e",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,7 +82,7 @@
     {
       "addr": "00575150",
       "from_addr": "00575284",
-      "name": "engine_texture.cpp_FUN_00575150",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -148,7 +148,7 @@
       {
         "call_addr": "004bc2cc",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -170,7 +170,7 @@
       {
         "call_addr": "004015d3",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401590",
+        "caller": "engine_2d.c_loadPaletteFile_FUN_00401590",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +203,7 @@
       {
         "call_addr": "0042c5b3",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0042c520",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +214,7 @@
       {
         "call_addr": "0042c639",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0042c520",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +225,7 @@
       {
         "call_addr": "004bbd64",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb9b0",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

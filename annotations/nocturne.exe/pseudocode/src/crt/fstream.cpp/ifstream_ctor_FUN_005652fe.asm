@@ -12,8 +12,8 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004a3b90 at 004a3e44
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a47a4
-;   undefined4 DAT_005a47ac
+;   WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo
+;   WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout
 ;   void* PTR_crt_fstream.cpp_ifstream_dtor_FUN_00565264_005a47b8 = 00565264
 ;   void* PTR_crt_unknown.c_FUN_005650f0_005a47c0 = 005650f0
 ;   void* PTR_crt_unknown.c_FUN_00565106_005a47c8 = 00565106
@@ -55,11 +55,11 @@ section .text
     ADD ESP,0x8                         ; 00565340
     MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a47c8 ; 00565343 | PTR_crt_unknown.c_FUN_00565106_005a47c8
     RET                                 ; 0056534b
-    MOV dword ptr [EAX],0x5a47a4        ; 0056534c | DAT_005a47a4
+    MOV dword ptr [EAX],0x5a47a4        ; 0056534c | g_IFStream_LayoutInfo
         ;   Label: LAB_0056534c
     ADD EAX,0x54                        ; 00565352
     PUSH EAX                            ; 00565355
-    MOV dword ptr [EAX + -0x10],0x5a47ac ; 00565356 | DAT_005a47ac
+    MOV dword ptr [EAX + -0x10],0x5a47ac ; 00565356 | g_IFStream_IStreamSubobjectLayout
     CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 0056535d
         ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_ctor_FUN_0056b503(ios * this_ptr)
     ADD ESP,0x4                         ; 00565362

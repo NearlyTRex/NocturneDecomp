@@ -32,7 +32,7 @@
 ; Referenced Globals:
 ;   float FLOAT_005a0884 = 65536
 ;   float FLOAT_005a0888 = 0.00390625
-;   undefined4 DAT_005a088c
+;   float g_MirrorIntToFloat_Fine = 0.00001525879
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480
@@ -63,13 +63,13 @@ section .text
     LEA EBX,[ESP + 0xc]                 ; 004d7c0a
     MOV EAX,EDX                         ; 004d7c0e
     FILD dword ptr [EAX]                ; 004d7c10
-    FMUL float ptr [0x005a088c]         ; 004d7c12 | DAT_005a088c
+    FMUL float ptr [0x005a088c]         ; 004d7c12 | g_MirrorIntToFloat_Fine
     FSTP float ptr [EBX]                ; 004d7c18
     FILD dword ptr [EAX + 0x4]          ; 004d7c1a
-    FMUL float ptr [0x005a088c]         ; 004d7c1d | DAT_005a088c
+    FMUL float ptr [0x005a088c]         ; 004d7c1d | g_MirrorIntToFloat_Fine
     FSTP float ptr [EBX + 0x4]          ; 004d7c23
     FILD dword ptr [EAX + 0x8]          ; 004d7c26
-    FMUL float ptr [0x005a088c]         ; 004d7c29 | DAT_005a088c
+    FMUL float ptr [0x005a088c]         ; 004d7c29 | g_MirrorIntToFloat_Fine
     FSTP float ptr [EBX + 0x8]          ; 004d7c2f
     FLD float ptr [ESP + 0xc]           ; 004d7c32
     FLD float ptr [ESP + 0x10]          ; 004d7c36

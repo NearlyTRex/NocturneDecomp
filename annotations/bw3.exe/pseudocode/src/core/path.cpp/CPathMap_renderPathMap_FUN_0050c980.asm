@@ -15,21 +15,21 @@
 ;   core_path.cpp_renderPathMapsAtPosition_FUN_0050d050 at 0050d10b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cb8fc
-;   undefined4 DAT_005cb904
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_01ed2a34
-;   undefined4 DAT_01ed2a38
-;   undefined4 DAT_01ed2a3c
-;   undefined4 DAT_01ed2a40
-;   undefined4 DAT_01ed2a44
-;   undefined4 DAT_01ed2a48
-;   undefined4 DAT_01ed2a4c
-;   undefined4 DAT_01ed2a50
-;   undefined4 DAT_01ed2a54
-;   undefined4 DAT_01ed2a58
-;   undefined4 DAT_01ed2a5c
-;   undefined4 DAT_01ed2a60
+;   float g_FLOAT_005cb8fc = 256
+;   double g_DOUBLE_005cb904 = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   undefined4 g_PathMapQuad.base.base.count
+;   undefined4 g_PathMapQuad.base.surface_normal.A
+;   undefined4 g_PathMapQuad.base.surface_normal.B
+;   undefined4 g_PathMapQuad.base.surface_normal.C
+;   undefined4 g_PathMapQuad.base.surface_normal.D
+;   undefined4 g_PathMapQuad.vertices[0].vertex_index
+;   undefined4 g_PathMapQuad.vertices[0].texture_u
+;   undefined4 g_PathMapQuad.vertices[0].texture_v
+;   undefined4 g_PathMapQuad.vertices[1].vertex_index
+;   undefined4 g_PathMapQuad.vertices[1].texture_u
+;   undefined4 g_PathMapQuad.vertices[1].texture_v
+;   undefined4 g_PathMapQuad.vertices[2].vertex_index
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046c5e0
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450
-;   engine_special.cpp_FUN_005632a3
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
 ;
 ; *****************************************************************************
 
@@ -53,7 +53,7 @@ section .text
     MOV EBP,ESP                         ; 0050c984
     SUB ESP,0x6c                        ; 0050c986
     AND ESP,0xfffffff8                  ; 0050c989
-    MOV EDX,dword ptr [0x005f2afc]      ; 0050c98c | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 0050c98c | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 0050c992
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0050c993
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
@@ -78,7 +78,7 @@ section .text
     FILD dword ptr [EAX + 0x2c]         ; 0050c9c1
     FMUL float ptr [0x0203b3b8]         ; 0050c9c4 | g_CDemonRaytraceInstance.adjusted_size.z
     MOV EAX,ESP                         ; 0050c9ca
-    MOV EBX,dword ptr [0x005f2afc]      ; 0050c9cc | DAT_005f2afc
+    MOV EBX,dword ptr [0x005f2afc]      ; 0050c9cc | g_CDemonRenderer_PTR_005f2afc
     PUSH EAX                            ; 0050c9d2
     FADD float ptr [0x0203b394]         ; 0050c9d3 | g_CDemonRaytraceInstance.bbox_min.z
     PUSH EBX                            ; 0050c9d9
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 0046ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0050c9e3
     PUSH 0x60360c                       ; 0050c9e6
-    MOV ESI,dword ptr [0x005f2afc]      ; 0050c9eb | DAT_005f2afc
+    MOV ESI,dword ptr [0x005f2afc]      ; 0050c9eb | g_CDemonRenderer_PTR_005f2afc
     PUSH ESI                            ; 0050c9f1
     MOV EDI,0x4                         ; 0050c9f2
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0050c9f7
@@ -95,29 +95,29 @@ section .text
     MOV EDX,0x1                         ; 0050c9fc
     MOV ESI,0x2                         ; 0050ca01
     ADD ESP,0x8                         ; 0050ca06
-    MOV dword ptr [0x01ed2a34],EDI      ; 0050ca09 | DAT_01ed2a34
+    MOV dword ptr [0x01ed2a34],EDI      ; 0050ca09 | g_PathMapQuad.base.base.count
     XOR EAX,EAX                         ; 0050ca0f
     MOV EDI,0x800000                    ; 0050ca11
-    MOV [0x01ed2a38],EAX                ; 0050ca16 | DAT_01ed2a38
-    MOV [0x01ed2a3c],EAX                ; 0050ca1b | DAT_01ed2a3c
-    MOV [0x01ed2a40],EAX                ; 0050ca20 | DAT_01ed2a40
-    MOV [0x01ed2a44],EAX                ; 0050ca25 | DAT_01ed2a44
-    MOV [0x01ed2a48],EAX                ; 0050ca2a | DAT_01ed2a48
-    MOV dword ptr [0x01ed2a54],EDX      ; 0050ca2f | DAT_01ed2a54
-    MOV dword ptr [0x01ed2a60],ESI      ; 0050ca35 | DAT_01ed2a60
+    MOV [0x01ed2a38],EAX                ; 0050ca16 | g_PathMapQuad.base.surface_normal.A
+    MOV [0x01ed2a3c],EAX                ; 0050ca1b | g_PathMapQuad.base.surface_normal.B
+    MOV [0x01ed2a40],EAX                ; 0050ca20 | g_PathMapQuad.base.surface_normal.C
+    MOV [0x01ed2a44],EAX                ; 0050ca25 | g_PathMapQuad.base.surface_normal.D
+    MOV [0x01ed2a48],EAX                ; 0050ca2a | g_PathMapQuad.vertices[0].vertex_index
+    MOV dword ptr [0x01ed2a54],EDX      ; 0050ca2f | g_PathMapQuad.vertices[1].vertex_index
+    MOV dword ptr [0x01ed2a60],ESI      ; 0050ca35 | g_PathMapQuad.vertices[2].vertex_index
     PUSH EAX                            ; 0050ca3b
     MOV EDX,0x3                         ; 0050ca3c
-    MOV ESI,dword ptr [0x005f2afc]      ; 0050ca41 | DAT_005f2afc
-    MOV dword ptr [0x01ed2a4c],EDI      ; 0050ca47 | DAT_01ed2a4c
-    MOV dword ptr [0x01ed2a50],EDI      ; 0050ca4d | DAT_01ed2a50
-    MOV dword ptr [0x01ed2a58],EDI      ; 0050ca53 | DAT_01ed2a58
-    MOV dword ptr [0x01ed2a5c],EDI      ; 0050ca59 | DAT_01ed2a5c
-    MOV dword ptr [0x01ed2a64],EDI      ; 0050ca5f | DAT_01ed2a64
-    MOV dword ptr [0x01ed2a68],EDI      ; 0050ca65 | DAT_01ed2a68
-    MOV dword ptr [0x01ed2a70],EDI      ; 0050ca6b | DAT_01ed2a70
+    MOV ESI,dword ptr [0x005f2afc]      ; 0050ca41 | g_CDemonRenderer_PTR_005f2afc
+    MOV dword ptr [0x01ed2a4c],EDI      ; 0050ca47 | g_PathMapQuad.vertices[0].texture_u
+    MOV dword ptr [0x01ed2a50],EDI      ; 0050ca4d | g_PathMapQuad.vertices[0].texture_v
+    MOV dword ptr [0x01ed2a58],EDI      ; 0050ca53 | g_PathMapQuad.vertices[1].texture_u
+    MOV dword ptr [0x01ed2a5c],EDI      ; 0050ca59 | g_PathMapQuad.vertices[1].texture_v
+    MOV dword ptr [0x01ed2a64],EDI      ; 0050ca5f | g_PathMapQuad.vertices[2].texture_u
+    MOV dword ptr [0x01ed2a68],EDI      ; 0050ca65 | g_PathMapQuad.vertices[2].texture_v
+    MOV dword ptr [0x01ed2a70],EDI      ; 0050ca6b | g_PathMapQuad.vertices[3].texture_u
     PUSH ESI                            ; 0050ca71
-    MOV dword ptr [0x01ed2a74],EDI      ; 0050ca72 | DAT_01ed2a74
-    MOV dword ptr [0x01ed2a6c],EDX      ; 0050ca78 | DAT_01ed2a6c
+    MOV dword ptr [0x01ed2a74],EDI      ; 0050ca72 | g_PathMapQuad.vertices[3].texture_v
+    MOV dword ptr [0x01ed2a6c],EDX      ; 0050ca78 | g_PathMapQuad.vertices[3].vertex_index
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450 ; 0050ca7e
         ;   XREF to: 0046d450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0050ca83
@@ -169,7 +169,7 @@ section .text
     JL 0x0050cab8                       ; 0050cb10
         ;   XREF to: 0050cab8 (CONDITIONAL_JUMP)  ; LAB_0050cab8
     PUSH 0x1                            ; 0050cb12
-    MOV EDI,dword ptr [0x005f2afc]      ; 0050cb14 | DAT_005f2afc
+    MOV EDI,dword ptr [0x005f2afc]      ; 0050cb14 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDI                            ; 0050cb1a
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450 ; 0050cb1b
         ;   XREF to: 0046d450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450(CDemonRenderer * this_ptr, int enabled)
@@ -184,14 +184,14 @@ section .text
         ;   Label: LAB_0050cb2a
     JG 0x0050cadd                       ; 0050cb30
         ;   XREF to: 0050cadd (CONDITIONAL_JUMP)  ; LAB_0050cadd
-    FLD float ptr [0x005cb8fc]          ; 0050cb32 | DAT_005cb8fc
+    FLD float ptr [0x005cb8fc]          ; 0050cb32 | g_FLOAT_005cb8fc
     FLD float ptr [0x0203b3b0]          ; 0050cb38 | g_CDemonRaytraceInstance.adjusted_size.x
     FMUL ST1                            ; 0050cb3e
     FLD float ptr [0x0203b3b4]          ; 0050cb40 | g_CDemonRaytraceInstance.adjusted_size.y
     FMUL ST2                            ; 0050cb46
     FLD float ptr [0x0203b3b8]          ; 0050cb48 | g_CDemonRaytraceInstance.adjusted_size.z
     FMULP ST3                           ; 0050cb4e
-    FLD double ptr [0x005cb904]         ; 0050cb50 | DAT_005cb904
+    FLD double ptr [0x005cb904]         ; 0050cb50 | g_DOUBLE_005cb904
     FLD float ptr [0x0203b390]          ; 0050cb56 | g_CDemonRaytraceInstance.bbox_min.y
     FMUL ST1                            ; 0050cb5c
     LEA EDI,[ESP + 0x24]                ; 0050cb5e
@@ -224,30 +224,30 @@ section .text
     MOV dword ptr [ESP + 0x68],EAX      ; 0050cbb1
     FILD dword ptr [ESP + 0x68]         ; 0050cbb5
     FMUL float ptr [ESP + 0x20]         ; 0050cbb9
-    MOV EDX,dword ptr [0x005f2afc]      ; 0050cbbd | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 0050cbbd | g_CDemonRenderer_PTR_005f2afc
     FXCH ST2                            ; 0050cbc3
     CALL crt_math.c_round_FUN_005a3120  ; 0050cbc5
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x30]        ; 0050cbca
     LEA EAX,[ESP + 0x30]                ; 0050cbce
     FADDP ST2,ST0                       ; 0050cbd2
     PUSH EAX                            ; 0050cbd4
     CALL crt_math.c_round_FUN_005a3120  ; 0050cbd5
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FXCH                                ; 0050cbda
     FADDP ST2,ST0                       ; 0050cbdc
     FISTP dword ptr [ESP + 0x3c]        ; 0050cbde
     CALL crt_math.c_round_FUN_005a3120  ; 0050cbe2
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x38]        ; 0050cbe7
     MOV EAX,dword ptr [EDX]             ; 0050cbeb
     PUSH EAX                            ; 0050cbed
-    CALL engine_special.cpp_FUN_005632a3 ; 0050cbee
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0050cbee
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0050cbf3
     MOV EAX,dword ptr [ESP + 0x30]      ; 0050cbf6
     MOV dword ptr [ESP + 0x68],EAX      ; 0050cbfa
-    MOV EDX,dword ptr [0x005f2afc]      ; 0050cbfe | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 0050cbfe | g_CDemonRenderer_PTR_005f2afc
     FILD dword ptr [ESP + 0x68]         ; 0050cc04
     LEA EAX,[ESP + 0x30]                ; 0050cc08
     FLD ST0                             ; 0050cc0c
@@ -255,17 +255,17 @@ section .text
     PUSH EAX                            ; 0050cc12
     FSTP ST1                            ; 0050cc13
     CALL crt_math.c_round_FUN_005a3120  ; 0050cc15
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x34]        ; 0050cc1a
     MOV EAX,dword ptr [EDX]             ; 0050cc1e
     ADD EAX,0x30                        ; 0050cc20
     PUSH EAX                            ; 0050cc23
-    CALL engine_special.cpp_FUN_005632a3 ; 0050cc24
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0050cc24
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0050cc29
     MOV EAX,dword ptr [ESP + 0x38]      ; 0050cc2c
     MOV dword ptr [ESP + 0x68],EAX      ; 0050cc30
-    MOV EDX,dword ptr [0x005f2afc]      ; 0050cc34 | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 0050cc34 | g_CDemonRenderer_PTR_005f2afc
     FILD dword ptr [ESP + 0x68]         ; 0050cc3a
     LEA EAX,[ESP + 0x30]                ; 0050cc3e
     FLD ST0                             ; 0050cc42
@@ -273,13 +273,13 @@ section .text
     PUSH EAX                            ; 0050cc48
     FSTP ST1                            ; 0050cc49
     CALL crt_math.c_round_FUN_005a3120  ; 0050cc4b
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x3c]        ; 0050cc50
     MOV EAX,dword ptr [EDX]             ; 0050cc54
     ADD EAX,0x60                        ; 0050cc56
     PUSH EAX                            ; 0050cc59
-    CALL engine_special.cpp_FUN_005632a3 ; 0050cc5a
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0050cc5a
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0050cc5f
     MOV EAX,dword ptr [ESP + 0x30]      ; 0050cc62
     MOV dword ptr [ESP + 0x68],EAX      ; 0050cc66
@@ -287,19 +287,19 @@ section .text
     FILD dword ptr [ESP + 0x68]         ; 0050cc6e
     FLD ST0                             ; 0050cc72
     FSUB float ptr [ESP + 0x18]         ; 0050cc74
-    MOV EAX,[0x005f2afc]                ; 0050cc78 | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 0050cc78 | g_CDemonRenderer_PTR_005f2afc
     FSTP ST1                            ; 0050cc7d
     CALL crt_math.c_round_FUN_005a3120  ; 0050cc7f
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x30]        ; 0050cc84
     MOV EAX,dword ptr [EAX]             ; 0050cc88
     PUSH EDX                            ; 0050cc8a
     ADD EAX,0x90                        ; 0050cc8b
     PUSH EAX                            ; 0050cc90
-    CALL engine_special.cpp_FUN_005632a3 ; 0050cc91
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0050cc91
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0050cc96
-    MOV EAX,[0x005f2afc]                ; 0050cc99 | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 0050cc99 | g_CDemonRenderer_PTR_005f2afc
     MOV EDX,dword ptr [EAX]             ; 0050cc9e
     MOV ECX,dword ptr [ESP + 0x58]      ; 0050cca0
     MOV dword ptr [EDX + 0x20],ECX      ; 0050cca4

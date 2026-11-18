@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004ea980 at 004ea9aa
+;   core_hero.cpp_CHero_dtor_FUN_004ea980 at 004ea9aa
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_clear_FUN_004f6fa0

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 170,
+    "complexity_score": 74,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 10,
+    "pseudocode_lines": 59,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 213
+    "total_lines": 212
   },
   "cross_references": [
     {
@@ -114,20 +113,20 @@
     },
     {
       "addr": "00763e84",
-      "name": "DAT_00763e84",
-      "type": "undefined4",
+      "name": "g_ActorDataFile",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "00763e88",
-      "name": "DAT_00763e88",
-      "type": "undefined4",
+      "name": "g_ActorReadingMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00763e8c",
-      "name": "DAT_00763e8c",
-      "type": "undefined4",
+      "name": "g_CurrentActorBeingProcessed",
+      "type": "CDemonActor*",
       "value": null
     },
     {
@@ -281,80 +280,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00763e8c",
-      "severity": "mild",
-      "text": "uVar3 = DAT_00763e8c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "uVar2 = DAT_00763e88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "local_14 = DAT_00763e84;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "DAT_00763e84 = file_handle;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "DAT_00763e88 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_00763e8c",
-      "severity": "mild",
-      "text": "DAT_00763e8c = this_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_00763e8c",
-      "severity": "mild",
-      "text": "DAT_00763e8c = (CDemonActor *)uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "DAT_00763e88 = uVar2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "DAT_00763e84 = (_FILE *)local_14;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

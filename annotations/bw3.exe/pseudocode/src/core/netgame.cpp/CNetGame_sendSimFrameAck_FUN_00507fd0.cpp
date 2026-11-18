@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(CNetGame *this_ptr)
 
 {
@@ -21,24 +19,24 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(CNetGame *th
   
   bVar4 = 0;
   if (this_ptr->connection_type != CONNECTION_CLIENT) {
-    _DAT_01d71de0 = "..\\core\\netgame.cpp";
-    _DAT_01d71de4 = 0xa29;
-    core_main_c_FUN_004e4330("CNetGame::sendSimFrameAck - should only be called in client mode");
+    g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
+    g_INT_01d71de4 = 0xa29;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::sendSimFrameAck - should only be called in client mode");
   }
   if (this_ptr->network_mode != NET_MODE_PLAYING) {
-    _DAT_01d71de0 = "..\\core\\netgame.cpp";
-    _DAT_01d71de4 = 0xa2a;
-    core_main_c_FUN_004e4330("CNetGame::sendSimFrameAck - should only be called in the game loop");
+    g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
+    g_INT_01d71de4 = 0xa2a;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::sendSimFrameAck - should only be called in the game loop");
   }
   if (this_ptr->server_player_index < 0) {
-    _DAT_01d71de0 = "..\\core\\netgame.cpp";
-    _DAT_01d71de4 = 0xa2b;
-    core_main_c_FUN_004e4330("CNetGame::sendSimFrameAck - server not in player list");
+    g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
+    g_INT_01d71de4 = 0xa2b;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::sendSimFrameAck - server not in player list");
   }
   if (this_ptr->local_player_index < 0) {
-    _DAT_01d71de0 = "..\\core\\netgame.cpp";
-    _DAT_01d71de4 = 0xa2c;
-    core_main_c_FUN_004e4330("CNetGame::sendSimFrameAck - I'm not in player list");
+    g_CHAR_PTR_01d71de0 = "..\\core\\netgame.cpp";
+    g_INT_01d71de4 = 0xa2c;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CNetGame::sendSimFrameAck - I'm not in player list");
   }
   local_50.size = 0x3d;
   local_50.type = PACKET_PLAYER_INPUT;
@@ -51,6 +49,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(CNetGame *th
     piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
   core_netgame_cpp_CNetGame_send_FUN_00505870(this_ptr,this_ptr->server_player_index,&local_50);
-  _DAT_01da6488 = _DAT_01da6478;
+  g_NetLastSimFrameAckTime = g_UINT_01da6478;
   return;
 }

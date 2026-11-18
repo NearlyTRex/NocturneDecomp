@@ -8,21 +8,21 @@
 ;
 ; XREF[11]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfc13
-;   core_game.cpp_FUN_004d7250 at 004d75b7
+;   core_game.cpp_CGame_showChapterSelect_FUN_004d7250 at 004d75b7
 ;   core_game.cpp_staticInit_FUN_004cb7d0 at 004cb813
-;   core_menu.cpp_FUN_0050ba70 at 0050c890
-;   core_menu.cpp_FUN_0050d640 at 0050e5cf
-;   core_mission.cpp_FUN_0051c240 at 0051c253
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e5cf
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c890
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240 at 0051c253
 ;   core_script.cpp_staticInit_FUN_005430c0 at 005430c5
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0057db60 at 0057db6c
-;   engine_pod.cpp_FUN_0053bfc0 at 0053c122
-;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 00494fe4
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0 at 0053c122
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180 at 0049522c
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dc605
+;   TerminatedCString s_OK_005dc605
 ;   TerminatedCString s_Cancel_005dc608
-;   undefined1* g_CPickListVTable = 0049a710
+;   CPickList_full_vtable g_CPickListVTable
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_0049d480
@@ -65,7 +65,7 @@ section .text
     MOV dword ptr [EBX + 0x1b0],0x0     ; 0049a680
     ADD ESP,0x4                         ; 0049a68a
     MOV dword ptr [EBX + 0x1b4],0x0     ; 0049a68d
-    PUSH 0x5dc605                       ; 0049a697 | DAT_005dc605
+    PUSH 0x5dc605                       ; 0049a697 | = "OK"
     MOV dword ptr [EBX + 0x1b8],0x0     ; 0049a69c
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0049a6a6
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)

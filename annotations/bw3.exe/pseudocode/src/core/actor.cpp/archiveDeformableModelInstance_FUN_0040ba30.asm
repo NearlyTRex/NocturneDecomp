@@ -24,7 +24,7 @@
 ;   ... and 27 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007df9b8
+;   int g_ActorReadingMode
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveString_FUN_0040b680
@@ -40,7 +40,7 @@ section .text
     SUB ESP,0xc8                        ; 0040ba32
     MOV EDI,dword ptr [ESP + 0xd4]      ; 0040ba38
     MOV EDX,dword ptr [ESP + 0xd8]      ; 0040ba3f
-    CMP dword ptr [0x007df9b8],0x1      ; 0040ba46 | DAT_007df9b8
+    CMP dword ptr [0x007df9b8],0x1      ; 0040ba46 | g_ActorReadingMode
     JNZ 0x0040ba72                      ; 0040ba4d
         ;   XREF to: 0040ba72 (CONDITIONAL_JUMP)  ; LAB_0040ba72
     PUSH EDX                            ; 0040ba4f

@@ -34,24 +34,24 @@
 ; Referenced Globals:
 ;   void* switchdataD_00469af4 = 00469bfd
 ;   void* switchdataD_00469b14 = 00469d56
-;   undefined4 DAT_01bdd7bc
-;   undefined4 DAT_01bdd7c0
-;   undefined4 DAT_01bdd7c4
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5ac
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
+;   int g_CurrentDrawColor
+;   int g_PaletteColorIndex
+;   CBitFont* g_CurrentFont
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5ac
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
 ;
 ; Called Functions:
+;   engine_2d.c_disableTextWrap_FUN_00402830
 ;   engine_2d.c_drawTextCenteredAtColor_FUN_00402600
 ;   engine_2d.c_drawTextCenteredColor_FUN_004026d0
 ;   engine_2d.c_drawTextColor_FUN_00402440
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540
-;   engine_2d.c_FUN_00402800
-;   engine_2d.c_FUN_00402810
-;   engine_2d.c_FUN_00402830
-;   engine_2d.c_FUN_00402840
-;   engine_2d.c_FUN_00402850
+;   engine_2d.c_getTextColor_FUN_00402840
+;   engine_2d.c_getTextWrapEnabled_FUN_00402800
+;   engine_2d.c_setTextColor_FUN_00402850
+;   engine_2d.c_setTextWrapEnabled_FUN_00402810
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0
 ;   engine_font.cpp_CBitFont_drawTextRight_FUN_004b0da0
@@ -81,33 +81,33 @@ section .text
     MOV EDX,dword ptr [EAX + 0xc]       ; 00469b66
     ADD EBX,EDX                         ; 00469b69
     ADD EBP,EDX                         ; 00469b6b
-    MOV EDX,dword ptr [0x01c6b5a8]      ; 00469b6d | DAT_01c6b5a8
+    MOV EDX,dword ptr [0x01c6b5a8]      ; 00469b6d | g_INT_01c6b5a8
     MOV dword ptr [ESP + 0x4],EDX       ; 00469b73
-    MOV EDX,dword ptr [0x01c6b5b0]      ; 00469b77 | DAT_01c6b5b0
+    MOV EDX,dword ptr [0x01c6b5b0]      ; 00469b77 | g_INT_01c6b5b0
     MOV dword ptr [ESP + 0x14],EDX      ; 00469b7d
-    MOV EDX,dword ptr [0x01c6b5ac]      ; 00469b81 | DAT_01c6b5ac
+    MOV EDX,dword ptr [0x01c6b5ac]      ; 00469b81 | g_INT_01c6b5ac
     MOV dword ptr [ESP + 0x8],EDX       ; 00469b87
-    MOV EDX,dword ptr [0x01c6b5b4]      ; 00469b8b | DAT_01c6b5b4
+    MOV EDX,dword ptr [0x01c6b5b4]      ; 00469b8b | g_INT_01c6b5b4
     MOV dword ptr [ESP + 0x10],EDX      ; 00469b91
     MOV EDX,dword ptr [EAX + 0x10]      ; 00469b95
-    MOV dword ptr [0x01c6b5a8],EDX      ; 00469b98 | DAT_01c6b5a8
+    MOV dword ptr [0x01c6b5a8],EDX      ; 00469b98 | g_INT_01c6b5a8
     MOV EDX,dword ptr [EAX + 0x18]      ; 00469b9e
-    MOV dword ptr [0x01c6b5b0],EDX      ; 00469ba1 | DAT_01c6b5b0
+    MOV dword ptr [0x01c6b5b0],EDX      ; 00469ba1 | g_INT_01c6b5b0
     MOV EDX,dword ptr [EAX + 0x14]      ; 00469ba7
     MOV EAX,dword ptr [EAX + 0x1c]      ; 00469baa
-    MOV [0x01c6b5b4],EAX                ; 00469bad | DAT_01c6b5b4
+    MOV [0x01c6b5b4],EAX                ; 00469bad | g_INT_01c6b5b4
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00469bb2
     SHL EAX,0x2                         ; 00469bb6
     MOV dword ptr [ESP + 0x40],ECX      ; 00469bb9
     MOV dword ptr [ESP + 0x1c],EAX      ; 00469bbd
-    MOV EAX,[0x01bdd7c4]                ; 00469bc1 | DAT_01bdd7c4
-    MOV dword ptr [0x01c6b5ac],EDX      ; 00469bc6 | DAT_01c6b5ac
+    MOV EAX,[0x01bdd7c4]                ; 00469bc1 | g_CurrentFont
+    MOV dword ptr [0x01c6b5ac],EDX      ; 00469bc6 | g_INT_01c6b5ac
     TEST EAX,EAX                        ; 00469bcc
     JZ 0x00469dcb                       ; 00469bce
         ;   XREF to: 00469dcb (CONDITIONAL_JUMP)  ; LAB_00469dcb
     CALL engine_font.cpp_getDefaultTextColor_FUN_004b12e0 ; 00469bd4
         ;   XREF to: 004b12e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_getDefaultTextColor_FUN_004b12e0()
-    MOV ECX,dword ptr [0x01bdd7bc]      ; 00469bd9 | DAT_01bdd7bc
+    MOV ECX,dword ptr [0x01bdd7bc]      ; 00469bd9 | g_CurrentDrawColor
     PUSH ECX                            ; 00469bdf
     MOV dword ptr [ESP + 0x4],EAX       ; 00469be0
     CALL engine_font.cpp_setDefaultTextColor_FUN_004b1300 ; 00469be4
@@ -125,7 +125,7 @@ section .text
     PUSH -0x3                           ; 00469c00
     PUSH EBX                            ; 00469c02
     PUSH ESI                            ; 00469c03
-    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469c04 | DAT_01bdd7c4
+    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469c04 | g_CurrentFont
     PUSH EBP                            ; 00469c0a
         ;   Label: LAB_00469c0a
     CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0 ; 00469c0b
@@ -140,13 +140,13 @@ section .text
     ADD ESP,0x4                         ; 00469c1c
         ;   Label: LAB_00469c1c
     MOV EAX,dword ptr [ESP + 0x4]       ; 00469c1f
-    MOV [0x01c6b5a8],EAX                ; 00469c23 | DAT_01c6b5a8
+    MOV [0x01c6b5a8],EAX                ; 00469c23 | g_INT_01c6b5a8
     MOV EAX,dword ptr [ESP + 0x14]      ; 00469c28
-    MOV [0x01c6b5b0],EAX                ; 00469c2c | DAT_01c6b5b0
+    MOV [0x01c6b5b0],EAX                ; 00469c2c | g_INT_01c6b5b0
     MOV EAX,dword ptr [ESP + 0x8]       ; 00469c31
-    MOV [0x01c6b5ac],EAX                ; 00469c35 | DAT_01c6b5ac
+    MOV [0x01c6b5ac],EAX                ; 00469c35 | g_INT_01c6b5ac
     MOV EAX,dword ptr [ESP + 0x10]      ; 00469c3a
-    MOV [0x01c6b5b4],EAX                ; 00469c3e | DAT_01c6b5b4
+    MOV [0x01c6b5b4],EAX                ; 00469c3e | g_INT_01c6b5b4
     ADD ESP,0x20                        ; 00469c43
     POP EBP                             ; 00469c46
     POP EDI                             ; 00469c47
@@ -159,7 +159,7 @@ section .text
     PUSH -0x3                           ; 00469c4e
     PUSH EBX                            ; 00469c50
     PUSH ESI                            ; 00469c51
-    MOV EDI,dword ptr [0x01bdd7c4]      ; 00469c52 | DAT_01bdd7c4
+    MOV EDI,dword ptr [0x01bdd7c4]      ; 00469c52 | g_CurrentFont
     PUSH EDI                            ; 00469c58
     CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004b0da0 ; 00469c59
         ;   XREF to: 004b0da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004b0da0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
@@ -171,13 +171,13 @@ section .text
     PUSH -0x3                           ; 00469c63
     PUSH EBX                            ; 00469c65
     PUSH ESI                            ; 00469c66
-    MOV ESI,dword ptr [0x01bdd7c4]      ; 00469c67 | DAT_01bdd7c4
+    MOV ESI,dword ptr [0x01bdd7c4]      ; 00469c67 | g_CurrentFont
     PUSH ESI                            ; 00469c6d
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0 ; 00469c6e
         ;   XREF to: 004b0ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     JMP 0x00469c10                      ; 00469c73
         ;   XREF to: 00469c10 (UNCONDITIONAL_JUMP)  ; LAB_00469c10
-    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469c75 | DAT_01bdd7c4
+    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469c75 | g_CurrentFont
         ;   Label: caseD_3
     MOV EDX,dword ptr [EBP + 0x41f0]    ; 00469c7b
     MOV EAX,EDX                         ; 00469c81
@@ -192,7 +192,7 @@ section .text
     PUSH ESI                            ; 00469c92
     JMP 0x00469c0a                      ; 00469c93
         ;   XREF to: 00469c0a (UNCONDITIONAL_JUMP)  ; LAB_00469c0a
-    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469c98 | DAT_01bdd7c4
+    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469c98 | g_CurrentFont
         ;   Label: caseD_4
     MOV EDX,dword ptr [EBP + 0x41f0]    ; 00469c9e
     MOV EAX,EDX                         ; 00469ca4
@@ -218,7 +218,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x50]      ; 00469cc7
     PUSH ECX                            ; 00469ccb
     PUSH ESI                            ; 00469ccc
-    MOV EBX,dword ptr [0x01bdd7c4]      ; 00469ccd | DAT_01bdd7c4
+    MOV EBX,dword ptr [0x01bdd7c4]      ; 00469ccd | g_CurrentFont
     PUSH EBX                            ; 00469cd3
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0 ; 00469cd4
         ;   XREF to: 004b0fa0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
@@ -227,7 +227,7 @@ section .text
         ;   XREF to: 00469c13 (UNCONDITIONAL_JUMP)  ; default
     ADD EBX,EBP                         ; 00469ce1
         ;   Label: caseD_6
-    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469ce3 | DAT_01bdd7c4
+    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469ce3 | g_CurrentFont
     LEA EDX,[EBX + 0x1]                 ; 00469ce9
     MOV EAX,dword ptr [EBP + 0x41f0]    ; 00469cec
     SUB EDX,EAX                         ; 00469cf2
@@ -244,7 +244,7 @@ section .text
         ;   XREF to: 00469c0a (UNCONDITIONAL_JUMP)  ; LAB_00469c0a
     ADD EBX,EBP                         ; 00469d09
         ;   Label: caseD_7
-    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469d0b | DAT_01bdd7c4
+    MOV EBP,dword ptr [0x01bdd7c4]      ; 00469d0b | g_CurrentFont
     INC EBX                             ; 00469d11
     MOV EDX,dword ptr [EBP + 0x41f0]    ; 00469d12
     SUB EBX,EDX                         ; 00469d18
@@ -296,13 +296,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 00469d61
         ;   Label: default
     PUSH EAX                            ; 00469d65
-    CALL engine_2d.c_FUN_00402850       ; 00469d66
-        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402850(int color)
+    CALL engine_2d.c_setTextColor_FUN_00402850 ; 00469d66
+        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextColor_FUN_00402850(int color)
     ADD ESP,0x4                         ; 00469d6b
     MOV EDX,dword ptr [ESP + 0xc]       ; 00469d6e
     PUSH EDX                            ; 00469d72
-    CALL engine_2d.c_FUN_00402810       ; 00469d73
-        ;   XREF to: 00402810 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402810(int enabled)
+    CALL engine_2d.c_setTextWrapEnabled_FUN_00402810 ; 00469d73
+        ;   XREF to: 00402810 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextWrapEnabled_FUN_00402810(int enabled)
     JMP 0x00469c1c                      ; 00469d78
         ;   XREF to: 00469c1c (UNCONDITIONAL_JUMP)  ; LAB_00469c1c
     SUB EBX,0x5                         ; 00469d7d
@@ -350,19 +350,19 @@ section .text
     ADD ESP,0x10                        ; 00469dc6
     JMP 0x00469d61                      ; 00469dc9
         ;   XREF to: 00469d61 (UNCONDITIONAL_JUMP)  ; default
-    CALL engine_2d.c_FUN_00402800       ; 00469dcb
-        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)  ; int engine_2d.c_FUN_00402800()
+    CALL engine_2d.c_getTextWrapEnabled_FUN_00402800 ; 00469dcb
+        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getTextWrapEnabled_FUN_00402800()
         ;   Label: LAB_00469dcb
     MOV dword ptr [ESP + 0xc],EAX       ; 00469dd0
-    CALL engine_2d.c_FUN_00402840       ; 00469dd4
-        ;   XREF to: 00402840 (UNCONDITIONAL_CALL)  ; int engine_2d.c_FUN_00402840()
+    CALL engine_2d.c_getTextColor_FUN_00402840 ; 00469dd4
+        ;   XREF to: 00402840 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getTextColor_FUN_00402840()
     MOV dword ptr [ESP + 0x18],EAX      ; 00469dd9
-    CALL engine_2d.c_FUN_00402830       ; 00469ddd
-        ;   XREF to: 00402830 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402830()
-    MOV EDX,dword ptr [0x01bdd7c0]      ; 00469de2 | DAT_01bdd7c0
+    CALL engine_2d.c_disableTextWrap_FUN_00402830 ; 00469ddd
+        ;   XREF to: 00402830 (UNCONDITIONAL_CALL)  ; void engine_2d.c_disableTextWrap_FUN_00402830()
+    MOV EDX,dword ptr [0x01bdd7c0]      ; 00469de2 | g_PaletteColorIndex
     PUSH EDX                            ; 00469de8
-    CALL engine_2d.c_FUN_00402850       ; 00469de9
-        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402850(int color)
+    CALL engine_2d.c_setTextColor_FUN_00402850 ; 00469de9
+        ;   XREF to: 00402850 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextColor_FUN_00402850(int color)
     ADD ESP,0x4                         ; 00469dee
     CMP dword ptr [ESP + 0x4c],0x7      ; 00469df1
     JA 0x00469d61                       ; 00469df6

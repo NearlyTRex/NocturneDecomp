@@ -6,28 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_0055dcf0(int buffer_index)
 
 {
   MMRESULT MVar1;
-  int iVar2;
   
-  iVar2 = buffer_index * 4;
-  if ((*(int *)(&DAT_02cf55f8 + iVar2) == 0) || (*(int *)(iVar2 + 0x2cf5558) == 0)) {
+  if ((g_WaveInBuffers[buffer_index] == 0) || (g_WaveInHeaders[buffer_index] == (LPWAVEHDR)0x0)) {
     return 0;
   }
-  *(int *)(*(int *)(iVar2 + 0x2cf5558) + 4) =
-       _DAT_02cf564c *
-       ((int)((_DAT_02cf5648 + (_DAT_02cf5648 >> 0x1f) * -8) -
-             (uint)((_DAT_02cf5648 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02cf5658;
-  MVar1 = waveInPrepareHeader(_DAT_02cf5504,*(LPWAVEHDR *)(iVar2 + 0x2cf5558),0x20);
+  g_WaveInHeaders[buffer_index]->dwBufferLength =
+       g_WaveInChannels *
+       ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
+             (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples;
+  MVar1 = waveInPrepareHeader((HWAVEIN)g_WaveInHandle,g_WaveInHeaders[buffer_index],0x20);
   if (MVar1 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_0055a560("waveOutPrepareHeader failed!");
     return 0;
   }
-  MVar1 = waveInAddBuffer(_DAT_02cf5504,*(LPWAVEHDR *)(iVar2 + 0x2cf5558),0x20);
+  MVar1 = waveInAddBuffer((HWAVEIN)g_WaveInHandle,g_WaveInHeaders[buffer_index],0x20);
   if (MVar1 == 0) {
     return 1;
   }

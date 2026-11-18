@@ -22,6 +22,7 @@
 #include "types/classes/CBox.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CChemPuzzle.h"
+#include "types/classes/CColor3f.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x4f.h"
@@ -40,6 +41,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
+#include "types/structs/SMRGLModelBounds.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -48,7 +50,7 @@
 
 void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00410110(CBaron *this_ptr,float delta_time);
 void __cdecl core_baron_cpp_CBaron_archive_FUN_00410180(CBaron *this_ptr);
-undefined4 core_baron_cpp_FUN_004101e0(void);
+int __cdecl core_baron_cpp_CBaron_renderOpaque_FUN_004101e0(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004101f0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_processDamage_FUN_00410400(CBaron *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_baron_cpp_CBaron_drawWeapon_FUN_00410420(CBaron *this_ptr,int drawn);
@@ -72,7 +74,7 @@ CDemonActorType * __cdecl core_barrier_cpp_CBarrier_getActorType_FUN_00410820(CB
 CBarrier * __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00410830(CBarrier *this_ptr);
 void __cdecl core_barrier_cpp_CBarrier_setup_FUN_00410880(CBarrier *this_ptr);
 int __cdecl core_barrier_cpp_CBarrier_renderTransparent_FUN_004108b0(CBarrier *this_ptr);
-CBoundingBox3D * __cdecl core_barrier_cpp_CBarrier_getBoundingBox_FUN_004108c0(CBarrier *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_barrier_cpp_CBarrier_getBoundingBox_FUN_004108c0(CBarrier *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_barrier_cpp_CBarrier_archive_FUN_00410940(CBarrier *this_ptr);
 ECollisionType __cdecl core_barrier_cpp_CBarrier_getCollisionType_FUN_004109a0(CBarrier *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_barrier_cpp_CBarrier_updateCollisionData_FUN_004109e0(CBarrier *this_ptr);
@@ -85,7 +87,7 @@ void __cdecl core_bat_cpp_CBat_setup_FUN_00410c20(CBat *this_ptr);
 void __cdecl core_bat_cpp_CBat_archive_FUN_00410c90(CBat *this_ptr);
 void __cdecl core_bat_cpp_CBat_process_FUN_00410d80(CBat *this_ptr,float delta_time);
 int __cdecl core_bat_cpp_CBat_renderOpaque_FUN_00410f70(CBat *this_ptr);
-CBoundingBox3D * __cdecl core_bat_cpp_CBat_getBoundingBox_FUN_00411000(CBat *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_bat_cpp_CBat_getBoundingBox_FUN_00411000(CBat *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_00411060(CBat *this_ptr);
 CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_00411140(CBat *this_ptr,uint flags);
 void __cdecl core_batcreat_cpp_staticInit_FUN_004111b0(void);
@@ -127,7 +129,7 @@ void __cdecl core_battery_cpp_CBattery_process_FUN_004144f0(CBattery *this_ptr,f
 int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_00414500(CBattery *this_ptr);
 void __cdecl core_battery_cpp_CBattery_archive_FUN_004145a0(CBattery *this_ptr);
 ECollisionType __cdecl core_battery_cpp_CBattery_getCollisionType_FUN_004145f0(CBattery *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_battery_cpp_CBattery_getBoundingBox_FUN_00414600(CBattery *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_battery_cpp_CBattery_getBoundingBox_FUN_00414600(CBattery *this_ptr,CBoundingBox3D *out_box);
 CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_00414640(CBattery *this_ptr,uint flags);
 void __cdecl core_beast_cpp_staticInit_FUN_00414690(void);
 CBeast * __cdecl core_beast_cpp_factoryFuncBeast_FUN_004146c0(void);
@@ -163,7 +165,7 @@ void __cdecl core_bird_cpp_CBird_renderBackground_FUN_00415660(CBird *this_ptr,i
 int __cdecl core_bird_cpp_CBird_renderOpaque_FUN_00415690(CBird *this_ptr);
 int __cdecl core_bird_cpp_CBird_renderTransparent_FUN_00415730(CBird *this_ptr);
 void __cdecl core_bird_cpp_CBird_archive_FUN_00415780(CBird *this_ptr);
-undefined4 core_bird_cpp_FUN_00415830(CMotionController *param_1,char *param_2);
+int __cdecl core_bird_cpp_setRandomMotionVariant_FUN_00415830(CMotionController *motion_controller,char *motion_name);
 void __cdecl core_bird_cpp_CBird_processDamage_FUN_00415910(CBird *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_bird_cpp_CBird_isInvulnerable_FUN_004159c0(CBird *this_ptr);
 CPathMap * __cdecl core_bird_cpp_CBird_getPathMap_FUN_004159e0(CBird *this_ptr);
@@ -187,7 +189,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecP
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_00416620(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00416790(CAudioRecPuzzle *this_ptr,float delta_time);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_00416cf0(CAudioRecPuzzle *this_ptr,int button);
-void __cdecl core_bmppuzzl_cpp_FUN_00416d50(CAudioRecPuzzle *this_ptr);
+void __cdecl core_bmppuzzl_cpp_doNothing_FUN_00416d50(void);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00416d60(CAudioRecPuzzle *this_ptr);
 void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20(CAudioRecPuzzle *this_ptr,int knob);
 int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_00416f10(CAudioRecPuzzle *this_ptr,int x,int y);
@@ -226,7 +228,7 @@ CBodyPart * __cdecl core_bodypart_cpp_factoryFuncBodyPart_FUN_00418b10(void);
 CDemonActorType * __cdecl core_bodypart_cpp_CBodyPart_getActorType_FUN_00418b30(CBodyPart *this_ptr);
 CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00418b40(CBodyPart *this_ptr);
 CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags);
-void core_bodypart_cpp_setCounts_FUN_00418d00(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_00418d00(CBodyPart *this_ptr,int vertex_count,int tri_count);
 void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00418e50(CBodyPart *this_ptr,int render_flags);
 int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_00418fc0(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419130(CBodyPart *this_ptr,int layer_flag);
@@ -236,7 +238,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
 void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419740(CBodyPart *this_ptr,float delta_time);
 void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00419940(CBodyPart *this_ptr,float delta_time);
 ECollisionType __cdecl core_bodypart_cpp_CBodyPart_getCollisionType_FUN_00419aa0(CBodyPart *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00419ab0(CBodyPart *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00419ab0(CBodyPart *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_bodypart_cpp_CBodyPart_canPickup_FUN_00419ae0(CBodyPart *this_ptr,CDemonActor *picker);
 void __cdecl core_bodypart_cpp_CBodyPart_pickup_FUN_00419b00(CBodyPart *this_ptr,CDemonActor *carrier);
 void __cdecl core_bodypart_cpp_CBodyPart_onDropped_FUN_00419b10(CBodyPart *this_ptr,CVector3f *drop_position);
@@ -247,25 +249,25 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a70
 void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041aaa0(CBodyPart *this_ptr,char *model_name,CVector3f *position_offset,CVector3f *euler_angles);
 void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ab20(CBodyPart *this_ptr,CVector3f *position);
 int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_0041ac60(CBodyPart *this_ptr,char *texture_name);
-void core_bodypart_cpp_FUN_0041ad40(int param_1);
+void __cdecl core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_0041aef0(CBodyPart *this_ptr);
 int __cdecl core_bodypart_cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041af30(CBodyPart *this_ptr);
 void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_0041af50(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
-void core_bodypart_cpp_FUN_0041afa0(float *param_1,float *param_2);
-void core_bodypart_cpp_FUN_0041afe0(float *param_1,float *param_2);
-void core_bodypart_cpp_FUN_0041b020(float *param_1,float *param_2);
-void core_bodypart_cpp_FUN_0041b080(float *param_1);
+CVector3f * __stack2_esi core_bodypart_cpp_scaleVector_FUN_0041afa0(CVector3f *src,float *scalar,CVector3f *dst);
+CVector3f * __stack2_esi core_bodypart_cpp_subtractVector_FUN_0041afe0(CVector3f *a,CVector3f *b,CVector3f *dst);
+CVector3f * __stack2_esi core_bodypart_cpp_addVector_FUN_0041b020(CVector3f *a,CVector3f *b,CVector3f *dst);
+CBoundingBox3D * __stack_esi core_bodypart_cpp_boundingBoxExtent_FUN_0041b080(CBoundingBox3D *src,CBoundingBox3D *dst);
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_0041b130(SBodyPartFire *this_ptr);
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_0041b150(SBodyPartFire *this_ptr,uint flags);
 SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_0041b170(SBodyPartModel *this_ptr);
-void core_bodypart_cpp_FUN_0041b190(void *param_1);
+SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor2_FUN_0041b190(SBodyPartFire *this_ptr,uint flags);
 void __cdecl core_boneguy_cpp_staticInit_FUN_0041b1b0(void);
-void core_boneguy_cpp_FUN_0041b1e0(int param_1);
-void core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_0041b2a0(int param_1);
+CVector3f * __stack_esi core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_0041b1e0(CDemonActor *actor,CVector3f *out);
+CVector3f * __stack_esi core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_0041b2a0(CDemonActor *actor,CVector3f *out);
 CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_0041b3a0(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_0041b3c0(CBoneGuy *this_ptr);
-void core_boneguy_cpp_rgbToHsv_FUN_0041b3d0(void);
-void core_boneguy_cpp_hsvToRgb_FUN_0041b590(float *param_1);
+CColor3f * __stack_esi core_boneguy_cpp_rgbToHsv_FUN_0041b3d0(CColor3f *in_rgb,CColor3f *out_hsv);
+CColor3f * __stack_esi core_boneguy_cpp_hsvToRgb_FUN_0041b590(CColor3f *in_hsv,CColor3f *out_rgb);
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041b750(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_0041b940(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,float delta_time);
@@ -285,12 +287,12 @@ SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_ctor_FUN_0041d8e0(SBoneGuyBox
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041d8f0(SMRGLHeaderExtended *mrgl_data);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041d920(char *filename);
 void __cdecl engine_boss_c_modelStructNotSupported3_FUN_0041d950(SMRGLHeaderExtended *mrgl_data);
-void engine_boss_c_FUN_0041d980(void);
+void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041d980(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds);
 CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041da00(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041dab0(CBox *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041dac0(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
-void core_box_cpp_FUN_0041dcf0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
-void __cdecl core_box_cpp_FUN_0041de90(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
+void __cdecl core_box_cpp_CBox_setupN_FUN_0041dcf0(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume);
+void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041de90(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 void __cdecl core_box_cpp_CBox_process_FUN_0041e0d0(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e130(CBox *this_ptr,float delta_time);
 

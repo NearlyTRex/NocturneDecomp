@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor_ptr
 ; char *           Stack[0x8]:4   class_name
 ;
-; XREF[55]:
+; XREF[56]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cb49
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a0e8
 ;   core_ammo.cpp_CAmmo_canPickup_FUN_0040e080 at 0040e08a
@@ -17,8 +17,8 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930 at 00418e04
 ;   core_boxactor.cpp_CBoxActor_canPickup_FUN_004200a0 at 004200b7
 ;   core_carved.cpp_CCarved_isGrabbable_FUN_00428fc0 at 00428fca
-;   core_carved.cpp_FUN_00427bc0 at 00428387
-;   ... and 45 more
+;   core_carved.cpp_CCarved_processPickup_FUN_00427bc0 at 00428387
+;   ... and 46 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_matchesClassName_FUN_0040c7f0

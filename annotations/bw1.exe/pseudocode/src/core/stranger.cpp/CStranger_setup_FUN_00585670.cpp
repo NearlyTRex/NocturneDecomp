@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_00585670(CStranger *this_ptr)
 
@@ -32,56 +31,58 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00585670(CStranger *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004eaa10(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_00);
-  _DAT_02c83600 =
+  g_INT_ARRAY_02c83600[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 head",1);
-  _DAT_02c83604 =
+  g_INT_ARRAY_02c83600[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Clavicle",1);
-  _DAT_02c83608 =
+  g_INT_ARRAY_02c83600[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Clavicle",1);
-  _DAT_02c8360c =
+  g_INT_ARRAY_02c83600[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_02c83610 =
+  g_INT_ARRAY_02c83600[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_02c83614 =
+  g_INT_ARRAY_02c83600[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L ForeArm",1);
-  _DAT_02c83618 =
+  g_INT_ARRAY_02c83600[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_02c8361c =
+  g_INT_ARRAY_02c83600[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_02c83620 =
+  g_INT_ARRAY_02c83600[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Foot",1);
-  _DAT_02c83624 =
+  g_INT_ARRAY_02c83600[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Thigh",1);
-  _DAT_02c83628 =
+  g_INT_ARRAY_02c83600[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Thigh",1);
-  _DAT_02c8362c =
+  g_INT_ARRAY_02c83600[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Calf",1);
-  _DAT_02c83630 =
+  g_INT_ARRAY_02c83600[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Calf",1);
-  _DAT_02c83634 =
+  g_INT_ARRAY_02c83600[0xd] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_02c83638 =
+  g_INT_ARRAY_02c83600[0xe] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_02c8363c =
+  g_INT_ARRAY_02c83600[0xf] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Neck",1);
-  _DAT_02c83640 =
+  g_INT_ARRAY_02c83600[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine2",1);
-  _DAT_02c83644 =
+  g_INT_ARRAY_02c83600[0x11] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine1",1);
-  _DAT_02c83648 =
+  g_INT_ARRAY_02c83600[0x12] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine",1);
-  _DAT_02c8364c =
+  g_INT_ARRAY_02c83600[0x13] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Pelvis",1);
   iVar4 = 1;
   pcVar3 = "turnlstart";
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_02c83634;
-  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_02c83638;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_ARRAY_02c83600[0xd];
+  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_ARRAY_02c83600[0xe];
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
-  _DAT_02c83650 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
+  g_INT_ARRAY_02c83600[0x14] =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "turnrstart";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
-  _DAT_02c83654 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
+  g_INT_ARRAY_02c83600[0x15] =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "pickup";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
@@ -89,7 +90,7 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00585670(CStranger *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_005675f0
             (this_ptr_00,iVar4,22.0);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-            (this_ptr_00,_DAT_02c83638,&CStack_1c);
+            (this_ptr_00,g_INT_ARRAY_02c83600[0xe],&CStack_1c);
   fStack_40 = CStack_1c.x;
   (&stack0xffffffc4)[(uint)bVar2 * 0xfffffffe] =
        (float)*(uint *)((int)&CStack_1c + (uint)bVar2 * -8 + 4);
@@ -101,7 +102,7 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00585670(CStranger *this_ptr)
     (this_ptr->ref_r_hand_bone_pos).z = fStack_38;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
-            (&(this_ptr->base).base.model,_DAT_02c83610,&CStack_34);
+            (&(this_ptr->base).base.model,g_INT_ARRAY_02c83600[4],&CStack_34);
   fStack_28 = CStack_34.x;
   afStack_24[(uint)bVar2 * -2] = *(float *)((int)&CStack_34 + (uint)bVar2 * -8 + 4);
   afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
@@ -122,7 +123,8 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00585670(CStranger *this_ptr)
   this_ptr->goggle_sfx_handles[1] = 0;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
                           (&(this_ptr->base).base.model);
-  _DAT_02c83658 =
-       core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780(this_ptr_02,&DAT_005f6706,1);
+  g_INT_ARRAY_02c83600[0x16] =
+       core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780(this_ptr_02,"head",1)
+  ;
   return;
 }

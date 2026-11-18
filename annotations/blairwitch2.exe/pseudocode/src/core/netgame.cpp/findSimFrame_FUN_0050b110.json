@@ -1,0 +1,128 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050b110",
+    "address_range": [
+      [
+        "0050b110",
+        "0050b152"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_findSimFrame_FUN_0050b110",
+    "signature": "int __cdecl core_netgame_cpp_findSimFrame_FUN_0050b110(int sequence_number)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d54640",
+      "name": "g_SimFrameCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.068965517241379,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 1,
+      "CBRANCH": 3,
+      "COPY": 26,
+      "INT_ADD": 10,
+      "INT_AND": 58,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 6,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 8,
+      "INT_XOR": 5,
+      "LOAD": 7,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 234
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052c2e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9153
+    },
+    "bw3.exe": {
+      "addr": "00503bf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0053f550",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e96e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sequence_number",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_SSimFrame_ARRAY_01d54644",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SSimFrame_ARRAY_01d54644[0].player_input + iVar1 + -0xc)) {",
+      "type": "pointer_cast"
+    }
+  ]
+}

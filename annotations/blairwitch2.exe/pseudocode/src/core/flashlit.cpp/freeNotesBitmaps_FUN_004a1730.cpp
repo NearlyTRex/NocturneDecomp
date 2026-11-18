@@ -1,0 +1,34 @@
+// Name: core_flashlit.cpp_freeNotesBitmaps_FUN_004a1730
+// Address: 004a1730
+// Address Range: [[004a1730, 004a17ed]]
+// Convention: __cdecl
+// Signature: void __cdecl core_flashlit_cpp_freeNotesBitmaps_FUN_004a1730(void)
+
+#include "nocturne.h"
+
+void __cdecl core_flashlit_cpp_freeNotesBitmaps_FUN_004a1730(void)
+
+{
+  CAlphaBitmap *this_ptr;
+  
+  this_ptr = CAlphaBitmap_ARRAY_01caf128;
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf114);
+  do {
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(this_ptr);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != &CAlphaBitmap_01caf1a0);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1a0);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1b4);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1c8);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1dc);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1f0);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf204);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf218);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf22c);
+  g_INT_00616040 = -1;
+  g_INT_00616010 = 1;
+  g_INT_01caf488 = 0;
+  g_CHAR_01caf4a0 = '\0';
+  g_INT_01caf568 = 0;
+  return;
+}

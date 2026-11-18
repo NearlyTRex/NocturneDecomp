@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c8ff0 at 005c9010
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9f6e0
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -46,7 +46,7 @@ section .text
     CMP EDX,ESI                         ; 005cc5ca
     JBE 0x005cc5f2                      ; 005cc5cc
         ;   XREF to: 005cc5f2 (CONDITIONAL_JUMP)  ; LAB_005cc5f2
-    CMP dword ptr [0x02c9f6e0],0x0      ; 005cc5ce | DAT_02c9f6e0
+    CMP dword ptr [0x02c9f6e0],0x0      ; 005cc5ce | g_MultibyteLocaleActive
     JZ 0x005cc5f2                       ; 005cc5d5
         ;   XREF to: 005cc5f2 (CONDITIONAL_JUMP)  ; LAB_005cc5f2
     MOV AL,byte ptr [EAX + -0x1]        ; 005cc5d7

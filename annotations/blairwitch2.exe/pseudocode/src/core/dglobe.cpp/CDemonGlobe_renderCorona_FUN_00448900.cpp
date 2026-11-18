@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *this_ptr)
 
 {
@@ -15,17 +13,22 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
   int iVar1;
   int iVar2;
   byte bVar3;
-  float10 fVar4;
-  float afStackY_1044 [1005];
+  double dVar4;
+  float afStackY_1044 [1004];
   SMRGLHeaderPrimitive *prim;
-  code *scanline_renderer;
-  SMRGLHeaderPrimitive local_84;
+  CustomScanlineFunc *scanline_renderer;
+  byte local_84 [4];
+  uint local_80;
+  uint local_7c;
+  uint local_78;
+  int local_74;
   uint local_6c;
   uint local_68;
   uint local_64;
   uint local_60;
   float local_5c;
-  float local_58 [5];
+  float local_58 [2];
+  CVector3f local_50;
   float local_44;
   float local_40;
   float local_3c;
@@ -37,12 +40,13 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
   
   bVar3 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (0x01BA5C50,&this_ptr->position);
-  engine_drender_cpp_FUN_0046b5e0(DAT_0060b280);
-  local_5c = local_58[2];
-  local_58[(uint)bVar3 * -2] = local_58[(uint)bVar3 * -2 + 3];
+            (g_CDemonRenderer_PTR_0060b27c,&this_ptr->position);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046b5e0
+            (g_CDemonRenderer_PTR_0060b280,&local_50);
+  local_5c = local_50.x;
+  local_58[(uint)bVar3 * -2] = *(float *)((int)&local_50 + (uint)bVar3 * -8 + 4);
   local_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-       local_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+       *(float *)((int)&local_50 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   local_28[2] = local_5c - (this_ptr->position).x;
   local_28[3] = local_58[0] - (this_ptr->position).y;
   local_18 = local_58[1] - (this_ptr->position).z;
@@ -57,40 +61,42 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
   }
   if (this_ptr->radius_squared <=
       local_58[1] * local_58[1] + local_5c * local_5c + local_58[0] * local_58[0]) {
-    local_14 = this_ptr->radius * (float)_DAT_005cf012;
+    local_14 = this_ptr->radius * (float)0.00390625;
     iVar2 = 0;
     iVar1 = 0;
     do {
-      local_44 = (float)*(int *)((int)&DAT_0060a0fc + iVar1) * local_14;
-      local_40 = (float)*(int *)((int)&DAT_0060a100 + iVar1) * local_14;
-      local_3c = (float)*(int *)((int)&DAT_0060a104 + iVar1) * local_14;
-      local_38.x = (int)ROUND(local_44 * _DAT_005f5020);
-      local_38.y = (int)ROUND(local_40 * _DAT_005f5020);
-      local_38.z = (int)ROUND(local_3c * _DAT_005f5020);
+      local_44 = (float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_14;
+      local_40 = (float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_14;
+      local_3c = (float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_14;
+      local_38.x = (int)ROUND(local_44 * 256.0f);
+      local_38.y = (int)ROUND(local_40 * 256.0f);
+      local_38.z = (int)ROUND(local_3c * 256.0f);
       iVar1 = iVar1 + 0xc;
-      engine_special_cpp_FUN_0055d723
+      engine_special_cpp_transformAndProjectPoint_FUN_0055d723
                 ((SProjectedVertex *)
-                 ((int)&(0x01BA5C50->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
-                 &local_38);
+                 ((int)&(g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iVar2),&local_38);
       iVar2 = iVar2 + 0x30;
     } while (iVar1 != 0x2e8);
     iVar1 = 0;
     do {
-      this_ptr_00 = 0x01BA5C50;
-      local_84.base.count = *(int *)((int)&DAT_0060a3e4 + iVar1);
-      local_84.surface_normal.A = *(UIntegerFloat *)((int)&DAT_0060a3e8 + iVar1);
-      local_84.surface_normal.B = *(UIntegerFloat *)((int)&DAT_0060a3ec + iVar1);
-      local_84.surface_normal.C = *(UIntegerFloat *)((int)&DAT_0060a3f0 + iVar1);
-      local_6c = *(uint *)((int)&DAT_0060a3f8 + iVar1);
-      fVar4 = (float10)*(int *)((int)&DAT_0060a3f4 + iVar1) * (float10)this_ptr->radius;
-      local_68 = *(uint *)((int)&DAT_0060a3fc + iVar1);
-      local_64 = *(uint *)((int)&DAT_0060a400 + iVar1);
-      scanline_renderer = core_dcamera_cpp_renderCoronaDepthScanline_FUN_0043f860;
-      local_60 = *(uint *)((int)&DAT_0060a404 + iVar1);
+      this_ptr_00 = g_CDemonRenderer_PTR_0060b27c;
+      scanline_renderer = (CustomScanlineFunc *)local_84;
+      local_80 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x14);
+      local_7c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x10);
+      local_78 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0xc);
+      local_74 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -8);
+      iVar2 = iVar1 + -4;
+      local_6c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1);
+      local_68 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 4);
+      local_64 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 8);
+      local_60 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 0xc);
       iVar1 = iVar1 + 0x24;
-      prim = &local_84;
-      round();
-      local_84.surface_normal.D.i = (int)ROUND(fVar4);
+      prim = (SMRGLHeaderPrimitive *)0x448aa6;
+      dVar4 = round
+                        ((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2) *
+                                 this_ptr->radius));
+      local_74 = (int)ROUND(dVar4);
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750
                 (this_ptr_00,prim,scanline_renderer);
     } while (iVar1 != 0xbd0);

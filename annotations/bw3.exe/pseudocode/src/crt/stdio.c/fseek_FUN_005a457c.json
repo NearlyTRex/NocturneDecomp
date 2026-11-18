@@ -25,7 +25,7 @@
     {
       "addr": "00510a90",
       "from_addr": "00510b4a",
-      "name": "cockpit_pkbmpset.cpp_FUN_00510a90",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_00510a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -37,7 +37,7 @@
     {
       "addr": "004bdfb0",
       "from_addr": "004be1e3",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,61 +49,61 @@
     {
       "addr": "004659c0",
       "from_addr": "00465a69",
-      "name": "engine_dosio.cpp_FUN_004659c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00512e70",
-      "from_addr": "00512eab",
-      "name": "engine_pod.cpp_FUN_00512e70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00513d20",
-      "from_addr": "00513d9d",
-      "name": "engine_pod.cpp_FUN_00513d20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00513ff0",
-      "from_addr": "00514096",
-      "name": "engine_pod.cpp_FUN_00513ff0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00514110",
-      "from_addr": "005141af",
-      "name": "engine_pod.cpp_FUN_00514110",
+      "name": "engine_dosio.cpp_getFile_FUN_004659c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00514220",
       "from_addr": "005142b8",
-      "name": "engine_pod.cpp_FUN_00514220",
+      "name": "engine_pod.cpp_CPodFile_computeFileCRC_FUN_00514220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00513ff0",
+      "from_addr": "00514096",
+      "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00513ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00514110",
+      "from_addr": "005141af",
+      "name": "engine_pod.cpp_CPodFile_getDependencyRecord_FUN_00514110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00513d20",
+      "from_addr": "00513d9d",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005149c0",
       "from_addr": "00514aa6",
-      "name": "engine_pod.cpp_FUN_005149c0",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_005149c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512e70",
+      "from_addr": "00512eab",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_00512e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd3c0",
+      "from_addr": "004fd424",
+      "name": "sound_mp3.cpp_CFileBitStream_init_FUN_004fd3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502890",
+      "from_addr": "00502925",
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00502890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00502bc0",
       "from_addr": "00502bef",
       "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004fd3c0",
-      "from_addr": "004fd424",
-      "name": "sound_mp3.cpp_FUN_004fd3c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00502890",
-      "from_addr": "00502925",
-      "name": "sound_mp3.cpp_FUN_00502890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -188,7 +188,7 @@
       {
         "call_addr": "00465a69",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_004659c0",
+        "caller": "engine_dosio.cpp_getFile_FUN_004659c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "004be1e3",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
       {
         "call_addr": "00502925",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_00502890",
+        "caller": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00502890",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -287,7 +287,7 @@
       {
         "call_addr": "00514096",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_00513ff0",
+        "caller": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00513ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

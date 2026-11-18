@@ -5,10 +5,20 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "defines.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1BD0000
 // =============================================================================
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_MouseButtonFlags;
+
+// int
+extern int g_GlobalDeltaTimeInt;
+extern int g_AnimationTimerValue;
+extern int g_MouseX;
+extern int g_MouseY;
 
 // uchar[18][256]
 extern uchar g_FogTable[18][256];

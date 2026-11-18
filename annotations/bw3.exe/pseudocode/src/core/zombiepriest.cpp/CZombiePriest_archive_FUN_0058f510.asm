@@ -7,7 +7,7 @@
 ; CZombiePriest *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d8c4f+1
+;   TerminatedCString s_speed_005d8c50
 ;   TerminatedCString s_modelName_005d8c56
 ;   TerminatedCString s_guardDistance_005d8c60
 ;   TerminatedCString s_motion_state_005d8c6e
@@ -39,7 +39,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 0058f516
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0058f51b
-    PUSH 0x5d8c50                       ; 0058f51e | s_speed_005d8c4f+1
+    PUSH 0x5d8c50                       ; 0058f51e | = "speed"
     LEA EAX,[EBX + 0xcdcc]              ; 0058f523
     PUSH EAX                            ; 0058f529
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0058f52a

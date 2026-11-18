@@ -16,7 +16,7 @@
 ;   TerminatedCString s_none_0061b468
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b8010
+;   crt_stdio.c_fprintf_FUN_005b8010
 ;
 ; *****************************************************************************
 
@@ -32,16 +32,16 @@ section .text
     PUSH 0x61b468                       ; 0052a09e | = "(none)"
     PUSH 0x5e5032                       ; 0052a0a3 | = "\"%s\"\n"
     PUSH EDX                            ; 0052a0a8
-    CALL crt_unknown.c_FUN_005b8010     ; 0052a0a9
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0052a0a9
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0052a0ae
     RET                                 ; 0052a0b1
     PUSH EAX                            ; 0052a0b2
         ;   Label: LAB_0052a0b2
     PUSH 0x5e5038                       ; 0052a0b3 | = "\"%s\"\n"
     PUSH EDX                            ; 0052a0b8
-    CALL crt_unknown.c_FUN_005b8010     ; 0052a0b9
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
+    CALL crt_stdio.c_fprintf_FUN_005b8010 ; 0052a0b9
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005b8010(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0052a0be
     RET                                 ; 0052a0c1
 

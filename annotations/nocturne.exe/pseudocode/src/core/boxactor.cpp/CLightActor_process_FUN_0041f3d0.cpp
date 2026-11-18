@@ -39,8 +39,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CLightActor *thi
     filter_index = 0;
     iVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0,7);
     core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
-              (&this_ptr->light,g_CDemonFilter_ARRAY_0076483c + iVar4,filter_index,filter_pos_x,
-               filter_pos_y);
+              (&this_ptr->light,g_LightActorFilters + iVar4,filter_index,filter_pos_x,filter_pos_y);
     local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,0.15);
     this_ptr->flicker_timer = local_c;
   }

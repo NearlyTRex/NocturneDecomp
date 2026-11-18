@@ -34,7 +34,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00(SPageRe
       str1 = pcStack_20 + iVar3 * 0x20;
       iVar2 = _stricmp(str1,str2);
       if (iVar2 != 0) {
-        _sprintf(acStack_124,(char *)0x5c0de3);
+        _sprintf(acStack_124,"sm_%s");
         engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(pCStack_14,acStack_124,0x23,0x2f);
         do {
           cVar1 = *str1;
@@ -51,7 +51,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00(SPageRe
                 (pCStack_14,iStack_1c + 0x17c,0x17c,0xffff);
       if (iVar3 == 2) {
         core_event_cpp_CEventList_executeCommands_FUN_0048c150
-                  (0x01C6E360,"FinishedTwanaPuzzle");
+                  (g_CEventListPtr,"FinishedTwanaPuzzle");
         memset(pcStack_20,0,0x60);
       }
     }

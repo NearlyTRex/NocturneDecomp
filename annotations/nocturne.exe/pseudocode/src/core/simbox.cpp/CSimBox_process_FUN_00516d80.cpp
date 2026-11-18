@@ -19,7 +19,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00516d80(CSimBox *this_ptr,floa
   
   if ((this_ptr->type == 1) && ((this_ptr->physics_box).is_valid == 0)) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->trigger_event);
+                      (g_CEventListPtr,this_ptr->trigger_event);
     if (iVar3 != 0) {
       pCVar5 = &(this_ptr->physics_box).linear_velocity_local;
       (this_ptr->physics_box).is_valid = 1;

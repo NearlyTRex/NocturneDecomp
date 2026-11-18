@@ -18,9 +18,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040c2b0
+;   core_inv.cpp_CInventory_addItem_FUN_004f7690
 ;   core_inv.cpp_CInventory_initialize_FUN_004f7050
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0
-;   core_inv.cpp_FUN_004f7690
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH 0x1                            ; 00540d96
     PUSH EDX                            ; 00540d98
     PUSH EBX                            ; 00540d99
-    CALL core_inv.cpp_FUN_004f7690      ; 00540d9a
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004f7690 ; 00540d9a
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 00540d9f
     PUSH 0x1                            ; 00540da2
     PUSH 0x5                            ; 00540da4

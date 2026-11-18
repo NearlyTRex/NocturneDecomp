@@ -9,7 +9,7 @@
 void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_00477730(CDemonTriangle *this_ptr,_FILE *file_handle)
 
 {
-  _fscanf(file_handle,(char *)0x5d1d9b);
+  _fscanf(file_handle,"%f,%f,%f,%f,%f,%f,%f,%f,%f\n");
   core_dtri_cpp_CDemonTriangle_calculateData_FUN_00477890(this_ptr);
   return;
 }

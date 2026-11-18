@@ -60,9 +60,9 @@ double g_SampleDistances[400] = {};
 float g_MoonAnimationTimer = {};
 
 // int
-int INT_02f31234 = {};
-int INT_02f31238 = {};
-int INT_02f3123c = {};
+int g_LodPreviewShowVertexLabels = {};
+int g_LodPreviewShowNextLod = {};
+int g_LodPreviewShowEdges = {};
 int g_SamplePointCount = {};
 int g_LodReplayMode = {};
 int g_LodGenerationStamp = {};

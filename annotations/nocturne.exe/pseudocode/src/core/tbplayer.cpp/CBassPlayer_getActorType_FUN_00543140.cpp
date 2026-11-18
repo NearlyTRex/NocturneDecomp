@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_00543140(CBassPlayer *this_ptr)
 
 {
-  return &g_CBassPlayerActorType_02dca0e0;
+  return &g_CBassPlayerClassInfo;
 }

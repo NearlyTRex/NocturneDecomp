@@ -9,14 +9,15 @@
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CPickList.h"
 #include "types/classes/CScript.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1E50000
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CScatActorType_01e533d0;
-extern CDemonActorType g_CSentinelActorType_01e57248;
+extern CDemonActorType g_CScatClassInfo;
+extern CDemonActorType g_CSentinelClassInfo;
 
 // CDemonPod
 extern CDemonPod g_CDemonPodInstance;
@@ -30,6 +31,41 @@ extern CPickList g_ScriptPickList;
 // CScript
 extern CScript g_CScriptInstance;
 
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SoftwareEdgeBuffer[16];
+extern SSoftwareEdge g_SoftwareEdgeTable[16];
+
+// char[10][1024]
+extern char g_ScriptSubtitleLines[10][1024];
+
+// char[2048]
+extern char g_ScriptLineBuffer[2048];
+extern char g_ScriptErrorBuffer[2048];
+
+// float
+extern float g_ScriptTimeScale;
+
 // int
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
 extern int g_RenderedTriangleCount;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
+extern int g_PreviousLetterboxMode;
+extern int g_ScriptEventsEnabled;
+extern int g_ScriptInputFlag;
+extern int g_ScriptLoopWarningShown;
+extern int g_ActorLookedUpByVariable;
+extern int g_INT_01e57218;
+extern int g_INT_01e5721c;
+extern int g_INT_01e57220;
+extern int g_INT_01e5722c;
+extern int g_INT_01e57230;
+extern int g_INT_01e5723c;
+extern int g_INT_01e57244;
+
+// int[18]
+extern int g_ScatIndices[18];
 

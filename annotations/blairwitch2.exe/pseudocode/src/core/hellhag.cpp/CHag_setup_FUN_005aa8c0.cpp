@@ -25,11 +25,11 @@ void __cdecl core_hellhag_cpp_CHag_setup_FUN_005aa8c0(CHag *this_ptr)
   pCVar1 = (this_ptr->base).base.base.base.particle_systems;
   (this_ptr->base).base.base.eye_glow_bone = this_ptr->head_bone;
   core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x100);
-  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,(CDemonActor *)this_ptr);
   core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(pCVar1,0);
   pCVar1 = (this_ptr->base).base.base.base.particle_systems + 4;
   core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x100);
-  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,(CDemonActor *)this_ptr);
   core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(pCVar1,0);
   return;
 }

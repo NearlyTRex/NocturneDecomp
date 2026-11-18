@@ -1,0 +1,1153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1216,
+    "complexity_score": 720,
+    "cross_reference_count": 1,
+    "function_call_count": 57,
+    "global_count": 73,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 380,
+    "suspect_count": 30,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_type_propagation"
+    ],
+    "total_lines": 1596
+  },
+  "cross_references": [
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004cfb60",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ce580",
+    "address_range": [
+      [
+        "004ce580",
+        "004cf429"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_game.cpp_CGame_processFrame_FUN_004ce580",
+    "signature": "void __cdecl core_game_cpp_CGame_processFrame_FUN_004ce580(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044dd70",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044dd70"
+    },
+    {
+      "addr": "0044de40",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044de40"
+    },
+    {
+      "addr": "004a1b70",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70"
+    },
+    {
+      "addr": "004a6d80",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_render_FUN_004a6d80"
+    },
+    {
+      "addr": "004be0f0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0"
+    },
+    {
+      "addr": "004cc0c0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_drawScreenBorder_FUN_004cc0c0"
+    },
+    {
+      "addr": "004d8060",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_process_FUN_004d8060"
+    },
+    {
+      "addr": "004d61e0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_renderIrisFade_FUN_004d61e0"
+    },
+    {
+      "addr": "004cc2b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004cc2b0"
+    },
+    {
+      "addr": "004ccc40",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40"
+    },
+    {
+      "addr": "004d7f50",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_slamDT_FUN_004d7f50"
+    },
+    {
+      "addr": "004cbf20",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_updateDT_FUN_004cbf20"
+    },
+    {
+      "addr": "004dc1a0",
+      "is_variadic": false,
+      "name": "core_game.cpp_drawCursor_FUN_004dc1a0"
+    },
+    {
+      "addr": "004fae10",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10"
+    },
+    {
+      "addr": "00530340",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_00530340"
+    },
+    {
+      "addr": "0052fee0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0052fee0"
+    },
+    {
+      "addr": "00543c00",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_renderEditor_FUN_00543c00"
+    },
+    {
+      "addr": "005439b0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_005439b0"
+    },
+    {
+      "addr": "00550da0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_00550da0"
+    },
+    {
+      "addr": "00551a50",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderLightDebugView_FUN_00551a50"
+    },
+    {
+      "addr": "00551170",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00551170"
+    },
+    {
+      "addr": "00550580",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00550580"
+    },
+    {
+      "addr": "00550260",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260"
+    },
+    {
+      "addr": "0056b780",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_getMemoryStats_FUN_0056b780"
+    },
+    {
+      "addr": "0056ba00",
+      "is_variadic": false,
+      "name": "core_slew.cpp_CSlew_init_FUN_0056ba00"
+    },
+    {
+      "addr": "0056ba50",
+      "is_variadic": false,
+      "name": "core_slew.cpp_CSlew_processInput_FUN_0056ba50"
+    },
+    {
+      "addr": "0057ce10",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_process_FUN_0057ce10"
+    },
+    {
+      "addr": "005c3050",
+      "is_variadic": false,
+      "name": "crt_env.c_getenv_FUN_005c3050"
+    },
+    {
+      "addr": "005c0d10",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005c0d10"
+    },
+    {
+      "addr": "005c2f00",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fputc_FUN_005c2f00"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00401fe0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fe0"
+    },
+    {
+      "addr": "00402140",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawTextXY_FUN_00402140"
+    },
+    {
+      "addr": "00445430",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
+    },
+    {
+      "addr": "00445690",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_render_FUN_00445690"
+    },
+    {
+      "addr": "00479180",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00479180"
+    },
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
+    },
+    {
+      "addr": "00483de0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0"
+    },
+    {
+      "addr": "00535d80",
+      "is_variadic": false,
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_00535d80"
+    },
+    {
+      "addr": "0057dc40",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_0057dc40"
+    },
+    {
+      "addr": "00582bf0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_getTextureInfo_FUN_00582bf0"
+    },
+    {
+      "addr": "00581f50",
+      "is_variadic": false,
+      "name": "engine_special.cpp_lockFrame_FUN_00581f50"
+    },
+    {
+      "addr": "00581fa0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_unlockFrame_FUN_00581fa0"
+    },
+    {
+      "addr": "00597cd0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_getTextureCacheStats_FUN_00597cd0"
+    },
+    {
+      "addr": "00498e40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e40"
+    },
+    {
+      "addr": "00497870",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00497870"
+    },
+    {
+      "addr": "0049b830",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830"
+    },
+    {
+      "addr": "00573e20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_countActiveSfx_FUN_00573e20"
+    },
+    {
+      "addr": "00572340",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_init_FUN_00572340"
+    },
+    {
+      "addr": "00573d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getFirstActiveSfx_FUN_00573d20"
+    },
+    {
+      "addr": "00573d60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getNextActiveSfx_FUN_00573d60"
+    },
+    {
+      "addr": "00573620",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620"
+    },
+    {
+      "addr": "005746e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundMemoryStats_FUN_005746e0"
+    },
+    {
+      "addr": "00531090",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
+    },
+    {
+      "addr": "005acc00",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005acc00"
+    },
+    {
+      "addr": "005acb10",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10"
+    },
+    {
+      "addr": "005b2420",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1330",
+      "name": "s_noc_05d_raw_005e1330",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e133c",
+      "name": "s_Movie_recording_active_m_005e133c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e135d",
+      "name": "s_wb_005e135d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e1360",
+      "name": "s_movie_005e1360",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e15a7",
+      "name": "s_screen_paint_3_2f_ms_005e15a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e15c0",
+      "name": "s_SPOOKHOUSE_005e15c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e15cb",
+      "name": "s_demon_d_pcx_005e15cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e15d7",
+      "name": "s_Set_s_Camera_s_group_d_005e15d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e15f5",
+      "name": "s_FR_f_AVG_f_PC_d_005e15f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e160d",
+      "name": "s_Hero_4_2f_4_2f_4_2f_xyz_005e160d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e1644",
+      "name": "s_Slew_s_Virtual_Director_005e1644",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e1665",
+      "name": "s_Fudge_g_g_g_005e1665",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e1675",
+      "name": "s_SFX_d_Samples_Active_d_1_005e1675",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e16c6",
+      "name": "s_s_32_d_64_d_128_d_256_d_005e16c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e16ef",
+      "name": "s_You_re_dead_Game_over_005e16ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e1708",
+      "name": "s_MouseControlMode_005e1708",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e171c",
+      "name": "g_DOUBLE_005e171c",
+      "type": "double",
+      "value": "0.0555555555555556"
+    },
+    {
+      "addr": "005e1724",
+      "name": "g_DOUBLE_005e1724",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "005e172c",
+      "name": "g_DOUBLE_005e172c",
+      "type": "double",
+      "value": "1000"
+    },
+    {
+      "addr": "005e1734",
+      "name": "g_FLOAT_005e1734",
+      "type": "float",
+      "value": "0.3183099"
+    },
+    {
+      "addr": "005e173c",
+      "name": "g_DOUBLE_005e173c",
+      "type": "double",
+      "value": "180"
+    },
+    {
+      "addr": "005e1744",
+      "name": "g_DOUBLE_005e1744",
+      "type": "double",
+      "value": "0.0009765625"
+    },
+    {
+      "addr": "00600f74",
+      "name": "g_FLOAT_00600f74",
+      "type": "float",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "00611100",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007db5f0"
+    },
+    {
+      "addr": "00612560",
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
+    },
+    {
+      "addr": "0061abc0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
+    },
+    {
+      "addr": "0061b498",
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "0061b49c",
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
+    },
+    {
+      "addr": "0061d418",
+      "name": "g_CFieldNotesPtr",
+      "type": "CFieldNotes*",
+      "value": "01cc8004"
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "0061d960",
+      "name": "PTR_s_Off_0061d960",
+      "type": "void*",
+      "value": "005e36a4"
+    },
+    {
+      "addr": "0061d96c",
+      "name": "g_MovieRecordingWidth",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0061d970",
+      "name": "g_MovieRecordingHeight",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0061f2a4",
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
+    },
+    {
+      "addr": "00622580",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "01d51c20"
+    },
+    {
+      "addr": "00622ad0",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e81c80"
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "006236b8",
+      "name": "g_CSound_PTR_006236b8",
+      "type": "CSound*",
+      "value": "02c82a60"
+    },
+    {
+      "addr": "007c3978",
+      "name": "g_CPuzzle_PTR_007c3978",
+      "type": "CPuzzle*",
+      "value": null
+    },
+    {
+      "addr": "007db5f0",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "01c4353c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c43540",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c43544",
+      "name": "g_MouseButtonFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c4354c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01c43550",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c50948",
+      "name": "g_INT_01c50948",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc8004",
+      "name": "g_CFieldNotesInstance",
+      "type": "CFieldNotes",
+      "value": null
+    },
+    {
+      "addr": "01cc8044",
+      "name": "g_CFieldNotesInstance.is_displayed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9ba0",
+      "name": "g_DOUBLE_01cc9ba0",
+      "type": "double",
+      "value": null
+    },
+    {
+      "addr": "01cc9ba4",
+      "name": "g_DOUBLE_01cc9ba0+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9ba8",
+      "name": "g_INT_01cc9ba8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01ccf624",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccfe94",
+      "name": "g_ScreenshotIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd01fc",
+      "name": "g_CPickList",
+      "type": "CPickList",
+      "value": null
+    },
+    {
+      "addr": "01cd0b40",
+      "name": "g_INT_01cd0b40",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c38",
+      "name": "g_MovieRecordingArmed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c3c",
+      "name": "g_MovieRecordingActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c40",
+      "name": "g_MovieRecordingMaxFrames",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c44",
+      "name": "g_MovieRecordingFrameCounter",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c48",
+      "name": "g_INT_01cd0c48",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c5c",
+      "name": "g_INT_01cd0c5c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "g_INT_01d06ab4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d1bca0",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "01d51c20",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
+      "value": null
+    },
+    {
+      "addr": "01d51d90",
+      "name": "g_CNetGameInstance.has_pending_sim_frame",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e7dac8",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e81c80",
+      "name": "g_CScriptInstance",
+      "type": "CScript",
+      "value": null
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01e822b8",
+      "name": "g_CDemonSetInstance.cameras[0].camera_group",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fdd020",
+      "name": "g_CDemonSetInstance.selected_camera_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83370",
+      "name": "g_INT_02c83370",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cfb60",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.95020325203252,
+    "instruction_count": 984,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 72,
+      "BOOL_OR": 4,
+      "BRANCH": 13,
+      "CALL": 90,
+      "CALLIND": 8,
+      "CBRANCH": 67,
+      "COPY": 1139,
+      "FLOAT2FLOAT": 42,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 3,
+      "FLOAT_MULT": 16,
+      "INT2FLOAT": 10,
+      "INT_ADD": 359,
+      "INT_AND": 612,
+      "INT_CARRY": 101,
+      "INT_EQUAL": 474,
+      "INT_LEFT": 11,
+      "INT_LESS": 68,
+      "INT_MULT": 28,
+      "INT_NOTEQUAL": 45,
+      "INT_OR": 56,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 70,
+      "INT_SCARRY": 110,
+      "INT_SDIV": 7,
+      "INT_SEXT": 22,
+      "INT_SLESS": 236,
+      "INT_SREM": 7,
+      "INT_SRIGHT": 14,
+      "INT_SUB": 375,
+      "INT_XOR": 11,
+      "INT_ZEXT": 26,
+      "LOAD": 173,
+      "POPCOUNT": 230,
+      "RETURN": 2,
+      "STORE": 340,
+      "SUBPIECE": 24
+    },
+    "pcode_op_count": 4871
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b5190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8238
+    },
+    "bw3.exe": {
+      "addr": "004b6f30",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004da100",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7667
+    },
+    "nocturne.exe": {
+      "addr": "0049cc10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7544
+    }
+  },
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ce58c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 22,
+      "match": "aiStackY_1074",
+      "severity": "moderate",
+      "text": "int aiStackY_1074 [579];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(code **)((int)g_CPuzzle_PTR_007c3978",
+      "severity": "moderate",
+      "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x1c))(g_CPuzzle_PTR_007c3978);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 73,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x1c))(g_CPuzzle_PTR_007c3978);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(code **)((int)g_CPuzzle_PTR_007c3978",
+      "severity": "moderate",
+      "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x18))(g_CPuzzle_PTR_007c3978);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 154,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x18))(g_CPuzzle_PTR_007c3978);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + iStack_28));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 280,
+      "match": "&stack0xfffff8d8",
+      "severity": "moderate",
+      "text": "(&iStack_54,&stack0xfffff8d8,&iStack_50,(int *)&stack0xfffff8d4,&iStack_4c,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 280,
+      "match": "&stack0xfffff8d4",
+      "severity": "moderate",
+      "text": "(&iStack_54,&stack0xfffff8d8,&iStack_50,(int *)&stack0xfffff8d4,&iStack_4c,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 281,
+      "match": "&stack0xfffff8d0",
+      "severity": "moderate",
+      "text": "(int *)&stack0xfffff8d0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&CStack_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)&CStack_8c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(int)&CStack_68",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_68 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)&CStack_8c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 109,
+      "match": "(int)&CStack_68",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_68 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)&CStack_8c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 114,
+      "match": "(int)&CStack_80",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 115,
+      "match": "(int)&CStack_8c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 116,
+      "match": "(int)&CStack_80",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 217,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + iStack_28));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 332,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 85,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_a8.position.x = (pCVar8->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 92,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_a8.orientation.vec.x = (pUVar9->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 107,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_68 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 108,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 109,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_68 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 113,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 114,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 115,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 116,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_80 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

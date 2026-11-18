@@ -2,14 +2,15 @@
 // Address: 00523140
 // Address Range: [[00523140, 0052318c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_00523140(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)
+// Signature: void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_00523140(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_00523140(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)
+void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_00523140(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list)
 
 {
   core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005221d0
-            (this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);
+            (this_ptr->models + model_index,vertex_count,vertex_data,poly_count,poly_data,0x3c,
+             texture_list,texture_index_list);
   return;
 }

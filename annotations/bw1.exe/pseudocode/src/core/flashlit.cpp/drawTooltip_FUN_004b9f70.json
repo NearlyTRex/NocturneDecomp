@@ -1,0 +1,159 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 16,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 10,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004b9f70",
+    "address_range": [
+      [
+        "004b9f70",
+        "004b9fef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flashlit.cpp_drawTooltip_FUN_004b9f70",
+    "signature": "void __cdecl core_flashlit_cpp_drawTooltip_FUN_004b9f70(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004031c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_004031c0"
+    },
+    {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061d310",
+      "name": "g_INT_0061d310",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "0152d240",
+      "name": "g_TinyFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01cc7f1c",
+      "name": "g_INT_01cc7f1c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f20",
+      "name": "g_INT_01cc7f20",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f24",
+      "name": "g_INT_01cc7f24",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f28",
+      "name": "g_INT_01cc7f28",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f2c",
+      "name": "g_INT_01cc7f2c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f30",
+      "name": "g_INT_01cc7f30",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc7f38",
+      "name": "g_CHAR_01cc7f38",
+      "type": "char",
+      "value": null
+    },
+    {
+      "addr": "01cc8000",
+      "name": "g_INT_01cc8000",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4318181818181817,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 42,
+      "INT_ADD": 9,
+      "INT_AND": 16,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 151
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a16b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a7bb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

@@ -17,8 +17,8 @@ void __cdecl core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(CCurtain *this_ptr)
             ((this_ptr->curtain_texture).texture_name,"curtainTexture");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->opacity,"opacity");
   local_8 = 0;
-  if (1 < INT_005ad3f0) {
-    if (INT_005ad3f0 < 4) {
+  if (1 < g_CCurtainClassVersion) {
+    if (g_CCurtainClassVersion < 4) {
       core_actor_cpp_archiveInteger_FUN_0040c900((int *)&local_8,"cinched");
       this_ptr->cinched_top = (uint)((local_8 & 1) != 0);
       this_ptr->cinched_bottom = (uint)((local_8 & 2) != 0);
@@ -32,10 +32,10 @@ void __cdecl core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(CCurtain *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->gravity,"gravity");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->hit_floor,"hitFloor");
   }
-  if (2 < INT_005ad3f0) {
+  if (2 < g_CCurtainClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->simulate_me,"simulateMe");
   }
-  if (3 < INT_005ad3f0) {
+  if (3 < g_CCurtainClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->cinched_top,"cinchedTop");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->cinched_bottom,"cinchedBottom");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->cinched_left,"cinchedLeft");
@@ -43,10 +43,10 @@ void __cdecl core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(CCurtain *this_ptr)
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->falling,"falling");
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->let_go_event,"letGoEvent");
   }
-  if (4 < INT_005ad3f0) {
+  if (4 < g_CCurtainClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->patch_size,"patchSize");
   }
-  if (INT_005ad3f0 < 6) {
+  if (g_CCurtainClassVersion < 6) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900

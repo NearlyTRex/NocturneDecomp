@@ -20,9 +20,9 @@
 ;   core_weaver.cpp_CRobin_renderTransparent_FUN_005a6760 at 005a6767
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ef9c7
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   double g_DOUBLE_005ef9c7 = 65535
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0
@@ -51,14 +51,14 @@ section .text
         ;   Label: LAB_0059f99b
     PUSH EBX                            ; 0059f99c
     FLD float ptr [ESI + 0x113c4]       ; 0059f99d
-    FMUL double ptr [0x005ef9c7]        ; 0059f9a3 | DAT_005ef9c7
+    FMUL double ptr [0x005ef9c7]        ; 0059f9a3 | g_DOUBLE_005ef9c7
     CALL crt_math.c_round_FUN_005b7ff0  ; 0059f9a9
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0059f9ae
     MOV ECX,dword ptr [ESP + 0x8]       ; 0059f9b2
     PUSH ECX                            ; 0059f9b6
-    MOV EBX,dword ptr [0x0060b280]      ; 0059f9b7 | DAT_0060b280
-    PUSH EBX                            ; 0059f9bd | DAT_01ba5c50
+    MOV EBX,dword ptr [0x0060b280]      ; 0059f9b7 | g_CDemonRenderer_PTR_0060b280
+    PUSH EBX                            ; 0059f9bd | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0 ; 0059f9be
         ;   XREF to: 0046b8e0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0059f9c3

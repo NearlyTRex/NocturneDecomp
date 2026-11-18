@@ -40,7 +40,7 @@ LAB_0056d124:
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                ((CDemonActor *)this_ptr,"@smiley_die??.wav" + 1);
+                ((CDemonActor *)this_ptr,"smiley_die??.wav");
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
     return;

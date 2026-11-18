@@ -17,10 +17,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042cd70 at 0042d228
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042d228
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d5ba00
+;   int g_HeroCount
 ;
 ; *****************************************************************************
 
@@ -39,12 +39,12 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004d2402
     FLD float ptr [EBP + 0x18]          ; 004d2405
     FMUL ST0                            ; 004d2408
-    MOV EDX,dword ptr [0x01d5ba00]      ; 004d240a | DAT_01d5ba00
+    MOV EDX,dword ptr [0x01d5ba00]      ; 004d240a | g_HeroCount
     FSTP float ptr [EBP + 0x18]         ; 004d2410
     TEST EDX,EDX                        ; 004d2413
     JLE 0x004d2433                      ; 004d2415
         ;   XREF to: 004d2433 (CONDITIONAL_JUMP)  ; LAB_004d2433
-    MOV EBX,dword ptr [0x01d5ba00]      ; 004d2417 | DAT_01d5ba00
+    MOV EBX,dword ptr [0x01d5ba00]      ; 004d2417 | g_HeroCount
     XOR EDX,EDX                         ; 004d241d
     SHL EBX,0x2                         ; 004d241f
     MOV ESI,dword ptr [EDX + 0x1d5ba04] ; 004d2422

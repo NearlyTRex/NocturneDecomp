@@ -36,6 +36,6 @@ int __cdecl core_script_cpp_parseBodyPartMask_FUN_004fe3d0(CCharacter *character
     part_mask[iVar2] = 1;
   }
   pcVar3 = core_script_cpp_getDeformableModelFilename_FUN_005058b0(this_ptr);
-  _sprintf(&DAT_01e56420,"Character %s model %s does not have a part '%s'",character,pcVar3,pcVar4);
+  _sprintf(g_ScriptErrorBuffer,"Character %s model %s does not have a part '%s'",character,pcVar3,pcVar4);
   return 0;
 }

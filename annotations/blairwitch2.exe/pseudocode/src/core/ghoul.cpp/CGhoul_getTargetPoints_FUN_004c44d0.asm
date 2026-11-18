@@ -9,14 +9,14 @@
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004c44b4 = 004c455b
-;   undefined4 DAT_005d924f
-;   undefined4 DAT_005d9257
+;   double g_DOUBLE_005d924f = 0.5
+;   double g_DOUBLE_005d9257 = 0.700000000000000
 ;   undefined4 DAT_005d925f
-;   undefined4 DAT_01cb821c
-;   undefined4 DAT_01cb8230
-;   undefined4 DAT_01cb8234
-;   undefined4 DAT_01cb8240
-;   undefined4 DAT_01cb8244
+;   int[11] g_GhoulIndices
+;   undefined4 g_GhoulIndices[5]
+;   undefined4 g_GhoulIndices[6]
+;   undefined4 g_GhoulIndices[9]
+;   undefined4 g_GhoulIndices[10]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90
@@ -33,7 +33,7 @@ section .text
     MOV EBP,ESP                         ; 004c44d4
     SUB ESP,0x8c                        ; 004c44d6
     AND ESP,0xfffffff8                  ; 004c44dc
-    MOV EDX,dword ptr [0x01cb8240]      ; 004c44df | DAT_01cb8240
+    MOV EDX,dword ptr [0x01cb8240]      ; 004c44df | g_GhoulIndices[9]
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c44e5
     PUSH EDX                            ; 004c44e8
     ADD EAX,0x2b4                       ; 004c44e9
@@ -81,7 +81,7 @@ section .text
     CMP dword ptr [EAX + 0x23f4],0x0    ; 004c456c
     JZ 0x004c461e                       ; 004c4573
         ;   XREF to: 004c461e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cb8230]      ; 004c4579 | DAT_01cb8230
+    MOV ESI,dword ptr [0x01cb8230]      ; 004c4579 | g_GhoulIndices[5]
     PUSH ESI                            ; 004c457f
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004c4580
     PUSH EDI                            ; 004c4587
@@ -108,11 +108,11 @@ section .text
         ;   Label: LAB_004c45bf
     IMUL EDX,EBX,0xc                    ; 004c45c3
         ;   Label: LAB_004c45c3
-    FLD double ptr [0x005d924f]         ; 004c45c6 | DAT_005d924f
+    FLD double ptr [0x005d924f]         ; 004c45c6 | g_DOUBLE_005d924f
     FLD float ptr [ESP + 0x30]          ; 004c45cc
     FMUL ST1                            ; 004c45d0
     FLD float ptr [ESP + 0x34]          ; 004c45d2
-    FMUL double ptr [0x005d9257]        ; 004c45d6 | DAT_005d9257
+    FMUL double ptr [0x005d9257]        ; 004c45d6 | g_DOUBLE_005d9257
     FLD float ptr [ESP + 0x24]          ; 004c45dc
     FMULP ST3                           ; 004c45e0
     FLD float ptr [ESP + 0x28]          ; 004c45e2
@@ -170,7 +170,7 @@ section .text
     CMP dword ptr [EAX + 0x23f4],0x0    ; 004c4669
     JZ 0x004c461e                       ; 004c4670
         ;   XREF to: 004c461e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cb8234]      ; 004c4672 | DAT_01cb8234
+    MOV ESI,dword ptr [0x01cb8234]      ; 004c4672 | g_GhoulIndices[6]
     PUSH ESI                            ; 004c4678
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004c4679
     PUSH EDI                            ; 004c4680
@@ -204,7 +204,7 @@ section .text
     CMP dword ptr [EAX + 0x23f4],0x0    ; 004c46d2
     JZ 0x004c461e                       ; 004c46d9
         ;   XREF to: 004c461e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cb821c]      ; 004c46df | DAT_01cb821c
+    MOV ESI,dword ptr [0x01cb821c]      ; 004c46df | g_GhoulIndices
     PUSH ESI                            ; 004c46e5
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004c46e6
     PUSH EDI                            ; 004c46ed
@@ -240,7 +240,7 @@ section .text
     CMP dword ptr [EAX + 0x23f4],0x0    ; 004c4741
     JZ 0x004c461e                       ; 004c4748
         ;   XREF to: 004c461e (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x01cb8244]      ; 004c474e | DAT_01cb8244
+    MOV ESI,dword ptr [0x01cb8244]      ; 004c474e | g_GhoulIndices[10]
     PUSH ESI                            ; 004c4754
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004c4755
     PUSH EDI                            ; 004c475c

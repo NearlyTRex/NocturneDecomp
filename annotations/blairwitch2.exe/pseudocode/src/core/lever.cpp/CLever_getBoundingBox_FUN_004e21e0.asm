@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_lever_cpp_CLever_getBoundingBox_FUN_004e21e0(CLever *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_lever_cpp_CLever_getBoundingBox_FUN_004e21e0(CLever *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20

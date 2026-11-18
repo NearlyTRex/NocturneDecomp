@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa164
-;   undefined4 DAT_01d0d2d4
+;   float g_FLOAT_005fa164 = 3
+;   float g_FLOAT_01d0d2d4
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005b7f5f
@@ -31,8 +31,8 @@ section .text
     PUSH 0x1d0c3a4                      ; 004f21b1
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004f21b6
         ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
-    FLD float ptr [0x005fa164]          ; 004f21bb | DAT_005fa164
+    FLD float ptr [0x005fa164]          ; 004f21bb | g_FLOAT_005fa164
     ADD ESP,0xc                         ; 004f21c1
-    FSTP float ptr [0x01d0d2d4]         ; 004f21c4 | DAT_01d0d2d4
+    FSTP float ptr [0x01d0d2d4]         ; 004f21c4 | g_FLOAT_01d0d2d4
     RET                                 ; 004f21ca
 

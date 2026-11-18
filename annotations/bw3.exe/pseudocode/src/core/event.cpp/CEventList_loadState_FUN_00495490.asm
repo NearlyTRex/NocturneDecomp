@@ -14,29 +14,29 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bdfb0 at 004be68e
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be68e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0111
+;   TerminatedCString s_d_005c0111
 ;   TerminatedCString s_core_event_cpp_005c0115
 ;   TerminatedCString s_CEventList_loadState_fil_005c0127
-;   undefined4 DAT_005c018a
+;   TerminatedCString s_d_005c018a
 ;   TerminatedCString s_anon_005c018e
-;   undefined4 DAT_005c0195
+;   TerminatedCString s_d_005c0195
 ;   TerminatedCString s_anon_005c0199
-;   undefined4 DAT_005c01a0
+;   TerminatedCString s_d_005c01a0
 ;   TerminatedCString s_anon_005c01a4
-;   undefined4 DAT_005c01ab
+;   TerminatedCString s_d_005c01ab
 ;   TerminatedCString s_f_005c01af
-;   undefined4 DAT_005c01ba
+;   TerminatedCString s_d_005c01ba
 ;   TerminatedCString s_d_005c01be
-;   undefined4 DAT_005c01c9
+;   TerminatedCString s_d_005c01c9
 ;   TerminatedCString s_anon_005c01cd
 ;   ... and 4 more
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_0048bfd0
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;
@@ -65,7 +65,7 @@ section .text
     ADD ESP,0xc                         ; 004954c1
     LEA EAX,[ESP + 0x100]               ; 004954c4
     PUSH EAX                            ; 004954cb
-    PUSH 0x5c0111                       ; 004954cc | DAT_005c0111
+    PUSH 0x5c0111                       ; 004954cc | = "%d\n"
     PUSH ESI                            ; 004954d1
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004954d2
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 005a3f00 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005a3f00(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004954fa
     PUSH EBX                            ; 004954fd
-    PUSH 0x5c018a                       ; 004954fe | DAT_005c018a
+    PUSH 0x5c018a                       ; 004954fe | = "%d\n"
     PUSH ESI                            ; 00495503
     XOR EBP,EBP                         ; 00495504
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00495506
@@ -117,7 +117,7 @@ section .text
     ADD ESP,0xc                         ; 00495540
     LEA EDI,[EBX + 0xc84]               ; 00495543
     PUSH EDI                            ; 00495549
-    PUSH 0x5c0195                       ; 0049554a | DAT_005c0195
+    PUSH 0x5c0195                       ; 0049554a | = "%d\n"
     PUSH ESI                            ; 0049554f
     XOR EBP,EBP                         ; 00495550
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00495552
@@ -153,7 +153,7 @@ section .text
     ADD ESP,0xc                         ; 004955a0
     LEA EDI,[EBX + 0x258c]              ; 004955a3
     PUSH EDI                            ; 004955a9
-    PUSH 0x5c01a0                       ; 004955aa | DAT_005c01a0
+    PUSH 0x5c01a0                       ; 004955aa | = "%d\n"
     PUSH ESI                            ; 004955af
     XOR EBP,EBP                         ; 004955b0
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004955b2
@@ -192,7 +192,7 @@ section .text
     ADD ESP,0xc                         ; 0049560e
     LEA EDI,[EBX + 0x3210]              ; 00495611
     PUSH EDI                            ; 00495617
-    PUSH 0x5c01ab                       ; 00495618 | DAT_005c01ab
+    PUSH 0x5c01ab                       ; 00495618 | = "%d\n"
     PUSH ESI                            ; 0049561d
     XOR EBP,EBP                         ; 0049561e
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00495620
@@ -237,7 +237,7 @@ section .text
     ADD ESP,0xc                         ; 0049569e
     LEA EDI,[EBX + 0x337c]              ; 004956a1
     PUSH EDI                            ; 004956a7
-    PUSH 0x5c01ba                       ; 004956a8 | DAT_005c01ba
+    PUSH 0x5c01ba                       ; 004956a8 | = "%d\n"
     PUSH ESI                            ; 004956ad
     XOR EBP,EBP                         ; 004956ae
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004956b0
@@ -283,7 +283,7 @@ section .text
     ADD ESP,0xc                         ; 0049572e
     LEA EDI,[EBX + 0x34e8]              ; 00495731
     PUSH EDI                            ; 00495737
-    PUSH 0x5c01c9                       ; 00495738 | DAT_005c01c9
+    PUSH 0x5c01c9                       ; 00495738 | = "%d\n"
     PUSH ESI                            ; 0049573d
     XOR EBP,EBP                         ; 0049573e
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00495740
@@ -334,10 +334,10 @@ section .text
     MOV ECX,0x5c0115                    ; 004957be | = "..\\core\\event.cpp"
     MOV EDI,0x1035                      ; 004957c3
     PUSH 0x5c0127                       ; 004957c8 | = "CEventList::loadState - file version ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004957cd | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004957d3 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004957d9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004957cd | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004957d3 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004957d9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004957de
     JMP 0x004954ea                      ; 004957e1
         ;   XREF to: 004954ea (UNCONDITIONAL_JUMP)  ; LAB_004954ea
@@ -351,7 +351,7 @@ section .text
     ADD ESP,0xc                         ; 004957f6
     LEA EDI,[EBX + 0x1908]              ; 004957f9
     PUSH EDI                            ; 004957ff
-    PUSH 0x5c01e0                       ; 00495800 | DAT_005c01e0
+    PUSH 0x5c01e0                       ; 00495800 | = "%d\n"
     PUSH ESI                            ; 00495805
     XOR EDI,EDI                         ; 00495806
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00495808

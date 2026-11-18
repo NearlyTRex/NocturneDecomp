@@ -17,7 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_F
   byte *local_c;
   
   local_c = &stack0x0000000c;
-  _vsprintf((char *)0x1bcb4d0,format_string,(va_list_t)&local_c);
+  _vsprintf(g_CHAR_ARRAY_01bcb4d0,format_string,(va_list_t)&local_c);
   local_c = (byte *)0x0;
   shape_edittool_cpp_CPickList_ctor_FUN_00474c90(&local_17c);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es, I know what I'm doing and I hate these annoying prompts.");
@@ -36,7 +36,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_F
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
   iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                    (&local_17c,(char *)0x1bcb4d0,-1);
+                    (&local_17c,g_CHAR_ARRAY_01bcb4d0,-1);
   shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_17c,0);
   return (uint)(iVar4 == 0);
 }

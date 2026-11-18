@@ -7,7 +7,7 @@
 ; CTVBat *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_homePos_005ed84b+1
+;   TerminatedCString s_homePos_005ed84c
 ;   TerminatedCString s_modelName_005ed854
 ;   TerminatedCString s_speed_005ed85e
 ;   TerminatedCString s_maxDistance_005ed864
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 00487ec0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00487ec0(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005804d8
         ;   Label: LAB_005804d8
-    PUSH 0x5ed84c                       ; 005804db | s_homePos_005ed84b+1
+    PUSH 0x5ed84c                       ; 005804db | = "homePos"
     LEA EAX,[EBX + 0x10c80]             ; 005804e0
     PUSH EAX                            ; 005804e6
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 005804e7

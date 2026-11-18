@@ -11,7 +11,7 @@
 ;   core_dfilter.cpp_CDemonFilter_dtor_FUN_0045d9a0 at 0045d9a6
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     RET                                 ; 0045da1d
     PUSH EDX                            ; 0045da1e
         ;   Label: LAB_0045da1e
-    CALL crt_unknown.c_FUN_005c09f0     ; 0045da1f
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 0045da1f
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 0045da24
     MOV dword ptr [EBX + 0x48],0x0      ; 0045da27
     POP EBX                             ; 0045da2e

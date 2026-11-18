@@ -22,11 +22,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c525
 ;   TerminatedCString s_CNetGame_sendMyStateChan_0058c539
-;   int g_INT_005bdee4 = 0x1
+;   int g_NetLobbyStateChanged = 0x1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cea3f4
-;   undefined4 DAT_01cea3f8
+;   int g_LastPingTime
+;   uint g_CurrentGameTime
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -66,10 +66,10 @@ section .text
     MOV ESI,0x12                        ; 004ed1b0
     SAR EDX,0x1f                        ; 004ed1b5
     IDIV ESI                            ; 004ed1b8
-    MOV EBP,dword ptr [0x01cea3f4]      ; 004ed1ba | DAT_01cea3f4
+    MOV EBP,dword ptr [0x01cea3f4]      ; 004ed1ba | g_LastPingTime
     MOV EDX,EAX                         ; 004ed1c0
     SUB EAX,EBP                         ; 004ed1c2
-    MOV dword ptr [0x01cea3f4],EDX      ; 004ed1c4 | DAT_01cea3f4
+    MOV dword ptr [0x01cea3f4],EDX      ; 004ed1c4 | g_LastPingTime
     TEST EAX,EAX                        ; 004ed1ca
     JL 0x004ed2be                       ; 004ed1cc
         ;   XREF to: 004ed2be (CONDITIONAL_JUMP)  ; LAB_004ed2be
@@ -77,7 +77,7 @@ section .text
     JLE 0x004ed1de                      ; 004ed1d7
         ;   XREF to: 004ed1de (CONDITIONAL_JUMP)  ; LAB_004ed1de
     MOV EAX,0x20000                     ; 004ed1d9
-    MOV EDX,dword ptr [0x01cea3f8]      ; 004ed1de | DAT_01cea3f8
+    MOV EDX,dword ptr [0x01cea3f8]      ; 004ed1de | g_CurrentGameTime
         ;   Label: LAB_004ed1de
     MOV ECX,0x29                        ; 004ed1e4
     ADD EDX,EAX                         ; 004ed1e9
@@ -86,13 +86,13 @@ section .text
     MOV byte ptr [ESP + 0x4],AH         ; 004ed1f0
     MOV EAX,dword ptr [EBX + 0x114]     ; 004ed1f4
     SHL EAX,0x3                         ; 004ed1fa
-    MOV dword ptr [0x01cea3f8],EDX      ; 004ed1fd | DAT_01cea3f8
+    MOV dword ptr [0x01cea3f8],EDX      ; 004ed1fd | g_CurrentGameTime
     MOV EDX,EAX                         ; 004ed203
     SHL EAX,0x4                         ; 004ed205
     SUB EAX,EDX                         ; 004ed208
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x64] ; 004ed20a
     MOV dword ptr [ESP + 0x1d],EAX      ; 004ed20e
-    MOV EAX,[0x01cea3f8]                ; 004ed212 | DAT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004ed212 | g_CurrentGameTime
     MOV dword ptr [ESP + 0x5],EAX       ; 004ed217
     MOV EAX,dword ptr [EBX + 0x114]     ; 004ed21b
     SHL EAX,0x3                         ; 004ed221
@@ -147,8 +147,8 @@ section .text
     SUB EAX,EDX                         ; 004ed2a1
     ADD ESP,0xc                         ; 004ed2a3
     ADD EBX,EAX                         ; 004ed2a6
-    MOV EAX,[0x01cea3f8]                ; 004ed2a8 | DAT_01cea3f8
-    MOV dword ptr [0x005bdee4],EDI      ; 004ed2ad | g_INT_005bdee4
+    MOV EAX,[0x01cea3f8]                ; 004ed2a8 | g_CurrentGameTime
+    MOV dword ptr [0x005bdee4],EDI      ; 004ed2ad | g_NetLobbyStateChanged
     MOV dword ptr [EBX + 0x60],EAX      ; 004ed2b3
     ADD ESP,0x2c                        ; 004ed2b6
     POP EBP                             ; 004ed2b9

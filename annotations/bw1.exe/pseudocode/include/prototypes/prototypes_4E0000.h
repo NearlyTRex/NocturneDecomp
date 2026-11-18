@@ -12,6 +12,7 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
 #include "types/classes/CFlies.h"
 #include "types/classes/CFootstep.h"
 #include "types/classes/CGhoul.h"
@@ -34,14 +35,17 @@
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CVector4i.h"
 #include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
+#include "types/enums/EHeroType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SQuadVertices.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -51,7 +55,7 @@
 void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004e0100(CGhoul *this_ptr,int layer_flag);
 void __cdecl core_ghoul_cpp_CGhoul_archive_FUN_004e0130(CGhoul *this_ptr);
 int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e0240(CGhoul *this_ptr,CVector3f *out_attract_position);
-CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004e0520(CGhoul *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004e0520(CGhoul *this_ptr,CVector3f *out_point);
 void __cdecl core_ghoul_cpp_CGhoul_processDismemberment_FUN_004e05b0(CGhoul *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,CVector3f *out_points_array);
@@ -66,11 +70,11 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e1a10(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e1be0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e1fb0(CGlass *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004e2170(CGlass *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_glass_cpp_CGlass_getBoundingBox_FUN_004e2170(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004e21f0(CGlass *this_ptr);
 ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004e22f0(CGlass *this_ptr,SCollisionInfo *collision_info);
-void core_glass_cpp_FUN_004e2320(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
-void core_glass_cpp_FUN_004e34b0(CDemonActor *param_1);
+void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004e2320(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level);
+void __cdecl core_glass_cpp_CGlass_shatter_FUN_004e34b0(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLaserInfo *laser_info);
 EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004e3a30(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004e3a40(CGlass *this_ptr);
@@ -90,7 +94,7 @@ CGoggles * __cdecl core_goggles_cpp_CGoggles_dtor_FUN_004e3cf0(CGoggles *this_pt
 void __cdecl core_gore_cpp_staticInit_FUN_004e3d40(void);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004e3e20(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004e3e50(CBloodParticle *this_ptr);
-void core_gore_cpp_FUN_004e3f40(CVector3f *param_1);
+void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004e3f40(CBloodParticle *this_ptr);
 int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004e4730(CBloodParticle *this_ptr,CVector3f *collision_normal);
 void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004e4790(CBloodSplat *this_ptr,CVector3f *position,EBloodType blood_type);
 void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004e4830(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type);
@@ -121,7 +125,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060(CGore *this_ptr,CV
 CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004e6290(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004e62e0(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
 void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004e6310(CGore *this_ptr);
-CFlies * core_gore_cpp_FUN_004e63e0(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
+CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004e63e0(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size);
 void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004e64d0(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
 void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004e6510(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,EBloodType blood_type);
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004e6590(CGore *this_ptr,CVector3f *position,int *out_blood_type);
@@ -199,7 +203,7 @@ CHealthItem * __cdecl core_health_cpp_CHealthItem_ctor_FUN_004ea330(CHealthItem 
 void __cdecl core_health_cpp_CHealthItem_setup_FUN_004ea390(CHealthItem *this_ptr);
 void __cdecl core_health_cpp_CHealthItem_process_FUN_004ea3b0(CHealthItem *this_ptr,float delta_time);
 int __cdecl core_health_cpp_CHealthItem_renderOpaque_FUN_004ea3c0(CHealthItem *this_ptr);
-CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004ea440(CHealthItem *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_health_cpp_CHealthItem_getBoundingBox_FUN_004ea440(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_health_cpp_CHealthItem_archive_FUN_004ea480(CHealthItem *this_ptr);
 ECollisionType __cdecl core_health_cpp_CHealthItem_getCollisionType_FUN_004ea500(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004ea510(CHealthItem *this_ptr,CDemonActor *picker);
@@ -211,7 +215,7 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004ea640(CLocation *locatio
 int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(CVector3f *point,float radius);
 int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004ea830(CHero *this_ptr);
-void core_hero_cpp_FUN_004ea980(int param_1);
+CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004ea980(CHero *this_ptr,uint flags);
 void __cdecl core_hero_cpp_CHero_setup_FUN_004eaa10(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004eaa70(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004eaab0(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
@@ -219,46 +223,46 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004eab00(CHero *this_ptr);
 CPathMap * __cdecl core_hero_cpp_CHero_getPathMap_FUN_004ead80(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004ead90(CHero *this_ptr,CDemonActor *grabber);
 int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004eada0(CHero *this_ptr,CDemonActor *grabber,int grab_type);
-undefined4 switchD_004ec9a0::caseD_1(void);
+int __cdecl switchD_004ec9a0::core_hero_cpp_CHero_isInvulnerable_FUN_004eadb0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canReachPickup_FUN_004eade0(CHero *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
 int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004eadf0(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004eaf20(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004eb090(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *this_ptr);
-bool core_hero_cpp_FUN_004eb3e0(CDemonActor *param_1);
-void core_hero_cpp_FUN_004eb5b0(int param_1);
+int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero *this_ptr,int ignore_lock);
+void __cdecl core_hero_cpp_CHero_clearHeroAction_FUN_004eb5b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(CHero *this_ptr);
-int __cdecl core_hero_cpp_FUN_004eb660(CHero *this_ptr);
-undefined4 __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004eb890(CCharacter *param_1);
+int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004eb660(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004ebbe0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004ebe80(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryUseSelectedItem_FUN_004ec020(CHero *this_ptr);
-bool core_hero_cpp_FUN_004ec090(CHero *param_1,char *param_2);
+bool __cdecl core_hero_cpp_CHero_tryPickupActorOfClass_FUN_004ec090(CHero *this_ptr,char *class_name);
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004ec1b0(CHero *this_ptr);
-void __cdecl core_hero_cpp_FUN_004ec280(CHero *this_ptr,int hand_index);
+void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004ec280(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004ec300(CHero *this_ptr,uint key_mask);
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004ec320(CHero *this_ptr,int ai_task);
-CCharacter * core_hero_cpp_FUN_004ec350(int param_1,float *param_2);
+CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004ec350(CHero *this_ptr,float *out_distance);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004ec540(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004ec570(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004ec640(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004ec950(CHero *this_ptr,int action_type);
-undefined4 switchD_004ec9a0::default(void);
+int __cdecl switchD_004ec9a0::core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004ec9c0(CHeroPlaceholder *this_ptr);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004ec9e0(CHero *this_ptr);
-undefined4 core_hero_cpp_FUN_004eca10(CHero *param_1,undefined4 param_2);
+int __cdecl core_hero_cpp_CHero_findHeroAction_FUN_004eca10(CHero *this_ptr,int ignore_lock);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004ecb90(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004ecba0(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004ecc00(CHeroPlaceholder *this_ptr,uint flags);
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004ecc60(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
-CDemonActor * core_hero_cpp_FUN_004ecca0(int param_1);
+CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004ecca0(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004ecd50(CHeroPlaceholder *this_ptr);
-undefined8 core_hero_cpp_FUN_004ecda0(void);
+void __cdecl core_hero_cpp_initializeColorMasks_FUN_004ecda0(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004ecef0(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70(void);
 void __cdecl core_hiram_cpp_staticInit_FUN_004ed130(void);

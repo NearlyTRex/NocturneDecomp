@@ -6,87 +6,91 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004c94c0(CGore *this_ptr,int render_all,int expire_flag)
 
 {
+  CBloodSplat *this_ptr_00;
   int iVar1;
   int iVar2;
+  CBloodPool *this_ptr_01;
+  CFootstep *this_ptr_02;
   
   if (g_CGamePtr->blood_flag != 0) {
-    core_gore_cpp_CBloodSplat_setupRenderState_FUN_004c7f80((CBloodSplat *)0x1cbcafc);
+    core_gore_cpp_CBloodSplat_setupRenderState_FUN_004c7f80(g_BloodSplats);
     if (render_all == 0) {
       iVar2 = 0;
-      if (0 < _DAT_01cbcaf8) {
+      if (0 < g_BloodSplatCount) {
         iVar1 = 0;
         do {
-          if (*(int *)(iVar1 + 0x1cbcafc) == 0) {
-            core_gore_cpp_FUN_004c8010(iVar1 + 0x1cbcafc,expire_flag);
+          if (*(int *)((int)&g_BloodSplats[0].expired + iVar1) == 0) {
+            core_gore_cpp_CBloodSplat_render_FUN_004c8010
+                      ((CBloodSplat *)((int)&g_BloodSplats[0].expired + iVar1),expire_flag);
           }
           iVar2 = iVar2 + 1;
           iVar1 = iVar1 + 0x44;
-        } while (iVar2 < _DAT_01cbcaf8);
+        } while (iVar2 < g_BloodSplatCount);
       }
     }
     else {
       iVar2 = 0;
-      if (0 < _DAT_01cbcaf8) {
-        iVar1 = 0x1cbcafc;
+      if (0 < g_BloodSplatCount) {
+        this_ptr_00 = g_BloodSplats;
         do {
           iVar2 = iVar2 + 1;
-          core_gore_cpp_FUN_004c8010(iVar1,0);
-          iVar1 = iVar1 + 0x44;
-        } while (iVar2 < _DAT_01cbcaf8);
+          core_gore_cpp_CBloodSplat_render_FUN_004c8010(this_ptr_00,0);
+          this_ptr_00 = this_ptr_00 + 1;
+        } while (iVar2 < g_BloodSplatCount);
       }
     }
-    core_gore_cpp_CBloodPool_setupRenderState_FUN_004c8800((CBloodPool *)0x1cdde44);
+    core_gore_cpp_CBloodPool_setupRenderState_FUN_004c8800(g_BloodPools);
     if (render_all == 0) {
       iVar2 = 0;
-      if (0 < _DAT_01cdde40) {
+      if (0 < g_BloodPoolCount) {
         iVar1 = 0;
         do {
-          if (*(int *)(iVar1 + 0x1cdde44) == 0) {
-            core_gore_cpp_FUN_004c88a0(iVar1 + 0x1cdde44,expire_flag);
+          if (*(int *)((int)&g_BloodPools[0].expired + iVar1) == 0) {
+            core_gore_cpp_CBloodPool_render_FUN_004c88a0
+                      ((CBloodPool *)((int)&g_BloodPools[0].expired + iVar1),expire_flag);
           }
           iVar2 = iVar2 + 1;
           iVar1 = iVar1 + 0x28;
-        } while (iVar2 < _DAT_01cdde40);
+        } while (iVar2 < g_BloodPoolCount);
       }
     }
     else {
       iVar2 = 0;
-      if (0 < _DAT_01cdde40) {
-        iVar1 = 0x1cdde44;
+      if (0 < g_BloodPoolCount) {
+        this_ptr_01 = g_BloodPools;
         do {
           iVar2 = iVar2 + 1;
-          core_gore_cpp_FUN_004c88a0(iVar1,0);
-          iVar1 = iVar1 + 0x28;
-        } while (iVar2 < _DAT_01cdde40);
+          core_gore_cpp_CBloodPool_render_FUN_004c88a0(this_ptr_01,0);
+          this_ptr_01 = this_ptr_01 + 1;
+        } while (iVar2 < g_BloodPoolCount);
       }
     }
     if (render_all == 0) {
       iVar2 = 0;
-      if (0 < _DAT_01cde348) {
+      if (0 < g_FootstepCount) {
         iVar1 = 0;
         do {
-          if (*(int *)(iVar1 + 0x1cde34c) == 0) {
-            core_gore_cpp_FUN_004c9000(iVar1 + 0x1cde34c,expire_flag);
+          if (*(int *)((int)g_Footsteps[0].corners + iVar1 + -8) == 0) {
+            core_gore_cpp_CFootstep_render_FUN_004c9000
+                      ((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),expire_flag);
           }
           iVar2 = iVar2 + 1;
           iVar1 = iVar1 + 0x40;
-        } while (iVar2 < _DAT_01cde348);
+        } while (iVar2 < g_FootstepCount);
       }
     }
     else {
       iVar2 = 0;
-      if (0 < _DAT_01cde348) {
-        iVar1 = 0x1cde34c;
+      if (0 < g_FootstepCount) {
+        this_ptr_02 = g_Footsteps;
         do {
           iVar2 = iVar2 + 1;
-          core_gore_cpp_FUN_004c9000(iVar1,0);
-          iVar1 = iVar1 + 0x40;
-        } while (iVar2 < _DAT_01cde348);
+          core_gore_cpp_CFootstep_render_FUN_004c9000(this_ptr_02,0);
+          this_ptr_02 = this_ptr_02 + 1;
+        } while (iVar2 < g_FootstepCount);
         return;
       }
     }

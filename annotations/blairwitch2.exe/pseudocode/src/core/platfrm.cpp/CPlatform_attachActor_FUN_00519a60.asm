@@ -18,13 +18,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_platfrm_cpp_005e23cc
 ;   TerminatedCString s_CPlatform_attachActor_to_005e23e0
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
-;   core_xform.cpp_FUN_00591ad0
-;   core_xform.cpp_FUN_00591c10
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     PUSH EAX                            ; 00519acd
     LEA EAX,[ESP + 0x8]                 ; 00519ace
     PUSH EAX                            ; 00519ad2
-    CALL core_xform.cpp_FUN_00591c10    ; 00519ad3
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 00519ad3
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00519ad8
     LEA EAX,[ESI + 0x30]                ; 00519adb
     PUSH EAX                            ; 00519ade
@@ -96,8 +96,8 @@ section .text
     PUSH ESI                            ; 00519ae2
     LEA EAX,[ESP + 0x68]                ; 00519ae3
     PUSH EAX                            ; 00519ae7
-    CALL core_xform.cpp_FUN_00591ad0    ; 00519ae8
-        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0 ; 00519ae8
+        ;   XREF to: 00591ad0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_00591ad0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00519aed
     LEA EAX,[ESP + 0x60]                ; 00519af0
     PUSH EAX                            ; 00519af4
@@ -122,10 +122,10 @@ section .text
         ;   Label: LAB_00519b28
     MOV EBX,0x3d0                       ; 00519b2d
     PUSH 0x5e23e0                       ; 00519b32 | = "CPlatform::attachActor - too many!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00519b37 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00519b3d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00519b43
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00519b37 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00519b3d | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00519b43
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00519b48
     ADD ESP,0x90                        ; 00519b4b
     POP EBP                             ; 00519b51

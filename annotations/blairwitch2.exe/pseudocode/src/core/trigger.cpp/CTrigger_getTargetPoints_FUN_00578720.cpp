@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_00578720(CTrigger *this_ptr,CVector3f *out_points_array)
 
 {
@@ -56,10 +54,10 @@ int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_00578720(CTrigger *thi
        *(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  fStack_30 = fStack_24 * _DAT_005ecf0a;
-  fStack_2c = fStack_20 * _DAT_005ecf0a;
-  fStack_28 = fStack_1c * _DAT_005ecf0a;
-  fStack_c = fStack_24 * _DAT_005ecf0a;
+  fStack_30 = fStack_24 * 0.5f;
+  fStack_2c = fStack_20 * 0.5f;
+  fStack_28 = fStack_1c * 0.5f;
+  fStack_c = fStack_24 * 0.5f;
   *(uint *)(&stack0xfffffff8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffffd4 + (uint)bVar4 * -8);
   *(uint *)(&stack0xfffffffc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =

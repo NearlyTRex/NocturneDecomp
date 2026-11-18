@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_005cdaad at 005cdacd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fb299
-;   undefined4 DAT_00626b50
+;   char g_SpaceCharacter =  
+;   char*[7] g_MathErrorMessages
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_005c2f00
@@ -31,13 +31,13 @@ section .text
     MOV EBX,EAX                         ; 005cda6e
     PUSH EAX                            ; 005cda70
     MOV EAX,dword ptr [EBP + 0x8]       ; 005cda71
-    MOV EDX,dword ptr [EAX*0x4 + 0x626b50] ; 005cda74 | DAT_00626b50
+    MOV EDX,dword ptr [EAX*0x4 + 0x626b50] ; 005cda74 | g_MathErrorMessages
     PUSH EDX                            ; 005cda7b
     CALL crt_unknown.c_FUN_005ce150     ; 005cda7c
         ;   XREF to: 005ce150 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ce150()
     ADD ESP,0x8                         ; 005cda81
     PUSH EBX                            ; 005cda84
-    PUSH 0x5fb299                       ; 005cda85 | DAT_005fb299
+    PUSH 0x5fb299                       ; 005cda85 | g_SpaceCharacter
     CALL crt_unknown.c_FUN_005ce150     ; 005cda8a
         ;   XREF to: 005ce150 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ce150()
     ADD ESP,0x8                         ; 005cda8f

@@ -19,12 +19,12 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e16cc
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004f9950 at 004f9960
 ;   core_moon.cpp_CMoon_render_FUN_00502510 at 00502598
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fdfe
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0 at 005342ef
-;   core_set.cpp_FUN_0052fad0 at 0052fdfe
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1563
+;   double g_CameraScaleFactor = 256
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
     SUB ESP,0x8                         ; 0046afb1
     MOV EAX,dword ptr [ESP + 0x14]      ; 0046afb4
-    FLD double ptr [0x005d1563]         ; 0046afb8 | DAT_005d1563
+    FLD double ptr [0x005d1563]         ; 0046afb8 | g_CameraScaleFactor
     FLD float ptr [EAX + 0x8]           ; 0046afbe
     FMUL ST1                            ; 0046afc1
     FLD float ptr [EAX + 0x4]           ; 0046afc3
@@ -47,10 +47,10 @@ section .text
     FMULP ST3                           ; 0046afca
     FXCH                                ; 0046afcc
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046afce
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046afd3
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046afd5
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0046afda
     FISTP dword ptr [ESP]               ; 0046afdc
     FISTP dword ptr [ESP + 0x4]         ; 0046afdf
@@ -58,7 +58,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 0046afe6
     PUSH EDX                            ; 0046afea
     CALL crt_math.c_round_FUN_005b7ff0  ; 0046afeb
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH ECX                            ; 0046aff0
     FISTP dword ptr [ESP + 0xc]         ; 0046aff1
     MOV EBX,dword ptr [ESP + 0xc]       ; 0046aff5

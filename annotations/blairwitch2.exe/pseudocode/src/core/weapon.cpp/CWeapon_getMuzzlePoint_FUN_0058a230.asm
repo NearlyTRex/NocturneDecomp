@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0058a230(CWeapon *this_ptr,CVector3f *out_point)
+; CVector3f * __stack_esi core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0058a230(CWeapon *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20

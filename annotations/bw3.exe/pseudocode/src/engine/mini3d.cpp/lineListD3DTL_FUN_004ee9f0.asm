@@ -11,9 +11,9 @@
 ;   engine_mini3d.cpp_drawLine_FUN_004f3700 at 004f37cd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_01c6e2b4
-;   undefined4 DAT_02cf60dc
+;   int g_INT_01c6cee8
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   void* g_APIDLL_setTextureClamp
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_updateRenderState_FUN_004f2430
@@ -28,10 +28,10 @@ section .text
         ;   Label: engine_mini3d.cpp_lineListD3DTL_FUN_004ee9f0
     CALL engine_mini3d.cpp_updateRenderState_FUN_004f2430 ; 004ee9f5
         ;   XREF to: 004f2430 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_updateRenderState_FUN_004f2430()
-    CMP dword ptr [0x02cf60dc],0x0      ; 004ee9fa | DAT_02cf60dc
+    CMP dword ptr [0x02cf60dc],0x0      ; 004ee9fa | g_APIDLL_setTextureClamp
     JZ 0x004eea0c                       ; 004eea01
         ;   XREF to: 004eea0c (CONDITIONAL_JUMP)  ; LAB_004eea0c
-    CMP dword ptr [0x01c6cee8],0x0      ; 004eea03 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 004eea03 | g_INT_01c6cee8
     JNZ 0x004eea0d                      ; 004eea0a
         ;   XREF to: 004eea0d (CONDITIONAL_JUMP)  ; LAB_004eea0d
     RET                                 ; 004eea0c
@@ -40,13 +40,13 @@ section .text
         ;   Label: LAB_004eea0d
     PUSH ESI                            ; 004eea0e
     PUSH EBX                            ; 004eea0f
-    MOV EBX,dword ptr [0x01c6e2b4]      ; 004eea10 | DAT_01c6e2b4
+    MOV EBX,dword ptr [0x01c6e2b4]      ; 004eea10 | g_RenderStateFlags
     PUSH EBX                            ; 004eea16
     MOV ESI,dword ptr [ESP + 0x18]      ; 004eea17
     PUSH ESI                            ; 004eea1b
     MOV EDI,dword ptr [ESP + 0x18]      ; 004eea1c
     PUSH EDI                            ; 004eea20
-    CALL dword ptr [0x02cf60dc]         ; 004eea21 | DAT_02cf60dc
+    CALL dword ptr [0x02cf60dc]         ; 004eea21 | g_APIDLL_setTextureClamp
     ADD ESP,0xc                         ; 004eea27
     POP EBX                             ; 004eea2a
     POP ESI                             ; 004eea2b

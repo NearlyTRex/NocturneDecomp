@@ -15,66 +15,69 @@ void __cdecl engine_clipper_c_clipPolygonLeftPlaneGlobal_FUN_00432420(void)
   SRenderVertex *v1;
   SRenderVertex *pSVar4;
   SRenderVertex *pSVar5;
-  int *piVar6;
+  SRenderVertex *pSVar6;
   byte bVar7;
   int iStack_14;
   
   bVar7 = 0;
   iStack_14 = 0;
-  if (0 < (int)DAT_007bfd00) {
-    v1 = (SRenderVertex *)&DAT_007bfd0c;
+  if (0 < g_OutputVertexCount) {
+    v1 = g_ClipperOutputBuffer;
     do {
       uVar2 = iStack_14 + 1;
-      if (uVar2 == DAT_007bfd00) {
-        uVar2 = uVar2 ^ DAT_007bfd00;
+      if (uVar2 == g_OutputVertexCount) {
+        uVar2 = uVar2 ^ g_OutputVertexCount;
       }
-      pSVar4 = (SRenderVertex *)(&DAT_007bfd0c + uVar2 * 0xc);
+      pSVar4 = g_ClipperOutputBuffer + uVar2;
       bVar1 = (v1->projected_vertex).transformed_x <= -(v1->projected_vertex).transformed_z;
-      if ((pSVar4->projected_vertex).transformed_x <= (int)-(&DAT_007bfd14)[uVar2 * 0xc]) {
+      if ((pSVar4->projected_vertex).transformed_x <=
+          -g_ClipperOutputBuffer[uVar2].projected_vertex.transformed_z) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
         pSVar4 = v1;
-        piVar6 = &DAT_007c090c + DAT_007bfd04 * 0xc;
+        pSVar5 = g_ClipperWorkingBuffer + g_TempVertexCount;
         for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar6 = (pSVar4->projected_vertex).transformed_x;
+          (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
           pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-          piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+          pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
         }
         for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *(char *)piVar6 = (char)(pSVar4->projected_vertex).transformed_x;
+          *(char *)&(pSVar5->projected_vertex).transformed_x =
+               (char)(pSVar4->projected_vertex).transformed_x;
           pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -2 + 1);
-          piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
+          pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);
         }
-        DAT_007bfd04 = DAT_007bfd04 + 1;
+        g_TempVertexCount = g_TempVertexCount + 1;
         break;
       case 1:
         engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00431f40
-                  (pSVar4,v1,(SRenderVertex *)(&DAT_007c090c + DAT_007bfd04 * 0xc));
-        DAT_007bfd04 = DAT_007bfd04 + 1;
+                  (pSVar4,v1,g_ClipperWorkingBuffer + g_TempVertexCount);
+        g_TempVertexCount = g_TempVertexCount + 1;
         break;
       case 2:
         pSVar5 = v1;
-        piVar6 = &DAT_007c090c + DAT_007bfd04 * 0xc;
+        pSVar6 = g_ClipperWorkingBuffer + g_TempVertexCount;
         for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar6 = (pSVar5->projected_vertex).transformed_x;
+          (pSVar6->projected_vertex).transformed_x = (pSVar5->projected_vertex).transformed_x;
           pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
-          piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+          pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);
         }
         for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *(char *)piVar6 = (char)(pSVar5->projected_vertex).transformed_x;
+          *(char *)&(pSVar6->projected_vertex).transformed_x =
+               (char)(pSVar5->projected_vertex).transformed_x;
           pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);
-          piVar6 = (int *)((int)piVar6 + (uint)bVar7 * -2 + 1);
+          pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar7 * -2 + 1);
         }
-        DAT_007bfd04 = DAT_007bfd04 + 1;
+        g_TempVertexCount = g_TempVertexCount + 1;
         engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00431f40
-                  (v1,pSVar4,(SRenderVertex *)(&DAT_007c090c + DAT_007bfd04 * 0xc));
-        DAT_007bfd04 = DAT_007bfd04 + 1;
+                  (v1,pSVar4,g_ClipperWorkingBuffer + g_TempVertexCount);
+        g_TempVertexCount = g_TempVertexCount + 1;
       }
       iStack_14 = iStack_14 + 1;
       v1 = v1 + 1;
-    } while (iStack_14 < (int)DAT_007bfd00);
+    } while (iStack_14 < g_OutputVertexCount);
   }
   return;
 }

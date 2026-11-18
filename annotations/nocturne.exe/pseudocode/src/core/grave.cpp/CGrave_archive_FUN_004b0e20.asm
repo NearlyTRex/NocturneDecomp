@@ -17,7 +17,7 @@
 ;   TerminatedCString s_hideOnFirstFrame_00585232
 ;   TerminatedCString s_startCondition_00585243
 ;   TerminatedCString s_startSound_00585252
-;   int INT_005ba8c8 = 0x4
+;   int g_CGraveClassVersion = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
@@ -50,7 +50,7 @@ section .text
     PUSH EAX                            ; 004b0e51
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004b0e52
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005ba8c8]      ; 004b0e57 | INT_005ba8c8
+    MOV EDX,dword ptr [0x005ba8c8]      ; 004b0e57 | g_CGraveClassVersion
     ADD ESP,0x8                         ; 004b0e5d
     CMP EDX,0x2                         ; 004b0e60
     JL 0x004b0ecf                       ; 004b0e63
@@ -67,7 +67,7 @@ section .text
     PUSH EAX                            ; 004b0e84
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004b0e85
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
-    MOV ESI,dword ptr [0x005ba8c8]      ; 004b0e8a | INT_005ba8c8
+    MOV ESI,dword ptr [0x005ba8c8]      ; 004b0e8a | g_CGraveClassVersion
     ADD ESP,0x8                         ; 004b0e90
     CMP ESI,0x3                         ; 004b0e93
     JL 0x004b0ec0                       ; 004b0e96
@@ -84,7 +84,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004b0eb8
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004b0ebd
-    CMP dword ptr [0x005ba8c8],0x4      ; 004b0ec0 | INT_005ba8c8
+    CMP dword ptr [0x005ba8c8],0x4      ; 004b0ec0 | g_CGraveClassVersion
         ;   Label: LAB_004b0ec0
     JGE 0x004b0f00                      ; 004b0ec7
         ;   XREF to: 004b0f00 (CONDITIONAL_JUMP)  ; LAB_004b0f00

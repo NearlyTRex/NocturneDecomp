@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 23,
+    "complexity_score": 7,
     "cross_reference_count": 33,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 21
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
   },
   "cross_references": [
     {
@@ -112,27 +110,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bdfb0",
+      "from_addr": "004be805",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bb100",
       "from_addr": "004bc5ef",
       "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004b6f30",
+      "from_addr": "004b798c",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ba540",
       "from_addr": "004ba9fa",
       "name": "core_game.cpp_CGame_processHotkeys_FUN_004ba540",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b6f30",
-      "from_addr": "004b798c",
-      "name": "core_game.cpp_FUN_004b6f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bdfb0",
-      "from_addr": "004be805",
-      "name": "core_game.cpp_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -144,7 +142,7 @@
     {
       "addr": "004d3c90",
       "from_addr": "004d3dd6",
-      "name": "core_hero.cpp_FUN_004d3c90",
+      "name": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004d3c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -162,7 +160,7 @@
     {
       "addr": "004e04b0",
       "from_addr": "004e053d",
-      "name": "core_lever.cpp_FUN_004e04b0",
+      "name": "core_lever.cpp_CLever_setState_FUN_004e04b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -174,7 +172,7 @@
     {
       "addr": "00524940",
       "from_addr": "00524b12",
-      "name": "core_prye.cpp_FUN_00524940",
+      "name": "core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -186,7 +184,7 @@
     {
       "addr": "005459b0",
       "from_addr": "00545b71",
-      "name": "core_shadow.cpp_FUN_005459b0",
+      "name": "core_shadow.cpp_CShadow_processDamage_FUN_005459b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -236,8 +234,8 @@
   "globals": [
     {
       "addr": "01c734ac",
-      "name": "DAT_01c734ac",
-      "type": "undefined4",
+      "name": "g_EventDryRun",
+      "type": "int",
       "value": null
     }
   ],
@@ -247,7 +245,7 @@
       {
         "call_addr": "004be805",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,7 +256,7 @@
       {
         "call_addr": "004e053d",
         "call_type": "direct",
-        "caller": "core_lever.cpp_FUN_004e04b0",
+        "caller": "core_lever.cpp_CLever_setState_FUN_004e04b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +267,7 @@
       {
         "call_addr": "004e0573",
         "call_type": "direct",
-        "caller": "core_lever.cpp_FUN_004e04b0",
+        "caller": "core_lever.cpp_CLever_setState_FUN_004e04b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -280,7 +278,7 @@
       {
         "call_addr": "004b798c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6f30",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -431,14 +429,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

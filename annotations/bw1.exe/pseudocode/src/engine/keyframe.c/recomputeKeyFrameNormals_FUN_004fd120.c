@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLPrimitiveTriangle *primitive_list)
 
 {
@@ -25,7 +23,7 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLPrimit
     iVar1 = (primitive_list->base).base.type;
     pSVar3 = primitive_list;
     if (((iVar1 == 0x18) || (iVar1 == 0x29)) || (iVar1 == 0x19)) break;
-    uVar2 = engine_model_c_FUN_0051fee0((SMRGLHeaderExtended *)primitive_list);
+    uVar2 = engine_model_c_getMRGLSize_FUN_0051fee0((SMRGLHeaderExtended *)primitive_list);
     primitive_list =
          (SMRGLPrimitiveTriangle *)
          ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
@@ -33,14 +31,14 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLPrimit
     iVar1 = (primitive_list->base).base.type;
   }
   if (vertex_data == (CVector3i *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\keyframe.c";
-    _DAT_01d1d404 = 0x1f5;
-    core_main_c_FUN_005030e0("recomputeKeyFrameNormals: Cannot find vptr");
+    g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
+    g_INT_01d1d404 = 0x1f5;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("recomputeKeyFrameNormals: Cannot find vptr");
   }
   if (pSVar3 == (SMRGLPrimitiveTriangle *)0x0) {
-    _DAT_01d1d400 = "..\\engine\\keyframe.c";
-    _DAT_01d1d404 = 0x1f6;
-    core_main_c_FUN_005030e0("recomputeKeyFrameNormals: Cannot find fptr");
+    g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
+    g_INT_01d1d404 = 0x1f6;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {
     uVar2 = (primitive_list->base).base.type;
@@ -55,7 +53,7 @@ LAB_004fd17f:
                 (vertex_data,(SMRGLPrimitiveTriangleIndex *)primitive_list);
     }
     else if (uVar2 == 0x29) goto LAB_004fd17f;
-    uVar2 = engine_model_c_FUN_0051fee0((SMRGLHeaderExtended *)primitive_list);
+    uVar2 = engine_model_c_getMRGLSize_FUN_0051fee0((SMRGLHeaderExtended *)primitive_list);
     primitive_list =
          (SMRGLPrimitiveTriangle *)
          ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +

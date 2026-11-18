@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr)
 
 {
@@ -17,7 +15,7 @@ CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaf
   pCVar2 = (CLightStaff *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CLightStaffVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            (&(pCVar2->base).model,(char *)0x5c69c6);
+            (&(pCVar2->base).model,"l_staff.KFM");
   (pCVar2->base).is_spread_weapon = 0;
   (pCVar2->base).fire_mode = FIRE_MODE_AUTOMATIC;
   (pCVar2->base).weapon_type = WEAPON_TYPE_BARON|WEAPON_TYPE_TOMMY_GUN;
@@ -31,7 +29,7 @@ CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaf
   (pCVar2->base).draw_crosshair = 0;
   (pCVar2->base).number_of_hands_needed = 2;
   pCVar2->flicker_timer = 0.1;
-  fVar1 = _DAT_005e24ec;
+  fVar1 = 8.0f;
   pCVar2->flicker_frame = 0;
   pCVar2->sfx_handle = 0;
   (pCVar2->base).weight = fVar1;

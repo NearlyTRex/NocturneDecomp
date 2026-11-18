@@ -15,13 +15,13 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0 at 0042814f
 ;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 004371c6
 ;   core_dest.cpp_CActorDestination_process_FUN_00447140 at 004472d7
+;   core_door.cpp_CDoor_onOpened_FUN_0045efc0 at 0045efd1
 ;   core_door.cpp_CDoor_process_FUN_0045f5a0 at 0045f66f
-;   core_door.cpp_FUN_0045efc0 at 0045efd1
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890 at 004888dc
 ;   ... and 15 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c3dd0c
+;   int g_EventDryRun
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommandString_FUN_00489510
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004894f6
     XOR EDX,EDX                         ; 004894fa
     PUSH EBX                            ; 004894fc
-    MOV dword ptr [0x01c3dd0c],EDX      ; 004894fd | DAT_01c3dd0c
+    MOV dword ptr [0x01c3dd0c],EDX      ; 004894fd | g_EventDryRun
     CALL core_event.cpp_CEventList_executeCommandString_FUN_00489510 ; 00489503
         ;   XREF to: 00489510 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommandString_FUN_00489510(CEventList * this_ptr, char * command_string)
     ADD ESP,0x8                         ; 00489508

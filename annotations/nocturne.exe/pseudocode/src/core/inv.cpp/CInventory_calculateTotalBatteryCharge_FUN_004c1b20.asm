@@ -14,7 +14,7 @@
 ;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c79cf
 ;
 ; Referenced Globals:
-;   undefined4 g_CBatteryActorType_00764674.name_hash
+;   undefined4 g_CBatteryClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -42,7 +42,7 @@ section .text
     JLE 0x004c1b65                      ; 004c1b40
         ;   XREF to: 004c1b65 (CONDITIONAL_JUMP)  ; LAB_004c1b65
     MOV ESI,EDI                         ; 004c1b42
-    MOV EAX,[0x007646ac]                ; 004c1b44 | g_CBatteryActorType_00764674.name_hash
+    MOV EAX,[0x007646ac]                ; 004c1b44 | g_CBatteryClassInfo.name_hash
         ;   Label: LAB_004c1b44
     PUSH EAX                            ; 004c1b49
     MOV EDX,dword ptr [ESI + 0xc]       ; 004c1b4a

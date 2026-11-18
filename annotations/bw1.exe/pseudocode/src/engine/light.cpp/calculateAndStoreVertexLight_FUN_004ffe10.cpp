@@ -13,6 +13,6 @@ void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004ffe10(int vert
   
   iVar1 = engine_light_cpp_calculatePhongLighting_FUN_004ffaf0
                     (vertex_position->x,vertex_position->y,vertex_position->z);
-  (&DAT_00629034)[vertex_index * 0xc] = iVar1;
+  g_SRenderVertex_ARRAY_00629014[vertex_index].r = iVar1;
   return;
 }

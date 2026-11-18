@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   CFont_vtable g_CWinFontVTable
-;   undefined4 DAT_005a44a0
+;   WatcomTypeInfo g_WatcomTypeInfo_005a44a0
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
@@ -46,7 +46,7 @@ section .text
     MOV EAX,EBX                         ; 00558031
     POP EBX                             ; 00558033
     RET                                 ; 00558034
-    PUSH 0x5a44a0                       ; 00558035 | DAT_005a44a0
+    PUSH 0x5a44a0                       ; 00558035 | g_WatcomTypeInfo_005a44a0
         ;   Label: LAB_00558035
     PUSH EBX                            ; 0055803a
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 0055803b

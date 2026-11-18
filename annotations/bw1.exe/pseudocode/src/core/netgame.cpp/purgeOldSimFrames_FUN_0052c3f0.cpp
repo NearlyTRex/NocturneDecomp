@@ -6,32 +6,32 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0052c3f0(int min_sequence)
 
 {
   int iVar1;
   int iVar2;
-  byte *src;
+  SSimFrame *src;
   
   iVar1 = 0;
-  if (0 < _DAT_01d715a8) {
+  if (0 < g_SimFrameCount) {
     iVar2 = 0;
-    src = &DAT_01d71618;
+    src = g_SSimFrame_ARRAY_01d715ac + 1;
     do {
-      while (*(int *)(iVar2 + 0x1d715ac) < min_sequence) {
-        _DAT_01d715a8 = _DAT_01d715a8 + -1;
+      while (*(int *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar2 + -0xc) < min_sequence
+            ) {
+        g_SimFrameCount = g_SimFrameCount + -1;
         memmove
-                  ((void *)(iVar2 + 0x1d715ac),src,(_DAT_01d715a8 - iVar1) * 0x6c);
-        if (_DAT_01d715a8 <= iVar1) {
+                  ((void *)((int)g_SSimFrame_ARRAY_01d715ac[0].player_input + iVar2 + -0xc),src,
+                   (g_SimFrameCount - iVar1) * 0x6c);
+        if (g_SimFrameCount <= iVar1) {
           return;
         }
       }
-      src = src + 0x6c;
+      src = src + 1;
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 0x6c;
-    } while (iVar1 < _DAT_01d715a8);
+    } while (iVar1 < g_SimFrameCount);
   }
   return;
 }

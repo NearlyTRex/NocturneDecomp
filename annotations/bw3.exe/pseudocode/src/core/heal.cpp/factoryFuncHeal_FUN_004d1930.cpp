@@ -11,7 +11,7 @@ CHeal * __cdecl core_heal_cpp_factoryFuncHeal_FUN_004d1930(void)
 {
   CHeal *pCVar1;
   
-  pCVar1 = (CHeal *)operator_new(0x59c);
+  pCVar1 = operator_new(0x59c);
   if (pCVar1 == (CHeal *)0x0) {
     return (CHeal *)0x0;
   }

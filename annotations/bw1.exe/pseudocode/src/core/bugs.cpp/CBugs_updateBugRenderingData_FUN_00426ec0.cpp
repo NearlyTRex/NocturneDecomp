@@ -1,0 +1,300 @@
+// Name: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00426ec0
+// Address: 00426ec0
+// Address Range: [[00426ec0, 00427827]]
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this_ptr,SBug *bug_data,float delta_time)
+
+#include "nocturne.h"
+
+void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00426ec0(CBugs *this_ptr,SBug *bug_data,float delta_time)
+
+{
+  int iVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  CVector3i *pCVar6;
+  CDeformableModel *pCVar7;
+  SInputFace *pSVar8;
+  int iVar9;
+  byte bVar10;
+  float afStackY_1154 [1001];
+  CMatrix3x4f *matrix;
+  float local_1a0;
+  float local_19c;
+  float local_198;
+  CMatrix3x3f local_194;
+  float local_16c;
+  float local_168 [2];
+  CVector3f local_160;
+  float local_154;
+  float local_150 [4];
+  float local_140;
+  float local_13c;
+  float local_138;
+  float local_134;
+  float local_130;
+  float local_12c [4];
+  float local_11c;
+  float local_118;
+  float local_114;
+  float local_110;
+  float local_10c;
+  float local_108;
+  float local_104;
+  float local_100;
+  float local_fc;
+  float local_f8;
+  CVector3f local_f4;
+  float local_e8;
+  float local_e4;
+  float local_e0;
+  float local_dc;
+  float local_d8 [4];
+  float local_c8;
+  float local_c4;
+  float local_c0;
+  float local_bc;
+  float local_b8;
+  float local_b4 [5];
+  CVector3f local_a0;
+  float local_94;
+  float local_90 [4];
+  float local_80;
+  float local_7c;
+  float local_78;
+  float local_74;
+  float local_70;
+  float local_6c;
+  float local_68;
+  float local_64;
+  float local_60;
+  float local_5c;
+  float local_58;
+  float local_54;
+  float local_50;
+  float local_4c;
+  float local_48;
+  float local_44;
+  CVector3f local_40 [2];
+  float local_24;
+  float local_20;
+  float local_1c;
+  float local_18;
+  
+  bVar10 = 0;
+  local_1a0 = delta_time;
+  if (bug_data->current_vertex < 0) {
+    pCVar6 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->dest_vertex;
+    local_160.x = (float)pCVar6->x * 0.00390625f;
+    local_160.y = (float)pCVar6->y * 0.00390625f;
+    local_160.z = (float)pCVar6->z * 0.00390625f;
+    core_xform_cpp_transformVector3x4InPlace_FUN_005b5100(&local_160,&this_ptr->model_world_matrix);
+    iVar9 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426870
+                      (this_ptr,bug_data,local_1a0,&local_160);
+    if (iVar9 != 0) {
+      core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00427830(this_ptr,bug_data);
+      bug_data->interp_t = 0.0;
+      return;
+    }
+  }
+  else {
+    if (bug_data->crawl_duration <= 0.0) {
+      core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00427830(this_ptr,bug_data);
+      bug_data->interp_t = 0.0;
+    }
+    else {
+      iVar9 = 0;
+      local_198 = 1.0f / bug_data->crawl_duration;
+      while( true ) {
+        local_19c = bug_data->interp_t;
+        fVar2 = local_1a0 * local_198 + bug_data->interp_t;
+        bug_data->interp_t = fVar2;
+        if (fVar2 < 1.0) break;
+        core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00427830(this_ptr,bug_data);
+        local_1a0 = local_1a0 - (1.0 - local_19c) / local_198;
+        bug_data->interp_t = bug_data->interp_t + -1.0f;
+        if ((local_1a0 < (float)0.001) || (iVar9 = iVar9 + 1, 2 < iVar9)) break;
+      }
+      if (bug_data->interp_t < 0.0) {
+        bug_data->interp_t = 0.0;
+      }
+      if (1.0 < bug_data->interp_t) {
+        bug_data->interp_t = 1.0;
+      }
+    }
+    pCVar6 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->current_vertex;
+    local_13c = (float)pCVar6->x * 0.00390625f;
+    local_138 = (float)pCVar6->y * 0.00390625f;
+    local_134 = (float)pCVar6->z * 0.00390625f;
+    pCVar6 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->dest_vertex;
+    local_e8 = (float)pCVar6->x * 0.00390625f;
+    local_e4 = (float)pCVar6->y * 0.00390625f;
+    local_e0 = (float)pCVar6->z * 0.00390625f;
+    local_154 = local_e8 * bug_data->interp_t;
+    local_150[0] = local_e4 * bug_data->interp_t;
+    local_150[1] = local_e0 * bug_data->interp_t;
+    local_dc = local_154;
+    local_d8[(uint)bVar10 * -2] = local_150[(uint)bVar10 * -2];
+    local_d8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+         local_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+    local_18 = 1.0 - bug_data->interp_t;
+    matrix = &this_ptr->model_world_matrix;
+    local_100 = local_13c * local_18;
+    local_fc = local_138 * local_18;
+    local_f8 = local_134 * local_18;
+    local_90[2] = local_13c * local_18;
+    local_90[(uint)bVar10 * -2 + 3] = local_12c[(uint)bVar10 * -2 + 0xc];
+    local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+         local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+    local_4c = local_90[2] + local_dc;
+    local_48 = local_90[3] + local_d8[0];
+    local_44 = local_80 + local_d8[1];
+    local_a0.x = local_90[2] + local_dc;
+    *(float *)((int)&local_a0 + (uint)bVar10 * -8 + 4) = local_90[(uint)bVar10 * -2 + 0x12];
+    *(float *)((int)&local_a0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13];
+    core_xform_cpp_transformVector3x4_FUN_005b5080(&local_a0,matrix,local_40);
+    local_10c = local_40[0].x;
+    local_12c[(uint)bVar10 * -2 + 9] = *(float *)((int)local_40 + (uint)bVar10 * -8 + 4);
+    local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
+         *(float *)((int)local_40 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+    if (&bug_data->position != (CVector3f *)(local_12c + 8)) {
+      (bug_data->position).x = local_10c;
+      (bug_data->position).y = local_108;
+      (bug_data->position).z = local_104;
+    }
+    local_58 = local_e8 - local_13c;
+    local_54 = local_e4 - local_138;
+    local_50 = local_e0 - local_134;
+    local_16c = local_e8 - local_13c;
+    local_168[(uint)bVar10 * -2] = local_90[(uint)bVar10 * -2 + 0xf];
+    local_168[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
+    iVar9 = this_ptr->swarm_vertices[bug_data->current_vertex].first_edge_data;
+    iVar1 = this_ptr->lod_index;
+    pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
+                       (this_ptr->deformable_model_ptr);
+    pSVar8 = pCVar7->tri_data_ptr[iVar1] + iVar9;
+    pCVar6 = this_ptr->deformable_model_ptr->skinned_vertices_buffer +
+             (pSVar8->vertex_indices).vertex_index_0;
+    local_13c = (float)pCVar6->x * 0.00390625f;
+    local_138 = (float)pCVar6->y * 0.00390625f;
+    local_134 = (float)pCVar6->z * 0.00390625f;
+    pCVar6 = this_ptr->deformable_model_ptr->skinned_vertices_buffer +
+             (pSVar8->vertex_indices).vertex_index_1;
+    local_e8 = (float)pCVar6->x * 0.00390625f;
+    fVar2 = (float)pCVar6->y * 0.00390625f;
+    local_e4 = fVar2;
+    fVar3 = (float)pCVar6->z * 0.00390625f;
+    local_e0 = fVar3;
+    pCVar6 = this_ptr->deformable_model_ptr->skinned_vertices_buffer +
+             (pSVar8->vertex_indices).vertex_index_2;
+    local_c4 = (float)pCVar6->x * 0.00390625f;
+    fVar4 = (float)pCVar6->y * 0.00390625f;
+    local_c0 = fVar4;
+    fVar5 = (float)pCVar6->z * 0.00390625f;
+    local_bc = fVar5;
+    local_64 = local_e8 - local_13c;
+    local_60 = fVar2 - local_138;
+    local_5c = fVar3 - local_134;
+    local_150[2] = local_c4 - local_e8;
+    local_7c = local_64;
+    local_90[(uint)bVar10 * -2 + 6] = local_90[(uint)bVar10 * -2 + 0xc];
+    local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+    local_150[3] = fVar4 - fVar2;
+    local_140 = fVar5 - fVar3;
+    local_b8 = local_150[2];
+    local_b4[(uint)bVar10 * -2] = local_150[(uint)bVar10 * -2 + 3];
+    local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+         local_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+    local_d8[2] = local_78 * local_b4[1] - local_74 * local_b4[0];
+    local_d8[3] = local_74 * local_b8 - local_7c * local_b4[1];
+    local_c8 = local_7c * local_b4[0] - local_78 * local_b8;
+    local_b4[2] = local_d8[2];
+    local_b4[(uint)bVar10 * -2 + 3] = local_d8[(uint)bVar10 * -2 + 3];
+    local_b4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+         local_d8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+    local_94 = local_b4[3] * local_168[1] - local_b4[4] * local_168[0];
+    local_90[0] = local_b4[4] * local_16c - local_b4[2] * local_168[1];
+    local_90[1] = local_b4[2] * local_168[0] - local_b4[3] * local_16c;
+    local_130 = local_94;
+    local_12c[(uint)bVar10 * -2] = local_90[(uint)bVar10 * -2];
+    local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+         local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+    local_118 = local_168[0] * local_12c[1] - local_168[1] * local_12c[0];
+    local_114 = local_168[1] * local_130 - local_16c * local_12c[1];
+    local_110 = local_16c * local_12c[0] - local_168[0] * local_130;
+    local_70 = local_118;
+    local_90[(uint)bVar10 * -2 + 9] = local_12c[(uint)bVar10 * -2 + 6];
+    local_90[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
+         local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
+    if (local_b4 + 2 != local_90 + 8) {
+      local_b4[2] = local_70;
+      local_b4[3] = local_6c;
+      local_b4[4] = local_68;
+    }
+    local_1c = SQRT(local_b4[4] * local_b4[4] +
+                    local_b4[2] * local_b4[2] + local_b4[3] * local_b4[3]);
+    if (local_1c <= 0.0) {
+      local_b4[3] = 0.0;
+      local_b4[2] = 0.0;
+      local_b4[4] = 0.0;
+    }
+    else {
+      fVar2 = 1.0 / local_1c;
+      local_b4[2] = local_b4[2] * fVar2;
+      local_b4[3] = local_b4[3] * fVar2;
+      local_b4[4] = local_b4[4] * fVar2;
+    }
+    local_24 = SQRT(local_12c[1] * local_12c[1] +
+                    local_130 * local_130 + local_12c[0] * local_12c[0]);
+    if (local_24 <= 0.0) {
+      local_12c[0] = 0.0;
+      local_130 = 0.0;
+      local_12c[1] = 0.0;
+    }
+    else {
+      fVar2 = 1.0 / local_24;
+      local_130 = local_130 * fVar2;
+      local_12c[0] = local_12c[0] * fVar2;
+      local_12c[1] = local_12c[1] * fVar2;
+    }
+    local_20 = SQRT(local_168[1] * local_168[1] +
+                    local_16c * local_16c + local_168[0] * local_168[0]);
+    if (local_20 <= 0.0) {
+      local_168[0] = 0.0;
+      local_16c = 0.0;
+      local_168[1] = 0.0;
+    }
+    else {
+      fVar2 = 1.0 / local_20;
+      local_16c = local_16c * fVar2;
+      local_168[0] = local_168[0] * fVar2;
+      local_168[1] = local_168[1] * fVar2;
+    }
+    local_194.m[0].x = local_130;
+    local_194.m[0].y = local_b4[2];
+    local_194.m[0].z = local_16c;
+    local_194.m[1].x = local_12c[0];
+    local_194.m[1].y = local_b4[3];
+    local_194.m[1].z = local_168[0];
+    local_194.m[2].x = local_12c[1];
+    local_194.m[2].y = local_b4[4];
+    local_194.m[2].z = local_168[1];
+    core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840(&local_194,&local_f4);
+    local_12c[2] = local_f4.x;
+    local_12c[(uint)bVar10 * -2 + 3] = *(float *)((int)&local_f4 + (uint)bVar10 * -8 + 4);
+    local_12c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
+         *(float *)((int)&local_f4 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+    if (&bug_data->orientation != (CVector3f *)(local_12c + 2)) {
+      (bug_data->orientation).x = local_12c[2];
+      (bug_data->orientation).y = local_12c[3];
+      (bug_data->orientation).z = local_11c;
+      return;
+    }
+  }
+  return;
+}

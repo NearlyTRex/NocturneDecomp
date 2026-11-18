@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_mobster_die_wav_005deef4+1
+;   TerminatedCString s_mobster_die_wav_005deef5
 ;   TerminatedCString s_mobster_hit_wav_005def07
 ;   undefined4 g_CTommyGunClassInfo.name_hash
 ;
@@ -17,8 +17,8 @@
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_mobster.cpp_CMobster_processDismemberment_FUN_004ffcc0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
@@ -116,8 +116,8 @@ section .text
     PUSH ESI                            ; 00500154
         ;   Label: LAB_00500154
     MOV dword ptr [EBX + 0x25a8],0x0    ; 00500155
-    CALL core_motion.cpp_FUN_005035c0   ; 0050015f
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0050015f
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00500164
     ADD ESP,0x4                         ; 00500167
     CMP EAX,0x5                         ; 0050016a
@@ -147,7 +147,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00551050 ; 005001a6
         ;   XREF to: 00551050 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00551050(uint sfx_handle)
     ADD ESP,0x4                         ; 005001ab
-    PUSH 0x5deef5                       ; 005001ae | s_mobster_die_wav_005deef4+1
+    PUSH 0x5deef5                       ; 005001ae | = "mobster-die-?.wav"
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 005001b3
     PUSH EBX                            ; 005001b9
     CALL dword ptr [EAX + 0x34]         ; 005001ba

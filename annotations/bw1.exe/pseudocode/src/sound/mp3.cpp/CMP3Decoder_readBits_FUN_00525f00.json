@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 77,
+    "complexity_score": 36,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 116
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -69,7 +66,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     }
   ],
   "globals": [
@@ -87,26 +84,26 @@
     },
     {
       "addr": "006206b0",
-      "name": "DAT_006206b0",
-      "type": "undefined4",
+      "name": "g_MpegBitMaskTableMultiBit",
+      "type": "uint[18]",
       "value": null
     },
     {
       "addr": "006206d0",
-      "name": "DAT_006206d0",
+      "name": "g_MpegBitMaskTableMultiBit[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -319,30 +316,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"Buffer overflow!!  File: %s\",&DAT_01d404c8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_006206b0",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_006206b0 + uVar1 * 4)) >> (local_14 & 0x1f)) <<",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

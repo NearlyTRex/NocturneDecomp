@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_trap_cpp_CTrap_getActorType_FUN_00546810(CTrap *this_ptr)
 
 {
-  return &g_CTrapActorType_02dd100c;
+  return &g_CTrapClassInfo;
 }

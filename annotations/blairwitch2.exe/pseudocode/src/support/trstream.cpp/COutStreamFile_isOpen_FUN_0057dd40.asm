@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00442025
-;   support_codec.cpp_FUN_004340f0 at 00434139
+;   support_codec.cpp_CCodec_processFiles_FUN_004340f0 at 00434139
 ;
 ; *****************************************************************************
 

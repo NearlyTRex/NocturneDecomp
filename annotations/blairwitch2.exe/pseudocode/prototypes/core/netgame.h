@@ -27,15 +27,15 @@ float __cdecl getElapsedSeconds(uint timestamp);
 
 // Original: core_netgame.cpp_resetChatCounts_FUN_0050b060
 // Address: 0050b060
-void resetChatCounts(void);
+void __cdecl resetChatCounts(void);
 
 // Original: core_netgame.cpp_removeChatOut_FUN_0050b070
 // Address: 0050b070
 void __cdecl removeChatOut(int index);
 
-// Original: core_netgame.cpp_FUN_0050b110
+// Original: core_netgame.cpp_findSimFrame_FUN_0050b110
 // Address: 0050b110
-int FUN_0050b110(void);
+int __cdecl findSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_allocSimFrame_FUN_0050b160
 // Address: 0050b160
@@ -57,9 +57,9 @@ void __cdecl CNetGame::init(CNetGame *this_ptr);
 // Address: 0050b3f0
 void __cdecl CNetGame::shutdown(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_0050b420
+// Original: core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0050b420
 // Address: 0050b420
-int __cdecl FUN_0050b420(CNetGame *this_ptr);
+int __cdecl CNetGame::initializeNetworkToHost(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0
 // Address: 0050b4d0

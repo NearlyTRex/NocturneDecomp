@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 277,
+    "complexity_score": 138,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 27,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 107,
-    "suspect_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 113,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "wrong_global"
     ],
-    "total_lines": 465
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -25,7 +24,7 @@
     {
       "addr": "0050d120",
       "from_addr": "0050d15e",
-      "name": "core_path.cpp_FUN_0050d120",
+      "name": "core_path.cpp_CPathMap_setupPathSearch_FUN_0050d120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +44,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "0050b320",
@@ -73,152 +72,152 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ec1514",
-      "name": "DAT_01ec1514",
-      "type": "undefined4",
+      "name": "g_PathfindingMaxClimbHeight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ec183c",
-      "name": "DAT_01ec183c",
-      "type": "undefined4",
+      "name": "g_PathfindingCurrentX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ec1840",
-      "name": "DAT_01ec1840",
-      "type": "undefined4",
+      "name": "g_PathfindingCurrentZ",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ec1844",
-      "name": "DAT_01ec1844",
-      "type": "undefined4",
+      "name": "g_PathfindingDestX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ec1848",
-      "name": "DAT_01ec1848",
-      "type": "undefined4",
+      "name": "g_PathfindingDestZ",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ec184c",
-      "name": "DAT_01ec184c",
-      "type": "undefined4",
+      "name": "g_PathfindingQueue",
+      "type": "CPathQueueNode[5000]",
       "value": null
     },
     {
       "addr": "01ec1850",
-      "name": "DAT_01ec1850",
+      "name": "g_PathfindingQueue[0].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1854",
-      "name": "DAT_01ec1854",
+      "name": "g_PathfindingQueue[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1858",
-      "name": "DAT_01ec1858",
+      "name": "g_PathfindingQueue[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec185c",
-      "name": "DAT_01ec185c",
+      "name": "g_PathfindingQueue[1].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1860",
-      "name": "DAT_01ec1860",
+      "name": "g_PathfindingQueue[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1864",
-      "name": "DAT_01ec1864",
+      "name": "g_PathfindingQueue[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1868",
-      "name": "DAT_01ec1868",
+      "name": "g_PathfindingQueue[2].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec186c",
-      "name": "DAT_01ec186c",
+      "name": "g_PathfindingQueue[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1870",
-      "name": "DAT_01ec1870",
+      "name": "g_PathfindingQueue[3].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1874",
-      "name": "DAT_01ec1874",
+      "name": "g_PathfindingQueue[3].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1878",
-      "name": "DAT_01ec1878",
+      "name": "g_PathfindingQueue[3].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec187c",
-      "name": "DAT_01ec187c",
+      "name": "g_PathfindingQueue[4].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1880",
-      "name": "DAT_01ec1880",
+      "name": "g_PathfindingQueue[4].cost",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ec1884",
-      "name": "DAT_01ec1884",
+      "name": "g_PathfindingQueue[4].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ed02ac",
-      "name": "DAT_01ed02ac",
-      "type": "undefined4",
+      "name": "g_PathfindingQueueHead",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed02b0",
-      "name": "DAT_01ed02b0",
-      "type": "undefined4",
+      "name": "g_PathfindingQueueTail",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed2a2c",
-      "name": "DAT_01ed2a2c",
-      "type": "undefined4",
+      "name": "g_PathfindingNodesExpanded",
+      "type": "int",
       "value": null
     }
   ],
@@ -239,7 +238,7 @@
       {
         "call_addr": "0050d15e",
         "call_type": "direct",
-        "caller": "core_path.cpp_FUN_0050d120",
+        "caller": "core_path.cpp_CPathMap_setupPathSearch_FUN_0050d120",
         "estimated_params": 2,
         "instructions_analyzed": 16,
         "method": "push_count",
@@ -380,132 +379,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x01ed02b8, +1 bytes).",
+      "line": 98,
+      "match": "g_PathfindingVisitedMinus1",
+      "severity": "moderate",
+      "text": "if (((0 < iVar8) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + iVar8] == '\\0')) &&",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01ec184c",
-      "severity": "mild",
-      "text": "grid_x = *(int *)(&DAT_01ec184c + iVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01ec1850",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(&DAT_01ec1850 + iVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01ec1854",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_01ec1854 + iVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_01ec184c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec184c + iVar7) = grid_x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_01ec1850",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1850 + iVar7) = iVar2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_01ec1854",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1854 + iVar7) = iVar1 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_01ec184c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec184c + iVar2) = grid_x + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_01ec1850",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1850 + iVar2) = iVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_01ec1854",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1854 + iVar2) = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_01ec184c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec184c + iVar2) = grid_x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_01ec1850",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1850 + iVar2) = iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_01ec1854",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1854 + iVar2) = iVar1 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_01ec184c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec184c + iVar8) = grid_x + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x01ed02b8, +1 bytes).",
       "line": 101,
-      "match": "DAT_01ec1850",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1850 + iVar8) = iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_01ec1854",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ec1854 + iVar8) = iVar1;",
-      "type": "undefined_data"
+      "match": "g_PathfindingVisitedMinus1",
+      "severity": "moderate",
+      "text": "(&g_PathfindingVisitedMinus1)[iVar8 + grid_z * 100] = '\\x04';",
+      "type": "wrong_global"
     }
   ]
 }

@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 69,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00514bb0",
+    "address_range": [
+      [
+        "00514bb0",
+        "00514c1c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_verifyIntegrity_FUN_00514bb0",
+    "signature": "int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_00514bb0(CPod *this_ptr,char *pod_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00512f00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_00512f00"
+    },
+    {
+      "addr": "00512f70",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_dtor_FUN_00512f70"
+    },
+    {
+      "addr": "00512fb0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0"
+    },
+    {
+      "addr": "00513d20",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.205128205128205,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 27,
+      "INT_ADD": 15,
+      "INT_AND": 21,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 16,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 164
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051b8d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.987
+    },
+    "bw1.exe": {
+      "addr": "0053ce50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00551280",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.987
+    },
+    "nocturne.exe": {
+      "addr": "004f9100",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.987
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      },
+      {
+        "is_param": true,
+        "name": "pod_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 7,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "engine_pod_cpp_CPodFile_ctor_FUN_00512f00((CPodFile *)&stack0xfffffbd0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 9,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "((CPodFile *)&stack0xfffffbd0,pod_filename,(char *)0x0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 11,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "iVar1 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00513d20((CPodFile *)&stack0xfffffbd0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xfffffbd4",
+      "severity": "moderate",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_00512f70((CPodFile *)&stack0xfffffbd4,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xfffffbd0",
+      "severity": "moderate",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_00512f70((CPodFile *)&stack0xfffffbd0,0);",
+      "type": "stack_ref"
+    }
+  ]
+}

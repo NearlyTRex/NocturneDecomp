@@ -20,18 +20,18 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(CAlphaBitmap 
   int local_18;
   char *local_14;
   
-  if ((((-1 < this_ptr->width + x) && (x < DAT_005fba18)) && (-1 < y + this_ptr->height)) &&
-     (y < DAT_005fba1c)) {
+  if ((((-1 < this_ptr->width + x) && (x < g_INT_005fba18)) && (-1 < y + this_ptr->height)) &&
+     (y < g_INT_005fba1c)) {
     engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040db50(this_ptr);
     local_14 = this_ptr->raw;
     pcVar3 = this_ptr->opa;
-    if (DAT_005fba20 == 0x20) {
+    if (g_INT_005fba20 == 0x20) {
       local_24 = 0;
       if (0 < this_ptr->height) {
         local_18 = y;
         do {
-          if ((-1 < local_18) && (local_18 < DAT_005fba1c)) {
-            destPixels = *(uint **)(&DAT_01c5faec + local_18 * 4);
+          if ((-1 < local_18) && (local_18 < g_INT_005fba1c)) {
+            destPixels = (uint *)g_ScreenBufferArray[local_18];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {
@@ -41,8 +41,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(CAlphaBitmap 
             else {
               destPixels = destPixels + x;
             }
-            if (DAT_005fba18 < x + iVar1) {
-              iVar1 = DAT_005fba18 - x;
+            if (g_INT_005fba18 < x + iVar1) {
+              iVar1 = g_INT_005fba18 - x;
             }
             engine_special_cpp_renderAlphaRow32_FUN_005630a3
                       (destPixels,(uchar *)(local_14 + iVar2),(uchar *)(pcVar3 + iVar2),alpha,iVar1)
@@ -60,8 +60,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(CAlphaBitmap 
       if (0 < this_ptr->height) {
         local_1c = y;
         do {
-          if ((-1 < local_1c) && (local_1c < DAT_005fba1c)) {
-            destPixels_00 = *(ushort **)(&DAT_01c5faec + local_1c * 4);
+          if ((-1 < local_1c) && (local_1c < g_INT_005fba1c)) {
+            destPixels_00 = (ushort *)g_ScreenBufferArray[local_1c];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {
@@ -71,8 +71,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(CAlphaBitmap 
             else {
               destPixels_00 = destPixels_00 + x;
             }
-            if (DAT_005fba18 < x + iVar1) {
-              iVar1 = DAT_005fba18 - x;
+            if (g_INT_005fba18 < x + iVar1) {
+              iVar1 = g_INT_005fba18 - x;
             }
             engine_special_cpp_renderAlphaRow16_FUN_0056313e
                       (destPixels_00,(uchar *)(local_14 + iVar2),(uchar *)(pcVar3 + iVar2),alpha,

@@ -170,11 +170,11 @@
 ;   core_cloth.cpp_CCloth_process_FUN_005afdf0 at 005afe0e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f10eb
-;   undefined4 DAT_005f10f3
-;   undefined4 DAT_005f10fb
-;   undefined4 DAT_005f1103
-;   undefined4 DAT_006011a0
+;   double g_DOUBLE_005f10eb = 9999
+;   double g_DOUBLE_005f10f3 = 0.0100000000000000
+;   double g_DOUBLE_005f10fb = -1
+;   float g_FLOAT_005f1103 = 0.1000000
+;   float g_FLOAT_006011a0 = 256
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
@@ -185,10 +185,10 @@
 ;   core_cloth.cpp_CCloth_applyConstraints_FUN_005af530
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_005af3b0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
-;   core_dirmat.cpp_FUN_004495a0
-;   core_motion.cpp_FUN_005035c0
-;   core_xform.cpp_FUN_00591530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -205,14 +205,14 @@ section .text
     XOR EDX,EDX                         ; 005afe2f
     FLD float ptr [EBP + 0x24]          ; 005afe31
     MOV dword ptr [ESP + 0x23c],EDX     ; 005afe34
-    FCOMP double ptr [0x005f10eb]       ; 005afe3b | DAT_005f10eb
+    FCOMP double ptr [0x005f10eb]       ; 005afe3b | g_DOUBLE_005f10eb
     FNSTSW AX                           ; 005afe41
     SAHF                                ; 005afe43
     JNC 0x005b0937                      ; 005afe44
         ;   XREF to: 005b0937 (CONDITIONAL_JUMP)  ; LAB_005b0937
     FLD float ptr [EBP + 0x20]          ; 005afe4a
         ;   Label: LAB_005afe4a
-    FCOMP double ptr [0x005f10f3]       ; 005afe4d | DAT_005f10f3
+    FCOMP double ptr [0x005f10f3]       ; 005afe4d | g_DOUBLE_005f10f3
     FNSTSW AX                           ; 005afe53
     SAHF                                ; 005afe55
     JNC 0x005afe5f                      ; 005afe56
@@ -275,8 +275,8 @@ section .text
     PUSH ECX                            ; 005aff48
     LEA ESI,[ESP + 0x154]               ; 005aff49
     LEA EDI,[ESP + 0xa0]                ; 005aff50
-    CALL core_xform.cpp_FUN_00591530    ; 005aff57
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005aff57
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x154]               ; 005aff5c
     ADD ESP,0x8                         ; 005aff63
     MOVSD ES:EDI,ESI                    ; 005aff66
@@ -363,8 +363,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x28]      ; 005b0090
         ;   Label: LAB_005b0090
     PUSH EBX                            ; 005b0093
-    CALL core_motion.cpp_FUN_005035c0   ; 005b0094
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005b0094
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005b0099
     ADD ESP,0x4                         ; 005b009c
     TEST EAX,EAX                        ; 005b009f
@@ -408,8 +408,8 @@ section .text
     PUSH EAX                            ; 005b0144
     LEA ESI,[ESP + 0xd0]                ; 005b0145
     LEA EDI,[ESP + 0x40]                ; 005b014c
-    CALL core_dirmat.cpp_FUN_00449530   ; 005b0150
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 005b0150
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 005b0155
     LEA ESI,[ESP + 0xc8]                ; 005b0158
     MOV EAX,dword ptr [ESP + 0x248]     ; 005b015f
@@ -527,7 +527,7 @@ section .text
     FLD float ptr [ESP]                 ; 005b030c
         ;   Label: LAB_005b030c
     MOV EAX,[0x0061b5a8]                ; 005b030f | g_CDemonSetPtr
-    FMUL double ptr [0x005f10fb]        ; 005b0314 | DAT_005f10fb
+    FMUL double ptr [0x005f10fb]        ; 005b0314 | g_DOUBLE_005f10fb
     FLD float ptr [EAX + 0x15ac70]      ; 005b031a | g_CDemonSetInstance.active_fog.scroll.x
     FXCH                                ; 005b0320
     FSTP float ptr [ESP]                ; 005b0322
@@ -550,8 +550,8 @@ section .text
     PUSH EAX                            ; 005b036c
     LEA ESI,[ESP + 0x184]               ; 005b036d
     LEA EDI,[ESP + 0x64]                ; 005b0374
-    CALL core_dirmat.cpp_FUN_004495a0   ; 005b0378
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 005b0378
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x184]               ; 005b037d
     MOV EBX,dword ptr [EBP + 0x14]      ; 005b0384
     ADD ESP,0x8                         ; 005b0387
@@ -611,8 +611,8 @@ section .text
     PUSH EAX                            ; 005b0450
     LEA ESI,[ESP + 0x1f0]               ; 005b0451
     LEA EDI,[ESP + 0x70]                ; 005b0458
-    CALL core_dirmat.cpp_FUN_004495a0   ; 005b045c
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 005b045c
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x1f0]               ; 005b0461
     ADD ESP,0x8                         ; 005b0468
     MOVSD ES:EDI,ESI                    ; 005b046b
@@ -767,8 +767,8 @@ section .text
     PUSH EAX                            ; 005b06a7
     MOV dword ptr [ESP + 0xe8],EBX      ; 005b06a8
     MOV dword ptr [ESP + 0xf0],EBX      ; 005b06af
-    CALL core_dirmat.cpp_FUN_004495a0   ; 005b06b6
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 005b06b6
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 005b06bb
     LEA ESI,[ESP + 0x170]               ; 005b06be
     MOV EAX,dword ptr [EBP + 0x14]      ; 005b06c5
@@ -932,13 +932,13 @@ section .text
     MOV EAX,EDX                         ; 005b08ed
     ADD EBX,ECX                         ; 005b08ef
     FLD float ptr [EAX]                 ; 005b08f1
-    FMUL float ptr [0x006011a0]         ; 005b08f3 | DAT_006011a0
+    FMUL float ptr [0x006011a0]         ; 005b08f3 | g_FLOAT_006011a0
     FISTP dword ptr [EBX]               ; 005b08f9
     FLD float ptr [EAX + 0x4]           ; 005b08fb
-    FMUL float ptr [0x006011a0]         ; 005b08fe | DAT_006011a0
+    FMUL float ptr [0x006011a0]         ; 005b08fe | g_FLOAT_006011a0
     FISTP dword ptr [EBX + 0x4]         ; 005b0904
     FLD float ptr [EAX + 0x8]           ; 005b0907
-    FMUL float ptr [0x006011a0]         ; 005b090a | DAT_006011a0
+    FMUL float ptr [0x006011a0]         ; 005b090a | g_FLOAT_006011a0
     FISTP dword ptr [EBX + 0x8]         ; 005b0910
     MOV EAX,dword ptr [EBP + 0x14]      ; 005b0913
     INC ESI                             ; 005b0916
@@ -1081,7 +1081,7 @@ section .text
     FMUL ST0                            ; 005b0af6
     FADDP                               ; 005b0af8
     FSQRT                               ; 005b0afa
-    FCOMP float ptr [0x005f1103]        ; 005b0afc | DAT_005f1103
+    FCOMP float ptr [0x005f1103]        ; 005b0afc | g_FLOAT_005f1103
     FNSTSW AX                           ; 005b0b02
     SAHF                                ; 005b0b04
     JC 0x005b0c32                       ; 005b0b05
@@ -1196,7 +1196,7 @@ section .text
     FMUL ST0                            ; 005b0c5f
     FADDP                               ; 005b0c61
     FSQRT                               ; 005b0c63
-    FCOMP float ptr [0x005f1103]        ; 005b0c65 | DAT_005f1103
+    FCOMP float ptr [0x005f1103]        ; 005b0c65 | g_FLOAT_005f1103
     FNSTSW AX                           ; 005b0c6b
     SAHF                                ; 005b0c6d
     JC 0x005b080d                       ; 005b0c6e

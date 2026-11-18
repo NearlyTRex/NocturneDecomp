@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005506b0 at 005506e8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fbc14
+;   float g_FLOAT_005fbc14 = -1
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [EBX + 0x50],0x0      ; 005500e3
     MOV dword ptr [EBX + 0x54],0x0      ; 005500ea
     MOV dword ptr [EBX + 0x58],0x0      ; 005500f1
-    FLD float ptr [0x005fbc14]          ; 005500f8 | DAT_005fbc14
+    FLD float ptr [0x005fbc14]          ; 005500f8 | g_FLOAT_005fbc14
     MOV dword ptr [EBX + 0x5c],0x0      ; 005500fe
     ADD ESP,0xc                         ; 00550105
     FSTP float ptr [EBX + 0x40]         ; 00550108

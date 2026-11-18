@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 21,
+    "complexity_score": 5,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 14
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
   },
   "cross_references": [
     {
@@ -56,8 +54,8 @@
   "globals": [
     {
       "addr": "02dd0f84",
-      "name": "DAT_02dd0f84",
-      "type": "undefined4",
+      "name": "g_TextureCacheInstance",
+      "type": "CTextureCache*",
       "value": null
     }
   ],
@@ -82,6 +80,24 @@
     "pcode_op_count": 19
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00575010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    },
+    "bw1.exe": {
+      "addr": "00597c30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    },
+    "bw3.exe": {
+      "addr": "0056ac20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    },
     "nocedit.exe": {
       "addr": "005dd8e0",
       "by": "name",
@@ -97,14 +113,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

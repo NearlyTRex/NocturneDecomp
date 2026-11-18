@@ -1,0 +1,193 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 101,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "stack_ref"
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0047d890",
+    "address_range": [
+      [
+        "0047d890",
+        "0047d914"
+      ]
+    ],
+    "convention": "__stack3_esi",
+    "name": "core_dracbrid.cpp_randomizePosition_FUN_0047d890",
+    "signature": "CVector3f * __stack3_esi core_dracbrid_cpp_randomizePosition_FUN_0047d890(float src_x,float src_y,float src_z,CVector3f *dest)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "declared_stack_bytes": 12,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.27906976744186,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 96,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 3,
+      "INT_ADD": 32,
+      "INT_AND": 10,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_MULT": 12,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 24,
+      "INT_ZEXT": 12,
+      "LOAD": 15,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 270
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00465370",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00486430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7059
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "src_x",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "src_y",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "src_z",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0047d8f5",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047d906",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "afStackY_1000",
+      "severity": "moderate",
+      "text": "float afStackY_1000 [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xffffffec + (uint)bVar3 * -8) = (&src_y)[(uint)bVar3 * -2];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)dest",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)dest + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "type": "stack_ref"
+    }
+  ]
+}

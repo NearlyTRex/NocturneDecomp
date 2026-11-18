@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 287,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 13,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 207,
-    "suspect_count": 7,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 671
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 211,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 675
   },
   "cross_references": [
     {
@@ -71,74 +68,74 @@
     },
     {
       "addr": "007303fc",
-      "name": "DAT_007303fc",
-      "type": "undefined4",
+      "name": "g_CullingMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b598",
-      "name": "DAT_01c6b598",
-      "type": "undefined4",
+      "name": "g_INT_01c6b598",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b59c",
-      "name": "DAT_01c6b59c",
-      "type": "undefined4",
+      "name": "g_INT_01c6b59c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a0",
-      "name": "DAT_01c6b5a0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a4",
-      "name": "DAT_01c6b5a4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed3198",
-      "name": "DAT_01ed3198",
-      "type": "undefined4",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d24d80",
-      "name": "DAT_02d24d80",
-      "type": "undefined4",
+      "name": "g_RasterizerEdgeCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d24d84",
-      "name": "DAT_02d24d84",
-      "type": "undefined4",
+      "name": "g_SSoftwareEdge_ARRAY_02d24d84",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "02d24dd4",
-      "name": "DAT_02d24dd4",
+      "name": "g_SSoftwareEdge_ARRAY_02d24d84[1].base.y_min",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d25284",
-      "name": "DAT_02d25284",
-      "type": "undefined4",
+      "name": "g_RasterizerMinY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d25288",
-      "name": "DAT_02d25288",
-      "type": "undefined4",
+      "name": "g_RasterizerMaxY",
+      "type": "int",
       "value": null
     }
   ],
@@ -268,62 +265,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_007303fc",
-      "severity": "mild",
-      "text": "if ((DAT_007303fc != 0) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_02d24d84",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_02d24d84 + iVar6) = iVar10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_02d24d84",
-      "severity": "mild",
-      "text": "right = (SSoftwareEdge *)&DAT_02d24d84;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 151,
-      "match": "DAT_02d24d84",
-      "severity": "mild",
-      "text": "left = (SSoftwareEdge *)&DAT_02d24d84;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 167,
-      "match": "DAT_02d24d84",
-      "severity": "mild",
-      "text": "right = (SSoftwareEdge *)&DAT_02d24d84;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 184,
-      "match": "DAT_02d24d84",
-      "severity": "mild",
-      "text": "left = (SSoftwareEdge *)&DAT_02d24d84;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

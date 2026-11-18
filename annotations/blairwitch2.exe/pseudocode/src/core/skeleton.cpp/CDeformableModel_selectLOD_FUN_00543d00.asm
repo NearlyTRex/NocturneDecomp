@@ -15,11 +15,11 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170 at 005471c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041ae50
+;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;
@@ -32,8 +32,8 @@ section .text
     PUSH EBP                            ; 00543d01
     SUB ESP,0x8                         ; 00543d02
     MOV EBX,dword ptr [ESP + 0x14]      ; 00543d05
-    MOV EDX,dword ptr [0x0060b280]      ; 00543d09 | DAT_0060b280
-    PUSH EDX                            ; 00543d0f | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 00543d09 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 00543d0f | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00543d10
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00543d15
@@ -57,13 +57,13 @@ section .text
         ;   Label: LAB_00543d2c
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00543d2d
     PUSH ESI                            ; 00543d31
-    CALL core_box.cpp_FUN_0041ae50      ; 00543d32
-        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; float core_box.cpp_FUN_0041ae50(CBoundingBox3D * this_ptr)
+    CALL core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50 ; 00543d32
+        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041ae50(CBoundingBox3D * this_ptr)
     MOV dword ptr [ESP + 0xc],EAX       ; 00543d37
     MOV ECX,dword ptr [EBX]             ; 00543d3b
     FLD float ptr [ESP + 0xc]           ; 00543d3d
     CALL crt_math.c_round_FUN_005b7ff0  ; 00543d41
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     ADD ESP,0x4                         ; 00543d46
     DEC ECX                             ; 00543d49
     FISTP dword ptr [ESP + 0x4]         ; 00543d4a

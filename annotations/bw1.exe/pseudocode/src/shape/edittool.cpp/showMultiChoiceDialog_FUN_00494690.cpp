@@ -6,26 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_00494690(CStrList *str_list,char *dialog_title,int dialog_mode)
 
 {
   char cVar1;
   int iVar2;
-  uint uVar3;
+  void *pvVar3;
   char *pcVar4;
   int iVar5;
   int iVar6;
-  void *ptr;
   int iVar7;
   int iVar8;
   int iVar9;
   CEdButton *pCVar10;
   char *pcVar11;
   bool bVar12;
+  WatcomTypeInfo *type_info;
   char local_150 [256];
-  uint local_50;
+  int local_50;
   int local_4c;
   int local_48;
   CEdButton *local_44;
@@ -43,18 +41,21 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_00494690(CStrList *str_
   int local_14;
   int iStack_10;
   
-  if (_DAT_01c3eb50 == (CBitFont *)0x0) {
-    _DAT_01d1d400 = "..\\shape\\edittool.cpp";
-    _DAT_01d1d404 = 0xa4;
-    core_main_c_FUN_005030e0("gEdFont must be set by the application.");
+  if (g_CBitFont_PTR_01c3eb50 == (CBitFont *)0x0) {
+    g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
+    g_INT_01d1d404 = 0xa4;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("gEdFont must be set by the application.");
   }
-  _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
-  _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c3eb50->max_char_width;
+  g_INT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_CBitFont_PTR_01c3eb50,0x6a)
+  ;
   if ((dialog_title == (char *)0x0) || (iVar2 = *(int *)dialog_title, iVar2 < 1)) {
     return -1;
   }
-  uVar3 = operator_new_array(iVar2 * 0xe4 + 4,iVar2,&g_CEdButtonTypeInfo);
-  local_44 = (CEdButton *)__vec_new(uVar3);
+  type_info = &g_CEdButtonTypeInfo;
+  iVar9 = iVar2;
+  pvVar3 = operator_new_array(iVar2 * 0xe4 + 4);
+  local_44 = (CEdButton *)__vec_new(pvVar3,iVar9,type_info);
   iVar9 = 0;
   local_18 = 0;
   pCVar10 = local_44;
@@ -111,28 +112,29 @@ LAB_0049479f:
   if (local_18 < iVar9) {
     local_18 = shape_edittool_cpp_calculateButtonWidth_FUN_0049d950("Cancel");
   }
-  local_40 = (int)((DAT_0061b498 + (DAT_0061b498 >> 0x1f) * -0x80) -
-                  (uint)((DAT_0061b498 >> 0x1f) << 6 < 0)) >> 7;
-  iVar9 = DAT_0061b49c / 0x60;
+  local_40 = (int)((g_INT_0061b498 + (g_INT_0061b498 >> 0x1f) * -0x80) -
+                  (uint)((g_INT_0061b498 >> 0x1f) << 6 < 0)) >> 7;
+  iVar9 = g_INT_0061b49c / 0x60;
   if (dialog_mode == 0) {
     iVar7 = local_40 + -2;
     iVar8 = local_18 * iVar2;
-    iVar5 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
+    iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
     iVar5 = iVar5 + -1;
     iVar7 = (iVar2 + -1) * iVar7 + iVar8 + 1;
   }
   else {
-    iVar5 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
+    iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
     iVar5 = (iVar9 + -2) * (iVar2 + -1) + iVar5 * iVar2;
     iVar7 = local_18;
   }
-  iVar8 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,(char *)str_list);
+  iVar8 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
+                    (g_CBitFont_PTR_01c3eb50,(char *)str_list);
   if (iVar8 < iVar7) {
     iVar8 = iVar7;
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00496840
             (g_CEditorToolsPtr,iVar8,iVar5,(char *)str_list,0);
-  local_2c = (((_DAT_01c4f010 - _DAT_01c4f008) + 1) - iVar7) / 2;
+  local_2c = (((g_ClipRight - g_INT_01c4f008) + 1) - iVar7) / 2;
   iVar5 = 0;
   if (0 < iVar2) {
     local_34 = iVar9 + -1;
@@ -143,23 +145,23 @@ LAB_0049479f:
     local_1c = 0;
     pCVar10 = local_44;
     do {
-      iVar9 = _DAT_01c4f008 + local_2c;
+      iVar9 = g_INT_01c4f008 + local_2c;
       if (dialog_mode == 0) {
         iVar9 = iVar9 + local_1c + local_24;
-        iVar7 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
-        local_4c = (_DAT_01c4f014 - iVar7) + 1;
+        iVar7 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
+        local_4c = (g_INT_01c4f014 - iVar7) + 1;
         pcVar11 = shape_edittool_cpp_CStrList_getStringAt_FUN_004998a0
                             ((CStrList *)dialog_title,iVar5);
         iVar6 = local_18 + iVar9;
         iVar7 = local_4c;
-        iVar8 = _DAT_01c4f014;
+        iVar8 = g_INT_01c4f014;
       }
       else {
-        iVar7 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
-        local_48 = iVar7 * iVar5 + _DAT_01c4f00c + local_28 + -1;
+        iVar7 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
+        local_48 = iVar7 * iVar5 + g_INT_01c4f00c + local_28 + -1;
         pcVar11 = shape_edittool_cpp_CStrList_getStringAt_FUN_004998a0
                             ((CStrList *)dialog_title,iVar5);
-        iVar7 = shape_edittool_cpp_FUN_0049d9e0((char *)0x0);
+        iVar7 = shape_edittool_cpp_calculateButtonHeight_FUN_0049d9e0((char *)0x0);
         iVar8 = iVar7 + local_48 + -1;
         iVar6 = local_18 + iVar9;
         iVar7 = local_48;
@@ -174,24 +176,26 @@ LAB_0049479f:
     } while (iVar5 < iVar2);
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  local_50 = DAT_0061b4ac;
-  DAT_0061b4ac = 0x7f;
+  local_50 = g_InputKeyMask;
+  g_InputKeyMask = 0x7f;
   local_14 = 0;
   local_3c = iVar2 + -1;
   iVar9 = -2;
   do {
-    iVar5 = (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_RETURN);
+    iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_RETURN);
     if (iVar5 != 0) {
       iVar9 = local_14;
     }
-    iVar5 = (*0x01D1BCA0->vtable->getKeyState)(0x01D1BCA0,DIK_LSHIFT);
+    iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LSHIFT);
     if ((iVar5 == 0) &&
-       (iVar5 = (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_TAB), iVar5 != 0)) {
+       (iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_TAB),
+       iVar5 != 0)) {
       local_14 = local_14 + 1;
     }
-    iVar5 = (*0x01D1BCA0->vtable->getKeyState)(0x01D1BCA0,DIK_LSHIFT);
+    iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getKeyState)(g_CKeys_PTR_0061f2a4,DIK_LSHIFT);
     if ((iVar5 != 0) &&
-       (iVar5 = (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_TAB), iVar5 != 0)) {
+       (iVar5 = (*g_CKeys_PTR_0061f2a4->vtable->getAndClearKeyState)(g_CKeys_PTR_0061f2a4,DIK_TAB),
+       iVar5 != 0)) {
       local_14 = local_14 + -1;
     }
     if (local_14 < iVar2) {
@@ -202,12 +206,12 @@ LAB_0049479f:
     else {
       local_14 = 0;
     }
-    if (_DAT_02c9be70 != 0) {
+    if (g_InputDisabled != 0) {
       iVar9 = -1;
       break;
     }
     while (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(), iVar5 != 0) {
-      iStack_10 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004fd270(0x01D1BCA0);
+      iStack_10 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004fd270(g_CKeys_PTR_0061f2a4);
       cVar1 = (char)local_44->shortcut_key;
       pCVar10 = local_44;
       for (iVar5 = 0; (cVar1 != '\0' && (iVar5 < iVar2)); iVar5 = iVar5 + 1) {
@@ -230,31 +234,31 @@ LAB_0049479f:
         if (iVar7 != 0) {
           iVar9 = iVar5;
         }
-        if (pCVar10 == _DAT_01c3f5d0) {
+        if (pCVar10 == (CEdButton *)g_ActiveControl) {
           local_14 = iVar5;
         }
         iVar5 = iVar5 + 1;
         pCVar10 = pCVar10 + 1;
       } while (iVar5 < iVar2);
     }
-    shape_edittool_cpp_FUN_00496ee0(g_CEditorToolsPtr);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0(g_CEditorToolsPtr);
     iVar5 = 0;
     pCVar10 = local_44;
     if (0 < iVar2) {
       do {
         bVar12 = iVar5 == local_14;
         iVar5 = iVar5 + 1;
-        shape_edittool_cpp_FUN_0049d580(pCVar10,bVar12);
+        shape_edittool_cpp_CEdButton_paint_FUN_0049d580(pCVar10,(uint)bVar12);
         pCVar10 = pCVar10 + 1;
       } while (iVar5 < iVar2);
     }
-    shape_edittool_cpp_FUN_00497870(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00497870(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   } while (iVar9 == -2);
-  ptr = __vec_delete(local_44,&g_CEdButtonTypeInfo);
-  FUN_005c0336(ptr);
-  DAT_0061b4ac = local_50;
+  pvVar3 = __vec_delete(local_44,&g_CEdButtonTypeInfo);
+  free(pvVar3);
+  g_InputKeyMask = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();
-  shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_00496dd0(g_CEditorToolsPtr);
   return iVar9;
 }

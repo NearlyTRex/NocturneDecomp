@@ -11,7 +11,7 @@ CConfederateZombie * __cdecl core_confzomb_cpp_factoryFuncConfederateZombie_FUN_
 {
   CConfederateZombie *pCVar1;
   
-  pCVar1 = (CConfederateZombie *)operator_new(0x11858);
+  pCVar1 = operator_new(0x11858);
   if (pCVar1 == (CConfederateZombie *)0x0) {
     return (CConfederateZombie *)0x0;
   }

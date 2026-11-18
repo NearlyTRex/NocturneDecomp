@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color)
 
 {
@@ -55,17 +53,17 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
   } while (cVar1 != '\0');
   SetTextColor(this_ptr->device_context_handle,0);
   TextOutA(this_ptr->device_context_handle,0,0,text_string,~uVar6 - 1);
-  if (this_ptr->right + x < DAT_006141b8) {
+  if (this_ptr->right + x < g_INT_006141b8) {
     iVar3 = this_ptr->right;
   }
   else {
-    iVar3 = DAT_006141b8 - x;
+    iVar3 = g_INT_006141b8 - x;
   }
-  if (this_ptr->top + y < DAT_006141bc) {
+  if (this_ptr->top + y < g_INT_006141bc) {
     iStack_20 = this_ptr->top;
   }
   else {
-    iStack_20 = DAT_006141bc - y;
+    iStack_20 = g_INT_006141bc - y;
   }
   if (this_ptr->cached_string_width < iVar3) {
     iVar3 = this_ptr->cached_string_width;
@@ -74,25 +72,28 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
     iStack_20 = this_ptr->cached_string_height;
   }
   iVar4 = foreground_color * 3;
-  if (DAT_006141c0 == 0x10) {
+  if (g_INT_006141c0 == 0x10) {
     if (foreground_color < 0) {
       iVar4 = engine_font_cpp_getDefaultTextColor_FUN_004a96e0();
       uVar2 = (ushort)iVar4;
     }
     else {
-      uVar2 = (ushort)((byte)(&DAT_01c3583a)[iVar4] / _DAT_01c35830 << (DAT_01c3582c & 0x1f)) |
-              (ushort)((byte)(&DAT_01c35839)[iVar4] / _DAT_01c35824 << (DAT_01c35820 & 0x1f)) |
-              (ushort)((byte)(&DAT_01c35838)[iVar4] / _DAT_01c35818 << (DAT_01c35814 & 0x1f));
+      uVar2 = (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2] / (uint)g_BlueScaleFactor <<
+                      (g_BlueBitPosition.bytes[0] & 0x1f)) |
+              (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] / (uint)g_GreenScaleFactor <<
+                      (g_GreenBitPosition.bytes[0] & 0x1f)) |
+              (ushort)((uint)g_UCHAR_ARRAY_01c35838[iVar4] / (uint)g_RedScaleFactor <<
+                      (g_RedBitPosition.bytes[0] & 0x1f));
     }
     iStack_28 = 0;
     if (0 < iStack_20) {
       iStack_38 = y;
       do {
         iVar4 = iStack_38 + this_ptr->y_offset1;
-        if ((-1 < iVar4) && (iVar4 < DAT_006141bc)) {
+        if ((-1 < iVar4) && (iVar4 < g_INT_006141bc)) {
           iVar5 = 0;
           if (0 < iVar3) {
-            puVar7 = (ushort *)(x * 2 + *(int *)(&DAT_01c2a38c + iVar4 * 4));
+            puVar7 = (ushort *)(g_ScreenBufferArray[iVar4] + x * 2);
             do {
               if (*(short *)((int)this_ptr->ppv_bits + (iStack_28 * this_ptr->right + iVar5) * 2) !=
                   0x7c1f) {
@@ -113,15 +114,15 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
       uStack_30 = engine_font_cpp_getDefaultTextColor_FUN_004a96e0();
     }
     else {
-      uVar6 = (uint)(byte)(&DAT_01c3583a)[iVar4];
-      if (DAT_006141c0 == 0x20) {
-        uStack_30 = (uint)(byte)(&DAT_01c35839)[iVar4] << (DAT_01c35820 & 0x1f) |
-                    (uint)(byte)(&DAT_01c35838)[iVar4] << (DAT_01c35814 & 0x1f);
-        uVar6 = uVar6 << (DAT_01c3582c & 0x1f);
+      uVar6 = (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2];
+      if (g_INT_006141c0 == 0x20) {
+        uStack_30 = (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f)
+                    | (uint)g_UCHAR_ARRAY_01c35838[iVar4] << (g_RedBitPosition.bytes[0] & 0x1f);
+        uVar6 = uVar6 << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
-        uStack_30 = (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
-                    (uint)(byte)(&DAT_01c35839)[iVar4] << 8;
+        uStack_30 = (uint)g_UCHAR_ARRAY_01c35838[iVar4] << 0x10 |
+                    (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] << 8;
       }
       uStack_30 = uStack_30 | uVar6;
     }
@@ -130,10 +131,10 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
       iStack_1c = y;
       do {
         iVar4 = iStack_1c + this_ptr->y_offset1;
-        if ((-1 < iVar4) && (iVar4 < DAT_006141bc)) {
+        if ((-1 < iVar4) && (iVar4 < g_INT_006141bc)) {
           iVar5 = 0;
           if (0 < iVar3) {
-            puVar8 = (uint *)(*(int *)(&DAT_01c2a38c + iVar4 * 4) + x * 4);
+            puVar8 = (uint *)(g_ScreenBufferArray[iVar4] + x * 4);
             do {
               if (*(int *)((int)this_ptr->ppv_bits + (iStack_18 * this_ptr->right + iVar5) * 4) !=
                   0xff00ff) {

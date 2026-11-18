@@ -15,7 +15,7 @@ section .text
     PUSH 0x2566c                        ; 0051e970
         ;   Label: core_scat.cpp_factoryFuncScat_FUN_0051e970
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0051e975
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0051e97a
     TEST EAX,EAX                        ; 0051e97d
     JNZ 0x0051e982                      ; 0051e97f

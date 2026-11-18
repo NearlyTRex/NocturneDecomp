@@ -10,6 +10,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDirectSoundDevice.h"
 #include "types/classes/CIniFile.h"
+#include "types/classes/CSampleInfo.h"
 #include "types/classes/CSfxOptions.h"
 #include "types/classes/CSfxSample.h"
 #include "types/classes/CSfxSlot.h"
@@ -19,9 +20,12 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
+#include "types/structs/SHardwareEdge.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SProjectedVertex.h"
+#include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRecordingDeviceInfo.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
@@ -124,7 +128,7 @@ int __cdecl sound_sndmain_cpp_initializeSoundDevice_FUN_00552b90(void);
 int __cdecl sound_sndmain_cpp_closeSoundDevice_FUN_00552c40(void);
 int __cdecl sound_sndmain_cpp_getCurrentSoundDevice_FUN_00552ca0(void);
 int __cdecl sound_sndmain_cpp_getMixBufferCount_FUN_00552cb0(void);
-void __cdecl sound_sndmain_cpp_set3DListenerOrientRight_FUN_00552cc0(float orient_right_x,float orient_right_y,float orient_right_z);
+void __cdecl sound_sndmain_cpp_setReverb_FUN_00552cc0(float volume,float decay_time,float damping);
 int __cdecl sound_sndmain_cpp_getRecordingDeviceCount_FUN_00552d00(void);
 void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00552d60(int index,SRecordingDeviceInfo *device_info);
 int __cdecl sound_sndmain_cpp_findBestRecordingDevice_FUN_00552dc0(void);
@@ -162,36 +166,36 @@ CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_dtor_FUN_00554a80(CSfxSlot *this_p
 CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00554a90(CSfxOptions *this_ptr,uint flags);
 CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_00554aa0(CSfxSample *this_ptr,uint flags);
 void __cdecl sound_sndmain_cpp_staticInit_FUN_00554ac0(void);
-char * __cdecl sound_snddx_cpp_FUN_00554ad0(uint error_code);
+char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code);
 int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00554c80(void);
-bool sound_snddx_cpp_FUN_00554e50(int param_1);
-int sound_snddx_cpp_FUN_00554f80(float param_1);
-int sound_snddx_cpp_FUN_00555020(float param_1);
+int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00554e50(int sfx_handle);
+int __cdecl sound_snddx_cpp_volumeToDirectSoundAttenuation_FUN_00554f80(float volume);
+int __cdecl sound_snddx_cpp_clampDirectSoundFrequency_FUN_00555020(float frequency);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00555060(CDirectSoundDevice *this_ptr);
-undefined4 sound_snddx_cpp_FUN_00555130(int *param_1);
-undefined4 sound_snddx_cpp_FUN_005552a0(void);
-undefined4 sound_snddx_cpp_FUN_00555560(undefined4 *param_1,int param_2,ushort param_3,int param_4,uint *param_5);
-undefined4 sound_snddx_cpp_FUN_00555a80(void);
-undefined4 sound_snddx_cpp_FUN_00555b60(void);
-void sound_snddx_cpp_FUN_00555c10(undefined4 param_1,double param_2,double param_3,double param_4);
-void sound_snddx_cpp_FUN_00555c50(void);
-void sound_snddx_cpp_FUN_00555c80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_00555cb0(CDirectSoundDevice *this_ptr,double distance_in_feet);
-int sound_snddx_cpp_FUN_00555ce0(undefined4 param_1,int param_2);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_00555130(CDirectSoundDevice *this_ptr);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005552a0(CDirectSoundDevice *this_ptr);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_00555560(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_00555a80(CDirectSoundDevice *this_ptr);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_00555b60(CDirectSoundDevice *this_ptr);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_00555c10(CDirectSoundDevice *this_ptr,double x,double y,double z);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_00555c50(CDirectSoundDevice *this_ptr,float x_front,float y_front,float z_front,float x_top,float y_top,float z_top,float x_right,float y_right,float z_right);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_00555c80(CDirectSoundDevice *this_ptr,float x_velocity,float y_velocity,float z_velocity);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_00555cb0(CDirectSoundDevice *this_ptr,float distance_in_feet);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_00555ce0(CDirectSoundDevice *this_ptr,CSampleInfo *sample_info);
 int __cdecl sound_snddx_cpp_isValidSampleBuffer_FUN_00555fb0(int buffer_id);
-void sound_snddx_cpp_FUN_00555ff0(undefined4 param_1,int param_2);
-int sound_snddx_cpp_FUN_00556050(undefined4 param_1,int param_2,int param_3,int param_4);
-void sound_snddx_cpp_FUN_005561b0(undefined4 param_1,int param_2);
-int sound_snddx_cpp_FUN_00556290(undefined4 param_1,int param_2);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_00555ff0(CDirectSoundDevice *this_ptr,int buffer_id);
+void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_00556050(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_005561b0(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_00556290(CDirectSoundDevice *this_ptr,int sample_buffer_id);
 int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_00556520(int sfx_handle);
-int sound_snddx_cpp_FUN_00556550(undefined4 param_1,int *param_2,uint param_3);
-undefined4 sound_snddx_cpp_FUN_00556ed0(undefined4 param_1,int param_2);
-double sound_snddx_cpp_FUN_00556f80(undefined4 param_1,int param_2);
-undefined4 sound_snddx_cpp_FUN_005570a0(int *param_1,int param_2);
-void sound_snddx_cpp_FUN_00557500(undefined4 param_1,int param_2);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_00556550(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_00556ed0(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
+double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_00556f80(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005570a0(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_00557500(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
 int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_00557540(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
-void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005577b0(CDirectSoundDevice *this_ptr);
-void sound_snddx_cpp_FUN_00557800(void);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_005577b0(CDirectSoundDevice *this_ptr,float volume,float decay_time,float damping);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_00557800(CDirectSoundDevice *this_ptr);
 int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_00557860(UINT device_id,SSoundDeviceInfo *device_info);
 CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(UINT device_id);
 void __cdecl sound_sndwav_cpp_staticInit_FUN_00557b40(void);
@@ -200,8 +204,8 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_00557b90(int buffer_index);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_00557d10(CWavOutDevice *this_ptr);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_00557dc0(CWavOutDevice *this_ptr);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_00557e90(CWavOutDevice *this_ptr);
-int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size);
-int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005580e0(CWavOutDevice *this_ptr,short *output_buffer,int num_samples);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005580e0(CWavOutDevice *this_ptr);
 int __cdecl sound_sndwav_cpp_getWavInBufferSizeBytes_FUN_00558160(void);
 int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_00558190(int buffer_index);
 int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_00558240(CWavInDevice *this_ptr);
@@ -212,36 +216,36 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005587b0(CWavInDevice *this_p
 int __cdecl sound_sndwav_cpp_enumerateWavOutDevice_FUN_00558940(UINT device_id,SSoundDeviceInfo *device_info);
 CWavOutDevice * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_005589e0(UINT device_id);
 int __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_00558a30(UINT device_id,SRecordingDeviceInfo *device_info);
-undefined * sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(void);
-undefined4 sound_sndwav_cpp_FUN_00558b20(void);
-void sound_sndwav_cpp_FUN_00558b30(void);
-void sound_sndwav_cpp_FUN_00558b40(void);
-void sound_sndwav_cpp_FUN_00558b50(void);
-void sound_sndwav_cpp_FUN_00558b60(void);
-void sound_sndwav_cpp_FUN_00558b70(void);
-void sound_sndwav_cpp_FUN_00558b80(void);
-undefined4 sound_sndwav_cpp_FUN_00558b90(void);
-void sound_sndwav_cpp_FUN_00558ba0(void);
-undefined4 sound_sndwav_cpp_FUN_00558bb0(void);
-void sound_sndwav_cpp_FUN_00558bc0(void);
-undefined4 sound_sndwav_cpp_FUN_00558bd0(void);
-undefined4 sound_sndwav_cpp_FUN_00558be0(void);
+CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(UINT device_id);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_hasHardware3D_FUN_00558b20(CWavOutDevice *this_ptr);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_00558b30(CWavOutDevice *this_ptr);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerPos_FUN_00558b40(CWavOutDevice *this_ptr,double x,double y,double z);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_00558b50(CWavOutDevice *this_ptr,float x_front,float y_front,float z_front,float x_top,float y_top,float z_top,float x_right,float y_right,float z_right);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerVelocity_FUN_00558b60(CWavOutDevice *this_ptr,float x_velocity,float y_velocity,float z_velocity);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_00558b70(CWavOutDevice *this_ptr,float distance_in_feet);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_setReverb_FUN_00558b80(CWavOutDevice *this_ptr,float volume,float decay_time,float damping);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSample_FUN_00558b90(CWavOutDevice *this_ptr,CSampleInfo *sample_info);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_00558ba0(CWavOutDevice *this_ptr,int buffer_id);
+void * __cdecl sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_00558bb0(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_unlockSample_FUN_00558bc0(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_00558bd0(CWavOutDevice *this_ptr,int sample_buffer_id);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_applySfxChanges_FUN_00558be0(CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags);
 double __cdecl sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_00558bf0(CWavOutDevice *this_ptr,CSfxSlot *slot);
-undefined4 sound_sndwav_cpp_FUN_00558c10(void);
-void sound_sndwav_cpp_FUN_00558c20(void);
-undefined4 sound_sndwav_cpp_FUN_00558c30(void);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_startSfx_FUN_00558c10(CWavOutDevice *this_ptr,CSfxSlot *slot);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_killSfx_FUN_00558c20(CWavOutDevice *this_ptr,CSfxSlot *slot);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_00558c30(CWavOutDevice *this_ptr,CSfxSlot *slot);
 void __cdecl core_sound_cpp_staticInit_FUN_00558c40(void);
 void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_00558cb0(char *wildcard_pattern);
 void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void);
 void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005593d0(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_005594c0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
-void core_sound_cpp_FUN_00559ab0(void);
-uint core_sound_cpp_FUN_00559b50(void);
+void __cdecl core_sound_cpp_resetTrainSounds_FUN_00559ab0(void);
+void __cdecl core_sound_cpp_processTrainSounds_FUN_00559b50(void);
 CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0055a0e0(CSound *this_ptr);
-void __cdecl core_sound_cpp_FUN_0055a100(CSound *this_ptr);
+void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_0055a100(CSound *this_ptr);
 void __cdecl core_sound_cpp_shutdownSoundSystem_FUN_0055a160(void);
 void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0055a170(void);
-void __cdecl core_sound_cpp_FUN_0055a1d0(CSound *this_ptr);
+void __cdecl core_sound_cpp_CSound_init_FUN_0055a1d0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_shutdown_FUN_0055a360(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_configure_FUN_0055ac50(CSound *this_ptr);
@@ -255,8 +259,8 @@ uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30(C
 int __cdecl core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70(CSound *this_ptr,uint sfx_handle);
 void __cdecl core_sound_cpp_CSound_killSound_FUN_0055af80(CSound *this_ptr,uint sfx_handle);
 float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_0055af90(CSound *this_ptr,char *sound_name);
-undefined4 core_sound_cpp_FUN_0055b060(void);
-void __cdecl core_sound_cpp_CSound_set3DListenerOrientRight_FUN_0055b080(CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z);
+char * __cdecl core_sound_cpp_CSound_getSoundModeName_FUN_0055b060(CSound *this_ptr,int sound_mode_index);
+void __cdecl core_sound_cpp_CSound_setReverb_FUN_0055b080(CSound *this_ptr,float volume,float decay_time,float damping);
 void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0055b0b0(CSound *this_ptr,int index);
 int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_0055b110(CSound *this_ptr,char *title,int *selection_inout);
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_0055b1b0(CSound *this_ptr,float target_volume,float fade_time);
@@ -266,32 +270,32 @@ void __cdecl engine_special_cpp_clearScreen_FUN_0055b1f0(void);
 void __cdecl engine_special_cpp_clearZBufferNative_FUN_0055b254(void);
 void __cdecl engine_special_cpp_clearScreenRegion_FUN_0055b2b7(int color);
 void __cdecl engine_special_cpp_fillDepthRegion_FUN_0055b342(int left,int right,int top,int bottom);
-void engine_special_cpp_FUN_0055b3b1(void);
-void engine_special_cpp_FUN_0055bb20(void);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b1(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
-void engine_special_cpp_FUN_0055c45c(void);
-void engine_special_cpp_FUN_0055ca23(void);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor32_FUN_0055c45c(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0055d523(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0055d5be(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
-void engine_special_cpp_FUN_0055d6d7(void);
-void __cdecl engine_special_cpp_FUN_0055d723(SProjectedVertex *output,CVector3i *input);
-void __cdecl engine_special_cpp_FUN_0055d9ec(SProjectedVertex *output,CVector3i *input);
+void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_0055d6d7(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
+void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_0055d6dd(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
+void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0055d723(SProjectedVertex *output,CVector3i *input);
+void __cdecl engine_special_cpp_transformPoint_FUN_0055d9ec(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0(void);
 int __cdecl engine_special_cpp_loadExternalRenderer_FUN_0055e8c0(HWND window_handle);
 int __cdecl engine_special_cpp_kill_FUN_0055f4d0(void);
 int __cdecl engine_special_cpp_isExternalRendererActive_FUN_0055f4f0(void);
-undefined4 engine_special_cpp_FUN_0055f500(void);
+int __cdecl engine_special_cpp_lockFrame_FUN_0055f500(void);
 int __cdecl engine_special_cpp_unlockFrame_FUN_0055f550(int clear_lock_flag);
-int __cdecl engine_special_cpp_FUN_0055f590(void);
-int __cdecl engine_special_cpp_FUN_0055f5b0(void);
-undefined4 engine_special_cpp_FUN_0055f5d0(undefined4 param_1);
-undefined4 engine_special_cpp_FUN_0055f610(void);
-undefined4 engine_special_cpp_FUN_0055f650(void);
-undefined4 engine_special_cpp_FUN_0055f690(undefined4 param_1,undefined4 param_2);
-undefined4 engine_special_cpp_FUN_0055f710(void);
-undefined4 engine_special_cpp_FUN_0055f750(void);
+int __cdecl engine_special_cpp_beginScene_FUN_0055f590(void);
+int __cdecl engine_special_cpp_endScene_FUN_0055f5b0(void);
+int __cdecl engine_special_cpp_selectTexture_FUN_0055f5d0(SMRGLTextureBasic *texture_info);
+int __cdecl engine_special_cpp_updateTexture_FUN_0055f610(SMRGLTextureBasic *texture_info);
+int __cdecl engine_special_cpp_selectTextureFromPalette_FUN_0055f650(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl engine_special_cpp_updateTextureFromPalette_FUN_0055f690(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl engine_special_cpp_updateTextureBGRA_FUN_0055f710(SMRGLTextureBasic *texture_info,int flags);
+int __cdecl engine_special_cpp_setMipMapLevel_FUN_0055f750(int mipmap_level);
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_0055f770(int width,int height,int bits_per_pixel);
 int __cdecl engine_special_cpp_setColorTable16_FUN_0055f890(void);
 int __cdecl engine_special_cpp_restoreVideoMode_FUN_0055f8c0(void);

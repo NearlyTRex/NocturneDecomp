@@ -14,14 +14,14 @@ HeapBlock * __cdecl InsertHeapBlockInOrder(HeapBlock *new_block)
   HeapBlock *pHVar3;
   
   pHVar3 = (HeapBlock *)0x0;
-  for (pHVar2 = DAT_005c1680; (pHVar2 != (HeapBlock *)0x0 && (pHVar2 <= new_block));
+  for (pHVar2 = (HeapBlock *)g_MainHeap; (pHVar2 != (HeapBlock *)0x0 && (pHVar2 <= new_block));
       pHVar2 = pHVar2->next) {
     pHVar3 = pHVar2;
   }
   new_block->prev = pHVar3;
   new_block->next = pHVar2;
   if (pHVar3 == (HeapBlock *)0x0) {
-    DAT_005c1680 = new_block;
+    g_MainHeap = (Heap *)new_block;
   }
   else {
     pHVar3->next = new_block;

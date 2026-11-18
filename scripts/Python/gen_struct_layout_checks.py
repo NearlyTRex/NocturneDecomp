@@ -24,8 +24,6 @@ import sys
 from collections import defaultdict
 
 
-REPO_ROOT_DEFAULT = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', '..'))
 
 
 def slugify_leaf(cat):
@@ -105,7 +103,7 @@ def emit_file(out_path, leaf, structs):
         f.write('\n'.join(lines))
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--data-types', required=True,
                     help='path to data_types.json')
@@ -115,7 +113,7 @@ def main():
                     help='newline-delimited list of struct names to skip')
     ap.add_argument('--clean', action='store_true',
                     help='delete existing .cpp files in out-dir before writing')
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.data_types, 'r') as f:
         dt = json.load(f)

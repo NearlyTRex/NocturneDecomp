@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_prye_cpp_staticInit_FUN_00517c20(void)
 
 {
-  _DAT_01ed36c0 = 0x3f083127;
-  _DAT_01ed36c4 = 0xbdf9db23;
-  _DAT_01ed36c8 = 0x3ded9168;
-  _DAT_01ed36cc = 0xbf05e354;
-  _DAT_01ed36d0 = 0x3d656042;
-  _DAT_01ed36d4 = 0x3e010625;
+  g_CVector3f_01ed36c0.x = 0.532;
+  g_CVector3f_01ed36c0.y = -0.122;
+  g_CVector3f_01ed36c0.z = 0.116;
+  g_CVector3f_01ed36cc.x = -0.523;
+  g_CVector3f_01ed36cc.y = 0.056;
+  g_CVector3f_01ed36cc.z = 0.126;
   core_actor_cpp_registerActorClass_FUN_0040c3a0
-            (&g_CPryeClassInfo,(char *)0x5cca67,core_prye_cpp_factoryFuncPrye_FUN_00517f50,
+            (&g_CPryeClassInfo,"CPrye",core_prye_cpp_factoryFuncPrye_FUN_00517f50,
              &g_CPryeClassVersion,1,&g_CHeroClassInfo);
   return;
 }

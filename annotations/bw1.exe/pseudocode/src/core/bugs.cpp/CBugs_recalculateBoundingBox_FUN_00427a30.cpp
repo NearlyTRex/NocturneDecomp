@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00427a30(CBugs *this_ptr)
 
 {
@@ -41,12 +39,12 @@ void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00427a30(CBugs *this
       pCVar7 = (CVector3f *)&pCVar7[5].y;
     } while (iVar8 < this_ptr->count);
   }
-  fVar2 = (this_ptr->bounds).min.x + _DAT_005d5170;
-  fVar3 = (this_ptr->bounds).min.z + _DAT_005d5170;
-  fVar4 = (this_ptr->bounds).max.x + _DAT_005d5174;
-  fVar5 = (this_ptr->bounds).max.y + _DAT_005d5174;
-  fVar6 = (this_ptr->bounds).max.z + _DAT_005d5174;
-  (this_ptr->bounds).min.y = (this_ptr->bounds).min.y + _DAT_005d5170;
+  fVar2 = (this_ptr->bounds).min.x + -0.3333333f;
+  fVar3 = (this_ptr->bounds).min.z + -0.3333333f;
+  fVar4 = (this_ptr->bounds).max.x + 0.3333333f;
+  fVar5 = (this_ptr->bounds).max.y + 0.3333333f;
+  fVar6 = (this_ptr->bounds).max.z + 0.3333333f;
+  (this_ptr->bounds).min.y = (this_ptr->bounds).min.y + -0.3333333f;
   (this_ptr->bounds).min.z = fVar3;
   (this_ptr->bounds).max.x = fVar4;
   (this_ptr->bounds).max.y = fVar5;

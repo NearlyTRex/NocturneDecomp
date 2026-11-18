@@ -11,12 +11,12 @@
 ;   TerminatedCString s_dogbite0_wav_005f0e54
 ;   TerminatedCString s_dogjump0_wav_005f0e62
 ;   TerminatedCString s_dogfoot0_wav_005f0e70
-;   undefined4 DAT_00600c58
-;   undefined4 DAT_00600c5c
-;   undefined4 DAT_0061c068
+;   float g_FLOAT_00600c58 = 5
+;   float g_FLOAT_00600c5c = 10
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059f740
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -45,15 +45,15 @@ section .text
     MOV EDI,dword ptr [EBX + 0x11850]   ; 005ac635
     PUSH 0x40000000                     ; 005ac63b
     PUSH EDI                            ; 005ac640
-    PUSH dword ptr [0x00600c58]         ; 005ac641 | DAT_00600c58
+    PUSH dword ptr [0x00600c58]         ; 005ac641 | g_FLOAT_00600c58
     PUSH EBX                            ; 005ac647
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ac648
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ac648
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ac64d
     PUSH ESI                            ; 005ac650
     PUSH 0x5f0e54                       ; 005ac651 | = "dogbite0?.wav"
     PUSH EBX                            ; 005ac656
-    MOV EBP,dword ptr [0x0061c068]      ; 005ac657 | DAT_0061c068
+    MOV EBP,dword ptr [0x0061c068]      ; 005ac657 | g_CSound_PTR_0061c068
     PUSH EBP                            ; 005ac65d
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005ac65e
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -67,15 +67,15 @@ section .text
         ;   Label: LAB_005ac66b
     PUSH 0x40000000                     ; 005ac671
     PUSH ECX                            ; 005ac676
-    PUSH dword ptr [0x00600c5c]         ; 005ac677 | DAT_00600c5c
+    PUSH dword ptr [0x00600c5c]         ; 005ac677 | g_FLOAT_00600c5c
     PUSH EBX                            ; 005ac67d
-    CALL core_basicene.cpp_FUN_0059f740 ; 005ac67e
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005ac67e
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005ac683
     PUSH ESI                            ; 005ac686
     PUSH 0x5f0e62                       ; 005ac687 | = "dogjump0?.wav"
     PUSH EBX                            ; 005ac68c
-    MOV EBX,dword ptr [0x0061c068]      ; 005ac68d | DAT_0061c068
+    MOV EBX,dword ptr [0x0061c068]      ; 005ac68d | g_CSound_PTR_0061c068
     PUSH EBX                            ; 005ac693
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005ac694
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_005ac6a0
     PUSH 0x5f0e70                       ; 005ac6a1 | = "dogfoot0?.wav"
     PUSH EBX                            ; 005ac6a6
-    MOV EDX,dword ptr [0x0061c068]      ; 005ac6a7 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 005ac6a7 | g_CSound_PTR_0061c068
     PUSH EDX                            ; 005ac6ad
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005ac6ae
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

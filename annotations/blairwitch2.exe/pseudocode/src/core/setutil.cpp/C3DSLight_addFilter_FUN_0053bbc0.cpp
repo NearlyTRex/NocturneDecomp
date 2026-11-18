@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_0053bbc0(C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
 
 {
@@ -16,9 +14,9 @@ void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_0053bbc0(C3DSLight *this_p
   char (*pacVar3) [40];
   
   if (0x1f < this_ptr->filter_count) {
-    _DAT_01d046a0 = "..\\core\\setutil.cpp";
-    _DAT_01d046a4 = 0x3b6;
-    core_main_c_FUN_004e4500("C3DSLight::addFilter - too many filters (max is %d)",0x20);
+    g_CHAR_PTR_01d046a0 = "..\\core\\setutil.cpp";
+    g_INT_01d046a4 = 0x3b6;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("C3DSLight::addFilter - too many filters (max is %d)");
   }
   pacVar3 = this_ptr->filter_names + this_ptr->filter_count;
   do {

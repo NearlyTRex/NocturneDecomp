@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   cheat_string
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cb80f8
+;   byte g_BYTE_01cb80f8
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005b8e40
@@ -64,7 +64,7 @@ section .text
     JNZ 0x004b8df9                      ; 004b8de2
         ;   XREF to: 004b8df9 (CONDITIONAL_JUMP)  ; LAB_004b8df9
     XOR AH,AH                           ; 004b8de4
-    MOV byte ptr [0x01cb80f8],AH        ; 004b8de6 | DAT_01cb80f8
+    MOV byte ptr [0x01cb80f8],AH        ; 004b8de6 | g_BYTE_01cb80f8
     MOV EAX,0x1                         ; 004b8dec
     ADD ESP,0x8                         ; 004b8df1
     POP EBP                             ; 004b8df4

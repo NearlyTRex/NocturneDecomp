@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 58,
+    "complexity_score": 44,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 2,
+    "pseudocode_lines": 29,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 98
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -99,7 +98,7 @@
     {
       "addr": "005a86a0",
       "is_variadic": false,
-      "name": "core_bwspart.cpp_FUN_005a86a0"
+      "name": "core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0"
     },
     {
       "addr": "0046b960",
@@ -110,14 +109,14 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -166,19 +165,11 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 18,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
-      "text": "while (piVar2 = (int *)((int)this_ptr->particles + iVar3), *piVar2 != 0) {",
+      "text": "while (particle = (int *)((int)this_ptr->particles + iVar2), *particle != 0) {",
       "type": "pointer_cast"
     }
   ]

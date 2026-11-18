@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_00551d20(char *filename)
 
 {
@@ -42,14 +40,15 @@ LAB_00551d58:
   }
   iVar5 = 0;
   do {
-    _DAT_02cebc20 = _DAT_02cebc20 + 1;
-    if (0x3f < _DAT_02cebc20) {
-      _DAT_02cebc20 = 0;
+    g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+    if (0x3f < g_LastSampleAccessIndex) {
+      g_LastSampleAccessIndex = 0;
     }
-    if ((((g_SfxSamples[_DAT_02cebc20].taken == 0) && (g_SfxSamples[_DAT_02cebc20].ref_count == 0))
-        && (g_SfxSamples[_DAT_02cebc20].is_user_sample == 0)) &&
-       (g_SfxSamples[_DAT_02cebc20].locked_length == 0)) {
-      pCVar4 = g_SfxSamples + _DAT_02cebc20;
+    if ((((g_SfxSamples[g_LastSampleAccessIndex].taken == 0) &&
+         (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) &&
+        (g_SfxSamples[g_LastSampleAccessIndex].is_user_sample == 0)) &&
+       (g_SfxSamples[g_LastSampleAccessIndex].locked_length == 0)) {
+      pCVar4 = g_SfxSamples + g_LastSampleAccessIndex;
       bVar7 = pCVar4 == (CSfxSample *)0x0;
       goto LAB_00551d88;
     }
@@ -60,8 +59,8 @@ LAB_00551d58:
 LAB_00551d88:
   if (!bVar7) {
     sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(pCVar4);
-    if ((DAT_02cdafb0 & 1) == 0) {
-      DAT_02cdafb0 = DAT_02cdafb0 | 1;
+    if ((g_BYTE_02cdafb0 & 1) == 0) {
+      g_BYTE_02cdafb0 = g_BYTE_02cdafb0 | 1;
       sound_mp3_cpp_CMP3Decoder_ctor_FUN_00502750(&g_CMP3DecoderInstance);
       _atexit(&g_CMP3DecoderDestructorNode1);
     }
@@ -91,15 +90,15 @@ LAB_00551d88:
         } while (cVar1 != '\0');
         memmove(&local_23c,local_23b,~uVar3 - 1);
       }
-      iVar5 = _stricmp(&local_23c,&DAT_005d2895);
+      iVar5 = _stricmp(&local_23c,"wav");
       if (iVar5 == 0) {
         support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
         iVar5 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                           (&local_3c,"sound",filename,1);
         if (iVar5 == 0) {
-          _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-          _DAT_01d71de4 = 0x36d;
-          core_main_c_FUN_004e4330("Can't open %s",filename);
+          g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+          g_INT_01d71de4 = 0x36d;
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Can't open %s");
         }
         pCVar4->file_offset = 0;
         iVar5 = sound_sndmain_cpp_parseWavFile_FUN_00551000
@@ -149,14 +148,14 @@ LAB_00551d88:
         support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);
       }
       else {
-        iVar5 = _stricmp(&local_23c,&DAT_005d28fc);
+        iVar5 = _stricmp(&local_23c,"mp3");
         if (iVar5 != 0) {
-          _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-          _DAT_01d71de4 = 0x40f;
-          core_main_c_FUN_004e4330("Unknown sample file format extension: %s",filename);
+          g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+          g_INT_01d71de4 = 0x40f;
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Unknown sample file format extension: %s");
 LAB_005520db:
           _sprintf(&local_23c,"SOUND: Loaded sample %s\n");
-          wincore_winrun_cpp_FUN_00581c70(&local_23c);
+          wincore_winrun_cpp_outputDebugString_FUN_00581c70(&local_23c);
           return pCVar4;
         }
         sound_mp3_cpp_CMP3Decoder_openFile_FUN_005027b0(&g_CMP3DecoderInstance,filename);
@@ -167,9 +166,9 @@ LAB_005520db:
         (pCVar4->sample_info).sample_rate = iVar5;
         sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00551620(pCVar4);
         if ((pCVar4->sample_info).sample_count < 0) {
-          _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
-          _DAT_01d71de4 = 0x3df;
-          core_main_c_FUN_004e4330("Don't know length of sample %s",filename);
+          g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
+          g_INT_01d71de4 = 0x3df;
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Don't know length of sample %s");
         }
         pCVar4->taken = 0;
         pCVar4->ref_count = 0;

@@ -25,17 +25,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005cac29
 ;   TerminatedCString s_CNetGame_updatePing_inva_005cac3d
-;   undefined4 DAT_005cac69
-;   undefined4 DAT_005cac71
-;   undefined4 DAT_005cac79
-;   undefined4 DAT_005cac81
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01da6474
-;   undefined4 DAT_01da6478
+;   double g_TimeToSeconds = 0.0000152587890625
+;   double g_MaxPingTime = 30
+;   double g_PingCheckThreshold = 0.400000000000000
+;   double g_BadConnectionTime = 5
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_LastPingTime
+;   uint g_UINT_01da6478
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_netgame.cpp_CNetGame_send_FUN_00505870
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
@@ -63,10 +63,10 @@ section .text
         ;   Label: LAB_0050633b
     MOV EDI,0x735                       ; 00506340
     PUSH 0x5cac3d                       ; 00506345 | = "CNetGame::updatePing - invalid player..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0050634a | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00506350 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00506356
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 0050634a | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 00506350 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00506356
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050635b
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0050635e
         ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
@@ -75,10 +75,10 @@ section .text
     MOV ECX,0x12                        ; 00506365
     SAR EDX,0x1f                        ; 0050636a
     IDIV ECX                            ; 0050636d
-    MOV ECX,dword ptr [0x01da6474]      ; 0050636f | DAT_01da6474
+    MOV ECX,dword ptr [0x01da6474]      ; 0050636f | g_LastPingTime
     MOV EDX,EAX                         ; 00506375
     SUB EAX,ECX                         ; 00506377
-    MOV dword ptr [0x01da6474],EDX      ; 00506379 | DAT_01da6474
+    MOV dword ptr [0x01da6474],EDX      ; 00506379 | g_LastPingTime
     TEST EAX,EAX                        ; 0050637f
     JL 0x005064b1                       ; 00506381
         ;   XREF to: 005064b1 (CONDITIONAL_JUMP)  ; LAB_005064b1
@@ -88,13 +88,13 @@ section .text
     MOV EAX,0x20000                     ; 0050638e
     MOV EDX,EBX                         ; 00506393
         ;   Label: LAB_00506393
-    MOV EDI,dword ptr [0x01da6478]      ; 00506395 | DAT_01da6478
+    MOV EDI,dword ptr [0x01da6478]      ; 00506395 | g_UINT_01da6478
     SHL EDX,0x7                         ; 0050639b
     ADD EDI,EAX                         ; 0050639e
     LEA EAX,[ESI + 0x20]                ; 005063a0
     ADD EDX,EAX                         ; 005063a3
     MOV EAX,dword ptr [ESI + 0x124]     ; 005063a5
-    MOV dword ptr [0x01da6478],EDI      ; 005063ab | DAT_01da6478
+    MOV dword ptr [0x01da6478],EDI      ; 005063ab | g_UINT_01da6478
     CMP EBX,EAX                         ; 005063b1
     JZ 0x005064b8                       ; 005063b3
         ;   XREF to: 005064b8 (CONDITIONAL_JUMP)  ; LAB_005064b8
@@ -103,7 +103,7 @@ section .text
     SUB ECX,EAX                         ; 005063be
     MOV dword ptr [ESP + 0x18],ECX      ; 005063c0
     FILD dword ptr [ESP + 0x18]         ; 005063c4
-    FMUL double ptr [0x005cac69]        ; 005063c8 | DAT_005cac69
+    FMUL double ptr [0x005cac69]        ; 005063c8 | g_TimeToSeconds
     FST float ptr [ESP + 0x8]           ; 005063ce
     FLDZ                                ; 005063d2
     FCOMPP                              ; 005063d4
@@ -115,7 +115,7 @@ section .text
     MOV dword ptr [ESP + 0x8],ECX       ; 005063dd
     FLD float ptr [ESP + 0x8]           ; 005063e1
         ;   Label: LAB_005063e1
-    FCOMP double ptr [0x005cac71]       ; 005063e5 | DAT_005cac71
+    FCOMP double ptr [0x005cac71]       ; 005063e5 | g_MaxPingTime
     FNSTSW AX                           ; 005063eb
     SAHF                                ; 005063ed
     JBE 0x005063f8                      ; 005063ee
@@ -123,17 +123,17 @@ section .text
     MOV dword ptr [ESP + 0x8],0x41f00000 ; 005063f0
     FLD float ptr [ESP + 0x8]           ; 005063f8
         ;   Label: LAB_005063f8
-    FCOMP double ptr [0x005cac79]       ; 005063fc | DAT_005cac79
+    FCOMP double ptr [0x005cac79]       ; 005063fc | g_PingCheckThreshold
     FNSTSW AX                           ; 00506402
     SAHF                                ; 00506404
     JC 0x005064aa                       ; 00506405
         ;   XREF to: 005064aa (CONDITIONAL_JUMP)  ; LAB_005064aa
-    MOV ECX,dword ptr [0x01da6478]      ; 0050640b | DAT_01da6478
+    MOV ECX,dword ptr [0x01da6478]      ; 0050640b | g_UINT_01da6478
     MOV EAX,dword ptr [EDX + 0x30]      ; 00506411
     SUB ECX,EAX                         ; 00506414
     MOV dword ptr [ESP + 0x18],ECX      ; 00506416
     FILD dword ptr [ESP + 0x18]         ; 0050641a
-    FMUL double ptr [0x005cac69]        ; 0050641e | DAT_005cac69
+    FMUL double ptr [0x005cac69]        ; 0050641e | g_TimeToSeconds
     FST float ptr [ESP + 0x4]           ; 00506424
     FLDZ                                ; 00506428
     FCOMPP                              ; 0050642a
@@ -145,7 +145,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 00506433
     FLD float ptr [ESP + 0x4]           ; 00506437
         ;   Label: LAB_00506437
-    FCOMP double ptr [0x005cac71]       ; 0050643b | DAT_005cac71
+    FCOMP double ptr [0x005cac71]       ; 0050643b | g_MaxPingTime
     FNSTSW AX                           ; 00506441
     SAHF                                ; 00506443
     JBE 0x0050644e                      ; 00506444
@@ -168,7 +168,7 @@ section .text
         ;   XREF to: 005064aa (CONDITIONAL_JUMP)  ; LAB_005064aa
     FLD float ptr [ESP]                 ; 0050646b
         ;   Label: LAB_0050646b
-    FCOMP double ptr [0x005cac81]       ; 0050646e | DAT_005cac81
+    FCOMP double ptr [0x005cac81]       ; 0050646e | g_BadConnectionTime
     FNSTSW AX                           ; 00506474
     SAHF                                ; 00506476
     JBE 0x00506480                      ; 00506477
@@ -178,7 +178,7 @@ section .text
         ;   Label: LAB_00506480
     MOV EDI,0x9                         ; 00506482
     MOV byte ptr [ESP + 0x10],AH        ; 00506487
-    MOV EAX,[0x01da6478]                ; 0050648b | DAT_01da6478
+    MOV EAX,[0x01da6478]                ; 0050648b | g_UINT_01da6478
     MOV dword ptr [ESP + 0xc],EDI       ; 00506490
     MOV dword ptr [ESP + 0x11],EAX      ; 00506494
     MOV dword ptr [EDX + 0x2c],EAX      ; 00506498

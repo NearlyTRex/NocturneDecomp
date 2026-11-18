@@ -9,9 +9,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[25]:
+; XREF[26]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492193
-;   core_event.cpp_FUN_0048c2e0 at 0048c599
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048c599
 ;   core_event.cpp_parseIntOrCounter_FUN_0048b910 at 0048b920
 ;   core_event.cpp_parseVectorLocation_FUN_0048ba80 at 0048babd
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004ab30c
@@ -20,7 +20,7 @@
 ;   core_script.cpp_CScript_startDialogLine_FUN_00530150 at 005301c9
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052b313
 ;   core_script.cpp_parseBodyPartMask_FUN_00528c20 at 00528c73
-;   ... and 15 more
+;   ... and 16 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a5b60

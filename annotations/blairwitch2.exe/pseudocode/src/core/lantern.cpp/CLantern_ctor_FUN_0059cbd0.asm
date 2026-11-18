@@ -10,7 +10,7 @@
 ;   core_lantern.cpp_factoryFuncLantern_FUN_0059cba0 at 0059cbb3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fe8dc
+;   float g_FLOAT_005fe8dc = 10
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_init_FUN_00449d90
@@ -53,7 +53,7 @@ section .text
     MOV dword ptr [EBX + 0x6d4],0x0     ; 0059cc5f
     MOV dword ptr [EBX + 0x700],0x0     ; 0059cc69
     MOV dword ptr [EBX + 0x6f8],0x0     ; 0059cc73
-    FLD float ptr [0x005fe8dc]          ; 0059cc7d | DAT_005fe8dc
+    FLD float ptr [0x005fe8dc]          ; 0059cc7d | g_FLOAT_005fe8dc
     MOV dword ptr [EBX + 0x704],0x1cb3950 ; 0059cc83
     ADD ESP,0x4                         ; 0059cc8d
     MOV ECX,dword ptr [EBX + 0x704]     ; 0059cc90

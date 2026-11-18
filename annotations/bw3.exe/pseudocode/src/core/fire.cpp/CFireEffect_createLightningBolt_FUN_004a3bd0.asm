@@ -13,11 +13,11 @@
 ; XREF[3]:
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048864f
 ;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059c354
-;   core_weather.cpp_FUN_0057c2e0 at 0057c57a
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0 at 0057c57a
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01d00eac
+;   int g_INT_01d00eac
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004a3bd5
     PUSH dword ptr [ESP + 0x14]         ; 004a3bd9
     PUSH EDX                            ; 004a3bdd
-    MOV EDX,dword ptr [0x01d00eac]      ; 004a3bde | DAT_01d00eac
+    MOV EDX,dword ptr [0x01d00eac]      ; 004a3bde | g_INT_01d00eac
     LEA EAX,[EDX*0x4 + 0x0]             ; 004a3be4
     SUB EAX,EDX                         ; 004a3beb
     SHL EAX,0x4                         ; 004a3bed
@@ -42,10 +42,10 @@ section .text
     PUSH EAX                            ; 004a3bf5
     CALL core_fire.cpp_CLightningBolt_activate_FUN_0049f420 ; 004a3bf6
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activate_FUN_0049f420(CLightningBolt * this_ptr, CVector3f * start_position, float start_width, float end_width)
-    MOV ECX,dword ptr [0x01d00eac]      ; 004a3bfb | DAT_01d00eac
+    MOV ECX,dword ptr [0x01d00eac]      ; 004a3bfb | g_INT_01d00eac
     INC ECX                             ; 004a3c01
     ADD ESP,0x10                        ; 004a3c02
-    MOV dword ptr [0x01d00eac],ECX      ; 004a3c05 | DAT_01d00eac
+    MOV dword ptr [0x01d00eac],ECX      ; 004a3c05 | g_INT_01d00eac
     CMP ECX,0x40                        ; 004a3c0b
     JGE 0x004a3c19                      ; 004a3c0e
         ;   XREF to: 004a3c19 (CONDITIONAL_JUMP)  ; LAB_004a3c19
@@ -57,7 +57,7 @@ section .text
     PUSH ESI                            ; 004a3c19
         ;   Label: LAB_004a3c19
     XOR ESI,ESI                         ; 004a3c1a
-    MOV dword ptr [0x01d00eac],ESI      ; 004a3c1c | DAT_01d00eac
+    MOV dword ptr [0x01d00eac],ESI      ; 004a3c1c | g_INT_01d00eac
     POP ESI                             ; 004a3c22
     CMP dword ptr [ESP + 0x14],0x0      ; 004a3c23
     JNZ 0x004a3c2c                      ; 004a3c28

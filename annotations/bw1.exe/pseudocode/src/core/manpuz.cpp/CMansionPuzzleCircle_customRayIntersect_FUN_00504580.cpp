@@ -6,67 +6,55 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 {
-  CMatrix3x3f *pCVar1;
-  SPanel *pSVar2;
-  SReflector *pSVar3;
-  CKeyFramedModel *pCVar4;
-  int iVar5;
-  CBoundingBox3D *pCVar6;
+  CMatrix3x3f *this_ptr_00;
+  SPanel *pSVar1;
+  SReflector *pSVar2;
+  CKeyFramedModel *pCVar3;
+  int iVar4;
+  CBoundingBox3D *pCVar5;
   CDemonTriangle *triangle;
-  float *pfVar7;
-  byte bVar8;
+  CBoundingBox3D *pCVar6;
+  byte bVar7;
   float afStackY_115c [1005];
-  uint *puVar9;
-  float *pfVar10;
-  float *pfVar11;
-  CVector3f *pCVar12;
-  byte *puVar13;
+  CVector3f *pCVar8;
+  CVector3f *pCVar9;
+  CVector3f *pCVar10;
   float fStack_198;
   float fStack_194;
   float fStack_190;
-  float fStack_18c;
-  float fStack_188;
-  float fStack_184;
-  float fStack_180;
-  float fStack_17c;
-  float fStack_178;
-  float fStack_174;
-  float fStack_168;
-  uint uStack_15c;
+  CBoundingBox3D CStack_18c;
+  CVector3f CStack_174;
+  CVector3f CStack_168;
+  CVector3f CStack_15c;
   CVector3f CStack_150;
-  uint uStack_144;
-  float afStack_140 [2];
-  byte auStack_138 [12];
-  uint uStack_12c;
-  float afStack_128 [2];
+  CVector3f CStack_144;
+  CVector3f CStack_138;
+  CVector3f CStack_12c;
   CVector3f CStack_120;
   float fStack_114;
-  float afStack_110 [5];
-  float fStack_fc;
-  uint uStack_f0;
+  float afStack_110 [2];
+  CVector3f CStack_108;
+  CVector3f CStack_fc;
+  CVector3f CStack_f0;
   float fStack_e4;
-  float fStack_e0;
-  float fStack_dc;
-  uint uStack_d8;
+  float afStack_e0 [2];
+  CVector3f CStack_d8;
   CVector3f CStack_cc;
-  uint uStack_c0;
-  float afStack_bc [5];
-  byte auStack_a8 [12];
-  float fStack_9c;
-  float afStack_98 [5];
-  float afStack_84 [3];
-  uint uStack_78;
+  CVector3f CStack_c0;
+  CVector3f CStack_b4;
+  CVector3f CStack_a8;
+  CVector3f CStack_9c;
+  CVector3f CStack_90;
+  CVector3f CStack_84;
+  CVector3f CStack_78;
   float fStack_6c;
-  float fStack_68;
-  float fStack_64;
-  float afStack_60 [3];
-  float afStack_54 [3];
-  float afStack_48 [3];
+  float afStack_68 [2];
+  CVector3f CStack_60;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
   int *piStack_3c;
   SGem *pSStack_38;
   CMatrix3x3f *pCStack_34;
@@ -79,62 +67,69 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005045
   int iStack_18;
   float fStack_14;
   
-  bVar8 = 0;
-  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->panel_model);
+  bVar7 = 0;
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->panel_model);
   fStack_1c = 1.01;
-  pCVar6 = &pCVar4->bounds;
-  pfVar7 = &stack0xfffffe74;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *pfVar7 = (pCVar6->min).x;
-    pCVar6 = (CBoundingBox3D *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
-    pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
+  pCVar5 = &pCVar3->bounds;
+  pCVar6 = &CStack_18c;
+  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+    (pCVar6->min).x = (pCVar5->min).x;
+    pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
+    pCVar6 = (CBoundingBox3D *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
   }
   pSStack_38 = this_ptr->gems;
   iStack_2c = 0;
   pSStack_28 = this_ptr->panels;
   do {
-    pSVar2 = pSStack_28;
+    pSVar1 = pSStack_28;
     if (pSStack_28->exists != 0) {
       fStack_e4 = ray_origin->x - (pSStack_28->local_position).x;
-      fStack_e0 = ray_origin->y - (pSStack_28->local_position).y;
-      pfVar7 = afStack_98 + 5;
-      fStack_dc = ray_origin->z - (pSStack_28->local_position).z;
-      afStack_84[0] = fStack_e4;
-      afStack_98[(uint)bVar8 * -2 + 6] = afStack_110[(uint)bVar8 * -2 + 0xc];
-      afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7] =
-           afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd];
-      pCStack_34 = &pSVar2->rotation_matrix;
-      core_dirmat_cpp_FUN_0045f700(pCStack_34,pfVar7);
-      pCVar1 = pCStack_34;
-      uStack_15c = uStack_12c;
-      *(float *)((int)&stack0xfffffea8 + (uint)bVar8 * 0xfffffffe * 4) =
-           afStack_128[(uint)bVar8 * -2];
-      pCVar12 = ray_direction;
-      *(float *)(auStack_138 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + -0x1c) =
-           afStack_128[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-      core_dirmat_cpp_FUN_0045f700(pCVar1,pCVar12);
-      puVar13 = auStack_a8;
-      pfVar11 = afStack_bc + 2;
-      puVar9 = &stack0xfffffea4;
-      pfVar7 = &stack0xfffffe74;
-      afStack_bc[2] = (float)uStack_d8;
-      afStack_bc[(uint)bVar8 * -2 + 3] = afStack_110[(uint)bVar8 * -2 + 0xf];
-      afStack_bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-           afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x10];
-      fStack_190 = (float)core_box_cpp_FUN_00420ee0(pfVar7,puVar9,pfVar11,puVar13);
+      afStack_e0[0] = ray_origin->y - (pSStack_28->local_position).y;
+      pCVar8 = &CStack_84;
+      afStack_e0[1] = ray_origin->z - (pSStack_28->local_position).z;
+      CStack_84.x = fStack_e4;
+      *(float *)((int)&CStack_84 + (uint)bVar7 * -8 + 4) = afStack_e0[(uint)bVar7 * -2];
+      *(float *)((int)&CStack_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           afStack_e0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+      pCStack_34 = &pSVar1->rotation_matrix;
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
+                (pCStack_34,pCVar8,&CStack_12c);
+      this_ptr_00 = pCStack_34;
+      CStack_15c.x = CStack_12c.x;
+      *(uint *)((int)&CStack_15c + (uint)bVar7 * -8 + 4) =
+           *(uint *)((int)&CStack_12c + (uint)bVar7 * -8 + 4);
+      pCVar8 = ray_direction;
+      *(uint *)((int)&CStack_15c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           *(uint *)((int)&CStack_12c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
+                (this_ptr_00,pCVar8,&CStack_d8);
+      pCVar10 = &CStack_a8;
+      pCVar9 = &CStack_b4;
+      pCVar8 = &CStack_15c;
+      pCVar5 = &CStack_18c;
+      CStack_b4.x = CStack_d8.x;
+      *(uint *)((int)&CStack_b4 + (uint)bVar7 * -8 + 4) =
+           *(uint *)((int)&CStack_d8 + (uint)bVar7 * -8 + 4);
+      *(uint *)((int)&CStack_b4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           *(uint *)((int)&CStack_d8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      fStack_190 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
+                             (pCVar5,pCVar8,pCVar9,pCVar10);
       fStack_14 = fStack_190;
       if ((0.0 <= fStack_190) && (fStack_190 < fStack_1c)) {
         fStack_1c = fStack_190;
-        core_dirmat_cpp_FUN_0045f690(pCStack_34,auStack_a8);
-        uStack_144 = uStack_c0;
-        afStack_140[(uint)bVar8 * -2] = afStack_bc[(uint)bVar8 * -2];
-        afStack_140[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-             afStack_bc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-        core_actor_cpp_FUN_00408ac0(this_ptr,&uStack_144);
-        CStack_cc.x = fStack_fc;
-        *(float *)((int)&CStack_cc + (uint)bVar8 * -8 + 4) = afStack_110[(uint)bVar8 * -2 + 6];
-        *(float *)((int)&CStack_cc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-             afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
+        core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690(pCStack_34,&CStack_a8,&CStack_c0);
+        CStack_144.x = CStack_c0.x;
+        *(uint *)((int)&CStack_144 + (uint)bVar7 * -8 + 4) =
+             *(uint *)((int)&CStack_c0 + (uint)bVar7 * -8 + 4);
+        *(uint *)((int)&CStack_144 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+             *(uint *)((int)&CStack_c0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+        core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0
+                  (&this_ptr->base,&CStack_144,&CStack_fc);
+        CStack_cc.x = CStack_fc.x;
+        *(uint *)((int)&CStack_cc + (uint)bVar7 * -8 + 4) =
+             *(uint *)((int)&CStack_fc + (uint)bVar7 * -8 + 4);
+        *(uint *)((int)&CStack_cc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+             *(uint *)((int)&CStack_fc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         if (out_normal != &CStack_cc) {
           out_normal->x = CStack_cc.x;
           out_normal->y = CStack_cc.y;
@@ -152,20 +147,19 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005045
       if ((0.0 <= fStack_14) && (fStack_14 < fStack_1c)) {
         fStack_1c = fStack_14;
         fStack_6c = -(triangle->normal).x;
-        pfVar7 = &stack0xfffffe8c;
-        fStack_68 = -(triangle->normal).y;
-        fStack_64 = -(triangle->normal).z;
-        fStack_174 = fStack_6c;
-        *(float *)((int)&stack0xfffffe90 + (uint)bVar8 * 0xfffffffe * 4) =
-             afStack_98[(uint)bVar8 * -2 + 0xc];
-        *(float *)(&stack0xfffffe94 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-             afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd];
-        core_actor_cpp_FUN_00408ac0(this_ptr,pfVar7);
-        CStack_150.x = fStack_168;
-        *(uint *)((int)&CStack_150 + (uint)bVar8 * -8 + 4) =
-             *(uint *)(&stack0xfffffe9c + (uint)bVar8 * -8);
-        *(float *)((int)&CStack_150 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-             afStack_140[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -8];
+        pCVar8 = &CStack_174;
+        afStack_68[0] = -(triangle->normal).y;
+        afStack_68[1] = -(triangle->normal).z;
+        CStack_174.x = fStack_6c;
+        *(float *)((int)&CStack_174 + (uint)bVar7 * -8 + 4) = afStack_68[(uint)bVar7 * -2];
+        *(float *)((int)&CStack_174 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+             afStack_68[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+        core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(&this_ptr->base,pCVar8,&CStack_168);
+        CStack_150.x = CStack_168.x;
+        *(uint *)((int)&CStack_150 + (uint)bVar7 * -8 + 4) =
+             *(uint *)((int)&CStack_168 + (uint)bVar7 * -8 + 4);
+        *(uint *)((int)&CStack_150 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+             *(uint *)((int)&CStack_168 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         if (out_normal != &CStack_150) {
           out_normal->x = CStack_150.x;
           out_normal->y = CStack_150.y;
@@ -177,62 +171,69 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005045
     iStack_2c = iStack_2c + 0xb8;
     pSStack_28 = pSStack_28 + 1;
   } while (iStack_2c != 0x8a0);
-  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
                      (&this_ptr->reflector_model);
-  if ((CBoundingBox3D *)&stack0xfffffe74 != &pCVar4->bounds) {
-    fStack_18c = (pCVar4->bounds).min.x;
-    fStack_188 = (pCVar4->bounds).min.y;
-    fStack_184 = (pCVar4->bounds).min.z;
+  if (&CStack_18c != &pCVar3->bounds) {
+    CStack_18c.min.x = (pCVar3->bounds).min.x;
+    CStack_18c.min.y = (pCVar3->bounds).min.y;
+    CStack_18c.min.z = (pCVar3->bounds).min.z;
   }
-  pCVar12 = &(pCVar4->bounds).max;
-  if ((CVector3f *)&stack0xfffffe80 != pCVar12) {
-    fStack_180 = pCVar12->x;
-    fStack_17c = (pCVar4->bounds).max.y;
-    fStack_178 = (pCVar4->bounds).max.z;
+  pCVar8 = &(pCVar3->bounds).max;
+  if (&CStack_18c.max != pCVar8) {
+    CStack_18c.max.x = pCVar8->x;
+    CStack_18c.max.y = (pCVar3->bounds).max.y;
+    CStack_18c.max.z = (pCVar3->bounds).max.z;
   }
   pSStack_24 = this_ptr->reflectors;
   piStack_3c = this_ptr->laser_color_r;
   do {
-    pSVar3 = pSStack_24;
+    pSVar2 = pSStack_24;
     if (0.0 < pSStack_24->interp_factor) {
       fStack_114 = ray_origin->x - (pSStack_24->position).x;
       afStack_110[0] = ray_origin->y - (pSStack_24->position).y;
-      pfVar7 = afStack_98 + 0xe;
+      pCVar8 = &CStack_60;
       afStack_110[1] = ray_origin->z - (pSStack_24->position).z;
-      afStack_60[0] = fStack_114;
-      afStack_98[(uint)bVar8 * -2 + 0xf] = afStack_110[(uint)bVar8 * -2];
-      afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x10] =
-           afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-      pCStack_30 = &pSVar3->rotation_matrix;
-      core_dirmat_cpp_FUN_0045f700(pCStack_30,pfVar7);
-      afStack_48[0] = (float)uStack_78;
-      afStack_98[(uint)bVar8 * -2 + 0x15] = afStack_98[(uint)bVar8 * -2 + 9];
-      afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x16] =
-           afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
-      core_dirmat_cpp_FUN_0045f700(pCStack_30,ray_direction);
-      puVar13 = auStack_138;
-      pfVar11 = afStack_98 + 0x11;
-      pfVar10 = afStack_98 + 0x14;
-      pfVar7 = &stack0xfffffe74;
-      afStack_54[0] = afStack_110[2];
-      afStack_98[(uint)bVar8 * -2 + 0x12] = afStack_110[(uint)bVar8 * -2 + 3];
-      afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13] =
-           afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-      fStack_14 = (float)core_box_cpp_FUN_00420ee0(pfVar7,pfVar10,pfVar11,puVar13);
+      CStack_60.x = fStack_114;
+      *(float *)((int)&CStack_60 + (uint)bVar7 * -8 + 4) = afStack_110[(uint)bVar7 * -2];
+      *(float *)((int)&CStack_60 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           afStack_110[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+      pCStack_30 = &pSVar2->rotation_matrix;
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
+                (pCStack_30,pCVar8,&CStack_78);
+      CStack_48.x = CStack_78.x;
+      *(uint *)((int)&CStack_48 + (uint)bVar7 * -8 + 4) =
+           *(uint *)((int)&CStack_78 + (uint)bVar7 * -8 + 4);
+      *(uint *)((int)&CStack_48 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           *(uint *)((int)&CStack_78 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
+                (pCStack_30,ray_direction,&CStack_108);
+      pCVar8 = &CStack_138;
+      pCVar10 = &CStack_54;
+      pCVar9 = &CStack_48;
+      pCVar5 = &CStack_18c;
+      CStack_54.x = CStack_108.x;
+      *(uint *)((int)&CStack_54 + (uint)bVar7 * -8 + 4) =
+           *(uint *)((int)&CStack_108 + (uint)bVar7 * -8 + 4);
+      *(uint *)((int)&CStack_54 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+           *(uint *)((int)&CStack_108 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      fStack_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
+                            (pCVar5,pCVar9,pCVar10,pCVar8);
       fStack_194 = fStack_14;
       if ((0.0 <= fStack_14) && (fStack_14 < fStack_1c)) {
         fStack_1c = fStack_14;
-        core_dirmat_cpp_FUN_0045f690(pCStack_30,auStack_138);
-        pfVar7 = afStack_98 + 2;
-        afStack_98[2] = (float)uStack_f0;
-        afStack_98[(uint)bVar8 * -2 + 3] = afStack_110[(uint)bVar8 * -2 + 9];
-        afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
-             afStack_110[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
-        core_actor_cpp_FUN_00408ac0(this_ptr,pfVar7);
-        CStack_120.x = fStack_9c;
-        *(float *)((int)&CStack_120 + (uint)bVar8 * -8 + 4) = afStack_98[(uint)bVar8 * -2];
-        *(float *)((int)&CStack_120 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-             afStack_98[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+        core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045f690(pCStack_30,&CStack_138,&CStack_f0);
+        pCVar8 = &CStack_90;
+        CStack_90.x = CStack_f0.x;
+        *(uint *)((int)&CStack_90 + (uint)bVar7 * -8 + 4) =
+             *(uint *)((int)&CStack_f0 + (uint)bVar7 * -8 + 4);
+        *(uint *)((int)&CStack_90 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+             *(uint *)((int)&CStack_f0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+        core_actor_cpp_CDemonActor_transformVector_FUN_00408ac0(&this_ptr->base,pCVar8,&CStack_9c);
+        CStack_120.x = CStack_9c.x;
+        *(uint *)((int)&CStack_120 + (uint)bVar7 * -8 + 4) =
+             *(uint *)((int)&CStack_9c + (uint)bVar7 * -8 + 4);
+        *(uint *)((int)&CStack_120 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+             *(uint *)((int)&CStack_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
         if (out_normal != &CStack_120) {
           out_normal->x = CStack_120.x;
           out_normal->y = CStack_120.y;

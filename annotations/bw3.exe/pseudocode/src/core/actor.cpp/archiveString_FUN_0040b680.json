@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 129,
+    "complexity_score": 34,
     "cross_reference_count": 45,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 34,
-    "suspect_count": 9,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 153
   },
   "cross_references": [
@@ -240,7 +238,7 @@
     {
       "addr": "00563e50",
       "from_addr": "00563e6a",
-      "name": "core_spawner.cpp_FUN_00563e50",
+      "name": "core_spawner.cpp_CSpawner_archive_FUN_00563e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -315,6 +313,11 @@
       "name": "crt_stdio.c_fgetc_FUN_005a32b0"
     },
     {
+      "addr": "005a3140",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005a3140"
+    },
+    {
       "addr": "005a3230",
       "is_variadic": false,
       "name": "crt_stdio.c_fscanf_FUN_005a3230"
@@ -323,11 +326,6 @@
       "addr": "005a3480",
       "is_variadic": false,
       "name": "crt_stdio.c_ungetc_FUN_005a3480"
-    },
-    {
-      "addr": "005a3140",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3140"
     }
   ],
   "globals": [
@@ -351,26 +349,26 @@
     },
     {
       "addr": "005f0990",
-      "name": "DAT_005f0990",
-      "type": "undefined1",
+      "name": "g_PropertyNamePrefix",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "006074b8",
-      "name": "DAT_006074b8",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "007df9b4",
-      "name": "DAT_007df9b4",
-      "type": "undefined4",
+      "name": "g_ActorDataFile",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "007df9b8",
-      "name": "DAT_007df9b8",
-      "type": "undefined4",
+      "name": "g_ActorReadingMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -568,78 +566,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_007df9b8",
-      "severity": "mild",
-      "text": "if (DAT_007df9b8 != 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s\\\"%s\\\"\",&DAT_005f0990,string_buffer);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_005f0990",
-      "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s\\\"%s\\\"\",&DAT_005f0990,string_buffer);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_007df9b4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "} while (((&DAT_006074b8)[(byte)((char)iVar1 + 1)] & 2) != 0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_007df9b4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "_ungetc(iVar1,DAT_007df9b4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007df9b4,\"%[^\\\"]\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_007df9b4);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

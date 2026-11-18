@@ -13,10 +13,10 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_005992b0 = 256
-;   void* PTR_DAT_005ae700 = 01b4d738
+;   void* PTR_g_CDemonRenderer_01b4d738_005ae700 = 01b4d738
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0xc                         ; 0040ab72
     MOV EAX,dword ptr [ESP + 0x18]      ; 0040ab75
     MOV EBX,ESP                         ; 0040ab79
-    MOV EDX,dword ptr [0x005ae700]      ; 0040ab7b | PTR_DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0040ab7b | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0040ab81
     FMUL float ptr [0x005992b0]         ; 0040ab83 | FLOAT_005992b0
     FISTP dword ptr [EBX]               ; 0040ab89
@@ -45,13 +45,13 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 0040aba0
     MOV EAX,ESP                         ; 0040aba3
     PUSH EAX                            ; 0040aba5
-    MOV EAX,dword ptr [EDX]             ; 0040aba6 | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 0040aba6 | g_CDemonRenderer_01b4d738
     ADD EAX,0xea5d0                     ; 0040aba8
     PUSH EAX                            ; 0040abad
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0040abae
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
-    MOV EBX,dword ptr [0x005ae700]      ; 0040abb3 | PTR_DAT_005ae700
-    MOV EBX,dword ptr [EBX]             ; 0040abb9 | DAT_01b4d738
+    MOV EBX,dword ptr [0x005ae700]      ; 0040abb3 | PTR_g_CDemonRenderer_01b4d738_005ae700
+    MOV EBX,dword ptr [EBX]             ; 0040abb9 | g_CDemonRenderer_01b4d738
     MOV AH,byte ptr [EBX + 0xea5e3]     ; 0040abbb
     ADD ESP,0x8                         ; 0040abc1
     TEST AH,0x80                        ; 0040abc4

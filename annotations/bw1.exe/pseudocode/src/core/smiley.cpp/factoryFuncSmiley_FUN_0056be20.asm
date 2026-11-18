@@ -15,7 +15,7 @@ section .text
     PUSH 0xc2ac                         ; 0056be20
         ;   Label: core_smiley.cpp_factoryFuncSmiley_FUN_0056be20
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0056be25
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0056be2a
     TEST EAX,EAX                        ; 0056be2d
     JNZ 0x0056be32                      ; 0056be2f

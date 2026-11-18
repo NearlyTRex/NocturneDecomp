@@ -1,0 +1,14 @@
+// Name: engine_prim.c_setCullingMode_FUN_0051c1a0
+// Address: 0051c1a0
+// Address Range: [[0051c1a0, 0051c1a9]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_prim_c_setCullingMode_FUN_0051c1a0(int culling_mode)
+
+#include "nocturne.h"
+
+void __cdecl engine_prim_c_setCullingMode_FUN_0051c1a0(int culling_mode)
+
+{
+  g_CullingMode = culling_mode;
+  return;
+}

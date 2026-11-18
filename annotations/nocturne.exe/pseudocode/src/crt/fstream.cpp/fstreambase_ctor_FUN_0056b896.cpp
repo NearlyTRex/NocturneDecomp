@@ -16,7 +16,7 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0056b896(fstreambase 
   ios *piVar4;
   
   if ((c1 & 1) == 0) {
-    (this_ptr->base).layout_info = &g_WatcomVirtualBaseDescriptor_005a4a18;
+    (this_ptr->base).layout_info = &g_FStreamBase_VirtualBaseLayout;
     piVar4 = crt_iostream_cpp_ios_ctor_FUN_0056b503(&this_ptr->ios_base);
     this_ptr = (fstreambase *)&piVar4[-2].__enabled_exceptions;
   }

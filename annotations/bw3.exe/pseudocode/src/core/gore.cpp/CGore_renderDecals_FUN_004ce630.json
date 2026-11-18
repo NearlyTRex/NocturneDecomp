@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 134,
+    "complexity_score": 204,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
-    "suspect_count": 4,
+    "pseudocode_lines": 94,
+    "suspect_count": 10,
     "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 275
+    "total_lines": 285
   },
   "cross_references": [
     {
@@ -29,15 +29,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00534890",
-      "from_addr": "005352dd",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+      "addr": "00535da0",
+      "from_addr": "0053620c",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00535da0",
-      "from_addr": "0053620c",
-      "name": "core_set.cpp_FUN_00535da0",
+      "addr": "00534890",
+      "from_addr": "005352dd",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,9 +55,19 @@
   },
   "function_calls": [
     {
+      "addr": "004cdd30",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004cdd30"
+    },
+    {
       "addr": "004cdc90",
       "is_variadic": false,
       "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004cdc90"
+    },
+    {
+      "addr": "004cd690",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004cd690"
     },
     {
       "addr": "004cd600",
@@ -65,19 +75,9 @@
       "name": "core_gore.cpp_CBloodSplat_setupRenderState_FUN_004cd600"
     },
     {
-      "addr": "004cd690",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004cd690"
-    },
-    {
-      "addr": "004cdd30",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004cdd30"
-    },
-    {
       "addr": "004ce310",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ce310"
+      "name": "core_gore.cpp_CFootstep_render_FUN_004ce310"
     }
   ],
   "globals": [
@@ -101,20 +101,20 @@
     },
     {
       "addr": "01d276b8",
-      "name": "DAT_01d276b8",
-      "type": "undefined4",
+      "name": "g_BloodSplatCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d4a940",
-      "name": "DAT_01d4a940",
-      "type": "undefined4",
+      "name": "g_BloodPoolCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d4aec8",
-      "name": "DAT_01d4aec8",
-      "type": "undefined4",
+      "name": "g_FootstepCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -135,7 +135,7 @@
       {
         "call_addr": "0053620c",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00535da0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,36 +258,84 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Pointer value `&g_CBloodSplat_ARRAY_01d276bc[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&g_CBloodSplat_ARRAY_01d276bc[0].expired",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01d276bc[0].expired + iVar1) == 0) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d276bc assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 28,
-      "match": "0x1d276bc",
+      "description": "Pointer value `&g_CBloodSplat_ARRAY_01d276bc[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)&g_CBloodSplat_ARRAY_01d276bc[0].expired",
       "severity": "moderate",
-      "text": "iVar1 = 0x1d276bc;",
-      "type": "raw_address_constant"
+      "text": "((CBloodSplat *)((int)&g_CBloodSplat_ARRAY_01d276bc[0].expired + iVar1),",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d4a944 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 53,
-      "match": "0x1d4a944",
+      "description": "Pointer value `&g_CBloodPool_ARRAY_01d4a944[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)&g_CBloodPool_ARRAY_01d4a944[0].expired",
       "severity": "moderate",
-      "text": "iVar1 = 0x1d4a944;",
-      "type": "raw_address_constant"
+      "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01d4a944[0].expired + iVar1) == 0) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d4aecc assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 77,
-      "match": "0x1d4aecc",
+      "description": "Pointer value `&g_CBloodPool_ARRAY_01d4a944[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&g_CBloodPool_ARRAY_01d4a944[0].expired",
       "severity": "moderate",
-      "text": "iVar1 = 0x1d4aecc;",
-      "type": "raw_address_constant"
+      "text": "((CBloodPool *)((int)&g_CBloodPool_ARRAY_01d4a944[0].expired + iVar1),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 18,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01d276bc[0].expired + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 20,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CBloodSplat *)((int)&g_CBloodSplat_ARRAY_01d276bc[0].expired + iVar1),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01d4a944[0].expired + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CBloodPool *)((int)&g_CBloodPool_ARRAY_01d4a944[0].expired + iVar1),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 71,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&((CFootstep *)(g_CFootstep_ARRAY_01d4aecc[0].corners + -1))->expired +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 75,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&((CFootstep *)(g_CFootstep_ARRAY_01d4aecc[0].corners + -1))->expired +",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -17,7 +17,7 @@ CCross * __cdecl core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
   pCVar2 = (CCross *)core_melee_cpp_CMelee_ctor_FUN_004ea8b0(&this_ptr->base);
   (pCVar2->base).base.base.vtable._ub = &g_CCrossVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (&(pCVar2->base).base.model,(char *)0x5f06e9);
+            (&(pCVar2->base).base.model,"Cross1.kfm");
   (pCVar2->base).base.weapon_type = WEAPON_TYPE_BARON|WEAPON_TYPE_FLASHLIGHT;
   (pCVar2->base).strength_lo = 25.0;
   pcVar3 = "shovel?.wav";
@@ -34,7 +34,7 @@ CCross * __cdecl core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5f0700;
+  pcVar3 = "shvl-f?.wav";
   pcVar4 = (pCVar2->base).swing_hit_character_sound;
   do {
     cVar1 = *pcVar3;
@@ -45,7 +45,7 @@ CCross * __cdecl core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5f070c;
+  pcVar3 = "shvl-s?.wav";
   pcVar4 = (pCVar2->base).hit_other_sound;
   do {
     cVar1 = *pcVar3;

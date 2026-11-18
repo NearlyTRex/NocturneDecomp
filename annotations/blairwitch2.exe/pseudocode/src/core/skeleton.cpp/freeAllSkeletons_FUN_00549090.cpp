@@ -16,7 +16,7 @@ void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_00549090(void)
   do {
     core_skeleton_cpp_CSkeleton_free_FUN_00540980(this_ptr,1);
     this_ptr = this_ptr + 1;
-  } while (this_ptr != (CSkeleton *)&DAT_02628554);
-  memset(&DAT_02628554,0,0xa0);
+  } while (this_ptr != g_SkeletonPool + sizeof(g_SkeletonPool) / sizeof(g_SkeletonPool[0]));
+  memset(g_CHAR_ARRAY_02628554,0,0xa0);
   return;
 }

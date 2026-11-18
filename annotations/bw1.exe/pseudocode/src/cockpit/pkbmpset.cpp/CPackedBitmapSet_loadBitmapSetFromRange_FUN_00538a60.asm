@@ -1,23 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60(CPackedBitmapSet *this_ptr,char *param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int first_index,int last_index,int transparency_color,int apply_palette_flag)
 ;
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
-; int              Stack[0x18]:4   param_6
-; int              Stack[0x1c]:4   param_7
-; int              Stack[0x20]:4   param_8
+; char *           Stack[0x8]:4   filename_format
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
+; int              Stack[0x14]:4   first_index
+; int              Stack[0x18]:4   last_index
+; int              Stack[0x1c]:4   transparency_color
+; int              Stack[0x20]:4   apply_palette_flag
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005389c0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_00538900
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00538990
-;   cockpit_pkbmpset.cpp_FUN_005389c0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     INC EAX                             ; 00538a8f
     PUSH EAX                            ; 00538a90
     PUSH EDI                            ; 00538a91
-    CALL cockpit_pkbmpset.cpp_FUN_005389c0 ; 00538a92
-        ;   XREF to: 005389c0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbmpset.cpp_FUN_005389c0()
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005389c0 ; 00538a92
+        ;   XREF to: 005389c0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_005389c0(CPackedBitmapSet * this_ptr, int bitmap_count)
     ADD ESP,0x8                         ; 00538a97
     MOV EAX,dword ptr [ESP + 0x84]      ; 00538a9a
     MOV dword ptr [EDI + 0x20],EAX      ; 00538aa1

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndwav_cpp_CWavInDevice_reset_FUN_0057ae10(CWavInDevice *this_ptr)
 
 {
@@ -16,8 +14,8 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_reset_FUN_0057ae10(CWavInDevice *this_
   int iVar3;
   
   iVar3 = 1;
-  if (_DAT_02c828d8 != (HWAVEIN)0x0) {
-    MVar1 = waveInReset(_DAT_02c828d8);
+  if (g_WaveInHandle != 0) {
+    MVar1 = waveInReset((HWAVEIN)g_WaveInHandle);
     if (MVar1 != 0) {
       sound_sndmain_cpp_logSoundError_FUN_005773f0("waveInReset failed!");
       iVar3 = 0;
@@ -25,8 +23,9 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_reset_FUN_0057ae10(CWavInDevice *this_
   }
   iVar2 = 0;
   do {
-    if (*(LPWAVEHDR *)(iVar2 + 0x2c8292c) != (LPWAVEHDR)0x0) {
-      waveInUnprepareHeader(_DAT_02c828d8,*(LPWAVEHDR *)(iVar2 + 0x2c8292c),0x20);
+    if (*(LPWAVEHDR *)((int)g_WaveInHeaders + iVar2) != (LPWAVEHDR)0x0) {
+      waveInUnprepareHeader
+                ((HWAVEIN)g_WaveInHandle,*(LPWAVEHDR *)((int)g_WaveInHeaders + iVar2),0x20);
     }
     iVar2 = iVar2 + 4;
   } while (iVar2 != 0x50);

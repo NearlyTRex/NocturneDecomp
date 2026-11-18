@@ -7,7 +7,7 @@
 ; CYow *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_Aspeed_005d82ed+2
+;   TerminatedCString s_speed_005d82ef
 ;   TerminatedCString s_modelName_005d82f5
 ;   TerminatedCString s_guardDistance_005d82ff
 ;   TerminatedCString s_motion_state_005d830d
@@ -30,7 +30,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 00586e57
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00586e5c
-    PUSH 0x5d82ef                       ; 00586e5f | s_Aspeed_005d82ed+2
+    PUSH 0x5d82ef                       ; 00586e5f | = "speed"
     LEA EBX,[ESI + 0xcdcc]              ; 00586e64
     PUSH EBX                            ; 00586e6a
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00586e6b

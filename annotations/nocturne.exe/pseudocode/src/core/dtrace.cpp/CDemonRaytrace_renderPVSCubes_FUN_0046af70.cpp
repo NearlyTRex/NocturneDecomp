@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70(CDemonRaytrace *this_ptr)
 
 {
@@ -17,19 +15,20 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70(CDemonRa
   
   iVar1 = 0;
   engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
-            ((CDemonRenderer *)PTR_DAT_005ae700,0xff,0xff,0xff);
-  if (0 < _DAT_01b7b744) {
-    world_position = g_CVector3f_ARRAY_01b8efcc;
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,0xff,0xff,0xff);
+  if (0 < g_PVSDrawnCubeCount) {
+    world_position = g_PVSCubePositions;
     iVar2 = 0;
     do {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                ((CDemonRenderer *)PTR_DAT_005ae700,world_position);
-      core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(*(CDemonCube **)(iVar2 + 0x1b7b74c),0);
+                ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,world_position);
+      core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0
+                (*(CDemonCube **)((int)g_PVSCubePointers + iVar2),0);
       iVar2 = iVar2 + 4;
       iVar1 = iVar1 + 1;
       engine_special_cpp_sync_FUN_00532b30();
       world_position = world_position + 1;
-    } while (iVar1 < _DAT_01b7b744);
+    } while (iVar1 < g_PVSDrawnCubeCount);
   }
   return;
 }

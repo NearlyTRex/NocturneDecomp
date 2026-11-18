@@ -19,7 +19,7 @@
 ;   TerminatedCString s_CDeformableModelInstance_00591d84
 ;   double DOUBLE_00591dcb = 2670176.85779676
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -100,7 +100,7 @@ section .text
     JNZ 0x0051f19b                      ; 0051f118
         ;   XREF to: 0051f19b (CONDITIONAL_JUMP)  ; LAB_0051f19b
     MOV EAX,[0x005ae704]                ; 0051f11e | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,dword ptr [EAX]             ; 0051f123 | DAT_01b4d738
+    MOV EAX,dword ptr [EAX]             ; 0051f123 | g_CDemonRenderer_01b4d738
     MOV EBX,dword ptr [ESP + 0x20]      ; 0051f125
     MOV dword ptr [ECX + EAX*0x1 + 0x18],EBX ; 0051f129
         ;   Label: LAB_0051f129
@@ -114,7 +114,7 @@ section .text
     ADD EDX,EAX                         ; 0051f141
     MOV EAX,[0x005ae704]                ; 0051f143 | g_CDemonRenderer_PTR_005ae704
     ADD ECX,0x30                        ; 0051f148
-    MOV EAX,dword ptr [EAX]             ; 0051f14b | DAT_01b4d738
+    MOV EAX,dword ptr [EAX]             ; 0051f14b | g_CDemonRenderer_01b4d738
     MOV dword ptr [ECX + EAX*0x1 + -0x14],EDX ; 0051f14d
     MOV EAX,dword ptr [ESP + 0x4]       ; 0051f151
     ADD EDI,0xc                         ; 0051f155
@@ -160,7 +160,7 @@ section .text
     ADD EAX,EBX                         ; 0051f1ba
     MOV dword ptr [ESP],EAX             ; 0051f1bc
     MOV EAX,[0x005ae704]                ; 0051f1bf | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,dword ptr [EAX]             ; 0051f1c4 | DAT_01b4d738
+    MOV EAX,dword ptr [EAX]             ; 0051f1c4 | g_CDemonRenderer_01b4d738
     MOV EBX,dword ptr [ESP]             ; 0051f1c6
     JMP 0x0051f129                      ; 0051f1c9
         ;   XREF to: 0051f129 (UNCONDITIONAL_JUMP)  ; LAB_0051f129

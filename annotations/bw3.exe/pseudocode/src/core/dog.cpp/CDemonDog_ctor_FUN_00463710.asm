@@ -7,7 +7,7 @@
 ; CDemonDog *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dog.cpp_FUN_004636e0 at 004636f3
+;   core_dog.cpp_factoryFuncDemonDog_FUN_004636e0 at 004636f3
 ;
 ; Called Functions:
 ;   core_dog.cpp_CZombieDog_ctor_FUN_00462710

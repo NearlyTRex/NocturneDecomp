@@ -22,7 +22,7 @@
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   IUnknown* g_DirectDrawUnknown
-;   undefined4 DAT_02ddf568
+;   int g_GraphicsResetFlag
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 00553193
     MOV EDX,0x1                         ; 00553194
     MOV ECX,dword ptr [0x02dc9d60]      ; 00553199 | g_UseDirect3D
-    MOV dword ptr [0x02ddf568],EDX      ; 0055319f | DAT_02ddf568
+    MOV dword ptr [0x02ddf568],EDX      ; 0055319f | g_GraphicsResetFlag
     TEST ECX,ECX                        ; 005531a5
     JZ 0x005532fc                       ; 005531a7
         ;   XREF to: 005532fc (CONDITIONAL_JUMP)  ; LAB_005532fc
@@ -162,7 +162,7 @@ section .text
     JNZ 0x005532e0                      ; 005532ca
         ;   XREF to: 005532e0 (CONDITIONAL_JUMP)  ; LAB_005532e0
     PUSH 0x11                           ; 005532cc
-    MOV EBP,dword ptr [0x02de2098]      ; 005532ce | g_HWND_02de2098
+    MOV EBP,dword ptr [0x02de2098]      ; 005532ce | g_MainWindowHandle
     MOV EAX,[0x02ddf550]                ; 005532d4 | g_DirectDrawObject
     PUSH EBP                            ; 005532d9
     MOV EDX,dword ptr [EAX]             ; 005532da

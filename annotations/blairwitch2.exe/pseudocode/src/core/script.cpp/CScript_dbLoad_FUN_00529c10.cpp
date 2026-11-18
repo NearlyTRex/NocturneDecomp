@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char *filename)
 
 {
@@ -32,16 +30,16 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
   if (local_c < 1) {
     return;
   }
-  file_handle = engine_dosio_cpp_FUN_00460c70("world",filename,&DAT_005e4ea3);
+  file_handle = engine_dosio_cpp_getFile_FUN_00460c70("world",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
-    _DAT_01d046a0 = "..\\core\\script.cpp";
-    _DAT_01d046a4 = 0x11af;
-    core_main_c_FUN_004e4500("Can't open world\\%s",filename);
+    g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
+    g_INT_01d046a4 = 0x11af;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open world\\%s");
   }
   lVar2 = _ftell(file_handle);
   local_c = local_c + lVar2;
   do {
-    _fscanf(file_handle,&DAT_005e4ed3);
+    _fscanf(file_handle," ");
     lVar2 = _ftell(file_handle);
     if (local_c <= lVar2) {
       _fclose(file_handle);
@@ -49,10 +47,9 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
     }
     iVar3 = _fscanf(file_handle,"%[^,], ");
     if (iVar3 != 1) {
-      _DAT_01d046a0 = "..\\core\\script.cpp";
-      _DAT_01d046a4 = 0x11c4;
-      core_main_c_FUN_004e4500
-                ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
+      g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
+      g_INT_01d046a4 = 0x11c4;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - error parsing %s record %d");
     }
     iVar3 = _fgetc(file_handle);
     if (iVar3 == 0x2c) {
@@ -62,18 +59,16 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
       _ungetc(iVar3,file_handle);
       iVar3 = _fscanf(file_handle,"%[^,],");
       if (iVar3 != 1) {
-        _DAT_01d046a0 = "..\\core\\script.cpp";
-        _DAT_01d046a4 = 0x11cd;
-        core_main_c_FUN_004e4500
-                  ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
+        g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
+        g_INT_01d046a4 = 0x11cd;
+        core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - error parsing %s record %d");
       }
     }
     iVar3 = _fscanf(file_handle," %[^\n]\n");
     if (iVar3 != 1) {
-      _DAT_01d046a0 = "..\\core\\script.cpp";
-      _DAT_01d046a4 = 0x11d2;
-      core_main_c_FUN_004e4500
-                ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
+      g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
+      g_INT_01d046a4 = 0x11d2;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - error parsing %s record %d");
     }
     core_script_cpp_trimString_FUN_00521110(local_334);
     core_script_cpp_trimString_FUN_00521110(local_2bc);
@@ -119,9 +114,9 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
     pSVar4 = (SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226);
     this_ptr->dialog_entries = pSVar4;
     if (pSVar4 == (SDialogEntry *)0x0) {
-      _DAT_01d046a0 = "..\\core\\script.cpp";
-      _DAT_01d046a4 = 0x11f3;
-      core_main_c_FUN_004e4500("SCScipt::dbLoad - out of memory");
+      g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
+      g_INT_01d046a4 = 0x11f3;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("SCScipt::dbLoad - out of memory");
     }
     pcVar6 = local_334;
     pSVar4 = this_ptr->dialog_entries + this_ptr->dialog_entry_count + -1;

@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[7]:
-;   core_dpart.cpp_FUN_0047ab00 at 0047ac1a
-;   core_zombie.cpp_FUN_005bf120 at 005bf430
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00407df0 at 00408051
+;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00 at 0047ac1a
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 at 0053f892
 ;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e328
 ;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f383
 ;   engine_zraster.c_rasterizePolygonCustom_FUN_005bf640 at 005bf8cb
+;   engine_zraster.c_rasterizeTriangle_FUN_005bf120 at 005bf430
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c51d10
+;   int g_ProcessorType
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 0053dbc1
     MOV EAX,dword ptr [ESP + 0xc]       ; 0053dbc2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0053dbc6
-    MOV EDX,dword ptr [0x01c51d10]      ; 0053dbca | DAT_01c51d10
+    MOV EDX,dword ptr [0x01c51d10]      ; 0053dbca | g_ProcessorType
     TEST EDX,EDX                        ; 0053dbd0
     JZ 0x0053dbff                       ; 0053dbd2
         ;   XREF to: 0053dbff (CONDITIONAL_JUMP)  ; LAB_0053dbff

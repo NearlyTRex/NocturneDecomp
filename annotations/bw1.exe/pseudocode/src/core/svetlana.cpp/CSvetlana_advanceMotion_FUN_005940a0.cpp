@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005940a0(CSvetlana *this_ptr,float delta_time)
 
 {
@@ -22,7 +20,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005940a0(CSvetlana *t
     }
     else {
       if (bone_index < 0x65) {
-        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00594140(this_ptr,_DAT_02c8374c);
+        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00594140
+                  (this_ptr,g_SvetlanaBoneIndices[0x11]);
         iVar1 = this_ptr->attack_hand;
       }
       else {
@@ -31,7 +30,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005940a0(CSvetlana *t
           ;
           goto LAB_005940ee;
         }
-        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00594140(this_ptr,_DAT_02c83750);
+        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00594140
+                  (this_ptr,g_SvetlanaBoneIndices[0x12]);
         iVar1 = this_ptr->attack_hand;
       }
       this_ptr->attack_hand = (uint)(iVar1 == 0);

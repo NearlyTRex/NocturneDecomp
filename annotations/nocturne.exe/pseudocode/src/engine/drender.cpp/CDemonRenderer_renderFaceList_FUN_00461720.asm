@@ -23,7 +23,7 @@
 ;   TerminatedCString s_CDemonRenderer_demonGZFa_0057dd10
 ;   SMRGLPrimitiveQuad*[2000] g_VisibleFacePointers
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_006b0280
+;   int g_CullingMode
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -122,7 +122,7 @@ section .text
         ;   Label: LAB_0046179e
     JNZ 0x00461779                      ; 004617a2
         ;   XREF to: 00461779 (CONDITIONAL_JUMP)  ; LAB_00461779
-    CMP dword ptr [0x006b0280],0x0      ; 004617a4 | DAT_006b0280
+    CMP dword ptr [0x006b0280],0x0      ; 004617a4 | g_CullingMode
     JZ 0x00461779                       ; 004617ab
         ;   XREF to: 00461779 (CONDITIONAL_JUMP)  ; LAB_00461779
     CMP dword ptr [ESI + 0x4],0x0       ; 004617ad

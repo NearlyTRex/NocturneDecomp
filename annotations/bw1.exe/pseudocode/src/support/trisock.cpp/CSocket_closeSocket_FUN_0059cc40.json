@@ -46,19 +46,19 @@
     {
       "addr": "0059cf00",
       "from_addr": "0059d02c",
-      "name": "support_trisock.cpp_FUN_0059cf00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e350",
-      "from_addr": "0059e457",
-      "name": "support_trisock.cpp_FUN_0059e350",
+      "name": "support_trisock.cpp_httpConnectToUrl_FUN_0059cf00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059ed20",
       "from_addr": "0059ed72",
-      "name": "support_trisock.cpp_FUN_0059ed20",
+      "name": "support_trisock.cpp_httpRequestReset_FUN_0059ed20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e350",
+      "from_addr": "0059e400",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_0059e350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,7 +88,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 11,
     "call_sites": [
       {
         "call_addr": "0052c5e9",
@@ -102,9 +102,20 @@
         "stack_params": 1
       },
       {
+        "call_addr": "0059e400",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_httpRequestUpdate_FUN_0059e350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
         "call_addr": "0059e457",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059e350",
+        "caller": "support_trisock.cpp_httpRequestUpdate_FUN_0059e350",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,6 +127,28 @@
         "call_addr": "0059c916",
         "call_type": "direct",
         "caller": "support_trisock.cpp_CSocket_createSocket_FUN_0059c910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059eb9e",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_httpRequestUpdate_FUN_0059e350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059ebbc",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_httpRequestUpdate_FUN_0059e350",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,18 +192,7 @@
       {
         "call_addr": "0059d02c",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059cf00",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0059ed72",
-        "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059ed20",
+        "caller": "support_trisock.cpp_httpConnectToUrl_FUN_0059cf00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

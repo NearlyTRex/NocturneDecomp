@@ -15,16 +15,16 @@
 ;   core_fire.cpp_CLightningBolt_render_FUN_0049f520 at 0049f847
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00496f60 at 0049726f
 ;   core_fire.cpp_CTrail_render_FUN_004a0680 at 004a0931
-;   core_gore.cpp_FUN_004ccbe0 at 004ccf70
-;   core_gore.cpp_FUN_004cd690 at 004cd952
-;   core_gore.cpp_FUN_004cdd30 at 004cdf9f
+;   core_gore.cpp_CBloodParticle_render_FUN_004ccbe0 at 004ccf70
+;   core_gore.cpp_CBloodPool_render_FUN_004cdd30 at 004cdf9f
+;   core_gore.cpp_CBloodSplat_render_FUN_004cd690 at 004cd952
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c6b5cc
-;   undefined4 DAT_01c6e2b4
-;   undefined4 DAT_01c6e2b8
+;   int g_INT_005fba20 = 0x8
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
@@ -77,9 +77,9 @@ section .text
         ;   XREF to: 0046c7c3 (CONDITIONAL_JUMP)  ; LAB_0046c7c3
     XOR EDX,EDX                         ; 0046c783
     MOV EAX,0x46f9a6                    ; 0046c785
-    MOV dword ptr [0x01c6e2b4],EDX      ; 0046c78a | DAT_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],EDX      ; 0046c790 | DAT_01c6e2b8
-    MOV [0x01c6b5cc],EAX                ; 0046c796 | DAT_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],EDX      ; 0046c78a | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],EDX      ; 0046c790 | g_VertexPreprocessMode
+    MOV [0x01c6b5cc],EAX                ; 0046c796 | g_ScanlineRenderFunc
     LEA EAX,[ESI + 0x18]                ; 0046c79b
         ;   Label: LAB_0046c79b
     PUSH EAX                            ; 0046c79e
@@ -106,19 +106,19 @@ section .text
         ;   XREF to: 0046c7ac (CONDITIONAL_JUMP)  ; LAB_0046c7ac
     JMP 0x0046c746                      ; 0046c7c1
         ;   XREF to: 0046c746 (UNCONDITIONAL_JUMP)  ; LAB_0046c746
-    CMP dword ptr [0x005fba20],0x20     ; 0046c7c3 | DAT_005fba20
+    CMP dword ptr [0x005fba20],0x20     ; 0046c7c3 | g_INT_005fba20
         ;   Label: LAB_0046c7c3
     JNZ 0x0046c7ee                      ; 0046c7ca
         ;   XREF to: 0046c7ee (CONDITIONAL_JUMP)  ; LAB_0046c7ee
-    MOV dword ptr [0x01c6b5cc],0x560f31 ; 0046c7cc | DAT_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x560f31 ; 0046c7cc | g_ScanlineRenderFunc
     MOV EDI,0x6                         ; 0046c7d6
         ;   Label: LAB_0046c7d6
     MOV EBX,0x267                       ; 0046c7db
-    MOV dword ptr [0x01c6e2b8],EDI      ; 0046c7e0 | DAT_01c6e2b8
-    MOV dword ptr [0x01c6e2b4],EBX      ; 0046c7e6 | DAT_01c6e2b4
+    MOV dword ptr [0x01c6e2b8],EDI      ; 0046c7e0 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c6e2b4],EBX      ; 0046c7e6 | g_RenderStateFlags
     JMP 0x0046c79b                      ; 0046c7ec
         ;   XREF to: 0046c79b (UNCONDITIONAL_JUMP)  ; LAB_0046c79b
-    MOV dword ptr [0x01c6b5cc],0x561713 ; 0046c7ee | DAT_01c6b5cc
+    MOV dword ptr [0x01c6b5cc],0x561713 ; 0046c7ee | g_ScanlineRenderFunc
         ;   Label: LAB_0046c7ee
     JMP 0x0046c7d6                      ; 0046c7f8
         ;   XREF to: 0046c7d6 (UNCONDITIONAL_JUMP)  ; LAB_0046c7d6

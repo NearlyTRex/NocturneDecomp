@@ -2,16 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 96,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "register_param",
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 49
@@ -39,15 +39,15 @@
     },
     {
       "addr": "0061f6cc",
-      "name": "DAT_0061f6cc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_UserExceptionFilter",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "0061f6d0",
-      "name": "DAT_0061f6d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ExceptionCleanup",
+      "type": "void*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -131,28 +131,12 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 16,
-      "match": "DAT_0061f764",
-      "severity": "mild",
-      "text": "*(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)(&DAT_0061f764 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0061f6cc",
-      "severity": "mild",
-      "text": "DAT_0061f6cc = &UNK_005c4e8c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0061f6d0",
-      "severity": "mild",
-      "text": "DAT_0061f6d0 = processSignal;",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_GlobalSignalHandlers",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)((int)g_GlobalSignalHandlers + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",

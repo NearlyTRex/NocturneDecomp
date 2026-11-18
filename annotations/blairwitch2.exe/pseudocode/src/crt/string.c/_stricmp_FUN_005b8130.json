@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 42,
     "complexity_score": 19,
-    "cross_reference_count": 106,
+    "cross_reference_count": 107,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -17,6 +17,12 @@
       "addr": "00516d70",
       "from_addr": "00516d9f",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_00516d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00517d70",
+      "from_addr": "00517dfc",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_00517d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,6 +74,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00489670",
+      "from_addr": "004896af",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004918d0",
       "from_addr": "004918f0",
       "name": "core_event.cpp_CEventList_findActorVariable_FUN_004918d0",
@@ -113,12 +125,6 @@
       "addr": "0048e2b0",
       "from_addr": "0048e2c2",
       "name": "core_event.cpp_CEventList_resolveVariable_FUN_0048e2b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00489670",
-      "from_addr": "004896af",
-      "name": "core_event.cpp_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -176,9 +182,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bbf70",
+      "from_addr": "004bbfc0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bdb10",
       "from_addr": "004bdb59",
       "name": "core_game.cpp_CGame_promptLoadGame_FUN_004bdb10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb9b0",
+      "from_addr": "004bba0a",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -188,21 +206,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bb9b0",
-      "from_addr": "004bba0a",
-      "name": "core_game.cpp_FUN_004bb9b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bbf70",
-      "from_addr": "004bbfc0",
-      "name": "core_game.cpp_FUN_004bbf70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004bc840",
       "from_addr": "004bc9c4",
-      "name": "core_game.cpp_FUN_004bc840",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004bc840",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -224,6 +230,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004dadb0",
+      "from_addr": "004db4ee",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004db830",
       "from_addr": "004db84c",
       "name": "core_inv.cpp_CInventory_findItemByName_FUN_004db830",
@@ -233,12 +245,6 @@
       "addr": "004dbd80",
       "from_addr": "004dc0e2",
       "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dadb0",
-      "from_addr": "004db4ee",
-      "name": "core_inv.cpp_FUN_004dadb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -262,7 +268,13 @@
     {
       "addr": "004ebf10",
       "from_addr": "004ec533",
-      "name": "core_menu.cpp_FUN_004ebf10",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004ebf10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fc820",
+      "from_addr": "004fc8f6",
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -281,12 +293,6 @@
       "addr": "004fc040",
       "from_addr": "004fc112",
       "name": "core_mission.cpp_CDemonMission_loadActor_FUN_004fc040",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004fc820",
-      "from_addr": "004fc8f6",
-      "name": "core_mission.cpp_FUN_004fc820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -424,7 +430,7 @@
     {
       "addr": "00559b50",
       "from_addr": "00559c73",
-      "name": "core_sound.cpp_FUN_00559b50",
+      "name": "core_sound.cpp_processTrainSounds_FUN_00559b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -520,7 +526,13 @@
     {
       "addr": "00574490",
       "from_addr": "005744bd",
-      "name": "engine_texture.cpp_FUN_00574490",
+      "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_00574490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cb20",
+      "from_addr": "0047ccd2",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -533,6 +545,12 @@
       "addr": "00482350",
       "from_addr": "004824e2",
       "name": "shape_edittool.cpp_CPickList_handleInput_FUN_00482350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483d80",
+      "from_addr": "00483dc5",
+      "name": "shape_edittool.cpp_CPickList_sort_FUN_00483d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -557,18 +575,6 @@
       "addr": "00481a70",
       "from_addr": "00481be5",
       "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047cb20",
-      "from_addr": "0047ccd2",
-      "name": "shape_edittool.cpp_FUN_0047cb20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00483d80",
-      "from_addr": "00483dc5",
-      "name": "shape_edittool.cpp_FUN_00483d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -670,7 +676,7 @@
       {
         "call_addr": "004bc9c4",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bc840",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004bc840",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -714,7 +720,7 @@
       {
         "call_addr": "004bbfc0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -725,7 +731,7 @@
       {
         "call_addr": "004bbfd9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -736,7 +742,7 @@
       {
         "call_addr": "004bc11f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

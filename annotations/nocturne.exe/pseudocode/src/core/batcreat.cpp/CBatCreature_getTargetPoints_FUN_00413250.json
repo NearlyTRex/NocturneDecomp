@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 44,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 50
@@ -38,8 +37,8 @@
   "globals": [
     {
       "addr": "0076459c",
-      "name": "DAT_0076459c",
-      "type": "undefined4",
+      "name": "g_INT_0076459c",
+      "type": "int",
       "value": null
     }
   ],
@@ -127,14 +126,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0076459c",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,&local_14,DAT_0076459c);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 13,

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 82,
+    "complexity_score": 67,
     "cross_reference_count": 12,
     "function_call_count": 0,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -106,62 +105,62 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d098cc",
-      "name": "DAT_01d098cc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d098cc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d098d0",
-      "name": "DAT_01d098d0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d098d0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d098d4",
-      "name": "DAT_01d098d4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d098d4",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d098d8",
-      "name": "DAT_01d098d8",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d098d8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09918",
-      "name": "DAT_01d09918",
-      "type": "undefined4",
+      "name": "g_PTR_01d09918",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d0c398",
-      "name": "DAT_01d0c398",
-      "type": "undefined4",
+      "name": "g_INT_01d0c398",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d167ac",
-      "name": "DAT_01d167ac",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167ac",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167b0",
-      "name": "DAT_01d167b0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167b0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167b4",
-      "name": "DAT_01d167b4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167b4",
+      "type": "float",
       "value": null
     },
     {
@@ -172,20 +171,20 @@
     },
     {
       "addr": "01d167bc",
-      "name": "DAT_01d167bc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167bc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167c0",
-      "name": "DAT_01d167c0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167c0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167c4",
-      "name": "DAT_01d167c4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167c4",
+      "type": "float",
       "value": null
     },
     {
@@ -196,20 +195,20 @@
     },
     {
       "addr": "01d167cc",
-      "name": "DAT_01d167cc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167cc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167d0",
-      "name": "DAT_01d167d0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167d0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167d4",
-      "name": "DAT_01d167d4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167d4",
+      "type": "float",
       "value": null
     },
     {
@@ -220,20 +219,20 @@
     },
     {
       "addr": "01d167dc",
-      "name": "DAT_01d167dc",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167dc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167e0",
-      "name": "DAT_01d167e0",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167e0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d167e4",
-      "name": "DAT_01d167e4",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d167e4",
+      "type": "float",
       "value": null
     },
     {
@@ -244,8 +243,8 @@
     },
     {
       "addr": "0264bc84",
-      "name": "DAT_0264bc84",
-      "type": "undefined4",
+      "name": "g_APIDLL_lockHoldBuffer",
+      "type": "void*",
       "value": null
     }
   ],
@@ -311,19 +310,11 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
+      "line": 34,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bc84 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_APIDLL_lockHoldBuffer)(&g_FLOAT_01d167ac,g_FLOAT_01d098cc,g_FLOAT_01d098d0);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01d167ac",
-      "severity": "mild",
-      "text": "(*_DAT_0264bc84)(&DAT_01d167ac,_DAT_01d098cc,_DAT_01d098d0);",
-      "type": "undefined_data"
     }
   ]
 }

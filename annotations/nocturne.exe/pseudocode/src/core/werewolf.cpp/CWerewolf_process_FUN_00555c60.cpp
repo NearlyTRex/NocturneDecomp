@@ -258,7 +258,7 @@ LAB_005567cd:
         }
       }
       pCVar12 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (this_ptr->chain_anchor,g_CTrapActorType_02dd100c.name_hash);
+                          (this_ptr->chain_anchor,g_CTrapClassInfo.name_hash);
       if ((pCVar12 == (CDemonActor *)0x0) || (local_18 != 0xf)) {
         pCVar13 = (this_ptr->base).victim;
         if (this_ptr->type == WEREWOLF_TYPE_FOREST) {
@@ -348,7 +348,7 @@ LAB_00556967:
         }
         else if (iVar6 < 1) {
           pCVar12 = core_actor_cpp_castToClassHash_FUN_0040d890
-                              (this_ptr->chain_anchor,g_CTrapActorType_02dd100c.name_hash);
+                              (this_ptr->chain_anchor,g_CTrapClassInfo.name_hash);
           if (pCVar12 == (CDemonActor *)0x0) {
             local_194.x = (target_pos->position).x - (this_ptr->base).base.base.location.position.x;
             local_194.y = (pCVar13->base).location.position.y -
@@ -386,7 +386,7 @@ LAB_00556967:
                   pCVar10 = (CWerewolf *)
                             core_actor_cpp_castToClassHash_FUN_0040d890
                                       (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar6),
-                                       g_CWerewolfActorType_02de078c.name_hash);
+                                       g_CWerewolfClassInfo.name_hash);
                   if (((pCVar10 != (CWerewolf *)0x0) && (pCVar10 != this_ptr)) &&
                      (pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                                          (&(pCVar10->base).base.model.base),
@@ -588,7 +588,7 @@ LAB_00556301:
           }
         }
         pCVar12 = core_actor_cpp_castToClassHash_FUN_0040d890
-                            (this_ptr->chain_anchor,g_CTrapActorType_02dd100c.name_hash);
+                            (this_ptr->chain_anchor,g_CTrapClassInfo.name_hash);
         if ((pCVar12 != (CDemonActor *)0x0) && (local_18 == 0xe)) goto LAB_005567aa;
         if ((this_ptr->base).victim == (CCharacter *)0x0) goto LAB_00555e90;
         iVar6 = core_actor_cpp_randomChance_FUN_0040dea0(0.4);

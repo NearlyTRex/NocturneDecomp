@@ -6,7 +6,7 @@
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d1bc2
-;   core_menu.cpp_FUN_0050ba70 at 0050bb4a
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050bb4a
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cfb1
 ;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d71e
 ;   core_sound.cpp_playSfxInternal_FUN_0057bef0 at 0057beff
@@ -15,13 +15,13 @@
 ;   sound_sndmain.cpp_writeIni_FUN_005763b0 at 005764d3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c8065c
+;   int g_SoundMuted
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02c8065c]                ; 005735f0 | DAT_02c8065c
+    MOV EAX,[0x02c8065c]                ; 005735f0 | g_SoundMuted
         ;   Label: sound_sndmain.cpp_isSoundMuted_FUN_005735f0
     RET                                 ; 005735f5
 

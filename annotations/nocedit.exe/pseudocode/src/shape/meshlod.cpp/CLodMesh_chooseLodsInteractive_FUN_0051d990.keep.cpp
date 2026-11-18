@@ -119,10 +119,10 @@ LAB_0051e453:
     }
     if (((local_180.tri_count < iVar6 + -1) || (iVar6 < local_180.tri_count)) &&
        (shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(this_ptr,iVar6,&local_180),
-       iVar6 = INT_0067d39c, INT_0067d39c = iVar6, render_mode == 2)) {
-      INT_0067d39c = 0;
+       iVar6 = g_LodChooserSelectedLod, g_LodChooserSelectedLod = iVar6, render_mode == 2)) {
+      g_LodChooserSelectedLod = 0;
       shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(&local_180);
-      INT_0067d39c = iVar6;
+      g_LodChooserSelectedLod = iVar6;
     }
     if (0 < iVar7) {
       face_counts[iVar7] = local_180.tri_count;

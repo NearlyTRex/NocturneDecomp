@@ -10,7 +10,6 @@ void FUN_0056e09c(HANDLE param_1,uint param_2)
 
 {
   int iVar1;
-  int iVar2;
   DWORD nStdHandle;
   
   if ((int)param_2 < 0) {
@@ -29,21 +28,20 @@ void FUN_0056e09c(HANDLE param_1,uint param_2)
   }
   SetStdHandle(nStdHandle,param_1);
 LAB_0056e0ea:
-  iVar1 = param_2 * 4;
-  if ((int)param_2 < DAT_005c1f58) {
-    *(HANDLE *)(iVar1 + (int)DAT_005c1f54) = param_1;
+  if ((int)param_2 < g_INT_005c1f58) {
+    g_IOControlBlock->standard_handles[param_2] = param_1;
   }
   else {
-    DAT_005c1f54 = realloc(DAT_005c1f54,iVar1 + 4);
-    if (DAT_005c1f58 < (int)param_2) {
-      iVar2 = DAT_005c1f58 * 4;
+    g_IOControlBlock = realloc(g_IOControlBlock,param_2 * 4 + 4);
+    if (g_INT_005c1f58 < (int)param_2) {
+      iVar1 = g_INT_005c1f58 * 4;
       do {
-        *(uint *)((int)DAT_005c1f54 + iVar2) = 0;
-        iVar2 = iVar2 + 4;
-      } while (iVar2 < iVar1);
+        *(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;
+        iVar1 = iVar1 + 4;
+      } while (iVar1 < (int)(param_2 * 4));
     }
-    DAT_005c1f58 = param_2 + 1;
-    *(HANDLE *)(param_2 * 4 + (int)DAT_005c1f54) = param_1;
+    g_INT_005c1f58 = param_2 + 1;
+    g_IOControlBlock->standard_handles[param_2] = param_1;
   }
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();
   return;

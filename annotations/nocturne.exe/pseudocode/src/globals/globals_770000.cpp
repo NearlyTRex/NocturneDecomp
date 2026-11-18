@@ -8,20 +8,25 @@
 CConsole g_CConsoleInstance = {};
 
 // CDemonActorType
-CDemonActorType g_CColonelActorType_0077acd0 = {};
-CDemonActorType g_CConveyorActorType_0077bcc8 = {};
-CDemonActorType g_CZombieCowActorType_0077bd04 = {};
-CDemonActorType g_CCrateActorType_0077bd40 = {};
-CDemonActorType g_CCrossbowActorType_0077bd7c = {};
-CDemonActorType g_CCurtainActorType_0077d20c = {};
+CDemonActorType g_CColonelClassInfo = {};
+CDemonActorType g_CConveyorClassInfo = {};
+CDemonActorType g_CZombieCowClassInfo = {};
+CDemonActorType g_CCrateClassInfo = {};
+CDemonActorType g_CCrossbowClassInfo = {};
+CDemonActorType g_CCurtainClassInfo = {};
 
 // CVector3f[100]
-CVector3f g_CVector3f_ARRAY_0077bdbc[100] = {};
+CVector3f g_CurtainCollisionPositions[100] = {};
 
 // SCollisionInfo[100]
-SCollisionInfo g_SCollisionInfo_ARRAY_0077c26c[100] = {};
+SCollisionInfo g_CurtainCollisionInfos[100] = {};
 
-// undefined4
-undefined4 DAT_0077ac8c = {};
-undefined4 DAT_0077bdb8 = {};
+// char[145328]
+char g_CHAR_ARRAY_0077d250[145328] = {};
+
+// int
+int g_INT_0077bdb8 = {};
+
+// int[17]
+int g_ColonelIndices[17] = {};
 

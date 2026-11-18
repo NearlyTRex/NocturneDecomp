@@ -15,32 +15,34 @@ int __cdecl core_weapon_cpp_CWeapon_renderTransparent_FUN_0057b040(CWeapon *this
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
-  uint auStack_40 [6];
+  int in_stack_ffffffc4;
+  uint auStack_38 [4];
   uint auStack_28 [6];
   
   bVar5 = 0;
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-  puVar3 = auStack_40;
+  puVar3 = auStack_38;
   puVar4 = auStack_28;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar4 = *puVar3;
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  iVar2 = core_box_cpp_FUN_0041daf0(auStack_28);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0
+                    ((CBoundingBox3D *)(auStack_28 + 2),in_stack_ffffffc4);
   if (this_ptr->render_alpha == 0x10000) {
-    core_actor_cpp_FUN_004087d0(&this_ptr->base);
+    core_actor_cpp_CDemonActor_renderTransparent_FUN_004087d0(&this_ptr->base);
   }
   else {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
     if (iVar2 != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-                (DAT_005f2afc,this_ptr->render_alpha);
+                (g_CDemonRenderer_PTR_005f2afc,this_ptr->render_alpha);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
                 (&this_ptr->model,0.0,0x267);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
-    this_ptr_00 = DAT_005f2afc;
+    this_ptr_00 = g_CDemonRenderer_PTR_005f2afc;
     this_ptr->is_rendered = 0;
     iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(this_ptr_00);
     if ((iVar1 == 0) && (iVar2 != 0)) {

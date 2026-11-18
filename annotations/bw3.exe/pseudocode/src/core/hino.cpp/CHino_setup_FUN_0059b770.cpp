@@ -24,8 +24,8 @@ void __cdecl core_hino_cpp_CHino_setup_FUN_0059b770(CHino *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
-  _DAT_02d24c4c =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"@Bip01 Head" + 1,1);
+  g_INT_02d24c4c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Head",1);
   _DAT_02d24c54 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 R Hand",1);
   (this_ptr->base).base.carry_hands[0].bone_index = _DAT_02d24c54;

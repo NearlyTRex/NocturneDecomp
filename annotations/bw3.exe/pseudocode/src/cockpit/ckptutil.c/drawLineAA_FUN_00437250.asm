@@ -14,11 +14,11 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00468e60 at 00468ee4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f12f0
-;   undefined4 DAT_01c6b5a8
-;   undefined4 DAT_01c6b5ac
-;   undefined4 DAT_01c6b5b0
-;   undefined4 DAT_01c6b5b4
+;   int g_INT_005f12f0 = 0x1
+;   int g_INT_01c6b5a8
+;   int g_INT_01c6b5ac
+;   int g_INT_01c6b5b0
+;   int g_INT_01c6b5b4
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0
@@ -44,18 +44,18 @@ section .text
     CMP EBX,ECX                         ; 0043726d
     JG 0x00437317                       ; 0043726f
         ;   XREF to: 00437317 (CONDITIONAL_JUMP)  ; LAB_00437317
-    CMP dword ptr [0x005f12f0],0x0      ; 00437275 | DAT_005f12f0
+    CMP dword ptr [0x005f12f0],0x0      ; 00437275 | g_INT_005f12f0
         ;   Label: LAB_00437275
     JNZ 0x004372ca                      ; 0043727c
         ;   XREF to: 004372ca (CONDITIONAL_JUMP)  ; LAB_004372ca
-    CMP ESI,dword ptr [0x01c6b5a8]      ; 0043727e | DAT_01c6b5a8
+    CMP ESI,dword ptr [0x01c6b5a8]      ; 0043727e | g_INT_01c6b5a8
     JGE 0x00437295                      ; 00437284
         ;   XREF to: 00437295 (CONDITIONAL_JUMP)  ; LAB_00437295
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00437286
-    CMP EAX,dword ptr [0x01c6b5a8]      ; 00437289 | DAT_01c6b5a8
+    CMP EAX,dword ptr [0x01c6b5a8]      ; 00437289 | g_INT_01c6b5a8
     JL 0x00437310                       ; 0043728f
         ;   XREF to: 00437310 (CONDITIONAL_JUMP)  ; LAB_00437310
-    MOV ECX,dword ptr [0x01c6b5b0]      ; 00437295 | DAT_01c6b5b0
+    MOV ECX,dword ptr [0x01c6b5b0]      ; 00437295 | g_INT_01c6b5b0
         ;   Label: LAB_00437295
     CMP ESI,ECX                         ; 0043729b
     JLE 0x004372a8                      ; 0043729d
@@ -63,15 +63,15 @@ section .text
     CMP ECX,dword ptr [EBP + 0x1c]      ; 0043729f
     JL 0x00437310                       ; 004372a2
         ;   XREF to: 00437310 (CONDITIONAL_JUMP)  ; LAB_00437310
-    CMP EBX,dword ptr [0x01c6b5ac]      ; 004372a8 | DAT_01c6b5ac
+    CMP EBX,dword ptr [0x01c6b5ac]      ; 004372a8 | g_INT_01c6b5ac
         ;   Label: LAB_004372a8
     JGE 0x004372bb                      ; 004372ae
         ;   XREF to: 004372bb (CONDITIONAL_JUMP)  ; LAB_004372bb
     MOV EAX,dword ptr [EBP + 0x20]      ; 004372b0
-    CMP EAX,dword ptr [0x01c6b5ac]      ; 004372b3 | DAT_01c6b5ac
+    CMP EAX,dword ptr [0x01c6b5ac]      ; 004372b3 | g_INT_01c6b5ac
     JL 0x00437310                       ; 004372b9
         ;   XREF to: 00437310 (CONDITIONAL_JUMP)  ; LAB_00437310
-    MOV ECX,dword ptr [0x01c6b5b4]      ; 004372bb | DAT_01c6b5b4
+    MOV ECX,dword ptr [0x01c6b5b4]      ; 004372bb | g_INT_01c6b5b4
         ;   Label: LAB_004372bb
     CMP EBX,ECX                         ; 004372c1
     JLE 0x004372ca                      ; 004372c3

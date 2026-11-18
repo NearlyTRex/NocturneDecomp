@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 56,
+    "complexity_score": 21,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 65
   },
   "cross_references": [
@@ -83,9 +81,9 @@
     },
     {
       "addr": "005bea74",
-      "name": "DAT_005bea74",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentSoundDevice",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "01cc4800",
@@ -211,30 +209,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005bea74",
-      "severity": "mild",
-      "text": "device_id = DAT_005bea74;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005bea74",
-      "severity": "mild",
-      "text": "DAT_005bea74 = device_id;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005bea74",
-      "severity": "mild",
-      "text": "DAT_005bea74 = sound_sndmain_cpp_findBestSoundDevice_FUN_00528320();",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -2,25 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 96,
+    "complexity_score": 55,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 4,
+    "pseudocode_lines": 40,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 138
+    "total_lines": 137
   },
   "cross_references": [
     {
       "addr": "00534420",
       "from_addr": "005345a3",
       "name": "core_set.cpp_CDemonSet_initScene_FUN_00534420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005365c0",
+      "from_addr": "005367f3",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00536990",
+      "from_addr": "00536bb4",
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -33,18 +43,6 @@
       "addr": "00534890",
       "from_addr": "005351b3",
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005365c0",
-      "from_addr": "005367f3",
-      "name": "core_set.cpp_FUN_005365c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00536990",
-      "from_addr": "00536bb4",
-      "name": "core_set.cpp_FUN_00536990",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,7 +68,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "0046d520",
@@ -98,44 +96,44 @@
     },
     {
       "addr": "005bb394",
-      "name": "DAT_005bb394",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ShadowDepthToDistanceScale",
+      "type": "double",
+      "value": "0.00390625"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c5faec",
-      "name": "DAT_01c5faec",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c5faf0",
-      "name": "DAT_01c5faf0",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -189,7 +187,7 @@
       {
         "call_addr": "005367f3",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005365c0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +198,7 @@
       {
         "call_addr": "00536bb4",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00536990",
+        "caller": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -325,32 +323,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01c5faec",
-      "severity": "mild",
-      "text": "*(void **)(&DAT_01c5faec + iVar3 * 4) = pCVar4->saved_screen_buffer_rows[0];",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 39,
+      "line": 37,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CDemonLight *)&(pCVar4->base).base.position;",

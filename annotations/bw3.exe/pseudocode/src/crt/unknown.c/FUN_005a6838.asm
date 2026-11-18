@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005a6838(undefined4 param_1,char *param_2,int param_3)
+; void crt_unknown_c_FUN_005a6838(int param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_005a6a78 at 005a6f85
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005acc88
+;   crt_unknown.c_IntegerToString_FUN_005acc88
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EBP                            ; 005a6842
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005a6843
     PUSH EDX                            ; 005a6847
-    CALL crt_unknown.c_FUN_005acc88     ; 005a6848
-        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005acc88()
+    CALL crt_unknown.c_IntegerToString_FUN_005acc88 ; 005a6848
+        ;   XREF to: 005acc88 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_IntegerToString_FUN_005acc88(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005a684d
     MOV EDI,EBP                         ; 005a6850
     PUSH ES                             ; 005a6852

@@ -31,23 +31,23 @@
 ;   core_armour.cpp_CArmour_processDamage_FUN_0040ec40 at 0040ec5a
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040ebd1
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00413c40 at 00413f72
+;   core_charactr.cpp_CCharacter_explode_FUN_00430c90 at 00430d7a
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_004319e0 at 00431bbc
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0 at 0042fc9b
-;   core_charactr.cpp_FUN_00430c90 at 00430d7a
 ;   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004dd630 at 004dd726
 ;   core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f0a20 at 004f0a58
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a6402
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5a57
+;   float g_FLOAT_005d5a57 = 0.5
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
@@ -160,7 +160,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00430ead
     MOVSD ES:EDI,ESI                    ; 00430eae
     MOVSD ES:EDI,ESI                    ; 00430eaf
-    FLD float ptr [0x005d5a57]          ; 00430eb0 | DAT_005d5a57
+    FLD float ptr [0x005d5a57]          ; 00430eb0 | g_FLOAT_005d5a57
     FLD float ptr [ESP + 0x74]          ; 00430eb6
     FMUL ST1                            ; 00430eba
     FLD float ptr [ESP + 0x78]          ; 00430ebc
@@ -182,8 +182,8 @@ section .text
     PUSH ECX                            ; 00430efb
     LEA ESI,[ESP + 0xac]                ; 00430efc
     LEA EDI,[ESP + 0xa0]                ; 00430f03
-    CALL core_actor.cpp_FUN_00408b40    ; 00430f0a
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00430f0a
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00430f0f
     LEA ESI,[ESP + 0xa4]                ; 00430f12
     MOV EAX,dword ptr [EBP + 0x14]      ; 00430f19
@@ -214,7 +214,7 @@ section .text
     LEA ESI,[ESP + 0x6c]                ; 00430f58
     LEA EDI,[ESP + 0xb4]                ; 00430f5c
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 00430f63
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 00430f68
     LEA ESI,[ESP + 0x68]                ; 00430f6b
     PUSH dword ptr [ESP]                ; 00430f6f
@@ -269,8 +269,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xe8]      ; 0043102f
     MOV dword ptr [ESP + 0xd4],ECX      ; 00431036
     MOV dword ptr [ESP + 0xd8],EAX      ; 0043103d
-    CALL core_dirmat.cpp_FUN_0045f690   ; 00431044
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 00431044
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xdc]                ; 00431049
     ADD ESP,0x8                         ; 00431050
     MOVSD ES:EDI,ESI                    ; 00431053

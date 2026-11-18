@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 101,
+    "complexity_score": 85,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 433
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 85,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 432
   },
   "cross_references": [
     {
@@ -24,19 +22,19 @@
     {
       "addr": "004bcbf0",
       "from_addr": "004bcfd4",
-      "name": "core_game.cpp_FUN_004bcbf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004eed60",
-      "from_addr": "004efc79",
-      "name": "core_menu.cpp_FUN_004eed60",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eb490",
       "from_addr": "004eb56e",
       "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eed60",
+      "from_addr": "004efc79",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,44 +76,44 @@
   "globals": [
     {
       "addr": "00617dd4",
-      "name": "DAT_00617dd4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
     },
     {
       "addr": "01c38af0",
-      "name": "DAT_01c38af0",
-      "type": "undefined4",
+      "name": "g_JoyXPos",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38af4",
-      "name": "DAT_01c38af4",
-      "type": "undefined4",
+      "name": "g_JoyYPos",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b00",
-      "name": "DAT_01c38b00",
-      "type": "undefined4",
+      "name": "g_JoyButtons",
+      "type": "DWORD",
       "value": null
     },
     {
       "addr": "01c38b01",
-      "name": "DAT_01c38b01",
+      "name": "g_JoyButtons+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c38b04",
-      "name": "DAT_01c38b04",
-      "type": "undefined4",
+      "name": "g_JoystickPresent",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d02f84",
-      "name": "DAT_01d02f84",
-      "type": "undefined4",
+      "name": "g_PTR_01d02f84",
+      "type": "void*",
       "value": null
     }
   ],
@@ -125,7 +123,7 @@
       {
         "call_addr": "004bcfd4",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bcbf0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,7 +134,7 @@
       {
         "call_addr": "004bd2b9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bcbf0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +178,7 @@
       {
         "call_addr": "004efc79",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eed60",
+        "caller": "core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +189,7 @@
       {
         "call_addr": "004efdf3",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eed60",
+        "caller": "core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -202,7 +200,7 @@
       {
         "call_addr": "004efe01",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eed60",
+        "caller": "core_menu.cpp_configureCustomKeyBindings_FUN_004eed60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -306,14 +304,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

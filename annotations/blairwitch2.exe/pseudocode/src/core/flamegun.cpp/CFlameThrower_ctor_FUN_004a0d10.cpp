@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004a0d10(CFlameThrower *this_ptr)
 
 {
@@ -26,7 +24,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004a0d10(CFlame
   (pCVar2->base).can_penetrate = 0;
   (pCVar2->base).bolt_velocity = 15.0;
   (pCVar2->base).fire_cooldown = 1;
-  fVar1 = _DAT_005f6b4c;
+  fVar1 = 8.0f;
   pCVar2->fire_rate_timer = 0.0;
   pCVar2->was_firing_prev_frame = 0;
   (pCVar2->base).weight = fVar1;

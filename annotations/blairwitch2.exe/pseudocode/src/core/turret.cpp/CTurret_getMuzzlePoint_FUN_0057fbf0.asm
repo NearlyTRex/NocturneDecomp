@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_turret_cpp_CTurret_getMuzzlePoint_FUN_0057fbf0(CTurret *this_ptr,CVector3f *out_point)
+; CVector3f * __stack_esi core_turret_cpp_CTurret_getMuzzlePoint_FUN_0057fbf0(CTurret *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; *****************************************************************************
 

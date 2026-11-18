@@ -15,8 +15,8 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 at 0050de6b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00766c70
-;   undefined4 DAT_00766c74
+;   int g_ClippedVertexCount
+;   SRenderVertex[16] g_ClippedVertexBuffer
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
 ;
@@ -78,7 +78,7 @@ section .text
     MOV dword ptr [0x01c039a4],EDI      ; 00460ed8 | g_VertexPreprocessMode
     CALL core_xform.cpp_transformAndClipGeometry_FUN_0055e040 ; 00460ede
         ;   XREF to: 0055e040 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count, int * vertex_indices)
-    MOV EAX,[0x00766c70]                ; 00460ee3 | DAT_00766c70
+    MOV EAX,[0x00766c70]                ; 00460ee3 | g_ClippedVertexCount
     ADD ESP,0x8                         ; 00460ee8
     CMP EAX,0x2                         ; 00460eeb
     JLE 0x00460e9c                      ; 00460eee
@@ -86,7 +86,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00460ef0
     PUSH EDX                            ; 00460ef4
     PUSH EAX                            ; 00460ef5
-    PUSH 0x766c74                       ; 00460ef6 | DAT_00766c74
+    PUSH 0x766c74                       ; 00460ef6 | g_ClippedVertexBuffer
     CALL engine_zraster.c_rasterizePolygonCustom_FUN_00562de0 ; 00460efb
         ;   XREF to: 00562de0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00460f00

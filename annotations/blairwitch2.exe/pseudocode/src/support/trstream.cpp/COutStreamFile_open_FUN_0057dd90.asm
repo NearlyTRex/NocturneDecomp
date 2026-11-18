@@ -9,8 +9,8 @@
 ; char *           Stack[0xc]:4   mode
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004bb9b0 at 004bbcd6
-;   core_game.cpp_FUN_004bbf70 at 004bc255
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc255
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbcd6
 ;   support_trstream.cpp_COutStreamFile_ctorOpen_FUN_0057dba0 at 0057dbc9
 ;
 ; Called Functions:

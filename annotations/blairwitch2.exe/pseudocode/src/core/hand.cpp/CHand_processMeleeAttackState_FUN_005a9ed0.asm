@@ -9,16 +9,16 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Sleeping_005f0a46
-;   undefined4 DAT_005f0a53
-;   undefined4 DAT_0060088c
+;   double g_DOUBLE_005f0a53 = 0.900000000000000
+;   float g_FLOAT_0060088c = 5
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_motion.cpp_FUN_00503e60
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -69,7 +69,7 @@ section .text
     FMUL ST0                            ; 005a9f29
     FADDP                               ; 005a9f2b
     FSQRT                               ; 005a9f2d
-    FCOMP float ptr [0x0060088c]        ; 005a9f2f | DAT_0060088c
+    FCOMP float ptr [0x0060088c]        ; 005a9f2f | g_FLOAT_0060088c
     FNSTSW AX                           ; 005a9f35
     SAHF                                ; 005a9f37
     JA 0x005a9fb9                       ; 005a9f38
@@ -93,13 +93,13 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 005a9f63
         ;   Label: LAB_005a9f63
     PUSH ESI                            ; 005a9f69
-    CALL core_motion.cpp_FUN_005035c0   ; 005a9f6a
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a9f6a
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005a9f6f
     PUSH ESI                            ; 005a9f72
     MOV EDI,dword ptr [EAX + 0x24]      ; 005a9f73
-    CALL core_motion.cpp_FUN_00503e60   ; 005a9f76
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005a9f76
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x10],EAX      ; 005a9f7b
     FLD float ptr [ESP + 0x10]          ; 005a9f7f
     ADD ESP,0x4                         ; 005a9f83
@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 005a9fda (CONDITIONAL_JUMP)  ; LAB_005a9fda
     FLD float ptr [ESP]                 ; 005a9f8e
         ;   Label: LAB_005a9f8e
-    FCOMP double ptr [0x005f0a53]       ; 005a9f91 | DAT_005f0a53
+    FCOMP double ptr [0x005f0a53]       ; 005a9f91 | g_DOUBLE_005f0a53
     FNSTSW AX                           ; 005a9f97
     SAHF                                ; 005a9f99
     JBE 0x005a9ef3                      ; 005a9f9a
@@ -130,8 +130,8 @@ section .text
         ;   Label: LAB_005a9fb9
     ADD EBX,0x10af8                     ; 005a9fbe
     PUSH EBX                            ; 005a9fc4
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a9fc5
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a9fc5
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a9fca
     MOV ESP,EBP                         ; 005a9fcd
     POP EBP                             ; 005a9fcf

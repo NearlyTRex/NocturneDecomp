@@ -14,15 +14,15 @@
   },
   "cross_references": [
     {
-      "addr": "00490f80",
-      "from_addr": "0049102b",
-      "name": "core_event.cpp_FUN_00490f80",
+      "addr": "00491110",
+      "from_addr": "004911bb",
+      "name": "core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00491110",
-      "from_addr": "004911bb",
-      "name": "core_event.cpp_FUN_00491110",
+      "addr": "00490f80",
+      "from_addr": "0049102b",
+      "name": "core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,7 +34,13 @@
     {
       "addr": "004a85a0",
       "from_addr": "004a85ed",
-      "name": "engine_font.cpp_FUN_004a85a0",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cb20",
+      "from_addr": "0047cf8e",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,12 +53,6 @@
       "addr": "00481620",
       "from_addr": "00481825",
       "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00481620",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047cb20",
-      "from_addr": "0047cf8e",
-      "name": "shape_edittool.cpp_FUN_0047cb20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +87,7 @@
       {
         "call_addr": "004911bb",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00491110",
+        "caller": "core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00491110",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +109,7 @@
       {
         "call_addr": "0049102b",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00490f80",
+        "caller": "core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +131,7 @@
       {
         "call_addr": "0047cf8e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047cb20",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +142,7 @@
       {
         "call_addr": "0047d064",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047cb20",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +153,7 @@
       {
         "call_addr": "004a85ed",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004a85a0",
+        "caller": "engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

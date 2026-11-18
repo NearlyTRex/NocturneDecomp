@@ -54,7 +54,7 @@ void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_005584a0(CScat *this_ptr,int 
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(this_ptr->aim_yaw,&local_7c);
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(this_ptr->aim_pitch,&local_14c);
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_14c,&local_7c,&local_15c);
-  core_xform_cpp_slerpQuaternion_FUN_005f77e0(&CQuaternion4f_00665998,&local_fc,0.95,&local_4c);
+  core_xform_cpp_slerpQuaternion_FUN_005f77e0(&g_IdentityQuaternion,&local_fc,0.95,&local_4c);
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_4c,&local_15c,&local_3c);
   core_xform_cpp_slerpQuaternion_FUN_005f77e0
             ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + local_1c,

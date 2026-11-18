@@ -22,11 +22,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d4900 at 004d49fe
+;   core_hero.cpp_CHero_findHeroAction_FUN_004d4900 at 004d49fe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c4d2d
-;   undefined4 DAT_005c4d35
+;   double g_DOUBLE_005c4d2d = 5
+;   double g_DOUBLE_005c4d35 = 3
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
@@ -34,8 +34,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408bf0
-;   core_lever.cpp_FUN_004e0a30
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+;   core_lever.cpp_CLever_isAccessibleFrom_FUN_004e0a30
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;
 ; *****************************************************************************
@@ -94,8 +94,8 @@ section .text
     PUSH ECX                            ; 004d3351
     LEA ESI,[ESP + 0x34]                ; 004d3352
     LEA EDI,[ESP + 0x28]                ; 004d3356
-    CALL core_actor.cpp_FUN_00408bf0    ; 004d335a
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 004d335a
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x34]                ; 004d335f
     ADD ESP,0x8                         ; 004d3363
     MOVSD ES:EDI,ESI                    ; 004d3366
@@ -103,7 +103,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d3368
     FLD float ptr [ESP + 0x24]          ; 004d3369
     FABS                                ; 004d336d
-    FCOMP double ptr [0x005c4d2d]       ; 004d336f | DAT_005c4d2d
+    FCOMP double ptr [0x005c4d2d]       ; 004d336f | g_DOUBLE_005c4d2d
     FNSTSW AX                           ; 004d3375
     SAHF                                ; 004d3377
     JA 0x004d343c                       ; 004d3378
@@ -118,14 +118,14 @@ section .text
     JA 0x004d343c                       ; 004d338f
         ;   XREF to: 004d343c (CONDITIONAL_JUMP)  ; LAB_004d343c
     FLD double ptr [ESP]                ; 004d3395
-    FCOMP double ptr [0x005c4d35]       ; 004d3398 | DAT_005c4d35
+    FCOMP double ptr [0x005c4d35]       ; 004d3398 | g_DOUBLE_005c4d35
     FNSTSW AX                           ; 004d339e
     SAHF                                ; 004d33a0
     JA 0x004d343c                       ; 004d33a1
         ;   XREF to: 004d343c (CONDITIONAL_JUMP)  ; LAB_004d343c
     FLD float ptr [ESP + 0x20]          ; 004d33a7
     FABS                                ; 004d33ab
-    FCOMP double ptr [0x005c4d35]       ; 004d33ad | DAT_005c4d35
+    FCOMP double ptr [0x005c4d35]       ; 004d33ad | g_DOUBLE_005c4d35
     FNSTSW AX                           ; 004d33b3
     SAHF                                ; 004d33b5
     JA 0x004d343c                       ; 004d33b6
@@ -135,7 +135,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 004d33c1
     LEA EDI,[ESP + 0x18]                ; 004d33c5
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 004d33c9
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0xc]                 ; 004d33ce
     ADD ESP,0x4                         ; 004d33d2
     MOVSD ES:EDI,ESI                    ; 004d33d5
@@ -150,8 +150,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 004d33ec
     PUSH EDI                            ; 004d33f0
     PUSH EBX                            ; 004d33f1
-    CALL core_lever.cpp_FUN_004e0a30    ; 004d33f2
-        ;   XREF to: 004e0a30 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_004e0a30()
+    CALL core_lever.cpp_CLever_isAccessibleFrom_FUN_004e0a30 ; 004d33f2
+        ;   XREF to: 004e0a30 (UNCONDITIONAL_CALL)  ; int core_lever.cpp_CLever_isAccessibleFrom_FUN_004e0a30(CLever * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004d33f7
     TEST EAX,EAX                        ; 004d33fa
     JZ 0x004d343c                       ; 004d33fc

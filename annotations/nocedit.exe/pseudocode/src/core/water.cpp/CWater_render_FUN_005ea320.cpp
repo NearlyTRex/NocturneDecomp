@@ -27,21 +27,22 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
   
   if (ABS(this_ptr->water_level_y) != 0.0) {
     g_WaterAnimationTimer = g_WaterAnimationTimer + g_GlobalDeltaTimeInt;
-    if (INT_006844f4 < g_WaterAnimationTimer) {
-      g_WaterAnimationTimer = g_WaterAnimationTimer - INT_006844f4;
+    if (g_WaterFrameDuration < g_WaterAnimationTimer) {
+      g_WaterAnimationTimer = g_WaterAnimationTimer - g_WaterFrameDuration;
       g_WaterCurrentFrame = g_WaterCurrentFrame + 1;
       if (0xf < g_WaterCurrentFrame) {
         g_WaterCurrentFrame = 0;
       }
     }
-    INT_03f8f62c = (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)INT_006844f4);
-    if (INT_03f8f62c < 0x10000) {
-      if (INT_03f8f62c < 0) {
-        INT_03f8f62c = 0;
+    g_WaterAnimationBlend =
+         (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)g_WaterFrameDuration);
+    if (g_WaterAnimationBlend < 0x10000) {
+      if (g_WaterAnimationBlend < 0) {
+        g_WaterAnimationBlend = 0;
       }
     }
     else {
-      INT_03f8f62c = 0xffff;
+      g_WaterAnimationBlend = 0xffff;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,g_WaterTextures + g_WaterCurrentFrame);

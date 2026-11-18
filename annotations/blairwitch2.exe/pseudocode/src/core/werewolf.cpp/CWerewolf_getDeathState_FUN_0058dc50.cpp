@@ -10,13 +10,14 @@ EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_0058dc50(CWere
 
 {
   uint uVar1;
-  int iVar2;
+  SMotion *pSVar2;
   
   if ((this_ptr->base).base.base.lifecycle_state == ACTOR_DESTROYED) {
     return DEATH_STATE_DEAD;
   }
-  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
-  uVar1 = *(uint *)(iVar2 + 0x24);
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.model.base);
+  uVar1 = pSVar2->state_index;
   if (0xb < uVar1) {
     if (uVar1 < 0xd) {
       return DEATH_STATE_DYING;

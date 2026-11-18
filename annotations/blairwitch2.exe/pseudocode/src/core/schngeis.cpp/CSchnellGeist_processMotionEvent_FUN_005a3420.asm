@@ -15,14 +15,14 @@
 ;   TerminatedCString s_schnellfootsteps0_wav_005f015c
 ;   TerminatedCString s_schnelljump_wav_005f0173
 ;   TerminatedCString s_schnelldeath01_wav_005f0183
-;   undefined4 DAT_005ff358
+;   float g_FLOAT_005ff358 = 15
 ;   undefined4 DAT_005ff35c
 ;   undefined4 DAT_005ff360
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740
 ;   core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
-;   core_basicene.cpp_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -46,11 +46,11 @@ section .text
         ;   Label: caseD_1f40
     PUSH 0x40000000                     ; 005a3443
     PUSH ESI                            ; 005a3448
-    PUSH dword ptr [0x005ff358]         ; 005a3449 | DAT_005ff358
+    PUSH dword ptr [0x005ff358]         ; 005a3449 | g_FLOAT_005ff358
     PUSH EBX                            ; 005a344f
         ;   Label: LAB_005a344f
-    CALL core_basicene.cpp_FUN_0059f740 ; 005a3450
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 ; 005a3450
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; int core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740(CBasicEnemy * this_ptr, float damage, int bone_index, float radius)
     ADD ESP,0x10                        ; 005a3455
         ;   Label: LAB_005a3455
     MOV EDI,dword ptr [ESP + 0x18]      ; 005a3458
@@ -58,7 +58,7 @@ section .text
     PUSH EDI                            ; 005a345c
     PUSH EBX                            ; 005a345d
     CALL core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880 ; 005a345e
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int param_2)
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int event_id)
     ADD ESP,0x8                         ; 005a3463
     POP EBP                             ; 005a3466
     POP EDI                             ; 005a3467
@@ -70,7 +70,7 @@ section .text
     PUSH EAX                            ; 005a346e
     PUSH 0x5f0129                       ; 005a346f | = "schnellbreath01"
     PUSH EBX                            ; 005a3474
-    MOV ECX,dword ptr [0x0061c068]      ; 005a3475 | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005a3475 | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005a347b
     MOV dword ptr [EBX + 0x11864],0x1   ; 005a347c
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a3486
@@ -83,7 +83,7 @@ section .text
     PUSH EDI                            ; 005a349b
     PUSH EBX                            ; 005a349c
     CALL core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880 ; 005a349d
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int param_2)
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int event_id)
     ADD ESP,0x8                         ; 005a34a2
     POP EBP                             ; 005a34a5
     POP EDI                             ; 005a34a6
@@ -109,7 +109,7 @@ section .text
     PUSH EAX                            ; 005a34d8
     PUSH 0x5f0139                       ; 005a34d9 | = "schnellarm0?.wav"
     PUSH EBX                            ; 005a34de
-    MOV EBP,dword ptr [0x0061c068]      ; 005a34df | DAT_0061c068
+    MOV EBP,dword ptr [0x0061c068]      ; 005a34df | g_CSound_PTR_0061c068
     PUSH EBP                            ; 005a34e5
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a34e6
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -120,7 +120,7 @@ section .text
     PUSH EAX                            ; 005a34f3
     PUSH 0x5f014a                       ; 005a34f4 | = "schnellbite01.wav"
     PUSH EBX                            ; 005a34f9
-    MOV EDI,dword ptr [0x0061c068]      ; 005a34fa | DAT_0061c068
+    MOV EDI,dword ptr [0x0061c068]      ; 005a34fa | g_CSound_PTR_0061c068
     PUSH EDI                            ; 005a3500
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a3501
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -131,7 +131,7 @@ section .text
     PUSH EAX                            ; 005a350e
     PUSH 0x5f015c                       ; 005a350f | = "schnellfootsteps0?.wav"
     PUSH EBX                            ; 005a3514
-    MOV ESI,dword ptr [0x0061c068]      ; 005a3515 | DAT_0061c068
+    MOV ESI,dword ptr [0x0061c068]      ; 005a3515 | g_CSound_PTR_0061c068
     PUSH ESI                            ; 005a351b
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a351c
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -142,7 +142,7 @@ section .text
     PUSH EAX                            ; 005a3529
     PUSH 0x5f0173                       ; 005a352a | = "schnelljump.wav"
     PUSH EBX                            ; 005a352f
-    MOV ECX,dword ptr [0x0061c068]      ; 005a3530 | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005a3530 | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005a3536
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a3537
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -153,7 +153,7 @@ section .text
     PUSH EAX                            ; 005a3544
     PUSH 0x5f0183                       ; 005a3545 | = "schnelldeath01.wav"
     PUSH EBX                            ; 005a354a
-    MOV EDX,dword ptr [0x0061c068]      ; 005a354b | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 005a354b | g_CSound_PTR_0061c068
     PUSH EDX                            ; 005a3551
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a3552
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

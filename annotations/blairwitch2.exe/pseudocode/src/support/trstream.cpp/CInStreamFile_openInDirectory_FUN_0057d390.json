@@ -17,21 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "0042c520",
-      "from_addr": "0042c55c",
-      "name": "cockpit_ckptutil.c_FUN_0042c520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042c780",
       "from_addr": "0042c832",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401590",
-      "from_addr": "004015ad",
-      "name": "engine_2d.c_FUN_00401590",
+      "addr": "0042c520",
+      "from_addr": "0042c55c",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,21 +41,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00401590",
+      "from_addr": "004015ad",
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a7d00",
       "from_addr": "004a7e9a",
       "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a7fd0",
-      "from_addr": "004a813b",
-      "name": "engine_font.cpp_FUN_004a7fd0",
+      "addr": "004a85a0",
+      "from_addr": "004a8603",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a85a0",
-      "from_addr": "004a8603",
-      "name": "engine_font.cpp_FUN_004a85a0",
+      "addr": "004a7fd0",
+      "from_addr": "004a813b",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -73,7 +73,7 @@
     {
       "addr": "00575150",
       "from_addr": "00575249",
-      "name": "engine_texture.cpp_FUN_00575150",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -126,14 +126,14 @@
       "name": "CreateFileA"
     },
     {
+      "addr": "00460910",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_callRelativeFilePathHook_FUN_00460910"
+    },
+    {
       "addr": "00460980",
       "is_variadic": false,
       "name": "engine_dosio.cpp_findFile_FUN_00460980"
-    },
-    {
-      "addr": "00460910",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460910"
     },
     {
       "addr": "0057d1d0",
@@ -166,7 +166,7 @@
       {
         "call_addr": "004015ad",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401590",
+        "caller": "engine_2d.c_loadPaletteFile_FUN_00401590",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "0042c55c",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0042c520",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_0042c520",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

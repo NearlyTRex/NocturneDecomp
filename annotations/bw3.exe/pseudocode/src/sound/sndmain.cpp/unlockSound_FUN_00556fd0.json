@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 30,
+    "complexity_score": 14,
     "cross_reference_count": 37,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 55
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -258,7 +256,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "00558f20",
@@ -286,26 +284,26 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf3418",
-      "name": "DAT_02cf3418",
-      "type": "undefined4",
+      "name": "g_SoundMutex",
+      "type": "HANDLE",
       "value": null
     },
     {
       "addr": "02cf341c",
-      "name": "DAT_02cf341c",
-      "type": "undefined4",
+      "name": "g_SoundLockCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -368,14 +366,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

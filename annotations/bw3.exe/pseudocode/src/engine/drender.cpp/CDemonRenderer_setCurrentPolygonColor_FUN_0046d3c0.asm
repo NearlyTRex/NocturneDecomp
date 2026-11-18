@@ -9,13 +9,13 @@
 ;
 ; XREF[5]:
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004217c0 at 004218bc
-;   core_cloth.cpp_FUN_0043f110 at 0043f124
-;   core_dpart.cpp_FUN_00466830 at 00466917
-;   core_dtrace.cpp_FUN_00475090 at 00475443
+;   core_cloth.cpp_CCloth_renderCollisionBones_FUN_0043f110 at 0043f124
+;   core_dpart.cpp_CDemonPart_renderFaces_FUN_00466830 at 00466917
+;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00475090 at 00475443
 ;   core_water.cpp_CWater_render_FUN_00577760 at 00577cba
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007303dc
+;   int g_CurrentPolygonColor
 ;
 ; *****************************************************************************
 
@@ -23,6 +23,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046d3c0
         ;   Label: engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0
-    MOV [0x007303dc],EAX                ; 0046d3c4 | DAT_007303dc
+    MOV [0x007303dc],EAX                ; 0046d3c4 | g_CurrentPolygonColor
     RET                                 ; 0046d3c9
 

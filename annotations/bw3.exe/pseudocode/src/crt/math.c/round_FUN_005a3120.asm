@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_round_FUN_005a3120(void)
+; double __fpureg_safe crt_math_c_round_FUN_005a3120(double value)
 ;
 ; Parameters:
 ; undefined        Stack[0x0]:1   local_res0
@@ -9,18 +9,18 @@
 ; undefined2       Stack[-0x8]:2  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[224]:
+; XREF[227]:
 ;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00437510 at 004376ec
 ;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0 at 00437a1f
-;   cockpit_drawsurf.cpp_FUN_00468620 at 00468658
-;   cockpit_drawsurf.cpp_FUN_004691e0 at 0046920b
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004691e0 at 0046920b
+;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00468620 at 00468658
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a3ac
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0 at 0040cefd
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20 at 0040df80
 ;   core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0 at 005a182e
 ;   core_baal.cpp_CBaal_renderTransparent_FUN_00597970 at 005979d6
 ;   core_bat.cpp_CBat_getBoundingBox_FUN_0040f290 at 0040f2a6
-;   ... and 214 more
+;   ... and 217 more
 ;
 ; *****************************************************************************
 

@@ -1,0 +1,60 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00444910(CCourse *this_ptr,int count)
+;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   count
+;
+; XREF[1]:
+;   core_course.cpp_CCourse_load_FUN_00444970 at 004449fb
+;
+; Referenced Globals:
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;
+; Called Functions:
+;   core_course.cpp_CCourse_free_FUN_00444aa0
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
+;   crt_memory.c_operator_new_array_FUN_005a40df
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00444910
+        ;   Label: core_course.cpp_CCourse_allocMemory_FUN_00444910
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00444911
+    PUSH EBX                            ; 00444915
+    CALL core_course.cpp_CCourse_free_FUN_00444aa0 ; 00444916
+        ;   XREF to: 00444aa0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00444aa0(CCourse * this_ptr)
+    ADD ESP,0x4                         ; 0044491b
+    MOV EAX,dword ptr [ESP + 0xc]       ; 0044491e
+    MOV dword ptr [EBX],EAX             ; 00444922
+    SHL EAX,0x2                         ; 00444924
+    MOV EDX,EAX                         ; 00444927
+    SHL EAX,0x3                         ; 00444929
+    SUB EAX,EDX                         ; 0044492c
+    PUSH EAX                            ; 0044492e
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 0044492f
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005a40df(uint size)
+    ADD ESP,0x4                         ; 00444934
+    MOV dword ptr [EBX + 0x4],EAX       ; 00444937
+    TEST EAX,EAX                        ; 0044493a
+    JZ 0x00444940                       ; 0044493c
+        ;   XREF to: 00444940 (CONDITIONAL_JUMP)  ; LAB_00444940
+    POP EBX                             ; 0044493e
+    RET                                 ; 0044493f
+    MOV ECX,0x5b9805                    ; 00444940
+        ;   Label: LAB_00444940
+    MOV EBX,0x6e                        ; 00444945
+    PUSH 0x5b9818                       ; 0044494a
+    MOV dword ptr [0x01d71de0],ECX      ; 0044494f | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00444955 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0044495b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
+    ADD ESP,0x4                         ; 00444960
+    POP EBX                             ; 00444963
+    RET                                 ; 00444964
+

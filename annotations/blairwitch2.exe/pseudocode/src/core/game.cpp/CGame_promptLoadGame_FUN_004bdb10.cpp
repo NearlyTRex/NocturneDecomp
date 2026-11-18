@@ -22,12 +22,13 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004bdb10(CGame *this_ptr)
   
   this_ptr->need_chapter_reload = 0;
   this_ptr->chapter_reload_filename[0] = '\0';
-  splitpath(&DAT_01cb7b50,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
-  iVar2 = _stricmp(local_10c,&DAT_005d892b);
+  splitpath
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
+  iVar2 = _stricmp(local_10c,"noc");
   if ((iVar2 == 0) ||
-     (iVar2 = _stricmp(local_10c,&DAT_005d892f), iVar2 == 0)) {
+     (iVar2 = _stricmp(local_10c,".noc"), iVar2 == 0)) {
     pcVar4 = local_210;
-    pcVar3 = &DAT_01cb7b50;
+    pcVar3 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;
@@ -45,7 +46,7 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004bdb10(CGame *this_ptr)
   pcVar3 = local_210;
   flags = 1;
   file_pattern = "*.noc";
-  search_directory = &DAT_005d893a;
+  search_directory = "save";
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Select file to load");
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970
                     (g_CEditorToolsPtr,pcVar4,search_directory,file_pattern,output_filename,flags);

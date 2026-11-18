@@ -6,65 +6,60 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00451e50(float max_z_plane)
 
 {
-  CVector3f *vertex2;
   byte bVar1;
   uint uVar2;
-  int iVar3;
   CVector3f *vertex1;
-  int iVar4;
+  int iVar3;
   
-  iVar4 = 0;
-  if (0 < (int)_DAT_015489d0) {
-    vertex1 = (CVector3f *)0x15489d4;
+  iVar3 = 0;
+  if (0 < (int)g_CubeClipStage5Count) {
+    vertex1 = g_ClipStageMinZBuffer;
     do {
-      uVar2 = iVar4 + 1;
-      if (uVar2 == _DAT_015489d0) {
-        uVar2 = uVar2 ^ _DAT_015489d0;
+      uVar2 = iVar3 + 1;
+      if (uVar2 == g_CubeClipStage5Count) {
+        uVar2 = uVar2 ^ g_CubeClipStage5Count;
       }
-      vertex2 = (CVector3f *)(uVar2 * 0xc + 0x15489d4);
       bVar1 = max_z_plane < vertex1->z;
-      if (max_z_plane < *(float *)(uVar2 * 0xc + 0x15489dc)) {
+      if (max_z_plane < g_ClipStageMinZBuffer[uVar2].z) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
-        iVar3 = _DAT_01548a94 * 0xc;
-        if ((CVector3f *)(&DAT_01548a98 + iVar3) != vertex1) {
-          ((CVector3f *)(&DAT_01548a98 + iVar3))->x = vertex1->x;
-          *(float *)(&DAT_01548a9c + iVar3) = vertex1->y;
-          *(float *)(&DAT_01548aa0 + iVar3) = vertex1->z;
+        if ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3) != vertex1) {
+          ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3))->x = vertex1->x;
+          *(float *)(&DAT_01548a9c + g_CubeClippedTriangleCount * 0xc) = vertex1->y;
+          (&g_FLOAT_01548aa0)[g_CubeClippedTriangleCount * 3] = vertex1->z;
         }
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                  (vertex2,vertex1,(CVector3f *)(&DAT_01548a98 + _DAT_01548a94 * 0xc),0.0,0.0,-1.0,
+                  (g_ClipStageMinZBuffer + uVar2,vertex1,
+                   (CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3),0.0,0.0,-1.0,
                    (double)max_z_plane);
         break;
       case 2:
-        iVar3 = _DAT_01548a94 * 0xc;
-        if ((CVector3f *)(&DAT_01548a98 + iVar3) != vertex1) {
-          ((CVector3f *)(&DAT_01548a98 + iVar3))->x = vertex1->x;
-          *(float *)(&DAT_01548a9c + iVar3) = vertex1->y;
-          *(float *)(&DAT_01548aa0 + iVar3) = vertex1->z;
+        if ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3) != vertex1) {
+          ((CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3))->x = vertex1->x;
+          *(float *)(&DAT_01548a9c + g_CubeClippedTriangleCount * 0xc) = vertex1->y;
+          (&g_FLOAT_01548aa0)[g_CubeClippedTriangleCount * 3] = vertex1->z;
         }
-        _DAT_01548a94 = _DAT_01548a94 + 1;
+        g_CubeClippedTriangleCount = g_CubeClippedTriangleCount + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                  (vertex1,vertex2,(CVector3f *)(&DAT_01548a98 + _DAT_01548a94 * 0xc),0.0,0.0,-1.0,
+                  (vertex1,g_ClipStageMinZBuffer + uVar2,
+                   (CVector3f *)(&g_FLOAT_01548a98 + g_CubeClippedTriangleCount * 3),0.0,0.0,-1.0,
                    (double)max_z_plane);
         break;
       default:
         goto switchD_00451ec4_caseD_3;
       }
-      _DAT_01548a94 = _DAT_01548a94 + 1;
+      g_CubeClippedTriangleCount = g_CubeClippedTriangleCount + 1;
 switchD_00451ec4_caseD_3:
-      iVar4 = iVar4 + 1;
+      iVar3 = iVar3 + 1;
       vertex1 = vertex1 + 1;
-    } while (iVar4 < (int)_DAT_015489d0);
+    } while (iVar3 < (int)g_CubeClipStage5Count);
   }
   return;
 }

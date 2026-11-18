@@ -25,13 +25,13 @@
 ;
 ; XREF[2]:
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00 at 0057fa6a
-;   core_turret.cpp_FUN_0057f0b0 at 0057f6a4
+;   core_turret.cpp_CTurret_updateTargeting_FUN_0057f0b0 at 0057f6a4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ed810
-;   undefined4 DAT_005ed814
-;   undefined4 DAT_005fd52c
-;   undefined4 DAT_005fd530
+;   float g_FLOAT_005ed810 = 0.01745329
+;   double g_DOUBLE_005ed814 = 0.00100000000000000
+;   float g_FLOAT_005fd52c = -0.5235988
+;   float g_FLOAT_005fd530 = 1.221730
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
@@ -75,26 +75,26 @@ section .text
     LEA ESI,[ESP + 0x30]                ; 0057f747
     LEA EDI,[ESP + 0x24]                ; 0057f74b
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0057f74f
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x30]                ; 0057f754
     ADD ESP,0x4                         ; 0057f758
     MOVSD ES:EDI,ESI                    ; 0057f75b
     MOVSD ES:EDI,ESI                    ; 0057f75c
     MOVSD ES:EDI,ESI                    ; 0057f75d
     FLD float ptr [ESP + 0x20]          ; 0057f75e
-    FCOMP float ptr [0x005fd52c]        ; 0057f762 | DAT_005fd52c
+    FCOMP float ptr [0x005fd52c]        ; 0057f762 | g_FLOAT_005fd52c
     FNSTSW AX                           ; 0057f768
     SAHF                                ; 0057f76a
     JC 0x0057f8bf                       ; 0057f76b
         ;   XREF to: 0057f8bf (CONDITIONAL_JUMP)  ; LAB_0057f8bf
     FLD float ptr [ESP + 0x20]          ; 0057f771
         ;   Label: LAB_0057f771
-    FCOMP float ptr [0x005fd530]        ; 0057f775 | DAT_005fd530
+    FCOMP float ptr [0x005fd530]        ; 0057f775 | g_FLOAT_005fd530
     FNSTSW AX                           ; 0057f77b
     SAHF                                ; 0057f77d
     JBE 0x0057f789                      ; 0057f77e
         ;   XREF to: 0057f789 (CONDITIONAL_JUMP)  ; LAB_0057f789
-    MOV EAX,[0x005fd530]                ; 0057f780 | DAT_005fd530
+    MOV EAX,[0x005fd530]                ; 0057f780 | g_FLOAT_005fd530
     MOV dword ptr [ESP + 0x20],EAX      ; 0057f785
     FLD float ptr [ESP + 0x24]          ; 0057f789
         ;   Label: LAB_0057f789
@@ -116,7 +116,7 @@ section .text
         ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     FLD float ptr [EBX + 0x8d4]         ; 0057f7be
     MOV dword ptr [ESP + 0x48],EAX      ; 0057f7c4
-    FMUL float ptr [0x005ed810]         ; 0057f7c8 | DAT_005ed810
+    FMUL float ptr [0x005ed810]         ; 0057f7c8 | g_FLOAT_005ed810
     FLD float ptr [ESP + 0x48]          ; 0057f7ce
     ADD ESP,0x4                         ; 0057f7d2
     FXCH                                ; 0057f7d5
@@ -179,7 +179,7 @@ section .text
         ;   XREF to: 00408ae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0057f863
     FLD float ptr [ESP + 0x4]           ; 0057f866
-    FCOMP double ptr [0x005ed814]       ; 0057f86a | DAT_005ed814
+    FCOMP double ptr [0x005ed814]       ; 0057f86a | g_DOUBLE_005ed814
     FNSTSW AX                           ; 0057f870
     SAHF                                ; 0057f872
     JNC 0x0057f8cd                      ; 0057f873
@@ -196,7 +196,7 @@ section .text
     JZ 0x0057f8d5                       ; 0057f88b
         ;   XREF to: 0057f8d5 (CONDITIONAL_JUMP)  ; LAB_0057f8d5
     FLD float ptr [ESP]                 ; 0057f88d
-    FCOMP double ptr [0x005ed814]       ; 0057f890 | DAT_005ed814
+    FCOMP double ptr [0x005ed814]       ; 0057f890 | g_DOUBLE_005ed814
     FNSTSW AX                           ; 0057f896
     SAHF                                ; 0057f898
     JNC 0x0057f8d1                      ; 0057f899
@@ -219,7 +219,7 @@ section .text
     POP ESI                             ; 0057f8bc
     POP EBX                             ; 0057f8bd
     RET                                 ; 0057f8be
-    MOV EAX,[0x005fd52c]                ; 0057f8bf | DAT_005fd52c
+    MOV EAX,[0x005fd52c]                ; 0057f8bf | g_FLOAT_005fd52c
         ;   Label: LAB_0057f8bf
     MOV dword ptr [ESP + 0x20],EAX      ; 0057f8c4
     JMP 0x0057f771                      ; 0057f8c8

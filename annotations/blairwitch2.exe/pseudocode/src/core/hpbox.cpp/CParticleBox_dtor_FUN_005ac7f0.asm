@@ -17,8 +17,8 @@
 ;   core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220
 ;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     PUSH ESI                            ; 005ac809
     MOV dword ptr [EBX + 0x2b0],0x600e34 ; 005ac80a | g_CParticleBoxVTable
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005ac814
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005ac819
     PUSH ESI                            ; 005ac81c
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005ac81d
@@ -46,7 +46,7 @@ section .text
     LEA ESI,[EBX + 0x1dc]               ; 005ac827
     PUSH ESI                            ; 005ac82d
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005ac82e
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005ac833
     PUSH ESI                            ; 005ac836
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005ac837
@@ -56,7 +56,7 @@ section .text
     LEA ESI,[EBX + 0x198]               ; 005ac841
     PUSH ESI                            ; 005ac847
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005ac848
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005ac84d
     PUSH ESI                            ; 005ac850
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005ac851
@@ -66,7 +66,7 @@ section .text
     LEA ESI,[EBX + 0x154]               ; 005ac85b
     PUSH ESI                            ; 005ac861
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005ac862
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005ac867
     PUSH ESI                            ; 005ac86a
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005ac86b
@@ -100,8 +100,8 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005ac8b0
     PUSH EAX                            ; 005ac8b3
-    CALL crt_unknown.c_FUN_005b7fce     ; 005ac8b4
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 005ac8b4
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 005ac8b9
     MOV EAX,EBX                         ; 005ac8bc
     POP ESI                             ; 005ac8be
@@ -109,8 +109,8 @@ section .text
     RET                                 ; 005ac8c0
     PUSH EAX                            ; 005ac8c1
         ;   Label: LAB_005ac8c1
-    CALL crt_unknown.c_FUN_005b7fdc     ; 005ac8c2
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 005ac8c2
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 005ac8c7
     MOV EAX,EBX                         ; 005ac8ca
     POP ESI                             ; 005ac8cc

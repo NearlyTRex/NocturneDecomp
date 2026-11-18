@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_00515ae0(float *vertices,int vertex_count,ushort *indices,int triangle_count,int clip_flags)
 
 {
@@ -27,16 +25,17 @@ void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_00515ae0(float *vertices,
         indices = indices + 3;
         iVar4 = iVar4 + 1;
         engine_mini3d_cpp_clipBatchTriangle_FUN_00515850
-                  ((float *)(_DAT_01d227e0 + (uint)uVar3 * 0x40),
-                   (float *)((uint)*puVar2 * 0x40 + _DAT_01d227e0),
-                   (float *)((uint)*puVar1 * 0x40 + _DAT_01d227e0));
+                  (g_FLOAT_PTR_01d227e0 + (uint)uVar3 * 0x10,
+                   g_FLOAT_PTR_01d227e0 + (uint)*puVar2 * 0x10,
+                   g_FLOAT_PTR_01d227e0 + (uint)*puVar1 * 0x10);
       } while (iVar4 < triangle_count);
     }
     engine_mini3d_cpp_flushTriangleBatch_FUN_00515750();
     return;
   }
-  if ((_DAT_02c83470 != (code *)0x0) && (_DAT_01c50948 != 0)) {
-    (*_DAT_02c83470)(_DAT_01d227e0,vertex_count,indices,triangle_count,_DAT_01c51d14);
+  if ((g_PTR_02c83470 != (byte *)0x0) && (g_INT_01c50948 != 0)) {
+    (*(code *)g_PTR_02c83470)
+              (g_FLOAT_PTR_01d227e0,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
     return;
   }
   iVar4 = 0;
@@ -48,9 +47,9 @@ void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_00515ae0(float *vertices,
       indices = indices + 3;
       iVar4 = iVar4 + 1;
       engine_mini3d_cpp_rasterizeTriangle_FUN_00516060
-                ((float *)(_DAT_01d227e0 + (uint)uVar3 * 0x40),
-                 (float *)((uint)*puVar2 * 0x40 + _DAT_01d227e0),
-                 (float *)((uint)*puVar1 * 0x40 + _DAT_01d227e0));
+                (g_FLOAT_PTR_01d227e0 + (uint)uVar3 * 0x10,
+                 g_FLOAT_PTR_01d227e0 + (uint)*puVar2 * 0x10,
+                 g_FLOAT_PTR_01d227e0 + (uint)*puVar1 * 0x10);
     } while (iVar4 < triangle_count);
   }
   return;

@@ -8,7 +8,7 @@
 ; CInventory *     Stack[0x8]:4   inventory
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00520d20 at 00520d5c
+;   core_prye.cpp_CPrye_processPickupComplete_FUN_00520d20 at 00520d5c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ammobox_cpp_005b615c
@@ -17,14 +17,14 @@
 ;   undefined4 s_ome_ammo_005b617e+1
 ;   undefined4 s_me_ammo_005b617e+2
 ;   undefined4 s_e_ammo_005b617e+3
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040de60
 ;   core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e070
-;   core_inv.cpp_FUN_004da880
-;   core_main.c_FUN_004e4330
+;   core_inv.cpp_CInventory_addItem_FUN_004da880
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH EDX                            ; 0040e73e
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040e73f
     PUSH EBX                            ; 0040e743
-    CALL core_inv.cpp_FUN_004da880      ; 0040e744
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 0040e744
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     MOV dword ptr [EBP + 0x320],0x0     ; 0040e749
     ADD ESP,0xc                         ; 0040e753
     MOV dword ptr [EBP + 0x314],0x0     ; 0040e756
@@ -61,7 +61,7 @@ section .text
     PUSH 0x320                          ; 0040e763
         ;   Label: LAB_0040e763
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040e768
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0040e76d
     TEST EAX,EAX                        ; 0040e770
     JZ 0x0040e77d                       ; 0040e772
@@ -80,10 +80,10 @@ section .text
     MOV ESI,0x5b615c                    ; 0040e785 | = "..\\core\\ammobox.cpp"
     MOV EDI,0xa2                        ; 0040e78a
     PUSH 0x5b6170                       ; 0040e78f | = "Out of memory"
-    MOV dword ptr [0x01d71de0],ESI      ; 0040e794 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0040e79a | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0040e7a0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 0040e794 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 0040e79a | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040e7a0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0040e7a5
     MOV EAX,dword ptr [EBP + 0x314]     ; 0040e7a8
         ;   Label: LAB_0040e7a8
@@ -120,8 +120,8 @@ section .text
     PUSH EBX                            ; 0040e7f3
     MOV EDX,dword ptr [ESP + 0x20]      ; 0040e7f4
     PUSH EDX                            ; 0040e7f8
-    CALL core_inv.cpp_FUN_004da880      ; 0040e7f9
-        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004da880 ; 0040e7f9
+        ;   XREF to: 004da880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004da880(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 0040e7fe
     MOV dword ptr [EBP + 0x314],0x0     ; 0040e801
     POP ESI                             ; 0040e80b

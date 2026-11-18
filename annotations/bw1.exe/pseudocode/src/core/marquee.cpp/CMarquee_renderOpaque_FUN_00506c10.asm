@@ -7,12 +7,12 @@
 ; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;
 ; *****************************************************************************
@@ -23,7 +23,7 @@ section .text
         ;   Label: core_marquee.cpp_CMarquee_renderOpaque_FUN_00506c10
     SUB ESP,0x30                        ; 00506c11
     MOV EBX,dword ptr [ESP + 0x38]      ; 00506c14
-    MOV EDX,dword ptr [0x00612560]      ; 00506c18 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 00506c18 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 00506c1e
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00506c1f
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
@@ -55,8 +55,8 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 00506c63
     PUSH EAX                            ; 00506c67
     MOVSD.REP ES:EDI,ESI                ; 00506c68
-    CALL core_box.cpp_FUN_004207b0      ; 00506c6a
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 00506c6a
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00506c6f
     PUSH EBX                            ; 00506c72
     MOV dword ptr [EBX + 0x19c],EAX     ; 00506c73

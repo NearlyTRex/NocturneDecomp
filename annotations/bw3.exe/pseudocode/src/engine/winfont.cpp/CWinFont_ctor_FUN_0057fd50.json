@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 22,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 66
+    "total_lines": 65
   },
   "cross_references": [
     {
       "addr": "00459f50",
       "from_addr": "0045a739",
-      "name": "core_dfont.cpp_FUN_00459f50",
+      "name": "core_dfont.cpp_initFonts_FUN_00459f50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -34,14 +34,14 @@
   },
   "function_calls": [
     {
-      "addr": "00509b90",
-      "is_variadic": false,
-      "name": "core_npc.cpp_FUN_00509b90"
-    },
-    {
       "addr": "EXTERNAL:0000000a",
       "is_variadic": false,
       "name": "CreateFontA"
+    },
+    {
+      "addr": "00509b90",
+      "is_variadic": false,
+      "name": "engine_palette.cpp_CFont_ctor_FUN_00509b90"
     }
   ],
   "globals": [
@@ -53,9 +53,9 @@
     },
     {
       "addr": "005e6534",
-      "name": "PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0057fe10_005e6534",
-      "type": "undefined1*",
-      "value": "0057fe10"
+      "name": "g_CFont_vtable_005e6534",
+      "type": "CFont_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -64,7 +64,7 @@
       {
         "call_addr": "0045a739",
         "call_type": "direct",
-        "caller": "core_dfont.cpp_FUN_00459f50",
+        "caller": "core_dfont.cpp_initFonts_FUN_00459f50",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -75,7 +75,7 @@
       {
         "call_addr": "0045a7a5",
         "call_type": "direct",
-        "caller": "core_dfont.cpp_FUN_00459f50",
+        "caller": "core_dfont.cpp_initFonts_FUN_00459f50",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,7 +86,7 @@
       {
         "call_addr": "0045a810",
         "call_type": "direct",
-        "caller": "core_dfont.cpp_FUN_00459f50",
+        "caller": "core_dfont.cpp_initFonts_FUN_00459f50",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,7 +97,7 @@
       {
         "call_addr": "0045a87c",
         "call_type": "direct",
-        "caller": "core_dfont.cpp_FUN_00459f50",
+        "caller": "core_dfont.cpp_initFonts_FUN_00459f50",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

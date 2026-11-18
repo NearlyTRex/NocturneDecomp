@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 45,
+    "complexity_score": 198,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 15,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 16,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 101
+    "total_lines": 104
   },
   "cross_references": [
     {
@@ -24,7 +24,7 @@
     {
       "addr": "0047f970",
       "from_addr": "0047f97f",
-      "name": "shape_edittool.cpp_FUN_0047f970",
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,12 +44,12 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3770",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3770"
+      "name": "crt_unknown.c_debugFree_FUN_005a3770"
     },
     {
       "addr": "004ed020",
@@ -72,80 +72,80 @@
     },
     {
       "addr": "01c5b104",
-      "name": "DAT_01c5b104",
-      "type": "undefined4",
+      "name": "g_WindowStackCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b598",
-      "name": "DAT_01c6b598",
-      "type": "undefined4",
+      "name": "g_INT_01c6b598",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b59c",
-      "name": "DAT_01c6b59c",
-      "type": "undefined4",
+      "name": "g_INT_01c6b59c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a0",
-      "name": "DAT_01c6b5a0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a4",
-      "name": "DAT_01c6b5a4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a8",
-      "name": "DAT_01c6b5a8",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5ac",
-      "name": "DAT_01c6b5ac",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b0",
-      "name": "DAT_01c6b5b0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5b0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b4",
-      "name": "DAT_01c6b5b4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b8",
-      "name": "DAT_01c6b5b8",
-      "type": "undefined4",
+      "name": "g_ViewportWidth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5bc",
-      "name": "DAT_01c6b5bc",
-      "type": "undefined4",
+      "name": "g_ViewportHeight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -155,7 +155,7 @@
       {
         "call_addr": "0047f97f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f970",
+        "caller": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047f970",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -255,12 +255,132 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(void **)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "ptr = *(void **)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1d8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1d8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "(*(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x20),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x24),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x28),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b5a8 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b5ac = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b5b0 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b5b4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b598 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b59c = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b5a0 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_INT_01c6b5a4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_ViewportWidth = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c5b108",
+      "severity": "moderate",
+      "text": "g_ViewportHeight = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x44);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -12,14 +12,14 @@
 ; XREF[6]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420669
 ;   core_elephant.cpp_CElephantGun_process_FUN_00486c30 at 00486d08
-;   core_set.cpp_FUN_005365c0 at 005366e3
-;   core_set.cpp_FUN_00536990 at 00536aba
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0 at 005366e3
+;   core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990 at 00536aba
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00542aa0 at 00542b06
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0 at 0057b771
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bb5b4
-;   undefined4 DAT_005bb5bc
+;   double g_VolumetricFilterScaleLowRes = 7
+;   double g_VolumetricFilterScaleHighRes = 3
 ;   CDemonFilter* g_GlobalFilters = 01548c00
 ;   CDemonFilter* g_PlayerFilters = 01548c00
 ;
@@ -42,10 +42,10 @@ section .text
     PUSH EBX                            ; 0045facd
     FLD float ptr [EAX + 0x2fa8]        ; 0045face
     PUSH 0x0                            ; 0045fad4
-    FMUL double ptr [0x005bb5bc]        ; 0045fad6 | DAT_005bb5bc
+    FMUL double ptr [0x005bb5bc]        ; 0045fad6 | g_VolumetricFilterScaleHighRes
     PUSH 0x0                            ; 0045fadc
     CALL crt_math.c_round_FUN_005a3120  ; 0045fade
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0045fae3
     MOV EDX,dword ptr [ESP + 0xc]       ; 0045fae7
     PUSH 0x0                            ; 0045faeb
@@ -61,10 +61,10 @@ section .text
     FLD float ptr [EAX + 0x2fa8]        ; 0045fb03
         ;   Label: LAB_0045fb03
     PUSH 0x0                            ; 0045fb09
-    FMUL double ptr [0x005bb5b4]        ; 0045fb0b | DAT_005bb5b4
+    FMUL double ptr [0x005bb5b4]        ; 0045fb0b | g_VolumetricFilterScaleLowRes
     PUSH 0x0                            ; 0045fb11
     CALL crt_math.c_round_FUN_005a3120  ; 0045fb13
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0045fb18
     MOV EDX,dword ptr [ESP + 0x8]       ; 0045fb1c
     PUSH 0x0                            ; 0045fb20

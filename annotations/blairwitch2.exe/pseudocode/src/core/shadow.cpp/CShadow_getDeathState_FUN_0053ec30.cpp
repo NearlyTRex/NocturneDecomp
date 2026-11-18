@@ -2,27 +2,28 @@
 // Address: 0053ec30
 // Address Range: [[0053ec30, 0053ec6d]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr)
+// Signature: EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr)
+EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_0053ec30(CShadow *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   
   if ((this_ptr->base).base.base.lifecycle_state != ACTOR_DESTROYED) {
-    iVar1 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
-    switch(*(uint *)(iVar1 + 0x24)) {
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                       (&(this_ptr->base).base.model.base);
+    switch(pSVar1->state_index) {
     case 0xd:
     case 0xe:
-      return 1;
+      return DEATH_STATE_DYING;
     case 0xf:
     case 0x10:
-      return 2;
+      return DEATH_STATE_DEAD;
     default:
-      return 0;
+      return DEATH_STATE_ALIVE;
     }
   }
-  return 2;
+  return DEATH_STATE_DEAD;
 }

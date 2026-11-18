@@ -1553,11 +1553,11 @@
       "type":"function_definition"
     },
     {
-      "name":"CSoundDevice_close",
+      "name":"CSoundDevice_applySfxChanges",
       "type":"function_definition"
     },
     {
-      "name":"CSoundDevice_commitDeferredSettings",
+      "name":"CSoundDevice_close",
       "type":"function_definition"
     },
     {
@@ -1589,6 +1589,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CSoundDevice_pollPlayback",
+      "type":"function_definition"
+    },
+    {
       "name":"CSoundDevice_reset",
       "type":"function_definition"
     },
@@ -1613,7 +1617,7 @@
       "type":"function_definition"
     },
     {
-      "name":"CSoundDevice_setSfxPos",
+      "name":"CSoundDevice_setReverb",
       "type":"function_definition"
     },
     {
@@ -3805,10 +3809,6 @@
       "type":"struct"
     },
     {
-      "name":"SCorona",
-      "type":"struct"
-    },
-    {
       "name":"SCoronaLightEntry",
       "type":"struct"
     },
@@ -4601,6 +4601,14 @@
       "type":"struct"
     },
     {
+      "name":"SReverbSettings",
+      "type":"struct"
+    },
+    {
+      "name":"SReverbPreset",
+      "type":"struct"
+    },
+    {
       "name":"SRoom",
       "type":"struct"
     },
@@ -4686,10 +4694,6 @@
     },
     {
       "name":"SSoundDeviceInfo",
-      "type":"struct"
-    },
-    {
-      "name":"SSoundModeEntry",
       "type":"struct"
     },
     {
@@ -17575,11 +17579,19 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CSoundDevice_close",
+      "name":"CSoundDevice_applySfxChanges",
       "parameters":[
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"slot",
+          "type":"CSfxSlot*"
+        },
+        {
+          "name":"update_flags",
+          "type":"int"
         }
       ],
       "return_type":"int",
@@ -17589,14 +17601,14 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CSoundDevice_commitDeferredSettings",
+      "name":"CSoundDevice_close",
       "parameters":[
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
         }
       ],
-      "return_type":"void",
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -17728,6 +17740,20 @@
         {
           "name":"num_samples",
           "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CSoundDevice_pollPlayback",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CSoundDevice*"
         }
       ],
       "return_type":"int",
@@ -17901,22 +17927,26 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CSoundDevice_setSfxPos",
+      "name":"CSoundDevice_setReverb",
       "parameters":[
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
         },
         {
-          "name":"slot",
-          "type":"CSfxSlot*"
+          "name":"volume",
+          "type":"float"
         },
         {
-          "name":"update_flags",
-          "type":"int"
+          "name":"decay_time",
+          "type":"float"
+        },
+        {
+          "name":"damping",
+          "type":"float"
         }
       ],
-      "return_type":"int",
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -17964,9 +17994,17 @@
         {
           "name":"buffer_id",
           "type":"int"
+        },
+        {
+          "name":"offset",
+          "type":"int"
+        },
+        {
+          "name":"size",
+          "type":"int"
         }
       ],
-      "return_type":"int",
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -46263,7 +46301,7 @@
           "len":4,
           "name":"poll",
           "offset":16,
-          "type":"CSoundDevice_poll*"
+          "type":"CSoundDevice_pollPlayback*"
         },
         {
           "len":4,
@@ -46297,9 +46335,9 @@
         },
         {
           "len":4,
-          "name":"commitDeferredSettings",
+          "name":"setReverb",
           "offset":40,
-          "type":"CSoundDevice_commitDeferredSettings*"
+          "type":"CSoundDevice_setReverb*"
         },
         {
           "len":4,
@@ -46333,9 +46371,9 @@
         },
         {
           "len":4,
-          "name":"setSfxPos",
+          "name":"applySfxChanges",
           "offset":64,
-          "type":"CSoundDevice_setSfxPos*"
+          "type":"CSoundDevice_applySfxChanges*"
         },
         {
           "len":4,
@@ -55833,43 +55871,6 @@
       "fields":[
         {
           "len":4,
-          "name":"globe",
-          "offset":0,
-          "type":"CDemonGlobe*"
-        },
-        {
-          "len":960,
-          "name":"row_min_x",
-          "offset":4,
-          "type":"int[240]"
-        },
-        {
-          "len":960,
-          "name":"row_max_x",
-          "offset":964,
-          "type":"int[240]"
-        },
-        {
-          "len":76800,
-          "name":"intensity",
-          "offset":1924,
-          "type":"char[240][320]"
-        }
-      ],
-      "importable":true,
-      "len":78724,
-      "min_alig":1,
-      "name":"SCorona",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
           "name":"count",
           "offset":0,
           "type":"int"
@@ -62043,6 +62044,62 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"name",
+          "offset":0,
+          "type":"char*"
+        },
+        {
+          "len":12,
+          "name":"reverb",
+          "offset":4,
+          "type":"SReverbSettings"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "min_alig":1,
+      "name":"SReverbPreset",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"volume",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"decay_time",
+          "offset":4,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"damping",
+          "offset":8,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "min_alig":1,
+      "name":"SReverbSettings",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":1,
           "name":"r",
           "offset":0,
@@ -62675,31 +62732,6 @@
       "len":280,
       "min_alig":1,
       "name":"SSoundDeviceInfo",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"name",
-          "offset":0,
-          "type":"char*"
-        },
-        {
-          "len":12,
-          "name":"listener_orient",
-          "offset":4,
-          "type":"CVector3f"
-        }
-      ],
-      "importable":true,
-      "len":16,
-      "min_alig":1,
-      "name":"SSoundModeEntry",
       "pack":false,
       "type":"struct"
     },

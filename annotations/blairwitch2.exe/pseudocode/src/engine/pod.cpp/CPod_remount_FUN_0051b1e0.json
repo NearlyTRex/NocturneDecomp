@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 82,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [],
   "function": {
@@ -33,7 +32,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "00519f00",
@@ -56,14 +55,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -105,6 +104,18 @@
     "pcode_op_count": 234
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "0053c750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9474
+    },
+    "bw3.exe": {
+      "addr": "005144b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9474
+    },
     "nocedit.exe": {
       "addr": "00550af0",
       "by": "name",
@@ -153,16 +164,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -170,7 +173,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 37,
+      "line": 35,
       "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
       "text": "pCVar3 = (CPod *)pCVar3->pod_files;",

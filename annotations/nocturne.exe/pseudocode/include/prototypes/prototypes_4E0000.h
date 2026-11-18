@@ -115,7 +115,7 @@ void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_004e25c0(int layer
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004e2630(SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_fillBuffer_FUN_004e27f0(CFileBitStream *this_ptr);
 void __cdecl sound_mp3_cpp_CFileBitStream_reset_FUN_004e2850(CFileBitStream *this_ptr);
-void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *file_handle,ulong buffer_size,int stream_length);
 void __cdecl sound_mp3_cpp_CFileBitStream_close_FUN_004e2980(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *this_ptr,int num_bits);

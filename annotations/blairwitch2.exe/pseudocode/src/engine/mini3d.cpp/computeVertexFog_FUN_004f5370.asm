@@ -12,9 +12,9 @@
 ;   engine_mini3d.cpp_polyList_FUN_004f3920 at 004f3b1a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d09868
-;   undefined4 DAT_01d0990c
-;   undefined4 DAT_01d12158
+;   int g_INT_01d09868
+;   float g_FLOAT_01d0990c
+;   float g_FLOAT_01d12158
 ;
 ; *****************************************************************************
 
@@ -23,13 +23,13 @@ section .text
     SUB ESP,0x4                         ; 004f5370
         ;   Label: engine_mini3d.cpp_computeVertexFog_FUN_004f5370
     MOV EDX,dword ptr [ESP + 0x8]       ; 004f5373
-    MOV ECX,dword ptr [0x01d09868]      ; 004f5377 | DAT_01d09868
+    MOV ECX,dword ptr [0x01d09868]      ; 004f5377 | g_INT_01d09868
     TEST ECX,ECX                        ; 004f537d
     JZ 0x004f53c3                       ; 004f537f
         ;   XREF to: 004f53c3 (CONDITIONAL_JUMP)  ; LAB_004f53c3
     FLD float ptr [EDX + 0x8]           ; 004f5381
-    FSUB float ptr [0x01d0990c]         ; 004f5384 | DAT_01d0990c
-    FMUL float ptr [0x01d12158]         ; 004f538a | DAT_01d12158
+    FSUB float ptr [0x01d0990c]         ; 004f5384 | g_FLOAT_01d0990c
+    FMUL float ptr [0x01d12158]         ; 004f538a | g_FLOAT_01d12158
     FLDZ                                ; 004f5390
     FXCH                                ; 004f5392
     FSTP float ptr [ESP]                ; 004f5394

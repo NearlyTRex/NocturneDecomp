@@ -13,13 +13,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f121a
 ;   TerminatedCString s_CClothList_remove_invali_005f122c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
-;   core_necklace.cpp_FUN_005ade00
-;   crt_unknown.c_FUN_005b7fdc
+;   core_cloth.cpp_CCloth_dtor_FUN_005ade00
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
 ;
 ; *****************************************************************************
 
@@ -41,10 +41,10 @@ section .text
         ;   Label: LAB_005b1653
     MOV EBX,0x5f1                       ; 005b1658
     PUSH 0x5f122c                       ; 005b165d | = "CClothList::remove - invalid index"
-    MOV dword ptr [0x01d046a0],ECX      ; 005b1662 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005b1668 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 005b166e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 005b1662 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 005b1668 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b166e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b1673
     MOV ESI,dword ptr [ESP + 0x10]      ; 005b1676
         ;   Label: LAB_005b1676
@@ -56,12 +56,12 @@ section .text
         ;   XREF to: 005b16a1 (CONDITIONAL_JUMP)  ; LAB_005b16a1
     PUSH 0x0                            ; 005b168d
     PUSH EAX                            ; 005b168f
-    CALL core_necklace.cpp_FUN_005ade00 ; 005b1690
-        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005ade00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_005ade00 ; 005b1690
+        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_005ade00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005b1695
     PUSH EAX                            ; 005b1698
-    CALL crt_unknown.c_FUN_005b7fdc     ; 005b1699
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 005b1699
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 005b169e
     MOV EAX,dword ptr [ESP + 0x10]      ; 005b16a1
         ;   Label: LAB_005b16a1

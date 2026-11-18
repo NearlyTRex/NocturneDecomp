@@ -7,7 +7,7 @@
 ; CTheHand *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_s_0_modelName_005d6529+2
+;   TerminatedCString s_modelName_005d652b
 ;   TerminatedCString s_motion_state_005d6535
 ;   TerminatedCString s_partStatus_005d6542
 ;
@@ -28,7 +28,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_00489120 ; 0056c8c6
         ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_00489120(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0056c8cb
-    PUSH 0x5d652b                       ; 0056c8ce | s_s_0_modelName_005d6529+2
+    PUSH 0x5d652b                       ; 0056c8ce | = "modelName"
     ADD EBX,0x158                       ; 0056c8d3
     PUSH EBX                            ; 0056c8d9
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30 ; 0056c8da

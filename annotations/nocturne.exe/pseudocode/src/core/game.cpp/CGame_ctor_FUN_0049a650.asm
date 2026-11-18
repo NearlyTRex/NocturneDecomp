@@ -10,7 +10,7 @@
 ;   core_game.cpp_staticInit_FUN_0049a1e0 at 0049a209
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c78598
+;   char[256] g_CurrentSaveFile
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610
@@ -82,7 +82,7 @@ section .text
     MOV dword ptr [EBX + 0x254],0x0     ; 0049a84b
     XOR AH,AH                           ; 0049a855
     MOV dword ptr [EBX + 0x258],0x0     ; 0049a857
-    MOV byte ptr [0x01c78598],AH        ; 0049a861 | DAT_01c78598
+    MOV byte ptr [0x01c78598],AH        ; 0049a861 | g_CurrentSaveFile
     MOV byte ptr [EBX + 0x9c8],AH       ; 0049a867
     MOV EAX,EBX                         ; 0049a86d
     POP EBX                             ; 0049a86f

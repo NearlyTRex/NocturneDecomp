@@ -10,7 +10,7 @@
 ;   core_shotgun.cpp_factoryFuncShotgun_FUN_00561590 at 005615a3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006054dc
+;   float g_FLOAT_006054dc = 8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
@@ -40,7 +40,7 @@ section .text
     MOV dword ptr [EBX + 0x2e0],0x1     ; 00561605
     MOV dword ptr [EBX + 0x2e4],0x1     ; 0056160f
     MOV dword ptr [EBX + 0x2e8],0x41700000 ; 00561619
-    FLD float ptr [0x006054dc]          ; 00561623 | DAT_006054dc
+    FLD float ptr [0x006054dc]          ; 00561623 | g_FLOAT_006054dc
     MOV dword ptr [EBX + 0x2ec],0x0     ; 00561629
     ADD ESP,0x8                         ; 00561633
     MOV dword ptr [EBX + 0x57c],0x0     ; 00561636

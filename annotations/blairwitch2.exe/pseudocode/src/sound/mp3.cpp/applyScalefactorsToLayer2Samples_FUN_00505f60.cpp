@@ -27,7 +27,7 @@ void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00505f60(float *
         iVar2 = *piVar4;
         piVar4 = piVar4 + 0x60;
         iVar5 = iVar5 + 1;
-        *pfVar3 = *pfVar3 * (float)*(double *)(&DAT_00619030 + iVar2 * 8);
+        *pfVar3 = *pfVar3 * (float)g_MpegScalefactorTable[iVar2];
         pfVar3 = pfVar3 + 0x60;
       } while (iVar5 < iVar1);
     }

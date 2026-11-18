@@ -32,23 +32,23 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e039d
 ;   TerminatedCString s_removeChatOut_invalid_in_005e03b1
-;   undefined4 DAT_005e0c75
-;   undefined4 DAT_005e0c7d
-;   undefined4 DAT_005e0c85
-;   undefined4 DAT_005e0c8d
-;   undefined4 DAT_005e0c95
-;   undefined4 DAT_005e0c9d
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01d34e34
-;   undefined4 DAT_01d34e38
-;   undefined4 DAT_01d51050
-;   undefined4 DAT_01d51054
-;   undefined4 DAT_01d51058
+;   double g_DOUBLE_005e0c75 = 0.0000152587890625
+;   double g_DOUBLE_005e0c7d = 4
+;   double g_DOUBLE_005e0c85 = 30
+;   double g_DOUBLE_005e0c8d = 20
+;   double g_DOUBLE_005e0c95 = 2
+;   double g_DOUBLE_005e0c9d = 5
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   int g_LastPingTime
+;   uint g_CurrentGameTime
+;   int g_ChatOutCount
+;   SChatOutMessage[50] g_ChatOutMessages
+;   undefined4 g_ChatOutMessages[0].sequence_number
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0
 ;   crt_string.c_memmove_FUN_005ba1f0
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
@@ -71,10 +71,10 @@ section .text
     MOV EBX,0x12                        ; 0050dba6
     SAR EDX,0x1f                        ; 0050dbab
     IDIV EBX                            ; 0050dbae
-    MOV ECX,dword ptr [0x01d34e34]      ; 0050dbb0 | DAT_01d34e34
+    MOV ECX,dword ptr [0x01d34e34]      ; 0050dbb0 | g_LastPingTime
     MOV EDX,EAX                         ; 0050dbb6
     SUB EAX,ECX                         ; 0050dbb8
-    MOV dword ptr [0x01d34e34],EDX      ; 0050dbba | DAT_01d34e34
+    MOV dword ptr [0x01d34e34],EDX      ; 0050dbba | g_LastPingTime
     TEST EAX,EAX                        ; 0050dbc0
     JL 0x0050ddd8                       ; 0050dbc2
         ;   XREF to: 0050ddd8 (CONDITIONAL_JUMP)  ; LAB_0050ddd8
@@ -82,31 +82,31 @@ section .text
     JLE 0x0050dbd4                      ; 0050dbcd
         ;   XREF to: 0050dbd4 (CONDITIONAL_JUMP)  ; LAB_0050dbd4
     MOV EAX,0x20000                     ; 0050dbcf
-    MOV EBX,dword ptr [0x01d34e38]      ; 0050dbd4 | DAT_01d34e38
+    MOV EBX,dword ptr [0x01d34e38]      ; 0050dbd4 | g_CurrentGameTime
         ;   Label: LAB_0050dbd4
-    MOV EDI,dword ptr [0x01d51050]      ; 0050dbda | DAT_01d51050
+    MOV EDI,dword ptr [0x01d51050]      ; 0050dbda | g_ChatOutCount
     XOR ESI,ESI                         ; 0050dbe0
     ADD EBX,EAX                         ; 0050dbe2
     MOV dword ptr [ESP + 0x120],ESI     ; 0050dbe4
-    MOV dword ptr [0x01d34e38],EBX      ; 0050dbeb | DAT_01d34e38
+    MOV dword ptr [0x01d34e38],EBX      ; 0050dbeb | g_CurrentGameTime
     TEST EDI,EDI                        ; 0050dbf1
     JLE 0x0050ddd1                      ; 0050dbf3
         ;   XREF to: 0050ddd1 (CONDITIONAL_JUMP)  ; LAB_0050ddd1
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050dbf9
     MOV ECX,0x1d51054                   ; 0050dbfc
     ADD EAX,0x20                        ; 0050dc01
-    MOV dword ptr [ESP + 0x11c],ECX     ; 0050dc04 | DAT_01d51054
+    MOV dword ptr [ESP + 0x11c],ECX     ; 0050dc04 | g_ChatOutMessages
     MOV dword ptr [ESP + 0x118],EAX     ; 0050dc0b
     MOV EAX,dword ptr [ESP + 0x11c]     ; 0050dc12
         ;   Label: LAB_0050dc12
-    MOV EDX,dword ptr [0x01d34e38]      ; 0050dc19 | DAT_01d34e38
-    MOV dword ptr [ESP + 0x12c],EAX     ; 0050dc1f | DAT_01d51054
-    MOV EAX,dword ptr [EAX]             ; 0050dc26 | DAT_01d51054
+    MOV EDX,dword ptr [0x01d34e38]      ; 0050dc19 | g_CurrentGameTime
+    MOV dword ptr [ESP + 0x12c],EAX     ; 0050dc1f | g_ChatOutMessages
+    MOV EAX,dword ptr [EAX]             ; 0050dc26 | g_ChatOutMessages
     SUB EDX,EAX                         ; 0050dc28
     MOV dword ptr [ESP + 0x140],EDX     ; 0050dc2a
     MOV EBX,0x1                         ; 0050dc31
     FILD dword ptr [ESP + 0x140]        ; 0050dc36
-    FMUL double ptr [0x005e0c75]        ; 0050dc3d | DAT_005e0c75
+    FMUL double ptr [0x005e0c75]        ; 0050dc3d | g_DOUBLE_005e0c75
     MOV dword ptr [ESP + 0x128],EBX     ; 0050dc43
     FST float ptr [ESP + 0x4]           ; 0050dc4a
     FLDZ                                ; 0050dc4e
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 0050dddf (CONDITIONAL_JUMP)  ; LAB_0050dddf
     FLD float ptr [ESP + 0x4]           ; 0050dc5b
         ;   Label: LAB_0050dc5b
-    FCOMP double ptr [0x005e0c85]       ; 0050dc5f | DAT_005e0c85
+    FCOMP double ptr [0x005e0c85]       ; 0050dc5f | g_DOUBLE_005e0c85
     FNSTSW AX                           ; 0050dc65
     SAHF                                ; 0050dc67
     JBE 0x0050dc72                      ; 0050dc68
@@ -125,7 +125,7 @@ section .text
     MOV dword ptr [ESP + 0x4],0x41f00000 ; 0050dc6a
     FLD float ptr [ESP + 0x4]           ; 0050dc72
         ;   Label: LAB_0050dc72
-    FCOMP double ptr [0x005e0c8d]       ; 0050dc76 | DAT_005e0c8d
+    FCOMP double ptr [0x005e0c8d]       ; 0050dc76 | g_DOUBLE_005e0c8d
     FNSTSW AX                           ; 0050dc7c
     SAHF                                ; 0050dc7e
     JNC 0x0050dd40                      ; 0050dc7f
@@ -140,7 +140,7 @@ section .text
     ADD EAX,0x14                        ; 0050dca2
     MOV dword ptr [ESP + 0x124],EAX     ; 0050dca5
     MOV EAX,dword ptr [ESP + 0x12c]     ; 0050dcac
-    MOV dword ptr [ESP + 0x138],EAX     ; 0050dcb3 | DAT_01d51054
+    MOV dword ptr [ESP + 0x138],EAX     ; 0050dcb3 | g_ChatOutMessages
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050dcba
     MOV dword ptr [ESP + 0x134],EAX     ; 0050dcbd
     MOV EAX,dword ptr [ESP + 0x118]     ; 0050dcc4
@@ -149,7 +149,7 @@ section .text
     MOV dword ptr [ESP + 0x13c],EAX     ; 0050dcd5
     MOV EAX,dword ptr [ESP + 0x138]     ; 0050dcdc
         ;   Label: LAB_0050dcdc
-    CMP byte ptr [EAX + 0x8],0x0        ; 0050dce3 | DAT_01d5105c | DAT_01d5105d
+    CMP byte ptr [EAX + 0x8],0x0        ; 0050dce3 | g_ChatOutMessages[0].ack_flags | g_ChatOutMessages[0].ack_flags+1
     JZ 0x0050ddea                       ; 0050dce7
         ;   XREF to: 0050ddea (CONDITIONAL_JUMP)  ; LAB_0050ddea
     MOV ECX,dword ptr [ESP + 0x138]     ; 0050dced
@@ -179,19 +179,19 @@ section .text
     TEST EBX,EBX                        ; 0050dd55
     JL 0x0050dd61                       ; 0050dd57
         ;   XREF to: 0050dd61 (CONDITIONAL_JUMP)  ; LAB_0050dd61
-    CMP EBX,dword ptr [0x01d51050]      ; 0050dd59 | DAT_01d51050
+    CMP EBX,dword ptr [0x01d51050]      ; 0050dd59 | g_ChatOutCount
     JL 0x0050dd83                       ; 0050dd5f
         ;   XREF to: 0050dd83 (CONDITIONAL_JUMP)  ; LAB_0050dd83
     MOV EAX,0x5e039d                    ; 0050dd61 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_0050dd61
     MOV EDX,0x107                       ; 0050dd66
     PUSH 0x5e03b1                       ; 0050dd6b | = "removeChatOut - invalid index"
-    MOV [0x01d046a0],EAX                ; 0050dd70 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0050dd75 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050dd7b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV [0x01d046a0],EAX                ; 0050dd70 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 0050dd75 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050dd7b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050dd80
-    MOV ECX,dword ptr [0x01d51050]      ; 0050dd83 | DAT_01d51050
+    MOV ECX,dword ptr [0x01d51050]      ; 0050dd83 | g_ChatOutCount
         ;   Label: LAB_0050dd83
     DEC ECX                             ; 0050dd89
     MOV EAX,ECX                         ; 0050dd8a
@@ -205,13 +205,13 @@ section .text
     IMUL EAX,EBX,0x114                  ; 0050dda4
     ADD EAX,0x1d51054                   ; 0050ddaa
     PUSH EAX                            ; 0050ddaf
-    MOV dword ptr [0x01d51050],ECX      ; 0050ddb0 | DAT_01d51050
+    MOV dword ptr [0x01d51050],ECX      ; 0050ddb0 | g_ChatOutCount
     CALL crt_string.c_memmove_FUN_005ba1f0 ; 0050ddb6
         ;   XREF to: 005ba1f0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005ba1f0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0050ddbb
     MOV EAX,dword ptr [ESP + 0x120]     ; 0050ddbe
         ;   Label: LAB_0050ddbe
-    CMP EAX,dword ptr [0x01d51050]      ; 0050ddc5 | DAT_01d51050
+    CMP EAX,dword ptr [0x01d51050]      ; 0050ddc5 | g_ChatOutCount
     JL 0x0050dc12                       ; 0050ddcb
         ;   XREF to: 0050dc12 (CONDITIONAL_JUMP)  ; LAB_0050dc12
     MOV ESP,EBP                         ; 0050ddd1
@@ -234,10 +234,10 @@ section .text
         ;   Label: LAB_0050ddea
     XOR ESI,ESI                         ; 0050ddf1
     FLD float ptr [EAX + 0x48]          ; 0050ddf3
-    FMUL double ptr [0x005e0c7d]        ; 0050ddf6 | DAT_005e0c7d
+    FMUL double ptr [0x005e0c7d]        ; 0050ddf6 | g_DOUBLE_005e0c7d
     MOV dword ptr [ESP + 0x128],ESI     ; 0050ddfc
     FST float ptr [ESP + 0x8]           ; 0050de03
-    FCOMP double ptr [0x005e0c95]       ; 0050de07 | DAT_005e0c95
+    FCOMP double ptr [0x005e0c95]       ; 0050de07 | g_DOUBLE_005e0c95
     FNSTSW AX                           ; 0050de0d
     SAHF                                ; 0050de0f
     JNC 0x0050de1a                      ; 0050de10
@@ -245,19 +245,19 @@ section .text
     MOV dword ptr [ESP + 0x8],0x40000000 ; 0050de12
     FLD float ptr [ESP + 0x8]           ; 0050de1a
         ;   Label: LAB_0050de1a
-    FCOMP double ptr [0x005e0c9d]       ; 0050de1e | DAT_005e0c9d
+    FCOMP double ptr [0x005e0c9d]       ; 0050de1e | g_DOUBLE_005e0c9d
     FNSTSW AX                           ; 0050de24
     SAHF                                ; 0050de26
     JBE 0x0050de31                      ; 0050de27
         ;   XREF to: 0050de31 (CONDITIONAL_JUMP)  ; LAB_0050de31
     MOV dword ptr [ESP + 0x8],0x40a00000 ; 0050de29
-    MOV EDX,dword ptr [0x01d34e38]      ; 0050de31 | DAT_01d34e38
+    MOV EDX,dword ptr [0x01d34e38]      ; 0050de31 | g_CurrentGameTime
         ;   Label: LAB_0050de31
-    MOV EAX,dword ptr [EBX + 0xc]       ; 0050de37 | DAT_01d51064
+    MOV EAX,dword ptr [EBX + 0xc]       ; 0050de37 | g_ChatOutMessages[0].player_timestamps[1]
     SUB EDX,EAX                         ; 0050de3a
     MOV dword ptr [ESP + 0x140],EDX     ; 0050de3c
     FILD dword ptr [ESP + 0x140]        ; 0050de43
-    FMUL double ptr [0x005e0c75]        ; 0050de4a | DAT_005e0c75
+    FMUL double ptr [0x005e0c75]        ; 0050de4a | g_DOUBLE_005e0c75
     FST float ptr [ESP]                 ; 0050de50
     FLDZ                                ; 0050de53
     FCOMPP                              ; 0050de55
@@ -269,7 +269,7 @@ section .text
     MOV dword ptr [ESP],EDX             ; 0050de5e
     FLD float ptr [ESP]                 ; 0050de61
         ;   Label: LAB_0050de61
-    FCOMP double ptr [0x005e0c85]       ; 0050de64 | DAT_005e0c85
+    FCOMP double ptr [0x005e0c85]       ; 0050de64 | g_DOUBLE_005e0c85
     FNSTSW AX                           ; 0050de6a
     SAHF                                ; 0050de6c
     JBE 0x0050de76                      ; 0050de6d
@@ -288,17 +288,17 @@ section .text
     MOV dword ptr [ESP + 0xc],ESI       ; 0050de94
     MOV byte ptr [ESP + 0x10],DH        ; 0050de98
     LEA EDI,[ESP + 0x15]                ; 0050de9c
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0050dea0 | DAT_01d51058
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0050dea0 | g_ChatOutMessages[0].sequence_number
     MOV ESI,dword ptr [ESP + 0x124]     ; 0050dea3
     MOV dword ptr [ESP + 0x11],EAX      ; 0050deaa
     PUSH EDI                            ; 0050deae
-    MOV AL,byte ptr [ESI]               ; 0050deaf | DAT_01d51068 | DAT_01d5106a
+    MOV AL,byte ptr [ESI]               ; 0050deaf | g_ChatOutMessages[0].message[0] | g_ChatOutMessages[0].message[2]
         ;   Label: LAB_0050deaf
     MOV byte ptr [EDI],AL               ; 0050deb1
     CMP AL,0x0                          ; 0050deb3
     JZ 0x0050dec7                       ; 0050deb5
         ;   XREF to: 0050dec7 (CONDITIONAL_JUMP)  ; LAB_0050dec7
-    MOV AL,byte ptr [ESI + 0x1]         ; 0050deb7 | DAT_01d51069 | DAT_01d5106b
+    MOV AL,byte ptr [ESI + 0x1]         ; 0050deb7 | g_ChatOutMessages[0].message[1] | g_ChatOutMessages[0].message[3]
     ADD ESI,0x2                         ; 0050deba
     MOV byte ptr [EDI + 0x1],AL         ; 0050debd
     ADD EDI,0x2                         ; 0050dec0
@@ -315,9 +315,9 @@ section .text
     PUSH EAX                            ; 0050ded8
     CALL core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0 ; 0050ded9
         ;   XREF to: 0050cdf0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
-    MOV EAX,[0x01d34e38]                ; 0050dede | DAT_01d34e38
+    MOV EAX,[0x01d34e38]                ; 0050dede | g_CurrentGameTime
     ADD ESP,0xc                         ; 0050dee3
-    MOV dword ptr [EBX + 0xc],EAX       ; 0050dee6 | DAT_01d51064
+    MOV dword ptr [EBX + 0xc],EAX       ; 0050dee6 | g_ChatOutMessages[0].player_timestamps[1]
     JMP 0x0050dced                      ; 0050dee9
         ;   XREF to: 0050dced (UNCONDITIONAL_JUMP)  ; LAB_0050dced
     MOV EBX,dword ptr [ESP + 0x120]     ; 0050deee

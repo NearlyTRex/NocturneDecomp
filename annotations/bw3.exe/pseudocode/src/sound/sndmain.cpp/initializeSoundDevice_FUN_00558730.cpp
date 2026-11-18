@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_initializeSoundDevice_FUN_00558730(void)
 
 {
@@ -17,23 +15,22 @@ int __cdecl sound_sndmain_cpp_initializeSoundDevice_FUN_00558730(void)
   if (iVar1 == 0) {
     return 0;
   }
-  sound_sndmain_cpp_selectSoundDevice_FUN_00558640(DAT_0060423c);
-  if (-1 < DAT_0060423c) {
-    if (*(int *)(DAT_0060423c * 0x118 + 0x2cf2ac0) == 0) {
-      _DAT_02cf3280 =
-           sound_sndwav_cpp_getWavOutDevice_FUN_0055e540
-                     (*(UINT *)(DAT_0060423c * 0x118 + 0x2cf2ac4));
+  sound_sndmain_cpp_selectSoundDevice_FUN_00558640(g_CurrentSoundDevice);
+  if (-1 < g_CurrentSoundDevice) {
+    if (g_SoundDevices[g_CurrentSoundDevice].api_type == 0) {
+      g_CSoundDevicePtr =
+           &sound_sndwav_cpp_getWavOutDevice_FUN_0055e540
+                      (g_SoundDevices[g_CurrentSoundDevice].device_id)->base;
     }
-    if (*(int *)(DAT_0060423c * 0x118 + 0x2cf2ac0) == 1) {
-      _DAT_02cf3280 =
-           (CWavOutDevice *)
-           sound_snddx_cpp_getDirectSoundDevice_FUN_0055d470
-                     (*(UINT *)(DAT_0060423c * 0x118 + 0x2cf2ac4));
+    if (g_SoundDevices[g_CurrentSoundDevice].api_type == 1) {
+      g_CSoundDevicePtr =
+           &sound_snddx_cpp_getDirectSoundDevice_FUN_0055d470
+                      (g_SoundDevices[g_CurrentSoundDevice].device_id)->base;
     }
-    if (_DAT_02cf3280 == (CWavOutDevice *)0x0) {
+    if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       return 0;
     }
-    _DAT_02cf3288 = (*((_DAT_02cf3280->base).vtable)->hasHardware3D)(&_DAT_02cf3280->base);
+    g_HasHardware3DSound = (*g_CSoundDevicePtr->vtable->hasHardware3D)(g_CSoundDevicePtr);
     return 1;
   }
   return 0;

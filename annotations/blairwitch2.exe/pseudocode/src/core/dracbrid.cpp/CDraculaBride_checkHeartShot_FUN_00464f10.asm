@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Shot_thru_the_heart_005d1180
-;   undefined4 DAT_005d119c
+;   double g_DOUBLE_005d119c = 20
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CConsole g_CConsoleInstance
 ;
@@ -46,7 +46,7 @@ section .text
     PUSH 0x5d1180                       ; 00464f39 | = "Shot thru the heart\n"
     MOV EDI,dword ptr [0x00609ed0]      ; 00464f3e | g_CConsolePtr
     FLD ST0                             ; 00464f44
-    FMUL double ptr [0x005d119c]        ; 00464f46 | DAT_005d119c
+    FMUL double ptr [0x005d119c]        ; 00464f46 | g_DOUBLE_005d119c
     PUSH EDI                            ; 00464f4c | g_CConsoleInstance
     FSTP ST1                            ; 00464f4d
     FSTP float ptr [EAX + 0x4]          ; 00464f4f

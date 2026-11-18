@@ -19,7 +19,7 @@ CVector3f * __cdecl core_bride_cpp_CBride_getTargetPoint_FUN_00420eb0(CBride *th
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
-            (&(this_ptr->base).base.model,DAT_00764b2c,&local_4c);
+            (&(this_ptr->base).base.model,g_BrideIndices[0],&local_4c);
   pCVar2 = &local_4c;
   pCVar3 = &local_7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

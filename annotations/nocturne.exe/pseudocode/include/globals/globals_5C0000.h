@@ -4,14 +4,31 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/signal.h"
+#include "system/stdio.h"
 #include "system/stdlib.h"
+#include "system/time.h"
 #include "system/watcom.h"
+#include "system/wincon.h"
+#include "system/windef.h"
+#include "system/winnt.h"
+#include "types/classes/CTerrain.h"
 #include "types/classes/CTextureList.h"
 #include "types/classes/CWater.h"
+#include "types/classes/CWeather.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5C0000
 // =============================================================================
+
+// BYTE
+extern BYTE g_WindowsMinorVersion;
+
+// CTerrain*
+extern CTerrain* g_CTerrainPtr;
 
 // CTextureList*
 extern CTextureList* g_CTextureListPtr;
@@ -19,10 +36,30 @@ extern CTextureList* g_CTextureListPtr;
 // CWater*
 extern CWater* g_CWaterPtr;
 
+// CWeather*
+extern CWeather* g_CWeatherPtr;
+
+// DWORD
+extern DWORD g_WinMainCmdShow;
+extern DWORD g_StackAllocSize;
+extern DWORD g_RuntimeBufferSize;
+
+// GUID
+extern GUID g_IID_IDirectSound3DListener;
+extern GUID g_IID_IDirectSound3DBuffer;
+
+// HANDLE
+extern HANDLE g_ConsoleInputHandle;
+extern HANDLE g_ConsoleOutputHandle;
+
+// Heap*
+extern Heap* g_MainHeap;
+extern Heap* g_SecondaryHeap;
+
 // RuntimeHandlerEntry
 extern RuntimeHandlerEntry g_FirstInitHandler;
 extern RuntimeHandlerEntry RuntimeHandlerEntry_005c26ce;
-extern RuntimeHandlerEntry RuntimeHandlerEntry_005c26f8;
+extern RuntimeHandlerEntry g_ExitHandlerTableEnd;
 
 // RuntimeHandlerEntry[160]
 extern RuntimeHandlerEntry g_InitHandlers[160];
@@ -30,134 +67,181 @@ extern RuntimeHandlerEntry g_InitHandlers[160];
 // RuntimeHandlerEntry[6]
 extern RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6];
 
+// SIGNAL_HANDLER_TYPE[26]
+extern SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26];
+
+// SIOControlBlock*
+extern SIOControlBlock* g_IOControlBlock;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_WaterRenderQuad;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_RainDropTexture;
+extern SMRGLTextureBasic g_RainSplashTexture;
+extern SMRGLTextureBasic g_SnowflakeTexture;
+extern SMRGLTextureBasic g_WerewolfEyeGlowTexture;
+
+// SMRGLTextureBasic[16]
+extern SMRGLTextureBasic g_WaterTextures[16];
+
+// SRenderVertex[20000]
+extern SRenderVertex g_SRenderVertex_ARRAY_005c5014[20000];
+
+// TerminatedCString
+extern TerminatedCString s_EST_005c1e08;
+extern TerminatedCString s_EDT_005c1e89;
+
+// WCHAR*
+extern WCHAR* g_CommandLineArgsW;
+extern WCHAR* g_ExeFileNameW;
+extern WCHAR* g_DllFileNameW;
+
+// WORD
+extern WORD g_WindowsPlatformVersion;
+
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_CTextureListDestructorNode;
 extern WatcomStaticDestructorNode g_CWaterDestructorNode;
 
+// WatcomStaticDestructorNode*
+extern WatcomStaticDestructorNode* g_AtexitListHead;
+
+// _FILE
+extern _FILE g_StdoutLogFile;
+extern _FILE g_FILE_005c18c8;
+
+// _FILE*
+extern _FILE* g_StaticFilePoolStart;
+
+// byte
+extern byte g_BYTE_005c1794;
+extern byte g_BYTE_005c1795;
+extern byte g_WindowsMajorVersion;
+extern byte g_UseSoftwareMath;
+extern byte g_TimezoneInitFlags;
+extern byte g_DebuggerIsAttached;
+extern byte g_ConsoleHandlerRegistered;
+
+// byte[16]
+extern byte g_IEEE754ExponentClassTable[16];
+
+// char*
+extern char* g_ExeFileNameA;
+extern char* g_DllFileNameA;
+extern char* g_EnvironmentStrings;
+
+// char[145]
+extern char g_CHAR_ARRAY_005c2170[145];
+
 // char[256]
 extern char g_RendererDllPath[256];
+
+// char[260]
+extern char g_TempDirectoryBuffer[260];
+
+// char[4]
+extern char g_CHAR_ARRAY_005c1a9c[4];
+
+// dst_rule
+extern dst_rule g_DstStartRule;
 
 // int
 extern int g_SystemInitialized;
 extern int g_VideoMemorySize;
 extern int g_MaxTextureSize;
 extern int g_FullScreenQuadDepth;
-extern int g_INT_005c0f90;
-extern int INT_005c0ff0;
-extern int INT_005c10b0;
-extern int INT_005c1130;
-extern int INT_005c1160;
-extern int INT_005c1174;
-extern int INT_005c1188;
-extern int INT_005c11a0;
-extern int g_INT_005c11c4;
-extern int g_INT_005c154c;
-extern int INT_005c1578;
-extern int INT_005c1590;
-extern int INT_005c1614;
+extern int g_CSpikeClassVersion;
+extern int g_CStrangerClassVersion;
+extern int g_CTentacleClassVersion;
+extern int g_CTriggerClassVersion;
+extern int g_CTurretClassVersion;
+extern int g_CTVBatClassVersion;
+extern int g_CVampireBossVersion;
+extern int g_CVehicleClassVersion;
+extern int g_CCryptVesselClassVersion;
+extern int g_WaterFrameDuration;
+extern int g_CWaterActorVersion;
+extern int g_CWayPointClassVersion;
+extern int g_CWeaponClassVersion;
+extern int g_CWerewolfClassVersion;
 extern int INT_005c1654;
+extern int g_WindowActive;
+extern int g_ForceMessagePump;
 extern int INT_005c1668;
-extern int INT_005c166c;
+extern int g_CZombieClassVersion;
+extern int g_INT_005c1688;
+extern int g_INT_005c1aa0;
+extern int g_INT_005c1ab8;
+extern int g_INT_005c1cc8;
+extern int g_ConsoleInitializationFlag;
+extern int g_INT_005c1d50;
+extern int g_DstTransitionSecond;
+extern int g_DstTransitionMinute;
+extern int g_DstTransitionHour;
+extern int g_TimezoneOffset;
+extern int g_DaylightSavingActive;
+extern int g_DaylightSavingOffset;
+extern int g_INT_005c1f58;
+extern int g_INT_005c1f5c;
+extern int g_INT_005c1fe8;
+extern int g_HeapFlags;
+extern int g_ConsoleInputState;
+extern int g_INT_005c206c;
+
+// short
+extern short g_PureVirtualCallFlag;
+
+// uint
+extern uint g_WindowsPlatformVersionExt;
+extern uint g_WindowsVersionLow;
+extern uint g_WindowsVersionMid;
+extern uint g_WindowsVersionCombined;
+extern uint g_MaxHandleCount;
+extern uint g_CodePage;
+
+// uint*
+extern uint* g_HeapBound;
 
 // undefined1
-extern undefined1 DAT_005c1a9c;
 extern undefined1 DAT_005c1b23;
-extern undefined1 DAT_005c1b24;
-extern undefined1 DAT_005c1b25;
-extern undefined1 DAT_005c1b26;
-extern undefined1 DAT_005c1b27;
-extern undefined1 DAT_005c1d0f;
-extern undefined1 DAT_005c1e89;
-extern undefined1 DAT_005c2050;
-extern undefined1 DAT_005c2140;
-
-// undefined2
-extern undefined2 DAT_005c1d11;
-extern undefined2 DAT_005c1f4c;
 
 // undefined4
-extern undefined4 DAT_005c1660;
-extern undefined4 DAT_005c1664;
-extern undefined4 DAT_005c1680;
-extern undefined4 DAT_005c1684;
-extern undefined4 DAT_005c1688;
-extern undefined4 DAT_005c1ab8;
-extern undefined4 DAT_005c1b04;
 extern undefined4 DAT_005c1c28;
-extern undefined4 DAT_005c1cc8;
-extern undefined4 DAT_005c1ccc;
-extern undefined4 DAT_005c1cf0;
-extern undefined4 DAT_005c1cf8;
-extern undefined4 DAT_005c1d17;
-extern undefined4 DAT_005c1d1b;
-extern undefined4 DAT_005c1d50;
-extern undefined4 DAT_005c1d54;
-extern undefined4 DAT_005c1d58;
-extern undefined4 DAT_005c1d5c;
-extern undefined4 DAT_005c1d60;
-extern undefined4 DAT_005c1d7c;
-extern undefined4 DAT_005c1d80;
-extern undefined4 DAT_005c1d88;
-extern undefined4 DAT_005c1d90;
-extern undefined4 DAT_005c1d94;
-extern undefined4 DAT_005c1dd8;
-extern undefined4 DAT_005c1ddc;
 extern undefined4 DAT_005c1de0;
-extern undefined4 DAT_005c1de4;
-extern undefined4 DAT_005c1de8;
-extern undefined4 DAT_005c1dec;
 extern undefined4 DAT_005c1dfc;
 extern undefined4 DAT_005c1e00;
 extern undefined4 DAT_005c1e04;
-extern undefined4 DAT_005c1f14;
-extern undefined4 DAT_005c1f1c;
-extern undefined4 DAT_005c1f20;
-extern undefined4 DAT_005c1f50;
-extern undefined4 DAT_005c1f54;
-extern undefined4 DAT_005c1f58;
-extern undefined4 DAT_005c1f5c;
-extern undefined4 DAT_005c1f6c;
-extern undefined4 DAT_005c1f70;
-extern undefined4 DAT_005c204c;
-extern undefined4 DAT_005c206c;
-extern undefined4 DAT_005c20d0;
-extern undefined4 DAT_005c20d4;
-extern undefined4 DAT_005c2144;
-extern undefined4 DAT_005c5014;
-extern undefined4 DAT_005c5018;
-extern undefined4 DAT_005c501c;
-extern undefined4 DAT_005c5024;
-extern undefined4 DAT_005c502c;
-extern undefined4 DAT_005c5034;
-extern undefined4 DAT_005c5038;
-extern undefined4 DAT_005c503c;
-extern undefined4 DAT_005c5040;
-extern undefined4 DAT_005c5044;
-extern undefined4 DAT_005c5048;
-extern undefined4 DAT_005c504c;
-extern undefined4 DAT_005c5054;
-extern undefined4 DAT_005c5064;
-extern undefined4 DAT_005c5068;
-extern undefined4 DAT_005c506c;
-extern undefined4 DAT_005c5070;
-extern undefined4 DAT_005c5074;
-extern undefined4 DAT_005c5078;
-extern undefined4 DAT_005c5084;
-extern undefined4 DAT_005c5088;
-extern undefined4 DAT_005c5094;
-extern undefined4 DAT_005c5098;
-extern undefined4 DAT_005c509c;
-extern undefined4 DAT_005c50a4;
-extern undefined4 DAT_005c50a8;
-extern undefined4 DAT_005c50b4;
-extern undefined4 DAT_005c50c4;
-extern undefined4 DAT_005c50c8;
-extern undefined4 DAT_005c50cc;
-extern undefined4 DAT_005c50e4;
-extern undefined4 DAT_005c5114;
-extern undefined4 DAT_005c5144;
-extern undefined4 DAT_005c5174;
 
 // void*
+extern void* g_SpecialExitHandler;
+extern void* g_CrtStackBuffer;
+extern void* g_PTR_005c1d23;
+extern void* g_IsSpecialDeviceFuncPtr;
+extern void* g_SpecialDeviceCleanupFunc;
+extern void* g_PTR_005c1d5c;
+extern void* g_SpecialDeviceCloseFunc;
+extern void* g_SpecialDeviceReadFuncPtr;
+extern void* g_SpecialDeviceWriteFuncPtr;
+extern void* g_SpecialConsoleInputHandler;
+extern void* g_SpecialConsoleOutputHandler;
+extern void* g_PTR_005c1d94;
+extern void* g_UserExceptionFilter;
+extern void* g_ExceptionCleanup;
+extern void* g_PTR_005c2168;
+extern void* g_PTR_005c216c;
+extern void* g_PTR_005c3f84;
 extern void* g_BackBuffer;
+
+// void*[2]
+extern void* g_ARRAY_PTR_005c2040[2];
+
+// void*[3]
+extern void* g_ARRAY_PTR_005c1f60[3];
+
+// void*[4]
+extern void* g_ARRAY_PTR_005c1cb4[4];
+
+// void*[8]
+extern void* g_ARRAY_PTR_005c4094[8];
 

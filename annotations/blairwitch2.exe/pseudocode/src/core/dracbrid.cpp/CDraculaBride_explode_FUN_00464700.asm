@@ -31,14 +31,14 @@
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0 at 0046316b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d10bc
+;   float g_FLOAT_005d10bc = 0.5
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-;   core_dirmat.cpp_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00464a00
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
@@ -145,7 +145,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0046481a
     MOVSD ES:EDI,ESI                    ; 0046481b
     MOVSD ES:EDI,ESI                    ; 0046481c
-    FLD float ptr [0x005d10bc]          ; 0046481d | DAT_005d10bc
+    FLD float ptr [0x005d10bc]          ; 0046481d | g_FLOAT_005d10bc
     FLD float ptr [ESP + 0x98]          ; 00464823
     FMUL ST1                            ; 0046482a
     FLD float ptr [ESP + 0x9c]          ; 0046482c
@@ -167,8 +167,8 @@ section .text
     PUSH ECX                            ; 00464871
     LEA ESI,[ESP + 0x64]                ; 00464872
     LEA EDI,[ESP + 0x70]                ; 00464876
-    CALL core_actor.cpp_FUN_00408d70    ; 0046487a
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0046487a
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0046487f
     LEA ESI,[ESP + 0x5c]                ; 00464882
     MOV EAX,dword ptr [EBP + 0x14]      ; 00464886
@@ -197,7 +197,7 @@ section .text
     LEA ESI,[ESP + 0x78]                ; 004648bb
     LEA EDI,[ESP + 0xb4]                ; 004648bf
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004648c6
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     ADD ESP,0x4                         ; 004648cb
     LEA ESI,[ESP + 0x74]                ; 004648ce
     PUSH dword ptr [ESP]                ; 004648d2
@@ -252,8 +252,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xe8]      ; 00464992
     MOV dword ptr [ESP + 0xb0],ECX      ; 00464999
     MOV dword ptr [ESP + 0xb4],EAX      ; 004649a0
-    CALL core_dirmat.cpp_FUN_00449530   ; 004649a7
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004649a7
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xdc]                ; 004649ac
     ADD ESP,0x8                         ; 004649b3
     MOVSD ES:EDI,ESI                    ; 004649b6

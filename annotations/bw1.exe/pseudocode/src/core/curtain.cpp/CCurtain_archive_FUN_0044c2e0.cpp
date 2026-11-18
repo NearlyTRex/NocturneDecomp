@@ -12,7 +12,7 @@ void __cdecl core_curtain_cpp_CCurtain_archive_FUN_0044c2e0(CCurtain *this_ptr)
   uint uStack_8;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
-  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->curtain_size,"?curtainSize" + 1);
+  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->curtain_size,"curtainSize");
   core_actor_cpp_archiveString_FUN_0040b440
             ((this_ptr->curtain_texture).texture_name,"curtainTexture");
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->opacity,"opacity");

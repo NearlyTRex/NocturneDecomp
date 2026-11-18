@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 142,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 9,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 108
@@ -34,7 +33,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "0044e6a0",
@@ -70,9 +69,9 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "0061b5a8",
@@ -82,8 +81,8 @@
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -94,8 +93,8 @@
     },
     {
       "addr": "0265370c",
-      "name": "DAT_0265370c",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
       "value": null
     }
   ],
@@ -167,24 +166,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)this_ptr);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,&this_ptr->rotation,(CVector3i *)0x0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(CBoundingBox3D *)((int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CBoundingBox3D *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
@@ -192,31 +175,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(CVector3f *)((int)pCVar3",
+      "line": 21,
+      "match": "(CBoundingBox3D *)((int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0265370c",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_0265370c,&CStack_28,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 20,
       "match": "(int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CBoundingBox3D *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
@@ -224,15 +191,15 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
+      "line": 21,
       "match": "(int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 19,
+      "line": 18,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

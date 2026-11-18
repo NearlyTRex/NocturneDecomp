@@ -26,7 +26,7 @@ int __cdecl core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(SNotesSection *t
       pSVar3 = (SNotesSection *)(pSVar3->name + 4);
     } while (iVar2 < this_ptr->entry_count);
   }
-  iVar2 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,&DAT_005d5dc8);
+  iVar2 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,"<pg>");
   if (-1 < iVar2) {
     this_ptr->page_count = view->page_index - this_ptr->first_page;
     return 1;

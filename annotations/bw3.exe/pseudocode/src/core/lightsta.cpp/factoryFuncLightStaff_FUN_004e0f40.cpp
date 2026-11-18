@@ -11,7 +11,7 @@ CLightStaff * __cdecl core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void)
 {
   CLightStaff *pCVar1;
   
-  pCVar1 = (CLightStaff *)operator_new(0x608);
+  pCVar1 = operator_new(0x608);
   if (pCVar1 == (CLightStaff *)0x0) {
     return (CLightStaff *)0x0;
   }

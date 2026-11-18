@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_00409170 at 004095ca
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409170 at 004095ca
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_005660c0

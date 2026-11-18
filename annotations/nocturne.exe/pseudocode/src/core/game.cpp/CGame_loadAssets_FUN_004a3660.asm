@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd40
 ;
 ; Referenced Globals:
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CGore* g_CGorePtr = 01c78c7c
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonSet g_CDemonSetInstance
@@ -32,7 +32,7 @@ section .text
     CALL core_set.cpp_CDemonSet_loadAssets_FUN_0050d280 ; 004a3668
         ;   XREF to: 0050d280 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_loadAssets_FUN_0050d280(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004a366d
-    MOV ECX,dword ptr [0x005b80f0]      ; 004a3670 | g_CFireEffect_PTR_005b80f0
+    MOV ECX,dword ptr [0x005b80f0]      ; 004a3670 | g_CFireEffectPtr
     PUSH ECX                            ; 004a3676
     CALL core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70 ; 004a3677
         ;   XREF to: 0048af70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70(CFireEffect * this_ptr)

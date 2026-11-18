@@ -16,7 +16,7 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00447750(CConveyor *thi
   
   pCVar2 = (CConveyor *)core_platfrm_cpp_CPlatform_ctor_FUN_00539400(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CConveyorVTable;
-  pcVar3 = (char *)0x5d70f8;
+  pcVar3 = "none";
   (pCVar2->size).x = 1.0;
   (pCVar2->size).z = 1.0;
   (pCVar2->size).y = 0.1;
@@ -31,7 +31,7 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00447750(CConveyor *thi
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)0x5d70fd;
+  pcVar3 = "none";
   pcVar4 = pCVar2->stop_event;
   do {
     cVar1 = *pcVar3;

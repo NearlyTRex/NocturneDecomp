@@ -21,7 +21,7 @@ void __cdecl core_dracbrid_cpp_staticInit_FUN_00462af0(void)
   _DAT_01ba5734 = 0;
   _DAT_01ba5738 = 0;
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CDraculaBrideClassInfo,"p?CDraculaBride" + 2,
+            (&g_CDraculaBrideClassInfo,"CDraculaBride",
              core_dracbrid_cpp_factoryFuncDraculaBride_FUN_00462b70,&g_CDraculaBrideClassVersion,9,
              &g_CEnemyClassInfo);
   __arrinit(&DAT_01ba5798,6,&g_SFreakyTypeInfo);

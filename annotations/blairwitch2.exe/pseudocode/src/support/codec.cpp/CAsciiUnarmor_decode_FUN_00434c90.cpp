@@ -2,21 +2,22 @@
 // Address: 00434c90
 // Address Range: [[00434c90, 00434cd3]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00434c90(CAsciiUnarmor *this_ptr,int *param_2,undefined4 param_3)
+// Signature: int __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00434c90(CAsciiUnarmor *this_ptr,void *istream,void *ostream)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00434c90(CAsciiUnarmor *this_ptr,int *param_2,uint param_3)
+int __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00434c90(CAsciiUnarmor *this_ptr,void *istream,void *ostream)
 
 {
-  int iVar1;
+  int ch;
+  uint bit_value;
   
   while( true ) {
-    iVar1 = (**(code **)(*param_2 + 4))(param_2);
-    if (iVar1 < 0) break;
-    iVar1 = support_codec_cpp_FUN_00434b10(iVar1);
-    if (-1 < iVar1) {
-      support_codec_cpp_FUN_004338f0(&this_ptr->bit_buffer,6,iVar1,param_3);
+    ch = (**(code **)(*(int *)istream + 4))(istream);
+    if (ch < 0) break;
+    bit_value = support_codec_cpp_decodeArmorChar_FUN_00434b10(ch);
+    if (-1 < (int)bit_value) {
+      support_codec_cpp_writeBitsToStream_FUN_004338f0(&this_ptr->bit_buffer,6,bit_value,ostream);
     }
   }
   return 1;

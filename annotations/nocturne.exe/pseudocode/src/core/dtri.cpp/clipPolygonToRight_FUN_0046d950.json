@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 96,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 3,
+    "pseudocode_lines": 55,
+    "suspect_count": 2,
     "suspect_types": [
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 197
+    "total_lines": 196
   },
   "cross_references": [],
   "function": {
@@ -51,61 +50,61 @@
     },
     {
       "addr": "01bc9af4",
-      "name": "DAT_01bc9af4",
-      "type": "undefined4",
+      "name": "g_ClipBuffer2VertexCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bc9af8",
-      "name": "g_CVector3f_ARRAY_01bc9af8",
+      "name": "g_ClipBuffer2Vertices",
       "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01bc9afc",
-      "name": "g_CVector3f_ARRAY_01bc9af8[0].y",
+      "name": "g_ClipBuffer2Vertices[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9b00",
-      "name": "g_CVector3f_ARRAY_01bc9af8[0].z",
+      "name": "g_ClipBuffer2Vertices[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9b04",
-      "name": "g_CVector3f_ARRAY_01bc9af8[1].x",
+      "name": "g_ClipBuffer2Vertices[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9b10",
-      "name": "g_CVector3f_ARRAY_01bc9af8[2].x",
+      "name": "g_ClipBuffer2Vertices[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9bb8",
-      "name": "DAT_01bc9bb8",
-      "type": "undefined4",
+      "name": "g_ClipBuffer3VertexCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bc9bbc",
-      "name": "g_CVector3f_ARRAY_01bc9bbc",
+      "name": "g_ClipBuffer3Vertices",
       "type": "CVector3f[16]",
       "value": null
     },
     {
       "addr": "01bc9bc0",
-      "name": "g_CVector3f_ARRAY_01bc9bbc[0].y",
+      "name": "g_ClipBuffer3Vertices[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9bc4",
-      "name": "g_CVector3f_ARRAY_01bc9bbc[0].z",
+      "name": "g_ClipBuffer3Vertices[0].z",
       "type": "undefined4",
       "value": null
     }
@@ -234,27 +233,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 29,
+      "line": 27,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9bbc[_DAT_01bc9bb8].x = point1_ptr->x;",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 41,
+      "line": 39,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9bbc[_DAT_01bc9bb8].x = point1_ptr->x;",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;",
       "type": "unrolled_memcpy"
     }
   ]

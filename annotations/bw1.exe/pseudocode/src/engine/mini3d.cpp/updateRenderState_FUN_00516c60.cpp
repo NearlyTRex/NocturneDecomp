@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_updateRenderState_FUN_00516c60(void)
 
 {
-  _DAT_01c51d14 = _DAT_01d224b8 | 0x205;
-  _DAT_01c51d18 = 0;
-  if (_DAT_01d224c8 != 0) {
-    _DAT_01c51d14 = _DAT_01d224b8 | 0x20d;
+  g_RenderStateFlags.dword = g_INT_01d224b8 | (RENDER_TEX_ENABLE | RENDER_FOG_COLOR | RENDER_COLOR_FROM_VERTEX);
+  g_VertexPreprocessMode = 0;
+  if (g_INT_01d224c8 != 0) {
+    g_RenderStateFlags.dword = g_INT_01d224b8 | (RENDER_TEX_ENABLE | RENDER_FOG_COLOR | RENDER_SOLID_ALPHA_BLEND | RENDER_COLOR_FROM_VERTEX);
   }
-  if (_DAT_01d224c4 == 0) {
-    _DAT_01c51d0c = _DAT_01d224bc;
+  if (g_INT_01d224c4 == 0) {
+    g_BlendMode = g_INT_01d224bc;
     return;
   }
-  _DAT_01c51d14 = _DAT_01c51d14 | 0x122;
-  _DAT_01c51d0c = _DAT_01d224bc;
+  g_RenderStateFlags.dword = g_RenderStateFlags.dword | (RENDER_FORCE_SOLID_LOOP | RENDER_BLEND_READ_DEST | RENDER_ALPHA_FROM_VERTEX);
+  g_BlendMode = g_INT_01d224bc;
   return;
 }

@@ -30,27 +30,27 @@
 ;
 ; XREF[13]:
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_00419550 at 004196bb
-;   core_carved.cpp_FUN_00428810 at 00428973
+;   core_carved.cpp_CCarved_processDismemberment_FUN_00428810 at 00428973
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_00430520 at 00430574
 ;   core_construc.cpp_CConstruct_explode_FUN_00444110 at 00444249
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 004457ea
-;   core_demnfolk.cpp_FUN_00458680 at 00458760
+;   core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_00458680 at 00458760
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c5f10 at 004c5fe5
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c9140 at 004c9220
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004d7bd0 at 004d7cb5
-;   core_moocow.cpp_FUN_004f9050 at 004f90dc
+;   core_moocow.cpp_CMooCow_processDismemberment_FUN_004f9050 at 004f90dc
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007e2bac
+;   undefined4 g_StakeModelInstance.model_name[0]
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_004166d0
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_00416750
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360
-;   core_xform.cpp_FUN_00583260
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -195,7 +195,7 @@ section .text
     PUSH EAX                            ; 00430714
     LEA ESI,[EBP + 0x1a]                ; 00430715
     CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 00430718
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_00583b10(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x4                         ; 0043071d
     LEA EAX,[EBP + 0x26]                ; 00430720
     PUSH EAX                            ; 00430723
@@ -213,7 +213,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00430741
     PUSH EAX                            ; 00430742
     LEA EDI,[EBP + 0x3e]                ; 00430743
-    PUSH 0x7e2bac                       ; 00430746 | DAT_007e2bac
+    PUSH 0x7e2bac                       ; 00430746 | g_StakeModelInstance.model_name[0]
     MOV EAX,dword ptr [EBP + 0x8a]      ; 0043074b
     LEA ESI,[EBP + 0x32]                ; 00430751
     PUSH EAX                            ; 00430754
@@ -237,8 +237,8 @@ section .text
     PUSH EAX                            ; 0043077a
     LEA ESI,[EBP + 0x56]                ; 0043077b
     LEA EDI,[EBP + 0x4a]                ; 0043077e
-    CALL core_xform.cpp_FUN_00583260    ; 00430781
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00430781
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0x56]                ; 00430786
     LEA EAX,[EBP + 0x4a]                ; 00430789
     ADD ESP,0x8                         ; 0043078c

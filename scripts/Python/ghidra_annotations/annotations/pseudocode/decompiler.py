@@ -3,7 +3,9 @@
 
 import re
 from ghidra.util.task import ConsoleTaskMonitor
-from ghidra_annotations.util.log import log_info
+
+# A string's label, s_<text>_<address>; group 2 is the address
+STRING_LABEL_RE = re.compile(r'\b(s_[^\s\(\),;]*?_([0-9A-Fa-f]{6,}))\b')
 
 
 def extract_signature_from_decompiled_code(decompiled_code):
@@ -48,9 +50,10 @@ def extract_signature_from_decompiled_code(decompiled_code):
                 break  # Empty line before signature means we're done
             continue
 
-        # Skip comment lines
+        # Skip comment lines; a block comment's last line opens it (walking
+        # upwards) unless that line is the whole comment
         if line_stripped.endswith('*/'):
-            in_comment = True
+            in_comment = not line_stripped.startswith('/*')
             continue
         if in_comment:
             if line_stripped.startswith('/*'):
@@ -103,47 +106,10 @@ def decompile_function_raw(interface, func, symbol_table, string_map, timeout=60
     if not res.decompileCompleted():
         return _failure_stub(res)
 
-    # Basic string replacement (relatively light Python work)
+    # A string's label becomes its literal. A PTR_s_ label is left alone: its
+    # address is the pointer's own, which is never a string's.
     decompiled_code = res.getDecompiledFunction().getC()
-    try:
-        pattern1 = re.compile(r'\b(s_[^\s\(\),;]*?_([0-9A-Fa-f]{6,}))\b')
-        pattern2 = re.compile(r'\b(PTR_s_[^\s\(\),;]*?_([0-9A-Fa-f]{6,}))\b')
-        decompiled_code = pattern1.sub(lambda m: replace_symbol(m, string_map), decompiled_code)
-        decompiled_code = pattern2.sub(lambda m: replace_symbol(m, string_map), decompiled_code)
-    except Exception as e:
-        pass  # Don't log from worker thread to avoid GIL contention
-    return decompiled_code
-
-
-def generate_decompilation_code(interface, func, symbol_table, string_map, timeout=60):
-    """Generate decompiled C code for a function.
-
-    Args:
-        interface: The DecompInterface instance
-        func: The function to decompile
-        symbol_table: The program's symbol table
-        string_map: Map of addresses to string values
-        timeout: Decompilation timeout in seconds
-
-    Returns:
-        The decompiled C code as a string
-    """
-    from ghidra_annotations.annotations.pseudocode.strings import replace_symbol
-
-    res = interface.decompileFunction(func, timeout, ConsoleTaskMonitor())
-    if not res.decompileCompleted():
-        return _failure_stub(res)
-
-    decompiled_code = res.getDecompiledFunction().getC()
-
-    try:
-        pattern1 = re.compile(r'\b(s_[^\s\(\),;]*?_([0-9A-Fa-f]{6,}))\b')
-        pattern2 = re.compile(r'\b(PTR_s_[^\s\(\),;]*?_([0-9A-Fa-f]{6,}))\b')
-        decompiled_code = pattern1.sub(lambda m: replace_symbol(m, string_map), decompiled_code)
-        decompiled_code = pattern2.sub(lambda m: replace_symbol(m, string_map), decompiled_code)
-    except Exception as e:
-        log_info("Warning: Failed to process string replacements: %s" % str(e))
-    return decompiled_code
+    return STRING_LABEL_RE.sub(lambda m: replace_symbol(m, string_map), decompiled_code)
 
 
 def build_constants_map(constants_list):
@@ -183,29 +149,10 @@ def build_constants_map(constants_list):
     return constants_map
 
 
-# Cache for pre-compiled constants pattern
-_constants_pattern_cache = {'map_id': None, 'pattern': None, 'constants': None}
-
-
-def build_constants_pattern(constants_map):
-    """Pre-compile regex pattern for constants replacement.
-
-    Call this once after building constants_map for efficient per-function replacement.
-
-    Args:
-        constants_map: Map of constant names to values
-
-    Returns:
-        Tuple of (compiled_pattern, constants_map) or (None, None) if no constants
-    """
-    if not constants_map:
-        return None, None
-
-    sorted_names = sorted(constants_map.keys(), key=len, reverse=True)
-    escaped_names = [re.escape(name) for name in sorted_names]
-    combined_pattern = r'\b(' + '|'.join(escaped_names) + r')\b'
-    compiled_pattern = re.compile(combined_pattern)
-    return compiled_pattern, constants_map
+# The pattern for the constants map last used, which is the same map for every
+# function of an export; kept with the map itself, so a new map is never matched
+# by a recycled id()
+_constants_pattern_cache = {'constants': None, 'pattern': None}
 
 
 def replace_constants_in_code(decompiled_code, constants_map):
@@ -218,40 +165,21 @@ def replace_constants_in_code(decompiled_code, constants_map):
     Returns:
         The code with constants replaced
     """
-    global _constants_pattern_cache
-
     if not constants_map:
         return decompiled_code
 
-    # Use cached pattern if same constants_map (by identity)
-    map_id = id(constants_map)
-    if _constants_pattern_cache['map_id'] != map_id:
-
-        # Build and cache the pattern
-        sorted_names = sorted(constants_map.keys(), key=len, reverse=True)
-        escaped_names = [re.escape(name) for name in sorted_names]
-        # Negative lookbehind: don't replace constants preceded by & (address-of)
-        combined_pattern = r'(?<!&)\b(' + '|'.join(escaped_names) + r')\b'
-        _constants_pattern_cache['pattern'] = re.compile(combined_pattern)
+    if _constants_pattern_cache['constants'] is not constants_map:
+        # Longest first, so a name is not cut short by one it begins with. The
+        # lookbehind leaves &CONSTANT (its address) alone.
+        names = sorted(constants_map, key=len, reverse=True)
+        _constants_pattern_cache['pattern'] = re.compile(
+            r'(?<!&)\b(' + '|'.join(re.escape(name) for name in names) + r')\b')
         _constants_pattern_cache['constants'] = constants_map
-        _constants_pattern_cache['map_id'] = map_id
-
-    compiled_pattern = _constants_pattern_cache['pattern']
-    cached_constants = _constants_pattern_cache['constants']
 
     # Fast path: quick substring check before regex
-    found_any = False
-    for const_name in cached_constants:
-        if const_name in decompiled_code:
-            found_any = True
-            break
-    if not found_any:
+    if not any(name in decompiled_code for name in constants_map):
         return decompiled_code
-
-    def replace_match(match):
-        return cached_constants[match.group(1)]
-
-    return compiled_pattern.sub(replace_match, decompiled_code)
+    return _constants_pattern_cache['pattern'].sub(lambda m: constants_map[m.group(1)], decompiled_code)
 
 
 def export_stack_frame(func):
@@ -277,24 +205,15 @@ def export_stack_frame(func):
     }
 
     for var in frame.getStackVariables():
-        # Use getDisplayName() for proper display of pointer types (e.g., "SRenderVertex *")
-        # Falls back to getName() then 'undefined4' if not available
-        data_type = var.getDataType()
-        if data_type:
-            if hasattr(data_type, 'getDisplayName'):
-                type_name = data_type.getDisplayName()
-            else:
-                type_name = data_type.getName()
-        else:
-            type_name = 'undefined4'
-        var_info = {
+        # getDisplayName() spells pointer types properly ("SRenderVertex *"). A
+        # variable always has a type in Ghidra; DEFAULT stands in for none.
+        frame_info['variables'].append({
             'name': var.getName(),
             'offset': var.getStackOffset(),
             'size': var.getLength(),
-            'type': type_name,
+            'type': var.getDataType().getDisplayName(),
             'is_param': var.getStackOffset() >= 0
-        }
-        frame_info['variables'].append(var_info)
+        })
 
     frame_info['variables'].sort(key=lambda v: v['offset'])
     return frame_info

@@ -29,9 +29,9 @@ void __cdecl CBelling::setup(CBelling *this_ptr);
 // Address: 005a9060
 void __cdecl CBelling::processStates(CBelling *this_ptr,float delta_time,int mode);
 
-// Original: core_belling.cpp_FUN_005a9080
+// Original: core_belling.cpp_CBelling_processAI_FUN_005a9080
 // Address: 005a9080
-void FUN_005a9080(int param_1);
+void __cdecl CBelling::processAI(CBelling *this_ptr);
 
 // Original: core_belling.cpp_CBelling_processDeathState_FUN_005a90d0
 // Address: 005a90d0

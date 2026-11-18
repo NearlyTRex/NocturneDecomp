@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 135,
+    "complexity_score": 94,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 6,
+    "pseudocode_lines": 54,
+    "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 193
+    "total_lines": 192
   },
   "cross_references": [
     {
@@ -33,7 +31,7 @@
     {
       "addr": "004e1480",
       "from_addr": "004e1505",
-      "name": "core_level.cpp_FUN_004e1480",
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004e1480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,6 +65,11 @@
       "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_0044ee60"
     },
     {
+      "addr": "0044e590",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590"
+    },
+    {
       "addr": "0044de20",
       "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20"
@@ -77,14 +80,9 @@
       "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010"
     },
     {
-      "addr": "0044e590",
-      "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_0044e590"
-    },
-    {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b89c0",
@@ -104,14 +102,14 @@
     {
       "addr": "00460c70",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460c70"
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70"
     }
   ],
   "globals": [
     {
       "addr": "005cf58f",
-      "name": "DAT_005cf58f",
-      "type": "undefined4",
+      "name": "s_rb_005cf58f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -134,8 +132,8 @@
     },
     {
       "addr": "005cf5ca",
-      "name": "DAT_005cf5ca",
-      "type": "undefined4",
+      "name": "s_rt_005cf5ca",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -158,14 +156,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -175,7 +173,7 @@
       {
         "call_addr": "004e1505",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e1480",
+        "caller": "core_level.cpp_CLevelLoader_show_FUN_004e1480",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,32 +300,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005cf58f",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_FUN_00460c70(\"models\",filename,&DAT_005cf58f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005cf5ca",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_FUN_00460c70(\"models\",filename,&DAT_005cf5ca);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -335,7 +309,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `model_filename` field (which decays to a pointer), `+ CONST`; `offsetof(model_filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 29,
+      "line": 27,
       "match": "pCVar3 = (T *)(pCVar3->model_filename + CONST)",
       "severity": "moderate",
       "text": "pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 2);",
@@ -343,7 +317,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `model_filename` field (which decays to a pointer), `+ CONST`; `offsetof(model_filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 54,
+      "line": 52,
       "match": "pCVar3 = (T *)(pCVar3->model_filename + CONST)",
       "severity": "moderate",
       "text": "pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 0x48);",

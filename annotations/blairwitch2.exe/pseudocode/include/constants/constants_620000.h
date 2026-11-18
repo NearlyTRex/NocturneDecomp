@@ -5,11 +5,30 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "prototypes/prototypes_5B0000.h"
-#include "prototypes/prototypes_5C0000.h"
 
 // =============================================================================
 // CONSTANTS
 // =============================================================================
+
+// double constants
+static double g_DOUBLE_006217dc = 1;
+
+// float constants
+static float g_IEEE754NormalScaleFactor = 0.9375f;
+static float g_IEEE754SubnormalScaleFactor = 1.0625f;
+static float g_IEEE754RenormScaleFactor = 9.223372e+18f;
+static float g_FLOAT_00621820 = 16.0f;
+static float g_FLOAT_00621824 = 0.0625f;
+
+// float10 constants
+static float10 g_FLOAT10_0062180c = 3.1415927f;
+static float10 g_FLOAT10_00621816 = 1.5707963f;
+static float10 g_FLOAT10_00621828 = -0.33333333f;
+static float10 g_FLOAT10_00621832 = 0.2f;
+static float10 g_FLOAT10_0062183c = -0.14285714f;
+static float10 g_FLOAT10_00621846 = 0.11111111f;
+static float10 g_FLOAT10_00621850 = -0.090907585f;
+static float10 g_FLOAT10_0062185a = 0.076416908f;
 
 // undefined1* constants
 static undefined1* DAT_006216E0 = (undefined1*)crt_unknown_c_FUN_005bf503;
@@ -75,11 +94,4 @@ static undefined1* DAT_006217CC = (undefined1*)crt_unknown_c_FUN_005bf92f;
 static undefined1* DAT_006217D0 = (undefined1*)crt_unknown_c_FUN_005bf94f;
 static undefined1* DAT_006217D4 = (undefined1*)crt_unknown_c_FUN_005bf963;
 static undefined1* DAT_006217D8 = (undefined1*)crt_unknown_c_FUN_005bf97b;
-static undefined1* DAT_006217F0 = (undefined1*)crt_unknown_c_FUN_005c3ddb;
-static undefined1* DAT_006217F4 = (undefined1*)crt_unknown_c_FUN_005c3de8;
-static undefined1* DAT_006217F8 = (undefined1*)crt_unknown_c_FUN_005c3dfb;
-static undefined1* DAT_006217FC = (undefined1*)crt_unknown_c_FUN_005c3e10;
-static undefined1* DAT_00621800 = (undefined1*)crt_unknown_c_FUN_005c3e23;
-static undefined1* DAT_00621804 = (undefined1*)crt_unknown_c_FUN_005c3e38;
-static undefined1* DAT_00621808 = (undefined1*)crt_unknown_c_FUN_005c3e4b;
 

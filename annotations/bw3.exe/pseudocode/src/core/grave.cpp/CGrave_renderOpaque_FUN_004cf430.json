@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 46,
+    "complexity_score": 73,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 1,
+    "pseudocode_lines": 33,
+    "suspect_count": 3,
     "suspect_types": [
+      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 97
+    "total_lines": 99
   },
   "cross_references": [],
   "function": {
@@ -41,7 +42,7 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "00462540",
@@ -52,9 +53,9 @@
   "globals": [
     {
       "addr": "00600530",
-      "name": "DAT_00600530",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00600530",
+      "type": "CDemonMission*",
+      "value": "01d81080"
     },
     {
       "addr": "01d82088",
@@ -145,8 +146,24 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 20,
+      "line": 21,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

@@ -13,17 +13,13 @@ CDemonPart * __cdecl CDemonPart::dtor(CDemonPart *this_ptr,uint flags);
 // Address: 004799e0
 void __cdecl CDemonPart::alloc(CDemonPart *this_ptr);
 
-// Original: core_dpart.cpp_FUN_00479ae0
+// Original: core_dpart.cpp_CDemonPart_free_FUN_00479ae0
 // Address: 00479ae0
-void FUN_00479ae0(int param_1);
+void __cdecl CDemonPart::free(CDemonPart *this_ptr);
 
-// Original: core_dpart.cpp_FUN_00479b22
-// Address: 00479b22
-void FUN_00479b22(void);
-
-// Original: core_dpart.cpp_FUN_00479b40
+// Original: core_dpart.cpp_CDemonPart_load_FUN_00479b40
 // Address: 00479b40
-void FUN_00479b40(void);
+void __cdecl CDemonPart::load(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_save_FUN_00479b70
 // Address: 00479b70
@@ -33,13 +29,13 @@ void __cdecl CDemonPart::save(CDemonPart *this_ptr);
 // Address: 00479ba0
 void __cdecl CDemonPart::calculateFaceNormals(CDemonPart *this_ptr);
 
-// Original: core_dpart.cpp_FUN_00479c70
+// Original: core_dpart.cpp_CDemonPart_loadFromFile_FUN_00479c70
 // Address: 00479c70
-void FUN_00479c70(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
+void __cdecl CDemonPart::loadFromFile(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
 
-// Original: core_dpart.cpp_FUN_00479f60
+// Original: core_dpart.cpp_CDemonPart_renderFaces_FUN_00479f60
 // Address: 00479f60
-void FUN_00479f60(void);
+void __cdecl CDemonPart::renderFaces(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_0047a320
 // Address: 0047a320
@@ -48,11 +44,3 @@ void __cdecl setupDepthOnlyEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEd
 // Original: core_dpart.cpp_findEdgeByYStart_FUN_0047a440
 // Address: 0047a440
 SSoftwareEdge * __cdecl findEdgeByYStart(int scanline_y,SSoftwareEdge *exclude_edge);
-
-// Original: core_dpart.cpp_FUN_0047a480
-// Address: 0047a480
-void __cdecl FUN_0047a480(int *vertex_indices,int vertex_count);
-
-// Original: core_dpart.cpp_FUN_0047ab00
-// Address: 0047ab00
-void __cdecl FUN_0047ab00(CVector3i *vertex_indices,int vertex_count);

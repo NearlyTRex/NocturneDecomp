@@ -10,9 +10,9 @@
 ; CVector3f *      Stack[0x10]:4   out_normal
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041af70
-;   core_dirmat.cpp_FUN_00449530
-;   core_dirmat.cpp_FUN_004495a0
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_dtri.cpp_rayTriangleIntersection_FUN_00477a50
 ;
@@ -220,8 +220,8 @@ section .text
     PUSH EAX                            ; 004e5bfa
     LEA EDI,[ESP + 0xc8]                ; 004e5bfb
     MOV dword ptr [ESP + 0x12c],EAX     ; 004e5c02
-    CALL core_dirmat.cpp_FUN_004495a0   ; 004e5c09
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 004e5c09
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 004e5c0e
     LEA ESI,[ESP + 0xb4]                ; 004e5c11
     MOV EAX,dword ptr [EBP + 0x1c]      ; 004e5c18
@@ -232,8 +232,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e5c25
     PUSH EDX                            ; 004e5c26
     LEA ESI,[ESP + 0x50]                ; 004e5c27
-    CALL core_dirmat.cpp_FUN_004495a0   ; 004e5c2b
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 004e5c2b
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 004e5c30
     LEA EAX,[ESP + 0x9c]                ; 004e5c33
     PUSH EAX                            ; 004e5c3a
@@ -248,8 +248,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e5c5b
     MOVSD ES:EDI,ESI                    ; 004e5c5c
     MOVSD ES:EDI,ESI                    ; 004e5c5d
-    CALL core_box.cpp_FUN_0041af70      ; 004e5c5e
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 004e5c5e
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x14c],EAX     ; 004e5c63
     FLD float ptr [ESP + 0x14c]         ; 004e5c6a
     ADD ESP,0x10                        ; 004e5c71
@@ -274,8 +274,8 @@ section .text
     PUSH ECX                            ; 004e5cb3
     LEA ESI,[ESP + 0xd4]                ; 004e5cb4
     LEA EDI,[ESP + 0x38]                ; 004e5cbb
-    CALL core_dirmat.cpp_FUN_00449530   ; 004e5cbf
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004e5cbf
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xd4]                ; 004e5cc4
     ADD ESP,0x8                         ; 004e5ccb
     LEA EAX,[ESP + 0x30]                ; 004e5cce
@@ -332,8 +332,8 @@ section .text
     PUSH EAX                            ; 004e5d61
     LEA EDI,[ESP + 0x74]                ; 004e5d62
     MOV dword ptr [ESP + 0x128],EAX     ; 004e5d66
-    CALL core_dirmat.cpp_FUN_004495a0   ; 004e5d6d
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 004e5d6d
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x110]               ; 004e5d72
     ADD ESP,0x8                         ; 004e5d79
     MOVSD ES:EDI,ESI                    ; 004e5d7c
@@ -344,8 +344,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x124]     ; 004e5d83
     PUSH EAX                            ; 004e5d8a
     LEA ESI,[ESP + 0xf8]                ; 004e5d8b
-    CALL core_dirmat.cpp_FUN_004495a0   ; 004e5d92
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 004e5d92
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 004e5d97
     LEA EAX,[ESP + 0x54]                ; 004e5d9a
     PUSH EAX                            ; 004e5d9e
@@ -360,8 +360,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e5dbf
     MOVSD ES:EDI,ESI                    ; 004e5dc0
     MOVSD ES:EDI,ESI                    ; 004e5dc1
-    CALL core_box.cpp_FUN_0041af70      ; 004e5dc2
-        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041af70()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70 ; 004e5dc2
+        ;   XREF to: 0041af70 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x14c],EAX     ; 004e5dc7
     FLD float ptr [ESP + 0x14c]         ; 004e5dce
     ADD ESP,0x10                        ; 004e5dd5
@@ -386,8 +386,8 @@ section .text
     PUSH EDX                            ; 004e5e11
     LEA ESI,[ESP + 0x98]                ; 004e5e12
     LEA EDI,[ESP + 0x8c]                ; 004e5e19
-    CALL core_dirmat.cpp_FUN_00449530   ; 004e5e20
-        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_00449530()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530 ; 004e5e20
+        ;   XREF to: 00449530 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00449530(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x98]                ; 004e5e25
     ADD ESP,0x8                         ; 004e5e2c
     LEA EAX,[ESP + 0x84]                ; 004e5e2f

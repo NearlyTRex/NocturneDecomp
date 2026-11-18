@@ -12,10 +12,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcd9b8
-;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01bcddec
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_EditorFontMaxCharWidth
+;   int g_INT_01bcd9bc
+;   int g_WindowStatusTextColor
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   char* g_CurrentFilename
@@ -40,19 +40,19 @@ section .text
     PUSH EDI                            ; 004700d2
     PUSH EBP                            ; 004700d3
     SUB ESP,0x4                         ; 004700d4
-    CMP dword ptr [0x01bcd070],0x0      ; 004700d7 | DAT_01bcd070
+    CMP dword ptr [0x01bcd070],0x0      ; 004700d7 | g_CBitFont_PTR_01bcd070
     JZ 0x00470178                       ; 004700de
         ;   XREF to: 00470178 (CONDITIONAL_JUMP)  ; LAB_00470178
-    MOV EAX,[0x01bcd070]                ; 004700e4 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 004700e4 | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_004700e4
     PUSH 0x6a                           ; 004700e9
     MOV EDX,dword ptr [EAX + 0x3168]    ; 004700eb
     PUSH EAX                            ; 004700f1
-    MOV dword ptr [0x01bcd9b8],EDX      ; 004700f2 | DAT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EDX      ; 004700f2 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004700f8
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004700fd
-    MOV [0x01bcd9bc],EAX                ; 00470100 | DAT_01bcd9bc
+    MOV [0x01bcd9bc],EAX                ; 00470100 | g_INT_01bcd9bc
     LEA EAX,[ESP + 0x20]                ; 00470105
     MOV dword ptr [ESP],EAX             ; 00470109
     MOV EAX,ESP                         ; 0047010c
@@ -75,14 +75,14 @@ section .text
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0047013e
     PUSH -0x1                           ; 00470141
-    MOV EAX,[0x01bcddec]                ; 00470143 | DAT_01bcddec
+    MOV EAX,[0x01bcddec]                ; 00470143 | g_WindowStatusTextColor
     PUSH EAX                            ; 00470148
     MOV EDX,dword ptr [0x01c00c5c]      ; 00470149 | g_ClipTop
     PUSH EDX                            ; 0047014f
     MOV ECX,dword ptr [0x01c00c58]      ; 00470150 | g_ClipLeft
     PUSH ECX                            ; 00470156
     PUSH 0x1bcb0d0                      ; 00470157
-    MOV EBX,dword ptr [0x01bcd070]      ; 0047015c | DAT_01bcd070
+    MOV EBX,dword ptr [0x01bcd070]      ; 0047015c | g_CBitFont_PTR_01bcd070
     PUSH EBX                            ; 00470162
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00470163
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

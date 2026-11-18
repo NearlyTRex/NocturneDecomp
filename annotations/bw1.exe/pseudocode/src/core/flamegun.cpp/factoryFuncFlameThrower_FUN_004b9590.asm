@@ -15,7 +15,7 @@ section .text
     PUSH 0x588                          ; 004b9590
         ;   Label: core_flamegun.cpp_factoryFuncFlameThrower_FUN_004b9590
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004b9595
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004b959a
     TEST EAX,EAX                        ; 004b959d
     JNZ 0x004b95a2                      ; 004b959f

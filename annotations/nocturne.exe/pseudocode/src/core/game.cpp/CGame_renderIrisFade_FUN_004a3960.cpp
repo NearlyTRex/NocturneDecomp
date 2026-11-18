@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(CGame *this_ptr)
 
 {
@@ -17,13 +15,13 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(CGame *this_ptr)
   int iVar4;
   double dVar5;
   
-  if (_DAT_01c78b04 != 0) {
-    if (((_DAT_01c78b04 < 4) && (_DAT_01c78b04 != 1)) && (0x3f7fffff < (int)_DAT_01c78b08)) {
+  if (g_IrisFadeType != 0) {
+    if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (0x3f7fffff < (int)g_IrisFadeRadius)) {
       core_game_cpp_calculateIrisFadeCenter_FUN_004a3860();
       iVar3 = g_WindowHeight;
       if (g_BitsPerPixel == 0x20) {
         iVar4 = 0;
-        dVar5 = round((double)(_DAT_01c78b08 * _DAT_01c78b08));
+        dVar5 = round((double)(g_IrisFadeRadius * g_IrisFadeRadius));
         if (0 < iVar3) {
           iVar3 = 0;
           do {
@@ -32,8 +30,8 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(CGame *this_ptr)
             if (0 < g_WindowWidth) {
               do {
                 if ((int)ROUND(dVar5) <
-                    (_DAT_01c78b10 - iVar4) * (_DAT_01c78b10 - iVar4) +
-                    (_DAT_01c78b0c - iVar1) * (_DAT_01c78b0c - iVar1)) {
+                    (g_IrisFadeCenterY - iVar4) * (g_IrisFadeCenterY - iVar4) +
+                    (g_IrisFadeCenterX - iVar1) * (g_IrisFadeCenterX - iVar1)) {
                   *puVar2 = 0;
                 }
                 iVar1 = iVar1 + 1;

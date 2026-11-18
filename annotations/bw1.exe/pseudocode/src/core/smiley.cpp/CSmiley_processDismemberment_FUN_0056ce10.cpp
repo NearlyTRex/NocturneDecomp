@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_0056ce10(CSmiley *this_ptr,SDamageInfo *damage_info)
 
@@ -98,19 +97,19 @@ switchD_0056ce99_default:
               0) {
             damage_info->damage_amount = 9999.0;
           }
-          damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005f2a3f;
+          damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
         }
       }
       iVar1 = damage_info->hit_part_index;
       if (iVar1 != this_ptr->part_indices[10]) {
         if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
-          damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f2a47;
+          damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
           return;
         }
         damage_info->damage_amount = damage_info->damage_amount;
         return;
       }
-      damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f2a4f;
+      damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
       return;
     }
   }

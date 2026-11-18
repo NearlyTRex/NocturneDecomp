@@ -6,19 +6,22 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
-#include "types/classes/CHero.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPackedBitmap.h"
 #include "types/classes/CPackedBitmapSet.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CPod.h"
+#include "types/classes/CPodAuditRecord.h"
+#include "types/classes/CPodDependencyRecord.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CPodSearchContext.h"
 #include "types/classes/CPrye.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -28,7 +31,6 @@
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STrianglePackedIndices.h"
-#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x510000
@@ -38,15 +40,18 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00510160(CPacked
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_00510210(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00510230(int total_entries,_FILE *file_header);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_005102b0(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
-CPackedBitmap * cockpit_pkbitmap_cpp_FUN_00510430(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_00510430(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_005105e0(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_00510610(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00510670(CPackedBitmapSet *this_ptr);
-void __cdecl cockpit_pkbmpset_cpp_FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count);
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740(CPackedBitmapSet *this_ptr,undefined4 param_2,undefined4 param_3,char *param_4,int param_5,int param_6,int param_7,int param_8,int param_9,int param_10);
-void cockpit_pkbmpset_cpp_FUN_00510810(void);
-void cockpit_pkbmpset_cpp_FUN_00510a90(CPackedBitmapSet *param_1,int param_2,int param_3);
-void cockpit_pkbmpset_cpp_FUN_00510de0(void);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int start_index,int end_index,int transparency_color,int apply_palette_flag);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00510810(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_00510a90(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_00510c70(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00510d20(CPackedBitmapSet *this_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_00510d70(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_00510da0(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00510e70(CPackedBitmapSet *this_ptr,char *act_filename);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00510ec0(CPackedBitmapSet *this_ptr,char *palette_data);
 int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00510f40(CPackedBitmapSet *this_ptr);
@@ -62,7 +67,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_005114f0(CPlatform *this_ptr
 void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_00512020(CPlatform *this_ptr,float goal_param,float movement_rate);
 int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_005120b0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_00512200(CPlatform *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_005123e0(CPlatform *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_platfrm_cpp_CPlatform_getBoundingBox_FUN_005123e0(CPlatform *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_00512420(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005127f0(CPlatform *this_ptr,CDemonActor *actor);
 ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_00512a40(CPlatform *this_ptr,SCollisionInfo *collision_info);
@@ -70,46 +75,46 @@ int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_00512a60(CPlatform *
 EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_00512a80(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_00512a90(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00512aa0(CPlatform *this_ptr,CDemonActor *actor);
-void __cdecl core_platfrm_cpp_FUN_00512be0(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_00512be0(CPlatform *this_ptr);
 CPlatform * __cdecl core_platfrm_cpp_CPlatform_dtor_FUN_00512cf0(CPlatform *this_ptr,uint flags);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_00512d60(uint current_crc,uchar data_byte);
-uint engine_pod_cpp_FUN_00512e70(char *param_1,int param_2);
+uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_00512e70(char *filename,int start_offset);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_00512f00(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_00512f70(CPodFile *this_ptr,uint flags);
 int __cdecl engine_pod_cpp_qsortByFilename_FUN_00512f90(char **filename1_ptr,char **filename2_ptr);
-undefined4 engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3);
+int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00512fb0(CPodFile *this_ptr,char *pod_filename,char *out_error_message);
 void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_00513b90(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_00513c30(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_00513ca0(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
-bool engine_pod_cpp_FUN_00513d20(int *param_1);
-void engine_pod_cpp_FUN_00513ff0(int param_1,int param_2);
-void engine_pod_cpp_FUN_00514110(int param_1,int param_2);
-uint engine_pod_cpp_FUN_00514220(int param_1,int param_2);
+int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00513d20(CPodFile *this_ptr);
+CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00513ff0(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
+CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_FUN_00514110(CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record);
+uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_00514220(CPodFile *this_ptr,int file_index);
 CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_00514320(CPod *this_ptr);
 CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_00514350(CPod *this_ptr,uint flags);
-undefined4 engine_pod_cpp_FUN_005143b0(int *param_1,undefined4 param_2,char *param_3);
-void engine_pod_cpp_FUN_005144b0(int *param_1);
+int __cdecl engine_pod_cpp_CPod_mount_FUN_005143b0(CPod *this_ptr,char *pod_filename,char *out_error_message);
+void __cdecl engine_pod_cpp_CPod_remount_FUN_005144b0(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_dismount_FUN_00514560(CPod *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPod_init_FUN_00514600(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00514650(CPod *this_ptr);
 int __cdecl engine_pod_cpp_findFilesByExtension_FUN_005146a0(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00514860(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_005148b0(CPod *this_ptr,CPodSearchContext *search_context);
-void engine_pod_cpp_FUN_005149c0(void);
-undefined4 engine_pod_cpp_FUN_00514bb0(undefined4 param_1,undefined4 param_2);
-int __cdecl engine_pod_cpp_CPod_locateFile_FUN_00514c20(CPod *this_ptr,undefined4 param_2,undefined4 param_3,int *param_4);
+void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_005149c0(CPod *this_ptr,char *pod_filename);
+int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_00514bb0(CPod *this_ptr,char *pod_filename);
+CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_00514c20(CPod *this_ptr,char *base_path,char *filename,int *file_index_out);
 int __cdecl engine_pod_cpp_CPod_findFile_FUN_00514cb0(CPod *this_ptr,SFoundFileInfo *found_file_info);
 void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_00514d00(CPod *this_ptr);
 int __cdecl engine_pod_cpp_CPod_getPodIndexByFilename_FUN_00515150(CPod *this_ptr,char *target_filename);
 void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_005151f0(CPod *this_ptr,int index);
 int __cdecl engine_pod_cpp_findFileInPod_FUN_00515280(SFoundFileInfo *info);
 void __cdecl core_podmain_cpp_staticInit_FUN_005152b0(void);
-void core_podmain_cpp_FUN_005152e0(int param_1);
+void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005152e0(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_00515470(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_00515490(CDemonPod *this_ptr,uint flags);
-void core_podmain_cpp_FUN_005154f0(void);
-void __cdecl engine_prim_c_FUN_00515500(int culling_mode);
-void engine_prim_c_FUN_00515510(int param_1,int param_2);
+void __cdecl core_podmain_cpp_setMaxViewportScanline_FUN_005154f0(int max);
+void __cdecl engine_prim_c_setCullingMode_FUN_00515500(int culling_mode);
+void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_00515510(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_005158e0(int y_value,SSoftwareEdge *edge_ptr);
 void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00515920(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00515990(SRenderVertex *vertices,int vertex_count);
@@ -124,9 +129,9 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00516b00(SRenderVertex *
 void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00516de0(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex_indices,int vertex_count);
 void __cdecl core_prye_cpp_staticInit_FUN_00517c20(void);
-float core_prye_cpp_FUN_00517c90(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-float core_prye_cpp_FUN_00517ce0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-undefined4 core_prye_cpp_FUN_00517d50(CDemonActor *param_1);
+float __cdecl core_prye_cpp_aimBlendWeightCallback_FUN_00517c90(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
+float __cdecl core_prye_cpp_armBlendWeightCallback_FUN_00517ce0(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
+int __cdecl core_prye_cpp_getWeaponInteractionType_FUN_00517d50(CWeapon *weapon);
 float __cdecl core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80(CDemonActor *object);
 CPrye * __cdecl core_prye_cpp_factoryFuncPrye_FUN_00517f50(void);
 CDemonActorType * __cdecl core_prye_cpp_CPrye_getActorType_FUN_00517f70(CPrye *this_ptr);
@@ -134,17 +139,17 @@ CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delta_time);
-void core_prye_cpp_FUN_00518cd0(UOrientationVector *param_1,float param_2);
-void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2);
+void __cdecl core_prye_cpp_CPrye_processFrame_FUN_00518cd0(CPrye *this_ptr,float delta_time);
+void __cdecl core_prye_cpp_CPrye_processMotionEvents_FUN_0051b550(CPrye *this_ptr,float delta_time);
 float __cdecl core_prye_cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(CPrye *this_ptr);
-undefined4 core_prye_cpp_FUN_0051c0f0(void);
-void core_prye_cpp_FUN_0051c100(int param_1);
-void core_prye_cpp_FUN_0051c1c0(CPrye *param_1);
-void core_prye_cpp_FUN_0051e280(int param_1,SPose *param_2);
+float __cdecl core_prye_cpp_CPrye_getFlashlightMaxAngle_FUN_0051c0f0(CPrye *this_ptr);
+CVector3f * __stack_esi core_prye_cpp_CPrye_getHandsMidpoint_FUN_0051c100(CPrye *this_ptr,CVector3f *out_position);
+void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *this_ptr);
+void __cdecl core_prye_cpp_CPrye_extractTurnPose_FUN_0051e280(CPrye *this_ptr,SPose *out_pose);
 void __cdecl core_prye_cpp_CPrye_updateTurnBlending_FUN_0051e380(CPrye *this_ptr,float delta_time);
 void __cdecl core_prye_cpp_CPrye_setPositionAndOrientation_FUN_0051e690(CPrye *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void __cdecl core_prye_cpp_CPrye_makeDrawDecision_FUN_0051e6d0(CPrye *this_ptr);
-void core_prye_cpp_FUN_0051ee10(int param_1,int param_2);
+void __cdecl core_prye_cpp_CPrye_applyArmAimRotation_FUN_0051ee10(CPrye *this_ptr,int arm_side);
 void __cdecl core_prye_cpp_CPrye_updateWeaponPosition_FUN_0051f360(CPrye *this_ptr,int hand_index);
-float * core_prye_cpp_FUN_0051f490(CCharacter *param_1,CDemonActor *param_2,float param_3);
+CMatrix3x4f * __stack3_esi core_prye_cpp_CPrye_computeWeaponAttachXForm_FUN_0051f490(CPrye *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix);
 

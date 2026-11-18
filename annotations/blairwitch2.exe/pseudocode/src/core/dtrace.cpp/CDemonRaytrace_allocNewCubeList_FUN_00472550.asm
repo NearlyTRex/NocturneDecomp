@@ -13,11 +13,11 @@
 ;   TerminatedCString s_core_dtrace_cpp_005d198d
 ;   TerminatedCString s_CDemonRaytrace_allocNewC_005d19a0
 ;   WatcomTypeInfo g_CDemonCubeTypeInfo
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c___vec_new_FUN_005ba2b4
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;
@@ -42,11 +42,11 @@ section .text
     ADD EAX,0x4                         ; 00472579
     PUSH EAX                            ; 0047257c
     CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 0047257d
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005b8df8(uint size)
     ADD ESP,0x4                         ; 00472582
     PUSH EAX                            ; 00472585
     CALL crt_memory.c___vec_new_FUN_005ba2b4 ; 00472586
-        ;   XREF to: 005ba2b4 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_new_FUN_005ba2b4()
+        ;   XREF to: 005ba2b4 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_005ba2b4(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0047258b
     MOV dword ptr [EBX + 0x50],EAX      ; 0047258e
     TEST EAX,EAX                        ; 00472591
@@ -59,10 +59,10 @@ section .text
     MOV EBX,0x5d198d                    ; 00472598 | = "..\\core\\dtrace.cpp"
     MOV ESI,0xae                        ; 0047259d
     PUSH 0x5d19a0                       ; 004725a2 | = "CDemonRaytrace::allocNewCubeList - Ou..."
-    MOV dword ptr [0x01d046a0],EBX      ; 004725a7 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004725ad | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004725b3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 004725a7 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004725ad | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004725b3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004725b8
     POP ESI                             ; 004725bb
     POP EBX                             ; 004725bc

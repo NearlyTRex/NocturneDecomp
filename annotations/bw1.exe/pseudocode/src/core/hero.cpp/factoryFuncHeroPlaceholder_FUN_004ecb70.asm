@@ -15,7 +15,7 @@ section .text
     PUSH 0x17c                          ; 004ecb70
         ;   Label: core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004ecb70
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004ecb75
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004ecb7a
     TEST EAX,EAX                        ; 004ecb7d
     JNZ 0x004ecb82                      ; 004ecb7f

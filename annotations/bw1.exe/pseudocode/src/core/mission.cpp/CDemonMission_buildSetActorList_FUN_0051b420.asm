@@ -7,23 +7,23 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_event.cpp_FUN_004a1d00 at 004a4bdd
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4bdd
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0 at 0051c19b
+;   core_mission.cpp_CDemonMission_loadSet_FUN_0051b610 at 0051b645
 ;   core_mission.cpp_CDemonMission_removeAllActors_FUN_0051b5a0 at 0051b5cf
-;   core_mission.cpp_FUN_0051b610 at 0051b645
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_005e96f7
 ;   TerminatedCString s_CDemonMission_buildSetAc_005e970b
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00555ad0
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005593e0
 ;
@@ -77,10 +77,10 @@ section .text
     JL 0x0051b4a9                       ; 0051b48e
         ;   XREF to: 0051b4a9 (CONDITIONAL_JUMP)  ; LAB_0051b4a9
     PUSH 0x5e970b                       ; 0051b490 | = "CDemonMission::buildSetActorList - To..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0051b495 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0051b49b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0051b4a1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 0051b495 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0051b49b | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051b4a1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051b4a6
     MOV EAX,[0x00622c18]                ; 0051b4a9 | g_CDemonSetPtr
         ;   Label: LAB_0051b4a9

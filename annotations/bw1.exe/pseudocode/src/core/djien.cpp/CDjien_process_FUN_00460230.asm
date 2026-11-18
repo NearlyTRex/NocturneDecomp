@@ -21,25 +21,25 @@
 ;   TerminatedCString s_DjienSacksGone_005d8d32
 ;   TerminatedCString s_DjienHeartDestroyed_005d8d41
 ;   TerminatedCString s_djien_die_wav_4_005d8d55
-;   undefined4 DAT_005d8d68
-;   undefined4 DAT_005d8d70
+;   float g_FLOAT_005d8d68 = 4
+;   double g_DOUBLE_005d8d70 = 0.950000000000000
 ;   ... and 6 more
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
+;   core_charactr.cpp_CCharacter_followActor_FUN_00431cc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
+;   core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
-;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_00431cc0
-;   core_charactr.cpp_FUN_00435320
-;   core_charactr.cpp_FUN_00435380
-;   core_djien.cpp_FUN_00460960
-;   core_djien.cpp_FUN_00460cb0
+;   core_djien.cpp_CDjien_blowApart_FUN_00460cb0
+;   core_djien.cpp_CDjien_hesitate_FUN_00460960
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   ... and 10 more
 ;
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 00524770 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770(CMotionController * this_ptr)
     FLD float ptr [EBP + 0x92]          ; 004602a5
     FMUL float ptr [EBX + 0xc1d0]       ; 004602ab
-    FMUL float ptr [0x005d8d68]         ; 004602b1 | DAT_005d8d68
+    FMUL float ptr [0x005d8d68]         ; 004602b1 | g_FLOAT_005d8d68
     FLD float ptr [EBX + 0x24a4]        ; 004602b7
     ADD ESP,0x4                         ; 004602bd
     MOV EDI,dword ptr [EAX + 0x24]      ; 004602c0
@@ -96,8 +96,8 @@ section .text
     FSTP float ptr [EBX + 0x2524]       ; 004602c6
     FSTP float ptr [ESP]                ; 004602cc
     PUSH EBX                            ; 004602cf
-    CALL core_charactr.cpp_FUN_00435320 ; 004602d0
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 004602d0
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004602d5
     PUSH dword ptr [EBP + 0x92]         ; 004602d8
     PUSH EBX                            ; 004602de
@@ -137,13 +137,13 @@ section .text
     JG 0x004603f1                       ; 0046033e
         ;   XREF to: 004603f1 (CONDITIONAL_JUMP)  ; LAB_004603f1
     PUSH 0x5d8d32                       ; 00460344 | = "DjienSacksGone"
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00460349 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00460349 | g_CEventListPtr
     PUSH ECX                            ; 0046034f
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00460350
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00460355
     PUSH 0x5d8d41                       ; 00460358 | = "DjienHeartDestroyed"
-    MOV ESI,dword ptr [0x0061b4d0]      ; 0046035d | DAT_0061b4d0
+    MOV ESI,dword ptr [0x0061b4d0]      ; 0046035d | g_CEventListPtr
     PUSH ESI                            ; 00460363
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460364
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 004603f1 (CONDITIONAL_JUMP)  ; LAB_004603f1
     MOV EDI,dword ptr [EBX + 0xc2c8]    ; 0046039a
     PUSH EDI                            ; 004603a0
-    MOV EAX,[0x006236b8]                ; 004603a1 | DAT_006236b8
+    MOV EAX,[0x006236b8]                ; 004603a1 | g_CSound_PTR_006236b8
     PUSH EAX                            ; 004603a6
     CALL core_sound.cpp_CSound_killSound_FUN_0057d9d0 ; 004603a7
         ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)
@@ -183,8 +183,8 @@ section .text
     JNZ 0x004603f1                      ; 004603d9
         ;   XREF to: 004603f1 (CONDITIONAL_JUMP)  ; LAB_004603f1
     PUSH EBX                            ; 004603db
-    CALL core_djien.cpp_FUN_00460cb0    ; 004603dc
-        ;   XREF to: 00460cb0 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460cb0()
+    CALL core_djien.cpp_CDjien_blowApart_FUN_00460cb0 ; 004603dc
+        ;   XREF to: 00460cb0 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_blowApart_FUN_00460cb0(CDjien * this_ptr)
     ADD ESP,0x4                         ; 004603e1
     PUSH 0x0                            ; 004603e4
     PUSH 0xf                            ; 004603e6
@@ -214,8 +214,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00460423
     PUSH EBX                            ; 00460429
     LEA ESI,[EBX + 0x2518]              ; 0046042a
-    CALL core_charactr.cpp_FUN_0042d700 ; 00460430
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 00460430
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     FLD float ptr [ESI]                 ; 00460435
     FMUL float ptr [EBP + 0x92]         ; 00460437
     FLD float ptr [ESI + 0x4]           ; 0046043d
@@ -285,8 +285,8 @@ section .text
     LEA EAX,[EBP + 0x12]                ; 004604f0
     PUSH EAX                            ; 004604f3
     PUSH EBX                            ; 004604f4
-    CALL core_charactr.cpp_FUN_0042d750 ; 004604f5
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 004604f5
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004604fa
     PUSH EBX                            ; 004604fd
         ;   Label: LAB_004604fd
@@ -348,12 +348,12 @@ section .text
     LEA ESI,[EBX + 0x158]               ; 00460577
         ;   Label: LAB_00460577
     PUSH ESI                            ; 0046057d
-    CALL core_motion.cpp_FUN_00525020   ; 0046057e
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 0046057e
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 00460583
     ADD ESP,0x4                         ; 00460586
     FLD float ptr [EBP + 0x76]          ; 00460589
-    FCOMP double ptr [0x005d8d70]       ; 0046058c | DAT_005d8d70
+    FCOMP double ptr [0x005d8d70]       ; 0046058c | g_DOUBLE_005d8d70
     FNSTSW AX                           ; 00460592
     SAHF                                ; 00460594
     JBE 0x0046031a                      ; 00460595
@@ -376,8 +376,8 @@ section .text
     PUSH 0x3f800000                     ; 004605cc
     PUSH ECX                            ; 004605d1
     PUSH EBX                            ; 004605d2
-    CALL core_charactr.cpp_FUN_00431cc0 ; 004605d3
-        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431cc0()
+    CALL core_charactr.cpp_CCharacter_followActor_FUN_00431cc0 ; 004605d3
+        ;   XREF to: 00431cc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00431cc0(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     MOV EAX,dword ptr [EBX + 0xc2f4]    ; 004605d8
     ADD ESP,0x14                        ; 004605de
     CMP EAX,0x1                         ; 004605e1
@@ -429,8 +429,8 @@ section .text
     ADD ESP,0x8                         ; 0046067f
     PUSH 0x5d8c9f                       ; 00460682 | = "DjienHome"
     PUSH EBX                            ; 00460687
-    CALL core_charactr.cpp_FUN_00435380 ; 00460688
-        ;   XREF to: 00435380 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435380()
+    CALL core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380 ; 00460688
+        ;   XREF to: 00435380 (UNCONDITIONAL_CALL)  ; CWayPoint * core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_00435380(CCharacter * this_ptr, char * name_pattern)
     ADD ESP,0x8                         ; 0046068d
     MOV dword ptr [EBX + 0xc2f0],EAX    ; 00460690
     JMP 0x00460332                      ; 00460696
@@ -464,7 +464,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0xc2c8]    ; 004606cb
         ;   Label: LAB_004606cb
     PUSH EDX                            ; 004606d1
-    MOV ECX,dword ptr [0x006236b8]      ; 004606d2 | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 004606d2 | g_CSound_PTR_006236b8
     PUSH ECX                            ; 004606d8
     MOV dword ptr [EBX + 0xc9c0],0x1    ; 004606d9
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004606e3
@@ -533,7 +533,7 @@ section .text
     FADDP                               ; 004607aa
     FSTP float ptr [EBP + 0x6e]         ; 004607ac
     MOV EAX,dword ptr [EBP + 0x6e]      ; 004607af
-    MOV EDX,dword ptr [0x01cc804c]      ; 004607b2 | DAT_01cc804c
+    MOV EDX,dword ptr [0x01cc804c]      ; 004607b2 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004607b8
     ADD EAX,EDX                         ; 004607ba
     MOV dword ptr [EBP + 0x6a],EAX      ; 004607bc
@@ -569,7 +569,7 @@ section .text
     JNZ 0x00460332                      ; 0046081f
         ;   XREF to: 00460332 (CONDITIONAL_JUMP)  ; LAB_00460332
     PUSH 0x5d8ca9                       ; 00460825 | = "DjienInZone"
-    MOV EDI,dword ptr [0x0061b4d0]      ; 0046082a | DAT_0061b4d0
+    MOV EDI,dword ptr [0x0061b4d0]      ; 0046082a | g_CEventListPtr
     PUSH EDI                            ; 00460830
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00460831
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -593,8 +593,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0046086d
     PUSH EBX                            ; 00460870
-    CALL core_djien.cpp_FUN_00460960    ; 00460871
-        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460960()
+    CALL core_djien.cpp_CDjien_hesitate_FUN_00460960 ; 00460871
+        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_hesitate_FUN_00460960(CDjien * this_ptr)
     ADD ESP,0x4                         ; 00460876
     JMP 0x00460332                      ; 00460879
         ;   XREF to: 00460332 (UNCONDITIONAL_JUMP)  ; LAB_00460332
@@ -606,8 +606,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0046088e
     PUSH EBX                            ; 00460891
-    CALL core_djien.cpp_FUN_00460960    ; 00460892
-        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460960()
+    CALL core_djien.cpp_CDjien_hesitate_FUN_00460960 ; 00460892
+        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_hesitate_FUN_00460960(CDjien * this_ptr)
     ADD ESP,0x4                         ; 00460897
     JMP 0x00460332                      ; 0046089a
         ;   XREF to: 00460332 (UNCONDITIONAL_JUMP)  ; LAB_00460332
@@ -651,8 +651,8 @@ section .text
         ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00460918
     PUSH EBX                            ; 0046091b
-    CALL core_djien.cpp_FUN_00460960    ; 0046091c
-        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_00460960()
+    CALL core_djien.cpp_CDjien_hesitate_FUN_00460960 ; 0046091c
+        ;   XREF to: 00460960 (UNCONDITIONAL_CALL)  ; void core_djien.cpp_CDjien_hesitate_FUN_00460960(CDjien * this_ptr)
     ADD ESP,0x4                         ; 00460921
     JMP 0x00460332                      ; 00460924
         ;   XREF to: 00460332 (UNCONDITIONAL_JUMP)  ; LAB_00460332

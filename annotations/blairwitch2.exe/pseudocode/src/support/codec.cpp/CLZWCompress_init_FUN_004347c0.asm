@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00442109
-;   core_game.cpp_FUN_004bb9b0 at 004bbd1c
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbd1c
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_init_FUN_004342d0

@@ -34,9 +34,9 @@
 ;   float FLOAT_00597cc5 = -50
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f[200] g_CVector3f_ARRAY_02ddfa28
-;   undefined4 g_CVector3f_ARRAY_02ddfa28[0].y
-;   undefined4 g_CVector3f_ARRAY_02ddfa28[0].z
+;   CVector3f[200] g_WeatherParticlePositions
+;   undefined4 g_WeatherParticlePositions[0].y
+;   undefined4 g_WeatherParticlePositions[0].z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -195,11 +195,11 @@ section .text
     JZ 0x00555991                       ; 0055597b
         ;   XREF to: 00555991 (CONDITIONAL_JUMP)  ; LAB_00555991
     MOV EAX,dword ptr [ESP + 0x18]      ; 0055597d
-    MOV dword ptr [EBX],EAX             ; 00555981 | g_CVector3f_ARRAY_02ddfa28
+    MOV dword ptr [EBX],EAX             ; 00555981 | g_WeatherParticlePositions
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00555983
-    MOV dword ptr [EBX + 0x4],EAX       ; 00555987 | g_CVector3f_ARRAY_02ddfa28[0].y
+    MOV dword ptr [EBX + 0x4],EAX       ; 00555987 | g_WeatherParticlePositions[0].y
     MOV EAX,dword ptr [ESP + 0x20]      ; 0055598a
-    MOV dword ptr [EBX + 0x8],EAX       ; 0055598e | g_CVector3f_ARRAY_02ddfa28[0].z
+    MOV dword ptr [EBX + 0x8],EAX       ; 0055598e | g_WeatherParticlePositions[0].z
     ADD ESI,0x4                         ; 00555991
         ;   Label: LAB_00555991
     ADD EBX,0xc                         ; 00555994

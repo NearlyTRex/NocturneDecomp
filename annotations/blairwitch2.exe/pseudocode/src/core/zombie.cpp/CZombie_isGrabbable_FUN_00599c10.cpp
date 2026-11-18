@@ -11,7 +11,7 @@ int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_00599c10(CZombie *this_ptr,C
 {
   int iVar1;
   
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(grabber,"?CTentacle" + 1);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(grabber,"CTentacle");
   if (iVar1 != 0) {
     return 1;
   }

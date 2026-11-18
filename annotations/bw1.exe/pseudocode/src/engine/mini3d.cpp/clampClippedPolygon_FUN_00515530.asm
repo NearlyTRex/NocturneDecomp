@@ -12,8 +12,8 @@
 ;   engine_mini3d.cpp_drawSurfaceTriangle_FUN_00517240 at 00517333
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d227f8
-;   undefined4 DAT_01d247fc
+;   int g_INT_01d227f8
+;   float g_FLOAT_01d247fc
 ;   undefined4 DAT_01d24804
 ;   undefined4 DAT_01d2483c
 ;   undefined4 DAT_01d24840
@@ -26,7 +26,7 @@ section .text
     PUSH EBX                            ; 00515530
         ;   Label: engine_mini3d.cpp_clampClippedPolygon_FUN_00515530
     SUB ESP,0x4                         ; 00515531
-    MOV EBX,dword ptr [0x01d227f8]      ; 00515534 | DAT_01d227f8
+    MOV EBX,dword ptr [0x01d227f8]      ; 00515534 | g_INT_01d227f8
     MOV EDX,0x1d247fc                   ; 0051553a
     XOR ECX,ECX                         ; 0051553f
     TEST EBX,EBX                        ; 00515541
@@ -36,14 +36,14 @@ section .text
         ;   Label: LAB_00515545
     JZ 0x00515570                       ; 0051554c
         ;   XREF to: 00515570 (CONDITIONAL_JUMP)  ; LAB_00515570
-    FLD float ptr [EDX]                 ; 0051554e | DAT_01d247fc | DAT_01d2483c
+    FLD float ptr [EDX]                 ; 0051554e | g_FLOAT_01d247fc | DAT_01d2483c
     FCOMP float ptr [EDX + 0x8]         ; 00515550 | DAT_01d24804 | DAT_01d24844
     FNSTSW AX                           ; 00515553
     SAHF                                ; 00515555
     JBE 0x00515586                      ; 00515556
         ;   XREF to: 00515586 (CONDITIONAL_JUMP)  ; LAB_00515586
     MOV EAX,dword ptr [EDX + 0x8]       ; 00515558 | DAT_01d24804 | DAT_01d24844
-    MOV dword ptr [EDX],EAX             ; 0051555b | DAT_01d247fc | DAT_01d2483c
+    MOV dword ptr [EDX],EAX             ; 0051555b | g_FLOAT_01d247fc | DAT_01d2483c
         ;   Label: LAB_0051555b
     INC ECX                             ; 0051555d
         ;   Label: LAB_0051555d
@@ -51,7 +51,7 @@ section .text
     CMP ECX,EBX                         ; 00515561
     JL 0x00515545                       ; 00515563
         ;   XREF to: 00515545 (CONDITIONAL_JUMP)  ; LAB_00515545
-    MOV dword ptr [0x01d227f8],EBX      ; 00515565 | DAT_01d227f8
+    MOV dword ptr [0x01d227f8],EBX      ; 00515565 | g_INT_01d227f8
         ;   Label: LAB_00515565
     ADD ESP,0x4                         ; 0051556b
     POP EBX                             ; 0051556e

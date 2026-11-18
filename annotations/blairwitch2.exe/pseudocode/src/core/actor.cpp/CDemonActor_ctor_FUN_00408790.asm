@@ -20,14 +20,14 @@
 ;   ... and 38 more
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005ca42a
-;   undefined1 DAT_005ca42b
-;   undefined1 DAT_005ca42c
-;   undefined1 DAT_005ca42d
-;   undefined1 DAT_005ca42f
-;   undefined1 DAT_005ca430
-;   undefined1 DAT_005ca431
-;   undefined1 DAT_005ca432
+;   TerminatedCString s_none_005ca42a
+;   undefined4 s_one_005ca42a+1
+;   undefined4 s_ne_005ca42a+2
+;   undefined4 s_e_005ca42a+3
+;   TerminatedCString s_str_005ca42f
+;   undefined4 s_tr_005ca42f+1
+;   undefined4 s_r_005ca42f+2
+;   undefined4 s__005ca42f+3
 ;   CDemonActor_vtable g_CDemonActorVTable
 ;   WatcomTypeInfo g_CSimpleParticleSystemTypeInfo
 ;   undefined4 DAT_0078a123
@@ -71,7 +71,7 @@ section .text
     MOV dword ptr [EAX],EDX             ; 004087f3
     LEA EAX,[EBX + 0x30]                ; 004087f5
     MOV dword ptr [EBX + 0x2c],0x0      ; 004087f8
-    MOV ESI,0x5ca42a                    ; 004087ff | DAT_005ca42a
+    MOV ESI,0x5ca42a                    ; 004087ff | = "none"
     MOV dword ptr [EAX + 0x8],0x0       ; 00408804
     PUSH EBX                            ; 0040880b
     MOV EDX,dword ptr [EAX + 0x8]       ; 0040880c
@@ -84,13 +84,13 @@ section .text
     LEA EDI,[EBX + 0x78]                ; 0040881f
     MOV dword ptr [EBX + 0x74],0x3f800000 ; 00408822
     PUSH EDI                            ; 00408829
-    MOV AL,byte ptr [ESI]               ; 0040882a | DAT_005ca42a | DAT_005ca42c
+    MOV AL,byte ptr [ESI]               ; 0040882a | = "none" | s_ne_005ca42a+2
         ;   Label: LAB_0040882a
     MOV byte ptr [EDI],AL               ; 0040882c
     CMP AL,0x0                          ; 0040882e
     JZ 0x00408842                       ; 00408830
         ;   XREF to: 00408842 (CONDITIONAL_JUMP)  ; LAB_00408842
-    MOV AL,byte ptr [ESI + 0x1]         ; 00408832 | DAT_005ca42b | DAT_005ca42d
+    MOV AL,byte ptr [ESI + 0x1]         ; 00408832 | s_one_005ca42a+1 | s_e_005ca42a+3
     ADD ESI,0x2                         ; 00408835
     MOV byte ptr [EDI + 0x1],AL         ; 00408838
     ADD EDI,0x2                         ; 0040883b
@@ -121,18 +121,18 @@ section .text
     MOV dword ptr [EBX + 0x114],0x0     ; 004088b6
     MOV dword ptr [EBX + 0x100],0x0     ; 004088c0
     MOV dword ptr [EBX + 0x104],0x0     ; 004088ca
-    MOV ESI,0x5ca42f                    ; 004088d4 | DAT_005ca42f
+    MOV ESI,0x5ca42f                    ; 004088d4 | = "str"
     MOV dword ptr [EBX + 0x64],0x64     ; 004088d9
     LEA EDI,[EBX + 0x120]               ; 004088e0
     MOV dword ptr [EBX + 0x68],0x78a123 ; 004088e6 | DAT_0078a123
     PUSH EDI                            ; 004088ed
-    MOV AL,byte ptr [ESI]               ; 004088ee | DAT_005ca42f | DAT_005ca431
+    MOV AL,byte ptr [ESI]               ; 004088ee | = "str" | s_r_005ca42f+2
         ;   Label: LAB_004088ee
     MOV byte ptr [EDI],AL               ; 004088f0
     CMP AL,0x0                          ; 004088f2
     JZ 0x00408906                       ; 004088f4
         ;   XREF to: 00408906 (CONDITIONAL_JUMP)  ; LAB_00408906
-    MOV AL,byte ptr [ESI + 0x1]         ; 004088f6 | DAT_005ca430 | DAT_005ca432
+    MOV AL,byte ptr [ESI + 0x1]         ; 004088f6 | s_tr_005ca42f+1 | s__005ca42f+3
     ADD ESI,0x2                         ; 004088f9
     MOV byte ptr [EDI + 0x1],AL         ; 004088fc
     ADD EDI,0x2                         ; 004088ff

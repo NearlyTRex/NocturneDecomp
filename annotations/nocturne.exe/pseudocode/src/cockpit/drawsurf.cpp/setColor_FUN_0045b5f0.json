@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 84,
+    "complexity_score": 68,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 21,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 54,
-    "suspect_count": 2,
+    "pseudocode_lines": 53,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 230
+    "total_lines": 229
   },
   "cross_references": [
     {
@@ -69,56 +68,56 @@
     },
     {
       "addr": "01b4d710",
-      "name": "DAT_01b4d710",
-      "type": "undefined4",
+      "name": "g_INT_01b4d710",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d714",
-      "name": "DAT_01b4d714",
-      "type": "undefined4",
+      "name": "g_PaletteColorIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d71c",
-      "name": "DAT_01b4d71c",
-      "type": "undefined4",
+      "name": "g_UseRGBConversion",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d720",
-      "name": "DAT_01b4d720",
-      "type": "undefined4",
+      "name": "g_OriginalColorValue",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d724",
-      "name": "DAT_01b4d724",
-      "type": "undefined4",
+      "name": "g_ScaledRedComponent",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d728",
-      "name": "DAT_01b4d728",
-      "type": "undefined4",
+      "name": "g_ScaledGreenComponent",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d72c",
-      "name": "DAT_01b4d72c",
-      "type": "undefined4",
+      "name": "g_ScaledBlueComponent",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d730",
-      "name": "DAT_01b4d730",
-      "type": "undefined4",
+      "name": "g_PackedPixelColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d734",
-      "name": "DAT_01b4d734",
-      "type": "undefined4",
+      "name": "g_DuplicatedPixelColor",
+      "type": "int",
       "value": null
     },
     {
@@ -390,14 +389,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x0045b79e) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
     }
   ]
 }

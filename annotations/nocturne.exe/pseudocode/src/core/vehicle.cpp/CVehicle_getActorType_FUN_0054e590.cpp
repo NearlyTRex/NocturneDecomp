@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_vehicle_cpp_CVehicle_getActorType_FUN_0054e590(CVehicle *this_ptr)
 
 {
-  return &g_CVehicleActorType_02dd1190;
+  return &g_CVehicleClassInfo;
 }

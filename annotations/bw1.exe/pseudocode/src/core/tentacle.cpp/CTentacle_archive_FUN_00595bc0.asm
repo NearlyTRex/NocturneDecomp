@@ -7,7 +7,7 @@
 ; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_s_0_modelName_005f776c+2
+;   TerminatedCString s_modelName_005f776e
 ;   TerminatedCString s_guardDistance_005f7778
 ;   TerminatedCString s_motion_state_005f7786
 ;   TerminatedCString s_partStatus_005f7793
@@ -34,7 +34,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_archive_FUN_004a0520 ; 00595bc7
         ;   XREF to: 004a0520 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004a0520(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00595bcc
-    PUSH 0x5f776e                       ; 00595bcf | s_s_0_modelName_005f776c+2
+    PUSH 0x5f776e                       ; 00595bcf | = "modelName"
     LEA ESI,[EBX + 0x158]               ; 00595bd4
     PUSH ESI                            ; 00595bda
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0 ; 00595bdb

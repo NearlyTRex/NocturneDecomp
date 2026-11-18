@@ -1,0 +1,115 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
+  "cross_references": [
+    {
+      "addr": "00522350",
+      "from_addr": "005286ce",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00424b90",
+    "address_range": [
+      [
+        "00424b90",
+        "00424ba8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_setMouthFrame_FUN_00424b90",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_setMouthFrame_FUN_00424b90(CCharacter *this_ptr,int frame,float hold_time)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005286ce",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "COPY": 5,
+      "INT_ADD": 6,
+      "LOAD": 4,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 18
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0042e920",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0042d8a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "frame",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "hold_time",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

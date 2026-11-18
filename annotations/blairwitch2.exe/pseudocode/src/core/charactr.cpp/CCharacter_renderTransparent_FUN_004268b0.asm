@@ -20,18 +20,18 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_007bda98
-;   undefined1 DAT_007bdad8
+;   CDemonGlobe g_CDemonGlobe_007bda98
+;   byte g_BYTE_007bdad8
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
-;   core_box.cpp_FUN_0041a840
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_00426990
-;   core_charactr.cpp_FUN_0042b620
-;   core_set.cpp_FUN_005306e0
+;   core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620
+;   core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0
 ;
 ; *****************************************************************************
 
@@ -44,13 +44,13 @@ section .text
     PUSH EBP                            ; 004268b3
     SUB ESP,0x30                        ; 004268b4
     MOV EBX,dword ptr [ESP + 0x44]      ; 004268b7
-    MOV AH,byte ptr [0x007bdad8]        ; 004268bb | DAT_007bdad8
+    MOV AH,byte ptr [0x007bdad8]        ; 004268bb | g_BYTE_007bdad8
     TEST AH,0x1                         ; 004268c1
     JNZ 0x004268d1                      ; 004268c4
         ;   XREF to: 004268d1 (CONDITIONAL_JUMP)  ; LAB_004268d1
     MOV DL,AH                           ; 004268c6
     OR DL,0x1                           ; 004268c8
-    MOV byte ptr [0x007bdad8],DL        ; 004268cb | DAT_007bdad8
+    MOV byte ptr [0x007bdad8],DL        ; 004268cb | g_BYTE_007bdad8
     PUSH EBX                            ; 004268d1
         ;   Label: LAB_004268d1
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0 ; 004268d2
@@ -69,8 +69,8 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 004268fb
     PUSH EAX                            ; 004268ff
     MOVSD.REP ES:EDI,ESI                ; 00426900
-    CALL core_box.cpp_FUN_0041a840      ; 00426902
-        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840 ; 00426902
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 00426907
     TEST EAX,EAX                        ; 0042690a
     JZ 0x0042692a                       ; 0042690c
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 00424bd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042691e
     PUSH EBX                            ; 00426921
-    CALL core_charactr.cpp_FUN_0042b620 ; 00426922
-        ;   XREF to: 0042b620 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b620()
+    CALL core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620 ; 00426922
+        ;   XREF to: 0042b620 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderPhantomEyes_FUN_0042b620(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00426927
     PUSH EBX                            ; 0042692a
         ;   Label: LAB_0042692a
@@ -92,11 +92,11 @@ section .text
     TEST EBP,EBP                        ; 00426933
     JZ 0x0042694b                       ; 00426935
         ;   XREF to: 0042694b (CONDITIONAL_JUMP)  ; LAB_0042694b
-    PUSH 0x7bda98                       ; 00426937 | DAT_007bda98
+    PUSH 0x7bda98                       ; 00426937 | g_CDemonGlobe_007bda98
     MOV EDX,dword ptr [0x0061b5a8]      ; 0042693c | g_CDemonSetPtr
     PUSH EDX                            ; 00426942 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_005306e0      ; 00426943
-        ;   XREF to: 005306e0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005306e0()
+    CALL core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0 ; 00426943
+        ;   XREF to: 005306e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 00426948
     CMP dword ptr [EBX + 0x3564],0x0    ; 0042694b
         ;   Label: LAB_0042694b

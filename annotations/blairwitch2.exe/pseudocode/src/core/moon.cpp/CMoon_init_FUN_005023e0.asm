@@ -7,8 +7,8 @@
 ; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_menu.cpp_FUN_004ee1a0 at 004ee35a
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee4a0
+;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee35a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_blairwitch_00_005df306

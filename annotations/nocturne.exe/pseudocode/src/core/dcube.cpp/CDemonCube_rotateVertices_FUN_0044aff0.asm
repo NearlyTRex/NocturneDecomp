@@ -31,14 +31,14 @@
 ;   TerminatedCString s_core_dcube_cpp_0057bd80
 ;   TerminatedCString s_CDemonCube_rotateVertici_0057bd92
 ;   float FLOAT_0057bdeb = 127
-;   undefined4 DAT_0059be10
+;   float g_CubeWorldToScreenScale = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_014b847c
-;   undefined4 DAT_014b8480
-;   undefined4 DAT_014b8484
-;   undefined4 DAT_014b8488
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01b4d750
+;   CVector3f g_StaticColorVector
+;   undefined4 g_StaticColorVector.y
+;   undefined4 g_StaticColorVector.z
+;   uchar g_ColorConstantsInitialized
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   undefined4 g_CDemonRenderer_01b4d738.advanced_culling_enabled
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   UVector3 g_ZeroVector
@@ -65,7 +65,7 @@ section .text
     SUB ESP,0x38                        ; 0044aff6
     PUSH 0x2dd1184                      ; 0044aff9 | g_ZeroVector
     MOV EDX,dword ptr [0x005ae704]      ; 0044affe | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0044b004 | DAT_01b4d738
+    PUSH EDX                            ; 0044b004 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0044b005
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044b00a
@@ -77,13 +77,13 @@ section .text
     PUSH 0x1                            ; 0044b01f
         ;   Label: LAB_0044b01f
     MOV EAX,[0x005ae704]                ; 0044b021 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 0044b026 | DAT_01b4d738
+    PUSH EAX                            ; 0044b026 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0044b027
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0044b02c
     PUSH 0x1                            ; 0044b02f
     MOV EDX,dword ptr [0x005ae704]      ; 0044b031 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0044b037 | DAT_01b4d738
+    PUSH EDX                            ; 0044b037 | g_CDemonRenderer_01b4d738
     MOV ESI,dword ptr [EBP + 0x14]      ; 0044b038
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 0044b03b
         ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
@@ -95,7 +95,7 @@ section .text
     MOV dword ptr [EBP + -0x10],ECX     ; 0044b051
     MOV dword ptr [EBP + -0xc],ECX      ; 0044b054
     MOV EDX,dword ptr [EAX + 0x20]      ; 0044b057
-    MOV EDI,dword ptr [EDI]             ; 0044b05a | DAT_01b4d738
+    MOV EDI,dword ptr [EDI]             ; 0044b05a | g_CDemonRenderer_01b4d738
     TEST EDX,EDX                        ; 0044b05c
     JLE 0x0044b0b6                      ; 0044b05e
         ;   XREF to: 0044b0b6 (CONDITIONAL_JUMP)  ; LAB_0044b0b6
@@ -103,13 +103,13 @@ section .text
         ;   Label: LAB_0044b060
     MOV EAX,ESI                         ; 0044b063
     FLD float ptr [EAX]                 ; 0044b065
-    FMUL float ptr [0x0059be10]         ; 0044b067 | DAT_0059be10
+    FMUL float ptr [0x0059be10]         ; 0044b067 | g_CubeWorldToScreenScale
     FISTP dword ptr [EBX]               ; 0044b06d
     FLD float ptr [EAX + 0x4]           ; 0044b06f
-    FMUL float ptr [0x0059be10]         ; 0044b072 | DAT_0059be10
+    FMUL float ptr [0x0059be10]         ; 0044b072 | g_CubeWorldToScreenScale
     FISTP dword ptr [EBX + 0x4]         ; 0044b078
     FLD float ptr [EAX + 0x8]           ; 0044b07b
-    FMUL float ptr [0x0059be10]         ; 0044b07e | DAT_0059be10
+    FMUL float ptr [0x0059be10]         ; 0044b07e | g_CubeWorldToScreenScale
     FISTP dword ptr [EBX + 0x8]         ; 0044b084
     LEA EAX,[EBP + -0x38]               ; 0044b087
     PUSH EAX                            ; 0044b08a
@@ -140,16 +140,16 @@ section .text
     JNZ 0x0044b0d7                      ; 0044b0bf
         ;   XREF to: 0044b0d7 (CONDITIONAL_JUMP)  ; LAB_0044b0d7
     MOV EAX,[0x005ae704]                ; 0044b0c1 | g_CDemonRenderer_PTR_005ae704
-    MOV EDX,dword ptr [EAX + 0x18]      ; 0044b0c6 | DAT_01b4d750
+    MOV EDX,dword ptr [EAX + 0x18]      ; 0044b0c6 | g_CDemonRenderer_01b4d738.advanced_culling_enabled
     TEST EDX,EDX                        ; 0044b0c9
     JNZ 0x0044b0d7                      ; 0044b0cb
         ;   XREF to: 0044b0d7 (CONDITIONAL_JUMP)  ; LAB_0044b0d7
     PUSH EDX                            ; 0044b0cd
-    PUSH EAX                            ; 0044b0ce | DAT_01b4d738
+    PUSH EAX                            ; 0044b0ce | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0044b0cf
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0044b0d4
-    MOV AH,byte ptr [0x014b8488]        ; 0044b0d7 | DAT_014b8488
+    MOV AH,byte ptr [0x014b8488]        ; 0044b0d7 | g_ColorConstantsInitialized
         ;   Label: LAB_0044b0d7
     TEST AH,0x1                         ; 0044b0dd
     JZ 0x0044b22c                       ; 0044b0e0
@@ -215,7 +215,7 @@ section .text
     AND EAX,0xff                        ; 0044b18b
     PUSH EAX                            ; 0044b190
     MOV EDI,dword ptr [0x005ae704]      ; 0044b191 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDI                            ; 0044b197 | DAT_01b4d738
+    PUSH EDI                            ; 0044b197 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0044b198
         ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     ADD ESP,0x10                        ; 0044b19d
@@ -244,13 +244,13 @@ section .text
     PUSH 0x1                            ; 0044b1d6
         ;   Label: LAB_0044b1d6
     MOV EAX,[0x005ae704]                ; 0044b1d8 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 0044b1dd | DAT_01b4d738
+    PUSH EAX                            ; 0044b1dd | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0044b1de
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0044b1e3
     PUSH 0x0                            ; 0044b1e6
     MOV EDX,dword ptr [0x005ae704]      ; 0044b1e8 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0044b1ee | DAT_01b4d738
+    PUSH EDX                            ; 0044b1ee | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 0044b1ef
         ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 0044b1f4
@@ -278,10 +278,10 @@ section .text
     MOV DL,AH                           ; 0044b231
     MOV EAX,0xbf13cd3a                  ; 0044b233
     OR DL,0x1                           ; 0044b238
-    MOV dword ptr [0x014b847c],EDI      ; 0044b23b | DAT_014b847c
-    MOV dword ptr [0x014b8484],EDI      ; 0044b241 | DAT_014b8484
-    MOV [0x014b8480],EAX                ; 0044b247 | DAT_014b8480
-    MOV byte ptr [0x014b8488],DL        ; 0044b24c | DAT_014b8488
+    MOV dword ptr [0x014b847c],EDI      ; 0044b23b | g_StaticColorVector
+    MOV dword ptr [0x014b8484],EDI      ; 0044b241 | g_StaticColorVector.z
+    MOV [0x014b8480],EAX                ; 0044b247 | g_StaticColorVector.y
+    MOV byte ptr [0x014b8488],DL        ; 0044b24c | g_ColorConstantsInitialized
     JMP 0x0044b0e6                      ; 0044b252
         ;   XREF to: 0044b0e6 (UNCONDITIONAL_JUMP)  ; LAB_0044b0e6
 

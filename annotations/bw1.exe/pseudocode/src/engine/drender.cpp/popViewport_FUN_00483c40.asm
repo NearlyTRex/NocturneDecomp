@@ -11,8 +11,8 @@
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0 at 00462b52
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0 at 004f952b
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fee08
-;   core_setdir.cpp_FUN_00559f80 at 0055a500
-;   core_setdir.cpp_FUN_0055b330 at 0055b494
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80 at 0055a500
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_0055b330 at 0055b494
 ;
 ; Called Functions:
 ;   engine_matrix.c_popViewport_FUN_00509210

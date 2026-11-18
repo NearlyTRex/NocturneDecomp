@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad4 = 005671e4
-;   undefined4 DAT_02de4e20
+;   FileListNode* g_AllocatedListHead
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
@@ -27,7 +27,7 @@ section .text
     PUSH EDI                            ; 0056aefe
     MOV EDI,dword ptr [ESP + 0x10]      ; 0056aeff
     CALL dword ptr [0x005c1ad0]         ; 0056af03 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad0
-    MOV EBX,dword ptr [0x02de4e20]      ; 0056af09 | DAT_02de4e20
+    MOV EBX,dword ptr [0x02de4e20]      ; 0056af09 | g_AllocatedListHead
     XOR ESI,ESI                         ; 0056af0f
     TEST EBX,EBX                        ; 0056af11
     JZ 0x0056af35                       ; 0056af13

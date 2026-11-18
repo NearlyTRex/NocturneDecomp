@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_smiley_cpp_CSmiley_getActorType_FUN_0051fce0(CSmiley *this_ptr)
 
 {
-  return &g_CSmileyActorType_02da8aa4;
+  return &g_CSmileyClassInfo;
 }

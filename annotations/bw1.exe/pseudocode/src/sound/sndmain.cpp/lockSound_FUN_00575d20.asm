@@ -22,13 +22,13 @@
 ;   TerminatedCString s_lockSound_unable_to_crea_005f43d0
 ;   TerminatedCString s_sound_sndmain_cpp_005f43fa
 ;   TerminatedCString s_lockSound_lock_imbalance_005f440f
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c807e8
-;   undefined4 DAT_02c807ec
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   HANDLE g_SoundMutex
+;   int g_SoundLockCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   wincore_winrun.cpp_createMutex_FUN_005b3740
 ;   wincore_winrun.cpp_waitForMutex_FUN_005b3750
 ;
@@ -39,12 +39,12 @@ section .text
     PUSH ESI                            ; 00575d20
         ;   Label: sound_sndmain.cpp_lockSound_FUN_00575d20
     PUSH EDI                            ; 00575d21
-    CMP dword ptr [0x02c807e8],0x0      ; 00575d22 | DAT_02c807e8
+    CMP dword ptr [0x02c807e8],0x0      ; 00575d22 | g_SoundMutex
     JNZ 0x00575d5e                      ; 00575d29
         ;   XREF to: 00575d5e (CONDITIONAL_JUMP)  ; LAB_00575d5e
     CALL wincore_winrun.cpp_createMutex_FUN_005b3740 ; 00575d2b
         ;   XREF to: 005b3740 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createMutex_FUN_005b3740()
-    MOV [0x02c807e8],EAX                ; 00575d30 | DAT_02c807e8
+    MOV [0x02c807e8],EAX                ; 00575d30 | g_SoundMutex
     TEST EAX,EAX                        ; 00575d35
     JNZ 0x00575d5e                      ; 00575d37
         ;   XREF to: 00575d5e (CONDITIONAL_JUMP)  ; LAB_00575d5e
@@ -52,21 +52,21 @@ section .text
     MOV ECX,0x5f43bb                    ; 00575d3a | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x17d4                      ; 00575d3f
     PUSH 0x5f43d0                       ; 00575d44 | = "lockSound - unable to create mutex ob..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00575d49 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00575d4f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00575d55
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00575d49 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00575d4f | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00575d55
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575d5a
     POP EBX                             ; 00575d5d
-    MOV ESI,dword ptr [0x02c807e8]      ; 00575d5e | DAT_02c807e8
+    MOV ESI,dword ptr [0x02c807e8]      ; 00575d5e | g_SoundMutex
         ;   Label: LAB_00575d5e
     PUSH ESI                            ; 00575d64
     CALL wincore_winrun.cpp_waitForMutex_FUN_005b3750 ; 00575d65
         ;   XREF to: 005b3750 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_waitForMutex_FUN_005b3750(HANDLE mutex_handle)
-    MOV EDI,dword ptr [0x02c807ec]      ; 00575d6a | DAT_02c807ec
+    MOV EDI,dword ptr [0x02c807ec]      ; 00575d6a | g_SoundLockCount
     INC EDI                             ; 00575d70
     ADD ESP,0x4                         ; 00575d71
-    MOV dword ptr [0x02c807ec],EDI      ; 00575d74 | DAT_02c807ec
+    MOV dword ptr [0x02c807ec],EDI      ; 00575d74 | g_SoundLockCount
     CMP EDI,0x63                        ; 00575d7a
     JG 0x00575d82                       ; 00575d7d
         ;   XREF to: 00575d82 (CONDITIONAL_JUMP)  ; LAB_00575d82
@@ -77,10 +77,10 @@ section .text
         ;   Label: LAB_00575d82
     MOV EDX,0x17df                      ; 00575d87
     PUSH 0x5f440f                       ; 00575d8c | = "lockSound - lock imbalance?"
-    MOV [0x01d1d400],EAX                ; 00575d91 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00575d96 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00575d9c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 00575d91 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00575d96 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00575d9c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575da1
     POP EDI                             ; 00575da4
     POP ESI                             ; 00575da5

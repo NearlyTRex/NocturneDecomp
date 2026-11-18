@@ -2,15 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 66,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 58
   },
@@ -38,21 +38,21 @@
   "globals": [
     {
       "addr": "005c1f54",
-      "name": "DAT_005c1f54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     },
     {
       "addr": "005c1f58",
-      "name": "DAT_005c1f58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1f58",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005c1f90",
-      "name": "DAT_005c1f90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
     }
   ],
   "param_estimates": {
@@ -138,36 +138,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_005c1f58",
-      "severity": "mild",
-      "text": "if (DAT_005c1f58 < 0x00000014) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005c1f58",
-      "severity": "mild",
-      "text": "if (0 < (int)DAT_005c1f58) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 15,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "if (*(int *)(DAT_005c1f54 + iVar2) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005c1f58",
-      "severity": "mild",
-      "text": "} while (iVar2 < (int)(DAT_005c1f58 * 4));",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_IOControlBlock",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_IOControlBlock->standard_handles + iVar2) == 0) {",
+      "type": "pointer_cast"
     }
   ]
 }

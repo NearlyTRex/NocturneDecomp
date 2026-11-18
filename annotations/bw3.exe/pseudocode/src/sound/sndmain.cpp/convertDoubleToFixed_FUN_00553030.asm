@@ -9,7 +9,7 @@
 ; int *            Stack[0x10]:4   out_fractional_part
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2b7a
+;   double g_DOUBLE_005d2b7a = 4294967296
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005a3600
@@ -34,7 +34,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 0055304d
     ADD ESP,0x8                         ; 00553051
     CALL crt_math.c_round_FUN_005a3120  ; 00553054
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP qword ptr [ESP]               ; 00553059
     MOV EAX,dword ptr [ESP]             ; 0055305c
     MOV dword ptr [ESP + 0x4],EBX       ; 0055305f
@@ -42,11 +42,11 @@ section .text
     FILD qword ptr [ESP]                ; 00553066
     FSUBR double ptr [ESP + 0x10]       ; 00553069
     MOV EDX,dword ptr [ESP + 0x18]      ; 0055306d
-    FMUL double ptr [0x005d2b7a]        ; 00553071 | DAT_005d2b7a
+    FMUL double ptr [0x005d2b7a]        ; 00553071 | g_DOUBLE_005d2b7a
     MOV dword ptr [EDX],EAX             ; 00553077
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00553079
     CALL crt_math.c_round_FUN_005a3120  ; 0055307d
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP qword ptr [ESP]               ; 00553082
     MOV EAX,dword ptr [ESP]             ; 00553085
     MOV dword ptr [EDX],EAX             ; 00553088

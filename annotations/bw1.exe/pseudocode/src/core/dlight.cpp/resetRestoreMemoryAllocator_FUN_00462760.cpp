@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_00462760(void)
 
 {
-  _DAT_01b2d370 = 0;
+  g_ShadowRestoreAllocator = 0;
   return;
 }

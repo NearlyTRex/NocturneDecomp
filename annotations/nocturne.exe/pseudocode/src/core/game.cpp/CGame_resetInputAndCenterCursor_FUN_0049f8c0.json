@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 46,
+    "complexity_score": 15,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 55
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -109,14 +106,14 @@
     },
     {
       "addr": "01c78418",
-      "name": "DAT_01c78418",
-      "type": "undefined4",
+      "name": "g_InputResetFlag",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c7841c",
-      "name": "DAT_01c7841c",
-      "type": "undefined4",
+      "name": "g_StoredCameraValue",
+      "type": "int",
       "value": null
     },
     {
@@ -258,6 +255,18 @@
       "class": "logic-change",
       "ratio": 0.7838
     },
+    "bw1.exe": {
+      "addr": "004d19d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7073
+    },
+    "bw3.exe": {
+      "addr": "004ba490",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7073
+    },
     "nocedit.exe": {
       "addr": "004dce70",
       "by": "name",
@@ -281,22 +290,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c781c0",
-      "severity": "mild",
-      "text": "memset(&DAT_01c781c0,0,600);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

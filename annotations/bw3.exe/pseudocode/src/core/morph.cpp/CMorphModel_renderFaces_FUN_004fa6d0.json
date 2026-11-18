@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 167,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 11,
+    "pseudocode_lines": 46,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 147
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -81,32 +79,32 @@
   "globals": [
     {
       "addr": "005c96eb",
-      "name": "DAT_005c96eb",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c96eb",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "005c96f3",
-      "name": "DAT_005c96f3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c96f3",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c6e24c",
-      "name": "DAT_01c6e24c",
-      "type": "undefined4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "int",
       "value": null
     }
   ],
@@ -241,80 +239,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(this_ptr->textures + iVar1));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0(DAT_005f2afc,poly,0x267);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 35,
+      "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +",
@@ -322,7 +248,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 27,
+      "line": 28,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).",

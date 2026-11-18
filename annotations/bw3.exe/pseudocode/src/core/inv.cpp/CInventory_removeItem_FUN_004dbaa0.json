@@ -37,7 +37,7 @@
     {
       "addr": "00524940",
       "from_addr": "00524c0c",
-      "name": "core_prye.cpp_FUN_00524940",
+      "name": "core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -63,7 +63,7 @@
     {
       "addr": "004085a0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_004085a0"
+      "name": "core_actor.cpp_deleteActor_FUN_004085a0"
     },
     {
       "addr": "005a54c0",
@@ -122,7 +122,7 @@
       {
         "call_addr": "00524c0c",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_00524940",
+        "caller": "core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,6 +167,18 @@
     "pcode_op_count": 269
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004db8e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7626
+    },
+    "bw1.exe": {
+      "addr": "004f8d00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.95
+    },
     "nocedit.exe": {
       "addr": "004fea70",
       "by": "name",
@@ -212,15 +224,15 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 33,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((iVar4 - iVar2) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((iVar3 - iVar1) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 24,
       "match": "memmove",
       "severity": "moderate",

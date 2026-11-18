@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 180,
+    "complexity_score": 63,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 10,
-    "suspect_types": [
-      "extra_output",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 241
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 63,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 239
   },
   "cross_references": [
     {
@@ -26,7 +22,7 @@
     {
       "addr": "0052af80",
       "from_addr": "0052b077",
-      "name": "sound_mp3.cpp_FUN_0052af80",
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +42,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c03a0",
@@ -87,26 +83,26 @@
     },
     {
       "addr": "006202e8",
-      "name": "DAT_006202e8",
-      "type": "undefined4",
+      "name": "g_MpegSampleRateTable",
+      "type": "double[2][4]",
       "value": null
     },
     {
       "addr": "00620328",
-      "name": "DAT_00620328",
-      "type": "undefined4",
+      "name": "g_MpegBitrateTable",
+      "type": "int[2][3][15]",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -116,7 +112,7 @@
       {
         "call_addr": "0052b077",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_0052af80",
+        "caller": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -260,86 +256,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_006202e8",
-      "severity": "mild",
-      "text": "fVar6 = (float10)*(double *)(&DAT_006202e8 + pSVar3->sampling_rate_index * 8 + iVar4 * 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "if (((iVar5 == 0x30) && (0x37 < extraout_EDX)) ||",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "else if ((iVar5 == 0x30) || (extraout_EDX < 0x60)) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "if ((iVar5 == 0x20) || (0x30 < extraout_EDX)) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"MPEG Layer 2 - pick_table - can't load tables!  File: %s\",&DAT_01d404c8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_01d404c8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"js_bound bad layer/modext (%d/%d)  File: %s\",iVar5,iVar2,&DAT_01d404c8);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

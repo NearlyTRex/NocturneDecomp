@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *this_ptr,CVector3f *out_points_array)
 
@@ -23,7 +22,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *
   
   iVar3 = 1;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_4c,_DAT_01c78b18);
+                     (&(this_ptr->base).base.model,&local_4c,g_INT_01c78b18);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
     out_points_array->y = pCVar1->y;
@@ -31,7 +30,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                       (&(this_ptr->base).base.model,&local_40,_DAT_01c78b2c);
+                       (&(this_ptr->base).base.model,&local_40,g_INT_01c78b2c);
     if (out_points_array + 1 != pCVar1) {
       out_points_array[1].x = pCVar1->x;
       out_points_array[1].y = pCVar1->y;
@@ -41,7 +40,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                       (&(this_ptr->base).base.model,&local_34,_DAT_01c78b30);
+                       (&(this_ptr->base).base.model,&local_34,g_INT_01c78b30);
     pCVar2 = out_points_array + iVar3;
     if (pCVar2 != pCVar1) {
       pCVar2->x = pCVar1->x;
@@ -52,7 +51,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                       (&(this_ptr->base).base.model,&local_1c,_DAT_01c78b3c);
+                       (&(this_ptr->base).base.model,&local_1c,g_INT_01c78b3c);
     pCVar2 = out_points_array + iVar3;
     if (pCVar2 != pCVar1) {
       pCVar2->x = pCVar1->x;
@@ -65,7 +64,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *
     return iVar3;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_28,_DAT_01c78b44);
+                     (&(this_ptr->base).base.model,&local_28,g_INT_01c78b44);
   pCVar2 = out_points_array + iVar3;
   if (pCVar2 != pCVar1) {
     pCVar2->x = pCVar1->x;

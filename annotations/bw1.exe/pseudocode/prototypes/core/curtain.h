@@ -25,13 +25,13 @@ CCurtain * __cdecl CCurtain::ctor(CCurtain *this_ptr);
 // Address: 0044a380
 void __cdecl CCurtain::setup(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_FUN_0044aa10
+// Original: core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0044aa10
 // Address: 0044aa10
-void FUN_0044aa10(int param_1);
+void __cdecl CCurtain::updateWorldPositions(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_FUN_0044ab20
+// Original: core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0044ab20
 // Address: 0044ab20
-void FUN_0044ab20(int param_1);
+void __cdecl CCurtain::updateLocalPositions(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_solveConstraints_FUN_0044ac10
 // Address: 0044ac10
@@ -59,7 +59,7 @@ ECollisionType __cdecl CCurtain::getCollisionType(CCurtain *this_ptr,SCollisionI
 
 // Original: core_curtain.cpp_CCurtain_getBoundingBox_FUN_0044c260
 // Address: 0044c260
-CBoundingBox3D * __cdecl CCurtain::getBoundingBox(CCurtain *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CCurtain::getBoundingBox(CCurtain *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_curtain.cpp_CCurtain_archive_FUN_0044c2e0
 // Address: 0044c2e0

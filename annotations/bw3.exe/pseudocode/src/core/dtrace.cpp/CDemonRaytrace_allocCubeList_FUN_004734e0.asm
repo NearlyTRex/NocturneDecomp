@@ -7,11 +7,11 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_calloc_FUN_005a4b20
 ;
 ; *****************************************************************************
@@ -28,7 +28,7 @@ section .text
     PUSH EAX                            ; 004734f1
     PUSH 0x58                           ; 004734f2
     CALL crt_memory.c_calloc_FUN_005a4b20 ; 004734f4
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_005a4b20(uint count, uint size)
     ADD ESP,0x8                         ; 004734f9
     MOV dword ptr [EBX + 0x4c],EAX      ; 004734fc
     TEST EAX,EAX                        ; 004734ff
@@ -42,10 +42,10 @@ section .text
     MOV EDI,0x5bc801                    ; 00473507
     MOV EBP,0x88                        ; 0047350c
     PUSH 0x5bc814                       ; 00473511
-    MOV dword ptr [0x01d71de0],EDI      ; 00473516 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0047351c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00473522
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 00473516 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 0047351c | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00473522
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00473527
     POP EDI                             ; 0047352a
     POP EBP                             ; 0047352b

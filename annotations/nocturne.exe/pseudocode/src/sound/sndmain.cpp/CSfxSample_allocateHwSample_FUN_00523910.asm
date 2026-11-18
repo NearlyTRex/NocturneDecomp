@@ -15,11 +15,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_allocateHwSample_failed_005927ce
-;   undefined4 DAT_02dc1ed8
+;   int g_LastSampleAccessIndex
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].buffer_id
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00564a70
@@ -60,7 +60,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 00523942
     MOV EBP,dword ptr [ESP + 0x18]      ; 00523946
     MOV EDI,dword ptr [ESP + 0x18]      ; 0052394a
-    MOV ECX,dword ptr [0x02dc8318]      ; 0052394e | DAT_02dc8318
+    MOV ECX,dword ptr [0x02dc8318]      ; 0052394e | g_CSoundDevicePtr
     MOV EAX,dword ptr [EAX + 0x108]     ; 00523954
     MOV ESI,dword ptr [ESI + 0x10c]     ; 0052395a
     MOV EBP,dword ptr [EBP + 0x138]     ; 00523960
@@ -74,7 +74,7 @@ section .text
     PUSH ESI                            ; 00523974
     MOV EBX,dword ptr [ESP + 0x8]       ; 00523975
     PUSH EBX                            ; 00523979
-    MOV EAX,[0x02dc8318]                ; 0052397a | DAT_02dc8318
+    MOV EAX,[0x02dc8318]                ; 0052397a | g_CSoundDevicePtr
     PUSH EDI                            ; 0052397f
     MOV EDX,dword ptr [EAX]             ; 00523980
     PUSH EAX                            ; 00523982
@@ -83,7 +83,7 @@ section .text
     TEST EAX,EAX                        ; 00523989
     JNZ 0x005239c5                      ; 0052398b
         ;   XREF to: 005239c5 (CONDITIONAL_JUMP)  ; LAB_005239c5
-    MOV EAX,[0x02dc1ed8]                ; 0052398d | DAT_02dc1ed8
+    MOV EAX,[0x02dc1ed8]                ; 0052398d | g_LastSampleAccessIndex
     XOR EBX,EBX                         ; 00523992
     INC EAX                             ; 00523994
         ;   Label: LAB_00523994

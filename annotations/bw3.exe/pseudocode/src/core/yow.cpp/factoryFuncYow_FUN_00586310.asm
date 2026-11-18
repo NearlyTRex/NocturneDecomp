@@ -15,7 +15,7 @@ section .text
     PUSH 0xd078                         ; 00586310
         ;   Label: core_yow.cpp_factoryFuncYow_FUN_00586310
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00586315
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0058631a
     TEST EAX,EAX                        ; 0058631d
     JNZ 0x00586322                      ; 0058631f

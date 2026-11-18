@@ -11,9 +11,9 @@
 ;
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
-;   core_muzzle.cpp_FUN_0059d7f0
-;   core_muzzle.cpp_FUN_0059d990
-;   core_muzzle.cpp_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80
+;   core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990
+;   core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   core_weaver.cpp_CRobin_processStates_FUN_005a60d0
 ;
@@ -57,17 +57,17 @@ section .text
     PUSH 0x5f0643                       ; 005a5f15
     LEA ESI,[EBX + 0x10af8]             ; 005a5f1a
     PUSH ESI                            ; 005a5f20
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a5f21
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a5f21
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a5f26
     PUSH 0x5f0651                       ; 005a5f29
     PUSH ESI                            ; 005a5f2e
-    CALL core_muzzle.cpp_FUN_0059d990   ; 005a5f2f
-        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d990()
+    CALL core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990 ; 005a5f2f
+        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a5f34
     PUSH ESI                            ; 005a5f37
-    CALL core_muzzle.cpp_FUN_0059dc80   ; 005a5f38
-        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dc80()
+    CALL core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80 ; 005a5f38
+        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80(SStateMachine * this_ptr)
     ADD ESP,0x4                         ; 005a5f3d
     MOV EAX,EBX                         ; 005a5f40
     MOV dword ptr [EBX + 0x2ac],0x0     ; 005a5f42

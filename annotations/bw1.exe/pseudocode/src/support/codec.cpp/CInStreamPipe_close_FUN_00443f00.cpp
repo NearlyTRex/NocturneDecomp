@@ -27,7 +27,7 @@ void __cdecl support_codec_cpp_CInStreamPipe_close_FUN_00443f00(CInStreamPipe *t
     this_ptr->source = (void *)0x0;
   }
   if (this_ptr->buffer != (char *)0x0) {
-    FUN_005c09f0(this_ptr->buffer);
+    debugFree(this_ptr->buffer);
     this_ptr->buffer = (char *)0x0;
   }
   this_ptr->buffer_size = 0;

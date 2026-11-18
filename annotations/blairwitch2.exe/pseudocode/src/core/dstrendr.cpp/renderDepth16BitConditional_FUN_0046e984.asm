@@ -8,8 +8,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_004697a0 at 0046982f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01c35e74
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ReciprocalLookupTable[1]
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     SHR EAX,0x10                        ; 0046e993
         ;   Label: LAB_0046e993
     SHR ECX,0x10                        ; 0046e996
-    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046e999 | DAT_01c2a38c
+    MOV EBX,dword ptr [EBX*0x4 + 0x1c2a38c] ; 0046e999 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 0046e9a0
     JLE 0x0046e9d5                      ; 0046e9a2
         ;   XREF to: 0046e9d5 (CONDITIONAL_JUMP)  ; LAB_0046e9d5
@@ -36,7 +36,7 @@ section .text
     ADD EBX,EAX                         ; 0046e9a6
     MOV EAX,dword ptr [EDI + 0x28]      ; 0046e9a8
     SUB EAX,dword ptr [ESI + 0x28]      ; 0046e9ab
-    IMUL dword ptr [ECX*0x4 + 0x1c35e74] ; 0046e9ae | DAT_01c35e74
+    IMUL dword ptr [ECX*0x4 + 0x1c35e74] ; 0046e9ae | g_ReciprocalLookupTable[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 0046e9b5
     MOV EAX,ESI                         ; 0046e9b8
         ;   Label: LAB_0046e9b8

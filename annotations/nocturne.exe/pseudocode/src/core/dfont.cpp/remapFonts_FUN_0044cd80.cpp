@@ -9,6 +9,6 @@
 void __cdecl core_dfont_cpp_remapFonts_FUN_0044cd80(void)
 
 {
-  engine_font_cpp_CBitFont_remapPalette_FUN_004931b0(g_CBitFont_PTR_014b98f8);
+  engine_font_cpp_CBitFont_remapPalette_FUN_004931b0(g_MediumFont);
   return;
 }

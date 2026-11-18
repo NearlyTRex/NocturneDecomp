@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(float param_1)
+; CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(float angle_radians,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -11,19 +13,19 @@
 ;
 ; XREF[18]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429ba1
-;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d3f
+;   core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0 at 005a0d3f
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0 at 004562e1
+;   core_doc.cpp_CDoc_extractTurnPose_FUN_00455170 at 00455211
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455ad5
-;   core_doc.cpp_FUN_00450c60 at 00451721
-;   core_doc.cpp_FUN_00453d80 at 00453ff8
-;   core_doc.cpp_FUN_00455170 at 00455211
-;   core_doc.cpp_FUN_00455d10 at 00455dc3
-;   core_doc.cpp_FUN_004562a0 at 004562e1
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00451721
+;   core_doc.cpp_CDoc_updateLantern_FUN_00455d10 at 00455dc3
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80 at 00453ff8
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbdf
 ;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c76d
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eedae
+;   float g_FLOAT_005eedae = 0.5
 ;
 ; *****************************************************************************
 
@@ -34,7 +36,7 @@ section .text
     SUB ESP,0x18                        ; 00593fe1
     MOV EDX,ESI                         ; 00593fe4
     FLD float ptr [ESP + 0x20]          ; 00593fe6
-    FMUL float ptr [0x005eedae]         ; 00593fea | DAT_005eedae
+    FMUL float ptr [0x005eedae]         ; 00593fea | g_FLOAT_005eedae
     FLD ST0                             ; 00593ff0
     FCOS                                ; 00593ff2
     FXCH                                ; 00593ff4

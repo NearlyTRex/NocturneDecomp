@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_00504e20(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
 
 {
   if (bits_per_byte != 8) {
-    _DAT_01d046a0 = "..\\sound\\mp3.cpp";
-    _DAT_01d046a4 = 800;
-    core_main_c_FUN_004e4500("hputbuf - Not Supported yet!!  File: %s",&DAT_01d23558);
+    g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
+    g_INT_01d046a4 = 800;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("hputbuf - Not Supported yet!!  File: %s");
   }
   (this_ptr->memory_bitstream).frame_buffer[(this_ptr->memory_bitstream).buffer_size_limit & 0xfff]
        = byte_value;

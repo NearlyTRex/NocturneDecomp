@@ -38,8 +38,8 @@
 ;   double DOUBLE_00586182 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01cae288
-;   undefined4 g_CWeaponActorType_02ddf970.name_hash
+;   int[18] g_IcePickIndices
+;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -267,7 +267,7 @@ section .text
     CALL core_inv.cpp_CInventory_updateInventory_FUN_004c1850 ; 004ba22f
         ;   XREF to: 004c1850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateInventory_FUN_004c1850(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004ba234
-    MOV EDI,dword ptr [0x02ddf9a8]      ; 004ba237 | g_CWeaponActorType_02ddf970.name_hash
+    MOV EDI,dword ptr [0x02ddf9a8]      ; 004ba237 | g_CWeaponClassInfo.name_hash
     PUSH EDI                            ; 004ba23d
     MOV EAX,dword ptr [EBX + 0x24f0]    ; 004ba23e
     PUSH EAX                            ; 004ba244
@@ -303,7 +303,7 @@ section .text
     JNZ 0x004ba2e3                      ; 004ba29b
         ;   XREF to: 004ba2e3 (CONDITIONAL_JUMP)  ; LAB_004ba2e3
     PUSH 0x51b650                       ; 004ba29d
-    MOV ECX,dword ptr [0x01cae288]      ; 004ba2a2 | DAT_01cae288
+    MOV ECX,dword ptr [0x01cae288]      ; 004ba2a2 | g_IcePickIndices
     PUSH ECX                            ; 004ba2a8
     LEA EAX,[EBX + 0x1fa4c]             ; 004ba2a9
     PUSH dword ptr [EBX + 0x1fa58]      ; 004ba2af
@@ -447,7 +447,7 @@ section .text
     TEST EAX,EAX                        ; 004ba40f
     JZ 0x004ba580                       ; 004ba411
         ;   XREF to: 004ba580 (CONDITIONAL_JUMP)  ; LAB_004ba580
-    MOV EDX,dword ptr [0x02ddf9a8]      ; 004ba417 | g_CWeaponActorType_02ddf970.name_hash
+    MOV EDX,dword ptr [0x02ddf9a8]      ; 004ba417 | g_CWeaponClassInfo.name_hash
     PUSH EDX                            ; 004ba41d
     MOV ECX,dword ptr [EBX + 0x24f0]    ; 004ba41e
     PUSH ECX                            ; 004ba424

@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_lookForHead_005fa953+1
+;   TerminatedCString s_lookForHead_005fa954
 ;   TerminatedCString s_f_zombie_die_wav_005fa960
 ;   TerminatedCString s_zom_d0_wav_005fa972
 ;   TerminatedCString s_f_zombie_hit_wav_005fa97e
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 005be800 (CONDITIONAL_JUMP)  ; LAB_005be800
     PUSH 0x0                            ; 005be896
         ;   Label: LAB_005be896
-    PUSH 0x5fa954                       ; 005be898 | s_lookForHead_005fa953+1
+    PUSH 0x5fa954                       ; 005be898 | = "lookForHead"
     LEA EAX,[EBX + 0x158]               ; 005be89d
     PUSH EAX                            ; 005be8a3
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 005be8a4

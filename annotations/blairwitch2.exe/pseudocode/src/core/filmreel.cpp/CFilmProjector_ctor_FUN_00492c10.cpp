@@ -21,7 +21,8 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00492c10(CFil
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pcVar3 = "CFilmReel";
   *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 100) = &g_CFilmProjectorVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5d5297);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
+            (this_ptr_00,"filmreel.kfm");
   pcVar4 = this_ptr_00[-1].model_name + 0x6c;
   this_ptr_00[1].part_visibility_flags[0x1a] = 0;
   do {
@@ -33,7 +34,7 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00492c10(CFil
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = (char *)0x5d52ae;
+  pcVar4 = "none";
   this_ptr_00[1].part_visibility_flags[0x1b] = 0;
   piVar5 = this_ptr_00[1].part_visibility_flags + 1;
   this_ptr_00[1].part_visibility_flags[0] = 0;

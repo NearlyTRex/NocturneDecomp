@@ -37,10 +37,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_fog_005ce646
-;   undefined4 DAT_005ce64d
+;   TerminatedCString s_rb_005ce64d
 ;   TerminatedCString s_backdrop_005ce650
 ;   TerminatedCString s_backdrop_s_005ce659
-;   undefined4 DAT_005ce665
+;   TerminatedCString s_wb_005ce665
 ;   TerminatedCString s_core_dcamera_cpp_005ce668
 ;   TerminatedCString s_Can_t_create_s_005ce67c
 ;   TerminatedCString s_core_dcamera_cpp_005ce68c
@@ -49,8 +49,8 @@
 ;   TerminatedCString s_Not_all_bytes_consumed_c_005ce6c9
 ;   TerminatedCString s_core_dcamera_cpp_005ce6ef
 ;   TerminatedCString s_Error_writing_compressed_005ce703
-;   undefined4 DAT_005ce726
-;   undefined4 DAT_0060a00c
+;   double g_BackdropColorMultiplier = 256
+;   TerminatedCString s_EFD_0060a00c
 ;   ... and 20 more
 ;
 ; Called Functions:
@@ -58,17 +58,17 @@
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_0043af40
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_0043b1a0
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0043b380
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;   support_codec.cpp_CCodec_dtor_FUN_00433e90
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00434770
+;   support_codec.cpp_CLZWCompress_finalize_FUN_00434910
 ;   support_codec.cpp_CLZWCompress_init_FUN_004347c0
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00434270
-;   support_codec.cpp_FUN_00433ff0
-;   support_codec.cpp_FUN_00434910
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -85,21 +85,21 @@ section .text
     PUSH 0x146592c                      ; 00441f5f
     MOV ESI,0x10                        ; 00441f64
     XOR ECX,ECX                         ; 00441f69
-    MOV dword ptr [0x013083cc],EDX      ; 00441f6b | DAT_013083cc
-    MOV dword ptr [0x01465920],ECX      ; 00441f71 | DAT_01465920
-    MOV dword ptr [0x01465924],ECX      ; 00441f77 | DAT_01465924
+    MOV dword ptr [0x013083cc],EDX      ; 00441f6b | g_BackdropSaveActive
+    MOV dword ptr [0x01465920],ECX      ; 00441f71 | g_ImageProcessingState1
+    MOV dword ptr [0x01465924],ECX      ; 00441f77 | g_ImageProcessingState2
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0043af40 ; 00441f7d
         ;   XREF to: 0043af40 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_0043af40(SFogGrid * fog)
-    MOV EAX,[0x01466938]                ; 00441f82 | DAT_01466938
-    MOV EDI,dword ptr [0x0146693c]      ; 00441f87 | DAT_0146693c
-    MOV EBP,dword ptr [0x01466940]      ; 00441f8d | DAT_01466940
+    MOV EAX,[0x01466938]                ; 00441f82 | g_CameraFogGrid.scroll_vector.x
+    MOV EDI,dword ptr [0x0146693c]      ; 00441f87 | g_CameraFogGrid.scroll_vector.y
+    MOV EBP,dword ptr [0x01466940]      ; 00441f8d | g_CameraFogGrid.scroll_vector.z
     ADD ESP,0x4                         ; 00441f93
     OR EAX,EDI                          ; 00441f96
-    MOV dword ptr [0x01465928],ESI      ; 00441f98 | DAT_01465928
+    MOV dword ptr [0x01465928],ESI      ; 00441f98 | g_ImageBytesPerPixel
     OR EAX,EBP                          ; 00441f9e
     JNZ 0x00441fac                      ; 00441fa0
         ;   XREF to: 00441fac (CONDITIONAL_JUMP)  ; LAB_00441fac
-    MOV dword ptr [0x01465928],0x1      ; 00441fa2 | DAT_01465928
+    MOV dword ptr [0x01465928],0x1      ; 00441fa2 | g_ImageBytesPerPixel
     MOV EAX,dword ptr [ESP + 0x210]     ; 00441fac
         ;   Label: LAB_00441fac
     ADD EAX,0x40                        ; 00441fb3
@@ -110,12 +110,12 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00441fc1
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00441fc6
-    PUSH 0x5ce64d                       ; 00441fc9 | DAT_005ce64d
+    PUSH 0x5ce64d                       ; 00441fc9 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 00441fce
     PUSH EAX                            ; 00441fd2
     PUSH 0x5ce650                       ; 00441fd3 | = "backdrop"
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00441fd8
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00441fd8
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00441fdd
     TEST EAX,EAX                        ; 00441fe0
     JNZ 0x00442539                      ; 00441fe2
@@ -128,7 +128,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00441ff8
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00441ffd
-    PUSH 0x5ce665                       ; 00442000 | DAT_005ce665
+    PUSH 0x5ce665                       ; 00442000 | = "wb"
     LEA EAX,[ESP + 0x104]               ; 00442005
     PUSH EAX                            ; 0044200c
     LEA EAX,[ESP + 0x1b8]               ; 0044200d
@@ -149,10 +149,10 @@ section .text
     MOV EDX,0x5ce668                    ; 00442039 | = "..\\core\\dcamera.cpp"
     MOV ECX,0x1325                      ; 0044203e
     PUSH 0x5ce67c                       ; 00442043 | = "Can't create %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00442048 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0044204e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00442054
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00442048 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 0044204e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00442054
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00442059
     PUSH 0x1000                         ; 0044205c
         ;   Label: LAB_0044205c
@@ -160,13 +160,13 @@ section .text
     LEA EAX,[ESP + 0x1b8]               ; 00442066
     PUSH EAX                            ; 0044206d
     CALL support_trstream.cpp_COutStreamFile_write_FUN_0057dca0 ; 0044206e
-        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
-    MOV EBX,dword ptr [0x01466948]      ; 00442073 | DAT_01466948
+        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile * this_ptr, void * data, int size)
+    MOV EBX,dword ptr [0x01466948]      ; 00442073 | g_CameraFogGrid.density_multiplier
     ADD ESP,0xc                         ; 00442079
     TEST EBX,EBX                        ; 0044207c
     JZ 0x0044254d                       ; 0044207e
         ;   XREF to: 0044254d (CONDITIONAL_JUMP)  ; LAB_0044254d
-    MOV EAX,[0x0060a00c]                ; 00442084 | DAT_0060a00c
+    MOV EAX,[0x0060a00c]                ; 00442084 | = "EFD"
     PUSH 0x3                            ; 00442089
     MOV dword ptr [ESP + 0x1bc],EAX     ; 0044208b | LAB_00444645
     LEA EAX,[ESP + 0x1bc]               ; 00442092
@@ -174,26 +174,26 @@ section .text
     LEA EAX,[ESP + 0x1b8]               ; 0044209a
     PUSH EAX                            ; 004420a1
     CALL support_trstream.cpp_COutStreamFile_write_FUN_0057dca0 ; 004420a2
-        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
+        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile * this_ptr, void * data, int size)
     ADD ESP,0xc                         ; 004420a7
     MOV EAX,dword ptr [ESP + 0x210]     ; 004420aa
-    FLD double ptr [0x005ce726]         ; 004420b1 | DAT_005ce726
+    FLD double ptr [0x005ce726]         ; 004420b1 | g_BackdropColorMultiplier
     FLD float ptr [EAX + 0x4]           ; 004420b7
     FMUL ST1                            ; 004420ba
     CALL crt_math.c_round_FUN_005b7ff0  ; 004420bc
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1a4]       ; 004420c1
     FLD float ptr [EAX + 0x8]           ; 004420c8
     FMUL ST1                            ; 004420cb
     PUSH 0x6                            ; 004420cd
     CALL crt_math.c_round_FUN_005b7ff0  ; 004420cf
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x1ac]       ; 004420d4
     FMUL float ptr [EAX + 0xc]          ; 004420db
     PUSH 0x10000                        ; 004420de
     LEA EAX,[ESP + 0x16c]               ; 004420e3
     CALL crt_math.c_round_FUN_005b7ff0  ; 004420ea
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EAX                            ; 004420ef
     FISTP dword ptr [ESP + 0x1b8]       ; 004420f0
     CALL support_codec.cpp_CLZWCompress_ctor_FUN_00434770 ; 004420f7
@@ -205,7 +205,7 @@ section .text
     CALL support_codec.cpp_CLZWCompress_init_FUN_004347c0 ; 00442109
         ;   XREF to: 004347c0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWCompress_init_FUN_004347c0(CLZWCompress * this_ptr)
     ADD ESP,0x4                         ; 0044210e
-    MOV EDI,dword ptr [0x01465928]      ; 00442111 | DAT_01465928
+    MOV EDI,dword ptr [0x01465928]      ; 00442111 | g_ImageBytesPerPixel
     MOV dword ptr [ESP + 0x1f4],ESI     ; 00442117
     TEST EDI,EDI                        ; 0044211e
     JLE 0x004424e0                      ; 00442120
@@ -249,7 +249,7 @@ section .text
     CMP EDX,EBP                         ; 004421d0
     JLE 0x00442228                      ; 004421d2
         ;   XREF to: 00442228 (CONDITIONAL_JUMP)  ; LAB_00442228
-    MOV EAX,dword ptr [ESI]             ; 004421d4 | DAT_00b1b198 | DAT_00b1b698 | DAT_00b1b69c
+    MOV EAX,dword ptr [ESI]             ; 004421d4 | g_PrecomputedDepthBuffer[320] | g_PrecomputedDepthBuffer[640] | g_PrecomputedDepthBuffer[641]
         ;   Label: LAB_004421d4
     CMP EAX,0x7fffffff                  ; 004421d6
     JZ 0x00442550                       ; 004421db
@@ -268,7 +268,7 @@ section .text
     JBE 0x0044220d                      ; 00442206
         ;   XREF to: 0044220d (CONDITIONAL_JUMP)  ; LAB_0044220d
     MOV EAX,0xff                        ; 00442208
-    MOV byte ptr [EBX],AL               ; 0044220d | DAT_01326e60
+    MOV byte ptr [EBX],AL               ; 0044220d | g_CameraPlaneWorkBuffer.pixels[1][0]
         ;   Label: LAB_0044220d
     MOV EAX,dword ptr [ESP + 0x210]     ; 0044220f
         ;   Label: LAB_0044220f
@@ -354,7 +354,7 @@ section .text
     JGE 0x00442558                      ; 0044236d
         ;   XREF to: 00442558 (CONDITIONAL_JUMP)  ; LAB_00442558
     MOV EAX,0xffffffe0                  ; 00442373
-    MOV byte ptr [ESI + 0x1326d20],AL   ; 00442378 | DAT_01326d20 | DAT_01326d21
+    MOV byte ptr [ESI + 0x1326d20],AL   ; 00442378 | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[0][1]
         ;   Label: LAB_00442378
     ADD EAX,EBX                         ; 0044237e
     MOV EDI,dword ptr [ESP + 0x1f4]     ; 00442380
@@ -397,13 +397,13 @@ section .text
     PUSH EAX                            ; 0044241d
     LEA EAX,[ESP + 0x1c0]               ; 0044241e
     PUSH EAX                            ; 00442425
-    PUSH 0x1326d20                      ; 00442426 | DAT_01326d20
+    PUSH 0x1326d20                      ; 00442426 | g_CameraPlaneWorkBuffer
     LEA EAX,[ESP + 0x170]               ; 0044242b
     MOV EBP,0x12c00                     ; 00442432
     PUSH EAX                            ; 00442437
     MOV dword ptr [ESP + 0x1cc],EBP     ; 00442438
-    CALL support_codec.cpp_FUN_00433ff0 ; 0044243f
-        ;   XREF to: 00433ff0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00433ff0()
+    CALL support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0 ; 0044243f
+        ;   XREF to: 00433ff0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CCodec_processFromBuffer_FUN_00433ff0(CCodec * this_ptr, char * input, int * input_length, void * ostream)
     ADD ESP,0x10                        ; 00442444
     TEST EAX,EAX                        ; 00442447
     JZ 0x0044256b                       ; 00442449
@@ -417,10 +417,10 @@ section .text
     MOV EBX,0x5ce6b5                    ; 00442461 | = "..\\core\\dcamera.cpp"
     MOV ESI,0x1394                      ; 00442466
     PUSH 0x5ce6c9                       ; 0044246b | = "Not all bytes consumed compressing %s"
-    MOV dword ptr [0x01d046a0],EBX      ; 00442470 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00442476 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044247c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 00442470 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00442476 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044247c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00442481
     LEA EAX,[ESP + 0x1b0]               ; 00442484
         ;   Label: LAB_00442484
@@ -435,7 +435,7 @@ section .text
         ;   Label: LAB_0044249c
     MOV EAX,dword ptr [ESP + 0x1c0]     ; 004424a3
     MOV EDX,dword ptr [ESP + 0x1f4]     ; 004424aa
-    MOV ECX,dword ptr [0x01465928]      ; 004424b1 | DAT_01465928
+    MOV ECX,dword ptr [0x01465928]      ; 004424b1 | g_ImageBytesPerPixel
     ADD EBP,0x12c00                     ; 004424b7
     ADD EAX,0x12c00                     ; 004424bd
     INC EDX                             ; 004424c2
@@ -450,8 +450,8 @@ section .text
     PUSH EAX                            ; 004424e7
     LEA EAX,[ESP + 0x168]               ; 004424e8
     PUSH EAX                            ; 004424ef
-    CALL support_codec.cpp_FUN_00434910 ; 004424f0
-        ;   XREF to: 00434910 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434910()
+    CALL support_codec.cpp_CLZWCompress_finalize_FUN_00434910 ; 004424f0
+        ;   XREF to: 00434910 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_00434910(CLZWCompress * this_ptr, COutStream * ostream)
     ADD ESP,0x8                         ; 004424f5
     PUSH 0x0                            ; 004424f8
     LEA EAX,[ESP + 0x16c]               ; 004424fa
@@ -482,7 +482,7 @@ section .text
     PUSH EAX                            ; 00442539
         ;   Label: LAB_00442539
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 0044253a
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0044253f
     ADD ESP,0x1fc                       ; 00442542
     POP EBP                             ; 00442548
@@ -494,7 +494,7 @@ section .text
         ;   Label: LAB_0044254d
     JMP 0x0044251e                      ; 0044254e
         ;   XREF to: 0044251e (UNCONDITIONAL_JUMP)  ; LAB_0044251e
-    MOV byte ptr [EBX],0xff             ; 00442550 | DAT_01326fa0
+    MOV byte ptr [EBX],0xff             ; 00442550 | g_CameraPlaneWorkBuffer.pixels[2][0]
         ;   Label: LAB_00442550
     JMP 0x0044220f                      ; 00442553
         ;   XREF to: 0044220f (UNCONDITIONAL_JUMP)  ; LAB_0044220f
@@ -505,15 +505,15 @@ section .text
     MOV EAX,0x3f                        ; 00442561
     JMP 0x00442378                      ; 00442566
         ;   XREF to: 00442378 (UNCONDITIONAL_JUMP)  ; LAB_00442378
-    MOV dword ptr [0x01d046a0],0x5ce68c ; 0044256b | DAT_01d046a0 | = "..\\core\\dcamera.cpp"
+    MOV dword ptr [0x01d046a0],0x5ce68c ; 0044256b | g_CHAR_PTR_01d046a0 | = "..\\core\\dcamera.cpp"
         ;   Label: LAB_0044256b
     LEA EAX,[ESP + 0x100]               ; 00442575
     PUSH EAX                            ; 0044257c
     MOV EDX,0x1392                      ; 0044257d
     PUSH 0x5ce6a0                       ; 00442582 | = "Error compressing %s"
-    MOV dword ptr [0x01d046a4],EDX      ; 00442587 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044258d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a4],EDX      ; 00442587 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044258d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00442592
     JMP 0x0044244f                      ; 00442595
         ;   XREF to: 0044244f (UNCONDITIONAL_JUMP)  ; LAB_0044244f
@@ -523,10 +523,10 @@ section .text
     MOV EDI,0x5ce6ef                    ; 004425a2 | = "..\\core\\dcamera.cpp"
     MOV EBP,0x1395                      ; 004425a7
     PUSH 0x5ce703                       ; 004425ac | = "Error writing compressed file %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 004425b1 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004425b7 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004425bd
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 004425b1 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 004425b7 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004425bd
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004425c2
     JMP 0x0044249c                      ; 004425c5
         ;   XREF to: 0044249c (UNCONDITIONAL_JUMP)  ; LAB_0044249c

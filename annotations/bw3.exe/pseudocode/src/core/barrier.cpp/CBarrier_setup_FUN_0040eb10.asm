@@ -7,7 +7,7 @@
 ; CBarrier *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600530
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
@@ -22,7 +22,7 @@ section .text
     PUSH EBX                            ; 0040eb15
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 0040eb16
         ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408890(CDemonActor * this_ptr)
-    MOV EAX,[0x00600530]                ; 0040eb1b | DAT_00600530
+    MOV EAX,[0x00600530]                ; 0040eb1b | g_CDemonMission_PTR_00600530
     MOV EAX,dword ptr [EAX + 0x1008]    ; 0040eb20
     MOV dword ptr [EBX + 0xf8],0x0      ; 0040eb26
     ADD ESP,0x4                         ; 0040eb30

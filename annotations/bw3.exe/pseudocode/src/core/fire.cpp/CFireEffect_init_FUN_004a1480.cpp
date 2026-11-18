@@ -6,177 +6,176 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_init_FUN_004a1480(CFireEffect *this_ptr)
 
 {
   CSmokeParticle *this_ptr_00;
   CSpark *pCVar1;
   CFirefly *pCVar3;
-  uint *puVar4;
+  CMuzzleFlash *pCVar4;
   CGlassParticle *pCVar5;
-  byte *puVar7;
+  CBulletTrail *pCVar7;
   CFireball *pCVar9;
   CRock *pCVar11;
   CLeaf *pCVar13;
   CFirefly *pCVar15;
-  CExplosion *pCVar16;
-  CToss *this_ptr_01;
-  CCrater *this_ptr_02;
-  CLightningBolt *pCVar17;
-  CTrail *this_ptr_03;
-  CShell *pCVar18;
-  CPopcorn *pCVar20;
-  CRainDrop *pCVar22;
-  CDemonActorType *this_ptr_04;
+  CExplosion *this_ptr_01;
+  CToss *this_ptr_02;
+  CCrater *this_ptr_03;
+  CGunFlame *this_ptr_04;
+  CLightningBolt *pCVar16;
+  CTrail *this_ptr_05;
+  CShell *pCVar17;
+  CPopcorn *pCVar19;
+  CRainDrop *pCVar21;
+  CStormEffect *this_ptr_06;
   CSpark *pCVar2;
   CGlassParticle *pCVar6;
-  byte *puVar8;
+  CBulletTrail *pCVar8;
   CFireball *pCVar10;
   CRock *pCVar12;
   CLeaf *pCVar14;
-  CShell *pCVar19;
-  CPopcorn *pCVar21;
-  CRainDrop *pCVar23;
+  CShell *pCVar18;
+  CPopcorn *pCVar20;
+  CRainDrop *pCVar22;
   
-  this_ptr_00 = (CSmokeParticle *)&DAT_01c74ea0;
-  _DAT_01c74e9c = 0;
+  this_ptr_00 = g_SmokeParticlePool;
+  g_SmokeParticleAllocIndex = 0;
   do {
     core_fire_cpp_CSmokeParticle_reset_FUN_00496d50(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CSmokeParticle *)&DAT_01c8aea0);
-  _DAT_01c8aea4 = 0;
-  _DAT_01c8aea0 = 0;
-  _DAT_01cb4eb0 = 0;
+  } while (this_ptr_00 != g_SmokeParticlePool + sizeof(g_SmokeParticlePool) / sizeof(g_SmokeParticlePool[0]));
+  g_BulletHoleAllocIndex = 0;
+  g_INT_01c8aea0 = 0;
+  g_INT_01cb4eb0 = 0;
   pCVar1 = g_SparkPool;
   do {
     pCVar2 = pCVar1 + 1;
     (pCVar1->base).lifetime_remaining = 0.0;
     pCVar1 = pCVar2;
-  } while (pCVar2 != (CSpark *)&DAT_01cba2b4);
+  } while (pCVar2 != g_SparkPool + sizeof(g_SparkPool) / sizeof(g_SparkPool[0]));
   pCVar15 = CFirefly_ARRAY_01cba2b8;
   do {
     pCVar3 = pCVar15 + 1;
     (pCVar15->base).lifetime_remaining = 0.0;
     pCVar15 = pCVar3;
-  } while (pCVar3 != (CFirefly *)&DAT_01cbb9b8);
-  puVar4 = (uint *)&DAT_01cbb9bc;
+  } while (pCVar3 != (CFirefly *)&g_MuzzleFlashAllocIndex);
+  pCVar4 = g_MuzzleFlashPool;
   do {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 0x17;
-  } while (puVar4 != (uint *)&DAT_01cbc0ec);
-  _DAT_01c8eea8 = 0;
-  _DAT_01c8eeac = 0;
-  _DAT_01cbc0ec = 0;
+    pCVar4->frames_remaining = 0;
+    pCVar4 = pCVar4 + 1;
+  } while (pCVar4 != g_MuzzleFlashPool + sizeof(g_MuzzleFlashPool) / sizeof(g_MuzzleFlashPool[0]));
+  g_INT_01c8eea8 = 0;
+  g_INT_01c8eeac = 0;
+  g_INT_01cbc0ec = 0;
   pCVar5 = CGlassParticle_ARRAY_01cbc0f0;
   do {
     pCVar6 = pCVar5 + 1;
     (pCVar5->base).lifetime_remaining = 0.0;
     pCVar5 = pCVar6;
-  } while (pCVar6 != (CGlassParticle *)&DAT_01cefd10);
-  puVar8 = (byte *)0x1cefd14;
+  } while (pCVar6 != (CGlassParticle *)&g_INT_01cefd10);
+  pCVar7 = g_BulletTrailPool;
   do {
-    puVar7 = puVar8 + 0x24;
-    *(uint *)(puVar8 + 0x20) = 0;
-    puVar8 = puVar7;
-  } while (puVar7 != &DAT_01cefe7c);
-  _DAT_01cefe7c = 0;
+    pCVar8 = pCVar7 + 1;
+    pCVar7->frames_remaining = 0;
+    pCVar7 = pCVar8;
+  } while (pCVar8 != g_BulletTrailPool + sizeof(g_BulletTrailPool) / sizeof(g_BulletTrailPool[0]));
+  g_FireballAllocIndex = 0;
   pCVar9 = g_FireballPool;
   do {
     pCVar10 = pCVar9 + 1;
     (pCVar9->base).lifetime_remaining = 0.0;
     pCVar9 = pCVar10;
-  } while (pCVar10 != (CFireball *)&DAT_01cf2780);
-  _DAT_01cf2780 = 0;
+  } while (pCVar10 != g_FireballPool + sizeof(g_FireballPool) / sizeof(g_FireballPool[0]));
+  g_RockAllocIndex = 0;
   pCVar11 = g_RockPool;
   do {
     pCVar12 = pCVar11 + 1;
     (pCVar11->base).lifetime_remaining = 0.0;
     pCVar11 = pCVar12;
-  } while (pCVar12 != (CRock *)&DAT_01cf3b84);
-  _DAT_01cf3b84 = 0;
+  } while (pCVar12 != g_RockPool + sizeof(g_RockPool) / sizeof(g_RockPool[0]));
+  g_INT_01cf3b84 = 0;
   pCVar13 = CLeaf_ARRAY_01cf3b88;
   do {
     pCVar14 = pCVar13 + 1;
     (pCVar13->base).lifetime_remaining = 0.0;
     pCVar13 = pCVar14;
-  } while (pCVar14 != (CLeaf *)&DAT_01cf5088);
-  _DAT_01cba2b4 = 0;
+  } while (pCVar14 != (CLeaf *)&g_LaserBeamActiveCount);
+  g_TossAllocIndex = 0;
   pCVar15 = CFirefly_ARRAY_01cba2b8;
   do {
     pCVar3 = pCVar15 + 1;
     (pCVar15->base).lifetime_remaining = 0.0;
     pCVar15 = pCVar3;
-  } while (pCVar3 != (CFirefly *)&DAT_01cbb9b8);
-  pCVar16 = (CExplosion *)0x1cf6090;
-  _DAT_01cf608c = 0;
+  } while (pCVar3 != (CFirefly *)&g_MuzzleFlashAllocIndex);
+  this_ptr_01 = g_CExplosion_ARRAY_01cf6090;
+  g_INT_01cf608c = 0;
   do {
-    core_fire_cpp_CExplosion_ctor_FUN_0049c670(pCVar16);
-    pCVar16 = pCVar16 + 1;
-  } while (pCVar16 != (CExplosion *)&DAT_01cf61d0);
-  this_ptr_01 = g_TossPool;
-  _DAT_01cf61d0 = 0;
-  do {
-    core_fire_cpp_CToss_reset_FUN_0049cec0(this_ptr_01);
+    core_fire_cpp_CExplosion_ctor_FUN_0049c670(this_ptr_01);
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (CToss *)&DAT_01cfaff4);
-  this_ptr_02 = (CCrater *)0x1cfaff8;
-  _DAT_01cfaff4 = 0;
+  } while (this_ptr_01 != g_CExplosion_ARRAY_01cf6090 + sizeof(g_CExplosion_ARRAY_01cf6090) / sizeof(g_CExplosion_ARRAY_01cf6090[0]));
+  this_ptr_02 = g_TossPool;
+  g_INT_01cf61d0 = 0;
   do {
-    core_fire_cpp_CCrater_reset_FUN_0049d570(this_ptr_02);
+    core_fire_cpp_CToss_reset_FUN_0049cec0(this_ptr_02);
     this_ptr_02 = this_ptr_02 + 1;
-  } while (this_ptr_02 != (CCrater *)&DAT_01cfb8b8);
-  pCVar16 = (CExplosion *)0x1cfb8bc;
-  _DAT_01cfb8b8 = 0;
+  } while (this_ptr_02 != g_TossPool + sizeof(g_TossPool) / sizeof(g_TossPool[0]));
+  this_ptr_03 = g_CCrater_ARRAY_01cfaff8;
+  g_INT_01cfaff4 = 0;
   do {
-    core_fire_cpp_CExplosion_ctor_FUN_0049c670(pCVar16);
-    pCVar16 = (CExplosion *)&pCVar16[1].lifetime;
-  } while (pCVar16 != (CExplosion *)&DAT_01d00eac);
-  pCVar17 = (CLightningBolt *)0x1d00eb0;
-  _DAT_01d00eac = 0;
-  do {
-    core_fire_cpp_CLightningBolt_reset_FUN_0049f410(pCVar17);
-    pCVar17 = pCVar17 + 1;
-  } while (pCVar17 != (CLightningBolt *)&DAT_01d01ab0);
-  _DAT_01d01ab0 = 0;
-  this_ptr_03 = (CTrail *)0x1d01ab4;
-  do {
-    core_fire_cpp_CTrail_reset_FUN_004a05d0(this_ptr_03);
+    core_fire_cpp_CCrater_reset_FUN_0049d570(this_ptr_03);
     this_ptr_03 = this_ptr_03 + 1;
-  } while (this_ptr_03 != (CTrail *)&DAT_01d028c4);
-  _DAT_01d028c4 = 0;
-  pCVar18 = g_ShellPool;
+  } while (this_ptr_03 != g_CCrater_ARRAY_01cfaff8 + sizeof(g_CCrater_ARRAY_01cfaff8) / sizeof(g_CCrater_ARRAY_01cfaff8[0]));
+  this_ptr_04 = g_CGunFlame_ARRAY_01cfb8bc;
+  g_LightningBoltAllocIndex = 0;
   do {
-    pCVar19 = pCVar18 + 1;
-    (pCVar18->base).lifetime_remaining = 0.0;
-    pCVar18 = pCVar19;
-  } while (pCVar19 != (CShell *)&DAT_01d03b88);
-  _DAT_01d03b88 = 0;
-  pCVar20 = g_PopcornPool;
+    core_fire_cpp_CExplosion_ctor_FUN_0049c670((CExplosion *)this_ptr_04);
+    this_ptr_04 = this_ptr_04 + 1;
+  } while (this_ptr_04 != g_CGunFlame_ARRAY_01cfb8bc + sizeof(g_CGunFlame_ARRAY_01cfb8bc) / sizeof(g_CGunFlame_ARRAY_01cfb8bc[0]));
+  pCVar16 = g_CLightningBolt_ARRAY_01d00eb0;
+  g_INT_01d00eac = 0;
   do {
-    pCVar21 = pCVar20 + 1;
-    (pCVar20->base).lifetime_remaining = 0.0;
-    pCVar20 = pCVar21;
-  } while (pCVar21 != (CPopcorn *)&DAT_01d07b8c);
-  _DAT_01d07b8c = 0;
-  pCVar22 = g_RainDropPool;
+    core_fire_cpp_CLightningBolt_reset_FUN_0049f410(pCVar16);
+    pCVar16 = pCVar16 + 1;
+  } while (pCVar16 != g_CLightningBolt_ARRAY_01d00eb0 + sizeof(g_CLightningBolt_ARRAY_01d00eb0) / sizeof(g_CLightningBolt_ARRAY_01d00eb0[0]));
+  g_INT_01d01ab0 = 0;
+  this_ptr_05 = g_CTrail_ARRAY_01d01ab4;
   do {
-    pCVar23 = pCVar22 + 1;
-    (pCVar22->base).lifetime_remaining = 0.0;
-    pCVar22 = pCVar23;
-  } while (pCVar23 != (CRainDrop *)&DAT_01d0bb90);
-  pCVar17 = (CLightningBolt *)0x1d0bb94;
-  _DAT_01d0bb90 = 0;
+    core_fire_cpp_CTrail_reset_FUN_004a05d0(this_ptr_05);
+    this_ptr_05 = this_ptr_05 + 1;
+  } while (this_ptr_05 != g_CTrail_ARRAY_01d01ab4 + sizeof(g_CTrail_ARRAY_01d01ab4) / sizeof(g_CTrail_ARRAY_01d01ab4[0]));
+  g_INT_01d028c4 = 0;
+  pCVar17 = g_ShellPool;
   do {
-    core_fire_cpp_CLightningBolt_reset_FUN_0049f410(pCVar17);
-    pCVar17 = (CLightningBolt *)&pCVar17[10].start_position;
-  } while (pCVar17 != (CLightningBolt *)&DAT_01d0ce7c);
-  this_ptr_04 = (CDemonActorType *)0x1d0ce80;
-  _DAT_01d0ce7c = 0;
+    pCVar18 = pCVar17 + 1;
+    (pCVar17->base).lifetime_remaining = 0.0;
+    pCVar17 = pCVar18;
+  } while (pCVar18 != g_ShellPool + sizeof(g_ShellPool) / sizeof(g_ShellPool[0]));
+  g_RainDropAllocIndex = 0;
+  pCVar19 = g_PopcornPool;
   do {
-    core_fire_cpp_CStormEffect_reset_FUN_004a0470((CStormEffect *)this_ptr_04);
-    this_ptr_04 = (CDemonActorType *)(this_ptr_04->class_name + 0xc);
-  } while (this_ptr_04 != &g_CFirestaffClassInfo);
+    pCVar20 = pCVar19 + 1;
+    (pCVar19->base).lifetime_remaining = 0.0;
+    pCVar19 = pCVar20;
+  } while (pCVar20 != g_PopcornPool + sizeof(g_PopcornPool) / sizeof(g_PopcornPool[0]));
+  g_INT_01d07b8c = 0;
+  pCVar21 = g_RainDropPool;
+  do {
+    pCVar22 = pCVar21 + 1;
+    (pCVar21->base).lifetime_remaining = 0.0;
+    pCVar21 = pCVar22;
+  } while (pCVar22 != g_RainDropPool + sizeof(g_RainDropPool) / sizeof(g_RainDropPool[0]));
+  pCVar16 = &g_CLightningBolt_01d0bb94;
+  g_INT_01d0bb90 = 0;
+  do {
+    core_fire_cpp_CLightningBolt_reset_FUN_0049f410(pCVar16);
+    pCVar16 = (CLightningBolt *)&pCVar16[10].start_position;
+  } while (pCVar16 != (CLightningBolt *)&g_INT_01d0ce7c);
+  this_ptr_06 = &g_CStormEffect_01d0ce80;
+  g_INT_01d0ce7c = 0;
+  do {
+    core_fire_cpp_CStormEffect_reset_FUN_004a0470(this_ptr_06);
+    this_ptr_06 = (CStormEffect *)(((CDemonActorType *)this_ptr_06)->class_name + 0xc);
+  } while ((CDemonActorType *)this_ptr_06 != &g_CFirestaffClassInfo);
   return;
 }

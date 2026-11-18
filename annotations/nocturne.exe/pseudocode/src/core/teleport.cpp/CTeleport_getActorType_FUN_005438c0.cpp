@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_teleport_cpp_CTeleport_getActorType_FUN_005438c0(CTeleport *this_ptr)
 
 {
-  return &g_CTeleportActorType_02dca194;
+  return &g_CTeleportClassInfo;
 }

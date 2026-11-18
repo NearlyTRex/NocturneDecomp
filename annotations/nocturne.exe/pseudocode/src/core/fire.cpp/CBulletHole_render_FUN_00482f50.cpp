@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr)
 
 {
+  int iVar1;
+  int iVar2;
   CVector3f *translation;
   CVector3i local_70;
   CVector3i local_64;
@@ -34,22 +34,22 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,&this_ptr->euler_angles,translation);
-  _DAT_005c505c = (this_ptr->texture_index & 1U) * 0x800000;
+  iVar1 = (this_ptr->texture_index & 1U) * 0x800000;
   local_50 = 0;
-  DAT_005c502c = _DAT_005c505c + 0x80000;
-  _DAT_005c5090 = (this_ptr->texture_index & 2U) * 0x400000;
-  _DAT_005c505c = _DAT_005c505c + 0x780000;
-  _DAT_005c5030 = _DAT_005c5090 + 0x780000;
-  _DAT_005c5090 = _DAT_005c5090 + 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[0].u = iVar1 + 0x80000;
+  iVar2 = (this_ptr->texture_index & 2U) * 0x400000;
+  g_SRenderVertex_ARRAY_005c5014[1].u = iVar1 + 0x780000;
+  g_SRenderVertex_ARRAY_005c5014[0].v = iVar2 + 0x780000;
+  g_SRenderVertex_ARRAY_005c5014[2].v = iVar2 + 0x80000;
   local_58 = 0xbe2e147b;
   local_54 = 0xbe2e147b;
   local_40.x = (int)ROUND(256.0f * -0.17);
   local_40.y = (int)ROUND(256.0f * -0.17);
   local_40.z = (int)ROUND(256.0f * 0.0);
-  _DAT_005c5060 = _DAT_005c5030;
-  _DAT_005c508c = _DAT_005c505c;
-  _DAT_005c50bc = DAT_005c502c;
-  _DAT_005c50c0 = _DAT_005c5090;
+  g_SRenderVertex_ARRAY_005c5014[1].v = g_SRenderVertex_ARRAY_005c5014[0].v;
+  g_SRenderVertex_ARRAY_005c5014[2].u = g_SRenderVertex_ARRAY_005c5014[1].u;
+  g_SRenderVertex_ARRAY_005c5014[3].u = g_SRenderVertex_ARRAY_005c5014[0].u;
+  g_SRenderVertex_ARRAY_005c5014[3].v = g_SRenderVertex_ARRAY_005c5014[2].v;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_40);
   local_58 = 0x3e2e147b;
@@ -78,13 +78,13 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_28);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (_DAT_007f7370,(SRenderVertex *)&DAT_005c5014);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014);
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (_DAT_007f7370,(SRenderVertex *)&DAT_005c5044);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014 + 1);
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (_DAT_007f7370,(SRenderVertex *)&DAT_005c5074);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014 + 2);
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
-              (_DAT_007f7370,(SRenderVertex *)&DAT_005c50a4);
+              (g_CurrentSceneCamera,g_SRenderVertex_ARRAY_005c5014 + 3);
   }
   else {
     core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
@@ -98,7 +98,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
     core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(g_CDemonSetPtr,&local_64,&local_4c,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
+            (g_CDemonRenderer_PTR_005ae704,&g_BillboardPrimitive.base);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     return;

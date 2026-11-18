@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   drop_position
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_004495a0
-;   core_weapon.cpp_FUN_0058a2f0
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0
+;   core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_0058a2f0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x30]      ; 00589f1b
     PUSH EBX                            ; 00589f1f
     MOV dword ptr [EBX + 0x460],0x0     ; 00589f20
-    CALL core_weapon.cpp_FUN_0058a2f0   ; 00589f2a
-        ;   XREF to: 0058a2f0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_0058a2f0()
+    CALL core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_0058a2f0 ; 00589f2a
+        ;   XREF to: 0058a2f0 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_0058a2f0(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 00589f2f
     TEST EBP,EBP                        ; 00589f32
     JNZ 0x00589f5a                      ; 00589f34
@@ -50,8 +50,8 @@ section .text
     PUSH EAX                            ; 00589f61
     LEA ESI,[ESP + 0x14]                ; 00589f62
     LEA EDI,[ESP + 0x8]                 ; 00589f66
-    CALL core_dirmat.cpp_FUN_004495a0   ; 00589f6a
-        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004495a0()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0 ; 00589f6a
+        ;   XREF to: 004495a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_004495a0(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x14]                ; 00589f6f
     LEA EAX,[ESP + 0x8]                 ; 00589f73
     ADD ESP,0x8                         ; 00589f77

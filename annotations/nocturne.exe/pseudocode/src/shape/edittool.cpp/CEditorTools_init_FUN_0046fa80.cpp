@@ -6,31 +6,29 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_init_FUN_0046fa80(CEditorTools *this_ptr)
 
 {
-  _DAT_01bcddcc = 7;
-  _DAT_01bcddd0 = 0xfb;
-  _DAT_01bcddd4 = 0xff;
-  _DAT_01bcddd8 = 0xff;
-  _DAT_01bcdddc = 4;
-  _DAT_01bcdde0 = 0xff;
-  _DAT_01bcdde4 = 0xff;
-  _DAT_01bcdde8 = 0xff;
-  _DAT_01bcddec = 0xff;
-  _DAT_01bcddf0 = 0xff;
-  _DAT_01bcddf4 = 0xfa;
-  _DAT_01bcddf8 = 0;
-  _DAT_01bcddfc = 4;
-  _DAT_01bcde00 = 0xff;
-  _DAT_01bcde04 = 0xff;
-  _DAT_01bcde08 = 0xff;
-  _DAT_01bcde18 = 7;
-  _DAT_01bcddc8 = 0;
-  _DAT_01bcde0c = 0xf8;
-  _DAT_01bcde10 = 2;
-  _DAT_01bcde14 = 0xfa;
+  g_INT_01bcddcc = 7;
+  g_INT_01bcddd0 = 0xfb;
+  g_INT_01bcddd4 = 0xff;
+  g_INT_01bcddd8 = 0xff;
+  g_SelectionColor = 4;
+  g_TextColor = 0xff;
+  g_CursorColor = 0xff;
+  g_StatusTextColor = 0xff;
+  g_WindowStatusTextColor = 0xff;
+  g_DialogTextColor = 0xff;
+  g_ActiveItemTextColor = 0xfa;
+  g_ProgressBarBackgroundColor = 0;
+  g_ProgressBarFillColor = 4;
+  g_ProgressBarBorderColor = 0xff;
+  g_AxisLabelTextColor = 0xff;
+  g_INT_01bcde08 = 0xff;
+  g_INT_01bcde18 = 7;
+  g_INT_01bcddc8 = 0;
+  g_INT_01bcde0c = 0xf8;
+  g_INT_01bcde10 = 2;
+  g_INT_01bcde14 = 0xfa;
   return;
 }

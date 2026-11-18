@@ -11,7 +11,7 @@
 ;   TerminatedCString s_ghostchilslap0_wav_005f09a7
 ;   TerminatedCString s_ghostchilddeath0_wav_005f09bb
 ;   TerminatedCString s_robinscream0_wav_005f09d1
-;   undefined4 DAT_0061c068
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
@@ -36,7 +36,7 @@ section .text
     PUSH EAX                            ; 005a9b0d
     PUSH 0x5f09a7                       ; 005a9b0e | = "ghostchilslap0?.wav"
     PUSH EDX                            ; 005a9b13
-    MOV EBX,dword ptr [0x0061c068]      ; 005a9b14 | DAT_0061c068
+    MOV EBX,dword ptr [0x0061c068]      ; 005a9b14 | g_CSound_PTR_0061c068
     PUSH EBX                            ; 005a9b1a
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a9b1b
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_005a9b25
     PUSH 0x5f09bb                       ; 005a9b26 | = "ghostchilddeath0?.wav"
     PUSH EDX                            ; 005a9b2b
-    MOV ECX,dword ptr [0x0061c068]      ; 005a9b2c | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 005a9b2c | g_CSound_PTR_0061c068
     PUSH ECX                            ; 005a9b32
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a9b33
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_005a9b3c
     PUSH 0x5f09d1                       ; 005a9b3d | = "robinscream0?.wav"
     PUSH EDX                            ; 005a9b42
-    MOV EDX,dword ptr [0x0061c068]      ; 005a9b43 | DAT_0061c068
+    MOV EDX,dword ptr [0x0061c068]      ; 005a9b43 | g_CSound_PTR_0061c068
     PUSH EDX                            ; 005a9b49
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 005a9b4a
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

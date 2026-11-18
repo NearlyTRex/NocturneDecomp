@@ -18,7 +18,7 @@
 ; undefined1       Stack[-0x10f]:1  local_10f
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_0057cb30 at 0057cb48
+;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30 at 0057cb48
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_005dc5f7

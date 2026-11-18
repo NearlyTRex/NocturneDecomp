@@ -7,12 +7,12 @@
 ; CSimBox *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005f1a8a+1
+;   TerminatedCString s_modelName_005f1a8b
 ;   TerminatedCString s_weight_005f1a95
 ;   TerminatedCString s_initialVelocity_005f1a9c
 ;   TerminatedCString s_initRotVel_005f1aac
 ;   TerminatedCString s_triggerEvent_005f1ab7
-;   undefined4 DAT_005f1ac4
+;   TerminatedCString s_type_005f1ac4
 ;   int g_CSimBoxClassVersion = 0x3
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 00562a46
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00562a4b
-    PUSH 0x5f1a8b                       ; 00562a4e | s_modelName_005f1a8a+1
+    PUSH 0x5f1a8b                       ; 00562a4e | = "modelName"
     LEA EAX,[EBX + 0x158]               ; 00562a53
     PUSH EAX                            ; 00562a59
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 00562a5a
@@ -79,7 +79,7 @@ section .text
         ;   XREF to: 00562ad3 (CONDITIONAL_JUMP)  ; LAB_00562ad3
     POP EBX                             ; 00562ad1
     RET                                 ; 00562ad2
-    PUSH 0x5f1ac4                       ; 00562ad3 | DAT_005f1ac4
+    PUSH 0x5f1ac4                       ; 00562ad3 | = "type"
         ;   Label: LAB_00562ad3
     ADD EBX,0x2d4                       ; 00562ad8
     PUSH EBX                            ; 00562ade

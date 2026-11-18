@@ -12,13 +12,13 @@
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_0054e8c0 at 0054e99a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02648428
-;   undefined4 DAT_02648430
-;   undefined4 DAT_02648438
-;   undefined4 DAT_02648440
-;   undefined4 DAT_02648448
-;   undefined4 DAT_02648450
-;   undefined4 DAT_026484bc
+;   double g_DOUBLE_02648428
+;   double g_DOUBLE_02648430
+;   double g_DOUBLE_02648438
+;   double g_DOUBLE_02648440
+;   double g_DOUBLE_02648448
+;   double g_DOUBLE_02648450
+;   int g_INT_026484bc
 ;
 ; *****************************************************************************
 
@@ -26,34 +26,34 @@ section .text
 
     SUB ESP,0x30                        ; 00551650
         ;   Label: sound_sndmain.cpp_getNearestListener_FUN_00551650
-    CMP dword ptr [0x026484bc],0x0      ; 00551653 | DAT_026484bc
+    CMP dword ptr [0x026484bc],0x0      ; 00551653 | g_INT_026484bc
     JZ 0x005516b9                       ; 0055165a
         ;   XREF to: 005516b9 (CONDITIONAL_JUMP)  ; LAB_005516b9
     FLD double ptr [ESP + 0x34]         ; 0055165c
     FLD ST0                             ; 00551660
-    FSUB double ptr [0x02648428]        ; 00551662 | DAT_02648428
+    FSUB double ptr [0x02648428]        ; 00551662 | g_DOUBLE_02648428
     FMUL ST0                            ; 00551668
     FLD double ptr [ESP + 0x3c]         ; 0055166a
     FLD ST0                             ; 0055166e
-    FSUB double ptr [0x02648438]        ; 00551670 | DAT_02648438
+    FSUB double ptr [0x02648438]        ; 00551670 | g_DOUBLE_02648438
     FMUL ST0                            ; 00551676
     FLD double ptr [ESP + 0x44]         ; 00551678
     FLD ST0                             ; 0055167c
     FXCH ST2                            ; 0055167e
     FADDP ST4,ST0                       ; 00551680
     FXCH                                ; 00551682
-    FSUB double ptr [0x02648448]        ; 00551684 | DAT_02648448
+    FSUB double ptr [0x02648448]        ; 00551684 | g_DOUBLE_02648448
     FMUL ST0                            ; 0055168a
     FADDP ST3,ST0                       ; 0055168c
     FXCH ST3                            ; 0055168e
-    FSUB double ptr [0x02648430]        ; 00551690 | DAT_02648430
+    FSUB double ptr [0x02648430]        ; 00551690 | g_DOUBLE_02648430
     FMUL ST0                            ; 00551696
     FXCH                                ; 00551698
-    FSUB double ptr [0x02648440]        ; 0055169a | DAT_02648440
+    FSUB double ptr [0x02648440]        ; 0055169a | g_DOUBLE_02648440
     FMUL ST0                            ; 005516a0
     FADDP                               ; 005516a2
     FXCH ST2                            ; 005516a4
-    FSUB double ptr [0x02648450]        ; 005516a6 | DAT_02648450
+    FSUB double ptr [0x02648450]        ; 005516a6 | g_DOUBLE_02648450
     FMUL ST0                            ; 005516ac
     FADDP ST2,ST0                       ; 005516ae
     FXCH                                ; 005516b0

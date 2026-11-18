@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0050bcf0(CVector3i *vertex_array,ushort *triangle_indices,CVector3f *out_normal)
 
 {
@@ -36,7 +34,7 @@ void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0050bcf0(CVector3i *v
   fVar5 = (float)iVar10 * fVar4 - (float)iVar9 * fVar2;
   fVar4 = (float)iVar9 * fVar6 - (float)iVar10 * fVar7;
   fVar2 = (float)(g_FastInvSqrtMagic - ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) >> 1))
-          * (float)_DAT_00590642;
+          * (float)65535;
   out_normal->x = fVar3 * fVar2;
   out_normal->y = fVar5 * fVar2;
   out_normal->z = fVar4 * fVar2;

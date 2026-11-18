@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 39,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 117
   },
   "cross_references": [],
@@ -68,8 +66,8 @@
     },
     {
       "addr": "005f918a",
-      "name": "DAT_005f918a",
-      "type": "undefined4",
+      "name": "s_prey_005f918a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -209,16 +207,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005f918a",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0((CDemonActor **)&this_ptr->prey,&DAT_005f918a);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

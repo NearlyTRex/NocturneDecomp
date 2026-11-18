@@ -8,11 +8,12 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex_b
 ; SRenderVertex *  Stack[0xc]:4   vertex_out
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_xform.cpp_clipPolygonStage4_FUN_00587ab0 at 00587b8c
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00587cd0 at 00588339
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6e2b4
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;
 ; *****************************************************************************
 
@@ -82,7 +83,7 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 005875fd
     ADD EAX,EDX                         ; 005875ff
     MOV dword ptr [EDI],EAX             ; 00587601
-    MOV AH,byte ptr [0x01c6e2b4]        ; 00587603 | DAT_01c6e2b4
+    MOV AH,byte ptr [0x01c6e2b4]        ; 00587603 | g_RenderStateFlags
     MOV dword ptr [EDI + 0x10],0xffffffff ; 00587609
     TEST AH,0x4                         ; 00587610
     JNZ 0x0058761a                      ; 00587613

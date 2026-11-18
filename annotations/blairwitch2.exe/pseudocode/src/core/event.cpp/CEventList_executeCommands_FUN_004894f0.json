@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 23,
+    "complexity_score": 7,
     "cross_reference_count": 25,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 21
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
   },
   "cross_references": [
     {
@@ -58,15 +56,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045f5a0",
-      "from_addr": "0045f66f",
-      "name": "core_door.cpp_CDoor_process_FUN_0045f5a0",
+      "addr": "0045efc0",
+      "from_addr": "0045efd1",
+      "name": "core_door.cpp_CDoor_onOpened_FUN_0045efc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045efc0",
-      "from_addr": "0045efd1",
-      "name": "core_door.cpp_FUN_0045efc0",
+      "addr": "0045f5a0",
+      "from_addr": "0045f66f",
+      "name": "core_door.cpp_CDoor_process_FUN_0045f5a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -88,15 +86,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b82e0",
-      "from_addr": "004b8874",
-      "name": "core_game.cpp_FUN_004b82e0",
+      "addr": "004b90d0",
+      "from_addr": "004ba2a2",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b90d0",
-      "from_addr": "004ba2a2",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "addr": "004b82e0",
+      "from_addr": "004b8874",
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004b82e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -188,8 +186,8 @@
   "globals": [
     {
       "addr": "01c3dd0c",
-      "name": "DAT_01c3dd0c",
-      "type": "undefined4",
+      "name": "g_EventDryRun",
+      "type": "int",
       "value": null
     }
   ],
@@ -199,7 +197,7 @@
       {
         "call_addr": "004b8874",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b82e0",
+        "caller": "core_game.cpp_CGame_processHotkeys_FUN_004b82e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +208,7 @@
       {
         "call_addr": "004b88a0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b82e0",
+        "caller": "core_game.cpp_CGame_processHotkeys_FUN_004b82e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +219,7 @@
       {
         "call_addr": "004b88cd",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b82e0",
+        "caller": "core_game.cpp_CGame_processHotkeys_FUN_004b82e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +230,7 @@
       {
         "call_addr": "004ba2a2",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -287,7 +285,7 @@
       {
         "call_addr": "0045efd1",
         "call_type": "direct",
-        "caller": "core_door.cpp_FUN_0045efc0",
+        "caller": "core_door.cpp_CDoor_onOpened_FUN_0045efc0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -383,14 +381,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

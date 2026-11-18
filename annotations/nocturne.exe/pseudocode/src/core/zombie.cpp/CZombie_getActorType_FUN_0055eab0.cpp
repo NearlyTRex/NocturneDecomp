@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_0055eab0(CZombie *this_ptr)
 
 {
-  return &g_CZombieActorType_02de4940;
+  return &g_CZombieClassInfo;
 }

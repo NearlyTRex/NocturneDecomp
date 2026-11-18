@@ -37,8 +37,6 @@ def delete_pseudocode(currentProgram, path):
 
     def _is_protected(rel):
         rel = rel.replace(os.sep, '/')
-        if rel == '.':
-            return False
         for p in protected_paths:
             if rel == p or rel.startswith(p + '/'):
                 return True
@@ -49,11 +47,8 @@ def delete_pseudocode(currentProgram, path):
     log_info("Deleting all pseudocode files")
     for root, dirs, files in os.walk(pseudocode_dir):
         rel_root = os.path.relpath(root, pseudocode_dir)
-        if _is_protected(rel_root):
-            dirs[:] = []
-            continue
 
-        # Prevent os.walk from descending into protected children
+        # Never descend into a protected directory
         rel_norm = '' if rel_root == '.' else rel_root.replace(os.sep, '/')
         dirs[:] = [
             d for d in dirs
@@ -93,6 +88,6 @@ def delete_pseudocode(currentProgram, path):
                 if not os.listdir(dir_path):
                     os.rmdir(dir_path)
                     log_info("Removed empty directory: %s" % rel_dir)
-            except Exception as e:
+            except OSError:
                 pass
     log_info("Deleted %d files" % deleted_count)

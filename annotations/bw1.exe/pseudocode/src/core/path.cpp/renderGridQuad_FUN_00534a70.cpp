@@ -6,86 +6,69 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_renderGridQuad_FUN_00534a70(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)
 
 {
   float fVar1;
   float fVar2;
-  CDemonRenderer *this_ptr;
-  uint *puVar3;
-  int extraout_ECX;
-  int iVar4;
-  int *extraout_EDX;
-  int *extraout_EDX_00;
-  int *extraout_EDX_01;
-  int iVar5;
+  float fVar3;
+  double dVar4;
+  CDemonRenderer *pCVar5;
+  float unaff_EBX;
+  int unaff_EBP;
   int iVar6;
-  float10 fVar7;
-  float10 fVar8;
-  float10 fVar9;
-  float10 fVar10;
-  float10 fVar11;
-  CVector3i *pCVar12;
-  CVector3i CStack_1c;
+  float unaff_ESI;
+  double dVar7;
+  int unaff_retaddr;
+  CVector3i *pCVar8;
   int iStack_8;
   
-  fVar1 = g_CDemonRaytraceInstance.adjusted_size.x * _DAT_005eca84;
-  fVar2 = g_CDemonRaytraceInstance.adjusted_size.z * _DAT_005eca84;
-  fVar7 = (float10)_DAT_005eca8c;
-  fVar8 = (float10)g_CDemonRaytraceInstance.bbox_min.y * fVar7;
-  fVar9 = (float10)grid_x * (float10)fVar1;
-  fVar10 = (float10)grid_y * (float10)(g_CDemonRaytraceInstance.adjusted_size.y * _DAT_005eca84);
-  fVar11 = (float10)grid_z * (float10)fVar2;
-  iVar4 = red << 8;
-  pCVar12 = &CStack_1c;
-  round();
-  round();
-  CStack_1c.x = (int)ROUND(fVar9);
-  fVar7 = fVar8 + fVar10 + fVar7;
-  CStack_1c.z = (int)ROUND(fVar11);
-  puVar3 = (uint *)round();
-  CStack_1c.y = (int)ROUND(fVar7);
-  iVar5 = blue << 8;
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)*puVar3,pCVar12);
-  iStack_8 = CStack_1c.x;
-  pCVar12 = &CStack_1c;
-  fVar8 = (float10)CStack_1c.x + (float10)fVar1;
-  round();
-  CStack_1c.x = (int)ROUND(fVar8);
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar12);
-  iStack_8 = CStack_1c.z;
-  pCVar12 = &CStack_1c;
-  fVar8 = (float10)CStack_1c.z + (float10)fVar2;
-  round();
-  CStack_1c.z = (int)ROUND(fVar8);
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar12);
-  iStack_8 = CStack_1c.x;
-  pCVar12 = &CStack_1c;
-  fVar8 = (float10)CStack_1c.x - (float10)fVar1;
-  round();
-  CStack_1c.x = (int)ROUND(fVar8);
+  pCVar5 = g_CDemonRenderer_PTR_00612560;
+  dVar4 = 256;
+  fVar1 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
+  fVar2 = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
+  fVar3 = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
+  dVar7 = (double)g_CDemonRaytraceInstance.bbox_min.y * 256;
+  round((double)((float)grid_x * fVar1));
+  round((double)((float)grid_z * fVar3));
+  pCVar8 = (CVector3i *)0x534b1f;
+  dVar7 = round(dVar7 + (double)grid_y * (double)fVar2 + dVar4);
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&pCVar5->vertex_buffer_ptr->projected_vertex,pCVar8);
+  pCVar5 = g_CDemonRenderer_PTR_00612560;
+  pCVar8 = (CVector3i *)0x534b5d;
+  round((double)((float)(int)fVar1 + unaff_EBX));
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&pCVar5->vertex_buffer_ptr[1].projected_vertex,pCVar8);
+  pCVar5 = g_CDemonRenderer_PTR_00612560;
+  pCVar8 = (CVector3i *)0x534b93;
+  round((double)((float)(int)ROUND(dVar7) + unaff_ESI));
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&pCVar5->vertex_buffer_ptr[2].projected_vertex,pCVar8);
+  pCVar5 = g_CDemonRenderer_PTR_00612560;
+  pCVar8 = (CVector3i *)0x534bc9;
+  round((double)((float)(int)fVar2 - 7.649255e-39));
   iVar6 = alpha << 8;
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar12);
-  this_ptr = DAT_00612560;
-  DAT_00612560->vertex_buffer_ptr->r = iVar4;
-  this_ptr->vertex_buffer_ptr->g = extraout_ECX;
-  this_ptr->vertex_buffer_ptr->b = iVar5;
-  this_ptr->vertex_buffer_ptr->a = iVar6;
-  this_ptr->vertex_buffer_ptr[1].r = iVar4;
-  this_ptr->vertex_buffer_ptr[1].g = extraout_ECX;
-  this_ptr->vertex_buffer_ptr[1].b = iVar5;
-  this_ptr->vertex_buffer_ptr[1].a = iVar6;
-  this_ptr->vertex_buffer_ptr[2].r = iVar4;
-  this_ptr->vertex_buffer_ptr[2].g = extraout_ECX;
-  this_ptr->vertex_buffer_ptr[2].b = iVar5;
-  this_ptr->vertex_buffer_ptr[2].a = iVar6;
-  this_ptr->vertex_buffer_ptr[3].r = iVar4;
-  this_ptr->vertex_buffer_ptr[3].g = extraout_ECX;
-  this_ptr->vertex_buffer_ptr[3].b = iVar5;
-  this_ptr->vertex_buffer_ptr[3].a = iVar6;
+  engine_special_cpp_transformAndProjectPoint_FUN_00580173
+            (&pCVar5->vertex_buffer_ptr[3].projected_vertex,pCVar8);
+  pCVar5 = g_CDemonRenderer_PTR_00612560;
+  g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r = iStack_8;
+  pCVar5->vertex_buffer_ptr->g = unaff_EBP;
+  pCVar5->vertex_buffer_ptr->b = unaff_retaddr;
+  pCVar5->vertex_buffer_ptr->a = iVar6;
+  pCVar5->vertex_buffer_ptr[1].r = iStack_8;
+  pCVar5->vertex_buffer_ptr[1].g = unaff_EBP;
+  pCVar5->vertex_buffer_ptr[1].b = unaff_retaddr;
+  pCVar5->vertex_buffer_ptr[1].a = iVar6;
+  pCVar5->vertex_buffer_ptr[2].r = iStack_8;
+  pCVar5->vertex_buffer_ptr[2].g = unaff_EBP;
+  pCVar5->vertex_buffer_ptr[2].b = unaff_retaddr;
+  pCVar5->vertex_buffer_ptr[2].a = iVar6;
+  pCVar5->vertex_buffer_ptr[3].r = iStack_8;
+  pCVar5->vertex_buffer_ptr[3].g = unaff_EBP;
+  pCVar5->vertex_buffer_ptr[3].b = unaff_retaddr;
+  pCVar5->vertex_buffer_ptr[3].a = iVar6;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00482f00
-            (this_ptr,(SMRGLPrimitivePoly *)0x1e7d360);
+            (pCVar5,(SMRGLPrimitivePoly *)&g_PathMapQuad);
   return;
 }

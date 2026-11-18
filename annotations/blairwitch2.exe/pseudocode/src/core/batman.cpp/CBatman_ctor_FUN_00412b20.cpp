@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412b20(CBatman *this_ptr)
 
 {
@@ -19,14 +17,14 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412b20(CBatman *this_ptr)
   char *pcVar6;
   
   pCVar4 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
-  pcVar5 = (char *)0x5cb971;
+  pcVar5 = "none";
   (pCVar4->base).base.base.vtable._ub = &g_CBatmanVTable._ub;
   pcVar6 = pCVar4->fall_event;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(pCVar4->base).base.model,(char *)0x5cb966);
-  fVar2 = _DAT_005f3090;
+            (&(pCVar4->base).base.model,"batman.dfm");
+  fVar2 = 50.0f;
   (pCVar4->base).base.collision_cylinder_height = 0.6;
-  fVar3 = _DAT_005f3094;
+  fVar3 = 100.0f;
   (pCVar4->base).base.collision_cylinder_radius = 2.0;
   (pCVar4->base).base.ai_detection_range_min = fVar2;
   (pCVar4->base).base.ai_detection_range_max = fVar3;

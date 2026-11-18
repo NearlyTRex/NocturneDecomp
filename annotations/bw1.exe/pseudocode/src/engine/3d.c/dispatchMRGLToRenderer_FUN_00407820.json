@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 204,
+    "complexity_score": 196,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 111,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation",
+      "stack_ref"
     ],
-    "total_lines": 356
+    "total_lines": 353
   },
   "cross_references": [],
   "function": {
@@ -34,7 +33,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005bfb40",
@@ -44,7 +43,7 @@
     {
       "addr": "004076e0",
       "is_variadic": false,
-      "name": "engine_3d.c_FUN_004076e0"
+      "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_004076e0"
     },
     {
       "addr": "00403920",
@@ -79,7 +78,7 @@
     {
       "addr": "0051fee0",
       "is_variadic": false,
-      "name": "engine_model.c_FUN_0051fee0"
+      "name": "engine_model.c_getMRGLSize_FUN_0051fee0"
     },
     {
       "addr": "005823a0",
@@ -89,38 +88,38 @@
     {
       "addr": "00597a20",
       "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_00597a20"
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_00597a20"
     }
   ],
   "globals": [
     {
       "addr": "0061b4c0",
-      "name": "DAT_0061b4c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
     },
     {
       "addr": "007c1070",
-      "name": "DAT_007c1070",
-      "type": "undefined4",
+      "name": "g_RenderFaceCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c50948",
-      "name": "DAT_01c50948",
-      "type": "undefined4",
+      "name": "g_INT_01c50948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -206,56 +205,56 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_00629014",
-      "severity": "mild",
-      "text": "((SRenderVertex *)&DAT_00629014,(SMRGLPrimitiveQuad **)0x7c1074,_DAT_007c1070,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_0061b4c0",
-      "severity": "mild",
-      "text": "DAT_0061b4c0 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0061b4c0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4c0 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_00629014",
-      "severity": "mild",
-      "text": "((SRenderVertex *)&DAT_00629014,(SMRGLPrimitiveQuad **)0x7c1074,_DAT_007c1070,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 105,
-      "match": "*(SMRGLHeaderExtended **)(_DAT_007c1070 * 4 + 0x7c1074",
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)g_RenderFaceArray",
       "severity": "moderate",
-      "text": "*(SMRGLHeaderExtended **)(_DAT_007c1070 * 4 + 0x7c1074) = mrgl;",
-      "type": "raw_address_pointer_store"
+      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xfffffef0",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffef0,\"Unknown primitive : %d\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xfffffef0",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&stack0xfffffef0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(uint *)((int)g_RenderFaceArray",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_RenderFaceArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)g_RenderFaceArray",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_RenderFaceArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)g_RenderFaceArray",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar5);",
+      "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 115,
+      "line": 111,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",

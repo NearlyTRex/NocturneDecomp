@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *param_2)
+; int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *out_points_array)
 ;
 ; Parameters:
 ; CYow *           Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   param_2
+; float *          Stack[0x8]:4   out_points_array
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005b9280 = 005b933b
-;   undefined4 DAT_005fa3ac
-;   undefined4 DAT_005fa3b4
-;   undefined4 DAT_005fa3bc
+;   double g_DOUBLE_005fa3ac = 0.5
+;   double g_DOUBLE_005fa3b4 = 0.700000000000000
+;   double g_DOUBLE_005fa3bc = 0.300000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
@@ -111,15 +111,15 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 005b938f
     IMUL EDX,dword ptr [ESP + 0x8c],0xc ; 005b9393
         ;   Label: LAB_005b9393
-    FLD double ptr [0x005fa3ac]         ; 005b939b | DAT_005fa3ac
+    FLD double ptr [0x005fa3ac]         ; 005b939b | g_DOUBLE_005fa3ac
     FLD float ptr [ESP + 0x24]          ; 005b93a1
     FMUL ST1                            ; 005b93a5
     FLD float ptr [ESP + 0x28]          ; 005b93a7
-    FMUL double ptr [0x005fa3b4]        ; 005b93ab | DAT_005fa3b4
+    FMUL double ptr [0x005fa3b4]        ; 005b93ab | g_DOUBLE_005fa3b4
     FLD float ptr [ESP + 0x48]          ; 005b93b1
     FMULP ST3                           ; 005b93b5
     FLD float ptr [ESP + 0x4c]          ; 005b93b7
-    FMUL double ptr [0x005fa3bc]        ; 005b93bb | DAT_005fa3bc
+    FMUL double ptr [0x005fa3bc]        ; 005b93bb | g_DOUBLE_005fa3bc
     MOV EAX,dword ptr [EBP + 0x18]      ; 005b93c1
     FADDP                               ; 005b93c4
     FXCH ST2                            ; 005b93c6
@@ -195,15 +195,15 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 005b948e
     IMUL EDX,dword ptr [ESP + 0x8c],0xc ; 005b9492
         ;   Label: LAB_005b9492
-    FLD double ptr [0x005fa3ac]         ; 005b949a | DAT_005fa3ac
+    FLD double ptr [0x005fa3ac]         ; 005b949a | g_DOUBLE_005fa3ac
     FLD float ptr [ESP + 0x24]          ; 005b94a0
     FMUL ST1                            ; 005b94a4
     FLD float ptr [ESP + 0x28]          ; 005b94a6
-    FMUL double ptr [0x005fa3b4]        ; 005b94aa | DAT_005fa3b4
+    FMUL double ptr [0x005fa3b4]        ; 005b94aa | g_DOUBLE_005fa3b4
     FLD float ptr [ESP + 0x48]          ; 005b94b0
     FMULP ST3                           ; 005b94b4
     FLD float ptr [ESP + 0x4c]          ; 005b94b6
-    FMUL double ptr [0x005fa3bc]        ; 005b94ba | DAT_005fa3bc
+    FMUL double ptr [0x005fa3bc]        ; 005b94ba | g_DOUBLE_005fa3bc
     MOV ESI,dword ptr [EBP + 0x18]      ; 005b94c0
     LEA EAX,[ESP + 0x24]                ; 005b94c3
     FADDP                               ; 005b94c7

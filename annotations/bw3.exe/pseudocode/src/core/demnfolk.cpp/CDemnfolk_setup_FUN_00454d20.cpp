@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00454d20(CDemnfolk *this_ptr)
 
@@ -49,13 +48,13 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00454d20(CDemnfolk *this_ptr)
   this_ptr->bone_indices[10] = iVar1;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                    (this_ptr_02,&DAT_005ba475,1);
+                    (this_ptr_02,"larm",1);
   this_ptr->part_indices[0] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"l4arm",1);
   this_ptr->part_indices[1] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                    (this_ptr_02,&DAT_005ba480,1);
+                    (this_ptr_02,"rarm",1);
   this_ptr->part_indices[2] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"r4arm",0);
@@ -70,7 +69,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00454d20(CDemnfolk *this_ptr)
                     (this_ptr_02,"torso",1);
   this_ptr->part_indices[5] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
-                    (this_ptr_02,&DAT_005ba497,1);
+                    (this_ptr_02,"head",1);
   (this_ptr->base).base.model.part_data.visibility_flags[0x3b] = 0;
   this_ptr->part_indices[6] = iVar1;
   (this_ptr->base).base.carry_hands[0].bone_index = this_ptr->bone_indices[1];
@@ -84,7 +83,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00454d20(CDemnfolk *this_ptr)
   this_ptr->rise_delay = fVar2;
   if ((-1 < iVar1) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {
     (this_ptr->base).base.collision_cylinder_top =
-         (this_ptr->base).base.model.bounding_box.max.y + (float)_DAT_005ba4a2;
+         (this_ptr->base).base.model.bounding_box.max.y + (float)-0.75;
   }
   this_ptr->is_female = 0;
   this_ptr->sfx_handles[0] = 0;

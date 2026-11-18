@@ -2,11 +2,11 @@
 // Address: 005aed50
 // Address Range: [[005aed50, 005aee1f]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples)
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr)
 
 {
   int iVar1;

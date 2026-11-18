@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_shotgun_cpp_CShotgun_getActorType_FUN_00515d10(CShotgun *this_ptr)
 
 {
-  return &g_CShotgunActorType_0267189c;
+  return &g_CShotgunClassInfo;
 }

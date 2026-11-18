@@ -192,7 +192,7 @@ LAB_00540097:
   g_ChatOutCount = 0;
   g_RemoteSyncStage = 0;
   this_ptr->player_count = 0;
-  INT_02f7c8c4 = 0;
+  g_NetNextPlayerId = 0;
   this_ptr->has_pending_sim_frame = 0;
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0(void)
 
 {
@@ -15,6 +13,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0(void)
   uint uVar2;
   int iVar3;
   int iVar4;
+  uint uStack0000005c;
   
   uVar2 = sound_sndmain_cpp_isSoundSystemActive_FUN_00575540();
   if (uVar2 == 0) {
@@ -30,50 +29,54 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0(void)
     return 1;
   }
   sound_sndmain_cpp_lockSound_FUN_00575d20();
-  iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(DAT_006232e8,DAT_006232ec,DAT_006232f0);
+  iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00575120
+                    (g_AudioBitsPerSample,g_AudioChannelCount,g_AudioSampleRate);
   if (iVar3 != 0) {
-    if ((0 < _DAT_02c8066c) && (iVar3 = 0, 0 < DAT_006232ec)) {
+    if ((0 < g_NumMixBuffers) && (iVar3 = 0, 0 < g_AudioChannelCount)) {
       iVar4 = 0;
       do {
-        puVar1 = (uint *)(iVar4 + 0x2c80698);
+        puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);
         iVar4 = iVar4 + 4;
         iVar3 = iVar3 + 1;
-        memset((void *)*puVar1,0,_DAT_02c80668 * _DAT_02c8066c * 4);
-      } while (iVar3 < DAT_006232ec);
+        memset((void *)*puVar1,0,g_MixBufferSize * g_NumMixBuffers * 4);
+      } while (iVar3 < g_AudioChannelCount);
     }
-    _DAT_02c80660 = 0;
-    _DAT_02c80664 = 0;
-    (**(code **)(*_DAT_02c80650 + 0x1c))
-              (_DAT_02c80650,*(uint *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8),
-               *(uint *)(_DAT_02c7fc88 * 8 + 0x2c7fbfc),
-               *(uint *)(&DAT_02c7fc08 + _DAT_02c7fc88 * 8),
-               *(uint *)(_DAT_02c7fc88 * 8 + 0x2c7fc0c),
-               *(uint *)(&DAT_02c7fc18 + _DAT_02c7fc88 * 8),
-               *(uint *)(_DAT_02c7fc88 * 8 + 0x2c7fc1c));
-    (**(code **)(*_DAT_02c80650 + 0x20))
-              (_DAT_02c80650,*(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc40),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc48),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc50),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc58),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc60),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc68),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc70),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc78),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc80));
-    (**(code **)(*_DAT_02c80650 + 0x24))
-              (_DAT_02c80650,*(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc28),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc30),
-               *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc38));
-    (**(code **)(*_DAT_02c80650 + 0x28))(_DAT_02c80650,DAT_00623304);
-    (**(code **)(*_DAT_02c80650 + 0x2c))(_DAT_02c80650,_DAT_02c807d0,_DAT_02c807d4,_DAT_02c807d8);
-    _DAT_02c807f0 = wincore_winrun_cpp_getTime_FUN_005b2420();
-    iVar3 = (**(code **)(*_DAT_02c80650 + 4))(_DAT_02c80650);
+    g_MixBufferReadIndex = 0;
+    g_MixBufferWriteIndex = 0;
+    (*g_CSoundDevicePtr->vtable->set3DListenerPos)
+              (g_CSoundDevicePtr,
+               __BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88 * 8 + 4),
+                                *(uint *)(&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88))),
+               __BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc08 + g_INT_02c7fc88 * 8 + 4),
+                                *(uint *)(&g_DOUBLE_02c7fc08 + g_INT_02c7fc88))),
+               __BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc18 + g_INT_02c7fc88 * 8 + 4),
+                                *(uint *)(&g_DOUBLE_02c7fc18 + g_INT_02c7fc88))));
+    (*g_CSoundDevicePtr->vtable->set3DListenerOrient)
+              (g_CSoundDevicePtr,*(float *)((int)&g_CVector3d_02c7fc40.x + g_INT_02c7fc88 * 4),
+               *(float *)((int)&g_CVector3d_02c7fc40.y + g_INT_02c7fc88 * 4),
+               *(float *)((int)&g_CVector3d_02c7fc40.z + g_INT_02c7fc88 * 4),
+               *(float *)(g_INT_02c7fc88 * 4 + 0x2c7fc58),*(float *)(g_INT_02c7fc88 * 4 + 0x2c7fc60)
+               ,*(float *)(g_INT_02c7fc88 * 4 + 0x2c7fc68),
+               *(float *)(g_INT_02c7fc88 * 4 + 0x2c7fc70),*(float *)(g_INT_02c7fc88 * 4 + 0x2c7fc78)
+               ,*(float *)(g_INT_02c7fc88 * 4 + 0x2c7fc80));
+    (*g_CSoundDevicePtr->vtable->set3DListenerVelocity)
+              (g_CSoundDevicePtr,*(float *)((int)&g_CVector3d_02c7fc28.x + g_INT_02c7fc88 * 4),
+               *(float *)((int)&g_CVector3d_02c7fc28.y + g_INT_02c7fc88 * 4),
+               *(float *)((int)&g_CVector3d_02c7fc28.z + g_INT_02c7fc88 * 4));
+    (*g_CSoundDevicePtr->vtable->set3DListenerDistanceFactor)(g_CSoundDevicePtr,g_FLOAT_00623304);
+    (*g_CSoundDevicePtr->vtable->setReverb)
+              (g_CSoundDevicePtr,g_CachedReverb.volume,g_CachedReverb.decay_time,
+               g_CachedReverb.damping);
+    g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_005b2420();
+    iVar3 = (*g_CSoundDevicePtr->vtable->start)(g_CSoundDevicePtr);
     if (iVar3 != 0) {
-      _DAT_02c80654 = 1;
+      g_SoundBusyFlag = 1;
+      uStack0000005c = 0x5750bd;
       sound_sndmain_cpp_unlockSound_FUN_00573e70();
       return 1;
     }
   }
+  uStack0000005c = 0x5750cc;
   sound_sndmain_cpp_unlockSound_FUN_00573e70();
   return 0;
 }

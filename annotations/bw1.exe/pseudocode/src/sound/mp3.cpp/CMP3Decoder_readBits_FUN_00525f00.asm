@@ -20,13 +20,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005eb1b4
 ;   TerminatedCString s_Buffer_overflow_File_s_005eb1c5
-;   undefined4 DAT_006206b0
-;   undefined4 DAT_006206d0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   uint[18] g_MpegBitMaskTableMultiBit
+;   undefined4 g_MpegBitMaskTableMultiBit[8]
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -63,7 +63,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x531c]    ; 00525f44
     SUB ESI,EAX                         ; 00525f4a
     AND EDX,0xfff                       ; 00525f4c
-    MOV EBP,dword ptr [ECX*0x4 + 0x6206b0] ; 00525f52 | DAT_006206b0 | DAT_006206d0
+    MOV EBP,dword ptr [ECX*0x4 + 0x6206b0] ; 00525f52 | g_MpegBitMaskTableMultiBit | g_MpegBitMaskTableMultiBit[8]
     SUB ECX,EAX                         ; 00525f59
     MOV EDX,dword ptr [EBX + EDX*0x4 + 0x131c] ; 00525f5b
     MOV dword ptr [ESP],ECX             ; 00525f62
@@ -100,10 +100,10 @@ section .text
     MOV EBP,0x5eb1b4                    ; 00525fb1 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x30a                       ; 00525fb6
     PUSH 0x5eb1c5                       ; 00525fbb | = "Buffer overflow!!  File: %s"
-    MOV dword ptr [0x01d1d400],EBP      ; 00525fc0 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 00525fc6 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00525fcb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBP      ; 00525fc0 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 00525fc6 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00525fcb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00525fd0
     JMP 0x00525f2e                      ; 00525fd3
         ;   XREF to: 00525f2e (UNCONDITIONAL_JUMP)  ; LAB_00525f2e

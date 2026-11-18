@@ -15,7 +15,7 @@ section .text
     PUSH 0xa4c                          ; 00477240
         ;   Label: core_door.cpp_factoryFuncDoor_FUN_00477240
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00477245
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0047724a
     TEST EAX,EAX                        ; 0047724d
     JNZ 0x00477252                      ; 0047724f

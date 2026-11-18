@@ -19,7 +19,7 @@
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_0056b410 at 0056bc2a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -32,7 +32,7 @@ section .text
         ;   Label: core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
     ADD EAX,0x33c                       ; 004cc5d4
     PUSH EAX                            ; 004cc5d9
-    MOV EDX,dword ptr [0x005fba60]      ; 004cc5da | DAT_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 004cc5da | g_CEventListPtr
     PUSH EDX                            ; 004cc5e0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004cc5e1
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

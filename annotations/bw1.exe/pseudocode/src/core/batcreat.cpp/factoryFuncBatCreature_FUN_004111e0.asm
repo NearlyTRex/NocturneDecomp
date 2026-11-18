@@ -15,7 +15,7 @@ section .text
     PUSH 0xc2b4                         ; 004111e0
         ;   Label: core_batcreat.cpp_factoryFuncBatCreature_FUN_004111e0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004111e5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004111ea
     TEST EAX,EAX                        ; 004111ed
     JNZ 0x004111f2                      ; 004111ef

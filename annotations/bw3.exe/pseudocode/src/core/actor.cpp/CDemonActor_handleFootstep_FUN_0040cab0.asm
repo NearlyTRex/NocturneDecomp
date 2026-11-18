@@ -15,12 +15,12 @@
 ;   TerminatedCString s_twig_wav_005b5eaa
 ;   TerminatedCString s_CShadow_005b5eb4
 ;   TerminatedCString s_footstep_s_s_wav_f_005b5ebc
-;   undefined4 DAT_005b5ed9
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_005fc5a0
+;   float g_FLOAT_005b5ed9 = 10000
+;   CEventList* g_CEventListPtr = 01c6e360
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonCameraInstance.base.position
 ;   undefined4 g_CDemonCameraInstance.base.position+4
@@ -33,8 +33,8 @@
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930
+;   core_gore.cpp_CGore_createFootstep_FUN_004cee70
 ;   core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ceef0
-;   core_gore.cpp_FUN_004cee70
 ;   core_ground.cpp_getGroundTypeCode_FUN_004cf9a0
 ;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_0053ef60
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
@@ -74,7 +74,7 @@ section .text
     FSUB float ptr [ESP + 0x84]         ; 0040cb00
     FMUL ST0                            ; 0040cb07
     FADDP                               ; 0040cb09
-    FCOMP float ptr [0x005b5ed9]        ; 0040cb0b | DAT_005b5ed9
+    FCOMP float ptr [0x005b5ed9]        ; 0040cb0b | g_FLOAT_005b5ed9
     FNSTSW AX                           ; 0040cb11
     SAHF                                ; 0040cb13
     JBE 0x0040cb23                      ; 0040cb14
@@ -107,7 +107,7 @@ section .text
     JZ 0x0040cb69                       ; 0040cb53
         ;   XREF to: 0040cb69 (CONDITIONAL_JUMP)  ; LAB_0040cb69
     PUSH 0x5b5e9f                       ; 0040cb55 | = "FeetAreWet"
-    MOV ESI,dword ptr [0x005fba60]      ; 0040cb5a | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 0040cb5a | g_CEventListPtr
     PUSH ESI                            ; 0040cb60
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 0040cb61
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)
@@ -136,8 +136,8 @@ section .text
     PUSH EBX                            ; 0040cba6
     MOV EAX,[0x005fed24]                ; 0040cba7 | g_CGorePtr
     PUSH EAX                            ; 0040cbac
-    CALL core_gore.cpp_FUN_004cee70     ; 0040cbad
-        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cee70()
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004cee70 ; 0040cbad
+        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004cee70(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     MOV EDX,dword ptr [EBP + 0x114]     ; 0040cbb2
     SUB EDX,0x2000                      ; 0040cbb8
     ADD ESP,0x18                        ; 0040cbbe
@@ -159,7 +159,7 @@ section .text
     PUSH EBX                            ; 0040cbee
     PUSH 0x5b5eaa                       ; 0040cbef | = "twig?.wav"
     PUSH EBP                            ; 0040cbf4
-    MOV EDI,dword ptr [0x006045f8]      ; 0040cbf5 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0040cbf5 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0040cbfb
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0040cbfc
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -229,11 +229,11 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 0040ccd2
     PUSH EAX                            ; 0040ccd6
     PUSH EBX                            ; 0040ccd7
-    MOV EDX,dword ptr [0x005fc5a0]      ; 0040ccd8 | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 0040ccd8 | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 0040ccde
     INC ESI                             ; 0040ccdf
     CALL core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930 ; 0040cce0
-        ;   XREF to: 004a2930 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, CKeyFramedModel * param_4, ...)
+        ;   XREF to: 004a2930 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr, ...)
     MOV ECX,dword ptr [EBP + 0x11c]     ; 0040cce5
     ADD ESP,0x14                        ; 0040cceb
     CMP ESI,ECX                         ; 0040ccee
@@ -261,7 +261,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0040cd2e
     PUSH EAX                            ; 0040cd32
     PUSH EBP                            ; 0040cd33
-    MOV ECX,dword ptr [0x006045f8]      ; 0040cd34 | DAT_006045f8
+    MOV ECX,dword ptr [0x006045f8]      ; 0040cd34 | g_CSound_PTR_006045f8
     PUSH ECX                            ; 0040cd3a
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0040cd3b
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -288,8 +288,8 @@ section .text
     PUSH EBX                            ; 0040cd77
     MOV ECX,dword ptr [0x005fed24]      ; 0040cd78 | g_CGorePtr
     PUSH ECX                            ; 0040cd7e
-    CALL core_gore.cpp_FUN_004cee70     ; 0040cd7f
-        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004cee70()
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004cee70 ; 0040cd7f
+        ;   XREF to: 004cee70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004cee70(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     ADD ESP,0x18                        ; 0040cd84
     JMP 0x0040cbcf                      ; 0040cd87
         ;   XREF to: 0040cbcf (UNCONDITIONAL_JUMP)  ; LAB_0040cbcf

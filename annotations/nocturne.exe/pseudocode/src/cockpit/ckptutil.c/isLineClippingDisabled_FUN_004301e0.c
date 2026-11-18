@@ -9,5 +9,5 @@
 int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_004301e0(void)
 
 {
-  return DAT_005ad280;
+  return g_LineClippingDisabled;
 }

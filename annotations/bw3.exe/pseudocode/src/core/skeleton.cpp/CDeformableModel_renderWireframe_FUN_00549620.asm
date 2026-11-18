@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   lod_level
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550
@@ -34,7 +34,7 @@ section .text
     JL 0x00549650                       ; 00549638
         ;   XREF to: 00549650 (CONDITIONAL_JUMP)  ; LAB_00549650
     PUSH 0x1                            ; 0054963a
-    MOV ECX,dword ptr [0x005f2afc]      ; 0054963c | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 0054963c | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 00549642
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500 ; 00549643
         ;   XREF to: 0046d500 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(CDemonRenderer * this_ptr, int enabled)
@@ -52,7 +52,7 @@ section .text
     XOR EAX,EAX                         ; 0054965b
     MOV AX,word ptr [EDI + EBX*0x1]     ; 0054965d
     PUSH EAX                            ; 00549661
-    MOV ECX,dword ptr [0x005f2afc]      ; 00549662 | DAT_005f2afc
+    MOV ECX,dword ptr [0x005f2afc]      ; 00549662 | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 00549668
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550 ; 00549669
         ;   XREF to: 0046d550 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
@@ -63,7 +63,7 @@ section .text
     XOR EAX,EAX                         ; 00549679
     MOV AX,word ptr [EDI + EBX*0x1 + 0x2] ; 0054967b
     PUSH EAX                            ; 00549680
-    MOV EAX,[0x005f2afc]                ; 00549681 | DAT_005f2afc
+    MOV EAX,[0x005f2afc]                ; 00549681 | g_CDemonRenderer_PTR_005f2afc
     PUSH EAX                            ; 00549686
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550 ; 00549687
         ;   XREF to: 0046d550 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
@@ -74,7 +74,7 @@ section .text
     XOR EAX,EAX                         ; 00549696
     MOV AX,word ptr [EDI + EBX*0x1 + 0x4] ; 00549698
     PUSH EAX                            ; 0054969d
-    MOV EDX,dword ptr [0x005f2afc]      ; 0054969e | DAT_005f2afc
+    MOV EDX,dword ptr [0x005f2afc]      ; 0054969e | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 005496a4
     ADD EDI,0x12                        ; 005496a5
     INC ESI                             ; 005496a8

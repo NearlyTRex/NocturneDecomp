@@ -28,7 +28,7 @@
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CMP3DecoderInstanceOther.sample_rate
 ;   undefined4 g_CMP3DecoderInstanceOther.num_channels
-;   undefined4 DAT_02dbd348
+;   byte g_BYTE_02dbd348
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -221,14 +221,14 @@ section .text
     TEST EAX,EAX                        ; 00527b51
     JNZ 0x00527bcc                      ; 00527b53
         ;   XREF to: 00527bcc (CONDITIONAL_JUMP)  ; LAB_00527bcc
-    MOV DL,byte ptr [0x02dbd348]        ; 00527b55 | DAT_02dbd348
+    MOV DL,byte ptr [0x02dbd348]        ; 00527b55 | g_BYTE_02dbd348
     TEST DL,0x1                         ; 00527b5b
     JNZ 0x00527b85                      ; 00527b5e
         ;   XREF to: 00527b85 (CONDITIONAL_JUMP)  ; LAB_00527b85
     MOV DH,DL                           ; 00527b60
     OR DH,0x1                           ; 00527b62
     PUSH 0x2db4d18                      ; 00527b65
-    MOV byte ptr [0x02dbd348],DH        ; 00527b6a | DAT_02dbd348
+    MOV byte ptr [0x02dbd348],DH        ; 00527b6a | g_BYTE_02dbd348
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90 ; 00527b70
         ;   XREF to: 004e7d90 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00527b75

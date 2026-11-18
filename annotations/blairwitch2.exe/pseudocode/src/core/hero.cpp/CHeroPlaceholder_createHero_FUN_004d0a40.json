@@ -1,0 +1,214 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "004fcf70",
+      "from_addr": "004fd0aa",
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_004fcf70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d0a40",
+    "address_range": [
+      [
+        "004d0a40",
+        "004d0ae5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40",
+    "signature": "CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d0a40(CHeroPlaceholder *this_ptr,EHeroType hero_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "00408ae0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0"
+    },
+    {
+      "addr": "0040c5a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c5a0"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "004fcda0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da03c",
+      "name": "s_core_hero_cpp_005da03c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da04d",
+      "name": "s_CHeroPlaceholder_createH_005da04d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618170",
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
+    },
+    {
+      "addr": "01cedf50",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fd0aa",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_createOneHero_FUN_004fcf70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3275862068965516,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 50,
+      "INT_ADD": 26,
+      "INT_AND": 15,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 17,
+      "LOAD": 13,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 193
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ecca0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d4be0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f3d80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.65
+    },
+    "nocturne.exe": {
+      "addr": "004b6080",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.65
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHeroPlaceholder *"
+      },
+      {
+        "is_param": true,
+        "name": "hero_type",
+        "offset": 8,
+        "size": 4,
+        "type": "EHeroType"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 28,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (pUVar2->vec).x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

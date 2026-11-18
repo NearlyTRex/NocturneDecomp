@@ -10,7 +10,7 @@
 ;   core_haystack.cpp_factoryFuncHaystack_FUN_004cc730 at 004cc743
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ce240
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_haystack.cpp_CHaystack_ctor_FUN_004cc760
     MOV EDX,dword ptr [ESP + 0x8]       ; 004cc761
     PUSH EDX                            ; 004cc765
-    CALL core_hero.cpp_FUN_004ce240     ; 004cc766
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 004cc766
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     MOV EBX,EAX                         ; 004cc76b
     ADD EAX,0x2b4                       ; 004cc76d
     ADD ESP,0x4                         ; 004cc772

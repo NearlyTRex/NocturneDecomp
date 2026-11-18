@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 55,
+    "complexity_score": 41,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "pseudocode_lines": 26,
+    "suspect_count": 1,
     "suspect_types": [
-      "preinc_loop_idiom",
-      "warning_overlapping_globals"
+      "preinc_loop_idiom"
     ],
-    "total_lines": 75
+    "total_lines": 76
   },
   "cross_references": [
     {
       "addr": "004d2cd0",
       "from_addr": "004d2cda",
-      "name": "core_hero.cpp_FUN_004d2cd0",
+      "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,21 +78,21 @@
     },
     {
       "addr": "005c5f2b",
-      "name": "DAT_005c5f2b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_InventoryRandNormalizationFactor",
+      "type": "float",
+      "value": "0.00003051851"
     },
     {
       "addr": "005c5f2f",
-      "name": "DAT_005c5f2f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c5f2f",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005c5f37",
-      "name": "DAT_005c5f37",
-      "type": "undefined4",
-      "value": null
+      "name": "g_InventoryRandTwoFactor",
+      "type": "double",
+      "value": "2"
     }
   ],
   "param_estimates": {
@@ -124,7 +123,7 @@
       {
         "call_addr": "004d2cda",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d2cd0",
+        "caller": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -229,16 +228,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar2 = pCVar2;` self-assign, two-var `tmp = &pCVar2->field; pCVar2 = tmp;` ping-pong, or a bare `pCVar2 = pCVar2 + N;` advance followed by a `*pCVar2 =` store \u2014 plus a constant-index store on `pCVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 14,
+      "line": 12,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

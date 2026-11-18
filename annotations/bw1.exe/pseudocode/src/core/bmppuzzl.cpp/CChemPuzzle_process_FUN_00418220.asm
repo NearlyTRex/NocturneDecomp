@@ -11,12 +11,12 @@
 ;   TerminatedCString s_ChemPuzzleActive_005d4234
 ;   TerminatedCString s_SolvedChemistryPuzzle_005d4245
 ;   TerminatedCString s_FailedChemistryPuzzle_005d425b
-;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_0061f2a4
-;   undefined4 DAT_01c4353c
-;   undefined4 DAT_01c43540
-;   undefined4 DAT_01c43544
-;   undefined4 DAT_01d1bca0
+;   CEventList* g_CEventListPtr = 01c51d80
+;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
+;   void* g_PTR_01d1bca0
 ;
 ; Called Functions:
 ;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0
@@ -33,7 +33,7 @@ section .text
     PUSH EBP                            ; 00418223
     MOV EBX,dword ptr [ESP + 0x14]      ; 00418224
     PUSH 0x5d4234                       ; 00418228 | = "ChemPuzzleActive"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0041822d | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0041822d | g_CEventListPtr
     PUSH EDX                            ; 00418233
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00418234
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -299,22 +299,22 @@ section .text
     RET                                 ; 0041856e
     PUSH 0x5d4245                       ; 0041856f | = "SolvedChemistryPuzzle"
         ;   Label: LAB_0041856f
-    MOV EBP,dword ptr [0x0061b4d0]      ; 00418574 | DAT_0061b4d0
+    MOV EBP,dword ptr [0x0061b4d0]      ; 00418574 | g_CEventListPtr
     PUSH EBP                            ; 0041857a
     MOV dword ptr [EBX + 0x930],0xffffffff ; 0041857b
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00418585
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0041858a
-    MOV EAX,[0x0061f2a4]                ; 0041858d | DAT_0061f2a4
+    MOV EAX,[0x0061f2a4]                ; 0041858d | g_CKeys_PTR_0061f2a4
     PUSH 0x200                          ; 00418592
-    MOV EDX,dword ptr [EAX]             ; 00418597 | DAT_01d1bca0
-    PUSH EAX                            ; 00418599 | DAT_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 00418597 | g_PTR_01d1bca0
+    PUSH EAX                            ; 00418599 | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 0041859a
     ADD ESP,0x8                         ; 0041859d
     XOR EAX,EAX                         ; 004185a0
     PUSH EAX                            ; 004185a2
     PUSH EBX                            ; 004185a3
-    MOV [0x01c43544],EAX                ; 004185a4 | DAT_01c43544
+    MOV [0x01c43544],EAX                ; 004185a4 | g_MouseButtonFlags
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 004185a9
         ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004185ae
@@ -323,10 +323,10 @@ section .text
     POP ESI                             ; 004185b3
     POP EBX                             ; 004185b4
     RET                                 ; 004185b5
-    MOV EDX,dword ptr [0x01c43540]      ; 004185b6 | DAT_01c43540
+    MOV EDX,dword ptr [0x01c43540]      ; 004185b6 | g_MouseY
         ;   Label: LAB_004185b6
     PUSH EDX                            ; 004185bc
-    MOV ECX,dword ptr [0x01c4353c]      ; 004185bd | DAT_01c4353c
+    MOV ECX,dword ptr [0x01c4353c]      ; 004185bd | g_MouseX
     PUSH ECX                            ; 004185c3
     MOV EAX,dword ptr [EBX]             ; 004185c4
     PUSH EBX                            ; 004185c6
@@ -344,22 +344,22 @@ section .text
     JNZ 0x004185fc                      ; 004185e7
         ;   XREF to: 004185fc (CONDITIONAL_JUMP)  ; LAB_004185fc
     PUSH 0x5d425b                       ; 004185e9 | = "FailedChemistryPuzzle"
-    MOV EAX,[0x0061b4d0]                ; 004185ee | DAT_0061b4d0
+    MOV EAX,[0x0061b4d0]                ; 004185ee | g_CEventListPtr
     PUSH EAX                            ; 004185f3
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004185f4
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004185f9
     PUSH 0x200                          ; 004185fc
         ;   Label: LAB_004185fc
-    MOV EAX,[0x0061f2a4]                ; 00418601 | DAT_0061f2a4
-    PUSH EAX                            ; 00418606 | DAT_01d1bca0
-    MOV EDX,dword ptr [EAX]             ; 00418607 | DAT_01d1bca0
+    MOV EAX,[0x0061f2a4]                ; 00418601 | g_CKeys_PTR_0061f2a4
+    PUSH EAX                            ; 00418606 | g_PTR_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 00418607 | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 00418609
     ADD ESP,0x8                         ; 0041860c
     XOR EDX,EDX                         ; 0041860f
     PUSH EDX                            ; 00418611
     PUSH EBX                            ; 00418612
-    MOV dword ptr [0x01c43544],EDX      ; 00418613 | DAT_01c43544
+    MOV dword ptr [0x01c43544],EDX      ; 00418613 | g_MouseButtonFlags
     CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 00418619
         ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 0041861e
@@ -377,10 +377,10 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0041863a
     CALL dword ptr [EAX + 0x8]          ; 0041863c
     ADD ESP,0x4                         ; 0041863f
-    MOV EAX,[0x0061f2a4]                ; 00418642 | DAT_0061f2a4
+    MOV EAX,[0x0061f2a4]                ; 00418642 | g_CKeys_PTR_0061f2a4
     PUSH 0x200                          ; 00418647
-    MOV EDX,dword ptr [EAX]             ; 0041864c | DAT_01d1bca0
-    PUSH EAX                            ; 0041864e | DAT_01d1bca0
+    MOV EDX,dword ptr [EAX]             ; 0041864c | g_PTR_01d1bca0
+    PUSH EAX                            ; 0041864e | g_PTR_01d1bca0
     CALL dword ptr [EDX + 0x4]          ; 0041864f
     ADD ESP,0x8                         ; 00418652
     MOV dword ptr [EBX + 0x930],0xffffffff ; 00418655

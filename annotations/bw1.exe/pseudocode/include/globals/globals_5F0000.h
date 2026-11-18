@@ -6,13 +6,18 @@
 #include "system/basetypes.h"
 #include "system/watcom.h"
 #include "types/classes/CBoneGuy_full_vtable.h"
+#include "types/classes/CCameraView_vtable.h"
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CConstruct_full_vtable.h"
 #include "types/classes/CDemnfolk_full_vtable.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDjien_full_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
+#include "types/classes/CParticle_vtable.h"
+#include "types/classes/CPickList_full_vtable.h"
+#include "types/classes/CStrList_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 
 // =============================================================================
@@ -21,6 +26,11 @@
 
 // CBoneGuy_full_vtable
 extern CBoneGuy_full_vtable g_CBoneGuyVTable;
+
+// CCameraView_vtable
+extern CCameraView_vtable g_CCameraView_vtable_005fd414;
+extern CCameraView_vtable g_CDemonCameraVTable;
+extern CCameraView_vtable g_CCameraView_vtable_005febf4;
 
 // CCharacter_full_vtable
 extern CCharacter_full_vtable g_CBirdVTable;
@@ -31,6 +41,9 @@ extern CConstruct_full_vtable g_CConstructVTable;
 
 // CDemnfolk_full_vtable
 extern CDemnfolk_full_vtable g_CDemnfolkVTable;
+
+// CDemonActor*
+extern CDemonActor* g_ActorNameSentinel;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;
@@ -78,11 +91,26 @@ extern CHero_full_vtable g_CBaronVTable;
 extern CHero_full_vtable g_CColonelVTable;
 extern CHero_full_vtable g_CDocVTable;
 
+// CParticle_vtable
+extern CParticle_vtable g_CRainDropVTable;
+extern CParticle_vtable g_CPopcornVTable;
+
+// CPickList_full_vtable
+extern CPickList_full_vtable g_CPickListVTable;
+
+// CStrList_vtable
+extern CStrList_vtable g_CStrListVTable;
+
 // CWeapon_full_vtable
 extern CWeapon_full_vtable g_CBaronWeaponVTable;
 extern CWeapon_full_vtable g_CCrossbowVTable;
 extern CWeapon_full_vtable g_CDynamiteVTable;
 extern CWeapon_full_vtable g_CElephantGunVTable;
+
+// TerminatedCString
+extern TerminatedCString g_CChemPuzzleVTable;
+extern TerminatedCString g_CAsciiUnarmorVTable;
+extern TerminatedCString g_CInStreamPipeVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_005FC8F0;
@@ -206,18 +234,27 @@ extern WatcomTypeInfo g_CEmitterTypeInfo;
 extern WatcomTypeInfo g_CFilmReelTypeInfo;
 extern WatcomTypeInfo g_CFilmProjectorTypeInfo;
 
-// undefined1
-extern undefined1 DAT_005fb2c4;
+// char
+extern char g_SpaceCharacter;
 
-// undefined1*
-extern undefined1* g_CAudioRecPuzzleVTable;
-extern undefined1* g_CChemPuzzleVTable;
-extern undefined1* g_CAsciiArmorVTable;
-extern undefined1* g_CAsciiUnarmorVTable;
-extern undefined1* g_CInStreamPipeVTable;
-extern undefined1* g_CDemonCameraVTable;
-extern undefined1* g_CStrListVTable;
-extern undefined1* g_CPickListVTable;
-extern undefined1* g_CRainDropVTable;
-extern undefined1* g_CPopcornVTable;
+// int
+extern int g_INT_005faaf4;
+extern int g_INT_005fab04;
+extern int g_INT_005fab08;
+extern int g_INT_005fab0c;
+extern int g_INT_005fd468;
+extern int g_INT_005fe698;
+
+// void*[10]
+extern void* g_ARRAY_PTR_005fc944[10];
+
+// void*[23]
+extern void* g_CAudioRecPuzzleVTable[23];
+
+// void*[3]
+extern void* g_ARRAY_PTR_005fca94[3];
+
+// void*[9]
+extern void* g_ARRAY_PTR_005fd9b4[9];
+extern void* g_CAsciiArmorVTable[9];
 

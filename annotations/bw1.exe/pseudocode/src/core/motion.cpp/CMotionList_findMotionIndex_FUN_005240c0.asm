@@ -11,11 +11,11 @@
 ; XREF[23]:
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_004343c0 at 00434448
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00432c70 at 00432c96
+;   core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200 at 0046f2f6
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ed28
 ;   core_doc.cpp_CDoc_setup_FUN_00469060 at 00469250
-;   core_doc.cpp_FUN_0046caa0 at 0046e5d9
-;   core_doc.cpp_FUN_0046f200 at 0046f2f6
-;   core_event.cpp_FUN_004a1d00 at 004a631f
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046e5d9
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a631f
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004c6390 at 004c6564
 ;   core_ghoul.cpp_CGhoul_processDamage_FUN_004e0870 at 004e0c15
 ;   core_hostage.cpp_CHostage_setup_FUN_004ed630 at 004ed7ea
@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005ead50
 ;   TerminatedCString s_Can_t_find_motion_s_in_m_005ead63
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -85,10 +85,10 @@ section .text
     MOV ESI,0x5ead50                    ; 00524116 | = "..\\core\\motion.cpp"
     MOV EDI,0x13f                       ; 0052411b
     PUSH 0x5ead63                       ; 00524120 | = "Can't find motion \"%s\" in motion list"
-    MOV dword ptr [0x01d1d400],ESI      ; 00524125 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0052412b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00524131
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 00524125 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0052412b | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00524131
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00524136
     MOV EAX,0xffffffff                  ; 00524139
     POP EBP                             ; 0052413e

@@ -10,7 +10,7 @@ void __cdecl core_enemy_cpp_staticInit_FUN_00479530(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CEnemyActorType_01bcdebc,"CEnemy",(CDemonActor_FactoryFunc *)0x0,
-             &INT_005b7604,10,&g_CCharacterActorType_00765a60);
+            (&g_CEnemyClassInfo,"CEnemy",(CDemonActor_FactoryFunc *)0x0,
+             &g_CEnemyClassVersion,10,&g_CCharacterClassInfo);
   return;
 }

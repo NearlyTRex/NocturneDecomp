@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046bf90(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -28,29 +26,29 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046b
           this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2->vertices[0].texture_u;
           this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2->vertices[0].texture_v;
         }
-        *(int *)(&DAT_01bdd818 + iVar4) = iVar1;
+        *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
         pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
         iVar3 = iVar3 + 1;
         iVar4 = iVar4 + 4;
       } while (iVar3 < (poly->base).base.count);
     }
     if (this_ptr->shadow_pass_active == 0) {
-      if (DAT_005fba20 == 0x20) {
-        _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
+      if (g_INT_005fba20 == 0x20) {
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_00560f31;
       }
       else {
-        _DAT_01c6b5cc = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713;
       }
-      _DAT_01c6e2b8 = 6;
-      _DAT_01c6e2b4 = 0xc3;
+      g_VertexPreprocessMode = 6;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     }
     else {
-      _DAT_01c6e2b4 = 1;
-      _DAT_01c6e2b8 = 0;
-      _DAT_01c6b5cc = core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_0046fa57;
+      g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+      g_VertexPreprocessMode = 0;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_0046fa57;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-              (this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);
+              (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
   }
   return;
 }

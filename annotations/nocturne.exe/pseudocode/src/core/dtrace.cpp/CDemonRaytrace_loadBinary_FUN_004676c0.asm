@@ -26,8 +26,8 @@
 ;   TerminatedCString s_CDemonRaytrace_loadBinar_0057e19a
 ;   float FLOAT_0057e1ca = 8
 ;   float FLOAT_0057e1ce = 0.125
-;   undefined4 DAT_005b6d00
-;   undefined4 DAT_01bc994c
+;   int g_GeoFileFormatVersion = 0x4
+;   int g_INT_01bc994c
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -60,7 +60,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004676dd
     XOR EDX,EDX                         ; 004676e1
     PUSH EAX                            ; 004676e3
-    MOV dword ptr [0x01bc994c],EDX      ; 004676e4 | DAT_01bc994c
+    MOV dword ptr [0x01bc994c],EDX      ; 004676e4 | g_INT_01bc994c
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004676ea
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004676ef
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 00467809 (CONDITIONAL_JUMP)  ; LAB_00467809
     MOV EAX,dword ptr [ESP + 0xc]       ; 004676fd
         ;   Label: LAB_004676fd
-    CMP EAX,dword ptr [0x005b6d00]      ; 00467701 | DAT_005b6d00
+    CMP EAX,dword ptr [0x005b6d00]      ; 00467701 | g_GeoFileFormatVersion
     JLE 0x0046772c                      ; 00467707
         ;   XREF to: 0046772c (CONDITIONAL_JUMP)  ; LAB_0046772c
     MOV ECX,0x57e100                    ; 00467709 | = "..\\core\\dtrace.cpp"

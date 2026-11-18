@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 170,
+    "complexity_score": 150,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 70,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy"
@@ -38,50 +38,50 @@
   "globals": [
     {
       "addr": "005d82f3",
-      "name": "DAT_005d82f3",
-      "type": "undefined1",
+      "name": "s_demn_005d82f3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d82f4",
-      "name": "DAT_005d82f4",
-      "type": "undefined1",
+      "name": "s_demn_005d82f3+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d82f5",
-      "name": "DAT_005d82f5",
-      "type": "undefined1",
+      "name": "s_demn_005d82f3+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d82f6",
-      "name": "DAT_005d82f6",
-      "type": "undefined1",
+      "name": "s_demn_005d82f3+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d82f9",
-      "name": "DAT_005d82f9",
-      "type": "undefined1",
+      "name": "s_hurt_wav_2_005d82f9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d82fa",
-      "name": "DAT_005d82fa",
-      "type": "undefined1",
+      "name": "s_hurt_wav_2_005d82f9+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d82fb",
-      "name": "DAT_005d82fb",
-      "type": "undefined1",
+      "name": "s_hurt_wav_2_005d82f9+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d82fc",
-      "name": "s_rt_wav_2_005d82fc",
-      "type": "TerminatedCString",
+      "name": "s_hurt_wav_2_005d82f9+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -164,14 +164,6 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005d82f3",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_005d82f3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 13,
       "match": "DAT_0152c320",
       "severity": "mild",
@@ -184,14 +176,6 @@
       "match": "DAT_0152c320",
       "severity": "mild",
       "text": "pcVar5 = &DAT_0152c320;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005d82f9",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_005d82f9;",
       "type": "undefined_data"
     },
     {

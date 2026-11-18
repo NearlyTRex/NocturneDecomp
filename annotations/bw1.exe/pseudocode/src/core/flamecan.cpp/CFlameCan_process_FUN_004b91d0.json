@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 55,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 31,
     "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 107
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -57,21 +57,21 @@
   "globals": [
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "0061c010",
-      "name": "DAT_0061c010",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "01c57074"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     }
   ],
   "param_estimates": {
@@ -179,7 +179,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 30,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);",

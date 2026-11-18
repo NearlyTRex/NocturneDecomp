@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_polyListL_FUN_00512c60(float *vertices,int vertex_count,ushort *indices,int triangle_count)
 
 {
@@ -16,24 +14,25 @@ void __cdecl engine_mini3d_cpp_polyListL_FUN_00512c60(float *vertices,int vertex
   int iVar1;
   int in_stack_00000014;
   
-  _DAT_01e7dac8 = _DAT_01e7dac8 + triangle_count;
-  _DAT_01d224b4 = _DAT_01d224b4 + vertex_count;
-  if (_DAT_01d25f14 == 0) {
-    if ((_DAT_02c83460 != (code *)0x0) && (_DAT_01c50948 != 0)) {
-      (*_DAT_02c83460)(vertices,vertex_count,indices,triangle_count,_DAT_01c51d14);
+  g_RenderedTriangleCount = g_RenderedTriangleCount + triangle_count;
+  g_INT_01d224b4 = g_INT_01d224b4 + vertex_count;
+  if (g_INT_01d25f14 == 0) {
+    if ((g_PTR_02c83460 != (byte *)0x0) && (g_INT_01c50948 != 0)) {
+      (*(code *)g_PTR_02c83460)
+                (vertices,vertex_count,indices,triangle_count,g_RenderStateFlags.dword);
       return;
     }
     engine_mini3d_cpp_updateTransform_FUN_005124f0();
     engine_mini3d_cpp_updateRenderState_FUN_00516c60();
     engine_mini3d_cpp_allocVertexList_FUN_00512670();
     if (10000 < vertex_count) {
-      _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
-      _DAT_01d1d404 = 0x7e6;
-      core_main_c_FUN_005030e0("CMini3D::polyList - Too many verticies : %d",vertex_count);
+      g_CHAR_PTR_01d1d400 = "..\\engine\\mini3d.cpp";
+      g_INT_01d1d404 = 0x7e6;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("CMini3D::polyList - Too many verticies : %d");
     }
     iVar1 = 0;
     clip_flags = 0;
-    out = _DAT_01d227e0;
+    out = g_FLOAT_PTR_01d227e0;
     if (0 < vertex_count) {
       do {
         engine_mini3d_cpp_transformVertex_FUN_00513260((CVector3f *)vertices,out);
@@ -50,13 +49,13 @@ void __cdecl engine_mini3d_cpp_polyListL_FUN_00512c60(float *vertices,int vertex
         vertices = (float *)((int)vertices + 0x24);
       } while (iVar1 < in_stack_00000014);
     }
-    if (_DAT_01d25f18 == 0) {
+    if (g_INT_01d25f18 == 0) {
       engine_mini3d_cpp_drawTransformedList_FUN_00515ae0
-                (_DAT_01d227e0,vertex_count,indices,triangle_count,clip_flags);
+                (g_FLOAT_PTR_01d227e0,vertex_count,indices,triangle_count,clip_flags);
       return;
     }
     engine_mini3d_cpp_userClipPolyList_FUN_00517660
-              (_DAT_01d227e0,vertex_count,indices,triangle_count);
+              (g_FLOAT_PTR_01d227e0,vertex_count,indices,triangle_count);
   }
   else {
     engine_mini3d_cpp_polyListSurface_FUN_00516cc0(vertices,vertex_count,indices,triangle_count);

@@ -15,7 +15,7 @@ section .text
     PUSH 0x13ba4                        ; 0056f290
         ;   Label: core_succubus.cpp_factoryFuncSuccubus_FUN_0056f290
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0056f295
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0056f29a
     TEST EAX,EAX                        ; 0056f29d
     JNZ 0x0056f2a2                      ; 0056f29f

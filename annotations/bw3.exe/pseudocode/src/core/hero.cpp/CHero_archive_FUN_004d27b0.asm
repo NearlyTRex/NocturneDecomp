@@ -27,7 +27,7 @@
 ;   TerminatedCString s_leverToPull_005c4b98
 ;   TerminatedCString s_ladderToClimb_005c4ba4
 ;   TerminatedCString s_pushedObject_005c4bb2
-;   undefined4 DAT_005c4bbf
+;   TerminatedCString s_keys_005c4bbf
 ;   TerminatedCString s_keyNameList_d_005c4bc4
 ;   ... and 9 more
 ;
@@ -175,7 +175,7 @@ section .text
         ;   Label: LAB_004d291a
     JNZ 0x004d2938                      ; 004d2921
         ;   XREF to: 004d2938 (CONDITIONAL_JUMP)  ; LAB_004d2938
-    PUSH 0x5c4bbf                       ; 004d2923 | DAT_005c4bbf
+    PUSH 0x5c4bbf                       ; 004d2923 | = "keys"
     LEA EAX,[ESP + 0xcc]                ; 004d2928
     PUSH EAX                            ; 004d292f
     CALL core_actor.cpp_archiveInteger_FUN_0040b8b0 ; 004d2930
@@ -245,13 +245,13 @@ section .text
         ;   Label: LAB_004d29d7
     JL 0x004d2a03                       ; 004d29de
         ;   XREF to: 004d2a03 (CONDITIONAL_JUMP)  ; LAB_004d2a03
-    MOV ECX,dword ptr [0x007df9b8]      ; 004d29e0 | DAT_007df9b8
+    MOV ECX,dword ptr [0x007df9b8]      ; 004d29e0 | g_ActorReadingMode
     LEA EAX,[ESI + 0x206e8]             ; 004d29e6
     CMP ECX,0x1                         ; 004d29ec
     JNZ 0x004d2a5e                      ; 004d29ef
         ;   XREF to: 004d2a5e (CONDITIONAL_JUMP)  ; LAB_004d2a5e
     PUSH EDI                            ; 004d29f1
-    MOV EDI,dword ptr [0x007df9b4]      ; 004d29f2 | DAT_007df9b4
+    MOV EDI,dword ptr [0x007df9b4]      ; 004d29f2 | g_ActorDataFile
     PUSH EDI                            ; 004d29f8
     PUSH EAX                            ; 004d29f9
     CALL core_inv.cpp_CInventory_load_FUN_004dc750 ; 004d29fa
@@ -262,7 +262,7 @@ section .text
         ;   Label: LAB_004d2a03
     JL 0x004d2a34                       ; 004d2a0a
         ;   XREF to: 004d2a34 (CONDITIONAL_JUMP)  ; LAB_004d2a34
-    PUSH 0x5c4bfd                       ; 004d2a0c | DAT_005c4bfd
+    PUSH 0x5c4bfd                       ; 004d2a0c | = "mana"
     LEA EAX,[ESI + 0x20b80]             ; 004d2a11
     PUSH EAX                            ; 004d2a17
     CALL core_actor.cpp_archiveInteger_FUN_0040b8b0 ; 004d2a18
@@ -288,7 +288,7 @@ section .text
     POP ESI                             ; 004d2a5b
     POP EBX                             ; 004d2a5c
     RET                                 ; 004d2a5d
-    MOV EBX,dword ptr [0x007df9b4]      ; 004d2a5e | DAT_007df9b4
+    MOV EBX,dword ptr [0x007df9b4]      ; 004d2a5e | g_ActorDataFile
         ;   Label: LAB_004d2a5e
     PUSH EBX                            ; 004d2a64
     PUSH EAX                            ; 004d2a65

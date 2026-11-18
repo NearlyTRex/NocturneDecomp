@@ -10,49 +10,50 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processMotionEvent_FUN_005a252
 
 {
   int iVar1;
-  uint uVar2;
-  uint uVar3;
+  float damage;
+  float radius;
   
   iVar1 = 0;
   switch(event_id) {
   case 0x1fa4:
     iVar1 = this_ptr->right_finger_bone;
-    uVar3 = 0x40000000;
-    uVar2 = 0x41C80000;
+    radius = 2.0;
+    damage = 25.0f;
     break;
   case 0x1fa5:
-    iVar1 = core_basicene_cpp_FUN_0059f740
-                      (this_ptr,0x40A00000,this_ptr->right_finger_bone,0x3f800000);
+    iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                      (&this_ptr->base,5.0f,this_ptr->right_finger_bone,1.0);
     if (iVar1 == 0) {
       return;
     }
     goto LAB_005a25e4;
   case 0x1fa6:
     iVar1 = this_ptr->left_finger_bone;
-    uVar3 = 0x3f800000;
-    uVar2 = 0x40A00000;
+    radius = 1.0;
+    damage = 5.0f;
     break;
   case 0x1fa7:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"phantomhandswing0?.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"phantomhandswing0?.wav",
                &(this_ptr->base).base.base.base.location.position);
     return;
   case 0x1fa8:
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,"phantomteleport0?.wav",
+              (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"phantomteleport0?.wav",
                &(this_ptr->base).base.base.base.location.position);
     return;
   default:
     goto switchD_005a2537_default;
   }
-  iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,uVar2,iVar1,uVar3);
+  iVar1 = core_basicene_cpp_CBasicEnemy_attackFromBone_FUN_0059f740
+                    (&this_ptr->base,damage,iVar1,radius);
 switchD_005a2537_default:
   if (iVar1 == 0) {
     return;
   }
 LAB_005a25e4:
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-            (0x0264B290,(CDemonActor *)this_ptr,"phandslap0?.wav",
+            (g_CSound_PTR_0061c068,(CDemonActor *)this_ptr,"phandslap0?.wav",
              &(this_ptr->base).base.base.base.location.position);
   return;
 }

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 47,
+    "complexity_score": 48,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strcpy"
     ],
-    "total_lines": 101
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -56,7 +56,7 @@
     {
       "addr": "005b99c8",
       "is_variadic": false,
-      "name": "crt_io.c_FUN_005b99c8"
+      "name": "crt_io.c_getFileStat_FUN_005b99c8"
     },
     {
       "addr": "00461210",
@@ -213,7 +213,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 21,
+      "line": 22,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

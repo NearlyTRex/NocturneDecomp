@@ -18,7 +18,7 @@ void __cdecl core_yow_cpp_CYow_setup_FUN_005b81d0(CYow *this_ptr)
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&(this_ptr->base).base.model);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,"COMBATMODEHARD");
+                    (g_CEventListPtr,"COMBATMODEHARD");
   if (iVar1 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }
@@ -43,10 +43,10 @@ void __cdecl core_yow_cpp_CYow_setup_FUN_005b81d0(CYow *this_ptr)
   this_ptr->bone_indices[6] = iVar1;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
-                    (this_ptr_02,&DAT_005fa23b,1);
+                    (this_ptr_02,"larm",1);
   this_ptr->part_indices[0] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
-                    (this_ptr_02,&DAT_005fa240,1);
+                    (this_ptr_02,"rarm",1);
   this_ptr->part_indices[1] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
                     (this_ptr_02,"l4arm",1);
@@ -61,7 +61,7 @@ void __cdecl core_yow_cpp_CYow_setup_FUN_005b81d0(CYow *this_ptr)
                     (this_ptr_02,"torso",1);
   this_ptr->part_indices[5] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
-                    (this_ptr_02,&DAT_005fa25d,1);
+                    (this_ptr_02,"head",1);
   this_ptr->part_indices[6] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
                     (this_ptr_02,"rshin",1);

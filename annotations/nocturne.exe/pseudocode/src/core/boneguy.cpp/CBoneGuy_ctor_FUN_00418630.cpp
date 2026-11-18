@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00418630(CBoneGuy *this_ptr)
 
 {
@@ -66,8 +64,8 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00418630(CBoneGuy *this_pt
   local_14.b = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(106.0,256.0);
   local_8 = local_14.b;
   core_boneguy_cpp_hsvToRgb_FUN_00418480(&local_20,&local_14);
-  fVar2 = _DAT_0057919e;
-  dVar8 = round((double)(local_20.r * _DAT_0057919e));
+  fVar2 = 256.0f;
+  dVar8 = round((double)(local_20.r * 256.0f));
   *(int *)((int)dest + -0xbc9c) = (int)ROUND(dVar8);
   dVar8 = round((double)(local_20.r * fVar2));
   *(int *)((int)dest + -0xbc98) = (int)ROUND(dVar8);

@@ -10,7 +10,7 @@ void __cdecl core_baron_cpp_CBaron_archive_FUN_00411080(CBaron *this_ptr)
 
 {
   core_hero_cpp_CHero_archive_FUN_004b49a0(&this_ptr->base);
-  if (g_INT_005acf3c < 2) {
+  if (g_CBaronClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->summon_event,"summonEvent");

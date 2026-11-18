@@ -4,3 +4,68 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
+  warning_inlined_function          40 ( 75.5%)
+  warning_unreachable               13 ( 24.5%)
+
+====================================================================================================
+TYPE: warning_inlined_function (40 occurrences)
+====================================================================================================
+
+Unique patterns:
+    40x  WARNING: Inlined function:
+
+Functions:
+  cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
+  cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
+  core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70
+  core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20
+  core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700
+  core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640
+  core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0
+  core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
+  core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
+  core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
+  core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
+  core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0
+  core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0
+  core_game.cpp_CGame_slamDT_FUN_004e3080
+  core_game.cpp_CGame_updateDT_FUN_004d7d90
+  core_game.cpp_drawHealthBar_FUN_004d7fa0
+  core_ghoul.cpp_CGhoul_ctor_FUN_004e6030
+  core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
+  core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
+  core_setutil.cpp_CDemonLight_setTransformScale_FUN_00585220
+  core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40
+  engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0048c6e0
+  engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
+  engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0048c690
+  engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
+  engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
+  engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
+  engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
+  engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00
+  engine_matrix.c_calculate3DDistance_FUN_0050d830
+  engine_matrix.c_matrixPushAndRotate_FUN_0050db00
+  engine_matrix.c_vectorLength3DToInt_FUN_0050dad0
+  shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0
+  shape_design.c_sampleAndFilterPixel_FUN_0046ae20
+  shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
+  shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
+  wincore_winrun.cpp_getTime_FUN_005f2dc0
+  wincore_winrun.cpp_sleep_FUN_005f40e0
+  wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010
+
+====================================================================================================
+TYPE: warning_unreachable (13 occurrences)
+====================================================================================================
+
+Unique patterns:
+    13x  WARNING: Removing unreachable block
+
+Functions:
+  cockpit_drawsurf.cpp_setColorRGB_FUN_00487220
+  cockpit_drawsurf.cpp_setColor_FUN_00487010
+  core_inv.cpp_CInventory_clear_FUN_004fd0e0
+  core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
+  core_script.cpp_clearSelections_FUN_005644e0
+  engine_font.cpp_setShadowColor_FUN_004ce0f0

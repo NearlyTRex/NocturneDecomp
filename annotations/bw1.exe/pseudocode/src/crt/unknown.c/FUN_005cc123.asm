@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00628d06
+;   float10 g_FLOAT10_00628d06 = 1.570796326794896619
 ;
 ; *****************************************************************************
 
 section .text
 
-    FLD extended double ptr [0x00628d06] ; 005cc123 | DAT_00628d06
+    FLD extended double ptr [0x00628d06] ; 005cc123 | g_FLOAT10_00628d06
         ;   Label: crt_unknown.c_FUN_005cc123
     FSUBRP                              ; 005cc129
     FCHS                                ; 005cc12b

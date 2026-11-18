@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 43,
+    "complexity_score": 12,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 34
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -29,6 +26,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004db9d0",
+      "from_addr": "004db9ff",
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004defa0",
       "from_addr": "004deffa",
       "name": "core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0",
@@ -38,12 +41,6 @@
       "addr": "004dccd0",
       "from_addr": "004dcd1a",
       "name": "core_inv.cpp_CInventory_updateInventory_FUN_004dccd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004db9d0",
-      "from_addr": "004db9ff",
-      "name": "core_inv.cpp_FUN_004db9d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,8 +60,8 @@
   "globals": [
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     }
   ],
@@ -74,7 +71,7 @@
       {
         "call_addr": "004db9ff",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004db9d0",
+        "caller": "core_inv.cpp_CInventory_selectWeapon_FUN_004db9d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,22 +201,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 7,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "if (this_ptr->owner == *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4)) {",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

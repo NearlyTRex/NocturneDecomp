@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
@@ -27,7 +25,8 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumC
   int local_10;
   
   bVar6 = 0;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(g_CDemonRenderer_PTR_00612560)
+  ;
   if (iVar4 == 0) {
     local_24 = input_ptr->x - (this_ptr->camera_origin).x;
     local_20 = input_ptr->y - (this_ptr->camera_origin).y;
@@ -105,11 +104,11 @@ LAB_0044e502:
       }
     }
   }
-  iStack_30 = _DAT_01483a40;
+  iStack_30 = g_CameraOutOfBoundsCoord.x;
   *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =
-       *(uint *)(&DAT_01483a44 + (uint)bVar6 * -8);
+       *(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);
   *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&DAT_01483a48 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+       *(uint *)((uint)bVar6 * -8 + 0x1483a48 + (uint)bVar6 * -8);
   puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);
   output_ptr->x = iStack_30;
   *puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);

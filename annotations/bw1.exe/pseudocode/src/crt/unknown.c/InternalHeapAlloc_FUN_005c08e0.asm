@@ -14,12 +14,12 @@
 ;   crt_unknown.c_FUN_005c9fa0 at 005c9fcd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626220
-;   undefined4 DAT_00626224
-;   undefined4 DAT_00626228
+;   Heap* g_MainHeap = 00000000
+;   Heap* g_SecondaryHeap = 00000000
+;   int g_INT_00626228 = 0x0
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626618 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626620 = 005c50d4
-;   undefined4 DAT_02c9f690
+;   char[16] g_CHAR_ARRAY_02c9f690
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c50d4
@@ -67,31 +67,31 @@ section .text
     MOV byte ptr [ESP + 0x8],AH         ; 005c0923
     MOV EAX,dword ptr [ESP + 0x4]       ; 005c0927
         ;   Label: LAB_005c0927
-    CMP EAX,dword ptr [0x00626228]      ; 005c092b | DAT_00626228
+    CMP EAX,dword ptr [0x00626228]      ; 005c092b | g_INT_00626228
     JBE 0x005c094b                      ; 005c0931
         ;   XREF to: 005c094b (CONDITIONAL_JUMP)  ; LAB_005c094b
-    MOV ESI,dword ptr [0x00626224]      ; 005c0933 | DAT_00626224
+    MOV ESI,dword ptr [0x00626224]      ; 005c0933 | g_SecondaryHeap
     TEST ESI,ESI                        ; 005c0939
     JNZ 0x005c0959                      ; 005c093b
         ;   XREF to: 005c0959 (CONDITIONAL_JUMP)  ; LAB_005c0959
-    MOV dword ptr [0x00626228],ESI      ; 005c093d | DAT_00626228
-    MOV ESI,dword ptr [0x00626220]      ; 005c0943 | DAT_00626220
+    MOV dword ptr [0x00626228],ESI      ; 005c093d | g_INT_00626228
+    MOV ESI,dword ptr [0x00626220]      ; 005c0943 | g_MainHeap
     JMP 0x005c0959                      ; 005c0949
         ;   XREF to: 005c0959 (UNCONDITIONAL_JUMP)  ; LAB_005c0959
     XOR EDI,EDI                         ; 005c094b
         ;   Label: LAB_005c094b
-    MOV ESI,dword ptr [0x00626220]      ; 005c094d | DAT_00626220
-    MOV dword ptr [0x00626228],EDI      ; 005c0953 | DAT_00626228
+    MOV ESI,dword ptr [0x00626220]      ; 005c094d | g_MainHeap
+    MOV dword ptr [0x00626228],EDI      ; 005c0953 | g_INT_00626228
     TEST ESI,ESI                        ; 005c0959
         ;   Label: LAB_005c0959
     JZ 0x005c099a                       ; 005c095b
         ;   XREF to: 005c099a (CONDITIONAL_JUMP)  ; LAB_005c099a
     MOV EDI,dword ptr [ESI + 0x14]      ; 005c095d
-    MOV dword ptr [0x00626224],ESI      ; 005c0960 | DAT_00626224
+    MOV dword ptr [0x00626224],ESI      ; 005c0960 | g_SecondaryHeap
     CMP EDI,EBP                         ; 005c0966
     JC 0x005c0987                       ; 005c0968
         ;   XREF to: 005c0987 (CONDITIONAL_JUMP)  ; LAB_005c0987
-    MOV EAX,0x626220                    ; 005c096a | DAT_00626220
+    MOV EAX,0x626220                    ; 005c096a | g_MainHeap
     MOV DX,DS                           ; 005c096f
     AND EDX,0xffff                      ; 005c0971
     MOV EBX,ESI                         ; 005c0977
@@ -102,11 +102,11 @@ section .text
     TEST EAX,EAX                        ; 005c0983
     JNZ 0x005c09d0                      ; 005c0985
         ;   XREF to: 005c09d0 (CONDITIONAL_JUMP)  ; LAB_005c09d0
-    CMP EDI,dword ptr [0x00626228]      ; 005c0987 | DAT_00626228
+    CMP EDI,dword ptr [0x00626228]      ; 005c0987 | g_INT_00626228
         ;   Label: LAB_005c0987
     JBE 0x005c0995                      ; 005c098d
         ;   XREF to: 005c0995 (CONDITIONAL_JUMP)  ; LAB_005c0995
-    MOV dword ptr [0x00626228],EDI      ; 005c098f | DAT_00626228
+    MOV dword ptr [0x00626228],EDI      ; 005c098f | g_INT_00626228
     MOV ESI,dword ptr [ESI + 0x8]       ; 005c0995
         ;   Label: LAB_005c0995
     JMP 0x005c0959                      ; 005c0998
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 005c0927 (UNCONDITIONAL_JUMP)  ; LAB_005c0927
     XOR BH,BH                           ; 005c09d0
         ;   Label: LAB_005c09d0
-    MOV byte ptr [0x02c9f690],BH        ; 005c09d2 | DAT_02c9f690
+    MOV byte ptr [0x02c9f690],BH        ; 005c09d2 | g_CHAR_ARRAY_02c9f690
     CALL dword ptr [0x00626620]         ; 005c09d8 | PTR_crt_unknown.c_FUN_005c50d4_00626620
     MOV EAX,dword ptr [ESP]             ; 005c09de
     ADD ESP,0xc                         ; 005c09e1

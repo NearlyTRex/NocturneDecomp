@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_showMessage_FUN_004942e0(CEditorTools *this_ptr,char *format)
 
 {
@@ -17,7 +15,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_showMessage_FUN_004942e0(CEditorToo
   local_8 = &stack0x0000000c;
   _vsprintf(local_408,format,(va_list_t)&local_8);
   local_8 = (byte *)0x0;
-  shape_edittool_cpp_drawSingleButtonPrompt_FUN_00493d40("Message",local_408,_DAT_01c3f55c)
-  ;
+  shape_edittool_cpp_drawSingleButtonPrompt_FUN_00493d40
+            ("Message",local_408,g_WindowFontColor);
   return;
 }

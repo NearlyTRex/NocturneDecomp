@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 38,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 83
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -41,7 +41,7 @@
     {
       "addr": "00417d10",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_00417d10"
+      "name": "core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10"
     },
     {
       "addr": "005b1c70",
@@ -54,14 +54,14 @@
       "name": "crt_memory.c___vec_delete_FUN_005b7fa7"
     },
     {
-      "addr": "005b7fce",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7fce"
-    },
-    {
       "addr": "005b7fdc",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7fdc"
+      "name": "crt_unknown.c_debugFreeChecked_FUN_005b7fdc"
+    },
+    {
+      "addr": "005b7fce",
+      "is_variadic": false,
+      "name": "crt_unknown.c_free_FUN_005b7fce"
     }
   ],
   "globals": [
@@ -163,17 +163,25 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 19,
       "match": "pCVar1[-4].",
       "severity": "mild",
-      "text": "iVar2 = core_bodypart_cpp_FUN_00417d10(&pCVar1[-4].scrape_points[2].transformed_position.y,0);",
+      "text": "((SBodyPartFire *)&pCVar1[-4].scrape_points[2].transformed_position.y,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pSVar2[-3].",
+      "severity": "mild",
+      "text": "((CDemonActor *)(pSVar2[-3].flame.on_event + 0x58),1);",
       "type": "negative_offset"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 216,
         "vtable_addr": "005f36c4"
       },

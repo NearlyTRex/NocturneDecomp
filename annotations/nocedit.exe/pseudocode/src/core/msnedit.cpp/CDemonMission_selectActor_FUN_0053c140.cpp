@@ -21,7 +21,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMissi
     if (set_index != this_ptr->current_set_index) {
       core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,set_index);
     }
-    if ((INT_02f7c53c == 0) && (g_CEdCheckInstance.checked_state != 0)) {
+    if ((g_MsnEditViewMode == 0) && (g_CEdCheckInstance.checked_state != 0)) {
       core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                 (g_CDemonSetPtr,this_ptr->selected_actor,1);
     }

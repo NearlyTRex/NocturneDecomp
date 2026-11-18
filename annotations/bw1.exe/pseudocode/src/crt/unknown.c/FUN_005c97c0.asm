@@ -8,11 +8,11 @@
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_005c26e0 at 005c26ff
-;   crt_unknown.c_FUN_005cc6e0 at 005cc7f3
+;   crt_unknown.c__mktime_FUN_005cc6e0 at 005cc7f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060852c
-;   undefined4 DAT_00608546
+;   short g_DaysInMonth_Normal = 0x0
+;   short g_DaysInMonth_Leap = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c9950
@@ -117,17 +117,17 @@ section .text
     MOV dword ptr [EDI + 0x14],ESI      ; 005c9890
         ;   Label: LAB_005c9890
     ADD ESI,0x76c                       ; 005c9893
-    MOV EDX,0x60852c                    ; 005c9899 | DAT_0060852c
+    MOV EDX,0x60852c                    ; 005c9899 | g_DaysInMonth_Normal
     PUSH ESI                            ; 005c989e
     MOV dword ptr [EDI + 0x1c],EBX      ; 005c989f
-    MOV dword ptr [ESP + 0x4],EDX       ; 005c98a2 | DAT_0060852c
+    MOV dword ptr [ESP + 0x4],EDX       ; 005c98a2 | g_DaysInMonth_Normal
     CALL crt_unknown.c_FUN_005c9950     ; 005c98a6
         ;   XREF to: 005c9950 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c9950()
     ADD ESP,0x4                         ; 005c98ab
     TEST EAX,EAX                        ; 005c98ae
     JZ 0x005c98b9                       ; 005c98b0
         ;   XREF to: 005c98b9 (CONDITIONAL_JUMP)  ; LAB_005c98b9
-    MOV dword ptr [ESP],0x608546        ; 005c98b2 | DAT_00608546
+    MOV dword ptr [ESP],0x608546        ; 005c98b2 | g_DaysInMonth_Leap
     MOV ESI,0x1f                        ; 005c98b9
         ;   Label: LAB_005c98b9
     MOV EAX,EBX                         ; 005c98be
@@ -136,7 +136,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 005c98c4
     LEA ESI,[EAX*0x2 + 0x0]             ; 005c98c7
     ADD ESI,EDX                         ; 005c98ce
-    MOV ESI,dword ptr [ESI]             ; 005c98d0 | DAT_00608546 | DAT_0060852c
+    MOV ESI,dword ptr [ESI]             ; 005c98d0 | g_DaysInMonth_Leap | g_DaysInMonth_Normal
     SAR ESI,0x10                        ; 005c98d2
     CMP EBX,ESI                         ; 005c98d5
     JC 0x005c98da                       ; 005c98d7
@@ -147,7 +147,7 @@ section .text
     MOV dword ptr [EDI + 0x10],EAX      ; 005c98dd
     ADD EAX,EAX                         ; 005c98e0
     ADD EAX,ECX                         ; 005c98e2
-    MOVSX EAX,word ptr [EAX]            ; 005c98e4 | DAT_00608546 | DAT_0060852c
+    MOVSX EAX,word ptr [EAX]            ; 005c98e4 | g_DaysInMonth_Leap | g_DaysInMonth_Normal
     SUB EBX,EAX                         ; 005c98e7
     XOR EDX,EDX                         ; 005c98e9
     INC EBX                             ; 005c98eb

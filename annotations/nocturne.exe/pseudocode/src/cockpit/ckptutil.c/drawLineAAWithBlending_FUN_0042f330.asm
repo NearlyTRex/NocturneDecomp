@@ -32,7 +32,7 @@
 ;   cockpit_ckptutil.c_renderEdgeArrayWithBufferLookup_FUN_0042f190 at 0042f235
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00766c6c
+;   int g_LineBlendingDisabled
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -63,7 +63,7 @@ section .text
     CMP ESI,EAX                         ; 0042f352
     JG 0x0042f3d0                       ; 0042f354
         ;   XREF to: 0042f3d0 (CONDITIONAL_JUMP)  ; LAB_0042f3d0
-    CMP dword ptr [0x00766c6c],0x0      ; 0042f35a | DAT_00766c6c
+    CMP dword ptr [0x00766c6c],0x0      ; 0042f35a | g_LineBlendingDisabled
     JNZ 0x0042f39f                      ; 0042f361
         ;   XREF to: 0042f39f (CONDITIONAL_JUMP)  ; LAB_0042f39f
     MOV ECX,dword ptr [0x01c00c58]      ; 0042f363 | g_ClipLeft

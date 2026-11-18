@@ -2,20 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 258,
+    "complexity_score": 457,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 17,
+    "pseudocode_lines": 72,
+    "suspect_count": 35,
     "suspect_types": [
+      "bitcast_double_pair",
+      "displaced_global_access",
+      "pointer_cast",
       "pointer_stride_bytecount",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "pointer_truncation",
+      "raw_address_constant",
+      "suspicious_cast"
     ],
-    "total_lines": 240
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -33,7 +36,7 @@
     {
       "addr": "0057cc00",
       "from_addr": "0057cc63",
-      "name": "core_sound.cpp_FUN_0057cc00",
+      "name": "core_sound.cpp_CSound_init_FUN_0057cc00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -99,110 +102,110 @@
   "globals": [
     {
       "addr": "006232e8",
-      "name": "DAT_006232e8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioBitsPerSample",
+      "type": "int",
+      "value": "0x10"
     },
     {
       "addr": "006232ec",
-      "name": "DAT_006232ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "006232f0",
-      "name": "DAT_006232f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioSampleRate",
+      "type": "int",
+      "value": "0x5622"
     },
     {
       "addr": "00623304",
-      "name": "DAT_00623304",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00623304",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "02c7fbf8",
-      "name": "DAT_02c7fbf8",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fbf8",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc08",
-      "name": "DAT_02c7fc08",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fc08",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc18",
-      "name": "DAT_02c7fc18",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02c7fc18",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02c7fc88",
-      "name": "DAT_02c7fc88",
-      "type": "undefined4",
+      "name": "g_INT_02c7fc88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c80650",
-      "name": "DAT_02c80650",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02c80654",
-      "name": "DAT_02c80654",
-      "type": "undefined4",
+      "name": "g_SoundBusyFlag",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c80660",
-      "name": "DAT_02c80660",
-      "type": "undefined4",
+      "name": "g_MixBufferReadIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c80664",
-      "name": "DAT_02c80664",
-      "type": "undefined4",
+      "name": "g_MixBufferWriteIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c80668",
-      "name": "DAT_02c80668",
-      "type": "undefined4",
+      "name": "g_MixBufferSize",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8066c",
-      "name": "DAT_02c8066c",
-      "type": "undefined4",
+      "name": "g_NumMixBuffers",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c807d0",
-      "name": "DAT_02c807d0",
-      "type": "undefined4",
+      "name": "g_CachedReverb",
+      "type": "SReverbSettings",
       "value": null
     },
     {
       "addr": "02c807d4",
-      "name": "DAT_02c807d4",
+      "name": "g_CachedReverb.decay_time",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c807d8",
-      "name": "DAT_02c807d8",
+      "name": "g_CachedReverb.damping",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c807f0",
-      "name": "DAT_02c807f0",
-      "type": "undefined4",
+      "name": "g_SoundStartTime",
+      "type": "int",
       "value": null
     }
   ],
@@ -223,7 +226,7 @@
       {
         "call_addr": "0057cc63",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057cc00",
+        "caller": "core_sound.cpp_CSound_init_FUN_0057cc00",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -318,140 +321,314 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_006232e8",
-      "severity": "mild",
-      "text": "iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(DAT_006232e8,DAT_006232ec,DAT_006232f0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_006232ec",
-      "severity": "mild",
-      "text": "iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(DAT_006232e8,DAT_006232ec,DAT_006232f0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_006232f0",
-      "severity": "mild",
-      "text": "iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(DAT_006232e8,DAT_006232ec,DAT_006232f0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_006232ec",
-      "severity": "mild",
-      "text": "if ((0 < _DAT_02c8066c) && (iVar3 = 0, 0 < DAT_006232ec)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_006232ec",
-      "severity": "mild",
-      "text": "} while (iVar3 < DAT_006232ec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c80650 + 0x1c))",
-      "type": "unresolved_funcptr"
+      "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_02c7fbf8",
-      "severity": "mild",
-      "text": "(_DAT_02c80650,*(uint *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8),",
-      "type": "undefined_data"
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 41,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "bitcast_double_pair"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 43,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc08 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 45,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc18 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Cast-and-add on &g_DOUBLE_02c7fbf8 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc00 (at 0x02c7fc00, +8 bytes).",
       "line": 42,
-      "match": "DAT_02c7fc08",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fc08 + _DAT_02c7fc88 * 8),",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02c7fbf8",
+      "severity": "moderate",
+      "text": "*(uint *)(&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88))),",
+      "type": "suspicious_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Cast-and-add on &g_DOUBLE_02c7fc08 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc10 (at 0x02c7fc10, +8 bytes).",
       "line": 44,
-      "match": "DAT_02c7fc18",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_02c7fc18 + _DAT_02c7fc88 * 8),",
-      "type": "undefined_data"
+      "match": "g_DOUBLE_02c7fc08",
+      "severity": "moderate",
+      "text": "*(uint *)(&g_DOUBLE_02c7fc08 + g_INT_02c7fc88))),",
+      "type": "suspicious_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Cast-and-add on &g_DOUBLE_02c7fc18 \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DOUBLE_02c7fc20 (at 0x02c7fc20, +8 bytes).",
       "line": 46,
-      "match": "code *",
+      "match": "g_DOUBLE_02c7fc18",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c80650 + 0x20))",
-      "type": "unresolved_funcptr"
+      "text": "*(uint *)(&g_DOUBLE_02c7fc18 + g_INT_02c7fc88))));",
+      "type": "suspicious_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)g_ChannelPrimaryBuffers",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02c7fbf8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)&g_DOUBLE_02c7fbf8",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02c7fc08` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)&g_DOUBLE_02c7fc08",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc08 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_02c7fc18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)&g_DOUBLE_02c7fc18",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc18 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3d_02c7fc40.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&g_CVector3d_02c7fc40.x",
+      "severity": "moderate",
+      "text": "(g_CSoundDevicePtr,*(float *)((int)&g_CVector3d_02c7fc40.x + g_INT_02c7fc88 * 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3d_02c7fc40.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)&g_CVector3d_02c7fc40.y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc40.y + g_INT_02c7fc88 * 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3d_02c7fc40.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)&g_CVector3d_02c7fc40.z",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc40.z + g_INT_02c7fc88 * 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CVector3d_02c7fc28.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 56,
-      "match": "code *",
+      "match": "(int)&g_CVector3d_02c7fc28.x",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c80650 + 0x24))",
-      "type": "unresolved_funcptr"
+      "text": "(g_CSoundDevicePtr,*(float *)((int)&g_CVector3d_02c7fc28.x + g_INT_02c7fc88 * 4),",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 60,
-      "match": "code *",
+      "description": "Pointer value `&g_CVector3d_02c7fc28.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)&g_CVector3d_02c7fc28.y",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c80650 + 0x28))(_DAT_02c80650,DAT_00623304);",
-      "type": "unresolved_funcptr"
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.y + g_INT_02c7fc88 * 4),",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_00623304",
-      "severity": "mild",
-      "text": "(**(code **)(*_DAT_02c80650 + 0x28))(_DAT_02c80650,DAT_00623304);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
-      "match": "code *",
+      "description": "Pointer value `&g_CVector3d_02c7fc28.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)&g_CVector3d_02c7fc28.z",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c80650 + 0x2c))(_DAT_02c80650,_DAT_02c807d0,_DAT_02c807d4,_DAT_02c807d8);",
-      "type": "unresolved_funcptr"
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.z + g_INT_02c7fc88 * 4));",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
-      "match": "code *",
+      "description": "Raw hex address 0x5750bd assigned to bare local `uStack0000005c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack0000005c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 67,
+      "match": "0x5750bd",
       "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*_DAT_02c80650 + 4))(_DAT_02c80650);",
-      "type": "unresolved_funcptr"
+      "text": "uStack0000005c = 0x5750bd;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "mem* byte count hardcodes an element stride (_DAT_02c80668 * _DAT_02c8066c * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "Raw hex address 0x5750cc assigned to bare local `uStack0000005c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack0000005c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 72,
+      "match": "0x5750cc",
+      "severity": "moderate",
+      "text": "uStack0000005c = 0x5750cc;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fbf8 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc08 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&g_DOUBLE_02c7fc18 + g_INT_02c7fc88 * 8 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(g_CSoundDevicePtr,*(float *)((int)&g_CVector3d_02c7fc40.x + g_INT_02c7fc88 * 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 49,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc40.y + g_INT_02c7fc88 * 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 50,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc40.z + g_INT_02c7fc88 * 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(g_CSoundDevicePtr,*(float *)((int)&g_CVector3d_02c7fc28.x + g_INT_02c7fc88 * 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 57,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.y + g_INT_02c7fc88 * 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 58,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CVector3d_02c7fc28.z + g_INT_02c7fc88 * 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (g_MixBufferSize * g_NumMixBuffers * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 34,
       "match": "memset",
       "severity": "moderate",
-      "text": "memset((void *)*puVar1,0,_DAT_02c80668 * _DAT_02c8066c * 4);",
+      "text": "memset((void *)*puVar1,0,g_MixBufferSize * g_NumMixBuffers * 4);",
       "type": "pointer_stride_bytecount"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc1c] lands in g_DOUBLE_02c7fc18 but intended target is g_DOUBLE_02c7fc20 at 0x2c7fc20 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc18",
+      "displacement": "0x2c7fc1c",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc20",
+      "line": 86,
+      "match": "0x2c7fc1c",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574f95: MOV EDI,dword ptr [EAX*0x8 + 0x2c7fc1c]",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc18] lands in g_DOUBLE_02c7fc18 but intended target is g_DOUBLE_02c7fc20 at 0x2c7fc20 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc18",
+      "displacement": "0x2c7fc18",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc20",
+      "line": 88,
+      "match": "0x2c7fc18",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574f9d: MOV EBP,dword ptr [EAX*0x8 + 0x2c7fc18]  ; g_DOUBLE_02c7fc18",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc0c] lands in g_DOUBLE_02c7fc08 but intended target is g_DOUBLE_02c7fc10 at 0x2c7fc10 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc08",
+      "displacement": "0x2c7fc0c",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc10",
+      "line": 91,
+      "match": "0x2c7fc0c",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574fa7: MOV EDX,dword ptr [EAX*0x8 + 0x2c7fc0c]",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fc08] lands in g_DOUBLE_02c7fc08 but intended target is g_DOUBLE_02c7fc10 at 0x2c7fc10 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fc08",
+      "displacement": "0x2c7fc08",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc10",
+      "line": 95,
+      "match": "0x2c7fc08",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574fbb: MOV ECX,dword ptr [EAX*0x8 + 0x2c7fc08]  ; g_DOUBLE_02c7fc08",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fbfc] lands in g_DOUBLE_02c7fbf8 but intended target is g_DOUBLE_02c7fc00 at 0x2c7fc00 (displaced by 4 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fbf8",
+      "displacement": "0x2c7fbfc",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc00",
+      "line": 97,
+      "match": "0x2c7fbfc",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574fc3: MOV EDI,dword ptr [EAX*0x8 + 0x2c7fbfc]",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x2c7fbf8] lands in g_DOUBLE_02c7fbf8 but intended target is g_DOUBLE_02c7fc00 at 0x2c7fc00 (displaced by 8 bytes)",
+      "displaced_from": "g_DOUBLE_02c7fbf8",
+      "displacement": "0x2c7fbf8",
+      "instruction_address": "",
+      "intended_global": "g_DOUBLE_02c7fc00",
+      "line": 99,
+      "match": "0x2c7fbf8",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 00574fcb: MOV EBP,dword ptr [EAX*0x8 + 0x2c7fbf8]  ; g_DOUBLE_02c7fbf8",
+      "type": "displaced_global_access"
     }
   ]
 }

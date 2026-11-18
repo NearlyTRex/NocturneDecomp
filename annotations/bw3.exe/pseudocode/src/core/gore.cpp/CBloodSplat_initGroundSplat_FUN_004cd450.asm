@@ -12,8 +12,8 @@
 ;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004ce950 at 004ce972
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e0e18
-;   undefined4 DAT_01d5ba14
+;   float g_FLOAT_005e0e18 = 256
+;   int g_INT_01d5ba14
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -50,13 +50,13 @@ section .text
     MOV EAX,EDI                         ; 004cd48b
     MOV dword ptr [ESI + 0x28],0x0      ; 004cd48d
     FLD float ptr [EAX]                 ; 004cd494
-    FMUL float ptr [0x005e0e18]         ; 004cd496 | DAT_005e0e18
+    FMUL float ptr [0x005e0e18]         ; 004cd496 | g_FLOAT_005e0e18
     FISTP dword ptr [EBX]               ; 004cd49c
     FLD float ptr [EAX + 0x4]           ; 004cd49e
-    FMUL float ptr [0x005e0e18]         ; 004cd4a1 | DAT_005e0e18
+    FMUL float ptr [0x005e0e18]         ; 004cd4a1 | g_FLOAT_005e0e18
     FISTP dword ptr [EBX + 0x4]         ; 004cd4a7
     FLD float ptr [EAX + 0x8]           ; 004cd4aa
-    FMUL float ptr [0x005e0e18]         ; 004cd4ad | DAT_005e0e18
+    FMUL float ptr [0x005e0e18]         ; 004cd4ad | g_FLOAT_005e0e18
     FISTP dword ptr [EBX + 0x8]         ; 004cd4b3
     MOV dword ptr [ESI + 0x3c],0x0      ; 004cd4b6
     MOV dword ptr [ESI + 0x40],0xffff   ; 004cd4bd
@@ -70,7 +70,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004cd4e5
     MOV EDX,dword ptr [EAX + 0x4]       ; 004cd4e8
     MOV dword ptr [EAX],EDX             ; 004cd4eb
-    MOV EAX,[0x01d5ba14]                ; 004cd4ed | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 004cd4ed | g_INT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004cd4f2
     MOV EAX,dword ptr [EAX + 0x2c]      ; 004cd4f9
     MOV dword ptr [ESI + 0x10],EAX      ; 004cd4fc

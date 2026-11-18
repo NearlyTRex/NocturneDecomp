@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 ushort FUN_005c0dc0(byte *param_1)
 
 {
-  if ((_DAT_026807f0 != 0) && ((*(byte *)(*param_1 + 0x2680801) & 1) != 0)) {
+  if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[*param_1] & 1U) != 0)) {
     return CONCAT11(*param_1,param_1[1]);
   }
   return (ushort)*param_1;

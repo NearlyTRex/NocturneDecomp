@@ -11,7 +11,7 @@ SRGBColorPalette g_CameraImagePaletteData = {};
 char g_LightBufferPool[24][614400] = {};
 
 // int
-int INT_00c199f8 = {};
+int g_CoronaBlurFillValue = {};
 int g_CoronaMaxDepth = {};
 int g_CoronaDepthShift = {};
 int g_LightBufferPoolIndex = {};

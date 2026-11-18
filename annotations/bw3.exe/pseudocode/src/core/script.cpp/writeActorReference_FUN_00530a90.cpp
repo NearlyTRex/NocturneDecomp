@@ -10,9 +10,9 @@ void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(_FILE *file_handle
 
 {
   if (*actor == (CDemonActor *)0x0) {
-    FUN_005a3140(file_handle,"\"%s\"\n","(none)");
+    _fprintf(file_handle,"\"%s\"\n");
     return;
   }
-  FUN_005a3140(file_handle,"\"%s\"\n",*actor);
+  _fprintf(file_handle,"\"%s\"\n");
   return;
 }

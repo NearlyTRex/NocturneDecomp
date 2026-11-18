@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 123,
+    "complexity_score": 101,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 4,
+    "pseudocode_lines": 71,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 200
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -58,7 +57,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "0051ca00",
@@ -81,38 +80,38 @@
     },
     {
       "addr": "01ba5cc4",
-      "name": "DAT_01ba5cc4",
-      "type": "undefined4",
+      "name": "g_CaptureFaceCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ba5cc8",
-      "name": "DAT_01ba5cc8",
-      "type": "undefined4",
+      "name": "g_CaptureTextureCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ba5ccc",
-      "name": "DAT_01ba5ccc",
-      "type": "undefined4",
+      "name": "g_CapturedFaces",
+      "type": "SFace[5000]",
       "value": null
     },
     {
       "addr": "01ba5cd0",
-      "name": "DAT_01ba5cd0",
+      "name": "g_CapturedFaces[0].render_flags",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -269,36 +268,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)triangle_indices",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)triangle_indices + (uint)bVar12 * -8 + 4);",
+      "text": "puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01ba5ccc",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01ba5ccc + iVar7) = uVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_01ba5cd0",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01ba5cd0 + iVar7) = render_flags;",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0x1ba5cdc matches address of g_CapturedFaces (+16 bytes into) (type SFace[5000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 43,
+      "match": "0x1ba5cdc",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)(g_CaptureFaceCount * 0x20 + 0x1ba5cdc + (uint)bVar13 * -8);",
+      "type": "raw_address_constant"
     }
   ]
 }

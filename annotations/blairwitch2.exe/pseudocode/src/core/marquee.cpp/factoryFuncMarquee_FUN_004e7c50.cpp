@@ -11,7 +11,7 @@ CMarquee * __cdecl core_marquee_cpp_factoryFuncMarquee_FUN_004e7c50(void)
 {
   CMarquee *pCVar1;
   
-  pCVar1 = (CMarquee *)operator_new(0x318);
+  pCVar1 = operator_new(0x318);
   if (pCVar1 == (CMarquee *)0x0) {
     return (CMarquee *)0x0;
   }

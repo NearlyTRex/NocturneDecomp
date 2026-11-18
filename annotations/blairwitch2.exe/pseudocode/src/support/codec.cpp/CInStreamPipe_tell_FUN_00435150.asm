@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CInStreamPipe_tell_FUN_00435150(CInStreamPipe *this_ptr)
+; int __cdecl support_codec_cpp_CInStreamPipe_tell_FUN_00435150(CInStreamPipe *this_ptr)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
@@ -9,11 +9,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005cda2a
 ;   TerminatedCString s_CInStreamPipe_tell_not_a_005cda3f
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -23,10 +23,10 @@ section .text
         ;   Label: support_codec.cpp_CInStreamPipe_tell_FUN_00435150
     MOV ECX,0x82b                       ; 00435155
     PUSH 0x5cda3f                       ; 0043515a | = "CInStreamPipe::tell - not allowed"
-    MOV dword ptr [0x01d046a0],EDX      ; 0043515f | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00435165 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0043516b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 0043515f | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00435165 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043516b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     MOV EAX,0xffffffff                  ; 00435170
     ADD ESP,0x4                         ; 00435175
     RET                                 ; 00435178

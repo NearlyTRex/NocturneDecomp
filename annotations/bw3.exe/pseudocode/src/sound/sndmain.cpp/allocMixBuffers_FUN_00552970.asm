@@ -18,19 +18,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2a36
 ;   TerminatedCString s_allocMixBuffers_out_of_m_005d2a4b
-;   undefined4 DAT_0060422c
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cf3294
-;   undefined4 DAT_02cf3298
-;   undefined4 DAT_02cf329c
-;   undefined4 DAT_02cf32a0
-;   undefined4 DAT_02cf32a4
-;   undefined4 DAT_02cf32c8
-;   undefined4 DAT_02cf32ec
+;   int g_AudioChannelCount = 0x2
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_MixBufferReadIndex
+;   int g_MixBufferWriteIndex
+;   int g_MixBufferSize
+;   int g_NumMixBuffers
+;   float* g_TertiaryMixBuffer
+;   float* g_PrimaryMixBuffer
+;   float* g_SecondaryMixBuffer
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_realloc_FUN_005a3e50
 ;
 ; *****************************************************************************
@@ -45,7 +45,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 00552976
     MOV EDX,dword ptr [ESP + 0x24]      ; 0055297a
     MOV EBX,0x1                         ; 0055297e
-    MOV dword ptr [0x02cf32a0],EDX      ; 00552983 | DAT_02cf32a0
+    MOV dword ptr [0x02cf32a0],EDX      ; 00552983 | g_NumMixBuffers
     CMP EAX,EBX                         ; 00552989
     JLE 0x005529a0                      ; 0055298b
         ;   XREF to: 005529a0 (CONDITIONAL_JUMP)  ; LAB_005529a0
@@ -57,42 +57,42 @@ section .text
     LEA EAX,[EAX]                       ; 00552993
     LEA EDX,[EDX]                       ; 00552999
     NOP                                 ; 0055299f
-    MOV EAX,[0x02cf32a0]                ; 005529a0 | DAT_02cf32a0
+    MOV EAX,[0x02cf32a0]                ; 005529a0 | g_NumMixBuffers
         ;   Label: LAB_005529a0
     LEA ESI,[EBX*0x4 + 0x0]             ; 005529a5
     IMUL EAX,ESI                        ; 005529ac
-    IMUL EAX,dword ptr [0x0060422c]     ; 005529af | DAT_0060422c
+    IMUL EAX,dword ptr [0x0060422c]     ; 005529af | g_AudioChannelCount
     XOR EDX,EDX                         ; 005529b6
     PUSH EAX                            ; 005529b8
-    MOV EBP,dword ptr [0x02cf32c8]      ; 005529b9 | DAT_02cf32c8
-    MOV dword ptr [0x02cf3294],EDX      ; 005529bf | DAT_02cf3294
+    MOV EBP,dword ptr [0x02cf32c8]      ; 005529b9 | g_PrimaryMixBuffer
+    MOV dword ptr [0x02cf3294],EDX      ; 005529bf | g_MixBufferReadIndex
     PUSH EBP                            ; 005529c5
-    MOV dword ptr [0x02cf3298],EDX      ; 005529c6 | DAT_02cf3298
-    MOV dword ptr [0x02cf329c],EBX      ; 005529cc | DAT_02cf329c
+    MOV dword ptr [0x02cf3298],EDX      ; 005529c6 | g_MixBufferWriteIndex
+    MOV dword ptr [0x02cf329c],EBX      ; 005529cc | g_MixBufferSize
     CALL crt_memory.c_realloc_FUN_005a3e50 ; 005529d2
         ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
-    MOV [0x02cf32c8],EAX                ; 005529d7 | DAT_02cf32c8
-    MOV EAX,[0x0060422c]                ; 005529dc | DAT_0060422c
+    MOV [0x02cf32c8],EAX                ; 005529d7 | g_PrimaryMixBuffer
+    MOV EAX,[0x0060422c]                ; 005529dc | g_AudioChannelCount
     IMUL EAX,ESI                        ; 005529e1
     ADD ESP,0x8                         ; 005529e4
     ADD EAX,EAX                         ; 005529e7
     PUSH EAX                            ; 005529e9
-    MOV EAX,[0x02cf32ec]                ; 005529ea | DAT_02cf32ec
+    MOV EAX,[0x02cf32ec]                ; 005529ea | g_SecondaryMixBuffer
     PUSH EAX                            ; 005529ef
     CALL crt_memory.c_realloc_FUN_005a3e50 ; 005529f0
         ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
-    IMUL ESI,dword ptr [0x0060422c]     ; 005529f5 | DAT_0060422c
+    IMUL ESI,dword ptr [0x0060422c]     ; 005529f5 | g_AudioChannelCount
     ADD ESP,0x8                         ; 005529fc
     PUSH ESI                            ; 005529ff
-    MOV ECX,dword ptr [0x02cf32a4]      ; 00552a00 | DAT_02cf32a4
+    MOV ECX,dword ptr [0x02cf32a4]      ; 00552a00 | g_TertiaryMixBuffer
     PUSH ECX                            ; 00552a06
-    MOV [0x02cf32ec],EAX                ; 00552a07 | DAT_02cf32ec
+    MOV [0x02cf32ec],EAX                ; 00552a07 | g_SecondaryMixBuffer
     CALL crt_memory.c_realloc_FUN_005a3e50 ; 00552a0c
         ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
-    MOV EBX,dword ptr [0x02cf329c]      ; 00552a11 | DAT_02cf329c
-    MOV ESI,dword ptr [0x02cf32c8]      ; 00552a17 | DAT_02cf32c8
+    MOV EBX,dword ptr [0x02cf329c]      ; 00552a11 | g_MixBufferSize
+    MOV ESI,dword ptr [0x02cf32c8]      ; 00552a17 | g_PrimaryMixBuffer
     ADD ESP,0x8                         ; 00552a1d
-    MOV [0x02cf32a4],EAX                ; 00552a20 | DAT_02cf32a4
+    MOV [0x02cf32a4],EAX                ; 00552a20 | g_TertiaryMixBuffer
     TEST ESI,ESI                        ; 00552a25
     JNZ 0x00552b07                      ; 00552a27
         ;   XREF to: 00552b07 (CONDITIONAL_JUMP)  ; LAB_00552b07
@@ -100,14 +100,14 @@ section .text
         ;   Label: LAB_00552a2d
     MOV EAX,0x561                       ; 00552a32
     PUSH 0x5d2a4b                       ; 00552a37 | = "allocMixBuffers - out of memory"
-    MOV dword ptr [0x01d71de0],EBP      ; 00552a3c | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00552a42 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00552a47
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 00552a3c | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00552a42 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00552a47
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00552a4c
-    MOV ECX,dword ptr [0x0060422c]      ; 00552a4f | DAT_0060422c
+    MOV ECX,dword ptr [0x0060422c]      ; 00552a4f | g_AudioChannelCount
         ;   Label: LAB_00552a4f
-    MOV EBX,dword ptr [0x02cf329c]      ; 00552a55 | DAT_02cf329c
+    MOV EBX,dword ptr [0x02cf329c]      ; 00552a55 | g_MixBufferSize
     XOR EDX,EDX                         ; 00552a5b
     TEST ECX,ECX                        ; 00552a5d
     JLE 0x00552afa                      ; 00552a5f
@@ -126,16 +126,16 @@ section .text
     MOV EBP,EBX                         ; 00552a8e
         ;   Label: LAB_00552a8e
     IMUL EBP,EDX                        ; 00552a90
-    IMUL EBP,dword ptr [0x02cf32a0]     ; 00552a93 | DAT_02cf32a0
+    IMUL EBP,dword ptr [0x02cf32a0]     ; 00552a93 | g_NumMixBuffers
     SHL EBP,0x2                         ; 00552a9a
     MOV dword ptr [ESP + 0x4],EBP       ; 00552a9d
-    MOV EBP,dword ptr [0x02cf32c8]      ; 00552aa1 | DAT_02cf32c8
+    MOV EBP,dword ptr [0x02cf32c8]      ; 00552aa1 | g_PrimaryMixBuffer
     ADD EBP,dword ptr [ESP + 0x4]       ; 00552aa7
     MOV dword ptr [EAX + 0x2cf32cc],EBP ; 00552aab
-    MOV EBP,dword ptr [0x02cf32a4]      ; 00552ab1 | DAT_02cf32a4
+    MOV EBP,dword ptr [0x02cf32a4]      ; 00552ab1 | g_TertiaryMixBuffer
     ADD EBP,ECX                         ; 00552ab7
     MOV dword ptr [EAX + 0x2cf32a8],EBP ; 00552ab9
-    MOV EBP,dword ptr [0x02cf32ec]      ; 00552abf | DAT_02cf32ec
+    MOV EBP,dword ptr [0x02cf32ec]      ; 00552abf | g_SecondaryMixBuffer
     MOV dword ptr [ESP + 0x4],EBP       ; 00552ac5
     ADD EBP,EDI                         ; 00552ac9
     MOV dword ptr [EAX + 0x2cf32f0],EBP ; 00552acb
@@ -147,20 +147,20 @@ section .text
     MOV EBP,dword ptr [ESP + 0x8]       ; 00552ae5
     INC EDX                             ; 00552ae9
     ADD ECX,EBP                         ; 00552aea
-    MOV EBP,dword ptr [0x0060422c]      ; 00552aec | DAT_0060422c
+    MOV EBP,dword ptr [0x0060422c]      ; 00552aec | g_AudioChannelCount
     ADD EAX,0x4                         ; 00552af2
     CMP EDX,EBP                         ; 00552af5
     JL 0x00552a8e                       ; 00552af7
         ;   XREF to: 00552a8e (CONDITIONAL_JUMP)  ; LAB_00552a8e
     POP EDI                             ; 00552af9
-    MOV dword ptr [0x02cf329c],EBX      ; 00552afa | DAT_02cf329c
+    MOV dword ptr [0x02cf329c],EBX      ; 00552afa | g_MixBufferSize
         ;   Label: LAB_00552afa
     ADD ESP,0x10                        ; 00552b00
     POP EBP                             ; 00552b03
     POP ESI                             ; 00552b04
     POP EBX                             ; 00552b05
     RET                                 ; 00552b06
-    CMP dword ptr [0x02cf32ec],0x0      ; 00552b07 | DAT_02cf32ec
+    CMP dword ptr [0x02cf32ec],0x0      ; 00552b07 | g_SecondaryMixBuffer
         ;   Label: LAB_00552b07
     JZ 0x00552a2d                       ; 00552b0e
         ;   XREF to: 00552a2d (CONDITIONAL_JUMP)  ; LAB_00552a2d

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 40,
+    "complexity_score": 39,
     "cross_reference_count": 11,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
     "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "displaced_global_access",
+      "wrong_global"
     ],
-    "total_lines": 27
+    "total_lines": 26
   },
   "cross_references": [
     {
@@ -73,7 +73,7 @@
     {
       "addr": "005438d0",
       "from_addr": "00544489",
-      "name": "core_shadow.cpp_FUN_005438d0",
+      "name": "core_shadow.cpp_CShadow_process_FUN_005438d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -99,8 +99,8 @@
   "globals": [
     {
       "addr": "0203ad30",
-      "name": "DAT_0203ad30",
-      "type": "undefined4",
+      "name": "g_INT_0203ad30",
+      "type": "int",
       "value": null
     }
   ],
@@ -121,7 +121,7 @@
       {
         "call_addr": "00544489",
         "call_type": "direct",
-        "caller": "core_shadow.cpp_FUN_005438d0",
+        "caller": "core_shadow.cpp_CShadow_process_FUN_005438d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,20 +298,25 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Scalar global g_INT_0203ad30 accessed via (&g_INT_0203ad30)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CoronaGlobes (at 0x0203ad34, +4 bytes).",
+      "line": 6,
+      "match": "g_INT_0203ad30",
+      "severity": "moderate",
+      "text": "(&g_INT_0203ad30)[g_INT_0203ad30 + 1] = (int)globe;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0203ad30",
-      "severity": "mild",
-      "text": "*(CDemonGlobe **)(&DAT_0203ad30 + (_DAT_0203ad30 + 1) * 4) = globe;",
-      "type": "undefined_data"
+      "description": "Compiler displaced index base: [reg*4 + 0x203ad30] lands in g_INT_0203ad30 but intended target is g_CoronaGlobes at 0x203ad34 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_0203ad30",
+      "displacement": "0x203ad30",
+      "instruction_address": "",
+      "intended_global": "g_CoronaGlobes",
+      "line": 15,
+      "match": "0x203ad30",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 00537310: MOV dword ptr [EDX*0x4 + 0x203ad30],ECX  ; g_INT_0203ad30",
+      "type": "displaced_global_access"
     }
   ]
 }

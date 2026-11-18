@@ -15,15 +15,15 @@
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000 at 0042345f
 ;   core_colonel.cpp_CColonel_processAI_FUN_00435e30 at 00436348
 ;   core_enemy.cpp_CEnemy_updateVictim_FUN_00488450 at 004886a3
-;   core_gabriela.cpp_FUN_004aeb00 at 004af242
-;   core_game.cpp_FUN_004be8a0 at 004bf311
+;   core_gabriela.cpp_CGabriella_processAI_FUN_004aeb00 at 004af242
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004be8a0 at 004bf311
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c1980 at 004c1acc
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0 at 004cd567
 ;   core_icepick.cpp_CIcePick_processAI_FUN_004d5950 at 004d5fd4
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e4fed4
+;   int g_PathfindingMaxClimbHeight
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00512a70
@@ -55,7 +55,7 @@ section .text
     MOV EDX,0x1                         ; 00513679
         ;   Label: LAB_00513679
     LEA EDI,[EBX + 0x138cc]             ; 0051367e
-    MOV dword ptr [0x01e4fed4],EDX      ; 00513684 | DAT_01e4fed4
+    MOV dword ptr [0x01e4fed4],EDX      ; 00513684 | g_PathfindingMaxClimbHeight
     PUSH EBP                            ; 0051368a
         ;   Label: LAB_0051368a
     PUSH EDI                            ; 0051368b
@@ -104,10 +104,10 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 005136df
     JMP 0x00513679                      ; 005136e2
         ;   XREF to: 00513679 (UNCONDITIONAL_JUMP)  ; LAB_00513679
-    MOV EAX,[0x01e4fed4]                ; 005136e4 | DAT_01e4fed4
+    MOV EAX,[0x01e4fed4]                ; 005136e4 | g_PathfindingMaxClimbHeight
         ;   Label: LAB_005136e4
     INC EAX                             ; 005136e9
-    MOV [0x01e4fed4],EAX                ; 005136ea | DAT_01e4fed4
+    MOV [0x01e4fed4],EAX                ; 005136ea | g_PathfindingMaxClimbHeight
     CMP EAX,0x3                         ; 005136ef
     JLE 0x0051368a                      ; 005136f2
         ;   XREF to: 0051368a (CONDITIONAL_JUMP)  ; LAB_0051368a

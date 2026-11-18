@@ -8,10 +8,10 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0 at 004281ef
-;   core_motion.cpp_FUN_005042e0 at 0050441c
+;   core_motion.cpp_CMotionController_render_FUN_005042e0 at 0050441c
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00503870
         ;   Label: core_motion.cpp_CMotionController_getCurrentStateName_FUN_00503870
     PUSH EDX                            ; 00503874
-    CALL core_motion.cpp_FUN_005035c0   ; 00503875
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00503875
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0050387a
     ADD EAX,EAX                         ; 0050387d
     MOV EDX,EAX                         ; 0050387f

@@ -2,25 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 392,
-    "complexity_score": 570,
+    "complexity_score": 524,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 175,
-    "suspect_count": 35,
+    "pseudocode_lines": 179,
+    "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "raw_address_pointer_store",
       "signed_shift_global_idiom",
       "stack_param",
       "stack_ref",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 567
+    "total_lines": 571
   },
   "cross_references": [
     {
@@ -152,26 +150,26 @@
     },
     {
       "addr": "01bcd070",
-      "name": "DAT_01bcd070",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01bcd070",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01bcd07c",
-      "name": "DAT_01bcd07c",
-      "type": "undefined4",
+      "name": "g_INT_01bcd07c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcd9b8",
-      "name": "DAT_01bcd9b8",
-      "type": "undefined4",
+      "name": "g_EditorFontMaxCharWidth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bcd9bc",
-      "name": "DAT_01bcd9bc",
-      "type": "undefined4",
+      "name": "g_INT_01bcd9bc",
+      "type": "int",
       "value": null
     },
     {
@@ -439,16 +437,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_stack_ffffed18",
       "severity": "moderate",
       "text": "int in_stack_ffffed18;",
@@ -456,7 +446,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 94,
+      "line": 93,
       "match": "&stack0xffffed18",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffed18 + iVar5) =",
@@ -464,7 +454,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(uint *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ScreenBufferArray + iVar5);",
@@ -472,71 +462,55 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 105,
       "match": "(uint **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = *(uint **)((int)g_ScreenBufferArray + iVar12);",
+      "text": "puVar12 = *(uint **)((int)g_ScreenBufferArray + iVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 106,
       "match": "&stack0xffffed18",
       "severity": "moderate",
-      "text": "puVar13 = *(uint **)(&stack0xffffed18 + iVar12);",
+      "text": "puVar14 = *(uint **)(&stack0xffffed18 + iVar13);",
       "type": "stack_ref"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 107,
+      "line": 106,
       "match": "*(uint **)(&stack0xffffed18",
       "severity": "moderate",
-      "text": "puVar13 = *(uint **)(&stack0xffffed18 + iVar12);",
+      "text": "puVar14 = *(uint **)(&stack0xffffed18 + iVar13);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
-      "match": "(uint *)((int)puVar11",
+      "line": 114,
+      "match": "(uint *)((int)puVar12",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
-      "match": "(uint *)((int)puVar13",
+      "line": 115,
+      "match": "(uint *)((int)puVar14",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 121,
       "match": "in_stack_ffffed18",
       "severity": "moderate",
       "text": "engine_special_cpp_unlockFrame_FUN_00532320(in_stack_ffffed18);",
       "type": "stack_param"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 128,
-      "match": "*(void **)(iVar2 + 0x1bcd248",
-      "severity": "moderate",
-      "text": "*(void **)(iVar2 + 0x1bcd248) = pvVar8;",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 134,
-      "match": "*(uint **)(iVar2 + 0x1bcd248",
-      "severity": "moderate",
-      "text": "puVar11 = *(uint **)(iVar2 + 0x1bcd248);",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 138,
       "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);",
@@ -544,31 +518,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(uint *)((int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 153,
+      "line": 151,
       "match": "(uint *)((int)puVar14",
       "severity": "moderate",
-      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(uint *)((int)puVar11",
+      "line": 152,
+      "match": "(uint *)((int)puVar15",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + uVar7);",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(uint *)((int)puVar12",
+      "severity": "moderate",
+      "text": "puVar12 = (uint *)((int)puVar12 + uVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 95,
+      "line": 94,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ScreenBufferArray + iVar5);",
@@ -576,71 +550,63 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 105,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar11 = *(uint **)((int)g_ScreenBufferArray + iVar12);",
+      "text": "puVar12 = *(uint **)((int)g_ScreenBufferArray + iVar13);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `puVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 114,
+      "match": "(int)puVar12",
+      "severity": "moderate",
+      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 115,
-      "match": "(int)puVar11",
+      "match": "(int)puVar14",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
-      "match": "(int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 139,
+      "line": 138,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
-      "match": "(int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `puVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 153,
+      "line": 151,
       "match": "(int)puVar14",
       "severity": "moderate",
-      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 155,
-      "match": "(int)puVar11",
+      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 152,
+      "match": "(int)puVar15",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + uVar7);",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1bcc0d0 assigned to bare local `iVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 64,
-      "match": "0x1bcc0d0",
+      "description": "Pointer value `puVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 154,
+      "match": "(int)puVar12",
       "severity": "moderate",
-      "text": "iVar10 = 0x1bcc0d0;",
-      "type": "raw_address_constant"
+      "text": "puVar12 = (uint *)((int)puVar12 + uVar7);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 108,
+      "line": 107,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
@@ -648,7 +614,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 113,
+      "line": 112,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = uVar7 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
@@ -656,7 +622,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 145,
+      "line": 144,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
@@ -664,7 +630,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 150,
+      "line": 149,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = uVar7 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
@@ -672,7 +638,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 41,
+      "line": 40,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar3 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -",
@@ -680,7 +646,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 42,
+      "line": 41,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;",
@@ -688,7 +654,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 100,
+      "line": 99,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar5 = g_WindowWidth * g_BitsPerPixel >> 0x1f;",
@@ -696,10 +662,10 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 138,
+      "line": 137,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "iVar12 = left * g_BitsPerPixel >> 0x1f;",
+      "text": "iVar13 = left * g_BitsPerPixel >> 0x1f;",
       "type": "signed_shift_global_idiom"
     },
     {

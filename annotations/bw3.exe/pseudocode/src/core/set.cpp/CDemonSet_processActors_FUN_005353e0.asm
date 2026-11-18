@@ -27,13 +27,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_s_3_2f_ms_005d04ed
 ;   TerminatedCString s_Process_time_d_actors_3_005d0500
-;   undefined4 DAT_005d0527
-;   undefined4 DAT_005d052f
-;   undefined4 DAT_005d0537
+;   double g_DOUBLE_005d0527 = 0.0555555555555556
+;   double g_DOUBLE_005d052f = 0.0000152587890625
+;   double g_DOUBLE_005d0537 = 1000
 ;   CConsole* g_CConsolePtr = 007f7ea4
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 DAT_007df974
+;   CDemonActor* g_CurrentProcessingActor
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CFlameCanClassInfo.name_hash
@@ -49,7 +49,7 @@
 ;   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
-;   core_glass.cpp_FUN_004cc040
+;   core_glass.cpp_CGlass_shatter_FUN_004cc040
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_0050b1d0
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0
 ;   core_trigger.cpp_CTrigger_applyDamage_FUN_0056ee20
@@ -88,8 +88,8 @@ section .text
         ;   XREF to: 0053553f (CONDITIONAL_JUMP)  ; LAB_0053553f
     XOR EAX,EAX                         ; 00535422
         ;   Label: LAB_00535422
-    MOV [0x0203ad1c],EAX                ; 00535424 | DAT_0203ad1c
-    MOV [0x0203ad30],EAX                ; 00535429 | DAT_0203ad30
+    MOV [0x0203ad1c],EAX                ; 00535424 | g_INT_0203ad1c
+    MOV [0x0203ad30],EAX                ; 00535429 | g_INT_0203ad30
     MOV EAX,[0x005fe9dc]                ; 0053542e | g_CGamePtr
     MOV EAX,dword ptr [EAX + 0x314]     ; 00535433 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x58],EAX      ; 00535439
@@ -186,7 +186,7 @@ section .text
     JNZ 0x00535676                      ; 00535562
         ;   XREF to: 00535676 (CONDITIONAL_JUMP)  ; LAB_00535676
     LEA EDI,[ESP + 0x4c]                ; 00535568
-    MOV dword ptr [0x007df974],ESI      ; 0053556c | DAT_007df974
+    MOV dword ptr [0x007df974],ESI      ; 0053556c | g_CurrentProcessingActor
     LEA ESI,[ESI + 0x30]                ; 00535572
     MOV EAX,[0x005fe9dc]                ; 00535575 | g_CGamePtr
     MOVSD ES:EDI,ESI                    ; 0053557a
@@ -198,7 +198,7 @@ section .text
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00535586
         ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV dword ptr [ESP + 0x84],EAX      ; 0053558b
-    MOV EAX,[0x007df974]                ; 00535592 | DAT_007df974
+    MOV EAX,[0x007df974]                ; 00535592 | g_CurrentProcessingActor
         ;   Label: LAB_00535592
     PUSH dword ptr [ESP]                ; 00535597
     PUSH EAX                            ; 0053559a
@@ -215,7 +215,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x84]      ; 005355bc
     SUB EAX,ECX                         ; 005355c3
     MOV dword ptr [EBX + 0x207bad8],EAX ; 005355c5
-    MOV EAX,[0x007df974]                ; 005355cb | DAT_007df974
+    MOV EAX,[0x007df974]                ; 005355cb | g_CurrentProcessingActor
     MOV dword ptr [EBX + 0x207da18],EAX ; 005355d0
     MOV EAX,[0x005fe9dc]                ; 005355d6 | g_CGamePtr
         ;   Label: LAB_005355d6
@@ -226,7 +226,7 @@ section .text
     INC EDI                             ; 005355eb
     ADD EBX,0x4                         ; 005355ec
     MOV dword ptr [ESP + 0x8c],EDI      ; 005355ef
-    MOV EAX,[0x007df974]                ; 005355f6 | DAT_007df974
+    MOV EAX,[0x007df974]                ; 005355f6 | g_CurrentProcessingActor
         ;   Label: LAB_005355f6
     PUSH EAX                            ; 005355fb
     MOV EDX,dword ptr [EAX + 0x154]     ; 005355fc
@@ -235,7 +235,7 @@ section .text
     TEST EAX,EAX                        ; 0053560b
     JZ 0x00535624                       ; 0053560d
         ;   XREF to: 00535624 (CONDITIONAL_JUMP)  ; LAB_00535624
-    MOV EDX,dword ptr [0x007df974]      ; 0053560f | DAT_007df974
+    MOV EDX,dword ptr [0x007df974]      ; 0053560f | g_CurrentProcessingActor
     PUSH 0x0                            ; 00535615
     ADD EDX,0x20                        ; 00535617
     PUSH EDX                            ; 0053561a
@@ -243,7 +243,7 @@ section .text
     CALL core_path.cpp_CPathMap_updateIfNeeded_FUN_0050b1d0 ; 0053561c
         ;   XREF to: 0050b1d0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_updateIfNeeded_FUN_0050b1d0(CPathMap * this_ptr, CVector3f * source_position, int force_update)
     ADD ESP,0xc                         ; 00535621
-    MOV EDX,dword ptr [0x007df974]      ; 00535624 | DAT_007df974
+    MOV EDX,dword ptr [0x007df974]      ; 00535624 | g_CurrentProcessingActor
         ;   Label: LAB_00535624
     FLD float ptr [ESP + 0x50]          ; 0053562a
     FCOMP float ptr [EDX + 0x34]        ; 0053562e
@@ -251,14 +251,14 @@ section .text
     SAHF                                ; 00535633
     JZ 0x00535651                       ; 00535634
         ;   XREF to: 00535651 (CONDITIONAL_JUMP)  ; LAB_00535651
-    MOV EAX,[0x007df974]                ; 00535636 | DAT_007df974
+    MOV EAX,[0x007df974]                ; 00535636 | g_CurrentProcessingActor
         ;   Label: LAB_00535636
     PUSH EAX                            ; 0053563b
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0 ; 0053563c
         ;   XREF to: 004088f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00535641
     XOR EDX,EDX                         ; 00535644
-    MOV dword ptr [0x007df974],EDX      ; 00535646 | DAT_007df974
+    MOV dword ptr [0x007df974],EDX      ; 00535646 | g_CurrentProcessingActor
     JMP 0x005354f3                      ; 0053564c
         ;   XREF to: 005354f3 (UNCONDITIONAL_JUMP)  ; LAB_005354f3
     FLD float ptr [ESP + 0x4c]          ; 00535651
@@ -275,7 +275,7 @@ section .text
     JNZ 0x00535636                      ; 00535667
         ;   XREF to: 00535636 (CONDITIONAL_JUMP)  ; LAB_00535636
     XOR EDX,EDX                         ; 00535669
-    MOV dword ptr [0x007df974],EDX      ; 0053566b | DAT_007df974
+    MOV dword ptr [0x007df974],EDX      ; 0053566b | g_CurrentProcessingActor
     JMP 0x005354f3                      ; 00535671
         ;   XREF to: 005354f3 (UNCONDITIONAL_JUMP)  ; LAB_005354f3
     JLE 0x005354f3                      ; 00535676
@@ -325,7 +325,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 005356f1
     PUSH 0x0                            ; 005356f4
     PUSH EAX                            ; 005356f6
-    MOV ECX,dword ptr [0x005fc5a0]      ; 005356f7 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 005356f7 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 005356fd
     CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 005356fe
         ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
@@ -364,7 +364,7 @@ section .text
     ADD EAX,0x20                        ; 00535750
     PUSH 0x0                            ; 00535753
     PUSH EAX                            ; 00535755
-    MOV EDX,dword ptr [0x005fc5a0]      ; 00535756 | DAT_005fc5a0
+    MOV EDX,dword ptr [0x005fc5a0]      ; 00535756 | g_CFireEffect_PTR_005fc5a0
     PUSH EDX                            ; 0053575c
     MOV dword ptr [ESP + 0x8c],EAX      ; 0053575d
     CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 00535764
@@ -383,8 +383,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x74]      ; 0053577d
     PUSH ECX                            ; 00535781
     PUSH EBX                            ; 00535782
-    CALL core_glass.cpp_FUN_004cc040    ; 00535783
-        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004cc040()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004cc040 ; 00535783
+        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004cc040(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 00535788
     MOV EBX,dword ptr [0x02cfd894]      ; 0053578b | g_CTriggerClassInfo.name_hash
         ;   Label: LAB_0053578b
@@ -412,7 +412,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 005357c2
     PUSH 0x0                            ; 005357c5
     PUSH EAX                            ; 005357c7
-    MOV EAX,[0x005fc5a0]                ; 005357c8 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 005357c8 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 005357cd
     MOV dword ptr [ESP + 0x78],ECX      ; 005357ce
     CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 005357d2
@@ -444,7 +444,7 @@ section .text
     ADD EAX,0x20                        ; 0053580d
     PUSH 0x0                            ; 00535810
     PUSH EAX                            ; 00535812
-    MOV EAX,[0x005fc5a0]                ; 00535813 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 00535813 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 00535818
     CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790 ; 00535819
         ;   XREF to: 004a3790 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004a3790(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
@@ -542,9 +542,9 @@ section .text
     XOR EBX,EBX                         ; 00535934
     FILD dword ptr [EBX + 0x207bad8]    ; 00535936
         ;   Label: LAB_00535936
-    FMUL double ptr [0x005d0527]        ; 0053593c | DAT_005d0527
-    FMUL double ptr [0x005d052f]        ; 00535942 | DAT_005d052f
-    FMUL double ptr [0x005d0537]        ; 00535948 | DAT_005d0537
+    FMUL double ptr [0x005d0527]        ; 0053593c | g_DOUBLE_005d0527
+    FMUL double ptr [0x005d052f]        ; 00535942 | g_DOUBLE_005d052f
+    FMUL double ptr [0x005d0537]        ; 00535948 | g_DOUBLE_005d0537
     FDIV float ptr [ESP]                ; 0053594e
     SUB ESP,0x8                         ; 00535951
     FSTP double ptr [ESP]               ; 00535954
@@ -571,9 +571,9 @@ section .text
     SUB EAX,EBX                         ; 00535989
     MOV dword ptr [ESP + 0x9c],EAX      ; 0053598b
     FILD dword ptr [ESP + 0x9c]         ; 00535992
-    FMUL double ptr [0x005d0527]        ; 00535999 | DAT_005d0527
-    FMUL double ptr [0x005d052f]        ; 0053599f | DAT_005d052f
-    FMUL double ptr [0x005d0537]        ; 005359a5 | DAT_005d0537
+    FMUL double ptr [0x005d0527]        ; 00535999 | g_DOUBLE_005d0527
+    FMUL double ptr [0x005d052f]        ; 0053599f | g_DOUBLE_005d052f
+    FMUL double ptr [0x005d0537]        ; 005359a5 | g_DOUBLE_005d0537
     FDIV float ptr [ESP]                ; 005359ab
     SUB ESP,0x8                         ; 005359ae
     MOV ESI,dword ptr [ESP + 0x94]      ; 005359b1

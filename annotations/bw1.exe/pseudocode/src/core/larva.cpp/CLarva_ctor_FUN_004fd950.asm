@@ -10,8 +10,8 @@
 ;   core_larva.cpp_factoryFuncLarva_FUN_004fd920 at 004fd933
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00602d20
-;   undefined4 DAT_00602d24
+;   float g_FLOAT_00602d20 = 20
+;   float g_FLOAT_00602d24 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -39,9 +39,9 @@ section .text
     MOV dword ptr [EBX + 0x2ff0],0x3f000000 ; 004fd981
     MOV dword ptr [EBX + 0x27a0],0x1    ; 004fd98b
     MOV dword ptr [EBX + 0x2538],0x41700000 ; 004fd995
-    FLD float ptr [0x00602d20]          ; 004fd99f | DAT_00602d20
+    FLD float ptr [0x00602d20]          ; 004fd99f | g_FLOAT_00602d20
     MOV dword ptr [EBX + 0xc26c],0x0    ; 004fd9a5
-    FLD float ptr [0x00602d24]          ; 004fd9af | DAT_00602d24
+    FLD float ptr [0x00602d24]          ; 004fd9af | g_FLOAT_00602d24
     MOV dword ptr [EBX + 0xc270],0x0    ; 004fd9b5
     ADD ESP,0x8                         ; 004fd9bf
     MOV dword ptr [EBX + 0x252c],0x3f490fdb ; 004fd9c2

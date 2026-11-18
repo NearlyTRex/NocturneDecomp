@@ -21,10 +21,11 @@ void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004dd4e0(int x1,int y1,int 
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00617da4);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,alpha);
-  this_ptr = DAT_0060b280;
-  (DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = x1 << 0x10;
+            (g_CDemonRenderer_PTR_0060b280,&g_Inventory3DTextureAtlas);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(g_CDemonRenderer_PTR_0060b280,alpha)
+  ;
+  this_ptr = g_CDemonRenderer_PTR_0060b280;
+  (g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = x1 << 0x10;
   (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y1 << 0x10;
   (this_ptr->vertex_buffer_ptr->projected_vertex).transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr->u = 0;

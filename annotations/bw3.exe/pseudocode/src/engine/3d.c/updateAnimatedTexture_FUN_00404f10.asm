@@ -7,10 +7,10 @@
 ; SMRGLAnimatedTexture * Stack[0x4]:4   texture
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5fad0
+;   int g_GlobalDeltaTimeInt
 ;
 ; Called Functions:
-;   engine_texture.cpp_FUN_0056aa10
+;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     PUSH EBP                            ; 00404f13
     SUB ESP,0x18                        ; 00404f14
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00404f17
-    MOV EAX,[0x01c5fad0]                ; 00404f1b | DAT_01c5fad0
+    MOV EAX,[0x01c5fad0]                ; 00404f1b | g_GlobalDeltaTimeInt
     MOV EDX,dword ptr [EBX + 0x14]      ; 00404f20
     ADD EDX,EAX                         ; 00404f23
     MOV ECX,dword ptr [EBX + 0x10]      ; 00404f25
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_00404f79
     MOV EAX,ESP                         ; 00404f7a
     PUSH EAX                            ; 00404f7c
-    CALL engine_texture.cpp_FUN_0056aa10 ; 00404f7d
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 00404f7d
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     MOV EAX,dword ptr [EBX + 0x18]      ; 00404f82
     ADD ESP,0x4                         ; 00404f85
     TEST EAX,EAX                        ; 00404f88

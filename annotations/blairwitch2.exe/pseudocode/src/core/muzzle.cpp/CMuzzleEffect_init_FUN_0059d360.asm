@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *param_2,undefined4 param_3)
+; void __cdecl core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 ;
 ; Parameters:
 ; CMuzzleEffect *  Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; CVector3f *      Stack[0x8]:4   position
+; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00448810
-;   core_dirmat.cpp_FUN_004496e0
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005306b0
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     PUSH ECX                            ; 0059d3c9
     LEA EDI,[ESP + 0x10]                ; 0059d3ca
     LEA EBX,[EBP + 0x10]                ; 0059d3ce
-    CALL core_dirmat.cpp_FUN_004496e0   ; 0059d3d1
-        ;   XREF to: 004496e0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_004496e0()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0 ; 0059d3d1
+        ;   XREF to: 004496e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004496e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     LEA ESI,[ESP + 0x4]                 ; 0059d3d6
     ADD ESP,0x4                         ; 0059d3da
     LEA EAX,[ESP + 0xc]                 ; 0059d3dd

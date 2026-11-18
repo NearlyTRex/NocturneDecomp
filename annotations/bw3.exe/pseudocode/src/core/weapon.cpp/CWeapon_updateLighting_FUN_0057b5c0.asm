@@ -7,9 +7,9 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d78d3
-;   undefined4 DAT_005d78d7
-;   undefined4 DAT_005d78db
+;   float g_FLOAT_005d78d3 = 0.3490658
+;   float g_FLOAT_005d78d7 = 15
+;   float g_FLOAT_005d78db = 0.06666667
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonLightInstance.base.base.position
@@ -26,11 +26,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0045fab0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
 ;
@@ -61,8 +61,8 @@ section .text
     PUSH EBX                            ; 0057b5fa
     LEA ESI,[ESP + 0x54]                ; 0057b5fb
     LEA EDI,[ESP + 0x3c]                ; 0057b5ff
-    CALL core_actor.cpp_FUN_00408b80    ; 0057b603
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0057b603
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x54]                ; 0057b608
     MOV EDX,0x1                         ; 0057b60c
     LEA EAX,[ESP + 0x60]                ; 0057b611
@@ -82,7 +82,7 @@ section .text
     PUSH EAX                            ; 0057b636
     FLD float ptr [ESP + 0x60]          ; 0057b637
     LEA EDI,[ESP + 0x78]                ; 0057b63b
-    FADD float ptr [0x005d78d3]         ; 0057b63f | DAT_005d78d3
+    FADD float ptr [0x005d78d3]         ; 0057b63f | g_FLOAT_005d78d3
     XOR ESI,ESI                         ; 0057b645
     FSTP float ptr [ESP + 0x60]         ; 0057b647
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 0057b64b
@@ -96,8 +96,8 @@ section .text
     PUSH EAX                            ; 0057b667
     LEA ESI,[ESP + 0x6c]                ; 0057b668
     MOV dword ptr [ESP + 0x8c],EBP      ; 0057b66c
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0057b673
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0057b673
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x6c]                ; 0057b678
     ADD ESP,0x8                         ; 0057b67c
     LEA EAX,[ESP + 0x34]                ; 0057b67f
@@ -157,13 +157,13 @@ section .text
     MOV EAX,dword ptr [EAX + 0x206e8]   ; 0057b732
     MOV dword ptr [ESP + 0x88],EAX      ; 0057b738
     FLD float ptr [ESP + 0x88]          ; 0057b73f
-    FCOMP float ptr [0x005d78d7]        ; 0057b746 | DAT_005d78d7
+    FCOMP float ptr [0x005d78d7]        ; 0057b746 | g_FLOAT_005d78d7
     FNSTSW AX                           ; 0057b74c
     SAHF                                ; 0057b74e
     JNC 0x0057b765                      ; 0057b74f
         ;   XREF to: 0057b765 (CONDITIONAL_JUMP)  ; LAB_0057b765
     FLD float ptr [ESP + 0x88]          ; 0057b751
-    FMUL float ptr [0x005d78db]         ; 0057b758 | DAT_005d78db
+    FMUL float ptr [0x005d78db]         ; 0057b758 | g_FLOAT_005d78db
     FSTP float ptr [ESP + 0x8c]         ; 0057b75e
     PUSH dword ptr [ESP + 0x8c]         ; 0057b765
         ;   Label: LAB_0057b765
@@ -191,10 +191,10 @@ section .text
     ADD ESP,0x8                         ; 0057b7a2
     MOV EAX,0x8000                      ; 0057b7a5
     PUSH 0x40a00000                     ; 0057b7aa
-    MOV [0x02d0c190],EAX                ; 0057b7af | DAT_02d0c190
+    MOV [0x02d0c190],EAX                ; 0057b7af | g_WeaponCoronaGlobe.intensity_multiplier
     MOV AH,0x20                         ; 0057b7b4
     PUSH 0x2d0c154                      ; 0057b7b6
-    MOV byte ptr [0x02d0c170],AH        ; 0057b7bb | DAT_02d0c170
+    MOV byte ptr [0x02d0c170],AH        ; 0057b7bb | g_WeaponCoronaGlobe.intensity
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30 ; 0057b7c1
         ;   XREF to: 0045ab30 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 0057b7c6
@@ -202,7 +202,7 @@ section .text
     MOV ECX,dword ptr [0x00603b28]      ; 0057b7ce | g_CDemonSetPtr
     XOR EDX,EDX                         ; 0057b7d4
     PUSH ECX                            ; 0057b7d6 | g_CDemonSetInstance
-    MOV dword ptr [0x02d0c174],EDX      ; 0057b7d7 | DAT_02d0c174
+    MOV dword ptr [0x02d0c174],EDX      ; 0057b7d7 | g_WeaponCoronaGlobe.corona_mode
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0 ; 0057b7dd
         ;   XREF to: 005372f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 0057b7e2

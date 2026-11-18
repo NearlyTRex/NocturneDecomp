@@ -17,15 +17,15 @@
 ;   TerminatedCString s_CDemonCamera_init_Unable_005ce26a
 ;   TerminatedCString s_core_dcamera_cpp_005ce29c
 ;   TerminatedCString s_CDemonCamera_init_Unable_005ce2b0
-;   undefined4 DAT_01308800
-;   undefined4 DAT_0146694c
-;   undefined4 DAT_01466950
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
+;   int g_CameraScreenWidth
+;   int g_CameraScreenHeight
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0043b730
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     SAR EDX,0x1f                        ; 0043b58f
     IDIV ECX                            ; 0043b592
     ADD ESP,0x4                         ; 0043b594
-    MOV dword ptr [0x01466950],ESI      ; 0043b597 | DAT_01466950
-    MOV [0x0146694c],EAX                ; 0043b59d | DAT_0146694c
+    MOV dword ptr [0x01466950],ESI      ; 0043b597 | g_CameraScreenHeight
+    MOV [0x0146694c],EAX                ; 0043b59d | g_CameraScreenWidth
     CMP ESI,0x1e0                       ; 0043b5a2
     JLE 0x0043b5af                      ; 0043b5a8
         ;   XREF to: 0043b5af (CONDITIONAL_JUMP)  ; LAB_0043b5af
@@ -65,7 +65,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x144]     ; 0043b5d8
     XOR EDX,EDX                         ; 0043b5de
     MOV dword ptr [EBX + 0x150],EAX     ; 0043b5e0
-    MOV dword ptr [0x01308800],EDX      ; 0043b5e6 | DAT_01308800
+    MOV dword ptr [0x01308800],EDX      ; 0043b5e6 | g_CameraDownscaleIterations
     MOV EAX,dword ptr [EBX + 0x148]     ; 0043b5ec
     MOV ECX,dword ptr [EBX + 0x150]     ; 0043b5f2
     MOV dword ptr [EBX + 0x154],EAX     ; 0043b5f8
@@ -85,11 +85,11 @@ section .text
     SAR EDX,0x1f                        ; 0043b627
     IDIV ECX                            ; 0043b62a
     MOV ESI,dword ptr [EBX + 0x14c]     ; 0043b62c
-    MOV EDI,dword ptr [0x01308800]      ; 0043b632 | DAT_01308800
+    MOV EDI,dword ptr [0x01308800]      ; 0043b632 | g_CameraDownscaleIterations
     ADD ESI,ESI                         ; 0043b638
     INC EDI                             ; 0043b63a
     MOV dword ptr [EBX + 0x14c],ESI     ; 0043b63b
-    MOV dword ptr [0x01308800],EDI      ; 0043b641 | DAT_01308800
+    MOV dword ptr [0x01308800],EDI      ; 0043b641 | g_CameraDownscaleIterations
     MOV EBP,dword ptr [EBX + 0x150]     ; 0043b647
     MOV dword ptr [EBX + 0x154],EAX     ; 0043b64d
     CMP EBP,0x140                       ; 0043b653
@@ -112,10 +112,10 @@ section .text
     MOV ECX,0x5ce256                    ; 0043b688 | = "..\\core\\dcamera.cpp"
     MOV ESI,0x246                       ; 0043b68d
     PUSH 0x5ce26a                       ; 0043b692 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0043b697 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0043b69d | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0043b6a3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0043b697 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0043b69d | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043b6a3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043b6a8
     MOV EDX,dword ptr [EBX + 0x144]     ; 0043b6ab
         ;   Label: LAB_0043b6ab
@@ -147,10 +147,10 @@ section .text
         ;   Label: LAB_0043b6fd
     MOV EDX,0x24b                       ; 0043b702
     PUSH 0x5ce2b0                       ; 0043b707 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV [0x01d046a0],EAX                ; 0043b70c | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0043b711 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0043b717
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV [0x01d046a0],EAX                ; 0043b70c | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 0043b711 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0043b717
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043b71c
     JMP 0x0043b6d7                      ; 0043b71f
         ;   XREF to: 0043b6d7 (UNCONDITIONAL_JUMP)  ; LAB_0043b6d7

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 25,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 24
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
   },
   "cross_references": [
     {
@@ -44,19 +42,19 @@
   "globals": [
     {
       "addr": "02dc9474",
-      "name": "DAT_02dc9474",
-      "type": "undefined4",
+      "name": "g_SoundReverb",
+      "type": "SReverbSettings",
       "value": null
     },
     {
       "addr": "02dc9478",
-      "name": "DAT_02dc9478",
+      "name": "g_SoundReverb.decay_time",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc947c",
-      "name": "DAT_02dc947c",
+      "name": "g_SoundReverb.damping",
       "type": "undefined4",
       "value": null
     }
@@ -84,25 +82,25 @@
   "siblings": {
     "blairwitch2.exe": {
       "addr": "0055b080",
-      "by": "name",
+      "by": "body",
       "class": "identical",
       "ratio": 1.0
     },
     "bw1.exe": {
       "addr": "0057dad0",
-      "by": "name",
+      "by": "body",
       "class": "identical",
       "ratio": 1.0
     },
     "bw3.exe": {
       "addr": "00560c00",
-      "by": "name",
+      "by": "body",
       "class": "identical",
       "ratio": 1.0
     },
     "nocedit.exe": {
       "addr": "005b3c90",
-      "by": "name",
+      "by": "body",
       "class": "identical",
       "ratio": 1.0
     }
@@ -144,14 +142,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

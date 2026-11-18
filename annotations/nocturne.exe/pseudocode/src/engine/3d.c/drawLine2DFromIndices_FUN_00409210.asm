@@ -11,8 +11,8 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_005c5018
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290
@@ -31,16 +31,16 @@ section .text
     MOV ECX,0xc                         ; 00409222
     SHL EAX,0x4                         ; 00409227
     MOV EDI,ESP                         ; 0040922a
-    LEA ESI,[EAX + 0x5c5014]            ; 0040922c | DAT_005c5014
-    MOVSD.REP ES:EDI,ESI                ; 00409232 | DAT_005c5014 | DAT_005c5018
+    LEA ESI,[EAX + 0x5c5014]            ; 0040922c | g_SRenderVertex_ARRAY_005c5014
+    MOVSD.REP ES:EDI,ESI                ; 00409232 | g_SRenderVertex_ARRAY_005c5014 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
     MOV EDI,dword ptr [ESP + 0x70]      ; 00409234
     LEA EAX,[EDI*0x4 + 0x0]             ; 00409238
     SUB EAX,EDI                         ; 0040923f
     MOV ECX,0xc                         ; 00409241
     SHL EAX,0x4                         ; 00409246
     LEA EDI,[ESP + 0x30]                ; 00409249
-    LEA ESI,[EAX + 0x5c5014]            ; 0040924d | DAT_005c5014
-    MOVSD.REP ES:EDI,ESI                ; 00409253 | DAT_005c5014 | DAT_005c5018
+    LEA ESI,[EAX + 0x5c5014]            ; 0040924d | g_SRenderVertex_ARRAY_005c5014
+    MOVSD.REP ES:EDI,ESI                ; 00409253 | g_SRenderVertex_ARRAY_005c5014 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
     MOV ECX,0xc                         ; 00409255
     SUB ESP,0x30                        ; 0040925a
     LEA ESI,[ESP + 0x60]                ; 0040925d

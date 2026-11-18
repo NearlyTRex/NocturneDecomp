@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   end_pos
 ;
 ; XREF[1]:
-;   core_enemy.cpp_FUN_00489600 at 0048970a
+;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00489600 at 0048970a
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

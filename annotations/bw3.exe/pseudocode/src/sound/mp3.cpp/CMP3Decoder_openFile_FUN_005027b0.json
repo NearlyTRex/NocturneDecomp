@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 82,
+    "complexity_score": 51,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 129
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -52,12 +50,12 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "004659c0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004659c0"
+      "name": "engine_dosio.cpp_getFile_FUN_004659c0"
     },
     {
       "addr": "004657f0",
@@ -67,14 +65,14 @@
     {
       "addr": "00502890",
       "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_00502890"
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00502890"
     }
   ],
   "globals": [
     {
       "addr": "005ca31f",
-      "name": "s_sound_005ca31e+1",
-      "type": "undefined4",
+      "name": "s_sound_005ca31f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -91,8 +89,8 @@
     },
     {
       "addr": "005ca344",
-      "name": "DAT_005ca344",
-      "type": "undefined4",
+      "name": "s_rb_005ca344",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -127,14 +125,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -259,24 +257,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005ca344",
-      "severity": "mild",
-      "text": "p_Var3 = engine_dosio_cpp_FUN_004659c0(\"sound\",filename,&DAT_005ca344);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

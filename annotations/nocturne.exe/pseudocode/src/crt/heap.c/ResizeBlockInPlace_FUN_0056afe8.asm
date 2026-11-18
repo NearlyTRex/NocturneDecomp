@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_0056afe8(undefined4 param_1,undefined4 param_2,int *unaff_EBX,undefined4 param_4,short param_5,int *param_6,uint param_7,uint *param_8)
+; undefined4 __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_0056afe8(undefined4 param_1,undefined4 param_2,Heap *unaff_EBX,undefined4 param_4,short param_5,Heap *param_6,uint param_7,uint *param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -12,8 +12,8 @@
 ;   crt_heap.c_TryResizeInPlace_FUN_0056b1a4 at 0056b1c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1680
-;   undefined4 DAT_02de5461
+;   Heap* g_MainHeap = 00000000
+;   undefined4 g_CHAR_ARRAY_02de5460+1
 ;
 ; Called Functions:
 ;   crt_unknown.c_ValidateHeapIntegrity_FUN_005638e0
@@ -73,11 +73,11 @@ section .text
     MOV EAX,dword ptr [EBP + 0x4]       ; 0056b055
     MOV DX,DS                           ; 0056b058
     MOV dword ptr [ESP + 0x8],EAX       ; 0056b05a
-    MOV EAX,0x5c1680                    ; 0056b05e | DAT_005c1680
+    MOV EAX,0x5c1680                    ; 0056b05e | g_MainHeap
     CMP DX,word ptr [ESP + 0x20]        ; 0056b063
     JNZ 0x0056b08b                      ; 0056b068
         ;   XREF to: 0056b08b (CONDITIONAL_JUMP)  ; LAB_0056b08b
-    MOV EBX,dword ptr [0x005c1680]      ; 0056b06a | DAT_005c1680
+    MOV EBX,dword ptr [0x005c1680]      ; 0056b06a | g_MainHeap
     CMP dword ptr [EBX + 0x8],0x0       ; 0056b070
     JZ 0x0056b08b                       ; 0056b074
         ;   XREF to: 0056b08b (CONDITIONAL_JUMP)  ; LAB_0056b08b
@@ -128,7 +128,7 @@ section .text
     DEC ECX                             ; 0056b0cf
     XOR DL,DL                           ; 0056b0d0
     MOV dword ptr [EBX + 0x1c],ECX      ; 0056b0d2
-    MOV byte ptr [0x02de5461],DL        ; 0056b0d5 | DAT_02de5461
+    MOV byte ptr [0x02de5461],DL        ; 0056b0d5 | g_CHAR_ARRAY_02de5460+1
     MOV EDX,dword ptr [EAX]             ; 0056b0db
     CMP EDI,EDX                         ; 0056b0dd
     JC 0x0056b11f                       ; 0056b0df
@@ -152,7 +152,7 @@ section .text
     ADD EDI,EAX                         ; 0056b10e
     XOR AH,AH                           ; 0056b110
     MOV dword ptr [EDX],EDI             ; 0056b112
-    MOV byte ptr [0x02de5461],AH        ; 0056b114 | DAT_02de5461
+    MOV byte ptr [0x02de5461],AH        ; 0056b114 | g_CHAR_ARRAY_02de5460+1
     JMP 0x0056b198                      ; 0056b11a
         ;   XREF to: 0056b198 (UNCONDITIONAL_JUMP)  ; LAB_0056b198
     MOV ECX,EDX                         ; 0056b11f
@@ -181,14 +181,14 @@ section .text
     OR DI,0x1                           ; 0056b148
     LEA ECX,[EAX + EBP*0x1]             ; 0056b14c
     MOV dword ptr [EBP],EDI             ; 0056b14f
-    MOV EAX,0x5c1680                    ; 0056b152 | DAT_005c1680
+    MOV EAX,0x5c1680                    ; 0056b152 | g_MainHeap
     MOV dword ptr [ECX],EDX             ; 0056b157
     MOV DX,DS                           ; 0056b159
     MOV dword ptr [ESP],ECX             ; 0056b15b
     CMP DX,word ptr [ESP + 0x20]        ; 0056b15e
     JNZ 0x0056b186                      ; 0056b163
         ;   XREF to: 0056b186 (CONDITIONAL_JUMP)  ; LAB_0056b186
-    MOV EBX,dword ptr [0x005c1680]      ; 0056b165 | DAT_005c1680
+    MOV EBX,dword ptr [0x005c1680]      ; 0056b165 | g_MainHeap
     CMP dword ptr [EBX + 0x8],0x0       ; 0056b16b
     JZ 0x0056b186                       ; 0056b16f
         ;   XREF to: 0056b186 (CONDITIONAL_JUMP)  ; LAB_0056b186

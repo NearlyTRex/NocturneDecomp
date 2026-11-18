@@ -37,7 +37,7 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_00477fd0(CElephantGun *t
   }
   model_ptr = core_dmodel_cpp_loadModel_FUN_004543b0("shell.kfm");
   core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0
-            (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).base.location.position,
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
              &(this_ptr->base).base.orient.vec,&local_38,model_ptr);
   (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,"sh-cock.wav");
   return;

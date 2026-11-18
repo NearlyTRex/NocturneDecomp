@@ -10,10 +10,10 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610 at 004537b7
-;   core_game.cpp_FUN_004d6420 at 004d677e
+;   core_game.cpp_CGame_saveGame_FUN_004d6420 at 004d677e
 ;
 ; Referenced Globals:
-;   undefined1* PTR_support_codec.cpp_CLZWCompress_dtor_FUN_00444270_005fd984 = 00444270
+;   TerminatedCString s_pBD_005fd984
 ;
 ; Called Functions:
 ;   support_codec.cpp_CCodec_ctor_FUN_00442ba0
@@ -41,7 +41,7 @@ section .text
     MOV dword ptr [EAX + 0x24],EDX      ; 004434b7
     MOV EDX,0xffffffff                  ; 004434ba
     MOV CL,byte ptr [EAX + 0x24]        ; 004434bf
-    MOV dword ptr [EAX],0x5fd984        ; 004434c2 | PTR_support_codec.cpp_CLZWCompress_dtor_FUN_00444270_005fd984
+    MOV dword ptr [EAX],0x5fd984        ; 004434c2 | = "pBD"
     SHL EDX,CL                          ; 004434c8
     MOV dword ptr [EAX + 0x28],EDX      ; 004434ca
     NOT EDX                             ; 004434cd

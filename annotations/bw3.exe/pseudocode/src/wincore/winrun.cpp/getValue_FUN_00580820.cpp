@@ -9,5 +9,5 @@
 char __cdecl wincore_winrun_cpp_getValue_FUN_00580820(void)
 
 {
-  return DAT_02d20334;
+  return g_BYTE_02d20334;
 }

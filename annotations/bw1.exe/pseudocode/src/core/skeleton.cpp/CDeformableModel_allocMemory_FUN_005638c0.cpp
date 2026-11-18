@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_005638c0(CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,int num_parts)
 
 {
@@ -16,24 +14,24 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_005638c0(CDeform
   
   core_skeleton_cpp_CDeformableModel_free_FUN_005637d0(this_ptr);
   if (5 < num_texture_sets) {
-    _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-    _DAT_01d1d404 = 0x27a;
-    core_main_c_FUN_005030e0("Too many texture sets in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,num_texture_sets);
+    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+    g_INT_01d1d404 = 0x27a;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many texture sets in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   if (8 < num_textures) {
-    _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-    _DAT_01d1d404 = 0x27e;
-    core_main_c_FUN_005030e0("Too many textures in CDeformableModel::allocMemory.  Max is %d, requested %d.",8,num_textures);
+    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+    g_INT_01d1d404 = 0x27e;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many textures in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   if (0x3c < num_parts) {
-    _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-    _DAT_01d1d404 = 0x282;
-    core_main_c_FUN_005030e0("Too many parts in CDeformableModel::allocMemory.  Max is %d, requested %d.",0x3c,num_parts);
+    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+    g_INT_01d1d404 = 0x282;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many parts in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   if (5 < num_lods) {
-    _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-    _DAT_01d1d404 = 0x286;
-    core_main_c_FUN_005030e0("Too many LODs in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,num_lods);
+    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+    g_INT_01d1d404 = 0x286;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too many LODs in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   this_ptr->num_textures = num_textures;
   this_ptr->num_parts = num_parts;

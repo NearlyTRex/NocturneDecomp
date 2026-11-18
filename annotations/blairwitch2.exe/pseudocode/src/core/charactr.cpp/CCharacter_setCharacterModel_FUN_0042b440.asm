@@ -12,11 +12,11 @@
 ;   core_doc.cpp_CDoc_setCharacterModel_FUN_00450a60 at 00450a73
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f4088
+;   float g_FLOAT_005f4088 = 6
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390
-;   core_charactr.cpp_FUN_004247f0
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
 ;   core_cloth.cpp_CClothList_load_FUN_005b14a0
 ;   core_cloth.cpp_CClothList_remove_FUN_005b1640
@@ -72,7 +72,7 @@ section .text
     MOV dword ptr [EBX + 0x109c8],0x0   ; 0042b49b
     MOV dword ptr [EBX + 0x109d4],0x0   ; 0042b4a5
     MOV dword ptr [EBX + 0x109cc],0x0   ; 0042b4af
-    FLD float ptr [0x005f4088]          ; 0042b4b9 | DAT_005f4088
+    FLD float ptr [0x005f4088]          ; 0042b4b9 | g_FLOAT_005f4088
     FLD float ptr [EBX + 0x2824]        ; 0042b4bf
     MOV dword ptr [EBX + 0x109d8],0xfffffffe ; 0042b4c5
     ADD ESP,0x4                         ; 0042b4cf
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 00429390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00429390(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042b4e4
     PUSH EBX                            ; 0042b4e7
-    CALL core_charactr.cpp_FUN_004247f0 ; 0042b4e8
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004247f0()
+    CALL core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0 ; 0042b4e8
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0(CCharacter * this_ptr)
     MOV ESI,dword ptr [EBX + 0x2d0c]    ; 0042b4ed
     ADD ESP,0x4                         ; 0042b4f3
     TEST ESI,ESI                        ; 0042b4f6

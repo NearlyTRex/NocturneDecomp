@@ -7,18 +7,18 @@
 ; CLightGun *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6efa
-;   undefined4 DAT_005e6f02
-;   undefined4 DAT_005e6f0a
-;   undefined4 DAT_005e6f12
-;   undefined4 DAT_00603014
-;   undefined4 DAT_00612560
-;   undefined4 DAT_0061c010
-;   undefined4 DAT_01bc120c
+;   double g_DOUBLE_005e6efa = 18
+;   double g_DOUBLE_005e6f02 = 0.100000000000000
+;   double g_DOUBLE_005e6f0a = 0.015625
+;   double g_DOUBLE_005e6f12 = 0.150000000000000
+;   float g_FLOAT_00603014 = 56
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CFireEffect* g_CFireEffectPtr = 01c57074
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408ac0
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
@@ -37,8 +37,8 @@ section .text
     MOV EBP,ESP                         ; 00500f94
     SUB ESP,0x124                       ; 00500f96
     AND ESP,0xfffffff8                  ; 00500f9c
-    MOV EDX,dword ptr [0x00612560]      ; 00500f9f | DAT_00612560
-    PUSH EDX                            ; 00500fa5 | DAT_01bc120c
+    MOV EDX,dword ptr [0x00612560]      ; 00500f9f | g_CDemonRenderer_PTR_00612560
+    PUSH EDX                            ; 00500fa5 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00500fa6
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00500fab
@@ -65,8 +65,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 00500fed
     PUSH EDI                            ; 00500ff0
     LEA ESI,[ESP + 0xc]                 ; 00500ff1
-    CALL core_actor.cpp_FUN_00408b40    ; 00500ff5
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00500ff5
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA EDI,[ESP + 0xcc]                ; 00500ffa
     ADD ESP,0x8                         ; 00501001
     LEA ESI,[ESP + 0x4]                 ; 00501004
@@ -88,8 +88,8 @@ section .text
     PUSH ECX                            ; 0050104b
     LEA ESI,[ESP + 0xe4]                ; 0050104c
     LEA EDI,[ESP + 0x18]                ; 00501053
-    CALL core_actor.cpp_FUN_00408ac0    ; 00501057
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0 ; 00501057
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408ac0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0xe4]                ; 0050105c
     ADD ESP,0x8                         ; 00501063
     LEA EAX,[ESP + 0xf4]                ; 00501066
@@ -175,9 +175,9 @@ section .text
     FSTP float ptr [ESP + 0x88]         ; 00501188
     FSTP float ptr [ESP + 0x8c]         ; 0050118f
     FSTP float ptr [ESP + 0x90]         ; 00501196
-    FLD float ptr [0x00603014]          ; 0050119d | DAT_00603014
+    FLD float ptr [0x00603014]          ; 0050119d | g_FLOAT_00603014
         ;   Label: LAB_0050119d
-    FDIVR double ptr [0x005e6efa]       ; 005011a3 | DAT_005e6efa
+    FDIVR double ptr [0x005e6efa]       ; 005011a3 | g_DOUBLE_005e6efa
     FLD1                                ; 005011a9
     FPATAN                              ; 005011ab
     MOV EDX,dword ptr [EBP + 0x14]      ; 005011ad
@@ -198,8 +198,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005011e9
     PUSH ECX                            ; 005011ea
     LEA ESI,[ESP + 0x3c]                ; 005011eb
-    CALL core_actor.cpp_FUN_00408b40    ; 005011ef
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 005011ef
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 005011f4
     PUSH dword ptr [ESP]                ; 005011f7
     PUSH 0x0                            ; 005011fa
@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 0050120c
     LEA EAX,[ESP + 0xdc]                ; 0050120d
     PUSH EAX                            ; 00501214
-    MOV EBX,dword ptr [0x0061c010]      ; 00501215 | DAT_0061c010
+    MOV EBX,dword ptr [0x0061c010]      ; 00501215 | g_CFireEffectPtr
     PUSH EBX                            ; 0050121b
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0 ; 0050121c
         ;   XREF to: 004b60e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
@@ -224,7 +224,7 @@ section .text
     XOR ESI,ESI                         ; 00501243
     FLD float ptr [ESP]                 ; 00501245
         ;   Label: LAB_00501245
-    FMUL double ptr [0x005e6f02]        ; 00501248 | DAT_005e6f02
+    FMUL double ptr [0x005e6f02]        ; 00501248 | g_DOUBLE_005e6f02
     MOV dword ptr [ESP + 0x120],EBX     ; 0050124e
     FILD dword ptr [ESP + 0x120]        ; 00501255
     FMULP                               ; 0050125c
@@ -238,7 +238,7 @@ section .text
     PUSH EAX                            ; 00501274
     LEA EAX,[ESP + 0xdc]                ; 00501275
     PUSH EAX                            ; 0050127c
-    MOV EDI,dword ptr [0x0061c010]      ; 0050127d | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 0050127d | g_CFireEffectPtr
     PUSH EDI                            ; 00501283
     INC EBX                             ; 00501284
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0 ; 00501285
@@ -295,7 +295,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050133e
         ;   Label: LAB_0050133e
     FLD float ptr [EAX + 0x594]         ; 00501341
-    FMUL double ptr [0x005e6f0a]        ; 00501347 | DAT_005e6f0a
+    FMUL double ptr [0x005e6f0a]        ; 00501347 | g_DOUBLE_005e6f0a
     FLD float ptr [ESP + 0xa0]          ; 0050134d
     FXCH                                ; 00501354
     FSTP float ptr [ESP + 0x11c]        ; 00501356
@@ -331,7 +331,7 @@ section .text
     ADD ESP,0x8                         ; 005013d0
     MOV dword ptr [ESP + 0x120],EBX     ; 005013d3
     FILD dword ptr [ESP + 0x120]        ; 005013da
-    FMUL double ptr [0x005e6f12]        ; 005013e1 | DAT_005e6f12
+    FMUL double ptr [0x005e6f12]        ; 005013e1 | g_DOUBLE_005e6f12
     FSTP double ptr [ESP + 0x100]       ; 005013e7
     FMUL double ptr [ESP + 0x100]       ; 005013ee
     PUSH 0x40a00000                     ; 005013f5
@@ -358,7 +358,7 @@ section .text
     LEA EAX,[ESP + 0xa4]                ; 00501453
     PUSH EAX                            ; 0050145a
     LEA EAX,[ESP + 0x54]                ; 0050145b
-    MOV EDI,dword ptr [0x0061c010]      ; 0050145f | DAT_0061c010
+    MOV EDI,dword ptr [0x0061c010]      ; 0050145f | g_CFireEffectPtr
     PUSH EAX                            ; 00501465
     FMUL double ptr [ESP + 0x118]       ; 00501466
     PUSH EDI                            ; 0050146d

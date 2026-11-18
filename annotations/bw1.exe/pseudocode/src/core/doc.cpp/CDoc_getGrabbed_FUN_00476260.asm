@@ -11,15 +11,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_CDoc_startGettingGrabbed_005da606
 ;   TerminatedCString s_current_motion_is_s_005da630
-;   undefined4 DAT_005da64c
-;   undefined4 DAT_005da654
+;   double g_DOUBLE_005da64c = 0.300000000000000
+;   double g_DOUBLE_005da654 = 0.700000000000000
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004eadf0
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
-;   core_motion.cpp_FUN_00525020
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     JNZ 0x00476276                      ; 004762d5
         ;   XREF to: 00476276 (CONDITIONAL_JUMP)  ; LAB_00476276
     PUSH ESI                            ; 004762d7
-    CALL core_motion.cpp_FUN_00525020   ; 004762d8
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 004762d8
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x10],EAX      ; 004762dd
     FLD float ptr [ESP + 0x10]          ; 004762e1
     ADD ESP,0x4                         ; 004762e5
@@ -93,13 +93,13 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 004762fb
         ;   Label: LAB_004762fb
     FST double ptr [ESP]                ; 004762ff
-    FCOMP double ptr [0x005da64c]       ; 00476302 | DAT_005da64c
+    FCOMP double ptr [0x005da64c]       ; 00476302 | g_DOUBLE_005da64c
     FNSTSW AX                           ; 00476308
     SAHF                                ; 0047630a
     JBE 0x0047631f                      ; 0047630b
         ;   XREF to: 0047631f (CONDITIONAL_JUMP)  ; LAB_0047631f
     FLD double ptr [ESP]                ; 0047630d
-    FCOMP double ptr [0x005da654]       ; 00476310 | DAT_005da654
+    FCOMP double ptr [0x005da654]       ; 00476310 | g_DOUBLE_005da654
     FNSTSW AX                           ; 00476316
     SAHF                                ; 00476318
     JC 0x00476276                       ; 00476319

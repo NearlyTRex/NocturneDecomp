@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 181,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 43,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 91,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 337
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 90,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 336
   },
   "cross_references": [],
   "function": {
@@ -249,73 +246,73 @@
     },
     {
       "addr": "007c37b8",
-      "name": "DAT_007c37b8",
-      "type": "undefined4",
+      "name": "g_BatmanIndices",
+      "type": "int[12]",
       "value": null
     },
     {
       "addr": "007c37bc",
-      "name": "DAT_007c37bc",
+      "name": "g_BatmanIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37c0",
-      "name": "DAT_007c37c0",
+      "name": "g_BatmanIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37c4",
-      "name": "DAT_007c37c4",
+      "name": "g_BatmanIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37c8",
-      "name": "DAT_007c37c8",
+      "name": "g_BatmanIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37cc",
-      "name": "DAT_007c37cc",
+      "name": "g_BatmanIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37d0",
-      "name": "DAT_007c37d0",
+      "name": "g_BatmanIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37d4",
-      "name": "DAT_007c37d4",
+      "name": "g_BatmanIndices[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37d8",
-      "name": "DAT_007c37d8",
+      "name": "g_BatmanIndices[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37dc",
-      "name": "DAT_007c37dc",
+      "name": "g_BatmanIndices[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37e0",
-      "name": "DAT_007c37e0",
+      "name": "g_BatmanIndices[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c37e4",
-      "name": "DAT_007c37e4",
+      "name": "g_BatmanIndices[11]",
       "type": "undefined4",
       "value": null
     }
@@ -385,72 +382,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_007c37b8",
-      "severity": "mild",
-      "text": "DAT_007c37b8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_007c37c0",
-      "severity": "mild",
-      "text": "DAT_007c37c0 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_007c37dc",
-      "severity": "mild",
-      "text": "DAT_007c37dc = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_007c37e4",
-      "severity": "mild",
-      "text": "DAT_007c37e4 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_007c37b8",
-      "severity": "mild",
-      "text": "DAT_007c37b8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_007c37dc",
-      "severity": "mild",
-      "text": "DAT_007c37dc = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_007c37e4",
-      "severity": "mild",
-      "text": "DAT_007c37e4 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

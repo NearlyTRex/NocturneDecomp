@@ -33,9 +33,9 @@ int __cdecl CLantern::fire(CLantern *this_ptr);
 // Address: 0059ccf0
 void __cdecl CLantern::process(CLantern *this_ptr,float delta_time);
 
-// Original: core_lantern.cpp_FUN_0059ced0
+// Original: core_lantern.cpp_CLantern_updateLightTransform_FUN_0059ced0
 // Address: 0059ced0
-void FUN_0059ced0(int param_1);
+void __cdecl CLantern::updateLightTransform(CLantern *this_ptr);
 
 // Original: core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000
 // Address: 0059d000

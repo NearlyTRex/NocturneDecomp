@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   knob
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007dffb8
-;   undefined4 DAT_01c5fadc
+;   int g_INT_007dffb8
+;   int g_MouseX
 ;
 ; *****************************************************************************
 
@@ -38,10 +38,10 @@ section .text
     CMP EAX,dword ptr [EDX + 0x20]      ; 00412b29
     JNZ 0x00412b24                      ; 00412b2c
         ;   XREF to: 00412b24 (CONDITIONAL_JUMP)  ; LAB_00412b24
-    MOV ECX,dword ptr [0x01c5fadc]      ; 00412b2e | DAT_01c5fadc
+    MOV ECX,dword ptr [0x01c5fadc]      ; 00412b2e | g_MouseX
         ;   Label: LAB_00412b2e
     LEA EAX,[ESI*0x4 + 0x0]             ; 00412b34
-    MOV EBX,dword ptr [0x007dffb8]      ; 00412b3b | DAT_007dffb8
+    MOV EBX,dword ptr [0x007dffb8]      ; 00412b3b | g_INT_007dffb8
     ADD EAX,EDX                         ; 00412b41
     CMP ECX,EBX                         ; 00412b43
     JLE 0x00412b88                      ; 00412b45
@@ -52,9 +52,9 @@ section .text
     JLE 0x00412b5e                      ; 00412b55
         ;   XREF to: 00412b5e (CONDITIONAL_JUMP)  ; LAB_00412b5e
     MOV dword ptr [EAX + 0x38],0x4      ; 00412b57
-    MOV EAX,[0x01c5fadc]                ; 00412b5e | DAT_01c5fadc
+    MOV EAX,[0x01c5fadc]                ; 00412b5e | g_MouseX
         ;   Label: LAB_00412b5e
-    MOV [0x007dffb8],EAX                ; 00412b63 | DAT_007dffb8
+    MOV [0x007dffb8],EAX                ; 00412b63 | g_INT_007dffb8
     LEA EAX,[ESI*0x4 + 0x0]             ; 00412b68
     ADD EAX,EDX                         ; 00412b6f
     MOV EDI,dword ptr [EAX + 0x38]      ; 00412b71

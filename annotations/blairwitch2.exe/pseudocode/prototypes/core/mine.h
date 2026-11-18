@@ -41,9 +41,9 @@ int __cdecl CSpiritMine::renderOpaque(CSpiritMine *this_ptr);
 // Address: 005ad910
 int __cdecl CSpiritMine::renderTransparent(CSpiritMine *this_ptr);
 
-// Original: core_mine.cpp_FUN_005ad940
+// Original: core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940
 // Address: 005ad940
-void FUN_005ad940(int param_1);
+void __cdecl CSpiritMine::updateGlobe(CSpiritMine *this_ptr);
 
 // Original: core_mine.cpp_CSpiritMine_archive_FUN_005ad9f0
 // Address: 005ad9f0

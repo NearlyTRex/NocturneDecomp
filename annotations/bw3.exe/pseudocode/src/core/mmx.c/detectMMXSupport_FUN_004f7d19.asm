@@ -9,9 +9,9 @@
 ;   core_mmx.c_getCPUInfo_FUN_004f7d2f at 004f7d45
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060069d
-;   undefined1 DAT_006006a1
-;   undefined4 DAT_00800000
+;   uint g_CPUFeatureFlags = 0x0
+;   uchar g_CPUInfoMMXSupported = \x00
+;   undefined4 g_CHAR_ARRAY_007fa464+0x5b9c
 ;
 ; *****************************************************************************
 
@@ -19,11 +19,11 @@ section .text
 
     PUSH EAX                            ; 004f7d19
         ;   Label: core_mmx.c_detectMMXSupport_FUN_004f7d19
-    MOV EAX,[0x0060069d]                ; 004f7d1a | DAT_0060069d
-    TEST EAX,0x800000                   ; 004f7d1f | DAT_00800000
+    MOV EAX,[0x0060069d]                ; 004f7d1a | g_CPUFeatureFlags
+    TEST EAX,0x800000                   ; 004f7d1f | g_CHAR_ARRAY_007fa464+0x5b9c
     JZ 0x004f7d2d                       ; 004f7d24
         ;   XREF to: 004f7d2d (CONDITIONAL_JUMP)  ; LAB_004f7d2d
-    MOV byte ptr [0x006006a1],0x1       ; 004f7d26 | DAT_006006a1
+    MOV byte ptr [0x006006a1],0x1       ; 004f7d26 | g_CPUInfoMMXSupported
     POP EAX                             ; 004f7d2d
         ;   Label: LAB_004f7d2d
     RET                                 ; 004f7d2e

@@ -16,7 +16,7 @@
 ;   crt_fstream.cpp_ofstream_ctor_FUN_0056511e at 0056513e
 ;
 ; Referenced Globals:
-;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4a18
+;   WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout
 ;   void* PTR_crt_fstream.cpp_fstreambase_dtor_FUN_0056b810_005a4a24 = 0056b810
 ;   void* PTR_crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_0056b7f8_005a4a2c = 0056b7f8
 ;
@@ -39,7 +39,7 @@ section .text
     TEST byte ptr [ESP + 0x14],0x1      ; 0056b764
     JNZ 0x0056b780                      ; 0056b769
         ;   XREF to: 0056b780 (CONDITIONAL_JUMP)  ; LAB_0056b780
-    MOV dword ptr [EBX],0x5a4a18        ; 0056b76b | g_WatcomVirtualBaseDescriptor_005a4a18
+    MOV dword ptr [EBX],0x5a4a18        ; 0056b76b | g_FStreamBase_VirtualBaseLayout
     ADD EBX,0x48                        ; 0056b771
     PUSH EBX                            ; 0056b774
     CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 0056b775

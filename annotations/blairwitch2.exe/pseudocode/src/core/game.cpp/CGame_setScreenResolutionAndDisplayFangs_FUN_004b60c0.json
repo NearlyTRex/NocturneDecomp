@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 49,
+    "complexity_score": 18,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 83
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -69,7 +66,7 @@
     {
       "addr": "00588a50",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00588a50"
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_00588a50"
     },
     {
       "addr": "00589560",
@@ -86,26 +83,26 @@
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "01511cc0",
-      "name": "DAT_01511cc0",
-      "type": "undefined4",
+      "name": "g_ThemeFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c25590",
-      "name": "DAT_01c25590",
-      "type": "undefined4",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
@@ -221,22 +218,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "if ((DAT_006141bc != 0x1e0) || (this_ptr->game_bpp != 0x20)) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

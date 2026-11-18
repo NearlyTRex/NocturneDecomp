@@ -16,7 +16,7 @@
 ;
 ; XREF[2]:
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0 at 004e82ce
-;   shape_edittool.cpp_FUN_0047ee50 at 0047ef4c
+;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50 at 0047ef4c
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004b1040

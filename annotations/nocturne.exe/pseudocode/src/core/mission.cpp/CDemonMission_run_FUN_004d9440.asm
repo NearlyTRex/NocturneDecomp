@@ -19,12 +19,12 @@
 ;   TerminatedCString s_hq_geo_00589e3b
 ;   TerminatedCString s_Press_any_key_to_continu_00589e42
 ;   CGame* g_CGamePtr = 01c775ec
-;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
+;   CLevelLoader* g_CLevelLoaderPtr = 01cc3160
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   CBitFont* g_CBitFont_PTR_014b9900
+;   CBitFont* g_ThemeFont
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.act_completion_state
-;   undefined4 DAT_01cae0d4
+;   int g_HeroCount
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   ... and 2 more
@@ -58,7 +58,7 @@ section .text
     PUSH EBP                            ; 004d9443
     MOV EBX,dword ptr [ESP + 0x14]      ; 004d9444
     MOV EBP,0x1                         ; 004d9448
-    CMP EBP,dword ptr [0x01cae0d4]      ; 004d944d | DAT_01cae0d4
+    CMP EBP,dword ptr [0x01cae0d4]      ; 004d944d | g_HeroCount
         ;   Label: LAB_004d944d
     JG 0x004d9525                       ; 004d9453
         ;   XREF to: 004d9525 (CONDITIONAL_JUMP)  ; LAB_004d9525
@@ -86,7 +86,7 @@ section .text
     ADD ESP,0x8                         ; 004d94a0
     XOR AH,AH                           ; 004d94a3
     PUSH EBX                            ; 004d94a5
-    MOV byte ptr [0x01ccbbf0],AH        ; 004d94a6 | DAT_01ccbbf0
+    MOV byte ptr [0x01ccbbf0],AH        ; 004d94a6 | g_PendingMissionName
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180 ; 004d94ac
         ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d94b1
@@ -101,7 +101,7 @@ section .text
     PUSH EBX                            ; 004d94d1
     MOV EDI,EAX                         ; 004d94d2
     CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 ; 004d94d4
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004d94d9
     MOV EAX,dword ptr [ESI + 0x14c]     ; 004d94dc
     PUSH ESI                            ; 004d94e2
@@ -114,7 +114,7 @@ section .text
     TEST EDI,EDI                        ; 004d94f5
     JZ 0x004d9502                       ; 004d94f7
         ;   XREF to: 004d9502 (CONDITIONAL_JUMP)  ; LAB_004d9502
-    CMP byte ptr [0x01ccbbf0],0x0       ; 004d94f9 | DAT_01ccbbf0
+    CMP byte ptr [0x01ccbbf0],0x0       ; 004d94f9 | g_PendingMissionName
     JNZ 0x004d954d                      ; 004d9500
         ;   XREF to: 004d954d (CONDITIONAL_JUMP)  ; LAB_004d954d
     PUSH 0x1                            ; 004d9502
@@ -160,7 +160,7 @@ section .text
     PUSH EBP                            ; 004d956f
     PUSH EAX                            ; 004d9570
     PUSH 0x9                            ; 004d9571
-    MOV ECX,dword ptr [0x005baca0]      ; 004d9573 | g_CLevelLoader_PTR_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004d9573 | g_CLevelLoaderPtr
     PUSH ECX                            ; 004d9579
     MOV EDI,EBP                         ; 004d957a
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004d957c
@@ -168,7 +168,7 @@ section .text
         ;   Label: LAB_004d957c
     ADD ESP,0x10                        ; 004d9581
     PUSH 0x0                            ; 004d9584
-    PUSH 0x1ccbbf0                      ; 004d9586 | DAT_01ccbbf0
+    PUSH 0x1ccbbf0                      ; 004d9586 | g_PendingMissionName
     PUSH EBX                            ; 004d958b
     CALL core_mission.cpp_CDemonMission_load_FUN_004d7ee0 ; 004d958c
         ;   XREF to: 004d7ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission * this_ptr, char * mission_filename, int load_flags)
@@ -199,7 +199,7 @@ section .text
     PUSH EDI                            ; 004d95cd
     PUSH 0xf8                           ; 004d95ce
     PUSH 0x58                           ; 004d95d3
-    MOV ESI,dword ptr [0x014b9900]      ; 004d95d5 | g_CBitFont_PTR_014b9900
+    MOV ESI,dword ptr [0x014b9900]      ; 004d95d5 | g_ThemeFont
     PUSH ESI                            ; 004d95db
     MOV ESI,0x1df                       ; 004d95dc
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004d95e1
@@ -209,7 +209,7 @@ section .text
     LEA EAX,[ESI + -0x4]                ; 004d95eb
     PUSH EAX                            ; 004d95ee
     PUSH 0x27f                          ; 004d95ef
-    MOV EDI,dword ptr [0x014b9900]      ; 004d95f4 | g_CBitFont_PTR_014b9900
+    MOV EDI,dword ptr [0x014b9900]      ; 004d95f4 | g_ThemeFont
     PUSH EDI                            ; 004d95fa
     CALL engine_font.cpp_CBitFont_drawTextRight_FUN_00490be0 ; 004d95fb
         ;   XREF to: 00490be0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_00490be0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
@@ -231,7 +231,7 @@ section .text
     PUSH -0x1                           ; 004d9625
     PUSH EBP                            ; 004d9627
     PUSH 0x9                            ; 004d9628
-    MOV EDX,dword ptr [0x005baca0]      ; 004d962a | g_CLevelLoader_PTR_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 004d962a | g_CLevelLoaderPtr
     PUSH EDX                            ; 004d9630
     JMP 0x004d957c                      ; 004d9631
         ;   XREF to: 004d957c (UNCONDITIONAL_JUMP)  ; LAB_004d957c

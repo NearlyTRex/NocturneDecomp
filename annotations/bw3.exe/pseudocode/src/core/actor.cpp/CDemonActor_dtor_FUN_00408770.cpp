@@ -13,7 +13,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408770(CDemonActor *
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CDemonActorTypeInfo);
-    FUN_005a30b6(ptr);
+    free(ptr);
     return this_ptr;
   }
   this_ptr->validation_magic = 0x495fd67;
@@ -21,6 +21,6 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408770(CDemonActor *
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005a30c4(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

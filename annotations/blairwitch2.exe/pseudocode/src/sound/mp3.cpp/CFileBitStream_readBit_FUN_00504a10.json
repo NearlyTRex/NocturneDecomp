@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 61,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 46,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 166
   },
   "cross_references": [
@@ -56,13 +54,13 @@
   "globals": [
     {
       "addr": "00619230",
-      "name": "DAT_00619230",
-      "type": "undefined4",
+      "name": "g_MpegBitMaskTableSingleBit",
+      "type": "uint[8]",
       "value": null
     },
     {
       "addr": "0061924c",
-      "name": "DAT_0061924c",
+      "name": "g_MpegBitMaskTableSingleBit[7]",
       "type": "undefined4",
       "value": null
     }
@@ -260,14 +258,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_00619230",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)(&DAT_00619230 + iVar4 * 4);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

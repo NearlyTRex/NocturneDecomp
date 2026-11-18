@@ -13,18 +13,18 @@
 ; XREF[13]:
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410b32
 ;   core_bodypart.cpp_createBodyPart_FUN_004154f0 at 004155a3
-;   core_game.cpp_FUN_004b8e10 at 004b8fb8
-;   core_game.cpp_FUN_004b90d0 at 004ba0c4
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004ba0c4
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0 at 004b9003
-;   core_gore.cpp_FUN_004c9bd0 at 004c9c8d
-;   core_hero.cpp_FUN_004d0a40 at 004d0a99
-;   core_inv.cpp_FUN_004dadb0 at 004db51a
+;   core_game.cpp_giveHeroWeapon_FUN_004b8e10 at 004b8fb8
+;   core_gore.cpp_CGore_spawnFlies_FUN_004c9bd0 at 004c9c8d
+;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40 at 004d0a99
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0 at 004db51a
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1f22
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 at 004fc23a
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 004fcda6
     PUSH EDI                            ; 004fcdaa
     MOV byte ptr [EDI],0x0              ; 004fcdab
-    CALL core_actor.cpp_FUN_00408a50    ; 004fcdae
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 004fcdae
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004fcdb3
     MOV BL,byte ptr [EAX]               ; 004fcdb6
     MOV EDX,EAX                         ; 004fcdb8

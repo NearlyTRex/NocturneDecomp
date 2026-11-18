@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDrawSurface *this_ptr,int x,int start_y,int end_y)
 
 {
@@ -32,7 +30,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
       iVar2 = iVar5 * 2;
       iVar4 = iVar4 * 4;
       iVar3 = iVar3 * 4;
-      if (_DAT_01b4d71c != 0) {
+      if (g_UseRGBConversion != 0) {
         if ((uint)g_BitsPerPixel < 0x10) {
           if (g_BitsPerPixel == 8) {
             do {
@@ -49,7 +47,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
               piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
               iVar3 = iVar3 + 4;
               *(ushort *)(*piVar1 + iVar2) =
-                   *(ushort *)(*piVar1 + iVar2) >> (DAT_01b4d720 & 0x1f) & (ushort)_DAT_01b4d730;
+                   *(ushort *)(*piVar1 + iVar2) >> ((byte)g_OriginalColorValue & 0x1f) &
+                   (ushort)g_PackedPixelColor;
             } while (iVar3 <= iVar4);
             return;
           }
@@ -57,7 +56,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
             do {
               puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar5 * 4);
               iVar3 = iVar3 + 4;
-              *puVar6 = *puVar6 >> (DAT_01b4d720 & 0x1f) & _DAT_01b4d730;
+              *puVar6 = *puVar6 >> ((byte)g_OriginalColorValue & 0x1f) & g_PackedPixelColor;
             } while (iVar3 <= iVar4);
             return;
           }
@@ -78,14 +77,14 @@ LAB_0045c933:
         do {
           piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
-          *(byte *)(*piVar1 + iVar5) = DAT_01b4d710;
+          *(byte *)(*piVar1 + iVar5) = (byte)g_INT_01b4d710;
         } while (iVar3 <= iVar4);
       }
       else if ((uint)g_BitsPerPixel < 0x11) {
         do {
           piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
-          *(ushort *)(*piVar1 + iVar2) = _DAT_01b4d710;
+          *(ushort *)(*piVar1 + iVar2) = (ushort)g_INT_01b4d710;
         } while (iVar3 <= iVar4);
       }
       else {
@@ -93,7 +92,7 @@ LAB_0045c933:
         do {
           piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
-          *(uint *)(*piVar1 + iVar5 * 4) = _DAT_01b4d710;
+          *(int *)(*piVar1 + iVar5 * 4) = g_INT_01b4d710;
         } while (iVar3 <= iVar4);
       }
     }

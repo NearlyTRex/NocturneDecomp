@@ -11,7 +11,7 @@ CHand * __cdecl core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
 {
   CHand *pCVar1;
   
-  pCVar1 = (CHand *)operator_new(0x1186c);
+  pCVar1 = operator_new(0x1186c);
   if (pCVar1 == (CHand *)0x0) {
     return (CHand *)0x0;
   }

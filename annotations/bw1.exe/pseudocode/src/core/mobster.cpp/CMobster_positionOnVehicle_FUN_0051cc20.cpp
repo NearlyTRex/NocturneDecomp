@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_0051cc20(CMobster *this_ptr)
 
@@ -18,47 +17,41 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_0051cc20(CMobster *
   float local_48;
   float local_44;
   float local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  float local_18;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  CVector3f local_18;
   
   bVar2 = 0;
   if (this_ptr->side_of_car == 0) {
-    local_20 = 0xc0166666;
-    local_1c = 0xbfcccccd;
-    local_24 = 0x400ccccd;
-    if (&stack0xffffffd0 != &stack0xffffffdc) {
-      local_28 = 0xbfcccccd;
-      local_30 = 0x400ccccd;
-      local_2c = 0xc0166666;
+    local_24.y = -2.35;
+    local_24.z = -1.6;
+    local_24.x = 2.2;
+    if (&local_30 != &local_24) {
+      local_30.z = -1.6;
+      local_30.x = 2.2;
+      local_30.y = -2.35;
     }
-    fVar1 = (this_ptr->vehicle->orient).vec.y + _DAT_005e9db2;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + 1.570796f;
   }
   else {
-    local_38 = 0xc0166666;
-    local_34 = 0xbfcccccd;
-    local_3c = 0xc00ccccd;
-    if (&stack0xffffffd0 != &stack0xffffffc4) {
-      local_28 = 0xbfcccccd;
-      local_30 = 0xc00ccccd;
-      local_2c = 0xc0166666;
+    local_3c.y = -2.35;
+    local_3c.z = -1.6;
+    local_3c.x = -2.2;
+    if (&local_30 != &local_3c) {
+      local_30.z = -1.6;
+      local_30.x = -2.2;
+      local_30.y = -2.35;
     }
-    fVar1 = (this_ptr->vehicle->orient).vec.y + _DAT_005e9db6;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + -1.570796f;
   }
   (this_ptr->base).base.base.orient.vec.y = fVar1;
-  core_actor_cpp_FUN_00408b40(this_ptr->vehicle,&stack0xffffffd0);
-  local_48 = local_18;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40(this_ptr->vehicle,&local_30,&local_18);
+  local_48 = local_18.x;
   *(uint *)((int)&stack0xffffffbc + (uint)bVar2 * -8) =
-       *(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);
+       *(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   (this_ptr->base).base.base.location.position.x = local_48;
   (this_ptr->base).base.base.location.position.y = local_44;
   (this_ptr->base).base.base.location.position.z = local_40;

@@ -8,6 +8,7 @@ import sys
 import pytest
 
 # Local imports
+from disasm_helpers import insn
 from pe_helpers import SECTION_EXECUTE, build_sectioned_pe, call_rel32
 from repo_paths import SCRIPTS_DIR
 from sibling_images import code_at as at, function, install_programs, write_bucket, write_json
@@ -66,8 +67,25 @@ def caller_pop_ecx():
     return b"\x50" + call_rel32(at(CALLER_POP_ECX) + 1, at(RET_BARE)) + b"\x59\xc3"
 
 
+# Callers whose cleanup comes later: after a load (ADD ESP or POP ECX), or never
+# (a RET or a PUSH reaches ESP first).
+CALLER_LATE_ADD, CALLER_LATE_POP, CALLER_THEN_RET, CALLER_THEN_PUSH = 0x160, 0x170, 0x180, 0x190
+LOAD = b"\xa1\x34\x12\x00\x00"      # mov eax, [0x1234]
+
+
+def caller_late_add():
+    return b"\x50\x51" + call_rel32(at(CALLER_LATE_ADD) + 2, at(RET_BARE)) + LOAD + b"\x83\xc4\x08\xc3"
+
+
+def caller_then(offset, tail):
+    return call_rel32(at(offset), at(RET_BARE)) + tail
+
+
 BODIES = {RET8: b"\xc2\x08\x00", RET_MIXED: b"\xc2\x04\x00\xc2\x08\x00", RET_BARE: b"\xc3", NO_RET: b"\x90",
-          CALLER_PUSH_POP: caller_push_pop(), CALLER_STORE: caller_store(), CALLER_POP_ECX: caller_pop_ecx()}
+          CALLER_PUSH_POP: caller_push_pop(), CALLER_STORE: caller_store(), CALLER_POP_ECX: caller_pop_ecx(),
+          CALLER_LATE_ADD: caller_late_add(), CALLER_LATE_POP: caller_then(CALLER_LATE_POP, LOAD + b"\x59\xc3"),
+          CALLER_THEN_RET: caller_then(CALLER_THEN_RET, b"\xc3"),
+          CALLER_THEN_PUSH: caller_then(CALLER_THEN_PUSH, b"\x50\xc3")}
 
 
 def program(bodies):
@@ -124,6 +142,34 @@ def test_an_unparseable_cleanup_counts_as_none(monkeypatch, image):
     assert vss.observed_arg_bytes(image, [0x11], {}) == (4, None, None)
 
 
+def test_a_later_cleanup_is_found_past_work_that_leaves_esp_alone(image):
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_LATE_ADD) + 2], {}) == 8
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_LATE_POP)], {}) == 4
+    # The immediate measurement sees no cleanup at either
+    assert vss.observed_arg_bytes(image, [at(CALLER_LATE_ADD) + 2], {})[1] == 0
+
+
+def test_control_flow_or_another_esp_use_first_means_no_cleanup(image):
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_THEN_RET)], {}) == 0
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_THEN_PUSH)], {}) == 0
+
+
+def test_a_later_cleanup_needs_a_majority_and_a_readable_call(image):
+    cache = {}
+    assert vss.delayed_cleanup_bytes(image, [at(CALLER_LATE_ADD) + 2, at(CALLER_LATE_POP)], cache) is None
+    assert vss.delayed_cleanup_bytes(image, [0x00300000, at(CALLER_LATE_ADD) + 3], cache) is None
+
+
+def test_an_unparseable_later_cleanup_is_no_vote_and_a_scan_that_runs_out_is_none_found(monkeypatch, image):
+    insns = {"bad": [(0x11, "call", "x"), (0x16, "mov", "eax, ebx"), (0x18, "add", "esp, nonsense")],
+             "short": [(0x11, "call", "x"), (0x16, "mov", "eax, ebx")]}
+    monkeypatch.setattr(vss, "_function_insns", lambda image, cache, addr: insns[addr])
+    monkeypatch.setattr(image, "func_containing", lambda va: "bad")
+    assert vss.delayed_cleanup_bytes(image, [0x11], {}) is None
+    monkeypatch.setattr(image, "func_containing", lambda va: "short")
+    assert vss.delayed_cleanup_bytes(image, [0x11], {}) == 0
+
+
 def test_an_unreadable_body_has_no_instructions(image):
     image.by_addr["00300000"] = {"body": [{"start": "00300000", "end": "00300004"}]}
     assert vss._function_insns(image, {}, "00300000") == []
@@ -131,9 +177,10 @@ def test_an_unreadable_body_has_no_instructions(image):
 
 @pytest.fixture(name = "measured")
 def fixture_measured(monkeypatch):
-    def set_measurements(ret = None, args = (None, None, None)):
+    def set_measurements(ret = None, args = (None, None, None), delayed = None):
         monkeypatch.setattr(vss, "observed_ret_imm", lambda image, f: ret)
         monkeypatch.setattr(vss, "observed_arg_bytes", lambda image, sites, cache: args)
+        monkeypatch.setattr(vss, "delayed_cleanup_bytes", lambda image, sites, cache: delayed)
     return set_measurements
 
 
@@ -154,6 +201,14 @@ def fixture_measured(monkeypatch):
 def test_a_pair_is_judged_by_what_the_targets_bytes_measure(measured, a_func, ret, args, verdict, detail):
     measured(ret, args)
     assert vss.verify_pair(a_func, {}, None, (), {}) == (verdict, detail)
+
+
+def test_a_later_cleanup_confirms_but_never_convicts(measured):
+    measured(delayed = 4)
+    assert vss.verify_pair(func([param(4)]), {}, None, (), {}) == (
+        "agree", "callers' later cleanup 4 == 4 stack bytes")
+    measured(delayed = 8)
+    assert vss.verify_pair(func([param(4)]), {}, None, (), {})[0] == "unverifiable"
 
 
 # CBase's table and two derived tables that inherit slot 0 and override slot 1; an unrelated
@@ -221,8 +276,33 @@ def test_main_verifies_every_pair_and_writes_the_verdicts(mapping, tmp_path, cap
     assert "(1 of the agreements through a verified override of the same virtual)" in printed
     assert "of the 3 measurable pairs, 66.7% agree" in printed
     assert "1 of 1 signature conflicts" in printed and "RET 8 vs 4 stack bytes" in printed
-    verdicts = [p["sig_verdict"] for p in json.loads(out.read_text())["pairs"]]
-    assert verdicts == ["agree", "conflict", "agree", "unverifiable"]
+    assert "structural match: 0 measured pair(s) accepted, 0 of them conflicts; 0 unverifiable" in printed
+    pairs = json.loads(out.read_text())["pairs"]
+    assert [p["sig_verdict"] for p in pairs] == ["agree", "conflict", "agree", "unverifiable"]
+    assert all(p["sig_structural"] is False for p in pairs)
+
+
+def test_main_measures_the_rewritten_prototype_of_a_pair_whose_output_moved_to_esi(
+        mapping, tmp_path, capsys, monkeypatch):
+    # The pairs nocedit's prototype does not measure as fitting are offered for a rewrite
+    # (the third agrees only later, through its vtable slot); the agreeing ones never are
+    offered = []
+
+    def fits(a_func, _a, _b, _map):
+        offered.append(a_func["name"])
+        return 0 if a_func["name"].endswith(f"{at(0x30):08x}") else None
+
+    monkeypatch.setattr(vss, "esi_output_param", fits)
+    out = tmp_path / "verified.json"
+    vss.main([mapping, "--out", str(out), "--show", "0"])
+    assert "output in ESI: 1 prototype(s) rewritten, 0 agree, 0 conflict" in capsys.readouterr().out
+    assert offered == [f"core_a.cpp_CX_m{i}_FUN_{at(0x10 * i):08x}" for i in (1, 2, 3)]
+    rewritten = json.loads(out.read_text())["pairs"][3]
+    assert (rewritten["sig_verdict"], rewritten["sig_structural"]) == ("unverifiable", True)
+    assert rewritten["sig_detail"] == "output None in ESI: no conclusive measurement; wants 0 " \
+                                      "(pop None, push None, store None)"
+    assert rewritten["sig_rewrite"] == {"kind": "esi_output", "output": None, "conv": "__esi",
+                                        "params": [{"name": None, "type": None}]}
 
 
 def test_main_without_conflicts_or_output_only_reports(mapping, tmp_path, capsys):
@@ -232,6 +312,179 @@ def test_main_without_conflicts_or_output_only_reports(mapping, tmp_path, capsys
     vss.main([mapping, "--show", "0"])
     printed = capsys.readouterr().out
     assert "unverifiable :     1" in printed and "measurable" not in printed and "through a verified" not in printed
+
+
+def test_stack_arguments_are_read_through_the_tracked_esp_and_an_ebp_frame():
+    body = [insn("mov", "eax, dword ptr [esp + 4]"),      # argument 0
+            insn("push", "esi"),
+            insn("mov", "esi, dword ptr [esp + 0xc]"),    # argument 1, past the push
+            insn("sub", "esp, 8"),
+            insn("mov", "ecx, dword ptr [esp]"),          # a local
+            insn("mov", "edx, dword ptr [esp + 0x1a]"),   # not a slot
+            insn("add", "esp, 8"),
+            insn("add", "esp, eax"),                      # not an immediate: ignored
+            insn("pushal"), insn("popal"),
+            insn("push", "ebp"),
+            insn("mov", "ebp, esp"),
+            insn("mov", "eax, dword ptr [ebp + 0x14]"),   # argument 2
+            insn("mov", "eax, dword ptr [ebp + 2]"),      # not an argument
+            insn("pop", "ebp"), insn("pop", "esi"), insn("ret")]
+    assert vss.stack_args_read(body) == {0, 1, 2}
+    assert vss.stack_args_read([insn("mov", "eax, dword ptr [ebp + 8]")]) == set()
+
+
+def test_callees_must_all_appear_in_the_sources_order():
+    a = [insn("call", "0x401000"), insn("call", "0x402000"), insn("call", "eax"), insn("call", "0x409999")]
+    a_to_b = {"00401000": "00501000", "00402000": "00502000"}
+    in_order = [insn("call", "0x501000"), insn("call", "0x505000"), insn("call", "0x502000")]
+    swapped = [insn("call", "0x502000"), insn("call", "0x501000")]
+    assert vss.direct_callees(a) == ["00401000", "00402000", "00409999"]
+    assert vss.callees_in_order(a, in_order, a_to_b) is True
+    assert vss.callees_in_order(a, swapped, a_to_b) is False
+    assert vss.callees_in_order(a, in_order[:1], a_to_b) is False
+    assert vss.callees_in_order([insn("call", "0x409999")], in_order, a_to_b) is None
+
+
+def test_a_structural_match_needs_callees_the_receiver_and_the_same_arguments():
+    two = {"vars": {"params": [{}, {}]}}
+    calls = [insn("call", "0x401000")]
+    mapped = [insn("call", "0x501000")]
+    a_to_b = {"00401000": "00501000"}
+    reads_0_1 = [insn("mov", "eax, dword ptr [esp + 4]"), insn("mov", "eax, dword ptr [esp + 8]")]
+    assert vss.structural_match(two, reads_0_1 + calls, reads_0_1 + mapped, a_to_b)
+    assert not vss.structural_match(two, reads_0_1 + calls, reads_0_1[:1] + mapped, a_to_b)   # dropped one
+    assert not vss.structural_match(two, reads_0_1[1:] + calls, reads_0_1[1:] + mapped, a_to_b)  # no receiver
+    past = reads_0_1 + [insn("mov", "eax, dword ptr [esp + 0xc]")]
+    assert not vss.structural_match(two, past + calls, past + mapped, a_to_b)               # varargs
+    assert not vss.structural_match({}, reads_0_1 + calls, reads_0_1 + mapped, a_to_b)      # no parameters
+    assert not vss.structural_match(two, reads_0_1 + calls, reads_0_1, a_to_b)              # callee missing
+
+
+def test_a_leaf_matches_on_its_reads_alone_when_every_read_is_a_stack_parameter():
+    on_stack = {"vars": {"params": [param(4), param(8)]}}
+    reads_0_1 = [insn("mov", "eax, dword ptr [esp + 4]"), insn("mov", "eax, dword ptr [esp + 8]")]
+    a_to_b = {"00401000": "00501000"}
+    assert vss.structural_match(on_stack, reads_0_1, reads_0_1, a_to_b)
+    # An unmapped call on either side does not count against it
+    assert vss.structural_match(on_stack, reads_0_1 + [insn("call", "0x409999")],
+                                reads_0_1 + [insn("call", "0x509999")], a_to_b)
+    assert not vss.structural_match(on_stack, reads_0_1, reads_0_1[:1], a_to_b)           # dropped one
+    assert not vss.structural_match(on_stack, reads_0_1[1:], reads_0_1[1:], a_to_b)       # no receiver
+
+
+def test_a_leaf_whose_target_calls_a_mapped_function_the_source_does_not_is_no_match():
+    on_stack = {"vars": {"params": [param(4)]}}
+    reads_0 = [insn("mov", "eax, dword ptr [esp + 4]")]
+    assert not vss.structural_match(on_stack, reads_0, reads_0 + [insn("call", "0x501000")],
+                                    {"00401000": "00501000"})
+
+
+def test_a_leaf_reading_the_stack_where_its_prototype_has_a_register_is_no_match():
+    in_register = {"vars": {"params": [param(stack = False)]}}
+    reads_0 = [insn("mov", "eax, dword ptr [esp + 4]")]
+    assert not vss.structural_match(in_register, reads_0, reads_0, {})
+
+
+def test_the_structural_tally_counts_measured_pairs_only():
+    results = [{"sig_verdict": "agree", "sig_structural": True}, {"sig_verdict": "conflict", "sig_structural": False},
+               {"sig_verdict": "unverifiable", "sig_structural": True},
+               {"sig_verdict": "agree", "sig_structural": True, "sig_rewrite": {"kind": "esi_output"}}]
+    assert vss.structural_tally(results) == {("agree", True): 1, ("conflict", False): 1}
+
+
+# --- an output pointer moved into ESI -----------------------------------------------------------
+
+@pytest.mark.parametrize("body, live", [
+    ([insn("mov", "eax, esi")], True),
+    ([insn("push", "esi"), insn("mov", "esi, dword ptr [esp + 8]")], False),   # saved, then loaded
+    ([insn("mov", "esi, dword ptr [esi + 4]")], True),                       # loaded through itself
+    ([insn("xor", "esi, esi")], False),
+    ([insn("sub", "esi, esi")], False),
+    ([insn("pop", "esi")], False),
+    ([insn("add", "esi, 4")], True),
+    ([insn("rep movsd", "dword ptr es:[edi], dword ptr [esi]")], True),
+    ([insn("movsd", "")], True),
+    ([insn("movsx", "eax, si")], False),                                      # not a string op
+    ([insn("mov", "eax, 1")], False),
+])
+def test_esi_is_live_in_when_read_before_it_is_written(body, live):
+    assert vss.esi_live_in(body) is live
+
+
+def ptr_param(name, offset, kind = "CVector3f*"):
+    return {"name": name, "type": kind, **param(offset)}
+
+
+TRANSFORM = {"conv": "__cdecl", "ret": "CVector3f*",
+             "vars": {"params": [ptr_param("this_ptr", 4, "CDemonActor*"), ptr_param("output", 8),
+                                 ptr_param("input", 12)]}}
+READS_0_1_2 = [insn("mov", "eax, dword ptr [esp + 4]"), insn("mov", "eax, dword ptr [esp + 8]"),
+               insn("mov", "eax, dword ptr [esp + 0xc]")]
+READS_0_1_ESI = [insn("mov", "ebx, esi"), insn("mov", "eax, dword ptr [esp + 4]"),
+                 insn("mov", "eax, dword ptr [esp + 8]")]
+
+
+def test_the_output_a_target_takes_in_esi_is_the_one_its_source_returns():
+    # output and input are both CVector3f*: either fits the reads, the name settles it
+    assert vss.esi_output_param(TRANSFORM, READS_0_1_2, READS_0_1_ESI, {}) == 1
+
+
+def test_the_only_slot_that_fits_needs_no_tie_break_but_must_be_a_pointer():
+    # Reads 0 and 2: only taking out slot 0 leaves the target's single read
+    reads_0_2 = [insn("mov", "eax, dword ptr [esp + 4]"), insn("mov", "eax, dword ptr [esp + 0xc]")]
+    target = [insn("mov", "ebx, esi"), insn("mov", "eax, dword ptr [esp + 8]")]
+    one = {"conv": "__cdecl", "ret": "int", "vars": {"params": [ptr_param("corner", 4), param(8), param(12)]}}
+    assert vss.esi_output_param(one, reads_0_2, target, {}) == 0
+    scalar = {**one, "vars": {"params": [param(4), param(8), param(12)]}}
+    assert vss.esi_output_param(scalar, reads_0_2, target, {}) is None
+
+
+def test_slots_in_a_run_of_reads_all_fit_so_the_type_alone_never_settles_it():
+    # Taking out the receiver or the int leaves the same single read; only one is a pointer
+    one = {"conv": "__cdecl", "ret": "int",
+           "vars": {"params": [ptr_param("this_ptr", 4, "CBox*"), param(8)]}}
+    assert vss.esi_output_param(one, READS_0_1_2[:2], READS_0_1_ESI[:2], {}) is None
+
+
+def test_a_tie_neither_the_return_nor_a_name_settles_is_no_rewrite():
+    tied = {**TRANSFORM, "ret": "void", "vars": {"params": [ptr_param("this_ptr", 4, "CDemonActor*"),
+                                                             ptr_param("a", 8), ptr_param("b", 12)]}}
+    assert vss.esi_output_param(tied, READS_0_1_2, READS_0_1_ESI, {}) is None
+    # The return type alone settles one
+    typed = {**tied, "vars": {"params": [ptr_param("this_ptr", 4, "CDemonActor*"), ptr_param("a", 8),
+                                         ptr_param("b", 12, "CVector3i*")]}, "ret": "CVector3i*"}
+    assert vss.esi_output_param(typed, READS_0_1_2, READS_0_1_ESI, {}) == 2
+
+
+@pytest.mark.parametrize("change", [
+    lambda f, a, b: ({**f, "conv": "__stdcall"}, a, b),
+    lambda f, a, b: ({**f, "vars": {"params": []}}, a, b),
+    lambda f, a, b: ({**f, "vars": {"params": f["vars"]["params"] * 3}}, a, b),        # no convention
+    lambda f, a, b: ({**f, "vars": {"params": f["vars"]["params"][:2] + [param(stack = False)]}}, a, b),
+    lambda f, a, b: (f, [insn("mov", "eax, esi")] + a, b),                           # source reads ESI too
+    lambda f, a, b: (f, a, b[1:]),                                                   # target does not
+    lambda f, a, b: (f, a + [insn("call", "0x401000")], b),                          # a mapped call dropped
+    lambda f, a, b: (f, a + [insn("mov", "eax, dword ptr [esp + 0x10]")], b),        # reads past its params
+    lambda f, a, b: (f, a, b + [insn("mov", "eax, dword ptr [esp + 0xc]")]),         # target reads more
+])
+def test_anything_short_of_the_pattern_is_no_rewrite(change):
+    f, a, b = change(TRANSFORM, READS_0_1_2, READS_0_1_ESI)
+    assert vss.esi_output_param(f, a, b, {"00401000": "00501000"}) is None
+
+
+def test_the_rewritten_prototype_moves_the_output_last_into_esi():
+    f = vss.esi_output_function(TRANSFORM, 1)
+    assert f["conv"] == "__stack2_esi" and f["ret"] == "CVector3f*"
+    assert [(p["name"], p["storage"]) for p in f["vars"]["params"]] == [
+        ("this_ptr", {"stack": True, "offset": 4, "size": 4}),
+        ("input", {"stack": True, "offset": 8, "size": 4}),
+        ("output", {"stack": False, "reg": "ESI", "size": 4})]
+    assert vss.expected_param_bytes(f) == (8, 1, "")
+    assert vss.esi_rewrite(TRANSFORM, 1) == {
+        "kind": "esi_output", "output": "output", "conv": "__stack2_esi",
+        "params": [{"name": "this_ptr", "type": "CDemonActor*"}, {"name": "input", "type": "CVector3f*"},
+                   {"name": "output", "type": "CVector3f*"}]}
+    assert vss.esi_output_function({"vars": {"params": [ptr_param("out", 4)]}}, 0)["conv"] == "__esi"
 
 
 def test_runs_as_a_script(monkeypatch):

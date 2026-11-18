@@ -11,7 +11,6 @@
 ;   core_doc.cpp_CDoc_canDoHeroAction_FUN_0045d0c0 at 0045d187
 ;
 ; Referenced Globals:
-;   undefined4 caseD_1
 ;   void* switchdataD_004d0690 = 004d0717
 ;
 ; Called Functions:
@@ -60,9 +59,6 @@ section .text
         ;   XREF to: 004cea10 (CONDITIONAL_JUMP)  ; caseD_1
     LEA EAX,[EAX]                       ; 004d0728
     MOV EDX,EDX                         ; 004d072e
-    XOR EAX,EAX                         ; 004d0730
-        ;   Label: default
-    RET                                 ; 004d0732
     PUSH EAX                            ; 004d0733
         ;   Label: caseD_9
     CALL core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00429180 ; 004d0734

@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   y2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0d2e4
-;   undefined4 DAT_01d12114
+;   int g_INT_01d0d2e4
+;   float* g_FLOAT_PTR_01d12114
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_lineListD3DTL_FUN_004f44d0
@@ -24,7 +24,7 @@ section .text
     PUSH EBX                            ; 004f9000
         ;   Label: engine_mini3d.cpp_drawLine_FUN_004f9000
     SUB ESP,0x10                        ; 004f9001
-    MOV EBX,dword ptr [0x01d12114]      ; 004f9004 | DAT_01d12114
+    MOV EBX,dword ptr [0x01d12114]      ; 004f9004 | g_FLOAT_PTR_01d12114
     CALL engine_mini3d.cpp_nextDepth2D_FUN_004f93d0 ; 004f900a
         ;   XREF to: 004f93d0 (UNCONDITIONAL_CALL)  ; float engine_mini3d.cpp_nextDepth2D_FUN_004f93d0()
     MOV dword ptr [ESP + 0xc],EAX       ; 004f900f
@@ -52,7 +52,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f906d
     FSTP float ptr [EBX]                ; 004f9071
     MOV dword ptr [EBX + 0xc],EAX       ; 004f9073
-    MOV EAX,[0x01d0d2e4]                ; 004f9076 | DAT_01d0d2e4
+    MOV EAX,[0x01d0d2e4]                ; 004f9076 | g_INT_01d0d2e4
     FILD dword ptr [ESP + 0x14]         ; 004f907b
     MOV dword ptr [EBX + 0x10],EAX      ; 004f907f
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f9082
@@ -67,7 +67,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f90a3
     FILD dword ptr [ESP + 0x14]         ; 004f90a7
     MOV dword ptr [EBX + 0x2c],EAX      ; 004f90ab
-    MOV EAX,[0x01d0d2e4]                ; 004f90ae | DAT_01d0d2e4
+    MOV EAX,[0x01d0d2e4]                ; 004f90ae | g_INT_01d0d2e4
     FSTP float ptr [EBX + 0x24]         ; 004f90b3
     MOV dword ptr [EBX + 0x30],EAX      ; 004f90b6
     CALL engine_mini3d.cpp_lineListD3DTL_FUN_004f44d0 ; 004f90b9

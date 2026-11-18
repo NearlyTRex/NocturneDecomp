@@ -1,0 +1,245 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 62,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 122
+  },
+  "cross_references": [
+    {
+      "addr": "004cee30",
+      "from_addr": "004cee4d",
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004cee30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ced40",
+    "address_range": [
+      [
+        "004ced40",
+        "004cee27"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_spawnFlies_FUN_004ced40",
+    "signature": "CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004ced40(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ad7b0",
+      "is_variadic": false,
+      "name": "core_flies.cpp_CFlies_ctor_FUN_004ad7b0"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "004f6930",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930"
+    },
+    {
+      "addr": "004f7530",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530"
+    },
+    {
+      "addr": "005a3cb2",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4751",
+      "name": "s_core_gore_cpp_005c4751",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4762",
+      "name": "s_Can_t_create_flies_005c4762",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4779",
+      "name": "g_DOUBLE_005c4779",
+      "type": "double",
+      "value": "60"
+    },
+    {
+      "addr": "00600530",
+      "name": "g_CDemonMission_PTR_00600530",
+      "type": "CDemonMission*",
+      "value": "01d81080"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d81080",
+      "name": "DAT_01d81080",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cee4d",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004cee30",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7285714285714286,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 75,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_DIV": 1,
+      "INT_ADD": 29,
+      "INT_AND": 23,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 18,
+      "LOAD": 17,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 27
+    },
+    "pcode_op_count": 261
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004c9bd0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004e63e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004edf30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9859
+    },
+    "nocturne.exe": {
+      "addr": "004b0580",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "gather_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "spawn_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "box_size",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr_01->base).location.position.x = position->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 30,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr_01->box_size).x = box_size->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

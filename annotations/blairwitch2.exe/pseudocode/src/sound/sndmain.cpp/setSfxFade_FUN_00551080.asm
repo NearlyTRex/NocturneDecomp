@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00450c60 at 00453203
-;   core_event.cpp_FUN_00489670 at 0048b339
+;   core_doc.cpp_CDoc_processFrame_FUN_00450c60 at 00453203
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048b339
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 005656db
 ;
 ; Called Functions:

@@ -9,21 +9,20 @@
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_0058e050(CWinFont *this_ptr,uint flags)
 
 {
-  CWinFont *pCVar1;
-  void *ptr;
+  CWinFont *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CWinFontTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CWinFontTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).vtable =
-       (CFont_vtable *)&PTR_engine_winfont_cpp_CWinFont_dtor_FUN_0058e050_005fe274;
+  (this_ptr->base).vtable = &g_CFont_vtable_005fe274;
   engine_winfont_cpp_CWinFont_reset_FUN_0058e640(this_ptr);
-  pCVar1 = (CWinFont *)engine_palette_cpp_FUN_00510cc0(&this_ptr->base,1);
+  ptr = (CWinFont *)engine_palette_cpp_CFont_dtor_FUN_00510cc0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

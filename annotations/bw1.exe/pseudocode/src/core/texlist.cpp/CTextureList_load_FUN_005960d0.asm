@@ -24,26 +24,26 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_texlist_cpp_005f77bb
 ;   TerminatedCString s_CTextureList_load_No_ext_005f77cf
-;   undefined1 DAT_005f77f7
-;   undefined1 DAT_005f77f8
-;   undefined1 DAT_005f77f9
-;   undefined1 DAT_005f77fa
-;   undefined4 DAT_005f77fc
-;   undefined4 DAT_005f77ff
+;   TerminatedCString s_tex_005f77f7
+;   undefined4 s_tex_005f77f7+1
+;   undefined4 s_tex_005f77f7+2
+;   undefined4 s_tex_005f77f7+3
+;   TerminatedCString s_rt_005f77fc
+;   TerminatedCString s_data_005f77ff
 ;   TerminatedCString s_core_texlist_cpp_005f7804
 ;   TerminatedCString s_CTextureList_load_Bad_fi_005f7818
-;   undefined4 DAT_005f783b
-;   undefined4 DAT_005f783f
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   TerminatedCString s_d_005f783b
+;   TerminatedCString s_s_005f783f
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_ctype.c_toupper_FUN_005c12b0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;   crt_stdlib.c_atoi_FUN_005c30e0
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -100,16 +100,16 @@ section .text
     TEST ESI,ESI                        ; 00596122
     JZ 0x005962a6                       ; 00596124
         ;   XREF to: 005962a6 (CONDITIONAL_JUMP)  ; LAB_005962a6
-    MOV ESI,0x5f77f7                    ; 0059612a | DAT_005f77f7
+    MOV ESI,0x5f77f7                    ; 0059612a | = ".tex"
         ;   Label: LAB_0059612a
     PUSH EDI                            ; 0059612f
-    MOV AL,byte ptr [ESI]               ; 00596130 | DAT_005f77f7 | DAT_005f77f9
+    MOV AL,byte ptr [ESI]               ; 00596130 | = ".tex" | s_tex_005f77f7+2
         ;   Label: LAB_00596130
     MOV byte ptr [EDI],AL               ; 00596132
     CMP AL,0x0                          ; 00596134
     JZ 0x00596148                       ; 00596136
         ;   XREF to: 00596148 (CONDITIONAL_JUMP)  ; LAB_00596148
-    MOV AL,byte ptr [ESI + 0x1]         ; 00596138 | DAT_005f77f8 | DAT_005f77fa
+    MOV AL,byte ptr [ESI + 0x1]         ; 00596138 | s_tex_005f77f7+1 | s_tex_005f77f7+3
     ADD ESI,0x2                         ; 0059613b
     MOV byte ptr [EDI + 0x1],AL         ; 0059613e
     ADD EDI,0x2                         ; 00596141
@@ -118,12 +118,12 @@ section .text
         ;   XREF to: 00596130 (CONDITIONAL_JUMP)  ; LAB_00596130
     POP EDI                             ; 00596148
         ;   Label: LAB_00596148
-    PUSH 0x5f77fc                       ; 00596149 | DAT_005f77fc
+    PUSH 0x5f77fc                       ; 00596149 | = "rt"
     LEA EAX,[ESP + 0x4]                 ; 0059614e
     PUSH EAX                            ; 00596152
-    PUSH 0x5f77ff                       ; 00596153 | DAT_005f77ff
-    CALL engine_dosio.cpp_FUN_00479180  ; 00596158
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    PUSH 0x5f77ff                       ; 00596153 | = "data"
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 00596158
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0059615d
     MOV dword ptr [ESP + 0x100],EAX     ; 00596160
     TEST EAX,EAX                        ; 00596167
@@ -132,14 +132,14 @@ section .text
     MOV EBX,0x5f7804                    ; 0059616b | = "..\\core\\texlist.cpp"
     MOV ESI,0x6a                        ; 00596170
     PUSH 0x5f7818                       ; 00596175 | = "CTextureList::load - Bad filename!"
-    MOV dword ptr [0x01d1d400],EBX      ; 0059617a | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00596180 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00596186
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 0059617a | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00596180 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00596186
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0059618b
     PUSH EBP                            ; 0059618e
         ;   Label: LAB_0059618e
-    PUSH 0x5f783b                       ; 0059618f | DAT_005f783b
+    PUSH 0x5f783b                       ; 0059618f | = "%d\n"
     MOV EDI,dword ptr [ESP + 0x108]     ; 00596194
     PUSH EDI                            ; 0059619b
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0059619c
@@ -162,7 +162,7 @@ section .text
     MOV EAX,ESP                         ; 005961e3
         ;   Label: LAB_005961e3
     PUSH EAX                            ; 005961e5
-    PUSH 0x5f783f                       ; 005961e6 | DAT_005f783f
+    PUSH 0x5f783f                       ; 005961e6 | = "%s\n"
     MOV EBX,dword ptr [ESP + 0x108]     ; 005961eb
     PUSH EBX                            ; 005961f2
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 005961f3
@@ -252,10 +252,10 @@ section .text
         ;   Label: LAB_005962a6
     MOV ECX,0x61                        ; 005962ab
     PUSH 0x5f77cf                       ; 005962b0 | = "CTextureList::load - No extension found"
-    MOV dword ptr [0x01d1d400],EDX      ; 005962b5 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005962bb | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005962c1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 005962b5 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 005962bb | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005962c1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005962c6
     JMP 0x0059612a                      ; 005962c9
         ;   XREF to: 0059612a (UNCONDITIONAL_JUMP)  ; LAB_0059612a
@@ -299,7 +299,7 @@ section .text
         ;   Label: LAB_00596360
     PUSH ESI                            ; 00596367
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 00596368
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 0059636d
     ADD ESP,0x11c                       ; 00596370
     POP EBP                             ; 00596376

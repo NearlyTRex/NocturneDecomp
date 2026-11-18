@@ -28,9 +28,9 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_createActorByName_FUN_0040c2b0
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
-;   core_cloth.cpp_FUN_0043eea0
+;   core_cloth.cpp_CCloth_setup_FUN_0043eea0
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_morph.cpp_CMorph_getReady_FUN_00523310
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_005230c0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
@@ -56,7 +56,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 0050f2a0 | g_CNetGameInstance
     JNZ 0x0050f5fa                      ; 0050f2a3
         ;   XREF to: 0050f5fa (CONDITIONAL_JUMP)  ; LAB_0050f5fa
-    MOV EAX,[0x01d06ab4]                ; 0050f2a9 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 0050f2a9 | g_INT_01d06ab4
         ;   Label: LAB_0050f2a9
     SHL EAX,0x2                         ; 0050f2ae
     MOV EDI,dword ptr [EAX + 0x1d06aa4] ; 0050f2b1
@@ -90,60 +90,60 @@ section .text
     PUSH 0x1                            ; 0050f2ff
     PUSH 0x5e8831                       ; 0050f301 | = "Bip01 L Clavicle"
     PUSH ESI                            ; 0050f306
-    MOV [0x01d22424],EAX                ; 0050f307 | DAT_01d22424
+    MOV [0x01d22424],EAX                ; 0050f307 | g_MimicIndices
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f30c
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f311
     PUSH 0x1                            ; 0050f314
     PUSH 0x5e8842                       ; 0050f316 | = "Bip01 R Clavicle"
     PUSH ESI                            ; 0050f31b
-    MOV [0x01d22428],EAX                ; 0050f31c | DAT_01d22428
+    MOV [0x01d22428],EAX                ; 0050f31c | g_MimicIndices[1]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f321
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f326
     PUSH 0x1                            ; 0050f329
     PUSH 0x5e8853                       ; 0050f32b | = "Bip01 L UpperArm"
     PUSH ESI                            ; 0050f330
-    MOV [0x01d2242c],EAX                ; 0050f331 | DAT_01d2242c
+    MOV [0x01d2242c],EAX                ; 0050f331 | g_MimicIndices[2]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f336
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f33b
     PUSH 0x1                            ; 0050f33e
     PUSH 0x5e8864                       ; 0050f340 | = "Bip01 R UpperArm"
     PUSH ESI                            ; 0050f345
-    MOV [0x01d22430],EAX                ; 0050f346 | DAT_01d22430
+    MOV [0x01d22430],EAX                ; 0050f346 | g_MimicIndices[3]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f34b
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f350
     PUSH 0x1                            ; 0050f353
     PUSH 0x5e8875                       ; 0050f355 | = "Bip01 L ForeArm"
     PUSH ESI                            ; 0050f35a
-    MOV [0x01d22434],EAX                ; 0050f35b | DAT_01d22434
+    MOV [0x01d22434],EAX                ; 0050f35b | g_MimicIndices[4]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f360
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f365
     PUSH 0x1                            ; 0050f368
     PUSH 0x5e8885                       ; 0050f36a | = "Bip01 R ForeArm"
     PUSH ESI                            ; 0050f36f
-    MOV [0x01d22438],EAX                ; 0050f370 | DAT_01d22438
+    MOV [0x01d22438],EAX                ; 0050f370 | g_MimicIndices[5]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f375
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f37a
     PUSH 0x1                            ; 0050f37d
     PUSH 0x5e8895                       ; 0050f37f | = "Bip01 L Foot"
     PUSH ESI                            ; 0050f384
-    MOV [0x01d2243c],EAX                ; 0050f385 | DAT_01d2243c
+    MOV [0x01d2243c],EAX                ; 0050f385 | g_MimicIndices[6]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f38a
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f38f
     PUSH 0x1                            ; 0050f392
     PUSH 0x5e88a2                       ; 0050f394 | = "Bip01 R Foot"
     PUSH ESI                            ; 0050f399
-    MOV [0x01d22440],EAX                ; 0050f39a | DAT_01d22440
+    MOV [0x01d22440],EAX                ; 0050f39a | g_MimicIndices[7]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f39f
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f3a4
-    MOV [0x01d22444],EAX                ; 0050f3a7 | DAT_01d22444
+    MOV [0x01d22444],EAX                ; 0050f3a7 | g_MimicIndices[8]
     PUSH 0x1                            ; 0050f3ac
     PUSH 0x5e88af                       ; 0050f3ae | = "Bip01 L Thigh"
     PUSH ESI                            ; 0050f3b3
@@ -153,54 +153,54 @@ section .text
     PUSH 0x1                            ; 0050f3bc
     PUSH 0x5e88bd                       ; 0050f3be | = "Bip01 R Thigh"
     PUSH ESI                            ; 0050f3c3
-    MOV [0x01d22448],EAX                ; 0050f3c4 | DAT_01d22448
+    MOV [0x01d22448],EAX                ; 0050f3c4 | g_MimicIndices[9]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f3c9
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f3ce
     PUSH 0x1                            ; 0050f3d1
     PUSH 0x5e88cb                       ; 0050f3d3 | = "Bip01 L Calf"
     PUSH ESI                            ; 0050f3d8
-    MOV [0x01d2244c],EAX                ; 0050f3d9 | DAT_01d2244c
+    MOV [0x01d2244c],EAX                ; 0050f3d9 | g_MimicIndices[10]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f3de
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f3e3
     PUSH 0x1                            ; 0050f3e6
     PUSH 0x5e88d8                       ; 0050f3e8 | = "Bip01 R Calf"
     PUSH ESI                            ; 0050f3ed
-    MOV [0x01d22450],EAX                ; 0050f3ee | DAT_01d22450
+    MOV [0x01d22450],EAX                ; 0050f3ee | g_MimicIndices[11]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f3f3
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f3f8
     PUSH 0x1                            ; 0050f3fb
     PUSH 0x5e88e5                       ; 0050f3fd | = "Bip01 L Hand"
     PUSH ESI                            ; 0050f402
-    MOV [0x01d22454],EAX                ; 0050f403 | DAT_01d22454
+    MOV [0x01d22454],EAX                ; 0050f403 | g_MimicIndices[12]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f408
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f40d
     PUSH 0x1                            ; 0050f410
     PUSH 0x5e88f2                       ; 0050f412 | = "Bip01 R Hand"
     PUSH ESI                            ; 0050f417
-    MOV [0x01d22464],EAX                ; 0050f418 | DAT_01d22464
+    MOV [0x01d22464],EAX                ; 0050f418 | g_MimicIndices[16]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f41d
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f422
     PUSH 0x1                            ; 0050f425
     PUSH 0x5e88ff                       ; 0050f427 | = "Bip01 Spine2"
     PUSH ESI                            ; 0050f42c
-    MOV [0x01d22468],EAX                ; 0050f42d | DAT_01d22468
+    MOV [0x01d22468],EAX                ; 0050f42d | g_MimicIndices[17]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f432
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f437
     PUSH 0x1                            ; 0050f43a
     PUSH 0x5e890c                       ; 0050f43c | = "Bip01 Spine"
     PUSH ESI                            ; 0050f441
-    MOV [0x01d2246c],EAX                ; 0050f442 | DAT_01d2246c
+    MOV [0x01d2246c],EAX                ; 0050f442 | g_MimicIndices[18]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0050f447
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0050f44c
     PUSH EBX                            ; 0050f44f
-    MOV [0x01d22470],EAX                ; 0050f450 | DAT_01d22470
+    MOV [0x01d22470],EAX                ; 0050f450 | g_MimicIndices[19]
     CALL core_enemy.cpp_CEnemy_setup_FUN_004a0510 ; 0050f455
         ;   XREF to: 004a0510 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a0510(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0050f45a
@@ -216,8 +216,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 0050f476
     PUSH EAX                            ; 0050f479
     PUSH ESI                            ; 0050f47a
-    CALL core_cloth.cpp_FUN_0043eea0    ; 0050f47b
-        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043eea0 ; 0050f47b
+        ;   XREF to: 0043eea0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043eea0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 0050f480
     MOV EBP,dword ptr [0x01c3f6a0]      ; 0050f483 | g_CEnemyClassInfo.name_hash
     PUSH EBP                            ; 0050f489
@@ -237,10 +237,10 @@ section .text
     MOV EDX,0x5e8924                    ; 0050f4ac | = "..\\core\\mimic.cpp"
     MOV ECX,0x101                       ; 0050f4b1
     PUSH 0x5e8936                       ; 0050f4b6 | = "CMimic failed to create morph target ..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0050f4bb | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0050f4c1 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0050f4c7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0050f4bb | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0050f4c1 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050f4c7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050f4cc
     MOV EAX,dword ptr [EBX + 0x47ac0]   ; 0050f4cf
         ;   Label: LAB_0050f4cf
@@ -363,10 +363,10 @@ section .text
         ;   Label: LAB_0050f5fa
     MOV ESI,0xb6                        ; 0050f5ff
     PUSH 0x5e87e8                       ; 0050f604 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0050f609 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0050f60f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0050f615
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0050f609 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0050f60f | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0050f615
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0050f61a
     JMP 0x0050f2a9                      ; 0050f61d
         ;   XREF to: 0050f2a9 (UNCONDITIONAL_JUMP)  ; LAB_0050f2a9

@@ -26,9 +26,6 @@ section .text
         ;   XREF to: 004cea16 (CONDITIONAL_JUMP)  ; LAB_004cea16
     LEA EAX,[EAX]                       ; 004cea08
     MOV EDX,EDX                         ; 004cea0e
-    MOV EAX,0x1                         ; 004cea10
-        ;   Label: caseD_1
-    RET                                 ; 004cea15
     PUSH EDX                            ; 004cea16
         ;   Label: LAB_004cea16
     MOV EAX,dword ptr [ESP + 0x8]       ; 004cea17

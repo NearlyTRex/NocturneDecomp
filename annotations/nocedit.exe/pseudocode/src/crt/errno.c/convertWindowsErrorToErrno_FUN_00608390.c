@@ -27,7 +27,7 @@ int __cdecl convertWindowsErrorToErrno(DWORD windows_error)
     if (0x13 < windows_error) {
       windows_error = 0x13;
     }
-    error_code = *(int *)(&g_LookupTableStruct + windows_error) >> 0x18;
+    error_code = *(int *)(&DAT_006851fd + windows_error) >> 0x18;
   }
   setErrno(error_code);
   return -1;

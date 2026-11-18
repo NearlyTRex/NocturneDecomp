@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 37,
+    "complexity_score": 12,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 38
   },
   "cross_references": [
     {
       "addr": "00503a30",
       "from_addr": "00503a7e",
-      "name": "core_main.c_FUN_00503a30",
+      "name": "core_main.c_finalizeGameSystems_FUN_00503a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,8 +58,8 @@
   "globals": [
     {
       "addr": "02c5fc1c",
-      "name": "DAT_02c5fc1c",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_02c5fc1c",
+      "type": "char[188]",
       "value": null
     }
   ],
@@ -71,7 +69,7 @@
       {
         "call_addr": "00503a7e",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_00503a30",
+        "caller": "core_main.c_finalizeGameSystems_FUN_00503a30",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -155,22 +153,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_02c5fc1c",
-      "severity": "mild",
-      "text": "} while (this_ptr != (CSkeleton *)&DAT_02c5fc1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_02c5fc1c",
-      "severity": "mild",
-      "text": "memset(&DAT_02c5fc1c,0,0xa0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -18,8 +18,7 @@ void __cdecl core_shadow_cpp_staticInit_FUN_0053c170(void)
   _DAT_020b191c = 0x3ed70a3d;
   _DAT_020b1920 = 0x3f19999a;
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CShadowClassInfo,"CCShadow" + 1,
-             core_shadow_cpp_factoryFuncShadow_FUN_0053c1d0,&g_CShadowClassVersion,1,
-             &g_CEnemyClassInfo);
+            (&g_CShadowClassInfo,"CShadow",core_shadow_cpp_factoryFuncShadow_FUN_0053c1d0,
+             &g_CShadowClassVersion,1,&g_CEnemyClassInfo);
   return;
 }

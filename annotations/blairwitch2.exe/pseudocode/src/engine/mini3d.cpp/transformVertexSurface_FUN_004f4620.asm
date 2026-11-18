@@ -11,11 +11,11 @@
 ;   engine_mini3d.cpp_polyListSurface_FUN_004f7e00 at 004f7e60
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0987c
-;   undefined4 DAT_01d09880
-;   undefined4 DAT_01d09884
-;   undefined4 DAT_01d09888
-;   undefined4 DAT_01d09918
+;   float g_FLOAT_01d0987c
+;   float g_FLOAT_01d09880
+;   float g_FLOAT_01d09884
+;   float g_FLOAT_01d09888
+;   void* g_PTR_01d09918
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
         ;   Label: engine_mini3d.cpp_transformVertexSurface_FUN_004f4620
     MOV ECX,dword ptr [ESP + 0x10]      ; 004f4623
     MOV EDX,dword ptr [ESP + 0x14]      ; 004f4627
-    MOV EAX,[0x01d09918]                ; 004f462b | DAT_01d09918
+    MOV EAX,[0x01d09918]                ; 004f462b | g_PTR_01d09918
     FLD float ptr [ECX + 0x4]           ; 004f4630
     FSUB float ptr [EAX + 0x28]         ; 004f4633
     FLD ST0                             ; 004f4636
@@ -115,16 +115,16 @@ section .text
     FLD1                                ; 004f46e3
     FDIVRP                              ; 004f46e5
     FLD float ptr [EDX]                 ; 004f46e7
-    FMUL float ptr [0x01d0987c]         ; 004f46e9 | DAT_01d0987c
+    FMUL float ptr [0x01d0987c]         ; 004f46e9 | g_FLOAT_01d0987c
     FLD float ptr [EDX + 0x4]           ; 004f46ef
-    FMUL float ptr [0x01d09880]         ; 004f46f2 | DAT_01d09880
+    FMUL float ptr [0x01d09880]         ; 004f46f2 | g_FLOAT_01d09880
     FXCH ST2                            ; 004f46f8
     FSTP float ptr [EDX + 0xc]          ; 004f46fa
     FMUL float ptr [EDX + 0xc]          ; 004f46fd
     FXCH                                ; 004f4700
     FMUL float ptr [EDX + 0xc]          ; 004f4702
-    FLD float ptr [0x01d09888]          ; 004f4705 | DAT_01d09888
-    FLD float ptr [0x01d09884]          ; 004f470b | DAT_01d09884
+    FLD float ptr [0x01d09888]          ; 004f4705 | g_FLOAT_01d09888
+    FLD float ptr [0x01d09884]          ; 004f470b | g_FLOAT_01d09884
     FADDP ST3,ST0                       ; 004f4711
     FADDP                               ; 004f4713
     FXCH                                ; 004f4715

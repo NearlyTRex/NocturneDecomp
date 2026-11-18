@@ -24,12 +24,12 @@ void __cdecl core_script_cpp_CScript_executeContextAction_FUN_00565d00(CScript *
       input_text = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&this_ptr->script_text,line)
       ;
       iVar1 = core_script_cpp_CCmdParse_bestParse_FUN_00561db0
-                        (&CCmdParse_0310aa4c,input_text,iVar1,templates,iVar2);
+                        (&g_ContextActionParser,input_text,iVar1,templates,iVar2);
       if (-1 < iVar1) {
-        switch(CCmdParse_0310aa4c.params[iVar1].param_type) {
+        switch(g_ContextActionParser.params[iVar1].param_type) {
         case PARM_TYPE_ACTOR:
           actor = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
-                            (g_CDemonMissionPtr,CCmdParse_0310aa4c.params[iVar1].parsed_value);
+                            (g_CDemonMissionPtr,g_ContextActionParser.params[iVar1].parsed_value);
           if (actor == (CDemonActor *)0x0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"No such actor %s",iVar1 * 0x328 + 0x310ab80);
@@ -40,7 +40,7 @@ void __cdecl core_script_cpp_CScript_executeContextAction_FUN_00565d00(CScript *
         case PARM_TYPE_LABEL:
           core_script_cpp_CScript_buildParsedLines_FUN_0055a370(this_ptr);
           iVar2 = core_script_cpp_CScript_findLabelIndex_FUN_00560160
-                            (this_ptr,CCmdParse_0310aa4c.params[iVar1].parsed_value);
+                            (this_ptr,g_ContextActionParser.params[iVar1].parsed_value);
           if (-1 < iVar2) {
             g_CurrentEditingLine = this_ptr->parsed_lines[iVar2].line_number + -1;
             g_CurrentEditingColumn = 0;
@@ -55,7 +55,7 @@ void __cdecl core_script_cpp_CScript_executeContextAction_FUN_00565d00(CScript *
         case PARM_TYPE_WAV:
         case PARM_TYPE_DB_TAG:
           core_msnedit_cpp_CDemonMission_playSound_FUN_0053eb40
-                    (g_CDemonMissionPtr,CCmdParse_0310aa4c.params[iVar1].parsed_value);
+                    (g_CDemonMissionPtr,g_ContextActionParser.params[iVar1].parsed_value);
           return;
         }
       }

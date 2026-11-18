@@ -13,11 +13,11 @@
 ;   engine_mini3d.cpp_polyList_FUN_005126d0 at 00512886
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d224dc
-;   undefined4 DAT_01d224e0
-;   undefined4 DAT_01d224e4
-;   undefined4 DAT_01d224e8
-;   undefined4 DAT_01d2257c
+;   float g_FLOAT_01d224dc
+;   float g_FLOAT_01d224e0
+;   float g_FLOAT_01d224e4
+;   float g_FLOAT_01d224e8
+;   void* g_PTR_01d2257c
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
         ;   Label: engine_mini3d.cpp_transformVertex_FUN_00513260
     MOV ECX,dword ptr [ESP + 0x10]      ; 00513263
     MOV EDX,dword ptr [ESP + 0x14]      ; 00513267
-    MOV EAX,[0x01d2257c]                ; 0051326b | DAT_01d2257c
+    MOV EAX,[0x01d2257c]                ; 0051326b | g_PTR_01d2257c
     FLD float ptr [ECX + 0x4]           ; 00513270
     FSUB float ptr [EAX + 0x28]         ; 00513273
     FLD ST0                             ; 00513276
@@ -117,16 +117,16 @@ section .text
     FLD1                                ; 00513323
     FDIVRP                              ; 00513325
     FLD float ptr [EDX]                 ; 00513327
-    FMUL float ptr [0x01d224dc]         ; 00513329 | DAT_01d224dc
+    FMUL float ptr [0x01d224dc]         ; 00513329 | g_FLOAT_01d224dc
     FLD float ptr [EDX + 0x4]           ; 0051332f
-    FMUL float ptr [0x01d224e0]         ; 00513332 | DAT_01d224e0
+    FMUL float ptr [0x01d224e0]         ; 00513332 | g_FLOAT_01d224e0
     FXCH ST2                            ; 00513338
     FSTP float ptr [EDX + 0xc]          ; 0051333a
     FMUL float ptr [EDX + 0xc]          ; 0051333d
     FXCH                                ; 00513340
     FMUL float ptr [EDX + 0xc]          ; 00513342
-    FLD float ptr [0x01d224e8]          ; 00513345 | DAT_01d224e8
-    FLD float ptr [0x01d224e4]          ; 0051334b | DAT_01d224e4
+    FLD float ptr [0x01d224e8]          ; 00513345 | g_FLOAT_01d224e8
+    FLD float ptr [0x01d224e4]          ; 0051334b | g_FLOAT_01d224e4
     FADDP ST3,ST0                       ; 00513351
     FADDP                               ; 00513353
     FXCH                                ; 00513355

@@ -16,7 +16,7 @@ CBaal * __cdecl core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
   pCVar1 = (CBaal *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CBaalVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar1->base).base.model,(char *)0x5d948f);
+            (&(pCVar1->base).base.model,"bwp3_baal.dfm");
   (pCVar1->base).base.collision_cylinder_height = 0.5;
   (pCVar1->base).base.collision_cylinder_radius = 1.0;
   pCVar1->countdown_timer = 0.0;

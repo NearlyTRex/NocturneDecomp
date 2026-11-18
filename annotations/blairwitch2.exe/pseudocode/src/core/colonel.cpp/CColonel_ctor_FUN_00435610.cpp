@@ -11,7 +11,7 @@ CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_00435610(CColonel *this_pt
 {
   CColonel *pCVar1;
   
-  pCVar1 = (CColonel *)core_hero_cpp_FUN_004ce240(this_ptr);
+  pCVar1 = (CColonel *)core_hero_cpp_CHero_ctor_FUN_004ce240(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CColonelVTable._ub;
   pCVar1->guns_drawn = 0;
   pCVar1->dead = 0;

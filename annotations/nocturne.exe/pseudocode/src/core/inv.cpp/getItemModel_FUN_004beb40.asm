@@ -23,10 +23,10 @@
 ;   TerminatedCString s_CBattery_00586d00
 ;   TerminatedCString s_core_inv_cpp_00586d09
 ;   TerminatedCString s_getModel_Can_t_classify_00586d19
-;   undefined4 g_CAmmoActorType_007641bc.name_hash
-;   undefined4 g_CBatteryActorType_00764674.name_hash
-;   undefined4 g_CBoxActorActorType_00764800.name_hash
-;   undefined4 g_CFilmReelActorType_01c08c8c.name_hash
+;   undefined4 g_CAmmoClassInfo.name_hash
+;   undefined4 g_CBatteryClassInfo.name_hash
+;   undefined4 g_CBoxActorClassInfo.name_hash
+;   undefined4 g_CFilmReelClassInfo.name_hash
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -116,7 +116,7 @@ section .text
     TEST EAX,EAX                        ; 004bec06
     JZ 0x004bec6a                       ; 004bec08
         ;   XREF to: 004bec6a (CONDITIONAL_JUMP)  ; LAB_004bec6a
-    MOV ESI,dword ptr [0x007646ac]      ; 004bec0a | g_CBatteryActorType_00764674.name_hash
+    MOV ESI,dword ptr [0x007646ac]      ; 004bec0a | g_CBatteryClassInfo.name_hash
     PUSH ESI                            ; 004bec10
         ;   Label: LAB_004bec10
     PUSH EBX                            ; 004bec11
@@ -130,41 +130,41 @@ section .text
     POP ESI                             ; 004bec21
     POP EBX                             ; 004bec22
     RET                                 ; 004bec23
-    MOV EBP,dword ptr [0x02ddf9a8]      ; 004bec24 | g_CWeaponActorType_02ddf970.name_hash
+    MOV EBP,dword ptr [0x02ddf9a8]      ; 004bec24 | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004bec24
     PUSH EBP                            ; 004bec2a
     JMP 0x004bec11                      ; 004bec2b
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EDI,dword ptr [0x007641f4]      ; 004bec2d | g_CAmmoActorType_007641bc.name_hash
+    MOV EDI,dword ptr [0x007641f4]      ; 004bec2d | g_CAmmoClassInfo.name_hash
         ;   Label: LAB_004bec2d
     PUSH EDI                            ; 004bec33
     JMP 0x004bec11                      ; 004bec34
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV ESI,dword ptr [0x01cc30e0]      ; 004bec36 | g_CKeyActorActorType_01cc30a8.name_hash
+    MOV ESI,dword ptr [0x01cc30e0]      ; 004bec36 | g_CKeyActorClassInfo.name_hash
         ;   Label: LAB_004bec36
     JMP 0x004bec10                      ; 004bec3c
         ;   XREF to: 004bec10 (UNCONDITIONAL_JUMP)  ; LAB_004bec10
-    MOV ECX,dword ptr [0x00764838]      ; 004bec3e | g_CBoxActorActorType_00764800.name_hash
+    MOV ECX,dword ptr [0x00764838]      ; 004bec3e | g_CBoxActorClassInfo.name_hash
         ;   Label: LAB_004bec3e
     PUSH ECX                            ; 004bec44
     JMP 0x004bec11                      ; 004bec45
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EDX,dword ptr [0x01cae0d0]      ; 004bec47 | g_CHealthItemActorType_01cae098.name_hash
+    MOV EDX,dword ptr [0x01cae0d0]      ; 004bec47 | g_CHealthItemClassInfo.name_hash
         ;   Label: LAB_004bec47
     PUSH EDX                            ; 004bec4d
     JMP 0x004bec11                      ; 004bec4e
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EAX,[0x01c78bbc]                ; 004bec50 | g_CGasMaskActorType_01c78b84.name_hash
+    MOV EAX,[0x01c78bbc]                ; 004bec50 | g_CGasMaskClassInfo.name_hash
         ;   Label: LAB_004bec50
     PUSH EAX                            ; 004bec55
     JMP 0x004bec11                      ; 004bec56
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EBP,dword ptr [0x01c08cc4]      ; 004bec58 | g_CFilmReelActorType_01c08c8c.name_hash
+    MOV EBP,dword ptr [0x01c08cc4]      ; 004bec58 | g_CFilmReelClassInfo.name_hash
         ;   Label: LAB_004bec58
     PUSH EBP                            ; 004bec5e
     JMP 0x004bec11                      ; 004bec5f
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EDI,dword ptr [0x02dd1044]      ; 004bec61 | g_CTrapActorType_02dd100c.name_hash
+    MOV EDI,dword ptr [0x02dd1044]      ; 004bec61 | g_CTrapClassInfo.name_hash
         ;   Label: LAB_004bec61
     PUSH EDI                            ; 004bec67
     JMP 0x004bec11                      ; 004bec68

@@ -48,7 +48,7 @@ LAB_00565b61:
         goto LAB_00565be8;
         in_stack_ffffffe0 = 0x565ba5;
         integer_power();
-        if ((DAT_005c1d98 & 1) == 0) {
+        if ((g_UseSoftwareMath & 1) == 0) {
           fVar2 = (float10)1 / extraout_ST0_00;
         }
         else {

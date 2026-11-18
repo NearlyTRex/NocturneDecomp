@@ -9,6 +9,6 @@
 void __cdecl core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00539d50(CDemonSet *this_ptr)
 
 {
-  core_setdir_cpp_FUN_005398d0(this_ptr,0);
+  core_setdir_cpp_CDemonSet_saveThumbs_FUN_005398d0(this_ptr,(_FILE *)0x0);
   return;
 }

@@ -11,11 +11,11 @@
 ; int *            Stack[0x14]:4   out_device_ids
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004e85a0 at 004e85f8
+;   core_menu.cpp_configureGraphicsOptions_FUN_004e85a0 at 004e85f8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf6074
-;   undefined4 DAT_02cf6108
+;   void* g_APIDLL_buildCardList
+;   int g_INT_02cf6108
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
 
     PUSH EBP                            ; 00566400
         ;   Label: engine_special.cpp_buildCardList_FUN_00566400
-    CMP dword ptr [0x02cf6108],0x0      ; 00566401 | DAT_02cf6108
+    CMP dword ptr [0x02cf6108],0x0      ; 00566401 | g_INT_02cf6108
     JNZ 0x0056640e                      ; 00566408
         ;   XREF to: 0056640e (CONDITIONAL_JUMP)  ; LAB_0056640e
     XOR EAX,EAX                         ; 0056640a
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 00566424
     MOV EBP,dword ptr [ESP + 0x24]      ; 00566425
     PUSH EBP                            ; 00566429
-    CALL dword ptr [0x02cf6074]         ; 0056642a | DAT_02cf6074
+    CALL dword ptr [0x02cf6074]         ; 0056642a | g_APIDLL_buildCardList
     ADD ESP,0x14                        ; 00566430
     POP EBX                             ; 00566433
     POP ESI                             ; 00566434

@@ -13,12 +13,12 @@ void __cdecl core_bugs_cpp_CBugs_archive_FUN_0041f7c0(CBugs *this_ptr)
   int iVar2;
   
   core_enemy_cpp_CEnemy_archive_FUN_00487ec0(&this_ptr->base);
-  core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->count,"?count" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->count,"count");
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->model_count,"modelCount");
-  if (DAT_007bc038 == 1) {
+  if (g_ActorReadingMode == 1) {
     pCVar1 = this_ptr->models;
     do {
-      core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(pCVar1,&DAT_005cc972);
+      core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(pCVar1,&g_CHAR_005cc972);
       pCVar1 = pCVar1 + 1;
     } while (pCVar1 != (CKeyFramedModelInstance *)this_ptr->ground_heights);
   }

@@ -11,7 +11,7 @@
 ;   crt_stdio.c_prepare_stream_for_write_FUN_0056b35c at 0056b39c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1894
+;   _FILE* g_StaticFilePoolStart = 00000000
 ;
 ; *****************************************************************************
 
@@ -30,6 +30,6 @@ section .text
     SHL EAX,0x2                         ; 0056fe05
     ADD EAX,EDX                         ; 0056fe08
     ADD EAX,EAX                         ; 0056fe0a
-    ADD EAX,0x5c1894                    ; 0056fe0c | DAT_005c1894
+    ADD EAX,0x5c1894                    ; 0056fe0c | g_StaticFilePoolStart
     RET                                 ; 0056fe11
 

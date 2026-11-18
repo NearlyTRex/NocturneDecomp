@@ -172,6 +172,7 @@ class MemoryBlock:
         self.comment = None
         self.overlay = False
         self.block_type = "DEFAULT"
+        self.source_name = None
 
     def isInitialized(self):
         return self.initialized
@@ -205,6 +206,9 @@ class MemoryBlock:
 
     def setComment(self, comment):
         self.comment = comment
+
+    def setSourceName(self, source):
+        self.source_name = source
 
     def getName(self):
         return self.name
@@ -523,6 +527,9 @@ class LocalVariable:
 # A function, its own symbol (getSymbol is the function itself here), and
 # optionally the function it is a thunk to
 class Function:
+    # Reached through a function as well as the interface, as Ghidra's is
+    FunctionUpdateType = ghidra_fake.Function.FunctionUpdateType
+
     def __init__(self, name, entry, size = 1):
         self.name = name
         self.entry = entry
@@ -810,8 +817,9 @@ class AddressSpace:
     def getPointerSize(self):
         return self.pointer_size
 
+    # Ghidra's overloads: an offset, or its hex text
     def getAddress(self, offset):
-        return Address(offset)
+        return Address(int(offset, 16) if isinstance(offset, str) else offset)
 
     # Ghidra's space type is a number; 1 is memory
     def getType(self):

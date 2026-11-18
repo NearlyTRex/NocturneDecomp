@@ -2,21 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 211,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
-    "suspect_count": 14,
+    "pseudocode_lines": 45,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unknown_field",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 161
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -59,26 +57,26 @@
     },
     {
       "addr": "0061f6e8",
-      "name": "DAT_0061f6e8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ConsoleInputState",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "02681090",
-      "name": "DAT_02681090",
-      "type": "undefined4",
+      "name": "g_BufferedCharacter",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02681094",
-      "name": "DAT_02681094",
-      "type": "undefined4",
+      "name": "g_BufferedVirtualKey",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02681098",
-      "name": "DAT_02681098",
-      "type": "undefined4",
+      "name": "g_BufferedRepeatCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -211,72 +209,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint FUN_005c3510(HANDLE param_1)",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "if (DAT_0061f6e8 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "if (DAT_0061f6e8 < 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "DAT_0061f6e8 = 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "DAT_0061f6e8 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "if (DAT_0061f6e8 == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "DAT_0061f6e8 = (uint)(_DAT_02681098 != 0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "BVar1 = ReadConsoleInputA(param_1,&local_28,1,&local_14);",
@@ -284,35 +226,19 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 35,
       "match": "._2_1_",
       "severity": "mild",
-      "text": "_DAT_02681094 = (uint)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;",
+      "text": "g_BufferedVirtualKey = (int)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 36,
       "match": "._1_1_",
       "severity": "mild",
-      "text": "if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (_DAT_02681094 != 0)) {",
+      "text": "if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (g_BufferedVirtualKey != 0)) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "DAT_0061f6e8 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_0061f6e8",
-      "severity": "mild",
-      "text": "DAT_0061f6e8 = 2;",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 1,

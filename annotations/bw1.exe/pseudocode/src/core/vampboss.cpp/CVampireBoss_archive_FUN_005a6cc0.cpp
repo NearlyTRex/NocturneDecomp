@@ -12,7 +12,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005a6cc0(CVampireBoss *t
   core_enemy_cpp_CEnemy_archive_FUN_004a0520(&this_ptr->base);
   if (1 < g_CVampireBossClassVersion) {
     core_actor_cpp_archiveMotionState_FUN_0040b870
-              (&(this_ptr->base).base.model.base,"@human model motion state" + 1);
+              (&(this_ptr->base).base.model.base,"human model motion state");
     core_actor_cpp_archiveMotionState_FUN_0040b870
               (&(this_ptr->model).base,"bat model motion state");
   }
@@ -25,7 +25,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005a6cc0(CVampireBoss *t
   if (g_CVampireBossClassVersion < 4) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->form,&DAT_005f8e80);
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->form,"form");
   core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->morph_t,"morphT");
   return;
 }

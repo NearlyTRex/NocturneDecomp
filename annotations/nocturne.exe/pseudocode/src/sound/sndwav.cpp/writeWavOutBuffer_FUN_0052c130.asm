@@ -20,12 +20,12 @@
 ;   TerminatedCString s_waveOutUnprepareHeader_f_005948bd
 ;   TerminatedCString s_waveOutPrepareHeader_fai_005948dc
 ;   TerminatedCString s_waveOutWrite_failed_005948f9
-;   undefined4 DAT_02dc93a4
-;   undefined4 DAT_02dc9428
-;   undefined4 DAT_02dc942c
-;   undefined4 DAT_02dc9430
-;   undefined4 DAT_02dc9434
-;   undefined4 DAT_02dc9438
+;   HWAVEOUT g_WaveOutHandle
+;   int g_INT_02dc9428
+;   int g_INT_02dc942c
+;   int g_INT_02dc9430
+;   int g_INT_02dc9434
+;   int g_INT_02dc9438
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_00529980
@@ -64,13 +64,13 @@ section .text
     PUSH 0x20                           ; 0052c15b
         ;   Label: LAB_0052c15b
     PUSH ECX                            ; 0052c15d
-    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c15e | DAT_02dc93a4
+    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c15e | g_WaveOutHandle
     PUSH ESI                            ; 0052c164
     CALL dword ptr CS:[0x575404]        ; 0052c165 | PTR_waveOutUnprepareHeader_00575404
     TEST EAX,EAX                        ; 0052c16c
     JNZ 0x0052c249                      ; 0052c16e
         ;   XREF to: 0052c249 (CONDITIONAL_JUMP)  ; LAB_0052c249
-    MOV EAX,[0x02dc9428]                ; 0052c174 | DAT_02dc9428
+    MOV EAX,[0x02dc9428]                ; 0052c174 | g_INT_02dc9428
     MOV EDX,EAX                         ; 0052c179
     SAR EDX,0x1f                        ; 0052c17b
     SHL EDX,0x3                         ; 0052c17e
@@ -79,7 +79,7 @@ section .text
     MOV EBP,EAX                         ; 0052c186
     MOV ESI,EBP                         ; 0052c188
     IMUL EDX,EBP,0x0                    ; 0052c18a
-    MOV EBX,dword ptr [0x02dc9430]      ; 0052c18d | DAT_02dc9430
+    MOV EBX,dword ptr [0x02dc9430]      ; 0052c18d | g_INT_02dc9430
     MOV dword ptr [ESP + 0x20],EDI      ; 0052c193
     SHL EBX,0x2                         ; 0052c197
     XOR EAX,EAX                         ; 0052c19a
@@ -97,16 +97,16 @@ section .text
         ;   XREF to: 0052c1a6 (CONDITIONAL_JUMP)  ; LAB_0052c1a6
     LEA EAX,[EAX]                       ; 0052c1b6
     LEA EDX,[EDX]                       ; 0052c1bc
-    MOV EDI,dword ptr [0x02dc9430]      ; 0052c1c0 | DAT_02dc9430
+    MOV EDI,dword ptr [0x02dc9430]      ; 0052c1c0 | g_INT_02dc9430
         ;   Label: LAB_0052c1c0
     IMUL EBP,EDI                        ; 0052c1c6
     PUSH EBP                            ; 0052c1c9
-    MOV EBP,dword ptr [0x02dc9434]      ; 0052c1ca | DAT_02dc9434
+    MOV EBP,dword ptr [0x02dc9434]      ; 0052c1ca | g_INT_02dc9434
     PUSH EBP                            ; 0052c1d0
-    MOV EAX,[0x02dc942c]                ; 0052c1d1 | DAT_02dc942c
+    MOV EAX,[0x02dc942c]                ; 0052c1d1 | g_INT_02dc942c
     PUSH EAX                            ; 0052c1d6
     PUSH EDI                            ; 0052c1d7
-    MOV ECX,dword ptr [0x02dc9428]      ; 0052c1d8 | DAT_02dc9428
+    MOV ECX,dword ptr [0x02dc9428]      ; 0052c1d8 | g_INT_02dc9428
     PUSH ECX                            ; 0052c1de
     LEA EAX,[ESP + 0x14]                ; 0052c1df
     PUSH EAX                            ; 0052c1e3
@@ -115,13 +115,13 @@ section .text
     ADD ESP,0x18                        ; 0052c1e9
     MOV EDX,dword ptr [ESP + 0x20]      ; 0052c1ec
     MOV EDX,dword ptr [EDX + 0x2dc93a8] ; 0052c1f0
-    MOV EAX,[0x02dc9438]                ; 0052c1f6 | DAT_02dc9438
+    MOV EAX,[0x02dc9438]                ; 0052c1f6 | g_INT_02dc9438
     MOV dword ptr [EDX + 0x4],EAX       ; 0052c1fb
     MOV EAX,dword ptr [ESP + 0x20]      ; 0052c1fe
     PUSH 0x20                           ; 0052c202
     MOV EBX,dword ptr [EAX + 0x2dc93a8] ; 0052c204
     PUSH EBX                            ; 0052c20a
-    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c20b | DAT_02dc93a4
+    MOV ESI,dword ptr [0x02dc93a4]      ; 0052c20b | g_WaveOutHandle
     PUSH ESI                            ; 0052c211
     CALL dword ptr CS:[0x5753fc]        ; 0052c212 | PTR_waveOutPrepareHeader_005753fc
     TEST EAX,EAX                        ; 0052c219
@@ -131,7 +131,7 @@ section .text
     PUSH 0x20                           ; 0052c221
     MOV EDI,dword ptr [EAX + 0x2dc93a8] ; 0052c223
     PUSH EDI                            ; 0052c229
-    MOV EBP,dword ptr [0x02dc93a4]      ; 0052c22a | DAT_02dc93a4
+    MOV EBP,dword ptr [0x02dc93a4]      ; 0052c22a | g_WaveOutHandle
     PUSH EBP                            ; 0052c230
     CALL dword ptr CS:[0x575408]        ; 0052c231 | PTR_waveOutWrite_00575408
     TEST EAX,EAX                        ; 0052c238

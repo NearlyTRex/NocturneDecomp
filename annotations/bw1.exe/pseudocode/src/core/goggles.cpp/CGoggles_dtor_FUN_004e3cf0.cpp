@@ -9,18 +9,18 @@
 CGoggles * __cdecl core_goggles_cpp_CGoggles_dtor_FUN_004e3cf0(CGoggles *this_ptr,uint flags)
 
 {
-  CGoggles *pCVar1;
-  void *ptr;
+  CGoggles *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CGogglesTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CGogglesTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CGoggles *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
+  ptr = (CGoggles *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005c0344(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

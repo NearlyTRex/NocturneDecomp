@@ -48,19 +48,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_gabriela_cpp_005d7075
 ;   TerminatedCString s_Hell_froze_invalid_pickU_005d708a
-;   undefined4 DAT_005d70b3
-;   undefined4 DAT_005d70bb
+;   double g_DOUBLE_005d70b3 = -0.800000000000000
+;   double g_DOUBLE_005d70bb = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
-;   core_actor.cpp_FUN_00408de0
-;   core_main.c_FUN_004e4500
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
@@ -97,8 +97,8 @@ section .text
     PUSH ESI                            ; 004b0606
     LEA ESI,[ESP + 0x5c]                ; 004b0607
     MOV dword ptr [ESP + 0x70],EBX      ; 004b060b
-    CALL core_actor.cpp_FUN_00408d70    ; 004b060f
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004b060f
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 004b0614
     LEA EDX,[ESP + 0xc8]                ; 004b0618
     ADD ESP,0x8                         ; 004b061f
@@ -128,8 +128,8 @@ section .text
     PUSH ECX                            ; 004b067a
     MOV dword ptr [ESP + 0xb8],EDX      ; 004b067b
     LEA EDI,[ESP + 0x38]                ; 004b0682
-    CALL core_actor.cpp_FUN_00408d70    ; 004b0686
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004b0686
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xbc]                ; 004b068b
     LEA EAX,[ESP + 0x38]                ; 004b0692
     ADD ESP,0x8                         ; 004b0696
@@ -158,8 +158,8 @@ section .text
     PUSH EAX                            ; 004b06e3
     MOV dword ptr [ESP + 0xa0],EDI      ; 004b06e4
     LEA EDI,[ESP + 0x44]                ; 004b06eb
-    CALL core_actor.cpp_FUN_00408d70    ; 004b06ef
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004b06ef
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xa4]                ; 004b06f4
     LEA EAX,[ESP + 0x44]                ; 004b06fb
     ADD ESP,0x8                         ; 004b06ff
@@ -243,7 +243,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b0800
     FLD float ptr [ESP + 0x7c]          ; 004b0801
     FABS                                ; 004b0805
-    FCOMP double ptr [0x005d70bb]       ; 004b0807 | DAT_005d70bb
+    FCOMP double ptr [0x005d70bb]       ; 004b0807 | g_DOUBLE_005d70bb
     FNSTSW AX                           ; 004b080d
     SAHF                                ; 004b080f
     JA 0x004b0777                       ; 004b0810
@@ -275,8 +275,8 @@ section .text
     PUSH EBX                            ; 004b0876
     LEA ESI,[ESP + 0x50]                ; 004b0877
     LEA EDI,[ESP + 0x8c]                ; 004b087b
-    CALL core_actor.cpp_FUN_00408de0    ; 004b0882
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 004b0882
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x50]                ; 004b0887
     ADD ESP,0x8                         ; 004b088b
     MOVSD ES:EDI,ESI                    ; 004b088e
@@ -315,7 +315,7 @@ section .text
     FSTP float ptr [ESP + 0x8c]         ; 004b0901
     FLD float ptr [ESP + 0x8c]          ; 004b0908
         ;   Label: LAB_004b0908
-    FCOMP double ptr [0x005d70b3]       ; 004b090f | DAT_005d70b3
+    FCOMP double ptr [0x005d70b3]       ; 004b090f | g_DOUBLE_005d70b3
     FNSTSW AX                           ; 004b0915
     SAHF                                ; 004b0917
     JA 0x004b0777                       ; 004b0918
@@ -418,10 +418,10 @@ section .text
     MOV EDI,0x5d7075                    ; 004b0a0e | = "..\\core\\gabriela.cpp"
     MOV EAX,0x637                       ; 004b0a13
     PUSH 0x5d708a                       ; 004b0a18 | = "Hell froze - invalid pickUpType: %d"
-    MOV dword ptr [0x01d046a0],EDI      ; 004b0a1d | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004b0a23 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004b0a28
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 004b0a1d | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004b0a23 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b0a28
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004b0a2d
     JMP 0x004b09ea                      ; 004b0a30
         ;   XREF to: 004b09ea (UNCONDITIONAL_JUMP)  ; LAB_004b09ea

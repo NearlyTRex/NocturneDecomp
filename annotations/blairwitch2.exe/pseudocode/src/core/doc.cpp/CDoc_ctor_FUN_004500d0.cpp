@@ -15,16 +15,17 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   uint uVar2;
   uint uVar3;
   char cVar4;
-  EBoxActorPickupType EVar5;
-  int iVar6;
+  float fVar5;
+  CHero *pCVar6;
   CBoxActor *pCVar7;
   float *pfVar8;
   float *pfVar9;
   CVector3f *pCVar10;
-  uint uStack00000104;
+  uint uStack00000108;
   
-  iVar6 = core_hero_cpp_FUN_004ce240(this_ptr);
-  pCVar7 = core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30((CBoxActor *)(iVar6 + 0x259b4));
+  pCVar6 = core_hero_cpp_CHero_ctor_FUN_004ce240(&this_ptr->base);
+  pCVar7 = core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30
+                     ((CBoxActor *)&pCVar6[1].base.model.bone_origins[8].z);
   this_ptr_00 = &pCVar7[-0x4d].base.scale.z;
   *(CHero_full_vtable **)(pCVar7[-0x4d].model.model_name + 0x94) = &g_CDocVTable;
   pCVar7[-1].physics_box.scrape_points[0].raytrace_normal.x = 0.0;
@@ -85,12 +86,12 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   pCVar7[-0xffffffff00000001].push_sound[0x42] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x43] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x44] = '\0';
-  EVar5 = 0x41200000;
+  fVar5 = 10.0f;
   pCVar7[-0xffffffff00000001].push_sound[0x45] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x46] = '\0';
   pCVar7[-0xffffffff00000001].push_sound[0x47] = '\0';
   pCVar7[-1].physics_box.linear_velocity.z = -1e+30;
-  pCVar7[-1].pickup_type = EVar5;
+  pCVar7[-1].pickup_type = (EBoxActorPickupType)fVar5;
   pCVar7[-1].physics_box.rotation_matrix.m[2].x = -1e+30;
   pCVar7[-1].cam_orientation.heading = 0.0;
   this_ptr_01 = (CDeformableModelInstance *)(pCVar7[-0x4d].model.model_name + 0x98);
@@ -100,7 +101,7 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   pCVar7[-1].can_be_pushed = (int)pCVar7[-1].carrier_actor;
   *(uint *)(pCVar7[-1].push_sound + 0x18) = uVar2;
   *(uint *)(pCVar7[-1].push_sound + 0x10) = uVar3;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_01,(char *)0x5cfb87);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_01,"Laz86.dfm");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_01);
   pCVar7[-0x48].physics_box.scrape_points[6].transformed_position.z = 0.0;
   pCVar7[-0xffffffff00000001].push_sound[0x30] = '\0';
@@ -169,7 +170,7 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
             ((CCharacter *)this_ptr_00,1,0x10,"draw_holsters2aimFlashlight",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
             ((CCharacter *)this_ptr_00,0x12,2,"draw_L_reload",1);
-  uStack00000104 = 0x450430;
+  uStack00000108 = 0x450430;
   core_cloth_cpp_CClothList_add_FUN_005b15c0
             ((CClothList *)&pCVar7[-0x48].physics_box.scrape_points[6].previous_position.y,
              "LAZ86CLOTH.cth");
@@ -202,19 +203,19 @@ CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   pCVar7[-0x4d].base.particle_systems[2].fade_timer = 1.4013e-45;
   pCVar7[-0x2b].base.scale.z = 0;
   pfVar8 = &pCVar7[-0x2b].base.platform_orientation_delta.z;
-  if (pfVar8 != (float *)&stack0x00000110) {
+  if (pfVar8 != (float *)&stack0x00000114) {
     *pfVar8 = -0.113;
     pCVar7[-0x2b].base.is_renderable = 0x3ec3126f;
     pCVar7[-0x2b].base.is_transparent = 0x3e79db23;
   }
   piVar1 = &pCVar7[-0x2b].base.collision_disabled;
-  if (piVar1 != (int *)&stack0x00000128) {
+  if (piVar1 != (int *)&stack0x0000012c) {
     *piVar1 = 0x3de76c8b;
     pCVar7[-0x2b].base.process_disabled = 0x3ec3126f;
     pCVar7[-0x2b].base.scale.x = 0x3e79db23;
   }
   piVar1 = &pCVar7[-0x2b].base.dead1;
-  if (piVar1 == (int *)&stack0x0000011c) {
+  if (piVar1 == (int *)&stack0x00000120) {
     return (CDoc *)this_ptr_00;
   }
   *piVar1 = 0x3f000000;

@@ -2,19 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 167,
+    "complexity_score": 151,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 13,
+    "pseudocode_lines": 21,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 76
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -62,8 +61,8 @@
   "globals": [
     {
       "addr": "026807f0",
-      "name": "DAT_026807f0",
-      "type": "undefined4",
+      "name": "g_MultibyteLocaleActive",
+      "type": "int",
       "value": null
     }
   ],
@@ -166,16 +165,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "int FUN_005c0d60(byte *param_1,int param_2)",
@@ -183,7 +174,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "int FUN_005c0d60(byte *param_1,int param_2)",
@@ -191,7 +182,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "for (; (iVar1 = FUN_005c4260(param_1), iVar1 == 0 && (param_2 != 0));",
@@ -199,7 +190,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_2",
       "severity": "mild",
       "text": "for (; (iVar1 = FUN_005c4260(param_1), iVar1 == 0 && (param_2 != 0));",
@@ -207,7 +198,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + -1) {",
@@ -215,7 +206,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + -1) {",
@@ -223,15 +214,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((_DAT_026807f0 == 0) || ((*(byte *)(*param_1 + 0x2680801) & 1) == 0)) {",
+      "text": "if ((g_MultibyteLocaleActive == 0) || ((g_LeadByteTable[*param_1] & 1U) == 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[1] == 0) {",
@@ -239,7 +230,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = FUN_005c0e50(param_1);",
@@ -247,7 +238,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (byte *)FUN_005c0e00(param_1);",
@@ -255,7 +246,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (byte *)FUN_005c0e00(param_1);",

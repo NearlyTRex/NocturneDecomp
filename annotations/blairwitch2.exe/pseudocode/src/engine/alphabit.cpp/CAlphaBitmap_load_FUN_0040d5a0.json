@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 276,
-    "complexity_score": 279,
+    "complexity_score": 119,
     "cross_reference_count": 20,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
-    "suspect_count": 18,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 360
   },
@@ -32,13 +30,13 @@
     {
       "addr": "004a17f0",
       "from_addr": "004a1852",
-      "name": "core_flashlit.cpp_FUN_004a17f0",
+      "name": "core_flashlit.cpp_loadNotesBitmap_FUN_004a17f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a1870",
       "from_addr": "004a197e",
-      "name": "core_flashlit.cpp_FUN_004a1870",
+      "name": "core_flashlit.cpp_loadNotesBitmaps_FUN_004a1870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,6 +70,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bdc20",
+      "from_addr": "004bdc51",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004bdc20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bdfb0",
       "from_addr": "004be0d9",
       "name": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
@@ -90,12 +94,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bdc20",
-      "from_addr": "004bdc51",
-      "name": "core_game.cpp_FUN_004bdc20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004da990",
       "from_addr": "004da9d7",
       "name": "core_inv.cpp_loadAssets_FUN_004da990",
@@ -104,7 +102,7 @@
     {
       "addr": "004e1480",
       "from_addr": "004e1540",
-      "name": "core_level.cpp_FUN_004e1480",
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004e1480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -154,7 +152,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b89c0",
@@ -184,7 +182,7 @@
     {
       "addr": "00460c70",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460c70"
+      "name": "engine_dosio.cpp_getFile_FUN_00460c70"
     }
   ],
   "globals": [
@@ -196,14 +194,14 @@
     },
     {
       "addr": "005cb027",
-      "name": "DAT_005cb027",
-      "type": "undefined4",
+      "name": "s_rb_005cb027",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cb02a",
-      "name": "DAT_005cb02a",
-      "type": "undefined4",
+      "name": "s_art_005cb02a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -226,14 +224,14 @@
     },
     {
       "addr": "005cb06f",
-      "name": "DAT_005cb06f",
-      "type": "undefined4",
+      "name": "s_rb_005cb06f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cb072",
-      "name": "DAT_005cb072",
-      "type": "undefined4",
+      "name": "s_art_005cb072",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -256,68 +254,68 @@
     },
     {
       "addr": "005cb0b7",
-      "name": "DAT_005cb0b7",
-      "type": "undefined4",
+      "name": "s_rb_005cb0b7",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cb0ba",
-      "name": "DAT_005cb0ba",
-      "type": "undefined4",
+      "name": "s_art_005cb0ba",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c35814",
-      "name": "DAT_01c35814",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35818",
-      "name": "DAT_01c35818",
-      "type": "undefined4",
+      "name": "g_RedScaleFactor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35820",
-      "name": "DAT_01c35820",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35824",
-      "name": "DAT_01c35824",
-      "type": "undefined4",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3582c",
-      "name": "DAT_01c3582c",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35830",
-      "name": "DAT_01c35830",
-      "type": "undefined4",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -404,7 +402,7 @@
       {
         "call_addr": "004e1540",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e1480",
+        "caller": "core_level.cpp_CLevelLoader_show_FUN_004e1480",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -584,120 +582,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005cb02a",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_FUN_00460c70(&DAT_005cb02a,local_124,&DAT_005cb027);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005cb027",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_FUN_00460c70(&DAT_005cb02a,local_124,&DAT_005cb027);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005cb072",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_FUN_00460c70(&DAT_005cb072,local_124,&DAT_005cb06f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005cb06f",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_FUN_00460c70(&DAT_005cb072,local_124,&DAT_005cb06f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_01c3582c",
-      "severity": "mild",
-      "text": "uVar3 = (uint)(ushort)((ushort)(local_1c << (DAT_01c3582c & 0x1f)) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 48,
-      "match": "DAT_01c35820",
-      "severity": "mild",
-      "text": "(ushort)(local_20 << (DAT_01c35820 & 0x1f)) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c35814",
-      "severity": "mild",
-      "text": "(ushort)(local_24 << (DAT_01c35814 & 0x1f)));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)this_ptr->act + local_18);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "else if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01c3582c",
-      "severity": "mild",
-      "text": "uVar3 = uVar3 << (DAT_01c3582c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 54,
-      "match": "DAT_01c35814",
-      "severity": "mild",
-      "text": "uVar1 << (DAT_01c35814 & 0x1f) | uVar2 << (DAT_01c35820 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_01c35820",
-      "severity": "mild",
-      "text": "uVar1 << (DAT_01c35814 & 0x1f) | uVar2 << (DAT_01c35820 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)this_ptr->act + local_18);",
@@ -705,27 +599,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)this_ptr->act + local_18);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_005cb0ba",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_FUN_00460c70(&DAT_005cb0ba,local_124,&DAT_005cb0b7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_005cb0b7",
-      "severity": "mild",
-      "text": "file = engine_dosio_cpp_FUN_00460c70(&DAT_005cb0ba,local_124,&DAT_005cb0b7);",
-      "type": "undefined_data"
     }
   ]
 }

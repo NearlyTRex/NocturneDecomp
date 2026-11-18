@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_ptr,char *text,int clear_screen)
 
 {
@@ -77,27 +75,27 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     local_30 = 7.25;
     local_2c = 7.25;
     local_28 = 0.0;
-    local_60.x = (int)ROUND(_DAT_0059fbfc * 7.25);
-    local_60.y = (int)ROUND(_DAT_0059fbfc * 7.25);
-    local_60.z = (int)ROUND(_DAT_0059fbfc * 0.0);
+    local_60.x = (int)ROUND(256.0f * 7.25);
+    local_60.y = (int)ROUND(256.0f * 7.25);
+    local_60.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);
     local_30 = -local_30;
-    local_54.x = (int)ROUND(local_30 * _DAT_0059fbfc);
-    local_54.y = (int)ROUND(local_2c * _DAT_0059fbfc);
-    local_54.z = (int)ROUND(local_28 * _DAT_0059fbfc);
+    local_54.x = (int)ROUND(local_30 * 256.0f);
+    local_54.y = (int)ROUND(local_2c * 256.0f);
+    local_54.z = (int)ROUND(local_28 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_54);
     local_2c = -local_2c;
-    local_3c.x = (int)ROUND(local_30 * _DAT_0059fbfc);
-    local_3c.y = (int)ROUND(local_2c * _DAT_0059fbfc);
-    local_3c.z = (int)ROUND(local_28 * _DAT_0059fbfc);
+    local_3c.x = (int)ROUND(local_30 * 256.0f);
+    local_3c.y = (int)ROUND(local_2c * 256.0f);
+    local_3c.z = (int)ROUND(local_28 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_3c);
     local_30 = -local_30;
-    local_48.x = (int)ROUND(local_30 * _DAT_0059fbfc);
-    local_48.y = (int)ROUND(local_2c * _DAT_0059fbfc);
-    local_48.z = (int)ROUND(local_28 * _DAT_0059fbfc);
+    local_48.x = (int)ROUND(local_30 * 256.0f);
+    local_48.y = (int)ROUND(local_2c * 256.0f);
+    local_48.z = (int)ROUND(local_28 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_48);
     pCVar1 = g_CDemonRenderer_PTR_005ae704;
@@ -149,7 +147,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
     }
     g_CDemonSetPtr->rendering_mode = 0;
-    local_10 = g_CBitFont_PTR_014b9900;
+    local_10 = g_ThemeFont;
     iVar3 = (g_WindowWidth * 0x240) / 0x280;
     iVar6 = (g_WindowHeight * 0x18) / 0x1e0;
     iVar4 = (g_WindowWidth << 5) / 0x280;

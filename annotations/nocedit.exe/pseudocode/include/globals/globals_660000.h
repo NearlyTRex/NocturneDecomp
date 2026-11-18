@@ -130,7 +130,7 @@ extern CHero_full_vtable g_CSvetlanaVTable;
 extern CKeys_vtable g_CKeysVTable;
 
 // CMatrix3x4f
-extern CMatrix3x4f CMatrix3x4f_00665968;
+extern CMatrix3x4f g_IdentityMatrix3x4;
 
 // CMobster_full_vtable
 extern CMobster_full_vtable g_CMobsterVTable;
@@ -155,7 +155,7 @@ extern CPod_vtable g_CPodVTable;
 extern CPoly_vtable g_CPolyVTable;
 
 // CQuaternion4f
-extern CQuaternion4f CQuaternion4f_00665998;
+extern CQuaternion4f g_IdentityQuaternion;
 
 // CSmiley_full_vtable
 extern CSmiley_full_vtable g_CSmileyVTable;
@@ -198,14 +198,14 @@ extern SLightGlowTable g_LightGlow;
 extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];
 
 // SMRGLTextureBasic
-extern SMRGLTextureBasic SMRGLTextureBasic_0066e158;
-extern SMRGLTextureBasic SMRGLTextureBasic_0066e460;
-extern SMRGLTextureBasic SMRGLTextureBasic_0066e784;
+extern SMRGLTextureBasic g_BoundingBoxTexture;
+extern SMRGLTextureBasic g_BaronBlueGlowTexture;
+extern SMRGLTextureBasic g_BurnCharTexture;
 extern SMRGLTextureBasic g_CameraBackdropTexture;
 extern SMRGLTextureBasic g_CoronaHeadliteTexture;
 
 // SMRGLTextureBasic[6]
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6];
+extern SMRGLTextureBasic g_EtherealBoltTextures[6];
 
 // SPropertyFlag[2]
 extern SPropertyFlag g_PropertyFlagDefinitions[2];

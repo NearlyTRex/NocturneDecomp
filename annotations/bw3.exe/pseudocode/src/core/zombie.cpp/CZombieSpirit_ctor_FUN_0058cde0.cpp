@@ -14,7 +14,7 @@ CZombieSpirit * __cdecl core_zombie_cpp_CZombieSpirit_ctor_FUN_0058cde0(CZombieS
   pCVar1 = core_zombie_cpp_CZombie_ctor_FUN_005888d0(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CZombieSpiritVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(pCVar1->base).base.model,(char *)0x5d89a4);
+            (&(pCVar1->base).base.model,"bwp3_eth_zomb1.dfm");
   pCVar1->zombie_variant = 3;
   (pCVar1->base).base.hit_points = 30.0;
   (pCVar1->base).attack_damage = 15.0;

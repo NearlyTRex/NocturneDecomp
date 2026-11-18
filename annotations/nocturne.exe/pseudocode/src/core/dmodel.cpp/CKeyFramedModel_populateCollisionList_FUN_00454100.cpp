@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 
 {
@@ -55,13 +53,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(
           local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)
                            .base.type + local_24;
           pCVar1 = local_18 + *(int *)(local_14 + 0x18);
-          local_48.x = (float)pCVar1->x * _DAT_0059c064;
-          local_48.y = (float)pCVar1->y * _DAT_0059c064;
-          local_48.z = (float)pCVar1->z * _DAT_0059c064;
+          local_48.x = (float)pCVar1->x * 0.00390625f;
+          local_48.y = (float)pCVar1->y * 0.00390625f;
+          local_48.z = (float)pCVar1->z * 0.00390625f;
           pCVar1 = local_18 + *(int *)(local_14 + 0x24);
-          local_54.x = (float)pCVar1->x * _DAT_0059c064;
-          local_54.y = (float)pCVar1->y * _DAT_0059c064;
-          local_54.z = (float)pCVar1->z * _DAT_0059c064;
+          local_54.x = (float)pCVar1->x * 0.00390625f;
+          local_54.y = (float)pCVar1->y * 0.00390625f;
+          local_54.z = (float)pCVar1->z * 0.00390625f;
           pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                              (local_28,&local_3c,&local_48);
           if (&local_48 != pCVar2) {
@@ -81,9 +79,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(
             iVar3 = local_14 + 0x18;
             do {
               pCVar1 = local_18 + *(int *)(iVar3 + 0x18);
-              local_60.x = (float)pCVar1->x * _DAT_0059c064;
-              local_60.y = (float)pCVar1->y * _DAT_0059c064;
-              local_60.z = (float)pCVar1->z * _DAT_0059c064;
+              local_60.x = (float)pCVar1->x * 0.00390625f;
+              local_60.y = (float)pCVar1->y * 0.00390625f;
+              local_60.z = (float)pCVar1->z * 0.00390625f;
               pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                                  (local_1c,&local_6c,&local_60);
               if (&local_60 != pCVar2) {

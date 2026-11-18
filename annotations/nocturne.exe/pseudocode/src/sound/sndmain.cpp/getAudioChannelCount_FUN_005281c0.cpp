@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_getAudioChannelCount_FUN_005281c0(void)
 
 {
-  return DAT_005bea68;
+  return g_AudioChannelCount;
 }

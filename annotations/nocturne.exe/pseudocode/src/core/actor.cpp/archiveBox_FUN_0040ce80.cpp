@@ -11,25 +11,25 @@ void __cdecl core_actor_cpp_archiveBox_FUN_0040ce80(CBox *box_ptr,char *property
 {
   int iVar1;
   
-  if (DAT_00763e88 != 1) {
-    _fprintf(DAT_00763e84,"%s{ // %s\n",&DAT_005acc90,property_name);
+  if (g_ActorReadingMode != 1) {
+    _fprintf(g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(1);
-    core_box_cpp_CBox_saveToFile_FUN_0041c9e0(box_ptr,DAT_00763e84,&DAT_005acc90);
+    core_box_cpp_CBox_saveToFile_FUN_0041c9e0(box_ptr,g_ActorDataFile,g_PropertyNamePrefix);
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(-1);
-    _fprintf(DAT_00763e84,"%s}\n",&DAT_005acc90);
+    _fprintf(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;
   }
   do {
-    iVar1 = _fgetc(DAT_00763e84);
+    iVar1 = _fgetc(g_ActorDataFile);
     if (iVar1 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                 ("sim box state info opening brace",property_name);
     }
   } while (iVar1 != 10);
-  core_box_cpp_CBox_loadFromFile_FUN_0041c850(box_ptr,DAT_00763e84);
+  core_box_cpp_CBox_loadFromFile_FUN_0041c850(box_ptr,g_ActorDataFile);
   do {
     while( true ) {
-      iVar1 = _fgetc(DAT_00763e84);
+      iVar1 = _fgetc(g_ActorDataFile);
       if (-1 < iVar1) break;
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                 ("sim box state info closing brace",property_name);

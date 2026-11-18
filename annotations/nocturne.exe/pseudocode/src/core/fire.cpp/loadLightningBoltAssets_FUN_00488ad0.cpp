@@ -11,11 +11,11 @@ void __cdecl core_fire_cpp_loadLightningBoltAssets_FUN_00488ad0(void)
 {
   SMRGLTextureBasic *texture;
   
-  texture = (SMRGLTextureBasic *)&DAT_005b8b14;
+  texture = g_FireEffectLightningBoltTextures;
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (g_CDemonRenderer_PTR_005ae704,texture);
     texture = texture + 1;
-  } while (texture != (SMRGLTextureBasic *)&DAT_005b8ba4);
+  } while (texture != g_FireEffectLightningBoltTextures + sizeof(g_FireEffectLightningBoltTextures) / sizeof(g_FireEffectLightningBoltTextures[0]));
   return;
 }

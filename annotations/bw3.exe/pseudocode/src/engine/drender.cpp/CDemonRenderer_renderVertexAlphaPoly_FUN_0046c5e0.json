@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 143,
+    "complexity_score": 107,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 7,
+    "pseudocode_lines": 57,
+    "suspect_count": 4,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 187
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -63,38 +62,38 @@
   "globals": [
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bdd818",
-      "name": "DAT_01bdd818",
-      "type": "undefined4",
+      "name": "g_VertexIndexBuffer",
+      "type": "int[16]",
       "value": null
     },
     {
       "addr": "01bdd81c",
-      "name": "DAT_01bdd81c",
+      "name": "g_VertexIndexBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "DAT_01c6b5cc",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -230,48 +229,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01bdd818",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bdd818 + iVar3) = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01bdd818",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_01bdd818 + iVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_01bdd818",
-      "severity": "mild",
-      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
+      "line": 23,
       "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
@@ -279,7 +254,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 46,
+      "line": 44,
       "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",

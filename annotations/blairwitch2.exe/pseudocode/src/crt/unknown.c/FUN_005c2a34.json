@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 117,
+    "complexity_score": 82,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 51
@@ -86,9 +85,9 @@
     },
     {
       "addr": "0061f2a0",
-      "name": "DAT_0061f2a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061f2a0",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
@@ -185,22 +184,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0061f2a0",
-      "severity": "mild",
-      "text": "if (DAT_0061f2a0 != -1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061f2a0",
-      "severity": "mild",
-      "text": "pvVar1 = TlsGetValue(DAT_0061f2a0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(HANDLE *)((int)pvVar1",
@@ -215,14 +198,6 @@
       "severity": "moderate",
       "text": "FUN_005c4bcc(*(uint *)((int)pvVar1 + 0xda));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061f2a0",
-      "severity": "mild",
-      "text": "TlsSetValue(DAT_0061f2a0,(LPVOID)0x0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

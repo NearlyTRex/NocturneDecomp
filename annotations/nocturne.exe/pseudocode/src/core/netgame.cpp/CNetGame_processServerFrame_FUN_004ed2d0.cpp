@@ -6,49 +6,44 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(CNetGame *this_ptr)
 
 {
   SNetPlayer *pSVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
   uint seed_value;
-  CNetGame *pCVar4;
-  uint *puVar5;
-  int iVar6;
-  SSimFrame *sim_frame;
+  CNetGame *pCVar5;
+  SSimFrame *pSVar6;
   SSimFrame *pSVar7;
   SPlayerInput *pSVar8;
-  uint *puVar9;
-  byte *src;
-  SPlayerInput *pSVar10;
-  uint *puVar11;
-  byte bVar12;
+  SPlayerInput *pSVar9;
+  int *piVar10;
+  byte bVar11;
   SNetPacketHeader local_90;
-  uint local_8b;
-  uint local_87;
-  uint local_83;
-  uint local_7f [22];
+  int local_8b;
+  int local_87;
+  float local_83;
+  int local_7f [22];
   int local_24;
   int local_20;
   SSimFrame *local_1c;
   int local_18;
   SNetPlayer *local_14;
   
-  bVar12 = 0;
+  bVar11 = 0;
   iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
   iVar2 = iVar2 / 0x12;
-  _DAT_01cea3f4 = iVar2 - _DAT_01cea3f4;
-  if (_DAT_01cea3f4 < 0) {
-    _DAT_01cea3f4 = 0;
+  iVar3 = iVar2 - g_LastPingTime;
+  if (iVar3 < 0) {
+    iVar3 = 0;
   }
-  else if (0x20000 < _DAT_01cea3f4) {
-    _DAT_01cea3f4 = 0x20000;
+  else if (0x20000 < iVar3) {
+    iVar3 = 0x20000;
   }
-  _DAT_01cea3f8 = _DAT_01cea3f8 + _DAT_01cea3f4;
-  _DAT_01cea3f4 = iVar2;
+  g_CurrentGameTime = g_CurrentGameTime + iVar3;
+  g_LastPingTime = iVar2;
   if (this_ptr->connection_type == CONNECTION_NONE) {
     seed_value = rand();
     this_ptr->random_seed = seed_value;
@@ -77,82 +72,83 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(CNetGame 
     core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
     local_18 = 0x7fffffff;
     iVar2 = 0;
-    pCVar4 = this_ptr;
+    pCVar5 = this_ptr;
     if (0 < this_ptr->player_count) {
       do {
-        iVar6 = pCVar4->players[0].sim_frame_index;
-        if (iVar6 < local_18) {
-          local_18 = iVar6;
+        iVar3 = pCVar5->players[0].sim_frame_index;
+        if (iVar3 < local_18) {
+          local_18 = iVar3;
         }
         iVar2 = iVar2 + 1;
-        pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.fire;
+        pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.fire;
       } while (iVar2 < this_ptr->player_count);
     }
     iVar2 = 0;
-    if (0 < _DAT_01d09c00) {
-      iVar6 = 0;
-      src = &DAT_01d09c68;
+    if (0 < g_SimFrameCount) {
+      iVar3 = 0;
+      pSVar6 = g_SimFrameHistory + 1;
       do {
-        if (*(int *)(iVar6 + 0x1d09c04) < local_18) {
-          _DAT_01d09c00 = _DAT_01d09c00 + -1;
+        if (*(int *)((int)g_SimFrameHistory[0].player_input + iVar3 + -0xc) < local_18) {
+          g_SimFrameCount = g_SimFrameCount + -1;
           memmove
-                    ((void *)(iVar6 + 0x1d09c04),src,(_DAT_01d09c00 - iVar2) * 100);
+                    ((void *)((int)g_SimFrameHistory[0].player_input + iVar3 + -0xc),pSVar6,
+                     (g_SimFrameCount - iVar2) * 100);
         }
         else {
-          src = src + 100;
+          pSVar6 = pSVar6 + 1;
           iVar2 = iVar2 + 1;
-          iVar6 = iVar6 + 100;
+          iVar3 = iVar3 + 100;
         }
-      } while (iVar2 < _DAT_01d09c00);
+      } while (iVar2 < g_SimFrameCount);
     }
-    iVar6 = 0;
+    iVar3 = 0;
     iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
-    if (0 < _DAT_01d09c00) {
-      iVar3 = 0;
+    if (0 < g_SimFrameCount) {
+      iVar4 = 0;
       do {
-        if (iVar2 == *(int *)(iVar3 + 0x1d09c04)) {
-          if (-1 < iVar6) {
-            sim_frame = (SSimFrame *)(iVar3 + 0x1d09c04);
+        if (iVar2 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc)) {
+          if (-1 < iVar3) {
+            pSVar6 = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc);
             goto LAB_004ed475;
           }
           break;
         }
-        iVar3 = iVar3 + 100;
-        iVar6 = iVar6 + 1;
-      } while (iVar3 < _DAT_01d09c00 * 100);
+        iVar4 = iVar4 + 100;
+        iVar3 = iVar3 + 1;
+      } while (iVar4 < g_SimFrameCount * 100);
     }
-    if (0x1ff < _DAT_01d09c00) {
+    if (0x1ff < g_SimFrameCount) {
       g_CurrentFilename = "..\\core\\netgame.cpp";
       g_CurrentLineNumber = 299;
       core_main_c_displayErrorAndQuit_FUN_004c8440("allocSimFrame - sim history list full");
     }
-    sim_frame = (SSimFrame *)(_DAT_01d09c00 * 100 + 0x1d09c04);
-    _DAT_01d09c00 = _DAT_01d09c00 + 1;
-    memset(sim_frame,0,100);
-    sim_frame->sequence_number = iVar2;
+    pSVar6 = g_SimFrameHistory + g_SimFrameCount;
+    g_SimFrameCount = g_SimFrameCount + 1;
+    memset(pSVar6,0,100);
+    pSVar6->sequence_number = iVar2;
 LAB_004ed475:
     iVar2 = rand();
-    sim_frame->random_seed = iVar2;
-    sim_frame->delta_time = g_CGamePtr->delta_time_float;
+    pSVar6->random_seed = iVar2;
+    pSVar6->delta_time = g_CGamePtr->delta_time_float;
     iVar2 = 0;
-    pCVar4 = this_ptr;
-    pSVar7 = sim_frame;
+    pCVar5 = this_ptr;
+    pSVar7 = pSVar6;
     if (0 < this_ptr->player_count) {
       do {
-        pSVar8 = &pCVar4->players[0].player_input;
-        pSVar10 = pSVar7->player_input;
-        for (iVar6 = 0xb; iVar6 != 0; iVar6 = iVar6 + -1) {
-          (pSVar10->action_state).walk = (pSVar8->action_state).walk;
-          pSVar8 = (SPlayerInput *)((int)pSVar8 + (uint)bVar12 * -8 + 4);
-          pSVar10 = (SPlayerInput *)((int)pSVar10 + (uint)bVar12 * -8 + 4);
+        pSVar8 = &pCVar5->players[0].player_input;
+        pSVar9 = pSVar7->player_input;
+        for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
+          (pSVar9->action_state).walk = (pSVar8->action_state).walk;
+          pSVar8 = (SPlayerInput *)((int)pSVar8 + (uint)bVar11 * -8 + 4);
+          pSVar9 = (SPlayerInput *)((int)pSVar9 + (uint)bVar11 * -8 + 4);
         }
         iVar2 = iVar2 + 1;
-        pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.fire;
+        pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.fire;
         pSVar7 = (SSimFrame *)&pSVar7->player_input[0].strafe_speed;
       } while (iVar2 < this_ptr->player_count);
     }
-    local_1c = sim_frame;
-    core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(this_ptr,sim_frame);
+    local_1c = pSVar6;
+    core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(this_ptr,pSVar6);
     local_24 = 0;
     if (0 < this_ptr->player_count) {
       local_14 = this_ptr->players;
@@ -171,42 +167,42 @@ LAB_004ed475:
           }
           local_20 = pSVar1->sim_frame_index;
           for (; 0 < iVar2; iVar2 = iVar2 + -1) {
-            iVar6 = 0;
-            if (0 < _DAT_01d09c00) {
-              iVar3 = 0;
+            iVar3 = 0;
+            if (0 < g_SimFrameCount) {
+              iVar4 = 0;
               do {
-                if (local_20 == *(int *)(iVar3 + 0x1d09c04)) goto LAB_004ed65e;
-                iVar3 = iVar3 + 100;
-                iVar6 = iVar6 + 1;
-              } while (iVar3 < _DAT_01d09c00 * 100);
+                if (local_20 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc))
+                goto LAB_004ed65e;
+                iVar4 = iVar4 + 100;
+                iVar3 = iVar3 + 1;
+              } while (iVar4 < g_SimFrameCount * 100);
             }
-            iVar6 = -1;
+            iVar3 = -1;
 LAB_004ed65e:
-            if (iVar6 < 0) {
+            if (iVar3 < 0) {
               g_CurrentFilename = "..\\core\\netgame.cpp";
               g_CurrentLineNumber = 2381;
               core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::processServerFrame - client needs frame, but we don't have it in history!");
             }
-            iVar6 = iVar6 * 100;
-            puVar5 = (uint *)(iVar6 + 0x1d09c04);
+            pSVar6 = g_SimFrameHistory + iVar3;
             local_90.size = 0x69;
             local_90.type = PACKET_SIM_FRAME;
-            local_8b = *puVar5;
-            local_87 = *(uint *)(iVar6 + 0x1d09c08);
-            local_83 = *(uint *)(iVar6 + 0x1d09c0c);
-            iVar6 = 0;
+            local_8b = pSVar6->sequence_number;
+            local_87 = g_SimFrameHistory[iVar3].random_seed;
+            local_83 = g_SimFrameHistory[iVar3].delta_time;
+            iVar3 = 0;
             if (0 < this_ptr->player_count) {
               do {
-                puVar9 = puVar5 + 3;
-                puVar11 = local_7f + iVar6 * 0xb;
-                for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *puVar11 = *puVar9;
-                  puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
-                  puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+                pSVar8 = pSVar6->player_input;
+                piVar10 = local_7f + iVar3 * 0xb;
+                for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
+                  *piVar10 = (pSVar8->action_state).walk;
+                  pSVar8 = (SPlayerInput *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);
+                  piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
                 }
-                iVar6 = iVar6 + 1;
-                puVar5 = puVar5 + 0xb;
-              } while (iVar6 < this_ptr->player_count);
+                iVar3 = iVar3 + 1;
+                pSVar6 = (SSimFrame *)&pSVar6->player_input[0].strafe_speed;
+              } while (iVar3 < this_ptr->player_count);
             }
             core_netgame_cpp_CNetGame_send_FUN_004eb350(this_ptr,local_24,&local_90);
             local_20 = local_20 + 1;

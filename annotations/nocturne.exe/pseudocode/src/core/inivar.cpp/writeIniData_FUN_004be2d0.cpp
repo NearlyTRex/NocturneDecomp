@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inivar_cpp_writeIniData_FUN_004be2d0(void)
 
 {
@@ -31,8 +29,8 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004be2d0(void)
             (&local_210,"heroNumber",g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
             (&local_210,"haloMode",g_CGamePtr->halo_mode);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(&local_210,"firstTimeFlag",_DAT_01cae37c)
-  ;
+  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
+            (&local_210,"firstTimeFlag",g_FirstTimeFlag);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
             (&local_210,"subtitleMode",g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
@@ -47,7 +45,8 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004be2d0(void)
   }
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
             (&local_210,"quimbyFlag",g_CGamePtr->quimby_flag);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(&local_210,"currentBoard",_DAT_01cc64a4);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
+            (&local_210,"currentBoard",g_CurrentGraphicsBoard);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_210,"Sound");
   sound_sndmain_cpp_writeIni_FUN_00528c80(&local_210);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_210,"Control");

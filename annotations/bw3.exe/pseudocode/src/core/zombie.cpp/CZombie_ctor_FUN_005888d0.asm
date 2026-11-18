@@ -15,8 +15,8 @@
 ;   core_zombie.cpp_factoryFuncZombie_FUN_005888a0 at 005888b3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e677c
-;   undefined4 DAT_005e6780
+;   float g_FLOAT_005e677c = 50
+;   float g_FLOAT_005e6780 = 100
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
@@ -53,9 +53,9 @@ section .text
     MOV dword ptr [EBX + 0x326c],0x3f000000 ; 00588904
     LEA EDI,[EBX + 0xd074]              ; 0058890e
     MOV dword ptr [EBX + 0x3270],0x3f800000 ; 00588914
-    FLD float ptr [0x005e677c]          ; 0058891e | DAT_005e677c
+    FLD float ptr [0x005e677c]          ; 0058891e | g_FLOAT_005e677c
     MOV dword ptr [EBX + 0xd064],0x0    ; 00588924
-    FLD float ptr [0x005e6780]          ; 0058892e | DAT_005e6780
+    FLD float ptr [0x005e6780]          ; 0058892e | g_FLOAT_005e6780
     MOV dword ptr [EBX + 0xd060],0x0    ; 00588934
     ADD ESP,0x8                         ; 0058893e
     FXCH                                ; 00588941

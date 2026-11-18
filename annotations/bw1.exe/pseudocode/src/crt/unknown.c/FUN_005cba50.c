@@ -9,15 +9,15 @@
 uint FUN_005cba50(void)
 
 {
-  int *piVar1;
-  int *piVar2;
+  Heap *pHVar1;
+  Heap *pHVar2;
   
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626618)();
-  piVar1 = DAT_00626220;
-  while (piVar2 = piVar1, piVar2 != (int *)0x0) {
-    piVar1 = (int *)piVar2[2];
-    if (*piVar2 + -0x2c == *(int *)piVar2[9]) {
-      FUN_005cbaec(piVar2);
+  pHVar1 = g_MainHeap;
+  while (pHVar2 = pHVar1, pHVar2 != (Heap *)0x0) {
+    pHVar1 = pHVar2->next_heap_block;
+    if (pHVar2->heap_size + -0x2c == *(int *)pHVar2[3].heap_size) {
+      FUN_005cbaec(pHVar2);
     }
   }
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626620)();

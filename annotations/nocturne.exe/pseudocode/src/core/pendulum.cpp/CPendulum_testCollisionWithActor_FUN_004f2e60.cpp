@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor)
 
 {
@@ -88,9 +86,9 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPe
         pCStack_18 = &actor->location;
         pCStack_28 = &(this_ptr->base).orient_matrix;
         while( true ) {
-          CStack_a0.x = (float)pCVar6->x * _DAT_005a1228;
-          CStack_a0.y = (float)pCVar6->y * _DAT_005a1228;
-          CStack_a0.z = (float)pCVar6->z * _DAT_005a1228;
+          CStack_a0.x = (float)pCVar6->x * 0.00390625f;
+          CStack_a0.y = (float)pCVar6->y * 0.00390625f;
+          CStack_a0.z = (float)pCVar6->z * 0.00390625f;
           pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                              (pCStack_28,&CStack_64,&CStack_a0);
           if (&CStack_a0 != pCVar4) {

@@ -6,44 +6,40 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00555060(CDirectSoundDevice *this_ptr)
 
 {
   int iVar1;
   int buffer_id;
   int iVar2;
-  int unaff_ESI;
-  int unaff_EDI;
   
   iVar1 = (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   buffer_id = 0;
   do {
     iVar2 = buffer_id + 1;
-    (*((this_ptr->base).vtable)->lockSample)(&this_ptr->base,buffer_id,unaff_EDI,unaff_ESI);
+    (*((this_ptr->base).vtable)->freeSample)(&this_ptr->base,buffer_id);
     buffer_id = iVar2;
   } while (iVar2 < 0x41);
-  if (_DAT_0264a5d0 != (int *)0x0) {
-    (**(code **)(*_DAT_0264a5d0 + 8))();
-    _DAT_0264a5d0 = (int *)0x0;
+  if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {
+    (*g_DirectSound3DListener->vtable->Release)((IUnknown *)g_DirectSound3DListener);
+    g_DirectSound3DListener = (IDirectSound3DListener *)0x0;
   }
-  if (_DAT_0264a5cc != (int *)0x0) {
-    (**(code **)(*_DAT_0264a5cc + 8))(_DAT_0264a5cc);
-    _DAT_0264a5cc = (int *)0x0;
+  if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
+    (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer);
+    g_DirectSoundSecondaryBuffer = (IDirectSoundBuffer *)0x0;
   }
-  if (_DAT_0264a5d4 != (int *)0x0) {
-    (**(code **)(*_DAT_0264a5d4 + 8))(_DAT_0264a5d4);
-    _DAT_0264a5d4 = (int *)0x0;
+  if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
+    (*g_DirectSoundPropertySet->vtable->Release)((IUnknown *)g_DirectSoundPropertySet);
+    g_DirectSoundPropertySet = (IKsPropertySet *)0x0;
   }
-  if (_DAT_0264a5c8 != (int *)0x0) {
-    (**(code **)(*_DAT_0264a5c8 + 8))(_DAT_0264a5c8);
-    _DAT_0264a5c8 = (int *)0x0;
+  if (g_DirectSoundPrimaryBuffer != (IDirectSoundBuffer *)0x0) {
+    (*g_DirectSoundPrimaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundPrimaryBuffer);
+    g_DirectSoundPrimaryBuffer = (IDirectSoundBuffer *)0x0;
   }
-  if (_DAT_0264a5c4 == (int *)0x0) {
+  if (g_DirectSound == (IDirectSound *)0x0) {
     return (uint)(iVar1 != 0);
   }
-  (**(code **)(*_DAT_0264a5c4 + 8))(_DAT_0264a5c4);
-  _DAT_0264a5c4 = (int *)0x0;
+  (*g_DirectSound->vtable->Release)((IUnknown *)g_DirectSound);
+  g_DirectSound = (IDirectSound *)0x0;
   return (uint)(iVar1 != 0);
 }

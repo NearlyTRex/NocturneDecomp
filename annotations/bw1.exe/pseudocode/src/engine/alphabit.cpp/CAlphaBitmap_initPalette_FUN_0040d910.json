@@ -2,22 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 37
   },
   "cross_references": [
+    {
+      "addr": "0040d9a0",
+      "from_addr": "0040d9ac",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040d9a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0040d4b0",
       "from_addr": "0040d4f0",
@@ -27,13 +32,7 @@
     {
       "addr": "0040d660",
       "from_addr": "0040d70a",
-      "name": "engine_alphabit.cpp_FUN_0040d660",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040d9a0",
-      "from_addr": "0040d9ac",
-      "name": "engine_alphabit.cpp_FUN_0040d9a0",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,19 +52,19 @@
   "globals": [
     {
       "addr": "01c4e3d4",
-      "name": "DAT_01c4e3d4",
-      "type": "undefined4",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01c4e3d8",
-      "name": "DAT_01c4e3d8",
+      "name": "g_Hardware32BitPalette[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4e3d9",
-      "name": "DAT_01c4e3d9",
+      "name": "g_Hardware32BitPalette[1]+1",
       "type": "undefined4",
       "value": null
     }
@@ -87,7 +86,7 @@
       {
         "call_addr": "0040d70a",
         "call_type": "direct",
-        "caller": "engine_alphabit.cpp_FUN_0040d660",
+        "caller": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d660",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,7 +97,7 @@
       {
         "call_addr": "0040d9ac",
         "call_type": "direct",
-        "caller": "engine_alphabit.cpp_FUN_0040d9a0",
+        "caller": "engine_alphabit.cpp_CAlphaBitmap_displayFullScreen_FUN_0040d9a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,6 +138,12 @@
     "pcode_op_count": 114
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040dca0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6809
+    },
     "bw3.exe": {
       "addr": "0040db50",
       "by": "name",
@@ -175,14 +180,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_01c4e3d4",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)&DAT_01c4e3d4;",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 18,
@@ -228,7 +225,7 @@
       "line": 11,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0040d929: MOVSD.REP ES:EDI,ESI  ; DAT_01c4e3d4 | DAT_01c4e3d8",
+      "text": "// 0040d929: MOVSD.REP ES:EDI,ESI  ; g_Hardware32BitPalette | g_Hardware32BitPalette[1]",
       "type": "unrolled_memcpy"
     }
   ]

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this_ptr,CDemonActor *actor)
 
 {
@@ -34,8 +32,9 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this
         pCVar2 = this_ptr;
         while( true ) {
           if (pCVar1 == (CDemonActor *)0x0) {
-            core_xform_cpp_FUN_005b5760(&local_a0,&(actor->location).position,&(actor->orient).vec);
-            core_xform_cpp_FUN_005b5620
+            core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
+                      (&local_a0,&(actor->location).position,&(actor->orient).vec);
+            core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005b5620
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
             pCVar2->attach_actors[0].actor = actor;
             core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_a0,&local_40,&local_70);
@@ -53,9 +52,9 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this
           pCVar1 = pCVar2->attach_actors[1].actor;
           pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
         }
-        _DAT_01d1d400 = "..\\core\\platfrm.cpp";
-        _DAT_01d1d404 = 0x3d0;
-        core_main_c_FUN_005030e0("CPlatform::attachActor - too many!");
+        g_CHAR_PTR_01d1d400 = "..\\core\\platfrm.cpp";
+        g_INT_01d1d404 = 0x3d0;
+        core_main_c_displayErrorAndQuit_FUN_005030e0("CPlatform::attachActor - too many!");
         return;
       }
       pCVar1 = pCVar2->attach_actors[1].actor;

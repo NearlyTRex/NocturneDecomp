@@ -8,16 +8,16 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f0f37
+;   float g_FLOAT_005f0f37 = 0.5
 ;   CSimpleParticleSystem* g_CSimpleParticleSystemPtr = 026687b0
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
-;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -82,7 +82,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005adb69
     MOVSD ES:EDI,ESI                    ; 005adb6a
     MOVSD ES:EDI,ESI                    ; 005adb6b
-    FLD float ptr [0x005f0f37]          ; 005adb6c | DAT_005f0f37
+    FLD float ptr [0x005f0f37]          ; 005adb6c | g_FLOAT_005f0f37
     FLD float ptr [EBP + 0x4e]          ; 005adb72
     FMUL ST1                            ; 005adb75
     FLD float ptr [EBP + 0x52]          ; 005adb77
@@ -133,8 +133,8 @@ section .text
     PUSH EAX                            ; 005adbf5
     LEA ESI,[EBP + -0x3a]               ; 005adbf6
     LEA EDI,[EBP + -0x4a]               ; 005adbf9
-    CALL core_xform.cpp_FUN_00594380    ; 005adbfc
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 005adbfc
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[EBP + -0x3a]               ; 005adc01
     LEA EAX,[EBP + -0x4a]               ; 005adc04
     ADD ESP,0x4                         ; 005adc07
@@ -170,8 +170,8 @@ section .text
     PUSH EAX                            ; 005adc63
     MOV dword ptr [EBP + -0x6],EDX      ; 005adc64
     MOV dword ptr [EBP + -0x2],EDX      ; 005adc67
-    CALL core_xform.cpp_FUN_00591530    ; 005adc6a
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005adc6a
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + 0x12]                ; 005adc6f
     MOVSD ES:EDI,ESI                    ; 005adc72
     MOVSD ES:EDI,ESI                    ; 005adc73
@@ -235,7 +235,7 @@ section .text
     PUSH 0x3f800000                     ; 005add10
     PUSH EDX                            ; 005add15
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005add16
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005add1b
     LEA ESP,[EBP + 0x7a]                ; 005add1e
     POP EBP                             ; 005add21

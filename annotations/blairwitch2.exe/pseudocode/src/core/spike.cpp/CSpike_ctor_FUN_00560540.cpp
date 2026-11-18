@@ -19,9 +19,10 @@ CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00560540(CSpike *this_ptr)
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  pcVar3 = (char *)0x5eaff5;
+  pcVar3 = "none";
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CSpikeVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5eafeb);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
+            (this_ptr_00,"bgate.kfm");
   this_ptr_00[1].part_visibility_flags[0] = 0;
   this_ptr_00[1].part_visibility_flags[1] = 0;
   piVar5 = this_ptr_00[1].part_visibility_flags + 7;
@@ -35,7 +36,7 @@ CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00560540(CSpike *this_ptr)
     *(char *)((int)piVar5 + 1) = cVar1;
     piVar5 = (int *)((int)piVar5 + 2);
   } while (cVar1 != '\0');
-  pcVar4 = (char *)0x5eaffa;
+  pcVar4 = "none";
   pcVar3 = this_ptr_00[1].model_name + 8;
   do {
     cVar1 = *pcVar4;
@@ -46,7 +47,7 @@ CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00560540(CSpike *this_ptr)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = (char *)0x5eafff;
+  pcVar4 = "none";
   pcVar3 = this_ptr_00[1].model_name + 0x6c;
   do {
     cVar1 = *pcVar4;
@@ -57,7 +58,7 @@ CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00560540(CSpike *this_ptr)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = (char *)0x5eb004;
+  pcVar4 = "none";
   pcVar3 = this_ptr_00[1].model_name + 0xd0;
   do {
     cVar1 = *pcVar4;

@@ -11,8 +11,8 @@
 ; int              Stack[0x14]:4   bottom
 ;
 ; XREF[5]:
-;   core_flashlit.cpp_FUN_004a8270 at 004a8286
-;   core_flashlit.cpp_FUN_004a82f0 at 004a8313
+;   core_flashlit.cpp_layoutSections_FUN_004a8270 at 004a8286
+;   core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004a82f0 at 004a8313
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004abe5f
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa9af
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 at 004abbf2

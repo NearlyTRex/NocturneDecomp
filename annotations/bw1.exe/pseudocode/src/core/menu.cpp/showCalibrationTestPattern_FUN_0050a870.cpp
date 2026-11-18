@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_0050a870(char *message_text)
 
 {
@@ -52,15 +50,16 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_0050a870(char *message
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_0152d248,0x58);
-  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_0152d248,local_110);
+  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(g_SmallEditorFont,0x58);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_SmallEditorFont,local_110);
   engine_special_cpp_clearScreen_FUN_0057dc40();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&g_CalibrationBitmap,0,0,0xffff);
-  engine_font_cpp_FUN_004c1dd0
-            (_DAT_0152d248,local_110,0x140 - iVar3 / 2,iVar4 * -3 + 0x1e0,0xf8,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (g_SmallEditorFont,local_110,0x140 - iVar3 / 2,iVar4 * -3 + 0x1e0,0xf8,-1);
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Monitor calibration");
-  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_0152d248,pcVar5);
-  engine_font_cpp_FUN_004c1dd0(_DAT_0152d248,pcVar5,0x140 - iVar3 / 2,iVar4 * 2,0xf8,0xffffffff);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(g_SmallEditorFont,pcVar5);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (g_SmallEditorFont,pcVar5,0x140 - iVar3 / 2,iVar4 * 2,0xf8,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   wincore_winrun_cpp_getNextKeypress_FUN_005b2510();

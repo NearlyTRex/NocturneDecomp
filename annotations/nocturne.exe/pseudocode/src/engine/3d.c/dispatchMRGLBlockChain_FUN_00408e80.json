@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 43,
+    "complexity_score": 28,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "wrong_global"
+      "unresolved_funcptr"
     ],
     "total_lines": 40
   },
@@ -64,12 +63,12 @@
     {
       "addr": "005acab8",
       "name": "g_MRGLBlockHandlerTable",
-      "type": "undefined1*",
-      "value": "004044a0"
+      "type": "void*[67]",
+      "value": null
     },
     {
       "addr": "005b7644",
-      "name": "INT_005b7644",
+      "name": "g_VertexProcessingEnabled",
       "type": "int",
       "value": "0x1"
     }
@@ -183,6 +182,18 @@
       "class": "identical",
       "ratio": 1.0
     },
+    "bw1.exe": {
+      "addr": "004076e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9444
+    },
+    "bw3.exe": {
+      "addr": "00407720",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9444
+    },
     "nocedit.exe": {
       "addr": "00407890",
       "by": "name",
@@ -212,16 +223,8 @@
       "line": 11,
       "match": "code *",
       "severity": "moderate",
-      "text": "chain = (SMRGLHeaderExtended *)(*(code *)(&g_MRGLBlockHandlerTable)[iVar1])(chain);",
+      "text": "chain = (SMRGLHeaderExtended *)(*(code *)g_MRGLBlockHandlerTable[iVar1])(chain);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Scalar global g_MRGLBlockHandlerTable accessed via (&g_MRGLBlockHandlerTable)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_005acc88 (at 0x005acc88, +464 bytes).",
-      "line": 11,
-      "match": "g_MRGLBlockHandlerTable",
-      "severity": "moderate",
-      "text": "chain = (SMRGLHeaderExtended *)(*(code *)(&g_MRGLBlockHandlerTable)[iVar1])(chain);",
-      "type": "wrong_global"
     }
   ]
 }

@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 48,
+    "complexity_score": 17,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 56
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
   },
   "cross_references": [
     {
@@ -51,7 +48,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00535200",
@@ -62,20 +59,20 @@
   "globals": [
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e6be48",
-      "name": "DAT_01e6be48",
-      "type": "undefined4",
+      "name": "g_PathMapCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -189,24 +186,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 19,
-      "match": "*(CPathMap **)(_DAT_01e6be48 * 4 + 0x1e6be4c",
-      "severity": "moderate",
-      "text": "*(CPathMap **)(_DAT_01e6be48 * 4 + 0x1e6be4c) = this_ptr;",
-      "type": "raw_address_pointer_store"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 174,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 12,
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
     "suspect_types": [
-      "bit_int_float_compare",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "bit_int_float_compare"
     ],
-    "total_lines": 127
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -25,9 +23,9 @@
         "005b592e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_xform.cpp_angleFromSinCos_FUN_005b5860",
-    "signature": "float core_xform_cpp_angleFromSinCos_FUN_005b5860(float param_1,float param_2)"
+    "signature": "float __cdecl core_xform_cpp_angleFromSinCos_FUN_005b5860(float sin_value,float cos_value)"
   },
   "function_calls": [
     {
@@ -44,54 +42,54 @@
   "globals": [
     {
       "addr": "005fa0b0",
-      "name": "DAT_005fa0b0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa0b0",
+      "type": "float",
+      "value": "0.7070000"
     },
     {
       "addr": "005fa0b4",
-      "name": "DAT_005fa0b4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa0b4",
+      "type": "float",
+      "value": "-0.7070000"
     },
     {
       "addr": "005fa0b8",
-      "name": "DAT_005fa0b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa0b8",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "005fa0bc",
-      "name": "DAT_005fa0bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa0bc",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005fa0c0",
-      "name": "DAT_005fa0c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa0c0",
+      "type": "float",
+      "value": "-3.141593"
     },
     {
       "addr": "005fa0c4",
-      "name": "DAT_005fa0c4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa0c4",
+      "type": "float",
+      "value": "6.283185"
     },
     {
       "addr": "005fa0c8",
-      "name": "DAT_005fa0c8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fa0c8",
+      "type": "float",
+      "value": "-6.283185"
     }
   ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -159,108 +157,35 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sin_value",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "cos_value",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_xform_cpp_angleFromSinCos_FUN_005b5860(float param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float core_xform_cpp_angleFromSinCos_FUN_005b5860(float param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((_DAT_005fa0b0 <= param_1) || (param_1 <= _DAT_005fa0b4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((_DAT_005fa0b0 <= param_1) || (param_1 <= _DAT_005fa0b4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (_DAT_005fa0b8 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((int)param_2 < 0x3f800000) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = (float10)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (float10)param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 12,
-      "match": "(int)param_2 < 0x3f800000",
+      "line": 11,
+      "match": "(int)cos_value < 0x3f800000",
       "severity": "moderate",
-      "text": "if ((int)param_2 < 0x3f800000) {",
+      "text": "if ((-1.0f < cos_value) && ((int)cos_value < 0x3f800000)) {",
       "type": "bit_int_float_compare"
     }
   ]

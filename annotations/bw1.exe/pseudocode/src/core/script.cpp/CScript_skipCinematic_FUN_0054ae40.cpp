@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_script_cpp_CScript_skipCinematic_FUN_0054ae40(CScript *this_ptr)
 
 {
@@ -30,11 +28,9 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_0054ae40(CScript *this_ptr
     }
     iVar2 = iVar2 + 1;
     if (300 < iVar2) {
-      _DAT_01d1d404 = 0x102a;
-      _DAT_01d1d400 = "..\\core\\script.cpp";
-      core_main_c_FUN_005030e0
-                ("Infinite loop detected trying to skip cinematic, at script line %d",
-                 this_ptr->parsed_lines[this_ptr->next_cmd].line_number);
+      g_INT_01d1d404 = 0x102a;
+      g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Infinite loop detected trying to skip cinematic, at script line %d");
     }
   }
   return 1;

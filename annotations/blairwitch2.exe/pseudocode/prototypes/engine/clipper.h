@@ -39,11 +39,15 @@ int __cdecl clipPolygonRightPlane(SRenderVertex **input_vertices,SRenderVertex *
 
 // Original: engine_clipper.c_clipPolygonLeftPlane_FUN_00430cb0
 // Address: 00430cb0
-int clipPolygonLeftPlane(void);
+int __cdecl clipPolygonLeftPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 
 // Original: engine_clipper.c_clipPolygonBottomPlane_FUN_00430f30
 // Address: 00430f30
-int clipPolygonBottomPlane(void);
+int __cdecl clipPolygonBottomPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+
+// Original: engine_clipper.c_clipPolygonFarPlane_FUN_00431070
+// Address: 00431070
+void __cdecl clipPolygonFarPlane(void);
 
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_00431270
 // Address: 00431270
@@ -75,23 +79,27 @@ void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex
 
 // Original: engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_004322e0
 // Address: 004322e0
-void clipPolygonRightPlaneGlobal(void);
+void __cdecl clipPolygonRightPlaneGlobal(void);
 
 // Original: engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00432420
 // Address: 00432420
 void __cdecl clipPolygonLeftPlaneGlobal(void);
 
+// Original: engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_00432560
+// Address: 00432560
+void __cdecl clipPolygonTopPlaneGlobal(void);
+
 // Original: engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_004326a0
 // Address: 004326a0
-void clipPolygonBottomPlaneGlobal(void);
+void __cdecl clipPolygonBottomPlaneGlobal(void);
 
 // Original: engine_clipper.c_perspectiveDivideVertices_FUN_004327d0
 // Address: 004327d0
 void __cdecl perspectiveDivideVertices(void);
 
-// Original: engine_clipper.c_FUN_00432a20
-// Address: 00432a20
-undefined4 FUN_00432a20(void);
+// Original: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880
+// Address: 00432880
+int __cdecl clipPolygonToViewFrustumAdvanced(int vertex_count,int *vertex_indices);
 
 // Original: engine_clipper.c_clipPolygonToViewport_FUN_00433000
 // Address: 00433000

@@ -17,7 +17,7 @@
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_0045d900 at 0045d919
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0 at 0045d7d9
 ;   core_door.cpp_CDoor_setup_FUN_00477450 at 0047747a
-;   core_dpart.cpp_FUN_00479c70 at 00479d7d
+;   core_dpart.cpp_CDemonPart_loadFromFile_FUN_00479c70 at 00479d7d
 ;   ... and 24 more
 ;
 ; *****************************************************************************

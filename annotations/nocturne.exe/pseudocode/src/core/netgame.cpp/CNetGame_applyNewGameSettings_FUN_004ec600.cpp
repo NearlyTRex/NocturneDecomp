@@ -149,16 +149,16 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame
         pcVar8 = local_10f + iVar6 * 0x28;
         pSVar11 = local_28;
         if (uVar3 == this_ptr->local_player_index) {
-          g_INT_005bdee4 = uVar3 ^ this_ptr->local_player_index;
+          g_NetLobbyStateChanged = uVar3 ^ this_ptr->local_player_index;
           iVar14 = _strcmp(local_28->name,pcVar8);
           if (iVar14 != 0) {
-            g_INT_005bdee4 = 1;
+            g_NetLobbyStateChanged = 1;
           }
           if (local_2c->players[0].ready_flag == aEStack_f3[iVar6 * 10 + 2]) {
-            if (g_INT_005bdee4 == 0) goto LAB_004ecb76;
+            if (g_NetLobbyStateChanged == 0) goto LAB_004ecb76;
           }
           else {
-            g_INT_005bdee4 = 1;
+            g_NetLobbyStateChanged = 1;
           }
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(this_ptr);
         }

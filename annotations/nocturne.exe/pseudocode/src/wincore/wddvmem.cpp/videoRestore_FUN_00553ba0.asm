@@ -22,8 +22,8 @@
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   IUnknown* g_DirectDrawUnknown
-;   undefined4 DAT_02ddf568
-;   HWND g_HWND_02de2098
+;   int g_GraphicsResetFlag
+;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -43,7 +43,7 @@ section .text
     CMP dword ptr [0x02dc9d60],0x0      ; 00553ba3 | g_UseDirect3D
     JZ 0x00553cb7                       ; 00553baa
         ;   XREF to: 00553cb7 (CONDITIONAL_JUMP)  ; LAB_00553cb7
-    CMP dword ptr [0x02ddf568],0x0      ; 00553bb0 | DAT_02ddf568
+    CMP dword ptr [0x02ddf568],0x0      ; 00553bb0 | g_GraphicsResetFlag
     JZ 0x00553cb7                       ; 00553bb7
         ;   XREF to: 00553cb7 (CONDITIONAL_JUMP)  ; LAB_00553cb7
     MOV EDX,dword ptr [0x005b7624]      ; 00553bbd | g_BitsPerPixel
@@ -123,7 +123,7 @@ section .text
         ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00553c7d
     POP EDI                             ; 00553c80
-    MOV EBX,dword ptr [0x02de2098]      ; 00553c81 | g_HWND_02de2098
+    MOV EBX,dword ptr [0x02de2098]      ; 00553c81 | g_MainWindowHandle
         ;   Label: LAB_00553c81
     PUSH EBX                            ; 00553c87
     CALL dword ptr CS:[0x575470]        ; 00553c88 | PTR_SetFocus_00575470
@@ -136,7 +136,7 @@ section .text
     MOV EAX,EAX                         ; 00553c9e
     PUSH 0x11                           ; 00553ca1
         ;   Label: LAB_00553ca1
-    MOV EBP,dword ptr [0x02de2098]      ; 00553ca3 | g_HWND_02de2098
+    MOV EBP,dword ptr [0x02de2098]      ; 00553ca3 | g_MainWindowHandle
     MOV EAX,[0x02ddf550]                ; 00553ca9 | g_DirectDrawObject
     PUSH EBP                            ; 00553cae
     MOV EDX,dword ptr [EAX]             ; 00553caf

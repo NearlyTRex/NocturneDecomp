@@ -14,14 +14,13 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_sampl
   float fVar3;
   float fVar4;
   double dVar5;
-  double dVar6;
-  float *pfVar7;
-  int iVar8;
+  float *pfVar6;
+  int iVar7;
+  float *pfVar8;
   float *pfVar9;
   float *pfVar10;
-  float *pfVar11;
-  int iVar12;
-  float *pfVar13;
+  int iVar11;
+  float *pfVar12;
   uint local_48;
   uint uStack_44;
   float *local_30;
@@ -32,38 +31,38 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_sampl
   int local_1c;
   int local_14;
   
-  if (DAT_005bbbfc != 0) {
-    iVar12 = 0;
+  if (g_Mp3AntiAliasInitialized != 0) {
+    iVar11 = 0;
     do {
-      dVar6 = 1.0 / SQRT(*(double *)((int)&DAT_005bbc00 + iVar12) *
-                         *(double *)((int)&DAT_005bbc00 + iVar12) + 1.0);
-      dVar5 = *(double *)((int)&DAT_005bbc00 + iVar12);
-      iVar8 = iVar12 + 8;
-      local_48 = SUB84(__BITCAST_UINT64(dVar6),0);
-      *(uint *)(iVar12 + 0x1cd6fe8) = local_48;
-      uStack_44 = (uint)((ulonglong)dVar6 >> 0x20);
-      *(double *)(iVar12 + 0x1cd6fa8) = dVar5 * dVar6;
-      *(uint *)(iVar12 + 0x1cd6fec) = uStack_44;
-      iVar12 = iVar8;
-    } while (iVar8 != 0x40);
-    DAT_005bbbfc = 0;
+      dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar11) *
+                         *(double *)((int)g_Mp3AntiAliasCSSource + iVar11) + 1.0);
+      iVar7 = iVar11 + 8;
+      local_48 = SUB84(__BITCAST_UINT64(dVar5),0);
+      *(uint *)((int)g_Mp3AntiAliasCA + iVar11) = local_48;
+      uStack_44 = (uint)((ulonglong)dVar5 >> 0x20);
+      *(double *)((int)g_Mp3AntiAliasCS + iVar11) =
+           *(double *)((int)g_Mp3AntiAliasCSSource + iVar11) * dVar5;
+      *(uint *)((int)g_Mp3AntiAliasCA + iVar11 + 4) = uStack_44;
+      iVar11 = iVar7;
+    } while (iVar7 != 0x40);
+    g_Mp3AntiAliasInitialized = 0;
   }
-  iVar12 = 0;
+  iVar11 = 0;
   local_24 = output_samples;
-  pfVar10 = input_samples;
+  pfVar9 = input_samples;
   do {
-    pfVar10 = pfVar10 + 0x12;
-    pfVar7 = input_samples + iVar12 * 0x12;
-    pfVar9 = local_24;
+    pfVar9 = pfVar9 + 0x12;
+    pfVar6 = input_samples + iVar11 * 0x12;
+    pfVar8 = local_24;
     do {
-      fVar3 = *pfVar7;
-      pfVar7 = pfVar7 + 1;
-      *pfVar9 = fVar3;
-      pfVar9 = pfVar9 + 1;
-    } while (pfVar7 != pfVar10);
-    iVar12 = iVar12 + 1;
+      fVar3 = *pfVar6;
+      pfVar6 = pfVar6 + 1;
+      *pfVar8 = fVar3;
+      pfVar8 = pfVar8 + 1;
+    } while (pfVar6 != pfVar9);
+    iVar11 = iVar11 + 1;
     local_24 = local_24 + 0x12;
-  } while (iVar12 < 0x20);
+  } while (iVar11 < 0x20);
   if (((granule->window_switching_flag == 0) || (granule->block_type != 2)) ||
      (granule->mixed_block_flag != 0)) {
     if (((granule->window_switching_flag == 0) || (granule->mixed_block_flag == 0)) ||
@@ -80,26 +79,26 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_sampl
       local_30 = input_samples;
       do {
         local_20 = input_samples + 0x12;
-        pfVar13 = local_28 + 0x11;
-        pfVar7 = local_30 + 0x11;
-        iVar12 = 0;
-        pfVar10 = output_samples + (local_1c + 1) * 0x12;
-        pfVar9 = local_20;
+        pfVar12 = local_28 + 0x11;
+        pfVar6 = local_30 + 0x11;
+        iVar11 = 0;
+        pfVar9 = output_samples + (local_1c + 1) * 0x12;
+        pfVar8 = local_20;
         do {
-          fVar3 = *pfVar7;
-          fVar4 = *pfVar9;
-          *pfVar13 = fVar3 * (float)*(double *)(iVar12 + 0x1cd6fe8) -
-                     fVar4 * (float)*(double *)(iVar12 + 0x1cd6fa8);
-          pdVar1 = (double *)(iVar12 + 0x1cd6fe8);
-          pdVar2 = (double *)(iVar12 + 0x1cd6fa8);
-          pfVar11 = pfVar10 + 1;
-          pfVar13 = pfVar13 + -1;
-          iVar12 = iVar12 + 8;
-          pfVar9 = pfVar9 + 1;
-          pfVar7 = pfVar7 + -1;
-          *pfVar10 = fVar3 * (float)*pdVar2 + fVar4 * (float)*pdVar1;
-          pfVar10 = pfVar11;
-        } while (pfVar11 != local_2c);
+          fVar3 = *pfVar6;
+          fVar4 = *pfVar8;
+          *pfVar12 = fVar3 * (float)*(double *)((int)g_Mp3AntiAliasCA + iVar11) -
+                     fVar4 * (float)*(double *)((int)g_Mp3AntiAliasCS + iVar11);
+          pdVar1 = (double *)((int)g_Mp3AntiAliasCA + iVar11);
+          pdVar2 = (double *)((int)g_Mp3AntiAliasCS + iVar11);
+          pfVar10 = pfVar9 + 1;
+          pfVar12 = pfVar12 + -1;
+          iVar11 = iVar11 + 8;
+          pfVar8 = pfVar8 + 1;
+          pfVar6 = pfVar6 + -1;
+          *pfVar9 = fVar3 * (float)*pdVar2 + fVar4 * (float)*pdVar1;
+          pfVar9 = pfVar10;
+        } while (pfVar10 != local_2c);
         local_2c = local_2c + 0x12;
         local_28 = local_28 + 0x12;
         local_30 = local_30 + 0x12;

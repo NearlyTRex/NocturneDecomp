@@ -8,11 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
-;   core_glass.cpp_FUN_004e34b0
+;   core_glass.cpp_CGlass_shatter_FUN_004e34b0
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     LEA EAX,[EBX + 0x184]               ; 004e19da
         ;   Label: LAB_004e19da
     PUSH EAX                            ; 004e19e0
-    MOV ECX,dword ptr [0x0061b4d0]      ; 004e19e1 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 004e19e1 | g_CEventListPtr
     PUSH ECX                            ; 004e19e7
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 004e19e8
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)
@@ -42,8 +42,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004e19f4
     PUSH EAX                            ; 004e19f7
     PUSH EBX                            ; 004e19f8
-    CALL core_glass.cpp_FUN_004e34b0    ; 004e19f9
-        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004e34b0()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004e34b0 ; 004e19f9
+        ;   XREF to: 004e34b0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004e34b0(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 004e19fe
     POP EBX                             ; 004e1a01
     RET                                 ; 004e1a02

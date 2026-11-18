@@ -1,18 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00478b40(CDoor *this_ptr,CDemonActor *opener)
+; int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00478b40(CDoor *this_ptr,CDemonActor *opener,int ignore_lock)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   opener
+; int              Stack[0xc]:4   ignore_lock
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x1c]:1  local_1c
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004eb3e0 at 004eb54f
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0 at 004eb54f
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00478b2c = 00478b89
@@ -21,14 +22,14 @@
 ;   TerminatedCString s_CDoor_getMoveType_invali_005da9fb
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_door.cpp_CDoor_onLocked_FUN_00478d10
 ;   core_game.cpp_CGame_displayMessage_FUN_004cc190
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
 ; *****************************************************************************
@@ -50,8 +51,8 @@ section .text
     PUSH EBX                            ; 00478b56
     LEA ESI,[ESP + 0x8]                 ; 00478b57
     LEA EDI,[ESP + 0x14]                ; 00478b5b
-    CALL core_actor.cpp_FUN_00408bb0    ; 00478b5f
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 00478b5f
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 00478b64
     MOV ESI,ESP                         ; 00478b67
     MOV EDX,dword ptr [EBP + 0x1c]      ; 00478b69
@@ -245,10 +246,10 @@ section .text
         ;   Label: default
     MOV ECX,0x3de                       ; 00478ce8
     PUSH 0x5da9fb                       ; 00478ced | = "CDoor::getMoveType - invalid door!"
-    MOV dword ptr [0x01d1d400],EDX      ; 00478cf2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00478cf8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00478cfe
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00478cf2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00478cf8 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00478cfe
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00478d03
     XOR EAX,EAX                         ; 00478d06
     MOV ESP,EBP                         ; 00478d08

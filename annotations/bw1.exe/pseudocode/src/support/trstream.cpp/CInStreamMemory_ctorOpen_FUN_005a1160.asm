@@ -10,10 +10,10 @@
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CCodec_processBuffer_FUN_00442d90 at 00442da8
-;   support_codec.cpp_FUN_00442d10 at 00442d28
+;   support_codec.cpp_CCodec_processFromBuffer_FUN_00442d10 at 00442d28
 ;
 ; Referenced Globals:
-;   undefined1* g_CInStreamMemoryVTable = 005a11e0
+;   void*[12] g_CInStreamMemoryVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStream_ctor_FUN_0059f540
@@ -43,7 +43,7 @@ section .text
     MOV EBX,EAX                         ; 005a1195
     MOV dword ptr [EAX + 0x10],0x0      ; 005a1197
     CALL support_trstream.cpp_CInStreamMemory_open_FUN_005a1450 ; 005a119e
-        ;   XREF to: 005a1450 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamMemory_open_FUN_005a1450(CInStreamMemory * this_ptr, int param_2, int param_3)
+        ;   XREF to: 005a1450 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamMemory_open_FUN_005a1450(CInStreamMemory * this_ptr, int data, int size)
     ADD ESP,0xc                         ; 005a11a3
     MOV EAX,EBX                         ; 005a11a6
     POP ESI                             ; 005a11a8

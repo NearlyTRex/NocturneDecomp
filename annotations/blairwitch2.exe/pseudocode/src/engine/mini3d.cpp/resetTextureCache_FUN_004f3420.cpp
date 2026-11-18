@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_resetTextureCache_FUN_004f3420(void)
 
 {
-  engine_texture_cpp_FUN_00575010();
-  if ((_DAT_0264bcbc != (code *)0x0) && (_DAT_01c37788 != 0)) {
-    (*_DAT_0264bcbc)();
+  engine_texture_cpp_clearTextureCache_FUN_00575010();
+  if ((g_APIDLL_setTransform != (byte *)0x0) && (g_INT_01c37788 != 0)) {
+    (*(code *)g_APIDLL_setTransform)();
     return;
   }
   return;

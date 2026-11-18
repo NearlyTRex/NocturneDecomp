@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 102,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 7,
+    "pseudocode_lines": 16,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
-    "total_lines": 47
+    "total_lines": 46
   },
   "cross_references": [],
   "function": {
@@ -25,9 +24,9 @@
         "00558b16"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndwav.cpp_getWavInDevice_FUN_00558ad0",
-    "signature": "undefined * sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(void)"
+    "signature": "CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(UINT device_id)"
   },
   "function_calls": [
     {
@@ -39,18 +38,18 @@
   "globals": [
     {
       "addr": "0061bf88",
-      "name": "DAT_0061bf88",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WaveInDeviceID",
+      "type": "int",
+      "value": "-0x1"
     }
   ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -100,33 +99,33 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "device_id",
+        "offset": 4,
+        "size": 4,
+        "type": "UINT"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "UINT_PTR in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0264b280",
-      "severity": "mild",
-      "text": "iVar1 = sound_sndwav_cpp_CWavInDevice_close_FUN_00558240((CWavInDevice *)&DAT_0264b280);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "MVar2 = waveInGetDevCapsA(in_stack_00000008,(LPWAVEINCAPSA)&stack0xffffffd4,0x30);",
@@ -134,7 +133,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 15,
+      "line": 13,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "MVar2 = waveInGetDevCapsA(in_stack_00000008,(LPWAVEINCAPSA)&stack0xffffffd4,0x30);",
@@ -142,27 +141,11 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "DAT_0061bf88 = in_stack_00000008;",
+      "text": "g_WaveInDeviceID = in_stack_00000008;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0061bf88",
-      "severity": "mild",
-      "text": "DAT_0061bf88 = in_stack_00000008;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_0264b280",
-      "severity": "mild",
-      "text": "return &DAT_0264b280;",
-      "type": "undefined_data"
     }
   ]
 }

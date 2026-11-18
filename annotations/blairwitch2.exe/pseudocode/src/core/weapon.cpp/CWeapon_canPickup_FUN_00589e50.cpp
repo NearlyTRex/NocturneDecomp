@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00589e50(CWeapon *this_ptr,CDemonActor *picker)
 
 {
@@ -22,7 +20,7 @@ int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00589e50(CWeapon *this_ptr,CDe
       (fVar1 = (this_ptr->physics_box).linear_velocity_local.y,
       fVar2 = (this_ptr->physics_box).linear_velocity_local.x,
       fVar3 = (this_ptr->physics_box).linear_velocity_local.z,
-      (float)_DAT_005ee52a < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1))) ||
+      (float)0.5 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1))) ||
      (this_ptr->carried_by_actor != (CDemonActor *)0x0)) {
     return 0;
   }

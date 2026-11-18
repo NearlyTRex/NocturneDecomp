@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   cheat_string
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cd0c68
+;   undefined4 g_CHero_PTR_ARRAY_01cd0c60[2]
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005c12b0
@@ -64,7 +64,7 @@ section .text
     JNZ 0x004d2529                      ; 004d2512
         ;   XREF to: 004d2529 (CONDITIONAL_JUMP)  ; LAB_004d2529
     XOR AH,AH                           ; 004d2514
-    MOV byte ptr [0x01cd0c68],AH        ; 004d2516 | DAT_01cd0c68
+    MOV byte ptr [0x01cd0c68],AH        ; 004d2516 | g_CHero_PTR_ARRAY_01cd0c60[2]
     MOV EAX,0x1                         ; 004d251c
     ADD ESP,0x8                         ; 004d2521
     POP EBP                             ; 004d2524

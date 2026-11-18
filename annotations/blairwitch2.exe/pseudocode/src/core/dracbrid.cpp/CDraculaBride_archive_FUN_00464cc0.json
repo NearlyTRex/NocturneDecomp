@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 89,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 19,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 74,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 286
   },
   "cross_references": [],
@@ -77,8 +75,8 @@
   "globals": [
     {
       "addr": "005d10cc",
-      "name": "s_speed_005d10cb+1",
-      "type": "undefined4",
+      "name": "s_speed_005d10cc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -185,8 +183,8 @@
     },
     {
       "addr": "007bc038",
-      "name": "DAT_007bc038",
-      "type": "undefined4",
+      "name": "g_ActorReadingMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -263,20 +261,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "DAT_007bc038 == 1)) {",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "005f5674"
       }

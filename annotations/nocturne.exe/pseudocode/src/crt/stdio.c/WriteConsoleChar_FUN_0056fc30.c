@@ -15,15 +15,15 @@ int __watcallStack WriteConsoleChar(int character)
   byte local_8 [4];
   
   local_8[0] = (byte)character;
-  if (DAT_005c1d90 == (code *)0x0) {
+  if (g_SpecialConsoleOutputHandler == (byte *)0x0) {
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(1);
     hConsoleOutput = GetConsoleOutputHandle();
     WriteConsoleA(hConsoleOutput,local_8,1,&DStack_c,(LPVOID)0x0);
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(1);
   }
   else {
-    uVar1 = (*DAT_005c1d54)(1);
-    (*DAT_005c1d90)(uVar1,character);
+    uVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(1);
+    (*(code *)g_SpecialConsoleOutputHandler)(uVar1,character);
   }
   return character;
 }

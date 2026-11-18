@@ -11,7 +11,7 @@
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0 at 004defed
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x4]       ; 004dd2c0
         ;   Label: core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004dd2c0
-    MOV EDX,dword ptr [0x01cedef4]      ; 004dd2c4 | DAT_01cedef4
+    MOV EDX,dword ptr [0x01cedef4]      ; 004dd2c4 | g_INT_01cedef4
     MOV EAX,dword ptr [ECX + 0x4]       ; 004dd2ca
     CMP EAX,dword ptr [EDX*0x4 + 0x1cedee4] ; 004dd2cd
     JZ 0x004dd2d7                       ; 004dd2d4

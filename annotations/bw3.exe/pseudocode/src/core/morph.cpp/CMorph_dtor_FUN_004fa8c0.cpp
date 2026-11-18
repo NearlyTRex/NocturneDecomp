@@ -12,6 +12,6 @@ CMorph * __cdecl core_morph_cpp_CMorph_dtor_FUN_004fa8c0(CMorph *this_ptr,uint f
   CMorph *pCVar1;
   
   core_morph_cpp_CMorph_free_FUN_004fa8e0(this_ptr);
-  pCVar1 = (CMorph *)core_morph_cpp_FUN_004fb180(this_ptr->models,0);
+  pCVar1 = (CMorph *)core_morph_cpp_CMorphModel_arrdtor2_FUN_004fb180(this_ptr->models,0);
   return pCVar1;
 }

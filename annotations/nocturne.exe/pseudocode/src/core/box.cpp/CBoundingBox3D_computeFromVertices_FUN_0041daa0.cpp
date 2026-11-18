@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 
 {
@@ -53,7 +51,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(CBound
       vertices = vertices + 1;
     } while (iVar5 < vertex_count);
   }
-  fVar2 = (float)_DAT_005797d5;
+  fVar2 = (float)0.00390625;
   (this_ptr->min).x = (float)local_28 * fVar2;
   (this_ptr->min).y = (float)local_24 * fVar2;
   (this_ptr->max).x = (float)iVar6 * fVar2;

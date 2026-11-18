@@ -7,7 +7,7 @@
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0cac
+;   double g_DOUBLE_005c0cac = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
@@ -100,7 +100,7 @@ section .text
     FSTP double ptr [ESP]               ; 004a7098
     MOV dword ptr [EBX + 0x4e8],0x0     ; 004a709b
     FLD double ptr [ESP]                ; 004a70a5
-    FMUL double ptr [0x005c0cac]        ; 004a70a8 | DAT_005c0cac
+    FMUL double ptr [0x005c0cac]        ; 004a70a8 | g_DOUBLE_005c0cac
     FLD float ptr [EBX + 0x49c]         ; 004a70ae
     MOV dword ptr [EBX + 0x4ec],0x0     ; 004a70b4
     FXCH                                ; 004a70be

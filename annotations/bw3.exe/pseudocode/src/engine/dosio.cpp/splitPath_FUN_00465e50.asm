@@ -10,18 +10,18 @@
 ; char *           Stack[0x10]:4   filename
 ; char *           Stack[0x14]:4   extension
 ;
-; XREF[28]:
+; XREF[29]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492f48
-;   core_flashlit.cpp_FUN_004a7cf0 at 004a7d0b
-;   core_flashlit.cpp_FUN_004a7d70 at 004a7e40
+;   core_flashlit.cpp_loadNotesBitmap_FUN_004a7cf0 at 004a7d0b
+;   core_flashlit.cpp_loadNotesBitmaps_FUN_004a7d70 at 004a7e40
 ;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac378
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004ab331
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680 at 004a86c1
-;   core_game.cpp_FUN_004b6f30 at 004b7400
+;   core_game.cpp_CGame_processFrame_FUN_004b6f30 at 004b7400
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052bb19
-;   core_set.cpp_FUN_00532b80 at 00532fae
-;   engine_dosio.cpp_FUN_00465eb0 at 00465ee2
-;   ... and 18 more
+;   core_set.cpp_CDemonSet_load_FUN_00532b80 at 00532fae
+;   engine_dosio.cpp_changeFileExtension_FUN_00465f80 at 00465fa6
+;   ... and 19 more
 ;
 ; Called Functions:
 ;   crt_string.c_splitpath_FUN_005a5128

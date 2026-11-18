@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 97,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 97
   },
@@ -33,86 +31,86 @@
   "globals": [
     {
       "addr": "005ddc48",
-      "name": "DAT_005ddc48",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ddc48",
+      "type": "float",
+      "value": "0.003921569"
     },
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c35814",
-      "name": "DAT_01c35814",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35820",
-      "name": "DAT_01c35820",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c3582c",
-      "name": "DAT_01c3582c",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b5c",
-      "name": "DAT_01c38b5c",
-      "type": "undefined4",
+      "name": "g_SolidColorMode",
+      "type": "ulong",
       "value": null
     },
     {
       "addr": "01d09900",
-      "name": "DAT_01d09900",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09900",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09904",
-      "name": "DAT_01d09904",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09904",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09908",
-      "name": "DAT_01d09908",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09908",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d0990c",
-      "name": "DAT_01d0990c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d0990c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d09910",
-      "name": "DAT_01d09910",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d09910",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01d12158",
-      "name": "DAT_01d12158",
-      "type": "undefined4",
+      "name": "g_FLOAT_01d12158",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0264bccc",
-      "name": "DAT_0264bccc",
-      "type": "undefined4",
+      "name": "g_APIDLL_enableCulling",
+      "type": "void*",
       "value": null
     }
   ],
@@ -219,51 +217,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c3582c",
-      "severity": "mild",
-      "text": "blue << (DAT_01c3582c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c35814",
-      "severity": "mild",
-      "text": "red << (DAT_01c35814 & 0x1f) | green << (DAT_01c35820 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c35820",
-      "severity": "mild",
-      "text": "red << (DAT_01c35814 & 0x1f) | green << (DAT_01c35820 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_0264bccc != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "text": "(*(code *)g_APIDLL_enableCulling)",
       "type": "unresolved_funcptr"
     }
   ]

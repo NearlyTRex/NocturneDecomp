@@ -10,21 +10,21 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_0041d830(CBoxActor *thi
 
 {
   CBox *pCVar1;
-  CBoxActor *pCVar2;
-  void *ptr;
+  CBoxActor *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBoxActorTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBoxActorTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70(&this_ptr->physics_box,0);
-  pCVar2 = (CBoxActor *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);
+  ptr = (CBoxActor *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                  ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar2);
-  return pCVar2;
+  debugFreeChecked(ptr);
+  return ptr;
 }

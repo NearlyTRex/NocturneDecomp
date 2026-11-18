@@ -13,8 +13,8 @@ int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_005103f0(CDemonSet *t
   CDemonSet *pCVar2;
   
   if ((this_ptr->collision_flag != 0) &&
-     (iVar1 = core_actor_cpp_isOfClassHash_FUN_0040d860
-                        (actor,g_CCharacterActorType_00765a60.name_hash), iVar1 != 0)) {
+     (iVar1 = core_actor_cpp_isOfClassHash_FUN_0040d860(actor,g_CCharacterClassInfo.name_hash),
+     iVar1 != 0)) {
     return 1;
   }
   iVar1 = 0;

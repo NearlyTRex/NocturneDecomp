@@ -11,9 +11,9 @@
 ;   TerminatedCString s_shell_kfm_005d573a
 ;   TerminatedCString s_sh_sh_c_15_005d5744
 ;   TerminatedCString s_s_44_sh_c_2_005d5752
-;   undefined4 DAT_005d5762
-;   undefined4 DAT_00614d30
-;   undefined4 DAT_0061c068
+;   double g_DOUBLE_005d5762 = 0.25
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -38,7 +38,7 @@ section .text
     SUB EAX,EDX                         ; 0049b8a4
     MOV dword ptr [EBP + -0x4],EAX      ; 0049b8a6
     FILD dword ptr [EBP + -0x4]         ; 0049b8a9
-    FMUL double ptr [0x005d5762]        ; 0049b8ac | DAT_005d5762
+    FMUL double ptr [0x005d5762]        ; 0049b8ac | g_DOUBLE_005d5762
     FST float ptr [EBP + -0x8]          ; 0049b8b2
     FLDZ                                ; 0049b8b5
     FCOMPP                              ; 0049b8b7
@@ -114,9 +114,9 @@ section .text
         ;   XREF to: 0049b982 (CONDITIONAL_JUMP)  ; LAB_0049b982
     PUSH EDI                            ; 0049b951
     PUSH 0x5d5744                       ; 0049b952 | = "sh-sh?c @ .15"
-    MOV EBX,dword ptr [0x00614d30]      ; 0049b957 | DAT_00614d30
+    MOV EBX,dword ptr [0x00614d30]      ; 0049b957 | g_CFireEffectPtr
     PUSH EBX                            ; 0049b95d
-    MOV EAX,[0x0061c068]                ; 0049b95e | DAT_0061c068
+    MOV EAX,[0x0061c068]                ; 0049b95e | g_CSound_PTR_0061c068
     PUSH EAX                            ; 0049b963
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 0049b964
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -135,9 +135,9 @@ section .text
     PUSH EDI                            ; 0049b982
         ;   Label: LAB_0049b982
     PUSH 0x5d5752                       ; 0049b983 | = "44-sh?c @ .2"
-    MOV EDX,dword ptr [0x00614d30]      ; 0049b988 | DAT_00614d30
+    MOV EDX,dword ptr [0x00614d30]      ; 0049b988 | g_CFireEffectPtr
     PUSH EDX                            ; 0049b98e
-    MOV ECX,dword ptr [0x0061c068]      ; 0049b98f | DAT_0061c068
+    MOV ECX,dword ptr [0x0061c068]      ; 0049b98f | g_CSound_PTR_0061c068
     PUSH ECX                            ; 0049b995
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 0049b996
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)

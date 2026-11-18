@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004ea440(CHealthItem *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_health_cpp_CHealthItem_getBoundingBox_FUN_004ea440(CHealthItem *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900

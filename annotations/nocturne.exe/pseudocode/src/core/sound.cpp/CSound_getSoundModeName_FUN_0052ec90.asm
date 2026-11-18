@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   sound_mode_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00594bfe
+;   TerminatedCString s_anon_00594bfe
 ;   void* PTR_s_OFF_00594c3d_005bed6c = 00594c3d
 ;
 ; *****************************************************************************
@@ -23,7 +23,7 @@ section .text
     CMP EAX,0x1b                        ; 0052ec98
     JL 0x0052eca3                       ; 0052ec9b
         ;   XREF to: 0052eca3 (CONDITIONAL_JUMP)  ; LAB_0052eca3
-    MOV EAX,0x594bfe                    ; 0052ec9d | DAT_00594bfe
+    MOV EAX,0x594bfe                    ; 0052ec9d | = "????"
         ;   Label: LAB_0052ec9d
     RET                                 ; 0052eca2
     SHL EAX,0x4                         ; 0052eca3

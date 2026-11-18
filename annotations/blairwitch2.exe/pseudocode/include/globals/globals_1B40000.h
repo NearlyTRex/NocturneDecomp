@@ -5,6 +5,9 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CLever.h"
+#include "types/classes/CVector3f.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1B40000
@@ -14,4 +17,47 @@
 extern CDemonActorType g_CDocClassInfo;
 extern CDemonActorType g_CZombieDogClassInfo;
 extern CDemonActorType g_CDoorClassInfo;
+
+// CLever*
+extern CLever* g_CLever_PTR_01b4d22c;
+
+// CVector3f
+extern CVector3f g_CVector3f_01b4d220;
+extern CVector3f g_CVector3f_01b4d23c;
+extern CVector3f g_CVector3f_01b4d248;
+
+// FileSearchHandlerFunc*[5]
+extern FileSearchHandlerFunc* g_SearchHandlers[5];
+
+// byte
+extern byte g_BYTE_01b4d230;
+
+// char[4]
+extern char g_CHAR_ARRAY_01b4d388[4];
+
+// float
+extern float g_FLOAT_01b4d2f0;
+
+// int
+extern int g_INT_01b4d258;
+extern int g_INT_01b4d25c;
+extern int g_INT_01b4d260;
+extern int g_INT_01b4d264;
+extern int g_INT_01b4d268;
+extern int g_INT_01b4d26c;
+extern int g_INT_01b4d270;
+extern int g_INT_01b4d274;
+extern int g_INT_01b4d278;
+extern int g_INT_01b4d288;
+extern int g_INT_01b4d28c;
+extern int g_INT_01b4d290;
+extern int g_INT_01b4d298;
+extern int g_INT_01b4d29c;
+extern int g_INT_01b4d2a8;
+extern int g_INT_01b4d2ac;
+extern int g_INT_01b4d2b0;
+extern int g_NumSearchHandlers;
+
+// uint
+extern uint g_DoorLockedSoundHandle;
 

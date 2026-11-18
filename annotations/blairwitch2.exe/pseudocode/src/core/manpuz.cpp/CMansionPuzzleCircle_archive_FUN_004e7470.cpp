@@ -28,12 +28,12 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004e7470(CMansionP
     int_ptr_00 = &this_ptr->panels[0].color;
     do {
       core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->panels[iVar1].exists,"exists");
-      core_actor_cpp_archiveInteger_FUN_0040b960(&int_ptr_00->r,&DAT_005dc6cc);
-      core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr_01,&DAT_005dc6ce);
+      core_actor_cpp_archiveInteger_FUN_0040b960(&int_ptr_00->r,"r");
+      core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr_01,"g");
       iVar1 = iVar1 + 1;
       int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);
       int_ptr_01 = int_ptr_01 + 0x19;
-      core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr,&DAT_005dc6d0);
+      core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr,"b");
       int_ptr = int_ptr + 0x19;
     } while (iVar1 < 0xc);
   }

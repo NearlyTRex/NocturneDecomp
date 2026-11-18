@@ -57,7 +57,7 @@ section .text
     PUSH 0x1                            ; 004102f0
     PUSH 0x57853a                       ; 004102f2 | = "Bip01 L Clavicle"
     PUSH EBX                            ; 004102f7
-    MOV [0x007642e8],EAX                ; 004102f8 | DAT_007642e8
+    MOV [0x007642e8],EAX                ; 004102f8 | g_INT_007642e8
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 004102fd
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00410302
@@ -148,14 +148,14 @@ section .text
     PUSH 0x1                            ; 00410401
     PUSH 0x5785fb                       ; 00410403 | = "Bip01 R Hand"
     PUSH EBX                            ; 00410408
-    MOV [0x0076431c],EAX                ; 00410409 | DAT_0076431c
+    MOV [0x0076431c],EAX                ; 00410409 | g_INT_0076431c
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0041040e
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00410413
     PUSH 0x1                            ; 00410416
     PUSH 0x578608                       ; 00410418 | = "Bip01 Spine2"
     PUSH EBX                            ; 0041041d
-    MOV [0x00764320],EAX                ; 0041041e | DAT_00764320
+    MOV [0x00764320],EAX                ; 0041041e | g_INT_00764320
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 00410423
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00410428
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00410452
     MOV dword ptr [ESI + 0x1fb14],0x0   ; 00410455
-    PUSH 0x76436c                       ; 0041045f | DAT_0076436c
+    PUSH 0x76436c                       ; 0041045f | g_CKeyFramedModelInstanceInstance
     MOV dword ptr [ESI + 0x25bc],EAX    ; 00410464
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0041046a
         ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)

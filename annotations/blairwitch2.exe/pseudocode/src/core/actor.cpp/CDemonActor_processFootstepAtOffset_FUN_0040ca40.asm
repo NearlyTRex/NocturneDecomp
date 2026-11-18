@@ -9,8 +9,8 @@
 ; float            Stack[0xc]:4   volume
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005caeda
-;   undefined4 DAT_005caede
+;   float g_FLOAT_005caeda = 10000
+;   double g_DOUBLE_005caede = -1
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.ground_type
@@ -19,10 +19,10 @@
 ;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
-;   core_setcolid.cpp_FUN_00534ea0
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EBX                            ; 0040ca4f
     LEA ESI,[ESP + 0x14]                ; 0040ca50
     LEA EDI,[ESP + 0x2c]                ; 0040ca54
-    CALL core_actor.cpp_FUN_00408d70    ; 0040ca58
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0040ca58
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x14]                ; 0040ca5d
     ADD ESP,0x8                         ; 0040ca61
     MOVSD ES:EDI,ESI                    ; 0040ca64
@@ -68,7 +68,7 @@ section .text
     FSUB float ptr [ESP + 0x8]          ; 0040ca97
     FMUL ST0                            ; 0040ca9b
     FADDP                               ; 0040ca9d
-    FCOMP float ptr [0x005caeda]        ; 0040ca9f | DAT_005caeda
+    FCOMP float ptr [0x005caeda]        ; 0040ca9f | g_FLOAT_005caeda
     FNSTSW AX                           ; 0040caa5
     SAHF                                ; 0040caa7
     JBE 0x0040cab3                      ; 0040caa8
@@ -91,8 +91,8 @@ section .text
     PUSH EAX                            ; 0040cac9
     MOV ESI,dword ptr [0x0061b5a8]      ; 0040caca | g_CDemonSetPtr
     PUSH ESI                            ; 0040cad0 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00534ea0 ; 0040cad1
-        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00534ea0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 ; 0040cad1
+        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x50],EAX      ; 0040cad6
     FLD float ptr [ESP + 0x50]          ; 0040cada
     ADD ESP,0xc                         ; 0040cade
@@ -103,8 +103,8 @@ section .text
     PUSH EAX                            ; 0040caec | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x3c]         ; 0040caed
     MOV ESI,dword ptr [EAX + 0x14d134]  ; 0040caf1 | g_CDemonSetInstance.ground_type
-    CALL core_setcolid.cpp_FUN_00534ea0 ; 0040caf7
-        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00534ea0()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0 ; 0040caf7
+        ;   XREF to: 00534ea0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x50],EAX      ; 0040cafc
     FLD float ptr [ESP + 0x50]          ; 0040cb00
     ADD ESP,0xc                         ; 0040cb04
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 00537e00 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00537e00(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040cb17
     FLD float ptr [ESP + 0x34]          ; 0040cb1a
-    FADD double ptr [0x005caede]        ; 0040cb1e | DAT_005caede
+    FADD double ptr [0x005caede]        ; 0040cb1e | g_DOUBLE_005caede
     FLD float ptr [ESP + 0x30]          ; 0040cb24
     FCOMPP                              ; 0040cb28
     FNSTSW AX                           ; 0040cb2a

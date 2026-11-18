@@ -9,18 +9,18 @@
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[19]:
+; XREF[21]:
 ;   core_doc.cpp_CDoc_canDoHeroAction_FUN_0045d0c0 at 0045d19a
+;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_004568e0 at 00456be5
+;   core_doc.cpp_CDoc_handleFireButton_FUN_0045d2c0 at 0045d3ca
+;   core_doc.cpp_CDoc_isLanternToggleBlocked_FUN_0045df30 at 0045df89
 ;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 004559c6
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459c5c
-;   core_doc.cpp_FUN_004568e0 at 00456be5
-;   core_doc.cpp_FUN_004583f0 at 0045840f
-;   core_doc.cpp_FUN_0045bdc0 at 0045c253
-;   core_doc.cpp_FUN_0045d2c0 at 0045d3ca
-;   core_doc.cpp_FUN_0045df30 at 0045df89
-;   core_scat.cpp_CScat_renderOpaque_FUN_0051fa90 at 0051faed
-;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e708
-;   ... and 9 more
+;   core_doc.cpp_CDoc_tryClimbLadder_FUN_004583f0 at 0045840f
+;   core_doc.cpp_CDoc_tryDescendLadder_FUN_00458930 at 0045894f
+;   core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80 at 00458eb8
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 at 0045c253
+;   ... and 11 more
 ;
 ; *****************************************************************************
 

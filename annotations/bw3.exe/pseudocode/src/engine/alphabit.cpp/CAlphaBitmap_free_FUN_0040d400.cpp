@@ -10,17 +10,17 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap *th
 
 {
   if (this_ptr->raw != (char *)0x0) {
-    FUN_005a3770(this_ptr->raw);
+    debugFree(this_ptr->raw);
     this_ptr->raw = (char *)0x0;
   }
   if (this_ptr->opa != (char *)0x0) {
-    FUN_005a3770(this_ptr->opa);
+    debugFree(this_ptr->opa);
     this_ptr->opa = (char *)0x0;
   }
   if (this_ptr->act == (uint *)0x0) {
     return;
   }
-  FUN_005a3770(this_ptr->act);
+  debugFree(this_ptr->act);
   this_ptr->act = (uint *)0x0;
   return;
 }

@@ -26,7 +26,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
-;   undefined4 DAT_02ddf564
+;   int g_FlipPending
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
 
     PUSH EBP                            ; 00553520
         ;   Label: wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
-    CMP dword ptr [0x02ddf56c],0x0      ; 00553521 | DAT_02ddf56c
+    CMP dword ptr [0x02ddf56c],0x0      ; 00553521 | g_Display24BitFallback
     JNZ 0x005535ea                      ; 00553528
         ;   XREF to: 005535ea (CONDITIONAL_JUMP)  ; LAB_005535ea
     MOV ECX,dword ptr [0x01c02594]      ; 0055352e | g_UseExternalRenderer
@@ -97,14 +97,14 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005535d6
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005535db
-    MOV dword ptr [0x02ddf564],0x1      ; 005535de | DAT_02ddf564
+    MOV dword ptr [0x02ddf564],0x1      ; 005535de | g_FlipPending
         ;   Label: LAB_005535de
     POP ESI                             ; 005535e8
     POP EDI                             ; 005535e9
     POP EBP                             ; 005535ea
         ;   Label: LAB_005535ea
     RET                                 ; 005535eb
-    MOV dword ptr [0x02ddf564],0x1      ; 005535ec | DAT_02ddf564
+    MOV dword ptr [0x02ddf564],0x1      ; 005535ec | g_FlipPending
         ;   Label: LAB_005535ec
     POP EBP                             ; 005535f6
     RET                                 ; 005535f7

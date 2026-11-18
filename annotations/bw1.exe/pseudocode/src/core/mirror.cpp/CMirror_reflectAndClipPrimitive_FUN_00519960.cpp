@@ -6,73 +6,77 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00519960(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive)
 
 {
   SMRGLHeaderPrimitive *pSVar1;
-  int *piVar2;
-  float *pfVar3;
-  int iVar4;
-  SMRGLHeaderPrimitive *pSVar5;
-  int iVar6;
-  float *local_14;
+  SRenderVertex *pSVar2;
+  CVector3f *pCVar3;
+  int *piVar4;
+  int iVar5;
+  SMRGLHeaderPrimitive *pSVar6;
+  int iVar7;
+  CVector3f *local_14;
   
-  _DAT_01d2c5d0 = (primitive->base).count;
-  iVar4 = 0;
-  if (0 < _DAT_01d2c5d0) {
-    pfVar3 = (float *)&DAT_01d2c5d4;
-    pSVar5 = primitive;
+  g_MirrorInputVertexCount = (primitive->base).count;
+  iVar5 = 0;
+  if (0 < g_MirrorInputVertexCount) {
+    pCVar3 = g_MirrorInputVertices;
+    pSVar6 = primitive;
     do {
-      pSVar1 = pSVar5 + 1;
-      pSVar5 = (SMRGLHeaderPrimitive *)&(pSVar5->base).count;
-      piVar2 = (int *)(*DAT_00612560 + (pSVar1->base).type * 0x30);
-      iVar4 = iVar4 + 1;
-      *pfVar3 = (float)*piVar2 * _DAT_00603ce8;
-      pfVar3[1] = (float)piVar2[1] * _DAT_00603ce8;
-      pfVar3[2] = (float)piVar2[2] * _DAT_00603ce8;
-      pfVar3 = pfVar3 + 3;
-    } while (iVar4 < (primitive->base).count);
+      pSVar1 = pSVar6 + 1;
+      pSVar6 = (SMRGLHeaderPrimitive *)&(pSVar6->base).count;
+      pSVar2 = g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr + (pSVar1->base).type;
+      iVar5 = iVar5 + 1;
+      pCVar3->x = (float)(pSVar2->projected_vertex).transformed_x * 0.00390625f;
+      pCVar3->y = (float)(pSVar2->projected_vertex).transformed_y * 0.00390625f;
+      pCVar3->z = (float)(pSVar2->projected_vertex).transformed_z * 0.00390625f;
+      pCVar3 = pCVar3 + 1;
+    } while (iVar5 < (primitive->base).count);
   }
   core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-            (this_ptr->clip_planes,(CVector3f *)&DAT_01d2c5d4,_DAT_01d2c5d0,
-             (CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754);
-  if ((((2 < _DAT_01d2c754) &&
+            (this_ptr->clip_planes,g_MirrorInputVertices,g_MirrorInputVertexCount,
+             g_MirrorOutputVertices,&g_MirrorOutputVertexCount);
+  if ((((2 < g_MirrorOutputVertexCount) &&
        (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                  (this_ptr->clip_planes + 1,(CVector3f *)&DAT_01d2c758,_DAT_01d2c754,
-                   (CVector3f *)&DAT_01d2c5d4,(int *)&DAT_01d2c5d0), 2 < _DAT_01d2c5d0)) &&
-      (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                 (this_ptr->clip_planes + 2,(CVector3f *)&DAT_01d2c5d4,_DAT_01d2c5d0,
-                  (CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754), 2 < _DAT_01d2c754)) &&
+                  (this_ptr->clip_planes + 1,g_MirrorOutputVertices,g_MirrorOutputVertexCount,
+                   g_MirrorInputVertices,&g_MirrorInputVertexCount), 2 < g_MirrorInputVertexCount))
+      && (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
+                    (this_ptr->clip_planes + 2,g_MirrorInputVertices,g_MirrorInputVertexCount,
+                     g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
+         2 < g_MirrorOutputVertexCount)) &&
      ((core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                 (this_ptr->clip_planes + 3,(CVector3f *)&DAT_01d2c758,_DAT_01d2c754,
-                  (CVector3f *)&DAT_01d2c5d4,(int *)&DAT_01d2c5d0), 2 < _DAT_01d2c5d0 &&
+                 (this_ptr->clip_planes + 3,g_MirrorOutputVertices,g_MirrorOutputVertexCount,
+                  g_MirrorInputVertices,&g_MirrorInputVertexCount), 2 < g_MirrorInputVertexCount &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0
-                 (this_ptr->clip_planes + 4,(CVector3f *)&DAT_01d2c5d4,_DAT_01d2c5d0,
-                  (CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754), 2 < _DAT_01d2c754)))) {
-    (this_ptr->clip_primitive).base.base.count = _DAT_01d2c754;
+                 (this_ptr->clip_planes + 4,g_MirrorInputVertices,g_MirrorInputVertexCount,
+                  g_MirrorOutputVertices,&g_MirrorOutputVertexCount), 2 < g_MirrorOutputVertexCount)
+      ))) {
+    (this_ptr->clip_primitive).base.base.count = g_MirrorOutputVertexCount;
     (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
     (this_ptr->clip_primitive).base.surface_normal.B = (primitive->surface_normal).B;
     (this_ptr->clip_primitive).base.surface_normal.C = (primitive->surface_normal).C;
     (this_ptr->clip_primitive).base.surface_normal.D = (primitive->surface_normal).D;
-    iVar4 = 0;
-    if (0 < _DAT_01d2c754) {
-      local_14 = (float *)&DAT_01d2c758;
-      iVar6 = 0xea000;
+    iVar5 = 0;
+    if (0 < g_MirrorOutputVertexCount) {
+      local_14 = g_MirrorOutputVertices;
+      iVar7 = 0xea000;
       do {
-        piVar2 = (int *)(*DAT_00612560 + iVar6);
-        *piVar2 = (int)ROUND(*local_14 * _DAT_00603ce0);
-        piVar2[1] = (int)ROUND(local_14[1] * _DAT_00603ce0);
-        piVar2[2] = (int)ROUND(local_14[2] * _DAT_00603ce0);
-        *(uint *)(iVar6 + 0x10 + *DAT_00612560) = 0xffffffff;
-        (this_ptr->clip_primitive).vertices[0] = iVar4 + 0x4e00;
-        engine_matrix_c_projectCachedPoint_FUN_00507b30(iVar4 + 0x4e00);
-        iVar4 = iVar4 + 1;
-        iVar6 = iVar6 + 0x30;
-        local_14 = local_14 + 3;
+        piVar4 = (int *)((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).
+                               transformed_x + iVar7);
+        *piVar4 = (int)ROUND(local_14->x * 256.0f);
+        piVar4[1] = (int)ROUND(local_14->y * 256.0f);
+        piVar4[2] = (int)ROUND(local_14->z * 256.0f);
+        *(uint *)
+         ((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).screen_x +
+         iVar7) = 0xffffffff;
+        (this_ptr->clip_primitive).vertices[0] = iVar5 + 0x4e00;
+        engine_matrix_c_projectCachedPoint_FUN_00507b30(iVar5 + 0x4e00);
+        iVar5 = iVar5 + 1;
+        iVar7 = iVar7 + 0x30;
+        local_14 = local_14 + 1;
         this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
-      } while (iVar4 < _DAT_01d2c754);
+      } while (iVar5 < g_MirrorOutputVertexCount);
     }
     return 1;
   }

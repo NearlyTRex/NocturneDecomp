@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00516b90(CSimBox *this_ptr)
 
 {
-  return &g_CSimBoxActorType_02671914;
+  return &g_CSimBoxClassInfo;
 }

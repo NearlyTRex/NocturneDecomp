@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_xform_cpp_slerpQuaternion_FUN_00585b20(float *param_1,float *param_2,float param_3)
+; CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_00585b20(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat1_in
+; CQuaternion4f *  Stack[0x8]:4   quat2_in
+; float            Stack[0xc]:4   t
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined        Stack[-0x5c]:1  local_5c
@@ -23,16 +27,16 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417bd3
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000 at 004330b9
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 0044316c
-;   core_course.cpp_FUN_00444b70 at 00444d0a
+;   core_course.cpp_CCourse_interpolate_FUN_00444b70 at 00444d0a
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00511340 at 00511456
+;   core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10 at 0051efed
 ;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051ea2d
-;   core_prye.cpp_FUN_0051ee10 at 0051efed
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0054d8f0 at 0054d9a2
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90 at 0054cdba
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d81a3
+;   float g_FLOAT_005d81a3 = 0.9999900
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_005a5cc1
@@ -94,7 +98,7 @@ section .text
     FLD float ptr [ESP]                 ; 00585b9f
     FXCH                                ; 00585ba2
     FSTP float ptr [ESP + 0x48]         ; 00585ba4
-    FCOMP float ptr [0x005d81a3]        ; 00585ba8 | DAT_005d81a3
+    FCOMP float ptr [0x005d81a3]        ; 00585ba8 | g_FLOAT_005d81a3
     FNSTSW AX                           ; 00585bae
     SAHF                                ; 00585bb0
     JBE 0x00585c88                      ; 00585bb1
@@ -192,7 +196,7 @@ section .text
     FLD ST2                             ; 00585c97
     FXCH                                ; 00585c99
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 00585c9b
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
     FSTP ST2                            ; 00585ca0
     FLD float ptr [ESP + 0x48]          ; 00585ca2
     FMUL ST2                            ; 00585ca6

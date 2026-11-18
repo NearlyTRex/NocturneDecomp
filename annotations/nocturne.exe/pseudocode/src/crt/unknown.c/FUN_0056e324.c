@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_0056e324(void)
 
 {
@@ -16,18 +14,18 @@ void FUN_0056e324(void)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < _DAT_02de5c14) {
+  if (0 < g_INT_02de5c14) {
     iVar2 = 0;
     do {
-      DeleteCriticalSection(*(LPCRITICAL_SECTION *)(iVar2 + (int)_DAT_02de5c18));
-      puVar1 = (uint *)(iVar2 + (int)_DAT_02de5c18);
+      DeleteCriticalSection(*(LPCRITICAL_SECTION *)(g_PTR_02de5c18 + iVar2));
+      puVar1 = (uint *)(g_PTR_02de5c18 + iVar2);
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
       free((void *)*puVar1);
-    } while (iVar3 < _DAT_02de5c14);
+    } while (iVar3 < g_INT_02de5c14);
   }
-  if (_DAT_02de5c18 != (void *)0x0) {
-    free(_DAT_02de5c18);
+  if (g_PTR_02de5c18 != (byte *)0x0) {
+    free(g_PTR_02de5c18);
   }
   return;
 }

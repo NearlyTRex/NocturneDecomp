@@ -58,7 +58,7 @@
     {
       "addr": "004b51e0",
       "from_addr": "004b520d",
-      "name": "core_game.cpp_FUN_004b51e0",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,12 +74,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e7860",
-      "from_addr": "004e78e3",
-      "name": "core_menu.cpp_FUN_004e7860",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004e80f0",
       "from_addr": "004e82a4",
       "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
@@ -89,6 +83,12 @@
       "addr": "004e7dc0",
       "from_addr": "004e7e25",
       "name": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7860",
+      "from_addr": "004e78e3",
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004e7860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,6 +116,24 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00486120",
+      "from_addr": "00486361",
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_00486120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486670",
+      "from_addr": "004866cd",
+      "name": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_00486670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d1a0",
+      "from_addr": "0047d1bf",
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0047d1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047f3e0",
       "from_addr": "0047f42c",
       "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0",
@@ -131,6 +149,24 @@
       "addr": "0047cfa0",
       "from_addr": "0047cfcb",
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480f00",
+      "from_addr": "00480f2c",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d0a0",
+      "from_addr": "0047d0cb",
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0047d0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047fa80",
+      "from_addr": "0047faa8",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -158,51 +194,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047b580",
-      "from_addr": "0047b59d",
-      "name": "shape_edittool.cpp_FUN_0047b580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047d0a0",
-      "from_addr": "0047d0cb",
-      "name": "shape_edittool.cpp_FUN_0047d0a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047d1a0",
-      "from_addr": "0047d1bf",
-      "name": "shape_edittool.cpp_FUN_0047d1a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047fa80",
-      "from_addr": "0047faa8",
-      "name": "shape_edittool.cpp_FUN_0047fa80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00480f00",
-      "from_addr": "00480f2c",
-      "name": "shape_edittool.cpp_FUN_00480f00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00486120",
-      "from_addr": "00486361",
-      "name": "shape_edittool.cpp_FUN_00486120",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00486580",
       "from_addr": "004865c8",
-      "name": "shape_edittool.cpp_FUN_00486580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00486670",
-      "from_addr": "004866cd",
-      "name": "shape_edittool.cpp_FUN_00486670",
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_00486580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -215,6 +209,12 @@
       "addr": "0047c8e0",
       "from_addr": "0047c912",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b580",
+      "from_addr": "0047b59d",
+      "name": "shape_edittool.cpp_initEditorFontMetrics_FUN_0047b580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -283,7 +283,7 @@
       {
         "call_addr": "0047faa8",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047fa80",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -294,7 +294,7 @@
       {
         "call_addr": "00486361",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00486120",
+        "caller": "shape_edittool.cpp_CEdButton_paint_FUN_00486120",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,7 +316,7 @@
       {
         "call_addr": "004865c8",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00486580",
+        "caller": "shape_edittool.cpp_calculateButtonHeight_FUN_00486580",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

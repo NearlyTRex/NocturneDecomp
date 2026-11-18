@@ -15,7 +15,7 @@
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined        Stack[-0x18]:1  local_18
 ;
-; XREF[49]:
+; XREF[50]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411948
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413301
 ;   core_bird.cpp_CBird_process_FUN_00415340 at 004153fb
@@ -25,13 +25,13 @@
 ;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004488e6
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a43d
 ;   core_doc.cpp_CDoc_aimLeftPistol_FUN_00473160 at 00473427
-;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 0047547e
-;   ... and 39 more
+;   core_doc.cpp_CDoc_autoAimAtThreat_FUN_004724a0 at 00472759
+;   ... and 40 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00568e30
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-;   core_xform.cpp_FUN_005b5080
+;   core_xform.cpp_transformVector3x4_FUN_005b5080
 ;
 ; *****************************************************************************
 
@@ -116,8 +116,8 @@ section .text
     PUSH EBP                            ; 0056910e
     LEA ESI,[ESP + 0x74]                ; 0056910f
     LEA EDI,[ESP + 0x80]                ; 00569113
-    CALL core_xform.cpp_FUN_005b5080    ; 0056911a
-        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5080()
+    CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0056911a
+        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x74]                ; 0056911f
     ADD ESP,0x8                         ; 00569123
     JMP 0x00569067                      ; 00569126

@@ -8,12 +8,12 @@
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4768
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141d4
-;   undefined1 DAT_006182d8
-;   undefined1 DAT_006182dc
-;   undefined1 DAT_006182e1
-;   undefined4 DAT_01c38b40
-;   undefined4 DAT_01c38b44
+;   uint g_CPUFamily = 0x5
+;   uchar g_CPUInfoFamily = \x00
+;   uchar g_CPUInfoIntelCPU = \x00
+;   uchar g_CPUInfoMMXSupported = \x00
+;   int g_MMXSupported
+;   int g_CPUModel
 ;
 ; Called Functions:
 ;   core_mmx.c_detectIntelProcessor_FUN_004fd4cc
@@ -30,13 +30,13 @@ section .text
     CALL core_mmx.c_detectMMXSupport_FUN_004fd579 ; 004fd496
         ;   XREF to: 004fd579 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectMMXSupport_FUN_004fd579()
     XOR EAX,EAX                         ; 004fd49b
-    MOV AL,[0x006182e1]                 ; 004fd49d | DAT_006182e1
-    MOV [0x01c38b40],EAX                ; 004fd4a2 | DAT_01c38b40
+    MOV AL,[0x006182e1]                 ; 004fd49d | g_CPUInfoMMXSupported
+    MOV [0x01c38b40],EAX                ; 004fd4a2 | g_MMXSupported
     XOR EAX,EAX                         ; 004fd4a7
-    MOV AL,[0x006182d8]                 ; 004fd4a9 | DAT_006182d8
-    MOV [0x006141d4],EAX                ; 004fd4ae | DAT_006141d4
-    MOVZX EAX,byte ptr [0x006182dc]     ; 004fd4b3 | DAT_006182dc
-    MOV [0x01c38b44],EAX                ; 004fd4ba | DAT_01c38b44
+    MOV AL,[0x006182d8]                 ; 004fd4a9 | g_CPUInfoFamily
+    MOV [0x006141d4],EAX                ; 004fd4ae | g_CPUFamily
+    MOVZX EAX,byte ptr [0x006182dc]     ; 004fd4b3 | g_CPUInfoIntelCPU
+    MOV [0x01c38b44],EAX                ; 004fd4ba | g_CPUModel
     POP EAX                             ; 004fd4bf
     RET                                 ; 004fd4c0
 

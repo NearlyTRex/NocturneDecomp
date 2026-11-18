@@ -32,20 +32,20 @@
 ;   core_colonel.cpp_CColonel_process_FUN_00444550 at 004449c7
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c78d6
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e96f9
-;   core_hero.cpp_FUN_004eca10 at 004eca67
+;   core_hero.cpp_CHero_findHeroAction_FUN_004eca10 at 004eca67
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f141e
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 005912f7
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005936e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4835
-;   undefined4 DAT_005e483d
+;   double g_DOUBLE_005e4835 = 4
+;   double g_DOUBLE_005e483d = 0.349065850388889
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     PUSH EBX                            ; 004eb268
     LEA ESI,[ESP + 0x50]                ; 004eb269
     MOV dword ptr [ESP + 0x30],EDX      ; 004eb26d
-    CALL core_actor.cpp_FUN_00408b40    ; 004eb271
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004eb271
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 004eb276
     XOR EAX,EAX                         ; 004eb279
     XOR EDX,EDX                         ; 004eb27b
@@ -129,7 +129,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eb30c
     FLD float ptr [ESP + 0x10]          ; 004eb30d
     FABS                                ; 004eb311
-    FCOMP double ptr [0x005e4835]       ; 004eb313 | DAT_005e4835
+    FCOMP double ptr [0x005e4835]       ; 004eb313 | g_DOUBLE_005e4835
     FNSTSW AX                           ; 004eb319
     SAHF                                ; 004eb31b
     JA 0x004eb2bd                       ; 004eb31c
@@ -153,8 +153,8 @@ section .text
     PUSH EBX                            ; 004eb34a
     LEA ESI,[ESP + 0x38]                ; 004eb34b
     LEA EDI,[ESP + 0x44]                ; 004eb34f
-    CALL core_actor.cpp_FUN_00408b00    ; 004eb353
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 004eb353
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x38]                ; 004eb358
     ADD ESP,0x8                         ; 004eb35c
     LEA EAX,[ESP + 0x3c]                ; 004eb35f
@@ -165,7 +165,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 004eb367
     LEA EDI,[ESP + 0x58]                ; 004eb36b
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004eb36f
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(CVector3f * in_direction_vector, CVector3f * out_euler_angles)
     LEA ESI,[ESP + 0x4]                 ; 004eb374
     ADD ESP,0x4                         ; 004eb378
     MOVSD ES:EDI,ESI                    ; 004eb37b
@@ -173,7 +173,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eb37d
     FLD float ptr [ESP + 0x58]          ; 004eb37e
     FABS                                ; 004eb382
-    FCOMP double ptr [0x005e483d]       ; 004eb384 | DAT_005e483d
+    FCOMP double ptr [0x005e483d]       ; 004eb384 | g_DOUBLE_005e483d
     FNSTSW AX                           ; 004eb38a
     SAHF                                ; 004eb38c
     JA 0x004eb2bd                       ; 004eb38d

@@ -6,24 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004cebf0(CGore *this_ptr)
 
 {
   CBloodPool *pCVar1;
   int iVar2;
   
-  iVar2 = _DAT_01d4a93c + 1;
-  pCVar1 = (CBloodPool *)(_DAT_01d4a93c * 0x2c + 0x1d4a944);
+  iVar2 = g_BloodPoolIndex + 1;
+  pCVar1 = g_CBloodPool_ARRAY_01d4a944 + g_BloodPoolIndex;
   if (0x1f < iVar2) {
     iVar2 = 0;
   }
-  if (0x1f < _DAT_01d4a940) {
-    _DAT_01d4a93c = iVar2;
+  if (0x1f < g_BloodPoolCount) {
+    g_BloodPoolIndex = iVar2;
     return pCVar1;
   }
-  _DAT_01d4a940 = _DAT_01d4a940 + 1;
-  _DAT_01d4a93c = iVar2;
+  g_BloodPoolCount = g_BloodPoolCount + 1;
+  g_BloodPoolIndex = iVar2;
   return pCVar1;
 }

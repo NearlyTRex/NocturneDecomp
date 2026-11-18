@@ -94,19 +94,17 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
     this_ptr->beam_length = (this_ptr->base).bolt_velocity * fVar2;
     pCStack_18 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSetPtr->collision_actor,g_CCharacterActorType_00765a60.name_hash
-                           );
+                           (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((pCStack_18 != (CCharacter *)0x0) &&
        (EVar4 = (*(((pCStack_18->base).vtable._uc)->_uc).getDeathState)(pCStack_18), 0 < (int)EVar4)
        ) {
       uStack_14 = 0;
     }
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash);
+                       (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
     this_ptr_02 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,g_CTriggerActorType_02dd1084.name_hash)
-    ;
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
     pCStack_28 = this_ptr_02;
     if (pCStack_18 != (CCharacter *)0x0) {
       iVar6 = (*(((pCStack_18->base).vtable._uc)->_uc).isInvulnerable)(pCStack_18);

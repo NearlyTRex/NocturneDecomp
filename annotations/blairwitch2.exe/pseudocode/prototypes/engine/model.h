@@ -5,22 +5,26 @@
 // Function prototypes for engine/model.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_model.c_byteswapMRGLData_FUN_005006a0
+// Address: 005006a0
+void __cdecl byteswapMRGLData(SMRGLHeaderExtended *mrgl_data,int data_size);
+
 // Original: engine_model.c_loadModelFile_FUN_00500720
 // Address: 00500720
 SMRGLHeaderExtended * __cdecl loadModelFile(char *filename);
 
 // Original: engine_model.c_freeMRGLData_FUN_005008f0
 // Address: 005008f0
-void freeMRGLData(SMRGLHeaderExtended *param_1);
+void __cdecl freeMRGLData(SMRGLHeaderExtended *mrgl_data);
 
-// Original: engine_model.c_FUN_00500970
+// Original: engine_model.c_getMRGLBounds_FUN_00500970
 // Address: 00500970
-uint * FUN_00500970(int *param_1);
+SMRGLModelBounds * __stack_esi getMRGLBounds(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 
-// Original: engine_model.c_FUN_00500f30
+// Original: engine_model.c_getMRGLSize_FUN_00500f30
 // Address: 00500f30
-int __cdecl FUN_00500f30(SMRGLHeaderExtended *header);
+int __cdecl getMRGLSize(SMRGLHeaderExtended *header);
 
-// Original: engine_model.c_FUN_005011a0
+// Original: engine_model.c_loadModelChunk_FUN_005011a0
 // Address: 005011a0
-SMRGLHeaderExtended * __cdecl FUN_005011a0(char *filename,int model_size);
+SMRGLHeaderExtended * __cdecl loadModelChunk(char *filename,int model_size);

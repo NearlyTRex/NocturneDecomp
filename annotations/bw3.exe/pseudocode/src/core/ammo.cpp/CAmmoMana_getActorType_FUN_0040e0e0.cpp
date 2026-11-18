@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_ammo_cpp_CAmmoMana_getActorType_FUN_0040e0e0(CAmmoMana *this_ptr)
 
 {
-  return (CDemonActorType *)&DAT_007dfd28;
+  return &g_CDemonActorType_007dfd28;
 }

@@ -1,0 +1,104 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a1b60",
+    "address_range": [
+      [
+        "004a1b60",
+        "004a1bad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flashlit.cpp_findSectionForPage_FUN_004a1b60",
+    "signature": "int __cdecl core_flashlit_cpp_findSectionForPage_FUN_004a1b60(int page)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01cab9f0",
+      "name": "g_INT_01cab9f0",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.607142857142857,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 25,
+      "INT_ADD": 12,
+      "INT_AND": 17,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 17,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 129
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ba440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a8080",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "page",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

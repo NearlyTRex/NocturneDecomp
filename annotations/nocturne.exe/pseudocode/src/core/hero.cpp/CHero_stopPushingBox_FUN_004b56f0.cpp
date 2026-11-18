@@ -16,7 +16,7 @@ void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004b56f0(CHero *this_ptr)
     return;
   }
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (&this_ptr->pushed_object->base,g_CBoxActorActorType_00764800.name_hash);
+                     (&this_ptr->pushed_object->base,g_CBoxActorClassInfo.name_hash);
   if (this_ptr == *(CHero **)pCVar1[2].create_event) {
     sfx_handle = *(uint *)(pCVar1[2].create_event + 8);
     pCVar1[2].create_event[0] = '\0';

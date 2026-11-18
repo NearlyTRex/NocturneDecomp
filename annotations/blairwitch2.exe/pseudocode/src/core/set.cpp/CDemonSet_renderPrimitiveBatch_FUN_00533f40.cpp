@@ -19,8 +19,8 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40(CDemonSet 
   
   if (g_CGamePtr->suppress_set_geometry == 0) {
     if ((g_CGamePtr->render_mode != 0) &&
-       (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),
-       iVar2 == 0)) {
+       (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+                          (g_CDemonRenderer_PTR_0060b280), iVar2 == 0)) {
       core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_005337e0
                 (this_ptr,&primitive_array->base,primitive_count,0xffff);
       return;
@@ -40,11 +40,12 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40(CDemonSet 
         pSVar1 = pSVar1 + 1;
         iVar2 = iVar2 + 1;
         engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750
-                  (DAT_0060b280,&local_38,core_dcamera_cpp_renderFlatColorScanline_FUN_0043fb20);
+                  (g_CDemonRenderer_PTR_0060b280,&local_38,
+                   core_dcamera_cpp_renderFlatColorScanline_FUN_0043fb20);
       } while (iVar2 < primitive_count);
     }
     engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_0046bd10
-              (DAT_0060b280,primitive_array,primitive_count,render_flags);
+              (g_CDemonRenderer_PTR_0060b280,primitive_array,primitive_count,render_flags);
   }
   return;
 }

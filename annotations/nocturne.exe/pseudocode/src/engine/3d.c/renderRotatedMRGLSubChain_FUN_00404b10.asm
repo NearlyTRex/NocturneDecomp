@@ -38,9 +38,9 @@
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
-;   undefined4 DAT_01c039dc
-;   undefined4 DAT_01c039e0
-;   undefined4 DAT_01c039e4
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix.m[0].y
 ;   undefined4 g_TransformMatrix.m[0].z
@@ -72,11 +72,11 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 00404b25
     MOV EAX,[0x01c039c0]                ; 00404b29 | g_RelativeZ
     MOV dword ptr [ESP + 0x8],EAX       ; 00404b2e
-    MOV EAX,[0x01c039dc]                ; 00404b32 | DAT_01c039dc
+    MOV EAX,[0x01c039dc]                ; 00404b32 | g_LightDirectionX
     MOV dword ptr [ESP + 0x40],EAX      ; 00404b37
-    MOV EAX,[0x01c039e0]                ; 00404b3b | DAT_01c039e0
+    MOV EAX,[0x01c039e0]                ; 00404b3b | g_LightDirectionY
     MOV dword ptr [ESP + 0x30],EAX      ; 00404b40
-    MOV EAX,[0x01c039e4]                ; 00404b44 | DAT_01c039e4
+    MOV EAX,[0x01c039e4]                ; 00404b44 | g_LightDirectionZ
     MOV dword ptr [ESP + 0x34],EAX      ; 00404b49
     MOV EAX,[0x01c039e8]                ; 00404b4d | g_TransformMatrix
     MOV dword ptr [ESP + 0x28],EAX      ; 00404b52
@@ -308,7 +308,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00404e2a
     ADD EDX,EAX                         ; 00404e2d
     MOV EAX,dword ptr [ESP + 0x60]      ; 00404e2f
-    MOV dword ptr [0x01c039dc],EDX      ; 00404e33 | DAT_01c039dc
+    MOV dword ptr [0x01c039dc],EDX      ; 00404e33 | g_LightDirectionX
     MOV EDX,dword ptr [ESP + 0x40]      ; 00404e39
     IMUL EDX                            ; 00404e3d
     SHRD EAX,EDX,0x10                   ; 00404e3f
@@ -326,7 +326,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00404e62
     MOV EDX,dword ptr [ESP]             ; 00404e66
     ADD EDX,EAX                         ; 00404e69
-    MOV dword ptr [0x01c039e0],EDX      ; 00404e6b | DAT_01c039e0
+    MOV dword ptr [0x01c039e0],EDX      ; 00404e6b | g_LightDirectionY
     MOV EDX,dword ptr [ESP + 0x40]      ; 00404e71
     MOV EAX,EBP                         ; 00404e75
     IMUL EDX                            ; 00404e77
@@ -346,7 +346,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00404ea2
     ADD EDX,EAX                         ; 00404ea5
     MOV EAX,dword ptr [ESP + 0x28]      ; 00404ea7
-    MOV dword ptr [0x01c039e4],EDX      ; 00404eab | DAT_01c039e4
+    MOV dword ptr [0x01c039e4],EDX      ; 00404eab | g_LightDirectionZ
     MOV EDX,dword ptr [ESP + 0x50]      ; 00404eb1
     IMUL EDX                            ; 00404eb5
     SHRD EAX,EDX,0x10                   ; 00404eb7
@@ -528,11 +528,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00405103
     MOV [0x01c039c0],EAX                ; 00405107 | g_RelativeZ
     MOV EAX,dword ptr [ESP + 0x40]      ; 0040510c
-    MOV [0x01c039dc],EAX                ; 00405110 | DAT_01c039dc
+    MOV [0x01c039dc],EAX                ; 00405110 | g_LightDirectionX
     MOV EAX,dword ptr [ESP + 0x30]      ; 00405115
-    MOV [0x01c039e0],EAX                ; 00405119 | DAT_01c039e0
+    MOV [0x01c039e0],EAX                ; 00405119 | g_LightDirectionY
     MOV EAX,dword ptr [ESP + 0x34]      ; 0040511e
-    MOV [0x01c039e4],EAX                ; 00405122 | DAT_01c039e4
+    MOV [0x01c039e4],EAX                ; 00405122 | g_LightDirectionZ
     MOV EAX,dword ptr [ESP + 0x80]      ; 00405127
     ADD EAX,0x20                        ; 0040512e
     ADD ESP,0x6c                        ; 00405131

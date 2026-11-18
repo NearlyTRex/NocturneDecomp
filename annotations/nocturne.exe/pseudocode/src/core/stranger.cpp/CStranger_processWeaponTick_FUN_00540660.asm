@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a2704 = 10
-;   undefined4 g_CDynamiteActorType_01bca088.name_hash
+;   undefined4 g_CDynamiteClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -42,7 +42,7 @@ section .text
     PUSH EDX                            ; 0054067f
     CALL dword ptr [ESI + 0x4]          ; 00540680
     ADD ESP,0x8                         ; 00540683
-    MOV ECX,dword ptr [0x01bca0c0]      ; 00540686 | g_CDynamiteActorType_01bca088.name_hash
+    MOV ECX,dword ptr [0x01bca0c0]      ; 00540686 | g_CDynamiteClassInfo.name_hash
     PUSH ECX                            ; 0054068c
     MOV ESI,dword ptr [EBX + 0x1fa94]   ; 0054068d
     PUSH ESI                            ; 00540693

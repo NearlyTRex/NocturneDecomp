@@ -58,7 +58,7 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(CStake *this_ptr,CVector3f 
   }
   this_ptr->active = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     (&g_CKeyFramedModelInstance_01c08d48);
+                     (&g_FireEffectFlamingStakeModel);
   local_8c = (pCVar1->bounds).min.x;
   local_88 = (pCVar1->bounds).min.y;
   local_84 = (pCVar1->bounds).min.z;

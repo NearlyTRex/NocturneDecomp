@@ -12,11 +12,11 @@
 ; int *            Stack[0x18]:4   out_available_memory
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004ce580 at 004cec75
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004cec75
 ;
 ; Referenced Globals:
 ;   IMAGE_DOS_HEADER IMAGE_DOS_HEADER_00400000
-;   undefined4 DAT_00623310
+;   int g_MaximumSoundMemoryBudget = 0x400000
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].is_user_sample
@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_0057474b
     JZ 0x0057475e                       ; 0057474d
         ;   XREF to: 0057475e (CONDITIONAL_JUMP)  ; LAB_0057475e
-    MOV EAX,[0x00623310]                ; 0057474f | DAT_00623310
+    MOV EAX,[0x00623310]                ; 0057474f | g_MaximumSoundMemoryBudget
     ADD EBX,ESI                         ; 00574754
     SUB EAX,EBX                         ; 00574756 | IMAGE_DOS_HEADER_00400000
     MOV dword ptr [EDI],EAX             ; 00574758 | IMAGE_DOS_HEADER_00400000

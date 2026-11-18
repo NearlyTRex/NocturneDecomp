@@ -20,7 +20,7 @@
 ;   engine_font.cpp_CBitFont_drawTextRight_FUN_004c2150 at 004c217f
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004c1dd0
+;   engine_font.cpp_CBitFont_drawText_FUN_004c1dd0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EDI                            ; 004c207c
     MOV EBP,dword ptr [ESP + 0x28]      ; 004c207d
     PUSH EBP                            ; 004c2081
-    CALL engine_font.cpp_FUN_004c1dd0   ; 004c2082
-        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004c1dd0 ; 004c2082
+        ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004c2087
     POP EBP                             ; 004c208a
     POP EDI                             ; 004c208b

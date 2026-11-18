@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gargoyle_cpp_CGargoyle_setup_FUN_004bfbe0(CGargoyle *this_ptr)
 
 {
@@ -20,39 +18,39 @@ void __cdecl core_gargoyle_cpp_CGargoyle_setup_FUN_004bfbe0(CGargoyle *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
-  _DAT_01cb8120 =
+  g_GargoyleIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
-  _DAT_01cb812c =
+  g_GargoyleIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L ForeArm",1);
-  _DAT_01cb8130 =
+  g_GargoyleIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R ForeArm",1);
-  _DAT_01cb8134 =
+  g_GargoyleIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01cb8138 =
+  g_GargoyleIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01cb813c =
+  g_GargoyleIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Foot",1);
-  _DAT_01cb8140 =
+  g_GargoyleIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Foot",1);
-  _DAT_01cb8124 =
+  g_GargoyleIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L Hand",1);
-  _DAT_01cb8128 =
+  g_GargoyleIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R Hand",1);
-  _DAT_01cb8144 =
+  g_GargoyleIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
-  _DAT_01cb8148 =
+  g_GargoyleIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine1",1);
-  _DAT_01cb814c =
+  g_GargoyleIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
-  _DAT_01cb8120 =
+  g_GargoyleIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Head",1);
-  _DAT_01cb8134 =
+  g_GargoyleIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 L UpperArm",1);
-  _DAT_01cb8138 =
+  g_GargoyleIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 R UpperArm",1);
-  _DAT_01cb8144 =
+  g_GargoyleIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
-  _DAT_01cb814c =
+  g_GargoyleIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100

@@ -23,13 +23,14 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
-    INT_00823a90 = (int)ROUND(ROUND((float)INT_00823a90 +
-                                    g_CGamePtr->delta_time_float * 8388608.0f));
+    g_EtherealUVScroll =
+         (int)ROUND(ROUND((float)g_EtherealUVScroll + g_CGamePtr->delta_time_float * 8388608.0f)
+                   );
   }
   iVar2 = rand();
-  INT_00823a94 = iVar2 % 6;
+  g_EtherealBoltFrame = iVar2 % 6;
   g_CDemonRendererPtr2->skip_uv_extraction = 1;
-  engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic_ARRAY_0066e6b0 + iVar2 % 6);
+  engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(g_EtherealBoltTextures + iVar2 % 6);
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(this_ptr_00,&local_1aac);
   core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
@@ -40,7 +41,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   iVar1 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,bounding_box);
   core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(this_ptr_00,iVar1);
   core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
-            (this_ptr_00,INT_00823a90,0);
+            (this_ptr_00,g_EtherealUVScroll,0);
   iVar1 = 0;
   do {
     pCVar1 = g_CDemonRendererPtr2;

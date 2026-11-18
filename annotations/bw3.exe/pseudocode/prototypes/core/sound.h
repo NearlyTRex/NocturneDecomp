@@ -25,21 +25,21 @@ void __cdecl CSound::findRandomSoundFile(CSound *this_ptr,char *out_result,char 
 // Address: 0055f020
 uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
 
-// Original: core_sound.cpp_FUN_0055f610
+// Original: core_sound.cpp_resetTrainSounds_FUN_0055f610
 // Address: 0055f610
-void FUN_0055f610(void);
+void __cdecl resetTrainSounds(void);
 
-// Original: core_sound.cpp_FUN_0055f6b0
+// Original: core_sound.cpp_processTrainSounds_FUN_0055f6b0
 // Address: 0055f6b0
-uint FUN_0055f6b0(void);
+void __cdecl processTrainSounds(void);
 
 // Original: core_sound.cpp_CSound_ctor_FUN_0055fc40
 // Address: 0055fc40
 CSound * __cdecl CSound::ctor(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0055fc60
+// Original: core_sound.cpp_CSound_findAllSoundFiles_FUN_0055fc60
 // Address: 0055fc60
-void __cdecl FUN_0055fc60(CSound *this_ptr);
+void __cdecl CSound::findAllSoundFiles(CSound *this_ptr);
 
 // Original: core_sound.cpp_shutdownSoundSystem_FUN_0055fcc0
 // Address: 0055fcc0
@@ -49,9 +49,9 @@ void __cdecl shutdownSoundSystem(void);
 // Address: 0055fcd0
 void __cdecl syncChannel3WithChannel0(void);
 
-// Original: core_sound.cpp_FUN_0055fd30
+// Original: core_sound.cpp_CSound_init_FUN_0055fd30
 // Address: 0055fd30
-void __cdecl FUN_0055fd30(CSound *this_ptr);
+void __cdecl CSound::init(CSound *this_ptr);
 
 // Original: core_sound.cpp_CSound_shutdown_FUN_0055fee0
 // Address: 0055fee0
@@ -105,13 +105,13 @@ void __cdecl CSound::killSound(CSound *this_ptr,uint sfx_handle);
 // Address: 00560b10
 float __cdecl CSound::getSoundDuration(CSound *this_ptr,char *sound_name);
 
-// Original: core_sound.cpp_FUN_00560be0
+// Original: core_sound.cpp_CSound_getSoundModeName_FUN_00560be0
 // Address: 00560be0
-undefined4 FUN_00560be0(void);
+char * __cdecl CSound::getSoundModeName(CSound *this_ptr,int sound_mode_index);
 
-// Original: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_00560c00
+// Original: core_sound.cpp_CSound_setReverb_FUN_00560c00
 // Address: 00560c00
-void __cdecl CSound::set3DListenerOrientRight(CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z);
+void __cdecl CSound::setReverb(CSound *this_ptr,float volume,float decay_time,float damping);
 
 // Original: core_sound.cpp_CSound_setReverbPreset_FUN_00560c30
 // Address: 00560c30

@@ -18,14 +18,14 @@
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0 at 0042a9ca
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e5f59
+;   float g_FLOAT_005e5f59 = -10
 ;   CWater* g_CWaterPtr = 02653790
 ;   undefined4 g_CWaterInstance.water_level_y
 ;   undefined4 g_CWaterActorClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     PUSH EAX                            ; 00538207
     LEA ESI,[ESP + 0x44]                ; 00538208
     LEA EDI,[ESP + 0x38]                ; 0053820c
-    CALL core_actor.cpp_FUN_00408de0    ; 00538210
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 00538210
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x44]                ; 00538215
     ADD ESP,0x8                         ; 00538219
     MOVSD ES:EDI,ESI                    ; 0053821c
@@ -116,7 +116,7 @@ section .text
     ADD ESP,0x4                         ; 0053823a
     MOVSD.REP ES:EDI,ESI                ; 0053823d
     FLD float ptr [ESP + 0x1c]          ; 0053823f
-    FADD float ptr [0x005e5f59]         ; 00538243 | DAT_005e5f59
+    FADD float ptr [0x005e5f59]         ; 00538243 | g_FLOAT_005e5f59
     FLD float ptr [ESP + 0x18]          ; 00538249
     FXCH                                ; 0053824d
     FSTP float ptr [ESP + 0x1c]         ; 0053824f

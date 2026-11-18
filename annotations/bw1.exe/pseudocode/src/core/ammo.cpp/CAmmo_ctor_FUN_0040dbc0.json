@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 93,
+    "complexity_score": 78,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 75
   },
@@ -44,7 +43,7 @@
     {
       "addr": "004f8b70",
       "from_addr": "004f8b94",
-      "name": "core_inv.cpp_FUN_004f8b70",
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -86,26 +85,26 @@
     },
     {
       "addr": "005d304a",
-      "name": "DAT_005d304a",
-      "type": "undefined1",
+      "name": "s_CGun_005d304a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d304b",
-      "name": "DAT_005d304b",
-      "type": "undefined1",
+      "name": "s_Gun_005d304a+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d304c",
-      "name": "DAT_005d304c",
-      "type": "undefined1",
+      "name": "s_un_005d304a+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d304d",
-      "name": "DAT_005d304d",
-      "type": "undefined1",
+      "name": "s_n_005d304a+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -220,7 +219,7 @@
       {
         "call_addr": "004f8b94",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f8b70",
+        "caller": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -309,14 +308,6 @@
       "severity": "mild",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005d304a",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005d304a;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

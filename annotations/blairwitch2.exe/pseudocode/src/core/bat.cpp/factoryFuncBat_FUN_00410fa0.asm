@@ -15,7 +15,7 @@ section .text
     PUSH 0x4e4                          ; 00410fa0
         ;   Label: core_bat.cpp_factoryFuncBat_FUN_00410fa0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00410fa5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 00410faa
     TEST EAX,EAX                        ; 00410fad
     JNZ 0x00410fb2                      ; 00410faf

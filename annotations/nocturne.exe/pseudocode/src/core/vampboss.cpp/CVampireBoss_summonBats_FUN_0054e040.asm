@@ -15,7 +15,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
-;   undefined4 g_CTVBatActorType_02dd110c.name_hash
+;   undefined4 g_CTVBatClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -46,7 +46,7 @@ section .text
     POP ESI                             ; 0054e06b
     POP EBX                             ; 0054e06c
     RET                                 ; 0054e06d
-    MOV ECX,dword ptr [0x02dd1144]      ; 0054e06e | g_CTVBatActorType_02dd110c.name_hash
+    MOV ECX,dword ptr [0x02dd1144]      ; 0054e06e | g_CTVBatClassInfo.name_hash
         ;   Label: LAB_0054e06e
     PUSH ECX                            ; 0054e074
     MOV EDI,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0054e075 | g_CDemonSetInstance.actors[0]

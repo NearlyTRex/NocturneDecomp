@@ -7,3 +7,7 @@
 // CStake[256]
 CStake g_StakePool[256] = {};
 
+// int
+int g_StakeActiveCount = {};
+int g_StakeAllocIndex = {};
+

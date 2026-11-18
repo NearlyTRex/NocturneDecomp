@@ -9,50 +9,46 @@
 void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *model_ptr,char *property_name)
 
 {
-  SPartInstanceData *pSVar1;
+  CVector3f *pCVar1;
   int iVar2;
   int iVar3;
-  CDeformableModelInstance *pCVar4;
   int local_14;
   
-  if (DAT_007bc038 != 1) {
-    FUN_005b8010(DAT_007bc034,"%s{ // %s\n",&DAT_00609590,property_name);
+  if (g_ActorReadingMode != 1) {
+    _fprintf(g_ActorDataFile,"%s{ // %s\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040b050(1);
-    FUN_005b8010(DAT_007bc034,"%s%d\n",&DAT_00609590,0x1e);
-    FUN_005b8010(DAT_007bc034,&DAT_005cac35,&DAT_00609590);
-    pCVar4 = model_ptr;
+    _fprintf(g_ActorDataFile,"%s%d\n");
+    _fprintf(g_ActorDataFile,"%s");
+    pCVar1 = model_ptr->bone_origins;
     do {
-      pSVar1 = &pCVar4->part_data;
-      pCVar4 = (CDeformableModelInstance *)&(pCVar4->base).current_motion_index;
-      FUN_005b8010(DAT_007bc034,&DAT_005cac38,pSVar1->visibility_flags[0]);
-    } while (pCVar4 != (CDeformableModelInstance *)&model_ptr->bone_origins[2].z);
-    FUN_005b8010(DAT_007bc034,&DAT_005cac3c);
-    iVar2 = 0;
-    FUN_005b8010(DAT_007bc034,&DAT_005cac3e,&DAT_00609590);
-    do {
-      pSVar1 = &model_ptr->part_data;
       model_ptr = (CDeformableModelInstance *)&(model_ptr->base).current_motion_index;
+      _fprintf(g_ActorDataFile,"%d ");
+    } while (model_ptr != (CDeformableModelInstance *)&pCVar1[2].z);
+    _fprintf(g_ActorDataFile,"\n");
+    iVar2 = 0;
+    _fprintf(g_ActorDataFile,"%s");
+    do {
       iVar2 = iVar2 + 1;
-      FUN_005b8010(DAT_007bc034,&DAT_005cac41,pSVar1->texture_set_indices[0]);
+      _fprintf(g_ActorDataFile,"%d ");
     } while (iVar2 < 0x1e);
-    FUN_005b8010(DAT_007bc034,&DAT_005cac45);
+    _fprintf(g_ActorDataFile,"\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040b050(-1);
-    FUN_005b8010(DAT_007bc034,&DAT_005cac47,&DAT_00609590);
+    _fprintf(g_ActorDataFile,"%s}\n");
     return;
   }
   do {
-    iVar2 = _fgetc(DAT_007bc034);
+    iVar2 = _fgetc(g_ActorDataFile);
     if (iVar2 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b380
                 ("part status opening brace",property_name);
     }
   } while (iVar2 != 10);
-  _fscanf(DAT_007bc034,&DAT_005cabbb);
+  _fscanf(g_ActorDataFile,"%d");
   core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00547440(model_ptr);
   iVar2 = 0;
   if (0 < local_14) {
     do {
-      iVar3 = _fscanf(DAT_007bc034,&DAT_005cabbe);
+      iVar3 = _fscanf(g_ActorDataFile,"%d");
       if (iVar3 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b380
                   ("part status entry","description");
@@ -60,12 +56,12 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInsta
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_14);
   }
-  _fscanf(DAT_007bc034,&DAT_005cabdf);
+  _fscanf(g_ActorDataFile," ");
   core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460(model_ptr);
   iVar2 = 0;
   if (0 < local_14) {
     do {
-      iVar3 = _fscanf(DAT_007bc034,&DAT_005cabe1);
+      iVar3 = _fscanf(g_ActorDataFile,"%d");
       if (iVar3 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b380
                   ("part texture entry","description");
@@ -73,9 +69,9 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInsta
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_14);
   }
-  _fscanf(DAT_007bc034,&DAT_005cac03);
+  _fscanf(g_ActorDataFile," ");
   do {
-    while (iVar2 = _fgetc(DAT_007bc034), -1 < iVar2) {
+    while (iVar2 = _fgetc(g_ActorDataFile), -1 < iVar2) {
       if (iVar2 == 10) {
         return;
       }

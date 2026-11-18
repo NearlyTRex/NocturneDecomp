@@ -9,10 +9,11 @@
 int __cdecl engine_matrix_c_calculate3DDistance_FUN_004e9920(int x1,int y1,int z1,int x2,int y2,int z2)
 
 {
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = SQRT((float10)(z1 - z2) * (float10)(z1 - z2) +
-               (float10)(y1 - y2) * (float10)(y1 - y2) + (float10)(x1 - x2) * (float10)(x1 - x2));
-  round();
-  return (int)ROUND(fVar1);
+  dVar1 = round
+                    (SQRT((double)(z1 - z2) * (double)(z1 - z2) +
+                          (double)(y1 - y2) * (double)(y1 - y2) +
+                          (double)(x1 - x2) * (double)(x1 - x2)));
+  return (int)ROUND(dVar1);
 }

@@ -15,7 +15,7 @@ void __cdecl ProcessExitHandlers(uchar min_priority,uchar max_priority)
   
   while( true ) {
     pRVar1 = &RuntimeHandlerEntry_005c26ce;
-    pRVar3 = &RuntimeHandlerEntry_005c26f8;
+    pRVar3 = &g_ExitHandlerTableEnd;
     bVar2 = min_priority;
     do {
       if ((pRVar1->status != '\x02') && (bVar2 <= pRVar1->priority)) {
@@ -23,8 +23,8 @@ void __cdecl ProcessExitHandlers(uchar min_priority,uchar max_priority)
         pRVar3 = pRVar1;
       }
       pRVar1 = pRVar1 + 1;
-    } while (pRVar1 < &RuntimeHandlerEntry_005c26f8);
-    if (pRVar3 == &RuntimeHandlerEntry_005c26f8) break;
+    } while (pRVar1 < &g_ExitHandlerTableEnd);
+    if (pRVar3 == &g_ExitHandlerTableEnd) break;
     if (pRVar3->priority <= max_priority) {
       invokeRuntimeHandler(&pRVar3->func);
     }

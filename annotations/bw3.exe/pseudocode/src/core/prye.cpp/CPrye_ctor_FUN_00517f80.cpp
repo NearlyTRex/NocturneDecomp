@@ -37,7 +37,7 @@ CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
   this_ptr_00->dual_wield_side = 0;
   this_ptr_00->melee_attack_index = 0;
   this_ptr_00->interact_blend = 0.0;
-  fVar1 = 0x41200000;
+  fVar1 = 10.0f;
   (this_ptr_00->carry_object_bbox).max.x = -1e+30;
   (this_ptr_00->carry_object_world_center).x = -1e+30;
   this_ptr_00->aim_speed_factor = fVar1;
@@ -48,7 +48,7 @@ CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
   (this_ptr_00->left_arm_aim).target_yaw = fVar1;
   (this_ptr_00->left_arm_aim).aim_yaw = fVar2;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            (&(this_ptr_00->base).base.model,(char *)0x5cca9f);
+            (&(this_ptr_00->base).base.model,"BWP3_PRYE.dfm");
   (this_ptr_00->base).base.layer_action_index = 0;
   this_ptr_00->weapon = (CWeapon *)0x0;
   this_ptr_00->turn_angle = 0.0;
@@ -92,11 +92,11 @@ CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
             ((CCharacter *)this_ptr_00,0xd,8,"draw_spearStab",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
-            ((CCharacter *)this_ptr_00,0xd,8,(char *)0x5ccbc6,1);
+            ((CCharacter *)this_ptr_00,0xd,8,"Melee1",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
-            ((CCharacter *)this_ptr_00,0xd,8,(char *)0x5ccbcd,1);
+            ((CCharacter *)this_ptr_00,0xd,8,"Melee2",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
-            ((CCharacter *)this_ptr_00,0xd,8,(char *)0x5ccbd4,1);
+            ((CCharacter *)this_ptr_00,0xd,8,"Melee3",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
             ((CCharacter *)this_ptr_00,0xd,8,"draw_spearOverheadswing",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
@@ -131,7 +131,8 @@ CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
             ((CCharacter *)this_ptr_00,0x11,0x11,"draw_vileThrow",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
             ((CCharacter *)this_ptr_00,0x12,0x12,"heal_shake",1);
-  core_cloth_cpp_CClothList_add_FUN_0043fa40(&(this_ptr_00->base).base.cloth_list,(char *)0x5ccd24);
+  core_cloth_cpp_CClothList_add_FUN_0043fa40
+            (&(this_ptr_00->base).base.cloth_list,"bwp3_prcth.cth");
   this_ptr_00->fall_velocity_snapshot = 0.0;
   return this_ptr_00;
 }

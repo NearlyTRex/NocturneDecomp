@@ -16,25 +16,25 @@
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_005e14ea
 ;   TerminatedCString s_s_confused_while_walking_005e14f0
-;   undefined4 DAT_005e151a
-;   undefined4 DAT_005e151e
+;   TerminatedCString s_RUN_005e151a
+;   TerminatedCString s_WALK_005e151e
 ;   TerminatedCString s_STAND_005e1523
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a10
-;   core_charactr.cpp_FUN_00423a60
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004c9ad0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
@@ -140,8 +140,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00510684
     PUSH EBX                            ; 00510685
     LEA ESI,[ESP + 0x30]                ; 00510686
-    CALL core_actor.cpp_FUN_00408d70    ; 0051068a
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0051068a
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0051068f
     PUSH 0x0                            ; 00510692
     LEA EAX,[ESP + 0x38]                ; 00510694
@@ -167,8 +167,8 @@ section .text
     FSTP float ptr [EBX + 0x2594]       ; 005106d8
     FSTP float ptr [ESP]                ; 005106de
     PUSH EBX                            ; 005106e1
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 005106e2
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 005106e2
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005106e7
     PUSH dword ptr [EBP + 0x18]         ; 005106ea
     PUSH EBX                            ; 005106ed
@@ -187,7 +187,7 @@ section .text
         ;   XREF to: 005108c0 (CONDITIONAL_JUMP)  ; LAB_005108c0
     PUSH 0x1                            ; 00510712
         ;   Label: LAB_00510712
-    PUSH 0x5e151e                       ; 00510714 | DAT_005e151e
+    PUSH 0x5e151e                       ; 00510714 | = "WALK"
     LEA EAX,[EBX + 0x2b4]               ; 00510719
         ;   Label: LAB_00510719
     PUSH EAX                            ; 0051071f
@@ -205,8 +205,8 @@ section .text
         ;   Label: LAB_00510740
     PUSH EBX                            ; 00510743
     LEA ESI,[EBX + 0x2588]              ; 00510744
-    CALL core_charactr.cpp_FUN_00423a10 ; 0051074a
-        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00423a10()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10 ; 0051074a
+        ;   XREF to: 00423a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_00423a10(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051074f
     FLD float ptr [ESI]                 ; 00510752
     FMUL float ptr [EBP + 0x18]         ; 00510754
@@ -275,8 +275,8 @@ section .text
     FST float ptr [EDX + 0x4]           ; 00510813
     PUSH EBX                            ; 00510816
     FSTP float ptr [EDX]                ; 00510817
-    CALL core_charactr.cpp_FUN_00423a60 ; 00510819
-        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60 ; 00510819
+        ;   XREF to: 00423a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0051081e
     PUSH EBX                            ; 00510821
     CALL core_charactr.cpp_CCharacter_preProcess_FUN_00424470 ; 00510822
@@ -322,7 +322,7 @@ section .text
         ;   XREF to: 00510725 (UNCONDITIONAL_JUMP)  ; LAB_00510725
     PUSH 0x0                            ; 00510884
         ;   Label: LAB_00510884
-    PUSH 0x5e151a                       ; 00510886 | DAT_005e151a
+    PUSH 0x5e151a                       ; 00510886 | = "RUN"
     PUSH ESI                            ; 0051088b
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_00503860 ; 0051088c
         ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00503860(CMotionController * this_ptr)

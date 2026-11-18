@@ -9,18 +9,18 @@
 CHolycross * __cdecl core_holycrss_cpp_CHolycross_dtor_FUN_004d5320(CHolycross *this_ptr,uint flags)
 
 {
-  CWeapon *pCVar1;
-  void *ptr;
+  CWeapon *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CHolycrossTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CHolycrossTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
+  ptr = core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return (CHolycross *)pCVar1;
+    return (CHolycross *)ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return (CHolycross *)pCVar1;
+  debugFreeChecked(ptr);
+  return (CHolycross *)ptr;
 }

@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006005c0
-;   undefined4 DAT_006236b8
+;   float g_FLOAT_006005c0 = 4
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0
@@ -53,7 +53,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x57c]     ; 004b975e
         ;   Label: LAB_004b975e
     PUSH EAX                            ; 004b9764
-    MOV EDX,dword ptr [0x006236b8]      ; 004b9765 | DAT_006236b8
+    MOV EDX,dword ptr [0x006236b8]      ; 004b9765 | g_CSound_PTR_006236b8
     PUSH EDX                            ; 004b976b
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 004b976c
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
@@ -73,7 +73,7 @@ section .text
     SAHF                                ; 004b9793
     JBE 0x004b9742                      ; 004b9794
         ;   XREF to: 004b9742 (CONDITIONAL_JUMP)  ; LAB_004b9742
-    FLD float ptr [0x006005c0]          ; 004b9796 | DAT_006005c0
+    FLD float ptr [0x006005c0]          ; 004b9796 | g_FLOAT_006005c0
     FLD1                                ; 004b979c
     FDIVRP                              ; 004b979e
     MOV ECX,dword ptr [EBX + 0x568]     ; 004b97a0
@@ -98,7 +98,7 @@ section .text
         ;   XREF to: 004b9778 (UNCONDITIONAL_JUMP)  ; LAB_004b9778
     PUSH ECX                            ; 004b97e3
         ;   Label: LAB_004b97e3
-    MOV EDI,dword ptr [0x006236b8]      ; 004b97e4 | DAT_006236b8
+    MOV EDI,dword ptr [0x006236b8]      ; 004b97e4 | g_CSound_PTR_006236b8
     PUSH EDI                            ; 004b97ea
     CALL core_sound.cpp_CSound_killSound_FUN_0057d9d0 ; 004b97eb
         ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)

@@ -7,14 +7,14 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_cloth.cpp_FUN_005b0ce0 at 005b0ec1
-;   shape_edittool.cpp_FUN_0047f210 at 0047f220
+;   core_cloth.cpp_CCloth_renderBone_FUN_005b0ce0 at 005b0ec1
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210 at 0047f220
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c2c910
-;   undefined4 DAT_01c2ccf0
-;   undefined4 DAT_01c3452f
-;   undefined4 DAT_01c3490f
+;   uchar[32768] g_ColorCubeLookup
+;   undefined4 g_ColorCubeLookup+0x3e0
+;   undefined4 g_ColorCubeLookup+0x7c1f
+;   undefined4 g_ColorCubeLookup+0x7fff
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
@@ -33,19 +33,19 @@ section .text
     TEST EAX,EAX                        ; 0047f1d1
     JNZ 0x0047f205                      ; 0047f1d3
         ;   XREF to: 0047f205 (CONDITIONAL_JUMP)  ; LAB_0047f205
-    MOV AL,[0x01c2c910]                 ; 0047f1d5 | DAT_01c2c910
+    MOV AL,[0x01c2c910]                 ; 0047f1d5 | g_ColorCubeLookup
     RET                                 ; 0047f1da
     XOR EAX,EAX                         ; 0047f1db
         ;   Label: LAB_0047f1db
-    MOV AL,[0x01c3490f]                 ; 0047f1dd | DAT_01c3490f
+    MOV AL,[0x01c3490f]                 ; 0047f1dd | g_ColorCubeLookup+0x7fff
     RET                                 ; 0047f1e2
     XOR EAX,EAX                         ; 0047f1e3
         ;   Label: LAB_0047f1e3
-    MOV AL,[0x01c2ccf0]                 ; 0047f1e5 | DAT_01c2ccf0
+    MOV AL,[0x01c2ccf0]                 ; 0047f1e5 | g_ColorCubeLookup+0x3e0
     RET                                 ; 0047f1ea
     XOR EAX,EAX                         ; 0047f1eb
         ;   Label: LAB_0047f1eb
-    MOV AL,[0x01c3452f]                 ; 0047f1ed | DAT_01c3452f
+    MOV AL,[0x01c3452f]                 ; 0047f1ed | g_ColorCubeLookup+0x7c1f
     RET                                 ; 0047f1f2
     JBE 0x0047f1db                      ; 0047f1f3
         ;   XREF to: 0047f1db (CONDITIONAL_JUMP)  ; LAB_0047f1db

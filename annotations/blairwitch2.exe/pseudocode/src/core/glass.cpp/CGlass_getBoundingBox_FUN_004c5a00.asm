@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004c5a00(CGlass *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_glass_cpp_CGlass_getBoundingBox_FUN_004c5a00(CGlass *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d9372
-;   undefined4 DAT_005d937a
+;   double g_DOUBLE_005d9372 = 0.5
+;   double g_DOUBLE_005d937a = 0.100000000000000
 ;
 ; *****************************************************************************
 
@@ -20,7 +19,7 @@ section .text
     SUB ESP,0x18                        ; 004c5a01
     MOV EDX,dword ptr [ESP + 0x20]      ; 004c5a04
     MOV EAX,ESI                         ; 004c5a08
-    FLD double ptr [0x005d9372]         ; 004c5a0a | DAT_005d9372
+    FLD double ptr [0x005d9372]         ; 004c5a0a | g_DOUBLE_005d9372
     FLD float ptr [EDX + 0x2b4]         ; 004c5a10
     FMUL ST1                            ; 004c5a16
     FLD float ptr [EDX + 0x2bc]         ; 004c5a18
@@ -36,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 004c5a3f
     MOV ESI,ESP                         ; 004c5a41
     MOV dword ptr [ESP + 0x4],ECX       ; 004c5a43
-    FADD double ptr [0x005d937a]        ; 004c5a47 | DAT_005d937a
+    FADD double ptr [0x005d937a]        ; 004c5a47 | g_DOUBLE_005d937a
     FXCH ST3                            ; 004c5a4d
     FSTP float ptr [ESP + 0xc]          ; 004c5a4f
     FXCH ST2                            ; 004c5a53

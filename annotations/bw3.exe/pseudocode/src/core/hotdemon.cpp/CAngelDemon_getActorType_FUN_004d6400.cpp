@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_hotdemon_cpp_CAngelDemon_getActorType_FUN_004d6400(CAngelDemon *this_ptr)
 
 {
-  return (CDemonActorType *)0x1d5bbd0;
+  return &g_CDemonActorType_01d5bbd0;
 }

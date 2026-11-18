@@ -1,0 +1,219 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 206,
+    "complexity_score": 91,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 91,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 297
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00466a50",
+    "address_range": [
+      [
+        "00466a50",
+        "00466c5d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00466a50",
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00466a50(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00466360",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00466360"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d12e0",
+      "name": "g_FLOAT_005d12e0",
+      "type": "float",
+      "value": "0.00001525879"
+    },
+    {
+      "addr": "0060b270",
+      "name": "g_INT_0060b270",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "0060b274",
+      "name": "g_FLOAT_0060b274",
+      "type": "float",
+      "value": "0.1000000"
+    },
+    {
+      "addr": "01ba5990",
+      "name": "g_FLOAT_01ba5990",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "01ba5994",
+      "name": "g_FLOAT_01ba5994",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "01ba5998",
+      "name": "g_INT_01ba5998",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c2a370",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c2a374",
+      "name": "g_AnimationTimerValue",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.539393939393939,
+    "instruction_count": 165,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 7,
+      "BRANCH": 5,
+      "CALL": 3,
+      "CBRANCH": 15,
+      "COPY": 189,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_2COMP": 1,
+      "INT_ADD": 56,
+      "INT_AND": 137,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 105,
+      "INT_LEFT": 10,
+      "INT_LESS": 20,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 20,
+      "INT_SBORROW": 21,
+      "INT_SCARRY": 16,
+      "INT_SDIV": 2,
+      "INT_SEXT": 4,
+      "INT_SLESS": 50,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 35,
+      "INT_XOR": 6,
+      "INT_ZEXT": 12,
+      "LOAD": 29,
+      "POPCOUNT": 50,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 26,
+      "SUBPIECE": 6,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 914
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0047ef60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00468620",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00487bc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.985
+    },
+    "nocturne.exe": {
+      "addr": "0045c1e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.985
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

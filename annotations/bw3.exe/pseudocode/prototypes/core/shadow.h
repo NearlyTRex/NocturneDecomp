@@ -21,101 +21,101 @@ CDemonActorType * __cdecl CShadow::getActorType(CShadow *this_ptr);
 // Address: 00543500
 CShadow * __cdecl CShadow::ctor(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00543680
+// Original: core_shadow.cpp_CShadow_setup_FUN_00543680
 // Address: 00543680
-void FUN_00543680(CEnemy *param_1);
+void __cdecl CShadow::setup(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_005438d0
+// Original: core_shadow.cpp_CShadow_process_FUN_005438d0
 // Address: 005438d0
-void FUN_005438d0(CEnemy *param_1,float param_2);
+void __cdecl CShadow::process(CShadow *this_ptr,float delta_time);
 
 // Original: core_shadow.cpp_CShadow_setWalkTarget_FUN_00544fd0
 // Address: 00544fd0
 void __cdecl CShadow::setWalkTarget(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 
-// Original: core_shadow.cpp_FUN_00545000
+// Original: core_shadow.cpp_CShadow_playHitAlertSound_FUN_00545000
 // Address: 00545000
-void FUN_00545000(int param_1);
+void __cdecl CShadow::playHitAlertSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545040
+// Original: core_shadow.cpp_CShadow_playAlertSound_FUN_00545040
 // Address: 00545040
-void FUN_00545040(int param_1);
+void __cdecl CShadow::playAlertSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545080
+// Original: core_shadow.cpp_CShadow_playAttackSound_FUN_00545080
 // Address: 00545080
-void FUN_00545080(int param_1);
+void __cdecl CShadow::playAttackSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_005450c0
+// Original: core_shadow.cpp_CShadow_playDamageSound_FUN_005450c0
 // Address: 005450c0
-void FUN_005450c0(int param_1);
+void __cdecl CShadow::playDamageSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545100
+// Original: core_shadow.cpp_CShadow_playDeathSound_FUN_00545100
 // Address: 00545100
-void FUN_00545100(int param_1);
+void __cdecl CShadow::playDeathSound(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545140
+// Original: core_shadow.cpp_CShadow_renderDebugMarker_FUN_00545140
 // Address: 00545140
-void FUN_00545140(int param_1,float *param_2);
+void __cdecl CShadow::renderDebugMarker(CShadow *this_ptr,CVector3f *position);
 
-// Original: core_shadow.cpp_FUN_00545700
+// Original: core_shadow.cpp_CShadow_renderOpaque_FUN_00545700
 // Address: 00545700
-void FUN_00545700(CCharacter *param_1);
+int __cdecl CShadow::renderOpaque(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545710
+// Original: core_shadow.cpp_CShadow_renderTransparent_FUN_00545710
 // Address: 00545710
-int FUN_00545710(CCharacter *param_1);
+int __cdecl CShadow::renderTransparent(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545910
+// Original: core_shadow.cpp_CShadow_archive_FUN_00545910
 // Address: 00545910
-void FUN_00545910(CEnemy *param_1);
+void __cdecl CShadow::archive(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_005459b0
+// Original: core_shadow.cpp_CShadow_processDamage_FUN_005459b0
 // Address: 005459b0
-void FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl CShadow::processDamage(CShadow *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_shadow.cpp_FUN_00545bd0
+// Original: core_shadow.cpp_CShadow_getDeathState_FUN_00545bd0
 // Address: 00545bd0
-undefined4 FUN_00545bd0(int param_1);
+EDeathState __cdecl CShadow::getDeathState(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545c10
+// Original: core_shadow.cpp_CShadow_getTargetPoints_FUN_00545c10
 // Address: 00545c10
-undefined4 FUN_00545c10(int param_1,float *param_2);
+int __cdecl CShadow::getTargetPoints(CShadow *this_ptr,CVector3f *out_points_array);
 
-// Original: core_shadow.cpp_FUN_00545c80
+// Original: core_shadow.cpp_CShadow_processChainConstraint_FUN_00545c80
 // Address: 00545c80
-void FUN_00545c80(CCharacter *param_1);
+void __cdecl CShadow::processChainConstraint(CShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545e70
+// Original: core_shadow.cpp_factoryFuncShadowForest_FUN_00545e70
 // Address: 00545e70
-void FUN_00545e70(void);
+CShadowForest * __cdecl factoryFuncShadowForest(void);
 
-// Original: core_shadow.cpp_FUN_00545e90
+// Original: core_shadow.cpp_CShadowForest_getActorType_FUN_00545e90
 // Address: 00545e90
-undefined4 FUN_00545e90(void);
+CDemonActorType * __cdecl CShadowForest::getActorType(CShadowForest *this_ptr);
 
 // Original: core_shadow.cpp_CShadowForest_ctor_FUN_00545ea0
 // Address: 00545ea0
 CShadowForest * __cdecl CShadowForest::ctor(CShadowForest *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545f00
+// Original: core_shadow.cpp_factoryFuncSpiritShadow_FUN_00545f00
 // Address: 00545f00
-void FUN_00545f00(void);
+CSpiritShadow * __cdecl factoryFuncSpiritShadow(void);
 
-// Original: core_shadow.cpp_FUN_00545f20
+// Original: core_shadow.cpp_CSpiritShadow_getActorType_FUN_00545f20
 // Address: 00545f20
-undefined4 FUN_00545f20(void);
+CDemonActorType * __cdecl CSpiritShadow::getActorType(CSpiritShadow *this_ptr);
 
 // Original: core_shadow.cpp_CSpiritShadow_ctor_FUN_00545f30
 // Address: 00545f30
 CSpiritShadow * __cdecl CSpiritShadow::ctor(CSpiritShadow *this_ptr);
 
-// Original: core_shadow.cpp_FUN_00545f90
+// Original: core_shadow.cpp_factoryFuncDemonShadow_FUN_00545f90
 // Address: 00545f90
-void FUN_00545f90(void);
+CDemonShadow * __cdecl factoryFuncDemonShadow(void);
 
-// Original: core_shadow.cpp_FUN_00545fb0
+// Original: core_shadow.cpp_CDemonShadow_getActorType_FUN_00545fb0
 // Address: 00545fb0
-undefined4 FUN_00545fb0(void);
+CDemonActorType * __cdecl CDemonShadow::getActorType(CDemonShadow *this_ptr);
 
 // Original: core_shadow.cpp_CDemonShadow_ctor_FUN_00545fc0
 // Address: 00545fc0

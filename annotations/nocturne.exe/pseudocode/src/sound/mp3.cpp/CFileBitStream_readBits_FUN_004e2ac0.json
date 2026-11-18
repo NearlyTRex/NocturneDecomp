@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 99,
+    "complexity_score": 74,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 74,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 253
   },
   "cross_references": [
@@ -121,13 +119,13 @@
     },
     {
       "addr": "005bc010",
-      "name": "DAT_005bc010",
-      "type": "undefined4",
+      "name": "g_MpegBitMaskTableMultiBit",
+      "type": "uint[18]",
       "value": null
     },
     {
       "addr": "005bc030",
-      "name": "DAT_005bc030",
+      "name": "g_MpegBitMaskTableMultiBit[8]",
       "type": "undefined4",
       "value": null
     },
@@ -353,22 +351,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"Cannot read or write more than %d bits at a time.  File: %s\",0x20,&DAT_01cd8b28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_005bc010",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_005bc010 + this_ptr->bits_available * 4)) >>",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

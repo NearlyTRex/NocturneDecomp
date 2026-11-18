@@ -6,69 +6,68 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_0054e5d0(CSfxSlot *this_ptr)
 
 {
-  float fVar1;
+  int iVar1;
   float fVar2;
-  int iVar3;
-  int extraout_ECX;
+  float fVar3;
   int iVar4;
-  CSfxSlot *pCVar5;
-  int extraout_EDX;
+  int iVar5;
   int iVar6;
-  float10 fVar7;
+  CSfxSlot *pCVar7;
+  double dVar8;
   
-  if (_DAT_0264901c < 1) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0xa69;
-    core_main_c_FUN_004e4500("SfxSlot::kill - must be locked!");
+  if (g_SoundLockCount < 1) {
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0xa69;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("SfxSlot::kill - must be locked!");
   }
-  iVar3 = DAT_0061bc9c;
-  if (DAT_0061bc9c < 2) {
+  iVar4 = g_AudioChannelCount;
+  if (g_AudioChannelCount < 2) {
     this_ptr->channel_target_buffer_offsets[0] = 0;
   }
   else if (((this_ptr->options).flags & 1) == 0) {
-    fVar1 = (1.0 / _DAT_005fbc18) * DAT_0061bcb4;
-    fVar2 = (float)DAT_0061bca0;
-    iVar4 = 99999;
-    pCVar5 = this_ptr;
-    if (0 < DAT_0061bc9c) {
+    fVar2 = (1.0 / 1116.4f) * g_FLOAT_0061bcb4;
+    fVar3 = (float)g_AudioSampleRate;
+    iVar6 = 99999;
+    iVar5 = 0;
+    pCVar7 = this_ptr;
+    if (0 < g_AudioChannelCount) {
       do {
-        fVar7 = (float10)pCVar5->distance_to_speakers[0] * (float10)(fVar2 * fVar1);
-        round();
-        iVar6 = (int)ROUND(fVar7);
-        *(int *)(extraout_EDX + 0xb0) = iVar6;
-        if (iVar6 < iVar4) {
-          iVar4 = iVar6;
+        dVar8 = round
+                          ((double)(pCVar7->distance_to_speakers[0] * fVar3 * fVar2));
+        iVar1 = (int)ROUND(dVar8);
+        pCVar7->channel_target_buffer_offsets[0] = iVar1;
+        if (iVar1 < iVar6) {
+          iVar6 = iVar1;
         }
-        pCVar5 = (CSfxSlot *)(extraout_EDX + 4);
-      } while (extraout_ECX + 1 < iVar3);
+        iVar5 = iVar5 + 1;
+        pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
+      } while (iVar5 < iVar4);
     }
-    iVar6 = 0;
-    if (0 < iVar3) {
+    iVar5 = 0;
+    if (0 < iVar4) {
       do {
-        iVar6 = iVar6 + 1;
+        iVar5 = iVar5 + 1;
         this_ptr->channel_target_buffer_offsets[0] =
-             this_ptr->channel_target_buffer_offsets[0] - iVar4;
+             this_ptr->channel_target_buffer_offsets[0] - iVar6;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar6 < iVar3);
-      DAT_0061bc9c = iVar3;
+      } while (iVar5 < iVar4);
+      g_AudioChannelCount = iVar4;
       return;
     }
   }
   else {
-    iVar4 = 0;
-    if (0 < DAT_0061bc9c) {
+    iVar6 = 0;
+    if (0 < g_AudioChannelCount) {
       do {
-        iVar4 = iVar4 + 1;
+        iVar6 = iVar6 + 1;
         this_ptr->channel_target_buffer_offsets[0] = 0;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar4 < DAT_0061bc9c);
+      } while (iVar6 < g_AudioChannelCount);
     }
   }
-  DAT_0061bc9c = iVar3;
+  g_AudioChannelCount = iVar4;
   return;
 }

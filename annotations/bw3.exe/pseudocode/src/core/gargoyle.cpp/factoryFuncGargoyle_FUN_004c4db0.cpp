@@ -11,7 +11,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void)
 {
   CGargoyle *pCVar1;
   
-  pCVar1 = (CGargoyle *)operator_new(0xd0b0);
+  pCVar1 = operator_new(0xd0b0);
   if (pCVar1 == (CGargoyle *)0x0) {
     return (CGargoyle *)0x0;
   }

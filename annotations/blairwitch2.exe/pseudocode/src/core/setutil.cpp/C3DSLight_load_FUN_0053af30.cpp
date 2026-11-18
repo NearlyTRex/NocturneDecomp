@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
@@ -45,25 +43,25 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_F
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
-  _fscanf(file_handle,&DAT_005e623c);
+  _fscanf(file_handle,"%f\n");
   if (g_CDemonSetPtr->set_file_version < 0x15) {
     this_ptr->aspect = 1.0;
   }
   else {
     _fgets(local_148,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005e6240);
+    _fscanf(file_handle,"%f\n");
   }
   if (g_CDemonSetPtr->set_file_version < 0x16) {
     this_ptr->intensity = 1.0;
   }
   else {
     _fgets(local_148,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005e6244);
+    _fscanf(file_handle,"%f\n");
   }
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
-  _fscanf(file_handle,&DAT_005e6248);
+  _fscanf(file_handle,"%d\n");
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
@@ -75,7 +73,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_F
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
-  _fscanf(file_handle,&DAT_005e6263);
+  _fscanf(file_handle,"%d\n");
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
@@ -83,7 +81,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_F
     this_ptr->blend_filter = 1;
   }
   else {
-    _fscanf(file_handle,&DAT_005e6267);
+    _fscanf(file_handle,"%d\n");
   }
   iVar3 = 0;
   if (0 < this_ptr->filter_count) {
@@ -109,7 +107,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_F
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_148,0xff,file_handle);
   }
-  _fscanf(file_handle,&DAT_005e627c);
+  _fscanf(file_handle,"%d\n");
   if (g_CDemonSetPtr->set_file_version < 0x13) {
     (this_ptr->filter_vel).x = 0;
     (this_ptr->filter_vel).y = 0;
@@ -143,7 +141,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_F
       pCVar2 = this_ptr;
       do {
         if (g_CDemonSetPtr->set_file_version < 2) {
-          _fscanf(file_handle,&DAT_005e6297);
+          _fscanf(file_handle,"%d\n");
           pCVar2->visible_flags[0] = local_44;
           *(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar3) = 1;
           *(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar3) = 0x13e;
@@ -162,15 +160,15 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_0053af30(C3DSLight *this_ptr,_F
   else {
     memset(this_ptr->visible_flags,0,0xfa);
     memset(this_ptr->camera_light_bounds,0,4000);
-    _fscanf(file_handle,&DAT_005e62ab);
+    _fscanf(file_handle,"%d\n");
     iVar3 = 0;
     if (0 < local_48) {
       do {
         _fscanf(file_handle,"%d,%d,%d,%d,%d\n");
         if (0xf9 < local_3c) {
-          _DAT_01d046a0 = "..\\core\\setutil.cpp";
-          _DAT_01d046a4 = 0x2d8;
-          core_main_c_FUN_004e4500("Invalid camera number in visiblilty list!");
+          g_CHAR_PTR_01d046a0 = "..\\core\\setutil.cpp";
+          g_INT_01d046a4 = 0x2d8;
+          core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid camera number in visiblilty list!");
         }
         this_ptr->visible_flags[local_3c] = '\x01';
         this_ptr->camera_light_bounds[local_3c].x_min = local_38;

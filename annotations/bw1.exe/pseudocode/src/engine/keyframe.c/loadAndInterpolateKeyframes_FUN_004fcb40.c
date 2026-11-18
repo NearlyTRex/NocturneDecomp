@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKeyframeModel *keyframe_model)
 
 {
@@ -31,8 +29,8 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKey
              engine_model_c_loadModelFile_FUN_0051f6d0(keyframe_model->filenames[0]);
     keyframe_model->base_keyframes = pSVar6;
   }
-  iVar4 = engine_model_c_FUN_0051fee0(&keyframe_model->base_keyframes->header);
-  iVar5 = engine_model_c_FUN_0051fee0
+  iVar4 = engine_model_c_getMRGLSize_FUN_0051fee0(&keyframe_model->base_keyframes->header);
+  iVar5 = engine_model_c_getMRGLSize_FUN_0051fee0
                     ((SMRGLHeaderExtended *)
                      ((int)&(keyframe_model->base_keyframes->header).base.type + iVar4));
   iVar12 = 0;
@@ -41,7 +39,8 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKey
     pSVar11 = keyframe_model;
     do {
       if (pSVar11->loaded_frames[0] == (SMRGLKeyframe *)0x0) {
-        pSVar6 = (SMRGLKeyframe *)engine_model_c_FUN_00520150(*filename,iVar4 + iVar5);
+        pSVar6 = (SMRGLKeyframe *)
+                 engine_model_c_loadModelChunk_FUN_00520150(*filename,iVar4 + iVar5);
         pSVar11->loaded_frames[0] = pSVar6;
       }
       pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;
@@ -56,14 +55,14 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKey
     do {
       pSVar1 = pSVar11->loaded_frames[0];
       if ((pSVar1->header).child_count != 2) {
-        _DAT_01d1d400 = "..\\engine\\keyframe.c";
-        _DAT_01d1d404 = 0xfd;
-        core_main_c_FUN_005030e0("Bad key frame");
+        g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
+        g_INT_01d1d404 = 0xfd;
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Bad key frame");
       }
       if ((pSVar1->vertex_header).count != (pSVar6->vertex_header).count) {
-        _DAT_01d1d400 = "..\\engine\\keyframe.c";
-        _DAT_01d1d404 = 0xfe;
-        core_main_c_FUN_005030e0("Key frame vertex mismatch");
+        g_CHAR_PTR_01d1d400 = "..\\engine\\keyframe.c";
+        g_INT_01d1d404 = 0xfe;
+        core_main_c_displayErrorAndQuit_FUN_005030e0("Key frame vertex mismatch");
       }
       iVar4 = iVar4 + 1;
       pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;

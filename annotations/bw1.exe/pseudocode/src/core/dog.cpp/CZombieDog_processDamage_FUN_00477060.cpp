@@ -29,7 +29,8 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_00477060(CZombieDog *this
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,iVar4,1);
 LAB_00477095:
-  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
+  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                    (g_CSound_PTR_006236b8,this_ptr->sfx_handle);
   if (iVar4 != 0) {
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
     return;

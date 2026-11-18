@@ -58,10 +58,10 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01b4d738
-;   undefined4 g_CHeroActorType_01cae0ec.name_hash
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   undefined4 g_CHeroClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
     SUB EBP,0x7e                        ; 0055475c
     MOV EBX,dword ptr [EBP + 0x92]      ; 0055475f
     MOV EDX,dword ptr [0x005ae704]      ; 00554765 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0055476b | DAT_01b4d738
+    PUSH EDX                            ; 0055476b | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0055476c
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00554771
@@ -164,7 +164,7 @@ section .text
     ADD ESP,0x4                         ; 00554826
     MOV dword ptr [EBP + 0xe],EAX       ; 00554829
     MOV EAX,0x3f800000                  ; 0055482c
-    MOV EDX,dword ptr [0x01cae124]      ; 00554831 | g_CHeroActorType_01cae0ec.name_hash
+    MOV EDX,dword ptr [0x01cae124]      ; 00554831 | g_CHeroClassInfo.name_hash
     MOV dword ptr [EBP + -0x6],EAX      ; 00554837
     PUSH EDX                            ; 0055483a
     MOV ECX,dword ptr [EBX + 0x2fc]     ; 0055483b
@@ -222,7 +222,7 @@ section .text
     LEA EAX,[EBP + 0x66]                ; 005548cf
     MOV dword ptr [EBP + 0x16],EDI      ; 005548d2
     PUSH EAX                            ; 005548d5
-    MOV EAX,[0x005b80f0]                ; 005548d6 | g_CFireEffect_PTR_005b80f0
+    MOV EAX,[0x005b80f0]                ; 005548d6 | g_CFireEffectPtr
     MOV dword ptr [EBP + -0x3e],EDI     ; 005548db
     PUSH EAX                            ; 005548de
     MOV dword ptr [EBP + 0x12],EBX      ; 005548df

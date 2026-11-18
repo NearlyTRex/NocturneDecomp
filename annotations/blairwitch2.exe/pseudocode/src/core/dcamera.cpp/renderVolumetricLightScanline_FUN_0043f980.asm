@@ -12,11 +12,11 @@
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044c830 at 0044ce70
 ;
 ; Referenced Globals:
-;   undefined4 DAT_013083cc
-;   undefined4 DAT_013083d0
-;   undefined4 DAT_01308800
-;   undefined4 DAT_01c35e48
-;   undefined4 DAT_01c35e4c
+;   int g_BackdropSaveActive
+;   int g_DitherPatternOffset
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
+;   int g_INT_01c35e48
+;   int g_INT_01c35e4c
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     SUB ESP,0x1c                        ; 0043f986
     MOV EDI,dword ptr [EBP + 0x18]      ; 0043f989
     MOV EDX,dword ptr [EBP + 0x14]      ; 0043f98c
-    SUB EDX,dword ptr [0x01c35e4c]      ; 0043f98f | DAT_01c35e4c
-    MOV ECX,dword ptr [0x01308800]      ; 0043f995 | DAT_01308800
+    SUB EDX,dword ptr [0x01c35e4c]      ; 0043f98f | g_INT_01c35e4c
+    MOV ECX,dword ptr [0x01308800]      ; 0043f995 | g_CameraDownscaleIterations
     MOV dword ptr [EBP + 0x14],EDX      ; 0043f99b
     CMP ECX,0x1                         ; 0043f99e
     JNZ 0x0043f9ad                      ; 0043f9a1
@@ -40,7 +40,7 @@ section .text
     TEST byte ptr [EBP + 0x14],0x1      ; 0043f9a3
     JNZ 0x0043fb16                      ; 0043f9a7
         ;   XREF to: 0043fb16 (CONDITIONAL_JUMP)  ; LAB_0043fb16
-    CMP dword ptr [0x01308800],0x2      ; 0043f9ad | DAT_01308800
+    CMP dword ptr [0x01308800],0x2      ; 0043f9ad | g_CameraDownscaleIterations
         ;   Label: LAB_0043f9ad
     JNZ 0x0043f9c0                      ; 0043f9b4
         ;   XREF to: 0043f9c0 (CONDITIONAL_JUMP)  ; LAB_0043f9c0
@@ -49,11 +49,11 @@ section .text
         ;   XREF to: 0043fb16 (CONDITIONAL_JUMP)  ; LAB_0043fb16
     MOV ESI,dword ptr [EBP + 0x14]      ; 0043f9c0
         ;   Label: LAB_0043f9c0
-    MOV CL,byte ptr [0x01308800]        ; 0043f9c3 | DAT_01308800
+    MOV CL,byte ptr [0x01308800]        ; 0043f9c3 | g_CameraDownscaleIterations
     SAR ESI,CL                          ; 0043f9c9
     MOV dword ptr [EBP + 0x14],ESI      ; 0043f9cb
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0043f9ce
-    MOV EAX,[0x01c35e48]                ; 0043f9d1 | DAT_01c35e48
+    MOV EAX,[0x01c35e48]                ; 0043f9d1 | g_INT_01c35e48
     MOV EBX,dword ptr [EDI + 0x8]       ; 0043f9d6
     MOV ESI,dword ptr [ESI + 0x8]       ; 0043f9d9
     SAR EBX,0x10                        ; 0043f9dc
@@ -112,7 +112,7 @@ section .text
     SAR EDX,0x1f                        ; 0043fa5b
     IDIV ECX                            ; 0043fa5e
     MOV dword ptr [EBP + -0x10],EAX     ; 0043fa60
-    MOV CL,byte ptr [0x01308800]        ; 0043fa63 | DAT_01308800
+    MOV CL,byte ptr [0x01308800]        ; 0043fa63 | g_CameraDownscaleIterations
     MOV EDX,EBX                         ; 0043fa69
     MOV EAX,dword ptr [EBP + 0x14]      ; 0043fa6b
     SHL EDX,CL                          ; 0043fa6e
@@ -133,7 +133,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0xfffffffc] ; 0043fa9f
     SHL ECX,0x2                         ; 0043faa5
     MOV ESI,dword ptr [EBP + 0xfffffff8] ; 0043faa8
-    MOV EDI,dword ptr [0x013083d0]      ; 0043faae | DAT_013083d0
+    MOV EDI,dword ptr [0x013083d0]      ; 0043faae | g_DitherPatternOffset
     MOV EBX,dword ptr [EBP + 0xffffffe4] ; 0043fab4
     MOV EDX,dword ptr [EBP + 0xffffffec] ; 0043faba
     MOV EAX,ECX                         ; 0043fac0
@@ -162,8 +162,8 @@ section .text
     SUB ECX,0x4                         ; 0043fb01
     JG 0x0043fac0                       ; 0043fb04
         ;   XREF to: 0043fac0 (CONDITIONAL_JUMP)  ; LAB_0043fac0
-    MOV dword ptr [0x013083d0],EDI      ; 0043fb06 | DAT_013083d0
-    MOV dword ptr [0x013083cc],0x1      ; 0043fb0c | DAT_013083cc
+    MOV dword ptr [0x013083d0],EDI      ; 0043fb06 | g_DitherPatternOffset
+    MOV dword ptr [0x013083cc],0x1      ; 0043fb0c | g_BackdropSaveActive
     MOV ESP,EBP                         ; 0043fb16
         ;   Label: LAB_0043fb16
     POP EBP                             ; 0043fb18

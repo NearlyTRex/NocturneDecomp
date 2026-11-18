@@ -110,7 +110,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs *this_ptr,
   }
   if ((0 < (int)pfVar6) &&
      (fVar2 = this_ptr->damage_timer - delta_time, this_ptr->damage_timer = fVar2,
-     class_name_hash = g_CCharacterActorType_00765a60.name_hash, fVar2 <= 0.0)) {
+     class_name_hash = g_CCharacterClassInfo.name_hash, fVar2 <= 0.0)) {
     this_ptr->damage_timer = 0.2;
     this_ptr_00 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890

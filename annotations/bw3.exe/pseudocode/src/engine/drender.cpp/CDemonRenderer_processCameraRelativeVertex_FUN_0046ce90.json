@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 25,
-    "cross_reference_count": 59,
+    "complexity_score": 17,
+    "cross_reference_count": 60,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 35
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -82,21 +80,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045dea0",
-      "from_addr": "0045e30e",
-      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0045d530",
       "from_addr": "0045d56c",
-      "name": "core_dlight.cpp_FUN_0045d530",
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0045d530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0045e6a0",
       "from_addr": "0045e6cd",
-      "name": "core_dlight.cpp_FUN_0045e6a0",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0045e6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045dea0",
+      "from_addr": "0045e30e",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -276,25 +274,25 @@
     {
       "addr": "004ccbe0",
       "from_addr": "004ccc4e",
-      "name": "core_gore.cpp_FUN_004ccbe0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004cd690",
-      "from_addr": "004cd705",
-      "name": "core_gore.cpp_FUN_004cd690",
+      "name": "core_gore.cpp_CBloodParticle_render_FUN_004ccbe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cdd30",
       "from_addr": "004cdd98",
-      "name": "core_gore.cpp_FUN_004cdd30",
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004cdd30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cd690",
+      "from_addr": "004cd705",
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004cd690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004dbe70",
       "from_addr": "004dc119",
-      "name": "core_inv.cpp_FUN_004dbe70",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -318,7 +316,13 @@
     {
       "addr": "0053f940",
       "from_addr": "00540386",
-      "name": "core_setdir.cpp_FUN_0053f940",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f0f0",
+      "from_addr": "0053f1e9",
+      "name": "core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -366,7 +370,7 @@
     {
       "addr": "0057c890",
       "from_addr": "0057ca91",
-      "name": "core_weather.cpp_FUN_0057c890",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_0057c890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -397,9 +401,9 @@
   "globals": [
     {
       "addr": "005bc513",
-      "name": "DAT_005bc513",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WorldToCameraScale",
+      "type": "double",
+      "value": "256"
     }
   ],
   "param_estimates": {
@@ -618,14 +622,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 115,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 72
   },
   "cross_references": [],
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CStrList_insertRange_FUN_00481050",
-    "signature": "void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_00481050(CStrList *this_ptr,int param_2,CStrList *param_3)"
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_00481050(CStrList *this_ptr,int insert_index,CStrList *source_list)"
   },
   "function_calls": [
     {
@@ -117,92 +115,19 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "insert_index",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "source_list",
         "offset": 12,
         "size": 4,
         "type": "CStrList *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_00481050(CStrList *this_ptr,int param_2,CStrList *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_00481050(CStrList *this_ptr,int param_2,CStrList *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(this_ptr,param_3->item_count + this_ptr->item_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3->item_count < 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "string_data = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(param_3,index);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*pCVar1->insert)(this_ptr,param_2,string_data);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "} while (index < param_3->item_count);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

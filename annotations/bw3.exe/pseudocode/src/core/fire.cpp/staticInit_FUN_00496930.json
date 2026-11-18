@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 214,
-    "complexity_score": 80,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 259
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 262
   },
   "cross_references": [],
   "function": {
@@ -113,30 +111,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01c74ea0",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c74ea0,0x800,&g_CSmokeParticleTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c8aea8",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01c8aea8,0x100,&g_CBulletHoleTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_01cbb9bc",
-      "severity": "mild",
-      "text": "__arrinit(&DAT_01cbb9bc,0x14,&g_CMuzzleFlashTypeInfo);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

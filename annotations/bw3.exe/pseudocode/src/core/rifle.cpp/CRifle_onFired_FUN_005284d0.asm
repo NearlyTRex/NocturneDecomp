@@ -7,15 +7,15 @@
 ; CRifle *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_rifbullet_kfm_005cdb4f+2
+;   TerminatedCString s_rifbullet_kfm_005cdb51
 ;   TerminatedCString s_shotgun_cock_wav_005cdb5f
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_dmodel.cpp_loadModel_FUN_00462420
 ;   core_fire.cpp_CFireEffect_createShell_FUN_004a3e70
 ;
@@ -75,8 +75,8 @@ section .text
     PUSH EAX                            ; 00528571
     LEA ESI,[ESP + 0x38]                ; 00528572
     LEA EDI,[ESP + 0x74]                ; 00528576
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0052857a
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0052857a
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0052857f
     LEA EAX,[ESP + 0x6c]                ; 00528582
     LEA ESI,[ESP + 0x30]                ; 00528586
@@ -87,8 +87,8 @@ section .text
     PUSH EBX                            ; 0052858e
     LEA ESI,[ESP + 0x5c]                ; 0052858f
     LEA EDI,[ESP + 0x68]                ; 00528593
-    CALL core_actor.cpp_FUN_00408b00    ; 00528597
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00528597
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x5c]                ; 0052859c
     ADD ESP,0x8                         ; 005285a0
     MOVSD ES:EDI,ESI                    ; 005285a3
@@ -105,7 +105,7 @@ section .text
     MOV dword ptr [ESP + 0x40],EAX      ; 005285be
     MOV EAX,dword ptr [ESP + 0x68]      ; 005285c2
     MOV dword ptr [ESP + 0x44],EAX      ; 005285c6
-    PUSH 0x5cdb51                       ; 005285ca | s_rifbullet_kfm_005cdb4f+2
+    PUSH 0x5cdb51                       ; 005285ca | = "rifbullet.kfm"
         ;   Label: LAB_005285ca
     CALL core_dmodel.cpp_loadModel_FUN_00462420 ; 005285cf
         ;   XREF to: 00462420 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00462420(char * filename)
@@ -117,7 +117,7 @@ section .text
     PUSH EAX                            ; 005285e0
     LEA EAX,[EBX + 0x20]                ; 005285e1
     PUSH EAX                            ; 005285e4
-    MOV EAX,[0x005fc5a0]                ; 005285e5 | DAT_005fc5a0
+    MOV EAX,[0x005fc5a0]                ; 005285e5 | g_CFireEffect_PTR_005fc5a0
     PUSH EAX                            ; 005285ea
     CALL core_fire.cpp_CFireEffect_createShell_FUN_004a3e70 ; 005285eb
         ;   XREF to: 004a3e70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004a3e70(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)

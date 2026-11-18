@@ -15,7 +15,7 @@
 ;   core_prye.cpp_CPrye_processDamage_FUN_00523e50 at 00523fc9
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004ced40
+;   core_gore.cpp_CGore_spawnFlies_FUN_004ced40
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EAX                            ; 004cee47
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004cee48
     PUSH ESI                            ; 004cee4c
-    CALL core_gore.cpp_FUN_004ced40     ; 004cee4d
-        ;   XREF to: 004ced40 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ced40()
+    CALL core_gore.cpp_CGore_spawnFlies_FUN_004ced40 ; 004cee4d
+        ;   XREF to: 004ced40 (UNCONDITIONAL_CALL)  ; CFlies * core_gore.cpp_CGore_spawnFlies_FUN_004ced40(CGore * this_ptr, CVector3f * position, int gather_count, float spawn_rate, ...)
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004cee52
     MOV dword ptr [EAX + 0x2c],EDX      ; 004cee55
     ADD ESP,0x14                        ; 004cee58

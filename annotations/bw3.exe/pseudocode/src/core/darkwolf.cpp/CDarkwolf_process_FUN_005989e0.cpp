@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_ptr,float delta_time)
 
@@ -40,10 +39,9 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
   float fStack_48;
   float fStack_44;
   float fStack_40;
-  float fStack_3c;
+  CVector3f CStack_3c;
   float fStack_30;
-  float fStack_2c;
-  float fStack_28;
+  float afStack_2c [4];
   int iStack_1c;
   float fStack_18;
   
@@ -53,8 +51,9 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
      iVar9 == 0)) {
     return;
   }
-  core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
-  core_charactr_cpp_FUN_00432330(this_ptr,delta_time,0);
+  core_charactr_cpp_CCharacter_processSmoking_FUN_00433c60((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00432330
+            ((CCharacter *)this_ptr,delta_time,0);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -70,9 +69,10 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
   fVar5 = (this_ptr->base).speed;
   iVar9 = pSVar10->state_index;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar5);
+  core_charactr_cpp_CCharacter_updateTurnSpeed_FUN_00434850
+            ((CCharacter *)this_ptr,delta_time * fVar5);
   if (iVar9 == 2) {
-    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005d9872;
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)2;
   }
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
@@ -84,22 +84,26 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
     pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base);
     iStack_1c = pSVar10->state_index;
     if ((((iStack_1c == 6) || (iStack_1c == 7)) && (iStack_1c == 7)) &&
-       ((fVar5 = delta_time * (float)_DAT_005d987a + this_ptr->morph_time,
+       ((fVar5 = delta_time * (float)0.5 + this_ptr->morph_time,
         this_ptr->morph_time = fVar5, 1.0 <= fVar5 && (this_ptr->morph_target != (CDemonActor *)0x0)
         ))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
-                (0x01D81080,this_ptr->morph_target);
-      this_ptr_00 = 0x01D81080;
+                (g_CDemonMission_PTR_00600530,this_ptr->morph_target);
+      this_ptr_00 = g_CDemonMission_PTR_00600530;
       this_ptr->morph_target = (CDemonActor *)0x0;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_00,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                (this_ptr_00,(CDemonActor *)this_ptr,1);
     }
     if (iStack_1c != 0) {
-      core_actor_cpp_FUN_00408b00(this_ptr,&(this_ptr->base).base.model.accumulated_root_motion);
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408b00
+                ((CDemonActor *)this_ptr,&(this_ptr->base).base.model.accumulated_root_motion,
+                 &CStack_3c);
       pCVar1 = &(this_ptr->base).base.base.location;
-      fStack_78 = fStack_3c;
-      *(float *)((int)&stack0xffffff8c + (uint)bVar12 * -8) = afStack_5c[(uint)bVar12 * -2 + 9];
-      *(float *)((int)&stack0xffffff90 + (uint)bVar12 * -8 + (uint)bVar12 * -8) =
-           afStack_5c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 10];
+      fStack_78 = CStack_3c.x;
+      *(uint *)((int)&stack0xffffff8c + (uint)bVar12 * -8) =
+           *(uint *)((int)&CStack_3c + (uint)bVar12 * -8 + 4);
+      *(uint *)((int)&stack0xffffff90 + (uint)bVar12 * -8 + (uint)bVar12 * -8) =
+           *(uint *)((int)&CStack_3c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
       fVar5 = (this_ptr->base).base.base.location.position.y;
       fVar6 = (this_ptr->base).base.base.location.position.z;
       (pCVar1->position).x = (pCVar1->position).x + fStack_78;
@@ -114,8 +118,9 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_process_FUN_005989e0(CDarkwolf *this_pt
       }
     }
     if (((iStack_1c == 3) &&
-        (fStack_18 = core_motion_cpp_FUN_004fc930(&(this_ptr->base).base.model.base),
-        fStack_18 < (float)_DAT_005d9882)) &&
+        (fStack_18 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004fc930
+                               (&(this_ptr->base).base.model.base),
+        fStack_18 < (float)0.29999999999999999)) &&
        (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(this_ptr->sfx_handle), iVar9 == 0)) {
       uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                          ((CDemonActor *)this_ptr,"dog_howl.wav");
@@ -155,18 +160,18 @@ LAB_00598b04:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_00598b24:
-  core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_applyGravity_FUN_0042c1e0((CCharacter *)this_ptr,delta_time);
   fStack_48 = (this_ptr->base).base.velocity.x * delta_time;
   fStack_44 = (this_ptr->base).base.velocity.y * delta_time;
   fStack_40 = (this_ptr->base).base.velocity.z * delta_time;
   fStack_30 = fStack_48;
-  afStack_5c[(uint)bVar12 * -2 + 0xc] = afStack_5c[(uint)bVar12 * -2 + 6];
-  afStack_5c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xd] =
+  afStack_2c[(uint)bVar12 * -2] = afStack_5c[(uint)bVar12 * -2 + 6];
+  afStack_2c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
        afStack_5c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 7];
   pCVar3 = &(this_ptr->base).base.position_delta;
   fStack_84 = fStack_30 + pCVar3->x;
-  fStack_80 = fStack_2c + (this_ptr->base).base.position_delta.y;
-  fStack_7c = fStack_28 + (this_ptr->base).base.position_delta.z;
+  fStack_80 = afStack_2c[0] + (this_ptr->base).base.position_delta.y;
+  fStack_7c = afStack_2c[1] + (this_ptr->base).base.position_delta.z;
   fStack_60 = fStack_84;
   afStack_5c[(uint)bVar12 * -2] = *(float *)((int)&stack0xffffff80 + (uint)bVar12 * -8);
   afStack_5c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
@@ -186,7 +191,7 @@ LAB_00598b24:
   fVar5 = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.y = fVar5;
   pCVar4->x = fVar5;
-  core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_6c);
+  core_charactr_cpp_CCharacter_moveAndCollide_FUN_0042c230((CCharacter *)this_ptr,&CStack_6c);
   core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);

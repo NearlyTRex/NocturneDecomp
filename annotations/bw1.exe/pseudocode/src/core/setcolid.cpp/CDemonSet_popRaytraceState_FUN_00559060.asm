@@ -15,12 +15,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005f0f0c
 ;   TerminatedCString s_CDemonSet_popRaytraceSta_005f0f21
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_020af5c8
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_RaytraceStateStackDepth
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -31,13 +31,13 @@ section .text
     PUSH ESI                            ; 00559061
     PUSH EDI                            ; 00559062
     MOV EBX,dword ptr [ESP + 0x10]      ; 00559063
-    CMP dword ptr [0x020af5c8],0x1      ; 00559067 | DAT_020af5c8
+    CMP dword ptr [0x020af5c8],0x1      ; 00559067 | g_RaytraceStateStackDepth
     JL 0x005591d5                       ; 0055906e
         ;   XREF to: 005591d5 (CONDITIONAL_JUMP)  ; LAB_005591d5
-    MOV EDI,dword ptr [0x020af5c8]      ; 00559074 | DAT_020af5c8
+    MOV EDI,dword ptr [0x020af5c8]      ; 00559074 | g_RaytraceStateStackDepth
         ;   Label: LAB_00559074
     DEC EDI                             ; 0055907a
-    MOV dword ptr [0x020af5c8],EDI      ; 0055907b | DAT_020af5c8
+    MOV dword ptr [0x020af5c8],EDI      ; 0055907b | g_RaytraceStateStackDepth
     LEA EAX,[EDI*0x4 + 0x0]             ; 00559081
     ADD EAX,EDI                         ; 00559088
     MOV EDI,0x20af5cc                   ; 0055908a
@@ -153,10 +153,10 @@ section .text
         ;   Label: LAB_005591d5
     MOV ESI,0x42a                       ; 005591da
     PUSH 0x5f0f21                       ; 005591df | = "CDemonSet::popRaytraceState - stack e..."
-    MOV dword ptr [0x01d1d400],ECX      ; 005591e4 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005591ea | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005591f0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 005591e4 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 005591ea | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005591f0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005591f5
     JMP 0x00559074                      ; 005591f8
         ;   XREF to: 00559074 (UNCONDITIONAL_JUMP)  ; LAB_00559074

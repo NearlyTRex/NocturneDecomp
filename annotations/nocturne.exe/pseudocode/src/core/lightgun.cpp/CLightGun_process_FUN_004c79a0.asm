@@ -189,7 +189,7 @@ section .text
         ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 004c7b6a
     PUSH 0x0                            ; 004c7b6d
-    MOV EBP,dword ptr [0x005c15b8]      ; 004c7b6f | DAT_005c15b8
+    MOV EBP,dword ptr [0x005c15b8]      ; 004c7b6f | g_CWeatherPtr
     PUSH 0x3dcccccd                     ; 004c7b75
     PUSH EBP                            ; 004c7b7a
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 ; 004c7b7b

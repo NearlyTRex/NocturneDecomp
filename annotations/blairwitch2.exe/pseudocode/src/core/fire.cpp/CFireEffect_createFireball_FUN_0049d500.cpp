@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0049d500(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle)
 
 {
@@ -15,12 +13,12 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0049d500(CFireEffect *
   int iVar2;
   CFireball *this_ptr_00;
   
-  iVar1 = _DAT_01c913d0;
-  iVar2 = _DAT_01c913d0 + 1;
-  this_ptr_00 = g_FireballPool + _DAT_01c913d0;
-  _DAT_01c913d0 = iVar2;
+  iVar1 = g_FireballAllocIndex;
+  iVar2 = g_FireballAllocIndex + 1;
+  this_ptr_00 = g_FireballPool + g_FireballAllocIndex;
+  g_FireballAllocIndex = iVar2;
   if (0x3f < iVar2) {
-    _DAT_01c913d0 = 0;
+    g_FireballAllocIndex = 0;
   }
   (*(g_FireballPool[iVar1].base.vtable)->setup)(&this_ptr_00->base,position,velocity);
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0xc000,0xffff);

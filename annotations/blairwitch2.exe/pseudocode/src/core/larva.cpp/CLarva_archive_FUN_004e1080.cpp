@@ -10,7 +10,7 @@ void __cdecl core_larva_cpp_CLarva_archive_FUN_004e1080(CLarva *this_ptr)
 
 {
   core_enemy_cpp_CEnemy_archive_FUN_00487ec0(&this_ptr->base);
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).speed,"?speed" + 1);
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0
             (&(this_ptr->base).base.model,"modelName");
   if (g_CLarvaClassVersion < 2) {

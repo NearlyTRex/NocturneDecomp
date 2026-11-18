@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_005812ac = 0.200000000000000
 ;   float FLOAT_005812b4 = -0.2000000
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CGame* g_CGamePtr = 01c775ec
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 00487a93
     PUSH 0x3f800000                     ; 00487a94
     PUSH EBX                            ; 00487a99
-    MOV EBP,dword ptr [0x005b80f0]      ; 00487a9a | g_CFireEffect_PTR_005b80f0
+    MOV EBP,dword ptr [0x005b80f0]      ; 00487a9a | g_CFireEffectPtr
     PUSH EBP                            ; 00487aa0
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00487aa1
         ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)

@@ -12,7 +12,7 @@
 ;   crt_fstream.cpp_ofstream_ctor_FUN_0056536a at 00565378
 ;
 ; Referenced Globals:
-;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4a18
+;   WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout
 ;   void* PTR_crt_fstream.cpp_fstreambase_dtor_FUN_0056b810_005a4a24 = 0056b810
 ;   void* PTR_crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_0056b7f8_005a4a2c = 0056b7f8
 ;
@@ -58,7 +58,7 @@ section .text
     MOV EAX,EBX                         ; 0056b8e4
     POP EBX                             ; 0056b8e6
     RET                                 ; 0056b8e7
-    MOV dword ptr [EBX],0x5a4a18        ; 0056b8e8 | g_WatcomVirtualBaseDescriptor_005a4a18
+    MOV dword ptr [EBX],0x5a4a18        ; 0056b8e8 | g_FStreamBase_VirtualBaseLayout
         ;   Label: LAB_0056b8e8
     ADD EBX,0x48                        ; 0056b8ee
     PUSH EBX                            ; 0056b8f1

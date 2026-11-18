@@ -6,20 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004a2560(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 {
+  CSmokeParticle *this_ptr_00;
   int iVar1;
   
-  iVar1 = _DAT_01c74e9c * 0x2c;
-  _DAT_01c74e9c = _DAT_01c74e9c + 1;
-  if (0x7ff < _DAT_01c74e9c) {
-    _DAT_01c74e9c = 0;
+  iVar1 = g_SmokeParticleAllocIndex + 1;
+  this_ptr_00 = g_SmokeParticlePool + g_SmokeParticleAllocIndex;
+  g_SmokeParticleAllocIndex = iVar1;
+  if (0x7ff < iVar1) {
+    g_SmokeParticleAllocIndex = 0;
   }
   core_fire_cpp_CSmokeParticle_init_FUN_00496d60
-            ((CSmokeParticle *)(&DAT_01c74ea0 + iVar1),position,drag_factor,wind_influence,
-             alpha_value);
+            (this_ptr_00,position,drag_factor,wind_influence,alpha_value);
   return;
 }

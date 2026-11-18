@@ -9,18 +9,18 @@
 CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00436ec0(CChain *this_ptr,uint flags)
 
 {
-  CChain *pCVar1;
-  void *ptr;
+  CChain *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CChainTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CChainTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CChain *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
+  ptr = (CChain *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005c0344(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

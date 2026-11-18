@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_0042cd70 at 0042d103
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042d103
 ;   core_script.cpp_CScript_resetDialogState_FUN_00530500 at 0053050a
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052bcea
 ;

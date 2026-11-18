@@ -2,41 +2,39 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 20,
+    "complexity_score": 4,
     "cross_reference_count": 10,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 8
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 7
   },
   "cross_references": [
     {
       "addr": "0050ba70",
       "from_addr": "0050c805",
-      "name": "core_menu.cpp_FUN_0050ba70",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057cb30",
       "from_addr": "0057cb6c",
-      "name": "core_sound.cpp_FUN_0057cb30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00577f90",
-      "from_addr": "00578239",
-      "name": "sound_snddx.cpp_FUN_00577f90",
+      "name": "core_sound.cpp_CSound_findAllSoundFiles_FUN_0057cb30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005784b0",
       "from_addr": "005784b7",
-      "name": "sound_snddx.cpp_FUN_005784b0",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00577f90",
+      "from_addr": "00578239",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_00577f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -92,8 +90,8 @@
   "globals": [
     {
       "addr": "02c80658",
-      "name": "DAT_02c80658",
-      "type": "undefined4",
+      "name": "g_HasHardware3DSound",
+      "type": "int",
       "value": null
     }
   ],
@@ -142,14 +140,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

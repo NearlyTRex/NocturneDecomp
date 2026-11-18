@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CConstruct * __cdecl core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *this_ptr)
 
 {
   char cVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   CEnemy *pCVar4;
   void *dest;
   char *pcVar5;
@@ -24,17 +22,17 @@ CConstruct * __cdecl core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *
   dest = __arrinit
                    (&pCVar4[1].base.base.previous_transform_state.position.y,0x18,
                     &g_SBoneGuyBoxTypeInfo);
-  pcVar5 = (char *)0x5d6d17;
+  pcVar5 = "none";
   *(CConstruct_full_vtable **)((int)dest + -0xc244) = &g_CConstructVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             ((CDeformableModelInstance *)((int)dest + -0xc240),"construct1.dfm");
-  uVar2 = _DAT_005fddc0;
+  fVar2 = 50.0f;
   pcVar7 = (char *)((int)dest + -0x130);
   *(uint *)((int)dest + -0x93ac) = 0x3f19999a;
-  uVar3 = _DAT_005fddc4;
+  fVar3 = 100.0f;
   *(uint *)((int)dest + -0x93a8) = 0x40000000;
-  *(uint *)((int)dest + -0x93a4) = uVar2;
-  *(uint *)((int)dest + -0x93a0) = uVar3;
+  *(float *)((int)dest + -0x93a4) = fVar2;
+  *(float *)((int)dest + -0x93a0) = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar7 = cVar1;
@@ -44,7 +42,7 @@ CConstruct * __cdecl core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  pcVar6 = (char *)0x5d6d1c;
+  pcVar6 = "none";
   pcVar7 = (char *)((int)dest + -0x70);
   pcVar5 = pcVar7;
   do {

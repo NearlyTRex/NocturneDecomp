@@ -28,7 +28,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
   uint local_38;
   int local_18;
   
-  if (_DAT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 2397;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::compute - must be locked!");
@@ -57,7 +57,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
       local_18 = 8;
     }
     sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(this_ptr);
-    if ((this_ptr->options).delay_remaining == _DAT_005a2148) {
+    if ((this_ptr->options).delay_remaining == -1) {
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
                   (g_CConsolePtr,"  auto computing delay...\n");
@@ -75,25 +75,25 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
                 (g_CConsolePtr,"  freq = %5.2f\n",(double)this_ptr->effective_frequency);
     }
     if (((this_ptr->options).flags & 1) == 0) {
-      dVar7 = (this_ptr->options).position.x - _DAT_02dc78e0;
-      dVar5 = (this_ptr->options).position.y - _DAT_02dc78e8;
-      dVar6 = (this_ptr->options).position.z - _DAT_02dc78f0;
+      dVar7 = (this_ptr->options).position.x - g_DOUBLE_02dc78e0;
+      dVar5 = (this_ptr->options).position.y - g_DOUBLE_02dc78e8;
+      dVar6 = (this_ptr->options).position.z - g_DOUBLE_02dc78f0;
       dVar4 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);
       if (this_ptr->is_active == 1) {
         local_38 = SUB84(__BITCAST_UINT64(dVar4),0);
         engine_console_cpp_CConsole_printf_FUN_0043ac60
                   (g_CConsolePtr,"  distToEar = %7.2fs\n",local_38);
       }
-      dVar8 = _DAT_02dc78f8 - (this_ptr->options).velocity.x;
-      dVar9 = _DAT_02dc7900 - (this_ptr->options).velocity.y;
-      dVar10 = _DAT_02dc7908 - (this_ptr->options).velocity.z;
+      dVar8 = g_DOUBLE_02dc78f8 - (this_ptr->options).velocity.x;
+      dVar9 = g_DOUBLE_02dc7900 - (this_ptr->options).velocity.y;
+      dVar10 = g_DOUBLE_02dc7908 - (this_ptr->options).velocity.z;
       if (dVar4 <= 0.0) {
         dVar4 = SQRT(dVar10 * dVar10 + dVar9 * dVar9 + dVar8 * dVar8);
       }
       else {
         dVar4 = (dVar6 * dVar10 + dVar5 * dVar9 + dVar7 * dVar8) / dVar4;
       }
-      local_60 = (dVar4 * _DAT_005bea80 + _DAT_005a2150) / _DAT_005a2150;
+      local_60 = (dVar4 * g_Cached3DDistanceFactor + 1116.4000000000001) / 1116.4000000000001;
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
                   (g_CConsolePtr,"  doppler = %5.2f\n",(uint)local_60);
@@ -121,7 +121,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
                 (g_CConsolePtr,"  vol = %5.2f\n",(double)(this_ptr->options).current_volume);
     }
     sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < DAT_005bea68)) {
+    if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < g_AudioChannelCount)) {
       do {
         iVar12 = iVar11 + 1;
         engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -130,7 +130,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
                                          0x1f)) * pCVar13->channel_volumes[0]));
         iVar11 = iVar12;
         pCVar13 = (CSfxSlot *)&(pCVar13->options).position;
-      } while (iVar12 < DAT_005bea68);
+      } while (iVar12 < g_AudioChannelCount);
     }
     if (this_ptr->effective_frequency < (float)(1.0 / _FLOAT_005a2160)) {
       this_ptr->effective_frequency = (float)(1.0 / _FLOAT_005a2160);
@@ -142,9 +142,9 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,f
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (g_CConsolePtr,"  effFreq = %5.2f\n",(double)this_ptr->effective_frequency);
     }
-    if (((local_18 != 0) && (_DAT_02dc8318 != (int *)0x0)) &&
+    if (((local_18 != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
        (this_ptr->hardware_buffer_handle != 0)) {
-      (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,local_18);
+      (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,local_18);
     }
     return 1;
   }

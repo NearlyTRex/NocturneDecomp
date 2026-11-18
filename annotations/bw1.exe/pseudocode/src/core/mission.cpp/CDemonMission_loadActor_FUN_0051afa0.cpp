@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_0051afa0(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )
 
 {
@@ -17,15 +15,9 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_0051afa0(CDem
   char local_dc [200];
   CDemonActor *local_14;
   
-  if (current_actor == (CDemonActor *)0x0) {
-    current_actor = (CDemonActor *)"(unknown)";
-  }
-  if (property_description == (char *)0x0) {
-    property_description = "(unknown)";
-  }
   do {
     iVar2 = _fgetc(file);
-  } while (((&DAT_00626114)[(byte)((char)iVar2 + 1)] & 2) != 0);
+  } while ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 2) != 0);
   if (iVar2 == 0x22) {
     iVar2 = _fgetc(file);
     if (iVar2 != 0x22) {
@@ -52,15 +44,14 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_0051afa0(CDem
   }
   else {
     _ungetc(iVar2,file);
-    iVar2 = _fscanf(file,&DAT_005e9697);
+    iVar2 = _fscanf(file,"%x");
     pCVar1 = local_14;
     if (iVar2 == 1) goto LAB_0051b028;
   }
   do {
-    _DAT_01d1d400 = "..\\core\\mission.cpp";
-    _DAT_01d1d404 = 0x234;
-    core_main_c_FUN_005030e0("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description)
-    ;
+    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
+    g_INT_01d1d404 = 0x234;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Error reading actor pointer.\nOwner: %s\nDescription: %s\n");
     pCVar1 = unaff_ESI;
 LAB_0051b028:
     while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {

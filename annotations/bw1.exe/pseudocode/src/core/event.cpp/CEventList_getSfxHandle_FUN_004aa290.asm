@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004a70d0 at 004a8d9d
-;   core_event.cpp_FUN_004a1d00 at 004a3a25
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a3a25
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findSfxEntry_FUN_004aa3b0

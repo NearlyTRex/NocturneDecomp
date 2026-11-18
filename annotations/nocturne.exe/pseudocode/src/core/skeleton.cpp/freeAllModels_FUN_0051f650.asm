@@ -10,7 +10,7 @@
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 at 0051f737
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0268cef0
+;   int g_DeformableModelCount
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0
@@ -34,7 +34,7 @@ section .text
     JNZ 0x0051f65d                      ; 0051f66e
         ;   XREF to: 0051f65d (CONDITIONAL_JUMP)  ; LAB_0051f65d
     XOR EDX,EDX                         ; 0051f670
-    MOV dword ptr [0x0268cef0],EDX      ; 0051f672 | DAT_0268cef0
+    MOV dword ptr [0x0268cef0],EDX      ; 0051f672 | g_DeformableModelCount
     POP ESI                             ; 0051f678
     POP EBX                             ; 0051f679
     RET                                 ; 0051f67a

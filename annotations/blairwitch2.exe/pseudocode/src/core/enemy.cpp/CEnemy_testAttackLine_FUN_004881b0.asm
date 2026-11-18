@@ -15,8 +15,8 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00419056
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2db9
-;   undefined4 DAT_005d2dc1
+;   double g_DOUBLE_005d2db9 = 1.20000000000000
+;   double g_DOUBLE_005d2dc1 = 0.25
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
@@ -72,11 +72,11 @@ section .text
     JNC 0x004881c9                      ; 00488206
         ;   XREF to: 004881c9 (CONDITIONAL_JUMP)  ; LAB_004881c9
     FLD double ptr [ESP]                ; 00488208
-    FMUL double ptr [0x005d2db9]        ; 0048820b | DAT_005d2db9
-    FMUL double ptr [0x005d2dc1]        ; 00488211 | DAT_005d2dc1
+    FMUL double ptr [0x005d2db9]        ; 0048820b | g_DOUBLE_005d2db9
+    FMUL double ptr [0x005d2dc1]        ; 00488211 | g_DOUBLE_005d2dc1
     PUSH 0x0                            ; 00488217
     CALL crt_math.c_round_FUN_005b7ff0  ; 00488219
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 0048821e
     MOV EDI,dword ptr [ESP + 0x18]      ; 00488222
     PUSH EDI                            ; 00488226

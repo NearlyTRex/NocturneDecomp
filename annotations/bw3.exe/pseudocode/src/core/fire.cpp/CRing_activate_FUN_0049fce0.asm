@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,undefined4 *param_2,int param_3,CCharacter *param_4)
+; void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner)
 ;
 ; Parameters:
 ; CRing *          Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
+; CVector3f *      Stack[0x8]:4   position
+; int              Stack[0xc]:4   ring_type
+; CCharacter *     Stack[0x10]:4   owner
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -16,13 +16,13 @@
 ;   core_fire.cpp_CFireEffect_createRing_FUN_004a3f70 at 004a3f9d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0900
+;   double g_DOUBLE_005c0900 = 0.392699081687500
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
-;   core_setcolid.cpp_FUN_0053bc80
+;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 0049fd0e
     MOV EDX,dword ptr [0x00603b28]      ; 0049fd0f | g_CDemonSetPtr
     PUSH EDX                            ; 0049fd15 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053bc80 ; 0049fd16
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053bc80()
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80 ; 0049fd16
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x18],EAX      ; 0049fd1b
     FLD float ptr [ESP + 0x18]          ; 0049fd1f
     ADD ESP,0xc                         ; 0049fd23
@@ -95,7 +95,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 0049fd76
         ;   Label: LAB_0049fd76
     FILD dword ptr [ESP + 0xc]          ; 0049fd7a
-    FMUL double ptr [0x005c0900]        ; 0049fd7e | DAT_005c0900
+    FMUL double ptr [0x005c0900]        ; 0049fd7e | g_DOUBLE_005c0900
     FLD ST0                             ; 0049fd84
     FCOS                                ; 0049fd86
     FXCH                                ; 0049fd88

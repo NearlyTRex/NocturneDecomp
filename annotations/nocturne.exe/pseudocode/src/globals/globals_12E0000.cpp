@@ -4,6 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x12E0000
 // =============================================================================
 
-// void*
-void* g_VOID_PTR_012e1778 = {};
+// SFogImagePlane[16]
+SFogImagePlane g_CameraImageDecompressBuffer[16] = {};
 

@@ -44,7 +44,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   bVar6 = 0;
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
   pCStack_20 = pCVar2;
-  core_motion_cpp_FUN_00504080
+  core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00504080
             (&this_ptr->base,motion_index,animation_time,(int *)(afStack_70 + 0x11),
              (int *)(afStack_70 + 0x12),&stack0xffffff78);
   bone_index = 0;

@@ -13,7 +13,7 @@
 ;   undefined4 s_CMotionController_005bb246+0xa
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd8b28
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -46,7 +46,7 @@ section .text
     POP ESI                             ; 004e25ec
     POP EBX                             ; 004e25ed
     RET                                 ; 004e25ee
-    PUSH 0x1cd8b28                      ; 004e25ef | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e25ef | g_CurrentMp3Filename
         ;   Label: LAB_004e25ef
     PUSH ESI                            ; 004e25f4
     PUSH EBX                            ; 004e25f5

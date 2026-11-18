@@ -13,14 +13,14 @@
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a166
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00418014
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426b32
-;   core_charactr.cpp_FUN_0042cd70 at 0042cdec
+;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70 at 0042cdec
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 004435a7
 ;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 0044537d
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598c15
 ;   ... and 30 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1fcc
+;   double g_DeformableModelTweenThreshold = 0.00100000000000000
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 0054c1b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     FLD float ptr [EBX + 0x14]          ; 0054c144
     ADD ESP,0x10                        ; 0054c147
-    FCOMP double ptr [0x005d1fcc]       ; 0054c14a | DAT_005d1fcc
+    FCOMP double ptr [0x005d1fcc]       ; 0054c14a | g_DeformableModelTweenThreshold
     FNSTSW AX                           ; 0054c150
     SAHF                                ; 0054c152
     JA 0x0054c157                       ; 0054c153

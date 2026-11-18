@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004739e0(CEditorTools *this_ptr,CVector3f *world_point,int line_length)
 
 {
   SProjectedVertex local_40 [2];
   CVector3i local_10;
   
-  local_10.x = (int)ROUND(world_point->x * _DAT_0059ca4c);
-  local_10.y = (int)ROUND(world_point->y * _DAT_0059ca4c);
-  local_10.z = (int)ROUND(world_point->z * _DAT_0059ca4c);
+  local_10.x = (int)ROUND(world_point->x * 256.0f);
+  local_10.y = (int)ROUND(world_point->y * 256.0f);
+  local_10.z = (int)ROUND(world_point->z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c(local_40,&local_10);
   if ((local_40[0].screen_x & 0x80000000U) != 0) {
     return;

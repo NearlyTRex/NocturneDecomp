@@ -14,15 +14,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005dfc3e
 ;   TerminatedCString s_Out_of_memory_005dfc53
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0
+;   engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040d970
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
-;   engine_alphabit.cpp_FUN_0040d970
 ;
 ; *****************************************************************************
 
@@ -98,12 +98,12 @@ section .text
     LEA ESI,[EBX + 0x88]                ; 004bc370
     PUSH ESI                            ; 004bc376
     CALL engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0 ; 004bc377
-        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap * this_ptr, int param_2, int param_3)
+        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004bc37c
     PUSH 0x0                            ; 004bc37f
     PUSH ESI                            ; 004bc381
-    CALL engine_alphabit.cpp_FUN_0040d970 ; 004bc382
-        ;   XREF to: 0040d970 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d970()
+    CALL engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040d970 ; 004bc382
+        ;   XREF to: 0040d970 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_fillOpa_FUN_0040d970(CAlphaBitmap * this_ptr, int value)
     ADD ESP,0x8                         ; 004bc387
     MOV ESI,dword ptr [EBX + 0x9c]      ; 004bc38a
     XOR ECX,ECX                         ; 004bc390
@@ -162,10 +162,10 @@ section .text
         ;   Label: LAB_004bc428
     MOV EDX,0x783                       ; 004bc42d
     PUSH 0x5dfc53                       ; 004bc432 | = "Out of memory!"
-    MOV [0x01d1d400],EAX                ; 004bc437 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 004bc43c | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004bc442
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 004bc437 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 004bc43c | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bc442
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bc447
     JMP 0x004bc31b                      ; 004bc44a
         ;   XREF to: 004bc31b (UNCONDITIONAL_JUMP)  ; LAB_004bc31b

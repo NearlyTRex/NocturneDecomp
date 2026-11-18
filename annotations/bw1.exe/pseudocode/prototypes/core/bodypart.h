@@ -29,9 +29,9 @@ CBodyPart * __cdecl CBodyPart::ctor(CBodyPart *this_ptr);
 // Address: 00418c70
 CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
 
-// Original: core_bodypart.cpp_setCounts_FUN_00418d00
+// Original: core_bodypart.cpp_CBodyPart_setCounts_FUN_00418d00
 // Address: 00418d00
-void setCounts(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CBodyPart::setCounts(CBodyPart *this_ptr,int vertex_count,int tri_count);
 
 // Original: core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00418e50
 // Address: 00418e50
@@ -71,7 +71,7 @@ ECollisionType __cdecl CBodyPart::getCollisionType(CBodyPart *this_ptr,SCollisio
 
 // Original: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419ab0
 // Address: 00419ab0
-CBoundingBox3D * __cdecl CBodyPart::getBoundingBox(CBodyPart *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBodyPart::getBoundingBox(CBodyPart *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bodypart.cpp_CBodyPart_canPickup_FUN_00419ae0
 // Address: 00419ae0
@@ -113,9 +113,9 @@ void __cdecl CBodyPart::addFire(CBodyPart *this_ptr,CVector3f *position);
 // Address: 0041ac60
 int __cdecl CBodyPart::addTexture(CBodyPart *this_ptr,char *texture_name);
 
-// Original: core_bodypart.cpp_FUN_0041ad40
+// Original: core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041ad40
 // Address: 0041ad40
-void FUN_0041ad40(int param_1);
+void __cdecl CBodyPart::setupPhysicsBox(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041aef0
 // Address: 0041aef0
@@ -129,21 +129,21 @@ int __cdecl CBodyPart::getAllowedMeleeAttackTypes(CBodyPart *this_ptr);
 // Address: 0041af50
 void __cdecl CBodyPart::fillAttackDamageInfo(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
-// Original: core_bodypart.cpp_FUN_0041afa0
+// Original: core_bodypart.cpp_scaleVector_FUN_0041afa0
 // Address: 0041afa0
-void FUN_0041afa0(float *param_1,float *param_2);
+CVector3f * __stack2_esi scaleVector(CVector3f *src,float *scalar,CVector3f *dst);
 
-// Original: core_bodypart.cpp_FUN_0041afe0
+// Original: core_bodypart.cpp_subtractVector_FUN_0041afe0
 // Address: 0041afe0
-void FUN_0041afe0(float *param_1,float *param_2);
+CVector3f * __stack2_esi subtractVector(CVector3f *a,CVector3f *b,CVector3f *dst);
 
-// Original: core_bodypart.cpp_FUN_0041b020
+// Original: core_bodypart.cpp_addVector_FUN_0041b020
 // Address: 0041b020
-void FUN_0041b020(float *param_1,float *param_2);
+CVector3f * __stack2_esi addVector(CVector3f *a,CVector3f *b,CVector3f *dst);
 
-// Original: core_bodypart.cpp_FUN_0041b080
+// Original: core_bodypart.cpp_boundingBoxExtent_FUN_0041b080
 // Address: 0041b080
-void FUN_0041b080(float *param_1);
+CBoundingBox3D * __stack_esi boundingBoxExtent(CBoundingBox3D *src,CBoundingBox3D *dst);
 
 // Original: core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b130
 // Address: 0041b130
@@ -157,6 +157,6 @@ SBodyPartFire * __cdecl SBodyPartFire::dtor(SBodyPartFire *this_ptr,uint flags);
 // Address: 0041b170
 SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041b190
+// Original: core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_0041b190
 // Address: 0041b190
-void FUN_0041b190(void *param_1);
+SBodyPartFire * __cdecl SBodyPartFire::arrdtor2(SBodyPartFire *this_ptr,uint flags);

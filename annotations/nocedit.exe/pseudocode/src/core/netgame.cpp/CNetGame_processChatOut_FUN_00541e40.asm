@@ -25,7 +25,7 @@
 ;   undefined4 g_ChatOutMessages[0].ack_flags+1
 ;   undefined4 g_ChatOutMessages[0].player_timestamps[0]
 ;   undefined4 g_ChatOutMessages[0].player_timestamps[1]
-;   int INT_02f9c0bc
+;   int g_ChatOutSequence
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -81,11 +81,11 @@ section .text
     MOV EAX,0x20000                     ; 00541eb9
     ADD EDI,EAX                         ; 00541ebe
         ;   Label: LAB_00541ebe
-    MOV EAX,[0x02f9c0bc]                ; 00541ec0 | INT_02f9c0bc
+    MOV EAX,[0x02f9c0bc]                ; 00541ec0 | g_ChatOutSequence
     PUSH 0x2                            ; 00541ec5
     INC EAX                             ; 00541ec7
     PUSH 0x1                            ; 00541ec8
-    MOV [0x02f9c0bc],EAX                ; 00541eca | INT_02f9c0bc
+    MOV [0x02f9c0bc],EAX                ; 00541eca | g_ChatOutSequence
     MOV dword ptr [EBP + 0x4],EAX       ; 00541ecf | g_ChatOutMessages[0].sequence_number
     LEA EAX,[EBP + 0x8]                 ; 00541ed2
     PUSH EAX                            ; 00541ed5

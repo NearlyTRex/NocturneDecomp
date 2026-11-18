@@ -13,16 +13,16 @@
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc385
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8f94
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40 at 004ccc5c
-;   core_inv.cpp_FUN_004fae10 at 004fb6b2
+;   core_inv.cpp_CInventory_renderAllItems_FUN_004fae10 at 004fb6b2
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20 at 00509eed
 ;   core_script.cpp_CScript_renderSubtitles_FUN_005439b0 at 00543b59
 ;   engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0 at 00406140
 ;   ... and 16 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006104f0
-;   undefined4 DAT_0061b4b8
-;   undefined4 DAT_00713a80
+;   int g_CurrentRenderColor = 0xffffff
+;   int g_CurrentAlphaValue = 0xff
+;   int g_CurrentInvertedColor
 ;
 ; *****************************************************************************
 
@@ -48,9 +48,9 @@ section .text
     OR ECX,EAX                          ; 00406bf6
     MOV EAX,ECX                         ; 00406bf8
     XOR EAX,0xffffff                    ; 00406bfa
-    MOV dword ptr [0x006104f0],ECX      ; 00406bff | DAT_006104f0
-    MOV [0x00713a80],EAX                ; 00406c05 | DAT_00713a80
-    MOV dword ptr [0x0061b4b8],EDX      ; 00406c0a | DAT_0061b4b8
+    MOV dword ptr [0x006104f0],ECX      ; 00406bff | g_CurrentRenderColor
+    MOV [0x00713a80],EAX                ; 00406c05 | g_CurrentInvertedColor
+    MOV dword ptr [0x0061b4b8],EDX      ; 00406c0a | g_CurrentAlphaValue
     RET                                 ; 00406c10
     XOR EDX,EDX                         ; 00406c11
         ;   Label: LAB_00406c11

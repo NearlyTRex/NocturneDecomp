@@ -12,9 +12,8 @@ CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_0058df90(CWinFont *this_
   CWinFont *pCVar1;
   HFONT pHVar2;
   
-  pCVar1 = (CWinFont *)core_npc_cpp_FUN_00510ca0(&this_ptr->base);
-  (pCVar1->base).vtable =
-       (CFont_vtable *)&PTR_engine_winfont_cpp_CWinFont_dtor_FUN_0058e050_005fe274;
+  pCVar1 = (CWinFont *)engine_palette_cpp_CFont_ctor_FUN_00510ca0(&this_ptr->base);
+  (pCVar1->base).vtable = &g_CFont_vtable_005fe274;
   pCVar1->device_context_handle = (HDC)0x0;
   pCVar1->font_handle = (HFONT)0x0;
   pCVar1->object_handle = (HGDIOBJ)0x0;

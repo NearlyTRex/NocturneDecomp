@@ -15,7 +15,7 @@ section .text
     PUSH 0xd09c                         ; 00593da0
         ;   Label: core_tawiscara.cpp_factoryFuncTawiscara_FUN_00593da0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00593da5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 00593daa
     TEST EAX,EAX                        ; 00593dad
     JNZ 0x00593db2                      ; 00593daf

@@ -11,7 +11,7 @@ void __cdecl core_barrier_cpp_CBarrier_archive_FUN_00411800(CBarrier *this_ptr)
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->size,"size");
-  if (g_INT_005acf80 < 2) {
+  if (g_CBarrierClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0

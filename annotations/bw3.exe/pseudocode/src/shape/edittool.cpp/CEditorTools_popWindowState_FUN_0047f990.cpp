@@ -6,36 +6,38 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(CEditorTools *this_ptr)
 
 {
+  void *ptr;
   int iVar1;
   
-  if (_DAT_01c5b104 < 1) {
-    _DAT_01d71de0 = "..\\shape\\edittool.cpp";
-    _DAT_01d71de4 = 0x916;
-    core_main_c_FUN_004e4330("CEditorTools::popWindow() called but no window was opened!");
+  if (g_WindowStackCount < 1) {
+    g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
+    g_INT_01d71de4 = 0x916;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("CEditorTools::popWindow() called but no window was opened!");
   }
-  _DAT_01c5b104 = _DAT_01c5b104 + -1;
-  iVar1 = _DAT_01c5b104 * 0x1f8;
-  if (*(int *)(iVar1 + 0x1c5b2e0) != 0) {
-    FUN_005a3770(*(int *)(iVar1 + 0x1c5b2e0));
-    *(uint *)(iVar1 + 0x1c5b2e0) = 0;
+  g_WindowStackCount = g_WindowStackCount + -1;
+  iVar1 = g_WindowStackCount * 0x1f8;
+  ptr = *(void **)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1d8);
+  if (ptr != (void *)0x0) {
+    debugFree(ptr);
+    *(uint *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1d8) = 0;
   }
   engine_mini3d_cpp_setRenderViewport_FUN_004ed020
-            (*(float *)(iVar1 + 0x1c5b128),*(float *)(iVar1 + 0x1c5b12c),
-             *(float *)(iVar1 + 0x1c5b130),*(float *)(iVar1 + 0x1c5b134));
-  _DAT_01c6b5a8 = *(uint *)(iVar1 + 0x1c5b118);
-  _DAT_01c6b5ac = *(uint *)(iVar1 + 0x1c5b11c);
-  _DAT_01c6b5b0 = *(uint *)(iVar1 + 0x1c5b120);
-  _DAT_01c6b5b4 = *(uint *)(iVar1 + 0x1c5b124);
-  _DAT_01c6b598 = *(uint *)(iVar1 + 0x1c5b138);
-  _DAT_01c6b59c = *(uint *)(iVar1 + 0x1c5b13c);
-  _DAT_01c6b5a0 = *(uint *)(iVar1 + 0x1c5b140);
-  _DAT_01c6b5a4 = *(uint *)(iVar1 + 0x1c5b144);
-  _DAT_01c6b5b8 = *(uint *)(iVar1 + 0x1c5b148);
-  _DAT_01c6b5bc = *(uint *)(iVar1 + 0x1c5b14c);
+            (*(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x20),
+             *(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x24),
+             *(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x28),
+             *(float *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x2c));
+  g_INT_01c6b5a8 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x10);
+  g_INT_01c6b5ac = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x14);
+  g_INT_01c6b5b0 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x18);
+  g_INT_01c6b5b4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1c);
+  g_INT_01c6b598 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x30);
+  g_INT_01c6b59c = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x34);
+  g_INT_01c6b5a0 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x38);
+  g_INT_01c6b5a4 = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x3c);
+  g_ViewportWidth = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x40);
+  g_ViewportHeight = *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x44);
   return;
 }

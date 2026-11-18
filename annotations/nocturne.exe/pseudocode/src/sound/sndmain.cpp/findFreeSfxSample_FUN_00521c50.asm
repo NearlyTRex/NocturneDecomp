@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc1ed8
+;   int g_LastSampleAccessIndex
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;
@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02dc1ed8]      ; 00521c50 | DAT_02dc1ed8
+    MOV EDX,dword ptr [0x02dc1ed8]      ; 00521c50 | g_LastSampleAccessIndex
         ;   Label: sound_sndmain.cpp_findFreeSfxSample_FUN_00521c50
     XOR EAX,EAX                         ; 00521c56
     INC EDX                             ; 00521c58
@@ -33,7 +33,7 @@ section .text
     JL 0x00521c58                       ; 00521c73
         ;   XREF to: 00521c58 (CONDITIONAL_JUMP)  ; LAB_00521c58
     XOR EAX,EAX                         ; 00521c75
-    MOV dword ptr [0x02dc1ed8],EDX      ; 00521c77 | DAT_02dc1ed8
+    MOV dword ptr [0x02dc1ed8],EDX      ; 00521c77 | g_LastSampleAccessIndex
     RET                                 ; 00521c7d
     CMP dword ptr [ECX + 0x2dc2008],0x0 ; 00521c7e | g_SfxSamples[1].ref_count
         ;   Label: LAB_00521c7e
@@ -41,6 +41,6 @@ section .text
         ;   XREF to: 00521c6f (CONDITIONAL_JUMP)  ; LAB_00521c6f
     MOV EAX,0x2dc1edc                   ; 00521c87
     ADD EAX,ECX                         ; 00521c8c
-    MOV dword ptr [0x02dc1ed8],EDX      ; 00521c8e | DAT_02dc1ed8
+    MOV dword ptr [0x02dc1ed8],EDX      ; 00521c8e | g_LastSampleAccessIndex
     RET                                 ; 00521c94
 

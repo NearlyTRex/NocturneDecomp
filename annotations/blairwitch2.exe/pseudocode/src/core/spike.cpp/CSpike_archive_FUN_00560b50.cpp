@@ -10,8 +10,7 @@ void __cdecl core_spike_cpp_CSpike_archive_FUN_00560b50(CSpike *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60
-            (&this_ptr->model,">modelName" + 1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60(&this_ptr->model,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->spike_type,"spikeType");
   core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->spike_state,"spikeState");
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->are_we_active,"areWeActive");

@@ -27,7 +27,7 @@ void __cdecl CMoon::free(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_update_FUN_005024a0
 // Address: 005024a0
-void __cdecl CMoon::update(CMoon *this_ptr,float param_2);
+void __cdecl CMoon::update(CMoon *this_ptr,float delta_time);
 
 // Original: core_moon.cpp_CMoon_render_FUN_00502510
 // Address: 00502510
@@ -37,14 +37,14 @@ void __cdecl CMoon::render(CMoon *this_ptr);
 // Address: 00502720
 CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor75(CAlphaBitmap *this_ptr,uint flags);
 
-// Original: core_moon.cpp_FUN_00502760
+// Original: core_moon.cpp_CMotionList_ctor_FUN_00502760
 // Address: 00502760
-undefined4 * FUN_00502760(undefined4 *param_1);
+CMotionList * __cdecl CMotionList::ctor(CMotionList *this_ptr);
 
-// Original: core_moon.cpp_FUN_00502790
+// Original: core_moon.cpp_CMotionList_dtor_FUN_00502790
 // Address: 00502790
-undefined4 FUN_00502790(undefined4 param_1);
+CMotionList * __cdecl CMotionList::dtor(CMotionList *this_ptr);
 
-// Original: core_moon.cpp_FUN_005027b0
+// Original: core_moon.cpp_CMotionList_free_FUN_005027b0
 // Address: 005027b0
-void FUN_005027b0(undefined4 *param_1);
+void __cdecl CMotionList::free(CMotionList *this_ptr);

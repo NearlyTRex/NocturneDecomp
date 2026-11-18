@@ -17,7 +17,7 @@
 ;   TerminatedCString s_core_dcamera_cpp_0057b704
 ;   TerminatedCString s_CDemonCamera_endScene_Sc_0057b718
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
@@ -91,7 +91,7 @@ section .text
         ;   XREF to: 00440a7a (CONDITIONAL_JUMP)  ; LAB_00440a7a
     MOV EBP,dword ptr [0x005ae704]      ; 00440ac0 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00440ac0
-    PUSH EBP                            ; 00440ac6 | DAT_01b4d738
+    PUSH EBP                            ; 00440ac6 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 00440ac7
         ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00440acc

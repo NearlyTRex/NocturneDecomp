@@ -11,7 +11,7 @@ CDarkwolf * __cdecl core_darkwolf_cpp_factoryFuncDarkwolf_FUN_00598750(void)
 {
   CDarkwolf *pCVar1;
   
-  pCVar1 = (CDarkwolf *)operator_new(0xdc98);
+  pCVar1 = operator_new(0xdc98);
   if (pCVar1 == (CDarkwolf *)0x0) {
     return (CDarkwolf *)0x0;
   }

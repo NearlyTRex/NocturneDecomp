@@ -18,7 +18,7 @@ void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00438790(void *dest_buffer,
   if (0 < height) {
     iVar1 = start_row + height;
     do {
-      iVar3 = DAT_0061b498 * start_row;
+      iVar3 = g_INT_0061b498 * start_row;
       start_row = start_row + 1;
       puVar4 = (uint *)(iVar3 + src_y + src_x);
       puVar5 = dest_buffer;

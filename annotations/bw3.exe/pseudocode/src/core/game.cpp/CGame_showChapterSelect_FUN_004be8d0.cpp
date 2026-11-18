@@ -1,0 +1,104 @@
+// Name: core_game.cpp_CGame_showChapterSelect_FUN_004be8d0
+// Address: 004be8d0
+// Address Range: [[004be8d0, 004beb7c]]
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004be8d0(CGame *this_ptr,int select_mode)
+
+#include "nocturne.h"
+
+void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004be8d0(CGame *this_ptr,int select_mode)
+
+{
+  char cVar1;
+  CBitFont *pCVar2;
+  _FILE *p_Var3;
+  int iVar4;
+  int load_flags;
+  char *pcVar5;
+  char *pcVar6;
+  CIniFile local_320;
+  char local_11c [260];
+  int local_18;
+  int local_14;
+  
+  p_Var3 = engine_dosio_cpp_getFile_FUN_004659c0
+                     (&g_CHAR_005c37de,"blairhero.pod","rb");
+  if (p_Var3 != (_FILE *)0x0) {
+    _fclose(p_Var3);
+  }
+  this_ptr->damageable_enemy_count = 0;
+  this_ptr->total_kill_count = 0;
+  this_ptr->total_game_time = 0.0;
+  this_ptr->total_play_time = 0.0;
+  this_ptr->end_timer = -1.0;
+  core_game_cpp_CGame_resetMusic_FUN_004c4d10(this_ptr);
+  pCVar2 = g_CBitFont_PTR_01c5b0e0;
+  g_CBitFont_PTR_01c5b0e0 = g_CBitFont_PTR_01549aa8;
+  this_ptr->is_loading = 0;
+  p_Var3 = _fopen("pod.ini","rt");
+  if (p_Var3 != (_FILE *)0x0) {
+    _fclose(p_Var3);
+  }
+  engine_ini_cpp_CIniFile_ctor_FUN_004d8a20(&local_320,"system\\bw3.ini","Game");
+  local_18 = 0;
+  engine_ini_cpp_CIniFile_getInteger_FUN_004d8c30(&local_320,"Act1Code",&local_18);
+  support_newmsg_cpp_getLocalizedString_FUN_00508960("The Rustin Parr Investigation");
+  local_14 = -1;
+  if (select_mode == 1 || p_Var3 != (_FILE *)0x0) {
+    iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70
+                      (g_CEditorToolsPtr,"Select mission to play","world",
+                       "*.msn",local_11c,0);
+    if (iVar4 == 0) goto LAB_004beb21;
+    g_ChapterDisplayName[0] = '\0';
+    g_OverlayDisplayTimer = 0.0;
+    g_ChapterDisplayYear = 0;
+  }
+  else {
+    pcVar6 = "town_act1.msn";
+    pcVar5 = local_11c;
+    do {
+      cVar1 = *pcVar6;
+      *pcVar5 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar6[1];
+      pcVar6 = pcVar6 + 2;
+      pcVar5[1] = cVar1;
+      pcVar5 = pcVar5 + 2;
+    } while (cVar1 != '\0');
+  }
+  core_fldnotes_cpp_CFieldNotes_clear_FUN_004ab7a0(g_CFieldNotesPtr);
+  core_event_cpp_CEventList_resetGameFlags_FUN_00494880(g_CEventListPtr);
+  load_flags = 1;
+  iVar4 = _stricmp(g_CurrentSaveFile,local_11c);
+  if (iVar4 != 0) {
+    pcVar5 = local_11c;
+    pcVar6 = g_CurrentSaveFile;
+    do {
+      cVar1 = *pcVar5;
+      *pcVar6 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
+    } while (cVar1 != '\0');
+    load_flags = 0;
+  }
+  core_level_cpp_CLevelLoader_show_FUN_004dfc50(g_CLevelLoaderPtr,10,0,local_14);
+  core_mission_cpp_CDemonMission_load_FUN_004f5bc0
+            (g_CDemonMission_PTR_00600530,local_11c,load_flags);
+  iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_004f7880
+                    (g_CDemonMission_PTR_00600530,(CCharacter *)0x0);
+  if (iVar4 != 0) {
+    core_mission_cpp_CDemonMission_startMission_FUN_004f7590(g_CDemonMission_PTR_00600530);
+    core_mission_cpp_CDemonMission_run_FUN_004f72a0(g_CDemonMission_PTR_00600530);
+    if (this_ptr->need_chapter_reload != 0) {
+      this_ptr->need_chapter_reload = 0;
+      core_game_cpp_CGame_loadGame_FUN_004bdfb0(this_ptr,this_ptr->chapter_reload_filename,1);
+    }
+  }
+LAB_004beb21:
+  g_CBitFont_PTR_01c5b0e0 = pCVar2;
+  engine_ini_cpp_CIniFile_dtor_FUN_004d8a50(&local_320,0);
+  return;
+}

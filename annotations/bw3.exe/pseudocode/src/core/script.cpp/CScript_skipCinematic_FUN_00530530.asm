@@ -18,12 +18,12 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01ed6810
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   char[2048] g_CHAR_ARRAY_01ed6810
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_script.cpp_CScript_resetDialogState_FUN_00530500
 ;   core_script.cpp_CScript_step_FUN_00529a70
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
@@ -83,20 +83,20 @@ section .text
     MOV EBP,0x5cfafc                    ; 005305a2 | = "..\\core\\script.cpp"
     MOV EAX,0x1030                      ; 005305a7
     MOV EDI,dword ptr [EBX + 0x44]      ; 005305ac
-    MOV [0x01d71de4],EAX                ; 005305af | DAT_01d71de4
+    MOV [0x01d71de4],EAX                ; 005305af | g_INT_01d71de4
     MOV EAX,dword ptr [EBX + 0x30]      ; 005305b4
-    MOV dword ptr [0x01d71de0],EBP      ; 005305b7 | DAT_01d71de0
+    MOV dword ptr [0x01d71de0],EBP      ; 005305b7 | g_CHAR_PTR_01d71de0
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 005305bd
     PUSH EDX                            ; 005305c0
     PUSH 0x5cfb0f                       ; 005305c1 | = "Infinite loop detected trying to skip..."
-    CALL core_main.c_FUN_004e4330       ; 005305c6
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005305c6
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005305cb
     JMP 0x00530560                      ; 005305ce
         ;   XREF to: 00530560 (UNCONDITIONAL_JUMP)  ; LAB_00530560
     MOV EAX,dword ptr [EBX + 0x30]      ; 005305d0
         ;   Label: LAB_005305d0
-    PUSH 0x1ed6810                      ; 005305d3 | DAT_01ed6810
+    PUSH 0x1ed6810                      ; 005305d3 | g_CHAR_ARRAY_01ed6810
     MOV EDX,dword ptr [EAX + EDI*0x8 + 0x4] ; 005305d8
     PUSH EDX                            ; 005305dc
     MOV ECX,dword ptr [EAX + EDI*0x8]   ; 005305dd

@@ -2,28 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 182,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 8,
+    "pseudocode_lines": 73,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "unknown_field",
+      "unrolled_memcpy"
     ],
-    "total_lines": 212
+    "total_lines": 213
   },
   "cross_references": [
     {
       "addr": "00518cd0",
       "from_addr": "00519e1e",
-      "name": "core_prye.cpp_FUN_00518cd0",
+      "name": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,35 +44,35 @@
     {
       "addr": "00408b40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408b40"
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b40"
     },
     {
       "addr": "00408bf0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408bf0"
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0"
     },
     {
       "addr": "0041e220",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041e220"
-    },
-    {
-      "addr": "0041f1e0",
-      "is_variadic": false,
-      "name": "core_boxactor.cpp_FUN_0041f1e0"
+      "name": "core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041e220"
     },
     {
       "addr": "004201a0",
       "is_variadic": false,
-      "name": "core_boxactor.cpp_FUN_004201a0"
+      "name": "core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_004201a0"
+    },
+    {
+      "addr": "0041f1e0",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041f1e0"
     }
   ],
   "globals": [
     {
       "addr": "005b7661",
-      "name": "DAT_005b7661",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005b7661",
+      "type": "double",
+      "value": "1.01000000000000"
     }
   ],
   "param_estimates": {
@@ -81,7 +81,7 @@
       {
         "call_addr": "00519e1e",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_00518cd0",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -274,24 +274,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 12,
       "match": "afStackY_1058",
       "severity": "moderate",
       "text": "float afStackY_1058 [1002];",
@@ -299,43 +283,83 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff58;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(float *)((int)local_68",
-      "severity": "moderate",
-      "text": "*(float *)((int)local_68 + ((uint)bVar7 * -2 + -1) * 4) = afStack_54[(uint)bVar7 * -2 + 6];",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "afStack_54[2] = (float)auStack_5c._4_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_70 = (float)local_44._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 43,
-      "match": "(float *)((int)local_68",
-      "severity": "moderate",
-      "text": "*(float *)((int)local_68 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4) =",
-      "type": "pointer_cast"
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if (local_68.x * (float)local_44._0_4_ + local_70 * afStack_54[2] + local_6c * afStack_54[3] < 0.0",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 45,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff58);",
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(CBoundingBox3D *)((int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&local_68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)&local_68",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_68 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_68 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 50,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 43
+    "total_lines": 46
   },
   "cross_references": [
     {
       "addr": "004ce580",
       "from_addr": "004cee2f",
-      "name": "core_game.cpp_FUN_004ce580",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004ce580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,13 +38,13 @@
   "globals": [
     {
       "addr": "02c74650",
-      "name": "DAT_02c74650",
+      "name": "g_CSfxSlot_ARRAY_02c745ec[0].playback_state",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c7476c",
-      "name": "DAT_02c7476c",
+      "name": "g_CSfxSlot_ARRAY_02c745ec[1].playback_state",
       "type": "undefined4",
       "value": null
     }
@@ -112,28 +112,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_02c74654",
-      "severity": "mild",
-      "text": "while ((*(int *)(&DAT_02c74654 + iVar1) == 0 || (*(int *)(&DAT_02c74650 + iVar1) == 0))) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02c745ec",
+      "severity": "moderate",
+      "text": "while ((*(int *)((int)g_CSfxSlot_ARRAY_02c745ec[0].distance_to_speakers + iVar2 + -8) == 0 ||",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_02c74650",
-      "severity": "mild",
-      "text": "while ((*(int *)(&DAT_02c74654 + iVar1) == 0 || (*(int *)(&DAT_02c74650 + iVar1) == 0))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_02c74650",
-      "severity": "mild",
-      "text": "return *(int *)(&DAT_02c74650 + iVar1) << 6 | uVar2;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02c745ec",
+      "severity": "moderate",
+      "text": "(iVar1 = *(int *)((int)g_CSfxSlot_ARRAY_02c745ec[0].distance_to_speakers + iVar2 + -0xc),",
+      "type": "pointer_cast"
     }
   ]
 }

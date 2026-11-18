@@ -11,18 +11,18 @@
 ;   core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a32c0 at 004a32cc
 ;   core_script.cpp_CScript_dtor_FUN_00521600 at 00521614
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760 at 0047c7dc
+;   shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0047c880 at 0047c926
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0047c7f0 at 0047c86c
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004820b0 at 00482104
-;   shape_edittool.cpp_FUN_0047c7f0 at 0047c86c
-;   shape_edittool.cpp_FUN_0047c880 at 0047c926
 ;
 ; Referenced Globals:
-;   undefined1* g_CStrListVTable = 00480d40
+;   CStrList_vtable g_CStrListVTable
 ;   WatcomTypeInfo g_CStrListTypeInfo
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;   shape_edittool.cpp_CStrList_clear_FUN_00480e10
 ;
 ; *****************************************************************************
@@ -53,16 +53,16 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00480d72
     PUSH EAX                            ; 00480d75
-    CALL crt_unknown.c_FUN_005b7fce     ; 00480d76
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 00480d76
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 00480d7b
     MOV EAX,EBX                         ; 00480d7e
     POP EBX                             ; 00480d80
     RET                                 ; 00480d81
     PUSH EBX                            ; 00480d82
         ;   Label: LAB_00480d82
-    CALL crt_unknown.c_FUN_005b7fdc     ; 00480d83
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 00480d83
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 00480d88
     MOV EAX,EBX                         ; 00480d8b
     POP EBX                             ; 00480d8d

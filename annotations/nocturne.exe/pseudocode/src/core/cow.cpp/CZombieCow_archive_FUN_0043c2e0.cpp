@@ -13,7 +13,7 @@ void __cdecl core_cow_cpp_CZombieCow_archive_FUN_0043c2e0(CZombieCow *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
             (&(this_ptr->base).base.model,"modelName");
-  if (g_INT_005ad3ac < 2) {
+  if (g_CZombieCowClassVersion < 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).guard_distance,"guardDistance");
   }

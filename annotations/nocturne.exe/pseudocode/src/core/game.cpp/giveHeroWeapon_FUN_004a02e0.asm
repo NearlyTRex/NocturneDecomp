@@ -17,7 +17,7 @@
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CWeaponActorType_02ddf970.name_hash
+;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -52,7 +52,7 @@ section .text
     PUSH EBX                            ; 004a030b
     CALL dword ptr [EAX]                ; 004a030c
     ADD ESP,0x4                         ; 004a030e
-    MOV EDI,dword ptr [0x02ddf9a8]      ; 004a0311 | g_CWeaponActorType_02ddf970.name_hash
+    MOV EDI,dword ptr [0x02ddf9a8]      ; 004a0311 | g_CWeaponClassInfo.name_hash
     PUSH EDI                            ; 004a0317
     PUSH EBX                            ; 004a0318
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004a0319

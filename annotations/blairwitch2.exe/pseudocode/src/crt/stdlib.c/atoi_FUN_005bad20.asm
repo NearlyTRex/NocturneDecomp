@@ -7,14 +7,14 @@
 ; char *           Stack[0x4]:4   string_ptr
 ;
 ; XREF[5]:
-;   core_hpatrol.cpp_FUN_0059c9c0 at 0059ca44
+;   core_hpatrol.cpp_findNextPatrolPoint_FUN_0059c9c0 at 0059ca44
 ;   core_texlist.cpp_CTextureList_load_FUN_005734b0 at 00573604
 ;   engine_ini.cpp_getProfileInteger_FUN_004d8840 at 004d88a4
 ;   wincore_winvideo.cpp_openMovie_FUN_00590e90 at 00590f11
 ;   wincore_winvideo.cpp_playMovie_FUN_00591190 at 00591270
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
         ;   Label: LAB_005bad25
     INC DL                              ; 005bad27
     AND EDX,0xff                        ; 005bad29
-    TEST byte ptr [EDX + 0x61ed94],0x2  ; 005bad2f | DAT_0061ed94
+    TEST byte ptr [EDX + 0x61ed94],0x2  ; 005bad2f | g_CharacterClassificationTable
     JZ 0x005bad3b                       ; 005bad36
         ;   XREF to: 005bad3b (CONDITIONAL_JUMP)  ; LAB_005bad3b
     INC EAX                             ; 005bad38
@@ -49,7 +49,7 @@ section .text
         ;   Label: LAB_005bad4a
     INC BL                              ; 005bad4c
     AND EBX,0xff                        ; 005bad4e
-    TEST byte ptr [EBX + 0x61ed94],0x20 ; 005bad54 | DAT_0061ed94
+    TEST byte ptr [EBX + 0x61ed94],0x20 ; 005bad54 | g_CharacterClassificationTable
     JZ 0x005bad6c                       ; 005bad5b
         ;   XREF to: 005bad6c (CONDITIONAL_JUMP)  ; LAB_005bad6c
     IMUL EDX,EDX,0xa                    ; 005bad5d

@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00518cd0 at 0051a94a
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 0051a94a
 ;
 ; Referenced Globals:
 ;   undefined4 g_CBoxActorClassInfo.name_hash

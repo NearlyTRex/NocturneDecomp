@@ -7,14 +7,14 @@
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_00614d30
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_0049dae0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
@@ -33,8 +33,8 @@ section .text
     MOV EBP,ESP                         ; 00487794
     SUB ESP,0x78                        ; 00487796
     MOV EBX,dword ptr [EBP + 0x14]      ; 00487799
-    MOV EDX,dword ptr [0x0060b280]      ; 0048779c | DAT_0060b280
-    PUSH EDX                            ; 004877a2 | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 0048779c | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 004877a2 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 004877a3
         ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004877a8
@@ -100,15 +100,15 @@ section .text
     PUSH EBX                            ; 00487849
     MOV dword ptr [EBP + -0x18],EDI     ; 0048784a
     MOV dword ptr [EBP + -0x14],EDI     ; 0048784d
-    CALL core_actor.cpp_FUN_00408cf0    ; 00487850
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 00487850
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00487855
     LEA EAX,[EBP + -0xc]                ; 00487858
     PUSH EAX                            ; 0048785b
     ADD EBX,0x20                        ; 0048785c
     LEA EDI,[EBP + -0xc]                ; 0048785f
     PUSH EBX                            ; 00487862
-    MOV ECX,dword ptr [0x00614d30]      ; 00487863 | DAT_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 00487863 | g_CFireEffectPtr
     LEA ESI,[EBP + -0x24]               ; 00487869
     PUSH ECX                            ; 0048786c
     MOVSD ES:EDI,ESI                    ; 0048786d

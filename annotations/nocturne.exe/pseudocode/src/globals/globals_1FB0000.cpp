@@ -4,12 +4,45 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1FB0000
 // =============================================================================
 
+// C3DSLight*[200]
+C3DSLight* g_C3DSLight_PTR_ARRAY_01fba9a8[200] = {};
+
 // CDemonCamera
 CDemonCamera g_CDemonCameraInstance = {};
+
+// CDemonGlobe*[100]
+CDemonGlobe* g_CoronaGlobes[100] = {};
+CDemonGlobe* g_QueuedCoronaGlobes[100] = {};
+CDemonGlobe* g_VisibleCoronaGlobes[100] = {};
+
+// CDemonLight*[4]
+CDemonLight* g_DynamicLights[4] = {};
+
+// CDemonLight*[96]
+CDemonLight* g_CDemonLight_PTR_ARRAY_01fb99d4[96] = {};
+CDemonLight* g_CDemonLight_PTR_ARRAY_01fb9b58[96] = {};
 
 // CDemonRaytrace
 CDemonRaytrace g_CDemonRaytraceInstance = {};
 
 // CKeyFramedModel
 CKeyFramedModel g_CKeyFramedModelInstance = {};
+
+// CRect[96]
+CRect g_SpotLightBounds[96] = {};
+
+// int
+int g_MasterLightCount = {};
+int g_INT_01fb9b54 = {};
+int g_INT_01fba2d8 = {};
+int g_INT_01fba2ec = {};
+int g_QueuedCoronaGlobeCount = {};
+int g_VisibleCoronaGlobeCount = {};
+int g_INT_01fba9a4 = {};
+
+// int[100]
+int g_QueuedCoronaGlobeAlphaMasks[100] = {};
+
+// int[65536]
+int g_IntensityToValueLookupTable[65536] = {};
 

@@ -7,7 +7,7 @@
 ; CMooCow *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005c91fb+1
+;   TerminatedCString s_modelName_005c91fc
 ;   TerminatedCString s_motion_state_005c9206
 ;
 ; Called Functions:
@@ -26,7 +26,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_archive_FUN_0042b450 ; 004f9016
         ;   XREF to: 0042b450 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_archive_FUN_0042b450(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004f901b
-    PUSH 0x5c91fc                       ; 004f901e | s_modelName_005c91fb+1
+    PUSH 0x5c91fc                       ; 004f901e | = "modelName"
     ADD EBX,0x158                       ; 004f9023
     PUSH EBX                            ; 004f9029
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30 ; 004f902a

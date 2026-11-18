@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_00414d10(CBiggs *this_ptr)
 
 {
   CBiggs *pCVar1;
   char cVar2;
   SMRGLTextureModel *pSVar3;
-  uint uVar4;
-  uint uVar5;
+  float fVar4;
+  float fVar5;
   CEnemy *pCVar6;
   CKeyFramedModelInstance *pCVar7;
   CMorph *pCVar8;
@@ -31,16 +29,16 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_00414d10(CBiggs *this_ptr)
        &g_CBiggsVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             ((CDeformableModelInstance *)(pCVar8[-0x16].models[0].textures[5].texture_name + 0x28),
-             (char *)0x5cbc8c);
+             "biggs.dfm");
   pcVar9 = "bigAlien";
   pCVar10 = pCVar8 + 1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)(pCVar8[-1].models[1].textures + 0xf),
              "question.kfm");
-  uVar4 = _DAT_005f3508;
+  fVar4 = 50.0f;
   pSVar3 = pCVar8[-0x12].models[0].textures;
   pSVar3[8].texture_name[0x1c] = -0x66;
-  uVar5 = _DAT_005f350c;
+  fVar5 = 100.0f;
   pSVar3[8].texture_name[0x1d] = -0x67;
   pSVar3[8].texture_name[0x1e] = '\x19';
   pSVar3[8].texture_name[0x1f] = '?';
@@ -49,8 +47,8 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_00414d10(CBiggs *this_ptr)
   pSVar3[8].texture_name[0x21] = 'f';
   pSVar3[8].texture_name[0x22] = 'f';
   pSVar3[8].texture_name[0x23] = '?';
-  *(uint *)(pCVar8[-0x12].models[0].textures[8].texture_name + 0x24) = uVar4;
-  *(uint *)(pCVar8[-0x12].models[0].textures[8].texture_name + 0x28) = uVar5;
+  *(float *)(pCVar8[-0x12].models[0].textures[8].texture_name + 0x24) = fVar4;
+  *(float *)(pCVar8[-0x12].models[0].textures[8].texture_name + 0x28) = fVar5;
   do {
     cVar2 = *pcVar9;
     *(char *)&pCVar10->models[0].part_count = cVar2;

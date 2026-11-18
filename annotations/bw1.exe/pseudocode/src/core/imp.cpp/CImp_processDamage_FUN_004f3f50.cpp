@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_imp_cpp_CImp_processDamage_FUN_004f3f50(CImp *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -19,24 +17,25 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004f3f50(CImp *this_ptr,SDamage
   byte bVar5;
   float afStackY_1010 [1009];
   char *sound_name;
-  float fStack_28;
+  CVector3f CStack_28;
   CVector3f CStack_1c;
   
   bVar5 = 0;
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
   if (damage_info->ammo_type == AMMO_TYPE_MERCURY) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e56da;
-    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
+    damage_info->damage_amount = damage_info->damage_amount * (float)2;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              ((CDemonActor *)this_ptr,&damage_info->impact_direction,&CStack_28);
     iVar4 = 0;
-    CStack_1c.x = fStack_28;
+    CStack_1c.x = CStack_28.x;
     *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + 4) =
-         *(uint *)(&stack0xffffffdc + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + 4);
     *(uint *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+         *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0
-                (0x01C57074,&CStack_1c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_1c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   core_imp_cpp_CImp_processDismemberment_FUN_004f3cb0(this_ptr,damage_info);

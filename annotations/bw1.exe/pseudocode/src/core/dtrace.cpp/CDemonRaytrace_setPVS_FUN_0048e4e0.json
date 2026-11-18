@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 99,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 3,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 168
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -40,7 +36,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     }
   ],
   "globals": [
@@ -58,50 +54,50 @@
     },
     {
       "addr": "01bef218",
-      "name": "DAT_01bef218",
-      "type": "undefined4",
+      "name": "g_PVSDrawnCubeCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bef21c",
-      "name": "DAT_01bef21c",
-      "type": "undefined4",
+      "name": "g_PVSReadyFlag",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bef224",
-      "name": "DAT_01bef224",
+      "name": "g_PVSCubePointers[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c02aa0",
-      "name": "DAT_01c02aa0",
-      "type": "undefined4",
+      "name": "g_PVSCubePositions",
+      "type": "CVector3f[20000]",
       "value": null
     },
     {
       "addr": "01c02aa4",
-      "name": "DAT_01c02aa4",
+      "name": "g_PVSCubePositions[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c02aa8",
-      "name": "DAT_01c02aa8",
+      "name": "g_PVSCubePositions[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -266,30 +262,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c02aa0",
-      "severity": "mild",
-      "text": "pfVar10 = (float *)&DAT_01c02aa0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 33,
-      "match": "*(CDemonCube **)(iVar11 * 4 + 0x1bef220",
-      "severity": "moderate",
-      "text": "*(CDemonCube **)(iVar11 * 4 + 0x1bef220) = this_ptr->cube_data + iVar5;",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

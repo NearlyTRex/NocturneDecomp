@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
 
 {
@@ -100,8 +98,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  this_ptr_00 = g_CBitFont_PTR_014b9900;
-  g_CBitFont_PTR_014b9900->win_font_enabled = 0;
+  this_ptr_00 = g_ThemeFont;
+  g_ThemeFont->win_font_enabled = 0;
   iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr_00,0x58);
   local_20 = -1;
   core_game_cpp_CGame_saveClockTime_FUN_0049a890(this_ptr);
@@ -138,7 +136,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
       if ((local_1c != 0) &&
          (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(local_1c), iVar2 == 0)) {
 LAB_004a722b:
-        if (_DAT_01d16810 != 0) {
+        if (g_UseOSFonts != 0) {
           this_ptr_00->win_font_enabled = 1;
         }
         sound_sndmain_cpp_resetSoundDevice_FUN_00528080();

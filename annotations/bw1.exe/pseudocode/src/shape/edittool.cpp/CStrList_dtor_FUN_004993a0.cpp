@@ -13,14 +13,14 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004993a0(CStrList *this_
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CStrListTypeInfo);
-    FUN_005c0336(ptr);
+    free(ptr);
     return this_ptr;
   }
-  (this_ptr->vtable)._us = (CStrList_vtable *)&g_CStrListVTable;
+  (this_ptr->vtable)._us = &g_CStrListVTable;
   shape_edittool_cpp_CStrList_clear_FUN_00499470(this_ptr);
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005c0344(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

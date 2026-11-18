@@ -9,12 +9,12 @@
 ; CVector3f *      Stack[0xc]:4   target_local_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5a67
+;   double g_DOUBLE_005d5a67 = 5
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH EBX                            ; 0043152a
     LEA ESI,[EBP + -0x30]               ; 0043152b
     LEA EDI,[EBP + -0x3c]               ; 0043152e
-    CALL core_actor.cpp_FUN_00408b40    ; 00431531
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00431531
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     FLD float ptr [EBP + -0x60]         ; 00431536
     LEA ESI,[EBP + -0x30]               ; 00431539
     FLD float ptr [EBP + -0x5c]         ; 0043153c
@@ -91,7 +91,7 @@ section .text
     FXCH                                ; 00431581
     FSQRT                               ; 00431583
     FXCH                                ; 00431585
-    FMUL double ptr [0x005d5a67]        ; 00431587 | DAT_005d5a67
+    FMUL double ptr [0x005d5a67]        ; 00431587 | g_DOUBLE_005d5a67
     XOR ECX,ECX                         ; 0043158d
     ADD ESP,0x8                         ; 0043158f
     MOV dword ptr [EBP + -0x14],ECX     ; 00431592

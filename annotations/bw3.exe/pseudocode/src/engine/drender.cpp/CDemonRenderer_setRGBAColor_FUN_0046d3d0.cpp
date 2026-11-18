@@ -6,25 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0(CDemonRenderer *this_ptr,int red_component,int green_component,int blue_component)
 
 {
   uint uVar1;
   
-  uVar1 = blue_component << (DAT_01c6af8c & 0x1f) |
-          red_component << (DAT_01c6af74 & 0x1f) | green_component << (DAT_01c6af80 & 0x1f);
-  _DAT_01c6b5c0 = blue_component | red_component << 0x10 | green_component << 8;
-  if (_DAT_01c6cee8 == 0) {
-    if (DAT_005fba20 == 0x20) {
-      _DAT_01c6b5c0 = uVar1;
+  uVar1 = blue_component << (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f) |
+          red_component << (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f) |
+          green_component << (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f);
+  g_INT_01c6b5c0 = blue_component | red_component << 0x10 | green_component << 8;
+  if (g_INT_01c6cee8 == 0) {
+    if (g_INT_005fba20 == 0x20) {
+      g_INT_01c6b5c0 = uVar1;
     }
-    _DAT_01c6b5c0 = _DAT_01c6b5c0 | this_ptr->alpha_mask;
+    g_INT_01c6b5c0 = g_INT_01c6b5c0 | this_ptr->alpha_mask;
     return;
   }
-  if (DAT_005fba20 == 0x20) {
-    _DAT_01c6b5c0 = uVar1;
+  if (g_INT_005fba20 == 0x20) {
+    g_INT_01c6b5c0 = uVar1;
   }
   return;
 }

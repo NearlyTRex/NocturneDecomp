@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CDemonSetInstance.enemy_count
-;   undefined4 g_CWerewolfActorType_02de078c.name_hash
+;   undefined4 g_CWerewolfClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -77,7 +77,7 @@ section .text
     ADD EDI,0x4                         ; 00546984
     JMP 0x0054693a                      ; 00546987
         ;   XREF to: 0054693a (UNCONDITIONAL_JUMP)  ; LAB_0054693a
-    MOV EDX,dword ptr [0x02de07c4]      ; 00546989 | g_CWerewolfActorType_02de078c.name_hash
+    MOV EDX,dword ptr [0x02de07c4]      ; 00546989 | g_CWerewolfClassInfo.name_hash
         ;   Label: LAB_00546989
     PUSH EDX                            ; 0054698f
     MOV ECX,dword ptr [EDI + EBX*0x1 + 0x150bf8] ; 00546990

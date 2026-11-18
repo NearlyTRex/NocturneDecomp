@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0043f330(CCurtain *this_ptr)
 
 {
@@ -46,9 +44,9 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0043f330(CCurtain *this_ptr
   piVar4 = input_vertices;
   if (0 < this_ptr->vertex_count) {
     do {
-      *piVar4 = (int)ROUND((pSVar5->local_position).x * _DAT_0059bc70);
-      piVar4[1] = (int)ROUND((pSVar5->local_position).y * _DAT_0059bc70);
-      piVar4[2] = (int)ROUND((pSVar5->local_position).z * _DAT_0059bc70);
+      *piVar4 = (int)ROUND((pSVar5->local_position).x * 256.0f);
+      piVar4[1] = (int)ROUND((pSVar5->local_position).y * 256.0f);
+      piVar4[2] = (int)ROUND((pSVar5->local_position).z * 256.0f);
       iVar3 = iVar3 + 1;
       pSVar5 = pSVar5 + 1;
       piVar4 = piVar4 + 3;

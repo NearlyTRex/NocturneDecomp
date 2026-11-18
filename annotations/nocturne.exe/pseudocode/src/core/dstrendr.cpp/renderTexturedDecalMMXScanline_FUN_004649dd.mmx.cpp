@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
@@ -27,33 +25,33 @@ __asm {
         lea EBX,[EBX + EAX*0x4]
         shl ECX,0x2
         lea EBP,[EBP + EAX*0x4]
-        mov dword ptr [DAT_005b06e4],ECX
-        mov dword ptr [DAT_005b06e0],EBX
-        mov dword ptr [DAT_005b06e8],EBP
+        mov dword ptr [g_PerspectiveScanlinePixelCount],ECX
+        mov dword ptr [g_PerspectiveScanlineColorPtr],EBX
+        mov dword ptr [g_PerspectiveScanlineZPtr],EBP
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c00c84]
-        mov dword ptr [DAT_005b06b8],EBX
-        mov dword ptr [DAT_005b06d4],EDX
+        mov dword ptr [g_PerspectiveNextU],EBX
+        mov dword ptr [g_SoftwareDeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c00c84]
-        mov dword ptr [DAT_005b06bc],EBX
-        mov dword ptr [DAT_005b06d8],EDX
+        mov dword ptr [g_PerspectiveNextV],EBX
+        mov dword ptr [g_SoftwareDeltaTextureV],EDX
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
         imul dword ptr [ECX + 0x1c00c84]
-        mov dword ptr [DAT_005b06c4],EBX
-        mov dword ptr [DAT_005b06dc],EDX
-        mov ECX,dword ptr [DAT_005b06b8]
-        mov EDX,dword ptr [DAT_005b06bc]
+        mov dword ptr [g_StartDepthZ],EBX
+        mov dword ptr [g_SoftwareDeltaDepthZ],EDX
+        mov ECX,dword ptr [g_PerspectiveNextU]
+        mov EDX,dword ptr [g_PerspectiveNextV]
         mov EDI,0x0
-        mov ESI,dword ptr [DAT_005b06c4]
+        mov ESI,dword ptr [g_StartDepthZ]
     LAB_00464a8a:
-        mov EAX,[DAT_005b06e8]
+        mov EAX,[g_PerspectiveScanlineZPtr]
         add EAX,EDI
         cmp ESI,dword ptr [EAX]
         jl LAB_00464ad7
@@ -68,16 +66,16 @@ __asm {
         add EBX,dword ptr [g_CurrentTextureData]
         movzx EAX,byte ptr [EBX]
         mov EAX,dword ptr [g_Hardware32BitPalette + EAX*0x4]
-        mov EBX,dword ptr [DAT_005b06e0]
+        mov EBX,dword ptr [g_PerspectiveScanlineColorPtr]
         add EBX,EDI
         mov dword ptr [EBX],EAX
     LAB_00464ad7:
         add EDI,0x4
-        cmp EDI,dword ptr [DAT_005b06e4]
+        cmp EDI,dword ptr [g_PerspectiveScanlinePixelCount]
         ja LAB_00464af6
-        add ECX,dword ptr [DAT_005b06d4]
-        add EDX,dword ptr [DAT_005b06d8]
-        add ESI,dword ptr [DAT_005b06dc]
+        add ECX,dword ptr [g_SoftwareDeltaTextureU]
+        add EDX,dword ptr [g_SoftwareDeltaTextureV]
+        add ESI,dword ptr [g_SoftwareDeltaDepthZ]
         jmp LAB_00464a8a
     LAB_00464af6:
         pop EBP

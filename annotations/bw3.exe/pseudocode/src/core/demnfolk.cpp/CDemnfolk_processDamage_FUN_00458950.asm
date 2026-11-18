@@ -8,18 +8,18 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_ShotInvulnerable_005ba909+1
+;   TerminatedCString s_ShotInvulnerable_005ba90a
 ;   TerminatedCString s_D_SHERIFF_dfm_005ba91b
 ;   TerminatedCString s_demn_die_wav_005ba929
 ;   TerminatedCString s_demn_die_wav_005ba93a
 ;   TerminatedCString s_demn_taunt_wav_005ba94b
 ;   TerminatedCString s_demn_taunt_wav_005ba95f
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_demnfolk.cpp_FUN_00458180
-;   core_demnfolk.cpp_FUN_00458680
+;   core_demnfolk.cpp_CDemnfolk_dropAndClearTarget_FUN_00458180
+;   core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_00458680
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
@@ -45,8 +45,8 @@ section .text
         ;   XREF to: 00458a88 (CONDITIONAL_JUMP)  ; LAB_00458a88
     PUSH EDI                            ; 00458969
     PUSH EBX                            ; 0045896a
-    CALL core_demnfolk.cpp_FUN_00458680 ; 0045896b
-        ;   XREF to: 00458680 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_FUN_00458680(CZombie * this_ptr, SDamageInfo * damage_info)
+    CALL core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_00458680 ; 0045896b
+        ;   XREF to: 00458680 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_00458680(CDemnfolk * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00458970
     MOV EAX,dword ptr [EBX + 0x154]     ; 00458973
     PUSH EBX                            ; 00458979
@@ -83,8 +83,8 @@ section .text
     JZ 0x00458a79                       ; 004589ec
         ;   XREF to: 00458a79 (CONDITIONAL_JUMP)  ; LAB_00458a79
     PUSH EBX                            ; 004589f2
-    CALL core_demnfolk.cpp_FUN_00458180 ; 004589f3
-        ;   XREF to: 00458180 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458180()
+    CALL core_demnfolk.cpp_CDemnfolk_dropAndClearTarget_FUN_00458180 ; 004589f3
+        ;   XREF to: 00458180 (UNCONDITIONAL_CALL)  ; void core_demnfolk.cpp_CDemnfolk_dropAndClearTarget_FUN_00458180(CDemnfolk * this_ptr)
     ADD ESP,0x4                         ; 004589f8
     PUSH 0x4                            ; 004589fb
     PUSH 0x0                            ; 004589fd
@@ -143,9 +143,9 @@ section .text
     POP ESI                             ; 00458a85
     POP EBX                             ; 00458a86
     RET                                 ; 00458a87
-    PUSH 0x5ba90a                       ; 00458a88 | s_ShotInvulnerable_005ba909+1
+    PUSH 0x5ba90a                       ; 00458a88 | = "ShotInvulnerable"
         ;   Label: LAB_00458a88
-    MOV EDX,dword ptr [0x005fba60]      ; 00458a8d | DAT_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 00458a8d | g_CEventListPtr
     PUSH EDX                            ; 00458a93
     CALL core_event.cpp_CEventList_executeCommands_FUN_0048c150 ; 00458a94
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0048c150(CEventList * this_ptr, char * commands)

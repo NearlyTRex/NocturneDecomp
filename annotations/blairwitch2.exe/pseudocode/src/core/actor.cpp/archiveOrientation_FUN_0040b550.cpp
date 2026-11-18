@@ -11,17 +11,15 @@ void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b550(COrientation *orient
 {
   int iVar1;
   
-  if (DAT_007bc038 == 1) {
-    iVar1 = _fscanf(DAT_007bc034,"%f,%f,%f");
+  if (g_ActorReadingMode == 1) {
+    iVar1 = _fscanf(g_ActorDataFile,"%f,%f,%f");
     if (iVar1 != 3) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b380
                 ("Euler PBH orientation",property_name);
     }
   }
   else {
-    FUN_005b8010
-              (DAT_007bc034,"%s%g,%g,%g",&DAT_00609590,(double)orient_ptr->pitch,
-               (double)orient_ptr->heading,(double)orient_ptr->bank);
+    _fprintf(g_ActorDataFile,"%s%g,%g,%g");
   }
   core_actor_cpp_archiveDescription_FUN_0040b400("Euler PBH orientation",property_name);
   return;

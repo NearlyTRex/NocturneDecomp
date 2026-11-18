@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_ptr,float delta_time)
 
@@ -270,7 +269,7 @@ LAB_004b34e4:
      pSVar9->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar16 = this_ptr->head_look_blend_weight;
-    iVar6 = _DAT_01cae018;
+    iVar6 = g_HaystackIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_0055d610(&this_ptr->head_look_euler,&CStack_8c);
     pCVar15 = pCStack_24;
     source_quaternions = &CStack_7c;

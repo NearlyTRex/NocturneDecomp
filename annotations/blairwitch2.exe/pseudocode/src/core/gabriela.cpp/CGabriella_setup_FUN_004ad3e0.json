@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 84,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 42,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 69,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 269
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 71,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 271
   },
   "cross_references": [],
   "function": {
@@ -36,7 +34,7 @@
     {
       "addr": "005ae680",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005ae680"
+      "name": "core_cloth.cpp_CCloth_setup_FUN_005ae680"
     },
     {
       "addr": "004ce4a0",
@@ -209,121 +207,121 @@
     },
     {
       "addr": "01cb0678",
-      "name": "DAT_01cb0678",
-      "type": "undefined4",
+      "name": "g_GabriellaIndices",
+      "type": "int[20]",
       "value": null
     },
     {
       "addr": "01cb067c",
-      "name": "DAT_01cb067c",
+      "name": "g_GabriellaIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb0680",
-      "name": "DAT_01cb0680",
+      "name": "g_GabriellaIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb0684",
-      "name": "DAT_01cb0684",
+      "name": "g_GabriellaIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb0688",
-      "name": "DAT_01cb0688",
+      "name": "g_GabriellaIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb068c",
-      "name": "DAT_01cb068c",
+      "name": "g_GabriellaIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb0690",
-      "name": "DAT_01cb0690",
+      "name": "g_GabriellaIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb0694",
-      "name": "DAT_01cb0694",
+      "name": "g_GabriellaIndices[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb0698",
-      "name": "DAT_01cb0698",
+      "name": "g_GabriellaIndices[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb069c",
-      "name": "DAT_01cb069c",
+      "name": "g_GabriellaIndices[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06a0",
-      "name": "DAT_01cb06a0",
+      "name": "g_GabriellaIndices[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06a4",
-      "name": "DAT_01cb06a4",
+      "name": "g_GabriellaIndices[11]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06a8",
-      "name": "DAT_01cb06a8",
+      "name": "g_GabriellaIndices[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06ac",
-      "name": "DAT_01cb06ac",
+      "name": "g_GabriellaIndices[13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06b0",
-      "name": "DAT_01cb06b0",
+      "name": "g_GabriellaIndices[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06b4",
-      "name": "DAT_01cb06b4",
+      "name": "g_GabriellaIndices[15]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06b8",
-      "name": "DAT_01cb06b8",
+      "name": "g_GabriellaIndices[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06bc",
-      "name": "DAT_01cb06bc",
+      "name": "g_GabriellaIndices[17]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06c0",
-      "name": "DAT_01cb06c0",
+      "name": "g_GabriellaIndices[18]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb06c4",
-      "name": "DAT_01cb06c4",
+      "name": "g_GabriellaIndices[19]",
       "type": "undefined4",
       "value": null
     }
@@ -393,20 +391,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 8,
         "vtable_addr": "005f7384"
       }

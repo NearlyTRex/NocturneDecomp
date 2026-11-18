@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b4e0
 ;   TerminatedCString s_MPEG_Layer_2_pick_table_0058b4f1
-;   undefined4 DAT_005bbc48
-;   undefined4 DAT_005bbc88
+;   double[2][4] g_MpegSampleRateTable
+;   int[2][3][15] g_MpegBitrateTable
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd8b28
+;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -53,7 +53,7 @@ section .text
     SUB EAX,EDX                         ; 004e24bb
     ADD EBP,EAX                         ; 004e24bd
     MOV EAX,dword ptr [ESP + 0x4]       ; 004e24bf
-    MOV EDX,dword ptr [EBP + EAX*0x4 + 0x5bbc88] ; 004e24c3 | DAT_005bbc88
+    MOV EDX,dword ptr [EBP + EAX*0x4 + 0x5bbc88] ; 004e24c3 | g_MpegBitrateTable
     MOV EAX,EDX                         ; 004e24ca
     MOV EBP,dword ptr [ESI + 0x10]      ; 004e24cc
     SAR EDX,0x1f                        ; 004e24cf
@@ -63,7 +63,7 @@ section .text
     MOV ECX,EBX                         ; 004e24d9
     SHL ECX,0x5                         ; 004e24db
     MOV EDI,dword ptr [ESI + 0x18]      ; 004e24de
-    FLD double ptr [ECX + EAX*0x8 + 0x5bbc48] ; 004e24e1 | DAT_005bbc48
+    FLD double ptr [ECX + EAX*0x8 + 0x5bbc48] ; 004e24e1 | g_MpegSampleRateTable
     CALL crt_math.c_round_FUN_00563a30  ; 004e24e8
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 004e24ed
@@ -155,7 +155,7 @@ section .text
     POP ESI                             ; 004e258a
     POP EBX                             ; 004e258b
     RET                                 ; 004e258c
-    PUSH 0x1cd8b28                      ; 004e258d | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e258d | g_CurrentMp3Filename
         ;   Label: LAB_004e258d
     MOV EAX,0x58b4e0                    ; 004e2592 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1a1                       ; 004e2597

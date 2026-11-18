@@ -7,16 +7,16 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[16]:
-;   cockpit_ckptutil.c_FUN_0042c520 at 0042c5b3
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780 at 0042c89f
-;   core_game.cpp_FUN_004bb9b0 at 004bbd64
-;   core_game.cpp_FUN_004bbf70 at 004bc2cc
-;   engine_2d.c_FUN_00401590 at 004015d3
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520 at 0042c5b3
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc2cc
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbd64
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010f8
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402aac
+;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015d3
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7f1c
-;   engine_font.cpp_FUN_004a7fd0 at 004a817e
-;   engine_font.cpp_FUN_004a85a0 at 004a87a3
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0 at 004a87a3
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0 at 004a817e
 ;   ... and 6 more
 ;
 ; Referenced Globals:

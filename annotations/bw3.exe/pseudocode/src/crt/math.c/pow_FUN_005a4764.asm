@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_pow_FUN_005a4764(void)
+; float10 __fpustack_safe crt_math_c_pow_FUN_005a4764(float10 base,float10 exp)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x2c]:8  local_2c
@@ -12,12 +12,12 @@
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00450980 at 004509b8
 ;   core_set.cpp_CDemonSet_setGamma_FUN_0053b1c0 at 0053b20b
-;   core_shadow.cpp_FUN_005438d0 at 005444d4
+;   core_shadow.cpp_CShadow_process_FUN_005438d0 at 005444d4
 ;   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00500be0 at 00500c20
 ;   sound_mp3.cpp_requantizeLayer3Samples_FUN_005003f0 at 0050067b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00607b5c
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a48a0
@@ -135,7 +135,7 @@ section .text
     CALL crt_unknown.c_FUN_005a48a0     ; 005a482e
         ;   XREF to: 005a48a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a48a0()
     FLD1                                ; 005a4833
-    TEST byte ptr [0x00607b5c],0x1      ; 005a4835 | DAT_00607b5c
+    TEST byte ptr [0x00607b5c],0x1      ; 005a4835 | g_UseSoftwareMath
     JNZ 0x005a4842                      ; 005a483c
         ;   XREF to: 005a4842 (CONDITIONAL_JUMP)  ; LAB_005a4842
     FDIVRP                              ; 005a483e

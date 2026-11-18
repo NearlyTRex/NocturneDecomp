@@ -16,7 +16,7 @@ void __cdecl core_shadow_cpp_CShadow_setup_FUN_0055dbf0(CShadow *this_ptr)
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&(this_ptr->base).base.model);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,"COMBATMODEHARD");
+                    (g_CEventListPtr,"COMBATMODEHARD");
   if (iVar1 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }

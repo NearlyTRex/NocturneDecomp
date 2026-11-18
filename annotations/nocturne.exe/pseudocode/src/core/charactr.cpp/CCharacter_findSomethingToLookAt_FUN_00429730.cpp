@@ -96,7 +96,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
              (ABS(CStack_44.x) <= (float)0.78539816337500001)) {
             fStack_100 = 10.0;
             pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                               (&pCVar4->base,g_CEnemyActorType_01bcdebc.name_hash);
+                               (&pCVar4->base,g_CEnemyClassInfo.name_hash);
             if (((pCVar3 != (CDemonActor *)0x0) && (EStack_1c == DEATH_STATE_ALIVE)) &&
                (fStack_100 = 30.0,
                this_ptr == (CCharacter *)pCVar3[0x8f].platform_orientation_delta.z)) {
@@ -154,8 +154,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(CCh
     ;
     pCVar4 = (CCharacter *)
              core_actor_cpp_castToClassHash_FUN_0040d890
-                       (&this_ptr->look_at_candidate->base,g_CCharacterActorType_00765a60.name_hash)
-    ;
+                       (&this_ptr->look_at_candidate->base,g_CCharacterClassInfo.name_hash);
     if (pCVar4 == (CCharacter *)0x0) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
       g_CurrentLineNumber = 3508;

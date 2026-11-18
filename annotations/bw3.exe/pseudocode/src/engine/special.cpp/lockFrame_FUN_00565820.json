@@ -1,0 +1,189 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 33,
+    "cross_reference_count": 9,
+    "function_call_count": 0,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [
+    {
+      "addr": "0044df60",
+      "from_addr": "0044df6e",
+      "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044df60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b6f30",
+      "from_addr": "004b729b",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bec20",
+      "from_addr": "004bede4",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f70a0",
+      "from_addr": "004f71b5",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_004f70a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec930",
+      "from_addr": "004ec930",
+      "name": "engine_mini3d.cpp_lockFrame_FUN_004ec930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566260",
+      "from_addr": "005662d4",
+      "name": "engine_special.cpp_presentToExternalRenderer_FUN_00566260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565a90",
+      "from_addr": "00565b32",
+      "name": "engine_special.cpp_setResolutionAndColorTable_FUN_00565a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cbd0",
+      "from_addr": "0047cc20",
+      "name": "shape_edittool.cpp_CEditorTools_backupScreen_FUN_0047cbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ccb0",
+      "from_addr": "0047ccf0",
+      "name": "shape_edittool.cpp_restoreScreen_FUN_0047ccb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00565820",
+    "address_range": [
+      [
+        "00565820",
+        "00565868"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_lockFrame_FUN_00565820",
+    "signature": "int __cdecl engine_special_cpp_lockFrame_FUN_00565820(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fba20",
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "01c6cee8",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6004",
+      "name": "g_APIDLL_lockFrame",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02cf6120",
+      "name": "g_INT_02cf6120",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6128",
+      "name": "g_INT_02cf6128",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf612c",
+      "name": "g_INT_02cf612c",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.142857142857143,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 3,
+      "INT_AND": 10,
+      "INT_EQUAL": 8,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "INT_XOR": 2,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 66
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055f500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00581f50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b7210",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7222
+    },
+    "nocturne.exe": {
+      "addr": "005322e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7222
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (*(code *)g_APIDLL_lockFrame)();",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

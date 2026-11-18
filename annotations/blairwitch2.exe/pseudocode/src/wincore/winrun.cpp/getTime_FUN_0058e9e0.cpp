@@ -6,31 +6,28 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_winrun_cpp_getTime_FUN_0058e9e0(void)
 
 {
-  double dVar1;
-  int iVar2;
-  DWORD DVar3;
-  float10 fVar4;
+  int iVar1;
+  DWORD DVar2;
+  double dVar3;
   
-  if (_DAT_02662d84 == 0) {
-    _DAT_02662d60 = _DAT_02662d68;
-    _DAT_02662d64 = _DAT_02662d6c;
-    QueryPerformanceCounter((LARGE_INTEGER *)&DAT_02662d68);
-    iVar2 = _DAT_02662d80;
-    dVar1 = ((((double)_DAT_02662d68 + (double)_DAT_02662d6c * _DAT_005ee852) -
-             ((double)_DAT_02662d60 + (double)_DAT_02662d64 * _DAT_005ee852)) / _DAT_02662d78) *
-            _DAT_005ee85a * _DAT_005ee862;
-    if (0.0 < dVar1) {
-      fVar4 = (float10)dVar1;
-      round();
-      _DAT_02662d80 = iVar2 + (int)ROUND(fVar4);
+  if (g_UseMultimediaTimer[0] == 0) {
+    g_PreviousCounterLow = g_PerformanceCounter.LowPart;
+    g_PreviousCounterHigh = g_PerformanceCounter.HighPart;
+    QueryPerformanceCounter((LARGE_INTEGER *)&g_PerformanceCounter);
+    iVar1 = g_AccumulatedGameTime;
+    dVar3 = ((((double)g_PerformanceCounter.LowPart +
+              (double)g_PerformanceCounter.HighPart * 4294967296) -
+             ((double)g_PreviousCounterLow + (double)g_PreviousCounterHigh * 4294967296))
+            / g_TimerCalibration) * 65536 * 18;
+    if (0.0 < dVar3) {
+      dVar3 = round(dVar3);
+      g_AccumulatedGameTime = iVar1 + (int)ROUND(dVar3);
     }
-    return _DAT_02662d80;
+    return g_AccumulatedGameTime;
   }
-  DVar3 = timeGetTime();
-  return DVar3 * 0x49c;
+  DVar2 = timeGetTime();
+  return DVar2 * 0x49c;
 }

@@ -8,14 +8,14 @@
 ; char *           Stack[0x8]:4   sound_name
 ;
 ; XREF[8]:
-;   core_carved.cpp_FUN_00428810 at 00428a29
+;   core_carved.cpp_CCarved_processDismemberment_FUN_00428810 at 00428a29
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 004458b3
-;   core_demnfolk.cpp_FUN_00458680 at 00458816
+;   core_demnfolk.cpp_CDemnfolk_processDismemberment_FUN_00458680 at 00458816
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c9140 at 004c92d6
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004d7bd0 at 004d7d6b
-;   core_moocow.cpp_FUN_004f9050 at 004f9155
+;   core_moocow.cpp_CMooCow_processDismemberment_FUN_004f9050 at 004f9155
 ;   core_zombie.cpp_CZombie_processDismemberment_FUN_0058c330 at 0058c549
-;   core_zombiepriest.cpp_FUN_0058f630 at 0058f8d4
+;   core_zombiepriest.cpp_CZombiePriest_processDismemberment_FUN_0058f630 at 0058f8d4
 ;
 ; *****************************************************************************
 

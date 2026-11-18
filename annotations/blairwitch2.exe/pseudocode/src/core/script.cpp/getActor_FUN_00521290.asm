@@ -18,20 +18,20 @@
 ;   undefined4 s_st_specify_actor_name_005e2cc9+2
 ;   undefined4 s_t_specify_actor_name_005e2cc9+3
 ;   TerminatedCString s_Actor_variable_s_not_def_005e2ce1
-;   undefined4 DAT_005e2d27
+;   TerminatedCString s_anon_005e2d27
 ;   TerminatedCString s_Can_t_use_actor_specifie_005e2d29
 ;   TerminatedCString s_Hero_doesn_t_exist_005e2d57
 ;   TerminatedCString s_Actor_s_does_not_exist_005e2d6e
 ;   TerminatedCString s_Actor_s_is_of_type_s_thi_005e2d89
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_00618170
+;   CEventList* g_CEventListPtr = 01c38bc0
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;   CNetGame g_CNetGameInstance
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50
 ;   core_actor.cpp_isOfClassHash_FUN_0040c8c0
 ;   core_event.cpp_CEventList_getActorByVarName_FUN_00491860
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
@@ -50,7 +50,7 @@ section .text
     PUSH EBP                            ; 00521293
     MOV EBX,dword ptr [ESP + 0x14]      ; 00521294
     XOR EDX,EDX                         ; 00521298
-    MOV dword ptr [0x01e6590c],EDX      ; 0052129a | DAT_01e6590c
+    MOV dword ptr [0x01e6590c],EDX      ; 0052129a | g_ActorLookedUpByVariable
     TEST EBX,EBX                        ; 005212a0
     JZ 0x005212c5                       ; 005212a2
         ;   XREF to: 005212c5 (CONDITIONAL_JUMP)  ; LAB_005212c5
@@ -76,16 +76,16 @@ section .text
     MOV ESI,0x5e2cc9                    ; 005212c5 | = "Must specify actor name"
         ;   Label: LAB_005212c5
     MOV EDI,0x1e65100                   ; 005212ca
-    PUSH EDI                            ; 005212cf | DAT_01e65100
+    PUSH EDI                            ; 005212cf | g_CHAR_ARRAY_01e65100
     MOV AL,byte ptr [ESI]               ; 005212d0 | = "Must specify actor name" | s_st_specify_actor_name_005e2cc9+2
         ;   Label: LAB_005212d0
-    MOV byte ptr [EDI],AL               ; 005212d2 | DAT_01e65100 | DAT_01e65102
+    MOV byte ptr [EDI],AL               ; 005212d2 | g_CHAR_ARRAY_01e65100 | g_CHAR_ARRAY_01e65100+2
     CMP AL,0x0                          ; 005212d4
     JZ 0x005212e8                       ; 005212d6
         ;   XREF to: 005212e8 (CONDITIONAL_JUMP)  ; LAB_005212e8
     MOV AL,byte ptr [ESI + 0x1]         ; 005212d8 | s_ust_specify_actor_name_005e2cc9+1 | s_t_specify_actor_name_005e2cc9+3
     ADD ESI,0x2                         ; 005212db
-    MOV byte ptr [EDI + 0x1],AL         ; 005212de | DAT_01e65101 | DAT_01e65103
+    MOV byte ptr [EDI + 0x1],AL         ; 005212de | g_CHAR_ARRAY_01e65100+1 | g_CHAR_ARRAY_01e65100+3
     ADD EDI,0x2                         ; 005212e1
     CMP AL,0x0                          ; 005212e4
     JNZ 0x005212d0                      ; 005212e6
@@ -100,10 +100,10 @@ section .text
     RET                                 ; 005212ef
     PUSH EBX                            ; 005212f0
         ;   Label: LAB_005212f0
-    MOV EAX,[0x006141f0]                ; 005212f1 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 005212f1 | g_CEventListPtr
     MOV EBP,0x1                         ; 005212f6
     PUSH EAX                            ; 005212fb
-    MOV dword ptr [0x01e6590c],EBP      ; 005212fc | DAT_01e6590c
+    MOV dword ptr [0x01e6590c],EBP      ; 005212fc | g_ActorLookedUpByVariable
     CALL core_event.cpp_CEventList_getActorByVarName_FUN_00491860 ; 00521302
         ;   XREF to: 00491860 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_CEventList_getActorByVarName_FUN_00491860(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 00521307
@@ -140,7 +140,7 @@ section .text
     POP ESI                             ; 00521344
     POP EBX                             ; 00521345
     RET                                 ; 00521346
-    PUSH 0x5e2d27                       ; 00521347 | DAT_005e2d27
+    PUSH 0x5e2d27                       ; 00521347 | = "$"
         ;   Label: LAB_00521347
     PUSH EBX                            ; 0052134c
     CALL crt_string.c__stricmp_FUN_005b8130 ; 0052134d
@@ -153,7 +153,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 0052135e | g_CNetGameInstance
     JNZ 0x00521398                      ; 00521361
         ;   XREF to: 00521398 (CONDITIONAL_JUMP)  ; LAB_00521398
-    MOV ESI,dword ptr [0x01cedef4]      ; 00521363 | DAT_01cedef4
+    MOV ESI,dword ptr [0x01cedef4]      ; 00521363 | g_INT_01cedef4
     MOV ESI,dword ptr [ESI*0x4 + 0x1cedee4] ; 00521369
     TEST ESI,ESI                        ; 00521370
     JNZ 0x00521310                      ; 00521372
@@ -161,7 +161,7 @@ section .text
     PUSH 0x5e2d57                       ; 00521374 | = "Hero doesn't exist!!?!"
     MOV EDI,0x1                         ; 00521379
     PUSH 0x1e65100                      ; 0052137e
-    MOV dword ptr [0x01e6590c],EDI      ; 00521383 | DAT_01e6590c
+    MOV dword ptr [0x01e6590c],EDI      ; 00521383 | g_ActorLookedUpByVariable
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00521389
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 0052138e
@@ -185,7 +185,7 @@ section .text
     RET                                 ; 005213b0
     PUSH EBX                            ; 005213b1
         ;   Label: LAB_005213b1
-    MOV ECX,dword ptr [0x00618170]      ; 005213b2 | DAT_00618170
+    MOV ECX,dword ptr [0x00618170]      ; 005213b2 | g_CDemonMission_PTR_00618170
     PUSH ECX                            ; 005213b8
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740 ; 005213b9
         ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission * this_ptr, char * name)
@@ -210,8 +210,8 @@ section .text
         ;   Label: LAB_005213e5
     PUSH ECX                            ; 005213e9
     PUSH ESI                            ; 005213ea
-    CALL core_actor.cpp_FUN_00408a50    ; 005213eb
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50 ; 005213eb
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005213f0
     PUSH EAX                            ; 005213f3
     PUSH EBX                            ; 005213f4

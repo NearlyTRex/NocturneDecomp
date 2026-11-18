@@ -17,7 +17,7 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_00449770(CCrossbow *thi
   pCVar3 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)(pCVar2[1].base.actor_name + 4));
   *(CWeapon_full_vtable **)pCVar3[-2].base.footstep_sound_code = &g_CCrossbowVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar3[-2].base.dead1,(char *)0x5d737c);
+            ((CKeyFramedModelInstance *)&pCVar3[-2].base.dead1,"crossbow.kfm");
   pCVar3[-1].base.location.position.z = 0.0;
   pCVar3[-1].render_corona = 0;
   (pCVar3->flame_size).x = 0.45;

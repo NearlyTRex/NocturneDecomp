@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *param_1,EAmmoType param_2)
+; void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *class_name,EAmmoType ammo_type)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   param_1
-; EAmmoType        Stack[0x8]:4   param_2
+; char *           Stack[0x4]:4   class_name
+; EAmmoType        Stack[0x8]:4   ammo_type
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450

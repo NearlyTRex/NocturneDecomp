@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2690000
@@ -16,4 +17,13 @@ extern CDemonActorType g_CShadowscClassInfo;
 extern CDemonActorType g_CShotgunClassInfo;
 extern CDemonActorType g_CShovelClassInfo;
 extern CDemonActorType g_CSimBoxClassInfo;
+
+// CDemonGlobe
+extern CDemonGlobe g_CDemonGlobe_0269cbb0;
+
+// int
+extern int g_INT_0269c7ac;
+
+// int[4000]
+extern int g_VertexRemapTable[4000];
 

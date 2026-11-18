@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 70,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 3,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
     "suspect_types": [
-      "bit_int_float_compare",
-      "warning_overlapping_globals"
+      "bit_int_float_compare"
     ],
-    "total_lines": 99
+    "total_lines": 98
   },
   "cross_references": [
     {
       "addr": "00584440",
       "from_addr": "005846d2",
-      "name": "shape_spotview.cpp_FUN_00584440",
+      "name": "shape_spotview.cpp_CSpotView_handleInput_FUN_00584440",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,51 +38,51 @@
   "globals": [
     {
       "addr": "005f630c",
-      "name": "DAT_005f630c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f630c",
+      "type": "float",
+      "value": "6.283185"
     },
     {
       "addr": "005f6310",
-      "name": "DAT_005f6310",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f6310",
+      "type": "float",
+      "value": "-6.283185"
     },
     {
       "addr": "005f6314",
-      "name": "DAT_005f6314",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f6314",
+      "type": "double",
+      "value": "-1.57079632675000"
     },
     {
       "addr": "005f631c",
-      "name": "DAT_005f631c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f631c",
+      "type": "double",
+      "value": "1.57079632675000"
     },
     {
       "addr": "005f6324",
-      "name": "DAT_005f6324",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f6324",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "005f632c",
-      "name": "DAT_005f632c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f632c",
+      "type": "double",
+      "value": "10000"
     },
     {
       "addr": "005f6334",
-      "name": "DAT_005f6334",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f6334",
+      "type": "double",
+      "value": "0.0100000000000000"
     },
     {
       "addr": "005f633c",
-      "name": "DAT_005f633c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f633c",
+      "type": "double",
+      "value": "100"
     }
   ],
   "param_estimates": {
@@ -92,7 +91,7 @@
       {
         "call_addr": "005846d2",
         "call_type": "direct",
-        "caller": "shape_spotview.cpp_FUN_00584440",
+        "caller": "shape_spotview.cpp_CSpotView_handleInput_FUN_00584440",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -103,7 +102,7 @@
       {
         "call_addr": "00584710",
         "call_type": "direct",
-        "caller": "shape_spotview.cpp_FUN_00584440",
+        "caller": "shape_spotview.cpp_CSpotView_handleInput_FUN_00584440",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,16 +193,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
-      "line": 7,
+      "line": 5,
       "match": "(int)this_ptr->yaw < 0x40490fdb",
       "severity": "moderate",
       "text": "if ((int)this_ptr->yaw < 0x40490fdb) {",
@@ -211,7 +202,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40490fdb is the IEEE 754 bit pattern of 3.14159f. Rewrite in a .keep as a plain float compare against 3.14159f.",
-      "line": 10,
+      "line": 8,
       "match": "0x40490fdb < (int)this_ptr->yaw)",
       "severity": "moderate",
       "text": "if (0x40490fdb < (int)this_ptr->yaw) {",

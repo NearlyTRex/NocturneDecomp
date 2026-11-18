@@ -25,16 +25,16 @@
 ;   core_fire.cpp_CFireEffect_process_FUN_004b4dd0 at 004b4fe7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061c010
+;   CFireEffect* g_CFireEffectPtr = 01c57074
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.delta_time_float
-;   undefined4 DAT_02c8af28
-;   undefined4 DAT_02c8af2c
-;   undefined4 DAT_02c8af30
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041e0d0
-;   core_dirmat.cpp_FUN_0045f690
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
@@ -85,7 +85,7 @@ section .text
     PUSH 0x42c80000                     ; 004b1ded
     PUSH 0x41800000                     ; 004b1df2
     PUSH EBP                            ; 004b1df7
-    MOV ECX,dword ptr [0x0061c010]      ; 004b1df8 | DAT_0061c010
+    MOV ECX,dword ptr [0x0061c010]      ; 004b1df8 | g_CFireEffectPtr
     PUSH ECX                            ; 004b1dfe
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60 ; 004b1dff
         ;   XREF to: 004b6c60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
@@ -106,9 +106,9 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 004b1e22
     MOV ESI,0x2c8af28                   ; 004b1e25
     PUSH EAX                            ; 004b1e2a
-    MOVSD ES:EDI,ESI                    ; 004b1e2b | DAT_02c8af28
-    MOVSD ES:EDI,ESI                    ; 004b1e2c | DAT_02c8af2c
-    MOVSD ES:EDI,ESI                    ; 004b1e2d | DAT_02c8af30
+    MOVSD ES:EDI,ESI                    ; 004b1e2b | g_ZeroVector
+    MOVSD ES:EDI,ESI                    ; 004b1e2c | g_ZeroVector.y
+    MOVSD ES:EDI,ESI                    ; 004b1e2d | g_ZeroVector.z
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900 ; 004b1e2e
         ;   XREF to: 00468900 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b1e33
@@ -121,8 +121,8 @@ section .text
     LEA EDI,[ESP + 0x38]                ; 004b1e4f
     PUSH EBX                            ; 004b1e53
     FSTP float ptr [ESP + 0x20]         ; 004b1e54
-    CALL core_dirmat.cpp_FUN_0045f690   ; 004b1e58
-        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f690()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690 ; 004b1e58
+        ;   XREF to: 0045f690 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045f690(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x30]                ; 004b1e5d
     ADD ESP,0x8                         ; 004b1e61
     LEA EBX,[ESP + 0x1c]                ; 004b1e64
@@ -166,7 +166,7 @@ section .text
     PUSH 0x0                            ; 004b1ed2
     LEA EAX,[ESP + 0x24]                ; 004b1ed4
     PUSH EAX                            ; 004b1ed8
-    MOV EDX,dword ptr [0x0061c010]      ; 004b1ed9 | DAT_0061c010
+    MOV EDX,dword ptr [0x0061c010]      ; 004b1ed9 | g_CFireEffectPtr
     PUSH EDX                            ; 004b1edf
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0 ; 004b1ee0
         ;   XREF to: 004b59e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

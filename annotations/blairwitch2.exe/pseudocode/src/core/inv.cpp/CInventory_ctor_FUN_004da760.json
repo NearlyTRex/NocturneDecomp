@@ -1,0 +1,165 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 38,
+    "complexity_score": 61,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
+    "suspect_types": [
+      "preinc_loop_idiom"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "004ce240",
+      "from_addr": "004ce262",
+      "name": "core_hero.cpp_CHero_ctor_FUN_004ce240",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004da760",
+    "address_range": [
+      [
+        "004da760",
+        "004da836"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_ctor_FUN_004da760",
+    "signature": "CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004da760(CInventory *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004ce262",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_ctor_FUN_004ce240",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ce270",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_ctor_FUN_004ce240",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ce27e",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_ctor_FUN_004ce240",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4545454545454546,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 25,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 114
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004f6ed0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7407
+    },
+    "bw3.exe": {
+      "addr": "004da360",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7273
+    },
+    "nocedit.exe": {
+      "addr": "004fd020",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7059
+    },
+    "nocturne.exe": {
+      "addr": "004bedc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7059
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar2 = pCVar2;` self-assign, two-var `tmp = &pCVar2->field; pCVar2 = tmp;` ping-pong, or a bare `pCVar2 = pCVar2 + N;` advance followed by a `*pCVar2 =` store \u2014 plus a constant-index store on `pCVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 26,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar2 = pCVar2;` self-assign, two-var `tmp = &pCVar2->field; pCVar2 = tmp;` ping-pong, or a bare `pCVar2 = pCVar2 + N;` advance followed by a `*pCVar2 =` store \u2014 plus a constant-index store on `pCVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 32,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    }
+  ]
+}

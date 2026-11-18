@@ -20,7 +20,7 @@
 ;   TerminatedCString s_Too_many_dynamic_lights_0059059a
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01fba2d8
+;   int g_INT_01fba2d8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -32,7 +32,7 @@ section .text
     PUSH EBX                            ; 0050a970
         ;   Label: core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970
     PUSH ESI                            ; 0050a971
-    MOV ESI,dword ptr [0x01fba2d8]      ; 0050a972 | DAT_01fba2d8
+    MOV ESI,dword ptr [0x01fba2d8]      ; 0050a972 | g_INT_01fba2d8
     MOV EBX,dword ptr [ESP + 0x10]      ; 0050a978
     CMP dword ptr [EBX + 0x1cb4],0x0    ; 0050a97c
     JZ 0x0050a9ba                       ; 0050a983
@@ -50,16 +50,16 @@ section .text
     CMP EAX,EDX                         ; 0050a99d
     JL 0x0050a992                       ; 0050a99f
         ;   XREF to: 0050a992 (CONDITIONAL_JUMP)  ; LAB_0050a992
-    MOV dword ptr [0x01fba2d8],ESI      ; 0050a9a1 | DAT_01fba2d8
+    MOV dword ptr [0x01fba2d8],ESI      ; 0050a9a1 | g_INT_01fba2d8
         ;   Label: LAB_0050a9a1
     CMP ESI,0x4                         ; 0050a9a7
     JGE 0x0050a9c3                      ; 0050a9aa
         ;   XREF to: 0050a9c3 (CONDITIONAL_JUMP)  ; LAB_0050a9c3
-    MOV ESI,dword ptr [0x01fba2d8]      ; 0050a9ac | DAT_01fba2d8
+    MOV ESI,dword ptr [0x01fba2d8]      ; 0050a9ac | g_INT_01fba2d8
         ;   Label: LAB_0050a9ac
     INC ESI                             ; 0050a9b2
-    MOV dword ptr [ESI*0x4 + 0x1fba2d8],EBX ; 0050a9b3 | DAT_01fba2d8
-    MOV dword ptr [0x01fba2d8],ESI      ; 0050a9ba | DAT_01fba2d8
+    MOV dword ptr [ESI*0x4 + 0x1fba2d8],EBX ; 0050a9b3 | g_INT_01fba2d8
+    MOV dword ptr [0x01fba2d8],ESI      ; 0050a9ba | g_INT_01fba2d8
         ;   Label: LAB_0050a9ba
     POP ESI                             ; 0050a9c0
     POP EBX                             ; 0050a9c1

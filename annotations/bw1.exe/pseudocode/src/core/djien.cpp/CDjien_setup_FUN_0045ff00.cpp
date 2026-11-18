@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
 
@@ -17,12 +16,12 @@ void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
   CDjien *pCVar2;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
-  float10 fVar4;
+  double dVar4;
   CDjien *pCVar3;
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&(this_ptr->base).base.model);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,"COMBATMODEHARD");
+                    (g_CEventListPtr,"COMBATMODEHARD");
   if (iVar1 == 0) {
     this_ptr->difficulty_speed_scale = 0.75;
   }
@@ -94,9 +93,9 @@ void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
                     (this_ptr_02,"sack06",1);
   this_ptr->sack_part_indices[5] = iVar1;
-  if (*(int *)(0x01D2C900 + 0x1008) == 0) {
+  if (g_CDemonMission_PTR_0061f650->is_in_editor == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                      (0x01C51D80,"PuzzleModeHard");
+                      (g_CEventListPtr,"PuzzleModeHard");
     if (iVar1 == 0) {
       (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->sack_part_indices[3]] = 0;
       (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->sack_part_indices[4]] = 0;
@@ -107,10 +106,9 @@ void __cdecl core_djien_cpp_CDjien_setup_FUN_0045ff00(CDjien *this_ptr)
       this_ptr->num_sacks_to_blow = 6;
     }
   }
-  fVar4 = (float10)(this_ptr->base).base.hit_points;
-  round();
+  dVar4 = round((double)(this_ptr->base).base.hit_points);
   this_ptr->state_timer = 0.0;
-  _DAT_00612270 = (int)ROUND(fVar4);
+  g_INT_00612270 = (int)ROUND(dVar4);
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   return;
 }

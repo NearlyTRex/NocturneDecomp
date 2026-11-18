@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 61,
     "complexity_score": 63,
-    "cross_reference_count": 18,
+    "cross_reference_count": 19,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -24,13 +24,13 @@
     {
       "addr": "00423a60",
       "from_addr": "00424035",
-      "name": "core_charactr.cpp_FUN_00423a60",
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00423a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042b2a0",
       "from_addr": "0042b2d2",
-      "name": "core_charactr.cpp_FUN_0042b2a0",
+      "name": "core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,7 +42,7 @@
     {
       "addr": "00489670",
       "from_addr": "00489860",
-      "name": "core_event.cpp_FUN_00489670",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,7 +54,7 @@
     {
       "addr": "004bbf70",
       "from_addr": "004bc391",
-      "name": "core_game.cpp_FUN_004bbf70",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -114,13 +114,19 @@
     {
       "addr": "00579e40",
       "from_addr": "0057a073",
-      "name": "support_trisock.cpp_FUN_00579e40",
+      "name": "support_trisock.cpp_httpReceiveResponse_FUN_00579e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ad10",
+      "from_addr": "0057b3b3",
+      "name": "support_trisock.cpp_httpRequestUpdate_FUN_0057ad10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057a360",
       "from_addr": "0057a38b",
-      "name": "support_trisock.cpp_FUN_0057a360",
+      "name": "support_trisock.cpp_parseUrl_FUN_0057a360",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -144,7 +150,7 @@
       {
         "call_addr": "004bc391",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bbf70",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bbf70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +183,7 @@
       {
         "call_addr": "00489860",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +194,7 @@
       {
         "call_addr": "00489b79",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +205,7 @@
       {
         "call_addr": "00489d0d",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +216,7 @@
       {
         "call_addr": "00489e8d",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +227,7 @@
       {
         "call_addr": "00489f94",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +238,7 @@
       {
         "call_addr": "0048a222",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +249,7 @@
       {
         "call_addr": "0048a3a1",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

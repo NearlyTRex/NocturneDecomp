@@ -12,7 +12,7 @@
 ;   void* PTR_CloseHandle_0057548c = 00175ad4
 ;   void* PTR_TlsGetValue_005755c8 = 0017609c
 ;   void* PTR_TlsSetValue_005755cc = 001760aa
-;   undefined4 DAT_005c1ab8
+;   int g_INT_005c1ab8 = -0x1
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 0056e664
         ;   Label: crt_unknown.c_FUN_0056e664
     PUSH ESI                            ; 0056e665
-    MOV EDX,dword ptr [0x005c1ab8]      ; 0056e666 | DAT_005c1ab8
+    MOV EDX,dword ptr [0x005c1ab8]      ; 0056e666 | g_INT_005c1ab8
     CMP EDX,-0x1                        ; 0056e66c
     JZ 0x0056e6b5                       ; 0056e66f
         ;   XREF to: 0056e6b5 (CONDITIONAL_JUMP)  ; LAB_0056e6b5
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 005712ec (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005712ec()
     ADD ESP,0x4                         ; 0056e68f
     PUSH 0x0                            ; 0056e692
-    MOV ESI,dword ptr [0x005c1ab8]      ; 0056e694 | DAT_005c1ab8
+    MOV ESI,dword ptr [0x005c1ab8]      ; 0056e694 | g_INT_005c1ab8
     PUSH ESI                            ; 0056e69a
     CALL dword ptr CS:[0x5755cc]        ; 0056e69b | PTR_TlsSetValue_005755cc
     TEST EBX,EBX                        ; 0056e6a2

@@ -11,8 +11,8 @@
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4 = 005671e4
-;   undefined4 DAT_005c1f54
-;   undefined4 DAT_005c1f58
+;   SIOControlBlock* g_IOControlBlock = 00000000
+;   int g_INT_005c1f58 = 0x0
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
@@ -28,10 +28,10 @@ section .text
     TEST EBX,EBX                        ; 0056e17f
     JLE 0x0056e198                      ; 0056e181
         ;   XREF to: 0056e198 (CONDITIONAL_JUMP)  ; LAB_0056e198
-    CMP EBX,dword ptr [0x005c1f58]      ; 0056e183 | DAT_005c1f58
+    CMP EBX,dword ptr [0x005c1f58]      ; 0056e183 | g_INT_005c1f58
     JGE 0x0056e198                      ; 0056e189
         ;   XREF to: 0056e198 (CONDITIONAL_JUMP)  ; LAB_0056e198
-    MOV EDX,dword ptr [0x005c1f54]      ; 0056e18b | DAT_005c1f54
+    MOV EDX,dword ptr [0x005c1f54]      ; 0056e18b | g_IOControlBlock
     MOV dword ptr [EDX + EBX*0x4],0x0   ; 0056e191
     CALL dword ptr [0x005c1af4]         ; 0056e198 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4
         ;   Label: LAB_0056e198

@@ -403,7 +403,7 @@ void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVer
 
 // Original: core_fire.cpp_CFireEffect_createBulletTrail_FUN_0048b220
 // Address: 0048b220
-void __cdecl CFireEffect::createBulletTrail(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
+void __cdecl CFireEffect::createBulletTrail(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 
 // Original: core_fire.cpp_CFireEffect_createFireball_FUN_0048b270
 // Address: 0048b270

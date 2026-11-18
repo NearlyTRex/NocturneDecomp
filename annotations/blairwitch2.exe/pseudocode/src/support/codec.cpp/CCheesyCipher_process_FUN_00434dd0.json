@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 144,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 11,
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -26,13 +25,13 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCheesyCipher_process_FUN_00434dd0",
-    "signature": "undefined4 __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00434dd0(CCheesyCipher *this_ptr,int *param_2,int *param_3)"
+    "signature": "int __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00434dd0(CCheesyCipher *this_ptr,void *istream,void *ostream)"
   },
   "function_calls": [
     {
       "addr": "00434d60",
       "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00434d60"
+      "name": "support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60"
     }
   ],
   "globals": [],
@@ -101,108 +100,44 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "istream",
         "offset": 8,
         "size": 4,
-        "type": "int *"
+        "type": "void *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "ostream",
         "offset": 12,
         "size": 4,
-        "type": "int *"
+        "type": "void *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00434dd0(CCheesyCipher *this_ptr,int *param_2,int *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00434dd0(CCheesyCipher *this_ptr,int *param_2,int *param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
+      "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*param_2 + 4))(param_2);",
+      "text": "iVar1 = (**(code **)(*(int *)istream + 4))(istream);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*param_2 + 4))(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*param_2 + 4))(param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 16,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*param_3 + 4))(param_3,uVar1);",
+      "text": "iVar1 = (**(code **)(*(int *)ostream + 4))(ostream,uVar2 & 0xff);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar3 = (**(code **)(*param_3 + 4))(param_3,uVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar3 = (**(code **)(*param_3 + 4))(param_3,uVar1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*param_2 + 8))(param_2,uVar1);",
+      "text": "iVar3 = (**(code **)(*(int *)istream + 8))(istream,uVar2 & 0xff);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar4 = (**(code **)(*param_2 + 8))(param_2,uVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar4 = (**(code **)(*param_2 + 8))(param_2,uVar1);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 30,
+    "complexity_score": 14,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 36
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
       "addr": "004e94f0",
       "from_addr": "004ea247",
-      "name": "core_menu.cpp_FUN_004e94f0",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,7 +42,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005586b0",
@@ -67,20 +65,20 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf328c",
-      "name": "DAT_02cf328c",
-      "type": "undefined4",
+      "name": "g_HardwareMixingEnabled",
+      "type": "int",
       "value": null
     }
   ],
@@ -101,7 +99,7 @@
       {
         "call_addr": "004ea247",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e94f0",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,14 +178,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

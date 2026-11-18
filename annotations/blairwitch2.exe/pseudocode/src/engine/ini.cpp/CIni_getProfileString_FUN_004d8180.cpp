@@ -23,7 +23,7 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004d8180(CIni *this_ptr,cha
   
   bVar6 = 0;
   local_14 = 0;
-  stream = _fopen(filename,&DAT_005dab81);
+  stream = _fopen(filename,"rt");
   if (stream != (_FILE *)0x0) {
     _sprintf(local_114,"[%s]\n");
     do {

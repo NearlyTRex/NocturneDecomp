@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 51,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 75
   },
   "cross_references": [
     {
       "addr": "00535da0",
       "from_addr": "00535e45",
-      "name": "core_set.cpp_FUN_00535da0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,32 +52,32 @@
   "globals": [
     {
       "addr": "00b9dd48",
-      "name": "DAT_00b9dd48",
-      "type": "undefined4",
+      "name": "g_CoronaBlurFillValue",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0134017c",
-      "name": "DAT_0134017c",
-      "type": "undefined4",
+      "name": "g_BackdropSaveActive",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d0",
-      "name": "DAT_0149d6d0",
-      "type": "undefined4",
+      "name": "g_ImageProcessingState1",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d4",
-      "name": "DAT_0149d6d4",
-      "type": "undefined4",
+      "name": "g_ImageProcessingState2",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0149d6d8",
-      "name": "DAT_0149d6d8",
-      "type": "undefined4",
+      "name": "g_ImageBytesPerPixel",
+      "type": "int",
       "value": null
     }
   ],
@@ -90,7 +87,7 @@
       {
         "call_addr": "00535e45",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00535da0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,22 +177,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "_memcpy(&DAT_0135ead0,(void *)0x13716d0,0x12c00);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

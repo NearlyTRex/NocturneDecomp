@@ -10,8 +10,8 @@ void __cdecl core_waypoint_cpp_staticInit_FUN_00552380(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CWayPointActorType_02ddf514,"CWayPoint",
-             core_waypoint_cpp_factoryFuncWayPoint_FUN_005524a0,&INT_005c1578,2,
-             &g_CTriggerActorType_02dd1084);
+            (&g_CWayPointClassInfo,"CWayPoint",
+             core_waypoint_cpp_factoryFuncWayPoint_FUN_005524a0,&g_CWayPointClassVersion,2,
+             &g_CTriggerClassInfo);
   return;
 }

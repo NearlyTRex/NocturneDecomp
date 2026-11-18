@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ad770(CWeapon *this_ptr,float delta_time)
 
 {
@@ -40,7 +38,7 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ad770(CWeapon *this_ptr,floa
     }
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(&this_ptr->base);
-  if (((this_ptr->carried_by_actor == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) &&
+  if ((((CHero *)this_ptr->carried_by_actor == g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]) &&
       (g_CGamePtr->flashlight_active != 0)) && (this_ptr->can_attach_light != 0)) {
     (*(((this_ptr->base).vtable._uc)->_uc).getGrabber)((CCharacter *)this_ptr);
     if (0.0 < g_CDemonLightInstance.volumetric_intensity) {

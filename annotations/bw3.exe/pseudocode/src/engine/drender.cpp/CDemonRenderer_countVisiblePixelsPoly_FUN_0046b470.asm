@@ -10,23 +10,23 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_setdir.cpp_FUN_0053f5d0 at 0053f623
-;   core_setdir.cpp_FUN_0053f940 at 005407c7
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940 at 005407c7
+;   core_setdir.cpp_calculateActorVisibility_FUN_0053f0f0 at 0053f623
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005bc4ac
 ;   TerminatedCString s_Can_t_use_demonZFacetCou_005bc4c2
-;   undefined4 DAT_01bdd810
-;   undefined4 DAT_01bdd818
-;   undefined4 DAT_01bdd81c
-;   undefined4 DAT_01c6b5cc
-;   undefined4 DAT_01c6e2b4
-;   undefined4 DAT_01c6e2b8
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   int g_RenderPixelCounter
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
+;   void* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
 ;
@@ -44,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0046b47b
     XOR EDX,EDX                         ; 0046b47f
     MOV ECX,dword ptr [EBP + 0xc]       ; 0046b481
-    MOV dword ptr [0x01bdd810],EDX      ; 0046b484 | DAT_01bdd810
+    MOV dword ptr [0x01bdd810],EDX      ; 0046b484 | g_RenderPixelCounter
     TEST ECX,ECX                        ; 0046b48a
     JNZ 0x0046b534                      ; 0046b48c
         ;   XREF to: 0046b534 (CONDITIONAL_JUMP)  ; LAB_0046b534
@@ -60,7 +60,7 @@ section .text
     XOR ECX,ECX                         ; 0046b4a5
     MOV ESI,dword ptr [EBX + 0x18]      ; 0046b4a7
         ;   Label: LAB_0046b4a7
-    MOV dword ptr [ECX + 0x1bdd818],ESI ; 0046b4aa | DAT_01bdd818 | DAT_01bdd81c
+    MOV dword ptr [ECX + 0x1bdd818],ESI ; 0046b4aa | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     LEA EAX,[ESI*0x4 + 0x0]             ; 0046b4b0
     SUB EAX,ESI                         ; 0046b4b7
     ADD ECX,0x4                         ; 0046b4b9
@@ -93,19 +93,19 @@ section .text
     MOV EAX,0x5bc4ac                    ; 0046b4f3 | = "..\\engine\\drender.cpp"
     MOV EDX,0x29d                       ; 0046b4f8
     PUSH 0x5bc4c2                       ; 0046b4fd | = "Can't use demonZFacetCount in shadow ..."
-    MOV [0x01d71de0],EAX                ; 0046b502 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0046b507 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0046b50d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 0046b502 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 0046b507 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0046b50d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046b512
-    PUSH 0x1bdd818                      ; 0046b515 | DAT_01bdd818
+    PUSH 0x1bdd818                      ; 0046b515 | g_VertexIndexBuffer
         ;   Label: LAB_0046b515
     MOV ECX,dword ptr [EDI + 0x4]       ; 0046b51a
     PUSH ECX                            ; 0046b51d
     PUSH EBP                            ; 0046b51e
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160 ; 0046b51f
         ;   XREF to: 0046b160 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
-    MOV EAX,[0x01bdd810]                ; 0046b524 | DAT_01bdd810
+    MOV EAX,[0x01bdd810]                ; 0046b524 | g_RenderPixelCounter
     ADD ESP,0xc                         ; 0046b529
     ADD ESP,0x4                         ; 0046b52c
         ;   Label: LAB_0046b52c
@@ -133,9 +133,9 @@ section .text
         ;   Label: LAB_0046b54e
     MOV ESI,0x6                         ; 0046b553
     MOV ECX,0x46ffa5                    ; 0046b558
-    MOV dword ptr [0x01c6e2b4],EBX      ; 0046b55d | DAT_01c6e2b4
-    MOV dword ptr [0x01c6e2b8],ESI      ; 0046b563 | DAT_01c6e2b8
-    MOV dword ptr [0x01c6b5cc],ECX      ; 0046b569 | DAT_01c6b5cc
+    MOV dword ptr [0x01c6e2b4],EBX      ; 0046b55d | g_RenderStateFlags
+    MOV dword ptr [0x01c6e2b8],ESI      ; 0046b563 | g_VertexPreprocessMode
+    MOV dword ptr [0x01c6b5cc],ECX      ; 0046b569 | g_ScanlineRenderFunc
     JMP 0x0046b515                      ; 0046b56f
         ;   XREF to: 0046b515 (UNCONDITIONAL_JUMP)  ; LAB_0046b515
 

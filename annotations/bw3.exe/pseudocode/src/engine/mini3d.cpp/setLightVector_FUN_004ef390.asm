@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   intensity
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c6cee8
-;   undefined4 DAT_01d76cfc
-;   undefined4 DAT_02cf60a8
+;   int g_INT_01c6cee8
+;   void* g_PTR_01d76cfc
+;   void* g_APIDLL_setLightVector
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_updateTransform_FUN_004edcc0
@@ -35,19 +35,19 @@ section .text
     FADDP                               ; 004ef3ad
     FSQRT                               ; 004ef3af
     FDIVR float ptr [ESP + 0x1c]        ; 004ef3b1
-    MOV EDX,dword ptr [0x02cf60a8]      ; 004ef3b5 | DAT_02cf60a8
+    MOV EDX,dword ptr [0x02cf60a8]      ; 004ef3b5 | g_APIDLL_setLightVector
     FSTP float ptr [ESP + 0xc]          ; 004ef3bb
     TEST EDX,EDX                        ; 004ef3bf
     JZ 0x004ef3cc                       ; 004ef3c1
         ;   XREF to: 004ef3cc (CONDITIONAL_JUMP)  ; LAB_004ef3cc
-    CMP dword ptr [0x01c6cee8],0x0      ; 004ef3c3 | DAT_01c6cee8
+    CMP dword ptr [0x01c6cee8],0x0      ; 004ef3c3 | g_INT_01c6cee8
     JNZ 0x004ef3ef                      ; 004ef3ca
         ;   XREF to: 004ef3ef (CONDITIONAL_JUMP)  ; LAB_004ef3ef
     FLD float ptr [ESP + 0xc]           ; 004ef3cc
         ;   Label: LAB_004ef3cc
     FLD float ptr [EBX]                 ; 004ef3d0
     FMUL ST1                            ; 004ef3d2
-    MOV EAX,[0x01d76cfc]                ; 004ef3d4 | DAT_01d76cfc
+    MOV EAX,[0x01d76cfc]                ; 004ef3d4 | g_PTR_01d76cfc
     FSTP float ptr [EAX + 0x30]         ; 004ef3d9
     FLD float ptr [EBX + 0x4]           ; 004ef3dc
     FMUL ST1                            ; 004ef3df
@@ -70,7 +70,7 @@ section .text
     PUSH dword ptr [ESP + 0x1c]         ; 004ef408
     PUSH EAX                            ; 004ef40c
     FSTP float ptr [ESP + 0x10]         ; 004ef40d
-    CALL dword ptr [0x02cf60a8]         ; 004ef411 | DAT_02cf60a8
+    CALL dword ptr [0x02cf60a8]         ; 004ef411 | g_APIDLL_setLightVector
     ADD ESP,0x8                         ; 004ef417
     JMP 0x004ef3cc                      ; 004ef41a
         ;   XREF to: 004ef3cc (UNCONDITIONAL_JUMP)  ; LAB_004ef3cc

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e4c70 at 004e4cdc
+;   core_main.c_finalizeGameSystems_FUN_004e4c70 at 004e4cdc
 ;
 ; *****************************************************************************
 

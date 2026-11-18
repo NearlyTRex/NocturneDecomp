@@ -23,7 +23,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(CDemonSet *this
     do {
       this_ptr_00 = (CGlass *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              (pCVar3->actors[0],g_CGlassActorType_01c78c40.name_hash);
+                              (pCVar3->actors[0],g_CGlassClassInfo.name_hash);
       if ((this_ptr_00 != (CGlass *)0x0) && (this_ptr_00->mirror_flag != 0)) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)this_ptr_00);
         this_ptr_01 = (*((this_ptr_00->base).vtable._ub)->getBoundingBox)

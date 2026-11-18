@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00462ba0(CDraculaBride *this_ptr)
 
 {
@@ -20,14 +18,14 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00462ba0(CDracu
   pCVar3 = (CDraculaBride *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
   (pCVar3->base).base.base.vtable._ub = &g_CDraculaBrideVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(pCVar3->base).base.model,(char *)0x5d0e22);
+            (&(pCVar3->base).base.model,"nbride2.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.5;
   (pCVar3->base).base.collision_cylinder_radius = 1.0;
   pCVar3->rise_event[0] = '\0';
   (pCVar3->base).base.hit_points = 135.0;
-  fVar1 = _DAT_005f5644;
+  fVar1 = 50.0f;
   pCVar3->mist_state = 0;
-  fVar2 = _DAT_005f5648;
+  fVar2 = 100.0f;
   pCVar3->vanish_timer = 0.0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;

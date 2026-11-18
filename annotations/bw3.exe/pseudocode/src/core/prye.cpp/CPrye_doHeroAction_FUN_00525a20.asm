@@ -10,7 +10,7 @@
 ;   undefined1* switchdataD_005259b8 = 00525b60
 ;   undefined1* switchdataD_005259d0 = 00525e3b
 ;   undefined1* switchdataD_005259e0 = 00525a43
-;   undefined4 s_CPrye_doHeroAction_pull_005cd7f6+1
+;   TerminatedCString s_CPrye_doHeroAction_pull_005cd7f7
 ;   TerminatedCString s_CPrye_doHeroAction_type_005cd819
 ;   TerminatedCString s_lever_s_005cd86d
 ;   TerminatedCString s_CHero_doHeroAction_type_005cd87b
@@ -19,19 +19,19 @@
 ;   TerminatedCString s_Picking_up_s_waist_level_005cd903
 ;   TerminatedCString s_Picking_up_s_off_ground_005cd91e
 ;   TerminatedCString s_Rummaging_s_005cd938
-;   undefined4 DAT_005cd947
-;   undefined4 DAT_005cd94f
-;   undefined4 DAT_005cd957
+;   float g_FLOAT_005cd947 = 0.5
+;   double g_DOUBLE_005cd94f = 2.5
+;   double g_DOUBLE_005cd957 = 2
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408b80
-;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00495db0
+;   core_hero.cpp_CHero_clearHeroAction_FUN_004d3210
 ;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250
-;   core_hero.cpp_FUN_004d3210
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
@@ -56,8 +56,8 @@ section .text
         ;   Label: switchD
     PUSH EBX                            ; 00525a43
         ;   Label: caseD_0
-    CALL core_hero.cpp_FUN_004d3210     ; 00525a44
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525a44
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525a49
     ADD ESP,0xd8                        ; 00525a4c
     POP EBP                             ; 00525a52
@@ -65,7 +65,7 @@ section .text
     POP ESI                             ; 00525a54
     POP EBX                             ; 00525a55
     RET                                 ; 00525a56
-    PUSH 0x5cd7f7                       ; 00525a57 | s_CPrye_doHeroAction_pull_005cd7f6+1
+    PUSH 0x5cd7f7                       ; 00525a57 | = "CPrye::doHeroAction - pull lever\n"
         ;   Label: caseD_8
     MOV EDX,dword ptr [0x005f1690]      ; 00525a5c | g_CConsolePtr
     PUSH EDX                            ; 00525a62 | g_CConsoleInstance
@@ -108,8 +108,8 @@ section .text
         ;   XREF to: 004fc0d0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00525acf
     PUSH EBX                            ; 00525ad2
-    CALL core_hero.cpp_FUN_004d3210     ; 00525ad3
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525ad3
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525ad8
     ADD ESP,0xd8                        ; 00525adb
     POP EBP                             ; 00525ae1
@@ -125,8 +125,8 @@ section .text
         ;   XREF to: 0047cf40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00525af7
     PUSH EBX                            ; 00525afa
-    CALL core_hero.cpp_FUN_004d3210     ; 00525afb
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525afb
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525b00
     ADD ESP,0xd8                        ; 00525b03
     POP EBP                             ; 00525b09
@@ -164,8 +164,8 @@ section .text
     MOV dword ptr [EBX + 0x20b94],0x0   ; 00525b60
         ;   Label: caseD_0
     PUSH EBX                            ; 00525b6a
-    CALL core_hero.cpp_FUN_004d3210     ; 00525b6b
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525b6b
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525b70
     ADD ESP,0xd8                        ; 00525b73
     POP EBP                             ; 00525b79
@@ -181,8 +181,8 @@ section .text
         ;   XREF to: 0047cf40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00525b8f
     PUSH EBX                            ; 00525b92
-    CALL core_hero.cpp_FUN_004d3210     ; 00525b93
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525b93
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525b98
     ADD ESP,0xd8                        ; 00525b9b
     POP EBP                             ; 00525ba1
@@ -200,8 +200,8 @@ section .text
     ADD ESP,0xc                         ; 00525bb6
     MOV dword ptr [EBX + 0x20b64],0x5   ; 00525bb9
     PUSH EBX                            ; 00525bc3
-    CALL core_hero.cpp_FUN_004d3210     ; 00525bc4
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525bc4
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525bc9
     ADD ESP,0xd8                        ; 00525bcc
     POP EBP                             ; 00525bd2
@@ -219,8 +219,8 @@ section .text
     ADD ESP,0xc                         ; 00525be7
     MOV dword ptr [EBX + 0x20b64],0x5   ; 00525bea
     PUSH EBX                            ; 00525bf4
-    CALL core_hero.cpp_FUN_004d3210     ; 00525bf5
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525bf5
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525bfa
     ADD ESP,0xd8                        ; 00525bfd
     POP EBP                             ; 00525c03
@@ -238,8 +238,8 @@ section .text
     ADD ESP,0xc                         ; 00525c18
     MOV dword ptr [EBX + 0x20b64],0x5   ; 00525c1b
     PUSH EBX                            ; 00525c25
-    CALL core_hero.cpp_FUN_004d3210     ; 00525c26
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525c26
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525c2b
     ADD ESP,0xd8                        ; 00525c2e
     POP EBP                             ; 00525c34
@@ -257,8 +257,8 @@ section .text
     ADD ESP,0xc                         ; 00525c49
     MOV dword ptr [EBX + 0x20b64],0x5   ; 00525c4c
     PUSH EBX                            ; 00525c56
-    CALL core_hero.cpp_FUN_004d3210     ; 00525c57
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525c57
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525c5c
     ADD ESP,0xd8                        ; 00525c5f
     POP EBP                             ; 00525c65
@@ -272,8 +272,8 @@ section .text
         ;   XREF to: 004d3250 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525c70
     PUSH EBX                            ; 00525c73
-    CALL core_hero.cpp_FUN_004d3210     ; 00525c74
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525c74
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525c79
     ADD ESP,0xd8                        ; 00525c7c
     POP EBP                             ; 00525c82
@@ -287,8 +287,8 @@ section .text
         ;   XREF to: 004d4520 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_doHeroAction_FUN_004d4520(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525c8d
     PUSH EBX                            ; 00525c90
-    CALL core_hero.cpp_FUN_004d3210     ; 00525c91
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525c91
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525c96
     ADD ESP,0xd8                        ; 00525c99
     POP EBP                             ; 00525c9f
@@ -358,7 +358,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00525d68
     MOVSD ES:EDI,ESI                    ; 00525d69
     MOVSD ES:EDI,ESI                    ; 00525d6a
-    FLD float ptr [0x005cd947]          ; 00525d6b | DAT_005cd947
+    FLD float ptr [0x005cd947]          ; 00525d6b | g_FLOAT_005cd947
     FLD float ptr [ESP + 0x90]          ; 00525d71
     FMUL ST1                            ; 00525d78
     FLD float ptr [ESP + 0x94]          ; 00525d7a
@@ -380,8 +380,8 @@ section .text
     PUSH EDX                            ; 00525dc2
     LEA ESI,[ESP + 0x38]                ; 00525dc3
     LEA EDI,[ESP + 0xbc]                ; 00525dc7
-    CALL core_actor.cpp_FUN_00408b80    ; 00525dce
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00525dce
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00525dd3
     LEA EAX,[ESP + 0xb4]                ; 00525dd6
     LEA ESI,[ESP + 0x30]                ; 00525ddd
@@ -392,8 +392,8 @@ section .text
     PUSH EBX                            ; 00525de5
     LEA ESI,[ESP + 0x5c]                ; 00525de6
     LEA EDI,[ESP + 0x80]                ; 00525dea
-    CALL core_actor.cpp_FUN_00408bf0    ; 00525df1
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 00525df1
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x5c]                ; 00525df6
     LEA EAX,[ESP + 0x80]                ; 00525dfa
     ADD ESP,0x8                         ; 00525e01
@@ -439,8 +439,8 @@ section .text
         ;   XREF to: 00525a43 (CONDITIONAL_JUMP)  ; caseD_c
     MOV dword ptr [EBX + 0x20b64],0x4   ; 00525e76
     PUSH EBX                            ; 00525e80
-    CALL core_hero.cpp_FUN_004d3210     ; 00525e81
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00525e81
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525e86
     ADD ESP,0xd8                        ; 00525e89
     POP EBP                             ; 00525e8f
@@ -465,19 +465,19 @@ section .text
     FLD float ptr [EBX + 0x20c90]       ; 00525eb7
         ;   Label: LAB_00525eb7
     LEA EDI,[EBX + 0x158]               ; 00525ebd
-    FCOMP double ptr [0x005cd957]       ; 00525ec3 | DAT_005cd957
+    FCOMP double ptr [0x005cd957]       ; 00525ec3 | g_DOUBLE_005cd957
     FNSTSW AX                           ; 00525ec9
     SAHF                                ; 00525ecb
     JBE 0x00526033                      ; 00525ecc
         ;   XREF to: 00526033 (CONDITIONAL_JUMP)  ; LAB_00526033
-    MOV ESI,dword ptr [0x01ed3714]      ; 00525ed2 | DAT_01ed3714
+    MOV ESI,dword ptr [0x01ed3714]      ; 00525ed2 | g_StrangerIndices[10]
     PUSH ESI                            ; 00525ed8
     PUSH EDI                            ; 00525ed9
     LEA ESI,[ESP + 0x44]                ; 00525eda
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0 ; 00525ede
         ;   XREF to: 0054dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00525ee3
-    MOV EBP,dword ptr [0x01ed36ec]      ; 00525ee6 | DAT_01ed36ec
+    MOV EBP,dword ptr [0x01ed36ec]      ; 00525ee6 | g_StrangerIndices
     PUSH EBP                            ; 00525eec
     PUSH EDI                            ; 00525eed
     LEA ESI,[ESP + 0xb0]                ; 00525eee
@@ -514,8 +514,8 @@ section .text
     PUSH ECX                            ; 00525f4e
     LEA ESI,[ESP + 0x74]                ; 00525f4f
     LEA EDI,[ESP + 0x50]                ; 00525f53
-    CALL core_actor.cpp_FUN_00408bf0    ; 00525f57
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 00525f57
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0x74]                ; 00525f5c
     ADD ESP,0x8                         ; 00525f60
     MOVSD ES:EDI,ESI                    ; 00525f63
@@ -533,7 +533,7 @@ section .text
         ;   Label: LAB_00525f7c
     LEA EDX,[EBX + 0x158]               ; 00525f82
     MOV dword ptr [EBX + 0x20c7c],EAX   ; 00525f88
-    FCOMP double ptr [0x005cd94f]       ; 00525f8e | DAT_005cd94f
+    FCOMP double ptr [0x005cd94f]       ; 00525f8e | g_DOUBLE_005cd94f
     FNSTSW AX                           ; 00525f94
     SAHF                                ; 00525f96
     JBE 0x0052600e                      ; 00525f97
@@ -550,8 +550,8 @@ section .text
     PUSH EBX                            ; 00525fb0
     LEA ESI,[ESP + 0xd4]                ; 00525fb1
     LEA EDI,[ESP + 0x68]                ; 00525fb8
-    CALL core_actor.cpp_FUN_00408bf0    ; 00525fbc
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0 ; 00525fbc
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0xd4]                ; 00525fc1
     LEA EAX,[ESP + 0x68]                ; 00525fc8
     ADD ESP,0x8                         ; 00525fcc
@@ -611,8 +611,8 @@ section .text
     MOV dword ptr [EBX + 0x20b98],0x0   ; 00526058
         ;   Label: default
     PUSH EBX                            ; 00526062
-    CALL core_hero.cpp_FUN_004d3210     ; 00526063
-        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d3210()
+    CALL core_hero.cpp_CHero_clearHeroAction_FUN_004d3210 ; 00526063
+        ;   XREF to: 004d3210 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_clearHeroAction_FUN_004d3210(CHero * this_ptr)
     ADD ESP,0x4                         ; 00526068
     ADD ESP,0xd8                        ; 0052606b
     POP EBP                             ; 00526071

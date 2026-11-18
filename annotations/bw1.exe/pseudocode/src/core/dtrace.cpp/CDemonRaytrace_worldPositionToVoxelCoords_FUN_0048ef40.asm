@@ -16,7 +16,7 @@
 ; XREF[7]:
 ;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0048fa40 at 0048faa5
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0048f920 at 0048f984
-;   core_particle.cpp_FUN_00532250 at 0053237c
+;   core_particle.cpp_CParticle_process_FUN_00532250 at 0053237c
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0 at 00533dec
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_005334f0 at 005335ab
 ;   core_path.cpp_getOrCreatePathMap_FUN_00535080 at 005350c6
@@ -52,7 +52,7 @@ section .text
     FLD double ptr [ESP + 0x14]         ; 0048ef73
     ADD ESP,0x8                         ; 0048ef77
     CALL crt_math.c_round_FUN_005c03a0  ; 0048ef7a
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP]               ; 0048ef7f
     SUB ESP,0x8                         ; 0048ef82
     FSTP double ptr [ESP]               ; 0048ef85
@@ -66,7 +66,7 @@ section .text
     FLD double ptr [ESP + 0x14]         ; 0048ef9e
     ADD ESP,0x8                         ; 0048efa2
     CALL crt_math.c_round_FUN_005c03a0  ; 0048efa5
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0048efaa
     SUB ESP,0x8                         ; 0048efae
     FSTP double ptr [ESP]               ; 0048efb1
@@ -79,7 +79,7 @@ section .text
     FLD double ptr [ESP + 0x14]         ; 0048efc7
     ADD ESP,0x8                         ; 0048efcb
     CALL crt_math.c_round_FUN_005c03a0  ; 0048efce
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0048efd3
     MOVSD ES:EDI,ESI                    ; 0048efd7
     MOVSD ES:EDI,ESI                    ; 0048efd8

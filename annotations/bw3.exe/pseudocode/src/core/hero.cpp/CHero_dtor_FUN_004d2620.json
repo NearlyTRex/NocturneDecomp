@@ -1,0 +1,260 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 137,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 9,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "00527300",
+      "from_addr": "0052730f",
+      "name": "core_prye.cpp_CPrye_dtor_FUN_00527300",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d2620",
+    "address_range": [
+      [
+        "004d2620",
+        "004d26ae"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_dtor_FUN_004d2620",
+    "signature": "CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004d2620(CHero *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408770"
+    },
+    {
+      "addr": "00410370",
+      "is_variadic": false,
+      "name": "core_armour.cpp_CFlame_arrdtor50_FUN_00410370"
+    },
+    {
+      "addr": "0043f900",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
+    },
+    {
+      "addr": "004da420",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_dtor_FUN_004da420"
+    },
+    {
+      "addr": "0050ad40",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_dtor_FUN_0050ad40"
+    },
+    {
+      "addr": "0054bf80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1534",
+      "name": "PTR_core_hero.cpp_CHero_setup_FUN_004d26b0_005e1534",
+      "type": "void*",
+      "value": "004d26b0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052730f",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_dtor_FUN_00527300",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.159090909090909,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 25,
+      "INT_ADD": 15,
+      "INT_AND": 32,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 16,
+      "INT_SUB": 25,
+      "INT_XOR": 2,
+      "LOAD": 4,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 227
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ce3d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8544
+    },
+    "bw1.exe": {
+      "addr": "004ea980",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f2470",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8544
+    },
+    "nocturne.exe": {
+      "addr": "004b4800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8544
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(CHero **)((int)g_CHero_PTR_ARRAY_01d5ba04",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CHero **)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)g_CHero_PTR_ARRAY_01d5ba04",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar1) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "((CFlame *)(pCVar3[-1].height_cache_tags[4] + 0x20),0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 28,
+      "match": "pCVar4[-4].",
+      "severity": "mild",
+      "text": "((CClothList *)((int)&pCVar4[-4].base.previous_transform_state.orientation + 4)",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "((CDemonActor *)(pCVar6[-1].part_data.texture_set_indices + 7),1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01d5ba04` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_CHero_PTR_ARRAY_01d5ba04",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CHero **)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar1)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CHero_PTR_ARRAY_01d5ba04` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)g_CHero_PTR_ARRAY_01d5ba04",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CHero_PTR_ARRAY_01d5ba04 + iVar1) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar4[-4].base.previous_transform_state.orientation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&pCVar4[-4].base.previous_transform_state.orientation",
+      "severity": "moderate",
+      "text": "((CClothList *)((int)&pCVar4[-4].base.previous_transform_state.orientation + 4)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CClothList *)((int)&pCVar4[-4].base.previous_transform_state.orientation + 4)",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 208,
+        "vtable_addr": "005e1534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

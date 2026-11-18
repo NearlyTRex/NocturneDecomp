@@ -17,11 +17,11 @@
 ;   void* PTR_GetProcAddress_005b35c8 = 001b3f72
 ;   TerminatedCString s_winmm_dll_005d7eda
 ;   TerminatedCString s_joyGetPosEx_005d7ee4
-;   undefined4 DAT_005fba30
-;   undefined4 DAT_01c6e264
-;   undefined4 DAT_01c6e274
-;   undefined4 DAT_02d22c1c
-;   undefined4 DAT_02d22c20
+;   int g_JoystickNumButtons = 0x4
+;   int g_JoystickPresent
+;   int g_JoystickHasPOV
+;   void* g_joyGetPosEx
+;   HMODULE g_WinmmDll
 ;
 ; Called Functions:
 ;   GetModuleHandleA
@@ -36,14 +36,14 @@ section .text
         ;   Label: wincore_winrun.cpp_initJoystick_FUN_00581c80
     PUSH 0x5d7eda                       ; 00581c86 | = "winmm.dll"
     CALL dword ptr CS:[0x5b35c0]        ; 00581c8b | PTR_GetModuleHandleA_005b35c0
-    MOV [0x02d22c20],EAX                ; 00581c92 | DAT_02d22c20
+    MOV [0x02d22c20],EAX                ; 00581c92 | g_WinmmDll
     TEST EAX,EAX                        ; 00581c97
     JZ 0x00581cad                       ; 00581c99
         ;   XREF to: 00581cad (CONDITIONAL_JUMP)  ; LAB_00581cad
     PUSH 0x5d7ee4                       ; 00581c9b | = "joyGetPosEx"
     PUSH EAX                            ; 00581ca0
     CALL dword ptr CS:[0x5b35c8]        ; 00581ca1 | PTR_GetProcAddress_005b35c8
-    MOV [0x02d22c1c],EAX                ; 00581ca8 | DAT_02d22c1c
+    MOV [0x02d22c1c],EAX                ; 00581ca8 | g_joyGetPosEx
     PUSH 0x194                          ; 00581cad
         ;   Label: LAB_00581cad
     LEA EAX,[ESP + 0x4]                 ; 00581cb2
@@ -56,9 +56,9 @@ section .text
     TEST byte ptr [ESP + 0x60],0x10     ; 00581cc4
     SETNZ AL                            ; 00581cc9
     AND EAX,0xff                        ; 00581ccc
-    MOV [0x01c6e274],EAX                ; 00581cd1 | DAT_01c6e274
+    MOV [0x01c6e274],EAX                ; 00581cd1 | g_JoystickHasPOV
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00581cd6
-    MOV [0x005fba30],EAX                ; 00581cda | DAT_005fba30
+    MOV [0x005fba30],EAX                ; 00581cda | g_JoystickNumButtons
     CMP EAX,0x8                         ; 00581cdf
     JG 0x00581cfd                       ; 00581ce2
         ;   XREF to: 00581cfd (CONDITIONAL_JUMP)  ; LAB_00581cfd
@@ -68,11 +68,11 @@ section .text
     PUSH EBX                            ; 00581cf1
         ;   Label: LAB_00581cf1
     XOR EBX,EBX                         ; 00581cf2
-    MOV dword ptr [0x01c6e264],EBX      ; 00581cf4 | DAT_01c6e264
+    MOV dword ptr [0x01c6e264],EBX      ; 00581cf4 | g_JoystickPresent
     POP EBX                             ; 00581cfa
     JMP 0x00581ce4                      ; 00581cfb
         ;   XREF to: 00581ce4 (UNCONDITIONAL_JUMP)  ; LAB_00581ce4
-    MOV dword ptr [0x005fba30],0x8      ; 00581cfd | DAT_005fba30
+    MOV dword ptr [0x005fba30],0x8      ; 00581cfd | g_JoystickNumButtons
         ;   Label: LAB_00581cfd
     ADD ESP,0x194                       ; 00581d07
     RET                                 ; 00581d0d

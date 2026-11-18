@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060a044
+;   float10 g_FLOAT10_0060a044 = 3.141592653589793239
 ;
 ; *****************************************************************************
 
 section .text
 
-    FLD extended double ptr [0x0060a044] ; 005af4c8 | DAT_0060a044
+    FLD extended double ptr [0x0060a044] ; 005af4c8 | g_FLOAT10_0060a044
         ;   Label: crt_unknown.c_FUN_005af4c8
     FSUBRP                              ; 005af4ce
     FLDCW word ptr [ESP + 0x18]         ; 005af4d0

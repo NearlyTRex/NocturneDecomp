@@ -14,18 +14,18 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820 at 00442a10
 ;
 ; Referenced Globals:
-;   undefined8 DAT_00611318
-;   undefined8 DAT_00611320
-;   undefined4 DAT_00612880
-;   undefined4 DAT_00613078
-;   undefined4 DAT_0061c8e8
-;   undefined4 DAT_0061c908
-;   undefined4 DAT_0061c928
-;   undefined4 DAT_0061c930
-;   undefined4 DAT_0061c950
-;   undefined4 DAT_0061c970
-;   undefined4 DAT_00b6639c
-;   undefined4 DAT_01c38b5c
+;   qword g_AmbientLightMMX1 = 0x4000400040004
+;   qword g_AmbientLightMMX2 = 0xc000c000c000c
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
+;   qword g_RedMask32 = 0xf80000
+;   qword g_GreenMask32 = 0xfc00
+;   qword g_BlueMask32 = 0xf8
+;   qword g_TotalDitherShift = 0x8
+;   qword g_GreenBlueDitherShift = 0x5
+;   qword g_BlueBitShift = 0x3
+;   uint[256] g_LightmapTexturePalette
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00471fd3
     MOV EBP,dword ptr [EBP + 0x14]      ; 00471fd6
     PXOR MM7,MM7                        ; 00471fd9
-    MOVD MM5,dword ptr [0x01c38b5c]     ; 00471fdc | DAT_01c38b5c
+    MOVD MM5,dword ptr [0x01c38b5c]     ; 00471fdc | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00471fe3
     PSLLW MM5,0x6                       ; 00471fe6
     MOV EAX,dword ptr [ESI]             ; 00471fea
@@ -129,31 +129,31 @@ section .text
     MOVZX EDX,byte ptr [EBX]            ; 004721bd
         ;   Label: LAB_004721bd
     MOVQ MM0,qword ptr [ESI]            ; 004721c0
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 004721c3 | DAT_00b6639c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 004721c3 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 004721cb
     PUNPCKLBW MM0,MM7                   ; 004721cf
     SHR EDX,0x1                         ; 004721d2
     PUNPCKLBW MM2,MM7                   ; 004721d4
     ADD EAX,EDX                         ; 004721d7
     PMULLW MM0,MM2                      ; 004721d9
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 004721dc | DAT_00612880
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 004721dc | g_LightmapData
     MOVQ MM2,MM3                        ; 004721e4
     MOVQ MM4,MM5                        ; 004721e7
-    PXOR MM2,qword ptr [0x00613078]     ; 004721ea | DAT_00613078
+    PXOR MM2,qword ptr [0x00613078]     ; 004721ea | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 004721f1
     PMULHW MM4,MM3                      ; 004721f4
     PADDW MM0,MM4                       ; 004721f7
-    PADDW MM0,qword ptr [0x00611318]    ; 004721fa | DAT_00611318
+    PADDW MM0,qword ptr [0x00611318]    ; 004721fa | g_AmbientLightMMX1
     PSRLW MM0,0x4                       ; 00472201
     PACKUSWB MM0,MM7                    ; 00472205
     MOVQ MM2,MM0                        ; 00472208
     MOVQ MM3,MM0                        ; 0047220b
-    PAND MM0,qword ptr [0x0061c928]     ; 0047220e | DAT_0061c928
-    PAND MM2,qword ptr [0x0061c908]     ; 00472215 | DAT_0061c908
-    PAND MM3,qword ptr [0x0061c8e8]     ; 0047221c | DAT_0061c8e8
-    PSRLQ MM0,qword ptr [0x0061c970]    ; 00472223 | DAT_0061c970
-    PSRLQ MM2,qword ptr [0x0061c950]    ; 0047222a | DAT_0061c950
-    PSRLQ MM3,qword ptr [0x0061c930]    ; 00472231 | DAT_0061c930
+    PAND MM0,qword ptr [0x0061c928]     ; 0047220e | g_BlueMask32
+    PAND MM2,qword ptr [0x0061c908]     ; 00472215 | g_GreenMask32
+    PAND MM3,qword ptr [0x0061c8e8]     ; 0047221c | g_RedMask32
+    PSRLQ MM0,qword ptr [0x0061c970]    ; 00472223 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x0061c950]    ; 0047222a | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x0061c930]    ; 00472231 | g_TotalDitherShift
     POR MM0,MM2                         ; 00472238
     POR MM0,MM3                         ; 0047223b
     MOVQ MM6,MM0                        ; 0047223e
@@ -162,31 +162,31 @@ section .text
     INC EBP                             ; 00472245
     MOVZX EDX,byte ptr [EBX]            ; 00472246
     MOVQ MM0,qword ptr [ESI]            ; 00472249
-    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 0047224c | DAT_00b6639c
+    MOVD MM2,dword ptr [EDX*0x4 + 0xb6639c] ; 0047224c | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00472254
     PUNPCKLBW MM0,MM7                   ; 00472258
     SHR EDX,0x1                         ; 0047225b
     PUNPCKLBW MM2,MM7                   ; 0047225d
     ADD EAX,EDX                         ; 00472260
     PMULLW MM0,MM2                      ; 00472262
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00472265 | DAT_00612880
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x612880] ; 00472265 | g_LightmapData
     MOVQ MM2,MM3                        ; 0047226d
     MOVQ MM4,MM5                        ; 00472270
-    PXOR MM2,qword ptr [0x00613078]     ; 00472273 | DAT_00613078
+    PXOR MM2,qword ptr [0x00613078]     ; 00472273 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0047227a
     PMULHW MM4,MM3                      ; 0047227d
     PADDW MM0,MM4                       ; 00472280
-    PADDW MM0,qword ptr [0x00611320]    ; 00472283 | DAT_00611320
+    PADDW MM0,qword ptr [0x00611320]    ; 00472283 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 0047228a
     PACKUSWB MM0,MM7                    ; 0047228e
     MOVQ MM2,MM0                        ; 00472291
     MOVQ MM3,MM0                        ; 00472294
-    PAND MM0,qword ptr [0x0061c928]     ; 00472297 | DAT_0061c928
-    PAND MM2,qword ptr [0x0061c908]     ; 0047229e | DAT_0061c908
-    PAND MM3,qword ptr [0x0061c8e8]     ; 004722a5 | DAT_0061c8e8
-    PSRLQ MM0,qword ptr [0x0061c970]    ; 004722ac | DAT_0061c970
-    PSRLQ MM2,qword ptr [0x0061c950]    ; 004722b3 | DAT_0061c950
-    PSRLQ MM3,qword ptr [0x0061c930]    ; 004722ba | DAT_0061c930
+    PAND MM0,qword ptr [0x0061c928]     ; 00472297 | g_BlueMask32
+    PAND MM2,qword ptr [0x0061c908]     ; 0047229e | g_GreenMask32
+    PAND MM3,qword ptr [0x0061c8e8]     ; 004722a5 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x0061c970]    ; 004722ac | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x0061c950]    ; 004722b3 | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x0061c930]    ; 004722ba | g_TotalDitherShift
     POR MM0,MM2                         ; 004722c1
     POR MM0,MM3                         ; 004722c4
     PSLLQ MM0,0x10                      ; 004722c7

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_holycrss_cpp_CHolycross_fillAttackDamageInfo_FUN_004d51d0(CHolycross *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 {
@@ -29,7 +27,7 @@ void __cdecl core_holycrss_cpp_CHolycross_fillAttackDamageInfo_FUN_004d51d0(CHol
   if (((pCVar2 != (CDemonActor *)0x0) &&
       ((*(uint *)(pCVar2[0x25].create_event + 0x24) & 0x7fffffff) != 0)) &&
      (*(int *)(pCVar2[0x25].create_event + 0x28) == 0)) {
-    out_damage_info->damage_amount = out_damage_info->damage_amount * _DAT_005c51db;
+    out_damage_info->damage_amount = out_damage_info->damage_amount * 3.0f;
     return;
   }
   return;

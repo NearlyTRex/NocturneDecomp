@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 20,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 15
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
   },
   "cross_references": [
     {
@@ -44,14 +42,14 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -178,14 +176,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170(DAT_00612560,primitive,0x24d);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

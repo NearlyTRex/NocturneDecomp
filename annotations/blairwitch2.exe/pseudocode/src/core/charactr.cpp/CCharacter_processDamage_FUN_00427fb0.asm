@@ -29,21 +29,21 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 s_ShotInvulnerable_005ccded+1
-;   undefined4 DAT_006141f0
+;   TerminatedCString s_ShotInvulnerable_005ccdee
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00
+;   core_charactr.cpp_CCharacter_explode_FUN_00427260
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_charactr.cpp_CCharacter_shatter_FUN_00427210
-;   core_charactr.cpp_FUN_00427260
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bb8d0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
@@ -108,8 +108,8 @@ section .text
     PUSH dword ptr [EAX + 0x18]         ; 00428027
     PUSH ECX                            ; 0042802a
     PUSH EBX                            ; 0042802b
-    CALL core_charactr.cpp_FUN_00427260 ; 0042802c
-        ;   XREF to: 00427260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427260()
+    CALL core_charactr.cpp_CCharacter_explode_FUN_00427260 ; 0042802c
+        ;   XREF to: 00427260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_explode_FUN_00427260(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0xc                         ; 00428031
     MOV EAX,dword ptr [EBP + 0x18]      ; 00428034
         ;   Label: LAB_00428034
@@ -120,8 +120,8 @@ section .text
     PUSH EAX                            ; 00428040
     PUSH EBX                            ; 00428041
     LEA ESI,[ESP + 0x2c]                ; 00428042
-    CALL core_actor.cpp_FUN_00408d70    ; 00428046
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 00428046
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0042804b
     LEA EDI,[ESP + 0x18]                ; 0042804e
     PUSH 0x0                            ; 00428052
@@ -153,7 +153,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 00428088
     FMUL float ptr [EAX + 0x8]          ; 0042808b
     CALL crt_math.c_round_FUN_005b7ff0  ; 0042808e
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x34]        ; 00428093
     MOV EAX,dword ptr [ESP + 0x34]      ; 00428097
     INC EAX                             ; 0042809b
@@ -164,8 +164,8 @@ section .text
     PUSH EBX                            ; 004280a7
     LEA ESI,[ESP + 0x14]                ; 004280a8
     LEA EDI,[ESP + 0x8]                 ; 004280ac
-    CALL core_actor.cpp_FUN_00408d70    ; 004280b0
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 004280b0
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x14]                ; 004280b5
     ADD ESP,0x8                         ; 004280b9
     MOVSD ES:EDI,ESI                    ; 004280bc
@@ -189,7 +189,7 @@ section .text
         ;   Label: LAB_004280e6
     JNZ 0x0042812a                      ; 004280ed
         ;   XREF to: 0042812a (CONDITIONAL_JUMP)  ; LAB_0042812a
-    MOV EAX,[0x01cedef4]                ; 004280ef | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 004280ef | g_INT_01cedef4
     CMP EBX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004280f4
     JZ 0x0042812a                       ; 004280fb
         ;   XREF to: 0042812a (CONDITIONAL_JUMP)  ; LAB_0042812a
@@ -220,9 +220,9 @@ section .text
     POP ESI                             ; 00428141
     POP EBX                             ; 00428142
     RET                                 ; 00428143
-    PUSH 0x5ccdee                       ; 00428144 | s_ShotInvulnerable_005ccded+1
+    PUSH 0x5ccdee                       ; 00428144 | = "ShotInvulnerable"
         ;   Label: LAB_00428144
-    MOV EAX,[0x006141f0]                ; 00428149 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 00428149 | g_CEventListPtr
     PUSH EAX                            ; 0042814e
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0042814f
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)

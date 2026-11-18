@@ -462,7 +462,7 @@
         "name":"distance_in_feet",
         "type":{
           "kind":"builtin",
-          "name":"double",
+          "name":"float",
           "ptr":0
         }
       }
@@ -470,43 +470,6 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
-      "ptr":0
-    },
-    "size":-1,
-    "variadic":false
-  },
-  {
-    "kind":"funcdef",
-    "name":"CSoundDevice_setSfxPos",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CSoundDevice",
-          "ptr":1
-        }
-      },
-      {
-        "name":"slot",
-        "type":{
-          "kind":"class",
-          "name":"CSfxSlot",
-          "ptr":1
-        }
-      },
-      {
-        "name":"update_flags",
-        "type":{
-          "kind":"builtin",
-          "name":"int",
-          "ptr":0
-        }
-      }
-    ],
-    "ret":{
-      "kind":"builtin",
-      "name":"int",
       "ptr":0
     },
     "size":-1,
@@ -531,11 +494,27 @@
           "name":"int",
           "ptr":0
         }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
       }
     ],
     "ret":{
       "kind":"builtin",
-      "name":"int",
+      "name":"void",
       "ptr":0
     },
     "size":-1,
@@ -711,6 +690,11 @@
     "name":"SMRGLTextureBasic",
     "parent":"SMRGLHeaderBasic",
     "size":24
+  },
+  {
+    "kind":"struct",
+    "name":"SMpegLayer3BandIndex",
+    "size":148
   },
   {
     "kind":"struct",

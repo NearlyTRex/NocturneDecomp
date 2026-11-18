@@ -6,71 +6,69 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int FUN_005cefe4(short *param_1,int param_2)
 
 {
-  int *piVar1;
+  char **ppcVar1;
   short *psVar2;
-  int iVar3;
-  int iVar4;
+  char *ptr;
+  char *pcVar3;
+  short sVar4;
   short sVar5;
-  short sVar6;
-  byte *puVar7;
-  short *psVar8;
+  byte *puVar6;
+  short *psVar7;
   SIZE_T n;
-  int *dest;
-  int iVar9;
-  short *psVar10;
+  char **dest;
+  int iVar8;
+  short *psVar9;
   
-  dest = _DAT_02c9f6d8;
+  dest = (char **)g_EnvironInitialized;
   do {
-    psVar8 = (short *)*dest;
-    if (psVar8 == (short *)0x0) {
-      return (int)_DAT_02c9f6d8 - (int)dest >> 2;
+    psVar7 = (short *)*dest;
+    if (psVar7 == (short *)0x0) {
+      return g_EnvironInitialized - (int)dest >> 2;
     }
-    sVar5 = *param_1;
-    psVar10 = param_1;
-    while (sVar5 != 0) {
-      sVar5 = FUN_005cf2d0(*psVar8);
-      sVar6 = FUN_005cf2d0(*psVar10);
-      if (sVar5 != sVar6) break;
-      if (*psVar8 == 0x3d) {
-        iVar9 = (int)dest - (int)_DAT_02c9f6d8 >> 2;
+    sVar4 = *param_1;
+    psVar9 = param_1;
+    while (sVar4 != 0) {
+      sVar4 = FUN_005cf2d0(*psVar7);
+      sVar5 = FUN_005cf2d0(*psVar9);
+      if (sVar4 != sVar5) break;
+      if (*psVar7 == 0x3d) {
+        iVar8 = (int)dest - g_EnvironInitialized >> 2;
         if (param_2 == 0) {
-          return iVar9 + 1;
+          return iVar8 + 1;
         }
-        iVar3 = *dest;
-        iVar4 = iVar3;
-        while (iVar4 != 0) {
+        ptr = *dest;
+        pcVar3 = ptr;
+        while (pcVar3 != (char *)0x0) {
           *dest = dest[1];
-          piVar1 = dest + 1;
+          ppcVar1 = dest + 1;
           dest = dest + 1;
-          iVar4 = *piVar1;
+          pcVar3 = *ppcVar1;
         }
-        if (_DAT_02c9f6d0 != (int *)0x0) {
-          if (*(char *)(iVar9 + (int)_DAT_02c9f6d0) != '\0') {
-            FUN_005c09f0(iVar3);
+        if (g_EnvironStringArea != (char **)0x0) {
+          if (*(char *)(iVar8 + (int)g_EnvironStringArea) != '\0') {
+            debugFree(ptr);
           }
-          n = (int)dest - (int)_DAT_02c9f6d8 >> 2;
-          memmove(dest,_DAT_02c9f6d0,n);
-          _DAT_02c9f6d0 = dest;
-          if (iVar9 < (int)n) {
-            puVar7 = (byte *)(iVar9 + (int)dest);
+          n = (int)dest - g_EnvironInitialized >> 2;
+          memmove(dest,g_EnvironStringArea,n);
+          g_EnvironStringArea = dest;
+          if (iVar8 < (int)n) {
+            puVar6 = (byte *)(iVar8 + (int)dest);
             do {
-              iVar9 = iVar9 + 1;
-              *puVar7 = puVar7[1];
-              puVar7 = puVar7 + 1;
-            } while (iVar9 < (int)n);
+              iVar8 = iVar8 + 1;
+              *puVar6 = puVar6[1];
+              puVar6 = puVar6 + 1;
+            } while (iVar8 < (int)n);
           }
         }
         return 0;
       }
-      psVar8 = psVar8 + 1;
-      psVar2 = psVar10 + 1;
-      psVar10 = psVar10 + 1;
-      sVar5 = *psVar2;
+      psVar7 = psVar7 + 1;
+      psVar2 = psVar9 + 1;
+      psVar9 = psVar9 + 1;
+      sVar4 = *psVar2;
     }
     dest = dest + 1;
   } while( true );

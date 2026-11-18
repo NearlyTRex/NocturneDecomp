@@ -11,7 +11,7 @@ CHecaitomix * __cdecl core_hecaitmx_cpp_factoryFuncHecaitomix_FUN_00597dc0(void)
 {
   CHecaitomix *pCVar1;
   
-  pCVar1 = (CHecaitomix *)operator_new(0xd07c);
+  pCVar1 = operator_new(0xd07c);
   if (pCVar1 == (CHecaitomix *)0x0) {
     return (CHecaitomix *)0x0;
   }

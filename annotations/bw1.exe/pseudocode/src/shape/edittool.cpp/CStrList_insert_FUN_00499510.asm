@@ -9,18 +9,18 @@
 ; char *           Stack[0xc]:4   string_data
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0049c290 at 0049c2a2
+;   shape_edittool.cpp_CPickList_insert_FUN_0049c290 at 0049c2a2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc338
 ;   TerminatedCString s_CStrList_insert_invalid_005dc34e
 ;   TerminatedCString s_shape_edittool_cpp_005dc36f
 ;   TerminatedCString s_CStrList_insert_out_of_m_005dc385
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_string.c_memmove_FUN_005c25d0
 ;   shape_edittool.cpp_CStrList_allocate_FUN_00499600
@@ -46,10 +46,10 @@ section .text
         ;   Label: LAB_00499524
     MOV ESI,0xc2b                       ; 00499529
     PUSH 0x5dc34e                       ; 0049952e | = "CStrList::insert - invalid index"
-    MOV dword ptr [0x01d1d400],ECX      ; 00499533 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00499539 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049953f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00499533 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00499539 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049953f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00499544
     MOV EDI,dword ptr [EBX]             ; 00499547
         ;   Label: LAB_00499547
@@ -129,10 +129,10 @@ section .text
         ;   Label: LAB_004995d8
     MOV EDI,0xc39                       ; 004995dd
     PUSH 0x5dc385                       ; 004995e2 | = "CStrList::insert - out of memory"
-    MOV dword ptr [0x01d1d400],ESI      ; 004995e7 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 004995ed | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004995f3
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 004995e7 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 004995ed | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004995f3
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004995f8
     JMP 0x004995af                      ; 004995fb
         ;   XREF to: 004995af (UNCONDITIONAL_JUMP)  ; LAB_004995af

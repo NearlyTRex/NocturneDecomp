@@ -10,15 +10,15 @@
 ;
 ; XREF[13]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00417230 at 00417549
-;   core_event.cpp_FUN_004a1d00 at 004a4a8d
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4a8d
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d282f
 ;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004d2690 at 004d272b
-;   core_inv.cpp_FUN_004f6b50 at 004f6b88
-;   core_inv.cpp_FUN_004f6bb0 at 004f6cfe
-;   core_inv.cpp_FUN_004f9f10 at 004fa2de
+;   core_inv.cpp_CInventory_updateInventory_FUN_004f9f10 at 004fa2de
+;   core_inv.cpp_playSpsSound_FUN_004f6b50 at 004f6b88
+;   core_inv.cpp_updateSps_FUN_004f6bb0 at 004f6cfe
 ;   core_script.cpp_CScript_startDialogLine_FUN_0054aa60 at 0054abda
+;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057ccf5
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_0057d810 at 0057d862
-;   core_sound.cpp_FUN_0057cc00 at 0057ccf5
 ;   ... and 3 more
 ;
 ; Called Functions:

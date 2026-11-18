@@ -1,20 +1,15 @@
 // Name: cockpit_ckptutil.c_blitFullScreen_FUN_0042d820
 // Address: 0042d820
 // Address Range: [[0042d820, 0042d848]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_blitFullScreen_FUN_0042d820(void)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_0042d820(void *sprite_data,void *span_data)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void cockpit_ckptutil_c_blitFullScreen_FUN_0042d820(void)
+void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_0042d820(void *sprite_data,void *span_data)
 
 {
-  void *in_stack_00000004;
-  void *in_stack_00000008;
-  
   cockpit_ckptutil_c_blitDualModeSprite_FUN_0042d390
-            (in_stack_00000004,in_stack_00000008,0,0,DAT_006141b8,DAT_006141bc);
+            (sprite_data,span_data,0,0,g_INT_006141b8,g_INT_006141bc);
   return;
 }

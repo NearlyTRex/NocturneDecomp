@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   device_id
 ;
 ; XREF[4]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c8f0
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c8f0
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0 at 005755d3
 ;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576194
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00574e00 at 00574e7a
@@ -15,12 +15,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f4238
 ;   TerminatedCString s_selectSoundDevice_device_005f424d
-;   undefined4 DAT_006232fc
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_CurrentSoundDevice = -0x1
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_findBestSoundDevice_FUN_005753b0
 ;   sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0
 ;   sound_sndmain.cpp_isSoundSystemActive_FUN_00575540
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_005754de
     JGE 0x005754e8                      ; 005754e0
         ;   XREF to: 005754e8 (CONDITIONAL_JUMP)  ; LAB_005754e8
-    MOV EBX,dword ptr [0x006232fc]      ; 005754e2 | DAT_006232fc
+    MOV EBX,dword ptr [0x006232fc]      ; 005754e2 | g_CurrentSoundDevice
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0 ; 005754e8
         ;   XREF to: 005752c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0()
         ;   Label: LAB_005754e8
@@ -52,17 +52,17 @@ section .text
         ;   XREF to: 005753b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestSoundDevice_FUN_005753b0()
         ;   Label: LAB_005754f1
     MOV EBX,EAX                         ; 005754f6
-    MOV dword ptr [0x006232fc],EBX      ; 005754f8 | DAT_006232fc
+    MOV dword ptr [0x006232fc],EBX      ; 005754f8 | g_CurrentSoundDevice
     POP EBX                             ; 005754fe
     RET                                 ; 005754ff
     MOV EDX,0x5f4238                    ; 00575500 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_00575500
     MOV ECX,0x1562                      ; 00575505
     PUSH 0x5f424d                       ; 0057550a | = "selectSoundDevice - device already open."
-    MOV dword ptr [0x01d1d400],EDX      ; 0057550f | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00575515 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0057551b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0057550f | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00575515 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057551b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575520
     JMP 0x005754de                      ; 00575523
         ;   XREF to: 005754de (UNCONDITIONAL_JUMP)  ; LAB_005754de
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_00575525
     JL 0x005754f1                       ; 00575527
         ;   XREF to: 005754f1 (CONDITIONAL_JUMP)  ; LAB_005754f1
-    MOV dword ptr [0x006232fc],EBX      ; 00575529 | DAT_006232fc
+    MOV dword ptr [0x006232fc],EBX      ; 00575529 | g_CurrentSoundDevice
     POP EBX                             ; 0057552f
     RET                                 ; 00575530
 

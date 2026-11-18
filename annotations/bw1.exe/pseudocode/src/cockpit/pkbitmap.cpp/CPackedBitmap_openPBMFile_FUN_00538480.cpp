@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00538480(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag)
 
 {
@@ -18,16 +16,17 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00538480(CPacked
   
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_00537550(this_ptr);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_005375c0(this_ptr,(char *)apply_palette_flag);
-  file_handle = engine_dosio_cpp_FUN_00479180((char *)0x5ecfbe,this_ptr->filename,(char *)0x5ecfbb);
+  file_handle = engine_dosio_cpp_getFile_FUN_00479180
+                          ("art",this_ptr->filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(acStack_60,"Unable to open PBM file %s");
-    _DAT_01d1d404 = 0x51c;
-    _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
-    core_main_c_FUN_005030e0(acStack_60);
+    g_INT_01d1d404 = 0x51c;
+    g_CHAR_PTR_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
+    core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_60);
   }
   cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(this_ptr,file_handle,0);
   uStack_5c = 0x538503;
-  _fclose();
+  _fclose(file_handle);
   if (in_stack_00000024 == 0) {
     return;
   }

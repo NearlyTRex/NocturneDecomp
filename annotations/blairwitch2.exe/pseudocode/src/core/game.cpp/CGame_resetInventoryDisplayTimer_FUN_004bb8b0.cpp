@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004bb8b0(CGame *this_ptr)
 
 {
   core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004dd2f0
-            ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c));
+            (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->inventories);
   return;
 }

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dest_cpp_CActorDestination_process_FUN_0045d2a0(CActorDestination *this_ptr,float delta_time)
 
@@ -51,7 +50,7 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0045d2a0(CActorDestinat
       *(uint *)((int)&stack0xffffffbc + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
            *(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
       if ((SQRT(fStack_44 * fStack_44 + fStack_4c * fStack_4c + fStack_48 * fStack_48) <
-           (float)_DAT_005d835b) &&
+           (float)0.10000000000000001) &&
          (iVar2 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0045d550(this_ptr,pCVar1),
          iVar2 != 0)) break;
       pCStack_1c = (CDemonActor *)(pCStack_1c->actor_name + 4);
@@ -72,15 +71,16 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0045d2a0(CActorDestinat
       fStack_54 = fStack_3c;
       fStack_50 = fStack_38;
     }
-    if ((((float)_DAT_005d8353 <= ABS(fStack_58)) || ((float)_DAT_005d8353 <= ABS(fStack_54))) ||
-       ((float)_DAT_005d8353 <= ABS(fStack_50))) {
+    if ((((float)0.25 <= ABS(fStack_58)) ||
+        ((float)0.25 <= ABS(fStack_54))) ||
+       ((float)0.25 <= ABS(fStack_50))) {
       this_ptr->triggered = 0;
       this_ptr->needs_actor_search = 0;
       return;
     }
     if ((this_ptr->persistent_event_flag != 0) ||
        ((this_ptr->triggered == 0 && (this_ptr->needs_actor_search == 0)))) {
-      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,this_ptr->what_event);
+      core_event_cpp_CEventList_executeCommands_FUN_004a1b70(g_CEventListPtr,this_ptr->what_event);
     }
     this_ptr->triggered = 1;
   }

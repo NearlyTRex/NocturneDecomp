@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_armour_wav_0057846a
 ;   double DOUBLE_0057847a = 3.14159265350000
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventListPtr = 01c03a10
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150
@@ -101,7 +101,7 @@ section .text
     ADD ESP,0x8                         ; 0040fae9
     LEA EAX,[ESI + 0xbd24]              ; 0040faec
     PUSH EAX                            ; 0040faf2
-    MOV EDX,dword ptr [0x005b7650]      ; 0040faf3 | DAT_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 0040faf3 | g_CEventListPtr
     PUSH EDX                            ; 0040faf9
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0040fafa
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

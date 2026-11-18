@@ -12,8 +12,8 @@
 ;   engine_2d.c_drawLine3D_FUN_00401310 at 0040139a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c6b5c0
+;   int g_INT_005fba20 = 0x8
+;   int g_INT_01c6b5c0
 ;
 ; *****************************************************************************
 
@@ -33,12 +33,12 @@ section .text
     CMP EDI,dword ptr [ECX]             ; 004012a1
     JBE 0x004012d9                      ; 004012a3
         ;   XREF to: 004012d9 (CONDITIONAL_JUMP)  ; LAB_004012d9
-    MOV EBP,dword ptr [0x005fba20]      ; 004012a5 | DAT_005fba20
+    MOV EBP,dword ptr [0x005fba20]      ; 004012a5 | g_INT_005fba20
     MOV dword ptr [ECX],EDI             ; 004012ab
     CMP EBP,0x8                         ; 004012ad
     JZ 0x004012dd                       ; 004012b0
         ;   XREF to: 004012dd (CONDITIONAL_JUMP)  ; LAB_004012dd
-    MOV ECX,dword ptr [0x01c6b5c0]      ; 004012b2 | DAT_01c6b5c0
+    MOV ECX,dword ptr [0x01c6b5c0]      ; 004012b2 | g_INT_01c6b5c0
     AND ECX,0xff                        ; 004012b8
     CMP EBP,0x10                        ; 004012be
     JNZ 0x004012f1                      ; 004012c1
@@ -56,7 +56,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x1c5faec] ; 004012dd
         ;   Label: LAB_004012dd
     LEA EDX,[EAX + EBX*0x1]             ; 004012e3
-    MOV AL,[0x01c6b5c0]                 ; 004012e6 | DAT_01c6b5c0
+    MOV AL,[0x01c6b5c0]                 ; 004012e6 | g_INT_01c6b5c0
     MOV byte ptr [EDX],AL               ; 004012eb
     POP EBP                             ; 004012ed
     POP EDI                             ; 004012ee

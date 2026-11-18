@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(CDrawSurface *this_ptr,int start_x,int y,int end_x)
 
 {
@@ -28,14 +26,14 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
       end_x_00 = this_ptr->clip_right;
     }
     if (start_x_00 <= end_x_00) {
-      if (_DAT_01b4d71c != 0) {
+      if (g_UseRGBConversion != 0) {
         cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0045bc20(start_x_00,end_x_00,y_00);
         return;
       }
       if ((uint)g_BitsPerPixel < 0x10) {
         if (g_BitsPerPixel == 8) {
           memset
-                    ((void *)((int)g_ScreenBufferArray[y_00] + start_x_00),_DAT_01b4d710,
+                    ((void *)((int)g_ScreenBufferArray[y_00] + start_x_00),g_INT_01b4d710,
                      (end_x_00 - start_x_00) + 1);
           return;
         }
@@ -45,7 +43,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
           puVar1 = (ushort *)(start_x_00 * 2 + (int)g_ScreenBufferArray[y_00]);
           do {
             start_x_00 = start_x_00 + 1;
-            *puVar1 = _DAT_01b4d710;
+            *puVar1 = (ushort)g_INT_01b4d710;
             puVar1 = puVar1 + 1;
           } while (start_x_00 <= end_x_00);
           return;
@@ -54,7 +52,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
           piVar2 = (int *)(start_x_00 * 4 + (int)g_ScreenBufferArray[y_00]);
           do {
             start_x_00 = start_x_00 + 1;
-            *piVar2 = _DAT_01b4d710;
+            *piVar2 = g_INT_01b4d710;
             piVar2 = piVar2 + 1;
           } while (start_x_00 <= end_x_00);
           return;

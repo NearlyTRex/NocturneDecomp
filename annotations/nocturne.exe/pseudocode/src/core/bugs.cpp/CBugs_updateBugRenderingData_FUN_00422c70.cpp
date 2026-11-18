@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *this_ptr,SBug *bug_data,float delta_time)
 
 {
@@ -65,9 +63,9 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *this
   local_118 = delta_time;
   if (bug_data->current_vertex < 0) {
     pCVar5 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->dest_vertex;
-    local_6c.x = (float)pCVar5->x * _DAT_0059ae98;
-    local_6c.y = (float)pCVar5->y * _DAT_0059ae98;
-    local_6c.z = (float)pCVar5->z * _DAT_0059ae98;
+    local_6c.x = (float)pCVar5->x * 0.00390625f;
+    local_6c.y = (float)pCVar5->y * 0.00390625f;
+    local_6c.z = (float)pCVar5->z * 0.00390625f;
     core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(&local_6c,&this_ptr->model_world_matrix);
     iVar9 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0
                       (this_ptr,bug_data,delta_time,&local_6c);
@@ -103,13 +101,13 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *this
       }
     }
     pCVar5 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->current_vertex;
-    local_84 = (float)pCVar5->x * _DAT_0059ae98;
-    local_80 = (float)pCVar5->y * _DAT_0059ae98;
-    local_7c = (float)pCVar5->z * _DAT_0059ae98;
+    local_84 = (float)pCVar5->x * 0.00390625f;
+    local_80 = (float)pCVar5->y * 0.00390625f;
+    local_7c = (float)pCVar5->z * 0.00390625f;
     pCVar5 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->dest_vertex;
-    local_30 = (float)pCVar5->x * _DAT_0059ae98;
-    local_2c = (float)pCVar5->y * _DAT_0059ae98;
-    local_28 = (float)pCVar5->z * _DAT_0059ae98;
+    local_30 = (float)pCVar5->x * 0.00390625f;
+    local_2c = (float)pCVar5->y * 0.00390625f;
+    local_28 = (float)pCVar5->z * 0.00390625f;
     pfVar1 = &bug_data->interp_t;
     local_b4 = local_30 * *pfVar1;
     local_b0 = local_2c * *pfVar1;
@@ -137,17 +135,17 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *this
                        (this_ptr->deformable_model_ptr);
     puVar8 = (ushort *)(*(int *)((int)pCVar7->tri_data_ptr + local_18) + iVar9 * 0x12);
     pCVar5 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + *puVar8;
-    local_84 = (float)pCVar5->x * _DAT_0059ae98;
-    local_80 = (float)pCVar5->y * _DAT_0059ae98;
-    local_7c = (float)pCVar5->z * _DAT_0059ae98;
+    local_84 = (float)pCVar5->x * 0.00390625f;
+    local_80 = (float)pCVar5->y * 0.00390625f;
+    local_7c = (float)pCVar5->z * 0.00390625f;
     pCVar5 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + puVar8[1];
-    local_30 = (float)pCVar5->x * _DAT_0059ae98;
-    local_2c = (float)pCVar5->y * _DAT_0059ae98;
-    local_28 = (float)pCVar5->z * _DAT_0059ae98;
+    local_30 = (float)pCVar5->x * 0.00390625f;
+    local_2c = (float)pCVar5->y * 0.00390625f;
+    local_28 = (float)pCVar5->z * 0.00390625f;
     pCVar5 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + puVar8[2];
-    local_60 = (float)pCVar5->x * _DAT_0059ae98;
-    local_5c = (float)pCVar5->y * _DAT_0059ae98;
-    local_58 = (float)pCVar5->z * _DAT_0059ae98;
+    local_60 = (float)pCVar5->x * 0.00390625f;
+    local_5c = (float)pCVar5->y * 0.00390625f;
+    local_58 = (float)pCVar5->z * 0.00390625f;
     local_50 = local_2c - local_80;
     local_94 = local_58 - local_28;
     local_4c = local_28 - local_7c;

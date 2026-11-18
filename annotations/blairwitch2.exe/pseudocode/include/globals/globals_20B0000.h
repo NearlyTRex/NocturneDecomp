@@ -4,7 +4,10 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x20B0000
@@ -15,4 +18,24 @@ extern CDemonActorType g_CShadowClassInfo;
 extern CDemonActorType g_CShotgunClassInfo;
 extern CDemonActorType g_CShovelClassInfo;
 extern CDemonActorType g_CSimBoxClassInfo;
+
+// CDemonGlobe
+extern CDemonGlobe g_CDemonGlobe_020b1924;
+
+// CVector3f[5000]
+extern CVector3f g_FloatVertexArray[5000];
+
+// int
+extern int g_SavedWindowWidth;
+extern int g_SavedWindowHeight;
+extern int g_VDIsActorAreaInvalid;
+
+// int[250]
+extern int g_VDCameraSortIndices[250];
+
+// int[4000]
+extern int g_VertexRemapTable[4000];
+
+// uint*[GAME_SCREEN_MAX_HEIGHT]
+extern uint* g_ZBufferScanlineArrayBackup[GAME_SCREEN_MAX_HEIGHT];
 

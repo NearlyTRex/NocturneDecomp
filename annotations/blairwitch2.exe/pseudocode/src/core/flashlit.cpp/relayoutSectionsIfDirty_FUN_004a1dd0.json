@@ -1,0 +1,124 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 26,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 84
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a1dd0",
+    "address_range": [
+      [
+        "004a1dd0",
+        "004a1e52"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004a1dd0",
+    "signature": "void __cdecl core_flashlit_cpp_relayoutSectionsIfDirty_FUN_004a1dd0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a3740",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740"
+    },
+    {
+      "addr": "004a27e0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_reset_FUN_004a27e0"
+    },
+    {
+      "addr": "004a2890",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_setRect_FUN_004a2890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616014",
+      "name": "g_INT_00616014",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "01cab7f0",
+      "name": "g_CHAR_ARRAY_01cab7f0",
+      "type": "char[512]",
+      "value": null
+    },
+    {
+      "addr": "01cab9f0",
+      "name": "g_INT_01cab9f0",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.456521739130435,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 45,
+      "INT_ADD": 15,
+      "INT_AND": 26,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 24,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 12,
+      "INT_SUB": 17,
+      "INT_XOR": 3,
+      "LOAD": 10,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 205
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ba6b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8989
+    },
+    "bw3.exe": {
+      "addr": "004a82f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8989
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

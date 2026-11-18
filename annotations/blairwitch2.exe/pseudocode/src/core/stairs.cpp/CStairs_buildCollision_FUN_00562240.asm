@@ -10,7 +10,7 @@
 ;   core_stairs.cpp_CStairs_setup_FUN_00561f60 at 00561f72
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eb170
+;   double g_DOUBLE_005eb170 = 0.5
 ;
 ; Called Functions:
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_004779e0
@@ -25,7 +25,7 @@ section .text
     PUSH EBP                            ; 00562242
     SUB ESP,0x4c                        ; 00562243
     MOV EBX,dword ptr [ESP + 0x5c]      ; 00562246
-    FLD double ptr [0x005eb170]         ; 0056224a | DAT_005eb170
+    FLD double ptr [0x005eb170]         ; 0056224a | g_DOUBLE_005eb170
     FLD float ptr [EBX + 0x2bc]         ; 00562250
     FMUL ST1                            ; 00562256
     FLD float ptr [EBX + 0x2bc]         ; 00562258

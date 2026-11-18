@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 68,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 41
   },
   "cross_references": [],
@@ -43,33 +41,33 @@
   "globals": [
     {
       "addr": "0061f7b8",
-      "name": "DAT_0061f7b8",
-      "type": "undefined1",
-      "value": null
+      "name": "g_CPUInfoFamily",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "0061f7b9",
-      "name": "DAT_0061f7b9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CPUInfoModel",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "0061f7ba",
-      "name": "DAT_0061f7ba",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CPUInfoStepping",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "0061f7bc",
-      "name": "DAT_0061f7bc",
-      "type": "undefined1",
-      "value": null
+      "name": "g_CPUInfoIntelCPU",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "0061f7c1",
-      "name": "DAT_0061f7c1",
-      "type": "undefined1",
-      "value": null
+      "name": "g_CPUInfoMMXSupported",
+      "type": "uchar",
+      "value": "\u0000"
     }
   ],
   "param_estimates": {
@@ -145,46 +143,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0061f7b8",
-      "severity": "mild",
-      "text": "cpu_info->family = (uint)DAT_0061f7b8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0061f7b9",
-      "severity": "mild",
-      "text": "cpu_info->model = (uint)DAT_0061f7b9;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_0061f7ba",
-      "severity": "mild",
-      "text": "cpu_info->stepping = (uint)DAT_0061f7ba;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061f7bc",
-      "severity": "mild",
-      "text": "cpu_info->is_intel = (uint)DAT_0061f7bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0061f7c1",
-      "severity": "mild",
-      "text": "cpu_info->mmx_supported = (uint)DAT_0061f7c1;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

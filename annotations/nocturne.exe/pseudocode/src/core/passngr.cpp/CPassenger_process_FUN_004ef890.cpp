@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_ptr,float delta_time)
 
@@ -32,7 +31,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_p
   iVar2 = pSVar5->state_index;
   if ((iVar2 == 1) || (iVar2 == 2)) {
     if ((iVar2 == 2) &&
-       ((fVar4 = delta_time / _DAT_005a1068 + this_ptr->morph_time, this_ptr->morph_time = fVar4,
+       ((fVar4 = delta_time / 2.0f + this_ptr->morph_time, this_ptr->morph_time = fVar4,
         1.0 <= fVar4 && (this_ptr->werewolf_actor != (CWerewolf *)0x0)))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
                 (g_CDemonMission_PTR_005baf90,(CDemonActor *)this_ptr->werewolf_actor);
@@ -44,7 +43,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_p
   }
   else {
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->transform_event);
+                      (g_CEventListPtr,this_ptr->transform_event);
     if (iVar6 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,1,1);
       if (this_ptr->transform_wav[0] != '\0') {

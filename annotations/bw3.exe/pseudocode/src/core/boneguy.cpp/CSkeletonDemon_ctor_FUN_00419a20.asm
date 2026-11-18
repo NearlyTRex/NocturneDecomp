@@ -7,7 +7,7 @@
 ; CSkeletonDemon * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_004199f0 at 00419a03
+;   core_boneguy.cpp_factoryFuncSkeletonDemon_FUN_004199f0 at 00419a03
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400

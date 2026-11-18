@@ -7,8 +7,8 @@
 ; float            Stack[0x4]:4   scale
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058786c
-;   undefined4 DAT_00587874
+;   double g_DOUBLE_0058786c = 0.300000000000000
+;   double g_DOUBLE_00587874 = 0.700000000000000
 ;
 ; *****************************************************************************
 
@@ -21,13 +21,13 @@ section .text
     AND ESP,0xfffffff8                  ; 004c52c6
     FLD float ptr [EBP + 0x8]           ; 004c52c9
     FST double ptr [ESP]                ; 004c52cc
-    FCOMP double ptr [0x0058786c]       ; 004c52cf | DAT_0058786c
+    FCOMP double ptr [0x0058786c]       ; 004c52cf | g_DOUBLE_0058786c
     FNSTSW AX                           ; 004c52d5
     SAHF                                ; 004c52d7
     JC 0x004c52f1                       ; 004c52d8
         ;   XREF to: 004c52f1 (CONDITIONAL_JUMP)  ; LAB_004c52f1
     FLD double ptr [ESP]                ; 004c52da
-    FCOMP double ptr [0x00587874]       ; 004c52dd | DAT_00587874
+    FCOMP double ptr [0x00587874]       ; 004c52dd | g_DOUBLE_00587874
     FNSTSW AX                           ; 004c52e3
     SAHF                                ; 004c52e5
     JNC 0x004c52fa                      ; 004c52e6

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags)
 
 {
@@ -30,15 +28,19 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0(CKeyF
          (fVar1 = (this_ptr->bounds).max.x - (this_ptr->bounds).min.x,
          fVar2 = (this_ptr->bounds).max.y - (this_ptr->bounds).min.y,
          fVar3 = (this_ptr->bounds).max.z - (this_ptr->bounds).min.z,
-         (float)_DAT_005d94c4 < SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2))) {
-        engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);
+         (float)250 < SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2))) {
+        engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80
+                  (g_CDemonRenderer_PTR_00612560,1);
       }
     }
     else {
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
-      engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80
+                (g_CDemonRenderer_PTR_00612560,0);
+      engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70
+                (g_CDemonRenderer_PTR_00612560,0);
     }
-    iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
+    iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+                      (g_CDemonRenderer_PTR_00612560);
     iVar8 = -1;
     local_2c = 0;
     if (0 < this_ptr->part_count) {
@@ -52,7 +54,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0(CKeyF
           if ((this_ptr->texture_count < 2) || (iVar4 != 0)) {
             if (iVar4 == 0) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                        (DAT_00612560,(SMRGLTextureBasic *)this_ptr->texture_list);
+                        (g_CDemonRenderer_PTR_00612560,(SMRGLTextureBasic *)this_ptr->texture_list);
             }
             core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
                       (g_CDemonSetPtr,this_ptr->poly_vert_list + iVar9,iVar5 - iVar9,render_flags);
@@ -61,7 +63,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0(CKeyF
             while (iVar9 < iVar5) {
               if (iVar8 != this_ptr->poly_texture_index_list[iVar9]) {
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                          (DAT_00612560,
+                          (g_CDemonRenderer_PTR_00612560,
                            (SMRGLTextureBasic *)
                            (this_ptr->texture_list + this_ptr->poly_texture_index_list[iVar9]));
                 iVar8 = this_ptr->poly_texture_index_list[iVar9];
@@ -86,8 +88,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0(CKeyF
         iVar9 = iVar5;
       } while (local_2c < this_ptr->part_count);
     }
-    engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
-    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
+    engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80
+              (g_CDemonRenderer_PTR_00612560,0);
+    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
+              (g_CDemonRenderer_PTR_00612560,1);
   }
   return;
 }

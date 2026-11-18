@@ -19,9 +19,9 @@
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00592aa0 at 00592c2a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.collision_render_enabled
 ;
@@ -30,7 +30,7 @@
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060
-;   core_charactr.cpp_FUN_0042e580
+;   core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042e580
 ;   core_cloth.cpp_CClothList_render_FUN_00441ff0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
@@ -46,9 +46,9 @@ section .text
     CMP dword ptr [EBX + 0xb9e8],0x0    ; 0042e966
     JZ 0x0042e9c5                       ; 0042e96d
         ;   XREF to: 0042e9c5 (CONDITIONAL_JUMP)  ; LAB_0042e9c5
-    MOV ECX,dword ptr [0x00612560]      ; 0042e96f | DAT_00612560
+    MOV ECX,dword ptr [0x00612560]      ; 0042e96f | g_CDemonRenderer_PTR_00612560
         ;   Label: LAB_0042e96f
-    PUSH ECX                            ; 0042e975 | DAT_01bc120c
+    PUSH ECX                            ; 0042e975 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 0042e976
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0042e97b
@@ -89,8 +89,8 @@ section .text
     PUSH ESI                            ; 0042e9c5
         ;   Label: LAB_0042e9c5
     PUSH EBX                            ; 0042e9c6
-    CALL core_charactr.cpp_FUN_0042e580 ; 0042e9c7
-        ;   XREF to: 0042e580 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042e580()
+    CALL core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042e580 ; 0042e9c7
+        ;   XREF to: 0042e580 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042e580(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042e9cc
     PUSH 0x0                            ; 0042e9cf
     PUSH 0x1                            ; 0042e9d1

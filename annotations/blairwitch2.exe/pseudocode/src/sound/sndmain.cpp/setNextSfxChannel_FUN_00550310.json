@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 40
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
   },
   "cross_references": [
     {
       "addr": "00489670",
       "from_addr": "0048c22e",
-      "name": "core_event.cpp_FUN_00489670",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,6 +38,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0055a1d0",
+      "from_addr": "0055a2ad",
+      "name": "core_sound.cpp_CSound_init_FUN_0055a1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0055a3c0",
       "from_addr": "0055a765",
       "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
@@ -48,13 +52,7 @@
     {
       "addr": "00559b50",
       "from_addr": "00559c5f",
-      "name": "core_sound.cpp_FUN_00559b50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055a1d0",
-      "from_addr": "0055a2ad",
-      "name": "core_sound.cpp_FUN_0055a1d0",
+      "name": "core_sound.cpp_processTrainSounds_FUN_00559b50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -74,7 +72,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     }
   ],
   "globals": [
@@ -92,20 +90,20 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264161c",
-      "name": "DAT_0264161c",
-      "type": "undefined4",
+      "name": "g_SfxLastSlot",
+      "type": "int",
       "value": null
     }
   ],
@@ -115,7 +113,7 @@
       {
         "call_addr": "0048c22e",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,7 +146,7 @@
       {
         "call_addr": "0055a2ad",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a1d0",
+        "caller": "core_sound.cpp_CSound_init_FUN_0055a1d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,7 +190,7 @@
       {
         "call_addr": "00559c5f",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_00559b50",
+        "caller": "core_sound.cpp_processTrainSounds_FUN_00559b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +201,7 @@
       {
         "call_addr": "00559f85",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_00559b50",
+        "caller": "core_sound.cpp_processTrainSounds_FUN_00559b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -290,14 +288,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

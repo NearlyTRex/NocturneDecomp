@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trstream_cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory *this_ptr,int param_2,int param_3)
+; void __cdecl support_trstream_cpp_COutStreamMemory_open_FUN_00574d50(COutStreamMemory *this_ptr,int buffer,int capacity)
 ;
 ; Parameters:
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   capacity
 ;
 ; XREF[1]:
 ;   support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0 at 00574b05

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 82,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
     "suspect_types": [
       "unrolled_memset",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 92
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -51,15 +50,15 @@
   "globals": [
     {
       "addr": "005f3090",
-      "name": "DAT_005f3090",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f3090",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005f3094",
-      "name": "DAT_005f3094",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f3094",
+      "type": "float",
+      "value": "100"
     }
   ],
   "param_estimates": {
@@ -146,16 +145,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -163,7 +154,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(pCVar4->new_pos).z = 0.0;",

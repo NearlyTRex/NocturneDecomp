@@ -19,14 +19,12 @@ float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDem
   int local_14;
   
   pCVar5 = (CKeyFramedModel *)0x0;
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (object,g_CBoxActorActorType_00764800.name_hash);
+  pCVar1 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040d890(object,g_CBoxActorClassInfo.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                        ((CKeyFramedModelInstance *)(pCVar1 + 1));
   }
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (object,g_CCryptVesselActorType_02dd11cc.name_hash);
+  pCVar1 = (CCryptVessel *)core_actor_cpp_castToClassHash_FUN_0040d890(object,g_CCryptVesselClassInfo.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                        ((CKeyFramedModelInstance *)(pCVar1 + 1));

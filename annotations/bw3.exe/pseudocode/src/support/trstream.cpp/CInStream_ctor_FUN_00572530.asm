@@ -17,7 +17,7 @@
 ;   support_trstream.cpp_CInStreamMemory_ctor_FUN_00574120 at 00574125
 ;
 ; Referenced Globals:
-;   undefined1* PTR_support_trstream.cpp_CInStream_dtor_FUN_00572540_005e5a54 = 00572540
+;   TerminatedCString s_W_005e5a54
 ;
 ; *****************************************************************************
 
@@ -25,6 +25,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00572530
         ;   Label: support_trstream.cpp_CInStream_ctor_FUN_00572530
-    MOV dword ptr [EAX],0x5e5a54        ; 00572534 | PTR_support_trstream.cpp_CInStream_dtor_FUN_00572540_005e5a54
+    MOV dword ptr [EAX],0x5e5a54        ; 00572534 | = "@%W"
     RET                                 ; 0057253a
 

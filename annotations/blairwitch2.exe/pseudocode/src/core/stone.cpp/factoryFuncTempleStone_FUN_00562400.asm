@@ -15,7 +15,7 @@ section .text
     PUSH 0x7d8                          ; 00562400
         ;   Label: core_stone.cpp_factoryFuncTempleStone_FUN_00562400
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00562405
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0056240a
     TEST EAX,EAX                        ; 0056240d
     JNZ 0x00562412                      ; 0056240f

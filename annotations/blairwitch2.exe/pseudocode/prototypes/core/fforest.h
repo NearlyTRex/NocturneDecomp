@@ -29,17 +29,17 @@ void __cdecl CTwigZombie::setup(CTwigZombie *this_ptr);
 // Address: 005a28a0
 void __cdecl CTwigZombie::processStates(CTwigZombie *this_ptr,float delta_time,int mode);
 
-// Original: core_fforest.cpp_FUN_005a2910
+// Original: core_fforest.cpp_CTwigZombie_processAI_FUN_005a2910
 // Address: 005a2910
-void FUN_005a2910(int param_1,float param_2);
+void __cdecl CTwigZombie::processAI(CTwigZombie *this_ptr,float delta_time);
 
 // Original: core_fforest.cpp_CTwigZombie_processDeathState_FUN_005a2a90
 // Address: 005a2a90
 void __cdecl CTwigZombie::processDeathState(CTwigZombie *this_ptr,float delta_time);
 
-// Original: core_fforest.cpp_FUN_005a2ac0
+// Original: core_fforest.cpp_CTwigZombie_processMeleeAttackState_FUN_005a2ac0
 // Address: 005a2ac0
-void FUN_005a2ac0(CEnemy *param_1);
+void __cdecl CTwigZombie::processMeleeAttackState(CTwigZombie *this_ptr);
 
 // Original: core_fforest.cpp_CTwigZombie_getDeathState_FUN_005a2dc0
 // Address: 005a2dc0

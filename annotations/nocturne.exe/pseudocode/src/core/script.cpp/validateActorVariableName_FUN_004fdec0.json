@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 85,
+    "complexity_score": 50,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 117
@@ -201,30 +200,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01e56420",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is not valid\",variable_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01e56420",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is too long\",variable_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01e56420",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Actor variable name must begin with '@'\");",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 13,

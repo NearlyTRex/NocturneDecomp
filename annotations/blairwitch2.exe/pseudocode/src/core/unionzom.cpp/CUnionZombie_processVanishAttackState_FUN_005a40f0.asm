@@ -11,17 +11,17 @@
 ;   TerminatedCString s_MeleeAttack_005f02b5
 ;   TerminatedCString s_ChaseComplete_005f02c1
 ;   TerminatedCString s_MeleeAttack_005f02cf
-;   undefined4 DAT_005f02de
-;   undefined4 DAT_005ff544
+;   float g_FLOAT_005f02de = 40
+;   float g_FLOAT_005ff544 = 2
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059f570
-;   core_basicene.cpp_FUN_005a01a0
+;   core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0
+;   core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_muzzle.cpp_FUN_0059d7f0
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
 ;
 ; *****************************************************************************
 
@@ -54,12 +54,12 @@ section .text
     PUSH 0x0                            ; 005a4124
     PUSH dword ptr [EBX + 0x113c4]      ; 005a4126
     PUSH EBX                            ; 005a412c
-    CALL core_basicene.cpp_FUN_005a01a0 ; 005a412d
-        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01a0()
+    CALL core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0 ; 005a412d
+        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0(CBasicEnemy * this_ptr, float fade_start, float fade_end, float fade_time)
     ADD ESP,0x10                        ; 005a4132
     PUSH EBX                            ; 005a4135
-    CALL core_basicene.cpp_FUN_0059f570 ; 005a4136
-        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f570()
+    CALL core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570 ; 005a4136
+        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a413b
     MOV dword ptr [EBX + 0x11858],0x1   ; 005a413e
     POP ESI                             ; 005a4148
@@ -67,15 +67,15 @@ section .text
     RET                                 ; 005a414a
     PUSH ESI                            ; 005a414b
         ;   Label: LAB_005a414b
-    CALL core_motion.cpp_FUN_005035c0   ; 005a414c
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a414c
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a4151
     ADD ESP,0x4                         ; 005a4154
     CMP EAX,0x4                         ; 005a4157
     JNZ 0x005a410f                      ; 005a415a
         ;   XREF to: 005a410f (CONDITIONAL_JUMP)  ; LAB_005a410f
     FLD float ptr [ESI + 0x8]           ; 005a415c
-    FCOMP float ptr [0x005f02de]        ; 005a415f | DAT_005f02de
+    FCOMP float ptr [0x005f02de]        ; 005a415f | g_FLOAT_005f02de
     FNSTSW AX                           ; 005a4165
     SAHF                                ; 005a4167
     JNC 0x005a4180                      ; 005a4168
@@ -95,12 +95,12 @@ section .text
     PUSH 0x3f800000                     ; 005a4185
     PUSH dword ptr [EBX + 0x113c4]      ; 005a418a
     PUSH EBX                            ; 005a4190
-    CALL core_basicene.cpp_FUN_005a01a0 ; 005a4191
-        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01a0()
+    CALL core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0 ; 005a4191
+        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setFade_FUN_005a01a0(CBasicEnemy * this_ptr, float fade_start, float fade_end, float fade_time)
     ADD ESP,0x10                        ; 005a4196
     PUSH EBX                            ; 005a4199
-    CALL core_basicene.cpp_FUN_0059f570 ; 005a419a
-        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f570()
+    CALL core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570 ; 005a419a
+        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a419f
     MOV dword ptr [EBX + 0x11858],0x2   ; 005a41a2
     POP ESI                             ; 005a41ac
@@ -108,8 +108,8 @@ section .text
     RET                                 ; 005a41ae
     PUSH ESI                            ; 005a41af
         ;   Label: LAB_005a41af
-    CALL core_motion.cpp_FUN_005035c0   ; 005a41b0
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005a41b0
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005a41b5
     ADD ESP,0x4                         ; 005a41b8
     CMP EAX,0x3                         ; 005a41bb
@@ -118,16 +118,16 @@ section .text
     PUSH 0x5f02b5                       ; 005a41c4 | = "MeleeAttack"
     LEA ESI,[EBX + 0x10af8]             ; 005a41c9
     PUSH 0x5f02c1                       ; 005a41cf | = "ChaseComplete"
-    FLD float ptr [0x005ff544]          ; 005a41d4 | DAT_005ff544
+    FLD float ptr [0x005ff544]          ; 005a41d4 | g_FLOAT_005ff544
     PUSH ESI                            ; 005a41da
     FSTP float ptr [EBX + 0x11394]      ; 005a41db
-    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a41e1
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0 ; 005a41e1
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0(SStateMachine * this_ptr, char * identifier, char * state_name)
     ADD ESP,0xc                         ; 005a41e6
     PUSH 0x5f02cf                       ; 005a41e9 | = "MeleeAttack"
     PUSH ESI                            ; 005a41ee
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a41ef
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005a41ef
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005a41f4
     MOV dword ptr [EBX + 0x11858],0x0   ; 005a41f7
     POP ESI                             ; 005a4201

@@ -19,7 +19,8 @@ void FUN_005acda0(char *param_1)
   while (cVar1 = *pcVar2, pcVar2 = pcVar2 + 1, cVar1 != '\0') {
     nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
   }
-  WriteFile(*(HANDLE *)(DAT_00607bdc + 8),param_1,nNumberOfBytesToWrite,&local_8,(LPOVERLAPPED)0x0);
+  WriteFile(g_IOControlBlock->standard_handles[2],param_1,nNumberOfBytesToWrite,&local_8,
+            (LPOVERLAPPED)0x0);
   FUN_005a8210();
   return;
 }

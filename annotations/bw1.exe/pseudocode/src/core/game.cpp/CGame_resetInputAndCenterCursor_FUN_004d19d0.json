@@ -1,0 +1,342 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 24,
+    "cross_reference_count": 7,
+    "function_call_count": 3,
+    "global_count": 12,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
+  },
+  "cross_references": [
+    {
+      "addr": "00415be0",
+      "from_addr": "00415c0e",
+      "name": "core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0860",
+      "from_addr": "004d08a5",
+      "name": "core_game.cpp_CGame_playerControls_FUN_004d0860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004cf98c",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d77d0",
+      "from_addr": "004d7b6f",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544310",
+      "from_addr": "005443ad",
+      "name": "core_script.cpp_CScript_executeInitSection_FUN_00544310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005437f0",
+      "from_addr": "00543873",
+      "name": "core_script.cpp_CScript_process_FUN_005437f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "0054861f",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d19d0",
+    "address_range": [
+      [
+        "004d19d0",
+        "004d1a7c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0",
+    "signature": "void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00530660",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_00530660"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005b2750",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005b2750"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b498",
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "0061b49c",
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0061d418",
+      "name": "g_CFieldNotesPtr",
+      "type": "CFieldNotes*",
+      "value": "01cc8004"
+    },
+    {
+      "addr": "00622580",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "01d51c20"
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "007c3978",
+      "name": "g_CPuzzle_PTR_007c3978",
+      "type": "CPuzzle*",
+      "value": null
+    },
+    {
+      "addr": "01cc8044",
+      "name": "g_CFieldNotesInstance.is_displayed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccff98",
+      "name": "g_PrevKeyboardState",
+      "type": "char[600]",
+      "value": null
+    },
+    {
+      "addr": "01cd01f0",
+      "name": "g_InputResetFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd01f4",
+      "name": "g_INT_01cd01f4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0b40",
+      "name": "g_INT_01cd0b40",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01fdd020",
+      "name": "g_CDemonSetInstance.selected_camera_index",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004cf98c",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00415c0e",
+        "call_type": "direct",
+        "caller": "core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d08a5",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_playerControls_FUN_004d0860",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004d7b6f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d7d96",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004d77d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00543873",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_process_FUN_005437f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005443ad",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_executeInitSection_FUN_00544310",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054861f",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054880b",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.270833333333333,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 4,
+      "COPY": 32,
+      "INT_ADD": 9,
+      "INT_AND": 53,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 30,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 8,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 14,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 20,
+      "LOAD": 5,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 253
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b8250",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8864
+    },
+    "bw3.exe": {
+      "addr": "004ba490",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dce70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7073
+    },
+    "nocturne.exe": {
+      "addr": "0049f8c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7073
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
+}

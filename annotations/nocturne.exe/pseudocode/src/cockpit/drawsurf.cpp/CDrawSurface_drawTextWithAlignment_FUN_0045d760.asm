@@ -34,9 +34,9 @@
 ; Referenced Globals:
 ;   void* switchdataD_0045d714 = 0045d81d
 ;   void* switchdataD_0045d734 = 0045d976
-;   undefined4 DAT_01b4d710
-;   undefined4 DAT_01b4d714
-;   undefined4 DAT_01b4d718
+;   int g_INT_01b4d710
+;   int g_PaletteColorIndex
+;   CBitFont* g_CurrentFont
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -100,14 +100,14 @@ section .text
     SHL EAX,0x2                         ; 0045d7d6
     MOV dword ptr [ESP + 0x40],ECX      ; 0045d7d9
     MOV dword ptr [ESP + 0x1c],EAX      ; 0045d7dd
-    MOV EAX,[0x01b4d718]                ; 0045d7e1 | DAT_01b4d718
+    MOV EAX,[0x01b4d718]                ; 0045d7e1 | g_CurrentFont
     MOV dword ptr [0x01c00c5c],EDX      ; 0045d7e6 | g_ClipTop
     TEST EAX,EAX                        ; 0045d7ec
     JZ 0x0045d9eb                       ; 0045d7ee
         ;   XREF to: 0045d9eb (CONDITIONAL_JUMP)  ; LAB_0045d9eb
     CALL engine_font.cpp_getDefaultTextColor_FUN_00491140 ; 0045d7f4
         ;   XREF to: 00491140 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_getDefaultTextColor_FUN_00491140()
-    MOV ECX,dword ptr [0x01b4d710]      ; 0045d7f9 | DAT_01b4d710
+    MOV ECX,dword ptr [0x01b4d710]      ; 0045d7f9 | g_INT_01b4d710
     PUSH ECX                            ; 0045d7ff
     MOV dword ptr [ESP + 0x4],EAX       ; 0045d800
     CALL engine_font.cpp_setDefaultTextColor_FUN_00491150 ; 0045d804
@@ -125,7 +125,7 @@ section .text
     PUSH -0x3                           ; 0045d820
     PUSH EBX                            ; 0045d822
     PUSH ESI                            ; 0045d823
-    MOV EBP,dword ptr [0x01b4d718]      ; 0045d824 | DAT_01b4d718
+    MOV EBP,dword ptr [0x01b4d718]      ; 0045d824 | g_CurrentFont
     PUSH EBP                            ; 0045d82a
         ;   Label: LAB_0045d82a
     CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0 ; 0045d82b
@@ -159,7 +159,7 @@ section .text
     PUSH -0x3                           ; 0045d86e
     PUSH EBX                            ; 0045d870
     PUSH ESI                            ; 0045d871
-    MOV EDI,dword ptr [0x01b4d718]      ; 0045d872 | DAT_01b4d718
+    MOV EDI,dword ptr [0x01b4d718]      ; 0045d872 | g_CurrentFont
     PUSH EDI                            ; 0045d878
     CALL engine_font.cpp_CBitFont_drawTextRight_FUN_00490be0 ; 0045d879
         ;   XREF to: 00490be0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_00490be0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
@@ -171,13 +171,13 @@ section .text
     PUSH -0x3                           ; 0045d883
     PUSH EBX                            ; 0045d885
     PUSH ESI                            ; 0045d886
-    MOV ESI,dword ptr [0x01b4d718]      ; 0045d887 | DAT_01b4d718
+    MOV ESI,dword ptr [0x01b4d718]      ; 0045d887 | g_CurrentFont
     PUSH ESI                            ; 0045d88d
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0 ; 0045d88e
         ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     JMP 0x0045d830                      ; 0045d893
         ;   XREF to: 0045d830 (UNCONDITIONAL_JUMP)  ; LAB_0045d830
-    MOV EBP,dword ptr [0x01b4d718]      ; 0045d895 | DAT_01b4d718
+    MOV EBP,dword ptr [0x01b4d718]      ; 0045d895 | g_CurrentFont
         ;   Label: caseD_3
     MOV EDX,dword ptr [EBP + 0x3170]    ; 0045d89b
     MOV EAX,EDX                         ; 0045d8a1
@@ -192,7 +192,7 @@ section .text
     PUSH ESI                            ; 0045d8b2
     JMP 0x0045d82a                      ; 0045d8b3
         ;   XREF to: 0045d82a (UNCONDITIONAL_JUMP)  ; LAB_0045d82a
-    MOV EBP,dword ptr [0x01b4d718]      ; 0045d8b8 | DAT_01b4d718
+    MOV EBP,dword ptr [0x01b4d718]      ; 0045d8b8 | g_CurrentFont
         ;   Label: caseD_4
     MOV EDX,dword ptr [EBP + 0x3170]    ; 0045d8be
     MOV EAX,EDX                         ; 0045d8c4
@@ -218,7 +218,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x50]      ; 0045d8e7
     PUSH ECX                            ; 0045d8eb
     PUSH ESI                            ; 0045d8ec
-    MOV EBX,dword ptr [0x01b4d718]      ; 0045d8ed | DAT_01b4d718
+    MOV EBX,dword ptr [0x01b4d718]      ; 0045d8ed | g_CurrentFont
     PUSH EBX                            ; 0045d8f3
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0 ; 0045d8f4
         ;   XREF to: 00490de0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
@@ -227,7 +227,7 @@ section .text
         ;   XREF to: 0045d833 (UNCONDITIONAL_JUMP)  ; default
     ADD EBX,EBP                         ; 0045d901
         ;   Label: caseD_6
-    MOV EBP,dword ptr [0x01b4d718]      ; 0045d903 | DAT_01b4d718
+    MOV EBP,dword ptr [0x01b4d718]      ; 0045d903 | g_CurrentFont
     LEA EDX,[EBX + 0x1]                 ; 0045d909
     MOV EAX,dword ptr [EBP + 0x3170]    ; 0045d90c
     SUB EDX,EAX                         ; 0045d912
@@ -244,7 +244,7 @@ section .text
         ;   XREF to: 0045d82a (UNCONDITIONAL_JUMP)  ; LAB_0045d82a
     ADD EBX,EBP                         ; 0045d929
         ;   Label: caseD_7
-    MOV EBP,dword ptr [0x01b4d718]      ; 0045d92b | DAT_01b4d718
+    MOV EBP,dword ptr [0x01b4d718]      ; 0045d92b | g_CurrentFont
     INC EBX                             ; 0045d931
     MOV EDX,dword ptr [EBP + 0x3170]    ; 0045d932
     SUB EBX,EDX                         ; 0045d938
@@ -359,7 +359,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EAX      ; 0045d9f9
     CALL engine_2d.c_disableTextWrap_FUN_00402e50 ; 0045d9fd
         ;   XREF to: 00402e50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_disableTextWrap_FUN_00402e50()
-    MOV EDX,dword ptr [0x01b4d714]      ; 0045da02 | DAT_01b4d714
+    MOV EDX,dword ptr [0x01b4d714]      ; 0045da02 | g_PaletteColorIndex
     PUSH EDX                            ; 0045da08
     CALL engine_2d.c_setTextColor_FUN_00402e70 ; 0045da09
         ;   XREF to: 00402e70 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextColor_FUN_00402e70(int color)

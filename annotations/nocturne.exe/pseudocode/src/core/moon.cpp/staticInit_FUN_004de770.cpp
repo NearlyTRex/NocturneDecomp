@@ -15,7 +15,7 @@ void __cdecl core_moon_cpp_staticInit_FUN_004de770(void)
   _atexit(&g_WatcomStaticDestructorNode_005bb168);
   __arrinit(g_MoonBatCourses,3,&g_CCourseTypeInfo_005a0c80);
   _atexit(&g_WatcomStaticDestructorNode_005bb178);
-  __arrinit(g_SBat_ARRAY_01ccdeec,0x1e,&g_SBatTypeInfo_005a0ca0);
+  __arrinit(g_MoonBats,0x1e,&g_SBatTypeInfo_005a0ca0);
   core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(&g_MoonBatModel);
   _atexit(&g_WatcomStaticDestructorNode_005bb188);
   return;

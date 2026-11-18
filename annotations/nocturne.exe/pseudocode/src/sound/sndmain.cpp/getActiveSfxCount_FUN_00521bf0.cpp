@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_00521bf0(void)
 
 {
@@ -15,7 +13,7 @@ int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_00521bf0(void)
   int iVar2;
   int iVar3;
   
-  if (_DAT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 502;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");

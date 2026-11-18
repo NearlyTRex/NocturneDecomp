@@ -49,31 +49,31 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004571f0(CDemonPart *thi
   }
   else {
     iVar7 = 0;
-    _fread(&g_VOID_PTR_01af4ef0,0x48,this_ptr->face_count,file_handle);
+    _fread(g_FaceConversionBuffer,0x48,this_ptr->face_count,file_handle);
     if (0 < this_ptr->face_count) {
       iVar6 = 0;
       iVar5 = 0;
       do {
         *(uint *)((int)&(this_ptr->face_data->plane).A + iVar5) =
-             *(uint *)(iVar6 + 0x1af4ef8);
+             *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -0x10);
         *(uint *)((int)&(this_ptr->face_data->plane).B + iVar5) =
-             *(uint *)(iVar6 + 0x1af4efc);
+             *(uint *)((int)(g_FaceConversionBuffer[0].vertices + -1) + iVar6);
         *(uint *)((int)&(this_ptr->face_data->plane).C + iVar5) =
-             *(uint *)(iVar6 + 0x1af4f00);
+             *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -8);
         *(uint *)((int)&(this_ptr->face_data->plane).D + iVar5) =
-             *(uint *)(iVar6 + 0x1af4f04);
+             *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -4);
         *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar5) =
-             *(uint *)(iVar6 + 0x1af4f08);
+             *(uint *)((int)&g_FaceConversionBuffer[0].vertices[0].vertex_index + iVar6);
         *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) =
-             *(uint *)(iVar6 + 0x1af4f14);
+             *(uint *)((int)&g_FaceConversionBuffer[0].vertices[1].vertex_index + iVar6);
         *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) =
-             *(uint *)(iVar6 + 0x1af4f20);
-        if (*(int *)(iVar6 + 0x1af4ef4) == 3) {
+             *(uint *)((int)&g_FaceConversionBuffer[0].vertices[2].vertex_index + iVar6);
+        if (*(int *)((int)g_FaceConversionBuffer[0].vertices + iVar6 + -0x14) == 3) {
           *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) = 0xffffffff;
         }
         else {
           *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar5) =
-               *(uint *)(iVar6 + 0x1af4f2c);
+               *(uint *)((int)&g_FaceConversionBuffer[0].vertices[3].vertex_index + iVar6);
         }
         iVar5 = iVar5 + 0x20;
         iVar7 = iVar7 + 1;

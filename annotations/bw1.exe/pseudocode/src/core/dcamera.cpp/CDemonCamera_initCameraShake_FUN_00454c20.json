@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 149,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 10,
-    "suspect_types": [
-      "extra_output",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 86
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -46,56 +42,56 @@
   "globals": [
     {
       "addr": "005d7a7f",
-      "name": "DAT_005d7a7f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d7a7f",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "00611224",
-      "name": "DAT_00611224",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CameraShakePeakValue",
+      "type": "int",
+      "value": "0x10000"
     },
     {
       "addr": "00611228",
-      "name": "DAT_00611228",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CameraShakeSustainValue",
+      "type": "int",
+      "value": "0xc80000"
     },
     {
       "addr": "0061122c",
-      "name": "DAT_0061122c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CameraShakeState",
+      "type": "int",
+      "value": "0x3"
     },
     {
       "addr": "01342200",
-      "name": "DAT_01342200",
-      "type": "undefined4",
+      "name": "g_CameraShakeSustainTimer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01342204",
-      "name": "DAT_01342204",
-      "type": "undefined4",
+      "name": "g_CameraShakeAttackTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01342208",
-      "name": "DAT_01342208",
-      "type": "undefined4",
+      "name": "g_CameraShakeAttackAccum",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0134220c",
-      "name": "DAT_0134220c",
-      "type": "undefined4",
+      "name": "g_CameraShakeDecayDuration",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01342210",
-      "name": "DAT_01342210",
-      "type": "undefined4",
+      "name": "g_CameraShakeDecayTimer",
+      "type": "int",
       "value": null
     }
   ],
@@ -215,86 +211,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_00611228",
-      "severity": "mild",
-      "text": "DAT_00611228 = (int)ROUND(fVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_00611224",
-      "severity": "mild",
-      "text": "DAT_00611224 = (int)ROUND(fVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "DAT_0061122c = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0061122c",
-      "severity": "mild",
-      "text": "DAT_0061122c = extraout_EDX;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0061122c",
-      "severity": "mild",
-      "text": "DAT_0061122c = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_00611228",
-      "severity": "mild",
-      "text": "_DAT_01342200 = DAT_00611228;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00611228",
-      "severity": "mild",
-      "text": "if (DAT_00611228 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0061122c",
-      "severity": "mild",
-      "text": "DAT_0061122c = 2;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

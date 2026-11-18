@@ -13,9 +13,9 @@
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_005640d0 at 00564205
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 DAT_01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.suppress_set_geometry
 ;   undefined4 g_CGameInstance.render_mode
@@ -39,8 +39,8 @@ section .text
     CMP dword ptr [EAX + 0x210],0x0     ; 00555300 | g_CGameInstance.render_mode
     JZ 0x0055531c                       ; 00555307
         ;   XREF to: 0055531c (CONDITIONAL_JUMP)  ; LAB_0055531c
-    MOV EBX,dword ptr [0x00612560]      ; 00555309 | DAT_00612560
-    PUSH EBX                            ; 0055530f | DAT_01bc120c
+    MOV EBX,dword ptr [0x00612560]      ; 00555309 | g_CDemonRenderer_PTR_00612560
+    PUSH EBX                            ; 0055530f | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 00555310
         ;   XREF to: 00483e60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00555315
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 00555325
     MOV ECX,dword ptr [ESP + 0x18]      ; 00555326
     PUSH ECX                            ; 0055532a
-    MOV EBX,dword ptr [0x00612560]      ; 0055532b | DAT_00612560
-    PUSH EBX                            ; 00555331 | DAT_01bc120c
+    MOV EBX,dword ptr [0x00612560]      ; 0055532b | g_CDemonRenderer_PTR_00612560
+    PUSH EBX                            ; 00555331 | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_004844f0 ; 00555332
         ;   XREF to: 004844f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)
     ADD ESP,0x10                        ; 00555337

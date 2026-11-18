@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet *this_ptr,CDemonGlobe *globe)
 
 {
-  if ((0xff < globe->linear_radius_scaled) && (_DAT_01fba2ec < 100)) {
-    *(CDemonGlobe **)(&DAT_01fba2ec + (_DAT_01fba2ec + 1) * 4) = globe;
-    _DAT_01fba2ec = _DAT_01fba2ec + 1;
+  if ((0xff < globe->linear_radius_scaled) && (g_INT_01fba2ec < 100)) {
+    (&g_INT_01fba2ec)[g_INT_01fba2ec + 1] = (int)globe;
+    g_INT_01fba2ec = g_INT_01fba2ec + 1;
     return;
   }
   return;

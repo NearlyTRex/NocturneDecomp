@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 234,
+    "complexity_score": 145,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
-    "suspect_count": 12,
+    "pseudocode_lines": 75,
+    "suspect_count": 5,
     "suspect_types": [
-      "extra_output",
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 247
+    "total_lines": 238
   },
   "cross_references": [
     {
@@ -44,7 +42,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b7ff0",
@@ -77,20 +75,20 @@
     },
     {
       "addr": "005cf91f",
-      "name": "DAT_005cf91f",
-      "type": "undefined4",
-      "value": null
+      "name": "g_NormalizeScale",
+      "type": "double",
+      "value": "65535"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -242,96 +240,40 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*extraout_EDX = (int)ROUND(fVar10);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "extraout_EDX[1] = (int)ROUND(fVar11);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "extraout_EDX[2] = (int)ROUND(fVar9);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "iVar6 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Pointer value `&this_ptr->vertex_normal_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 53,
       "match": "(int)&this_ptr->vertex_normal_list->x",
       "severity": "moderate",
-      "text": "piVar8 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar6);",
+      "text": "piVar6 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar4);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 59,
+      "line": 53,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar8 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar6);",
+      "text": "piVar6 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 36,
+      "line": 30,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 48,
-      "match": "pSVar5 = (T *)&(pSVar5->FIELD).SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 42,
+      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pSVar5 = (SMRGLPrimitiveTriangle *)&(pSVar5->base).surface_normal.B;",
+      "text": "pSVar3 = (SMRGLPrimitiveTriangle *)&(pSVar3->base).surface_normal.B;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "mem* byte count hardcodes an element stride (this_ptr->vertex_count * 0xc) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 30,
+      "line": 24,
       "match": "memset",
       "severity": "moderate",
       "text": "memset(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);",

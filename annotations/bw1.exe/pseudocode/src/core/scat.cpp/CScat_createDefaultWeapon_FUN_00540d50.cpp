@@ -29,7 +29,7 @@ void __cdecl core_scat_cpp_CScat_createDefaultWeapon_FUN_00540d50(CScat *this_pt
     pCVar3->actor_name[1] = cVar1;
     pCVar3 = (CDemonActor *)(pCVar3->actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004f7690(this_ptr_00,item_actor,1);
+  core_inv_cpp_CInventory_addItem_FUN_004f7690(this_ptr_00,item_actor,1);
   core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0(this_ptr_00,(CDemonActor *)0x0,5,1);
   return;
 }

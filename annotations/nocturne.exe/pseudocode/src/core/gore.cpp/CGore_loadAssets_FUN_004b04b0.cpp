@@ -13,39 +13,39 @@ void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004b04b0(CGore *this_ptr)
   SMRGLTextureBasic *pSVar2;
   int iVar3;
   
-  pSVar1 = (SMRGLTextureBasic *)&DAT_005b96ec;
+  pSVar1 = g_BloodSplatTextures;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b96d4);
+            (g_CDemonRenderer_PTR_005ae704,&g_BloodParticleTexture);
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (g_CDemonRenderer_PTR_005ae704,pSVar1);
     pSVar1 = pSVar1 + 1;
-  } while (pSVar1 != (SMRGLTextureBasic *)&DAT_005b974c);
+  } while (pSVar1 != g_BloodSplatTextures + sizeof(g_BloodSplatTextures) / sizeof(g_BloodSplatTextures[0]));
   iVar3 = 0;
-  pSVar1 = (SMRGLTextureBasic *)&DAT_005b98cc;
+  pSVar1 = g_BloodSplatAnimTextures;
   do {
-    pSVar2 = (SMRGLTextureBasic *)(&DAT_005b974c + iVar3 * 0x180);
+    pSVar1 = pSVar1 + 0x10;
+    pSVar2 = g_BloodSplatAnimTextures + iVar3 * 0x10;
     do {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                 (g_CDemonRenderer_PTR_005ae704,pSVar2);
       pSVar2 = pSVar2 + 1;
     } while (pSVar2 != pSVar1);
     iVar3 = iVar3 + 1;
-    pSVar1 = pSVar1 + 0x10;
   } while (iVar3 < 4);
   iVar3 = 0;
-  pSVar1 = (SMRGLTextureBasic *)&DAT_005ba004;
+  pSVar1 = g_BloodPoolAnimTextures;
   do {
-    pSVar2 = (SMRGLTextureBasic *)(&DAT_005b9d4c + iVar3 * 0x2b8);
+    pSVar1 = pSVar1 + 0x1d;
+    pSVar2 = g_BloodPoolAnimTextures + iVar3 * 0x1d;
     do {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                 (g_CDemonRenderer_PTR_005ae704,pSVar2);
       pSVar2 = pSVar2 + 1;
     } while (pSVar2 != pSVar1);
     iVar3 = iVar3 + 1;
-    pSVar1 = pSVar1 + 0x1d;
   } while (iVar3 < 4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ba84c);
+            (g_CDemonRenderer_PTR_005ae704,&g_FootstepTexture);
   return;
 }

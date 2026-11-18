@@ -2,20 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 180,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 12,
+    "pseudocode_lines": 42,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 136
+    "total_lines": 138
   },
   "cross_references": [],
   "function": {
@@ -34,50 +32,50 @@
   "globals": [
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c35210",
-      "name": "DAT_01c35210",
-      "type": "undefined4",
+      "name": "g_CurrentPalette",
+      "type": "SRGBColorPalette*",
       "value": null
     },
     {
       "addr": "01c35814",
-      "name": "DAT_01c35814",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35818",
-      "name": "DAT_01c35818",
-      "type": "undefined4",
+      "name": "g_RedScaleFactor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35820",
-      "name": "DAT_01c35820",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35824",
-      "name": "DAT_01c35824",
-      "type": "undefined4",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c3582c",
-      "name": "DAT_01c3582c",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c35830",
-      "name": "DAT_01c35830",
-      "type": "undefined4",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
       "value": null
     }
   ],
@@ -174,92 +172,36 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 != 0x20) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(SRGBColorPalette *)((int)rgb_palette_data",
+      "severity": "moderate",
+      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(SRGBColorPalette *)((int)rgb_palette_data",
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
       "severity": "moderate",
-      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar4) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01c35820",
-      "severity": "mild",
-      "text": "(ushort)(*puVar1 / _DAT_01c35824 << (DAT_01c35820 & 0x1f)) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_01c35814",
-      "severity": "mild",
-      "text": "(ushort)(pSVar3->r / _DAT_01c35818 << (DAT_01c35814 & 0x1f)) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01c3582c",
-      "severity": "mild",
-      "text": "(ushort)(*puVar2 / _DAT_01c35830 << (DAT_01c3582c & 0x1f));",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(SRGBColorPalette *)((int)rgb_palette_data",
       "severity": "moderate",
       "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01c35214",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c35214 + iVar4) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 39,
-      "match": "DAT_01c3582c",
-      "severity": "mild",
-      "text": "(uint)*puVar2 << (DAT_01c3582c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01c35814",
-      "severity": "mild",
-      "text": "(uint)pSVar3->r << (DAT_01c35814 & 0x1f) | (uint)*puVar1 << (DAT_01c35820 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01c35820",
-      "severity": "mild",
-      "text": "(uint)pSVar3->r << (DAT_01c35814 & 0x1f) | (uint)*puVar1 << (DAT_01c35820 & 0x1f);",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_Hardware32BitPalette",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
+      "type": "pointer_cast"
     }
   ]
 }

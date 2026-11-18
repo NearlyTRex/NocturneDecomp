@@ -397,28 +397,28 @@
 ;   core_fire.cpp_CStake_process_FUN_00497e80 at 00497e99
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7391
-;   undefined4 DAT_005b7399
-;   undefined4 DAT_005b73a1
-;   undefined4 DAT_005b73a9
-;   undefined4 DAT_005b73b1
-;   undefined4 DAT_005b73b5
-;   undefined4 DAT_005b73b9
-;   undefined4 DAT_005b73bd
-;   undefined4 DAT_005b73c1
-;   undefined4 DAT_005b73c9
-;   undefined4 DAT_005b73cd
-;   undefined4 DAT_005b73d1
-;   undefined4 DAT_005b73d9
-;   undefined4 DAT_005b73e1
+;   float g_BoxGroundPlaneY = -100
+;   double g_BoxGravityAcceleration = 32
+;   float g_FLOAT_005b73a1 = 25.13274
+;   double g_BoxCollisionRestitution = 1.01000000000000
+;   float g_BoxTorqueMultiplier = 2
+;   float g_BoxAngularDampingNegative = -1
+;   float g_BoxAngularDampingScale = 0.5
+;   float g_BoxLinearDampingFactor = 0.1000000
+;   double g_BoxNegativeRestitution = -1.01000000000000
+;   float g_BoxFrictionThreshold = 0.25
+;   float g_BoxCollisionDamping = 0.2000000
+;   double g_BoxMinimumVelocityThreshold = 0.0100000000000000
+;   double g_BoxCollisionEpsilon = 0.5
+;   double g_BoxCollisionNormalDotThreshold = 0.100000000000000
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
-;   core_dirmat.cpp_FUN_0045b800
-;   core_dirmat.cpp_FUN_0045b870
-;   core_dirmat.cpp_FUN_0045b9b0
-;   core_dtrace.cpp_FUN_00473cd0
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0
 ;
 ; *****************************************************************************
 
@@ -463,14 +463,14 @@ section .text
     PUSH EAX                            ; 0041b4e9
     LEA EAX,[ESP + 0x17c]               ; 0041b4ea
     FXCH                                ; 0041b4f1
-    FADD float ptr [0x005b7391]         ; 0041b4f3 | DAT_005b7391
+    FADD float ptr [0x005b7391]         ; 0041b4f3 | g_BoxGroundPlaneY
     PUSH EAX                            ; 0041b4f9
     FXCH                                ; 0041b4fa
     FSTP float ptr [ESP + 0x184]        ; 0041b4fc
     PUSH 0x203b37c                      ; 0041b503 | g_CDemonRaytraceInstance
     FSTP float ptr [ESP + 0x3f8]        ; 0041b508
-    CALL core_dtrace.cpp_FUN_00473cd0   ; 0041b50f
-        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00473cd0()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0 ; 0041b50f
+        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x6a0],EAX     ; 0041b514
     FLD float ptr [ESP + 0x6a0]         ; 0041b51b
     ADD ESP,0x14                        ; 0041b522
@@ -520,7 +520,7 @@ section .text
     MOV dword ptr [ESP + 0x110],ECX     ; 0041b5ac
     FLD float ptr [EBX + 0x94]          ; 0041b5b3
     FCHS                                ; 0041b5b9
-    FMUL double ptr [0x005b7399]        ; 0041b5bb | DAT_005b7399
+    FMUL double ptr [0x005b7399]        ; 0041b5bb | g_BoxGravityAcceleration
     LEA EAX,[ESP + 0x110]               ; 0041b5c1
     LEA ESI,[ESP + 0x41c]               ; 0041b5c8
     PUSH EAX                            ; 0041b5cf
@@ -528,8 +528,8 @@ section .text
     LEA EDI,[ESP + 0x2a0]               ; 0041b5d3
     PUSH EAX                            ; 0041b5da
     FSTP float ptr [ESP + 0x11c]        ; 0041b5db
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041b5e2
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041b5e2
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     FLD1                                ; 0041b5e7
     LEA ESI,[ESP + 0x424]               ; 0041b5e9
     ADD ESP,0x8                         ; 0041b5f0
@@ -607,8 +607,8 @@ section .text
     PUSH EAX                            ; 0041b6fd
     LEA EDI,[ESP + 0x49c]               ; 0041b6fe
     MOV dword ptr [ESP + 0x694],EAX     ; 0041b705
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0041b70c
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0041b70c
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x5d4]               ; 0041b711
     ADD ESP,0x8                         ; 0041b718
     MOVSD ES:EDI,ESI                    ; 0041b71b
@@ -647,8 +647,8 @@ section .text
     FADD float ptr [ESP + 0x1e0]        ; 0041b796
     LEA EDI,[ESP + 0x1f0]               ; 0041b79d
     FSTP float ptr [EAX + 0x8]          ; 0041b7a4
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041b7a7
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041b7a7
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x37c]               ; 0041b7ac
     LEA EAX,[ESP + 0x1f0]               ; 0041b7b3
     ADD ESP,0x8                         ; 0041b7ba
@@ -701,12 +701,12 @@ section .text
     FADDP                               ; 0041b854
     FSQRT                               ; 0041b856
     FST float ptr [ESP + 0x6a0]         ; 0041b858
-    FCOMP float ptr [0x005b73a1]        ; 0041b85f | DAT_005b73a1
+    FCOMP float ptr [0x005b73a1]        ; 0041b85f | g_FLOAT_005b73a1
     FNSTSW AX                           ; 0041b865
     SAHF                                ; 0041b867
     JBE 0x0041b8a7                      ; 0041b868
         ;   XREF to: 0041b8a7 (CONDITIONAL_JUMP)  ; LAB_0041b8a7
-    FLD float ptr [0x005b73a1]          ; 0041b86a | DAT_005b73a1
+    FLD float ptr [0x005b73a1]          ; 0041b86a | g_FLOAT_005b73a1
     FDIV float ptr [ESP + 0x6a0]        ; 0041b870
     FLD float ptr [EDX]                 ; 0041b877
     FXCH                                ; 0041b879
@@ -858,8 +858,8 @@ section .text
     PUSH EAX                            ; 0041ba6a
     LEA ESI,[ESP + 0x4bc]               ; 0041ba6b
     LEA EDI,[ESP + 0x384]               ; 0041ba72
-    CALL core_dirmat.cpp_FUN_0045b9b0   ; 0041ba79
-        ;   XREF to: 0045b9b0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b9b0()
+    CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0 ; 0041ba79
+        ;   XREF to: 0045b9b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     LEA ESI,[ESP + 0x4bc]               ; 0041ba7e
     LEA EAX,[ESP + 0x384]               ; 0041ba85
     ADD ESP,0x4                         ; 0041ba8c
@@ -897,8 +897,8 @@ section .text
     PUSH ESI                            ; 0041bb08
     LEA ESI,[ESP + 0x25c]               ; 0041bb09
     LEA EDI,[ESP + 0x4f0]               ; 0041bb10
-    CALL core_dirmat.cpp_FUN_0045b800   ; 0041bb17
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 0041bb17
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x25c]               ; 0041bb1c
     ADD ESP,0x8                         ; 0041bb23
     MOVSD ES:EDI,ESI                    ; 0041bb26
@@ -985,7 +985,7 @@ section .text
     FLD float ptr [EBX + 0x258]         ; 0041bc7c
         ;   Label: LAB_0041bc7c
     MOV EAX,dword ptr [ESP + 0x670]     ; 0041bc82
-    FADD double ptr [0x005b73d9]        ; 0041bc89 | DAT_005b73d9
+    FADD double ptr [0x005b73d9]        ; 0041bc89 | g_BoxCollisionEpsilon
     FLD float ptr [EAX + 0xc4]          ; 0041bc8f
     FXCH                                ; 0041bc95
     FSTP float ptr [EAX + 0xd0]         ; 0041bc97
@@ -1053,7 +1053,7 @@ section .text
     FLD float ptr [ECX + EBX*0x1 + 0xd8] ; 0041bdbd
     FLD1                                ; 0041bdc4
     FSUBRP                              ; 0041bdc6
-    FMUL double ptr [0x005b73a9]        ; 0041bdc8 | DAT_005b73a9
+    FMUL double ptr [0x005b73a9]        ; 0041bdc8 | g_BoxCollisionRestitution
     FLD float ptr [ESP + 0x410]         ; 0041bdce
     FXCH                                ; 0041bdd5
     FSTP float ptr [ESP + 0x658]        ; 0041bdd7
@@ -1095,8 +1095,8 @@ section .text
     FSUB float ptr [ESP + 0x614]        ; 0041be7c
     PUSH EAX                            ; 0041be83
     FSTP float ptr [EBX + 0x8]          ; 0041be84
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041be87
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041be87
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x4cc]               ; 0041be8c
     ADD ESP,0x8                         ; 0041be93
     MOVSD ES:EDI,ESI                    ; 0041be96
@@ -1111,7 +1111,7 @@ section .text
     FLD float ptr [ESP + 0x184]         ; 0041beb1
     FMUL float ptr [EAX + 0x8]          ; 0041beb8
     FADDP                               ; 0041bebb
-    FMUL float ptr [0x005b73b1]         ; 0041bebd | DAT_005b73b1
+    FMUL float ptr [0x005b73b1]         ; 0041bebd | g_BoxTorqueMultiplier
     FLD float ptr [ESP + 0x17c]         ; 0041bec3
     FXCH                                ; 0041beca
     FSTP float ptr [ESP + 0x62c]        ; 0041becc
@@ -1156,7 +1156,7 @@ section .text
     MOV dword ptr [ESP + 0x1b0],EAX     ; 0041bf8c
     MOV EAX,dword ptr [ESP + 0x4fc]     ; 0041bf93
     MOV dword ptr [ESP + 0x1b4],EAX     ; 0041bf9a
-    FLD float ptr [0x005b73b5]          ; 0041bfa1 | DAT_005b73b5
+    FLD float ptr [0x005b73b5]          ; 0041bfa1 | g_BoxAngularDampingNegative
         ;   Label: LAB_0041bfa1
     FLD float ptr [ESP + 0x1ac]         ; 0041bfa7
     FMUL ST1                            ; 0041bfae
@@ -1165,7 +1165,7 @@ section .text
     FLD float ptr [ESP + 0x1b4]         ; 0041bfb9
     FMULP ST3                           ; 0041bfc0
     FXCH                                ; 0041bfc2
-    FLD float ptr [0x005b73b9]          ; 0041bfc4 | DAT_005b73b9
+    FLD float ptr [0x005b73b9]          ; 0041bfc4 | g_BoxAngularDampingScale
     FXCH                                ; 0041bfca
     FMUL ST1                            ; 0041bfcc
     FXCH ST2                            ; 0041bfce
@@ -1278,7 +1278,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041c198
     MOVSD ES:EDI,ESI                    ; 0041c199
     MOVSD ES:EDI,ESI                    ; 0041c19a
-    FLD float ptr [0x005b73bd]          ; 0041c19b | DAT_005b73bd
+    FLD float ptr [0x005b73bd]          ; 0041c19b | g_BoxLinearDampingFactor
     FLD float ptr [ESP + 0x2b4]         ; 0041c1a1
     FMUL ST1                            ; 0041c1a8
     FLD float ptr [ESP + 0x2b8]         ; 0041c1aa
@@ -1317,15 +1317,15 @@ section .text
     MOV dword ptr [ESP + 0x364],EDI     ; 0041c234
     LEA EAX,[ESP + 0x35c]               ; 0041c23b
     FLD float ptr [EBX + 0x94]          ; 0041c242
-    FMUL double ptr [0x005b7399]        ; 0041c248 | DAT_005b7399
+    FMUL double ptr [0x005b7399]        ; 0041c248 | g_BoxGravityAcceleration
     PUSH EAX                            ; 0041c24e
     LEA EAX,[EBX + 0x18]                ; 0041c24f
     LEA ESI,[ESP + 0x444]               ; 0041c252
     PUSH EAX                            ; 0041c259
     LEA EDI,[ESP + 0x3ac]               ; 0041c25a
     FSTP float ptr [ESP + 0x368]        ; 0041c261
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041c268
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041c268
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x448]               ; 0041c26d
     LEA EAX,[ESP + 0x3ac]               ; 0041c274
     ADD ESP,0x8                         ; 0041c27b
@@ -1414,7 +1414,7 @@ section .text
     FLD float ptr [EBX + EAX*0x1 + 0xd8] ; 0041c3e1
     FLD1                                ; 0041c3e8
     FSUBRP                              ; 0041c3ea
-    FLD double ptr [0x005b73c1]         ; 0041c3ec | DAT_005b73c1
+    FLD double ptr [0x005b73c1]         ; 0041c3ec | g_BoxNegativeRestitution
     FXCH                                ; 0041c3f2
     FMUL ST1                            ; 0041c3f4
     FLD float ptr [ESP + 0x218]         ; 0041c3f6
@@ -1534,8 +1534,8 @@ section .text
     PUSH ESI                            ; 0041c5c9
     LEA ESI,[ESP + 0x94]                ; 0041c5ca
     FSTP float ptr [EBX + 0x8]          ; 0041c5d1
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041c5d4
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041c5d4
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x94]                ; 0041c5d9
     LEA EAX,[ESP + 0x400]               ; 0041c5e0
     ADD ESP,0x8                         ; 0041c5e7
@@ -1563,7 +1563,7 @@ section .text
     FLD float ptr [ESP + 0x538]         ; 0041c63a
     FMUL float ptr [EAX + 0x8]          ; 0041c641
     FADDP                               ; 0041c644
-    FMUL float ptr [0x005b73b1]         ; 0041c646 | DAT_005b73b1
+    FMUL float ptr [0x005b73b1]         ; 0041c646 | g_BoxTorqueMultiplier
     FLD float ptr [ESP + 0x530]         ; 0041c64c
     FXCH                                ; 0041c653
     FSTP float ptr [ESP + 0x628]        ; 0041c655
@@ -1608,7 +1608,7 @@ section .text
     MOV dword ptr [ESP + 0x5b8],EAX     ; 0041c715
     MOV EAX,dword ptr [ESP + 0x1c0]     ; 0041c71c
     MOV dword ptr [ESP + 0x5bc],EAX     ; 0041c723
-    FLD float ptr [0x005b73b5]          ; 0041c72a | DAT_005b73b5
+    FLD float ptr [0x005b73b5]          ; 0041c72a | g_BoxAngularDampingNegative
         ;   Label: LAB_0041c72a
     FLD float ptr [ESP + 0x5b4]         ; 0041c730
     FMUL ST1                            ; 0041c737
@@ -1617,7 +1617,7 @@ section .text
     FLD float ptr [ESP + 0x5bc]         ; 0041c742
     FMULP ST3                           ; 0041c749
     FXCH                                ; 0041c74b
-    FLD float ptr [0x005b73c9]          ; 0041c74d | DAT_005b73c9
+    FLD float ptr [0x005b73c9]          ; 0041c74d | g_BoxFrictionThreshold
     FXCH                                ; 0041c753
     FMUL ST1                            ; 0041c755
     FXCH ST2                            ; 0041c757
@@ -1736,7 +1736,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041c93a
     MOVSD ES:EDI,ESI                    ; 0041c93b
     LEA EDX,[ECX*0x4 + 0x0]             ; 0041c93c
-    FLD float ptr [0x005b73bd]          ; 0041c943 | DAT_005b73bd
+    FLD float ptr [0x005b73bd]          ; 0041c943 | g_BoxLinearDampingFactor
     FLD float ptr [ESP + 0xf8]          ; 0041c949
     FMUL ST1                            ; 0041c950
     SUB EDX,ECX                         ; 0041c952
@@ -1792,7 +1792,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041ca35
     MOVSD ES:EDI,ESI                    ; 0041ca36
     MOVSD ES:EDI,ESI                    ; 0041ca37
-    FLD float ptr [0x005b73bd]          ; 0041ca38 | DAT_005b73bd
+    FLD float ptr [0x005b73bd]          ; 0041ca38 | g_BoxLinearDampingFactor
     FLD float ptr [ESP + 0x578]         ; 0041ca3e
     FMUL ST1                            ; 0041ca45
     FLD float ptr [ESP + 0x57c]         ; 0041ca47
@@ -1839,13 +1839,13 @@ section .text
     MOV dword ptr [ESP + 0x530],EDI     ; 0041caed
     LEA EAX,[EBX + 0x18]                ; 0041caf4
     FLD float ptr [EBX + 0x94]          ; 0041caf7
-    FMUL double ptr [0x005b7399]        ; 0041cafd | DAT_005b7399
+    FMUL double ptr [0x005b7399]        ; 0041cafd | g_BoxGravityAcceleration
     PUSH EAX                            ; 0041cb03
     LEA ESI,[ESP + 0x34c]               ; 0041cb04
     LEA EDI,[ESP + 0x550]               ; 0041cb0b
     FSTP float ptr [ESP + 0x530]        ; 0041cb12
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041cb19
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041cb19
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x34c]               ; 0041cb1e
     LEA EAX,[ESP + 0x550]               ; 0041cb25
     ADD ESP,0x8                         ; 0041cb2c
@@ -1862,7 +1862,7 @@ section .text
     MOV dword ptr [ESP + 0x528],EAX     ; 0041cb52
     MOV EAX,dword ptr [ESP + 0x550]     ; 0041cb59
     MOV dword ptr [ESP + 0x52c],EAX     ; 0041cb60
-    FLD float ptr [0x005b73b9]          ; 0041cb67 | DAT_005b73b9
+    FLD float ptr [0x005b73b9]          ; 0041cb67 | g_BoxAngularDampingScale
         ;   Label: LAB_0041cb67
     FLD float ptr [ESP + 0x524]         ; 0041cb6d
     FMUL ST1                            ; 0041cb74
@@ -2009,7 +2009,7 @@ section .text
     FLD float ptr [EBX + EAX*0x1 + 0xd8] ; 0041cdfc
     FLD1                                ; 0041ce03
     FSUBRP                              ; 0041ce05
-    FMUL double ptr [0x005b73c1]        ; 0041ce07 | DAT_005b73c1
+    FMUL double ptr [0x005b73c1]        ; 0041ce07 | g_BoxNegativeRestitution
     FLD float ptr [ESP + 0x200]         ; 0041ce0d
     FXCH                                ; 0041ce14
     FSTP float ptr [ESP + 0x64c]        ; 0041ce16
@@ -2088,8 +2088,8 @@ section .text
     LEA ESI,[ESP + 0x510]               ; 0041cf59
     PUSH EAX                            ; 0041cf60
     FSTP float ptr [EBX + 0x8]          ; 0041cf61
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041cf64
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041cf64
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x514]               ; 0041cf69
     ADD ESP,0x8                         ; 0041cf70
     MOVSD ES:EDI,ESI                    ; 0041cf73
@@ -2104,7 +2104,7 @@ section .text
     FLD float ptr [ESP + 0x3b8]         ; 0041cf8e
     FMUL float ptr [EAX + 0x8]          ; 0041cf95
     FADDP                               ; 0041cf98
-    FMUL float ptr [0x005b73b1]         ; 0041cf9a | DAT_005b73b1
+    FMUL float ptr [0x005b73b1]         ; 0041cf9a | g_BoxTorqueMultiplier
     FLD float ptr [ESP + 0x3b0]         ; 0041cfa0
     FXCH                                ; 0041cfa7
     FSTP float ptr [ESP + 0x644]        ; 0041cfa9
@@ -2149,7 +2149,7 @@ section .text
     MOV dword ptr [ESP + 0x504],EAX     ; 0041d069
     MOV EAX,dword ptr [ESP + 0x5a4]     ; 0041d070
     MOV dword ptr [ESP + 0x508],EAX     ; 0041d077
-    FLD float ptr [0x005b73b5]          ; 0041d07e | DAT_005b73b5
+    FLD float ptr [0x005b73b5]          ; 0041d07e | g_BoxAngularDampingNegative
         ;   Label: LAB_0041d07e
     FLD float ptr [ESP + 0x500]         ; 0041d084
     FMUL ST1                            ; 0041d08b
@@ -2158,7 +2158,7 @@ section .text
     FLD float ptr [ESP + 0x508]         ; 0041d096
     FMULP ST3                           ; 0041d09d
     FXCH                                ; 0041d09f
-    FLD float ptr [0x005b73cd]          ; 0041d0a1 | DAT_005b73cd
+    FLD float ptr [0x005b73cd]          ; 0041d0a1 | g_BoxCollisionDamping
     FXCH                                ; 0041d0a7
     FMUL ST1                            ; 0041d0a9
     FXCH ST2                            ; 0041d0ab
@@ -2272,7 +2272,7 @@ section .text
         ;   Label: LAB_0041d22c
     FSUB float ptr [EBX + 0x258]        ; 0041d232
     FABS                                ; 0041d238
-    FCOMP double ptr [0x005b73e1]       ; 0041d23a | DAT_005b73e1
+    FCOMP double ptr [0x005b73e1]       ; 0041d23a | g_BoxCollisionNormalDotThreshold
     FNSTSW AX                           ; 0041d240
     SAHF                                ; 0041d242
     JNC 0x0041d246                      ; 0041d243
@@ -2344,7 +2344,7 @@ section .text
     FMUL ST0                            ; 0041d31e
     FADDP                               ; 0041d320
     FSQRT                               ; 0041d322
-    FCOMP double ptr [0x005b73d1]       ; 0041d324 | DAT_005b73d1
+    FCOMP double ptr [0x005b73d1]       ; 0041d324 | g_BoxMinimumVelocityThreshold
     FNSTSW AX                           ; 0041d32a
     SAHF                                ; 0041d32c
     JBE 0x0041bcef                      ; 0041d32d
@@ -2358,8 +2358,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x674]     ; 0041d348
     PUSH ECX                            ; 0041d34f
     PUSH 0x203b37c                      ; 0041d350 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_00473cd0   ; 0041d355
-        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00473cd0()
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0 ; 0041d355
+        ;   XREF to: 00473cd0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00473cd0(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x6a0],EAX     ; 0041d35a
     FLD float ptr [ESP + 0x6a0]         ; 0041d361
     ADD ESP,0x14                        ; 0041d368
@@ -2411,8 +2411,8 @@ section .text
     PUSH ESI                            ; 0041d40f
     LEA ESI,[ESP + 0x328]               ; 0041d410
     FSTP float ptr [EBX + 0x8]          ; 0041d417
-    CALL core_dirmat.cpp_FUN_0045b870   ; 0041d41a
-        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b870()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870 ; 0041d41a
+        ;   XREF to: 0045b870 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x328]               ; 0041d41f
     LEA EAX,[ESP + 0xa0]                ; 0041d426
     ADD ESP,0x8                         ; 0041d42d

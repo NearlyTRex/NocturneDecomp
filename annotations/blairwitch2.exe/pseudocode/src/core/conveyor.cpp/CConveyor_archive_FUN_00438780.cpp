@@ -10,7 +10,7 @@ void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_00438780(CConveyor *this_pt
 
 {
   core_platfrm_cpp_CPlatform_archive_FUN_005193f0(&this_ptr->base);
-  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->size,&DAT_005cdf96);
+  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->size,"size");
   core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->direction,"direction");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->start_event,"startEvent");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->stop_event,"stopEvent");

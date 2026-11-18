@@ -10,5 +10,5 @@ HANDLE __cdecl GetConsoleOutputHandle(void)
 
 {
   InitializeConsoleHandles();
-  return DAT_005c20d4;
+  return g_ConsoleOutputHandle;
 }

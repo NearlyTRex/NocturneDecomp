@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40(CFrankenstienMachine *this_ptr,float trigger_frame,char *sfx_filename)
 
 {
-  if ((_DAT_01cb0620 <= trigger_frame) && (trigger_frame < this_ptr->master_frame)) {
+  if ((g_FLOAT_01cb0620 <= trigger_frame) && (trigger_frame < this_ptr->master_frame)) {
     sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
     sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00550170(&this_ptr->anchor_world_position);
     sound_sndmain_cpp_startSfx_FUN_005506b0(sfx_filename);

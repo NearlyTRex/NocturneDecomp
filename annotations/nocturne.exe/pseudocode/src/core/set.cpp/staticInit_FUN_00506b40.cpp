@@ -17,6 +17,6 @@ void __cdecl core_set_cpp_staticInit_FUN_00506b40(void)
   _atexit(&g_CDemonRaytraceDestructorNode);
   core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(&g_CKeyFramedModelInstance);
   _atexit(&g_CKeyFramedModelDestructorNode);
-  __arrinit(g_CVector3f_ARRAY_01fff5b0,4000,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_FaceNormalArray,4000,&g_CVectorTypeInfo_005993b0);
   return;
 }

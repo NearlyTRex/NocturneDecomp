@@ -12,6 +12,6 @@ CAsciiArmor * __cdecl support_codec_cpp_CAsciiArmor_ctor_FUN_00443890(CAsciiArmo
   CAsciiArmor *pCVar1;
   
   pCVar1 = (CAsciiArmor *)support_codec_cpp_CCodec_ctor_FUN_00442ba0(&this_ptr->base);
-  (pCVar1->base).vtable = &g_CAsciiArmorVTable;
+  (pCVar1->base).vtable = g_CAsciiArmorVTable;
   return pCVar1;
 }

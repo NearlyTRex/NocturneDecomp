@@ -11,11 +11,11 @@
 ;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00435010 at 00435024
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
@@ -157,10 +157,10 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0043519d
     MOV ECX,0x119                       ; 004351a1
     PUSH EAX                            ; 004351a6
-    MOV dword ptr [0x01d71de0],EDX      ; 004351a7 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004351ad | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004351b3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 004351a7 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004351ad | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004351b3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004351b8
     LEA EAX,[ESP + 0xa0]                ; 004351bb
         ;   Label: LAB_004351bb

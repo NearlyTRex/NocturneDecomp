@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags)
 
 {
@@ -31,22 +29,23 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
   if (directory_path == (char *)0x0) {
     directory_path = &CHAR_00h_0057e72c;
   }
-  if (_DAT_01bcd070 == (CBitFont *)0x0) {
+  if (g_CBitFont_PTR_01bcd070 == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 139;
     core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
-  _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
-  _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01bcd070->max_char_width;
+  g_INT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_01bcd070,0x6a)
+  ;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
-            (this_ptr,_DAT_01bcd9b8 * 0x1e,_DAT_01bcd9bc * 2,dialog_title,0);
+            (this_ptr,g_EditorFontMaxCharWidth * 0x1e,g_INT_01bcd9bc * 2,dialog_title,0);
   pcVar8 = output_buffer;
   if ((flags & 1) == 0) {
     pcVar8 = (char *)0x0;
   }
   shape_edittool_cpp_CInputString_init_FUN_0046f0a0(&local_158,pcVar8,0x14,0);
-  local_18 = INT_005b7630;
-  INT_005b7630 = 0x7f;
+  local_18 = g_InputKeyMask;
+  g_InputKeyMask = 0x7f;
   local_14 = 0;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(this_ptr);
@@ -86,22 +85,23 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
       } while (cVar1 != '\0');
       engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
       engine_font_cpp_CBitFont_drawText_FUN_00490980
-                (_DAT_01bcd070,local_360,g_ClipLeft,g_ClipTop,_DAT_01bcddf0,-1);
+                (g_CBitFont_PTR_01bcd070,local_360,g_ClipLeft,g_ClipTop,g_DialogTextColor,-1);
     }
-    iVar3 = _DAT_01bcddf0;
+    iVar3 = g_DialogTextColor;
     if (local_14 != 0) {
-      iVar3 = _DAT_01bcddf4;
+      iVar3 = g_ActiveItemTextColor;
     }
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     color_value = -1;
-    y = g_ClipTop + _DAT_01bcd9bc;
+    y = g_ClipTop + g_INT_01bcd9bc;
     iVar4 = g_ClipLeft;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Filename: ");
-    engine_font_cpp_CBitFont_drawText_FUN_00490980(_DAT_01bcd070,pcVar8,iVar4,y,iVar3,color_value);
+    engine_font_cpp_CBitFont_drawText_FUN_00490980
+              (g_CBitFont_PTR_01bcd070,pcVar8,iVar4,y,iVar3,color_value);
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Filename: ");
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,pcVar8);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(g_CBitFont_PTR_01bcd070,pcVar8);
     shape_edittool_cpp_CInputString_draw_FUN_0046f680
-              (&local_158,iVar3 + g_ClipLeft,g_ClipTop + _DAT_01bcd9bc);
+              (&local_158,iVar3 + g_ClipLeft,g_ClipTop + g_INT_01bcd9bc);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     if (local_14 != 0) break;
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar3 != 0) {
@@ -111,7 +111,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-        INT_005b7630 = local_18;
+        g_InputKeyMask = local_18;
         return 0;
       }
       if ((iVar3 == 0xd) && (local_158.string_data[0] != '\0')) {
@@ -210,6 +210,6 @@ LAB_004711e7:
     output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(this_ptr);
-  INT_005b7630 = local_18;
+  g_InputKeyMask = local_18;
   return 1;
 }

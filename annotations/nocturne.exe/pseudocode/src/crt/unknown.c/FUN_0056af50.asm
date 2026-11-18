@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FillInputBuffer_FUN_00564670 at 005646ce
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1cf8
+;   int g_ConsoleInitializationFlag = 0x0
 ;
 ; Called Functions:
 ;   crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98
@@ -21,7 +21,7 @@ section .text
     PUSH EBX                            ; 0056af50
         ;   Label: crt_unknown.c_FUN_0056af50
     PUSH ESI                            ; 0056af51
-    MOV ESI,dword ptr [0x005c1cf8]      ; 0056af52 | DAT_005c1cf8
+    MOV ESI,dword ptr [0x005c1cf8]      ; 0056af52 | g_ConsoleInitializationFlag
     CALL crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98 ; 0056af58
         ;   XREF to: 0056fb98 (UNCONDITIONAL_CALL)  ; undefined1 crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98()
     MOV EBX,EAX                         ; 0056af5d

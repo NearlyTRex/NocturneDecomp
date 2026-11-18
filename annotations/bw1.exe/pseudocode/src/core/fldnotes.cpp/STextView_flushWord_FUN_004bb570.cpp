@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_STextView_flushWord_FUN_004bb570(STextView *this_ptr)
 
 {
@@ -17,16 +15,16 @@ void __cdecl core_fldnotes_cpp_STextView_flushWord_FUN_004bb570(STextView *this_
   if (this_ptr->word[0] == '\0') {
     return;
   }
-  this_ptr_00 = (SPageResourceText *)operator_new(0x120);
+  this_ptr_00 = operator_new(0x120);
   resource = (SPageResourceText *)0x0;
   if (this_ptr_00 != (SPageResourceText *)0x0) {
     resource = core_fldnotes_cpp_SPageResourceText_ctor_FUN_004ba850
                          (this_ptr_00,this_ptr->word,this_ptr->font);
   }
   if (resource == (SPageResourceText *)0x0) {
-    _DAT_01d1d400 = "..\\core\\fldnotes.cpp";
-    _DAT_01d1d404 = 0x581;
-    core_main_c_FUN_005030e0("Out of memory");
+    g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
+    g_INT_01d1d404 = 0x581;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
   }
   (resource->base).x = this_ptr->word_x;
   (resource->base).y = this_ptr->word_y;

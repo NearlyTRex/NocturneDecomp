@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_crate_cpp_CCrate_setup_FUN_00439dc0(CCrate *this_ptr)
 
 {
@@ -35,8 +33,8 @@ void __cdecl core_crate_cpp_CCrate_setup_FUN_00439dc0(CCrate *this_ptr)
     puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
     puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  fVar1 = (fStack_30 - fStack_3c) * (float)_DAT_005ce1cb;
-  fVar2 = (fStack_28 - fStack_34) * (float)_DAT_005ce1cb;
+  fVar1 = (fStack_30 - fStack_3c) * (float)0.5;
+  fVar2 = (fStack_28 - fStack_34) * (float)0.5;
   if (fVar1 < fVar2) {
     fVar2 = fVar1;
   }

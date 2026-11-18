@@ -14,17 +14,17 @@
 ;   core_drone.cpp_CDrone_process_FUN_0046d870 at 0046df27
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00491be0 at 00491c26
 ;   core_flame.cpp_CFlame_process_FUN_0049f2e0 at 0049f68a
-;   core_hellhag.cpp_FUN_005ab260 at 005ab46b
+;   core_hellhag.cpp_CHag_processAI_FUN_005ab260 at 005ab46b
 ;   core_tommygun.cpp_CTommyGun_process_FUN_00576130 at 00576310
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264161c
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264161c]      ; 005503e0 | DAT_0264161c
+    MOV EDX,dword ptr [0x0264161c]      ; 005503e0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0
     LEA EAX,[EDX*0x4 + 0x0]             ; 005503e6
     SUB EAX,EDX                         ; 005503ed

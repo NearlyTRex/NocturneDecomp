@@ -10,21 +10,21 @@ CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004cc5f0(CGlass *this_ptr,uint f
 
 {
   CMirror *pCVar1;
-  CGlass *pCVar2;
-  void *ptr;
+  CGlass *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CGlassTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CGlassTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_mirror_cpp_FUN_004f3fe0(&this_ptr->mirror,0);
-  pCVar2 = (CGlass *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                     ((CDemonActor *)&pCVar1[-2].reflection.corner4,1);
+  pCVar1 = core_mirror_cpp_CMirror_dtor_FUN_004f3fe0(&this_ptr->mirror,0);
+  ptr = (CGlass *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                  ((CDemonActor *)&pCVar1[-2].reflection.corner4,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_005a30c4(pCVar2);
-  return pCVar2;
+  debugFreeChecked(ptr);
+  return ptr;
 }

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
@@ -23,30 +22,26 @@ double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(short *s
   int iVar9;
   int iVar10;
   bool bVar11;
-  float10 fVar12;
-  double dVar13;
+  double dVar12;
   ulonglong local_34;
   
   if (0 < samples_to_process) {
-    dVar13 = floor(resample_position);
-    fVar12 = (float10)dVar13;
-    round();
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    dVar12 = floor(resample_position);
+    dVar12 = round(dVar12);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar10 = (uint)local_34;
-    local_34 = (longlong)ROUND(fVar12) & 0xffffffff;
-    fVar12 = ((float10)resample_position - (float10)local_34) * (float10)_DAT_005f32a0;
-    round();
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
+    dVar12 = round
+                       ((resample_position - (double)local_34) * 4294967296);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     uVar8 = (uint)local_34;
-    dVar13 = floor(resample_delta);
-    fVar12 = (float10)dVar13;
-    round();
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    dVar12 = floor(resample_delta);
+    dVar12 = round(dVar12);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar7 = (uint)local_34;
-    local_34 = (longlong)ROUND(fVar12) & 0xffffffff;
-    fVar12 = ((float10)resample_delta - (float10)local_34) * (float10)_DAT_005f32a0;
-    round();
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
+    dVar12 = round((resample_delta - (double)local_34) * 4294967296);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     fVar2 = channel_gains->left_gain;
     fVar3 = channel_gains->right_gain;
     pfVar4 = channel_buffers->right_channel;

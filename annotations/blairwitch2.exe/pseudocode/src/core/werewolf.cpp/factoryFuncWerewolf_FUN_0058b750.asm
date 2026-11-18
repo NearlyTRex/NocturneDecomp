@@ -15,7 +15,7 @@ section .text
     PUSH 0x10b40                        ; 0058b750
         ;   Label: core_werewolf.cpp_factoryFuncWerewolf_FUN_0058b750
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0058b755
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0058b75a
     TEST EAX,EAX                        ; 0058b75d
     JNZ 0x0058b762                      ; 0058b75f

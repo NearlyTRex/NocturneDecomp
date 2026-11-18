@@ -12,7 +12,7 @@
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 at 00538481
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     RET                                 ; 005386b9
     PUSH EDX                            ; 005386ba
         ;   Label: LAB_005386ba
-    CALL crt_unknown.c_FUN_005b86a0     ; 005386bb
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 005386bb
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 005386c0
     MOV dword ptr [EBX + 0x24],0x0      ; 005386c3
     MOV dword ptr [EBX + 0x4],0x0       ; 005386ca

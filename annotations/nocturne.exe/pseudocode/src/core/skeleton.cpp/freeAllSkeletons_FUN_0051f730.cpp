@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_0051f730(void)
 
 {
@@ -19,6 +17,6 @@ void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_0051f730(void)
     core_skeleton_cpp_CSkeleton_free_FUN_005174e0(this_ptr);
     this_ptr = this_ptr + 1;
   } while (this_ptr != (CSkeleton *)0x2da8a58);
-  _DAT_02737ef4 = 0;
+  g_INT_02737ef4 = 0;
   return;
 }

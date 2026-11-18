@@ -8,14 +8,14 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_00516de0 at 00516e03
+;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00516de0 at 00516e03
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_stdio.c_fwrite_FUN_005b9690
 ;
 ; *****************************************************************************
@@ -97,10 +97,10 @@ section .text
         ;   Label: LAB_00516f02
     MOV ESI,0x49c                       ; 00516f07
     PUSH 0x5e1c9b                       ; 00516f0c
-    MOV dword ptr [0x01d046a0],EBX      ; 00516f11 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00516f17 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00516f1d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 00516f11 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00516f17 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00516f1d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00516f22
     ADD ESP,0x1c                        ; 00516f25
     POP EBP                             ; 00516f28

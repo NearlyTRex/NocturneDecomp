@@ -33,7 +33,7 @@ _istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_00564fd8(void *this_
     operator_delete(this_ptr);
   }
   else {
-    ptr = __vec_delete(this_ptr,(WatcomTypeInfo *)&DAT_0059b4b0);
+    ptr = __vec_delete(this_ptr,&g_WatcomTypeInfo_0059b4b0);
     shape_memdbg_cpp_free_FUN_00564486(ptr);
   }
   return this_ptr;

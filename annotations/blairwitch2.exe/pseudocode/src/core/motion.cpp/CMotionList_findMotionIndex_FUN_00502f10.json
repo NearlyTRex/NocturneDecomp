@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 23,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 87
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
   },
   "cross_references": [
     {
       "addr": "005a01d0",
       "from_addr": "005a01f1",
-      "name": "core_basicene.cpp_FUN_005a01d0",
+      "name": "core_basicene.cpp_CBasicEnemy_initFlinch_FUN_005a01d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,6 +29,12 @@
       "addr": "004291b0",
       "from_addr": "004291d6",
       "name": "core_charactr.cpp_CCharacter_initGesture_FUN_004291b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004562a0",
+      "from_addr": "00456400",
+      "name": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,19 +52,13 @@
     {
       "addr": "00453d80",
       "from_addr": "00455111",
-      "name": "core_doc.cpp_FUN_00453d80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004562a0",
-      "from_addr": "00456400",
-      "name": "core_doc.cpp_FUN_004562a0",
+      "name": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00489670",
       "from_addr": "0048da60",
-      "name": "core_event.cpp_FUN_00489670",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -84,7 +82,7 @@
     {
       "addr": "004d5470",
       "from_addr": "004d54d1",
-      "name": "core_icepick.cpp_FUN_004d5470",
+      "name": "core_icepick.cpp_CIcePick_updateShootBlend_FUN_004d5470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,7 +94,7 @@
     {
       "addr": "005037d0",
       "from_addr": "005037ec",
-      "name": "core_motion.cpp_FUN_005037d0",
+      "name": "core_motion.cpp_CMotionController_setMotionList_FUN_005037d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -138,7 +136,7 @@
     {
       "addr": "00565ff0",
       "from_addr": "005673d5",
-      "name": "core_stranger.cpp_FUN_00565ff0",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -170,7 +168,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8130",
@@ -193,14 +191,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -210,7 +208,7 @@
       {
         "call_addr": "0048da60",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +241,7 @@
       {
         "call_addr": "00455111",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00453d80",
+        "caller": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_00453d80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -265,7 +263,7 @@
       {
         "call_addr": "00456400",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004562a0",
+        "caller": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_004562a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -276,7 +274,7 @@
       {
         "call_addr": "004d54d1",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004d5470",
+        "caller": "core_icepick.cpp_CIcePick_updateShootBlend_FUN_004d5470",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,7 +296,7 @@
       {
         "call_addr": "005673d5",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00565ff0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -407,14 +405,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

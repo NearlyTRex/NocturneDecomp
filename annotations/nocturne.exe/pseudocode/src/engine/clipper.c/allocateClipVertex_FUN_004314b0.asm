@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_clipper_c_0057ac47
 ;   TerminatedCString s_Ran_out_of_clipped_verts_0057ac5b
-;   undefined4 DAT_007678f8
-;   undefined4 DAT_00767b38
+;   SRenderVertex[12] g_ClipperTempBuffer
+;   int g_ClipperTempCount
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -19,18 +19,18 @@
 
 section .text
 
-    CMP dword ptr [0x00767b38],0xc      ; 004314b0 | DAT_00767b38
+    CMP dword ptr [0x00767b38],0xc      ; 004314b0 | g_ClipperTempCount
         ;   Label: engine_clipper.c_allocateClipVertex_FUN_004314b0
     JGE 0x004314d8                      ; 004314b7
         ;   XREF to: 004314d8 (CONDITIONAL_JUMP)  ; LAB_004314d8
-    MOV ECX,dword ptr [0x00767b38]      ; 004314b9 | DAT_00767b38
+    MOV ECX,dword ptr [0x00767b38]      ; 004314b9 | g_ClipperTempCount
         ;   Label: LAB_004314b9
     LEA EAX,[ECX*0x4 + 0x0]             ; 004314bf
     SUB EAX,ECX                         ; 004314c6
     INC ECX                             ; 004314c8
     SHL EAX,0x4                         ; 004314c9
-    MOV dword ptr [0x00767b38],ECX      ; 004314cc | DAT_00767b38
-    ADD EAX,0x7678f8                    ; 004314d2 | DAT_007678f8
+    MOV dword ptr [0x00767b38],ECX      ; 004314cc | g_ClipperTempCount
+    ADD EAX,0x7678f8                    ; 004314d2 | g_ClipperTempBuffer
     RET                                 ; 004314d7
     PUSH EBX                            ; 004314d8
         ;   Label: LAB_004314d8

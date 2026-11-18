@@ -121,6 +121,14 @@ def test_a_recorded_name_replaces_the_guess(builds):
                      "guess": False, "sig": {"ret": "void", "conv": "__cdecl", "params": [this_param("CDemonActor*")]}}
 
 
+def test_a_stale_table_does_not_name_a_slot(builds):
+    contract = dict(CONTRACT, CChain = {"slots": [row(2, "setup", 0)]})
+    path = builds / "annotations" / "dst.exe" / "reports" / "actor_vtable_contract.json"
+    write_json(path, contract)
+    built = bvs.plan("dst.exe", str(path), "ref.exe")
+    assert built["parts"]["CDemonActor_vtable"][2]["name"] == "vfunc2"
+
+
 def test_each_table_gets_the_struct_of_the_class_introducing_its_last_slot(built):
     applied = {a["class"]: (a["struct"], a["size"], a["fits"]) for a in built["apply"]}
     assert applied == {"CDemonActor": ("CDemonActor_vtable", 12, True), "CBox": ("CDemonActor_vtable", 12, True),

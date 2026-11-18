@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004bb240 at 004bb27a
-;   core_game.cpp_FUN_004bb3d0 at 004bb43e
+;   core_game.cpp_CGame_beginFadeIn_FUN_004bb240 at 004bb27a
+;   core_game.cpp_CGame_renderIrisFade_FUN_004bb3d0 at 004bb43e
 ;
 ; Referenced Globals:
 ;   CScript* g_CScriptPtr = 01e65cd0

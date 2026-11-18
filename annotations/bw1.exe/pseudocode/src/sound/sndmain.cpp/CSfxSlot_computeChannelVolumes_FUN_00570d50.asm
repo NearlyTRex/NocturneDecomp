@@ -20,14 +20,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3764
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005f3779
-;   undefined4 DAT_005f379c
-;   undefined4 DAT_006232ec
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c807ec
+;   float g_FLOAT_005f379c = 0.05000000
+;   int g_AudioChannelCount = 0x2
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_SoundLockCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0
 ;
 ; *****************************************************************************
@@ -39,9 +39,9 @@ section .text
     PUSH ESI                            ; 00570d51
     PUSH EBP                            ; 00570d52
     SUB ESP,0x1c                        ; 00570d53
-    MOV ESI,dword ptr [0x006232ec]      ; 00570d56 | DAT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570d56 | g_AudioChannelCount
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00570d5c
-    CMP dword ptr [0x02c807ec],0x0      ; 00570d60 | DAT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00570d60 | g_SoundLockCount
     JLE 0x00570dbd                      ; 00570d67
         ;   XREF to: 00570dbd (CONDITIONAL_JUMP)  ; LAB_00570dbd
     MOV EBP,dword ptr [EBX]             ; 00570d69
@@ -58,7 +58,7 @@ section .text
     TEST AH,0x1                         ; 00570d85
     JZ 0x00570de4                       ; 00570d88
         ;   XREF to: 00570de4 (CONDITIONAL_JUMP)  ; LAB_00570de4
-    MOV ESI,dword ptr [0x006232ec]      ; 00570d8a | DAT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570d8a | g_AudioChannelCount
     XOR EDX,EDX                         ; 00570d90
     TEST ESI,ESI                        ; 00570d92
     JLE 0x00570db0                      ; 00570d94
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 00570d99 (CONDITIONAL_JUMP)  ; LAB_00570d99
     LEA EAX,[EAX]                       ; 00570da7
     LEA EDX,[EDX]                       ; 00570dad
-    MOV dword ptr [0x006232ec],ESI      ; 00570db0 | DAT_006232ec
+    MOV dword ptr [0x006232ec],ESI      ; 00570db0 | g_AudioChannelCount
         ;   Label: LAB_00570db0
     ADD ESP,0x1c                        ; 00570db6
     POP EBP                             ; 00570db9
@@ -85,15 +85,15 @@ section .text
     MOV ECX,0x5f3764                    ; 00570dbe | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xa98                       ; 00570dc3
     PUSH 0x5f3779                       ; 00570dc8 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00570dcd | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00570dd3 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00570dd9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00570dcd | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00570dd3 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00570dd9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00570dde
     POP EDI                             ; 00570de1
     JMP 0x00570d69                      ; 00570de2
         ;   XREF to: 00570d69 (UNCONDITIONAL_JUMP)  ; LAB_00570d69
-    MOV ESI,dword ptr [0x006232ec]      ; 00570de4 | DAT_006232ec
+    MOV ESI,dword ptr [0x006232ec]      ; 00570de4 | g_AudioChannelCount
         ;   Label: LAB_00570de4
     XOR ECX,ECX                         ; 00570dea
     TEST ESI,ESI                        ; 00570dec
@@ -126,7 +126,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 00570e35
     FLD float ptr [ESP + 0xc]           ; 00570e39
         ;   Label: LAB_00570e39
-    FMUL float ptr [0x005f379c]         ; 00570e3d | DAT_005f379c
+    FMUL float ptr [0x005f379c]         ; 00570e3d | g_FLOAT_005f379c
     FCOMP float ptr [ESP + 0x14]        ; 00570e43
     FNSTSW AX                           ; 00570e47
     SAHF                                ; 00570e49

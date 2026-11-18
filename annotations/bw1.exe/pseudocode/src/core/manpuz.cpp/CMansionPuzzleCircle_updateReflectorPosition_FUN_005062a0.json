@@ -1,0 +1,170 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 29,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
+  },
+  "cross_references": [
+    {
+      "addr": "00504400",
+      "from_addr": "0050448d",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00503c90",
+      "from_addr": "0050425d",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005062a0",
+    "address_range": [
+      [
+        "005062a0",
+        "00506389"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_005062a0(CMansionPuzzleCircle *this_ptr,int reflector_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0050425d",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050448d",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.341176470588235,
+    "instruction_count": 85,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CBRANCH": 1,
+      "COPY": 297,
+      "FLOAT2FLOAT": 29,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 6,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 68,
+      "INT_AND": 27,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 17,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 19,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 24,
+      "INT_XOR": 1,
+      "INT_ZEXT": 18,
+      "LOAD": 39,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 24
+    },
+    "pcode_op_count": 624
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e7600",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050af80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6389
+    },
+    "nocturne.exe": {
+      "addr": "004cb980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6389
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "reflector_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00506317",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

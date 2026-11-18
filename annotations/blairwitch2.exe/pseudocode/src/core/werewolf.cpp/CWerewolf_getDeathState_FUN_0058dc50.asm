@@ -7,7 +7,7 @@
 ; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     ADD EAX,0x2b4                       ; 0058dc6b
         ;   Label: LAB_0058dc6b
     PUSH EAX                            ; 0058dc70
-    CALL core_motion.cpp_FUN_005035c0   ; 0058dc71
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058dc71
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058dc76
     ADD ESP,0x4                         ; 0058dc79
     CMP EAX,0xc                         ; 0058dc7c

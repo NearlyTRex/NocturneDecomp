@@ -1,0 +1,2089 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2335,
+    "complexity_score": 1557,
+    "cross_reference_count": 2,
+    "function_call_count": 21,
+    "global_count": 234,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 1022,
+    "suspect_count": 51,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 3357
+  },
+  "cross_references": [
+    {
+      "addr": "0050b470",
+      "from_addr": "0050b8ff",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_0050b470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c990",
+      "from_addr": "0050cc1f",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_0050c990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050d640",
+    "address_range": [
+      [
+        "0050d640",
+        "0050eff3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640",
+    "signature": "void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_0050d640(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d0960",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004d0960"
+    },
+    {
+      "addr": "004d0400",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_restoreDefaultControls_FUN_004d0400"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "0050a2b0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0"
+    },
+    {
+      "addr": "0050d220",
+      "is_variadic": false,
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_0050d220"
+    },
+    {
+      "addr": "0050d470",
+      "is_variadic": false,
+      "name": "core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "004fd2b0",
+      "is_variadic": false,
+      "name": "engine_keys.cpp_CKeys_toggleInputMask_FUN_004fd2b0"
+    },
+    {
+      "addr": "0057dc40",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_0057dc40"
+    },
+    {
+      "addr": "00494400",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400"
+    },
+    {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
+    },
+    {
+      "addr": "0049a620",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_0049a620"
+    },
+    {
+      "addr": "0049a8b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0"
+    },
+    {
+      "addr": "0049a710",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_0049a710"
+    },
+    {
+      "addr": "0049a820",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_setCancelButtonText_FUN_0049a820"
+    },
+    {
+      "addr": "0049a7b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_setOkButtonText_FUN_0049a7b0"
+    },
+    {
+      "addr": "0049a8a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_setSelectedResult_FUN_0049a8a0"
+    },
+    {
+      "addr": "004994d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
+    },
+    {
+      "addr": "00531090",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
+    },
+    {
+      "addr": "005acff0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005acff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0050d628",
+      "name": "switchdataD_0050d628",
+      "type": "void*",
+      "value": "0050e788"
+    },
+    {
+      "addr": "005e827d",
+      "name": "s_core_menu_cpp_005e827d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e828e",
+      "name": "s_Too_many_custom_keys_005e828e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8373",
+      "name": "s_Fire_Action_005e8373",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8381",
+      "name": "s_Forward_005e8381",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8389",
+      "name": "s_Back_005e8389",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e838e",
+      "name": "s_Strafe_on_005e838e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8398",
+      "name": "s_Strafe_left_005e8398",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83a4",
+      "name": "s_Strafe_right_005e83a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83b1",
+      "name": "s_Turn_left_005e83b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83bb",
+      "name": "s_Turn_right_005e83bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83c6",
+      "name": "s_Point_up_005e83c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83cf",
+      "name": "s_Point_down_005e83cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83da",
+      "name": "s_Quick_turn_005e83da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83e5",
+      "name": "s_Walk_005e83e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83ea",
+      "name": "s_Run_005e83ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83ee",
+      "name": "s_Use_item_005e83ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e83f7",
+      "name": "s_Flashlight_005e83f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8402",
+      "name": "s_Night_Vision_005e8402",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e840f",
+      "name": "s_Journal_005e840f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8417",
+      "name": "s_Map_005e8417",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e841b",
+      "name": "s_Compass_005e841b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8423",
+      "name": "s_SPS_005e8423",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8427",
+      "name": "s_Draw_005e8427",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e842c",
+      "name": "s_Select_pistol_weapons_005e842c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8442",
+      "name": "s_Select_assault_weapons_005e8442",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8459",
+      "name": "s_Select_energy_weapons_005e8459",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e846f",
+      "name": "s_Select_melee_weapons_005e846f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8484",
+      "name": "s_Next_weapon_005e8484",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8490",
+      "name": "s_Previous_weapon_005e8490",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84a0",
+      "name": "s_Next_item_005e84a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84aa",
+      "name": "s_Previous_item_005e84aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84b8",
+      "name": "s_Item_description_005e84b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84c9",
+      "name": "s_Next_ammo_005e84c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84d3",
+      "name": "s_Restore_defaults_005e84d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84e4",
+      "name": "s_s_s_005e84e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84ea",
+      "name": "s_Select_005e84ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84f1",
+      "name": "s_Close_005e84f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e84f7",
+      "name": "s_Edit_key_settings_005e84f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8509",
+      "name": "s_is_assigned_to_the_mouse_005e8509",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8539",
+      "name": "s_is_assigned_to_the_gamep_005e8539",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e856b",
+      "name": "s_OK_you_can_release_the_k_005e856b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e858f",
+      "name": "s_Press_new_key_or_button_005e858f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e85ac",
+      "name": "s_Mouse_buttons_cannot_be_005e85ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e85ce",
+      "name": "s_OK_you_can_release_the_k_005e85ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e85f2",
+      "name": "s_Forward_005e85f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e85fa",
+      "name": "s_Back_005e85fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e85ff",
+      "name": "s_Strafe_on_005e85ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8609",
+      "name": "s_Strafe_left_005e8609",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8615",
+      "name": "s_Strafe_right_005e8615",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8622",
+      "name": "s_Turn_left_005e8622",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e862c",
+      "name": "s_Turn_right_005e862c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8637",
+      "name": "s_Fire_Action_005e8637",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8645",
+      "name": "s_Point_up_005e8645",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e864e",
+      "name": "s_Point_down_005e864e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8659",
+      "name": "s_Quick_turn_005e8659",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8664",
+      "name": "s_Walk_005e8664",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8669",
+      "name": "s_Run_005e8669",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e866d",
+      "name": "s_Use_item_005e866d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8676",
+      "name": "s_Flashlight_005e8676",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8681",
+      "name": "s_Night_Vision_005e8681",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e868e",
+      "name": "s_Journal_005e868e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8696",
+      "name": "s_Map_005e8696",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e869a",
+      "name": "s_Compass_005e869a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e86a2",
+      "name": "s_SPS_005e86a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e86a6",
+      "name": "s_Draw_005e86a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e86ab",
+      "name": "s_Select_pistol_weapons_005e86ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e86c1",
+      "name": "s_Select_assault_weapons_005e86c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e86d8",
+      "name": "s_Select_energy_weapons_005e86d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e86ee",
+      "name": "s_Select_grenade_weapons_005e86ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8705",
+      "name": "s_Select_melee_weapons_005e8705",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e871a",
+      "name": "s_Next_weapon_005e871a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8726",
+      "name": "s_Previous_weapon_005e8726",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8736",
+      "name": "s_Next_item_005e8736",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8740",
+      "name": "s_Previous_item_005e8740",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e874e",
+      "name": "s_Item_description_005e874e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e875f",
+      "name": "s_One_or_more_keys_not_val_005e875f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061abc0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "0061f2a4",
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
+    },
+    {
+      "addr": "01ccf390",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01ccf3b8",
+      "name": "g_CGameInstance.key_walk",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf3d8",
+      "name": "g_CGameInstance.key_fire",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf43c",
+      "name": "g_CGameInstance.always_run",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf448",
+      "name": "g_CGameInstance.x_center",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf460",
+      "name": "g_CGameInstance.game_control",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1bca0",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "g_INT_01d1d404",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d21458",
+      "name": "g_CustomKeyCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d2145c",
+      "name": "g_CustomKeyPointers",
+      "type": "int*[31]",
+      "value": null
+    },
+    {
+      "addr": "01d21460",
+      "name": "g_CustomKeyPointers[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21464",
+      "name": "g_CustomKeyPointers[2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21468",
+      "name": "g_CustomKeyPointers[3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2146c",
+      "name": "g_CustomKeyPointers[4]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21470",
+      "name": "g_CustomKeyPointers[5]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21474",
+      "name": "g_CustomKeyPointers[6]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21478",
+      "name": "g_CustomKeyPointers[7]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2147c",
+      "name": "g_CustomKeyPointers[8]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21480",
+      "name": "g_CustomKeyPointers[9]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21484",
+      "name": "g_CustomKeyPointers[10]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21488",
+      "name": "g_CustomKeyPointers[11]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2148c",
+      "name": "g_CustomKeyPointers[12]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21490",
+      "name": "g_CustomKeyPointers[13]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21494",
+      "name": "g_CustomKeyPointers[14]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21498",
+      "name": "g_CustomKeyPointers[15]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2149c",
+      "name": "g_CustomKeyPointers[16]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214a0",
+      "name": "g_CustomKeyPointers[17]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214a4",
+      "name": "g_CustomKeyPointers[18]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214a8",
+      "name": "g_CustomKeyPointers[19]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214ac",
+      "name": "g_CustomKeyPointers[20]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214b0",
+      "name": "g_CustomKeyPointers[21]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214b4",
+      "name": "g_CustomKeyPointers[22]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214b8",
+      "name": "g_CustomKeyPointers[23]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214bc",
+      "name": "g_CustomKeyPointers[24]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214c0",
+      "name": "g_CustomKeyPointers[25]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214c4",
+      "name": "g_CustomKeyPointers[26]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214c8",
+      "name": "g_CustomKeyPointers[27]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214cc",
+      "name": "g_CustomKeyPointers[28]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d214d0",
+      "name": "g_CustomKeyPointers[29]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21508",
+      "name": "g_CustomKeyNames[1][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21509",
+      "name": "g_CustomKeyNames[1][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2150a",
+      "name": "g_CustomKeyNames[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2150b",
+      "name": "g_CustomKeyNames[1][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21530",
+      "name": "g_CustomKeyNames[2][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21531",
+      "name": "g_CustomKeyNames[2][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21532",
+      "name": "g_CustomKeyNames[2][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21533",
+      "name": "g_CustomKeyNames[2][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21558",
+      "name": "g_CustomKeyNames[3][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21559",
+      "name": "g_CustomKeyNames[3][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2155a",
+      "name": "g_CustomKeyNames[3][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2155b",
+      "name": "g_CustomKeyNames[3][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21580",
+      "name": "g_CustomKeyNames[4][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21581",
+      "name": "g_CustomKeyNames[4][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21582",
+      "name": "g_CustomKeyNames[4][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21583",
+      "name": "g_CustomKeyNames[4][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215a8",
+      "name": "g_CustomKeyNames[5][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215a9",
+      "name": "g_CustomKeyNames[5][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215aa",
+      "name": "g_CustomKeyNames[5][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215ab",
+      "name": "g_CustomKeyNames[5][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215d0",
+      "name": "g_CustomKeyNames[6][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215d1",
+      "name": "g_CustomKeyNames[6][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215d2",
+      "name": "g_CustomKeyNames[6][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215d3",
+      "name": "g_CustomKeyNames[6][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215f8",
+      "name": "g_CustomKeyNames[7][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215f9",
+      "name": "g_CustomKeyNames[7][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215fa",
+      "name": "g_CustomKeyNames[7][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d215fb",
+      "name": "g_CustomKeyNames[7][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21620",
+      "name": "g_CustomKeyNames[8][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21621",
+      "name": "g_CustomKeyNames[8][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21622",
+      "name": "g_CustomKeyNames[8][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21623",
+      "name": "g_CustomKeyNames[8][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21648",
+      "name": "g_CustomKeyNames[9][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21649",
+      "name": "g_CustomKeyNames[9][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2164a",
+      "name": "g_CustomKeyNames[9][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2164b",
+      "name": "g_CustomKeyNames[9][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21670",
+      "name": "g_CustomKeyNames[10][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21671",
+      "name": "g_CustomKeyNames[10][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21672",
+      "name": "g_CustomKeyNames[10][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21673",
+      "name": "g_CustomKeyNames[10][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21698",
+      "name": "g_CustomKeyNames[11][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21699",
+      "name": "g_CustomKeyNames[11][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216c0",
+      "name": "g_CustomKeyNames[12][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216c1",
+      "name": "g_CustomKeyNames[12][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216c2",
+      "name": "g_CustomKeyNames[12][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216c3",
+      "name": "g_CustomKeyNames[12][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216e8",
+      "name": "g_CustomKeyNames[13][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216e9",
+      "name": "g_CustomKeyNames[13][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216ea",
+      "name": "g_CustomKeyNames[13][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d216eb",
+      "name": "g_CustomKeyNames[13][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21710",
+      "name": "g_CustomKeyNames[14][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21711",
+      "name": "g_CustomKeyNames[14][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21712",
+      "name": "g_CustomKeyNames[14][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21713",
+      "name": "g_CustomKeyNames[14][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21738",
+      "name": "g_CustomKeyNames[15][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21739",
+      "name": "g_CustomKeyNames[15][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2173a",
+      "name": "g_CustomKeyNames[15][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2173b",
+      "name": "g_CustomKeyNames[15][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21760",
+      "name": "g_CustomKeyNames[16][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21761",
+      "name": "g_CustomKeyNames[16][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21762",
+      "name": "g_CustomKeyNames[16][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21763",
+      "name": "g_CustomKeyNames[16][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21788",
+      "name": "g_CustomKeyNames[17][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21789",
+      "name": "g_CustomKeyNames[17][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2178a",
+      "name": "g_CustomKeyNames[17][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2178b",
+      "name": "g_CustomKeyNames[17][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217b0",
+      "name": "g_CustomKeyNames[18][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217b1",
+      "name": "g_CustomKeyNames[18][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217b2",
+      "name": "g_CustomKeyNames[18][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217b3",
+      "name": "g_CustomKeyNames[18][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217d8",
+      "name": "g_CustomKeyNames[19][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217d9",
+      "name": "g_CustomKeyNames[19][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217da",
+      "name": "g_CustomKeyNames[19][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d217db",
+      "name": "g_CustomKeyNames[19][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21800",
+      "name": "g_CustomKeyNames[20][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21801",
+      "name": "g_CustomKeyNames[20][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21802",
+      "name": "g_CustomKeyNames[20][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21803",
+      "name": "g_CustomKeyNames[20][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21828",
+      "name": "g_CustomKeyNames[21][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21829",
+      "name": "g_CustomKeyNames[21][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2182a",
+      "name": "g_CustomKeyNames[21][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2182b",
+      "name": "g_CustomKeyNames[21][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21850",
+      "name": "g_CustomKeyNames[22][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21851",
+      "name": "g_CustomKeyNames[22][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21852",
+      "name": "g_CustomKeyNames[22][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21853",
+      "name": "g_CustomKeyNames[22][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21878",
+      "name": "g_CustomKeyNames[23][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21879",
+      "name": "g_CustomKeyNames[23][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2187a",
+      "name": "g_CustomKeyNames[23][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2187b",
+      "name": "g_CustomKeyNames[23][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218a0",
+      "name": "g_CustomKeyNames[24][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218a1",
+      "name": "g_CustomKeyNames[24][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218a2",
+      "name": "g_CustomKeyNames[24][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218a3",
+      "name": "g_CustomKeyNames[24][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218c8",
+      "name": "g_CustomKeyNames[25][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218c9",
+      "name": "g_CustomKeyNames[25][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218ca",
+      "name": "g_CustomKeyNames[25][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218cb",
+      "name": "g_CustomKeyNames[25][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218f0",
+      "name": "g_CustomKeyNames[26][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218f1",
+      "name": "g_CustomKeyNames[26][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218f2",
+      "name": "g_CustomKeyNames[26][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d218f3",
+      "name": "g_CustomKeyNames[26][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21918",
+      "name": "g_CustomKeyNames[27][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21919",
+      "name": "g_CustomKeyNames[27][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2191a",
+      "name": "g_CustomKeyNames[27][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2191b",
+      "name": "g_CustomKeyNames[27][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21940",
+      "name": "g_CustomKeyNames[28][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21941",
+      "name": "g_CustomKeyNames[28][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21942",
+      "name": "g_CustomKeyNames[28][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21943",
+      "name": "g_CustomKeyNames[28][3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21968",
+      "name": "g_CustomKeyNames[29][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21969",
+      "name": "g_CustomKeyNames[29][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2196a",
+      "name": "g_CustomKeyNames[29][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2196b",
+      "name": "g_CustomKeyNames[29][3]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.443544030253917,
+    "instruction_count": 1851,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 56,
+      "BOOL_OR": 3,
+      "BRANCH": 16,
+      "BRANCHIND": 1,
+      "CALL": 162,
+      "CALLIND": 5,
+      "CBRANCH": 158,
+      "COPY": 1161,
+      "INT_ADD": 572,
+      "INT_AND": 1153,
+      "INT_CARRY": 330,
+      "INT_EQUAL": 1145,
+      "INT_LESS": 145,
+      "INT_MULT": 72,
+      "INT_NOTEQUAL": 75,
+      "INT_OR": 29,
+      "INT_SBORROW": 153,
+      "INT_SCARRY": 365,
+      "INT_SEXT": 102,
+      "INT_SLESS": 570,
+      "INT_SUB": 591,
+      "INT_XOR": 10,
+      "INT_ZEXT": 4,
+      "LOAD": 167,
+      "POPCOUNT": 570,
+      "RETURN": 2,
+      "STORE": 540,
+      "SUBPIECE": 68
+    },
+    "pcode_op_count": 8225
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004eed60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3125
+    },
+    "bw3.exe": {
+      "addr": "004eae80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8383
+    },
+    "nocedit.exe": {
+      "addr": "005138e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3478
+    },
+    "nocturne.exe": {
+      "addr": "004d2d00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3406
+    }
+  },
+  "stack_frame": {
+    "frame_size": 3224,
+    "local_size": 3224,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c94",
+        "offset": -3220,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_8d4",
+        "offset": -2260,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_8d3",
+        "offset": -2259,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2d4",
+        "offset": -724,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2d3",
+        "offset": -723,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 646,
+      "match": "(EInputCodeType **)((int)g_CustomKeyPointers",
+      "severity": "moderate",
+      "text": "(**(EInputCodeType **)((int)g_CustomKeyPointers + iVar35));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1014,
+      "match": "(int **)((int)g_CustomKeyPointers",
+      "severity": "moderate",
+      "text": "(**(int **)((int)g_CustomKeyPointers + iVar31) == *g_CustomKeyPointers[iVar35])) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1015,
+      "match": "(int **)((int)g_CustomKeyPointers",
+      "severity": "moderate",
+      "text": "**(int **)((int)g_CustomKeyPointers + iVar31) = 599;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_CustomKeyPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 646,
+      "match": "(int)g_CustomKeyPointers",
+      "severity": "moderate",
+      "text": "(**(EInputCodeType **)((int)g_CustomKeyPointers + iVar35));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CustomKeyPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1014,
+      "match": "(int)g_CustomKeyPointers",
+      "severity": "moderate",
+      "text": "(**(int **)((int)g_CustomKeyPointers + iVar31) == *g_CustomKeyPointers[iVar35])) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CustomKeyPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1015,
+      "match": "(int)g_CustomKeyPointers",
+      "severity": "moderate",
+      "text": "**(int **)((int)g_CustomKeyPointers + iVar31) = 599;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 68,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 87,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 106,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 125,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 144,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 163,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 182,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 201,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 220,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 239,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 258,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 284,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 303,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 322,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 341,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 360,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 379,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 398,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 417,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 436,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 455,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 474,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 493,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 512,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 531,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 550,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 569,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 588,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 607,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 626,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 672,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 694,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 710,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 732,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 773,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 794,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 978,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 685,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 723,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 785,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 969,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 685,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 723,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 785,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 969,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ]
+}

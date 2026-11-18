@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 106,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 167
   },
   "cross_references": [
@@ -44,8 +42,8 @@
   "globals": [
     {
       "addr": "005e2dce",
-      "name": "DAT_005e2dce",
-      "type": "undefined4",
+      "name": "s_walk_005e2dce",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -56,14 +54,14 @@
     },
     {
       "addr": "005e2dda",
-      "name": "DAT_005e2dda",
-      "type": "undefined4",
+      "name": "s_run_005e2dda",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e2dde",
-      "name": "DAT_005e2dde",
-      "type": "undefined4",
+      "name": "s_fire_005e2dde",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -80,20 +78,20 @@
     },
     {
       "addr": "005e2df1",
-      "name": "DAT_005e2df1",
-      "type": "undefined4",
+      "name": "s_draw_005e2df1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e2df6",
-      "name": "DAT_005e2df6",
-      "type": "undefined4",
+      "name": "s_jump_005e2df6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005e2dfb",
-      "name": "DAT_005e2dfb",
-      "type": "undefined4",
+      "name": "s_drop_005e2dfb",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -201,54 +199,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005e2dce",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005e2dce);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005e2dda",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005e2dda);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005e2dde",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005e2dde);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005e2df1",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005e2df1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005e2df6",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005e2df6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005e2dfb",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(action_name,&DAT_005e2dfb);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CCmdParse
-CCmdParse CCmdParse_0310aa4c = {};
-CCmdParse CCmdParse_0310cb74 = {};
+CCmdParse g_ContextActionParser = {};
+CCmdParse g_ParameterValueParser = {};
 
 // CDemonActorType
 CDemonActorType g_CScatClassInfo = {};

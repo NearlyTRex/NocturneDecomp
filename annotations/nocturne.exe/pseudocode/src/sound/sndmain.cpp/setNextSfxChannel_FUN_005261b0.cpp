@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(int channel_index)
 
 {
@@ -16,6 +14,6 @@ void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(int channel_index)
     g_CurrentLineNumber = 3276;
     core_main_c_displayErrorAndQuit_FUN_004c8440("setNextSfxChannel - invalid channel index: %d",channel_index);
   }
-  g_CSfxOptions_ARRAY_02dc1b78[_DAT_02dc1b74].channel_index = channel_index;
+  g_CSfxOptions_ARRAY_02dc1b78[g_SfxLastSlot].channel_index = channel_index;
   return;
 }

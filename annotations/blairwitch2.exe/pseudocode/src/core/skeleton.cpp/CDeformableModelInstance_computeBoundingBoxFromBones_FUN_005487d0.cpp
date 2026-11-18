@@ -13,15 +13,17 @@ CBoundingBox3D * __stack_esi core_skeleton_cpp_CDeformableModelInstance_computeB
   CDeformableModel *this_ptr_00;
   CSkeleton *pCVar2;
   int iVar3;
+  uint corner_index;
   CBoundingBox3D *pCVar4;
   CBoundingBox3D *pCVar5;
   byte bVar6;
   uint auStackY_1040 [1009];
+  CMatrix3x4f *matrix;
   CBoundingBox3D local_70;
   CVector3f local_58;
-  uint local_4c;
-  uint auStack_48 [5];
-  float local_34;
+  CVector3f local_4c;
+  CVector3f local_40;
+  CVector3f local_34;
   CBoundingBox3D *local_28;
   int local_24;
   CDeformableModel *local_20;
@@ -44,22 +46,25 @@ CBoundingBox3D * __stack_esi core_skeleton_cpp_CDeformableModelInstance_computeB
     do {
       pCVar1 = local_1c;
       if (local_20->bone_flags[0] == 2) {
-        iVar3 = 0;
+        corner_index = 0;
         local_10 = local_18;
         do {
-          core_box_cpp_FUN_0041a600(local_10,iVar3,pCVar1);
-          auStack_48[2] = local_4c;
-          auStack_48[(uint)bVar6 * -2 + 3] = auStack_48[(uint)bVar6 * -2];
-          auStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-               auStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-          core_xform_cpp_FUN_00591530(auStack_48 + 2);
-          local_58.x = local_34;
-          *(uint *)((int)&local_58 + (uint)bVar6 * -8 + 4) = auStack_48[(uint)bVar6 * -2 + 6];
+          matrix = pCVar1;
+          core_box_cpp_CBoundingBox3D_getCorner_FUN_0041a600(local_10,corner_index,&local_4c);
+          local_40.x = local_4c.x;
+          *(uint *)((int)&local_40 + (uint)bVar6 * -8 + 4) =
+               *(uint *)((int)&local_4c + (uint)bVar6 * -8 + 4);
+          *(uint *)((int)&local_40 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+               *(uint *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+          core_xform_cpp_transformVector3x4_FUN_00591530(&local_40,matrix,&local_34);
+          local_58.x = local_34.x;
+          *(uint *)((int)&local_58 + (uint)bVar6 * -8 + 4) =
+               *(uint *)((int)&local_34 + (uint)bVar6 * -8 + 4);
           *(uint *)((int)&local_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               auStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
-          iVar3 = iVar3 + 1;
+               *(uint *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+          corner_index = corner_index + 1;
           core_box_cpp_CBoundingBox3D_expand_FUN_0041a590(&local_70,&local_58);
-        } while (iVar3 < 8);
+        } while ((int)corner_index < 8);
       }
       local_14 = local_14 + 1;
       local_20 = (CDeformableModel *)local_20->lod_info;

@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 30,
+    "complexity_score": 5,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 14
   },
   "cross_references": [
     {
       "addr": "0050ba70",
       "from_addr": "0050bf8b",
-      "name": "core_menu.cpp_FUN_0050ba70",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,9 +54,9 @@
   "globals": [
     {
       "addr": "006232e8",
-      "name": "DAT_006232e8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioBitsPerSample",
+      "type": "int",
+      "value": "0x10"
     }
   ],
   "pcode_summary": {
@@ -115,22 +113,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_006232e8",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_getAudioFormat_FUN_005751c0(&DAT_006232e8,(int *)0x0,(int *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_006232e8",
-      "severity": "mild",
-      "text": "return DAT_006232e8;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

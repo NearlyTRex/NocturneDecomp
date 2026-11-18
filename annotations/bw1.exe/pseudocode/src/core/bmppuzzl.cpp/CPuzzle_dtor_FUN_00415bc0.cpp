@@ -9,6 +9,6 @@
 CPuzzle * __cdecl core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0(CPuzzle *this_ptr,uint flags)
 
 {
-  this_ptr->vtable = &PTR_core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0_005fc944;
+  this_ptr->vtable = g_ARRAY_PTR_005fc944;
   return this_ptr;
 }

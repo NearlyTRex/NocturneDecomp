@@ -11,9 +11,9 @@
 ;   core_curtain.cpp_CCurtain_process_FUN_0044b6f0 at 0044beff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d7402
-;   undefined4 DAT_005d740a
-;   undefined4 DAT_007dc718
+;   double g_DOUBLE_005d7402 = -0.5
+;   double g_DOUBLE_005d740a = 0.0100000000000000
+;   int g_CurtainCollisionCount
 ;
 ; *****************************************************************************
 
@@ -50,7 +50,7 @@ section .text
     MOV dword ptr [ECX + 0x6c],0x1      ; 0044ac5d
     XOR EBX,EBX                         ; 0044ac64
         ;   Label: LAB_0044ac64
-    MOV ESI,dword ptr [0x007dc718]      ; 0044ac66 | DAT_007dc718
+    MOV ESI,dword ptr [0x007dc718]      ; 0044ac66 | g_CurtainCollisionCount
     MOV dword ptr [ESP + 0x1e4],EBX     ; 0044ac6c
     TEST ESI,ESI                        ; 0044ac73
     JLE 0x0044adee                      ; 0044ac75
@@ -87,7 +87,7 @@ section .text
     FNSTSW AX                           ; 0044ace8
     SAHF                                ; 0044acea
     FLD float ptr [ECX + 0x30]          ; 0044aceb
-    FCOMP double ptr [0x005d7402]       ; 0044acee | DAT_005d7402
+    FCOMP double ptr [0x005d7402]       ; 0044acee | g_DOUBLE_005d7402
     FNSTSW AX                           ; 0044acf4
     SAHF                                ; 0044acf6
     JNC 0x0044b217                      ; 0044acf7
@@ -146,7 +146,7 @@ section .text
     INC ESI                             ; 0044adca
     MOV dword ptr [ESP + 0x1d8],EDI     ; 0044adcb
     MOV dword ptr [ESP + 0x1cc],EAX     ; 0044add2
-    MOV EDI,dword ptr [0x007dc718]      ; 0044add9 | DAT_007dc718
+    MOV EDI,dword ptr [0x007dc718]      ; 0044add9 | g_CurtainCollisionCount
     MOV dword ptr [ESP + 0x1e4],ESI     ; 0044addf
     CMP ESI,EDI                         ; 0044ade6
     JL 0x0044aca8                       ; 0044ade8
@@ -311,7 +311,7 @@ section .text
     JNC 0x0044b1e5                      ; 0044b03d
         ;   XREF to: 0044b1e5 (CONDITIONAL_JUMP)  ; LAB_0044b1e5
     FLD float ptr [ESP]                 ; 0044b043
-    FCOMP double ptr [0x005d740a]       ; 0044b046 | DAT_005d740a
+    FCOMP double ptr [0x005d740a]       ; 0044b046 | g_DOUBLE_005d740a
     FNSTSW AX                           ; 0044b04c
     SAHF                                ; 0044b04e
     JBE 0x0044b1e5                      ; 0044b04f

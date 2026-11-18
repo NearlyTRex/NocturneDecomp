@@ -19,7 +19,7 @@ void __cdecl CGameHook::printBanner(CGameHook *this_ptr);
 
 // Original: core_gmehook.cpp_CGameHook_formatFlag_FUN_0059c380
 // Address: 0059c380
-void __cdecl CGameHook::formatFlag(CGameHook *this_ptr,undefined4 param_2,int param_3,char *param_4);
+void __cdecl CGameHook::formatFlag(CGameHook *this_ptr,char *label,int value,char *buffer);
 
 // Original: core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0
 // Address: 0059c3d0

@@ -9,7 +9,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_charactr.cpp_FUN_0042d8e0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 ;   core_morph.cpp_CMorph_render_FUN_004fb0e0
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004fab90
 ;
@@ -44,8 +44,8 @@ section .text
     JNZ 0x00599ac1                      ; 00599aa6
         ;   XREF to: 00599ac1 (CONDITIONAL_JUMP)  ; LAB_00599ac1
     PUSH EBX                            ; 00599aa8
-    CALL core_charactr.cpp_FUN_0042d8e0 ; 00599aa9
-        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d8e0()
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 ; 00599aa9
+        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00599aae
     PUSH EBX                            ; 00599ab1
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830 ; 00599ab2

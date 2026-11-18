@@ -58,15 +58,15 @@ extern CDemonActorType* g_ActorClassRegistrations[200];
 extern CDemonCamera* g_CurrentSceneCamera;
 
 // CDemonFilter[8]
-extern CDemonFilter CDemonFilter_ARRAY_008229ec[8];
+extern CDemonFilter g_LightActorFilters[8];
 
 // CKeyFramedModelInstance
 extern CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance;
-extern CKeyFramedModelInstance CKeyFramedModelInstance_00823a98;
+extern CKeyFramedModelInstance g_StakeModelInstance;
 
 // CVector3f
-extern CVector3f CVector3f_00822c88;
-extern CVector3f CVector3f_00822c94;
+extern CVector3f g_BrideOffsetMinusX;
+extern CVector3f g_BrideOffsetPlusX;
 
 // SEdge[512]
 extern SEdge g_TracedEdgeBuffer[512];
@@ -114,9 +114,9 @@ extern int g_RenderFaceCount;
 extern int g_ActorReadingMode;
 extern int g_IncludeCommentsWhenWriting;
 extern int g_NumActorClassTypes;
-extern int INT_008229ac;
-extern int INT_00823a90;
-extern int INT_00823a94;
+extern int g_LightActorFiltersInitialized;
+extern int g_EtherealUVScroll;
+extern int g_EtherealBoltFrame;
 extern int g_LineBlendingDisabled;
 extern int g_ClippedVertexCount;
 extern int g_SecondaryClipVertexCount;

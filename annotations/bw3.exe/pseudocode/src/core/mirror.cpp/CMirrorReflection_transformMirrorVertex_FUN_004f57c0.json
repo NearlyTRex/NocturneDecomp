@@ -1,0 +1,337 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 164,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "self_copy_guard",
+      "stack_alignment_array",
+      "warning_type_propagation"
+    ],
+    "total_lines": 103
+  },
+  "cross_references": [
+    {
+      "addr": "00537e20",
+      "from_addr": "00537fa5",
+      "name": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00537e20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f57c0",
+    "address_range": [
+      [
+        "004f57c0",
+        "004f586f"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0",
+    "signature": "CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004f57c0(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f50f0",
+      "is_variadic": false,
+      "name": "core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004f50f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e29c0",
+      "name": "g_MirrorProjectionScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "005e29c8",
+      "name": "g_MirrorIntToFloat_Coarse",
+      "type": "float",
+      "value": "0.00390625"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00537fa5",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00537e20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.916666666666667,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 165,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_MULT": 6,
+      "INT2FLOAT": 3,
+      "INT_ADD": 42,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_MULT": 12,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 20,
+      "INT_ZEXT": 12,
+      "LOAD": 21,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 21,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 355
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fb0a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00519ff0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005229b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7786
+    },
+    "nocturne.exe": {
+      "addr": "004d7b30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8793
+    }
+  },
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirrorReflection *"
+      },
+      {
+        "is_param": true,
+        "name": "input_vertex",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "aiStackY_1024",
+      "severity": "moderate",
+      "text": "int aiStackY_1024 [1013];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)local_38",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_38 + (uint)bVar2 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)local_38",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_38 + ((uint)bVar2 * -2 + (uint)bVar2 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)output_vertex",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)output_vertex + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)&local_18",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)&local_18",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_48 != &local_3c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 30,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_48 != &local_3c) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -10,8 +10,8 @@
 ;   core_yow.cpp_factoryFuncYow_FUN_005b8130 at 005b8143
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00608210
-;   undefined4 DAT_00608214
+;   float g_FLOAT_00608210 = 50
+;   float g_FLOAT_00608214 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
@@ -35,9 +35,9 @@ section .text
     MOV dword ptr [EAX + -0x4],0x608224 ; 005b817b
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 005b8182
         ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x00608210]          ; 005b8187 | DAT_00608210
+    FLD float ptr [0x00608210]          ; 005b8187 | g_FLOAT_00608210
     MOV dword ptr [EBX + 0x2fec],0x3f400000 ; 005b818d
-    FLD float ptr [0x00608214]          ; 005b8197 | DAT_00608214
+    FLD float ptr [0x00608214]          ; 005b8197 | g_FLOAT_00608214
     MOV dword ptr [EBX + 0x2ff0],0x3fc00000 ; 005b819d
     ADD ESP,0x8                         ; 005b81a7
     MOV dword ptr [EBX + 0xc2b0],0x0    ; 005b81aa

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 179,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "warning_overlapping_globals"
+      "wrong_global"
     ],
-    "total_lines": 200
+    "total_lines": 196
   },
   "cross_references": [],
   "function": {
@@ -51,14 +51,14 @@
     },
     {
       "addr": "015489d0",
-      "name": "DAT_015489d0",
-      "type": "undefined4",
+      "name": "g_CubeClipStage5Count",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01548a94",
-      "name": "DAT_01548a94",
-      "type": "undefined4",
+      "name": "g_CubeClippedTriangleCount",
+      "type": "uint",
       "value": null
     }
   ],
@@ -171,92 +171,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01548a98",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01548a98 + iVar3) != vertex1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01548a98",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01548a98 + iVar3))->x = vertex1->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
+      "line": 26,
       "match": "DAT_01548a9c",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01548a9c + iVar3) = vertex1->y;",
+      "text": "*(float *)(&DAT_01548a9c + g_CubeClippedTriangleCount * 0xc) = vertex1->y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01548aa0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01548aa0 + iVar3) = vertex1->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01548a98",
-      "severity": "mild",
-      "text": "(vertex2,vertex1,(CVector3f *)(&DAT_01548a98 + _DAT_01548a94 * 0xc),0.0,0.0,-1.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01548a98",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_01548a98 + iVar3) != vertex1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01548a98",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_01548a98 + iVar3))->x = vertex1->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
+      "line": 39,
       "match": "DAT_01548a9c",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01548a9c + iVar3) = vertex1->y;",
+      "text": "*(float *)(&DAT_01548a9c + g_CubeClippedTriangleCount * 0xc) = vertex1->y;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_01548aa0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01548aa0 + iVar3) = vertex1->z;",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01548aa0 accessed via (&g_FLOAT_01548aa0)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01548aa4 (at 0x01548aa4, +4 bytes).",
+      "line": 27,
+      "match": "g_FLOAT_01548aa0",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01548aa0)[g_CubeClippedTriangleCount * 3] = vertex1->z;",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_01548a98",
-      "severity": "mild",
-      "text": "(vertex1,vertex2,(CVector3f *)(&DAT_01548a98 + _DAT_01548a94 * 0xc),0.0,0.0,-1.0,",
-      "type": "undefined_data"
+      "description": "Scalar global g_FLOAT_01548aa0 accessed via (&g_FLOAT_01548aa0)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FLOAT_01548aa4 (at 0x01548aa4, +4 bytes).",
+      "line": 40,
+      "match": "g_FLOAT_01548aa0",
+      "severity": "moderate",
+      "text": "(&g_FLOAT_01548aa0)[g_CubeClippedTriangleCount * 3] = vertex1->z;",
+      "type": "wrong_global"
     }
   ]
 }

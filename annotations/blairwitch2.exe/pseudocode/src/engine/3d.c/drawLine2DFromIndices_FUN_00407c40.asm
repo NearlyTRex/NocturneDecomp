@@ -15,8 +15,8 @@
 ;   core_waypoint.cpp_CWayPoint_renderOpaque_FUN_00587e90 at 0058821e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00622014
-;   undefined4 DAT_00622018
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_00622014
+;   undefined4 g_SRenderVertex_ARRAY_00622014[0].projected_vertex.transformed_y
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0
@@ -35,16 +35,16 @@ section .text
     MOV ECX,0xc                         ; 00407c52
     SHL EAX,0x4                         ; 00407c57
     MOV EDI,ESP                         ; 00407c5a
-    LEA ESI,[EAX + 0x622014]            ; 00407c5c | DAT_00622014
-    MOVSD.REP ES:EDI,ESI                ; 00407c62 | DAT_00622014 | DAT_00622018
+    LEA ESI,[EAX + 0x622014]            ; 00407c5c | g_SRenderVertex_ARRAY_00622014
+    MOVSD.REP ES:EDI,ESI                ; 00407c62 | g_SRenderVertex_ARRAY_00622014 | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.transformed_y
     MOV EDI,dword ptr [ESP + 0x70]      ; 00407c64
     LEA EAX,[EDI*0x4 + 0x0]             ; 00407c68
     SUB EAX,EDI                         ; 00407c6f
     MOV ECX,0xc                         ; 00407c71
     SHL EAX,0x4                         ; 00407c76
     LEA EDI,[ESP + 0x30]                ; 00407c79
-    LEA ESI,[EAX + 0x622014]            ; 00407c7d | DAT_00622014
-    MOVSD.REP ES:EDI,ESI                ; 00407c83 | DAT_00622014 | DAT_00622018
+    LEA ESI,[EAX + 0x622014]            ; 00407c7d | g_SRenderVertex_ARRAY_00622014
+    MOVSD.REP ES:EDI,ESI                ; 00407c83 | g_SRenderVertex_ARRAY_00622014 | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.transformed_y
     MOV ECX,0xc                         ; 00407c85
     SUB ESP,0x30                        ; 00407c8a
     LEA ESI,[ESP + 0x60]                ; 00407c8d

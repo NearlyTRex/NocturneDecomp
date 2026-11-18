@@ -1,0 +1,60 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; float __cdecl core_prye_cpp_aimBlendWeightCallback_FUN_00517c90(int bone,int target,float weight,int distance,CDeformableModelInstance *instance)
+;
+; Parameters:
+; int              Stack[0x4]:4   bone
+; int              Stack[0x8]:4   target
+; float            Stack[0xc]:4   weight
+; int              Stack[0x10]:4   distance
+; CDeformableModelInstance * Stack[0x14]:4   instance
+;
+; XREF[1]:
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051de70
+;
+; Referenced Globals:
+;   double g_DOUBLE_005cca77 = 0.950000000000000
+;   double g_DOUBLE_005cca7f = 0.900000000000000
+;   float g_FLOAT_01ed36d8
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBP                            ; 00517c90
+        ;   Label: core_prye.cpp_aimBlendWeightCallback_FUN_00517c90
+    MOV EBP,ESP                         ; 00517c91
+    SUB ESP,0x8                         ; 00517c93
+    AND ESP,0xfffffff8                  ; 00517c96
+    MOV EAX,dword ptr [EBP + 0x14]      ; 00517c99
+    FLD float ptr [EBP + 0x10]          ; 00517c9c
+    FMUL float ptr [0x01ed36d8]         ; 00517c9f | g_FLOAT_01ed36d8
+    FSTP float ptr [ESP]                ; 00517ca5
+    TEST EAX,EAX                        ; 00517ca8
+    JLE 0x00517cc6                      ; 00517caa
+        ;   XREF to: 00517cc6 (CONDITIONAL_JUMP)  ; LAB_00517cc6
+    CMP EAX,0x1                         ; 00517cac
+    JNZ 0x00517cd1                      ; 00517caf
+        ;   XREF to: 00517cd1 (CONDITIONAL_JUMP)  ; LAB_00517cd1
+    FLD float ptr [ESP]                 ; 00517cb1
+    FMUL double ptr [0x005cca77]        ; 00517cb4 | g_DOUBLE_005cca77
+    FSTP float ptr [ESP + 0x4]          ; 00517cba
+        ;   Label: LAB_00517cba
+    MOV EAX,dword ptr [ESP + 0x4]       ; 00517cbe
+    MOV ESP,EBP                         ; 00517cc2
+    POP EBP                             ; 00517cc4
+    RET                                 ; 00517cc5
+    FLD float ptr [ESP]                 ; 00517cc6
+        ;   Label: LAB_00517cc6
+    FMUL double ptr [0x005cca7f]        ; 00517cc9 | g_DOUBLE_005cca7f
+    JMP 0x00517cba                      ; 00517ccf
+        ;   XREF to: 00517cba (UNCONDITIONAL_JUMP)  ; LAB_00517cba
+    MOV EAX,dword ptr [EBP + 0x10]      ; 00517cd1
+        ;   Label: LAB_00517cd1
+    MOV dword ptr [ESP + 0x4],EAX       ; 00517cd4
+    MOV EAX,dword ptr [ESP + 0x4]       ; 00517cd8
+    MOV ESP,EBP                         ; 00517cdc
+    POP EBP                             ; 00517cde
+    RET                                 ; 00517cdf
+

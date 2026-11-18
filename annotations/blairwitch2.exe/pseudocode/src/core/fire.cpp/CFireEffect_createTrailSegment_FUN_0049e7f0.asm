@@ -15,7 +15,7 @@
 ;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850 at 0049e919
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ca15a4
+;   int g_INT_01ca15a4
 ;
 ; Called Functions:
 ;   core_fire.cpp_CTrail_activate_FUN_0049b2e0
@@ -29,7 +29,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0049e7f1
     PUSH EDX                            ; 0049e7f5
     MOV ECX,dword ptr [ESP + 0x10]      ; 0049e7f6
-    MOV EDX,dword ptr [0x01ca15a4]      ; 0049e7fa | DAT_01ca15a4
+    MOV EDX,dword ptr [0x01ca15a4]      ; 0049e7fa | g_INT_01ca15a4
     PUSH dword ptr [ESP + 0x1c]         ; 0049e800
     LEA EAX,[EDX*0x8 + 0x0]             ; 0049e804
     PUSH dword ptr [ESP + 0x1c]         ; 0049e80b
@@ -41,10 +41,10 @@ section .text
     PUSH EAX                            ; 0049e81e
     CALL core_fire.cpp_CTrail_activate_FUN_0049b2e0 ; 0049e81f
         ;   XREF to: 0049b2e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CTrail_activate_FUN_0049b2e0(CTrail * this_ptr, CVector3f * position, float size, float alpha, ...)
-    MOV EBX,dword ptr [0x01ca15a4]      ; 0049e824 | DAT_01ca15a4
+    MOV EBX,dword ptr [0x01ca15a4]      ; 0049e824 | g_INT_01ca15a4
     INC EBX                             ; 0049e82a
     ADD ESP,0x18                        ; 0049e82b
-    MOV dword ptr [0x01ca15a4],EBX      ; 0049e82e | DAT_01ca15a4
+    MOV dword ptr [0x01ca15a4],EBX      ; 0049e82e | g_INT_01ca15a4
     CMP EBX,0x64                        ; 0049e834
     JGE 0x0049e83b                      ; 0049e837
         ;   XREF to: 0049e83b (CONDITIONAL_JUMP)  ; LAB_0049e83b
@@ -53,7 +53,7 @@ section .text
     PUSH EDI                            ; 0049e83b
         ;   Label: LAB_0049e83b
     XOR EDI,EDI                         ; 0049e83c
-    MOV dword ptr [0x01ca15a4],EDI      ; 0049e83e | DAT_01ca15a4
+    MOV dword ptr [0x01ca15a4],EDI      ; 0049e83e | g_INT_01ca15a4
     POP EDI                             ; 0049e844
     POP EBX                             ; 0049e845
     RET                                 ; 0049e846

@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Global_pathmap_list_corr_0058ce80
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01e312f8
+;   int g_PathMapCount
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 004f1ef3
     MOV EBP,dword ptr [ESP + 0x14]      ; 004f1ef4
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004f1ef8
-    MOV EDX,dword ptr [0x01e312f8]      ; 004f1efc | DAT_01e312f8
+    MOV EDX,dword ptr [0x01e312f8]      ; 004f1efc | g_PathMapCount
     XOR ESI,ESI                         ; 004f1f02
     TEST EDX,EDX                        ; 004f1f04
     JLE 0x004f1f33                      ; 004f1f06
@@ -46,7 +46,7 @@ section .text
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 004f1f19
     JLE 0x004f1f5d                      ; 004f1f23
         ;   XREF to: 004f1f5d (CONDITIONAL_JUMP)  ; LAB_004f1f5d
-    MOV ECX,dword ptr [0x01e312f8]      ; 004f1f25 | DAT_01e312f8
+    MOV ECX,dword ptr [0x01e312f8]      ; 004f1f25 | g_PathMapCount
         ;   Label: LAB_004f1f25
     INC ESI                             ; 004f1f2b
     ADD EBX,0x4                         ; 004f1f2c

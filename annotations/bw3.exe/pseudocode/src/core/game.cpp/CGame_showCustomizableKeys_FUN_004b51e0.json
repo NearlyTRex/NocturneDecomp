@@ -1,0 +1,665 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2365,
+    "complexity_score": 492,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 46,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 467,
+    "suspect_count": 2,
+    "suspect_types": [
+      "sign_compare_idiom"
+    ],
+    "total_lines": 2832
+  },
+  "cross_references": [
+    {
+      "addr": "004b6f30",
+      "from_addr": "004b791f",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b51e0",
+    "address_range": [
+      [
+        "004b51e0",
+        "004b6f2c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b51e0",
+    "signature": "void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b51e0(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004eaa60",
+      "is_variadic": false,
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_004eaa60"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "00406bf0",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406bf0"
+    },
+    {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004b0a20"
+    },
+    {
+      "addr": "004b30f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
+    },
+    {
+      "addr": "004b30c0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004b30c0"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c2240",
+      "name": "s_s_s_005c2240",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2248",
+      "name": "s_Quick_help_005c2248",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2253",
+      "name": "s_F1_Toggle_help_005c2253",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2264",
+      "name": "s_F2_Save_game_005c2264",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2273",
+      "name": "s_F3_Restore_game_005c2273",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2285",
+      "name": "s_F5_Toggle_mute_005c2285",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2296",
+      "name": "s_F6_Quick_save_005c2296",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22a6",
+      "name": "s_F9_Quick_load_005c22a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22b6",
+      "name": "s_ESC_Pause_game_005c22b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22c7",
+      "name": "s_Forward_005c22c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22cf",
+      "name": "s_Back_005c22cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22d4",
+      "name": "s_Walk_005c22d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22d9",
+      "name": "s_Run_005c22d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22dd",
+      "name": "s_Strafe_on_005c22dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22e7",
+      "name": "s_Strafe_left_005c22e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c22f3",
+      "name": "s_Strafe_right_005c22f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2300",
+      "name": "s_Turn_left_005c2300",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c230a",
+      "name": "s_Turn_right_005c230a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2315",
+      "name": "s_Fire_005c2315",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c231a",
+      "name": "s_Use_item_005c231a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2323",
+      "name": "s_Lantern_005c2323",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c232b",
+      "name": "s_Journal_005c232b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2333",
+      "name": "s_Map_005c2333",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2337",
+      "name": "s_Voodoo_Doll_005c2337",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2343",
+      "name": "s_Draw_005c2343",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2348",
+      "name": "s_Point_up_005c2348",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2351",
+      "name": "s_Point_down_005c2351",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c235c",
+      "name": "s_Quick_turn_005c235c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2367",
+      "name": "s_Cycle_conventional_weapo_005c2367",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c2382",
+      "name": "s_Cycle_staves_005c2382",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c238f",
+      "name": "s_Cycle_Christian_weapons_005c238f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c23a7",
+      "name": "s_Cycle_Shaman_weapons_005c23a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c23bc",
+      "name": "s_Cycle_Pagan_weapons_005c23bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c23d0",
+      "name": "s_Next_weapon_005c23d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c23dc",
+      "name": "s_Previous_weapon_005c23dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c23ec",
+      "name": "s_Next_item_005c23ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c23f6",
+      "name": "s_Previous_item_005c23f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fba18",
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005fba1c",
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01549aa8",
+      "name": "g_CBitFont_PTR_01549aa8",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01d213bc",
+      "name": "g_CGameInstance.always_run",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22c54",
+      "name": "g_INT_01d22c54",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d22c58",
+      "name": "g_INT_01d22c58",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d22c5c",
+      "name": "g_INT_01d22c5c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d22c60",
+      "name": "g_HelpCharWidth",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b791f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.932642487046632,
+    "instruction_count": 2123,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 365,
+      "BRANCH": 1,
+      "CALL": 167,
+      "CBRANCH": 36,
+      "COPY": 1469,
+      "INT_ADD": 508,
+      "INT_AND": 1865,
+      "INT_CARRY": 349,
+      "INT_EQUAL": 1169,
+      "INT_LEFT": 111,
+      "INT_LESS": 109,
+      "INT_MULT": 35,
+      "INT_NOTEQUAL": 182,
+      "INT_OR": 365,
+      "INT_SBORROW": 109,
+      "INT_SCARRY": 349,
+      "INT_SDIV": 35,
+      "INT_SEXT": 35,
+      "INT_SLESS": 607,
+      "INT_SREM": 35,
+      "INT_SRIGHT": 70,
+      "INT_SUB": 966,
+      "INT_XOR": 38,
+      "INT_ZEXT": 70,
+      "LOAD": 40,
+      "POPCOUNT": 531,
+      "RETURN": 2,
+      "STORE": 784,
+      "SUBPIECE": 70
+    },
+    "pcode_op_count": 10472
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b3c50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.061
+    },
+    "bw1.exe": {
+      "addr": "004ccc40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0566
+    },
+    "nocedit.exe": {
+      "addr": "004d89d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0588
+    },
+    "nocturne.exe": {
+      "addr": "0049b4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0588
+    }
+  },
+  "stack_frame": {
+    "frame_size": 7192,
+    "local_size": 7188,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c10",
+        "offset": -7184,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b10",
+        "offset": -6928,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a10",
+        "offset": -6672,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1910",
+        "offset": -6416,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1810",
+        "offset": -6160,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1710",
+        "offset": -5904,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1610",
+        "offset": -5648,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1510",
+        "offset": -5392,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1410",
+        "offset": -5136,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1310",
+        "offset": -4880,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1210",
+        "offset": -4624,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1110",
+        "offset": -4368,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1010",
+        "offset": -4112,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_f10",
+        "offset": -3856,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_e10",
+        "offset": -3600,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_d10",
+        "offset": -3344,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_c10",
+        "offset": -3088,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_b10",
+        "offset": -2832,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_a10",
+        "offset": -2576,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_910",
+        "offset": -2320,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_810",
+        "offset": -2064,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_710",
+        "offset": -1808,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_610",
+        "offset": -1552,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_510",
+        "offset": -1296,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_410",
+        "offset": -1040,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_310",
+        "offset": -784,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_210",
+        "offset": -528,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 160,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar3 = SBORROW4(iVar2,g_INT_01d22c58);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 173,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar3 = SBORROW4(iVar2,g_INT_01d22c58);",
+      "type": "sign_compare_idiom"
+    }
+  ]
+}

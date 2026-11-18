@@ -42,7 +42,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,&SMRGLTextureBasic_0067d150);
+              (g_CDemonRendererPtr2,&g_MarqueeSparkTexture);
     this_ptr_01 = &this_ptr->course;
     if (g_CDemonMissionPtr->is_in_editor == 0) {
       if (this_ptr->type == MARQUEE_DISPLAY_CURSIVE) {

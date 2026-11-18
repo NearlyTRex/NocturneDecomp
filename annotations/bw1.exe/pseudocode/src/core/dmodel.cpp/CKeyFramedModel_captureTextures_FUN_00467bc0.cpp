@@ -17,7 +17,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00467bc0(CKeyFr
     texture = (SMRGLTextureBasic *)this_ptr->texture_list;
     do {
       iVar1 = iVar1 + 1;
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
+                (g_CDemonRenderer_PTR_00612560,texture);
       texture = texture + 3;
     } while (iVar1 < this_ptr->texture_count);
   }

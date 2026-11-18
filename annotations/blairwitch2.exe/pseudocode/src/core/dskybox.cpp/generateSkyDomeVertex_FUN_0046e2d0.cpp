@@ -6,62 +6,46 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046e2d0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 {
   int iVar1;
-  int iVar2;
+  CDemonRenderer *pCVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
-  ulonglong uVar8;
+  float10 fVar8;
   CVector3i *input;
   float local_48;
-  CVector3i local_44;
-  double local_38;
-  double local_30;
-  float local_1c;
-  int local_18;
   
-  local_18 = u_coord;
-  local_1c = (float)u_coord * _DAT_005d18ff * _DAT_005d1903 * (float)_DAT_005d190b;
+  pCVar2 = g_CDemonRenderer_PTR_0060b280;
   if (v_coord == 0) {
     local_48 = 0.019634955;
   }
   else {
-    local_48 = (float)v_coord * _DAT_005d1913 * _DAT_005d1903 * (float)_DAT_005d191b;
-    local_18 = v_coord;
+    local_48 = (float)v_coord * 0.25f * 3.141593f *
+               (float)0.5;
   }
   fVar3 = (float10)fsin((float10)local_48);
-  fVar4 = (float10)local_1c + (float10)(float)sky_texture[1].base.count;
+  fVar4 = (float10)((float)u_coord * 0.0625f * 3.141593f *
+                   (float)2) + (float10)(float)sky_texture[1].base.count;
   fVar5 = (float10)fsin(fVar4);
   fVar6 = (float10)fcos((float10)local_48);
   fVar4 = (float10)fcos(fVar4);
-  fVar7 = (float10)_DAT_0060d1f4;
-  local_30 = (double)fVar6;
-  fVar6 = (float10)_DAT_005d1923;
-  fVar3 = fVar3 * fVar7 * fVar6;
-  fVar5 = fVar5 * fVar7 * (float10)local_30 * fVar6;
-  fVar6 = fVar4 * fVar7 * (float10)local_30 * fVar6;
-  input = &local_44;
-  local_38 = local_30;
-  round();
-  local_44.y = (int)ROUND(fVar3);
-  round();
-  uVar8 = round();
-  iVar2 = (int)uVar8;
-  local_44.x = (int)ROUND(fVar5);
-  local_44.z = (int)ROUND(fVar6);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)((ulonglong)uVar8 >> 0x20) + iVar2 * 0x10),input);
+  fVar7 = (float10)g_SkyDomeVertexScale;
+  fVar8 = (float10)256;
+  round((double)(fVar3 * fVar7 * fVar8));
+  round((double)(fVar5 * fVar7 * (float10)(double)fVar6 * fVar8));
+  input = (CVector3i *)0x46e3aa;
+  round((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&pCVar2->vertex_buffer_ptr[vertex_index].projected_vertex,input);
   iVar1 = (sky_texture->base).type;
-  (&DAT_00622034)[iVar2 * 4] = iVar1;
-  (&DAT_00622038)[iVar2 * 4] = iVar1;
-  (&DAT_0062203c)[iVar2 * 4] = iVar1;
-  (&DAT_00622040)[iVar2 * 4] = 0;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].r = iVar1;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].g = iVar1;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].b = iVar1;
+  g_SRenderVertex_ARRAY_00622014[vertex_index].a = 0;
   return;
 }

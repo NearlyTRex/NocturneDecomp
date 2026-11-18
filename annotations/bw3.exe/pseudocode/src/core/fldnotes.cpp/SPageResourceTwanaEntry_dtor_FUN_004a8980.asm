@@ -10,14 +10,14 @@
 ; Referenced Globals:
 ;   void* g_SPageResourceTwanaEntryVTable = 004a8980
 ;   WatcomTypeInfo g_PageResource_TwanaEntryTypeInfo
-;   undefined4 DAT_01d0cfa0
+;   int g_INT_01d0cfa0
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_CAlphaBitmap_arrdtor3_FUN_004ad410
 ;   core_fldnotes.cpp_SPageResource_dtor_FUN_004a83a0
 ;   crt_memory.c___vec_delete_FUN_005a308f
-;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a30c4
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
+;   crt_unknown.c_free_FUN_005a30b6
 ;
 ; *****************************************************************************
 
@@ -29,13 +29,13 @@ section .text
     TEST byte ptr [ESP + 0xc],0x4       ; 004a8985
     JNZ 0x004a89d6                      ; 004a898a
         ;   XREF to: 004a89d6 (CONDITIONAL_JUMP)  ; LAB_004a89d6
-    MOV EDX,dword ptr [0x01d0cfa0]      ; 004a898c | DAT_01d0cfa0
+    MOV EDX,dword ptr [0x01d0cfa0]      ; 004a898c | g_INT_01d0cfa0
     MOV dword ptr [EBX + 0x14],0x5e02c4 ; 004a8992 | g_SPageResourceTwanaEntryVTable
     CMP EBX,EDX                         ; 004a8999
     JNZ 0x004a89a5                      ; 004a899b
         ;   XREF to: 004a89a5 (CONDITIONAL_JUMP)  ; LAB_004a89a5
     XOR ECX,ECX                         ; 004a899d
-    MOV dword ptr [0x01d0cfa0],ECX      ; 004a899f | DAT_01d0cfa0
+    MOV dword ptr [0x01d0cfa0],ECX      ; 004a899f | g_INT_01d0cfa0
     PUSH 0x0                            ; 004a89a5
         ;   Label: LAB_004a89a5
     ADD EBX,0xdc                        ; 004a89a7
@@ -64,16 +64,16 @@ section .text
         ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004a89e1
     PUSH EAX                            ; 004a89e4
-    CALL crt_unknown.c_FUN_005a30b6     ; 004a89e5
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 004a89e5
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 004a89ea
     MOV EAX,EBX                         ; 004a89ed
     POP EBX                             ; 004a89ef
     RET                                 ; 004a89f0
     PUSH EAX                            ; 004a89f1
         ;   Label: LAB_004a89f1
-    CALL crt_unknown.c_FUN_005a30c4     ; 004a89f2
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 004a89f2
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 004a89f7
     MOV EAX,EBX                         ; 004a89fa
     POP EBX                             ; 004a89fc

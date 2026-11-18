@@ -116,54 +116,54 @@ section .text
     PUSH 0x1                            ; 0047b26f
     PUSH 0x5dacc8                       ; 0047b271 | = "Bip01 L Hand"
     PUSH ESI                            ; 0047b276
-    MOV [0x01bc0d34],EAX                ; 0047b277 | DAT_01bc0d34
+    MOV [0x01bc0d34],EAX                ; 0047b277 | g_DraculaBrideIndices
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0047b27c
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047b281
     PUSH 0x1                            ; 0047b284
     PUSH 0x5dacd5                       ; 0047b286 | = "Bip01 R Hand"
     PUSH ESI                            ; 0047b28b
-    MOV [0x01bc0d38],EAX                ; 0047b28c | DAT_01bc0d38
+    MOV [0x01bc0d38],EAX                ; 0047b28c | g_DraculaBrideIndices[1]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0047b291
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047b296
     PUSH 0x1                            ; 0047b299
     PUSH 0x5dace2                       ; 0047b29b | = "Bip01 L UpperArm"
     PUSH ESI                            ; 0047b2a0
-    MOV [0x01bc0d3c],EAX                ; 0047b2a1 | DAT_01bc0d3c
+    MOV [0x01bc0d3c],EAX                ; 0047b2a1 | g_DraculaBrideIndices[2]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0047b2a6
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047b2ab
     PUSH 0x1                            ; 0047b2ae
     PUSH 0x5dacf3                       ; 0047b2b0 | = "Bip01 R UpperArm"
     PUSH ESI                            ; 0047b2b5
-    MOV [0x01bc0d40],EAX                ; 0047b2b6 | DAT_01bc0d40
+    MOV [0x01bc0d40],EAX                ; 0047b2b6 | g_DraculaBrideIndices[3]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0047b2bb
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047b2c0
     PUSH 0x1                            ; 0047b2c3
     PUSH 0x5dad04                       ; 0047b2c5 | = "Bip01 Spine"
     PUSH ESI                            ; 0047b2ca
-    MOV [0x01bc0d44],EAX                ; 0047b2cb | DAT_01bc0d44
+    MOV [0x01bc0d44],EAX                ; 0047b2cb | g_DraculaBrideIndices[4]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0047b2d0
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047b2d5
     PUSH 0x1                            ; 0047b2d8
     PUSH 0x5dad10                       ; 0047b2da | = "Bip01 Spine1"
     PUSH ESI                            ; 0047b2df
-    MOV [0x01bc0d48],EAX                ; 0047b2e0 | DAT_01bc0d48
+    MOV [0x01bc0d48],EAX                ; 0047b2e0 | g_DraculaBrideIndices[5]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0047b2e5
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047b2ea
     PUSH 0x1                            ; 0047b2ed
     PUSH 0x5dad1d                       ; 0047b2ef | = "Bip01 Spine2"
     PUSH ESI                            ; 0047b2f4
-    MOV [0x01bc0d4c],EAX                ; 0047b2f5 | DAT_01bc0d4c
+    MOV [0x01bc0d4c],EAX                ; 0047b2f5 | g_DraculaBrideIndices[6]
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 0047b2fa
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047b2ff
     PUSH EDI                            ; 0047b302
-    MOV [0x01bc0d50],EAX                ; 0047b303 | DAT_01bc0d50
+    MOV [0x01bc0d50],EAX                ; 0047b303 | g_DraculaBrideIndices[7]
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0 ; 0047b308
         ;   XREF to: 00569eb0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(CDeformableModelInstance * this_ptr)
     MOV ESI,EAX                         ; 0047b30d

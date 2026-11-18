@@ -25,8 +25,8 @@
 ;   TerminatedCString s_core_construc_cpp_005cdf16
 ;   TerminatedCString s_CConstruct_explode_Not_e_005cdf2b
 ;   TerminatedCString s_boneguy_fallapart_wav_005cdf57
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -34,9 +34,9 @@
 ;   core_bodypart.cpp_createBodyPart_FUN_004154f0
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_004277e0
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;
 ; *****************************************************************************
 
@@ -179,8 +179,8 @@ section .text
         ;   Label: LAB_004381f8
     PUSH ESI                            ; 004381fb
     LEA ESI,[ESP + 0x4]                 ; 004381fc
-    CALL core_xform.cpp_FUN_00594380    ; 00438200
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 00438200
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 00438205
     MOV EDI,dword ptr [ESP + 0x2c]      ; 00438208
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0043820c
@@ -217,10 +217,10 @@ section .text
         ;   Label: LAB_0043825b
     MOV ESI,0x294                       ; 00438260
     PUSH 0x5cdf2b                       ; 00438265 | = "CConstruct::explode - Not enough cont..."
-    MOV dword ptr [0x01d046a0],EBX      ; 0043826a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00438270 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00438276
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBX      ; 0043826a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00438270 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00438276
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0043827b
     JMP 0x004380b7                      ; 0043827e
         ;   XREF to: 004380b7 (UNCONDITIONAL_JUMP)  ; LAB_004380b7

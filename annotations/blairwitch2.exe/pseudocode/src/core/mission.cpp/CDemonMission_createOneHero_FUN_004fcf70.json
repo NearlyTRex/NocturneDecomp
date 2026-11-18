@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 81,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 190
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -44,12 +41,12 @@
     {
       "addr": "004d0a40",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d0a40"
+      "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004d0a40"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "004fc200",
@@ -106,38 +103,38 @@
     },
     {
       "addr": "00617a68",
-      "name": "PTR_s_CGabriella_00617a68",
-      "type": "undefined1*",
-      "value": "005da083"
-    },
-    {
-      "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_ARRAY_00617a68",
+      "type": "char*[10]",
       "value": null
     },
     {
+      "addr": "00618170",
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
+    },
+    {
       "addr": "01cedee0",
-      "name": "DAT_01cedee0",
-      "type": "undefined4",
+      "name": "g_HeroCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cedf8c",
-      "name": "DAT_01cedf8c",
+      "name": "g_CHeroPlaceholderClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -271,22 +268,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 31,
-      "match": "*(CCharacter **)(index * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "*(CCharacter **)(index * 4 + 0x1cedee4) = local_14;",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

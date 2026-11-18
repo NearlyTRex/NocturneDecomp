@@ -9,9 +9,9 @@
 // Address: 0053d550
 void __cdecl staticInit(void);
 
-// Original: core_podmain.cpp_FUN_0053d580
+// Original: core_podmain.cpp_CDemonPod_load_FUN_0053d580
 // Address: 0053d580
-void FUN_0053d580(int param_1);
+void __cdecl CDemonPod::load(CDemonPod *this_ptr);
 
 // Original: core_podmain.cpp_CDemonPod_ctor_FUN_0053d710
 // Address: 0053d710
@@ -21,6 +21,6 @@ CDemonPod * __cdecl CDemonPod::ctor(CDemonPod *this_ptr);
 // Address: 0053d730
 CDemonPod * __cdecl CDemonPod::dtor(CDemonPod *this_ptr,uint flags);
 
-// Original: core_podmain.cpp_FUN_0053d790
+// Original: core_podmain.cpp_setMaxViewportScanline_FUN_0053d790
 // Address: 0053d790
-void FUN_0053d790(void);
+void __cdecl setMaxViewportScanline(int max);

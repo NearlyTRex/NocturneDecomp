@@ -27,11 +27,11 @@
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 ;   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
-;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0
 ;   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 ;   sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 ;   sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0
 ;   sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
+;   sound_sndmain.cpp_setReverb_FUN_005ab6e0
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0
 ;   sound_sndmain.cpp_startSfx_FUN_005a8e90
 ;
@@ -100,8 +100,8 @@ section .text
     PUSH 0x0                            ; 005b38c8
     PUSH 0x0                            ; 005b38ca
     PUSH 0x0                            ; 005b38cc
-    CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0 ; 005b38ce
-        ;   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)
+    CALL sound_sndmain.cpp_setReverb_FUN_005ab6e0 ; 005b38ce
+        ;   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setReverb_FUN_005ab6e0(float volume, float decay_time, float damping)
     ADD ESP,0xc                         ; 005b38d3
     PUSH 0x0                            ; 005b38d6
     PUSH 0x0                            ; 005b38d8

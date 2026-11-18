@@ -10,11 +10,11 @@
 ; Referenced Globals:
 ;   void* PTR_GetConsoleMode_005d0580 = 001d0e16
 ;   void* PTR_SetConsoleMode_005d0624 = 001d112e
-;   undefined4 DAT_006265c8
+;   int g_ConsoleInitializationFlag = 0x0
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626600 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626604 = 005c50d4
-;   undefined4 DAT_00626774
-;   undefined4 DAT_006267a8
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
+;   void* g_SpecialConsoleInputHandler = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c50d4
@@ -31,23 +31,23 @@ section .text
         ;   Label: crt_unknown.c_FUN_005cb928
     PUSH ESI                            ; 005cb929
     SUB ESP,0x4                         ; 005cb92a
-    MOV EAX,[0x006265c8]                ; 005cb92d | DAT_006265c8
+    MOV EAX,[0x006265c8]                ; 005cb92d | g_ConsoleInitializationFlag
     TEST EAX,EAX                        ; 005cb932
     JZ 0x005cb940                       ; 005cb934
         ;   XREF to: 005cb940 (CONDITIONAL_JUMP)  ; LAB_005cb940
     XOR ESI,ESI                         ; 005cb936
-    MOV dword ptr [0x006265c8],ESI      ; 005cb938 | DAT_006265c8
+    MOV dword ptr [0x006265c8],ESI      ; 005cb938 | g_ConsoleInitializationFlag
     JMP 0x005cb9ab                      ; 005cb93e
         ;   XREF to: 005cb9ab (UNCONDITIONAL_JUMP)  ; LAB_005cb9ab
-    CMP dword ptr [0x006267a8],0x0      ; 005cb940 | DAT_006267a8
+    CMP dword ptr [0x006267a8],0x0      ; 005cb940 | g_SpecialConsoleInputHandler
         ;   Label: LAB_005cb940
     JZ 0x005cb961                       ; 005cb947
         ;   XREF to: 005cb961 (CONDITIONAL_JUMP)  ; LAB_005cb961
     PUSH EAX                            ; 005cb949
-    CALL dword ptr [0x00626774]         ; 005cb94a | DAT_00626774
+    CALL dword ptr [0x00626774]         ; 005cb94a | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 005cb950
     PUSH EAX                            ; 005cb953
-    CALL dword ptr [0x006267a8]         ; 005cb954 | DAT_006267a8
+    CALL dword ptr [0x006267a8]         ; 005cb954 | g_SpecialConsoleInputHandler
     ADD ESP,0x4                         ; 005cb95a
     MOV ESI,EAX                         ; 005cb95d
     JMP 0x005cb9a9                      ; 005cb95f

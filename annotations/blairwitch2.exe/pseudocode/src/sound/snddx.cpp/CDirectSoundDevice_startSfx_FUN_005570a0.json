@@ -1,0 +1,303 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 389,
+    "complexity_score": 177,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 117,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 506
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005570a0",
+    "address_range": [
+      [
+        "005570a0",
+        "005574fa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005570a0",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005570a0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00555020",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_clampDirectSoundFrequency_FUN_00555020"
+    },
+    {
+      "addr": "00554ad0",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a3b",
+      "name": "s_DirectSux_Unable_to_s_s_005e9a3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea146",
+      "name": "s_sound_snddx_cpp_005ea146",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea159",
+      "name": "s_DirectSoundDevice_startS_005ea159",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea18a",
+      "name": "s_sound_snddx_cpp_005ea18a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea19d",
+      "name": "s_DirectSoundDevice_startS_005ea19d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea1c7",
+      "name": "s_sound_snddx_cpp_005ea1c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea1da",
+      "name": "s_DirectSoundDevice_startS_005ea1da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea234",
+      "name": "s_Set_frequency_hardware_s_005ea234",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea260",
+      "name": "s_Set_volume_hardware_sfx_005ea260",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea289",
+      "name": "s_Play_hardware_sfx_second_005ea289",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea2ac",
+      "name": "s_Set_hardware_sfx_seconda_005ea2ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea2d8",
+      "name": "s_Set_hardware_sfx_seconda_005ea2d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea30c",
+      "name": "s_Set_hardware_sfx_seconda_005ea30c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea335",
+      "name": "s_Play_hardware_sfx_second_005ea335",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.692063492063492,
+    "instruction_count": 315,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 19,
+      "BOOL_OR": 3,
+      "BRANCH": 5,
+      "CALL": 25,
+      "CALLIND": 8,
+      "CBRANCH": 21,
+      "COPY": 278,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 141,
+      "INT_AND": 183,
+      "INT_CARRY": 39,
+      "INT_EQUAL": 153,
+      "INT_LEFT": 4,
+      "INT_LESS": 14,
+      "INT_MULT": 17,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 12,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 39,
+      "INT_SLESS": 79,
+      "INT_SUB": 120,
+      "INT_XOR": 9,
+      "LOAD": 90,
+      "POPCOUNT": 75,
+      "RETURN": 7,
+      "STORE": 110
+    },
+    "pcode_op_count": 1478
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00579ad0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055cc40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005afe80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4941
+    },
+    "nocturne.exe": {
+      "addr": "0052b9a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4128
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "slot",
+        "offset": 8,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `dwFrequency` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)dwFrequency",
+      "severity": "moderate",
+      "text": "1 < (uint)((int)dwFrequency - (int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7]))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7]",
+      "severity": "moderate",
+      "text": "1 < (uint)((int)dwFrequency - (int)g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[iVar1 * 9 + 7]))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&slot->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 117,
+      "match": "(int)&slot->changed_flags",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&slot->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 117,
+      "match": "(int)&slot->changed_flags",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 117,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&slot->changed_flags + 3) = *(byte *)((int)&slot->changed_flags + 3) & 0xbf;",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 76,
+        "vtable_addr": "005fbcbc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -12,7 +12,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_free_FUN_0054c060(CDefor
   if (this_ptr->skinned_vertices_buffer == (CVector3i *)0x0) {
     return;
   }
-  FUN_005a30b6(this_ptr->skinned_vertices_buffer);
+  free(this_ptr->skinned_vertices_buffer);
   this_ptr->skinned_vertices_buffer = (CVector3i *)0x0;
   return;
 }

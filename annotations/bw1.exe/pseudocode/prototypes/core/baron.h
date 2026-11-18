@@ -53,9 +53,9 @@ void __cdecl CBaron::advanceMotion(CBaron *this_ptr,float delta_time);
 // Address: 00410180
 void __cdecl CBaron::archive(CBaron *this_ptr);
 
-// Original: core_baron.cpp_FUN_004101e0
+// Original: core_baron.cpp_CBaron_renderOpaque_FUN_004101e0
 // Address: 004101e0
-undefined4 FUN_004101e0(void);
+int __cdecl CBaron::renderOpaque(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_renderTransparent_FUN_004101f0
 // Address: 004101f0

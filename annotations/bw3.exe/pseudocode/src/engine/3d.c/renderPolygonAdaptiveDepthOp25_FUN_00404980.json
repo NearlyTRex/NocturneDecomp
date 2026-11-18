@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 171,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
-    "suspect_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 74,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 215
+    "total_lines": 218
   },
   "cross_references": [],
   "function": {
@@ -53,62 +52,62 @@
   "globals": [
     {
       "addr": "005f07bc",
-      "name": "DAT_005f07bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005f07bc",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "007303dc",
-      "name": "DAT_007303dc",
-      "type": "undefined4",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007303f4",
-      "name": "DAT_007303f4",
-      "type": "undefined4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5c0",
-      "name": "DAT_01c6b5c0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5c0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5c4",
-      "name": "DAT_01c6b5c4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5c4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5cc",
-      "name": "DAT_01c6b5cc",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c6e2a0",
-      "name": "DAT_01c6e2a0",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b8",
-      "name": "DAT_01c6e2b8",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -194,76 +193,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_007303f4",
-      "severity": "mild",
-      "text": "if (DAT_007303f4 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "else if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "else if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "else if (DAT_005fba20 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_007303dc",
-      "severity": "mild",
-      "text": "_DAT_01c6b5c0 = engine_3d_c_lookupLitColor_FUN_00403990(DAT_007303dc,_DAT_01c6b5c4);",
-      "type": "undefined_data"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 6,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar2;",
+      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

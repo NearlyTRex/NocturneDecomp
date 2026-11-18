@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 70,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
     "total_lines": 36
   },
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCheesyCipher_ctor_FUN_00441660",
-    "signature": "CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00441660(CCheesyCipher *this_ptr,undefined4 param_2,undefined4 param_3)"
+    "signature": "CCheesyCipher * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00441660(CCheesyCipher *this_ptr,int mode,uint key)"
   },
   "function_calls": [
     {
@@ -105,37 +104,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "mode",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "key",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00441660(CCheesyCipher *this_ptr,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00441660(CCheesyCipher *this_ptr,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Unresolved stack parameter",
       "line": 6,
@@ -143,14 +126,6 @@
       "severity": "moderate",
       "text": "uint in_stack_00000014;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "support_codec_cpp_CCheesyCipher_setMode_FUN_004416a0(this_ptr_00,param_2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",

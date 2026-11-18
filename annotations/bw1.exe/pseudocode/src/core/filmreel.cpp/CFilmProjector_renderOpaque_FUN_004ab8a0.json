@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 102,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
+      "stack_param",
       "unrolled_memcpy"
     ],
     "total_lines": 137
@@ -42,7 +42,7 @@
     {
       "addr": "004207b0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_004207b0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0"
     },
     {
       "addr": "004688a0",
@@ -63,9 +63,9 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     }
   ],
   "param_estimates": {
@@ -150,40 +150,24 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&DAT_02c8af28,&CStack_28);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffffac",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffac;",
+      "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_02c8af28",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&DAT_02c8af28,&CStack_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&CStack_1c,(CVector3f *)&DAT_02c8af28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_02c8af28",
-      "severity": "mild",
-      "text": "(DAT_00612560,&CStack_1c,(CVector3f *)&DAT_02c8af28);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffffac",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004207b0(&CStack_38,in_stack_ffffffac);",
+      "type": "stack_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 20,
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

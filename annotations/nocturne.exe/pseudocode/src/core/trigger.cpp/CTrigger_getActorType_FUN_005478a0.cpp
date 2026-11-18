@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_trigger_cpp_CTrigger_getActorType_FUN_005478a0(CTrigger *this_ptr)
 
 {
-  return &g_CTriggerActorType_02dd1084;
+  return &g_CTriggerClassInfo;
 }

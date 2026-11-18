@@ -7,14 +7,14 @@
 ; CRock *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02cfd900
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_0041daf0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00460f20
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_005375c0
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
@@ -33,16 +33,16 @@ section .text
     SUB ESP,0x18                        ; 0049a094
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0049a097
     PUSH EBX                            ; 0049a09b
-    MOV EDX,dword ptr [0x005f2afc]      ; 0049a09c | DAT_005f2afc
-    PUSH EDX                            ; 0049a0a2 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 0049a09c | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 0049a0a2 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90 ; 0049a0a3
         ;   XREF to: 0046ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0049a0a8
     PUSH 0x0                            ; 0049a0ab
     LEA EAX,[EBX + 0x40]                ; 0049a0ad
     PUSH EAX                            ; 0049a0b0
-    MOV ECX,dword ptr [0x005f2afc]      ; 0049a0b1 | DAT_005f2afc
-    PUSH ECX                            ; 0049a0b7 | DAT_01bdd7e4
+    MOV ECX,dword ptr [0x005f2afc]      ; 0049a0b1 | g_CDemonRenderer_PTR_005f2afc
+    PUSH ECX                            ; 0049a0b7 | g_CDemonRenderer_01bdd7e4
     LEA EDI,[ESP + 0xc]                 ; 0049a0b8
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0 ; 0049a0bc
         ;   XREF to: 0046cee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -54,15 +54,15 @@ section .text
     MOV ESI,dword ptr [ESI + 0x350]     ; 0049a0d2
     PUSH EAX                            ; 0049a0d8
     MOVSD.REP ES:EDI,ESI                ; 0049a0d9
-    CALL core_box.cpp_FUN_0041daf0      ; 0049a0db
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 0049a0db
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 0049a0e0
     TEST EAX,EAX                        ; 0049a0e3
     JNZ 0x0049a0fe                      ; 0049a0e5
         ;   XREF to: 0049a0fe (CONDITIONAL_JUMP)  ; LAB_0049a0fe
-    MOV EBP,dword ptr [0x005f2afc]      ; 0049a0e7 | DAT_005f2afc
+    MOV EBP,dword ptr [0x005f2afc]      ; 0049a0e7 | g_CDemonRenderer_PTR_005f2afc
         ;   Label: LAB_0049a0e7
-    PUSH EBP                            ; 0049a0ed | DAT_01bdd7e4
+    PUSH EBP                            ; 0049a0ed | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_pop_FUN_0046d080 ; 0049a0ee
         ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0049a0f3
@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 0049a104
     LEA EAX,[ESP + 0x8]                 ; 0049a105
     PUSH EAX                            ; 0049a109
-    PUSH 0x2cfd900                      ; 0049a10a | DAT_02cfd900
+    PUSH 0x2cfd900                      ; 0049a10a | g_ZeroVector
     PUSH EBX                            ; 0049a10f
     MOV ESI,dword ptr [0x00603b28]      ; 0049a110 | g_CDemonSetPtr
     PUSH ESI                            ; 0049a116 | g_CDemonSetInstance

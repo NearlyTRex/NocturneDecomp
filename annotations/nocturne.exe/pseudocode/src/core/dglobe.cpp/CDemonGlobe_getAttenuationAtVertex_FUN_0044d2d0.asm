@@ -28,7 +28,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bff8 = 0.00390625
-;   undefined4 DAT_0059bffc
+;   float g_FLOAT_0059bffc = 0.00001525879
 ;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
@@ -115,13 +115,13 @@ section .text
     FSTP float ptr [EBP + -0x1c]        ; 0044d39f
     FSTP float ptr [EBP + -0x18]        ; 0044d3a2
     FILD dword ptr [EAX]                ; 0044d3a5
-    FMUL float ptr [0x0059bffc]         ; 0044d3a7 | DAT_0059bffc
+    FMUL float ptr [0x0059bffc]         ; 0044d3a7 | g_FLOAT_0059bffc
     FSTP float ptr [EBX]                ; 0044d3ad
     FILD dword ptr [EAX + 0x4]          ; 0044d3af
-    FMUL float ptr [0x0059bffc]         ; 0044d3b2 | DAT_0059bffc
+    FMUL float ptr [0x0059bffc]         ; 0044d3b2 | g_FLOAT_0059bffc
     FSTP float ptr [EBX + 0x4]          ; 0044d3b8
     FILD dword ptr [EAX + 0x8]          ; 0044d3bb
-    FMUL float ptr [0x0059bffc]         ; 0044d3be | DAT_0059bffc
+    FMUL float ptr [0x0059bffc]         ; 0044d3be | g_FLOAT_0059bffc
     FSTP float ptr [EBX + 0x8]          ; 0044d3c4
     FLD float ptr [EBP + -0x1c]         ; 0044d3c7
     FMUL float ptr [EBP + -0x28]        ; 0044d3ca

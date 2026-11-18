@@ -64,8 +64,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0054ab10(CTurret *this_ptr)
     if ((dVar4 < 0.0) || (1.0 < dVar4)) break;
     this_ptr_00 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,
-                             g_CCharacterActorType_00765a60.name_hash);
+                            (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_00 != (CCharacter *)0x0) &&
        (EVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
        0 < (int)EVar2)) {
@@ -73,19 +72,17 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0054ab10(CTurret *this_ptr)
     }
     pCStack_1c = (CGlass *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
     this_ptr_01 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,g_CTriggerActorType_02dd1084.name_hash)
-    ;
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
     pCStack_28 = this_ptr_01;
     pCStack_24 = (CCrate *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSetPtr->collision_actor,g_CCrateActorType_0077bd40.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
     this_ptr_02 = (CFlameCan *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSetPtr->collision_actor,g_CFlameCanActorType_01c70654.name_hash
-                            );
+                            (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
     if (this_ptr_00 == (CCharacter *)0x0) {
       if (pCStack_1c == (CGlass *)0x0) {
         if (this_ptr_01 != (CTrigger *)0x0) {
@@ -105,7 +102,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0054ab10(CTurret *this_ptr)
         if (pCStack_24 == (CCrate *)0x0) {
           if (this_ptr_02 == (CFlameCan *)0x0) {
             core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60
-                      (g_CFireEffect_PTR_005b80f0,&g_CDemonSetPtr->collision_impact_position,
+                      (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                        &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
                        g_CDemonSetPtr->collision_actor);
             break;
@@ -168,7 +165,7 @@ LAB_0054aea2:
   CStack_40.z = CStack_a0.z;
   CStack_40.y = CStack_a0.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20
-            (g_CFireEffect_PTR_005b80f0,&CStack_40,&(this_ptr->base).base.orient_matrix);
+            (g_CFireEffectPtr,&CStack_40,&(this_ptr->base).base.orient_matrix);
   this_ptr->fire_sound_frames = 2;
   (this_ptr->base).fire_cooldown_timer = this_ptr->fire_delay_time;
   return 1;

@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 23,
+    "complexity_score": 6,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 16
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
   },
   "cross_references": [
     {
       "addr": "00469550",
       "from_addr": "0046bcfa",
-      "name": "core_doc.cpp_FUN_00469550",
+      "name": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,8 +54,8 @@
   "globals": [
     {
       "addr": "02c78cec",
-      "name": "DAT_02c78cec",
-      "type": "undefined4",
+      "name": "g_SfxLastSlot",
+      "type": "int",
       "value": null
     }
   ],
@@ -89,7 +87,7 @@
       {
         "call_addr": "0046bcfa",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00469550",
+        "caller": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,7 +98,7 @@
       {
         "call_addr": "0046bd43",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00469550",
+        "caller": "core_doc.cpp_CDoc_processFrame_FUN_00469550",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,14 +202,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

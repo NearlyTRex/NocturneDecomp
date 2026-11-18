@@ -2,29 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 25,
-    "cross_reference_count": 6,
+    "complexity_score": 24,
+    "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 30
+    "total_lines": 29
   },
   "cross_references": [
     {
-      "addr": "00461f70",
-      "from_addr": "00461ff1",
-      "name": "core_dpart.cpp_FUN_00461f70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004625f0",
-      "from_addr": "0046266d",
-      "name": "core_dpart.cpp_FUN_004625f0",
+      "addr": "00432880",
+      "from_addr": "004329be",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -37,6 +31,18 @@
       "addr": "00433000",
       "from_addr": "00433144",
       "name": "engine_clipper.c_clipPolygonToViewport_FUN_00433000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004625f0",
+      "from_addr": "0046266d",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00461f70",
+      "from_addr": "00461ff1",
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,19 +74,19 @@
   "globals": [
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bbf8",
-      "name": "DAT_0264bbf8",
-      "type": "undefined4",
+      "name": "g_PTR_0264bbf8",
+      "type": "void*",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "00431490",
@@ -107,7 +113,7 @@
       {
         "call_addr": "00461ff1",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00461f70",
+        "caller": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +124,7 @@
       {
         "call_addr": "0046266d",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_004625f0",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,6 +147,17 @@
         "call_addr": "0051e1f0",
         "call_type": "direct",
         "caller": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004329be",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,12 +255,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (*(code *)g_PTR_0264bbf8)(vertex_array,vertex_count,render_flags);",
+      "type": "unresolved_funcptr"
     }
   ]
 }

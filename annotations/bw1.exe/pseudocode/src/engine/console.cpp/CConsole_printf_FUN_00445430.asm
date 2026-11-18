@@ -24,15 +24,15 @@
 ;   ... and 92 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d6cf7
-;   undefined4 DAT_005d6cfa
+;   TerminatedCString s_at_005d6cf7
+;   TerminatedCString s_s_005d6cfa
 ;   TerminatedCString s_console_txt_00611108
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
+;   crt_stdio.c_fprintf_FUN_005c03c0
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
-;   crt_unknown.c_FUN_005c03c0
 ;   engine_console.cpp_CConsole_writeChar_FUN_00445500
 ;
 ; *****************************************************************************
@@ -101,7 +101,7 @@ section .text
     POP ESI                             ; 004454ba
     POP EBX                             ; 004454bb
     RET                                 ; 004454bc
-    PUSH 0x5d6cf7                       ; 004454bd | DAT_005d6cf7
+    PUSH 0x5d6cf7                       ; 004454bd | = "at"
         ;   Label: LAB_004454bd
     PUSH 0x611108                       ; 004454c2 | = "console.txt"
     CALL crt_stdio.c_fopen_FUN_005c157c ; 004454c7
@@ -113,14 +113,14 @@ section .text
         ;   XREF to: 004454b2 (CONDITIONAL_JUMP)  ; LAB_004454b2
     MOV EAX,ESP                         ; 004454d5
     PUSH EAX                            ; 004454d7
-    PUSH 0x5d6cfa                       ; 004454d8 | DAT_005d6cfa
+    PUSH 0x5d6cfa                       ; 004454d8 | = "%s"
     PUSH EBX                            ; 004454dd
-    CALL crt_unknown.c_FUN_005c03c0     ; 004454de
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
+    CALL crt_stdio.c_fprintf_FUN_005c03c0 ; 004454de
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005c03c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004454e3
     PUSH EBX                            ; 004454e6
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004454e7
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005c0d10(_FILE * file_handle)
     ADD ESP,0x4                         ; 004454ec
     ADD ESP,0x1004                      ; 004454ef
     POP EBP                             ; 004454f5

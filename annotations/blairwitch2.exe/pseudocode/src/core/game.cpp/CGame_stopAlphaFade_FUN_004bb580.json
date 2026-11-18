@@ -1,0 +1,87 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 7,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
+  "cross_references": [
+    {
+      "addr": "00522350",
+      "from_addr": "00527caa",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bb580",
+    "address_range": [
+      [
+        "004bb580",
+        "004bb5a2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_stopAlphaFade_FUN_004bb580",
+    "signature": "void __cdecl core_game_cpp_CGame_stopAlphaFade_FUN_004bb580(CGame *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00527caa",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "COPY": 4,
+      "INT_ADD": 5,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 15
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
+}

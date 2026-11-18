@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 35,
+    "complexity_score": 19,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 5,
-    "suspect_count": 2,
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "fast_inv_sqrt_inline",
-      "warning_overlapping_globals"
+      "fast_inv_sqrt_inline"
     ],
-    "total_lines": 12
+    "total_lines": 11
   },
   "cross_references": [],
   "function": {
@@ -32,8 +31,8 @@
   "globals": [
     {
       "addr": "01d1a0a8",
-      "name": "DAT_01d1a0a8",
-      "type": "undefined4",
+      "name": "g_FastInvSqrtMagic",
+      "type": "int",
       "value": null
     }
   ],
@@ -110,19 +109,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01d1a0a8`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01d1a0a8` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 7,
-      "match": "return (float)(_DAT_01d1a0a8 - ((int)dist_sq >> 1));",
+      "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
+      "line": 5,
+      "match": "return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));",
       "severity": "moderate",
-      "text": "return (float)(_DAT_01d1a0a8 - ((int)dist_sq >> 1));",
+      "text": "return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));",
       "type": "fast_inv_sqrt_inline"
     }
   ]

@@ -10,65 +10,64 @@ int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_00431b90(SRenderVertex **i
 
 {
   SRenderVertex *v2;
-  byte bVar1;
-  int iVar2;
-  int iVar3;
+  int iVar1;
+  byte bVar2;
+  SRenderVertex *pSVar3;
   int iVar4;
+  int iVar5;
   SRenderVertex *v1;
   int local_18;
   SRenderVertex **local_14;
   
-  iVar3 = 0;
+  iVar4 = 0;
   local_18 = 0;
   if (0 < vertex_count) {
     local_14 = input_vertices;
-    iVar4 = iVar3;
+    iVar5 = iVar4;
     v1 = input_vertices[vertex_count + -1];
     do {
-      iVar2 = DAT_00767b38;
+      iVar1 = g_ClipperTempCount;
       v2 = *local_14;
-      bVar1 = (v1->projected_vertex).transformed_x <= -(v1->projected_vertex).transformed_z;
+      bVar2 = (v1->projected_vertex).transformed_x <= -(v1->projected_vertex).transformed_z;
       if ((v2->projected_vertex).transformed_x <= -(v2->projected_vertex).transformed_z) {
-        bVar1 = bVar1 | 2;
+        bVar2 = bVar2 | 2;
       }
-      iVar3 = iVar4;
-      switch(bVar1) {
+      iVar4 = iVar5;
+      switch(bVar2) {
       case 0:
-        iVar3 = iVar4 + 1;
-        output_vertices[iVar4] = v1;
+        iVar4 = iVar5 + 1;
+        output_vertices[iVar5] = v1;
         break;
       case 1:
-        if (0xb < DAT_00767b38) {
+        if (0xb < g_ClipperTempCount) {
           g_CurrentFilename = "..\\engine\\clipper.c";
           g_CurrentLineNumber = 94;
           core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
         }
-        iVar2 = DAT_00767b38 * 0x30;
-        iVar3 = iVar4 + 1;
-        DAT_00767b38 = DAT_00767b38 + 1;
-        output_vertices[iVar4] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
-                  (v2,v1,(SRenderVertex *)(&DAT_007678f8 + iVar2));
+        pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
+        iVar4 = iVar5 + 1;
+        g_ClipperTempCount = g_ClipperTempCount + 1;
+        output_vertices[iVar5] = pSVar3;
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(v2,v1,pSVar3);
         break;
       case 2:
-        output_vertices[iVar4] = v1;
-        if (0xb < iVar2) {
+        output_vertices[iVar5] = v1;
+        if (0xb < iVar1) {
           g_CurrentFilename = "..\\engine\\clipper.c";
           g_CurrentLineNumber = 94;
           core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
         }
-        iVar2 = DAT_00767b38 * 0x30;
-        iVar3 = iVar4 + 2;
-        DAT_00767b38 = DAT_00767b38 + 1;
-        output_vertices[iVar4 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
-        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630
-                  (v1,v2,(SRenderVertex *)(&DAT_007678f8 + iVar2));
+        pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
+        iVar4 = iVar5 + 2;
+        g_ClipperTempCount = g_ClipperTempCount + 1;
+        output_vertices[iVar5 + 1] = pSVar3;
+        engine_clipper_c_interpolateVertexLeftClip_FUN_00431630(v1,v2,pSVar3);
       }
       local_14 = local_14 + 1;
       local_18 = local_18 + 1;
-      iVar4 = iVar3;
+      iVar5 = iVar4;
       v1 = v2;
     } while (local_18 < vertex_count);
   }
-  return iVar3;
+  return iVar4;
 }

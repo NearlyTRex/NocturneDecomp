@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEditorTools *this_ptr,float current_progress,float total_progress)
 
 {
@@ -26,7 +24,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
   float local_30;
   float local_2c;
   
-  if (_DAT_01bcd07c < 1) {
+  if (g_INT_01bcd07c < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 1541;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CEditorTools::updatePercentageWindow - no window open!");
@@ -45,20 +43,21 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
   dVar5 = round
                     ((double)(local_2c * (float)100 + (float)0.5));
   iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
-  iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
+  iVar1 = (g_INT_01bcd07c + -1) * 0x1d8;
   if (((int)ROUND(dVar5) != *(int *)(iVar1 + 0x1bcd250)) ||
      (0x47ffff < iVar4 - *(int *)(iVar1 + 0x1bcd254))) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-              (_DAT_01bcd070,g_ClipLeft,g_ClipRight,g_ClipTop,_DAT_01bcddec,-1,"%d%% complete"
-               ,(int)ROUND(dVar5),uVar8);
+              (g_CBitFont_PTR_01bcd070,g_ClipLeft,g_ClipRight,g_ClipTop,g_WindowStatusTextColor,-1,
+               "%d%% complete",(int)ROUND(dVar5),uVar8);
     iVar3 = g_ClipRight;
-    iVar1 = _DAT_01bcd9bc * 2 + g_ClipTop + 1;
-    y2 = _DAT_01bcd9bc * 4 + g_ClipTop + -1;
+    iVar1 = g_INT_01bcd9bc * 2 + g_ClipTop + 1;
+    y2 = g_INT_01bcd9bc * 4 + g_ClipTop + -1;
     x2_00 = g_ClipRight + -1;
     x1 = g_ClipLeft + 1;
-    engine_2d_c_fillRectWithBorder_FUN_00403ef0(x1,iVar1,x2_00,y2,_DAT_01bcddf8,_DAT_01bcde00);
+    engine_2d_c_fillRectWithBorder_FUN_00403ef0
+              (x1,iVar1,x2_00,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
     dVar5 = round
                       ((double)((float)((x2_00 - x1) + 1) * local_30 + (float)0.5));
     x2 = (int)ROUND(dVar5) + x1;
@@ -66,10 +65,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
       if (x2_00 <= x2) {
         x2 = iVar3 + -2;
       }
-      engine_2d_c_fillRectColor_FUN_00403e60(x1,iVar1,x2,(int)local_2c,_DAT_01bcddfc);
+      engine_2d_c_fillRectColor_FUN_00403e60(x1,iVar1,x2,(int)local_2c,g_ProgressBarFillColor);
     }
     if (0 < iVar4) {
-      fVar2 = (float)(y2 - *(int *)((_DAT_01bcd07c + -1) * 0x1d8 + 0x1bcd24c)) *
+      fVar2 = (float)(y2 - *(int *)((g_INT_01bcd07c + -1) * 0x1d8 + 0x1bcd24c)) *
               (float)8.4771050347222196e-07;
       dVar5 = (double)fVar2;
       if ((float)5 < fVar2) {
@@ -84,15 +83,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
                             (__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar8)) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-                    (_DAT_01bcd070,g_ClipLeft,g_ClipRight,g_ClipBottom - _DAT_01bcd9bc,_DAT_01bcddec
-                     ,-1,"%d:%02d elapsed, approximately %d:%02d remaining",(int)ROUND(dVar6) / 0x3c,
-                     (int)ROUND(dVar6) % 0x3c,iVar1 / 0x3c,iVar1 % 0x3c,uVar7,uVar8,SUB84(__BITCAST_UINT64(dVar5),0),
-                     (int)((ulonglong)dVar5 >> 0x20));
+                    (g_CBitFont_PTR_01bcd070,g_ClipLeft,g_ClipRight,g_ClipBottom - g_INT_01bcd9bc,
+                     g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
+                     (int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar1 / 0x3c,iVar1 % 0x3c,
+                     uVar7,uVar8,SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20));
         }
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
+    iVar1 = (g_INT_01bcd07c + -1) * 0x1d8;
     *(float *)(iVar1 + 0x1bcd250) = local_2c;
     *(float *)(iVar1 + 0x1bcd254) = local_30;
   }

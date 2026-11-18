@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_fire_cpp_spawnDiseaseBugs_FUN_0049cca0(CVector3f *position)
 
@@ -41,17 +40,18 @@ void __cdecl core_fire_cpp_spawnDiseaseBugs_FUN_0049cca0(CVector3f *position)
   bVar5 = 0;
   pCVar3 = core_actor_cpp_createActorByName_FUN_0040c4f0("CBugs");
   local_34 = pCVar3;
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(0x01D81080,pCVar3);
-  iVar2 = _DAT_01d5ba14;
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(g_CDemonMission_PTR_00600530,pCVar3)
+  ;
+  iVar2 = g_INT_01d5ba14;
   (pCVar3->location).position.x = position->x;
   (pCVar3->location).position.y = position->y;
   (pCVar3->location).position.z = position->z;
-  (pCVar3->location).area_id = *(int *)(*(int *)(iVar2 * 4 + 0x1d5ba04) + 0x2c);
+  (pCVar3->location).area_id = (g_CHero_PTR_ARRAY_01d5ba04[iVar2]->base).base.location.area_id;
   fStack_14 = (*((pCVar3->vtable)._ub)->cylinderGroundCheck)(pCVar3,0.5,(CVector3f *)0x0);
   pCVar1 = (pCVar3->vtable)._ub;
   (pCVar3->location).position.y = fStack_14;
   (*pCVar1->setup)(pCVar3);
-  core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,pCVar3);
+  core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(g_CDemonMission_PTR_00600530,pCVar3);
   iStack_24 = 0;
   fStack_2c = 20.0;
   pCStack_30 = (CCharacter *)0x0;

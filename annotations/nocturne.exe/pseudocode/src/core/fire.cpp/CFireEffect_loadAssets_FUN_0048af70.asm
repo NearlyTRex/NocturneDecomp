@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b84b4
-;   undefined4 DAT_005b84cc
-;   undefined4 DAT_005b84e4
-;   undefined4 DAT_01b4d738
+;   SMRGLTextureBasic g_FireEffectBlackHoleTexture
+;   SMRGLTextureBasic g_FireEffectSparkTexture
+;   SMRGLTextureBasic g_FireEffectBlueSparkTexture
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_fire.cpp_loadDebrisAssets_FUN_00486da0
@@ -33,21 +33,21 @@ section .text
 
     PUSH EBX                            ; 0048af70
         ;   Label: core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70
-    PUSH 0x5b84b4                       ; 0048af71 | DAT_005b84b4
+    PUSH 0x5b84b4                       ; 0048af71 | g_FireEffectBlackHoleTexture
     MOV EDX,dword ptr [0x005ae704]      ; 0048af76 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0048af7c | DAT_01b4d738
+    PUSH EDX                            ; 0048af7c | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0048af7d
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0048af82
-    PUSH 0x5b84cc                       ; 0048af85 | DAT_005b84cc
+    PUSH 0x5b84cc                       ; 0048af85 | g_FireEffectSparkTexture
     MOV ECX,dword ptr [0x005ae704]      ; 0048af8a | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 0048af90 | DAT_01b4d738
+    PUSH ECX                            ; 0048af90 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0048af91
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0048af96
-    PUSH 0x5b84e4                       ; 0048af99 | DAT_005b84e4
+    PUSH 0x5b84e4                       ; 0048af99 | g_FireEffectBlueSparkTexture
     MOV EBX,dword ptr [0x005ae704]      ; 0048af9e | g_CDemonRenderer_PTR_005ae704
-    PUSH EBX                            ; 0048afa4 | DAT_01b4d738
+    PUSH EBX                            ; 0048afa4 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0048afa5
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0048afaa

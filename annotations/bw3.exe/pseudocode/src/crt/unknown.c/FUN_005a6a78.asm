@@ -14,7 +14,7 @@
 ;   crt_unknown.c_FUN_005a6190 at 005a63cb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02d25930
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a678c
@@ -720,7 +720,7 @@ section .text
     JZ 0x005a70cd                       ; 005a700a
         ;   XREF to: 005a70cd (CONDITIONAL_JUMP)  ; LAB_005a70cd
     MOV AL,byte ptr [ESP + 0x8]         ; 005a7010
-    MOV EBP,dword ptr [0x02d25930]      ; 005a7014 | DAT_02d25930
+    MOV EBP,dword ptr [0x02d25930]      ; 005a7014 | g_MultibyteLocaleActive
     MOV byte ptr [ESI],AL               ; 005a701a
     TEST EBP,EBP                        ; 005a701c
     JZ 0x005a70cd                       ; 005a701e

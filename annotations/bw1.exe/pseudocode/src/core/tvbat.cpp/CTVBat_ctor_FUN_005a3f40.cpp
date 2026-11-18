@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005a3f40(CTVBat *this_ptr)
 
 {
@@ -23,13 +21,13 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005a3f40(CTVBat *this_ptr)
   this_ptr_00[1].part_visibility_flags[1] = 0;
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.9,1.1);
   this_ptr_00[1].part_visibility_flags[0] = (int)fVar2;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(this_ptr_00,(char *)0x5f8b97);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(this_ptr_00,"bat.kfm");
   this_ptr_00[1].part_visibility_flags[6] = 0x40a00000;
   this_ptr_00[1].part_visibility_flags[5] = 0x41700000;
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.9,1.1);
-  this_ptr_00[1].part_visibility_flags[8] = (int)(fVar2 * _DAT_005f8ba0);
+  this_ptr_00[1].part_visibility_flags[8] = (int)(fVar2 * 10.0f);
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.9,1.1);
-  this_ptr_00[1].part_visibility_flags[7] = (int)(fVar2 * _DAT_005f8ba4);
+  this_ptr_00[1].part_visibility_flags[7] = (int)(fVar2 * 2.0f);
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
   this_ptr_00[1].part_visibility_flags[10] = 0;
   this_ptr_00[1].part_visibility_flags[0xb] = 0;

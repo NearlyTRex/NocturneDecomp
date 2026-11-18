@@ -11,7 +11,7 @@
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e780 at 0040e78d
 ;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 at 0040f40b
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 00410768
-;   core_basicene.cpp_FUN_0059fae0 at 0059fb00
+;   core_basicene.cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0 at 0059fb00
 ;   core_bat.cpp_CBat_renderOpaque_FUN_004113f0 at 004113fb
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 at 00413cd8
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 at 0041513d
@@ -20,8 +20,8 @@
 ;   ... and 62 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b280
-;   undefined4 DAT_01ba5c50
+;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
+;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
@@ -35,8 +35,8 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
     ADD EAX,0x20                        ; 004089d4
     PUSH EAX                            ; 004089d7
-    MOV EDX,dword ptr [0x0060b280]      ; 004089d8 | DAT_0060b280
-    PUSH EDX                            ; 004089de | DAT_01ba5c50
+    MOV EDX,dword ptr [0x0060b280]      ; 004089d8 | g_CDemonRenderer_PTR_0060b280
+    PUSH EDX                            ; 004089de | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0 ; 004089df
         ;   XREF to: 0046b2b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004089e4
@@ -44,8 +44,8 @@ section .text
     PUSH 0x0                            ; 004089eb
     ADD EAX,0x30                        ; 004089ed
     PUSH EAX                            ; 004089f0
-    MOV ECX,dword ptr [0x0060b280]      ; 004089f1 | DAT_0060b280
-    PUSH ECX                            ; 004089f7 | DAT_01ba5c50
+    MOV ECX,dword ptr [0x0060b280]      ; 004089f1 | g_CDemonRenderer_PTR_0060b280
+    PUSH ECX                            ; 004089f7 | g_CDemonRenderer_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350 ; 004089f8
         ;   XREF to: 0046b350 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
     ADD ESP,0xc                         ; 004089fd

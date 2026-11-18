@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00598b50
-;   undefined1 DAT_005c1a9c
+;   TerminatedCString s_wb_00598b50
+;   char[4] g_CHAR_ARRAY_005c1a9c
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     TEST EAX,EAX                        ; 005686c9
     JZ 0x005686a5                       ; 005686cb
         ;   XREF to: 005686a5 (CONDITIONAL_JUMP)  ; LAB_005686a5
-    PUSH 0x598b50                       ; 005686cd | DAT_00598b50
+    PUSH 0x598b50                       ; 005686cd | = "wb+"
     LEA EAX,[ESP + 0x118]               ; 005686d2
     PUSH EAX                            ; 005686d9
     CALL crt_stdio.c_fopen_FUN_0056568c ; 005686da
@@ -77,7 +77,7 @@ section .text
     XOR EBX,EBX                         ; 00568702
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00568704
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
-    MOV BL,byte ptr [0x005c1a9c]        ; 00568709 | DAT_005c1a9c
+    MOV BL,byte ptr [0x005c1a9c]        ; 00568709 | g_CHAR_ARRAY_005c1a9c
     ADD ESP,0x4                         ; 0056870f
     PUSH EBX                            ; 00568712
         ;   Label: LAB_00568712
@@ -96,7 +96,7 @@ section .text
     TEST EAX,EAX                        ; 00568733
     JNZ 0x00568791                      ; 00568735
         ;   XREF to: 00568791 (CONDITIONAL_JUMP)  ; LAB_00568791
-    PUSH 0x598b50                       ; 00568737 | DAT_00598b50
+    PUSH 0x598b50                       ; 00568737 | = "wb+"
     LEA EAX,[ESP + 0x4]                 ; 0056873c
     PUSH EAX                            ; 00568740
     CALL crt_stdio.c_fopen_FUN_0056568c ; 00568741
@@ -111,7 +111,7 @@ section .text
     MOV byte ptr [ESI + 0xd],AH         ; 00568755
     MOV EAX,dword ptr [ESI + 0x8]       ; 00568758
     PUSH EBP                            ; 0056875b
-    MOV byte ptr [0x005c1a9c],BL        ; 0056875c | DAT_005c1a9c
+    MOV byte ptr [0x005c1a9c],BL        ; 0056875c | g_CHAR_ARRAY_005c1a9c
     MOV byte ptr [EAX + 0x14],BL        ; 00568762
     CALL crt_errno.c_setErrno_FUN_00568e80 ; 00568765
         ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00568e80(int error_code)

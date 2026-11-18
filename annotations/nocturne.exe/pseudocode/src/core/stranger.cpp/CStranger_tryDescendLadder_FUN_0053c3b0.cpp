@@ -65,7 +65,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
       this_ptr_00 = (CLadder *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
                               (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),
-                               g_CLadderActorType_01cc30e8.name_hash);
+                               g_CLadderClassInfo.name_hash);
       if ((this_ptr_00 != (CLadder *)0x0) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               ((this_ptr_00->base).location.position.y + (this_ptr_00->ladder_size).y)) <=

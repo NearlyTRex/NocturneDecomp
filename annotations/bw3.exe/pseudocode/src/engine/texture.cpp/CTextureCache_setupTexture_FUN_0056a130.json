@@ -1,0 +1,668 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 386,
+    "complexity_score": 531,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 151,
+    "suspect_count": 36,
+    "suspect_types": [
+      "pointer_cast",
+      "unknown_field",
+      "unresolved_funcptr",
+      "warning_unreachable"
+    ],
+    "total_lines": 537
+  },
+  "cross_references": [
+    {
+      "addr": "0056a8f0",
+      "from_addr": "0056a93a",
+      "name": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_0056a8f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056aa10",
+      "from_addr": "0056aa78",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056aab0",
+      "from_addr": "0056ab2b",
+      "name": "engine_texture.cpp_storePalettedTexture_FUN_0056aab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ab70",
+      "from_addr": "0056abe1",
+      "name": "engine_texture.cpp_storeTrueColorTexture_FUN_0056ab70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056a130",
+    "address_range": [
+      [
+        "0056a130",
+        "0056a602"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_CTextureCache_setupTexture_FUN_0056a130",
+    "signature": "void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_0056a130(CTextureCache *this_ptr,SMRGLTextureBasic *texture,int upload_mode)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fba20",
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "005fba28",
+      "name": "g_INT_005fba28",
+      "type": "int",
+      "value": "0x100"
+    },
+    {
+      "addr": "00604df8",
+      "name": "g_TextureShift1",
+      "type": "qword",
+      "value": "0x10"
+    },
+    {
+      "addr": "00604e18",
+      "name": "g_TextureShift2",
+      "type": "qword",
+      "value": "0x8"
+    },
+    {
+      "addr": "00604e38",
+      "name": "g_TextureMask1",
+      "type": "qword",
+      "value": "0xff"
+    },
+    {
+      "addr": "00604e58",
+      "name": "g_TextureMask2",
+      "type": "qword",
+      "value": "0xff00"
+    },
+    {
+      "addr": "01c6a970",
+      "name": "g_CurrentPalette",
+      "type": "SRGBColorPalette*",
+      "value": null
+    },
+    {
+      "addr": "01c6a974",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "01c6a978",
+      "name": "g_Hardware32BitPalette[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6af74",
+      "name": "g_BIT_INTEGER32_01c6af74",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6af78",
+      "name": "g_INT_01c6af78",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6af80",
+      "name": "g_BIT_INTEGER32_01c6af80",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6af84",
+      "name": "g_INT_01c6af84",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6af8c",
+      "name": "g_BIT_INTEGER32_01c6af8c",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6af90",
+      "name": "g_INT_01c6af90",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6ced0",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "01c6ced4",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "01c6cee0",
+      "name": "g_INT_01c6cee0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6cee4",
+      "name": "g_INT_01c6cee4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6cee8",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf600c",
+      "name": "g_APIDLL_selectTexture",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02cf6010",
+      "name": "g_APIDLL_updateTexture",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02cf6014",
+      "name": "g_APIDLL_selectTextureBGRA",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02cf6018",
+      "name": "g_APIDLL_updateTextureBGRA",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0056aa78",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056ab2b",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_storePalettedTexture_FUN_0056aab0",
+        "estimated_params": 3,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056a93a",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_0056a8f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056abe1",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_storeTrueColorTexture_FUN_0056ab70",
+        "estimated_params": 3,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.813664596273292,
+    "instruction_count": 322,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 83,
+      "BOOL_OR": 3,
+      "BRANCH": 14,
+      "CALLIND": 4,
+      "CBRANCH": 23,
+      "COPY": 284,
+      "INT_ADD": 89,
+      "INT_AND": 297,
+      "INT_CARRY": 14,
+      "INT_DIV": 3,
+      "INT_EQUAL": 154,
+      "INT_LEFT": 31,
+      "INT_LESS": 19,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 28,
+      "INT_OR": 83,
+      "INT_REM": 3,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 98,
+      "INT_SUB": 59,
+      "INT_XOR": 23,
+      "INT_ZEXT": 15,
+      "LOAD": 71,
+      "POPCOUNT": 70,
+      "RETURN": 3,
+      "STORE": 38,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 1550
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00574520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00597140",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005dd200",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0459
+    },
+    "nocturne.exe": {
+      "addr": "00545410",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2201
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureCache *"
+      },
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "upload_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0056a2f5) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)g_Hardware32BitPalette",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)g_Hardware32BitPalette",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + local_14) = uVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift1._0_4_ = 0x13;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift2._0_4_ = 0xe;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask1._0_4_ = 0x1f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask2._0_4_ = 0x3e0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift1._0_4_ = 0x12;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift2._0_4_ = 0xc;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask1._0_4_ = 0x3f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 90,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask2._0_4_ = 0xfc0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift1._0_4_ = 0x11;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 95,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift2._0_4_ = 10;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask1._0_4_ = 0x7f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 97,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask2._0_4_ = 0x3f80;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 102,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift1._0_4_ = 0x10;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 103,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift2._0_4_ = 8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask1._0_4_ = 0xff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask2._0_4_ = 0xff00;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 110,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift1._0_4_ = 0xf;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 111,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift2._0_4_ = 6;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 112,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask1._0_4_ = 0x1ff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask2._0_4_ = 0x3fe00;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 118,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift1._0_4_ = 0xe;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 119,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift2._0_4_ = 4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 120,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask1._0_4_ = 0x3ff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 121,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask2._0_4_ = 0xffc00;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 125,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift1._0_4_ = 0xd;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 126,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureShift2._0_4_ = 2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 127,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask1._0_4_ = 0x7ff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 128,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_TextureMask2._0_4_ = 0x3ff800;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 137,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_APIDLL_updateTexture)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 142,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_APIDLL_updateTextureBGRA)(texture,pSVar4->dimension,pSVar4->true_color_data);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 147,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_APIDLL_selectTexture)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 152,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_APIDLL_selectTextureBGRA)(texture,pSVar4->dimension,pSVar4->true_color_data);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

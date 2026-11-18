@@ -14,8 +14,7 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00478490(CDoor *this_ptr)
   char (*pacVar3) [100];
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->model,"?modelName" + 1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->door_type,"doorType");
   core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->door_side,"doorSide");
   core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->door_state,"doorState");
@@ -51,7 +50,7 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00478490(CDoor *this_ptr)
         (this_ptr->open_rule).list_size = 0;
       }
       else {
-        pcVar2 = &DAT_005da912;
+        pcVar2 = "true";
         pacVar3 = (this_ptr->open_rule).conditions;
         do {
           cVar1 = *pcVar2;

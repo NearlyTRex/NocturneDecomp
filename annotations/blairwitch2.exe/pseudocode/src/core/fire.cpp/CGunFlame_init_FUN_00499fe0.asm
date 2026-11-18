@@ -17,15 +17,15 @@
 ;   core_fire.cpp_CGunFlame_process_FUN_0049a3a0 at 0049a4b5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5692
-;   undefined4 DAT_005d569a
-;   undefined4 DAT_01c3f5a8
-;   undefined4 DAT_01c3f5ac
-;   undefined4 DAT_01c3f674
-;   undefined4 DAT_01c3f678
+;   float g_FLOAT_005d5692 = 25
+;   double g_DOUBLE_005d569a = 25
+;   int g_GunFlameCandidateCount
+;   CCharacter*[50] g_GunFlameCandidates
+;   int g_FlameCanCount
+;   CFlameCan*[150] g_FlameCans
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a08d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
@@ -43,7 +43,7 @@ section .text
     SUB ESP,0x40                        ; 00499fe6
     AND ESP,0xfffffff8                  ; 00499fe9
     XOR EDX,EDX                         ; 00499fec
-    MOV ECX,dword ptr [0x01c3f5a8]      ; 00499fee | DAT_01c3f5a8
+    MOV ECX,dword ptr [0x01c3f5a8]      ; 00499fee | g_GunFlameCandidateCount
     MOV dword ptr [ESP + 0x34],EDX      ; 00499ff4
     TEST ECX,ECX                        ; 00499ff8
     JLE 0x0049a04e                      ; 00499ffa
@@ -56,7 +56,7 @@ section .text
         ;   Label: LAB_0049a00a
     MOV EBX,dword ptr [ESP + 0x30]      ; 0049a00d
     MOV ECX,dword ptr [EAX + 0x20]      ; 0049a011
-    MOV EBX,dword ptr [EBX + 0x1c3f5ac] ; 0049a014 | DAT_01c3f5ac
+    MOV EBX,dword ptr [EBX + 0x1c3f5ac] ; 0049a014 | g_GunFlameCandidates
     CMP ECX,0x2                         ; 0049a01a
     JZ 0x0049a0b8                       ; 0049a01d
         ;   XREF to: 0049a0b8 (CONDITIONAL_JUMP)  ; LAB_0049a0b8
@@ -66,7 +66,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 0049a030
         ;   Label: LAB_0049a030
     MOV ESI,dword ptr [ESP + 0x34]      ; 0049a034
-    MOV EDI,dword ptr [0x01c3f5a8]      ; 0049a038 | DAT_01c3f5a8
+    MOV EDI,dword ptr [0x01c3f5a8]      ; 0049a038 | g_GunFlameCandidateCount
     ADD EBX,0x4                         ; 0049a03e
     INC ESI                             ; 0049a041
     MOV dword ptr [ESP + 0x30],EBX      ; 0049a042
@@ -74,7 +74,7 @@ section .text
     CMP ESI,EDI                         ; 0049a04a
     JL 0x0049a00a                       ; 0049a04c
         ;   XREF to: 0049a00a (CONDITIONAL_JUMP)  ; LAB_0049a00a
-    MOV EAX,[0x01c3f674]                ; 0049a04e | DAT_01c3f674
+    MOV EAX,[0x01c3f674]                ; 0049a04e | g_FlameCanCount
         ;   Label: LAB_0049a04e
     XOR ESI,ESI                         ; 0049a053
     TEST EAX,EAX                        ; 0049a055
@@ -85,7 +85,7 @@ section .text
     ADD EDI,0x4                         ; 0049a060
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0049a063
         ;   Label: LAB_0049a063
-    MOV EDX,dword ptr [EDX + 0x1c3f678] ; 0049a067 | DAT_01c3f678
+    MOV EDX,dword ptr [EDX + 0x1c3f678] ; 0049a067 | g_FlameCans
     LEA EBX,[EDX + 0x20]                ; 0049a06d
     FLD float ptr [EBX]                 ; 0049a070
     FSUB float ptr [EDI]                ; 0049a072
@@ -99,14 +99,14 @@ section .text
     FSUB float ptr [EDI + 0x8]          ; 0049a085
     FMUL ST0                            ; 0049a088
     FADDP                               ; 0049a08a
-    FCOMP double ptr [0x005d569a]       ; 0049a08c | DAT_005d569a
+    FCOMP double ptr [0x005d569a]       ; 0049a08c | g_DOUBLE_005d569a
     FNSTSW AX                           ; 0049a092
     SAHF                                ; 0049a094
     JBE 0x0049a142                      ; 0049a095
         ;   XREF to: 0049a142 (CONDITIONAL_JUMP)  ; LAB_0049a142
     MOV ECX,dword ptr [ESP + 0x2c]      ; 0049a09b
         ;   Label: LAB_0049a09b
-    MOV EBX,dword ptr [0x01c3f674]      ; 0049a09f | DAT_01c3f674
+    MOV EBX,dword ptr [0x01c3f674]      ; 0049a09f | g_FlameCanCount
     ADD ECX,0x4                         ; 0049a0a5
     INC ESI                             ; 0049a0a8
     MOV dword ptr [ESP + 0x2c],ECX      ; 0049a0a9
@@ -135,7 +135,7 @@ section .text
     FSUB float ptr [EDX + 0x8]          ; 0049a0d4
     FMUL ST0                            ; 0049a0d7
     FADDP                               ; 0049a0d9
-    FCOMP float ptr [0x005d5692]        ; 0049a0db | DAT_005d5692
+    FCOMP float ptr [0x005d5692]        ; 0049a0db | g_FLOAT_005d5692
     FNSTSW AX                           ; 0049a0e1
     SAHF                                ; 0049a0e3
     JA 0x0049a030                       ; 0049a0e4
@@ -150,8 +150,8 @@ section .text
     PUSH EBX                            ; 0049a0fe
     LEA ESI,[ESP + 0x14]                ; 0049a0ff
     LEA EDI,[ESP + 0x8]                 ; 0049a103
-    CALL core_actor.cpp_FUN_00408de0    ; 0049a107
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 0049a107
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 0049a10c
     LEA ESI,[ESP + 0xc]                 ; 0049a10f
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049a113

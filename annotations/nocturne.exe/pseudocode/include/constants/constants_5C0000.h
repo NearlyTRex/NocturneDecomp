@@ -7,7 +7,6 @@
 #include "globals.h"
 #include "constants.h"
 #include "prototypes/prototypes_560000.h"
-#include "prototypes/prototypes_570000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -39,22 +38,6 @@ static TerminatedCString s_CVampireBoss_005c1190 = "$CVampireBoss$$";
 static TerminatedCString s_CVehicle_005c11a8 = "$CVehicle$$";
 static TerminatedCString s_CTire_005c11b8 = "$CTire$$";
 static TerminatedCString s_CCryptVessel_005c11cc = "$CCryptVessel$$";
-static TerminatedCString s_WATER0_RAW_005c11fc = "WATER0.RAW";
-static TerminatedCString s_WATER1_RAW_005c1214 = "WATER1.RAW";
-static TerminatedCString s_WATER2_RAW_005c122c = "WATER2.RAW";
-static TerminatedCString s_WATER3_RAW_005c1244 = "WATER3.RAW";
-static TerminatedCString s_WATER4_RAW_005c125c = "WATER4.RAW";
-static TerminatedCString s_WATER5_RAW_005c1274 = "WATER5.RAW";
-static TerminatedCString s_WATER6_RAW_005c128c = "WATER6.RAW";
-static TerminatedCString s_WATER7_RAW_005c12a4 = "WATER7.RAW";
-static TerminatedCString s_WATER8_RAW_005c12bc = "WATER8.RAW";
-static TerminatedCString s_WATER9_RAW_005c12d4 = "WATER9.RAW";
-static TerminatedCString s_WATER10_RAW_005c12ec = "WATER10.RAW";
-static TerminatedCString s_WATER11_RAW_005c1304 = "WATER11.RAW";
-static TerminatedCString s_WATER12_RAW_005c131c = "WATER12.RAW";
-static TerminatedCString s_WATER13_RAW_005c1334 = "WATER13.RAW";
-static TerminatedCString s_WATER14_RAW_005c134c = "WATER14.RAW";
-static TerminatedCString s_WATER15_RAW_005c1364 = "WATER15.RAW";
 static TerminatedCString s_WATER0_RAW_005c13d4 = "WATER0.RAW";
 static TerminatedCString s_WATER1_RAW_005c13ec = "WATER1.RAW";
 static TerminatedCString s_WATER2_RAW_005c1404 = "WATER2.RAW";
@@ -76,11 +59,7 @@ static TerminatedCString s_SWaterVertex_005c1568 = "$SWaterVertex$$";
 static TerminatedCString s_CWayPoint_005c1580 = "$CWayPoint$$";
 static TerminatedCString s_CDemonGlobe_005c1598 = "$CDemonGlobe$$";
 static TerminatedCString s_CWeapon_005c15ac = "$CWeapon$$";
-static TerminatedCString s_RAINDRP1_RAW_005c15c4 = "RAINDRP1.RAW";
-static TerminatedCString s_RAINSPLT_RAW_005c15dc = "RAINSPLT.RAW";
-static TerminatedCString s_SNOWFLKE_RAW_005c15f4 = "SNOWFLKE.RAW";
 static TerminatedCString s_CWeather_005c1608 = "$CWeather$$";
-static TerminatedCString s_REDSPARK_RAW_005c1620 = "REDSPARK.RAW";
 static TerminatedCString s_CWerewolf_005c1634 = "$CWerewolf$$";
 static TerminatedCString s_CWinFont_005c1645 = "$CWinFont$$";
 static TerminatedCString s_CZombie_005c1674 = "$CZombie$$";
@@ -95,6 +74,94 @@ static TerminatedCString s_s_0123456789abcdefghijkl_005c1f24 = "0123456789abcdef
 static TerminatedCString s_s_0123456789abcdef_005c1f74 = "0123456789abcdef";
 static TerminatedCString s_s_0123456789abcdefghijkl_005c1ff0 = "0123456789abcdefghijklmnopqrstuvwxyz";
 static TerminatedCString s_s_0123456789abcdefghijkl_005c2018 = "0123456789abcdefghijklmnopqrstuvwxyz";
+
+// char*[12] constants
+static char* g_MonthNamesLong[12] = {
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"
+};
+
+// char*[23] constants
+static char* g_CHAR_PTR_ARRAY_005c2070[23] = {
+    "acos", "asin", "sqrt", "exp",
+    "cosh", "sinh", "pow", "acosh",
+    "log2", "log", "log10", "atanh",
+    "atan2", "ipow", "dpowi", "cos",
+    "sin", "tan", "y0", "y1",
+    "yn", "mod", "cotan"
+};
+
+// char*[7] constants
+static char* g_WeekdayNamesLong[7] = {
+    "Sunday", "Monday", "Tuesday", "Wednesday",
+    "Thursday", "Friday", "Saturday"
+};
+static char* g_MathErrorMessages[7] = {
+    nullptr, "Domain error", "Argument singularity", "Overflow range error",
+    "Underflow range error", "Total loss of significance", "Partial loss of significance"
+};
+
+// char[12][4] constants
+static char g_MonthNamesShort[12][4] = {
+    "Jan", "Feb", "Mar", "Apr",
+    "May", "Jun", "Jul", "Aug",
+    "Sep", "Oct", "Nov", "Dec"
+};
+
+// char[256] constants
+static char g_ShiftJIS_TrailByteTable[256] = {
+    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
+    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
+    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
+    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
+    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
+    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08,
+    (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08,
+    (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08,
+    (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08,
+    (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08,
+    (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x08, (char)0x00, (char)0x08, (char)0x0C, (char)0x0C, (char)0x0C,
+    (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
+    (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
+    (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x08, (char)0x0A, (char)0x0A, (char)0x0A, (char)0x0A, (char)0x0A, (char)0x09, (char)0x09,
+    (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09,
+    (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09,
+    (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09,
+    (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09,
+    (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x09, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
+    (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
+    (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
+    (char)0x0C, (char)0x00, (char)0x00, (char)0x00
+};
+
+// char[7][4] constants
+static char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+
+// double constants
+static double g_ExpUnderflowLimit = 709.78271289338397;
+static double g_DOUBLE_005c1da4 = -709.78271289338397;
+static double g_DOUBLE_005c4084 = 1;
+
+// float constants
+static float g_FLOAT_005c0fa8 = 12.0f;
+static float g_FLOAT_005c0fac = 1.0f;
+static float g_IEEE754NormalScaleFactor = 0.9375f;
+static float g_IEEE754SubnormalScaleFactor = 1.0625f;
+static float g_IEEE754RenormScaleFactor = 9.223372e+18f;
+static float g_FLOAT_005c40c8 = 16.0f;
+static float g_FLOAT_005c40cc = 0.0625f;
+
+// float10 constants
+static float10 g_PiOver2 = 1.5707963f;
+static float10 g_FLOAT10_005c40b4 = 3.1415927f;
+static float10 g_FLOAT10_005c40be = 1.5707963f;
+static float10 g_FLOAT10_005c40d0 = -0.33333333f;
+static float10 g_FLOAT10_005c40da = 0.2f;
+static float10 g_FLOAT10_005c40e4 = -0.14285714f;
+static float10 g_FLOAT10_005c40ee = 0.11111111f;
+static float10 g_FLOAT10_005c40f8 = -0.090907585f;
+static float10 g_FLOAT10_005c4102 = 0.076416908f;
 
 // int constants
 static int DAT_005C0FC4 = 0x2;
@@ -137,60 +204,13 @@ static uchar g_CharacterClassificationTable[257] = {
 
 // undefined1 constants
 static undefined1 DAT_005c18a0 = 0x01;
-static undefined1 DAT_005c18ba = 0x02;
 
 // undefined1* constants
 static undefined1* DAT_005C0E70 = (undefined1*)s_anon_00595005;
 static undefined1* DAT_005C0E74 = (undefined1*)s_e_m_e_e_00595007;
 static undefined1* DAT_005C0E78 = (undefined1*)s_anon_00595008;
-static undefined1* DAT_005C1818 = (undefined1*)s_Monday_005989f0;
-static undefined1* DAT_005C181C = (undefined1*)s_Tuesday_005989f8;
-static undefined1* DAT_005C1820 = (undefined1*)s_Wednesday_00598a00;
-static undefined1* DAT_005C1824 = (undefined1*)s_Thursday_00598a0c;
-static undefined1* DAT_005C1828 = (undefined1*)s_Friday_00598a18;
-static undefined1* DAT_005C182C = (undefined1*)s_Saturday_00598a20;
-static undefined1* DAT_005C1864 = (undefined1*)s_February_00598a34;
-static undefined1* DAT_005C1868 = (undefined1*)s_March_00598a40;
-static undefined1* DAT_005C186C = (undefined1*)s_April_00598a48;
-static undefined1* DAT_005C1870 = (undefined1*)s_May_00598a50;
-static undefined1* DAT_005C1874 = (undefined1*)s_June_00598a54;
-static undefined1* DAT_005C1878 = (undefined1*)s_July_00598a5c;
-static undefined1* DAT_005C187C = (undefined1*)s_August_00598a64;
-static undefined1* DAT_005C1880 = (undefined1*)s_September_00598a6c;
-static undefined1* DAT_005C1884 = (undefined1*)s_October_00598a78;
-static undefined1* DAT_005C1888 = (undefined1*)s_November_00598a80;
-static undefined1* DAT_005C188C = (undefined1*)s_December_00598a8c;
-static undefined1* DAT_005C1B18 = (undefined1*)s_TMPDIR_00598b3c;
-static undefined1* DAT_005C1B1C = (undefined1*)s_TEMPDIR_00598b44;
-static undefined1* DAT_005C2070 = (undefined1*)s_acos_00599108;
-static undefined1* DAT_005C2074 = (undefined1*)s_asin_0059910d;
-static undefined1* DAT_005C2078 = (undefined1*)s_sqrt_00599112;
-static undefined1* DAT_005C207C = (undefined1*)s_exp_00599117;
-static undefined1* DAT_005C2080 = (undefined1*)s_cosh_0059911b;
-static undefined1* DAT_005C2084 = (undefined1*)s_sinh_00599120;
-static undefined1* DAT_005C2088 = (undefined1*)s_pow_00599125;
-static undefined1* DAT_005C208C = (undefined1*)s_acosh_00599129;
-static undefined1* DAT_005C2090 = (undefined1*)s_log2_0059912f;
-static undefined1* DAT_005C2094 = (undefined1*)s_log_00599134;
-static undefined1* DAT_005C2098 = (undefined1*)s_log10_00599138;
-static undefined1* DAT_005C209C = (undefined1*)s_atanh_0059913e;
-static undefined1* DAT_005C20A0 = (undefined1*)s_atan2_00599144;
-static undefined1* DAT_005C20A4 = (undefined1*)s_ipow_0059914a;
-static undefined1* DAT_005C20A8 = (undefined1*)s_dpowi_0059914f;
-static undefined1* DAT_005C20AC = (undefined1*)s_cos_00599155;
-static undefined1* DAT_005C20B0 = (undefined1*)s_sin_00599159;
-static undefined1* DAT_005C20B4 = (undefined1*)s_tan_0059915d;
-static undefined1* DAT_005C20B8 = (undefined1*)s_y0_00599161;
-static undefined1* DAT_005C20BC = (undefined1*)s_y1_00599164;
-static undefined1* DAT_005C20C0 = (undefined1*)s_yn_00599167;
-static undefined1* DAT_005C20C4 = (undefined1*)s_mod_0059916a;
-static undefined1* DAT_005C20C8 = (undefined1*)s_cotan_0059916e;
-static undefined1* DAT_005C214C = (undefined1*)s_Domain_error_005991fc;
-static undefined1* DAT_005C2150 = (undefined1*)s_Argument_singularity_00599209;
-static undefined1* DAT_005C2154 = (undefined1*)s_Overflow_range_error_0059921e;
-static undefined1* DAT_005C2158 = (undefined1*)s_Underflow_range_error_00599233;
-static undefined1* DAT_005C215C = (undefined1*)s_Total_loss_of_significan_00599249;
-static undefined1* DAT_005C2160 = (undefined1*)s_Partial_loss_of_signific_00599264;
+static undefined1* DAT_005C1B18 = (undefined1*)&g_EmptyStringBuffer+0x10;
+static undefined1* DAT_005C1B1C = (undefined1*)&g_EmptyStringBuffer+0x18;
 static undefined1* DAT_005C3F88 = (undefined1*)crt_unknown_c_FUN_0056bf77;
 static undefined1* DAT_005C3F8C = (undefined1*)crt_unknown_c_FUN_0056bf7c;
 static undefined1* DAT_005C3F90 = (undefined1*)crt_unknown_c_FUN_0056bf82;
@@ -254,34 +274,13 @@ static undefined1* DAT_005C4074 = (undefined1*)crt_unknown_c_FUN_0056c3a3;
 static undefined1* DAT_005C4078 = (undefined1*)crt_unknown_c_FUN_0056c3c3;
 static undefined1* DAT_005C407C = (undefined1*)crt_math_c_fdiv_thunk_FUN_0056c3d7;
 static undefined1* DAT_005C4080 = (undefined1*)crt_unknown_c_FUN_0056c3ef;
-static undefined1* DAT_005C4098 = (undefined1*)crt_unknown_c_FUN_00570ebb;
-static undefined1* DAT_005C409C = (undefined1*)crt_unknown_c_FUN_00570ec8;
-static undefined1* DAT_005C40A0 = (undefined1*)crt_unknown_c_FUN_00570edb;
-static undefined1* DAT_005C40A4 = (undefined1*)crt_unknown_c_FUN_00570ef0;
-static undefined1* DAT_005C40A8 = (undefined1*)crt_unknown_c_FUN_00570f03;
-static undefined1* DAT_005C40AC = (undefined1*)crt_unknown_c_FUN_00570f18;
-static undefined1* DAT_005C40B0 = (undefined1*)crt_unknown_c_FUN_00570f2b;
 
 // undefined2 constants
 static undefined2 DAT_005c1c30 = 0x4002;
 
 // undefined4 constants
-static undefined4 DAT_005c1144 = 0x02DD10C8;
-static undefined4 DAT_005c11f0 = 0x00002000;
-static undefined4 DAT_005c15b8 = 0x02DDF9F0;
-static undefined4 DAT_005c1aa0 = 0x00000100;
 static undefined4 DAT_005c1c2c = 0xA0000000;
 static undefined4 DAT_005c1dbc = 0xFF010806;
-static undefined4 DAT_005c1dcc = 0x00000001;
-static undefined4 DAT_005c1dd0 = 0x00000003;
 static undefined4 DAT_005c1df0 = 0x00000005;
 static undefined4 DAT_005c1df4 = 0x00000009;
-static undefined4 DAT_005c1f90 = 0x00000014;
-static undefined4 DAT_005c1fe8 = 0x00000001;
-static undefined4 DAT_005c1fec = 0x00010000;
-static undefined4 DAT_005c20cc = 0x000000F4;
-static undefined4 DAT_005c20e0 = 0x00000002;
-static undefined4 DAT_005c20e4 = 0xFFFFFFFF;
-static undefined4 DAT_005c20e8 = 0x00000001;
-static undefined4 DAT_005c20ec = 0xFFFFFFFF;
 

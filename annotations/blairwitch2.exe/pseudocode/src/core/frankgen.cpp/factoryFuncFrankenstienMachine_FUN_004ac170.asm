@@ -15,7 +15,7 @@ section .text
     PUSH 0x5f8                          ; 004ac170
         ;   Label: core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004ac170
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004ac175
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004ac17a
     TEST EAX,EAX                        ; 004ac17d
     JNZ 0x004ac182                      ; 004ac17f

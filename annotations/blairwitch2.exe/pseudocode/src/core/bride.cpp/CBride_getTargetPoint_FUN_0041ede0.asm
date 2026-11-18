@@ -1,18 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_bride_cpp_CBride_getTargetPoint_FUN_0041ede0(CBride *this_ptr,CVector3f *out_point)
+; CVector3f * __stack_esi core_bride_cpp_CBride_getTargetPoint_FUN_0041ede0(CBride *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CBride *         Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007bccdc
+;   int[11] g_BrideIndices
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_00546790
-;   core_xform.cpp_FUN_00591530
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -25,7 +24,7 @@ section .text
     MOV EBP,ESP                         ; 0041ede3
     SUB ESP,0x78                        ; 0041ede5
     MOV EBX,ESI                         ; 0041ede8
-    MOV EDX,dword ptr [0x007bccdc]      ; 0041edea | DAT_007bccdc
+    MOV EDX,dword ptr [0x007bccdc]      ; 0041edea | g_BrideIndices
     MOV ESI,dword ptr [EBP + 0x10]      ; 0041edf0
     PUSH EDX                            ; 0041edf3
     ADD ESI,0x2b4                       ; 0041edf4
@@ -50,8 +49,8 @@ section .text
     PUSH ESI                            ; 0041ee2f
     LEA ESI,[EBP + -0xc]                ; 0041ee30
     MOV EDI,EBX                         ; 0041ee33
-    CALL core_xform.cpp_FUN_00591530    ; 0041ee35
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 0041ee35
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + -0xc]                ; 0041ee3a
     ADD ESP,0x8                         ; 0041ee3d
     MOVSD ES:EDI,ESI                    ; 0041ee40

@@ -15,7 +15,7 @@ section .text
     PUSH 0x2e0                          ; 0040ee80
         ;   Label: core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040ee80
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0040ee85
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0040ee8a
     TEST EAX,EAX                        ; 0040ee8d
     JNZ 0x0040ee92                      ; 0040ee8f

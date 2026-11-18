@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 37,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 22,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 97
   },
   "cross_references": [],
@@ -57,8 +55,8 @@
   "globals": [
     {
       "addr": "005edacc",
-      "name": "s_human_model_motion_state_005edacb+1",
-      "type": "undefined4",
+      "name": "s_human_model_motion_state_005edacc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -93,8 +91,8 @@
     },
     {
       "addr": "005edb24",
-      "name": "DAT_005edb24",
-      "type": "undefined4",
+      "name": "s_form_005edb24",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -180,20 +178,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005edb24",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->form,&DAT_005edb24);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "005fd844"
       }

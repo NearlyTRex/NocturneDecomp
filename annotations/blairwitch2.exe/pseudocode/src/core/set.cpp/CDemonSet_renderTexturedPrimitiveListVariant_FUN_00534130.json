@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 55,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 94
   },
   "cross_references": [
     {
       "addr": "00461a50",
       "from_addr": "00461b92",
-      "name": "core_dpart.cpp_FUN_00461a50",
+      "name": "core_dpart.cpp_CDemonPart_renderFaces_FUN_00461a50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,9 +47,9 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "00616494",
@@ -66,7 +64,7 @@
       {
         "call_addr": "00461b92",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00461a50",
+        "caller": "core_dpart.cpp_CDemonPart_renderFaces_FUN_00461a50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,22 +162,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "if (DAT_0060b280->advanced_culling_enabled == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)prim);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

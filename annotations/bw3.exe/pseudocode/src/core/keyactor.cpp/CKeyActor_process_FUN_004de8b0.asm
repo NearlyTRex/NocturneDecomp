@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c66a9
-;   undefined4 DAT_005c66ad
-;   undefined4 DAT_005c66b5
+;   float g_FLOAT_005c66a9 = 3.141593
+;   double g_DOUBLE_005c66ad = 8192
+;   double g_DOUBLE_005c66b5 = 16384
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 004de8b5
     FLD float ptr [ESP + 0x14]          ; 004de8b9
     LEA EAX,[ESI + 0x20]                ; 004de8bd
-    FMUL float ptr [0x005c66a9]         ; 004de8c0 | DAT_005c66a9
+    FMUL float ptr [0x005c66a9]         ; 004de8c0 | g_FLOAT_005c66a9
     PUSH EAX                            ; 004de8c6
     LEA EBX,[ESI + 0x2dc]               ; 004de8c7
     FADD float ptr [ESI + 0x2d8]        ; 004de8cd
@@ -40,11 +40,11 @@ section .text
         ;   XREF to: 0045aae0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0(CDemonGlobe * this_ptr, CVector3f * position)
     FLD float ptr [ESI + 0x2d8]         ; 004de8df
     FSIN                                ; 004de8e5
-    FMUL double ptr [0x005c66ad]        ; 004de8e7 | DAT_005c66ad
-    FADD double ptr [0x005c66b5]        ; 004de8ed | DAT_005c66b5
+    FMUL double ptr [0x005c66ad]        ; 004de8e7 | g_DOUBLE_005c66ad
+    FADD double ptr [0x005c66b5]        ; 004de8ed | g_DOUBLE_005c66b5
     ADD ESP,0x8                         ; 004de8f3
     CALL crt_math.c_round_FUN_005a3120  ; 004de8f6
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 004de8fb
     MOV EAX,dword ptr [ESP]             ; 004de8fe
     MOV EDX,EAX                         ; 004de901

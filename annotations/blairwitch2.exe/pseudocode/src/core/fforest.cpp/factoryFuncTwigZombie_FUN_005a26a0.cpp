@@ -11,7 +11,7 @@ CTwigZombie * __cdecl core_fforest_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
 {
   CTwigZombie *pCVar1;
   
-  pCVar1 = (CTwigZombie *)operator_new(0x11858);
+  pCVar1 = operator_new(0x11858);
   if (pCVar1 == (CTwigZombie *)0x0) {
     return (CTwigZombie *)0x0;
   }

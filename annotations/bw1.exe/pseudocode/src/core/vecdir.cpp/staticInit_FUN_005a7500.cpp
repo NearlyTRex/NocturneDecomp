@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_vecdir_cpp_staticInit_FUN_005a7500(void)
 
 {
-  _DAT_02c8af2c = 0;
-  _DAT_02c8af30 = 0;
-  _DAT_02c8af28 = 0;
+  g_ZeroVector.y = 0.0;
+  g_ZeroVector.z = 0.0;
+  g_ZeroVector.x = 0.0;
   return;
 }

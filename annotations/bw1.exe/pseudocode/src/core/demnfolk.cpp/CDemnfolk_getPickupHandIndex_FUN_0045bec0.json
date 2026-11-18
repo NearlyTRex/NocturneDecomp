@@ -1,0 +1,241 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 35,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 124
+  },
+  "cross_references": [
+    {
+      "addr": "0045bf60",
+      "from_addr": "0045bf6b",
+      "name": "core_demnfolk.cpp_CDemnfolk_canPickupWithHand_FUN_0045bf60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045b560",
+      "from_addr": "0045b741",
+      "name": "core_demnfolk.cpp_CDemnfolk_processPickup_FUN_0045b560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459100",
+      "from_addr": "00459ea9",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045bec0",
+    "address_range": [
+      [
+        "0045bec0",
+        "0045bf5c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_0045bec0",
+    "signature": "int __cdecl core_demnfolk_cpp_CDemnfolk_getPickupHandIndex_FUN_0045bec0(CDemnfolk *this_ptr,int object_shape_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    },
+    {
+      "addr": "005c1210",
+      "is_variadic": false,
+      "name": "crt_string.c__strnicmp_FUN_005c1210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d81b7",
+      "name": "s_jeff_dfm_005d81b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d81c0",
+      "name": "s_new_005d81c0",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "00459ea9",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045a83b",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045aa8e",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045b741",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_processPickup_FUN_0045b560",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045bf6b",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_canPickupWithHand_FUN_0045bf60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045ac7b",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004596c6",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00459709",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004597b6",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9402985074626864,
+    "instruction_count": 67,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "CALL": 2,
+      "CBRANCH": 11,
+      "COPY": 59,
+      "INT_ADD": 25,
+      "INT_AND": 30,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 28,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 14,
+      "INT_SUB": 16,
+      "INT_XOR": 1,
+      "LOAD": 21,
+      "POPCOUNT": 14,
+      "RETURN": 6,
+      "STORE": 9
+    },
+    "pcode_op_count": 264
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "004580a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemnfolk *"
+      },
+      {
+        "is_param": true,
+        "name": "object_shape_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

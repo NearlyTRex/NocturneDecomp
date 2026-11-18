@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba60
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -26,7 +26,7 @@ section .text
         ;   XREF to: 004e40a9 (CONDITIONAL_JUMP)  ; LAB_004e40a9
     LEA EAX,[EBX + 0x164]               ; 004e407f
     PUSH EAX                            ; 004e4085
-    MOV ESI,dword ptr [0x005fba60]      ; 004e4086 | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004e4086 | g_CEventListPtr
     PUSH ESI                            ; 004e408c
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004e408d
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -46,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x1c8]               ; 004e40a9
         ;   Label: LAB_004e40a9
     PUSH EAX                            ; 004e40af
-    MOV ECX,dword ptr [0x005fba60]      ; 004e40b0 | DAT_005fba60
+    MOV ECX,dword ptr [0x005fba60]      ; 004e40b0 | g_CEventListPtr
     PUSH ECX                            ; 004e40b6
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004e40b7
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)

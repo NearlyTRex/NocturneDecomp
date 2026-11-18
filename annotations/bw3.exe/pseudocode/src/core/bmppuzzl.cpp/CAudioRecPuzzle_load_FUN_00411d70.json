@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 702,
+    "complexity_score": 692,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 122,
-    "suspect_count": 56,
+    "pseudocode_lines": 127,
+    "suspect_count": 55,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 606
+    "total_lines": 611
   },
   "cross_references": [],
   "function": {
@@ -60,14 +59,14 @@
   "globals": [
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "007dffb8",
-      "name": "DAT_007dffb8",
-      "type": "undefined4",
+      "name": "g_INT_007dffb8",
+      "type": "int",
       "value": null
     }
   ],
@@ -146,14 +145,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_007dffb8",
-      "severity": "mild",
-      "text": "DAT_007dffb8 = 0xffffffff;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(code **)((int)(this_ptr->base).vtable",
@@ -238,7 +229,7 @@
       "line": 60,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,5,0x5b6661,0x16,0x20,3,0x171,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -246,23 +237,7 @@
       "line": 60,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,5,0x5b6661,0x16,0x20,3,0x171,0x12e,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(code **)((int)(this_ptr->base).vtable",
-      "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,6,0x5b6668,0x16,0x20,3,0x195,0x12e,0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,6,0x5b6668,0x16,0x20,3,0x195,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
@@ -270,7 +245,7 @@
       "line": 62,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,7,0x5b666f,0x16,0x20,3,0x1bd,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -278,23 +253,7 @@
       "line": 62,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,7,0x5b666f,0x16,0x20,3,0x1bd,0x12e,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(code **)((int)(this_ptr->base).vtable",
-      "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,8,0x5b6676,0x16,0x20,3,0x1e3,0x12e,0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,8,0x5b6676,0x16,0x20,3,0x1e3,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
@@ -302,7 +261,7 @@
       "line": 64,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,9,0x5b667d,0x16,0x20,3,0x20a,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -310,12 +269,12 @@
       "line": 64,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,9,0x5b667d,0x16,0x20,3,0x20a,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 66,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -323,7 +282,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 65,
+      "line": 66,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -331,7 +290,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 68,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -339,7 +298,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 67,
+      "line": 68,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -347,7 +306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -355,7 +314,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 69,
+      "line": 70,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -363,7 +322,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 72,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -371,7 +330,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 71,
+      "line": 72,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -379,7 +338,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 74,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -387,7 +346,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 73,
+      "line": 74,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -395,7 +354,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 76,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -403,7 +362,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 75,
+      "line": 76,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -411,7 +370,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 78,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -419,7 +378,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
+      "line": 78,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -427,7 +386,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 80,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -435,7 +394,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
+      "line": 80,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -443,7 +402,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 82,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -451,7 +410,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 81,
+      "line": 82,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -459,7 +418,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 84,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -467,7 +426,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 83,
+      "line": 84,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -475,7 +434,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 86,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -483,7 +442,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 85,
+      "line": 86,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -491,7 +450,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 88,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -499,7 +458,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 87,
+      "line": 88,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -507,7 +466,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 90,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -515,7 +474,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 89,
+      "line": 90,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -523,7 +482,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 92,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -531,7 +490,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 91,
+      "line": 92,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -539,7 +498,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -547,7 +506,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
+      "line": 94,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -555,7 +514,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -563,7 +522,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 95,
+      "line": 96,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -571,7 +530,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 98,
       "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
@@ -579,7 +538,39 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 97,
+      "line": 98,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(code **)((int)(this_ptr->base).vtable",
+      "severity": "moderate",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 100,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(code **)((int)(this_ptr->base).vtable",
+      "severity": "moderate",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 102,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",

@@ -53,9 +53,9 @@ extern CTrail g_TrailPool[100];
 extern SHardwareEdge g_HardwareEdgeTable[16];
 
 // UVector3
-extern UVector3 UNION_UVector3_02d7b814;
-extern UVector3 UNION_UVector3_02d7b820;
-extern UVector3 UNION_UVector3_02d7b82c;
+extern UVector3 g_GabriellaWeaponEuler;
+extern UVector3 g_GabriellaWeaponAttachEuler;
+extern UVector3 g_GabriellaWeaponAttachOffset;
 
 // char[1024]
 extern char g_TempTextBuffer[1024];
@@ -93,7 +93,7 @@ extern int g_PopcornAllocIndex;
 extern int g_RainDropAllocIndex;
 extern int g_FastSqrtMagic;
 extern int g_FastInvSqrtMagic;
-extern int INT_02d7a7c0;
+extern int g_FliesInitialized;
 extern int g_ShadowColor32;
 extern int g_ShadowColorRed;
 extern int g_ShadowColorGreen;

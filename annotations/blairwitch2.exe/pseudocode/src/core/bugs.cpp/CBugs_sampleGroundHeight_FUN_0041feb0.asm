@@ -16,10 +16,10 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00420840 at 00420915
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00420840 at 00420915
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f3e28
+;   float g_FLOAT_005f3e28 = 0.5
 ;
 ; Called Functions:
 ;   core_bugs.cpp_maxFloat_FUN_00422120
@@ -37,7 +37,7 @@ section .text
     FLD float ptr [ESP + 0x24]          ; 0041feb9
     FSUB float ptr [ESI + 0x1e628]      ; 0041febd
     FLD1                                ; 0041fec3
-    FDIV float ptr [0x005f3e28]         ; 0041fec5 | DAT_005f3e28
+    FDIV float ptr [0x005f3e28]         ; 0041fec5 | g_FLOAT_005f3e28
     FLD float ptr [ESP + 0x28]          ; 0041fecb
     FSUB float ptr [ESI + 0x1e62c]      ; 0041fecf
     FXCH ST2                            ; 0041fed5
@@ -49,10 +49,10 @@ section .text
     FST float ptr [ESP + 0x28]          ; 0041fee3
     FLD float ptr [ESP + 0x24]          ; 0041fee7
     CALL crt_math.c_round_FUN_005b7ff0  ; 0041feeb
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0041fef0
     CALL crt_math.c_round_FUN_005b7ff0  ; 0041fef2
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FXCH                                ; 0041fef7
     FISTP dword ptr [ESP + 0xc]         ; 0041fef9
     MOV EDX,dword ptr [ESP + 0xc]       ; 0041fefd

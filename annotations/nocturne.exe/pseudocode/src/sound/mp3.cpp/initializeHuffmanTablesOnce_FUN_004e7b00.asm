@@ -21,9 +21,9 @@
 ;   TerminatedCString s_huffman_decodertable_err_0058b830
 ;   TerminatedCString s_sound_mp3_cpp_0058b862
 ;   TerminatedCString s_decoder_table_read_error_0058b873
-;   undefined4 DAT_005bdba0
-;   undefined4 DAT_005bdba4
-;   undefined4 DAT_005bdba8
+;   SHuffmanTableSource[34] g_HuffmanTableSources
+;   undefined4 g_HuffmanTableSources[0].xlen
+;   undefined4 g_HuffmanTableSources[0].ylen
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 004e7b00
         ;   Label: sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_004e7b00
     SUB ESP,0xc                         ; 004e7b01
-    MOV EDX,dword ptr [0x01cd6320]      ; 004e7b04 | DAT_01cd6320
+    MOV EDX,dword ptr [0x01cd6320]      ; 004e7b04 | g_HuffmanTablesInitialized
     TEST EDX,EDX                        ; 004e7b0a
     JNZ 0x004e7c97                      ; 004e7b0c
         ;   XREF to: 004e7c97 (CONDITIONAL_JUMP)  ; LAB_004e7c97
@@ -59,16 +59,16 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e7b36
     MOV EAX,dword ptr [ESP + 0x14]      ; 004e7b39
-    MOV EAX,dword ptr [EAX + 0x5bdba0]  ; 004e7b3d | DAT_005bdba0
-    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e7b43 | DAT_01cd944c
+    MOV EAX,dword ptr [EAX + 0x5bdba0]  ; 004e7b3d | g_HuffmanTableSources
+    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e7b43 | g_HuffmanTables[0].table_size
     MOV EAX,dword ptr [ESP + 0x14]      ; 004e7b49
-    MOV EAX,dword ptr [EAX + 0x5bdba4]  ; 004e7b4d | DAT_005bdba4
+    MOV EAX,dword ptr [EAX + 0x5bdba4]  ; 004e7b4d | g_HuffmanTableSources[0].xlen
     MOV dword ptr [EBX + 0x1cd8c2c],EAX ; 004e7b53
     MOV EAX,dword ptr [ESP + 0x14]      ; 004e7b59
-    MOV EAX,dword ptr [EAX + 0x5bdba8]  ; 004e7b5d | DAT_005bdba8
+    MOV EAX,dword ptr [EAX + 0x5bdba8]  ; 004e7b5d | g_HuffmanTableSources[0].ylen
     MOV dword ptr [EBX + 0x1cd8c30],EAX ; 004e7b63
     MOV EAX,dword ptr [ESP + 0x14]      ; 004e7b69
-    MOV EAX,dword ptr [EAX + 0x5bdbac]  ; 004e7b6d | DAT_005bdbac
+    MOV EAX,dword ptr [EAX + 0x5bdbac]  ; 004e7b6d | g_HuffmanTableSources[0].bits
     MOV dword ptr [EBX + 0x1cd8c34],EAX ; 004e7b73
     MOV EAX,0x1                         ; 004e7b79
     MOV CL,byte ptr [EBX + 0x1cd8c34]   ; 004e7b7e
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 004e7c9c (CONDITIONAL_JUMP)  ; LAB_004e7c9c
     MOV EAX,dword ptr [ESP + 0x14]      ; 004e7baa
         ;   Label: LAB_004e7baa
-    MOV EAX,dword ptr [EAX + 0x5bdbb0]  ; 004e7bae | DAT_005bdbb0
+    MOV EAX,dword ptr [EAX + 0x5bdbb0]  ; 004e7bae | g_HuffmanTableSources[0].reference_index
     TEST EAX,EAX                        ; 004e7bb4
     JL 0x004e7ce1                       ; 004e7bb6
         ;   XREF to: 004e7ce1 (CONDITIONAL_JUMP)  ; LAB_004e7ce1
@@ -108,13 +108,13 @@ section .text
     AND CL,0x3                          ; 004e7beb
     MOVSB.REP ES:EDI,ESI                ; 004e7bee
     POP EDI                             ; 004e7bf0
-    MOV EAX,dword ptr [EDX + 0x1cd944c] ; 004e7bf1 | DAT_01cd944c
-    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e7bf7 | DAT_01cd944c
+    MOV EAX,dword ptr [EDX + 0x1cd944c] ; 004e7bf1 | g_HuffmanTables[0].table_size
+    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e7bf7 | g_HuffmanTables[0].table_size
     MOV EAX,dword ptr [EBX + 0x1cd8c2c] ; 004e7bfd
     CMP EAX,dword ptr [EDX + 0x1cd8c2c] ; 004e7c03
     JZ 0x004e7cca                       ; 004e7c09
         ;   XREF to: 004e7cca (CONDITIONAL_JUMP)  ; LAB_004e7cca
-    PUSH 0x1cd8b28                      ; 004e7c0f | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e7c0f | g_CurrentMp3Filename
         ;   Label: LAB_004e7c0f
     PUSH EBP                            ; 004e7c14
     MOV EDI,0x58b7b4                    ; 004e7c15 | = "..\\sound\\mp3.cpp"
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 004e7b26 (CONDITIONAL_JUMP)  ; LAB_004e7b26
     JZ 0x004e7c8a                       ; 004e7c60
         ;   XREF to: 004e7c8a (CONDITIONAL_JUMP)  ; LAB_004e7c8a
-    PUSH 0x1cd8b28                      ; 004e7c62 | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e7c62 | g_CurrentMp3Filename
     MOV EDI,0x58b862                    ; 004e7c67 | = "..\\sound\\mp3.cpp"
     MOV EBP,0xda1                       ; 004e7c6c
     PUSH 0x58b873                       ; 004e7c71 | = "decoder table read error.  File: %s"
@@ -149,7 +149,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e7c82
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e7c87
-    MOV dword ptr [0x01cd6320],0x1      ; 004e7c8a | DAT_01cd6320
+    MOV dword ptr [0x01cd6320],0x1      ; 004e7c8a | g_HuffmanTablesInitialized
         ;   Label: LAB_004e7c8a
     POP EBX                             ; 004e7c94
     POP ESI                             ; 004e7c95
@@ -158,7 +158,7 @@ section .text
         ;   Label: LAB_004e7c97
     POP EBP                             ; 004e7c9a
     RET                                 ; 004e7c9b
-    PUSH 0x1cd8b28                      ; 004e7c9c | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e7c9c | g_CurrentMp3Filename
         ;   Label: LAB_004e7c9c
     PUSH EBP                            ; 004e7ca1
     MOV ECX,0x58b782                    ; 004e7ca2 | = "..\\sound\\mp3.cpp"
@@ -182,7 +182,7 @@ section .text
         ;   Label: LAB_004e7ce1
     JNZ 0x004e7d70                      ; 004e7ce4
         ;   XREF to: 004e7d70 (CONDITIONAL_JUMP)  ; LAB_004e7d70
-    MOV ECX,dword ptr [EBX + 0x1cd944c] ; 004e7cea | DAT_01cd944c
+    MOV ECX,dword ptr [EBX + 0x1cd944c] ; 004e7cea | g_HuffmanTables[0].table_size
     MOV dword ptr [EBX + 0x1cd8c3c],EAX ; 004e7cf0
     CMP ECX,0x401                       ; 004e7cf6
     JNC 0x004e7d46                      ; 004e7cfc
@@ -191,9 +191,9 @@ section .text
         ;   Label: LAB_004e7cfe
     MOV EDI,EBX                         ; 004e7d02
     MOV ECX,EBX                         ; 004e7d04
-    MOV EDX,dword ptr [EBX + 0x1cd944c] ; 004e7d06 | DAT_01cd944c
+    MOV EDX,dword ptr [EBX + 0x1cd944c] ; 004e7d06 | g_HuffmanTables[0].table_size
     XOR ESI,ESI                         ; 004e7d0c
-    MOV EAX,dword ptr [EAX + 0x5bdbb4]  ; 004e7d0e | DAT_005bdbb4
+    MOV EAX,dword ptr [EAX + 0x5bdbb4]  ; 004e7d0e | g_HuffmanTableSources[0].huffman_data_ptr
     TEST EDX,EDX                        ; 004e7d14
     JBE 0x004e7c37                      ; 004e7d16
         ;   XREF to: 004e7c37 (CONDITIONAL_JUMP)  ; LAB_004e7c37
@@ -207,14 +207,14 @@ section .text
     MOV DL,byte ptr [EDX]               ; 004e7d2c
     MOV byte ptr [ECX + 0x1cd8c47],DL   ; 004e7d2e
     INC ESI                             ; 004e7d34
-    MOV EDX,dword ptr [EDI + 0x1cd944c] ; 004e7d35 | DAT_01cd944c
+    MOV EDX,dword ptr [EDI + 0x1cd944c] ; 004e7d35 | g_HuffmanTables[0].table_size
     INC EAX                             ; 004e7d3b
     CMP ESI,EDX                         ; 004e7d3c
     JNC 0x004e7c37                      ; 004e7d3e
         ;   XREF to: 004e7c37 (CONDITIONAL_JUMP)  ; LAB_004e7c37
     JMP 0x004e7d1c                      ; 004e7d44
         ;   XREF to: 004e7d1c (UNCONDITIONAL_JUMP)  ; LAB_004e7d1c
-    PUSH 0x1cd8b28                      ; 004e7d46 | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e7d46 | g_CurrentMp3Filename
         ;   Label: LAB_004e7d46
     MOV ESI,0x58b7e9                    ; 004e7d4b | = "..\\sound\\mp3.cpp"
     MOV EDI,0xd7e                       ; 004e7d50
@@ -226,7 +226,7 @@ section .text
     ADD ESP,0x8                         ; 004e7d6b
     JMP 0x004e7cfe                      ; 004e7d6e
         ;   XREF to: 004e7cfe (UNCONDITIONAL_JUMP)  ; LAB_004e7cfe
-    PUSH 0x1cd8b28                      ; 004e7d70 | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e7d70 | g_CurrentMp3Filename
         ;   Label: LAB_004e7d70
     PUSH EBP                            ; 004e7d75
     MOV EDI,0x58b81f                    ; 004e7d76 | = "..\\sound\\mp3.cpp"

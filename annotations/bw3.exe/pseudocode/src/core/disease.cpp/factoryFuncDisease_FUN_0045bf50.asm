@@ -15,7 +15,7 @@ section .text
     PUSH 0x5a4                          ; 0045bf50
         ;   Label: core_disease.cpp_factoryFuncDisease_FUN_0045bf50
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0045bf55
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0045bf5a
     TEST EAX,EAX                        ; 0045bf5d
     JNZ 0x0045bf62                      ; 0045bf5f

@@ -1,0 +1,303 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 21,
+    "cross_reference_count": 5,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "004f5bc0",
+      "from_addr": "004f5bf7",
+      "name": "core_mission.cpp_CDemonMission_load_FUN_004f5bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6a80",
+      "from_addr": "004f6a9e",
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7590",
+      "from_addr": "004f765b",
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534420",
+      "from_addr": "00534442",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_00534420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532b80",
+      "from_addr": "00532ba9",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00532b80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e0000",
+    "address_range": [
+      [
+        "004e0000",
+        "004e0083"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_level.cpp_CLevelLoader_update_FUN_004e0000",
+    "signature": "void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e0000(CLevelLoader *this_ptr,char *text,int clear_screen)"
+  },
+  "function_calls": [
+    {
+      "addr": "004031c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_004031c0"
+    },
+    {
+      "addr": "0040d6f0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba18",
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005fba1c",
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "004f5bf7",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_load_FUN_004f5bc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004f6a9e",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004f6b6c",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004f6b8f",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004f6bd9",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004f765b",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_startMission_FUN_004f7590",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00532ba9",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_load_FUN_00532b80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00533590",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_load_FUN_00532b80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0053362b",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_load_FUN_00532b80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00534442",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_00534420",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 34,
+      "INT_ADD": 13,
+      "INT_AND": 33,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 1,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 4,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 11,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 22,
+      "INT_ZEXT": 2,
+      "LOAD": 11,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 17,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 235
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e1600",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1522
+    },
+    "bw1.exe": {
+      "addr": "004fe9c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1574
+    },
+    "nocedit.exe": {
+      "addr": "00504160",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1407
+    },
+    "nocturne.exe": {
+      "addr": "004c59e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1407
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLevelLoader *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "clear_screen",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

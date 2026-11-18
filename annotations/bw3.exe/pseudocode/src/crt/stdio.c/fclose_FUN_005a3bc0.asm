@@ -15,9 +15,9 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_ftell_FUN_005a5d00
-;   crt_unknown.c_FUN_005a3770
+;   crt_stdio.c_remove_FUN_005a54b0
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_FUN_005a3b0c
-;   crt_unknown.c_FUN_005a54b0
 ;   crt_unknown.c_FUN_005a7f44
 ;   crt_unknown.c_FUN_005a7f58
 ;   crt_unknown.c_FUN_005a9bc0
@@ -88,8 +88,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x8]       ; 005a3c3e
     MOV EDX,dword ptr [EAX + 0x8]       ; 005a3c41
     PUSH EDX                            ; 005a3c44
-    CALL crt_unknown.c_FUN_005a3770     ; 005a3c45
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005a3c45
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     MOV EAX,dword ptr [EBX + 0x8]       ; 005a3c4a
     ADD ESP,0x4                         ; 005a3c4d
     MOV dword ptr [EAX + 0x8],0x0       ; 005a3c50
@@ -108,8 +108,8 @@ section .text
     ADD ESP,0x8                         ; 005a3c73
     MOV EAX,ESP                         ; 005a3c76
     PUSH EAX                            ; 005a3c78
-    CALL crt_unknown.c_FUN_005a54b0     ; 005a3c79
-        ;   XREF to: 005a54b0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005a54b0(char * filename)
+    CALL crt_stdio.c_remove_FUN_005a54b0 ; 005a3c79
+        ;   XREF to: 005a54b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005a54b0(char * filename)
     ADD ESP,0x4                         ; 005a3c7e
     MOV ECX,dword ptr [EBX + 0x10]      ; 005a3c81
         ;   Label: LAB_005a3c81

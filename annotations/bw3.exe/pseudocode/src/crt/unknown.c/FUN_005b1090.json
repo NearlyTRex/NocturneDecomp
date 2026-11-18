@@ -12,8 +12,8 @@
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "unnamed_param",
+      "wrong_global"
     ],
     "total_lines": 284
   },
@@ -228,14 +228,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "while (((&DAT_006074b8)[(byte)(*pcVar4 + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_3",
@@ -304,7 +296,7 @@
       "line": 51,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((&PTR_crt_unknown_c_FUN_005b1938_00607f18)[param_3] < puVar7) {",
+      "text": "if ((&g_PTR_00607f18)[param_3] < puVar7) {",
       "type": "unnamed_param"
     },
     {
@@ -362,6 +354,14 @@
       "severity": "mild",
       "text": "if (param_4 == 0) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Scalar global g_PTR_00607f18 accessed via (&g_PTR_00607f18)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CHAR_ARRAY_00607f1c (at 0x00607f1c, +4 bytes).",
+      "line": 51,
+      "match": "g_PTR_00607f18",
+      "severity": "moderate",
+      "text": "if ((&g_PTR_00607f18)[param_3] < puVar7) {",
+      "type": "wrong_global"
     },
     {
       "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

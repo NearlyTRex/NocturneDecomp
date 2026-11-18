@@ -12,10 +12,16 @@
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType g_CShotgunActorType_0267189c;
-extern CDemonActorType g_CShovelActorType_026718d8;
-extern CDemonActorType g_CSimBoxActorType_02671914;
+extern CDemonActorType g_CShotgunClassInfo;
+extern CDemonActorType g_CShovelClassInfo;
+extern CDemonActorType g_CSimBoxClassInfo;
 
 // CVector3f[5000]
-extern CVector3f g_CVector3f_ARRAY_026757d0[5000];
+extern CVector3f g_FloatVertexArray[5000];
+
+// int
+extern int g_INT_026714b0;
+
+// int[4000]
+extern int g_VertexRemapTable[4000];
 

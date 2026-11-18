@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 16
   },
   "cross_references": [],
@@ -55,6 +53,89 @@
       "STORE": 2
     },
     "pcode_op_count": 37
+  },
+  "possible_indirect_callers": {
+    "method_name": "getAndClearKeyState",
+    "param_analysis": {
+      "call_site_count": 132,
+      "caller_details": [
+        {
+          "caller": "CAudioRecPuzzle_process_FUN_0059b5a0",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CFieldNotes_process_FUN_004a5f60",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGameHook_showDebugMenu_FUN_0059c3d0",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processCheatCodes_FUN_004b90d0",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processCheatCodes_FUN_004b90d0",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFrame_FUN_004b5190",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFrame_FUN_004b5190",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFudge_FUN_004b39d0",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFudge_FUN_004b39d0",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFudge_FUN_004b39d0",
+          "estimated_params": 0
+        }
+      ],
+      "estimated_params": 0,
+      "param_estimates": [
+        0
+      ]
+    },
+    "possible_callers": [
+      "CAudioRecPuzzle_process_FUN_0059b5a0",
+      "CFieldNotes_process_FUN_004a5f60",
+      "CGameHook_showDebugMenu_FUN_0059c3d0",
+      "CGame_processCheatCodes_FUN_004b90d0",
+      "CGame_processFrame_FUN_004b5190",
+      "CGame_processFudge_FUN_004b39d0",
+      "CGame_processHotkeys_FUN_004b82e0",
+      "CGame_processKeyboardControls_FUN_004b76c0",
+      "CGame_processPointAndClickControls_FUN_004be8a0",
+      "CGame_runGameSession_FUN_004b6170",
+      "CInputString_handleKeyboardInput_FUN_0047acc0",
+      "CNetGame_initializeNetworkToJoin_FUN_0050b4d0",
+      "CNetGame_runLobby_FUN_0050cf50",
+      "CNetGame_syncPlayers_FUN_0050bdb0",
+      "CPickList_handleInput_FUN_00482350",
+      "CSpotView_handleInput_FUN_005619f0",
+      "adjustFixedPointSlider_FUN_004eba50",
+      "adjustMouseSensitivity_FUN_004eb7c0",
+      "calibrateGamepad_FUN_004eb490",
+      "captureDebugMovieFrame_FUN_004b2a50",
+      "configureCustomKeys_FUN_004ecc70",
+      "configureGraphicsOptions_FUN_004ebf10",
+      "configureSoundOptions_FUN_004ed260",
+      "renderMenuAndGetChoice_FUN_004eb0e0",
+      "showMainGameMenu_FUN_004ee3f0",
+      "showMultiChoiceDialog_FUN_0047c0f0",
+      "showOptionsScreen_FUN_004ee1a0",
+      "showTextInputDialog_FUN_0047b1f0"
+    ],
+    "vtable_offset": 4
   },
   "siblings": {
     "bw1.exe": {
@@ -105,24 +186,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "bVar1 = (&DAT_01c37790)[key_code];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_01c37790",
-      "severity": "mild",
-      "text": "(&DAT_01c37790)[key_code] = 0;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -19,9 +19,9 @@ void FUN_0056e6e4(void)
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4 = FUN_0056e42c;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae8 = FUN_0056e4ec;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1aec = FUN_0056e4fc;
-  PTR_crt_unknown_c_FUN_0056e250_005c1f60 = FUN_0056e390;
-  PTR_crt_unknown_c_FUN_0056e250_005c1f64 = FUN_0056e3f4;
-  PTR_crt_unknown_c_FUN_0056e250_005c1f68 = FUN_0056e37c;
+  g_ARRAY_PTR_005c1f60[0] = FUN_0056e390;
+  g_ARRAY_PTR_005c1f60[1] = FUN_0056e3f4;
+  g_ARRAY_PTR_005c1f60[2] = FUN_0056e37c;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad8 = FUN_0056e4ac;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1adc = FUN_0056e4cc;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0 = FUN_0056e4bc;
@@ -31,8 +31,9 @@ void FUN_0056e6e4(void)
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4 = FUN_0056e51c;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af8 = FUN_0056e6b8;
   PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af0 = FUN_0056e50c;
-  FUN_00571280(*(uint *)((int)_DAT_02de4e3c + 0xda),_DAT_02de4e3c);
-  TlsSetValue(DAT_005c1ab8,_DAT_02de4e3c);
+  FUN_00571280
+            (*(uint *)(g_CurrentThreadTlsBlock + 0xda),g_CurrentThreadTlsBlock);
+  TlsSetValue(g_INT_005c1ab8,g_CurrentThreadTlsBlock);
   PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc = FUN_0056e52c;
   return;
 }

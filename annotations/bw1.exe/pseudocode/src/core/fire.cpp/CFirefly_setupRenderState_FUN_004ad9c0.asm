@@ -16,21 +16,21 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b532f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df204
-;   undefined4 DAT_00612560
-;   undefined4 DAT_0062902c
-;   undefined4 DAT_00629030
-;   undefined4 DAT_0062905c
-;   undefined4 DAT_00629060
-;   undefined4 DAT_0062908c
-;   undefined4 DAT_00629090
-;   undefined4 DAT_006290bc
-;   undefined4 DAT_006290c0
-;   undefined4 DAT_007c6120
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01c57078
-;   undefined4 DAT_01c5707c
-;   undefined4 DAT_01c57080
+;   double g_DOUBLE_005df204 = -65536
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[0].v
+;   undefined4 g_SRenderVertex_ARRAY_00629014[1].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[1].v
+;   undefined4 g_SRenderVertex_ARRAY_00629014[2].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[2].v
+;   undefined4 g_SRenderVertex_ARRAY_00629014[3].u
+;   undefined4 g_SRenderVertex_ARRAY_00629014[3].v
+;   CDemonCamera* g_CurrentSceneCamera
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   CVector3i g_BillboardCameraRight
+;   undefined4 g_BillboardCameraRight.y
+;   undefined4 g_BillboardCameraRight.z
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -52,47 +52,47 @@ section .text
     MOV ESI,0xf80000                    ; 004ad9d5
     MOV EDI,0x1c57078                   ; 004ad9da
     XOR ECX,ECX                         ; 004ad9df
-    MOV dword ptr [0x01c57094],EDX      ; 004ad9e1 | DAT_01c57094
-    MOV dword ptr [0x01c57098],ECX      ; 004ad9e7 | DAT_01c57098
-    MOV dword ptr [0x01c5709c],ECX      ; 004ad9ed | DAT_01c5709c
-    MOV dword ptr [0x01c570a0],ECX      ; 004ad9f3 | DAT_01c570a0
-    MOV dword ptr [0x01c570a4],ECX      ; 004ad9f9 | DAT_01c570a4
-    MOV dword ptr [0x01c570a8],ECX      ; 004ad9ff | DAT_01c570a8
-    MOV [0x01c570ac],EAX                ; 004ada05 | DAT_01c570ac
-    MOV dword ptr [0x0062902c],EBX      ; 004ada0a | DAT_0062902c
-    MOV dword ptr [0x00629030],ESI      ; 004ada10 | DAT_00629030
-    MOV dword ptr [0x0062905c],ESI      ; 004ada16 | DAT_0062905c
-    MOV dword ptr [0x00629060],ESI      ; 004ada1c | DAT_00629060
-    MOV dword ptr [0x0062908c],ESI      ; 004ada22 | DAT_0062908c
-    MOV dword ptr [0x00629090],EBX      ; 004ada28 | DAT_00629090
-    MOV dword ptr [0x006290bc],EBX      ; 004ada2e | DAT_006290bc
-    MOV dword ptr [0x006290c0],EBX      ; 004ada34 | DAT_006290c0
+    MOV dword ptr [0x01c57094],EDX      ; 004ad9e1 | g_BillboardPrimitive.base.base.count
+    MOV dword ptr [0x01c57098],ECX      ; 004ad9e7 | g_BillboardPrimitive.base.surface_normal.A
+    MOV dword ptr [0x01c5709c],ECX      ; 004ad9ed | g_BillboardPrimitive.base.surface_normal.B
+    MOV dword ptr [0x01c570a0],ECX      ; 004ad9f3 | g_BillboardPrimitive.base.surface_normal.C
+    MOV dword ptr [0x01c570a4],ECX      ; 004ad9f9 | g_BillboardPrimitive.base.surface_normal.D
+    MOV dword ptr [0x01c570a8],ECX      ; 004ad9ff | g_BillboardPrimitive.vertices[0]
+    MOV [0x01c570ac],EAX                ; 004ada05 | g_BillboardPrimitive.vertices[1]
+    MOV dword ptr [0x0062902c],EBX      ; 004ada0a | g_SRenderVertex_ARRAY_00629014[0].u
+    MOV dword ptr [0x00629030],ESI      ; 004ada10 | g_SRenderVertex_ARRAY_00629014[0].v
+    MOV dword ptr [0x0062905c],ESI      ; 004ada16 | g_SRenderVertex_ARRAY_00629014[1].u
+    MOV dword ptr [0x00629060],ESI      ; 004ada1c | g_SRenderVertex_ARRAY_00629014[1].v
+    MOV dword ptr [0x0062908c],ESI      ; 004ada22 | g_SRenderVertex_ARRAY_00629014[2].u
+    MOV dword ptr [0x00629090],EBX      ; 004ada28 | g_SRenderVertex_ARRAY_00629014[2].v
+    MOV dword ptr [0x006290bc],EBX      ; 004ada2e | g_SRenderVertex_ARRAY_00629014[3].u
+    MOV dword ptr [0x006290c0],EBX      ; 004ada34 | g_SRenderVertex_ARRAY_00629014[3].v
     MOV EDX,0x2                         ; 004ada3a
     MOV ECX,0x3                         ; 004ada3f
-    MOV ESI,dword ptr [0x00612560]      ; 004ada44 | DAT_00612560
-    MOV dword ptr [0x01c570b0],EDX      ; 004ada4a | DAT_01c570b0
-    PUSH ESI                            ; 004ada50 | DAT_01bc120c
+    MOV ESI,dword ptr [0x00612560]      ; 004ada44 | g_CDemonRenderer_PTR_00612560
+    MOV dword ptr [0x01c570b0],EDX      ; 004ada4a | g_BillboardPrimitive.vertices[2]
+    PUSH ESI                            ; 004ada50 | g_CDemonRenderer_01bc120c
     LEA ESI,[ESP + 0x54]                ; 004ada51
-    MOV dword ptr [0x01c570b4],ECX      ; 004ada55 | DAT_01c570b4
+    MOV dword ptr [0x01c570b4],ECX      ; 004ada55 | g_BillboardPrimitive.vertices[3]
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50 ; 004ada5b
         ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004ada60
     ADD ESP,0x4                         ; 004ada64
-    MOVSD ES:EDI,ESI                    ; 004ada67 | DAT_01c57078
-    MOVSD ES:EDI,ESI                    ; 004ada68 | DAT_01c5707c
-    MOVSD ES:EDI,ESI                    ; 004ada69 | DAT_01c57080
-    MOV ESI,dword ptr [0x007c6120]      ; 004ada6a | DAT_007c6120
+    MOVSD ES:EDI,ESI                    ; 004ada67 | g_BillboardCameraRight
+    MOVSD ES:EDI,ESI                    ; 004ada68 | g_BillboardCameraRight.y
+    MOVSD ES:EDI,ESI                    ; 004ada69 | g_BillboardCameraRight.z
+    MOV ESI,dword ptr [0x007c6120]      ; 004ada6a | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 004ada70
     XOR EDI,EDI                         ; 004ada75
     LEA ESI,[ESI + 0x10]                ; 004ada77
-    MOV dword ptr [0x01c5707c],EDI      ; 004ada7a | DAT_01c5707c
+    MOV dword ptr [0x01c5707c],EDI      ; 004ada7a | g_BillboardCameraRight.y
     LEA EDI,[ESP + 0x28]                ; 004ada80
     MOVSD.REP ES:EDI,ESI                ; 004ada84
     MOV ECX,0xa                         ; 004ada86
     MOV EDI,ESP                         ; 004ada8b
     LEA ESI,[ESP + 0x28]                ; 004ada8d
     MOVSD.REP ES:EDI,ESI                ; 004ada91
-    FLD double ptr [0x005df204]         ; 004ada93 | DAT_005df204
+    FLD double ptr [0x005df204]         ; 004ada93 | g_DOUBLE_005df204
     FLD float ptr [ESP + 0x8]           ; 004ada99
     FMUL ST1                            ; 004ada9d
     FLD float ptr [ESP + 0x14]          ; 004ada9f
@@ -101,18 +101,18 @@ section .text
     FMULP ST3                           ; 004adaa9
     FXCH                                ; 004adaab
     CALL crt_math.c_round_FUN_005c03a0  ; 004adaad
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 004adab2
     CALL crt_math.c_round_FUN_005c03a0  ; 004adab4
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH ST2                            ; 004adab9
     CALL crt_math.c_round_FUN_005c03a0  ; 004adabb
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FXCH                                ; 004adac0
-    FISTP dword ptr [0x01c57084]        ; 004adac2 | DAT_01c57084
+    FISTP dword ptr [0x01c57084]        ; 004adac2 | g_BillboardCameraUp
     FXCH                                ; 004adac8
-    FISTP dword ptr [0x01c57088]        ; 004adaca | DAT_01c57088
-    FISTP dword ptr [0x01c5708c]        ; 004adad0 | DAT_01c5708c
+    FISTP dword ptr [0x01c57088]        ; 004adaca | g_BillboardCameraUp.y
+    FISTP dword ptr [0x01c5708c]        ; 004adad0 | g_BillboardCameraUp.z
     ADD ESP,0x5c                        ; 004adad6
     POP EDI                             ; 004adad9
     POP ESI                             ; 004adada

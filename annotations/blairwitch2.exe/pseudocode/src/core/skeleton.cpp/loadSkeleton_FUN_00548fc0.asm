@@ -12,12 +12,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e759a
 ;   TerminatedCString s_Can_t_load_s_because_ske_005e75af
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_02628554
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   char[188] g_CHAR_ARRAY_02628554
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_skeleton.cpp_CSkeleton_load_FUN_00540a10
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
@@ -51,7 +51,7 @@ section .text
     CMP EBX,0x28                        ; 00548ff7
     JL 0x00548fd5                       ; 00548ffa
         ;   XREF to: 00548fd5 (CONDITIONAL_JUMP)  ; LAB_00548fd5
-    MOV EDX,dword ptr [0x02628554]      ; 00548ffc | DAT_02628554
+    MOV EDX,dword ptr [0x02628554]      ; 00548ffc | g_CHAR_ARRAY_02628554
     XOR EBX,EBX                         ; 00549002
     XOR EAX,EAX                         ; 00549004
     TEST EDX,EDX                        ; 00549006
@@ -86,7 +86,7 @@ section .text
     MOV ECX,0x1                         ; 00549048
         ;   Label: LAB_00549048
     MOV EAX,EBP                         ; 0054904d
-    MOV dword ptr [EBX*0x4 + 0x2628554],ECX ; 0054904f | DAT_02628554
+    MOV dword ptr [EBX*0x4 + 0x2628554],ECX ; 0054904f | g_CHAR_ARRAY_02628554
     POP EBP                             ; 00549056
     POP EDI                             ; 00549057
     POP ESI                             ; 00549058
@@ -98,10 +98,10 @@ section .text
     MOV EBP,0x5e759a                    ; 0054905e | = "..\\core\\skeleton.cpp"
     MOV EAX,0x10a5                      ; 00549063
     PUSH 0x5e75af                       ; 00549068 | = "Can't load %s because skeleton manage..."
-    MOV dword ptr [0x01d046a0],EBP      ; 0054906d | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00549073 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00549078
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 0054906d | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00549073 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00549078
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0054907d
     XOR EAX,EAX                         ; 00549080
     POP EBP                             ; 00549082

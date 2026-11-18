@@ -27,7 +27,7 @@
 ;   TerminatedCString s_core_set_cpp_00590652
 ;   TerminatedCString s_CDemonSet_rotateVerticie_00590662
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -55,7 +55,7 @@ section .text
     PUSH 0x1                            ; 0050c21b
         ;   Label: LAB_0050c21b
     MOV EDI,dword ptr [0x005ae704]      ; 0050c21d | g_CDemonRenderer_PTR_005ae704
-    PUSH EDI                            ; 0050c223 | DAT_01b4d738
+    PUSH EDI                            ; 0050c223 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050c224
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     MOV ESI,dword ptr [0x005ae704]      ; 0050c229 | g_CDemonRenderer_PTR_005ae704
@@ -64,7 +64,7 @@ section .text
     XOR EDI,EDI                         ; 0050c234
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0050c236
     MOV dword ptr [ESP],EAX             ; 0050c23a
-    MOV ESI,dword ptr [ESI]             ; 0050c23d | DAT_01b4d738
+    MOV ESI,dword ptr [ESI]             ; 0050c23d | g_CDemonRenderer_01b4d738
     TEST EDX,EDX                        ; 0050c23f
     JLE 0x0050c267                      ; 0050c241
         ;   XREF to: 0050c267 (CONDITIONAL_JUMP)  ; LAB_0050c267
@@ -122,7 +122,7 @@ section .text
     PUSH 0x0                            ; 0050c2b8
         ;   Label: LAB_0050c2b8
     MOV ESI,dword ptr [0x005ae704]      ; 0050c2ba | g_CDemonRenderer_PTR_005ae704
-    PUSH ESI                            ; 0050c2c0 | DAT_01b4d738
+    PUSH ESI                            ; 0050c2c0 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050c2c1
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0050c2c6

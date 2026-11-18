@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_icepick_cpp_005da86e
 ;   TerminatedCString s_CIcePick_getCarryObjToBo_005da882
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
-;   core_xform.cpp_FUN_00591c10
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
     PUSH EAX                            ; 004d58b2
     LEA EAX,[ESP + 0x38]                ; 004d58b3
     PUSH EAX                            ; 004d58b7
-    CALL core_xform.cpp_FUN_00591c10    ; 004d58b8
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10 ; 004d58b8
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     LEA EAX,[EBP*0x4 + 0x0]             ; 004d58bd
     ADD ESP,0xc                         ; 004d58c4
     SUB EAX,EBP                         ; 004d58c7
@@ -117,10 +117,10 @@ section .text
         ;   Label: LAB_004d5921
     MOV ESI,0x289                       ; 004d5926
     PUSH 0x5da882                       ; 004d592b | = "CIcePick::getCarryObjToBodyXForm - wr..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004d5930 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004d5936 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004d593c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 004d5930 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004d5936 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004d593c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004d5941
     JMP 0x004d58a6                      ; 004d5944
         ;   XREF to: 004d58a6 (UNCONDITIONAL_JUMP)  ; LAB_004d58a6

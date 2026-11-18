@@ -6,11 +6,11 @@
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 24,
     "suspect_count": 1,
     "suspect_types": [
-      "suspicious_cast"
+      "undefined_data"
     ],
     "total_lines": 75
   },
@@ -73,15 +73,15 @@
   "globals": [
     {
       "addr": "006851fd",
-      "name": "g_LookupTableStruct",
+      "name": "DAT_006851fd",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00685210",
-      "name": "INT_00685210",
-      "type": "int",
-      "value": "-0xfef7fa"
+      "name": "g_DosErrorToErrno+0x10",
+      "type": "undefined4",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -222,12 +222,12 @@
   },
   "suspects": [
     {
-      "description": "Cast-and-add on &g_LookupTableStruct \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory.",
+      "description": "Undefined global data reference",
       "line": 23,
-      "match": "g_LookupTableStruct",
-      "severity": "moderate",
-      "text": "error_code = *(int *)(&g_LookupTableStruct + windows_error) >> 0x18;",
-      "type": "suspicious_cast"
+      "match": "DAT_006851fd",
+      "severity": "mild",
+      "text": "error_code = *(int *)(&DAT_006851fd + windows_error) >> 0x18;",
+      "type": "undefined_data"
     }
   ]
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(CBugs *this_ptr)
 
 {
@@ -34,11 +32,11 @@ void __cdecl core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(CBugs *this
     iVar1 = 0;
     pCVar3 = pCStack_2c;
     do {
-      CStack_3c.x = (int)ROUND(fVar4 * _DAT_0059ae90);
+      CStack_3c.x = (int)ROUND(fVar4 * 256.0f);
       CStack_3c.y = (int)ROUND((pCVar3->ground_heights[0][0] + (float)0.25) *
-                               _DAT_0059ae90);
+                               256.0f);
       CStack_3c.z = (int)ROUND(((float)iVar1 * 0.5f + this_ptr->grid_origin_z) *
-                               _DAT_0059ae90);
+                               256.0f);
       iStack_18 = iVar1;
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 ((SProjectedVertex *)

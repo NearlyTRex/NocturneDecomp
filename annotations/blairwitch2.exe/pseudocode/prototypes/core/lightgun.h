@@ -21,13 +21,13 @@ CDemonActorType * __cdecl CLightGun::getActorType(CLightGun *this_ptr);
 // Address: 004e2a20
 CLightGun * __cdecl CLightGun::ctor(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_FUN_004e2ae0
+// Original: core_lightgun.cpp_CLightGun_isVampireType_FUN_004e2ae0
 // Address: 004e2ae0
-undefined4 FUN_004e2ae0(CDemonActor *param_1);
+int __cdecl CLightGun::isVampireType(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_FUN_004e2bf0
+// Original: core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004e2bf0
 // Address: 004e2bf0
-void FUN_004e2bf0(int param_1);
+void __cdecl CLightGun::updateBeamLight(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_getMuzzlePoint_FUN_004e2cc0
 // Address: 004e2cc0

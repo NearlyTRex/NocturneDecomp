@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_SPageResourceText_draw_FUN_004ba930(SPageResourceText *this_ptr)
 
 {
@@ -15,15 +13,15 @@ void __cdecl core_fldnotes_cpp_SPageResourceText_draw_FUN_004ba930(SPageResource
   int iVar2;
   int x;
   
-  engine_font_cpp_FUN_004c1dd0
-            (this_ptr->font,this_ptr->text,(this_ptr->base).x,(this_ptr->base).y,0,0xffffffff);
+  engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
+            (this_ptr->font,this_ptr->text,(this_ptr->base).x,(this_ptr->base).y,0,-1);
   if (this_ptr->underlined == 0) {
     return;
   }
   iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr->font,0x78);
   iVar1 = (this_ptr->base).y + iVar1;
-  if (this_ptr->font != _DAT_0152d254) {
-    _DAT_01c4f020 = 0;
+  if (this_ptr->font != g_CBitFont_PTR_0152d254) {
+    g_INT_01c4f020 = 0;
     engine_2d_c_drawHLine_FUN_00402f30
               ((this_ptr->base).x,iVar1,(this_ptr->base).x + (this_ptr->base).width + -1);
     return;
@@ -37,7 +35,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceText_draw_FUN_004ba930(SPageResource
       x = x + CAlphaBitmap_01cc7cc0.width;
     } while (CAlphaBitmap_01cc7cc0.width < iVar2);
   }
-  engine_alphabit_cpp_FUN_0040d660
+  engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040d660
             (&CAlphaBitmap_01cc7cc0,x,iVar1,0,0,iVar2 + -1,CAlphaBitmap_01cc7cc0.height + -1,0xffff)
   ;
   return;

@@ -1,70 +1,71 @@
 // Name: core_zombie.cpp_getObjectGrabPointWorld_FUN_005ba890
 // Address: 005ba890
 // Address Range: [[005ba890, 005ba985]]
-// Convention: unknown
-// Signature: void core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(int param_1)
+// Convention: __stack_esi
+// Signature: CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(CDemonActor *actor,CVector3f *out_point)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(int param_1)
+CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_005ba890(CDemonActor *actor,CVector3f *out_point)
 
 {
   int iVar1;
-  uint *unaff_ESI;
+  float unaff_EBP;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  float afStackY_1040 [1004];
-  float fStack_70;
-  float fStack_6c;
+  float afStackY_1038 [1003];
+  CBoundingBox3D *in_stack_ffffff78;
   float fStack_68;
   float fStack_64;
   float fStack_60;
   float fStack_5c;
-  CVector3f CStack_58;
-  float fStack_4c;
-  float afStack_48 [5];
-  uint uStack_34;
-  CVector3f CStack_28;
-  float fStack_1c;
-  float afStack_18 [3];
+  float fStack_58;
+  float fStack_54;
+  CVector3f CStack_50;
+  float fStack_44;
+  float afStack_40 [2];
+  CVector3f CStack_38;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
+  float fStack_14;
+  float fStack_10;
   
   bVar4 = 0;
-  (**(code **)(*(int *)(param_1 + 0x154) + 0x1c))(param_1);
-  puVar2 = (uint *)&stack0xffffff78;
-  puVar3 = &stack0xffffff90;
+  (*((actor->vtable)._ub)->getBoundingBox)(actor,in_stack_ffffff78);
+  puVar3 = (uint *)&stack0xffffff80;
+  puVar2 = (uint *)&stack0xffffff90;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    *puVar2 = *puVar3;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
   }
-  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(&CStack_28);
-  CStack_28.x = fStack_70 + fStack_64;
-  CStack_28.y = fStack_6c + fStack_60;
-  CStack_28.z = fStack_68 + fStack_5c;
-  fStack_1c = fStack_70 + fStack_64;
-  afStack_18[(uint)bVar4 * -2] = *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + 4);
-  afStack_18[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(&CStack_58);
-  CStack_58.x = fStack_1c * _DAT_005fa3ec;
-  CStack_58.y = afStack_18[0] * _DAT_005fa3ec;
-  CStack_58.z = afStack_18[1] * _DAT_005fa3ec;
-  fStack_4c = fStack_1c * _DAT_005fa3ec;
-  afStack_48[(uint)bVar4 * -2] = *(float *)((int)&CStack_58 + (uint)bVar4 * -8 + 4);
-  afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       *(float *)((int)&CStack_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  afStack_48[1] = fStack_68 + (float)_DAT_005fa3f4;
-  afStack_48[2] = fStack_4c;
-  afStack_48[(uint)bVar4 * -2 + 3] = afStack_48[(uint)bVar4 * -2];
-  afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-       afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  core_actor_cpp_FUN_00408b40(param_1,afStack_48 + 2);
-  *unaff_ESI = uStack_34;
-  unaff_ESI[(uint)bVar4 * -2 + 1] = afStack_48[(uint)bVar4 * -2 + 6];
-  (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-       afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-  return;
+  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(&CStack_20);
+  CStack_20.x = fStack_68 + fStack_5c;
+  CStack_20.y = fStack_64 + fStack_58;
+  CStack_20.z = fStack_60 + fStack_54;
+  fStack_14 = fStack_68 + fStack_5c;
+  (&fStack_10)[(uint)bVar4 * -2] = *(float *)((int)&CStack_20 + (uint)bVar4 * -8 + 4);
+  *(uint *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+       *(uint *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(&CStack_50);
+  CStack_50.x = fStack_14 * 0.5f;
+  CStack_50.y = fStack_10 * 0.5f;
+  CStack_50.z = unaff_EBP * 0.5f;
+  fStack_44 = fStack_14 * 0.5f;
+  afStack_40[(uint)bVar4 * -2] = *(float *)((int)&CStack_50 + (uint)bVar4 * -8 + 4);
+  afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+       *(float *)((int)&CStack_50 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  afStack_40[1] = fStack_60 + (float)0.40000000000000002;
+  CStack_38.x = fStack_44;
+  *(float *)((int)&CStack_38 + (uint)bVar4 * -8 + 4) = afStack_40[(uint)bVar4 * -2];
+  *(float *)((int)&CStack_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       afStack_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40(actor,&CStack_38,&CStack_2c);
+  puVar3 = (uint *)((int)out_point + (uint)bVar4 * -8 + 4);
+  out_point->x = CStack_2c.x;
+  *puVar3 = *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
+  puVar3[(uint)bVar4 * -2 + 1] =
+       *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  return out_point;
 }

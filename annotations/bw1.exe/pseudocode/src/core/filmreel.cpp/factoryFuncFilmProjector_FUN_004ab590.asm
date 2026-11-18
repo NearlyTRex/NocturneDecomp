@@ -15,7 +15,7 @@ section .text
     PUSH 0x3e4                          ; 004ab590
         ;   Label: core_filmreel.cpp_factoryFuncFilmProjector_FUN_004ab590
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004ab595
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004ab59a
     TEST EAX,EAX                        ; 004ab59d
     JNZ 0x004ab5a2                      ; 004ab59f

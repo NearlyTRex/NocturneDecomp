@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 69,
+    "complexity_score": 83,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "displaced_global_access",
+      "pointer_cast",
+      "pointer_truncation",
+      "wrong_global"
     ],
-    "total_lines": 72
+    "total_lines": 71
   },
   "cross_references": [
     {
@@ -32,7 +33,7 @@
     {
       "addr": "00535da0",
       "from_addr": "00535ddf",
-      "name": "core_set.cpp_FUN_00535da0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,7 +59,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     }
   ],
   "globals": [
@@ -76,20 +77,20 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0203ad1c",
-      "name": "DAT_0203ad1c",
-      "type": "undefined4",
+      "name": "g_INT_0203ad1c",
+      "type": "int",
       "value": null
     }
   ],
@@ -172,28 +173,41 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 13,
-      "match": "*(CDemonLight **)(iVar1 + 0x203ad20",
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
       "severity": "moderate",
-      "text": "if (light == *(CDemonLight **)(iVar1 + 0x203ad20)) {",
-      "type": "raw_address_pointer_store"
+      "text": "if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0203ad1c",
-      "severity": "mild",
-      "text": "*(CDemonLight **)(&DAT_0203ad1c + _DAT_0203ad1c * 4) = light;",
-      "type": "undefined_data"
+      "description": "Scalar global g_INT_0203ad1c accessed via (&g_INT_0203ad1c)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DynamicLights (at 0x0203ad20, +4 bytes).",
+      "line": 23,
+      "match": "g_INT_0203ad1c",
+      "severity": "moderate",
+      "text": "(&g_INT_0203ad1c)[g_INT_0203ad1c] = (int)light;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)g_DynamicLights",
+      "severity": "moderate",
+      "text": "if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x203ad1c] lands in g_INT_0203ad1c but intended target is g_DynamicLights at 0x203ad20 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_0203ad1c",
+      "displacement": "0x203ad1c",
+      "instruction_address": "",
+      "intended_global": "g_DynamicLights",
+      "line": 30,
+      "match": "0x203ad1c",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 005372b3: MOV dword ptr [ESI*0x4 + 0x203ad1c],EBX  ; g_INT_0203ad1c",
+      "type": "displaced_global_access"
     }
   ]
 }

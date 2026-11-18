@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_00581300(CTVBat *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_tvbat_cpp_CTVBat_getBoundingBox_FUN_00581300(CTVBat *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
@@ -24,7 +23,7 @@ section .text
     FLD float ptr [EAX + 0x10af8]       ; 0058130b
     ADD EAX,0x10afc                     ; 00581311
     CALL crt_math.c_round_FUN_005b7ff0  ; 00581316
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     PUSH EAX                            ; 0058131b
     FISTP dword ptr [ESP + 0x1c]        ; 0058131c
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20 ; 00581320

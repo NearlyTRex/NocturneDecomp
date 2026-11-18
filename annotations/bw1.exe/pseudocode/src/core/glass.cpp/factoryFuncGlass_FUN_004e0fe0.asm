@@ -15,7 +15,7 @@ section .text
     PUSH 0xb40                          ; 004e0fe0
         ;   Label: core_glass.cpp_factoryFuncGlass_FUN_004e0fe0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004e0fe5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004e0fea
     TEST EAX,EAX                        ; 004e0fed
     JNZ 0x004e0ff2                      ; 004e0fef

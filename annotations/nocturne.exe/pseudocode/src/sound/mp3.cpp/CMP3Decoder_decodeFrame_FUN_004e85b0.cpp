@@ -132,13 +132,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         local_98 = 1;
         local_94 = *(uint *)(SStack_e4.layer + 0xc);
         local_14 = local_8c * 0xb4 + 0x3c;
-        iVar4 = *(int *)(&DAT_005bbc88 + local_94 * 4 + local_14) / SStack_e4.padding;
+        iVar4 = g_MpegBitrateTable[local_8c][1][local_94] / SStack_e4.padding;
         header_out = (int *)0x4e87a3;
         local_a0 = &SStack_e4.layer;
         dVar16 = round
-                           (*(double *)
-                             (&DAT_005bbc48 +
-                             *(uint *)(SStack_e4.layer + 0x10) * 8 + local_8c * 0x20));
+                           (g_MpegSampleRateTable[local_8c][*(uint *)(SStack_e4.layer + 0x10)]);
         local_94 = (uint)ROUND(dVar16);
         if (local_90 == 1) {
           if (((local_94 == 0x30) && (0x37 < iVar4)) || ((0x37 < iVar4 && (iVar4 < 0x51)))) {
@@ -212,7 +210,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
                   iVar4 = *piVar10;
                   piVar10 = piVar10 + 0x60;
                   iVar7 = iVar7 + 1;
-                  *pfVar5 = *pfVar5 * (float)*(double *)(&DAT_005bbdf0 + iVar4 * 8);
+                  *pfVar5 = *pfVar5 * (float)g_MpegScalefactorTable[iVar4];
                   pfVar5 = pfVar5 + 0x60;
                 } while (iVar7 < SStack_e4.sampling_rate_index);
               }
@@ -237,7 +235,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
       }
       else if (local_110[0] < 3) {
         local_60d0 = 0x480;
-        header_out = (int *)0x8;
+        header_out = (int *)&DAT_00000008;
         sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0
                   (pCVar2,aSStack_294,(SMpegFrame *)&SStack_e4);
         sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004e3460
@@ -298,7 +296,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         } while (SStack_e4.copyright < 0xc);
       }
       else if (local_110[0] == 3) {
-        header_out = (int *)0x8;
+        header_out = (int *)&DAT_00000008;
         if (*(int *)SStack_e4.mpeg_version == 0) {
           local_60d0 = 0x240;
         }
@@ -510,12 +508,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         iVar7 = 0x4e8afb;
         SStack_e4.channel_mode = (int)header_out;
         dVar16 = round
-                           ((((double)local_60d0 /
-                             *(double *)(&DAT_005bbc48 + local_104 * 8 + iStack_114 * 0x20)) *
-                            (double)*(int *)(&DAT_005bbc88 +
-                                            iStack_108 * 4 +
-                                            (local_110[0] - 1) * 0x3c + iStack_114 * 0xb4)) /
-                            (double)header_out);
+                           ((((double)local_60d0 / g_MpegSampleRateTable[iStack_114][local_104]) *
+                            (double)g_MpegBitrateTable[iStack_114 + -1][local_110[0] + 2]
+                                    [iStack_108]) / (double)header_out);
         local_68 = (SMpegLayer3GranuleInfo *)(int)ROUND(dVar16);
         if (local_100 != 0) {
           local_68 = (SMpegLayer3GranuleInfo *)((int)local_68 + 1);

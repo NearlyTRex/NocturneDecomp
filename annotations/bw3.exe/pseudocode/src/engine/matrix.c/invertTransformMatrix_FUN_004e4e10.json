@@ -2,17 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 210,
-    "complexity_score": 93,
+    "complexity_score": 90,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 29,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 78,
-    "suspect_count": 1,
+    "pseudocode_lines": 65,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 288
+    "total_lines": 275
   },
   "cross_references": [
     {
@@ -51,175 +51,175 @@
   "globals": [
     {
       "addr": "005c6eca",
-      "name": "DAT_005c6eca",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FixedToFloat",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005c6ed2",
-      "name": "DAT_005c6ed2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Fixed16Scale",
+      "type": "double",
+      "value": "65536"
     },
     {
       "addr": "01c6e2fc",
-      "name": "DAT_01c6e2fc",
-      "type": "undefined4",
+      "name": "g_INT_01c6e2fc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e300",
-      "name": "DAT_01c6e300",
-      "type": "undefined4",
+      "name": "g_INT_01c6e300",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e304",
-      "name": "DAT_01c6e304",
-      "type": "undefined4",
+      "name": "g_INT_01c6e304",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e308",
-      "name": "DAT_01c6e308",
-      "type": "undefined4",
+      "name": "g_INT_01c6e308",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e30c",
-      "name": "DAT_01c6e30c",
-      "type": "undefined4",
+      "name": "g_INT_01c6e30c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e310",
-      "name": "DAT_01c6e310",
-      "type": "undefined4",
+      "name": "g_INT_01c6e310",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e314",
-      "name": "DAT_01c6e314",
-      "type": "undefined4",
+      "name": "g_INT_01c6e314",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e318",
-      "name": "DAT_01c6e318",
-      "type": "undefined4",
+      "name": "g_INT_01c6e318",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e31c",
-      "name": "DAT_01c6e31c",
-      "type": "undefined4",
+      "name": "g_INT_01c6e31c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72644",
-      "name": "DAT_01d72644",
-      "type": "undefined4",
+      "name": "g_INT_01d72644",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72648",
-      "name": "DAT_01d72648",
-      "type": "undefined4",
+      "name": "g_INT_01d72648",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d7264c",
-      "name": "DAT_01d7264c",
-      "type": "undefined4",
+      "name": "g_INT_01d7264c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72650",
-      "name": "DAT_01d72650",
-      "type": "undefined4",
+      "name": "g_INT_01d72650",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72654",
-      "name": "DAT_01d72654",
-      "type": "undefined4",
+      "name": "g_INT_01d72654",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72658",
-      "name": "DAT_01d72658",
-      "type": "undefined4",
+      "name": "g_INT_01d72658",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d7265c",
-      "name": "DAT_01d7265c",
-      "type": "undefined4",
+      "name": "g_INT_01d7265c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72660",
-      "name": "DAT_01d72660",
-      "type": "undefined4",
+      "name": "g_INT_01d72660",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d72664",
-      "name": "DAT_01d72664",
-      "type": "undefined4",
+      "name": "g_INT_01d72664",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d7266c",
-      "name": "DAT_01d7266c",
-      "type": "undefined4",
+      "name": "g_TransformMatrixCopy",
+      "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "01d72670",
-      "name": "DAT_01d72670",
+      "name": "g_TransformMatrixCopy.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d72674",
-      "name": "DAT_01d72674",
+      "name": "g_TransformMatrixCopy.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d72678",
-      "name": "DAT_01d72678",
+      "name": "g_TransformMatrixCopy.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d7267c",
-      "name": "DAT_01d7267c",
+      "name": "g_TransformMatrixCopy.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d72680",
-      "name": "DAT_01d72680",
+      "name": "g_TransformMatrixCopy.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d72684",
-      "name": "DAT_01d72684",
+      "name": "g_TransformMatrixCopy.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d72688",
-      "name": "DAT_01d72688",
+      "name": "g_TransformMatrixCopy.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d7268c",
-      "name": "DAT_01d7268c",
+      "name": "g_TransformMatrixCopy.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -465,12 +465,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Likely misinterpreted integer as float",
+      "line": 58,
+      "match": "7.192002e-39",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "dVar19 = round((double)(uStack_54 * 7.192002e-39));",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 59,
+      "match": "7.19203e-39",
+      "severity": "mild",
+      "text": "dVar20 = round((double)(-(fVar3 * fVar7 - fVar8 * fVar12) * 7.19203e-39));",
+      "type": "suspect_float"
     }
   ]
 }

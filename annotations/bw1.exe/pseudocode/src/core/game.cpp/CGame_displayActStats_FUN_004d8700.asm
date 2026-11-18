@@ -25,19 +25,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_stats_005e34ac
 ;   TerminatedCString s_Level_time_005e34b2
-;   undefined1 DAT_005e34bd
-;   undefined1 DAT_005e34be
-;   undefined1 DAT_005e34bf
+;   TerminatedCString s_anon_005e34bd
+;   undefined4 s_anon_005e34bd+1
+;   undefined4 s_anon_005e34bd+2
 ;   TerminatedCString s_s_2d_2d_2d_2d_005e34c0
 ;   TerminatedCString s_Body_count_005e34d2
 ;   TerminatedCString s_anon_005e34dd
 ;   undefined4 s_anon_005e34dd+1
 ;   undefined4 s_anon_005e34dd+2
-;   undefined4 DAT_005e34e0
-;   undefined4 DAT_005e34ec
-;   undefined4 DAT_005e34f4
-;   undefined4 DAT_005e34fc
-;   undefined4 DAT_005e3504
+;   TerminatedCString s_d_005e34e0
+;   double g_DOUBLE_005e34ec = 0.000277777777777778
+;   double g_DOUBLE_005e34f4 = 3600
+;   double g_DOUBLE_005e34fc = 0.0166666666666667
+;   double g_DOUBLE_005e3504 = 60
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
-;   engine_font.cpp_FUN_004c4260
+;   engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
@@ -96,40 +96,40 @@ section .text
     MOV EAX,dword ptr [EAX + 0x26c]     ; 004d877d
     MOV EDX,dword ptr [ECX + 0x274]     ; 004d8783
     FLD ST0                             ; 004d8789
-    FMUL double ptr [0x005e34ec]        ; 004d878b | DAT_005e34ec
+    FMUL double ptr [0x005e34ec]        ; 004d878b | g_DOUBLE_005e34ec
     ADD EDX,EAX                         ; 004d8791
     CALL crt_math.c_round_FUN_005c03a0  ; 004d8793
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x528]       ; 004d8798
     MOV EAX,dword ptr [ESP + 0x528]     ; 004d879f
     MOV dword ptr [ESP + 0x534],EAX     ; 004d87a6
     FILD dword ptr [ESP + 0x534]        ; 004d87ad
-    FMUL double ptr [0x005e34f4]        ; 004d87b4 | DAT_005e34f4
+    FMUL double ptr [0x005e34f4]        ; 004d87b4 | g_DOUBLE_005e34f4
     FSUBP                               ; 004d87ba
     FLD ST0                             ; 004d87bc
-    FMUL double ptr [0x005e34fc]        ; 004d87be | DAT_005e34fc
+    FMUL double ptr [0x005e34fc]        ; 004d87be | g_DOUBLE_005e34fc
     CALL crt_math.c_round_FUN_005c03a0  ; 004d87c4
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x51c]       ; 004d87c9
     MOV EAX,dword ptr [ESP + 0x51c]     ; 004d87d0
     MOV dword ptr [ESP + 0x534],EAX     ; 004d87d7
     FILD dword ptr [ESP + 0x534]        ; 004d87de
-    FMUL double ptr [0x005e3504]        ; 004d87e5 | DAT_005e3504
+    FMUL double ptr [0x005e3504]        ; 004d87e5 | g_DOUBLE_005e3504
     FSUBP                               ; 004d87eb
     FST float ptr [ECX + 0x270]         ; 004d87ed
     CALL crt_math.c_round_FUN_005c03a0  ; 004d87f3
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x520]       ; 004d87f8
     MOV EAX,dword ptr [ESP + 0x520]     ; 004d87ff
     MOV dword ptr [ESP + 0x534],EAX     ; 004d8806
     FILD dword ptr [ESP + 0x534]        ; 004d880d
     FSUBR float ptr [ECX + 0x270]       ; 004d8814
     FST float ptr [ECX + 0x270]         ; 004d881a
-    FMUL double ptr [0x005e350c]        ; 004d8820 | DAT_005e350c
+    FMUL double ptr [0x005e350c]        ; 004d8820 | g_DOUBLE_005e350c
     PUSH 0x5e34b2                       ; 004d8826 | = "Level time"
     MOV dword ptr [ECX + 0x274],EDX     ; 004d882b
     CALL crt_math.c_round_FUN_005c03a0  ; 004d8831
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x528]       ; 004d8836
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 004d883d
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
@@ -152,7 +152,7 @@ section .text
         ;   XREF to: 004d884a (CONDITIONAL_JUMP)  ; LAB_004d884a
     POP EDI                             ; 004d8862
         ;   Label: LAB_004d8862
-    MOV ESI,0x5e34bd                    ; 004d8863 | DAT_005e34bd
+    MOV ESI,0x5e34bd                    ; 004d8863 | = "\n\n"
     MOV EDI,ESP                         ; 004d8868
     PUSH EDI                            ; 004d886a
     SUB ECX,ECX                         ; 004d886b
@@ -160,13 +160,13 @@ section .text
     MOV AL,0x0                          ; 004d886e
     SCASB.REPNE ES:EDI                  ; 004d8870
     DEC EDI                             ; 004d8872
-    MOV AL,byte ptr [ESI]               ; 004d8873 | DAT_005e34bd | DAT_005e34bf
+    MOV AL,byte ptr [ESI]               ; 004d8873 | = "\n\n" | s_anon_005e34bd+2
         ;   Label: LAB_004d8873
     MOV byte ptr [EDI],AL               ; 004d8875
     CMP AL,0x0                          ; 004d8877
     JZ 0x004d888b                       ; 004d8879
         ;   XREF to: 004d888b (CONDITIONAL_JUMP)  ; LAB_004d888b
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d887b | DAT_005e34be | = "%2d:%2d:%2d.%2d\n\n"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d887b | s_anon_005e34bd+1 | = "%2d:%2d:%2d.%2d\n\n"
     ADD ESI,0x2                         ; 004d887e
     MOV byte ptr [EDI + 0x1],AL         ; 004d8881
     ADD EDI,0x2                         ; 004d8884
@@ -278,7 +278,7 @@ section .text
     CMP AL,0x0                          ; 004d8962
     JZ 0x004d8976                       ; 004d8964
         ;   XREF to: 004d8976 (CONDITIONAL_JUMP)  ; LAB_004d8976
-    MOV AL,byte ptr [ESI + 0x1]         ; 004d8966 | s_anon_005e34dd+1 | DAT_005e34e0
+    MOV AL,byte ptr [ESI + 0x1]         ; 004d8966 | s_anon_005e34dd+1 | = "%d\n\n"
     ADD ESI,0x2                         ; 004d8969
     MOV byte ptr [EDI + 0x1],AL         ; 004d896c
     ADD EDI,0x2                         ; 004d896f
@@ -290,7 +290,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x54c]     ; 004d8977
     MOV EBP,dword ptr [EAX + 0x26c]     ; 004d897e
     PUSH EBP                            ; 004d8984
-    PUSH 0x5e34e0                       ; 004d8985 | DAT_005e34e0
+    PUSH 0x5e34e0                       ; 004d8985 | = "%d\n\n"
     LEA EAX,[ESP + 0x408]               ; 004d898a
     PUSH EAX                            ; 004d8991
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004d8992
@@ -320,7 +320,7 @@ section .text
     POP EDI                             ; 004d89c4
         ;   Label: LAB_004d89c4
     PUSH 0xffff                         ; 004d89c5
-    MOV EBP,dword ptr [0x0152d244]      ; 004d89ca | DAT_0152d244
+    MOV EBP,dword ptr [0x0152d244]      ; 004d89ca | g_ThemeFont
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 004d89d0
         ;   XREF to: 00406bd0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bd0(int alpha_color_value)
     ADD ESP,0x4                         ; 004d89d5
@@ -331,8 +331,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004d89e9
     PUSH EAX                            ; 004d89ed
     PUSH EBP                            ; 004d89ee
-    CALL engine_font.cpp_FUN_004c4260   ; 004d89ef
-        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c4260()
+    CALL engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260 ; 004d89ef
+        ;   XREF to: 004c4260 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapTextToLines_FUN_004c4260(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 004d89f4
     PUSH 0x58                           ; 004d89f7
     XOR EBX,EBX                         ; 004d89f9

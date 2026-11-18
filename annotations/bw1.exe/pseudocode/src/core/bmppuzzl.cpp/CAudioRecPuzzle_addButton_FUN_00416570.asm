@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_bmppuzzl_cpp_005d3f12
 ;   TerminatedCString s_Too_damn_many_buttons_005d3f27
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
 ;
 ; *****************************************************************************
@@ -78,10 +78,10 @@ section .text
         ;   Label: LAB_004165ef
     MOV EDX,0x299                       ; 004165f4
     PUSH 0x5d3f27                       ; 004165f9 | = "Too damn many buttons"
-    MOV [0x01d1d400],EAX                ; 004165fe | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00416603 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00416609
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 004165fe | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00416603 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00416609
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0041660e
     POP EDI                             ; 00416611
     POP ESI                             ; 00416612

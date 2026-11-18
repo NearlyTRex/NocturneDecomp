@@ -10,8 +10,8 @@ void __cdecl core_flamegun_cpp_staticInit_FUN_0048e960(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CFlameThrowerActorType_01c70690,"CFlameThrower",
-             core_flamegun_cpp_factoryFuncFlameThrower_FUN_0048e990,&g_INT_005b91dc,1,
-             &g_CWeaponActorType_02ddf970);
+            (&g_CFlameThrowerClassInfo,"CFlameThrower",
+             core_flamegun_cpp_factoryFuncFlameThrower_FUN_0048e990,&g_CFlameThrowerClassVersion,1,
+             &g_CWeaponClassInfo);
   return;
 }

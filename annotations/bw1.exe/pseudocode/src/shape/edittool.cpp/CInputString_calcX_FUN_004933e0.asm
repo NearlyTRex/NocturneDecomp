@@ -11,17 +11,17 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_004934b0 at 004935d8
+;   shape_edittool.cpp_CInputString_draw_FUN_004934b0 at 004935d8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbcac
 ;   TerminatedCString s_CInputString_calcX_strin_005dbcc2
-;   undefined4 DAT_01c3eb50
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   CBitFont* g_CBitFont_PTR_01c3eb50
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 ;
@@ -54,10 +54,10 @@ section .text
     MOV EDI,0x5dbcac                    ; 0049341c | = "..\\shape\\edittool.cpp"
     MOV EBP,0x20e                       ; 00493421
     PUSH 0x5dbcc2                       ; 00493426 | = "CInputString::calcX - string too big ..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0049342b | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00493431 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00493437
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 0049342b | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 00493431 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00493437
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049343c
     PUSH EBX                            ; 0049343f
         ;   Label: LAB_0049343f
@@ -71,7 +71,7 @@ section .text
     MOV byte ptr [ESP + EBX*0x1 + 0x4],AH ; 00493451
     LEA EAX,[ESP + 0x4]                 ; 00493455
     PUSH EAX                            ; 00493459
-    MOV EAX,[0x01c3eb50]                ; 0049345a | DAT_01c3eb50
+    MOV EAX,[0x01c3eb50]                ; 0049345a | g_CBitFont_PTR_01c3eb50
     PUSH EAX                            ; 0049345f
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 00493460
         ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
@@ -91,7 +91,7 @@ section .text
     PUSH EAX                            ; 00493477
     ADD EBX,EAX                         ; 00493478
     XOR EDX,EDX                         ; 0049347a
-    MOV ESI,dword ptr [0x01c3eb50]      ; 0049347c | DAT_01c3eb50
+    MOV ESI,dword ptr [0x01c3eb50]      ; 0049347c | g_CBitFont_PTR_01c3eb50
     MOV DL,byte ptr [EBX]               ; 00493482
     PUSH ESI                            ; 00493484
     MOV dword ptr [ESP + 0x410],EDX     ; 00493485

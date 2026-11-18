@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 195,
+    "complexity_score": 170,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 15,
+    "suspect_count": 13,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 64
   },
@@ -63,14 +62,14 @@
   "globals": [
     {
       "addr": "005a47a4",
-      "name": "DAT_005a47a4",
-      "type": "undefined4",
+      "name": "g_IFStream_LayoutInfo",
+      "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
       "addr": "005a47ac",
-      "name": "DAT_005a47ac",
-      "type": "undefined4",
+      "name": "g_IFStream_IStreamSubobjectLayout",
+      "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
@@ -182,28 +181,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005a47a4",
-      "severity": "mild",
-      "text": "*(byte **)this_ptr = &DAT_005a47a4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(byte **)((int)this_ptr",
+      "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_IFStream_IStreamSubobjectLayout;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005a47ac",
-      "severity": "mild",
-      "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -288,9 +271,9 @@
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 13,
-      "match": "(byte **)((int)this_ptr + 0x44)",
+      "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44)",
       "severity": "moderate",
-      "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_IFStream_IStreamSubobjectLayout;",
       "type": "pointer_cast"
     },
     {

@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 234,
+    "complexity_score": 178,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 17,
+    "pseudocode_lines": 33,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 65
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -47,9 +46,9 @@
         "0057b870"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_0057b820",
-    "signature": "CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point)"
+    "signature": "CVector3f * __stack_esi core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(CWeapon *this_ptr,CVector3f *out_point)"
   },
   "function_calls": [
     {
@@ -66,10 +65,12 @@
         "call_addr": "004117a4",
         "call_type": "direct",
         "caller": "core_blundrbs.cpp_CBlunderbus_getMuzzlePoint_FUN_00411790",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -77,10 +78,12 @@
         "call_addr": "0048b5e4",
         "call_type": "direct",
         "caller": "core_exorcism.cpp_CExorcism_getMuzzlePoint_FUN_0048b5d0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -88,19 +91,21 @@
         "call_addr": "004e3df4",
         "call_type": "direct",
         "caller": "core_lightsta.cpp_CLightStaff_getMuzzlePoint_FUN_004e3de0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
     "confidence": "high",
     "declared_params": 2,
-    "declared_stack_bytes": 8,
-    "estimated_params": 1,
-    "matches_declared": false
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.241379310344827,
@@ -156,10 +161,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 52,
     "local_size": 48,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -210,28 +215,13 @@
         "offset": 4,
         "size": 4,
         "type": "CWeapon *"
-      },
-      {
-        "is_param": true,
-        "name": "out_point",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3f *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CVector3f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 11,
       "match": "afStackY_ffc",
       "severity": "moderate",
       "text": "float afStackY_ffc [1011];",
@@ -239,7 +229,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 21,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "pfVar4 = (float *)&stack0xffffffd4;",
@@ -247,39 +237,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(CBoundingBox3D *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(uint *)((int)unaff_ESI",
+      "line": 30,
+      "match": "(uint *)((int)out_point",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
+      "text": "puVar5 = (uint *)((int)out_point + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI->x = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 32,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8);",
@@ -287,39 +261,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 34,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 24,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)unaff_ESI",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "(int)&stack0xfffffff0",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8);",
@@ -327,7 +285,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffff4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
+      "line": 34,
       "match": "(int)&stack0xfffffff4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -335,7 +293,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 23,
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -343,7 +301,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8);",
@@ -351,7 +309,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 35,
+      "line": 34,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",

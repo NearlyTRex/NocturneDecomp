@@ -17,15 +17,15 @@
 ;   core_fire.cpp_CGunFlame_process_FUN_004b2d40 at 004b2e55
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005df4d4
-;   undefined4 DAT_005df4dc
-;   undefined4 DAT_01c58768
-;   undefined4 DAT_01c5876c
-;   undefined4 DAT_01c58834
-;   undefined4 DAT_01c58838
+;   float g_FLOAT_005df4d4 = 25
+;   double g_DOUBLE_005df4dc = 25
+;   int g_GunFlameCandidateCount
+;   CCharacter*[50] g_GunFlameCandidates
+;   int g_FlameCanCount
+;   CFlameCan*[150] g_FlameCans
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_004308a0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004b9180
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
@@ -43,7 +43,7 @@ section .text
     SUB ESP,0x40                        ; 004b2986
     AND ESP,0xfffffff8                  ; 004b2989
     XOR EDX,EDX                         ; 004b298c
-    MOV ECX,dword ptr [0x01c58768]      ; 004b298e | DAT_01c58768
+    MOV ECX,dword ptr [0x01c58768]      ; 004b298e | g_GunFlameCandidateCount
     MOV dword ptr [ESP + 0x34],EDX      ; 004b2994
     TEST ECX,ECX                        ; 004b2998
     JLE 0x004b29ee                      ; 004b299a
@@ -56,7 +56,7 @@ section .text
         ;   Label: LAB_004b29aa
     MOV EBX,dword ptr [ESP + 0x30]      ; 004b29ad
     MOV ECX,dword ptr [EAX + 0x20]      ; 004b29b1
-    MOV EBX,dword ptr [EBX + 0x1c5876c] ; 004b29b4 | DAT_01c5876c
+    MOV EBX,dword ptr [EBX + 0x1c5876c] ; 004b29b4 | g_GunFlameCandidates
     CMP ECX,0x2                         ; 004b29ba
     JZ 0x004b2a58                       ; 004b29bd
         ;   XREF to: 004b2a58 (CONDITIONAL_JUMP)  ; LAB_004b2a58
@@ -66,7 +66,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 004b29d0
         ;   Label: LAB_004b29d0
     MOV ESI,dword ptr [ESP + 0x34]      ; 004b29d4
-    MOV EDI,dword ptr [0x01c58768]      ; 004b29d8 | DAT_01c58768
+    MOV EDI,dword ptr [0x01c58768]      ; 004b29d8 | g_GunFlameCandidateCount
     ADD EBX,0x4                         ; 004b29de
     INC ESI                             ; 004b29e1
     MOV dword ptr [ESP + 0x30],EBX      ; 004b29e2
@@ -74,7 +74,7 @@ section .text
     CMP ESI,EDI                         ; 004b29ea
     JL 0x004b29aa                       ; 004b29ec
         ;   XREF to: 004b29aa (CONDITIONAL_JUMP)  ; LAB_004b29aa
-    MOV EAX,[0x01c58834]                ; 004b29ee | DAT_01c58834
+    MOV EAX,[0x01c58834]                ; 004b29ee | g_FlameCanCount
         ;   Label: LAB_004b29ee
     XOR ESI,ESI                         ; 004b29f3
     TEST EAX,EAX                        ; 004b29f5
@@ -85,7 +85,7 @@ section .text
     ADD EDI,0x4                         ; 004b2a00
     MOV EDX,dword ptr [ESP + 0x2c]      ; 004b2a03
         ;   Label: LAB_004b2a03
-    MOV EDX,dword ptr [EDX + 0x1c58838] ; 004b2a07 | DAT_01c58838
+    MOV EDX,dword ptr [EDX + 0x1c58838] ; 004b2a07 | g_FlameCans
     LEA EBX,[EDX + 0x20]                ; 004b2a0d
     FLD float ptr [EBX]                 ; 004b2a10
     FSUB float ptr [EDI]                ; 004b2a12
@@ -99,14 +99,14 @@ section .text
     FSUB float ptr [EDI + 0x8]          ; 004b2a25
     FMUL ST0                            ; 004b2a28
     FADDP                               ; 004b2a2a
-    FCOMP double ptr [0x005df4dc]       ; 004b2a2c | DAT_005df4dc
+    FCOMP double ptr [0x005df4dc]       ; 004b2a2c | g_DOUBLE_005df4dc
     FNSTSW AX                           ; 004b2a32
     SAHF                                ; 004b2a34
     JBE 0x004b2ae2                      ; 004b2a35
         ;   XREF to: 004b2ae2 (CONDITIONAL_JUMP)  ; LAB_004b2ae2
     MOV ECX,dword ptr [ESP + 0x2c]      ; 004b2a3b
         ;   Label: LAB_004b2a3b
-    MOV EBX,dword ptr [0x01c58834]      ; 004b2a3f | DAT_01c58834
+    MOV EBX,dword ptr [0x01c58834]      ; 004b2a3f | g_FlameCanCount
     ADD ECX,0x4                         ; 004b2a45
     INC ESI                             ; 004b2a48
     MOV dword ptr [ESP + 0x2c],ECX      ; 004b2a49
@@ -135,7 +135,7 @@ section .text
     FSUB float ptr [EDX + 0x8]          ; 004b2a74
     FMUL ST0                            ; 004b2a77
     FADDP                               ; 004b2a79
-    FCOMP float ptr [0x005df4d4]        ; 004b2a7b | DAT_005df4d4
+    FCOMP float ptr [0x005df4d4]        ; 004b2a7b | g_FLOAT_005df4d4
     FNSTSW AX                           ; 004b2a81
     SAHF                                ; 004b2a83
     JA 0x004b29d0                       ; 004b2a84
@@ -150,8 +150,8 @@ section .text
     PUSH EBX                            ; 004b2a9e
     LEA ESI,[ESP + 0x14]                ; 004b2a9f
     LEA EDI,[ESP + 0x8]                 ; 004b2aa3
-    CALL core_actor.cpp_FUN_00408bb0    ; 004b2aa7
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0 ; 004b2aa7
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     ADD ESP,0x8                         ; 004b2aac
     LEA ESI,[ESP + 0xc]                 ; 004b2aaf
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b2ab3

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float projection_scale,_FILE *file_handle)
 
 {
@@ -34,52 +32,55 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   pvVar2 = malloc(this_ptr->width * this_ptr->height * 4);
   this_ptr->zbuffer_data = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\core\\setdir.cpp";
-    _DAT_01d046a4 = 0x9f;
-    core_main_c_FUN_004e4500("Out of memory");
+    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
+    g_INT_01d046a4 = 0x9f;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   if (file_handle != (_FILE *)0x0) {
     _fread(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
     return;
   }
-  value = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
-  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,0);
+  value = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280)
+  ;
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(g_CDemonRenderer_PTR_0060b280,0);
   iVar1 = this_ptr->height;
-  if (_DAT_020b0258 != 0) {
-    _DAT_01d046a0 = "..\\core\\setdir.cpp";
-    _DAT_01d046a4 = 0x67;
-    core_main_c_FUN_004e4500("saveZBufferTable - already saved!");
+  if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
+    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
+    g_INT_01d046a4 = 0x67;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - already saved!");
   }
   if (0 < iVar1) {
     iVar4 = 0;
     do {
       iVar3 = iVar4 + 4;
-      *(uint *)(&DAT_020b0258 + iVar4) = *(uint *)(&DAT_01c2b64c + iVar4);
+      *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) =
+           *(uint *)((int)g_ZBufferScanlineArray + iVar4);
       iVar4 = iVar3;
     } while (iVar3 < iVar1 * 4);
   }
   core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00538970(this_ptr);
   core_setdir_cpp_CZThumb_pushRenderingContext_FUN_005389b0(this_ptr);
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280
-            (DAT_0060b280,(CVector3i *)0x2093940);
+            (g_CDemonRenderer_PTR_0060b280,&g_VDTempVector);
   engine_special_cpp_clearZBufferNative_FUN_0055b254();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(g_CDemonSetPtr,9999.9,0);
   core_setdir_cpp_CZThumb_popRenderingContext_FUN_00538a30(this_ptr);
   iVar1 = this_ptr->height;
-  if (_DAT_020b0258 == 0) {
-    _DAT_01d046a0 = "..\\core\\setdir.cpp";
-    _DAT_01d046a4 = 0x70;
-    core_main_c_FUN_004e4500("saveZBufferTable - not saved!");
+  if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {
+    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
+    g_INT_01d046a4 = 0x70;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - not saved!");
   }
   if (0 < iVar1) {
     iVar4 = 0;
     do {
       iVar3 = iVar4 + 4;
-      *(uint *)(&DAT_01c2b64c + iVar4) = *(uint *)(&DAT_020b0258 + iVar4);
+      *(uint *)((int)g_ZBufferScanlineArray + iVar4) =
+           *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);
       iVar4 = iVar3;
     } while (iVar3 < iVar1 * 4);
   }
-  _DAT_020b0258 = 0;
-  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,value);
+  g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
+  engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(g_CDemonRenderer_PTR_0060b280,value);
   return;
 }

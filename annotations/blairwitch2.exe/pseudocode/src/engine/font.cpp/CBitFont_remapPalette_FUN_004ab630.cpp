@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004ab7b5) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004ab630(CBitFont *this_ptr)
 
@@ -31,26 +30,29 @@ void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004ab630(CBitFont *this_p
       local_14 = local_2c;
       pCVar1 = local_20;
       do {
-        if (DAT_006141c0 < 0x10) {
-          if (DAT_006141c0 != 8) {
+        if ((uint)g_INT_006141c0 < 0x10) {
+          if (g_INT_006141c0 != 8) {
 LAB_004ab7db:
-            _DAT_01d046a0 = "..\\engine\\font.cpp";
-            _DAT_01d046a4 = 0x8df;
-            core_main_c_FUN_004e4500("CBitFont::remapPalette - Invalid bitsPerPixel");
+            g_CHAR_PTR_01d046a0 = "..\\engine\\font.cpp";
+            g_INT_01d046a4 = 0x8df;
+            core_main_c_displayErrorAndQuit_FUN_004e4500("CBitFont::remapPalette - Invalid bitsPerPixel");
           }
         }
-        else if (DAT_006141c0 < 0x11) {
+        else if ((uint)g_INT_006141c0 < 0x11) {
           local_14->palettes_display[0][0] =
-               ((byte)pCVar1->palette_data[2] / _DAT_01c35830 << (DAT_01c3582c & 0x1f) |
-               (byte)pCVar1->palette_data[1] / _DAT_01c35824 << (DAT_01c35820 & 0x1f) |
-               (byte)pCVar1->palette_data[0] / _DAT_01c35818 << (DAT_01c35814 & 0x1f)) & 0xffff;
+               ((uint)(byte)pCVar1->palette_data[2] / (uint)g_BlueScaleFactor <<
+                (g_BlueBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[1] / (uint)g_GreenScaleFactor <<
+               (g_GreenBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[0] / (uint)g_RedScaleFactor <<
+               (g_RedBitPosition.bytes[0] & 0x1f)) & 0xffff;
         }
         else {
-          if (DAT_006141c0 != 0x20) goto LAB_004ab7db;
+          if (g_INT_006141c0 != 0x20) goto LAB_004ab7db;
           local_18->palettes_display[0][0] =
-               (uint)(byte)pCVar1->palette_data[2] << (DAT_01c3582c & 0x1f) |
-               (uint)(byte)pCVar1->palette_data[0] << (DAT_01c35814 & 0x1f) |
-               (uint)(byte)pCVar1->palette_data[1] << (DAT_01c35820 & 0x1f);
+               (uint)(byte)pCVar1->palette_data[2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[0] << (g_RedBitPosition.bytes[0] & 0x1f) |
+               (uint)(byte)pCVar1->palette_data[1] << (g_GreenBitPosition.bytes[0] & 0x1f);
         }
         pCVar1 = (CBitFont *)((int)&pCVar1->bitmap_count + 3);
         local_18 = (CBitFont *)local_18->bitmap_files;

@@ -12,6 +12,7 @@
 #include "types/classes/CCrater.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonSet.h"
 #include "types/classes/CEventList.h"
 #include "types/classes/CExplosion.h"
 #include "types/classes/CFilmProjector.h"
@@ -54,9 +55,9 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_00491b80(CEventList
 void __cdecl core_event_cpp_CEventList_render_FUN_00491bf0(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this_ptr,char *expression,int *parse_position);
 int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_00494630(CEventList *this_ptr,char *expression,int *parse_position);
-void core_event_cpp_FUN_004946f0(CEventList *param_1,char *param_2,int param_3);
-void core_event_cpp_FUN_00494880(int param_1);
-void core_event_cpp_FUN_004948e0(CEventList *param_1,char *param_2,int param_3);
+void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004946f0(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_00494880(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004948e0(CEventList *this_ptr,char *name,int add_flag);
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00494a70(CEventList *this_ptr,char *name,float duration);
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_00494bf0(CEventList *this_ptr,char *name,int value);
 int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_00494d00(CEventList *this_ptr,char *str);
@@ -76,12 +77,12 @@ int __cdecl core_event_cpp_isValidIdentifierChar_FUN_00495460(int ch);
 int __cdecl core_event_cpp_CEventList_loadState_FUN_00495490(CEventList *this_ptr,_FILE *file_handle);
 int __cdecl core_event_cpp_CEventList_saveState_FUN_00495850(CEventList *this_ptr,_FILE *file_handle);
 void __cdecl core_event_cpp_CRuleList_clear_FUN_00495b40(CRuleList *this_ptr);
-void core_event_cpp_FUN_00495b50(void);
-void core_event_cpp_FUN_00495c90(void);
+void __cdecl core_event_cpp_CRuleList_insert_FUN_00495b50(CRuleList *this_ptr,int index,char *condition,char *event);
+void __cdecl core_event_cpp_CRuleList_remove_FUN_00495c90(CRuleList *this_ptr,int index);
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00495d60(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_00495db0(CRuleList *this_ptr);
 CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00495e40(CQuaternion4f *dest,CQuaternion4f *src);
-undefined4 core_event_cpp_FUN_00495e60(int param_1);
+int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00495e60(CDemonSet *set_ptr);
 void __fastcall crt_watcom_c__memset_FUN_00495ec0(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_00495f30(void);
 void crt_unknown_c_FUN_00495f38(void);
@@ -104,7 +105,7 @@ int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004962e0(CFilmReel *thi
 void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_00496360(CFilmReel *this_ptr,int layer_flag);
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_00496380(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004963d0(CFilmReel *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004963f0(CFilmReel *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004963f0(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_00496430(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_00496450(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00496460(CFilmProjector *this_ptr);
@@ -147,11 +148,11 @@ void __cdecl core_fire_cpp_CRock_setup_FUN_00499fe0(CRock *this_ptr,CVector3f *p
 void __cdecl core_fire_cpp_loadRockAssets_FUN_0049a000(void);
 void __cdecl core_fire_cpp_CRock_process_FUN_0049a010(CRock *this_ptr);
 void __cdecl core_fire_cpp_CRock_render_FUN_0049a090(CRock *this_ptr);
-void __cdecl core_fire_cpp_CLeaf_init_FUN_0049a140(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl core_fire_cpp_CLeaf_init_FUN_0049a140(CLeaf *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model,float drag);
 void __cdecl core_fire_cpp_loadLeafAssets_FUN_0049a170(void);
 void __cdecl core_fire_cpp_CLeaf_process_FUN_0049a1c0(CLeaf *this_ptr);
 void __cdecl core_fire_cpp_CLeaf_render_FUN_0049a2c0(CLeaf *this_ptr);
-undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_0049a380(CLeaf *this_ptr);
+int __cdecl core_fire_cpp_CLeaf_onCollision_FUN_0049a380(CLeaf *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_0049a390(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_0049a450(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_0049a480(CMuzzleFlash *this_ptr);
@@ -196,6 +197,6 @@ void __cdecl core_fire_cpp_CLightningBolt_activate_FUN_0049f420(CLightningBolt *
 void __cdecl core_fire_cpp_CLightningBolt_activateDirectional_FUN_0049f470(CLightningBolt *this_ptr,CVector3f *start_position,CVector3f *end_position,float end_width,float end_spread,int mode,float lifetime,int render_alpha);
 void __cdecl core_fire_cpp_CLightningBolt_process_FUN_0049f4e0(CLightningBolt *this_ptr);
 void __cdecl core_fire_cpp_CLightningBolt_render_FUN_0049f520(CLightningBolt *this_ptr);
-void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,undefined4 *param_2,int param_3,CCharacter *param_4);
+void __cdecl core_fire_cpp_CRing_activate_FUN_0049fce0(CRing *this_ptr,CVector3f *position,int ring_type,CCharacter *owner);
 int * __cdecl core_fire_cpp_CRing_process_FUN_0049fdf0(CRing *this_ptr);
 

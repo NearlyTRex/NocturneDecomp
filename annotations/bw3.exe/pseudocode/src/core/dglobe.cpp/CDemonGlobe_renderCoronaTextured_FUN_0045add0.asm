@@ -7,16 +7,16 @@
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005baff1
-;   undefined4 DAT_005de380
-;   undefined4 DAT_005f2af8
+;   double g_CoronaVertexScale = 0.00390625
+;   float g_CoronaCoordinateScaleFactor = 256
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2af8 = 01bdd7e4
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
-;   engine_special.cpp_FUN_005632a3
-;   engine_texture.cpp_FUN_0056aa10
+;   engine_special.cpp_transformAndProjectPoint_FUN_005632a3
+;   engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 0045add7
     LEA EAX,[EBP + 0x24]                ; 0045addb
     PUSH EAX                            ; 0045adde
-    MOV EDX,dword ptr [0x005f2af8]      ; 0045addf | DAT_005f2af8
+    MOV EDX,dword ptr [0x005f2af8]      ; 0045addf | g_CDemonRenderer_PTR_005f2af8
     PUSH EDX                            ; 0045ade5
     XOR ESI,ESI                         ; 0045ade6
     XOR EDI,EDI                         ; 0045ade8
@@ -40,39 +40,39 @@ section .text
     ADD ESP,0x8                         ; 0045adef
     FILD dword ptr [EDI + 0x5f1954]     ; 0045adf2
         ;   Label: LAB_0045adf2
-    FMUL double ptr [0x005baff1]        ; 0045adf8 | DAT_005baff1
+    FMUL double ptr [0x005baff1]        ; 0045adf8 | g_CoronaVertexScale
     FMUL float ptr [EBP + 0x30]         ; 0045adfe
     FILD dword ptr [EDI + 0x5f1958]     ; 0045ae01
-    FMUL double ptr [0x005baff1]        ; 0045ae07 | DAT_005baff1
+    FMUL double ptr [0x005baff1]        ; 0045ae07 | g_CoronaVertexScale
     FXCH                                ; 0045ae0d
     FSTP float ptr [ESP + 0x28]         ; 0045ae0f
     FMUL float ptr [EBP + 0x30]         ; 0045ae13
     FILD dword ptr [EDI + 0x5f195c]     ; 0045ae16
-    FMUL double ptr [0x005baff1]        ; 0045ae1c | DAT_005baff1
+    FMUL double ptr [0x005baff1]        ; 0045ae1c | g_CoronaVertexScale
     FXCH                                ; 0045ae22
     FSTP float ptr [ESP + 0x2c]         ; 0045ae24
     FMUL float ptr [EBP + 0x30]         ; 0045ae28
     LEA EBX,[ESP + 0x34]                ; 0045ae2b
     LEA EAX,[ESP + 0x28]                ; 0045ae2f
-    MOV EDX,dword ptr [0x005f2af8]      ; 0045ae33 | DAT_005f2af8
+    MOV EDX,dword ptr [0x005f2af8]      ; 0045ae33 | g_CDemonRenderer_PTR_005f2af8
     FSTP float ptr [ESP + 0x30]         ; 0045ae39
     FLD float ptr [EAX]                 ; 0045ae3d
-    FMUL float ptr [0x005de380]         ; 0045ae3f | DAT_005de380
+    FMUL float ptr [0x005de380]         ; 0045ae3f | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0045ae45
     FLD float ptr [EAX + 0x4]           ; 0045ae47
-    FMUL float ptr [0x005de380]         ; 0045ae4a | DAT_005de380
+    FMUL float ptr [0x005de380]         ; 0045ae4a | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x4]         ; 0045ae50
     FLD float ptr [EAX + 0x8]           ; 0045ae53
-    FMUL float ptr [0x005de380]         ; 0045ae56 | DAT_005de380
+    FMUL float ptr [0x005de380]         ; 0045ae56 | g_CoronaCoordinateScaleFactor
     FISTP dword ptr [EBX + 0x8]         ; 0045ae5c
     LEA EAX,[ESP + 0x34]                ; 0045ae5f
     PUSH EAX                            ; 0045ae63
     MOV EAX,dword ptr [EDX]             ; 0045ae64
     ADD EAX,ESI                         ; 0045ae66
     PUSH EAX                            ; 0045ae68
-    CALL engine_special.cpp_FUN_005632a3 ; 0045ae69
-        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005f2af8]                ; 0045ae6e | DAT_005f2af8
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0045ae69
+        ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
+    MOV EAX,[0x005f2af8]                ; 0045ae6e | g_CDemonRenderer_PTR_005f2af8
     MOV EBX,dword ptr [EAX]             ; 0045ae73
     MOV dword ptr [ESI + EBX*0x1 + 0x18],0x800000 ; 0045ae75
     MOV EBX,dword ptr [EAX]             ; 0045ae7d
@@ -92,8 +92,8 @@ section .text
     JNZ 0x0045adf2                      ; 0045aebe
         ;   XREF to: 0045adf2 (CONDITIONAL_JUMP)  ; LAB_0045adf2
     PUSH 0x5f193c                       ; 0045aec4
-    CALL engine_texture.cpp_FUN_0056aa10 ; 0045aec9
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_0056aa10()
+    CALL engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10 ; 0045aec9
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_0056aa10(SMRGLTextureBasic * texture)
     XOR EBX,EBX                         ; 0045aece
     ADD ESP,0x4                         ; 0045aed0
     MOV EAX,dword ptr [EBX + 0x5f1c3c]  ; 0045aed3
@@ -114,13 +114,13 @@ section .text
     MOV EAX,dword ptr [EBX + 0x5f1c58]  ; 0045af18
     MOV dword ptr [ESP + 0x20],EAX      ; 0045af1e
     MOV EAX,dword ptr [EBX + 0x5f1c5c]  ; 0045af22
-    MOV ECX,dword ptr [0x005f2af8]      ; 0045af28 | DAT_005f2af8
+    MOV ECX,dword ptr [0x005f2af8]      ; 0045af28 | g_CDemonRenderer_PTR_005f2af8
     MOV dword ptr [ESP + 0x24],EAX      ; 0045af2e
     MOV EAX,ESP                         ; 0045af32
     ADD EBX,0x24                        ; 0045af34
     PUSH EAX                            ; 0045af37
     CALL crt_math.c_round_FUN_005a3120  ; 0045af38
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     PUSH ECX                            ; 0045af3d
     FISTP dword ptr [ESP + 0x1c]        ; 0045af3e
     CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510 ; 0045af42

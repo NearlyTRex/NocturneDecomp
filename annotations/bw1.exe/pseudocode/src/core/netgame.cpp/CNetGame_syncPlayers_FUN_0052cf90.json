@@ -2,20 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 245,
+    "complexity_score": 165,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
-      "raw_address_pointer_store",
       "shadow_pointer_walk",
-      "suspect_float",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
     "total_lines": 449
   },
@@ -50,7 +46,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "0052d360",
@@ -125,8 +121,8 @@
     },
     {
       "addr": "005eb96a",
-      "name": "DAT_005eb96a",
-      "type": "undefined4",
+      "name": "s_d_005eb96a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -149,62 +145,62 @@
     },
     {
       "addr": "005eba10",
-      "name": "DAT_005eba10",
-      "type": "undefined4",
-      "value": null
+      "name": "g_TimeoutScale",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005eba18",
-      "name": "DAT_005eba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxTimeout",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005eba20",
-      "name": "DAT_005eba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SyncTimeout",
+      "type": "double",
+      "value": "0.100000000000000"
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d51d9c",
-      "name": "DAT_01d51d9c",
-      "type": "undefined4",
+      "name": "g_LastPingTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d51da0",
-      "name": "DAT_01d51da0",
-      "type": "undefined4",
+      "name": "g_UINT_01d51da0",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01d51da8",
-      "name": "DAT_01d51da8",
-      "type": "undefined4",
+      "name": "g_RemoteSyncStage",
+      "type": "int",
       "value": null
     }
   ],
@@ -462,75 +458,27 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 50,
+      "line": 49,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_1c = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005eb96a",
-      "severity": "mild",
-      "text": "_sprintf(local_194,&DAT_005eb96a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 99,
-      "match": "*(code **)(*0x01D1BCA0",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 63,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 99,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 116,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 116,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 64,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.use_item;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 95,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 94,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.use_item;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;",
       "type": "shadow_pointer_walk"
     }
   ]

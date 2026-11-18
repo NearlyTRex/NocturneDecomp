@@ -8,8 +8,8 @@
 ; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dc515
-;   undefined4 DAT_005dc51d
+;   double g_DOUBLE_005dc515 = 0.00392156862745098
+;   double g_DOUBLE_005dc51d = 0.25
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409830
@@ -87,7 +87,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 004e5f9d
     FADDP                               ; 004e5fa1
     ADD EDX,EAX                         ; 004e5fa3
-    FCOMP double ptr [0x005dc51d]       ; 004e5fa5 | DAT_005dc51d
+    FCOMP double ptr [0x005dc51d]       ; 004e5fa5 | g_DOUBLE_005dc51d
     FNSTSW AX                           ; 004e5fab
     SAHF                                ; 004e5fad
     JC 0x004e5fcc                       ; 004e5fae
@@ -113,7 +113,7 @@ section .text
         ;   Label: LAB_004e5fcc
     FMUL float ptr [EBX]                ; 004e5fcf
     FMUL float ptr [EDX]                ; 004e5fd1
-    FLD double ptr [0x005dc515]         ; 004e5fd3 | DAT_005dc515
+    FLD double ptr [0x005dc515]         ; 004e5fd3 | g_DOUBLE_005dc515
     FXCH                                ; 004e5fd9
     FMUL ST1                            ; 004e5fdb
     FADD float ptr [EDX + 0x18]         ; 004e5fdd

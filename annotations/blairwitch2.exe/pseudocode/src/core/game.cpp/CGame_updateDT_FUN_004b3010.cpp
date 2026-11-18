@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_updateDT_FUN_004b3010(CGame *this_ptr)
 
 {
   int iVar1;
   int iVar2;
-  float10 fVar3;
+  double dVar3;
   
   iVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar2 = (iVar1 - this_ptr->clocktime) / 0x12;
@@ -25,17 +23,17 @@ void __cdecl core_game_cpp_CGame_updateDT_FUN_004b3010(CGame *this_ptr)
   if (0x4000 < this_ptr->delta_time_int) {
     this_ptr->delta_time_int = 0x4000;
   }
-  iVar1 = _DAT_01cb80d4;
-  fVar3 = (float10)this_ptr->delta_time_int * (float10)this_ptr->time_scale_factor;
-  round();
-  this_ptr->delta_time_int = (int)ROUND(fVar3);
+  iVar1 = g_MovieRecordingActive;
+  dVar3 = round
+                    ((double)((float)this_ptr->delta_time_int * this_ptr->time_scale_factor));
+  this_ptr->delta_time_int = (int)ROUND(dVar3);
   if (iVar1 != 0) {
-    fVar3 = ((float10)_DAT_005d72ef / (float10)_DAT_006164a0) * (float10)this_ptr->time_scale_factor
-    ;
-    round();
-    this_ptr->delta_time_int = (int)ROUND(fVar3);
+    dVar3 = round
+                      ((double)((65536.0f / 30.0f) *
+                               this_ptr->time_scale_factor));
+    this_ptr->delta_time_int = (int)ROUND(dVar3);
   }
-  _DAT_01c2a370 = this_ptr->delta_time_int;
-  this_ptr->delta_time_float = (float)this_ptr->delta_time_int * (float)_DAT_005d72f3;
+  g_GlobalDeltaTimeInt = this_ptr->delta_time_int;
+  this_ptr->delta_time_float = (float)this_ptr->delta_time_int * (float)1.52587890625e-05;
   return;
 }

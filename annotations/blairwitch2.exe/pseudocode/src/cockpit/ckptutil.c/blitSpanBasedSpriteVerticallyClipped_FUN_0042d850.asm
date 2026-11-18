@@ -8,13 +8,13 @@
 ; void *           Stack[0x8]:4   span_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e54
+;   int g_INT_006141b8 = 0x140
+;   int g_INT_006141c0 = 0x8
+;   int g_INT_01c35e4c
+;   int g_INT_01c35e54
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042c410
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410
 ;
 ; *****************************************************************************
 
@@ -27,15 +27,15 @@ section .text
     PUSH EBP                            ; 0042d853
     SUB ESP,0x30                        ; 0042d854
     MOV EBP,dword ptr [ESP + 0x48]      ; 0042d857
-    CALL cockpit_ckptutil.c_FUN_0042c410 ; 0042d85b
-        ;   XREF to: 0042c410 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042c410()
-    MOV EDX,dword ptr [0x006141c0]      ; 0042d860 | DAT_006141c0
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410 ; 0042d85b
+        ;   XREF to: 0042c410 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_0042c410()
+    MOV EDX,dword ptr [0x006141c0]      ; 0042d860 | g_INT_006141c0
     MOV EDI,EAX                         ; 0042d866
     CMP EDX,0x8                         ; 0042d868
     JNZ 0x0042d931                      ; 0042d86b
         ;   XREF to: 0042d931 (CONDITIONAL_JUMP)  ; LAB_0042d931
-    MOV EAX,[0x01c35e4c]                ; 0042d871 | DAT_01c35e4c
-    MOV EBX,dword ptr [0x01c35e54]      ; 0042d876 | DAT_01c35e54
+    MOV EAX,[0x01c35e4c]                ; 0042d871 | g_INT_01c35e4c
+    MOV EBX,dword ptr [0x01c35e54]      ; 0042d876 | g_INT_01c35e54
     MOV dword ptr [ESP + 0x14],EAX      ; 0042d87c
     CMP EAX,EBX                         ; 0042d880
     JG 0x0042d906                       ; 0042d882
@@ -51,7 +51,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0042d89f
         ;   Label: LAB_0042d89f
     MOV EAX,dword ptr [EAX + 0x1c2a38c] ; 0042d8a3
-    MOV ECX,dword ptr [0x006141b8]      ; 0042d8a9 | DAT_006141b8
+    MOV ECX,dword ptr [0x006141b8]      ; 0042d8a9 | g_INT_006141b8
     MOV dword ptr [ESP + 0x18],EAX      ; 0042d8af
     MOV EAX,dword ptr [ESP + 0x14]      ; 0042d8b3
     IMUL EAX,ECX                        ; 0042d8b7
@@ -71,7 +71,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 0042d8da
     MOV EBX,dword ptr [ESP + 0x8]       ; 0042d8de
     MOV ESI,dword ptr [ESP + 0x14]      ; 0042d8e2
-    MOV EDX,dword ptr [0x01c35e54]      ; 0042d8e6 | DAT_01c35e54
+    MOV EDX,dword ptr [0x01c35e54]      ; 0042d8e6 | g_INT_01c35e54
     ADD ECX,0x84                        ; 0042d8ec
     ADD EBX,0x4                         ; 0042d8f2
     INC ESI                             ; 0042d8f5
@@ -104,9 +104,9 @@ section .text
     ADD ESP,0xc                         ; 0042d92c
     JMP 0x0042d8d0                      ; 0042d92f
         ;   XREF to: 0042d8d0 (UNCONDITIONAL_JUMP)  ; LAB_0042d8d0
-    MOV EAX,[0x01c35e4c]                ; 0042d931 | DAT_01c35e4c
+    MOV EAX,[0x01c35e4c]                ; 0042d931 | g_INT_01c35e4c
         ;   Label: LAB_0042d931
-    MOV ECX,dword ptr [0x01c35e54]      ; 0042d936 | DAT_01c35e54
+    MOV ECX,dword ptr [0x01c35e54]      ; 0042d936 | g_INT_01c35e54
     MOV dword ptr [ESP + 0x10],EAX      ; 0042d93c
     CMP EAX,ECX                         ; 0042d940
     JG 0x0042d906                       ; 0042d942
@@ -122,7 +122,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0042d95a
         ;   Label: LAB_0042d95a
     MOV EAX,dword ptr [EAX + 0x1c2a38c] ; 0042d95d
-    MOV EBX,dword ptr [0x006141b8]      ; 0042d963 | DAT_006141b8
+    MOV EBX,dword ptr [0x006141b8]      ; 0042d963 | g_INT_006141b8
     MOV dword ptr [ESP + 0x28],EAX      ; 0042d969
     MOV EAX,dword ptr [ESP + 0x10]      ; 0042d96d
     IMUL EAX,EBX                        ; 0042d971
@@ -142,7 +142,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x4]       ; 0042d994
     MOV EAX,dword ptr [ESP]             ; 0042d998
     MOV EDX,dword ptr [ESP + 0x10]      ; 0042d99b
-    MOV ECX,dword ptr [0x01c35e54]      ; 0042d99f | DAT_01c35e54
+    MOV ECX,dword ptr [0x01c35e54]      ; 0042d99f | g_INT_01c35e54
     ADD ESI,0x84                        ; 0042d9a5
     ADD EAX,0x4                         ; 0042d9ab
     INC EDX                             ; 0042d9ae

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(CDemonGlobe *this_ptr,CVector3i *vertex_position,CVector3i *surface_normal)
 
 {
@@ -34,9 +32,9 @@ int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(CDem
              (this_ptr->radius_squared - fVar1) * this_ptr->inverse_radius_squared;
   if (surface_normal != (CVector3i *)0x0) {
     fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar1 >> 1));
-    fVar1 = local_28 * fVar1 * (float)surface_normal->z * _DAT_0059bffc +
-            local_30 * fVar1 * (float)surface_normal->x * _DAT_0059bffc +
-            local_2c * fVar1 * (float)surface_normal->y * _DAT_0059bffc;
+    fVar1 = local_28 * fVar1 * (float)surface_normal->z * 1.525879e-05f +
+            local_30 * fVar1 * (float)surface_normal->x * 1.525879e-05f +
+            local_2c * fVar1 * (float)surface_normal->y * 1.525879e-05f;
     if (0.0 < fVar1) {
       return 0;
     }

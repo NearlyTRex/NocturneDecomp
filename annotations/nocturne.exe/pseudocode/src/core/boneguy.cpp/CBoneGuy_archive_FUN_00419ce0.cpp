@@ -21,13 +21,13 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419ce0(CBoneGuy *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
             (&(this_ptr->base).base.model,"modelName");
-  if (g_INT_005ad054 < 4) {
+  if (g_CBoneGuyClassVersion < 4) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
-  if (1 < g_INT_005ad054) {
+  if (1 < g_CBoneGuyClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->death_event,"deathEvent");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->recombine_time,"recombineTime");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->blown_up,"blownUp");
@@ -58,7 +58,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419ce0(CBoneGuy *this_ptr)
       } while (iVar1 < this_ptr->box_count);
     }
   }
-  if ((2 < g_INT_005ad054) && (g_INT_005ad054 < 5)) {
+  if ((2 < g_CBoneGuyClassVersion) && (g_CBoneGuyClassVersion < 5)) {
     core_actor_cpp_archiveFloat_FUN_0040c880
               (&(this_ptr->base).victim_height,"victimHeight");
     return;

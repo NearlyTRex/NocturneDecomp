@@ -17,14 +17,14 @@ CParticle * __cdecl CParticle::dtor(CParticle *this_ptr,uint flags);
 // Address: 00509e40
 void __cdecl CParticle::setup(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
 
-// Original: core_particle.cpp_FUN_00509f30
+// Original: core_particle.cpp_CParticle_process_FUN_00509f30
 // Address: 00509f30
-void FUN_00509f30(CVector3f *param_1);
+void __cdecl CParticle::process(CParticle *this_ptr);
 
 // Original: core_particle.cpp_CParticle_render_FUN_0050a3b0
 // Address: 0050a3b0
 void __cdecl CParticle::render(CParticle *this_ptr);
 
-// Original: core_particle.cpp_FUN_0050a3e0
+// Original: core_particle.cpp_CParticle_onCollision_FUN_0050a3e0
 // Address: 0050a3e0
-undefined4 FUN_0050a3e0(void);
+int __cdecl CParticle::onCollision(CParticle *this_ptr,CVector3f *collision_normal);

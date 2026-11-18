@@ -17,9 +17,9 @@ CWeather * __cdecl CWeather::ctor(CWeather *this_ptr);
 // Address: 005ae190
 void __cdecl CWeather::update(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_005ae560
+// Original: core_weather.cpp_getCurrentCameraAmbientValue_FUN_005ae560
 // Address: 005ae560
-float FUN_005ae560(void);
+int __cdecl getCurrentCameraAmbientValue(void);
 
 // Original: core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580
 // Address: 005ae580

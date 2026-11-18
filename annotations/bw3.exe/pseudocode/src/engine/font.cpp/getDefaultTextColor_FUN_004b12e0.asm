@@ -6,25 +6,25 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40 at 00469bd4
-;   engine_palette.cpp_FUN_00509bc0 at 00509d1b
+;   engine_palette.cpp_CFont_queueText_FUN_00509bc0 at 00509d1b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01d1ad62
-;   undefined4 DAT_01d1ad64
+;   int g_INT_005fba20 = 0x8
+;   ushort g_USHORT_01d1ad62
+;   int g_ShadowColor32
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x005fba20],0x10     ; 004b12e0 | DAT_005fba20
+    CMP dword ptr [0x005fba20],0x10     ; 004b12e0 | g_INT_005fba20
         ;   Label: engine_font.cpp_getDefaultTextColor_FUN_004b12e0
     JNZ 0x004b12f2                      ; 004b12e7
         ;   XREF to: 004b12f2 (CONDITIONAL_JUMP)  ; LAB_004b12f2
     XOR EAX,EAX                         ; 004b12e9
-    MOV AX,[0x01d1ad62]                 ; 004b12eb | DAT_01d1ad62
+    MOV AX,[0x01d1ad62]                 ; 004b12eb | g_USHORT_01d1ad62
     RET                                 ; 004b12f1
-    MOV EAX,[0x01d1ad64]                ; 004b12f2 | DAT_01d1ad64
+    MOV EAX,[0x01d1ad64]                ; 004b12f2 | g_ShadowColor32
         ;   Label: LAB_004b12f2
     RET                                 ; 004b12f7
 

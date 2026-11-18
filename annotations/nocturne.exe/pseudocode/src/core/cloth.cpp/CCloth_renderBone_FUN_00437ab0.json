@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 244,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
-    "suspect_count": 14,
+    "pseudocode_lines": 78,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_ref",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 263
+    "total_lines": 262
   },
   "cross_references": [
     {
@@ -91,9 +90,9 @@
     },
     {
       "addr": "0059b360",
-      "name": "DAT_0059b360",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059b360",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae704",
@@ -109,8 +108,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -175,6 +174,24 @@
     "pcode_op_count": 803
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b0ce0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.88
+    },
+    "bw1.exe": {
+      "addr": "00441500",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.88
+    },
+    "bw3.exe": {
+      "addr": "0043f160",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.88
+    },
     "nocedit.exe": {
       "addr": "0043b7e0",
       "by": "name",
@@ -357,16 +374,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -374,7 +383,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
@@ -382,7 +391,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 26,
+      "line": 24,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "(&this_ptr->collide_bones[bone_index].local_matrix,(CVector3f *)&stack0xffffffa8);",
@@ -390,7 +399,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 27,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffa8,",
@@ -398,7 +407,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 47,
+      "line": 45,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
       "text": "transformed_x + local_1c),(CVector3i *)&stack0xffffff9c);",
@@ -406,7 +415,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 60,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,vertex_index1,unaff_EDI);",
@@ -414,7 +423,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 64,
+      "line": 62,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,unaff_EBP,unaff_EDI);",
@@ -422,7 +431,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 64,
+      "line": 62,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,unaff_EBP,unaff_EDI);",
@@ -430,7 +439,7 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "fVar1 = (float10)(int)pCVar3 * (float10)3.1415926535000001 * (float10)0.083333333333333301;",
@@ -438,7 +447,7 @@
     },
     {
       "description": "Pointer value `&pCVar3->vertex_buffer_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 69,
+      "line": 67,
       "match": "(int)&pCVar3->vertex_buffer_ptr",
       "severity": "moderate",
       "text": "pCVar3 = (CDemonRenderer *)((int)&pCVar3->vertex_buffer_ptr + 2);",
@@ -446,7 +455,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 69,
+      "line": 67,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar3 = (CDemonRenderer *)((int)&pCVar3->vertex_buffer_ptr + 2);",
@@ -454,7 +463,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",
@@ -462,7 +471,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",

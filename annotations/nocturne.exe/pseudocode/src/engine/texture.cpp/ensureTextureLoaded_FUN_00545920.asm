@@ -23,8 +23,8 @@
 ;   int g_TexturesDisabled
 ;   SRGBColorPalette* g_CurrentPalette
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dd0f80
-;   undefined4 DAT_02dd0f84
+;   int g_CurrentTextureIndex
+;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
 ;   engine_special.cpp_selectTextureFromPalette_FUN_00532400
@@ -63,7 +63,7 @@ section .text
     PUSH ESI                            ; 00545947
     AND EAX,0xffff                      ; 00545948
     PUSH EAX                            ; 0054594d
-    MOV ECX,dword ptr [0x02dd0f84]      ; 0054594e | DAT_02dd0f84
+    MOV ECX,dword ptr [0x02dd0f84]      ; 0054594e | g_TextureCacheInstance
     PUSH ECX                            ; 00545954
     CALL engine_texture.cpp_CTextureCache_findTexture_FUN_00545390 ; 00545955
         ;   XREF to: 00545390 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_findTexture_FUN_00545390(CTextureCache * this_ptr, int hint_index, char * texture_name)
@@ -72,7 +72,7 @@ section .text
     JNZ 0x0054597a                      ; 00545960
         ;   XREF to: 0054597a (CONDITIONAL_JUMP)  ; LAB_0054597a
     PUSH ESI                            ; 00545962
-    MOV ESI,dword ptr [0x02dd0f84]      ; 00545963 | DAT_02dd0f84
+    MOV ESI,dword ptr [0x02dd0f84]      ; 00545963 | g_TextureCacheInstance
     PUSH ESI                            ; 00545969
     MOV EDI,0x1                         ; 0054596a
     CALL engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0 ; 0054596f
@@ -81,9 +81,9 @@ section .text
     MOV dword ptr [EBX + 0x4],EAX       ; 00545977
     PUSH EAX                            ; 0054597a
         ;   Label: LAB_0054597a
-    MOV EBP,dword ptr [0x02dd0f84]      ; 0054597b | DAT_02dd0f84
+    MOV EBP,dword ptr [0x02dd0f84]      ; 0054597b | g_TextureCacheInstance
     PUSH EBP                            ; 00545981
-    MOV [0x02dd0f80],EAX                ; 00545982 | DAT_02dd0f80
+    MOV [0x02dd0f80],EAX                ; 00545982 | g_CurrentTextureIndex
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410 ; 00545987
         ;   XREF to: 00545410 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache * this_ptr, int texture_index)
     MOV EAX,[0x01c02594]                ; 0054598c | g_UseExternalRenderer

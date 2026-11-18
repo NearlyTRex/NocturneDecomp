@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_0049d600(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)
+; void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_0049d600(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; CKeyFramedModel * Stack[0x10]:4   param_4
-; undefined4       Stack[0x14]:4   param_5
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; CKeyFramedModel * Stack[0x10]:4   model_ptr
+; float            Stack[0x14]:4   drag
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60 at 0040cd7f
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 0048729a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c950d8
+;   int g_INT_01c950d8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
@@ -30,7 +30,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createLeaf_FUN_0049d600
     PUSH EBP                            ; 0049d601
     MOV ECX,dword ptr [ESP + 0x18]      ; 0049d602
-    MOV EDX,dword ptr [0x01c950d8]      ; 0049d606 | DAT_01c950d8
+    MOV EDX,dword ptr [0x01c950d8]      ; 0049d606 | g_INT_01c950d8
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049d60c
     ADD EAX,EDX                         ; 0049d613
     SHL EAX,0x2                         ; 0049d615
@@ -38,7 +38,7 @@ section .text
     ADD EAX,EDX                         ; 0049d61d
     INC EDX                             ; 0049d61f
     SHL EAX,0x2                         ; 0049d620
-    MOV dword ptr [0x01c950d8],EDX      ; 0049d623 | DAT_01c950d8
+    MOV dword ptr [0x01c950d8],EDX      ; 0049d623 | g_INT_01c950d8
     ADD EBX,EAX                         ; 0049d629
     CMP EDX,0x40                        ; 0049d62b
     JGE 0x0049d64f                      ; 0049d62e
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 0049d642
     PUSH EBX                            ; 0049d643
     CALL core_fire.cpp_CLeaf_init_FUN_00496750 ; 0049d644
-        ;   XREF to: 00496750 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLeaf_init_FUN_00496750(CLeaf * this_ptr, CVector3f * param_2, CVector3f * param_3, undefined4 param_4, ...)
+        ;   XREF to: 00496750 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLeaf_init_FUN_00496750(CLeaf * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model, ...)
     ADD ESP,0x14                        ; 0049d649
     POP EBP                             ; 0049d64c
     POP EBX                             ; 0049d64d
@@ -64,7 +64,7 @@ section .text
     PUSH EDI                            ; 0049d64f
         ;   Label: LAB_0049d64f
     XOR EDI,EDI                         ; 0049d650
-    MOV dword ptr [0x01c950d8],EDI      ; 0049d652 | DAT_01c950d8
+    MOV dword ptr [0x01c950d8],EDI      ; 0049d652 | g_INT_01c950d8
     POP EDI                             ; 0049d658
     JMP 0x0049d630                      ; 0049d659
         ;   XREF to: 0049d630 (UNCONDITIONAL_JUMP)  ; LAB_0049d630

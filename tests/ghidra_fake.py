@@ -543,6 +543,11 @@ class StructureDataType(CompositeLayout, Structure):
     def growStructure(self, amount):
         self.length += amount
 
+    # Every component gone and no length left, as a non-packed Ghidra struct's
+    def deleteAll(self):
+        self.components = []
+        self.length = 0
+
 
 class Enum(DefinedDataType):
     pass
@@ -854,8 +859,13 @@ class VariableStorage(JavaObject):
     def getVarnodes(self):
         return list(self.varnodes)
 
+    def isVoidStorage(self):
+        return self.kind == "void"
+
 
 VariableStorage.UNASSIGNED_STORAGE = VariableStorage()
+VariableStorage.VOID_STORAGE = VariableStorage()
+VariableStorage.VOID_STORAGE.kind = "void"
 
 
 # A parameter, local or return value: its name, type, storage, first use and comment
@@ -893,6 +903,10 @@ class Variable(JavaObject):
     def getOrdinal(self):
         return self.ordinal
 
+    # A convention's implicit parameter (`this`, a return-storage pointer); none here are
+    def isAutoParameter(self):
+        return False
+
     def isStackVariable(self):
         return self.storage.kind == "stack"
 
@@ -922,6 +936,13 @@ class Variable(JavaObject):
 class ParameterImpl(Variable):
     def __init__(self, name, data_type, storage_or_program, _program = None):
         super().__init__(name, data_type, storage_or_program if _program is not None else None)
+
+
+# Ghidra's forms: (type, program) for the convention to place, or (type, storage, program)
+class ReturnParameterImpl(Variable):
+    def __init__(self, data_type, storage_or_program, _program = None):
+        super().__init__("<RETURN>", data_type, storage_or_program if _program is not None else None)
+        self.args = (data_type, storage_or_program) + (() if _program is None else (_program,))
 
 
 class LocalVariableImpl(Variable):
@@ -997,7 +1018,8 @@ MODELLED = {
     "ghidra.util.exception": {"InvalidInputException": InvalidInputException,
                               "DuplicateNameException": DuplicateNameException},
     "ghidra.program.model.listing": {"Function": Function, "VariableStorage": VariableStorage,
-                                     "ParameterImpl": ParameterImpl, "LocalVariableImpl": LocalVariableImpl},
+                                     "ParameterImpl": ParameterImpl, "ReturnParameterImpl": ReturnParameterImpl,
+                                     "LocalVariableImpl": LocalVariableImpl},
     "ghidra.app.cmd.function": {"CreateFunctionCmd": CreateFunctionCmd},
     "java.lang": {"IllegalArgumentException": IllegalArgumentException},
     "java.util": {"ArrayList": ArrayList},

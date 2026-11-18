@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   void* PTR_ExitProcess_005b3540 = 001b3cfe
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079dc = 005a7f44
-;   undefined4 DAT_006079e8
-;   undefined4 DAT_02d252b0
+;   void* g_SpecialExitHandler = 00000000
+;   int g_EmergencyExitFlag
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f44
@@ -26,16 +26,16 @@
 
 section .text
 
-    CMP dword ptr [0x02d252b0],0x0      ; 005a8210 | DAT_02d252b0
+    CMP dword ptr [0x02d252b0],0x0      ; 005a8210 | g_EmergencyExitFlag
         ;   Label: crt_unknown.c_FUN_005a8210
     JZ 0x005a8234                       ; 005a8217
         ;   XREF to: 005a8234 (CONDITIONAL_JUMP)  ; LAB_005a8234
-    CMP dword ptr [0x006079e8],0x0      ; 005a8219 | DAT_006079e8
+    CMP dword ptr [0x006079e8],0x0      ; 005a8219 | g_SpecialExitHandler
     JZ 0x005a824b                       ; 005a8220
         ;   XREF to: 005a824b (CONDITIONAL_JUMP)  ; LAB_005a824b
     PUSH 0xff                           ; 005a8222
     PUSH 0x0                            ; 005a8227
-    CALL dword ptr [0x006079e8]         ; 005a8229 | DAT_006079e8
+    CALL dword ptr [0x006079e8]         ; 005a8229 | g_SpecialExitHandler
     ADD ESP,0x8                         ; 005a822f
     JMP 0x005a824b                      ; 005a8232
         ;   XREF to: 005a824b (UNCONDITIONAL_JUMP)  ; LAB_005a824b

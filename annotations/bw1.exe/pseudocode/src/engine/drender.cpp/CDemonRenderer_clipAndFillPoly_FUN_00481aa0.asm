@@ -10,35 +10,35 @@
 ;
 ; XREF[25]:
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_00481db0 at 00481e50
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_004824b0 at 004824eb
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_00482680 at 00482701
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_00482540 at 004825c0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050 at 004830c4
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00483120 at 004831be
 ;   engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_00482780 at 00482801
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0 at 00481f17
+;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_00482bf0 at 00482c69
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_00482cd0 at 00482d7e
-;   engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_004829b0 at 00482a29
-;   engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_00481fa0 at 00482051
-;   engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_00483340 at 004833de
 ;   ... and 15 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db2c9
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_005db2df
-;   undefined4 DAT_007c7554
-;   undefined4 DAT_007c7558
-;   undefined4 DAT_01c51d14
-;   undefined4 DAT_01c51d15
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_INT_007c7554
+;   SRenderVertex[16] g_SRenderVertex_ARRAY_007c7558
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   undefined4 g_RenderStateFlags+1
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_0047a480
-;   core_dpart.cpp_FUN_0047ab00
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
-;   core_zombie.cpp_FUN_005bf120
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
+;   engine_drender.cpp_renderTriangleSimple_FUN_0047ab00
+;   engine_drender.cpp_renderTriangleTextured_FUN_0047a480
+;   engine_zraster.c_rasterizeTriangle_FUN_005bf120
 ;
 ; *****************************************************************************
 
@@ -62,18 +62,18 @@ section .text
     CMP dword ptr [EDI + 0x4],0x0       ; 00481abc
     JZ 0x00481acb                       ; 00481ac0
         ;   XREF to: 00481acb (CONDITIONAL_JUMP)  ; LAB_00481acb
-    TEST byte ptr [0x01c51d14],0x1      ; 00481ac2 | DAT_01c51d14
+    TEST byte ptr [0x01c51d14],0x1      ; 00481ac2 | g_RenderStateFlags
     JZ 0x00481ad4                       ; 00481ac9
         ;   XREF to: 00481ad4 (CONDITIONAL_JUMP)  ; LAB_00481ad4
-    TEST byte ptr [0x01c51d14],0x5      ; 00481acb | DAT_01c51d14
+    TEST byte ptr [0x01c51d14],0x5      ; 00481acb | g_RenderStateFlags
         ;   Label: LAB_00481acb
     JNZ 0x00481b08                      ; 00481ad2
         ;   XREF to: 00481b08 (CONDITIONAL_JUMP)  ; LAB_00481b08
     PUSH EBX                            ; 00481ad4
         ;   Label: LAB_00481ad4
     PUSH ESI                            ; 00481ad5
-    CALL core_dpart.cpp_FUN_0047ab00    ; 00481ad6
-        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_0047ab00 ; 00481ad6
+        ;   XREF to: 0047ab00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_0047ab00(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 00481adb
         ;   Label: LAB_00481adb
     POP EBP                             ; 00481ade
@@ -86,32 +86,32 @@ section .text
         ;   Label: LAB_00481ae3
     MOV EBP,0xad                        ; 00481ae8
     PUSH 0x5db2df                       ; 00481aed | = "CDemonRenderer::clipAndFillPoly - Bad..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00481af2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00481af8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00481afe
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00481af2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 00481af8 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00481afe
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00481b03
     JMP 0x00481ab6                      ; 00481b06
         ;   XREF to: 00481ab6 (UNCONDITIONAL_JUMP)  ; LAB_00481ab6
     PUSH EBX                            ; 00481b08
         ;   Label: LAB_00481b08
     PUSH ESI                            ; 00481b09
-    CALL core_dpart.cpp_FUN_0047a480    ; 00481b0a
-        ;   XREF to: 0047a480 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_0047a480(int * vertex_indices, int vertex_count)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_0047a480 ; 00481b0a
+        ;   XREF to: 0047a480 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_0047a480(int * vertex_indices, int vertex_count)
     JMP 0x00481adb                      ; 00481b0f
         ;   XREF to: 00481adb (UNCONDITIONAL_JUMP)  ; LAB_00481adb
     CMP dword ptr [EDI + 0x4],0x0       ; 00481b11
         ;   Label: LAB_00481b11
     JZ 0x00481b20                       ; 00481b15
         ;   XREF to: 00481b20 (CONDITIONAL_JUMP)  ; LAB_00481b20
-    TEST byte ptr [0x01c51d14],0x1      ; 00481b17 | DAT_01c51d14
+    TEST byte ptr [0x01c51d14],0x1      ; 00481b17 | g_RenderStateFlags
     JZ 0x00481b41                       ; 00481b1e
         ;   XREF to: 00481b41 (CONDITIONAL_JUMP)  ; LAB_00481b41
-    TEST byte ptr [0x01c51d14],0x5      ; 00481b20 | DAT_01c51d14
+    TEST byte ptr [0x01c51d14],0x5      ; 00481b20 | g_RenderStateFlags
         ;   Label: LAB_00481b20
     JZ 0x00481b41                       ; 00481b27
         ;   XREF to: 00481b41 (CONDITIONAL_JUMP)  ; LAB_00481b41
-    TEST byte ptr [0x01c51d15],0x2      ; 00481b29 | DAT_01c51d15
+    TEST byte ptr [0x01c51d15],0x2      ; 00481b29 | g_RenderStateFlags+1
     JZ 0x00481b69                       ; 00481b30
         ;   XREF to: 00481b69 (CONDITIONAL_JUMP)  ; LAB_00481b69
     PUSH ESI                            ; 00481b32
@@ -129,15 +129,15 @@ section .text
     PUSH EBX                            ; 00481b42
     CALL core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0 ; 00481b43
         ;   XREF to: 005b9fc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0(int vertex_count, int * vertex_indices)
-    MOV ECX,dword ptr [0x007c7554]      ; 00481b48 | DAT_007c7554
+    MOV ECX,dword ptr [0x007c7554]      ; 00481b48 | g_INT_007c7554
     ADD ESP,0x8                         ; 00481b4e
     CMP ECX,0x2                         ; 00481b51
     JLE 0x00481ade                      ; 00481b54
         ;   XREF to: 00481ade (CONDITIONAL_JUMP)  ; LAB_00481ade
     PUSH ECX                            ; 00481b56
-    PUSH 0x7c7558                       ; 00481b57 | DAT_007c7558
-    CALL core_zombie.cpp_FUN_005bf120   ; 00481b5c
-        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
+    PUSH 0x7c7558                       ; 00481b57 | g_SRenderVertex_ARRAY_007c7558
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005bf120 ; 00481b5c
+        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 00481b61
     POP EBP                             ; 00481b64
     POP EDI                             ; 00481b65

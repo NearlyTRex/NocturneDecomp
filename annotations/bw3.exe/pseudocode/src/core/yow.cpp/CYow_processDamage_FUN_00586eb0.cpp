@@ -2,11 +2,11 @@
 // Address: 00586eb0
 // Address Range: [[00586eb0, 00586f8d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamageInfo *param_2)
+// Signature: void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamageInfo *param_2)
+void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -16,7 +16,7 @@ void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamage
   uint uVar4;
   int force_immediate;
   
-  fVar1 = (this_ptr->base).base.hit_points - param_2->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
@@ -37,14 +37,15 @@ void __cdecl core_yow_cpp_CYow_processDamage_FUN_00586eb0(CYow *this_ptr,SDamage
   core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
             (&this_ptr_00->base,iVar2,force_immediate);
 LAB_00586ef3:
-  iVar2 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0(0x02CF5680,this_ptr->sfx_handle);
+  iVar2 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
+                    (g_CSound_PTR_006045f8,this_ptr->sfx_handle);
   if (iVar2 != 0) {
-    core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,param_2);
+    core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);
     return;
   }
   uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"dog2.wav");
   this_ptr->sfx_handle = uVar4;
-  core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,param_2);
+  core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);
   return;
 }

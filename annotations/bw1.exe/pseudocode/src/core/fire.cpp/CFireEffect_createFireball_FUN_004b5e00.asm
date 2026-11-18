@@ -16,7 +16,7 @@
 ;   core_larva.cpp_CLarva_process_FUN_004fda40 at 004fdefe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01ca9e5c
+;   int g_FireballAllocIndex
 ;   undefined4 g_FireballPool[0].base.vtable
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createFireball_FUN_004b5e00
     PUSH EDI                            ; 004b5e01
     PUSH EBP                            ; 004b5e02
-    MOV EAX,[0x01ca9e5c]                ; 004b5e03 | DAT_01ca9e5c
+    MOV EAX,[0x01ca9e5c]                ; 004b5e03 | g_FireballAllocIndex
     LEA EBX,[EAX*0x4 + 0x0]             ; 004b5e08
     ADD EBX,EAX                         ; 004b5e0f
     SHL EBX,0x3                         ; 004b5e11
@@ -40,13 +40,13 @@ section .text
     SHL EBX,0x2                         ; 004b5e16
     LEA EDX,[EAX + 0x1]                 ; 004b5e19
     ADD EBX,0x1ca9e60                   ; 004b5e1c
-    MOV dword ptr [0x01ca9e5c],EDX      ; 004b5e22 | DAT_01ca9e5c
+    MOV dword ptr [0x01ca9e5c],EDX      ; 004b5e22 | g_FireballAllocIndex
     CMP EDX,0x40                        ; 004b5e28
     JL 0x004b5e37                       ; 004b5e2b
         ;   XREF to: 004b5e37 (CONDITIONAL_JUMP)  ; LAB_004b5e37
     PUSH ESI                            ; 004b5e2d
     XOR ESI,ESI                         ; 004b5e2e
-    MOV dword ptr [0x01ca9e5c],ESI      ; 004b5e30 | DAT_01ca9e5c
+    MOV dword ptr [0x01ca9e5c],ESI      ; 004b5e30 | g_FireballAllocIndex
     POP ESI                             ; 004b5e36
     MOV EDI,dword ptr [ESP + 0x18]      ; 004b5e37
         ;   Label: LAB_004b5e37

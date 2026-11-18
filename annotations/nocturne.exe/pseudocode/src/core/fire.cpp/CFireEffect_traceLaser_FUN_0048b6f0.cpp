@@ -184,7 +184,7 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_0048b6f0(CFireEffect *this
         if ((((recursion_depth == 0) && (laser_info->is_hero_weapon != 0)) &&
             (this_ptr_01 = (CCharacter *)
                            core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (this_ptr_00,g_CCharacterActorType_00765a60.name_hash),
+                                     (this_ptr_00,g_CCharacterClassInfo.name_hash),
             this_ptr_01 != (CCharacter *)0x0)) &&
            (iVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_01),
            iVar3 != 0)) {

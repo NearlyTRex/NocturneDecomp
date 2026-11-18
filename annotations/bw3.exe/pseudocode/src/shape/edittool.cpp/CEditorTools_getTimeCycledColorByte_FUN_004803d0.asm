@@ -7,8 +7,8 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_cloth.cpp_FUN_0043f160 at 0043f341
-;   shape_edittool.cpp_FUN_00480410 at 00480420
+;   core_cloth.cpp_CCloth_renderBone_FUN_0043f160 at 0043f341
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410 at 00480420
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getTime_FUN_005806a0

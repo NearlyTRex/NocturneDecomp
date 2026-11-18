@@ -15,16 +15,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3019
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005d302e
-;   undefined4 DAT_005e4844
-;   undefined4 DAT_0060422c
-;   undefined4 DAT_00604230
-;   undefined4 DAT_00604240
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cf341c
+;   float g_FLOAT_005e4844 = 1116.400
+;   int g_AudioChannelCount = 0x2
+;   int g_AudioSampleRate = 0x5622
+;   float g_FLOAT_00604240 = 1
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_SoundLockCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -36,12 +36,12 @@ section .text
     PUSH ESI                            ; 00554141
     PUSH EDI                            ; 00554142
     SUB ESP,0x8                         ; 00554143
-    MOV ESI,dword ptr [0x0060422c]      ; 00554146 | DAT_0060422c
+    MOV ESI,dword ptr [0x0060422c]      ; 00554146 | g_AudioChannelCount
     MOV EDI,dword ptr [ESP + 0x18]      ; 0055414c
-    CMP dword ptr [0x02cf341c],0x0      ; 00554150 | DAT_02cf341c
+    CMP dword ptr [0x02cf341c],0x0      ; 00554150 | g_SoundLockCount
     JLE 0x0055419d                      ; 00554157
         ;   XREF to: 0055419d (CONDITIONAL_JUMP)  ; LAB_0055419d
-    MOV ESI,dword ptr [0x0060422c]      ; 00554159 | DAT_0060422c
+    MOV ESI,dword ptr [0x0060422c]      ; 00554159 | g_AudioChannelCount
         ;   Label: LAB_00554159
     CMP ESI,0x2                         ; 0055415f
     JL 0x005541c2                       ; 00554162
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 00554172 (CONDITIONAL_JUMP)  ; LAB_00554172
     LEA EAX,[EAX]                       ; 00554184
     LEA EDX,[EDX]                       ; 0055418a
-    MOV dword ptr [0x0060422c],ESI      ; 00554190 | DAT_0060422c
+    MOV dword ptr [0x0060422c],ESI      ; 00554190 | g_AudioChannelCount
         ;   Label: LAB_00554190
     ADD ESP,0x8                         ; 00554196
     POP EDI                             ; 00554199
@@ -74,10 +74,10 @@ section .text
         ;   Label: LAB_0055419d
     MOV EBX,0xa6b                       ; 005541a2
     PUSH 0x5d302e                       ; 005541a7 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 005541ac | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 005541b2 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005541b8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 005541ac | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 005541b2 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005541b8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005541bd
     JMP 0x00554159                      ; 005541c0
         ;   XREF to: 00554159 (UNCONDITIONAL_JUMP)  ; LAB_00554159
@@ -87,9 +87,9 @@ section .text
         ;   XREF to: 00554190 (UNCONDITIONAL_JUMP)  ; LAB_00554190
     FLD1                                ; 005541ce
         ;   Label: LAB_005541ce
-    FDIV float ptr [0x005e4844]         ; 005541d0 | DAT_005e4844
-    FMUL float ptr [0x00604240]         ; 005541d6 | DAT_00604240
-    FILD dword ptr [0x00604230]         ; 005541dc | DAT_00604230
+    FDIV float ptr [0x005e4844]         ; 005541d0 | g_FLOAT_005e4844
+    FMUL float ptr [0x00604240]         ; 005541d6 | g_FLOAT_00604240
+    FILD dword ptr [0x00604230]         ; 005541dc | g_AudioSampleRate
     FMULP                               ; 005541e2
     MOV EBX,0x1869f                     ; 005541e4
     XOR ECX,ECX                         ; 005541e9
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_005541f5
     FMUL float ptr [ESP + 0x4]          ; 005541f8
     CALL crt_math.c_round_FUN_005a3120  ; 005541fc
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 00554201
     MOV EAX,dword ptr [ESP]             ; 00554204
     MOV dword ptr [EDX + 0xb0],EAX      ; 00554207
@@ -131,7 +131,7 @@ section .text
     CMP EDX,ESI                         ; 00554239
     JL 0x00554227                       ; 0055423b
         ;   XREF to: 00554227 (CONDITIONAL_JUMP)  ; LAB_00554227
-    MOV dword ptr [0x0060422c],ESI      ; 0055423d | DAT_0060422c
+    MOV dword ptr [0x0060422c],ESI      ; 0055423d | g_AudioChannelCount
     ADD ESP,0x8                         ; 00554243
     POP EDI                             ; 00554246
     POP ESI                             ; 00554247

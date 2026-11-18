@@ -10,12 +10,12 @@
 ; CVector3f *      Stack[0x10]:4   out_normal
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d8e68
+;   float g_FLOAT_005d8e68 = 4
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   core_box.cpp_FUN_00420ee0
-;   core_djien.cpp_FUN_004615b0
+;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0
+;   core_djien.cpp_CDjien_getSackTargetPoints_FUN_004615b0
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
     LEA ESI,[ESP + 0xb8]                ; 004610f6
     PUSH EAX                            ; 004610fd
     MOVSD.REP ES:EDI,ESI                ; 004610fe
-    CALL core_box.cpp_FUN_00420ee0      ; 00461100
-        ;   XREF to: 00420ee0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420ee0()
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0 ; 00461100
+        ;   XREF to: 00420ee0 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420ee0(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x130],EAX     ; 00461105
     FLD float ptr [ESP + 0x130]         ; 0046110c
     ADD ESP,0x10                        ; 00461113
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 00461168
     MOV ESI,dword ptr [EBP + 0x14]      ; 00461169
     PUSH ESI                            ; 0046116c
-    CALL core_djien.cpp_FUN_004615b0    ; 0046116d
-        ;   XREF to: 004615b0 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_004615b0()
+    CALL core_djien.cpp_CDjien_getSackTargetPoints_FUN_004615b0 ; 0046116d
+        ;   XREF to: 004615b0 (UNCONDITIONAL_CALL)  ; int core_djien.cpp_CDjien_getSackTargetPoints_FUN_004615b0(CDjien * this_ptr, CVector3f * out_points, int * out_sack_parts)
     ADD ESP,0xc                         ; 00461172
     MOV EDI,0xffffffff                  ; 00461175
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0046117a
@@ -189,7 +189,7 @@ section .text
     FXCH                                ; 004612e9
     FST float ptr [ESP + 0x8]           ; 004612eb
     FSUBRP                              ; 004612ef
-    FSUBR float ptr [0x005d8e68]        ; 004612f1 | DAT_005d8e68
+    FSUBR float ptr [0x005d8e68]        ; 004612f1 | g_FLOAT_005d8e68
     FLDZ                                ; 004612f7
     FCOMPP                              ; 004612f9
     FNSTSW AX                           ; 004612fb

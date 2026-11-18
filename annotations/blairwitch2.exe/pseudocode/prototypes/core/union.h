@@ -29,25 +29,25 @@ void __cdecl CUnion::setup(CUnion *this_ptr);
 // Address: 005a4c50
 void __cdecl CUnion::processStates(CUnion *this_ptr,float delta_time,int mode);
 
-// Original: core_union.cpp_FUN_005a4d50
+// Original: core_union.cpp_CUnion_processAI_FUN_005a4d50
 // Address: 005a4d50
-void FUN_005a4d50(int param_1);
+void __cdecl CUnion::processAI(CUnion *this_ptr);
 
 // Original: core_union.cpp_CUnion_processDeathState_FUN_005a4e60
 // Address: 005a4e60
 void __cdecl CUnion::processDeathState(CUnion *this_ptr,float delta_time);
 
-// Original: core_union.cpp_FUN_005a4e90
+// Original: core_union.cpp_CUnion_processRangeAttackState_FUN_005a4e90
 // Address: 005a4e90
-void FUN_005a4e90(CCharacter *param_1);
+void __cdecl CUnion::processRangeAttackState(CUnion *this_ptr);
 
-// Original: core_union.cpp_FUN_005a4fe0
+// Original: core_union.cpp_CUnion_processMeleeAttackState_FUN_005a4fe0
 // Address: 005a4fe0
-void FUN_005a4fe0(CCharacter *param_1);
+void __cdecl CUnion::processMeleeAttackState(CUnion *this_ptr);
 
-// Original: core_union.cpp_FUN_005a5130
+// Original: core_union.cpp_CUnion_processSupportStandState_FUN_005a5130
 // Address: 005a5130
-void FUN_005a5130(CCharacter *param_1,float param_2);
+void __cdecl CUnion::processSupportStandState(CUnion *this_ptr,float delta_time);
 
 // Original: core_union.cpp_CUnion_getDeathState_FUN_005a5280
 // Address: 005a5280
@@ -65,9 +65,9 @@ int __cdecl CUnion::renderOpaque(CUnion *this_ptr);
 // Address: 005a5450
 void __cdecl CUnion::archive(CUnion *this_ptr);
 
-// Original: core_union.cpp_FUN_005a5460
+// Original: core_union.cpp_CUnion_fireShotgun_FUN_005a5460
 // Address: 005a5460
-void FUN_005a5460(CDemonActor *param_1);
+void __cdecl CUnion::fireShotgun(CUnion *this_ptr);
 
 // Original: core_union.cpp_CUnion_processDamage_FUN_005a59f0
 // Address: 005a59f0

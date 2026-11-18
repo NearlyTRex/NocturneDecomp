@@ -1,31 +1,28 @@
 // Name: core_xform.cpp_quaternionFromAxisAngle_FUN_00585d90
 // Address: 00585d90
 // Address Range: [[00585d90, 00585ddb]]
-// Convention: unknown
-// Signature: void core_xform_cpp_quaternionFromAxisAngle_FUN_00585d90(float param_1,float *param_2)
+// Convention: __stack2_esi
+// Signature: CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_00585d90(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void core_xform_cpp_quaternionFromAxisAngle_FUN_00585d90(float param_1,float *param_2)
+CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_00585d90(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  float *unaff_ESI;
   float10 fVar4;
   float10 fVar5;
   
-  fVar4 = (float10)fsin((float10)param_1 * (float10)_DAT_005d81b3);
-  fVar5 = (float10)fcos((float10)param_1 * (float10)_DAT_005d81b3);
-  fVar1 = *param_2;
-  fVar2 = param_2[1];
-  fVar3 = param_2[2];
-  *unaff_ESI = (float)fVar5;
-  unaff_ESI[1] = (float)(fVar4 * (float10)fVar1);
-  unaff_ESI[2] = (float)(fVar4 * (float10)fVar2);
-  unaff_ESI[3] = (float)(fVar4 * (float10)fVar3);
-  return;
+  fVar4 = (float10)fsin((float10)angle_radians * (float10)0.5f);
+  fVar5 = (float10)fcos((float10)angle_radians * (float10)0.5f);
+  fVar1 = axis_ptr->x;
+  fVar2 = axis_ptr->y;
+  fVar3 = axis_ptr->z;
+  quat_out->w = (float)fVar5;
+  quat_out->x = (float)(fVar4 * (float10)fVar1);
+  quat_out->y = (float)(fVar4 * (float10)fVar2);
+  quat_out->z = (float)(fVar4 * (float10)fVar3);
+  return quat_out;
 }

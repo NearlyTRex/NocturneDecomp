@@ -24,10 +24,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00420e90 at 0042170c
+;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00420e90 at 0042170c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cca79
+;   double g_DOUBLE_005cca79 = 0.00390625
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -165,7 +165,7 @@ section .text
     MOV dword ptr [ESP + 0x54],EAX      ; 00421971
     FILD dword ptr [ESP + 0x54]         ; 00421975
     FSQRT                               ; 00421979
-    FMUL double ptr [0x005cca79]        ; 0042197b | DAT_005cca79
+    FMUL double ptr [0x005cca79]        ; 0042197b | g_DOUBLE_005cca79
     MOV EAX,dword ptr [ESP + 0x70]      ; 00421981
     FSTP float ptr [EAX + 0x38]         ; 00421985
     ADD ESP,0x58                        ; 00421988

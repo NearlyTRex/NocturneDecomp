@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
-;   core_hero.cpp_FUN_004d2cd0 at 004d2cda
+;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004d2cd0 at 004d2cda
 ;   core_inv.cpp_CInventory_load_FUN_004dc750 at 004dc772
 ;   core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430 at 0051843f
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052dff8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmo_005c5f22
-;   undefined4 DAT_005c5f2b
-;   undefined4 DAT_005c5f2f
-;   undefined4 DAT_005c5f37
+;   float g_InventoryRandNormalizationFactor = 0.00003051851
+;   float g_FLOAT_005c5f2f = 3.141593
+;   double g_InventoryRandTwoFactor = 2
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
@@ -46,9 +46,9 @@ section .text
         ;   Label: LAB_004da4fb
     MOV dword ptr [ESP],EAX             ; 004da500
     FILD dword ptr [ESP]                ; 004da503
-    FMUL float ptr [0x005c5f2b]         ; 004da506 | DAT_005c5f2b
-    FMUL float ptr [0x005c5f2f]         ; 004da50c | DAT_005c5f2f
-    FMUL double ptr [0x005c5f37]        ; 004da512 | DAT_005c5f37
+    FMUL float ptr [0x005c5f2b]         ; 004da506 | g_InventoryRandNormalizationFactor
+    FMUL float ptr [0x005c5f2f]         ; 004da50c | g_FLOAT_005c5f2f
+    FMUL double ptr [0x005c5f37]        ; 004da512 | g_InventoryRandTwoFactor
     ADD EBX,0x4                         ; 004da518
     FSTP float ptr [EBX + 0x1a0]        ; 004da51b
     CMP EBX,ESI                         ; 004da521

@@ -44,15 +44,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0041e9b0",
-      "from_addr": "0041eacf",
-      "name": "core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0",
+      "addr": "0041daf0",
+      "from_addr": "0041db27",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0041daf0",
-      "from_addr": "0041db27",
-      "name": "core_box.cpp_FUN_0041daf0",
+      "addr": "0041e9b0",
+      "from_addr": "0041eacf",
+      "name": "core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,6 +74,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0042d8e0",
+      "from_addr": "0042d962",
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042d9f0",
+      "from_addr": "0042da06",
+      "name": "core_charactr.cpp_CCharacter_renderCollision_FUN_0042d9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0042e220",
       "from_addr": "0042e2b1",
       "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220",
@@ -82,19 +94,7 @@
     {
       "addr": "0042d500",
       "from_addr": "0042d512",
-      "name": "core_charactr.cpp_FUN_0042d500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042d8e0",
-      "from_addr": "0042d962",
-      "name": "core_charactr.cpp_FUN_0042d8e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042d9f0",
-      "from_addr": "0042da06",
-      "name": "core_charactr.cpp_FUN_0042d9f0",
+      "name": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -214,7 +214,7 @@
     {
       "addr": "004fcdc0",
       "from_addr": "004fcde7",
-      "name": "core_motion.cpp_FUN_004fcdc0",
+      "name": "core_motion.cpp_CMotionController_render_FUN_004fcdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -254,6 +254,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0053ab10",
+      "from_addr": "0053ab30",
+      "name": "core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_0053ab10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0053ac80",
       "from_addr": "0053aca0",
       "name": "core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0053ac80",
@@ -272,21 +278,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053ab10",
-      "from_addr": "0053ab30",
-      "name": "core_set.cpp_FUN_0053ab10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053f940",
       "from_addr": "0053f9d7",
-      "name": "core_setdir.cpp_FUN_0053f940",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00540cf0",
       "from_addr": "00540cfe",
-      "name": "core_setdir.cpp_FUN_00540cf0",
+      "name": "core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -385,7 +385,7 @@
       {
         "call_addr": "0041db27",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041daf0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -440,7 +440,7 @@
       {
         "call_addr": "0053f9d7",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_0053f940",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_0053f940",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -451,7 +451,7 @@
       {
         "call_addr": "00540cfe",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00540cf0",
+        "caller": "core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

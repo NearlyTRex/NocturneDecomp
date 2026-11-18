@@ -6,17 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_set3DListenerDistanceFactor_FUN_00527830(double distance_in_feet)
 
 {
-  _DAT_005bea88 = 1.0 / distance_in_feet;
-  DAT_005bea80 = distance_in_feet._0_4_;
-  DAT_005bea84 = distance_in_feet._4_4_;
-  if (_DAT_02dc8318 == (int *)0x0) {
+  g_Cached3DDistanceFactorInverse = 1.0 / distance_in_feet;
+  g_Cached3DDistanceFactor = distance_in_feet;
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02dc8318 + 0x24))(_DAT_02dc8318,distance_in_feet);
+  (*g_CSoundDevicePtr->vtable->set3DListenerDistanceFactor)(g_CSoundDevicePtr,distance_in_feet);
   return;
 }

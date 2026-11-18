@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 55,
+    "complexity_score": 15,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 82
   },
   "cross_references": [],
@@ -42,44 +39,44 @@
     {
       "addr": "004c1dd0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1dd0"
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
     }
   ],
   "globals": [
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b49c",
-      "name": "DAT_0061b49c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b49c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "0152d244",
-      "name": "DAT_0152d244",
-      "type": "undefined4",
+      "name": "g_ThemeFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01cd0c4c",
-      "name": "DAT_01cd0c4c",
-      "type": "undefined4",
+      "name": "g_HelpCursorX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c50",
-      "name": "DAT_01cd0c50",
-      "type": "undefined4",
+      "name": "g_HelpCursorY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cd0c54",
-      "name": "DAT_01cd0c54",
-      "type": "undefined4",
+      "name": "g_HelpLineHeight",
+      "type": "int",
       "value": null
     }
   ],
@@ -176,30 +173,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0061b49c",
-      "severity": "mild",
-      "text": "if (_DAT_01cd0c50 <= DAT_0061b49c + _DAT_01cd0c54 * -4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "_DAT_01cd0c4c = _DAT_01cd0c4c + DAT_0061b498 / 3;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

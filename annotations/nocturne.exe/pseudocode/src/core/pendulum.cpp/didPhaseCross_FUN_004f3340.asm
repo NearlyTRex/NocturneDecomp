@@ -9,9 +9,9 @@
 ; float            Stack[0xc]:4   new_phase
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0058d020
-;   undefined4 DAT_0058d028
-;   undefined4 DAT_0058d030
+;   double g_DOUBLE_0058d020 = -0.5
+;   double g_DOUBLE_0058d028 = 0.5
+;   float g_FLOAT_0058d030 = -1
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
 
     FLD float ptr [ESP + 0x4]           ; 004f3340
         ;   Label: core_pendulum.cpp_didPhaseCross_FUN_004f3340
-    FADD double ptr [0x0058d020]        ; 004f3344 | DAT_0058d020
+    FADD double ptr [0x0058d020]        ; 004f3344 | g_DOUBLE_0058d020
     FLD float ptr [ESP + 0x8]           ; 004f334a
     FCOMPP                              ; 004f334e
     FNSTSW AX                           ; 004f3350
@@ -28,7 +28,7 @@ section .text
         ;   XREF to: 004f3411 (CONDITIONAL_JUMP)  ; LAB_004f3411
     FLD float ptr [ESP + 0x4]           ; 004f3359
         ;   Label: LAB_004f3359
-    FADD double ptr [0x0058d028]        ; 004f335d | DAT_0058d028
+    FADD double ptr [0x0058d028]        ; 004f335d | g_DOUBLE_0058d028
     FLD float ptr [ESP + 0x8]           ; 004f3363
     FCOMPP                              ; 004f3367
     FNSTSW AX                           ; 004f3369
@@ -36,7 +36,7 @@ section .text
     JBE 0x004f337c                      ; 004f336c
         ;   XREF to: 004f337c (CONDITIONAL_JUMP)  ; LAB_004f337c
     FLD float ptr [ESP + 0x8]           ; 004f336e
-    FADD float ptr [0x0058d030]         ; 004f3372 | DAT_0058d030
+    FADD float ptr [0x0058d030]         ; 004f3372 | g_FLOAT_0058d030
     FSTP float ptr [ESP + 0x8]          ; 004f3378
     FLD float ptr [ESP + 0x8]           ; 004f337c
         ;   Label: LAB_004f337c
@@ -75,7 +75,7 @@ section .text
     JBE 0x004f33dc                      ; 004f33cc
         ;   XREF to: 004f33dc (CONDITIONAL_JUMP)  ; LAB_004f33dc
     FLD float ptr [ESP + 0xc]           ; 004f33ce
-    FADD float ptr [0x0058d030]         ; 004f33d2 | DAT_0058d030
+    FADD float ptr [0x0058d030]         ; 004f33d2 | g_FLOAT_0058d030
     FSTP float ptr [ESP + 0xc]          ; 004f33d8
     FLD float ptr [ESP + 0x8]           ; 004f33dc
         ;   Label: LAB_004f33dc
@@ -88,7 +88,7 @@ section .text
     JBE 0x004f33fd                      ; 004f33ed
         ;   XREF to: 004f33fd (CONDITIONAL_JUMP)  ; LAB_004f33fd
     FLD float ptr [ESP + 0xc]           ; 004f33ef
-    FADD float ptr [0x0058d030]         ; 004f33f3 | DAT_0058d030
+    FADD float ptr [0x0058d030]         ; 004f33f3 | g_FLOAT_0058d030
     FSTP float ptr [ESP + 0xc]          ; 004f33f9
     FLD float ptr [ESP + 0xc]           ; 004f33fd
         ;   Label: LAB_004f33fd

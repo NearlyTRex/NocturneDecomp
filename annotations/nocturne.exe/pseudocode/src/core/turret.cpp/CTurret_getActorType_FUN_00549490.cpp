@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_turret_cpp_CTurret_getActorType_FUN_00549490(CTurret *this_ptr)
 
 {
-  return &g_CTurretActorType_02dd10d0;
+  return &g_CTurretClassInfo;
 }

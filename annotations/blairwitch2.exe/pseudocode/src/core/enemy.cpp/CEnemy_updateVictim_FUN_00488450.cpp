@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,float delta_time)
 
 {
   CCharacter *pCVar1;
-  CCharacter *this_ptr_00;
+  CCharacter *target;
   float fVar2;
   int iVar3;
   EDeathState EVar4;
-  CPathMap *this_ptr_01;
+  CPathMap *this_ptr_00;
   int iVar5;
   int iVar6;
   byte bVar7;
@@ -46,7 +44,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
   if (pCVar1 == (CCharacter *)0x0) {
     if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                          (0x01C38BC0,"?Capture" + 1), iVar3 != 0)) {
+                          (g_CEventListPtr,"Capture"), iVar3 != 0)) {
       this_ptr->is_in_combat = 0;
       this_ptr->victim_search_timer = 0.0;
       this_ptr->victim = (CCharacter *)0x0;
@@ -81,12 +79,12 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
                *(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8);
           if (ABS(fStack_4c) <= fStack_60) {
             if ((this_ptr->base).is_spectral == 0) {
-              fStack_4c = fStack_4c * _DAT_005d2df5;
+              fStack_4c = fStack_4c * 3.0f;
             }
             fStack_38 = fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c;
             if (fStack_38 <= fStack_2c) {
-              *(int *)(&DAT_01c264e4 + iStack_28) = iVar3;
-              *(float *)(&DAT_01c28424 + iStack_28) = fStack_38;
+              *(int *)((int)g_EnemyVictimCandidates + iStack_28) = iVar3;
+              *(float *)((int)g_EnemyVictimCandidateDistances + iStack_28) = fStack_38;
               iStack_28 = iStack_28 + 4;
               iStack_20 = iStack_20 + 1;
             }
@@ -104,8 +102,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
         if (0 < iStack_20) {
           iVar5 = 0;
           do {
-            if (*(float *)(&DAT_01c28424 + iVar5) < fStack_1c) {
-              fStack_1c = *(float *)(&DAT_01c28424 + iVar5);
+            if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar5) < fStack_1c) {
+              fStack_1c = *(float *)((int)g_EnemyVictimCandidateDistances + iVar5);
               iVar3 = iVar6;
             }
             iVar6 = iVar6 + 1;
@@ -113,24 +111,24 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
           } while (iVar6 < iStack_20);
         }
         if (iVar3 < 0) break;
-        this_ptr_00 = *(CCharacter **)(&DAT_01c264e4 + iVar3 * 4);
-        iVar6 = core_enemy_cpp_FUN_00488320(this_ptr,this_ptr_00);
+        target = (CCharacter *)g_EnemyVictimCandidates[iVar3];
+        iVar6 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00488320(this_ptr,(CDemonActor *)target);
         if (iVar6 != 0) {
-          this_ptr->victim = this_ptr_00;
+          this_ptr->victim = target;
           engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"%s can see hero\n");
           return;
         }
-        if (((this_ptr->allow_pathfind_to_new_targets != 0) || (this_ptr_00 == pCVar1)) &&
-           ((this_ptr_01 = (*((this_ptr_00->base).vtable._ub)->getPathMap)(&this_ptr_00->base),
-            this_ptr_01 != (CPathMap *)0x0 &&
+        if (((this_ptr->allow_pathfind_to_new_targets != 0) || (target == pCVar1)) &&
+           ((this_ptr_00 = (*((target->base).vtable._ub)->getPathMap)((CDemonActor *)target),
+            this_ptr_00 != (CPathMap *)0x0 &&
             (iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
-                               (this_ptr_01,pCStack_18,&CStack_44,
+                               (this_ptr_00,pCStack_18,&CStack_44,
                                 (this_ptr->base).base.direction_hint), iVar6 == 1)))) {
-          this_ptr->victim = this_ptr_00;
+          this_ptr->victim = target;
           return;
         }
-        *(uint *)(&DAT_01c28424 + iVar3 * 4) = 0x7149f2ca;
-        if (this_ptr_00 == pCVar1) {
+        g_EnemyVictimCandidateDistances[iVar3] = 1e+30;
+        if (target == pCVar1) {
           this_ptr->victim = pCVar1;
         }
       }
@@ -151,7 +149,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
     }
   }
   else {
-    if (pCVar1 == 0xFFFFFFFF) {
+    if (pCVar1 == (CCharacter *)NAN) {
       this_ptr->victim = (CCharacter *)0x0;
     }
     else {

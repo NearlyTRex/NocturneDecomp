@@ -9,24 +9,24 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_disableBodyPartDamage_005b6c35
-;   undefined4 DAT_005b6c52
-;   undefined4 DAT_005fba60
+;   double g_DOUBLE_005b6c52 = 3
+;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02cfd900
-;   undefined4 DAT_02cfd904
-;   undefined4 DAT_02cfd908
+;   CVector3f g_ZeroVector
+;   undefined4 g_ZeroVector.y
+;   undefined4 g_ZeroVector.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_bodypart.cpp_CBodyPart_processFires_FUN_00415570
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00414910
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_00416b20
-;   core_bodypart.cpp_setCounts_FUN_00414910
 ;   core_box.cpp_CBox_process_FUN_0041b410
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_setcolid.cpp_FUN_0053ed10
+;   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10
 ;
 ; *****************************************************************************
 
@@ -96,19 +96,19 @@ section .text
     PUSH 0x0                            ; 004153e4
     PUSH EBX                            ; 004153e6
     MOV dword ptr [EBX + 0x70],0x2      ; 004153e7
-    CALL core_bodypart.cpp_setCounts_FUN_00414910 ; 004153ee
-        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00414910()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00414910 ; 004153ee
+        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00414910(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x168]               ; 004153f3
     ADD ESP,0xc                         ; 004153f9
     MOV EDX,EAX                         ; 004153fc
     CMP EAX,0x2cfd900                   ; 004153fe
     JZ 0x0041541f                       ; 00415403
         ;   XREF to: 0041541f (CONDITIONAL_JUMP)  ; LAB_0041541f
-    MOV ECX,dword ptr [0x02cfd900]      ; 00415405 | DAT_02cfd900
+    MOV ECX,dword ptr [0x02cfd900]      ; 00415405 | g_ZeroVector
     MOV dword ptr [EAX],ECX             ; 0041540b
-    MOV ECX,dword ptr [0x02cfd904]      ; 0041540d | DAT_02cfd904
+    MOV ECX,dword ptr [0x02cfd904]      ; 0041540d | g_ZeroVector.y
     MOV dword ptr [EAX + 0x4],ECX       ; 00415413
-    MOV ECX,dword ptr [0x02cfd908]      ; 00415416 | DAT_02cfd908
+    MOV ECX,dword ptr [0x02cfd908]      ; 00415416 | g_ZeroVector.z
     MOV dword ptr [EAX + 0x8],ECX       ; 0041541c
     ADD EBX,0x15c                       ; 0041541f
         ;   Label: LAB_0041541f
@@ -178,13 +178,13 @@ section .text
     FADDP                               ; 004154ba
     ADD ESP,0x4                         ; 004154bc
     FSQRT                               ; 004154bf
-    FCOMP double ptr [0x005b6c52]       ; 004154c1 | DAT_005b6c52
+    FCOMP double ptr [0x005b6c52]       ; 004154c1 | g_DOUBLE_005b6c52
     FNSTSW AX                           ; 004154c7
     SAHF                                ; 004154c9
     JBE 0x004153cf                      ; 004154ca
         ;   XREF to: 004153cf (CONDITIONAL_JUMP)  ; LAB_004153cf
     PUSH 0x5b6c35                       ; 004154d0 | = "disableBodyPartDamage"
-    MOV ESI,dword ptr [0x005fba60]      ; 004154d5 | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 004154d5 | g_CEventListPtr
     PUSH ESI                            ; 004154db
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 004154dc
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -222,8 +222,8 @@ section .text
     PUSH EAX                            ; 00415540 | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x14]         ; 00415541
     MOV dword ptr [ESP + 0x40],EDI      ; 00415545
-    CALL core_setcolid.cpp_FUN_0053ed10 ; 00415549
-        ;   XREF to: 0053ed10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ed10()
+    CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10 ; 00415549
+        ;   XREF to: 0053ed10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0053ed10(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041554e
     PUSH dword ptr [EBP + 0x18]         ; 00415551
     PUSH EBX                            ; 00415554

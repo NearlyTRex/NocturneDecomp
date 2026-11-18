@@ -19,7 +19,7 @@
 ;   engine_pod.cpp_CPod_dismount_FUN_0051b280 at 0051b2b7
 ;
 ; Called Functions:
-;   crt_io.c_FUN_005b99c8
+;   crt_io.c_getFileStat_FUN_005b99c8
 ;   engine_dosio.cpp_getFullPath_FUN_00461210
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     PUSH EAX                            ; 00460a1a
     LEA EAX,[ESP + 0x4]                 ; 00460a1b
     PUSH EAX                            ; 00460a1f
-    CALL crt_io.c_FUN_005b99c8          ; 00460a20
-        ;   XREF to: 005b99c8 (UNCONDITIONAL_CALL)  ; int crt_io.c_FUN_005b99c8(char * filename, WatcomStat * file_info)
+    CALL crt_io.c_getFileStat_FUN_005b99c8 ; 00460a20
+        ;   XREF to: 005b99c8 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_005b99c8(char * filename, WatcomStat * file_info)
     ADD ESP,0x8                         ; 00460a25
     TEST EAX,EAX                        ; 00460a28
     JNZ 0x004609f7                      ; 00460a2a

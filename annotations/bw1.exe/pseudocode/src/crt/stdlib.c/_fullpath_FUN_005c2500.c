@@ -12,27 +12,27 @@ char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size)
   char *pcVar1;
   int iVar2;
   DWORD DVar3;
-  char *unaff_EBP;
+  char (*unaff_EBP) [4];
   LPSTR pCStack_14;
   
   if (buffer == (char *)0x0) {
     buffer_size = 0x104;
     buffer = malloc(0x104);
-    unaff_EBP = buffer;
-    if (buffer == (char *)0x0) {
+    unaff_EBP = (char (*) [4])buffer;
+    if ((char (*) [4])buffer == (char (*) [4])0x0) {
       setErrno(5);
       return (char *)0x0;
     }
   }
   if ((path != (char *)0x0) && (*path != '\0')) {
-    iVar2 = _stricmp(path,(char *)&DAT_005faa1c);
+    iVar2 = _stricmp(path,"con");
     if (iVar2 == 0) {
       if (buffer_size < 4) {
-        FUN_005c09f0(unaff_EBP);
+        debugFree(unaff_EBP);
         setErrno(0xe);
         return (char *)0x0;
       }
-      *(uint *)buffer = 0x006E6F63;
+      *(char (*) [4])buffer = "con";
     }
     else {
       DVar3 = GetFullPathNameA(path,buffer_size,buffer,&pCStack_14);

@@ -12,20 +12,20 @@
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020 at 0050e67d
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0050b420 at 0050b482
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0 at 0050b523
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 at 0050c45a
-;   core_netgame.cpp_FUN_0050b420 at 0050b482
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e0a9f
 ;   TerminatedCString s_CNetGame_addPlayer_too_m_005e0ab3
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_01d34e38
-;   undefined4 DAT_01d34e44
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   uint g_CurrentGameTime
+;   int g_NetNextPlayerId
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
@@ -85,13 +85,13 @@ section .text
     MOV dword ptr [EBX + 0x14],EAX      ; 0050ceee
     MOV EAX,dword ptr [ESP + 0x24]      ; 0050cef1
     MOV dword ptr [EBX + 0x18],EAX      ; 0050cef5
-    MOV EAX,[0x01d34e38]                ; 0050cef8 | DAT_01d34e38
+    MOV EAX,[0x01d34e38]                ; 0050cef8 | g_CurrentGameTime
     MOV dword ptr [EBX + 0x24],EAX      ; 0050cefd
     SUB EAX,0x1e0000                    ; 0050cf00
     MOV dword ptr [EBX + 0x2c],EAX      ; 0050cf05
     MOV EDX,EAX                         ; 0050cf08
     MOV dword ptr [EBX + 0x30],EAX      ; 0050cf0a
-    MOV EAX,[0x01d34e44]                ; 0050cf0d | DAT_01d34e44
+    MOV EAX,[0x01d34e44]                ; 0050cf0d | g_NetNextPlayerId
     MOV dword ptr [EBX + 0x38],EDX      ; 0050cf12
     DEC EAX                             ; 0050cf15
     MOV dword ptr [EBX + 0x34],EAX      ; 0050cf16
@@ -105,10 +105,10 @@ section .text
         ;   Label: LAB_0050cf20
     MOV ESI,0x5ff                       ; 0050cf25
     PUSH 0x5e0ab3                       ; 0050cf2a | = "CNetGame::addPlayer - too many players!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0050cf2f | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0050cf35 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050cf3b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0050cf2f | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 0050cf35 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050cf3b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050cf40
     JMP 0x0050ce82                      ; 0050cf43
         ;   XREF to: 0050ce82 (UNCONDITIONAL_JUMP)  ; LAB_0050ce82

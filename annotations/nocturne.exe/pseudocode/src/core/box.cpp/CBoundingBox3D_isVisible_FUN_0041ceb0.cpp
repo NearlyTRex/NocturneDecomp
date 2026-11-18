@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *this_ptr)
 
 {
@@ -44,23 +42,23 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *t
       local_1c = local_34;
       local_18 = local_30;
     }
-    local_14.x = (float)g_StoredX * _DAT_0059aa88;
-    local_14.y = (float)g_StoredY * _DAT_0059aa88;
-    local_14.z = (float)g_StoredZ * _DAT_0059aa88;
-    local_2c.x = (int)ROUND(local_20 * _DAT_0059aa80);
-    local_2c.y = (int)ROUND(local_1c * _DAT_0059aa80);
-    local_2c.z = (int)ROUND(local_18 * _DAT_0059aa80);
+    local_14.x = (float)g_StoredX * 0.00390625f;
+    local_14.y = (float)g_StoredY * 0.00390625f;
+    local_14.z = (float)g_StoredZ * 0.00390625f;
+    local_2c.x = (int)ROUND(local_20 * 256.0f);
+    local_2c.y = (int)ROUND(local_1c * 256.0f);
+    local_2c.z = (int)ROUND(local_18 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c(local_74,&local_2c);
     local_14.x = local_14.x + local_20;
     local_14.y = local_14.y + local_1c;
     local_14.z = local_14.z + local_18;
-    if (_DAT_007f7370 == 0) {
-      _DAT_01c038f4 = _DAT_007f7370;
+    if (g_CurrentSceneCamera == (CDemonCamera *)0x0) {
+      g_INT_01c038f4 = (int)g_CurrentSceneCamera;
     }
     else {
       core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
                 (&g_CDemonCameraInstance,&local_14,local_74);
-      if (65000 < _DAT_01c038f4) {
+      if (65000 < g_INT_01c038f4) {
         return 0;
       }
     }

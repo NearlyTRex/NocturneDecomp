@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_005bc726
-;   undefined4 DAT_005bc730
+;   TerminatedCString s_type_005bc730
 ;   TerminatedCString s_autoDrop_005bc735
 ;   TerminatedCString s_homePos_005bc73e
-;   undefined4 DAT_005bc746
+;   TerminatedCString s_vel_005bc746
 ;   TerminatedCString s_minAutoDripTime_005bc74a
 ;   TerminatedCString s_maxAutoDripTime_005bc75a
 ;   TerminatedCString s_dripRadius_005bc76a
@@ -45,7 +45,7 @@ section .text
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 0046ebde
         ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ebe3
-    PUSH 0x5bc730                       ; 0046ebe6 | DAT_005bc730
+    PUSH 0x5bc730                       ; 0046ebe6 | = "type"
     LEA EAX,[EBX + 0x2d4]               ; 0046ebeb
     PUSH EAX                            ; 0046ebf1
     CALL core_actor.cpp_archiveInteger_FUN_0040b8b0 ; 0046ebf2
@@ -63,7 +63,7 @@ section .text
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0046ec1a
         ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ec1f
-    PUSH 0x5bc746                       ; 0046ec22 | DAT_005bc746
+    PUSH 0x5bc746                       ; 0046ec22 | = "vel"
     LEA EAX,[EBX + 0x304]               ; 0046ec27
     PUSH EAX                            ; 0046ec2d
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0046ec2e

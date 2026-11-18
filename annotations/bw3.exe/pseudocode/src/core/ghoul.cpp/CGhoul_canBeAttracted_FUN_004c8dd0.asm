@@ -8,15 +8,15 @@
 ; CVector3f *      Stack[0x8]:4   out_attract_position
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c439d
-;   undefined4 DAT_01d22da4
-;   undefined4 DAT_01d22da8
-;   undefined4 DAT_01d22dac
-;   undefined4 DAT_01d22db0
+;   float g_FLOAT_005c439d = 0.5
+;   undefined4 g_GhoulIndices[1]
+;   undefined4 g_GhoulIndices[2]
+;   undefined4 g_GhoulIndices[3]
+;   undefined4 g_GhoulIndices[4]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
-;   core_motion.cpp_FUN_004fc350
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     PUSH 0xb                            ; 004c8de6
     ADD EBX,0x158                       ; 004c8de8
     PUSH EBX                            ; 004c8dee
-    CALL core_motion.cpp_FUN_004fc350   ; 004c8def
-        ;   XREF to: 004fc350 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_004fc350()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350 ; 004c8def
+        ;   XREF to: 004fc350 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x110],EAX     ; 004c8df4
     FLD float ptr [ESP + 0x110]         ; 004c8dfb
     FLDZ                                ; 004c8e02
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 004c8e19
         ;   Label: LAB_004c8e19
     PUSH ESI                            ; 004c8e1a
-    MOV EDX,dword ptr [0x01d22da4]      ; 004c8e1b | DAT_01d22da4
+    MOV EDX,dword ptr [0x01d22da4]      ; 004c8e1b | g_GhoulIndices[1]
     PUSH EDX                            ; 004c8e21
     PUSH EBX                            ; 004c8e22
     LEA ESI,[ESP + 0x7c]                ; 004c8e23
@@ -59,7 +59,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0 ; 004c8e2b
         ;   XREF to: 0054dcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004c8e30
-    MOV ECX,dword ptr [0x01d22dac]      ; 004c8e33 | DAT_01d22dac
+    MOV ECX,dword ptr [0x01d22dac]      ; 004c8e33 | g_GhoulIndices[3]
     LEA ESI,[ESP + 0x74]                ; 004c8e39
     PUSH ECX                            ; 004c8e3d
     MOVSD ES:EDI,ESI                    ; 004c8e3e
@@ -95,11 +95,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c8e96
     MOVSD ES:EDI,ESI                    ; 004c8e97
     FLD float ptr [ESP + 0x5c]          ; 004c8e98
-    FMUL float ptr [0x005c439d]         ; 004c8e9c | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c8e9c | g_FLOAT_005c439d
     FLD float ptr [ESP + 0x60]          ; 004c8ea2
-    FMUL float ptr [0x005c439d]         ; 004c8ea6 | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c8ea6 | g_FLOAT_005c439d
     FLD float ptr [ESP + 0x64]          ; 004c8eac
-    FMUL float ptr [0x005c439d]         ; 004c8eb0 | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c8eb0 | g_FLOAT_005c439d
     LEA EDI,[ESP + 0x14]                ; 004c8eb6
     LEA ESI,[ESP + 0xb0]                ; 004c8eba
     FXCH ST2                            ; 004c8ec1
@@ -109,7 +109,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c8ed8
     MOVSD ES:EDI,ESI                    ; 004c8ed9
     MOVSD ES:EDI,ESI                    ; 004c8eda
-    MOV ESI,dword ptr [0x01d22da8]      ; 004c8edb | DAT_01d22da8
+    MOV ESI,dword ptr [0x01d22da8]      ; 004c8edb | g_GhoulIndices[2]
     PUSH ESI                            ; 004c8ee1
     PUSH EBX                            ; 004c8ee2
     LEA ESI,[ESP + 0x94]                ; 004c8ee3
@@ -121,7 +121,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c8efd
     MOVSD ES:EDI,ESI                    ; 004c8efe
     MOVSD ES:EDI,ESI                    ; 004c8eff
-    MOV EDI,dword ptr [0x01d22db0]      ; 004c8f00 | DAT_01d22db0
+    MOV EDI,dword ptr [0x01d22db0]      ; 004c8f00 | g_GhoulIndices[4]
     PUSH EDI                            ; 004c8f06
     PUSH EBX                            ; 004c8f07
     LEA ESI,[ESP + 0xa0]                ; 004c8f08
@@ -153,11 +153,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c8f6b
     MOVSD ES:EDI,ESI                    ; 004c8f6c
     FLD float ptr [ESP + 0xd4]          ; 004c8f6d
-    FMUL float ptr [0x005c439d]         ; 004c8f74 | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c8f74 | g_FLOAT_005c439d
     FLD float ptr [ESP + 0xd8]          ; 004c8f7a
-    FMUL float ptr [0x005c439d]         ; 004c8f81 | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c8f81 | g_FLOAT_005c439d
     FLD float ptr [ESP + 0xdc]          ; 004c8f87
-    FMUL float ptr [0x005c439d]         ; 004c8f8e | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c8f8e | g_FLOAT_005c439d
     FLD float ptr [ESP + 0x14]          ; 004c8f94
     FLD float ptr [ESP + 0x18]          ; 004c8f98
     LEA EDI,[ESP + 0xf8]                ; 004c8f9c
@@ -187,12 +187,12 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c900b
     MOVSD ES:EDI,ESI                    ; 004c900c
     FLD float ptr [ESP + 0xe0]          ; 004c900d
-    FMUL float ptr [0x005c439d]         ; 004c9014 | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c9014 | g_FLOAT_005c439d
     FLD float ptr [ESP + 0xe4]          ; 004c901a
-    FMUL float ptr [0x005c439d]         ; 004c9021 | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c9021 | g_FLOAT_005c439d
     LEA EAX,[ESP + 0x20]                ; 004c9027
     FLD float ptr [ESP + 0xe8]          ; 004c902b
-    FMUL float ptr [0x005c439d]         ; 004c9032 | DAT_005c439d
+    FMUL float ptr [0x005c439d]         ; 004c9032 | g_FLOAT_005c439d
     PUSH EAX                            ; 004c9038
     MOV EAX,dword ptr [ESP + 0x124]     ; 004c9039
     LEA EDI,[ESP + 0x24]                ; 004c9040
@@ -207,8 +207,8 @@ section .text
     PUSH EAX                            ; 004c9065
     LEA ESI,[ESP + 0xac]                ; 004c9066
     LEA EDI,[ESP + 0x40]                ; 004c906d
-    CALL core_actor.cpp_FUN_00408b80    ; 004c9071
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004c9071
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xac]                ; 004c9076
     ADD ESP,0x8                         ; 004c907d
     LEA EAX,[ESP + 0x38]                ; 004c9080

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,CVector3f *out_points_array)
 
@@ -33,7 +32,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-            (&(this_ptr->base).base.model,_DAT_01cd0dbc,&CStack_88);
+            (&(this_ptr->base).base.model,g_GhoulIndices[9],&CStack_88);
   CStack_7c.x = CStack_88.x;
   *(uint *)((int)&CStack_7c + (uint)bVar4 * -8 + 4) =
        *(uint *)((int)&CStack_88 + (uint)bVar4 * -8 + 4);
@@ -52,7 +51,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,
     case 0:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-                  (pCStack_18,_DAT_01cd0dac,&CStack_64);
+                  (pCStack_18,g_GhoulIndices[5],&CStack_64);
         CStack_40.x = CStack_64.x;
         *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
              *(uint *)((int)&CStack_64 + (uint)bVar4 * -8 + 4);
@@ -64,8 +63,10 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,
           CStack_70.z = CStack_40.z;
         }
 LAB_004e0d43:
-        CStack_70.y = CStack_7c.y * (float)_DAT_005e3e19 + CStack_70.y * (float)_DAT_005e3e11;
-        CStack_70.x = CStack_7c.x * (float)_DAT_005e3e09 + CStack_70.x * (float)_DAT_005e3e09;
+        CStack_70.y = CStack_7c.y * (float)0.29999999999999999 +
+                      CStack_70.y * (float)0.69999999999999996;
+        CStack_70.x = CStack_7c.x * (float)0.5 +
+                      CStack_70.x * (float)0.5;
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != &CStack_70) {
           pCVar2->x = CStack_70.x;
@@ -80,7 +81,7 @@ LAB_004e0d9d:
     case 1:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-                  (pCStack_18,_DAT_01cd0db0,&CStack_34);
+                  (pCStack_18,g_GhoulIndices[6],&CStack_34);
         CStack_94.x = CStack_34.x;
         *(uint *)((int)&CStack_94 + (uint)bVar4 * -8 + 4) =
              *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
@@ -97,7 +98,7 @@ LAB_004e0d9d:
     case 2:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-                  (pCStack_18,_DAT_01cd0d98,&CStack_a0);
+                  (pCStack_18,g_GhoulIndices[0],&CStack_a0);
         pCVar2 = out_points_array + iVar3;
         CStack_28.x = CStack_a0.x;
         *(uint *)((int)&CStack_28 + (uint)bVar4 * -8 + 4) =
@@ -116,7 +117,7 @@ LAB_004e0d9a:
     case 3:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
-                  (pCStack_18,_DAT_01cd0dc0,&CStack_58);
+                  (pCStack_18,g_GhoulIndices[10],&CStack_58);
         pCVar2 = out_points_array + iVar3;
         CStack_4c.x = CStack_58.x;
         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + 4) =

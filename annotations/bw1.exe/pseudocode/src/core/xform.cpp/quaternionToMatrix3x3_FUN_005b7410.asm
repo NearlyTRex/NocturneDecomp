@@ -27,7 +27,7 @@
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_005b7560 at 005b7571
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fa164
+;   float g_FLOAT_005fa164 = 2
 ;
 ; *****************************************************************************
 
@@ -50,7 +50,7 @@ section .text
     FADDP                               ; 005b7432
     FLD float ptr [EAX + 0x4]           ; 005b7434
     FXCH                                ; 005b7437
-    FDIVR float ptr [0x005fa164]        ; 005b7439 | DAT_005fa164
+    FDIVR float ptr [0x005fa164]        ; 005b7439 | g_FLOAT_005fa164
     FXCH                                ; 005b743f
     FMUL ST1                            ; 005b7441
     FLD float ptr [EAX + 0x8]           ; 005b7443

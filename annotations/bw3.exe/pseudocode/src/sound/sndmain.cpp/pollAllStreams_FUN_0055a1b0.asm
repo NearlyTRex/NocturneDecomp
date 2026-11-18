@@ -15,10 +15,10 @@
 ;   sound_sndmain.cpp_processAudio_FUN_00559120 at 0055916f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d3f1a
-;   undefined4 DAT_005d3f22
-;   undefined4 DAT_005d3f2a
-;   undefined4 DAT_005e485c
+;   double g_DOUBLE_005d3f1a = -0.300000000000000
+;   double g_DOUBLE_005d3f22 = -0.100000000000000
+;   double g_DOUBLE_005d3f2a = -0.200000000000000
+;   float g_FLOAT_005e485c = 2
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960
@@ -38,13 +38,13 @@ section .text
     AND ESP,0xfffffff8                  ; 0055a1b8
     CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 0055a1bb
         ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
-    FLD float ptr [0x005e485c]          ; 0055a1c0 | DAT_005e485c
+    FLD float ptr [0x005e485c]          ; 0055a1c0 | g_FLOAT_005e485c
     MOV EDX,dword ptr [EBP + 0x10]      ; 0055a1c6
     FST double ptr [ESP]                ; 0055a1c9
     FLD ST0                             ; 0055a1cc
-    FADD double ptr [0x005d3f1a]        ; 0055a1ce | DAT_005d3f1a
+    FADD double ptr [0x005d3f1a]        ; 0055a1ce | g_DOUBLE_005d3f1a
     FXCH                                ; 0055a1d4
-    FADD double ptr [0x005d3f22]        ; 0055a1d6 | DAT_005d3f22
+    FADD double ptr [0x005d3f22]        ; 0055a1d6 | g_DOUBLE_005d3f22
     FXCH                                ; 0055a1dc
     FSTP float ptr [ESP + 0xc]          ; 0055a1de
     FSTP float ptr [ESP + 0x8]          ; 0055a1e2
@@ -74,8 +74,8 @@ section .text
     RET                                 ; 0055a21a
     FLD double ptr [ESP]                ; 0055a21b
         ;   Label: LAB_0055a21b
-    MOV EBX,dword ptr [0x005e485c]      ; 0055a21e | DAT_005e485c
-    FADD double ptr [0x005d3f2a]        ; 0055a224 | DAT_005d3f2a
+    MOV EBX,dword ptr [0x005e485c]      ; 0055a21e | g_FLOAT_005e485c
+    FADD double ptr [0x005d3f2a]        ; 0055a224 | g_DOUBLE_005d3f2a
     MOV dword ptr [ESP + 0x8],EBX       ; 0055a22a
     FSTP float ptr [ESP + 0xc]          ; 0055a22e
     JMP 0x0055a1ea                      ; 0055a232

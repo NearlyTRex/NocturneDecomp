@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel *this_ptr,char *part_name,int error_if_not_found)
 
 {
@@ -30,8 +28,8 @@ int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310(CDefo
   if (error_if_not_found == 0) {
     return -1;
   }
-  _DAT_01d71de0 = "..\\core\\skeleton.cpp";
-  _DAT_01d71de4 = 0x5d8;
-  core_main_c_FUN_004e4330("Can't find part %s in model %s",part_name,this_ptr->model_filename);
+  g_CHAR_PTR_01d71de0 = "..\\core\\skeleton.cpp";
+  g_INT_01d71de4 = 0x5d8;
+  core_main_c_displayErrorAndQuit_FUN_004e4330("Can't find part %s in model %s");
   return -1;
 }

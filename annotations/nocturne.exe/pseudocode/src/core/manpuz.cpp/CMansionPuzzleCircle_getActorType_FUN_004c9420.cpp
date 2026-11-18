@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_004c9420(CMansionPuzzleCircle *this_ptr)
 
 {
-  return &g_CMansionPuzzleCircleActorType_01cc485c;
+  return &g_CMansionPuzzleCircleClassInfo;
 }

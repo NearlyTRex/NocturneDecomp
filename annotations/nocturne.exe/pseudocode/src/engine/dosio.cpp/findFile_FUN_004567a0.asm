@@ -13,7 +13,7 @@
 ;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456ba8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01af4ed8
+;   int g_NumSearchHandlers
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_findFileNormally_FUN_00456800
@@ -28,7 +28,7 @@ section .text
     PUSH EDI                            ; 004567a2
     PUSH EBP                            ; 004567a3
     MOV EDI,dword ptr [ESP + 0x14]      ; 004567a4
-    MOV EDX,dword ptr [0x01af4ed8]      ; 004567a8 | DAT_01af4ed8
+    MOV EDX,dword ptr [0x01af4ed8]      ; 004567a8 | g_NumSearchHandlers
     CMP EDX,0x1                         ; 004567ae
     JL 0x004567e0                       ; 004567b1
         ;   XREF to: 004567e0 (CONDITIONAL_JUMP)  ; LAB_004567e0
@@ -45,7 +45,7 @@ section .text
     TEST EAX,EAX                        ; 004567c7
     JNZ 0x004567ee                      ; 004567c9
         ;   XREF to: 004567ee (CONDITIONAL_JUMP)  ; LAB_004567ee
-    MOV EBP,dword ptr [0x01af4ed8]      ; 004567cb | DAT_01af4ed8
+    MOV EBP,dword ptr [0x01af4ed8]      ; 004567cb | g_NumSearchHandlers
     INC ESI                             ; 004567d1
     ADD EBX,0x4                         ; 004567d2
     CMP ESI,EBP                         ; 004567d5

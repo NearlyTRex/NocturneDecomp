@@ -9,7 +9,7 @@
 void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_004f76f0(CDemonMission *this_ptr)
 
 {
-  engine_texture_cpp_FUN_0056ac20();
+  engine_texture_cpp_clearTextureCache_FUN_0056ac20();
   core_dmodel_cpp_freeAllModels_FUN_004624d0();
   core_skeleton_cpp_freeAllModels_FUN_005501a0();
   core_skeleton_cpp_freeAllSkeletons_FUN_005502d0();

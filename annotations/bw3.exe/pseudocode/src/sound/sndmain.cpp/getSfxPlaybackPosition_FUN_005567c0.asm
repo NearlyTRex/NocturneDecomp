@@ -14,11 +14,11 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00495280 at 004952c3
-;   core_game.cpp_FUN_004c4cc0 at 004c4cda
+;   core_game.cpp_CGame_saveMusicPosition_FUN_004c4cc0 at 004c4cda
 ;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056be1f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf3280
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00555930
@@ -51,7 +51,7 @@ section .text
     CMP dword ptr [EAX + 0x60],0x0      ; 005567e0
     JZ 0x005567fc                       ; 005567e4
         ;   XREF to: 005567fc (CONDITIONAL_JUMP)  ; LAB_005567fc
-    CMP dword ptr [0x02cf3280],0x0      ; 005567e6 | DAT_02cf3280
+    CMP dword ptr [0x02cf3280],0x0      ; 005567e6 | g_CSoundDevicePtr
     JZ 0x005567fc                       ; 005567ed
         ;   XREF to: 005567fc (CONDITIONAL_JUMP)  ; LAB_005567fc
     PUSH EAX                            ; 005567ef

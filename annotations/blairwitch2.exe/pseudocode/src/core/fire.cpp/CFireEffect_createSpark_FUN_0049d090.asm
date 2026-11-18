@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   spark_type
 ; int              Stack[0x1c]:4   fade_rate
 ;
-; XREF[19]:
+; XREF[20]:
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760 at 004128fd
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414290 at 0041442d
 ;   core_bride.cpp_CBride_processDamage_FUN_0041ead0 at 0041ec92
@@ -23,10 +23,10 @@
 ;   core_fire.cpp_CFireball_onCollision_FUN_004964c0 at 00496510
 ;   core_fire.cpp_CFireball_process_FUN_00495960 at 00495a71
 ;   core_fire.cpp_CToss_process_FUN_004993f0 at 00499540
-;   ... and 9 more
+;   ... and 10 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c7f4f0
+;   int g_SparkAllocIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
@@ -39,7 +39,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
     PUSH EDI                            ; 0049d091
     PUSH EBP                            ; 0049d092
-    MOV EDX,dword ptr [0x01c7f4f0]      ; 0049d093 | DAT_01c7f4f0
+    MOV EDX,dword ptr [0x01c7f4f0]      ; 0049d093 | g_SparkAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049d099
     ADD EAX,EDX                         ; 0049d0a0
     SHL EAX,0x2                         ; 0049d0a2
@@ -47,14 +47,14 @@ section .text
     ADD EAX,EDX                         ; 0049d0aa
     INC EDX                             ; 0049d0ac
     SHL EAX,0x2                         ; 0049d0ad
-    MOV dword ptr [0x01c7f4f0],EDX      ; 0049d0b0 | DAT_01c7f4f0
+    MOV dword ptr [0x01c7f4f0],EDX      ; 0049d0b0 | g_SparkAllocIndex
     ADD EBX,EAX                         ; 0049d0b6
     CMP EDX,0x100                       ; 0049d0b8
     JL 0x0049d0ca                       ; 0049d0be
         ;   XREF to: 0049d0ca (CONDITIONAL_JUMP)  ; LAB_0049d0ca
     PUSH ESI                            ; 0049d0c0
     XOR ESI,ESI                         ; 0049d0c1
-    MOV dword ptr [0x01c7f4f0],ESI      ; 0049d0c3 | DAT_01c7f4f0
+    MOV dword ptr [0x01c7f4f0],ESI      ; 0049d0c3 | g_SparkAllocIndex
     POP ESI                             ; 0049d0c9
     MOV EDI,dword ptr [ESP + 0x18]      ; 0049d0ca
         ;   Label: LAB_0049d0ca

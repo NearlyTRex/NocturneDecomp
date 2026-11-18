@@ -15,7 +15,7 @@ section .text
     PUSH 0x230                          ; 0040ea90
         ;   Label: core_barrier.cpp_factoryFuncBarrier_FUN_0040ea90
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040ea95
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0040ea9a
     TEST EAX,EAX                        ; 0040ea9d
     JNZ 0x0040eaa2                      ; 0040ea9f

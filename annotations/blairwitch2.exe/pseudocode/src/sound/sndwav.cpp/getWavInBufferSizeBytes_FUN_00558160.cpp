@@ -6,11 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndwav_cpp_getWavInBufferSizeBytes_FUN_00558160(void)
 
 {
-  return ((int)((_DAT_0264b24c + (_DAT_0264b24c >> 0x1f) * -8) -
-               (uint)((_DAT_0264b24c >> 0x1f) << 2 < 0)) >> 3) * _DAT_0264b25c * _DAT_0264b250;
+  return ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
+               (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples *
+         g_WaveInChannels;
 }

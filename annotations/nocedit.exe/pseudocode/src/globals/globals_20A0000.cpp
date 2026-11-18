@@ -19,7 +19,7 @@ CDemonActorType g_CActorDestinationClassInfo = {};
 CDemonFilter CDemonFilter_ARRAY_020a4ad8[4] = {};
 
 // CDemonFilter[8]
-CDemonFilter CDemonFilter_ARRAY_020a4878[8] = {};
+CDemonFilter g_PlayerFilterPool[8] = {};
 
 // CDemonLight*
 CDemonLight* g_CurrentShadowLight = {};

@@ -23,7 +23,7 @@ void __cdecl core_fire_cpp_CShell_process_FUN_0049b7f0(CShell *this_ptr)
   if ((this_ptr->base).lifetime_remaining <= 0.0) {
     return;
   }
-  core_particle_cpp_FUN_00510ef0(this_ptr);
+  core_particle_cpp_CParticle_process_FUN_00510ef0(&this_ptr->base);
   fStack_8 = g_CGamePtr->delta_time_float;
   fStack_20 = (this_ptr->angular_velocity).x * fStack_8;
   fStack_1c = (this_ptr->angular_velocity).y * fStack_8;

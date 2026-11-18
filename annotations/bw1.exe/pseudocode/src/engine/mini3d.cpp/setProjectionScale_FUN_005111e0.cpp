@@ -6,11 +6,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setProjectionScale_FUN_005111e0(float scale)
 
 {
-  _DAT_01d22528 = scale;
+  g_FLOAT_01d22528 = scale;
   return;
 }

@@ -55,7 +55,7 @@ ECollisionType __cdecl CFlameCan::getCollisionType(CFlameCan *this_ptr,SCollisio
 
 // Original: core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_004b94b0
 // Address: 004b94b0
-CBoundingBox3D * __cdecl CFlameCan::getBoundingBox(CFlameCan *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CFlameCan::getBoundingBox(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flamecan.cpp_CFlameCan_dtor_FUN_004b94f0
 // Address: 004b94f0

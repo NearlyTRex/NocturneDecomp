@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_ptr,char *pod_filename)
 
 {
@@ -68,7 +66,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
   bVar9 = 0;
   local_18 = 0;
   engine_pod_cpp_CPodFile_cleanup_FUN_0051a8f0(this_ptr);
-  engine_dosio_cpp_FUN_00460910(&local_6a4,0,pod_filename);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910
+            (local_6a4.found_path,(char *)0x0,pod_filename);
   iVar2 = engine_dosio_cpp_findFileNormally_FUN_004609e0(&local_6a4);
   if (iVar2 == 0) {
     return 0;
@@ -85,14 +84,14 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
   this_ptr->timestamp = local_6a4.timestamp;
-  file_00 = _fopen(this_ptr->filename,&DAT_005e2407);
+  file_00 = _fopen(this_ptr->filename,"rb");
   local_30 = file_00;
   if (file_00 == (_FILE *)0x0) goto LAB_00519fa2;
   engine_dosio_cpp_splitPath_FUN_00461070
             (pod_filename,(char *)0x0,(char *)0x0,(char *)0x0,local_260);
-  iVar2 = _stricmp(local_260,&DAT_005e240a);
+  iVar2 = _stricmp(local_260,"epd");
   if ((iVar2 == 0) ||
-     (iVar2 = _stricmp(local_260,&DAT_005e240e), iVar2 == 0)) {
+     (iVar2 = _stricmp(local_260,".epd"), iVar2 == 0)) {
     _fread(local_370,1,0x110,local_30);
     pcVar8 = local_36c;
     pcVar7 = this_ptr->description;
@@ -131,9 +130,9 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
           pcVar7 = (char *)realloc(this_ptr->file_data_buffer,local_2c);
           this_ptr->file_data_buffer = pcVar7;
           if (pcVar7 == (char *)0x0) {
-            _DAT_01d046a0 = "..\\engine\\pod.cpp";
-            _DAT_01d046a4 = 0x198;
-            core_main_c_FUN_004e4500("Out of memory!");
+            g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
+            g_INT_01d046a4 = 0x198;
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
           }
         }
         pcVar7 = local_ac;
@@ -220,9 +219,9 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
             pcVar7 = (char *)malloc(local_380);
             this_ptr->file_data_buffer = pcVar7;
             if (pcVar7 == (char *)0x0) {
-              _DAT_01d046a0 = "..\\engine\\pod.cpp";
-              _DAT_01d046a4 = 0x1ed;
-              core_main_c_FUN_004e4500("Out of memory!");
+              g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
+              g_INT_01d046a4 = 0x1ed;
+              core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
             }
             _fread(this_ptr->file_data_buffer,local_380,1,local_30);
             if ((local_30->_flag & 0x20) == 0) {
@@ -270,9 +269,9 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
       pcVar7 = (char *)malloc(size);
       this_ptr->file_data_buffer = pcVar7;
       if (pcVar7 == (char *)0x0) {
-        _DAT_01d046a0 = "..\\engine\\pod.cpp";
-        _DAT_01d046a4 = 0x228;
-        core_main_c_FUN_004e4500("Out of memory!");
+        g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
+        g_INT_01d046a4 = 0x228;
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
       }
       _fread(this_ptr->file_data_buffer,size,1,local_30);
       iVar2 = this_ptr->file_count + -1;
@@ -327,9 +326,9 @@ LAB_00519fa2:
           pcVar7 = (char *)realloc(this_ptr->file_data_buffer,local_14);
           this_ptr->file_data_buffer = pcVar7;
           if (pcVar7 == (char *)0x0) {
-            _DAT_01d046a0 = "..\\engine\\pod.cpp";
-            _DAT_01d046a4 = 0x260;
-            core_main_c_FUN_004e4500("Out of memory!");
+            g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
+            g_INT_01d046a4 = 0x260;
+            core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
           }
         }
         pcVar7 = local_5c;
@@ -364,9 +363,9 @@ LAB_0051a22e:
     pcVar7 = (char *)realloc(this_ptr->file_data_buffer,size);
     this_ptr->file_data_buffer = pcVar7;
     if (pcVar7 == (char *)0x0) {
-      _DAT_01d046a0 = "..\\engine\\pod.cpp";
-      _DAT_01d046a4 = 0x27b;
-      core_main_c_FUN_004e4500("realloc returns NULL shrinking filenameBlockSize to fit.");
+      g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
+      g_INT_01d046a4 = 0x27b;
+      core_main_c_displayErrorAndQuit_FUN_004e4500("realloc returns NULL shrinking filenameBlockSize to fit.");
     }
   }
   iVar2 = 0;

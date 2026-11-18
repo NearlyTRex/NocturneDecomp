@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 59,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 23,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 90
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -63,9 +60,9 @@
     },
     {
       "addr": "005b7648",
-      "name": "DAT_005b7648",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ProjectionScale",
+      "type": "int",
+      "value": "0x10000"
     },
     {
       "addr": "01c00c48",
@@ -135,38 +132,38 @@
     },
     {
       "addr": "01c039d0",
-      "name": "DAT_01c039d0",
-      "type": "undefined4",
+      "name": "g_CameraRotationPitch",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039d4",
-      "name": "DAT_01c039d4",
-      "type": "undefined4",
+      "name": "g_CameraRotationYaw",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039d8",
-      "name": "DAT_01c039d8",
-      "type": "undefined4",
+      "name": "g_CameraRotationRoll",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039dc",
-      "name": "DAT_01c039dc",
-      "type": "undefined4",
+      "name": "g_LightDirectionX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e0",
-      "name": "DAT_01c039e0",
-      "type": "undefined4",
+      "name": "g_LightDirectionY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e4",
-      "name": "DAT_01c039e4",
-      "type": "undefined4",
+      "name": "g_LightDirectionZ",
+      "type": "int",
       "value": null
     },
     {
@@ -183,8 +180,8 @@
     },
     {
       "addr": "01cc53d0",
-      "name": "DAT_01cc53d0",
-      "type": "undefined4",
+      "name": "g_ViewportStackIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -279,22 +276,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b7648",
-      "severity": "mild",
-      "text": "DAT_005b7648 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5474);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

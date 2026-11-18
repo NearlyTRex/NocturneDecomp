@@ -24,7 +24,6 @@
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
-#include "types/structs/SCorona.h"
 #include "types/structs/SCoronaLightEntry.h"
 #include "types/structs/SFog.h"
 #include "types/structs/SIntersectXZCylinder.h"
@@ -85,7 +84,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_00444f90(CDemonCame
 int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_004450b0(int start_x,int start_y,int depth_reciprocal);
 void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_004451a0(int row_index,int column_start,int column_end);
-void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCorona *corona);
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCoronaLightEntry *corona);
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00445650(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
 void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00445f70(int vertex_index,float x,float y,float z);

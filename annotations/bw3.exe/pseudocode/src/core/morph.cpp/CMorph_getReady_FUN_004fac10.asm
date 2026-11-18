@@ -76,12 +76,12 @@
 ;   TerminatedCString s_core_morph_cpp_005c96f7
 ;   TerminatedCString s_CMorph_getReady_can_t_do_005c9709
 ;   WatcomTypeInfo g_CBoundingBox3DTypeInfo
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041d840
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_morph.cpp_CMorphModel_findNearestPoint_FUN_004fa7f0
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
@@ -163,10 +163,10 @@ section .text
         ;   Label: LAB_004facdf
     MOV ESI,0x31f                       ; 004face4
     PUSH 0x5c9709                       ; 004face9 | = "CMorph::getReady - can't do this unle..."
-    MOV dword ptr [0x01d71de0],EBX      ; 004facee | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004facf4 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004facfa
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBX      ; 004facee | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004facf4 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004facfa
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004facff
     JMP 0x004fac38                      ; 004fad02
         ;   XREF to: 004fac38 (UNCONDITIONAL_JUMP)  ; LAB_004fac38

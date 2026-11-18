@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_005595a0(CDemonSet *this_ptr,CVector3f *point)
 
 {
@@ -26,8 +24,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_005595a0(CDemonSet *t
   float local_2c;
   float fStack_28;
   float fStack_24;
-  float local_20;
-  float fStack_1c;
+  CVector3f local_20;
   int local_14;
   
   bVar5 = 0;
@@ -39,12 +36,12 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_005595a0(CDemonSet *t
         this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040c600
                                 (pCVar1->actors[0],g_CWaterActorClassInfo.name_hash);
         if (this_ptr_00 != (CDemonActor *)0x0) {
-          core_actor_cpp_FUN_00408bb0(this_ptr_00,point);
-          local_2c = local_20;
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0(this_ptr_00,point,&local_20);
+          local_2c = local_20.x;
           *(uint *)((int)&stack0xffffffd8 + (uint)bVar5 * -8) =
-               *(uint *)((int)&stack0xffffffe4 + (uint)bVar5 * -8);
+               *(uint *)((int)&local_20 + (uint)bVar5 * -8 + 4);
           *(uint *)((int)&stack0xffffffdc + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-               *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+               *(uint *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
           (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_ffffffa4);
           puVar3 = (uint *)&stack0xffffffac;
           puVar4 = (uint *)&stack0xffffffbc;
@@ -53,9 +50,10 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_005595a0(CDemonSet *t
             puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
             puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
           }
-          fStack_38 = fStack_38 + _DAT_005f0fc9;
-          if ((((fStack_3c <= fStack_24) && (fStack_38 <= local_20)) && (fStack_34 <= fStack_1c)) &&
-             (((fStack_24 <= fStack_30 && (local_20 <= local_2c)) && (fStack_1c <= fStack_28)))) {
+          fStack_38 = fStack_38 + -10.0f;
+          if ((((fStack_3c <= fStack_24) && (fStack_38 <= local_20.x)) && (fStack_34 <= local_20.y))
+             && (((fStack_24 <= fStack_30 && (local_20.x <= local_2c)) && (local_20.y <= fStack_28))
+                )) {
             return 1;
           }
         }

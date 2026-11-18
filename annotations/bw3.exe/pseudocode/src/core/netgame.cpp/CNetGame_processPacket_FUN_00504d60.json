@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1075,
-    "complexity_score": 696,
+    "complexity_score": 706,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 416,
-    "suspect_count": 24,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
     "total_lines": 1491
@@ -46,7 +44,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "00506a00",
@@ -147,9 +145,9 @@
     },
     {
       "addr": "005caa40",
-      "name": "DAT_005caa40",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005caa40",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "005caa41",
@@ -177,86 +175,86 @@
     },
     {
       "addr": "005caab9",
-      "name": "DAT_005caab9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005caab9",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005caac1",
-      "name": "DAT_005caac1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005caac1",
+      "type": "double",
+      "value": "-30"
     },
     {
       "addr": "005caac9",
-      "name": "DAT_005caac9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005caac9",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da6478",
-      "name": "DAT_01da6478",
-      "type": "undefined4",
+      "name": "g_UINT_01da6478",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01da647c",
-      "name": "DAT_01da647c",
-      "type": "undefined4",
+      "name": "g_ConnectionStatus",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da6480",
-      "name": "DAT_01da6480",
-      "type": "undefined4",
+      "name": "g_RemoteSyncStage",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da6484",
-      "name": "DAT_01da6484",
-      "type": "undefined4",
+      "name": "g_NetNextPlayerId",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da648c",
-      "name": "DAT_01da648c",
-      "type": "undefined4",
+      "name": "g_ChatHistoryCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da65b8",
-      "name": "DAT_01da65b8",
+      "name": "g_ChatHistory[1].message_id",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01dc2690",
-      "name": "DAT_01dc2690",
-      "type": "undefined4",
+      "name": "g_ChatOutCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01dc5c80",
-      "name": "DAT_01dc5c80",
-      "type": "undefined4",
+      "name": "g_SimFrameCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cfd89c",
-      "name": "DAT_02cfd89c",
-      "type": "undefined4",
+      "name": "g_AnyAddressIP",
+      "type": "uchar[4]",
       "value": null
     }
   ],
@@ -636,19 +634,11 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 117,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x80 + 0x40) =",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar4 * 0x80 + 0x40) =",
       "type": "pointer_cast"
     },
     {
@@ -664,7 +654,7 @@
       "line": 141,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x80 + 0x40) =",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar4 * 0x80 + 0x40) =",
       "type": "pointer_cast"
     },
     {
@@ -676,28 +666,36 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 224,
-      "match": "DAT_01dc2698",
-      "severity": "mild",
-      "text": "while (*(uint *)(&DAT_01dc2698 + iVar5) == (packet->player_announce).addr.ip_address) {",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_ChatOutMessages",
+      "severity": "moderate",
+      "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + -8) ==",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 225,
-      "match": "DAT_01dc269c",
-      "severity": "mild",
-      "text": "(&DAT_01dc269c)[iVar5 + uVar2] = 1;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 226,
+      "match": "(byte *)((int)g_ChatOutMessages",
+      "severity": "moderate",
+      "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar4 + uVar2 + -4) = 1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 338,
-      "match": "DAT_005caa40",
-      "severity": "mild",
-      "text": "pcVar11 = &DAT_005caa40;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 356,
+      "match": "(uint *)((int)g_SSimFrame_ARRAY_01dc5c84",
+      "severity": "moderate",
+      "text": "if (local_34 == *(uint *)((int)g_SSimFrame_ARRAY_01dc5c84[0].player_input + iVar4 + -0xc)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 358,
+      "match": "(SSimFrame *)((int)g_SSimFrame_ARRAY_01dc5c84",
+      "severity": "moderate",
+      "text": "dest = (SSimFrame *)((int)g_SSimFrame_ARRAY_01dc5c84[0].player_input + iVar4 + -0xc);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -709,10 +707,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 414,
-      "match": "(SPlayerInput *)((int)pSVar6",
+      "line": 395,
+      "match": "(SPlayerInput *)((int)pSVar9",
       "severity": "moderate",
-      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
+      "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 414,
+      "match": "(SPlayerInput *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -732,11 +738,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 414,
-      "match": "(int)pSVar6",
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 395,
+      "match": "(int)pSVar9",
       "severity": "moderate",
-      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
+      "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 414,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -773,7 +787,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 285,
+      "line": 286,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -784,7 +798,7 @@
       "line": 392,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "text": "for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -792,7 +806,7 @@
       "line": 411,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "text": "for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 219,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 23,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 69,
-    "suspect_count": 14,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 362
   },
   "cross_references": [
     {
       "addr": "004bdfb0",
       "from_addr": "004be69e",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,7 +36,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "00531030",
@@ -63,15 +60,15 @@
     },
     {
       "addr": "0047cee0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047cee0"
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047cee0"
     }
   ],
   "globals": [
     {
       "addr": "005cfcf3",
-      "name": "DAT_005cfcf3",
-      "type": "undefined4",
+      "name": "s_d_005cfcf3",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -88,32 +85,32 @@
     },
     {
       "addr": "005cfd3f",
-      "name": "DAT_005cfd3f",
-      "type": "undefined4",
+      "name": "s_d_005cfd3f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd43",
-      "name": "DAT_005cfd43",
-      "type": "undefined4",
+      "name": "s_d_005cfd43",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd47",
-      "name": "DAT_005cfd47",
-      "type": "undefined4",
+      "name": "s_d_005cfd47",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd4b",
-      "name": "DAT_005cfd4b",
-      "type": "undefined4",
+      "name": "s_g_005cfd4b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd4f",
-      "name": "DAT_005cfd4f",
-      "type": "undefined4",
+      "name": "s_d_005cfd4f",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -124,44 +121,44 @@
     },
     {
       "addr": "005cfd5a",
-      "name": "DAT_005cfd5a",
-      "type": "undefined4",
+      "name": "s_anon_005cfd5a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd5d",
-      "name": "DAT_005cfd5d",
-      "type": "undefined4",
+      "name": "s_g_005cfd5d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd61",
-      "name": "DAT_005cfd61",
-      "type": "undefined4",
+      "name": "s_g_005cfd61",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd65",
-      "name": "DAT_005cfd65",
-      "type": "undefined4",
+      "name": "s_d_005cfd65",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd69",
-      "name": "DAT_005cfd69",
-      "type": "undefined4",
+      "name": "s_d_005cfd69",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd6d",
-      "name": "DAT_005cfd6d",
-      "type": "undefined4",
+      "name": "s_d_005cfd6d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005cfd71",
-      "name": "DAT_005cfd71",
-      "type": "undefined4",
+      "name": "s_u_005cfd71",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -190,20 +187,20 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ed7010",
-      "name": "DAT_01ed7010",
-      "type": "undefined4",
+      "name": "g_ScriptTimeScale",
+      "type": "float",
       "value": null
     }
   ],
@@ -213,7 +210,7 @@
       {
         "call_addr": "004be69e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -327,118 +324,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005cfcf3",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfcf3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005cfd3f",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd3f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005cfd43",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd43);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005cfd47",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd47);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005cfd4b",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd4b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005cfd4f",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd4f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005cfd5a",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd5a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005cfd5d",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd5d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005cfd61",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd61);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_005cfd65",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd65);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005cfd69",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd69);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005cfd6d",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd6d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005cfd71",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005cfd71);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

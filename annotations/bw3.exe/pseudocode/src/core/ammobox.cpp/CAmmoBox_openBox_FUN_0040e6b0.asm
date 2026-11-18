@@ -10,7 +10,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00518cd0 at 00519916
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00519916
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Open_pct_f_005b614d

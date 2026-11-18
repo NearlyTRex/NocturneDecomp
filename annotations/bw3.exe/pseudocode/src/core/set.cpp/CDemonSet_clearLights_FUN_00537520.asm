@@ -9,11 +9,11 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8633
 ;   core_mission.cpp_CDemonMission_process_FUN_004f70a0 at 004f71ee
-;   core_set.cpp_FUN_00533e60 at 005343fc
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00533e60 at 005343fc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0203a414
-;   undefined4 DAT_0203a418
+;   int g_MasterLightCount
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_0203a418
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_00448f30
@@ -30,23 +30,23 @@ section .text
     PUSH EDI                            ; 00537522
     PUSH EBP                            ; 00537523
     MOV EDI,dword ptr [ESP + 0x14]      ; 00537524
-    MOV EDX,dword ptr [0x0203a414]      ; 00537528 | DAT_0203a414
+    MOV EDX,dword ptr [0x0203a414]      ; 00537528 | g_MasterLightCount
     XOR ESI,ESI                         ; 0053752e
     TEST EDX,EDX                        ; 00537530
     JLE 0x00537556                      ; 00537532
         ;   XREF to: 00537556 (CONDITIONAL_JUMP)  ; LAB_00537556
     XOR EBX,EBX                         ; 00537534
-    MOV EAX,dword ptr [EBX + 0x203a418] ; 00537536 | DAT_0203a418
+    MOV EAX,dword ptr [EBX + 0x203a418] ; 00537536 | g_CDemonLight_PTR_ARRAY_0203a418
         ;   Label: LAB_00537536
     TEST EAX,EAX                        ; 0053753c
     JNZ 0x005375a7                      ; 0053753e
         ;   XREF to: 005375a7 (CONDITIONAL_JUMP)  ; LAB_005375a7
-    MOV EBP,dword ptr [0x0203a414]      ; 00537540 | DAT_0203a414
+    MOV EBP,dword ptr [0x0203a414]      ; 00537540 | g_MasterLightCount
         ;   Label: LAB_00537540
     ADD EBX,0x4                         ; 00537546
     XOR ECX,ECX                         ; 00537549
     INC ESI                             ; 0053754b
-    MOV dword ptr [EBX + 0x203a414],ECX ; 0053754c | DAT_0203a418
+    MOV dword ptr [EBX + 0x203a414],ECX ; 0053754c | g_CDemonLight_PTR_ARRAY_0203a418
     CMP ESI,EBP                         ; 00537552
     JL 0x00537536                       ; 00537554
         ;   XREF to: 00537536 (CONDITIONAL_JUMP)  ; LAB_00537536
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_00537556
     XOR EAX,EAX                         ; 0053755c
     XOR ESI,ESI                         ; 0053755e
-    MOV [0x0203a414],EAX                ; 00537560 | DAT_0203a414
+    MOV [0x0203a414],EAX                ; 00537560 | g_MasterLightCount
     TEST EDX,EDX                        ; 00537565
     JLE 0x00537590                      ; 00537567
         ;   XREF to: 00537590 (CONDITIONAL_JUMP)  ; LAB_00537590

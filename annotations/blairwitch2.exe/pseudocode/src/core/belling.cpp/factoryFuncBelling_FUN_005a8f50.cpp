@@ -11,7 +11,7 @@ CBelling * __cdecl core_belling_cpp_factoryFuncBelling_FUN_005a8f50(void)
 {
   CBelling *pCVar1;
   
-  pCVar1 = (CBelling *)operator_new(0x11850);
+  pCVar1 = operator_new(0x11850);
   if (pCVar1 == (CBelling *)0x0) {
     return (CBelling *)0x0;
   }

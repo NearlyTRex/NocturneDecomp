@@ -7,12 +7,12 @@
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00600530
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_trigger.cpp_CTrigger_setup_FUN_0056e0f0
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 005792b9
     CALL core_trigger.cpp_CTrigger_setup_FUN_0056e0f0 ; 005792ba
         ;   XREF to: 0056e0f0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_setup_FUN_0056e0f0(CTrigger * this_ptr)
-    MOV EAX,[0x00600530]                ; 005792bf | DAT_00600530
+    MOV EAX,[0x00600530]                ; 005792bf | g_CDemonMission_PTR_00600530
     ADD ESP,0x4                         ; 005792c4
     MOV EDX,dword ptr [ESI + 0x374]     ; 005792c7
     MOV EAX,dword ptr [EAX + 0x1008]    ; 005792cd
@@ -95,10 +95,10 @@ section .text
     MOV EBP,0x5d739e                    ; 00579354
     MOV EAX,0x81                        ; 00579359
     PUSH 0x5d73b3                       ; 0057935e
-    MOV dword ptr [0x01d71de0],EBP      ; 00579363 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00579369 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0057936e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 00579363 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00579369 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057936e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00579373
     ADD ESP,0xc                         ; 00579376
     POP EBP                             ; 00579379

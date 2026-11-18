@@ -21,7 +21,7 @@
 ;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 005953d3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f77ae
+;   double g_DOUBLE_005f77ae = 3
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
@@ -100,7 +100,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00595ce0
     FLD float ptr [ESP + 0x4]           ; 00595ce1
     FLD ST0                             ; 00595ce5
-    FMUL double ptr [0x005f77ae]        ; 00595ce7 | DAT_005f77ae
+    FMUL double ptr [0x005f77ae]        ; 00595ce7 | g_DOUBLE_005f77ae
     FSTP ST1                            ; 00595ced
     FST float ptr [ESP + 0x4]           ; 00595cef
     FMUL float ptr [ESP + 0x4]          ; 00595cf3

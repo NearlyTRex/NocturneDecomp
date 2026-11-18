@@ -14,7 +14,7 @@ void __cdecl engine_clipper_c_interpolateVertexFarClip_FUN_004394c0(SRenderVerte
   int iVar3;
   
   iVar3 = (v2->projected_vertex).transformed_z - (v1->projected_vertex).transformed_z;
-  uVar2 = DAT_005f12f4 - (v1->projected_vertex).transformed_z;
+  uVar2 = g_INT_005f12f4 - (v1->projected_vertex).transformed_z;
   if ((int)uVar2 < iVar3) {
     if (-iVar3 < (int)uVar2) {
       iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar3);

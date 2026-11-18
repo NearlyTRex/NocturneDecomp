@@ -11,12 +11,12 @@
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0d52
 ;   core_bodypart.cpp_createBodyPart_FUN_00414550 at 00414621
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598dcf
-;   core_enemy.cpp_FUN_00489c90 at 00489e34
+;   core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90 at 00489e34
 ;   core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0 at 0049cd2f
-;   core_gore.cpp_FUN_004ced40 at 004cee0c
+;   core_gore.cpp_CGore_spawnFlies_FUN_004ced40 at 004cee0c
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710 at 004f7839
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b65
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0 at 004f6286
-;   core_mission.cpp_FUN_004f7a20 at 004f7b65
 ;   core_passngr.cpp_CPassenger_process_FUN_0050a7d0 at 0050a8f6
 ;   ... and 9 more
 ;

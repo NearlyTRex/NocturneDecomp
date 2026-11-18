@@ -30,14 +30,16 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004f9670(CMoon *this_ptr)
   local_28.x = 3.16143;
   local_28.y = 7.6283;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
-            (DAT_005f2afc,&local_28);
-  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(DAT_005f2afc,43.153214);
-  engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40(DAT_005f2afc,&local_50);
+            (g_CDemonRenderer_PTR_005f2afc,&local_28);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
+            (g_CDemonRenderer_PTR_005f2afc,43.153214);
+  engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
+            (g_CDemonRenderer_PTR_005f2afc,&local_50);
   local_1c.x = 0.0;
   local_1c.y = 0.0;
   local_1c.z = 0.0;
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(DAT_005f2afc,&local_1c)
-  ;
+  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
+            (g_CDemonRenderer_PTR_005f2afc,&local_1c);
   pCVar1 = g_CDemonSetPtr;
   g_CDemonSetPtr->rendering_mode = 1;
   (pCVar1->light_direction).x = -37000;
@@ -45,19 +47,19 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004f9670(CMoon *this_ptr)
   (pCVar1->light_direction).z = 37000;
   core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(pCVar1,50000,50000,0x10000);
   pCVar1 = g_CDemonSetPtr;
-  DAT_00600774 = DAT_00600774 + 1;
+  g_INT_00600774 = g_INT_00600774 + 1;
   g_CDemonSetPtr->ambient_base_quick = 0x1964;
-  DAT_00600778 = DAT_00600778 + 1;
+  g_INT_00600778 = g_INT_00600778 + 1;
   pCVar1->rendering_mode = 0;
-  DAT_0060077c = DAT_0060077c + 1;
-  if (0x3c < DAT_00600774) {
-    DAT_00600774 = 0;
+  g_INT_0060077c = g_INT_0060077c + 1;
+  if (0x3c < g_INT_00600774) {
+    g_INT_00600774 = 0;
   }
-  if (0x2d < DAT_00600778) {
-    DAT_00600778 = 0;
+  if (0x2d < g_INT_00600778) {
+    g_INT_00600778 = 0;
   }
-  if (0x4b < DAT_0060077c) {
-    DAT_0060077c = 0;
+  if (0x4b < g_INT_0060077c) {
+    g_INT_0060077c = 0;
   }
   iVar2 = this_ptr->scroll_x[0] + 2;
   this_ptr->scroll_x[0] = iVar2;

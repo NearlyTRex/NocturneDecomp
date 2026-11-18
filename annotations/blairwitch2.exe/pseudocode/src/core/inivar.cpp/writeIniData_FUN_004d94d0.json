@@ -2,30 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 124,
+    "complexity_score": 129,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 126,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 84,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 676
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 129,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 721
   },
   "cross_references": [
     {
       "addr": "004e4e20",
       "from_addr": "004e4ea0",
-      "name": "core_main.c_FUN_004e4e20",
+      "name": "core_main.c_finalizeGameSystems_FUN_004e4e20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ee1a0",
       "from_addr": "004ee33a",
-      "name": "core_menu.cpp_FUN_004ee1a0",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004ee1a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,6 +40,11 @@
   },
   "function_calls": [
     {
+      "addr": "004d8910",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004d8910"
+    },
+    {
       "addr": "004d8940",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_dtor_FUN_004d8940"
@@ -53,19 +55,14 @@
       "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004d89d0"
     },
     {
+      "addr": "004d8b80",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_setInteger_FUN_004d8b80"
+    },
+    {
       "addr": "004d8aa0",
       "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_setString_FUN_004d8aa0"
-    },
-    {
-      "addr": "004d8910",
-      "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004d8910"
-    },
-    {
-      "addr": "004d8b80",
-      "is_variadic": false,
-      "name": "engine_ini.cpp_FUN_004d8b80"
     },
     {
       "addr": "00553980",
@@ -478,15 +475,15 @@
     },
     {
       "addr": "0061e180",
-      "name": "DAT_0061e180",
-      "type": "undefined1",
+      "name": "g_RendererDllPath",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "0061ec60",
-      "name": "DAT_0061ec60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061ec60",
+      "type": "int",
+      "value": "0xffff"
     },
     {
       "addr": "007c158c",
@@ -808,26 +805,26 @@
     },
     {
       "addr": "01cee1a8",
-      "name": "DAT_01cee1a8",
-      "type": "undefined4",
+      "name": "g_INT_01cee1a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d06a74",
-      "name": "DAT_01d06a74",
-      "type": "undefined4",
+      "name": "g_INT_01d06a74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bba0",
-      "name": "DAT_0264bba0",
-      "type": "undefined4",
+      "name": "g_INT_0264bba0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264bbac",
-      "name": "DAT_0264bbac",
-      "type": "undefined4",
+      "name": "g_INT_0264bbac",
+      "type": "int",
       "value": null
     }
   ],
@@ -897,30 +894,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0061e180",
-      "severity": "mild",
-      "text": "(&local_214,\"rendererDLLPath\",&DAT_0061e180);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0061ec60",
-      "severity": "mild",
-      "text": "engine_ini_cpp_FUN_004d8b80(&local_214,\"particleDensity\",DAT_0061ec60);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

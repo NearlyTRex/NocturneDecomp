@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -28,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370(C
       pSVar3 = poly;
       do {
         iVar1 = pSVar3->vertices[0].vertex_index;
-        *(int *)(&DAT_01bdd818 + iVar2) = iVar1;
+        *(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;
         local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         if ((int)(this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x & -0x80000000) != 0)
         {
@@ -45,17 +43,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370(C
         this_ptr->face_capture_enabled = local_18;
       }
       if (this_ptr->shadow_pass_active == 0) {
-        _DAT_01c6e2b4 = 0x90;
-        _DAT_01c6e2b8 = 6;
-        _DAT_01c6b5cc = core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_0046fb72;
+        g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = 6;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_0046fb72;
       }
       else {
-        _DAT_01c6e2b4 = 0;
-        _DAT_01c6e2b8 = 0;
-        _DAT_01c6b5cc = core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046f9f4;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046f9f4;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-                (this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);
+                (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);
       this_ptr->face_capture_enabled = iVar4;
     }
   }

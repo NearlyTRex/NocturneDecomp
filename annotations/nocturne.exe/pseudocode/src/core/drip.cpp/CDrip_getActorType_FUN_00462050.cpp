@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_00462050(CDrip *this_ptr)
 
 {
-  return &g_CDripActorType_01b7b2f4;
+  return &g_CDripClassInfo;
 }

@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   radius
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dde3c
-;   undefined4 DAT_01d098c8
-;   undefined4 DAT_01d09910
-;   undefined4 DAT_01d09918
+;   float g_FLOAT_005dde3c = 1.333000
+;   float g_FLOAT_01d098c8
+;   float g_FLOAT_01d09910
+;   void* g_PTR_01d09918
 ;
 ; *****************************************************************************
 
@@ -21,9 +21,9 @@ section .text
         ;   Label: engine_mini3d.cpp_isSphereVisible_FUN_004f4bf0
     MOV EAX,dword ptr [ESP + 0x20]      ; 004f4bf3
     FLD float ptr [ESP + 0x24]          ; 004f4bf7
-    FMUL float ptr [0x005dde3c]         ; 004f4bfb | DAT_005dde3c
+    FMUL float ptr [0x005dde3c]         ; 004f4bfb | g_FLOAT_005dde3c
     FLD float ptr [EAX]                 ; 004f4c01
-    MOV EDX,dword ptr [0x01d09918]      ; 004f4c03 | DAT_01d09918
+    MOV EDX,dword ptr [0x01d09918]      ; 004f4c03 | g_PTR_01d09918
     FLD float ptr [EAX + 0x4]           ; 004f4c09
     FXCH                                ; 004f4c0c
     FSUB float ptr [EDX + 0x24]         ; 004f4c0e
@@ -42,7 +42,7 @@ section .text
     FST float ptr [ESP + 0xc]           ; 004f4c32
     FMUL float ptr [EDX + 0x20]         ; 004f4c36
     FXCH ST2                            ; 004f4c39
-    FMUL float ptr [0x01d098c8]         ; 004f4c3b | DAT_01d098c8
+    FMUL float ptr [0x01d098c8]         ; 004f4c3b | g_FLOAT_01d098c8
     FXCH ST2                            ; 004f4c41
     FADDP                               ; 004f4c43
     FXCH                                ; 004f4c45
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 004f4cf3 (CONDITIONAL_JUMP)  ; LAB_004f4cf3
     FLD float ptr [ESP + 0x18]          ; 004f4c60
     FSUB float ptr [ESP + 0x24]         ; 004f4c64
-    FCOMP float ptr [0x01d09910]        ; 004f4c68 | DAT_01d09910
+    FCOMP float ptr [0x01d09910]        ; 004f4c68 | g_FLOAT_01d09910
     FNSTSW AX                           ; 004f4c6e
     SAHF                                ; 004f4c70
     JA 0x004f4cf3                       ; 004f4c71

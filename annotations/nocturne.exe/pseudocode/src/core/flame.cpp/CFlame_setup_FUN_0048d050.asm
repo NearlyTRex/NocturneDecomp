@@ -15,7 +15,7 @@
 ;   undefined4 DAT_005b8e00
 ;   undefined4 DAT_005b8e18
 ;   undefined4 DAT_005b8ec0
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
@@ -46,7 +46,7 @@ section .text
     PUSH EBX                            ; 0048d07c | DAT_005b8e00 | DAT_005b8e18 | DAT_005b8ec0
         ;   Label: LAB_0048d07c
     MOV ECX,dword ptr [0x005ae704]      ; 0048d07d | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 0048d083 | DAT_01b4d738
+    PUSH ECX                            ; 0048d083 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0048d084
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 0048d089

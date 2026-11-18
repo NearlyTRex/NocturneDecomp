@@ -27,22 +27,22 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f409
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f99aa
-;   undefined4 DAT_005f99b2
-;   undefined4 DAT_005f99ba
-;   undefined4 DAT_005f99c2
-;   undefined4 DAT_005f99c6
+;   double g_DOUBLE_005f99aa = 100
+;   double g_DOUBLE_005f99b2 = 0.785398163375000
+;   double g_DOUBLE_005f99ba = -0.785398163375000
+;   float g_FLOAT_005f99c2 = 50
+;   float g_FLOAT_005f99c6 = -50
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02c997f8
-;   undefined4 DAT_02c997fc
-;   undefined4 DAT_02c99800
+;   CVector3f[200] g_WeatherParticlePositions
+;   undefined4 g_WeatherParticlePositions[0].y
+;   undefined4 g_WeatherParticlePositions[0].z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005592b0
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
-;   core_setcolid.cpp_FUN_00557300
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_00557300
 ;
 ; *****************************************************************************
 
@@ -94,10 +94,10 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 005af0aa
     FLD float ptr [EAX + 0x4]           ; 005af0ae
     FLD ST0                             ; 005af0b1
-    FADD double ptr [0x005f99b2]        ; 005af0b3 | DAT_005f99b2
+    FADD double ptr [0x005f99b2]        ; 005af0b3 | g_DOUBLE_005f99b2
     SUB ESP,0x4                         ; 005af0b9
     FSTP float ptr [ESP]                ; 005af0bc
-    FADD double ptr [0x005f99ba]        ; 005af0bf | DAT_005f99ba
+    FADD double ptr [0x005f99ba]        ; 005af0bf | g_DOUBLE_005f99ba
     SUB ESP,0x4                         ; 005af0c5
     FSTP float ptr [ESP]                ; 005af0c8
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005af0cb
@@ -149,9 +149,9 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 005af151
     PUSH EAX                            ; 005af155 | g_CDemonSetInstance
     FXCH                                ; 005af156
-    FADD float ptr [0x005f99c2]         ; 005af158 | DAT_005f99c2
+    FADD float ptr [0x005f99c2]         ; 005af158 | g_FLOAT_005f99c2
     FXCH                                ; 005af15e
-    FADD float ptr [0x005f99c6]         ; 005af160 | DAT_005f99c6
+    FADD float ptr [0x005f99c6]         ; 005af160 | g_FLOAT_005f99c6
     FXCH                                ; 005af166
     FSTP float ptr [ESP + 0x8]          ; 005af168
     FSTP float ptr [ESP + 0x14]         ; 005af16c
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 005af190
     MOV ECX,dword ptr [0x00622c18]      ; 005af191 | g_CDemonSetPtr
     PUSH ECX                            ; 005af197 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00557300 ; 005af198
-        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00557300()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00557300 ; 005af198
+        ;   XREF to: 00557300 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00557300(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x48],EAX      ; 005af19d
     FLD float ptr [ESP + 0x48]          ; 005af1a1
     ADD ESP,0xc                         ; 005af1a5
@@ -186,7 +186,7 @@ section .text
         ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 005af1cc
     FLD float ptr [ESP + 0x44]          ; 005af1d0
-    FMUL double ptr [0x005f99aa]        ; 005af1d4 | DAT_005f99aa
+    FMUL double ptr [0x005f99aa]        ; 005af1d4 | g_DOUBLE_005f99aa
     ADD ESP,0x8                         ; 005af1da
     FADD double ptr [ESP + 0x2c]        ; 005af1dd
     LEA EAX,[ESP + 0x18]                ; 005af1e1
@@ -195,11 +195,11 @@ section .text
     JZ 0x005af201                       ; 005af1eb
         ;   XREF to: 005af201 (CONDITIONAL_JUMP)  ; LAB_005af201
     MOV EAX,dword ptr [ESP + 0x18]      ; 005af1ed
-    MOV dword ptr [EBX],EAX             ; 005af1f1 | DAT_02c997f8
+    MOV dword ptr [EBX],EAX             ; 005af1f1 | g_WeatherParticlePositions
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005af1f3
-    MOV dword ptr [EBX + 0x4],EAX       ; 005af1f7 | DAT_02c997fc
+    MOV dword ptr [EBX + 0x4],EAX       ; 005af1f7 | g_WeatherParticlePositions[0].y
     MOV EAX,dword ptr [ESP + 0x20]      ; 005af1fa
-    MOV dword ptr [EBX + 0x8],EAX       ; 005af1fe | DAT_02c99800
+    MOV dword ptr [EBX + 0x8],EAX       ; 005af1fe | g_WeatherParticlePositions[0].z
     ADD ESI,0x4                         ; 005af201
         ;   Label: LAB_005af201
     ADD EBX,0xc                         ; 005af204

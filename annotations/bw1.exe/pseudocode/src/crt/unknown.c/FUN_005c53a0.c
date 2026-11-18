@@ -6,20 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005c53a0(void)
 
 {
   UINT unaff_retaddr;
   
-  if (_DAT_02c9f060 == 0) {
+  if (g_EmergencyExitFlag == 0) {
     FUN_005cb5f4();
     FUN_005cb688();
     (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626638)();
   }
-  else if (DAT_00626644 != (code *)0x0) {
-    (*DAT_00626644)(0,0xff);
+  else if (g_SpecialExitHandler != (byte *)0x0) {
+    (*(code *)g_SpecialExitHandler)(0,0xff);
   }
                     /* WARNING: Subroutine does not return */
   ExitProcess(unaff_retaddr);

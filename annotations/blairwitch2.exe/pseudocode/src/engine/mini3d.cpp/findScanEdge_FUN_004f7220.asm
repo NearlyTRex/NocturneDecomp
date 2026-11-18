@@ -8,7 +8,7 @@
 ; int *            Stack[0x8]:4   exclude
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d17ab4
+;   int g_INT_01d17ab4
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 004f7220
         ;   Label: engine_mini3d.cpp_findScanEdge_FUN_004f7220
     PUSH ESI                            ; 004f7221
-    MOV EBX,dword ptr [0x01d17ab4]      ; 004f7222 | DAT_01d17ab4
+    MOV EBX,dword ptr [0x01d17ab4]      ; 004f7222 | g_INT_01d17ab4
     MOV ECX,dword ptr [ESP + 0xc]       ; 004f7228
     MOV ESI,dword ptr [ESP + 0x10]      ; 004f722c
     MOV EAX,0x1d17ab8                   ; 004f7230
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 004f723b (CONDITIONAL_JUMP)  ; LAB_004f723b
     XOR EAX,EAX                         ; 004f724b
         ;   Label: LAB_004f724b
-    MOV dword ptr [0x01d17ab4],EBX      ; 004f724d | DAT_01d17ab4
+    MOV dword ptr [0x01d17ab4],EBX      ; 004f724d | g_INT_01d17ab4
         ;   Label: LAB_004f724d
     POP ESI                             ; 004f7253
     POP EBX                             ; 004f7254

@@ -1,0 +1,620 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 266,
+    "complexity_score": 176,
+    "cross_reference_count": 25,
+    "function_call_count": 5,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 106,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 372
+  },
+  "cross_references": [
+    {
+      "addr": "004b9f70",
+      "from_addr": "004b9fe4",
+      "name": "core_flashlit.cpp_drawTooltip_FUN_004b9f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be0f0",
+      "from_addr": "004be44e",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bc830",
+      "from_addr": "004bc997",
+      "name": "core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba930",
+      "from_addr": "004ba94e",
+      "name": "core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc2b0",
+      "from_addr": "004cc3be",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004cc2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccc40",
+      "from_addr": "004ccccd",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccb00",
+      "from_addr": "004ccb21",
+      "name": "core_game.cpp_drawCreditsLine_FUN_004ccb00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccb80",
+      "from_addr": "004ccbd3",
+      "name": "core_game.cpp_drawKeyBindingEntry_FUN_004ccb80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fae10",
+      "from_addr": "004fb00f",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004fae10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fe9c0",
+      "from_addr": "004fef55",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004fe9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a2b0",
+      "from_addr": "0050a342",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509e20",
+      "from_addr": "00509f13",
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a870",
+      "from_addr": "0050a94b",
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_0050a870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a1f0",
+      "from_addr": "0050a257",
+      "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_0050a1f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005439b0",
+      "from_addr": "00543ba1",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_005439b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c2060",
+      "from_addr": "004c2082",
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049d580",
+      "from_addr": "0049d63f",
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_0049d580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049dc70",
+      "from_addr": "0049dd02",
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_0049dc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00498360",
+      "from_addr": "0049859e",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00498360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494500",
+      "from_addr": "004945b8",
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_00494500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496ee0",
+      "from_addr": "0049726f",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004958d0",
+      "from_addr": "00495a75",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004934b0",
+      "from_addr": "0049357a",
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_004934b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b830",
+      "from_addr": "0049bd22",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493d40",
+      "from_addr": "00493f9a",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c1dd0",
+    "address_range": [
+      [
+        "004c1dd0",
+        "004c2052"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004c1dd0(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "004c2810",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004c2810"
+    },
+    {
+      "addr": "004c47f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004c47f0"
+    },
+    {
+      "addr": "005320b0",
+      "is_variadic": false,
+      "name": "engine_palette.cpp_CFont_flushTextQueue_FUN_005320b0"
+    },
+    {
+      "addr": "00531ee0",
+      "is_variadic": false,
+      "name": "engine_palette.cpp_CFont_queueText_FUN_00531ee0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0a56",
+      "name": "g_DOUBLE_005e0a56",
+      "type": "double",
+      "value": "255"
+    },
+    {
+      "addr": "0061b4a0",
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "01c4e9d4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c4e9e0",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c4e9ec",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f8",
+      "name": "g_UCHAR_ARRAY_01c4e9f8",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f9",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9fa",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c50948",
+      "name": "g_INT_01c50948",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc8cd8",
+      "name": "g_ShadowColorRed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc8cdc",
+      "name": "g_ShadowColorGreen",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc8ce0",
+      "name": "g_ShadowColorBlue",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d224c0",
+      "name": "g_FLOAT_01d224c0",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "00493f9a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0049726f",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0049d63f",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEdButton_paint_FUN_0049d580",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0049bd22",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00509f13",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00509f46",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00509fe6",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0050a018",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0050a13c",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0050a94b",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showCalibrationTestPattern_FUN_0050a870",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.086124401913875,
+    "instruction_count": 209,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 62,
+      "BRANCH": 10,
+      "CALL": 6,
+      "CBRANCH": 18,
+      "COPY": 186,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 82,
+      "INT_AND": 248,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 133,
+      "INT_LEFT": 22,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 23,
+      "INT_OR": 61,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 83,
+      "INT_SUB": 63,
+      "INT_XOR": 13,
+      "INT_ZEXT": 2,
+      "LOAD": 75,
+      "POPCOUNT": 61,
+      "RETURN": 3,
+      "ROUND": 1,
+      "STORE": 47,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 1272
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a8df0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3326
+    },
+    "bw3.exe": {
+      "addr": "004b0a20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cda80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5988
+    },
+    "nocturne.exe": {
+      "addr": "00490980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5988
+    }
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)&this_ptr->bitmap_count",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
+      "match": "(int)&this_ptr->bitmap_count",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 104,
+      "match": "(int)&this_ptr->bitmap_count",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 94,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 97,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 104,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CBitFont *)((int)&this_ptr->bitmap_count + 1);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c78c14
+;   int g_INT_01c78c14
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelMatrix_FUN_0051d0a0
@@ -32,7 +32,7 @@ section .text
     MOV EBP,ESP                         ; 004ab114
     SUB ESP,0x6c                        ; 004ab116
     MOV EBX,dword ptr [EBP + 0x18]      ; 004ab119
-    MOV EDX,dword ptr [0x01c78c14]      ; 004ab11c | DAT_01c78c14
+    MOV EDX,dword ptr [0x01c78c14]      ; 004ab11c | g_INT_01c78c14
     MOV ESI,dword ptr [EBP + 0x14]      ; 004ab122
     PUSH EDX                            ; 004ab125
     ADD ESI,0x150                       ; 004ab126

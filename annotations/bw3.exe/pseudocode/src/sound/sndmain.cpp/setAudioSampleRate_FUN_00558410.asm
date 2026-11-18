@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   sample_rate
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004e94f0 at 004ea147
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004ea147
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getAudioBitDepth_FUN_00558370

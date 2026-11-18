@@ -9,6 +9,6 @@
 int __cdecl core_hpatrol_cpp_CPatrolPoint_renderOpaque_FUN_0059c980(CPatrolPoint *this_ptr)
 
 {
-  engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(g_CDemonRenderer_PTR_0060b280);
   return 0;
 }

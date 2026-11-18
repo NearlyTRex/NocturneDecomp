@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b40ed
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b3b90 at 004b3baa
-;   core_inv.cpp_FUN_004dadb0 at 004dafcd
-;   core_menu.cpp_FUN_004eed60 at 004efa1c
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0 at 004dafcd
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eed60 at 004efa1c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005dd2d3
@@ -222,18 +222,18 @@ section .text
         ;   Label: LAB_004eeb2a
     JZ 0x004eeb8c                       ; 004eeb2c
         ;   XREF to: 004eeb8c (CONDITIONAL_JUMP)  ; LAB_004eeb8c
-    MOV EDX,dword ptr [0x01d08d80]      ; 004eeb2e | DAT_01d08d80
+    MOV EDX,dword ptr [0x01d08d80]      ; 004eeb2e | g_StringBufferIndex
         ;   Label: LAB_004eeb2e
     INC EDX                             ; 004eeb34
     MOV ECX,0xa                         ; 004eeb35
     MOV EAX,EDX                         ; 004eeb3a
     SAR EDX,0x1f                        ; 004eeb3c
     IDIV ECX                            ; 004eeb3f
-    MOV EBX,dword ptr [0x01d08d80]      ; 004eeb41 | DAT_01d08d80
+    MOV EBX,dword ptr [0x01d08d80]      ; 004eeb41 | g_StringBufferIndex
     SHL EBX,0x8                         ; 004eeb47
     ADD EBX,0x1d08d88                   ; 004eeb4a
     MOV EDI,EBX                         ; 004eeb50
-    MOV dword ptr [0x01d08d80],EDX      ; 004eeb52 | DAT_01d08d80
+    MOV dword ptr [0x01d08d80],EDX      ; 004eeb52 | g_StringBufferIndex
     PUSH EDI                            ; 004eeb58
     MOV AL,byte ptr [ESI]               ; 004eeb59
         ;   Label: LAB_004eeb59

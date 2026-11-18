@@ -9,14 +9,13 @@
 void __cdecl core_dtri_cpp_staticInit_FUN_0046c250(void)
 
 {
-  __arrinit(g_CVector3f_ARRAY_01bc9970,0x10,&g_CVectorTypeInfo_005993b0);
-  __arrinit(g_CVector3f_ARRAY_01bc9a34,0x10,&g_CVectorTypeInfo_005993b0);
-  __arrinit(g_CVector3f_ARRAY_01bc9af8,0x10,&g_CVectorTypeInfo_005993b0);
-  __arrinit(g_CVector3f_ARRAY_01bc9bbc,0x10,&g_CVectorTypeInfo_005993b0);
-  __arrinit(g_CVector3f_ARRAY_01bc9c80,0x10,&g_CVectorTypeInfo_005993b0);
-  __arrinit(g_CVector3f_ARRAY_01bc9d44,0x10,&g_CVectorTypeInfo_005993b0);
-  __arrinit(g_CVector3f_ARRAY_01bc9e08,0x10,&g_CVectorTypeInfo_005993b0);
-  __arrinit
-            (g_CDemonTriangle_ARRAY_01bc9ec8,8,&g_CDemonTriangleTypeInfo_0059c080);
+  __arrinit(g_ClipInputVertices,0x10,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_ClipBuffer1Vertices,0x10,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_ClipBuffer2Vertices,0x10,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_ClipBuffer3Vertices,0x10,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_ClipBuffer4Vertices,0x10,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_ClipBuffer5Vertices,0x10,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_ClipOutputVertices,0x10,&g_CVectorTypeInfo_005993b0);
+  __arrinit(g_ClippedTriangleBuffer,8,&g_CDemonTriangleTypeInfo_0059c080);
   return;
 }

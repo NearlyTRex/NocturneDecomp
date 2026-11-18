@@ -9,11 +9,11 @@
 ; void *           Stack[0xc]:4   value
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0054d3a0
 ;   sound_sndmain.cpp_unlockSound_FUN_00551440
 ;
@@ -36,10 +36,10 @@ section .text
     MOV EDX,0x5e8d35                    ; 00550fc0
     MOV ECX,0x10cd                      ; 00550fc5
     PUSH 0x5e8d4a                       ; 00550fca
-    MOV dword ptr [0x01d046a0],EDX      ; 00550fcf | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00550fd5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00550fdb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00550fcf | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00550fd5 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00550fdb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00550fe0
     PUSH 0x1                            ; 00550fe3
         ;   Label: LAB_00550fe3

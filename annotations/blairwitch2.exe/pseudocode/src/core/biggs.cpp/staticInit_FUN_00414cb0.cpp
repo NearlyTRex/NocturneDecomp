@@ -10,7 +10,7 @@ void __cdecl core_biggs_cpp_staticInit_FUN_00414cb0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CBiggsClassInfo,(char *)0x5cbc85,core_biggs_cpp_factoryFuncBiggs_FUN_00414ce0,
+            (&g_CBiggsClassInfo,"CBiggs",core_biggs_cpp_factoryFuncBiggs_FUN_00414ce0,
              &g_CBiggsClassVersion,1,&g_CEnemyClassInfo);
   return;
 }

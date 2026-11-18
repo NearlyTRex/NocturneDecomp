@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_00553b70(void)
 
 {
-  if ((g_UseDirect3D != 0) && (_DAT_02ddf568 != 0)) {
+  if ((g_UseDirect3D != 0) && (g_GraphicsResetFlag != 0)) {
     engine_special_cpp_restoreVideoMode_FUN_005325f0();
-    ShowWindow(g_HWND_02de2098,6);
+    ShowWindow(g_MainWindowHandle,6);
     return;
   }
   return;

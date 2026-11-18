@@ -10,19 +10,16 @@ void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_00534a10(CDemonSet *this_p
 
 {
   int iVar1;
-  CDemonSet *pCVar2;
   
-  FUN_005b8010(file_handle,"@// Set state version\n" + 1);
-  FUN_005b8010(file_handle,&DAT_005e5bf0);
-  FUN_005b8010(file_handle,"// Camera count, enabled list\n");
+  _fprintf(file_handle,"// Set state version\n");
+  _fprintf(file_handle,"1\n");
+  _fprintf(file_handle,"// Camera count, enabled list\n");
   iVar1 = 0;
-  FUN_005b8010(file_handle,&DAT_005e5c12,this_ptr->camera_count);
-  pCVar2 = this_ptr;
+  _fprintf(file_handle,"%d\n");
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      FUN_005b8010(file_handle,&DAT_005e5c16,pCVar2->cameras[0].enabled);
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
+      _fprintf(file_handle,"%d\n");
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

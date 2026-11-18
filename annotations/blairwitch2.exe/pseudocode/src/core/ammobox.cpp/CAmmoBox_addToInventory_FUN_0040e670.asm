@@ -8,9 +8,9 @@
 ; CInventory *     Stack[0x8]:4   inventory
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00458320 at 0045835c
+;   core_doc.cpp_CDoc_processPickupComplete_FUN_00458320 at 0045835c
 ;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_004b0a40 at 004b0a6d
-;   core_stranger.cpp_FUN_0056a160 at 0056a19c
+;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160 at 0056a19c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ammobox_cpp_005cb271
@@ -19,15 +19,15 @@
 ;   undefined4 s_ome_ammo_005cb293+1
 ;   undefined4 s_me_ammo_005cb293+2
 ;   undefined4 s_e_ammo_005cb293+3
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0
+;   core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
-;   core_ammo.cpp_FUN_0040e440
-;   core_inv.cpp_FUN_004dadb0
-;   core_main.c_FUN_004e4500
+;   core_inv.cpp_CInventory_addItem_FUN_004dadb0
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 0040e690
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0040e691
     PUSH EBX                            ; 0040e695
-    CALL core_inv.cpp_FUN_004dadb0      ; 0040e696
-        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dadb0()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004dadb0 ; 0040e696
+        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004dadb0(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message, int unused_flag)
     MOV dword ptr [EBP + 0x47c],0x0     ; 0040e69b
     ADD ESP,0x10                        ; 0040e6a5
     MOV dword ptr [EBP + 0x470],0x0     ; 0040e6a8
@@ -65,7 +65,7 @@ section .text
     PUSH 0x47c                          ; 0040e6b5
         ;   Label: LAB_0040e6b5
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0040e6ba
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0040e6bf
     TEST EAX,EAX                        ; 0040e6c2
     JZ 0x0040e6cf                       ; 0040e6c4
@@ -84,10 +84,10 @@ section .text
     MOV ESI,0x5cb271                    ; 0040e6d7 | = "..\\core\\ammobox.cpp"
     MOV EDI,0xa2                        ; 0040e6dc
     PUSH 0x5cb285                       ; 0040e6e1 | = "Out of memory"
-    MOV dword ptr [0x01d046a0],ESI      ; 0040e6e6 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0040e6ec | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0040e6f2
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 0040e6e6 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0040e6ec | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040e6f2
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0040e6f7
     LEA ESI,[EBP + 0x430]               ; 0040e6fa
         ;   Label: LAB_0040e6fa
@@ -99,8 +99,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x470]     ; 0040e70a
     PUSH EAX                            ; 0040e710
     PUSH EBX                            ; 0040e711
-    CALL core_ammo.cpp_FUN_0040e440     ; 0040e712
-        ;   XREF to: 0040e440 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_FUN_0040e440(CAmmo * this_ptr, int ammo_count)
+    CALL core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440 ; 0040e712
+        ;   XREF to: 0040e440 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e440(CAmmo * this_ptr, int ammo_count)
     MOV EAX,dword ptr [EBP + 0x474]     ; 0040e717
     ADD ESP,0x8                         ; 0040e71d
     MOV dword ptr [EBX + 0x474],EAX     ; 0040e720
@@ -136,8 +136,8 @@ section .text
     PUSH EBX                            ; 0040e762
     MOV EDX,dword ptr [ESP + 0x24]      ; 0040e763
     PUSH EDX                            ; 0040e767
-    CALL core_inv.cpp_FUN_004dadb0      ; 0040e768
-        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dadb0()
+    CALL core_inv.cpp_CInventory_addItem_FUN_004dadb0 ; 0040e768
+        ;   XREF to: 004dadb0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004dadb0(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message, int unused_flag)
     ADD ESP,0x10                        ; 0040e76d
     MOV dword ptr [EBP + 0x470],0x0     ; 0040e770
     POP ESI                             ; 0040e77a

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position)
 
 {
@@ -32,7 +30,7 @@ int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *hum_value,fl
   *hum_value = fVar1;
 LAB_004e6b67:
   fVar1 = *hum_value;
-  fVar2 = (float)_DAT_005dc585;
+  fVar2 = (float)0.0039215686274509803;
   if (fVar1 * fVar2 <= 0.0) {
     sound_sndmain_cpp_killSfx_FUN_00551050(*sfx_handle);
     return iVar5;

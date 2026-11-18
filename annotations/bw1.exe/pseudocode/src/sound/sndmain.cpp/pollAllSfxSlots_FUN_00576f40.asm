@@ -8,22 +8,22 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_snddx.cpp_FUN_005784b0 at 005784d5
+;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005784b0 at 005784d5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f45db
 ;   TerminatedCString s_SfxSlot_pollSfx_must_be_005f45f0
-;   undefined4 DAT_005f4614
-;   undefined4 DAT_005f4618
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c74708
-;   undefined4 DAT_02c7fc8c
-;   undefined4 DAT_02c807ec
-;   undefined4 DAT_02c807f0
+;   float g_FLOAT_005f4614 = 8.477105E-7
+;   float g_FLOAT_005f4618 = 0.25
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   undefined4 g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
+;   int g_INT_02c7fc8c
+;   int g_SoundLockCount
+;   int g_SoundStartTime
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_0056f1e0
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30
 ;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10
@@ -40,13 +40,13 @@ section .text
     PUSH EDI                            ; 00576f42
     PUSH EBP                            ; 00576f43
     SUB ESP,0x8                         ; 00576f44
-    CMP dword ptr [0x02c807ec],0x0      ; 00576f47 | DAT_02c807ec
+    CMP dword ptr [0x02c807ec],0x0      ; 00576f47 | g_SoundLockCount
     JLE 0x00576fc6                      ; 00576f4e
         ;   XREF to: 00576fc6 (CONDITIONAL_JUMP)  ; LAB_00576fc6
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 00576f54
         ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_00576f54
-    MOV EDI,dword ptr [0x02c807f0]      ; 00576f59 | DAT_02c807f0
+    MOV EDI,dword ptr [0x02c807f0]      ; 00576f59 | g_SoundStartTime
     MOV EBX,EAX                         ; 00576f5f
     SUB EBX,EDI                         ; 00576f61
     MOV ESI,EAX                         ; 00576f63
@@ -56,9 +56,9 @@ section .text
     CMP EBX,0x1cccc                     ; 00576f69
     JL 0x00576fbe                       ; 00576f6f
         ;   XREF to: 00576fbe (CONDITIONAL_JUMP)  ; LAB_00576fbe
-    MOV EBP,dword ptr [0x02c7fc8c]      ; 00576f71 | DAT_02c7fc8c
+    MOV EBP,dword ptr [0x02c7fc8c]      ; 00576f71 | g_INT_02c7fc8c
         ;   Label: LAB_00576f71
-    MOV dword ptr [0x02c807f0],ESI      ; 00576f77 | DAT_02c807f0
+    MOV dword ptr [0x02c807f0],ESI      ; 00576f77 | g_SoundStartTime
     TEST EBP,EBP                        ; 00576f7d
     JZ 0x00576fee                       ; 00576f7f
         ;   XREF to: 00576fee (CONDITIONAL_JUMP)  ; LAB_00576fee
@@ -75,7 +75,7 @@ section .text
     LEA ESI,[EBX + 0x4700]              ; 00576f95
     PUSH dword ptr [ESP]                ; 00576f9b
         ;   Label: LAB_00576f9b
-    PUSH EBX                            ; 00576f9e | DAT_02c74708
+    PUSH EBX                            ; 00576f9e | g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30 ; 00576f9f
         ;   XREF to: 00570f30 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30(CSfxSlot * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00576fa4
@@ -102,10 +102,10 @@ section .text
         ;   Label: LAB_00576fc6
     MOV EBX,0x19e3                      ; 00576fcb
     PUSH 0x5f45f0                       ; 00576fd0 | = "SfxSlot::pollSfx - must be locked!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00576fd5 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00576fdb | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00576fe1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00576fd5 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00576fdb | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576fe1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576fe6
     JMP 0x00576f54                      ; 00576fe9
         ;   XREF to: 00576f54 (UNCONDITIONAL_JUMP)  ; LAB_00576f54
@@ -117,7 +117,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EBX       ; 00576ff5
         ;   Label: LAB_00576ff5
     FILD dword ptr [ESP + 0x4]          ; 00576ff9
-    FMUL float ptr [0x005f4614]         ; 00576ffd | DAT_005f4614
+    FMUL float ptr [0x005f4614]         ; 00576ffd | g_FLOAT_005f4614
     FLDZ                                ; 00577003
     FXCH                                ; 00577005
     FSTP float ptr [ESP]                ; 00577007
@@ -132,7 +132,7 @@ section .text
         ;   XREF to: 00576f90 (UNCONDITIONAL_JUMP)  ; LAB_00576f90
     FLD float ptr [ESP]                 ; 0057701c
         ;   Label: LAB_0057701c
-    FCOMP float ptr [0x005f4618]        ; 0057701f | DAT_005f4618
+    FCOMP float ptr [0x005f4618]        ; 0057701f | g_FLOAT_005f4618
     FNSTSW AX                           ; 00577025
     SAHF                                ; 00577027
     JBE 0x00576f90                      ; 00577028

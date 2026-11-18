@@ -10,11 +10,11 @@
 ;   engine_mini3d.cpp_init_FUN_00511030 at 00511035
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
@@ -48,10 +48,10 @@ section .text
     MOV EDX,0x5e8e97                    ; 00514cbe
     MOV ECX,0xddf                       ; 00514cc3
     PUSH 0x5e8eac                       ; 00514cc8
-    MOV dword ptr [0x01d1d400],EDX      ; 00514ccd | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00514cd3 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00514cd9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00514ccd | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00514cd3 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00514cd9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00514cde
     POP ESI                             ; 00514ce1
     LEA EAX,[EBX + 0x20]                ; 00514ce2

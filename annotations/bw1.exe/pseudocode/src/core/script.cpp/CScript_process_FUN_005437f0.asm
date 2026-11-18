@@ -19,14 +19,14 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.cinematic_skip_in_progress
-;   undefined4 DAT_01e810a8
-;   undefined4 DAT_01e810b0
-;   undefined4 DAT_01e818b4
-;   undefined4 DAT_01e818b8
+;   int g_INT_01e810a8
+;   char[2048] g_CHAR_ARRAY_01e810b0
+;   int g_ScriptInputFlag
+;   int g_ScriptLoopWarningShown
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_004355d0
-;   core_game.cpp_FUN_004d19d0
+;   core_charactr.cpp_getGameDeltaTime_FUN_004355d0
+;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0
 ;   core_script.cpp_CScript_step_FUN_00544460
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
@@ -46,7 +46,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005437fc
     XOR EDX,EDX                         ; 005437ff
     MOV ECX,dword ptr [EBX + 0x2c]      ; 00543801
-    MOV dword ptr [0x01e810a8],EDX      ; 00543804 | DAT_01e810a8
+    MOV dword ptr [0x01e810a8],EDX      ; 00543804 | g_INT_01e810a8
     CMP ECX,0x1                         ; 0054380a
     JL 0x0054388e                       ; 0054380d
         ;   XREF to: 0054388e (CONDITIONAL_JUMP)  ; LAB_0054388e
@@ -62,13 +62,13 @@ section .text
         ;   Label: LAB_0054382e
     PUSH EAX                            ; 00543833 | g_CGameInstance
     XOR ESI,ESI                         ; 00543834
-    CALL core_charactr.cpp_FUN_004355d0 ; 00543836
-        ;   XREF to: 004355d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004355d0()
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_004355d0 ; 00543836
+        ;   XREF to: 004355d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_004355d0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x8],EAX       ; 0054383b
     XOR EDX,EDX                         ; 0054383f
     FLD float ptr [ESP + 0x8]           ; 00543841
     ADD ESP,0x4                         ; 00543845
-    MOV dword ptr [0x01e818b4],EDX      ; 00543848 | DAT_01e818b4
+    MOV dword ptr [0x01e818b4],EDX      ; 00543848 | g_ScriptInputFlag
     FSTP float ptr [ESP]                ; 0054384e
     FLD float ptr [ESP]                 ; 00543851
         ;   Label: LAB_00543851
@@ -81,17 +81,17 @@ section .text
     CMP dword ptr [EBX + 0x1c],0x2      ; 0054385d
     JNZ 0x00543895                      ; 00543861
         ;   XREF to: 00543895 (CONDITIONAL_JUMP)  ; LAB_00543895
-    CMP dword ptr [0x01e818b4],0x0      ; 00543863 | DAT_01e818b4
+    CMP dword ptr [0x01e818b4],0x0      ; 00543863 | g_ScriptInputFlag
         ;   Label: LAB_00543863
     JZ 0x00543883                       ; 0054386a
         ;   XREF to: 00543883 (CONDITIONAL_JUMP)  ; LAB_00543883
     MOV EDX,dword ptr [0x0061d95c]      ; 0054386c | g_CGamePtr
     PUSH EDX                            ; 00543872 | g_CGameInstance
-    CALL core_game.cpp_FUN_004d19d0     ; 00543873
-        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004d19d0()
+    CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0 ; 00543873
+        ;   XREF to: 004d19d0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004d19d0(CGame * this_ptr)
     XOR ECX,ECX                         ; 00543878
     ADD ESP,0x4                         ; 0054387a
-    MOV dword ptr [0x01e818b4],ECX      ; 0054387d | DAT_01e818b4
+    MOV dword ptr [0x01e818b4],ECX      ; 0054387d | g_ScriptInputFlag
     MOV ESI,dword ptr [EBX + 0x4]       ; 00543883
         ;   Label: LAB_00543883
     TEST ESI,ESI                        ; 00543886
@@ -130,7 +130,7 @@ section .text
     CMP ESI,0x60e                       ; 005438bd
     JLE 0x00543851                      ; 005438c3
         ;   XREF to: 00543851 (CONDITIONAL_JUMP)  ; LAB_00543851
-    CMP dword ptr [0x01e818b8],0x0      ; 005438c5 | DAT_01e818b8
+    CMP dword ptr [0x01e818b8],0x0      ; 005438c5 | g_ScriptLoopWarningShown
     JNZ 0x00543863                      ; 005438cc
         ;   XREF to: 00543863 (CONDITIONAL_JUMP)  ; LAB_00543863
     MOV EAX,dword ptr [EBX + 0x30]      ; 005438ce
@@ -143,12 +143,12 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 005438e6
         ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005438eb
-    MOV dword ptr [0x01e818b8],EDI      ; 005438ee | DAT_01e818b8
+    MOV dword ptr [0x01e818b8],EDI      ; 005438ee | g_ScriptLoopWarningShown
     JMP 0x00543863                      ; 005438f4
         ;   XREF to: 00543863 (UNCONDITIONAL_JUMP)  ; LAB_00543863
     MOV EAX,dword ptr [EBX + 0x30]      ; 005438f9
         ;   Label: LAB_005438f9
-    PUSH 0x1e810b0                      ; 005438fc | DAT_01e810b0
+    PUSH 0x1e810b0                      ; 005438fc | g_CHAR_ARRAY_01e810b0
     MOV EDX,dword ptr [EAX + EDI*0x8 + 0x4] ; 00543901
     PUSH EDX                            ; 00543905
     MOV ECX,dword ptr [EAX + EDI*0x8]   ; 00543906

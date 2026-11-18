@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 23,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 87
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -25,6 +23,12 @@
       "addr": "00432c70",
       "from_addr": "00432c96",
       "name": "core_charactr.cpp_CCharacter_initGesture_FUN_00432c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f200",
+      "from_addr": "0046f2f6",
+      "name": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,19 +46,13 @@
     {
       "addr": "0046caa0",
       "from_addr": "0046e5d9",
-      "name": "core_doc.cpp_FUN_0046caa0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046f200",
-      "from_addr": "0046f2f6",
-      "name": "core_doc.cpp_FUN_0046f200",
+      "name": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a1d00",
       "from_addr": "004a631f",
-      "name": "core_event.cpp_FUN_004a1d00",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,7 +76,7 @@
     {
       "addr": "004f1670",
       "from_addr": "004f16d1",
-      "name": "core_icepick.cpp_FUN_004f1670",
+      "name": "core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f1670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -90,7 +88,7 @@
     {
       "addr": "00524970",
       "from_addr": "0052498c",
-      "name": "core_motion.cpp_FUN_00524970",
+      "name": "core_motion.cpp_CMotionController_setMotionList_FUN_00524970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -170,7 +168,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "005c04e0",
@@ -193,14 +191,14 @@
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -210,7 +208,7 @@
       {
         "call_addr": "004a631f",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_004a1d00",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +241,7 @@
       {
         "call_addr": "0052498c",
         "call_type": "direct",
-        "caller": "core_motion.cpp_FUN_00524970",
+        "caller": "core_motion.cpp_CMotionController_setMotionList_FUN_00524970",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -254,7 +252,7 @@
       {
         "call_addr": "0046e5d9",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0046caa0",
+        "caller": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -287,7 +285,7 @@
       {
         "call_addr": "0046f2f6",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0046f200",
+        "caller": "core_doc.cpp_CDoc_applyArmAimRotation_FUN_0046f200",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,7 +296,7 @@
       {
         "call_addr": "004f16d1",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004f1670",
+        "caller": "core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f1670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -407,14 +405,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

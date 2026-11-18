@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 121,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 3,
+    "pseudocode_lines": 80,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_constant",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 359
+    "total_lines": 358
   },
   "cross_references": [
     {
@@ -89,13 +88,13 @@
     },
     {
       "addr": "005bab60",
-      "name": "INT_005bab60",
+      "name": "g_InventoryWidth",
       "type": "int",
       "value": "0xd0"
     },
     {
       "addr": "005bab64",
-      "name": "INT_005bab64",
+      "name": "g_InventoryHeight",
       "type": "int",
       "value": "0x60"
     },
@@ -119,8 +118,8 @@
     },
     {
       "addr": "01cc30a0",
-      "name": "DAT_01cc30a0",
-      "type": "undefined4",
+      "name": "g_InventoryScreenHeight",
+      "type": "int",
       "value": null
     }
   ],
@@ -310,16 +309,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Raw hex address 0x4c23d6 assigned to bare local `iStack_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 21,
+      "line": 19,
       "match": "0x4c23d6",
       "severity": "moderate",
       "text": "iStack_40 = 0x4c23d6;",
@@ -327,7 +318,7 @@
     },
     {
       "description": "Raw hex address 0x4c222a assigned to bare local `iStack_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 34,
+      "line": 32,
       "match": "0x4c222a",
       "severity": "moderate",
       "text": "iStack_40 = 0x4c222a;",

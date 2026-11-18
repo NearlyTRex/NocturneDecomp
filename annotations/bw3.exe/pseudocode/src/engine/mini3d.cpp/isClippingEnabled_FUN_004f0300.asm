@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d79780
+;   int g_INT_01d79780
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x01d79780]                ; 004f0300 | DAT_01d79780
+    MOV EAX,[0x01d79780]                ; 004f0300 | g_INT_01d79780
         ;   Label: engine_mini3d.cpp_isClippingEnabled_FUN_004f0300
     RET                                 ; 004f0305
 

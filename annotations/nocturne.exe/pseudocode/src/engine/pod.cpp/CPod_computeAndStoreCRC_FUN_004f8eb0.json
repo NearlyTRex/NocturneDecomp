@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 133,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 13,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 78,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 284
   },
   "cross_references": [],
@@ -97,9 +95,9 @@
   "globals": [
     {
       "addr": "0058d9a8",
-      "name": "DAT_0058d9a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_0058d9a8",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "0058d9a9",
@@ -163,13 +161,13 @@
     },
     {
       "addr": "01e428d0",
-      "name": "DAT_01e428d0",
-      "type": "undefined4",
+      "name": "g_FileIOBuffer",
+      "type": "char[65536]",
       "value": null
     },
     {
       "addr": "01e428d1",
-      "name": "DAT_01e428d1",
+      "name": "g_FileIOBuffer+1",
       "type": "undefined4",
       "value": null
     }
@@ -212,6 +210,24 @@
     "pcode_op_count": 684
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051b6e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8053
+    },
+    "bw1.exe": {
+      "addr": "0053cc60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8026
+    },
+    "bw3.exe": {
+      "addr": "005149c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8026
+    },
     "nocedit.exe": {
       "addr": "00551000",
       "by": "name",
@@ -284,46 +300,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0058d9a8",
-      "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,pod_filename);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "puVar6 = &DAT_01e428d0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "_fread(&DAT_01e428d0,0x10000,1,local_14);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "_fread(&DAT_01e428d0,size,1,local_14);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_01e428d0",
-      "severity": "mild",
-      "text": "puVar6 = &DAT_01e428d0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

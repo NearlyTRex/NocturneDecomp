@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_tommygun_kfm_005ecc66
-;   undefined4 DAT_005fce6c
+;   float g_FLOAT_005fce6c = 8
 ;   CWeapon_full_vtable g_CTommyGunVTable
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     MOV dword ptr [EBX + 0x444],0x42c80000 ; 005757af
     MOV dword ptr [EBX + 0x448],0x1     ; 005757b9
     MOV dword ptr [EBX + 0x6d8],0x0     ; 005757c3
-    FLD float ptr [0x005fce6c]          ; 005757cd | DAT_005fce6c
+    FLD float ptr [0x005fce6c]          ; 005757cd | g_FLOAT_005fce6c
     MOV dword ptr [EBX + 0x6dc],0x0     ; 005757d3
     ADD ESP,0x8                         ; 005757dd
     MOV dword ptr [EBX + 0x6d4],0x0     ; 005757e0

@@ -2,20 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 158,
+    "complexity_score": 74,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 8,
+    "pseudocode_lines": 59,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 215
+    "total_lines": 216
   },
   "cross_references": [
     {
@@ -27,7 +24,7 @@
     {
       "addr": "00489670",
       "from_addr": "00489a86",
-      "name": "core_event.cpp_FUN_00489670",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,7 +50,7 @@
     {
       "addr": "00408a50",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408a50"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50"
     },
     {
       "addr": "0040c8c0",
@@ -108,8 +105,8 @@
     },
     {
       "addr": "005d2e56",
-      "name": "DAT_005d2e56",
-      "type": "undefined4",
+      "name": "s_anon_005d2e56",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -132,21 +129,21 @@
     },
     {
       "addr": "005f61e4",
-      "name": "DAT_005f61e4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ActorNameSentinel",
+      "type": "CDemonActor*",
+      "value": "0fffffff"
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "0061b120",
@@ -156,32 +153,32 @@
     },
     {
       "addr": "01c3dd10",
-      "name": "DAT_01c3dd10",
-      "type": "undefined4",
+      "name": "g_EventErrorMessageBuffer",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01c3dd11",
-      "name": "DAT_01c3dd11",
+      "name": "g_EventErrorMessageBuffer+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c3dd12",
-      "name": "DAT_01c3dd12",
+      "name": "g_EventErrorMessageBuffer+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c3dd13",
-      "name": "DAT_01c3dd13",
+      "name": "g_EventErrorMessageBuffer+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     },
     {
@@ -197,7 +194,7 @@
       {
         "call_addr": "00489a86",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,7 +205,7 @@
       {
         "call_addr": "0048a138",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +216,7 @@
       {
         "call_addr": "0048a16b",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -230,7 +227,7 @@
       {
         "call_addr": "0048a521",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -241,7 +238,7 @@
       {
         "call_addr": "0048a6d4",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +249,7 @@
       {
         "call_addr": "0048abae",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -263,7 +260,7 @@
       {
         "call_addr": "0048b713",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -274,7 +271,7 @@
       {
         "call_addr": "0048bb23",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -285,7 +282,7 @@
       {
         "call_addr": "0048c5d6",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -296,7 +293,7 @@
       {
         "call_addr": "0048cb75",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_00489670",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_00489670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -395,64 +392,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c3dd10",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_01c3dd10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005d2e56",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(name,&DAT_005d2e56);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01c3dd10",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c3dd10,\"Actor \\\"%s\\\" does not exist.\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c3dd10",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c3dd10,\"Can't use '$' actor specifier in multi-player\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 46,
-      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
-      "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_01c3dd10",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01c3dd10,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\");",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 16,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

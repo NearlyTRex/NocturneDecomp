@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bdd96
+;   float g_FLOAT_005bdd96 = -0.5
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_0057b820
@@ -41,7 +41,7 @@ section .text
     FLD float ptr [ESP + 0x14]          ; 0048b5ff
         ;   Label: LAB_0048b5ff
     LEA ESI,[ESP + 0xc]                 ; 0048b603
-    FADD float ptr [0x005bdd96]         ; 0048b607 | DAT_005bdd96
+    FADD float ptr [0x005bdd96]         ; 0048b607 | g_FLOAT_005bdd96
     MOV EDI,EBX                         ; 0048b60d
     FSTP float ptr [ESP + 0x14]         ; 0048b60f
     MOVSD ES:EDI,ESI                    ; 0048b613

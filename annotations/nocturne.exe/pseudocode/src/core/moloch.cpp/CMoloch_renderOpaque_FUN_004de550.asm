@@ -9,10 +9,10 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a0ab8
+;   float g_FLOAT_005a0ab8 = 2
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cd4318
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   int g_RenderMotionDebug
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x18                        ; 004de551
     MOV EBX,dword ptr [ESP + 0x20]      ; 004de554
     MOV EDX,dword ptr [0x005ae704]      ; 004de558 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004de55e | DAT_01b4d738
+    PUSH EDX                            ; 004de55e | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 004de55f
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004de564
@@ -88,7 +88,7 @@ section .text
     CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340 ; 004de5ec
         ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     FLD float ptr [EBX + 0x21cf8]       ; 004de5f1
-    FDIV float ptr [0x005a0ab8]         ; 004de5f7 | DAT_005a0ab8
+    FDIV float ptr [0x005a0ab8]         ; 004de5f7 | g_FLOAT_005a0ab8
     ADD ESP,0x10                        ; 004de5fd
     SUB ESP,0x4                         ; 004de600
     FSTP float ptr [ESP]                ; 004de603
@@ -96,12 +96,12 @@ section .text
     CALL core_morph.cpp_CMorph_render_FUN_004e0820 ; 004de607
         ;   XREF to: 004e0820 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_render_FUN_004e0820(CMorph * this_ptr, float morph_t)
     ADD ESP,0x8                         ; 004de60c
-    CMP dword ptr [0x01cd4318],0x0      ; 004de60f | DAT_01cd4318
+    CMP dword ptr [0x01cd4318],0x0      ; 004de60f | g_RenderMotionDebug
         ;   Label: LAB_004de60f
     JZ 0x004de647                       ; 004de616
         ;   XREF to: 004de647 (CONDITIONAL_JUMP)  ; LAB_004de647
     MOV EAX,[0x005ae704]                ; 004de618 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 004de61d | DAT_01b4d738
+    PUSH EAX                            ; 004de61d | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004de61e
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004de623

@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 167,
+    "complexity_score": 146,
     "cross_reference_count": 12,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 9,
+    "pseudocode_lines": 46,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "stack_alignment_array",
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_alignment_array"
     ],
-    "total_lines": 137
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -35,7 +33,7 @@
     {
       "addr": "0046caa0",
       "from_addr": "0046d457",
-      "name": "core_doc.cpp_FUN_0046caa0",
+      "name": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -125,9 +123,9 @@
   "globals": [
     {
       "addr": "005f2521",
-      "name": "DAT_005f2521",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f2521",
+      "type": "double",
+      "value": "0.00100000000000000"
     }
   ],
   "param_estimates": {
@@ -147,7 +145,7 @@
       {
         "call_addr": "0046d457",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0046caa0",
+        "caller": "core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -390,16 +388,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 12,
       "match": "afStackY_1808",
       "severity": "moderate",
       "text": "float afStackY_1808 [1522];",
@@ -414,30 +404,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*puVar3 = *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) +",
-      "type": "stack_ref"
-    },
-    {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 34,
       "match": "(int)local_18",
@@ -446,16 +412,40 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
-      "match": "(int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8)",
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)&CStack_2c",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) +",
+      "text": "puVar1 = (uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&CStack_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)&CStack_2c",
+      "severity": "moderate",
+      "text": "*puVar2 = *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 38,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar2 = *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 46,
+      "line": 44,
       "match": "local_18 = (T *)&(local_18->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "local_18 = (CDeformableModelInstance *)&(local_18->base).tween_speed;",

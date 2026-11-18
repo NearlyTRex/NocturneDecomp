@@ -36,9 +36,9 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(CNetGame *thi
     iVar3 = 0x20000;
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
-  INT_02f9c0bc = INT_02f9c0bc + 1;
+  g_ChatOutSequence = g_ChatOutSequence + 1;
   g_LastPingTime = iVar2 / 0x12;
-  g_ChatOutMessages[iVar1].sequence_number = INT_02f9c0bc;
+  g_ChatOutMessages[iVar1].sequence_number = g_ChatOutSequence;
   pSVar7->timestamp = g_CurrentGameTime;
   memset(&g_ChatOutMessages[iVar1].ack_flags,1,2);
   if (target_player < 0) {

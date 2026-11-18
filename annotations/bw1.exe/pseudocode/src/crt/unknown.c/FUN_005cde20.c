@@ -6,36 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005cde20(void)
 
 {
-  int *piVar1;
+  char **ppcVar1;
   
-  piVar1 = _DAT_02c9f6d4;
-  if (_DAT_02c9f6d4 != (int *)0x0) {
-    for (; *piVar1 != 0; piVar1 = piVar1 + 1) {
-      if (_DAT_02c9f6d0 != (int *)0x0) {
-        if (*(char *)(((int)piVar1 - (int)_DAT_02c9f6d4 >> 2) + (int)_DAT_02c9f6d0) != '\0') {
-          FUN_005c09f0(*piVar1);
+  ppcVar1 = g_EnvironmentBlock;
+  if (g_EnvironmentBlock != (char **)0x0) {
+    for (; *ppcVar1 != (char *)0x0; ppcVar1 = ppcVar1 + 1) {
+      if (g_EnvironStringArea != (char **)0x0) {
+        if (*(char *)(((int)ppcVar1 - (int)g_EnvironmentBlock >> 2) + (int)g_EnvironStringArea) !=
+            '\0') {
+          debugFree(*ppcVar1);
         }
-        *piVar1 = 0;
+        *ppcVar1 = (char *)0x0;
       }
     }
-    if (_DAT_02c9f6d0 == (int *)0x0) {
-      piVar1 = (int *)malloc(5);
+    if (g_EnvironStringArea == (char **)0x0) {
+      ppcVar1 = (char **)malloc(5);
     }
     else {
-      piVar1 = (int *)realloc(_DAT_02c9f6d4,5);
+      ppcVar1 = (char **)realloc(g_EnvironmentBlock,5);
     }
-    if (piVar1 == (int *)0x0) {
+    if (ppcVar1 == (char **)0x0) {
       return 0xffffffff;
     }
-    _DAT_02c9f6d4 = piVar1;
-    *piVar1 = 0;
-    _DAT_02c9f6d0 = piVar1 + 1;
-    *(byte *)_DAT_02c9f6d0 = 0;
+    g_EnvironmentBlock = ppcVar1;
+    *ppcVar1 = (char *)0x0;
+    g_EnvironStringArea = ppcVar1 + 1;
+    *(byte *)g_EnvironStringArea = 0;
   }
   return 0;
 }

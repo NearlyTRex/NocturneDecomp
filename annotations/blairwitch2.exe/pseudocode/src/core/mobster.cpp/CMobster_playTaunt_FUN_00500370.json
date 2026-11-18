@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 104,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 3,
+    "pseudocode_lines": 58,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "unnamed_field"
     ],
-    "total_lines": 218
+    "total_lines": 217
   },
   "cross_references": [
     {
@@ -68,9 +67,9 @@
     },
     {
       "addr": "005def35",
-      "name": "DAT_005def35",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005def35",
+      "type": "float",
+      "value": "5"
     },
     {
       "addr": "00616494",
@@ -86,9 +85,9 @@
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     },
     {
       "addr": "01cb691c",
@@ -281,16 +280,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),",
@@ -298,10 +289,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 54,
+      "line": 52,
       "match": "field_0x2a8",
       "severity": "mild",
-      "text": "(*(uint *)&pCVar2[0x62].field_0x2a8), iVar4 != 0)) &&",
+      "text": "(*(uint *)&pCVar2[0x62].field_0x2a8), iVar3 != 0)) &&",
       "type": "unnamed_field"
     }
   ]

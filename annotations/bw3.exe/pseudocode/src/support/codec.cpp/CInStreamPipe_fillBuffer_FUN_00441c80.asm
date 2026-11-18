@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CInStreamPipe_fillBuffer_FUN_00441c80(CInStreamPipe *this_ptr)
+; int __cdecl support_codec_cpp_CInStreamPipe_fillBuffer_FUN_00441c80(CInStreamPipe *this_ptr)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_00441cf9
     PUSH EAX                            ; 00441cfb
     CALL support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00 ; 00441cfc
-        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
+        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 00441d01
     TEST EAX,EAX                        ; 00441d04
     JL 0x00441d42                       ; 00441d06

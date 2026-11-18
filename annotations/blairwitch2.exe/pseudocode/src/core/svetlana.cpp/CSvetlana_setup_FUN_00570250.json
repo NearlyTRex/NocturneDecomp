@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 91,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 46,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 76,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 301
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 77,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 302
   },
   "cross_references": [],
   "function": {
@@ -36,7 +34,7 @@
     {
       "addr": "005ae680",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005ae680"
+      "name": "core_cloth.cpp_CCloth_setup_FUN_005ae680"
     },
     {
       "addr": "004ce4a0",
@@ -234,115 +232,115 @@
     },
     {
       "addr": "0264bf38",
-      "name": "DAT_0264bf38",
-      "type": "undefined4",
+      "name": "g_SvetlanaBoneIndices",
+      "type": "int[19]",
       "value": null
     },
     {
       "addr": "0264bf3c",
-      "name": "DAT_0264bf3c",
+      "name": "g_SvetlanaBoneIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf40",
-      "name": "DAT_0264bf40",
+      "name": "g_SvetlanaBoneIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf44",
-      "name": "DAT_0264bf44",
+      "name": "g_SvetlanaBoneIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf48",
-      "name": "DAT_0264bf48",
+      "name": "g_SvetlanaBoneIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf4c",
-      "name": "DAT_0264bf4c",
+      "name": "g_SvetlanaBoneIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf50",
-      "name": "DAT_0264bf50",
+      "name": "g_SvetlanaBoneIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf54",
-      "name": "DAT_0264bf54",
+      "name": "g_SvetlanaBoneIndices[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf58",
-      "name": "DAT_0264bf58",
+      "name": "g_SvetlanaBoneIndices[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf5c",
-      "name": "DAT_0264bf5c",
+      "name": "g_SvetlanaBoneIndices[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf60",
-      "name": "DAT_0264bf60",
+      "name": "g_SvetlanaBoneIndices[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf64",
-      "name": "DAT_0264bf64",
+      "name": "g_SvetlanaBoneIndices[11]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf68",
-      "name": "DAT_0264bf68",
+      "name": "g_SvetlanaBoneIndices[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf6c",
-      "name": "DAT_0264bf6c",
+      "name": "g_SvetlanaBoneIndices[13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf70",
-      "name": "DAT_0264bf70",
+      "name": "g_SvetlanaBoneIndices[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf74",
-      "name": "DAT_0264bf74",
+      "name": "g_SvetlanaBoneIndices[15]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf78",
-      "name": "DAT_0264bf78",
+      "name": "g_SvetlanaBoneIndices[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf7c",
-      "name": "DAT_0264bf7c",
+      "name": "g_SvetlanaBoneIndices[17]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0264bf80",
-      "name": "DAT_0264bf80",
+      "name": "g_SvetlanaBoneIndices[18]",
       "type": "undefined4",
       "value": null
     }
@@ -416,20 +414,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 8,
         "vtable_addr": "005fc584"
       }

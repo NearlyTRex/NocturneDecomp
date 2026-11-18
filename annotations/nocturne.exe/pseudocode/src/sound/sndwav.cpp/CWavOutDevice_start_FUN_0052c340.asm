@@ -10,10 +10,10 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00594925 = 0.333333333333333
-;   undefined4 DAT_02dc942c
-;   undefined4 DAT_02dc9434
-;   undefined4 DAT_02dc9438
-;   undefined4 DAT_02dc943c
+;   int g_INT_02dc942c
+;   int g_INT_02dc9434
+;   int g_INT_02dc9438
+;   int g_WaveOutNumBuffers
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 0052c341
     PUSH EDI                            ; 0052c342
     PUSH EBP                            ; 0052c343
-    MOV EDX,dword ptr [0x02dc943c]      ; 0052c344 | DAT_02dc943c
+    MOV EDX,dword ptr [0x02dc943c]      ; 0052c344 | g_WaveOutNumBuffers
     XOR ESI,ESI                         ; 0052c34a
     TEST EDX,EDX                        ; 0052c34c
     JLE 0x0052c3a6                      ; 0052c34e
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [EAX + 0xc],ESI       ; 0052c376
     ADD ESP,0xc                         ; 0052c379
     MOV EAX,dword ptr [EBX + 0x2dc93a8] ; 0052c37c
-    MOV EDX,dword ptr [0x02dc9438]      ; 0052c382 | DAT_02dc9438
+    MOV EDX,dword ptr [0x02dc9438]      ; 0052c382 | g_INT_02dc9438
     PUSH ESI                            ; 0052c388
     MOV dword ptr [EAX + 0x4],EDX       ; 0052c389
     CALL sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130 ; 0052c38c
@@ -58,15 +58,15 @@ section .text
     TEST EAX,EAX                        ; 0052c394
     JZ 0x0052c3d6                       ; 0052c396
         ;   XREF to: 0052c3d6 (CONDITIONAL_JUMP)  ; LAB_0052c3d6
-    MOV ECX,dword ptr [0x02dc943c]      ; 0052c398 | DAT_02dc943c
+    MOV ECX,dword ptr [0x02dc943c]      ; 0052c398 | g_WaveOutNumBuffers
     INC ESI                             ; 0052c39e
     ADD EBX,0x4                         ; 0052c39f
     CMP ESI,ECX                         ; 0052c3a2
     JL 0x0052c352                       ; 0052c3a4
         ;   XREF to: 0052c352 (CONDITIONAL_JUMP)  ; LAB_0052c352
-    FILD dword ptr [0x02dc9434]         ; 0052c3a6 | DAT_02dc9434
+    FILD dword ptr [0x02dc9434]         ; 0052c3a6 | g_INT_02dc9434
         ;   Label: LAB_0052c3a6
-    FILD dword ptr [0x02dc942c]         ; 0052c3ac | DAT_02dc942c
+    FILD dword ptr [0x02dc942c]         ; 0052c3ac | g_INT_02dc942c
     FDIVP                               ; 0052c3b2
     FMUL double ptr [0x00594925]        ; 0052c3b4 | DOUBLE_00594925
     SUB ESP,0x8                         ; 0052c3ba

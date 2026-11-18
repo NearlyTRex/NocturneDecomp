@@ -11,7 +11,7 @@ CSpiritIndian * __cdecl core_spirindi_cpp_factoryFuncSpiritIndian_FUN_00599f30(v
 {
   CSpiritIndian *pCVar1;
   
-  pCVar1 = (CSpiritIndian *)operator_new(0x34da4);
+  pCVar1 = operator_new(0x34da4);
   if (pCVar1 == (CSpiritIndian *)0x0) {
     return (CSpiritIndian *)0x0;
   }

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 78,
+    "complexity_score": 63,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 63,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 232
   },
   "cross_references": [
@@ -57,7 +55,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "0052df50",
@@ -85,50 +83,50 @@
     },
     {
       "addr": "005ebe58",
-      "name": "DAT_005ebe58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_TimeToSeconds",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005ebe60",
-      "name": "DAT_005ebe60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxPingTime",
+      "type": "double",
+      "value": "30"
     },
     {
       "addr": "005ebe68",
-      "name": "DAT_005ebe68",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PingCheckThreshold",
+      "type": "double",
+      "value": "0.400000000000000"
     },
     {
       "addr": "005ebe70",
-      "name": "DAT_005ebe70",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BadConnectionTime",
+      "type": "double",
+      "value": "5"
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d51d9c",
-      "name": "DAT_01d51d9c",
-      "type": "undefined4",
+      "name": "g_LastPingTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d51da0",
-      "name": "DAT_01d51da0",
-      "type": "undefined4",
+      "name": "g_UINT_01d51da0",
+      "type": "uint",
       "value": null
     }
   ],
@@ -351,14 +349,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

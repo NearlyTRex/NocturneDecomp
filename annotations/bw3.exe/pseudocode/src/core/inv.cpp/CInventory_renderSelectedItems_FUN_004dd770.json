@@ -2,26 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 401,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 29,
+    "pseudocode_lines": 80,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 369
+    "total_lines": 358
   },
   "cross_references": [
     {
       "addr": "00535da0",
       "from_addr": "00536598",
-      "name": "core_set.cpp_FUN_00535da0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,6 +36,11 @@
   },
   "function_calls": [
     {
+      "addr": "004dbe70",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbe70"
+    },
+    {
       "addr": "004dd5b0",
       "is_variadic": false,
       "name": "core_inv.cpp_drawItemIconBackground_FUN_004dd5b0"
@@ -47,11 +49,6 @@
       "addr": "004dd3f0",
       "is_variadic": false,
       "name": "core_inv.cpp_drawWeaponIconBackground_FUN_004dd3f0"
-    },
-    {
-      "addr": "004dbe70",
-      "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dbe70"
     },
     {
       "addr": "004da570",
@@ -67,21 +64,21 @@
   "globals": [
     {
       "addr": "005c65ff",
-      "name": "DAT_005c65ff",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c65ff",
+      "type": "float",
+      "value": "65535"
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005fe9dc",
@@ -91,15 +88,15 @@
     },
     {
       "addr": "00600180",
-      "name": "DAT_00600180",
-      "type": "undefined4",
-      "value": null
+      "name": "g_InventoryWidth",
+      "type": "int",
+      "value": "0xd0"
     },
     {
       "addr": "00600184",
-      "name": "DAT_00600184",
-      "type": "undefined4",
-      "value": null
+      "name": "g_InventoryHeight",
+      "type": "int",
+      "value": "0x60"
     },
     {
       "addr": "01d2130c",
@@ -115,14 +112,14 @@
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d70a34",
-      "name": "DAT_01d70a34",
-      "type": "undefined4",
+      "name": "g_InventoryScreenHeight",
+      "type": "int",
       "value": null
     }
   ],
@@ -132,7 +129,7 @@
       {
         "call_addr": "00536598",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00535da0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -312,236 +309,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX",
+      "description": "Raw hex address 0x4dd9f6 assigned to bare local `iStack_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 19,
+      "match": "0x4dd9f6",
       "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
+      "text": "iStack_40 = 0x4dd9f6;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_ECX_00",
+      "description": "Raw hex address 0x4dd84a assigned to bare local `iStack_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 32,
+      "match": "0x4dd84a",
       "severity": "moderate",
-      "text": "int extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 21,
-      "match": "*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
-      "severity": "moderate",
-      "text": "(this_ptr->owner == *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04))) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (DAT_005fba1c != _DAT_01d70a34) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "iVar5 = (DAT_005fba18 - iVar7) - iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005fba1c - iVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "iVar4 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "iVar5 = DAT_005fba18 - iVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005fba1c - iVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "iVar4 = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
-      "type": "undefined_data"
+      "text": "iStack_40 = 0x4dd84a;",
+      "type": "raw_address_constant"
     }
   ]
 }

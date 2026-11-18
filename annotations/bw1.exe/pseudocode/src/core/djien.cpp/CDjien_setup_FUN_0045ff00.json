@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 251,
-    "complexity_score": 150,
+    "complexity_score": 133,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 3,
+    "pseudocode_lines": 103,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 356
+    "total_lines": 354
   },
   "cross_references": [],
   "function": {
@@ -230,21 +229,21 @@
     },
     {
       "addr": "00612270",
-      "name": "DAT_00612270",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_00612270",
+      "type": "int",
+      "value": "0x14"
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "01d2d908",
@@ -317,16 +316,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar2` is advanced into scratch `pCVar3`, then rebound via a later `pCVar2 = pCVar3;`. Functionally identical to the single-line self-update; replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
-      "line": 27,
+      "line": 26,
       "match": "pCVar3 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar2 = pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CDjien *)((pCVar2->base).base.base.actor_name + 4);",

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 27,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 53
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
   },
   "cross_references": [],
   "function": {
@@ -42,9 +40,9 @@
   "globals": [
     {
       "addr": "005d9452",
-      "name": "DAT_005d9452",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d9452",
+      "type": "double",
+      "value": "0.900000000000000"
     },
     {
       "addr": "006167e0",
@@ -99,6 +97,12 @@
       "class": "identical",
       "ratio": 1.0
     },
+    "bw3.exe": {
+      "addr": "004cd3f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5
+    },
     "nocedit.exe": {
       "addr": "004ec290",
       "by": "name",
@@ -135,16 +139,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

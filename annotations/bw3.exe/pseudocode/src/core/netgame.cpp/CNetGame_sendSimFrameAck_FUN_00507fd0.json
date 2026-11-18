@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 105,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "pseudocode_lines": 44,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 139
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -41,7 +40,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "00505870",
@@ -100,26 +99,26 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da6478",
-      "name": "DAT_01da6478",
-      "type": "undefined4",
+      "name": "g_UINT_01da6478",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01da6488",
-      "name": "DAT_01da6488",
-      "type": "undefined4",
+      "name": "g_NetLastSimFrameAckTime",
+      "type": "uint",
       "value": null
     }
   ],
@@ -258,16 +257,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(SPlayerInput *)((int)pSVar2",
       "severity": "moderate",
       "text": "pSVar2 = (SPlayerInput *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -275,7 +266,7 @@
     },
     {
       "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 41,
       "match": "(int)pSVar2",
       "severity": "moderate",
       "text": "pSVar2 = (SPlayerInput *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -283,7 +274,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {",

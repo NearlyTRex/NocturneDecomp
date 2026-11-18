@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 22,
+    "complexity_score": 8,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 24
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -24,7 +22,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "0048c50b",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,8 +42,8 @@
   "globals": [
     {
       "addr": "006074b8",
-      "name": "DAT_006074b8",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -55,7 +53,7 @@
       {
         "call_addr": "0048c50b",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,14 +153,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_006074b8",
-      "severity": "mild",
-      "text": "if (((((&DAT_006074b8)[(byte)((char)ch + 1)] & 0xe0) == 0) && (ch != 0x5f)) && (ch != 0x2d)) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -9,27 +9,27 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_0044d6f0(CDemonCamera *this_ptr)
 
 {
-  ulonglong *output_buffer;
+  char (*output_buffer) [320];
   int iVar1;
-  ulonglong *input_buffer;
+  char (*input_buffer) [320];
   int iVar2;
   
-  output_buffer = (ulonglong *)0xb3fd08;
-  input_buffer = (ulonglong *)0xb2cfc8;
+  output_buffer = g_CoronaBlurWorkBuffer;
+  input_buffer = g_CoronaBlurOutputBuffer;
   iVar2 = 1;
   while( true ) {
-    output_buffer = output_buffer + 0x28;
-    input_buffer = input_buffer + 0x28;
+    output_buffer = output_buffer + 1;
+    input_buffer = input_buffer + 1;
     if (this_ptr->display_height + -1 <= iVar2) break;
     core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_004712b2
-              (output_buffer,input_buffer,this_ptr->display_width);
+              ((ulonglong *)output_buffer,(ulonglong *)input_buffer,this_ptr->display_width);
     iVar2 = iVar2 + 1;
   }
   iVar2 = 0;
   if (0 < this_ptr->display_height) {
     iVar1 = 0;
     do {
-      *(byte *)(iVar1 + 0xb3fd08) = 0;
+      g_CoronaBlurWorkBuffer[0][iVar1] = '\0';
       *(byte *)(this_ptr->display_width + 0xb3fd07 + iVar1) = 0;
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x140;
@@ -38,8 +38,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004
   iVar2 = 0;
   if (0 < this_ptr->display_width) {
     do {
-      *(byte *)(iVar2 + 0xb3fd08) = 0;
-      *(byte *)((this_ptr->display_height + -1) * 0x140 + 0xb3fd08 + iVar2) = 0;
+      g_CoronaBlurWorkBuffer[0][iVar2] = '\0';
+      g_CoronaBlurWorkBuffer[this_ptr->display_height + -1][iVar2] = '\0';
       iVar2 = iVar2 + 1;
     } while (iVar2 < this_ptr->display_width);
   }

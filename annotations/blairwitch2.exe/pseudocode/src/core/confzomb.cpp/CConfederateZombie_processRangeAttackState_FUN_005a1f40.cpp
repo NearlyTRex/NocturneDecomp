@@ -7,78 +7,80 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_confzomb_cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40(CConfederateZombie *this_ptr,float delta_time)
 
 {
-  SStateMachine *pSVar1;
-  CCharacter *pCVar2;
+  SStateMachine *this_ptr_00;
+  CCharacter *pCVar1;
+  float fVar2;
   float fVar3;
-  float fVar4;
-  int iVar5;
-  byte bVar6;
+  SMotion *pSVar4;
+  byte bVar5;
   float afStackY_1040 [1015];
-  uint uStack_58;
-  uint uStack_4c;
-  uint uStack_40;
+  CVector3f CStack_58;
+  CVector3f CStack_4c;
+  float fStack_40;
   float fStack_3c;
   uint uStack_38;
-  uint uStack_34;
-  uint uStack_28;
-  float fStack_24;
-  uint uStack_20;
+  CVector3f CStack_34;
+  float fStack_28;
+  float afStack_24 [5];
   
-  bVar6 = 0;
-  iVar5 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.base.model);
-  if (*(int *)(iVar5 + 0x24) == 2) {
-    if ((this_ptr->base).base.base.model.base.current_frame_number < _DAT_005efe5f) {
+  bVar5 = 0;
+  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                     (&(this_ptr->base).base.base.model.base);
+  if (pSVar4->state_index == 2) {
+    if ((this_ptr->base).base.base.model.base.current_frame_number < 70.0f) {
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
                 ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
     }
-    if (_DAT_005efe63 < (this_ptr->base).base.base.model.base.current_frame_number) {
+    if (74.0f < (this_ptr->base).base.base.model.base.current_frame_number) {
       (this_ptr->base).base.base.model.accumulated_root_motion.z = 0.0;
       (this_ptr->base).base.base.model.accumulated_root_motion.y =
            (this_ptr->base).base.base.model.accumulated_root_motion.z;
       (this_ptr->base).base.base.model.accumulated_root_motion.x =
            (this_ptr->base).base.base.model.accumulated_root_motion.y;
-      pCVar2 = (this_ptr->base).base.victim;
-      fVar3 = (this_ptr->base).base.base.base.location.position.x -
-              (pCVar2->base).location.position.x;
-      fVar4 = (this_ptr->base).base.base.base.location.position.z -
-              (pCVar2->base).location.position.z;
-      pSVar1 = &(this_ptr->base).state_machine;
-      if (SQRT(fVar4 * fVar4 + fVar3 * fVar3) <= _DAT_005fef90) {
-        (this_ptr->base).attack_range = _DAT_005fef94;
-        core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete","MeleeAttack");
-        core_muzzle_cpp_FUN_0059d8e0(pSVar1,"MeleeAttack");
+      pCVar1 = (this_ptr->base).base.victim;
+      fVar2 = (this_ptr->base).base.base.base.location.position.x -
+              (pCVar1->base).location.position.x;
+      fVar3 = (this_ptr->base).base.base.base.location.position.z -
+              (pCVar1->base).location.position.z;
+      this_ptr_00 = &(this_ptr->base).state_machine;
+      if (SQRT(fVar3 * fVar3 + fVar2 * fVar2) <= 6.0f) {
+        (this_ptr->base).attack_range = 2.0f;
+        core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
+                  (this_ptr_00,"ChaseComplete","MeleeAttack");
+        core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"MeleeAttack");
         return;
       }
-      (this_ptr->base).attack_range = _DAT_005fef90;
-      core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete","RangeAttack");
-      core_muzzle_cpp_FUN_0059dcb0(pSVar1,0x3dcccccd);
-      core_muzzle_cpp_FUN_0059d8e0(pSVar1,"Chasing");
+      (this_ptr->base).attack_range = 6.0f;
+      core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
+                (this_ptr_00,"ChaseComplete","RangeAttack");
+      core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_00,0.1);
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"Chasing");
     }
     return;
   }
-  core_actor_cpp_FUN_00408de0(this_ptr,&(((this_ptr->base).base.victim)->base).location);
-  uStack_4c = uStack_58;
-  *(uint *)((int)&stack0xffffffb8 + (uint)bVar6 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffffac + (uint)bVar6 * -8);
-  *(uint *)(&stack0xffffffbc + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffb0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffb4);
-  uStack_28 = uStack_34;
-  (&stack0xffffffdc)[(uint)bVar6 * 0xfffffffe] =
-       (float)*(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * 0xfffffffe * 4);
-  *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  if (&stack0xffffffc0 != &stack0xffffffd8) {
-    uStack_40 = uStack_28;
-    fStack_3c = fStack_24;
-    uStack_38 = uStack_20;
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
+            ((CDemonActor *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position,
+             &CStack_58);
+  CStack_4c.x = CStack_58.x;
+  *(uint *)((int)&CStack_4c + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + 4);
+  *(uint *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&CStack_4c,&CStack_34);
+  fStack_28 = CStack_34.x;
+  afStack_24[(uint)bVar5 * -2] = *(float *)((int)&CStack_34 + (uint)bVar5 * -8 + 4);
+  afStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+       *(float *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  if (&fStack_40 != &fStack_28) {
+    fStack_40 = fStack_28;
+    fStack_3c = afStack_24[0];
+    uStack_38 = afStack_24[1];
   }
-  if ((float)_DAT_005efe57 < fStack_3c) {
+  if ((float)0.10000000000000001 < fStack_3c) {
     (this_ptr->base).base.base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.base.model.accumulated_root_motion.y =
          (this_ptr->base).base.base.model.accumulated_root_motion.z;

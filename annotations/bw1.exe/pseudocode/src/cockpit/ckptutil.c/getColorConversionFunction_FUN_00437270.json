@@ -1,0 +1,269 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 13,
+    "cross_reference_count": 10,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "004380a0",
+      "from_addr": "004380c8",
+      "name": "cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004382d0",
+      "from_addr": "00438318",
+      "name": "cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437b90",
+      "from_addr": "00437bd8",
+      "name": "cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437f40",
+      "from_addr": "00437f78",
+      "name": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437940",
+      "from_addr": "0043799f",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438560",
+      "from_addr": "0043856b",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437700",
+      "from_addr": "00437757",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00437700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437d00",
+      "from_addr": "00437d3c",
+      "name": "cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438410",
+      "from_addr": "00438448",
+      "name": "cockpit_ckptutil.c_blitVerticalColumn_FUN_00438410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537760",
+      "from_addr": "005377a6",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00537760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00437270",
+    "address_range": [
+      [
+        "00437270",
+        "0043727f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270",
+    "signature": "ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_00437270(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0061b4a0",
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "0043856b",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005377a6",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00537760",
+        "estimated_params": 0,
+        "instructions_analyzed": 12,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00437757",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00437700",
+        "estimated_params": 0,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00437f78",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004380c8",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0043799f",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00437940",
+        "estimated_params": 0,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00437bd8",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b90",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00437d3c",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437d00",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00438318",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004382d0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00438448",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitVerticalColumn_FUN_00438410",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CBRANCH": 2,
+      "COPY": 3,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "POPCOUNT": 2
+    },
+    "pcode_op_count": 23
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042c410",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00434e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00431760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042d130",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8333
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 31,
+    "complexity_score": 15,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 42
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -74,44 +72,44 @@
   "globals": [
     {
       "addr": "01c38b4c",
-      "name": "DAT_01c38b4c",
-      "type": "undefined4",
+      "name": "g_BlendMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b58",
-      "name": "DAT_01c38b58",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09858",
-      "name": "DAT_01d09858",
-      "type": "undefined4",
+      "name": "g_INT_01d09858",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d0985c",
-      "name": "DAT_01d0985c",
-      "type": "undefined4",
+      "name": "g_INT_01d0985c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09864",
-      "name": "DAT_01d09864",
-      "type": "undefined4",
+      "name": "g_INT_01d09864",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09868",
-      "name": "DAT_01d09868",
-      "type": "undefined4",
+      "name": "g_INT_01d09868",
+      "type": "int",
       "value": null
     }
   ],
@@ -247,14 +245,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

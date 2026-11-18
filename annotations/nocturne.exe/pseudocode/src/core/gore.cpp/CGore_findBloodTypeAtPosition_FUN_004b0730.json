@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 52,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 15,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 149
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -51,79 +49,79 @@
     },
     {
       "addr": "01c7ccf0",
-      "name": "DAT_01c7ccf0",
-      "type": "undefined4",
+      "name": "g_BloodSplatCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c7cd04",
-      "name": "g_CBloodSplat_ARRAY_01c7ccf4[0].is_wall_splat",
+      "name": "g_BloodSplats[0].is_wall_splat",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7cd3c",
-      "name": "g_CBloodSplat_ARRAY_01c7ccf4[1].position.x",
+      "name": "g_BloodSplats[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7cd40",
-      "name": "g_CBloodSplat_ARRAY_01c7ccf4[1].position.y",
+      "name": "g_BloodSplats[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7cd44",
-      "name": "g_CBloodSplat_ARRAY_01c7ccf4[1].position.z",
+      "name": "g_BloodSplats[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7cd48",
-      "name": "g_CBloodSplat_ARRAY_01c7ccf4[1].is_wall_splat",
+      "name": "g_BloodSplats[1].is_wall_splat",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7cd4c",
-      "name": "g_CBloodSplat_ARRAY_01c7ccf4[1].blood_type",
+      "name": "g_BloodSplats[1].blood_type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9e038",
-      "name": "DAT_01c9e038",
-      "type": "undefined4",
+      "name": "g_BloodPoolCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c9e044",
-      "name": "g_CBloodPool_ARRAY_01c9e03c[0].position.y",
+      "name": "g_BloodPools[0].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9e068",
-      "name": "g_CBloodPool_ARRAY_01c9e03c[1].position.x",
+      "name": "g_BloodPools[1].position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9e06c",
-      "name": "g_CBloodPool_ARRAY_01c9e03c[1].position.y",
+      "name": "g_BloodPools[1].position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9e070",
-      "name": "g_CBloodPool_ARRAY_01c9e03c[1].position.z",
+      "name": "g_BloodPools[1].position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9e074",
-      "name": "g_CBloodPool_ARRAY_01c9e03c[1].blood_type",
+      "name": "g_BloodPools[1].blood_type",
       "type": "undefined4",
       "value": null
     }
@@ -258,14 +256,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

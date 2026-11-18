@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20(CGabriella *this_ptr,float delta_time,int has_carried_objects)
 
 {
@@ -18,7 +16,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
   uint *puVar4;
   uint *puVar5;
   byte bVar6;
-  uint in_stack_00000010;
+  float in_stack_00000010;
   float afStackY_1030 [986];
   CBoundingBox3D *in_stack_ffffff50;
   CBoundingBox3D *in_stack_ffffff58;
@@ -45,7 +43,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
   float local_18;
   
   bVar6 = 0;
-  fVar2 = delta_time / _DAT_00600d6c;
+  fVar2 = delta_time / 0.5f;
   this_ptr->left_clavicle_blend = this_ptr->left_clavicle_blend - fVar2;
   this_ptr->right_clavicle_blend = this_ptr->right_clavicle_blend - fVar2;
   if (this_ptr->left_clavicle_blend < 0.0) {
@@ -91,9 +89,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
            *(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       local_18 = -local_1c;
     }
-    core_gabriela_cpp_FUN_004caff0
-              (this_ptr,in_stack_00000010,&this_ptr->left_clavicle_blend,_DAT_01cc9148,_DAT_01cc910c
-               ,&stack0xffffffe8);
+    core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0
+              (this_ptr,in_stack_00000010,&this_ptr->left_clavicle_blend,g_GabriellaIndices[0x10],
+               g_GabriellaIndices[1],(CVector3f *)&stack0xffffffe8);
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     if (pCVar1 == (CDemonActor *)0x0) {
       local_18 = 0.5;
@@ -116,18 +114,18 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
       *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
            *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
     }
-    core_gabriela_cpp_FUN_004caff0
-              (this_ptr,in_stack_00000010,&this_ptr->right_clavicle_blend,_DAT_01cc914c,
-               _DAT_01cc9110,&stack0xffffffe8);
+    core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004caff0
+              (this_ptr,in_stack_00000010,&this_ptr->right_clavicle_blend,g_GabriellaIndices[0x11],
+               g_GabriellaIndices[2],(CVector3f *)&stack0xffffffe8);
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     return;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
-            (this_ptr_00,0,0.0,this_ptr->left_clavicle_blend,_DAT_01cc910c,
+            (this_ptr_00,0,0.0,this_ptr->left_clavicle_blend,g_GabriellaIndices[1],
              core_skeleton_cpp_blendWeightCallback_FUN_00567360);
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
-            (this_ptr_00,0,0.0,this_ptr->right_clavicle_blend,_DAT_01cc9110,
+            (this_ptr_00,0,0.0,this_ptr->right_clavicle_blend,g_GabriellaIndices[2],
              core_skeleton_cpp_blendWeightCallback_FUN_00567360);
   return;
 }

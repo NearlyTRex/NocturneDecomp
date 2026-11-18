@@ -10,11 +10,10 @@
 // =============================================================================
 
 // undefined1* constants
-static undefined1* DAT_0055F694 = (undefined1*)0x0055FA61; // DAT_0055fa61
-static undefined1* DAT_0055F698 = (undefined1*)0x0055FA61; // DAT_0055fa61
-static undefined1* DAT_0055F69C = (undefined1*)0x0055FB4F; // DAT_0055fb4f
-static undefined1* DAT_0055F6A0 = (undefined1*)0x0055FB4F; // DAT_0055fb4f
-static undefined1* DAT_0055F6A4 = (undefined1*)0x0055F97D; // LAB_0055f97d
+static undefined1* DAT_0055F698 = (undefined1*)0x0055FA61; // caseD_0
+static undefined1* DAT_0055F69C = (undefined1*)0x0055FB4F; // caseD_2
+static undefined1* DAT_0055F6A0 = (undefined1*)0x0055FB4F; // caseD_2
+static undefined1* DAT_0055F6A4 = (undefined1*)0x0055F97D; // caseD_4
 
 // void* constants
 static void* DAT_0055FF30 = (void*)0x0056045A; // caseD_0

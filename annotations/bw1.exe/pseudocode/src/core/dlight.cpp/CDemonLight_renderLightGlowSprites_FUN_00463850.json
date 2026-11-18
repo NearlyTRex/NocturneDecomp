@@ -1,0 +1,122 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 4,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 6
+  },
+  "cross_references": [
+    {
+      "addr": "00550580",
+      "from_addr": "00550d29",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00463850",
+    "address_range": [
+      [
+        "00463850",
+        "00463850"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00463850",
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00463850(CDemonLight *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00550d29",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00550d4f",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00550580",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 3
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044b050",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045d560",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00473f90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.004
+    },
+    "nocturne.exe": {
+      "addr": "0044f9b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0041
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": []
+}

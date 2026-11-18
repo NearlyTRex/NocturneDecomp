@@ -7,12 +7,13 @@
 ; CVector3f *      Stack[0x4]:4   point
 ; float            Stack[0x8]:4   radius
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_fire.cpp_initProcess_FUN_0049de60 at 0049dec2
 ;   core_trash.cpp_CTrash_process_FUN_0056d360 at 0056d37b
+;   core_trigger.cpp_CTrigger_process_FUN_0056e230 at 0056e274
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d5ba00
+;   int g_HeroCount
 ;
 ; *****************************************************************************
 
@@ -25,12 +26,12 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 004d2375
     FLD float ptr [ESP + 0x1c]          ; 004d2379
     FMUL ST0                            ; 004d237d
-    MOV EDX,dword ptr [0x01d5ba00]      ; 004d237f | DAT_01d5ba00
+    MOV EDX,dword ptr [0x01d5ba00]      ; 004d237f | g_HeroCount
     FSTP float ptr [ESP + 0x1c]         ; 004d2385
     TEST EDX,EDX                        ; 004d2389
     JLE 0x004d23a9                      ; 004d238b
         ;   XREF to: 004d23a9 (CONDITIONAL_JUMP)  ; LAB_004d23a9
-    MOV EBX,dword ptr [0x01d5ba00]      ; 004d238d | DAT_01d5ba00
+    MOV EBX,dword ptr [0x01d5ba00]      ; 004d238d | g_HeroCount
     XOR EDX,EDX                         ; 004d2393
     SHL EBX,0x2                         ; 004d2395
     MOV ESI,dword ptr [EDX + 0x1d5ba04] ; 004d2398

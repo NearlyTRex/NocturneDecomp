@@ -2,21 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 302,
+    "complexity_score": 146,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 19,
+    "pseudocode_lines": 91,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 258
+    "total_lines": 262
   },
   "cross_references": [],
   "function": {
@@ -61,86 +59,86 @@
   "globals": [
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "0062902c",
-      "name": "DAT_0062902c",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00629030",
-      "name": "DAT_00629030",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00713a5c",
-      "name": "DAT_00713a5c",
-      "type": "undefined4",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00713a70",
-      "name": "DAT_00713a70",
-      "type": "undefined4",
+      "name": "g_INT_00713a70",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00713a74",
-      "name": "DAT_00713a74",
-      "type": "undefined4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00713a98",
-      "name": "DAT_00713a98",
-      "type": "undefined4",
+      "name": "g_ProcessedVertexIndices",
+      "type": "int[24]",
       "value": null
     },
     {
       "addr": "00713a9c",
-      "name": "DAT_00713a9c",
+      "name": "g_ProcessedVertexIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4f020",
-      "name": "DAT_01c4f020",
-      "type": "undefined4",
+      "name": "g_INT_01c4f020",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f024",
-      "name": "DAT_01c4f024",
-      "type": "undefined4",
+      "name": "g_CurrentLightingValue",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c4f02c",
-      "name": "DAT_01c4f02c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c51d00",
-      "name": "DAT_01c51d00",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d14",
-      "name": "DAT_01c51d14",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c51d18",
-      "name": "DAT_01c51d18",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -227,128 +225,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00713a74",
-      "severity": "mild",
-      "text": "if (DAT_00713a74 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00713a70",
-      "severity": "mild",
-      "text": "if (DAT_00713a70 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "else if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "else if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00713a5c",
-      "severity": "mild",
-      "text": "_DAT_01c4f020 = engine_3d_c_lookupLitColor_FUN_00403990(DAT_00713a5c,_DAT_01c4f024);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "else if (DAT_0061b4a0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_00713a98",
-      "severity": "mild",
-      "text": "*(int *)((int)&DAT_00713a98 + iVar2) = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_0062902c",
-      "severity": "mild",
-      "text": "(&DAT_0062902c)[iVar1 * 0xc] = (pSVar3->base).count;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_00629030",
-      "severity": "mild",
-      "text": "*(UIntegerFloat *)(&DAT_00629030 + (pSVar3->base).type * 0x30) = (pSVar3->surface_normal).A;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_00713a98",
-      "severity": "mild",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_0043cbf0(vertex_count,&DAT_00713a98);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&DAT_00713a98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 81,
-      "match": "(int)&DAT_00713a98",
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(int *)((int)g_ProcessedVertexIndices",
       "severity": "moderate",
-      "text": "*(int *)((int)&DAT_00713a98 + iVar2) = iVar1;",
-      "type": "pointer_truncation"
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `&primitive[1].base` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
+      "line": 93,
       "match": "(int)&primitive[1].base",
       "severity": "moderate",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
@@ -356,15 +242,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 81,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(int *)((int)&DAT_00713a98 + iVar2) = iVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 90,
+      "line": 93,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
@@ -372,7 +250,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 86,
+      "line": 89,
       "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;",

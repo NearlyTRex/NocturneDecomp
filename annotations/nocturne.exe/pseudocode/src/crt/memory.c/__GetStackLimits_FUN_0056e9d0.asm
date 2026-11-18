@@ -18,8 +18,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_VirtualQuery_005755dc = 001760f2
-;   undefined1 DAT_005c1d0f
-;   undefined2 DAT_005c1d11
+;   BYTE g_WindowsMinorVersion = \x00
+;   WORD g_WindowsPlatformVersion = 0x0
 ;
 ; Called Functions:
 ;   VirtualQuery
@@ -41,7 +41,7 @@ section .text
     CALL dword ptr CS:[0x5755dc]        ; 0056e9e5 | PTR_VirtualQuery_005755dc
     MOV EDX,dword ptr [ESP]             ; 0056e9ec
     ADD EDX,dword ptr [ESP + 0xc]       ; 0056e9ef
-    MOV CX,word ptr [0x005c1d11]        ; 0056e9f3 | DAT_005c1d11
+    MOV CX,word ptr [0x005c1d11]        ; 0056e9f3 | g_WindowsPlatformVersion
     MOV EAX,dword ptr [ESP + 0x4]       ; 0056e9fa
     CMP CX,0x8000                       ; 0056e9fe
     JNC 0x0056ea0c                      ; 0056ea03
@@ -52,7 +52,7 @@ section .text
     JC 0x0056ea1e                       ; 0056ea0c
         ;   XREF to: 0056ea1e (CONDITIONAL_JUMP)  ; LAB_0056ea1e
         ;   Label: LAB_0056ea0c
-    CMP byte ptr [0x005c1d0f],0x4       ; 0056ea0e | DAT_005c1d0f
+    CMP byte ptr [0x005c1d0f],0x4       ; 0056ea0e | g_WindowsMinorVersion
     JNC 0x0056ea1e                      ; 0056ea15
         ;   XREF to: 0056ea1e (CONDITIONAL_JUMP)  ; LAB_0056ea1e
     ADD EAX,0x12000                     ; 0056ea17

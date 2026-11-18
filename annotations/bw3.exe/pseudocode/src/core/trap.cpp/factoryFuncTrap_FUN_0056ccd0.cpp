@@ -11,7 +11,7 @@ CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void)
 {
   CTrap *pCVar1;
   
-  pCVar1 = (CTrap *)operator_new(0x2dc);
+  pCVar1 = operator_new(0x2dc);
   if (pCVar1 == (CTrap *)0x0) {
     return (CTrap *)0x0;
   }

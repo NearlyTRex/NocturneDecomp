@@ -39,7 +39,7 @@ void __cdecl CBugs::renderGroundHeightGrid(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_getBoundingBox_FUN_004257c0
 // Address: 004257c0
-CBoundingBox3D * __cdecl CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bugs.cpp_CBugs_archive_FUN_004257f0
 // Address: 004257f0
@@ -85,13 +85,13 @@ void __cdecl CBugs::attackSwarmTarget(CBugs *this_ptr,float delta_time);
 // Address: 00426860
 void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_00426870
+// Original: core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426870
 // Address: 00426870
-undefined4 FUN_00426870(CBugs *param_1,int *param_2,float param_3,float *param_4);
+int __cdecl CBugs::updateBugPathfinding(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
 
-// Original: core_bugs.cpp_FUN_00426ec0
+// Original: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00426ec0
 // Address: 00426ec0
-void FUN_00426ec0(CBugs *param_1,SBug *param_2,float param_3);
+void __cdecl CBugs::updateBugRenderingData(CBugs *this_ptr,SBug *bug_data,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00427830
 // Address: 00427830
@@ -105,21 +105,21 @@ void __cdecl CBugs::recalculateBoundingBox(CBugs *this_ptr);
 // Address: 00427b40
 void __cdecl CBugs::setSwarmTarget(CBugs *this_ptr,CDemonActor *target);
 
-// Original: core_bugs.cpp_FUN_00427e00
+// Original: core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00427e00
 // Address: 00427e00
-void FUN_00427e00(int param_1,float *param_2);
+void __cdecl CBugs::applySwarmTranslation(CBugs *this_ptr,CVector3f *new_position);
 
-// Original: core_bugs.cpp_FUN_00428010
+// Original: core_bugs.cpp_normalizeVector_FUN_00428010
 // Address: 00428010
-void FUN_00428010(float *param_1);
+void __cdecl normalizeVector(CVector3f *dest);
 
 // Original: core_bugs.cpp_convertVector_FUN_00428080
 // Address: 00428080
 CVector3i * __cdecl convertVector(CVector3f *dest,CVector3i *src);
 
-// Original: core_bugs.cpp_FUN_00428120
+// Original: core_bugs.cpp_getDeformableModelName_FUN_00428120
 // Address: 00428120
-int FUN_00428120(int param_1);
+char * __cdecl getDeformableModelName(CDeformableModelInstance *model_ptr);
 
 // Original: core_bugs.cpp_maxFloat_FUN_00428150
 // Address: 00428150

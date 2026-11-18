@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_docCannotDie_005d086f
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0
@@ -20,7 +20,7 @@ section .text
 
     PUSH 0x5d086f                       ; 0045dda0 | = "docCannotDie"
         ;   Label: core_doc.cpp_CDoc_getDeathState_FUN_0045dda0
-    MOV EDX,dword ptr [0x006141f0]      ; 0045dda5 | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 0045dda5 | g_CEventListPtr
     PUSH EDX                            ; 0045ddab
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0045ddac
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

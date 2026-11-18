@@ -23,19 +23,18 @@ float __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_0056ec60(CT
   float fStack_44;
   float fStack_40;
   float fStack_3c;
-  uint uStack_28;
-  uint uStack_1c;
-  float fStack_14;
-  float fStack_10;
+  CVector3f CStack_28;
+  float fStack_1c;
+  float afStack_18 [3];
   
   bVar4 = 0;
   if (this_ptr->trigger_cause == TRIGGER_CAUSE_ACTION_BUTTON) {
-    core_actor_cpp_FUN_00408bf0(this_ptr,query_position);
-    uStack_1c = uStack_28;
-    *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+              (&this_ptr->base,query_position,&CStack_28);
+    fStack_1c = CStack_28.x;
+    afStack_18[(uint)bVar4 * -2] = *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + 4);
+    afStack_18[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffffa8);
     puVar2 = (uint *)&stack0xffffffc8;
     puVar3 = (uint *)&stack0xffffffa8;
@@ -44,8 +43,9 @@ float __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_0056ec60(CT
       puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    if ((((fStack_50 <= fStack_14) && (fStack_4c <= fStack_10)) && (fStack_48 <= unaff_EDI)) &&
-       (((fStack_14 <= fStack_44 && (fStack_10 <= fStack_40)) && (unaff_EDI <= fStack_3c)))) {
+    if ((((fStack_50 <= afStack_18[1]) && (fStack_4c <= afStack_18[2])) && (fStack_48 <= unaff_EDI))
+       && (((afStack_18[1] <= fStack_44 && (afStack_18[2] <= fStack_40)) && (unaff_EDI <= fStack_3c)
+           ))) {
       *in_stack_00000018 = this_ptr->hilite_actor;
       return 0.0;
     }

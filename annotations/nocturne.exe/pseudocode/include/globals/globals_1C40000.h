@@ -16,8 +16,13 @@
 extern CGlassParticle g_GlassParticlePool[256];
 
 // CMuzzleFlash[20]
-extern CMuzzleFlash g_CMuzzleFlash_ARRAY_01c4e958[20];
+extern CMuzzleFlash g_MuzzleFlashPool[20];
 
 // CSpark[256]
 extern CSpark g_SparkPool[256];
+
+// int
+extern int g_SparkAllocIndex;
+extern int g_MuzzleFlashAllocIndex;
+extern int g_GlassParticleAllocIndex;
 

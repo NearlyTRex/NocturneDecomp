@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 108,
+    "complexity_score": 33,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
-    "suspect_count": 7,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 95
   },
   "cross_references": [
@@ -68,55 +66,55 @@
     },
     {
       "addr": "005ad450",
-      "name": "DAT_005ad450",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_005ad450",
+      "type": "char[4]",
       "value": null
     },
     {
       "addr": "005ad454",
-      "name": "DAT_005ad454",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005ad454",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "005ad458",
-      "name": "DAT_005ad458",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005ad458",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "00b0e1fc",
-      "name": "DAT_00b0e1fc",
-      "type": "undefined4",
+      "name": "g_UINT_ARRAY_00b0e1fc",
+      "type": "uint[256]",
       "value": null
     },
     {
       "addr": "0140e790",
-      "name": "g_SFogGrid_0140d784.scroll_vector.x",
+      "name": "g_CameraFogGrid.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e794",
-      "name": "g_SFogGrid_0140d784.scroll_vector.y",
+      "name": "g_CameraFogGrid.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e798",
-      "name": "g_SFogGrid_0140d784.scroll_vector.z",
+      "name": "g_CameraFogGrid.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e79c",
-      "name": "g_SFogGrid_0140d784.height_threshold",
+      "name": "g_CameraFogGrid.height_threshold",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e7a0",
-      "name": "g_SFogGrid_0140d784.density_multiplier",
+      "name": "g_CameraFogGrid.density_multiplier",
       "type": "undefined4",
       "value": null
     }
@@ -227,62 +225,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005ad450",
-      "severity": "mild",
-      "text": "DAT_005ad450 = (fog_config->color_index).r;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005ad454",
-      "severity": "mild",
-      "text": "DAT_005ad454 = (fog_config->color_index).g;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005ad458",
-      "severity": "mild",
-      "text": "DAT_005ad458 = (fog_config->color_index).b;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + (fog_config->color_index).r * 4) & 0xff,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b0e1fc + (fog_config->color_index).g * 4) & 0xff,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005ad458",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -9,7 +9,7 @@
 void __cdecl core_skeleton_cpp_clearModelAndSkeletonInUseFlags_FUN_00549180(void)
 
 {
-  memset(&DAT_02628554,0,0xa0);
-  memset(&DAT_02177ff4,0,0x100);
+  memset(g_CHAR_ARRAY_02628554,0,0xa0);
+  memset(g_CHAR_ARRAY_02177ff4,0,0x100);
   return;
 }

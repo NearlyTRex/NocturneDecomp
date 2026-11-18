@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   frame_index
 ;
 ; XREF[6]:
+;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0044f020 at 0044f0c2
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_0044e720 at 0044e73c
-;   core_dmodel.cpp_FUN_0044f020 at 0044f0c2
 ;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0 at 004acd29
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_005b63b0 at 005b63da
 ;   core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_005b6560 at 005b6575

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 76,
+    "complexity_score": 61,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 156
   },
@@ -84,26 +83,26 @@
   "globals": [
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01d76f60",
-      "name": "DAT_01d76f60",
-      "type": "undefined4",
+      "name": "g_FLOAT_PTR_01d76f60",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "02cf60cc",
-      "name": "DAT_02cf60cc",
-      "type": "undefined4",
+      "name": "g_PTR_02cf60cc",
+      "type": "void*",
       "value": null
     }
   ],
@@ -262,19 +261,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 30,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_02cf60cc != (code *)0x0) && (_DAT_01c6cee8 != 0)) {",
+      "text": "(*(code *)g_PTR_02cf60cc)",
       "type": "unresolved_funcptr"
     }
   ]

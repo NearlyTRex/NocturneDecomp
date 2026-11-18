@@ -2,11 +2,11 @@
 // Address: 004e28a0
 // Address Range: [[004e28a0, 004e2977]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *file_handle,ulong buffer_size,int stream_length)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4)
+void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *file_handle,ulong buffer_size,int stream_length)
 
 {
   long lVar1;
@@ -20,17 +20,18 @@ void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004e28a0(CFileBitStream *this
     free(this_ptr->buffer);
     this_ptr->buffer = (char *)0x0;
   }
-  this_ptr->file_handle = param_2;
-  lVar1 = _ftell(param_2);
+  this_ptr->file_handle = file_handle;
+  lVar1 = _ftell(file_handle);
   this_ptr->stream_start_position = lVar1;
-  this_ptr->stream_length = param_4;
-  this_ptr->buffer_size = param_3;
-  pcVar2 = (char *)malloc(param_3);
+  this_ptr->stream_length = stream_length;
+  this_ptr->buffer_size = buffer_size;
+  pcVar2 = (char *)malloc(buffer_size);
   this_ptr->buffer = pcVar2;
   if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 511;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory.  File: %s",&DAT_01cd8b28);
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("Out of memory.  File: %s",g_CurrentMp3Filename);
   }
   _fseek(this_ptr->file_handle,this_ptr->stream_start_position,0);
   this_ptr->current_byte_index = 0;

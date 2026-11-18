@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   bone_index
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b90d0 at 004bacba
+;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004bacba
 ;
 ; *****************************************************************************
 

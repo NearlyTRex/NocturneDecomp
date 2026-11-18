@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005265e4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a2148
+;   double g_DOUBLE_005a2148 = -1
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0x60],0x0      ; 00525f2a
     MOV dword ptr [EBX + 0x64],0x0      ; 00525f31
-    FLD double ptr [0x005a2148]         ; 00525f38 | DAT_005a2148
+    FLD double ptr [0x005a2148]         ; 00525f38 | g_DOUBLE_005a2148
     MOV dword ptr [EBX + 0x68],0x0      ; 00525f3e
     ADD ESP,0xc                         ; 00525f45
     FSTP double ptr [EBX + 0x4c]        ; 00525f48

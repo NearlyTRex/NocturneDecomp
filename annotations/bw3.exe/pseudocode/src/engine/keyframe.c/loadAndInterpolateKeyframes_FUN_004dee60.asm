@@ -17,13 +17,13 @@
 ;   TerminatedCString s_Bad_key_frame_005c670a
 ;   TerminatedCString s_engine_keyframe_c_005c6718
 ;   TerminatedCString s_Key_frame_vertex_mismatc_005c672d
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
-;   engine_model.c_FUN_004f8730
-;   engine_model.c_FUN_004f89a0
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
+;   engine_model.c_getMRGLSize_FUN_004f8730
+;   engine_model.c_loadModelChunk_FUN_004f89a0
 ;   engine_model.c_loadModelFile_FUN_004f7f20
 ;
 ; *****************************************************************************
@@ -44,16 +44,16 @@ section .text
         ;   Label: LAB_004dee75
     MOV ECX,dword ptr [EAX + 0x14]      ; 004dee79
     PUSH ECX                            ; 004dee7c
-    CALL engine_model.c_FUN_004f8730    ; 004dee7d
-        ;   XREF to: 004f8730 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_004f8730(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_004f8730 ; 004dee7d
+        ;   XREF to: 004f8730 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004f8730(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 004dee82
     MOV EBP,EAX                         ; 004dee85
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004dee87
     MOV EAX,dword ptr [EAX + 0x14]      ; 004dee8b
     ADD EAX,EBP                         ; 004dee8e
     PUSH EAX                            ; 004dee90
-    CALL engine_model.c_FUN_004f8730    ; 004dee91
-        ;   XREF to: 004f8730 (UNCONDITIONAL_CALL)  ; int engine_model.c_FUN_004f8730(SMRGLHeaderExtended * header)
+    CALL engine_model.c_getMRGLSize_FUN_004f8730 ; 004dee91
+        ;   XREF to: 004f8730 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004f8730(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 004dee96
     ADD EBP,EAX                         ; 004dee99
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004dee9b
@@ -70,8 +70,8 @@ section .text
         ;   XREF to: 004deec6 (CONDITIONAL_JUMP)  ; LAB_004deec6
     PUSH EBP                            ; 004deeb6
     PUSH EDI                            ; 004deeb7
-    CALL engine_model.c_FUN_004f89a0    ; 004deeb8
-        ;   XREF to: 004f89a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_FUN_004f89a0(char * filename, int model_size)
+    CALL engine_model.c_loadModelChunk_FUN_004f89a0 ; 004deeb8
+        ;   XREF to: 004f89a0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelChunk_FUN_004f89a0(char * filename, int model_size)
     ADD ESP,0x8                         ; 004deebd
     MOV dword ptr [EBX + 0x118],EAX     ; 004deec0
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004deec6
@@ -104,10 +104,10 @@ section .text
     MOV EDX,0x5c66f5                    ; 004def02 | = "..\\engine\\keyframe.c"
     MOV ECX,0xfd                        ; 004def07
     PUSH 0x5c670a                       ; 004def0c | = "Bad key frame"
-    MOV dword ptr [0x01d71de0],EDX      ; 004def11 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004def17 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004def1d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 004def11 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004def17 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004def1d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004def22
     MOV EDX,dword ptr [EDI + 0x8]       ; 004def25
         ;   Label: LAB_004def25
@@ -117,10 +117,10 @@ section .text
     MOV ECX,0x5c6718                    ; 004def2d | = "..\\engine\\keyframe.c"
     MOV EDI,0xfe                        ; 004def32
     PUSH 0x5c672d                       ; 004def37 | = "Key frame vertex mismatch"
-    MOV dword ptr [0x01d71de0],ECX      ; 004def3c | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004def42 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004def48
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004def3c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 004def42 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004def48
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004def4d
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004def50
         ;   Label: LAB_004def50

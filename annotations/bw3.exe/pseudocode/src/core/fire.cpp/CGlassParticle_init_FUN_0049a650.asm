@@ -57,8 +57,8 @@
 ;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780 at 004a27c8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c05d0
-;   undefined4 DAT_005c05d4
+;   float g_FLOAT_005c05d0 = 0.3333333
+;   float g_FLOAT_005c05d4 = 10
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -116,7 +116,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0049a6cb
     MOVSD ES:EDI,ESI                    ; 0049a6cc
     MOVSD ES:EDI,ESI                    ; 0049a6cd
-    FLD float ptr [0x005c05d0]          ; 0049a6ce | DAT_005c05d0
+    FLD float ptr [0x005c05d0]          ; 0049a6ce | g_FLOAT_005c05d0
     FLD float ptr [ESP + 0xc]           ; 0049a6d4
     FMUL ST1                            ; 0049a6d8
     FLD float ptr [ESP + 0x10]          ; 0049a6da
@@ -330,7 +330,7 @@ section .text
     FSTP float ptr [EDX + 0x8]          ; 0049a99a
     LEA EAX,[EBX + 0xc]                 ; 0049a99d
         ;   Label: LAB_0049a99d
-    FLD float ptr [0x005c05d4]          ; 0049a9a0 | DAT_005c05d4
+    FLD float ptr [0x005c05d4]          ; 0049a9a0 | g_FLOAT_005c05d4
     FLD float ptr [EAX]                 ; 0049a9a6
     FMUL ST1                            ; 0049a9a8
     FLD float ptr [EAX + 0x4]           ; 0049a9aa

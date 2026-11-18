@@ -12,5 +12,5 @@ int __cdecl shape_edittool_cpp_calculateGridHeight_FUN_0049d450(void)
   int iVar1;
   
   iVar1 = shape_edittool_cpp_calculateGridWidth_FUN_0049d430();
-  return (((DAT_0061b49c * iVar1) / DAT_0061b498) * 4) / 3;
+  return (((g_INT_0061b49c * iVar1) / g_INT_0061b498) * 4) / 3;
 }

@@ -14,21 +14,21 @@
 ;   TerminatedCString s_setColorTable16_Unable_t_005f9708
 ;   TerminatedCString s_wincore_wddvmem_cpp_005f9736
 ;   TerminatedCString s_setColorTable16_Unable_t_005f974d
-;   undefined4 DAT_01c4e9d4
-;   undefined4 DAT_01c4e9d8
-;   undefined4 DAT_01c4e9dc
-;   undefined4 DAT_01c4e9e0
-;   undefined4 DAT_01c4e9e4
-;   undefined4 DAT_01c4e9e8
-;   undefined4 DAT_01c4e9ec
-;   undefined4 DAT_01c4e9f0
-;   undefined4 DAT_01c4e9f4
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_RedDitherShift
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_GreenDitherShift
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
+;   _BIT_INTEGER32 g_BlueDitherShift
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70
 ;
@@ -51,7 +51,7 @@ section .text
     LEA ECX,[ESP + 0x8]                 ; 005acd19
     MOV EDX,0x6c                        ; 005acd1d
     PUSH ECX                            ; 005acd22
-    MOV EAX,[0x02c99308]                ; 005acd23 | DAT_02c99308
+    MOV EAX,[0x02c99308]                ; 005acd23 | g_SoftwareRenderSurface
     MOV dword ptr [ESP + 0xc],EDX       ; 005acd28
     PUSH 0x0                            ; 005acd2c
     MOV EDX,dword ptr [EAX]             ; 005acd2e
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 005acdc0 (CONDITIONAL_JUMP)  ; LAB_005acdc0
     PUSH 0x0                            ; 005acd3c
         ;   Label: LAB_005acd3c
-    MOV EAX,[0x02c99308]                ; 005acd3e | DAT_02c99308
+    MOV EAX,[0x02c99308]                ; 005acd3e | g_SoftwareRenderSurface
     PUSH EAX                            ; 005acd43
     MOV ECX,dword ptr [EAX]             ; 005acd44
     CALL dword ptr [ECX + 0x80]         ; 005acd46
@@ -74,10 +74,10 @@ section .text
     MOV ESI,0x5f9736                    ; 005acd52 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x2c0                       ; 005acd57
     PUSH 0x5f974d                       ; 005acd5c | = "setColorTable16 - Unable to unlock ba..."
-    MOV dword ptr [0x01d1d400],ESI      ; 005acd61 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 005acd67 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005acd6d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 005acd61 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 005acd67 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acd6d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acd72
     POP ESI                             ; 005acd75
     POP EDI                             ; 005acd76
@@ -97,13 +97,13 @@ section .text
     LEA EAX,[EAX]                       ; 005acd8d
     MOV EAX,dword ptr [ESP + 0x58]      ; 005acd90
         ;   Label: LAB_005acd90
-    MOV dword ptr [0x01c4e9d4],ECX      ; 005acd94 | DAT_01c4e9d4
+    MOV dword ptr [0x01c4e9d4],ECX      ; 005acd94 | g_RedBitPosition
     SHR EAX,CL                          ; 005acd9a
     XOR EDX,EDX                         ; 005acd9c
     MOV ECX,EAX                         ; 005acd9e
     MOV EAX,0xff                        ; 005acda0
     DIV ECX                             ; 005acda5
-    MOV [0x01c4e9d8],EAX                ; 005acda7 | DAT_01c4e9d8
+    MOV [0x01c4e9d8],EAX                ; 005acda7 | g_RedScaleFactor
     XOR ECX,ECX                         ; 005acdac
     TEST EAX,EAX                        ; 005acdae
     JZ 0x005acde8                       ; 005acdb0
@@ -120,10 +120,10 @@ section .text
         ;   Label: LAB_005acdc0
     MOV EBX,0x2be                       ; 005acdc5
     PUSH 0x5f9708                       ; 005acdca | = "setColorTable16 - Unable to lock back..."
-    MOV dword ptr [0x01d1d400],ECX      ; 005acdcf | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 005acdd5 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005acddb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 005acdcf | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 005acdd5 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acddb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acde0
     JMP 0x005acd3c                      ; 005acde3
         ;   XREF to: 005acd3c (UNCONDITIONAL_JUMP)  ; LAB_005acd3c
@@ -131,7 +131,7 @@ section .text
         ;   Label: LAB_005acde8
     MOV DH,byte ptr [ESP + 0x5c]        ; 005acded
         ;   Label: LAB_005acded
-    MOV [0x01c4e9dc],EAX                ; 005acdf1 | DAT_01c4e9dc
+    MOV [0x01c4e9dc],EAX                ; 005acdf1 | g_RedDitherShift
     XOR ECX,ECX                         ; 005acdf6
     MOV EAX,dword ptr [ESP + 0x5c]      ; 005acdf8
     TEST DH,0x1                         ; 005acdfc
@@ -147,13 +147,13 @@ section .text
     MOV EDX,EDX                         ; 005ace0e
     MOV EAX,dword ptr [ESP + 0x5c]      ; 005ace10
         ;   Label: LAB_005ace10
-    MOV dword ptr [0x01c4e9e0],ECX      ; 005ace14 | DAT_01c4e9e0
+    MOV dword ptr [0x01c4e9e0],ECX      ; 005ace14 | g_GreenBitPosition
     SHR EAX,CL                          ; 005ace1a
     XOR EDX,EDX                         ; 005ace1c
     MOV ECX,EAX                         ; 005ace1e
     MOV EAX,0xff                        ; 005ace20
     DIV ECX                             ; 005ace25
-    MOV [0x01c4e9e4],EAX                ; 005ace27 | DAT_01c4e9e4
+    MOV [0x01c4e9e4],EAX                ; 005ace27 | g_GreenScaleFactor
     XOR ECX,ECX                         ; 005ace2c
     TEST EAX,EAX                        ; 005ace2e
     JZ 0x005ace40                       ; 005ace30
@@ -174,7 +174,7 @@ section .text
         ;   Label: LAB_005ace40
     MOV BL,byte ptr [ESP + 0x60]        ; 005ace45
         ;   Label: LAB_005ace45
-    MOV [0x01c4e9e8],EAX                ; 005ace49 | DAT_01c4e9e8
+    MOV [0x01c4e9e8],EAX                ; 005ace49 | g_GreenDitherShift
     XOR ECX,ECX                         ; 005ace4e
     MOV EAX,dword ptr [ESP + 0x60]      ; 005ace50
     TEST BL,0x1                         ; 005ace54
@@ -188,13 +188,13 @@ section .text
         ;   XREF to: 005ace59 (CONDITIONAL_JUMP)  ; LAB_005ace59
     MOV EAX,dword ptr [ESP + 0x60]      ; 005ace60
         ;   Label: LAB_005ace60
-    MOV dword ptr [0x01c4e9ec],ECX      ; 005ace64 | DAT_01c4e9ec
+    MOV dword ptr [0x01c4e9ec],ECX      ; 005ace64 | g_BlueBitPosition
     SHR EAX,CL                          ; 005ace6a
     XOR EDX,EDX                         ; 005ace6c
     MOV ECX,EAX                         ; 005ace6e
     MOV EAX,0xff                        ; 005ace70
     DIV ECX                             ; 005ace75
-    MOV [0x01c4e9f0],EAX                ; 005ace77 | DAT_01c4e9f0
+    MOV [0x01c4e9f0],EAX                ; 005ace77 | g_BlueScaleFactor
     XOR ECX,ECX                         ; 005ace7c
     TEST EAX,EAX                        ; 005ace7e
     JZ 0x005ace90                       ; 005ace80
@@ -213,7 +213,7 @@ section .text
         ;   XREF to: 005ace45 (UNCONDITIONAL_JUMP)  ; LAB_005ace45
     MOV EAX,0x20                        ; 005ace90
         ;   Label: LAB_005ace90
-    MOV [0x01c4e9f4],EAX                ; 005ace95 | DAT_01c4e9f4
+    MOV [0x01c4e9f4],EAX                ; 005ace95 | g_BlueDitherShift
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70 ; 005ace9a
         ;   XREF to: 004ecf70 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70()
     ADD ESP,0x6c                        ; 005ace9f
@@ -221,7 +221,7 @@ section .text
     RET                                 ; 005acea3
     MOV EAX,ECX                         ; 005acea4
         ;   Label: LAB_005acea4
-    MOV [0x01c4e9f4],EAX                ; 005acea6 | DAT_01c4e9f4
+    MOV [0x01c4e9f4],EAX                ; 005acea6 | g_BlueDitherShift
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70 ; 005aceab
         ;   XREF to: 004ecf70 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70()
     ADD ESP,0x6c                        ; 005aceb0

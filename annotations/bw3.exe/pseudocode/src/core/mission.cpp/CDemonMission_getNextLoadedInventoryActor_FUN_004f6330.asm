@@ -15,11 +15,11 @@
 ;   TerminatedCString s_CDemonMission_getNextLoa_005c8716
 ;   TerminatedCString s_core_mission_cpp_005c874c
 ;   TerminatedCString s_CDemonMission_getNextLoa_005c8760
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
@@ -38,10 +38,10 @@ section .text
     MOV ECX,0x5c8702                    ; 004f6341 | = "..\\core\\mission.cpp"
     MOV ESI,0x18d                       ; 004f6346
     PUSH 0x5c8716                       ; 004f634b | = "CDemonMission::getNextLoadedInventory..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004f6350 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f6356 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f635c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004f6350 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004f6356 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f635c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f6361
     POP ESI                             ; 004f6364
     MOV EDI,dword ptr [ESP + 0x14]      ; 004f6365
@@ -70,10 +70,10 @@ section .text
     MOV EAX,0x5c874c                    ; 004f639b | = "..\\core\\mission.cpp"
     MOV EDX,0x192                       ; 004f63a0
     PUSH 0x5c8760                       ; 004f63a5 | = "CDemonMission::getNextLoadedInventory..."
-    MOV [0x01d71de0],EAX                ; 004f63aa | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004f63af | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f63b5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 004f63aa | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 004f63af | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f63b5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004f63ba
     JMP 0x004f637d                      ; 004f63bd
         ;   XREF to: 004f637d (UNCONDITIONAL_JUMP)  ; LAB_004f637d

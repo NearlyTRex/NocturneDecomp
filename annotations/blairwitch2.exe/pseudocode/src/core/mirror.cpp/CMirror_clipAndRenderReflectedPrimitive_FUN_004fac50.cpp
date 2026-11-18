@@ -16,6 +16,6 @@ void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004fac5
     return;
   }
   engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_00469670
-            (DAT_0060b280,&(this_ptr->clip_primitive).base);
+            (g_CDemonRenderer_PTR_0060b280,&(this_ptr->clip_primitive).base);
   return;
 }

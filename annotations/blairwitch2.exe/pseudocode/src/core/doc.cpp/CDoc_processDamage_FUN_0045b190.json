@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 162,
+    "complexity_score": 148,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 122,
-    "suspect_count": 3,
+    "pseudocode_lines": 123,
+    "suspect_count": 2,
     "suspect_types": [
-      "suspect_float",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 444
+    "total_lines": 445
   },
   "cross_references": [],
   "function": {
@@ -76,14 +75,14 @@
       "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010"
     },
     {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
+    },
+    {
       "addr": "00503620",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
-    },
-    {
-      "addr": "005035c0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
     },
     {
       "addr": "00436710",
@@ -134,15 +133,15 @@
     },
     {
       "addr": "005d05ef",
-      "name": "DAT_005d05ef",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d05ef",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005f5128",
-      "name": "DAT_005f5128",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005f5128",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "00609ed0",
@@ -279,19 +278,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
       "line": 84,
       "match": "1.4013e-45",
       "severity": "mild",
-      "text": "fVar6 = 1.4013e-45;",
+      "text": "fVar7 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
@@ -299,16 +290,16 @@
       "line": 92,
       "match": "1.4013e-45",
       "severity": "mild",
-      "text": "fVar6 = 1.4013e-45;",
+      "text": "fVar7 = 1.4013e-45;",
       "type": "suspect_float"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "CHero",
-        "offset": 36,
-        "vtable_addr": "005f5260"
+        "class_name": "CDemonActor",
+        "offset": 272,
+        "vtable_addr": "005f5174"
       }
     ],
     "in_vtable": true,

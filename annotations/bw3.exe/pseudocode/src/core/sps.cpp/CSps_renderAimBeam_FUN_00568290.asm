@@ -7,9 +7,9 @@
 ; CSps *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f2afc
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_01bdd7e4
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -23,8 +23,8 @@ section .text
 
     SUB ESP,0x54                        ; 00568290
         ;   Label: core_sps.cpp_CSps_renderAimBeam_FUN_00568290
-    MOV EDX,dword ptr [0x005f2afc]      ; 00568293 | DAT_005f2afc
-    PUSH EDX                            ; 00568299 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 00568293 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 00568299 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 0056829a
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0056829f

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
@@ -15,7 +13,7 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMiss
   CHeroPlaceholder *this_ptr_00;
   CHero *local_14;
   
-  if (_DAT_01cae0d4 <= index) {
+  if (g_HeroCount <= index) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 1523;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::createOneHero - too many heros!");
@@ -40,7 +38,7 @@ LAB_004d999a:
     }
     this_ptr_00 = (CHeroPlaceholder *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (actor_ptr,g_CHeroPlaceholderActorType_01cae128.name_hash);
+                            (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
     if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (index == this_ptr_00->index)) {
       if (existing_actor == (CCharacter *)0x0) {
         local_14 = core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(this_ptr_00,hero_type);

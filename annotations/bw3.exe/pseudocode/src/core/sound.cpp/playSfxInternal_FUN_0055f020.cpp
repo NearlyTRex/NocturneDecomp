@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_0055f020(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags)
 
 {
@@ -17,16 +15,13 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0055f020(void *user_data,char *s
   char cVar4;
   char *pcVar5;
   char *pcVar6;
-  uint *puVar7;
-  int iVar8;
-  char *pcVar9;
-  byte bVar10;
+  int iVar7;
+  char *pcVar8;
+  byte bVar9;
   char local_170 [100];
   char local_10c [100];
   char local_a8 [100];
-  float local_44;
-  float local_40;
-  float local_3c;
+  CVector3f local_44;
   int local_38;
   int local_34;
   int local_30;
@@ -38,7 +33,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0055f020(void *user_data,char *s
   int local_18;
   char *local_14;
   
-  bVar10 = 0;
+  bVar9 = 0;
   iVar1 = sound_sndmain_cpp_isSoundMuted_FUN_00556750();
   if (iVar1 != 0) {
     return 0;
@@ -48,20 +43,20 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0055f020(void *user_data,char *s
     cVar4 = *sound_name;
     local_14 = sound_name;
     pcVar6 = local_170;
-    while ((((cVar4 != '\0' && (((&DAT_006074b8)[(byte)(*local_14 + 1)] & 2) == 0)) &&
-            (cVar4 = *local_14, cVar4 != '@')) && (cVar4 != '*'))) {
+    while ((((cVar4 != '\0' && ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0))
+            && (cVar4 = *local_14, cVar4 != '@')) && (cVar4 != '*'))) {
       if (cVar4 == '[') {
         local_34 = -1;
         sscanf(local_14,"[%d,%d]%n");
         if ((local_34 < 5) || (local_2c < local_30)) {
-          _DAT_01d71de0 = "..\\core\\sound.cpp";
-          _DAT_01d71de4 = 0x137;
-          core_main_c_FUN_004e4330("Invalid sfx string: %s");
+          g_CHAR_PTR_01d71de0 = "..\\core\\sound.cpp";
+          g_INT_01d71de4 = 0x137;
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid sfx string: %s");
         }
-        iVar1 = _sprintf(pcVar6,&DAT_005d51ce);
+        iVar1 = _sprintf(pcVar6,"?");
         pcVar5 = pcVar6 + iVar1;
         if (9 < local_2c) {
-          iVar1 = _sprintf(pcVar5,&DAT_005d51d0);
+          iVar1 = _sprintf(pcVar5,"?");
           pcVar5 = pcVar5 + iVar1;
         }
         local_14 = local_14 + local_34;
@@ -87,34 +82,34 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0055f020(void *user_data,char *s
     pcVar5 = (char *)0x0;
 LAB_0055f0a2:
     if (pcVar5 == (char *)0x0) {
-      pcVar5 = &DAT_005d51d2;
+      pcVar5 = ".wav";
       iVar1 = -1;
       pcVar6 = local_170;
       do {
-        pcVar9 = pcVar6;
+        pcVar8 = pcVar6;
         if (iVar1 == 0) break;
         iVar1 = iVar1 + -1;
-        pcVar9 = pcVar6 + (uint)bVar10 * -2 + 1;
+        pcVar8 = pcVar6 + (uint)bVar9 * -2 + 1;
         cVar4 = *pcVar6;
-        pcVar6 = pcVar9;
+        pcVar6 = pcVar8;
       } while (cVar4 != '\0');
-      pcVar9 = pcVar9 + -1;
+      pcVar8 = pcVar8 + -1;
       do {
         cVar4 = *pcVar5;
-        *pcVar9 = cVar4;
+        *pcVar8 = cVar4;
         if (cVar4 == '\0') break;
         cVar4 = pcVar5[1];
         pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar4;
-        pcVar9 = pcVar9 + 2;
+        pcVar8[1] = cVar4;
+        pcVar8 = pcVar8 + 2;
       } while (cVar4 != '\0');
     }
-    puVar7 = &DAT_006047b0;
-    pcVar6 = local_a8;
+    pcVar6 = g_SoundResultBufferTemplate;
+    pcVar5 = local_a8;
     for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(uint *)pcVar6 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-      pcVar6 = pcVar6 + ((uint)bVar10 * -2 + 1) * 4;
+      *(uint *)pcVar5 = *(uint *)pcVar6;
+      pcVar6 = pcVar6 + ((uint)bVar9 * -2 + 1) * 4;
+      pcVar5 = pcVar5 + ((uint)bVar9 * -2 + 1) * 4;
     }
     pcVar6 = local_170;
     do {
@@ -128,27 +123,29 @@ LAB_0055f0a2:
     pcVar5 = (char *)0x0;
 LAB_0055f102:
     if (pcVar5 == (char *)0x0) {
-      core_sound_cpp_CSound_findRandomSoundFile_FUN_0055ef30(0x02CF5680,local_a8,local_170);
+      core_sound_cpp_CSound_findRandomSoundFile_FUN_0055ef30
+                (g_CSound_PTR_006045f8,local_a8,local_170);
     }
     else {
-      local_44 = x;
-      local_40 = y;
-      local_3c = z;
+      local_44.x = x;
+      local_44.y = y;
+      local_44.z = z;
       if (position_tracker != (CVector3f *)0x0) {
-        local_44 = x + position_tracker->x;
-        local_40 = y + position_tracker->y;
-        local_3c = z + position_tracker->z;
+        local_44.x = x + position_tracker->x;
+        local_44.y = y + position_tracker->y;
+        local_44.z = z + position_tracker->z;
       }
-      local_28 = core_set_cpp_FUN_00539dd0(g_CDemonSetPtr);
+      local_28 = core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_00539dd0
+                           (g_CDemonSetPtr,&local_44);
       local_1c = local_28;
       local_18 = local_28 + 5;
       do {
         iVar1 = local_1c;
-        iVar8 = 0;
+        iVar7 = 0;
         local_38 = local_28;
         do {
           iVar3 = local_38;
-          if (iVar8 == 0) {
+          if (iVar7 == 0) {
             iVar3 = iVar1;
           }
           if ((-1 < iVar3) && (iVar3 < 6)) {
@@ -162,16 +159,17 @@ LAB_0055f102:
               }
               *pcVar5 = cVar4;
               pcVar5 = pcVar5 + 1;
-              pcVar9 = pcVar6 + 1;
+              pcVar8 = pcVar6 + 1;
               pcVar6 = pcVar6 + 1;
-              cVar4 = *pcVar9;
+              cVar4 = *pcVar8;
             }
             *pcVar5 = '\0';
-            core_sound_cpp_CSound_findRandomSoundFile_FUN_0055ef30(0x02CF5680,local_a8,local_10c);
+            core_sound_cpp_CSound_findRandomSoundFile_FUN_0055ef30
+                      (g_CSound_PTR_006045f8,local_a8,local_10c);
             if (local_a8[0] != '\0') break;
           }
-          iVar8 = iVar8 + 1;
-        } while (iVar8 < 2);
+          iVar7 = iVar7 + 1;
+        } while (iVar7 < 2);
         if (local_a8[0] != '\0') break;
         local_1c = local_1c + 1;
         local_28 = local_28 + -1;
@@ -183,14 +181,14 @@ LAB_0055f102:
     }
     cVar4 = *local_14;
     while (cVar4 != '\0') {
-      if (((&DAT_006074b8)[(byte)(*local_14 + 1)] & 2) == 0) {
+      if ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0) {
         if (*local_14 == '@') {
           local_24 = -1;
           sscanf(local_14,"@%f%n");
           if (local_24 < 2) {
-            _DAT_01d71de0 = "..\\core\\sound.cpp";
-            _DAT_01d71de4 = 0x1a4;
-            core_main_c_FUN_004e4330("Invalid sfx string: %s");
+            g_CHAR_PTR_01d71de0 = "..\\core\\sound.cpp";
+            g_INT_01d71de4 = 0x1a4;
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid sfx string: %s");
             local_14 = local_14 + local_24;
           }
           else {
@@ -201,9 +199,9 @@ LAB_0055f102:
           local_20 = -1;
           sscanf(local_14,"*%f%n");
           if (local_20 < 2) {
-            _DAT_01d71de0 = "..\\core\\sound.cpp";
-            _DAT_01d71de4 = 0x1aa;
-            core_main_c_FUN_004e4330("Invalid sfx string: %s");
+            g_CHAR_PTR_01d71de0 = "..\\core\\sound.cpp";
+            g_INT_01d71de4 = 0x1aa;
+            core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid sfx string: %s");
             local_14 = local_14 + local_20;
           }
           else {
@@ -211,9 +209,9 @@ LAB_0055f102:
           }
         }
         else {
-          _DAT_01d71de0 = "..\\core\\sound.cpp";
-          _DAT_01d71de4 = 0x1ad;
-          core_main_c_FUN_004e4330("Invalid sfx string: %s");
+          g_CHAR_PTR_01d71de0 = "..\\core\\sound.cpp";
+          g_INT_01d71de4 = 0x1ad;
+          core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid sfx string: %s");
         }
       }
       else {

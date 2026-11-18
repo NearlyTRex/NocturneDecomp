@@ -253,7 +253,7 @@ section .text
     JBE 0x005baf2c                      ; 005baf18
         ;   XREF to: 005baf2c (CONDITIONAL_JUMP)  ; LAB_005baf2c
     FLD float ptr [EBX + 0x2490]        ; 005baf1a
-    FADD double ptr [0x005fa534]        ; 005baf20 | DAT_005fa534
+    FADD double ptr [0x005fa534]        ; 005baf20 | g_DOUBLE_005fa534
     FSTP float ptr [EBX + 0x3000]       ; 005baf26
     PUSH 0x5fa50a                       ; 005baf2c | = "newzchik.dfm"
         ;   Label: LAB_005baf2c

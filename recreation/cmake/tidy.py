@@ -24,14 +24,14 @@ from pathlib import Path
 INCLUDE = re.compile(r'^\s*#\s*include\s+"([^"]+)"', re.MULTILINE)
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--clang-tidy", required=True)
     parser.add_argument("--source-dir", type=Path, required=True)
     parser.add_argument("--build-dir", type=Path, required=True)
     parser.add_argument("--cache-dir", type=Path, help="where clean results are kept; none disables")
     parser.add_argument("-j", "--jobs", type=int, default=os.cpu_count() or 1)
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def included_headers(source_dir: Path) -> set[str]:
@@ -150,8 +150,8 @@ class Run:
                 marker.unlink()
 
 
-def main() -> int:
-    args = parse_args()
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
     args.source_dir = args.source_dir.resolve()
     args.build_dir = args.build_dir.resolve()
     entries = json.loads((args.build_dir / "compile_commands.json").read_text())

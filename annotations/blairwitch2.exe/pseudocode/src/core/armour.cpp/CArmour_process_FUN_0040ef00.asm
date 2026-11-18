@@ -9,17 +9,17 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_armour_wav_005cb36e
-;   undefined4 DAT_006141f0
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_0042b2a0
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
 ;
 ; *****************************************************************************
@@ -68,12 +68,12 @@ section .text
     FSTP float ptr [ESI + 0x2594]       ; 0040ef6f
     FSTP float ptr [ESP]                ; 0040ef75
     PUSH ESI                            ; 0040ef78
-    CALL core_charactr.cpp_FUN_0042b2a0 ; 0040ef79
-        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b2a0()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0 ; 0040ef79
+        ;   XREF to: 0042b2a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_0042b2a0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040ef7e
     PUSH EBX                            ; 0040ef81
-    CALL core_motion.cpp_FUN_005035c0   ; 0040ef82
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0040ef82
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0040ef87
     PUSH dword ptr [EBP + 0x18]         ; 0040ef8a
     PUSH ESI                            ; 0040ef8d
@@ -102,7 +102,7 @@ section .text
     ADD ESP,0x8                         ; 0040efca
     LEA EAX,[ESI + 0x10af8]             ; 0040efcd
     PUSH EAX                            ; 0040efd3
-    MOV EDX,dword ptr [0x006141f0]      ; 0040efd4 | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 0040efd4 | g_CEventListPtr
     PUSH EDX                            ; 0040efda
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 0040efdb
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

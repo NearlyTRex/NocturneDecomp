@@ -18,7 +18,7 @@ void __cdecl sound_sndmain_cpp_processAudio_FUN_005abe20(void)
                       (g_SoundMutex,g_AudioLatencySeconds * 3);
     if (iVar1 != 0) {
       g_SoundLockCount = g_SoundLockCount + 1;
-      (*g_CSoundDevicePtr->vtable->poll)(g_CSoundDevicePtr,output_buffer,num_samples);
+      (*g_CSoundDevicePtr->vtable->poll)(g_CSoundDevicePtr);
       sound_sndmain_cpp_pollAllStreams_FUN_005ace90(0);
       g_SoundLockCount = g_SoundLockCount + -1;
       wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_SoundMutex);

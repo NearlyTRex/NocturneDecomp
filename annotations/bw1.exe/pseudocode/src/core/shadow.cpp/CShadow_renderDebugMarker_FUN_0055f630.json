@@ -1,0 +1,199 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 367,
+    "complexity_score": 252,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 192,
+    "suspect_count": 5,
+    "suspect_types": [
+      "raw_address_constant",
+      "stack_alignment_array"
+    ],
+    "total_lines": 559
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055f630",
+    "address_range": [
+      [
+        "0055f630",
+        "0055fbef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadow.cpp_CShadow_renderDebugMarker_FUN_0055f630",
+    "signature": "void __cdecl core_shadow_cpp_CShadow_renderDebugMarker_FUN_0055f630(CShadow *this_ptr,CVector3f *position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    },
+    {
+      "addr": "00482e30",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "00580173",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00605170",
+      "name": "g_FLOAT_00605170",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006051a4",
+      "name": "g_FLOAT_006051a4",
+      "type": "float",
+      "value": "0.2000000"
+    },
+    {
+      "addr": "006051a8",
+      "name": "g_FLOAT_006051a8",
+      "type": "float",
+      "value": "0.2000000"
+    },
+    {
+      "addr": "00612560",
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.617142857142857,
+    "instruction_count": 350,
+    "opcode_distribution": {
+      "CALL": 8,
+      "CBRANCH": 4,
+      "COPY": 980,
+      "FLOAT2FLOAT": 84,
+      "FLOAT_ADD": 8,
+      "FLOAT_MULT": 24,
+      "FLOAT_NEG": 4,
+      "INT_ADD": 241,
+      "INT_AND": 38,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 38,
+      "INT_LESS": 5,
+      "INT_MULT": 48,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 81,
+      "INT_XOR": 2,
+      "INT_ZEXT": 48,
+      "LOAD": 125,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "ROUND": 12,
+      "STORE": 136,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 1966
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053e080",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00545140",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadow *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 7,
+      "match": "afStackY_1104",
+      "severity": "moderate",
+      "text": "float afStackY_1104 [1006];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 172,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 173,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 174,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 175,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

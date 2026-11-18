@@ -8,22 +8,22 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00603170
-;   undefined4 DAT_00603178
-;   undefined4 DAT_0060317c
-;   undefined4 DAT_00603180
-;   undefined4 DAT_00603184
+;   float g_FLOAT_00603170 = 1.5
+;   float g_FLOAT_00603178 = 2
+;   float g_FLOAT_0060317c = 2.5
+;   float g_FLOAT_00603180 = 0.5
+;   float g_FLOAT_00603184 = 2.5
 ;   CFilterCache* g_CFilterCachePtr = 0152c72c
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 DAT_0062604c
+;   CWeather* g_CWeatherPtr = 02c997c0
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
-;   undefined4 DAT_01d06ab4
+;   int g_INT_01d06ab4
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
 ;   core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470
-;   core_lightpis.cpp_FUN_005017f0
+;   core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0
 ;   core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
 ;   core_weapon.cpp_CWeapon_process_FUN_005ad770
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580
@@ -51,41 +51,41 @@ section .text
     PUSH EBX                            ; 0050248e
     CALL core_weapon.cpp_CWeapon_process_FUN_005ad770 ; 0050248f
         ;   XREF to: 005ad770 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ad770(CWeapon * this_ptr, float delta_time)
-    MOV EAX,[0x01d06ab4]                ; 00502494 | DAT_01d06ab4
+    MOV EAX,[0x01d06ab4]                ; 00502494 | g_INT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 00502499
     ADD ESP,0x8                         ; 005024a0
     ADD EAX,0x1fae8                     ; 005024a3
-    PUSH dword ptr [0x00603170]         ; 005024a8 | DAT_00603170
+    PUSH dword ptr [0x00603170]         ; 005024a8 | g_FLOAT_00603170
     PUSH EAX                            ; 005024ae
     CALL core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470 ; 005024af
         ;   XREF to: 004fa470 (UNCONDITIONAL_CALL)  ; float core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470(CInventory * this_ptr, float max_charge)
     MOV dword ptr [ESP + 0x10],EAX      ; 005024b4
     FLD float ptr [ESP + 0x10]          ; 005024b8
-    FDIVR float ptr [0x00603170]        ; 005024bc | DAT_00603170
+    FDIVR float ptr [0x00603170]        ; 005024bc | g_FLOAT_00603170
     ADD ESP,0x8                         ; 005024c2
     FMUL float ptr [ESP + 0x20]         ; 005024c5
     FADD float ptr [EBX + 0x580]        ; 005024c9
     FST float ptr [EBX + 0x580]         ; 005024cf
-    FCOMP float ptr [0x00603170]        ; 005024d5 | DAT_00603170
+    FCOMP float ptr [0x00603170]        ; 005024d5 | g_FLOAT_00603170
     FNSTSW AX                           ; 005024db
     SAHF                                ; 005024dd
     JA 0x005025fe                       ; 005024de
         ;   XREF to: 005025fe (CONDITIONAL_JUMP)  ; LAB_005025fe
     FLD float ptr [EBX + 0x580]         ; 005024e4
         ;   Label: LAB_005024e4
-    FDIV float ptr [0x00603170]         ; 005024ea | DAT_00603170
+    FDIV float ptr [0x00603170]         ; 005024ea | g_FLOAT_00603170
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 005024f0
     FSTP float ptr [EBX + 0x584]        ; 005024f6
     CMP EDX,0x2                         ; 005024fc
     JNZ 0x0050260e                      ; 005024ff
         ;   XREF to: 0050260e (CONDITIONAL_JUMP)  ; LAB_0050260e
     PUSH ESI                            ; 00502505
-    FLD float ptr [0x00603178]          ; 00502506 | DAT_00603178
-    FLD float ptr [0x0060317c]          ; 0050250c | DAT_0060317c
+    FLD float ptr [0x00603178]          ; 00502506 | g_FLOAT_00603178
+    FLD float ptr [0x0060317c]          ; 0050250c | g_FLOAT_0060317c
     FSUB ST0,ST1                        ; 00502512
     FMUL float ptr [EBX + 0x584]        ; 00502514
-    FLD float ptr [0x00603180]          ; 0050251a | DAT_00603180
-    FLD float ptr [0x00603184]          ; 00502520 | DAT_00603184
+    FLD float ptr [0x00603180]          ; 0050251a | g_FLOAT_00603180
+    FLD float ptr [0x00603184]          ; 00502520 | g_FLOAT_00603184
     FSUB ST0,ST1                        ; 00502526
     MOV ECX,dword ptr [EBX + 0x57c]     ; 00502528
     FMUL float ptr [EBX + 0x584]        ; 0050252e
@@ -116,8 +116,8 @@ section .text
     ADD ESP,0x8                         ; 00502578
     PUSH EBX                            ; 0050257b
         ;   Label: LAB_0050257b
-    CALL core_lightpis.cpp_FUN_005017f0 ; 0050257c
-        ;   XREF to: 005017f0 (UNCONDITIONAL_CALL)  ; undefined core_lightpis.cpp_FUN_005017f0()
+    CALL core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0 ; 0050257c
+        ;   XREF to: 005017f0 (UNCONDITIONAL_CALL)  ; void core_lightpis.cpp_CLightPis_updateBeamLight_FUN_005017f0(CLightPis * this_ptr)
     MOV EBP,dword ptr [EBX + 0x578]     ; 00502581
     ADD ESP,0x4                         ; 00502587
     TEST EBP,EBP                        ; 0050258a
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 00463e30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 005025bf
     PUSH 0x0                            ; 005025c2
-    MOV ECX,dword ptr [0x0062604c]      ; 005025c4 | DAT_0062604c
+    MOV ECX,dword ptr [0x0062604c]      ; 005025c4 | g_CWeatherPtr
     PUSH 0x3dcccccd                     ; 005025ca
     PUSH ECX                            ; 005025cf
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580 ; 005025d0
@@ -161,7 +161,7 @@ section .text
     POP EDI                             ; 005025fb
     POP EBX                             ; 005025fc
     RET                                 ; 005025fd
-    MOV EAX,[0x00603170]                ; 005025fe | DAT_00603170
+    MOV EAX,[0x00603170]                ; 005025fe | g_FLOAT_00603170
         ;   Label: LAB_005025fe
     MOV dword ptr [EBX + 0x580],EAX     ; 00502603
     JMP 0x005024e4                      ; 00502609

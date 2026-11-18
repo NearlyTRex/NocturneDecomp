@@ -272,7 +272,6 @@ struct SChainVertex;
 struct SClothVertex;
 struct SCollisionInfo;
 struct SCollisionReturnInfo;
-struct SCorona;
 struct SCoronaLightEntry;
 struct SCubeDrawOwners;
 struct SCurtainVertex;

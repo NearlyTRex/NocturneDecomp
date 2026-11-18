@@ -7,7 +7,7 @@
 ; CGameHook *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_goggles.cpp_FUN_0059c270 at 0059c275
+;   core_goggles.cpp_staticInit_FUN_0059c270 at 0059c275
 ;
 ; *****************************************************************************
 

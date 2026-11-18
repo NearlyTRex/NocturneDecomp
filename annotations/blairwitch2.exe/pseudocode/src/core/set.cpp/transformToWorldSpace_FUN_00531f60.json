@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 51,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 106
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 105
   },
   "cross_references": [
     {
@@ -38,74 +36,74 @@
   "globals": [
     {
       "addr": "01c38b78",
-      "name": "DAT_01c38b78",
-      "type": "undefined4",
+      "name": "g_CameraOriginX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b7c",
-      "name": "DAT_01c38b7c",
-      "type": "undefined4",
+      "name": "g_CameraOriginY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b80",
-      "name": "DAT_01c38b80",
-      "type": "undefined4",
+      "name": "g_CameraOriginZ",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fb8",
-      "name": "DAT_01d04fb8",
-      "type": "undefined4",
+      "name": "g_INT_01d04fb8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fbc",
-      "name": "DAT_01d04fbc",
-      "type": "undefined4",
+      "name": "g_INT_01d04fbc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fc0",
-      "name": "DAT_01d04fc0",
-      "type": "undefined4",
+      "name": "g_INT_01d04fc0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fc4",
-      "name": "DAT_01d04fc4",
-      "type": "undefined4",
+      "name": "g_INT_01d04fc4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fc8",
-      "name": "DAT_01d04fc8",
-      "type": "undefined4",
+      "name": "g_INT_01d04fc8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fcc",
-      "name": "DAT_01d04fcc",
-      "type": "undefined4",
+      "name": "g_INT_01d04fcc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fd0",
-      "name": "DAT_01d04fd0",
-      "type": "undefined4",
+      "name": "g_INT_01d04fd0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fd4",
-      "name": "DAT_01d04fd4",
-      "type": "undefined4",
+      "name": "g_INT_01d04fd4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d04fd8",
-      "name": "DAT_01d04fd8",
-      "type": "undefined4",
+      "name": "g_INT_01d04fd8",
+      "type": "int",
       "value": null
     }
   ],
@@ -276,14 +274,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

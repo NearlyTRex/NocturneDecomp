@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 74,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
-    "total_lines": 189
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 190
   },
   "cross_references": [],
   "function": {
@@ -29,14 +27,14 @@
   },
   "function_calls": [
     {
+      "addr": "0059f740",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740"
+    },
+    {
       "addr": "0059e880",
       "is_variadic": false,
       "name": "core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880"
-    },
-    {
-      "addr": "0059f740",
-      "is_variadic": false,
-      "name": "core_basicene.cpp_FUN_0059f740"
     },
     {
       "addr": "0055ae50",
@@ -89,9 +87,9 @@
     },
     {
       "addr": "005ff358",
-      "name": "DAT_005ff358",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005ff358",
+      "type": "float",
+      "value": "15"
     },
     {
       "addr": "005ff35c",
@@ -107,9 +105,9 @@
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     }
   ],
   "param_estimates": {
@@ -172,20 +170,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex address 0x264b290 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 9,
-      "match": "0x264b290",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x0264B290;",
-      "type": "raw_address_constant"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 360,
         "vtable_addr": "005ff374"
       }

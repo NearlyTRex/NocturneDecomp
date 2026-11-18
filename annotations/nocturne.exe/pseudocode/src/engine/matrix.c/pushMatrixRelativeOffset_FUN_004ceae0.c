@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ceae0(int offset_x,int offset_y,int offset_z)
 
 {
@@ -15,17 +13,17 @@ void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ceae0(int offset_x,
   int iVar2;
   int iVar3;
   
-  iVar3 = _DAT_01cc5174;
+  iVar3 = g_MatrixStackIndex;
   iVar1 = g_RelativeY;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = g_RelativeX;
+  g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
   iVar2 = g_RelativeZ;
-  *(int *)(iVar3 * 4 + 0x1cc5308) = g_RelativeY;
-  *(int *)(iVar3 * 4 + 0x1cc5330) = g_RelativeZ;
-  _DAT_01cc5174 = _DAT_01cc5174 + 1;
+  g_MatrixStack_RelY[iVar3] = g_RelativeY;
+  g_MatrixStack_RelZ[iVar3] = g_RelativeZ;
+  g_MatrixStackIndex = g_MatrixStackIndex + 1;
   g_RelativeX = g_RelativeX - offset_x;
   g_RelativeY = iVar1 - offset_y;
   g_RelativeZ = iVar2 - offset_z;
-  if (_DAT_01cc5174 < 10) {
+  if (g_MatrixStackIndex < 10) {
     return;
   }
   g_CurrentFilename = "..\\engine\\matrix.c";

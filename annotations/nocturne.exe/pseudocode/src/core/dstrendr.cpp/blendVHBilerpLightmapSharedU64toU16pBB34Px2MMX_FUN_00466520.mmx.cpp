@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
@@ -118,14 +116,14 @@ __asm {
         movq MM0,qword ptr [ESI]
         shr EDX,0x1
         movzx EAX,byte ptr [EBX + 0x141]
-        movd MM2,dword ptr [DAT_00b0e1fc + EDX*0x4]
+        movd MM2,dword ptr [g_UINT_ARRAY_00b0e1fc + EDX*0x4]
         movzx EDX,byte ptr [EBX + 0x1]
         movq MM1,MM0
         add EDX,EAX
         movzx EAX,byte ptr [EBP]
         shr EDX,0x1
         punpcklbw MM0,MM7
-        movd MM6,dword ptr [DAT_00b0e1fc + EDX*0x4]
+        movd MM6,dword ptr [g_UINT_ARRAY_00b0e1fc + EDX*0x4]
         psrlq MM1,0x20
         shr EDX,0x1
         punpcklbw MM6,MM7
@@ -135,18 +133,18 @@ __asm {
         punpcklbw MM1,MM7
         pmullw MM0,MM2
         psrlw MM6,0x1
-        movq MM3,qword ptr [DAT_005b5d00 + EAX*0x8]
+        movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         pmullw MM1,MM6
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [DAT_005b64f8]
+        pxor MM2,qword ptr [0x005b64f8]
         pmulhw MM0,MM2
         pmulhw MM1,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [DAT_005b47b8]
-        paddw MM1,qword ptr [DAT_005b47c0]
+        paddw MM0,qword ptr [g_LightmapBlendBias3]
+        paddw MM1,qword ptr [g_LightmapBlendBias4]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM7

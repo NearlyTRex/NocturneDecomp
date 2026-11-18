@@ -9,8 +9,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_box.cpp_FUN_0041daf0
-;   core_charactr.cpp_FUN_0042d8e0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 ;
 ; *****************************************************************************
 
@@ -46,16 +46,16 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005a17a3
     PUSH EAX                            ; 005a17a7
     MOVSD.REP ES:EDI,ESI                ; 005a17a8
-    CALL core_box.cpp_FUN_0041daf0      ; 005a17aa
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 005a17aa
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 005a17af
     MOV ESI,EAX                         ; 005a17b2
     TEST EAX,EAX                        ; 005a17b4
     JZ 0x005a17c1                       ; 005a17b6
         ;   XREF to: 005a17c1 (CONDITIONAL_JUMP)  ; LAB_005a17c1
     PUSH EBX                            ; 005a17b8
-    CALL core_charactr.cpp_FUN_0042d8e0 ; 005a17b9
-        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d8e0()
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 ; 005a17b9
+        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005a17be
     PUSH EBX                            ; 005a17c1
         ;   Label: LAB_005a17c1

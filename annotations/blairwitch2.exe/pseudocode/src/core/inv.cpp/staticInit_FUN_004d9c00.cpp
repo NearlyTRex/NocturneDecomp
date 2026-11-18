@@ -9,15 +9,15 @@
 void __cdecl core_inv_cpp_staticInit_FUN_004d9c00(void)
 
 {
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01cf01b0);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_InvBackgroundBitmap);
   _atexit(&WatcomStaticDestructorNode_00617bd0);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01cf01c4);
   _atexit(&WatcomStaticDestructorNode_00617be0);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01cf01d8);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_WeapBackgroundBitmap);
   _atexit(&WatcomStaticDestructorNode_00617bf0);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01cf01ec);
   _atexit(&WatcomStaticDestructorNode_00617c00);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01d02e08);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_BatteryIconBitmap);
   _atexit(&WatcomStaticDestructorNode_00617c10);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01d02e1c);
   _atexit(&WatcomStaticDestructorNode_00617c20);

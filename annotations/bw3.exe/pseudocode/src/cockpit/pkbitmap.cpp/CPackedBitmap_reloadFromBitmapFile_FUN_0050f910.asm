@@ -16,12 +16,12 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740 at 005107e8
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00438ef0
+;   cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0050fd90
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0050f2a0
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH ESI                            ; 0050f93a
     PUSH 0x0                            ; 0050f93b
     PUSH EBX                            ; 0050f93d
-    CALL cockpit_ckptutil.c_FUN_00438ef0 ; 0050f93e
-        ;   XREF to: 00438ef0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_FUN_00438ef0(char * filename, void * buffer, int size)
+    CALL cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0 ; 0050f93e
+        ;   XREF to: 00438ef0 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 0050f943
     PUSH EDI                            ; 0050f946
     MOV ECX,dword ptr [ESP + 0x28]      ; 0050f947
@@ -65,8 +65,8 @@ section .text
         ;   XREF to: 0050fa90 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90(CPackedBitmap * this_ptr, uchar * bitmap_data, int width, int height, ...)
     ADD ESP,0x18                        ; 0050f95b
     PUSH ESI                            ; 0050f95e
-    CALL crt_unknown.c_FUN_005a3770     ; 0050f95f
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 0050f95f
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 0050f964
     CMP dword ptr [ESP + 0x28],0x0      ; 0050f967
     JNZ 0x0050f973                      ; 0050f96c

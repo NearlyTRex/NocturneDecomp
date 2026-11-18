@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 94,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 79,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 279
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 78,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -76,25 +74,25 @@
     },
     {
       "addr": "01c7139c",
-      "name": "DAT_01c7139c",
+      "name": "g_GabriellaIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c713a0",
-      "name": "DAT_01c713a0",
+      "name": "g_GabriellaIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c713d8",
-      "name": "DAT_01c713d8",
+      "name": "g_GabriellaIndices[16]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c713dc",
-      "name": "DAT_01c713dc",
+      "name": "g_GabriellaIndices[17]",
       "type": "undefined4",
       "value": null
     },
@@ -261,14 +259,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -30,7 +30,7 @@ int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004dee70(CInventory 
           return 1;
         }
         fVar5 = 5.0;
-        pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("?You used a key." + 1);
+        pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("You used a key.");
         core_game_cpp_CGame_displayMessage_FUN_004b31a0(g_CGamePtr,pcVar2,fVar5);
         pCVar1 = this_ptr->owner;
         if (pCVar1 == (CDemonActor *)0x0) {

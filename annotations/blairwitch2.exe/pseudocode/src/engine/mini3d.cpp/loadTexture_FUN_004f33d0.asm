@@ -11,10 +11,10 @@
 ; int              Stack[0x14]:4   arg5
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004a7fd0 at 004a821f
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0 at 004a821f
 ;
 ; Called Functions:
-;   engine_texture.cpp_FUN_00574ea0
+;   engine_texture.cpp_storePalettedTexture_FUN_00574ea0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH ESI                            ; 004f33e6
     MOV EDI,dword ptr [ESP + 0x20]      ; 004f33e7
     PUSH EDI                            ; 004f33eb
-    CALL engine_texture.cpp_FUN_00574ea0 ; 004f33ec
-        ;   XREF to: 00574ea0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574ea0()
+    CALL engine_texture.cpp_storePalettedTexture_FUN_00574ea0 ; 004f33ec
+        ;   XREF to: 00574ea0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_storePalettedTexture_FUN_00574ea0(SMRGLTextureBasic * texture, int dimension, uchar * texture_data, uchar * palette_data, ...)
     ADD ESP,0x14                        ; 004f33f1
     POP EDI                             ; 004f33f4
     POP ESI                             ; 004f33f5

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height)
 
 {
@@ -108,11 +106,11 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
         fVar1 = (triangle->triangle).normal.z;
         uVar8 = uVar6 | uVar7 | uVar8;
         fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
-        if ((DAT_014b8478 & 1) == 0) {
-          DAT_014b8478 = DAT_014b8478 | 1;
-          _DAT_014b8470 = -100.0;
-          _DAT_014b846c = 0;
-          _DAT_014b8474 = 0;
+        if ((g_DownwardRayInitialized & 1) == 0) {
+          g_DownwardRayInitialized = g_DownwardRayInitialized | 1;
+          g_DownwardRayDirection.y = -100.0;
+          g_DownwardRayDirection.x = 0.0;
+          g_DownwardRayDirection.z = 0.0;
         }
         if (0.01 <= (double)fVar9) {
           fVar9 = cylinder_radius / fVar9;
@@ -120,16 +118,17 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
           local_34[0].z = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
           local_34[0].y = cylinder_center->y;
           fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
-                            (triangle,local_34,(CVector3f *)&DAT_014b846c);
+                            (triangle,local_34,&g_DownwardRayDirection);
           if ((0.0 <= fVar9) &&
-             (local_34[0].y = fVar9 * _DAT_014b8470 + local_34[0].y, *out_height < local_34[0].y)) {
+             (local_34[0].y = fVar9 * g_DownwardRayDirection.y + local_34[0].y,
+             *out_height < local_34[0].y)) {
             *out_height = local_34[0].y;
             return 1;
           }
         }
         else if (uVar8 == 0) {
           fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
-                            (triangle,cylinder_center,(CVector3f *)&DAT_014b846c);
+                            (triangle,cylinder_center,&g_DownwardRayDirection);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_58.y;

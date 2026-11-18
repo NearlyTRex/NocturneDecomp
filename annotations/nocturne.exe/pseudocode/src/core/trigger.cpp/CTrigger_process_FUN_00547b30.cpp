@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_trigger_cpp_CTrigger_process_FUN_00547b30(CTrigger *this_ptr,float delta_time)
 
 {
@@ -49,7 +47,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_00547b30(CTrigger *this_ptr,f
     if (iVar9 != 0) {
       iVar9 = 0;
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a0);
-      if (0 < _DAT_01cae0d4) {
+      if (0 < g_HeroCount) {
         iVar10 = 0;
         do {
           iVar5 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0
@@ -60,7 +58,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_00547b30(CTrigger *this_ptr,f
           }
           iVar9 = iVar9 + 1;
           iVar10 = iVar10 + 4;
-        } while (iVar9 < _DAT_01cae0d4);
+        } while (iVar9 < g_HeroCount);
       }
     }
     break;
@@ -103,9 +101,9 @@ LAB_00547bbc:
         aCStack_58[0].y = pCVar8->y;
         aCStack_58[0].z = pCVar8->z;
       }
-      CStack_7c.x = (int)ROUND(aCStack_58[0].x * _DAT_005a3640);
-      CStack_7c.y = (int)ROUND(aCStack_58[0].y * _DAT_005a3640);
-      CStack_7c.z = (int)ROUND(aCStack_58[0].z * _DAT_005a3640);
+      CStack_7c.x = (int)ROUND(aCStack_58[0].x * 256.0f);
+      CStack_7c.y = (int)ROUND(aCStack_58[0].y * 256.0f);
+      CStack_7c.z = (int)ROUND(aCStack_58[0].z * 256.0f);
       iStack_18 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
                             (g_CDemonSetPtr,&CStack_7c,(CVector3i *)0x0);
       if ((this_ptr->light_min * (float)65536 <= (float)iStack_18) &&
@@ -130,7 +128,7 @@ LAB_00547bbc:
       fVar4 = (this_ptr->trigger_size).z;
       local_1c = fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2;
       local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
-                           (g_CFireEffect_PTR_005b80f0,&pCVar1->position,
+                           (g_CFireEffectPtr,&pCVar1->position,
                             (float)(((int)local_1c >> 1) + g_FastSqrtMagic),(CVector3f *)0x0,
                             (float *)0x0);
     }
@@ -223,10 +221,10 @@ LAB_005480a6:
 switchD_00547bd4_default:
   this_ptr->prev_triggered = local_34;
   if (this_ptr->trigger_state == 0) {
-    core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,this_ptr->off_event);
+    core_event_cpp_CEventList_executeCommands_FUN_0047ab70(g_CEventListPtr,this_ptr->off_event);
     this_ptr->triggering_actor = (CDemonActor *)0x0;
     return;
   }
-  core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,this_ptr->on_event);
+  core_event_cpp_CEventList_executeCommands_FUN_0047ab70(g_CEventListPtr,this_ptr->on_event);
   return;
 }

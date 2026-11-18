@@ -13,10 +13,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fangs_005c25f6
-;   undefined4 DAT_005fba1c
-;   undefined4 DAT_00600530
-;   undefined4 DAT_01549aa8
-;   undefined4 DAT_01c5b0e0
+;   int g_INT_005fba1c = 0xc8
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
+;   CBitFont* g_CBitFont_PTR_01549aa8
+;   CBitFont* g_CBitFont_PTR_01c5b0e0
 ;   undefined4 DAT_01d82088
 ;
 ; Called Functions:
@@ -26,7 +26,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;   engine_special.cpp_clearScreen_FUN_00560d70
-;   wincore_wddvmem.cpp_FUN_00579bb0
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
 ; *****************************************************************************
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x14                        ; 004b7ee1
     CALL engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0 ; 004b7ee4
         ;   XREF to: 00402ad0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0()
-    CMP dword ptr [0x005fba1c],0x1e0    ; 004b7ee9 | DAT_005fba1c
+    CMP dword ptr [0x005fba1c],0x1e0    ; 004b7ee9 | g_INT_005fba1c
     JNZ 0x004b7eff                      ; 004b7ef3
         ;   XREF to: 004b7eff (CONDITIONAL_JUMP)  ; LAB_004b7eff
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004b7ef5
@@ -49,10 +49,10 @@ section .text
         ;   Label: LAB_004b7eff
     PUSH 0x1e0                          ; 004b7f01
     PUSH 0x280                          ; 004b7f06
-    CALL wincore_wddvmem.cpp_FUN_00579bb0 ; 004b7f0b
-        ;   XREF to: 00579bb0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00579bb0()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0 ; 004b7f0b
+        ;   XREF to: 00579bb0 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 004b7f10
-    MOV EAX,[0x00600530]                ; 004b7f13 | DAT_00600530
+    MOV EAX,[0x00600530]                ; 004b7f13 | g_CDemonMission_PTR_00600530
         ;   Label: LAB_004b7f13
     CMP dword ptr [EAX + 0x1008],0x0    ; 004b7f18 | DAT_01d82088
     JZ 0x004b7f7c                       ; 004b7f1f
@@ -92,9 +92,9 @@ section .text
     ADD ESP,0x14                        ; 004b7f77
     POP EBX                             ; 004b7f7a
     RET                                 ; 004b7f7b
-    MOV EAX,[0x01549aa8]                ; 004b7f7c | DAT_01549aa8
+    MOV EAX,[0x01549aa8]                ; 004b7f7c | g_CBitFont_PTR_01549aa8
         ;   Label: LAB_004b7f7c
-    MOV [0x01c5b0e0],EAX                ; 004b7f81 | DAT_01c5b0e0
+    MOV [0x01c5b0e0],EAX                ; 004b7f81 | g_CBitFont_PTR_01c5b0e0
     JMP 0x004b7f21                      ; 004b7f86
         ;   XREF to: 004b7f21 (UNCONDITIONAL_JUMP)  ; LAB_004b7f21
 

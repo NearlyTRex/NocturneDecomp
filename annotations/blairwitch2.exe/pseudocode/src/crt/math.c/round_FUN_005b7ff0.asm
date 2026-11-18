@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_round_FUN_005b7ff0(void)
+; double __fpureg_safe crt_math_c_round_FUN_005b7ff0(double value)
 ;
 ; Parameters:
 ; undefined        Stack[0x0]:1   local_res0
@@ -9,18 +9,18 @@
 ; undefined2       Stack[-0x8]:2  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[215]:
+; XREF[218]:
 ;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042ebf0 at 0042edcc
 ;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_0042ef90 at 0042f0ff
-;   cockpit_drawsurf.cpp_FUN_00466a50 at 00466a88
-;   cockpit_drawsurf.cpp_FUN_00467610 at 0046763b
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_00467610 at 0046763b
+;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00466a50 at 00466a88
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a4ae
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0 at 0040d01d
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 004106e0
 ;   core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980 at 0059f9a9
 ;   core_bat.cpp_CBat_getBoundingBox_FUN_00411480 at 00411496
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00416d70 at 00416def
-;   ... and 205 more
+;   ... and 208 more
 ;
 ; *****************************************************************************
 

@@ -145,7 +145,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
     }
     if (((local_18 != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
        (this_ptr->hardware_buffer_handle != 0)) {
-      (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,local_18);
+      (*g_CSoundDevicePtr->vtable->applySfxChanges)(g_CSoundDevicePtr,this_ptr,local_18);
     }
     return 1;
   }

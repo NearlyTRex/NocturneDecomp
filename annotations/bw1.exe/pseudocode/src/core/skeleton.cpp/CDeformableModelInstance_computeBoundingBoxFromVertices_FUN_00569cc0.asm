@@ -32,8 +32,8 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_00569b50 at 00569c6d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f25ed
-;   undefined4 DAT_00605890
+;   float g_FLOAT_005f25ed = 0.05000000
+;   float g_FLOAT_00605890 = 0.00390625
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
@@ -136,26 +136,26 @@ section .text
     MOV EBX,EDX                         ; 00569d9b
     LEA EDI,[ESP + 0x3c]                ; 00569d9d
     FILD dword ptr [EAX]                ; 00569da1
-    FMUL float ptr [0x00605890]         ; 00569da3 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00569da3 | g_FLOAT_00605890
     FSTP float ptr [EBX]                ; 00569da9
     FILD dword ptr [EAX + 0x4]          ; 00569dab
-    FMUL float ptr [0x00605890]         ; 00569dae | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00569dae | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x4]          ; 00569db4
     FILD dword ptr [EAX + 0x8]          ; 00569db7
-    FMUL float ptr [0x00605890]         ; 00569dba | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00569dba | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x8]          ; 00569dc0
     ADD EBP,0x2334                      ; 00569dc3
     MOV EAX,ESP                         ; 00569dc9
     MOV EBX,EBP                         ; 00569dcb
     LEA ESI,[ESP + 0x30]                ; 00569dcd
     FILD dword ptr [EAX]                ; 00569dd1
-    FMUL float ptr [0x00605890]         ; 00569dd3 | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00569dd3 | g_FLOAT_00605890
     FSTP float ptr [EBX]                ; 00569dd9
     FILD dword ptr [EAX + 0x4]          ; 00569ddb
-    FMUL float ptr [0x00605890]         ; 00569dde | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00569dde | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x4]          ; 00569de4
     FILD dword ptr [EAX + 0x8]          ; 00569de7
-    FMUL float ptr [0x00605890]         ; 00569dea | DAT_00605890
+    FMUL float ptr [0x00605890]         ; 00569dea | g_FLOAT_00605890
     FSTP float ptr [EBX + 0x8]          ; 00569df0
     FLD float ptr [EBP]                 ; 00569df3
     FLD float ptr [EBP + 0x4]           ; 00569df6
@@ -174,7 +174,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00569e1a
     MOVSD ES:EDI,ESI                    ; 00569e1b
     MOVSD ES:EDI,ESI                    ; 00569e1c
-    FLD float ptr [0x005f25ed]          ; 00569e1d | DAT_005f25ed
+    FLD float ptr [0x005f25ed]          ; 00569e1d | g_FLOAT_005f25ed
     FLD float ptr [ESP + 0x3c]          ; 00569e23
     FMUL ST1                            ; 00569e27
     FLD float ptr [ESP + 0x40]          ; 00569e29

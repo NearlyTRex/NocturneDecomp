@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 43,
+    "complexity_score": 29,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 88
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -60,14 +58,14 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -189,14 +187,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

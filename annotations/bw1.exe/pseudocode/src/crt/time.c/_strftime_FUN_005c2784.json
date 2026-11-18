@@ -2,31 +2,30 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 346,
+    "complexity_score": 282,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 231,
-    "suspect_count": 10,
+    "pseudocode_lines": 232,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 716
+    "total_lines": 717
   },
   "cross_references": [
+    {
+      "addr": "00495180",
+      "from_addr": "004955a9",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00499c80",
       "from_addr": "00499d8d",
       "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00499c80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00495180",
-      "from_addr": "004955a9",
-      "name": "shape_edittool.cpp_FUN_00495180",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,7 +55,7 @@
     {
       "addr": "005c9e48",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c9e48"
+      "name": "crt_unknown.c_IntegerToString_FUN_005c9e48"
     }
   ],
   "globals": [
@@ -74,9 +73,9 @@
     },
     {
       "addr": "005faaf4",
-      "name": "DAT_005faaf4",
-      "type": "undefined1",
-      "value": null
+      "name": "g_INT_005faaf4",
+      "type": "int",
+      "value": "0xa"
     },
     {
       "addr": "005faaf8",
@@ -86,21 +85,21 @@
     },
     {
       "addr": "005fab04",
-      "name": "DAT_005fab04",
-      "type": "undefined1",
-      "value": null
+      "name": "g_INT_005fab04",
+      "type": "int",
+      "value": "0x4d41"
     },
     {
       "addr": "005fab08",
-      "name": "DAT_005fab08",
-      "type": "undefined1",
-      "value": null
+      "name": "g_INT_005fab08",
+      "type": "int",
+      "value": "0x4d50"
     },
     {
       "addr": "005fab0c",
-      "name": "DAT_005fab0c",
-      "type": "undefined1",
-      "value": null
+      "name": "g_INT_005fab0c",
+      "type": "int",
+      "value": "0x9"
     },
     {
       "addr": "005fab10",
@@ -116,31 +115,31 @@
     },
     {
       "addr": "00626238",
-      "name": "DAT_00626238",
-      "type": "undefined4",
+      "name": "g_WeekdayNamesShort",
+      "type": "char[7][4]",
       "value": null
     },
     {
       "addr": "00626254",
-      "name": "PTR_s_Sunday_00626254",
-      "type": "undefined1*",
-      "value": "005faa20"
+      "name": "g_WeekdayNamesLong",
+      "type": "char*[7]",
+      "value": null
     },
     {
       "addr": "00626270",
-      "name": "DAT_00626270",
-      "type": "undefined4",
+      "name": "g_MonthNamesShort",
+      "type": "char[12][4]",
       "value": null
     },
     {
       "addr": "006262a0",
-      "name": "PTR_s_January_006262a0",
-      "type": "undefined1*",
-      "value": "005faa64"
+      "name": "g_MonthNamesLong",
+      "type": "char*[12]",
+      "value": null
     },
     {
       "addr": "00626990",
-      "name": "PTR_DAT_00626990",
+      "name": "PTR_s_EST_00626990",
       "type": "void*",
       "value": "0062688c"
     }
@@ -162,7 +161,7 @@
       {
         "call_addr": "004955a9",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00495180",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -333,72 +332,24 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_00626238",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_00626238 + time_ptr->tm_wday * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_00626270",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_00626270 + time_ptr->tm_mon * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_005faaf4",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_005faaf4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 161,
-      "match": "DAT_005fab04",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_005fab04;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 164,
-      "match": "DAT_005fab08",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_005fab08;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 174,
-      "match": "DAT_005fab0c",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_005fab0c;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 221,
+      "line": 222,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "text": "for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 226,
+      "line": 227,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar4 = uVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "text": "for (uVar5 = uVar6 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 210,
+      "line": 211,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

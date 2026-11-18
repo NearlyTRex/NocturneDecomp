@@ -43,9 +43,9 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&pCVar2->vertex_buffer_ptr[vertex_index].projected_vertex,input);
   iVar1 = (sky_texture->base).type;
-  (&DAT_005c5034)[vertex_index * 0xc] = iVar1;
-  (&DAT_005c5038)[vertex_index * 0xc] = iVar1;
-  (&DAT_005c503c)[vertex_index * 0xc] = iVar1;
-  (&DAT_005c5040)[vertex_index * 0xc] = 0;
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].r = iVar1;
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].g = iVar1;
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].b = iVar1;
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].a = 0;
   return;
 }

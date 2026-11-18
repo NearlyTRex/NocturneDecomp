@@ -10,7 +10,7 @@
 ;   core_doc.cpp_factoryFuncDoc_FUN_00468c50 at 00468c63
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fecb8
+;   float g_FLOAT_005fecb8 = 10
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_00434320
@@ -64,7 +64,7 @@ section .text
     MOV dword ptr [EAX + 0x1feb8],0x0   ; 00468d89
     PUSH 0x5d98a4                       ; 00468d93
     MOV dword ptr [EAX + 0x1febc],0x0   ; 00468d98
-    FLD float ptr [0x005fecb8]          ; 00468da2 | DAT_005fecb8
+    FLD float ptr [0x005fecb8]          ; 00468da2 | g_FLOAT_005fecb8
     MOV dword ptr [EAX + 0x1ff2c],0xf149f2ca ; 00468da8
     PUSH EAX                            ; 00468db2
     FXCH                                ; 00468db3

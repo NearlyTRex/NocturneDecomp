@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce615
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf99a
-;   core_game.cpp_FUN_004ce580 at 004ce615
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005eb62a
@@ -35,14 +35,14 @@
 ;   TerminatedCString s_CNetGame_processServerFr_005ec267
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.delta_time_float
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01d51d9c
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_LastPingTime
 ;   ... and 8 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040cb80
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_005305a0
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360
 ;   core_netgame.cpp_CNetGame_send_FUN_0052df50
@@ -69,10 +69,10 @@ section .text
     MOV ECX,0x12                        ; 0052fef8
     SAR EDX,0x1f                        ; 0052fefd
     IDIV ECX                            ; 0052ff00
-    MOV ECX,dword ptr [0x01d51d9c]      ; 0052ff02 | DAT_01d51d9c
+    MOV ECX,dword ptr [0x01d51d9c]      ; 0052ff02 | g_LastPingTime
     MOV EDX,EAX                         ; 0052ff08
     SUB EAX,ECX                         ; 0052ff0a
-    MOV dword ptr [0x01d51d9c],EDX      ; 0052ff0c | DAT_01d51d9c
+    MOV dword ptr [0x01d51d9c],EDX      ; 0052ff0c | g_LastPingTime
     TEST EAX,EAX                        ; 0052ff12
     JL 0x00530133                       ; 0052ff14
         ;   XREF to: 00530133 (CONDITIONAL_JUMP)  ; LAB_00530133
@@ -80,11 +80,11 @@ section .text
     JLE 0x0052ff26                      ; 0052ff1f
         ;   XREF to: 0052ff26 (CONDITIONAL_JUMP)  ; LAB_0052ff26
     MOV EAX,0x20000                     ; 0052ff21
-    MOV ESI,dword ptr [0x01d51da0]      ; 0052ff26 | DAT_01d51da0
+    MOV ESI,dword ptr [0x01d51da0]      ; 0052ff26 | g_UINT_01d51da0
         ;   Label: LAB_0052ff26
     ADD ESI,EAX                         ; 0052ff2c
     MOV EDI,dword ptr [EBX]             ; 0052ff2e
-    MOV dword ptr [0x01d51da0],ESI      ; 0052ff30 | DAT_01d51da0
+    MOV dword ptr [0x01d51da0],ESI      ; 0052ff30 | g_UINT_01d51da0
     TEST EDI,EDI                        ; 0052ff36
     JZ 0x0053013a                       ; 0052ff38
         ;   XREF to: 0053013a (CONDITIONAL_JUMP)  ; LAB_0053013a
@@ -105,10 +105,10 @@ section .text
     MOV EBP,0x5ec1a4                    ; 0052ff6c | = "..\\core\\netgame.cpp"
     MOV EAX,0x8f7                       ; 0052ff71
     PUSH 0x5ec1b8                       ; 0052ff76 | = "CNetGame::processServerFrame - I'm no..."
-    MOV dword ptr [0x01d1d400],EBP      ; 0052ff7b | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0052ff81 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052ff86
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBP      ; 0052ff7b | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0052ff81 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052ff86
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052ff8b
     MOV EDX,dword ptr [EBX + 0x1c]      ; 0052ff8e
         ;   Label: LAB_0052ff8e
@@ -154,7 +154,7 @@ section .text
     CMP EAX,ECX                         ; 0052ffd9
     JL 0x0052ffc9                       ; 0052ffdb
         ;   XREF to: 0052ffc9 (CONDITIONAL_JUMP)  ; LAB_0052ffc9
-    MOV EDI,dword ptr [0x01d715a8]      ; 0052ffdd | DAT_01d715a8
+    MOV EDI,dword ptr [0x01d715a8]      ; 0052ffdd | g_SimFrameCount
         ;   Label: LAB_0052ffdd
     MOV dword ptr [ESP + 0x80],EDX      ; 0052ffe3
     XOR ESI,ESI                         ; 0052ffea
@@ -169,20 +169,20 @@ section .text
     CMP ECX,dword ptr [EBP + 0x1d715ac] ; 00530001
     JLE 0x00530181                      ; 00530007
         ;   XREF to: 00530181 (CONDITIONAL_JUMP)  ; LAB_00530181
-    MOV EAX,[0x01d715a8]                ; 0053000d | DAT_01d715a8
+    MOV EAX,[0x01d715a8]                ; 0053000d | g_SimFrameCount
     DEC EAX                             ; 00530012
-    MOV [0x01d715a8],EAX                ; 00530013 | DAT_01d715a8
+    MOV [0x01d715a8],EAX                ; 00530013 | g_SimFrameCount
     SUB EAX,ESI                         ; 00530018
     IMUL EAX,EAX,0x6c                   ; 0053001a
     PUSH EAX                            ; 0053001d
     MOV EAX,0x1d715ac                   ; 0053001e
-    PUSH EDI                            ; 00530023 | DAT_01d71618
+    PUSH EDI                            ; 00530023 | g_SSimFrame_ARRAY_01d715ac[1].sequence_number
     ADD EAX,EBP                         ; 00530024
     PUSH EAX                            ; 00530026
     CALL crt_string.c_memmove_FUN_005c25d0 ; 00530027
         ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0053002c
-    CMP ESI,dword ptr [0x01d715a8]      ; 0053002f | DAT_01d715a8
+    CMP ESI,dword ptr [0x01d715a8]      ; 0053002f | g_SimFrameCount
         ;   Label: LAB_0053002f
     JL 0x0052fffa                       ; 00530035
         ;   XREF to: 0052fffa (CONDITIONAL_JUMP)  ; LAB_0052fffa
@@ -195,7 +195,7 @@ section .text
     LEA ESI,[EBX + EAX*0x1]             ; 00530047
     XOR EDI,EDI                         ; 0053004a
     MOV ESI,dword ptr [ESI + 0x68]      ; 0053004c
-    MOV EDX,dword ptr [0x01d715a8]      ; 0053004f | DAT_01d715a8
+    MOV EDX,dword ptr [0x01d715a8]      ; 0053004f | g_SimFrameCount
     MOV EBP,ESI                         ; 00530055
     TEST EDX,EDX                        ; 00530057
     JLE 0x00530199                      ; 00530059
@@ -208,7 +208,7 @@ section .text
     SHL EDX,0x3                         ; 0053006b
     XOR EAX,EAX                         ; 0053006e
     ADD EDX,ECX                         ; 00530070
-    CMP EBP,dword ptr [EAX + 0x1d715ac] ; 00530072 | DAT_01d71618
+    CMP EBP,dword ptr [EAX + 0x1d715ac] ; 00530072 | g_SSimFrame_ARRAY_01d715ac[1].sequence_number
         ;   Label: LAB_00530072
     JNZ 0x0053018d                      ; 00530078
         ;   XREF to: 0053018d (CONDITIONAL_JUMP)  ; LAB_0053018d
@@ -305,10 +305,10 @@ section .text
         ;   Label: LAB_00530159
     MOV ESI,0x8f6                       ; 0053015e
     PUSH 0x5ec16d                       ; 00530163 | = "CNetGame::processServerFrame - I'm no..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00530168 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0053016e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00530174
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00530168 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0053016e | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00530174
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530179
     JMP 0x0052ff5e                      ; 0053017c
         ;   XREF to: 0052ff5e (UNCONDITIONAL_JUMP)  ; LAB_0052ff5e
@@ -324,19 +324,19 @@ section .text
     CMP EAX,EDX                         ; 00530191
     JL 0x00530072                       ; 00530193
         ;   XREF to: 00530072 (CONDITIONAL_JUMP)  ; LAB_00530072
-    CMP dword ptr [0x01d715a8],0x200    ; 00530199 | DAT_01d715a8
+    CMP dword ptr [0x01d715a8],0x200    ; 00530199 | g_SimFrameCount
         ;   Label: LAB_00530199
     JL 0x005301c7                       ; 005301a3
         ;   XREF to: 005301c7 (CONDITIONAL_JUMP)  ; LAB_005301c7
     MOV EBP,0x5eb62a                    ; 005301a5 | = "..\\core\\netgame.cpp"
     MOV EAX,0x12b                       ; 005301aa
     PUSH 0x5eb63e                       ; 005301af | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01d1d400],EBP      ; 005301b4 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 005301ba | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005301bf
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBP      ; 005301b4 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 005301ba | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005301bf
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005301c4
-    MOV EDX,dword ptr [0x01d715a8]      ; 005301c7 | DAT_01d715a8
+    MOV EDX,dword ptr [0x01d715a8]      ; 005301c7 | g_SimFrameCount
         ;   Label: LAB_005301c7
     LEA EAX,[EDX*0x4 + 0x0]             ; 005301cd
     SUB EAX,EDX                         ; 005301d4
@@ -347,11 +347,11 @@ section .text
     SHL EAX,0x3                         ; 005301e2
     PUSH 0x0                            ; 005301e5
     ADD EAX,EDX                         ; 005301e7
-    MOV EDX,dword ptr [0x01d715a8]      ; 005301e9 | DAT_01d715a8
+    MOV EDX,dword ptr [0x01d715a8]      ; 005301e9 | g_SimFrameCount
     ADD EBP,EAX                         ; 005301ef
     INC EDX                             ; 005301f1
     PUSH EBP                            ; 005301f2
-    MOV dword ptr [0x01d715a8],EDX      ; 005301f3 | DAT_01d715a8
+    MOV dword ptr [0x01d715a8],EDX      ; 005301f3 | g_SimFrameCount
     CALL crt_memory.c_memset_FUN_005bfb70 ; 005301f9
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005301fe
@@ -370,10 +370,10 @@ section .text
     MOV ECX,0x5ec1fe                    ; 00530221 | = "..\\core\\netgame.cpp"
     MOV EDI,0x93b                       ; 00530226
     PUSH 0x5ec212                       ; 0053022b | = "CNetGame::processServerFrame - player..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00530230 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00530236 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053023c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00530230 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00530236 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053023c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530241
     CMP EBP,0x5                         ; 00530244
         ;   Label: LAB_00530244
@@ -388,7 +388,7 @@ section .text
     JLE 0x00530107                      ; 00530257
         ;   XREF to: 00530107 (CONDITIONAL_JUMP)  ; LAB_00530107
     MOV ECX,dword ptr [ESP + 0x78]      ; 0053025d
-    MOV ESI,dword ptr [0x01d715a8]      ; 00530261 | DAT_01d715a8
+    MOV ESI,dword ptr [0x01d715a8]      ; 00530261 | g_SimFrameCount
     XOR EDX,EDX                         ; 00530267
     TEST ESI,ESI                        ; 00530269
     JLE 0x00530308                      ; 0053026b
@@ -411,11 +411,11 @@ section .text
     ADD EDX,0x1d715ac                   ; 00530296
     MOV dword ptr [ESP],ECX             ; 0053029c
     MOV byte ptr [ESP + 0x4],AH         ; 0053029f
-    MOV EAX,dword ptr [EDX]             ; 005302a3 | DAT_01d71540 | DAT_01d71618
+    MOV EAX,dword ptr [EDX]             ; 005302a3 | g_ChatOutMessages[49].message[156] | g_SSimFrame_ARRAY_01d715ac[1].sequence_number
     MOV dword ptr [ESP + 0x5],EAX       ; 005302a5
-    MOV EAX,dword ptr [EDX + 0x4]       ; 005302a9 | DAT_01d71544 | DAT_01d7161c
+    MOV EAX,dword ptr [EDX + 0x4]       ; 005302a9 | g_ChatOutMessages[49].message[160] | g_SSimFrame_ARRAY_01d715ac[1].random_seed
     MOV dword ptr [ESP + 0x9],EAX       ; 005302ac
-    MOV EAX,dword ptr [EDX + 0x8]       ; 005302b0 | DAT_01d71548 | DAT_01d71620
+    MOV EAX,dword ptr [EDX + 0x8]       ; 005302b0 | g_ChatOutMessages[49].message[164] | g_SSimFrame_ARRAY_01d715ac[1].delta_time
     MOV dword ptr [ESP + 0xd],EAX       ; 005302b3
     MOV ESI,dword ptr [EBX + 0x1c]      ; 005302b7
     XOR EAX,EAX                         ; 005302ba
@@ -463,10 +463,10 @@ section .text
         ;   Label: LAB_00530312
     MOV EDX,0x94d                       ; 00530317
     PUSH 0x5ec267                       ; 0053031c | = "CNetGame::processServerFrame - client..."
-    MOV [0x01d1d400],EAX                ; 00530321 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00530326 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053032c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 00530321 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 00530326 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053032c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00530331
     JMP 0x0053028c                      ; 00530334
         ;   XREF to: 0053028c (UNCONDITIONAL_JUMP)  ; LAB_0053028c

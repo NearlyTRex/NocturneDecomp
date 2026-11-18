@@ -18,10 +18,10 @@
 ;   TerminatedCString s_f_f_f_n_0057f46e
 ;   TerminatedCString s_n_0057f480
 ;   TerminatedCString s_Error_parsing_vector_loc_0057f48e
-;   undefined4 DAT_0059cf1c
-;   CDemonActorType g_CDemonActorActorType_00763e48
-;   undefined4 g_CDemonActorActorType_00763e48.name_hash
-;   undefined4 DAT_01c08b60
+;   CDemonActor* g_ActorNameSentinel = 0fffffff
+;   CDemonActorType g_CDemonActorClassInfo
+;   undefined4 g_CDemonActorClassInfo.name_hash
+;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
 ;   core_event.cpp_resolveActorByName_FUN_0047a390
@@ -88,8 +88,8 @@ section .text
     CMP dword ptr [ESP + 0x64],0x0      ; 0047a546
     JL 0x0047a59e                       ; 0047a54b
         ;   XREF to: 0047a59e (CONDITIONAL_JUMP)  ; LAB_0047a59e
-    PUSH 0x763e48                       ; 0047a54d | g_CDemonActorActorType_00763e48
-    MOV EDX,dword ptr [0x00763e80]      ; 0047a552 | g_CDemonActorActorType_00763e48.name_hash
+    PUSH 0x763e48                       ; 0047a54d | g_CDemonActorClassInfo
+    MOV EDX,dword ptr [0x00763e80]      ; 0047a552 | g_CDemonActorClassInfo.name_hash
     PUSH EDX                            ; 0047a558
     LEA EAX,[ESP + 0x8]                 ; 0047a559
     PUSH EAX                            ; 0047a55d
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 0047a5bd (CONDITIONAL_JUMP)  ; LAB_0047a5bd
     MOV EAX,dword ptr [ESP + 0x64]      ; 0047a56c
     ADD dword ptr [ESI],EAX             ; 0047a570
-    CMP EDX,dword ptr [0x0059cf1c]      ; 0047a572 | DAT_0059cf1c
+    CMP EDX,dword ptr [0x0059cf1c]      ; 0047a572 | g_ActorNameSentinel
     JZ 0x0047a5ca                       ; 0047a578
         ;   XREF to: 0047a5ca (CONDITIONAL_JUMP)  ; LAB_0047a5ca
     ADD EDX,0x20                        ; 0047a57a
@@ -125,7 +125,7 @@ section .text
     RET                                 ; 0047a59d
     PUSH 0x57f48e                       ; 0047a59e | = "Error parsing vector location"
         ;   Label: LAB_0047a59e
-    PUSH 0x1c08b60                      ; 0047a5a3 | DAT_01c08b60
+    PUSH 0x1c08b60                      ; 0047a5a3 | g_EventErrorMessageBuffer
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047a5a8
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 0047a5ad

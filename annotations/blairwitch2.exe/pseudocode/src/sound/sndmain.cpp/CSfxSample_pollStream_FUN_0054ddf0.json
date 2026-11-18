@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 550,
-    "complexity_score": 509,
+    "complexity_score": 336,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 239,
-    "suspect_count": 23,
+    "pseudocode_lines": 231,
+    "suspect_count": 8,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
-      "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
+      "raw_address_constant",
       "undefined_type",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 789
+    "total_lines": 781
   },
   "cross_references": [
     {
@@ -51,7 +48,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b7ff0",
@@ -246,50 +243,50 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02630cb8",
-      "name": "DAT_02630cb8",
-      "type": "undefined4",
+      "name": "g_SfxStreamReadBuffer",
+      "type": "char[15360]",
       "value": null
     },
     {
       "addr": "02630cbc",
-      "name": "DAT_02630cbc",
+      "name": "g_SfxStreamReadBuffer+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02630cbd",
-      "name": "DAT_02630cbd",
+      "name": "g_SfxStreamReadBuffer+5",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0263cf80",
-      "name": "DAT_0263cf80",
+      "name": "g_CSfxSlot_ARRAY_0263cf1c[0].playback_state",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02648e80",
-      "name": "DAT_02648e80",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "0264901c",
-      "name": "DAT_0264901c",
-      "type": "undefined4",
+      "name": "g_SoundLockCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -498,16 +495,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved type",
-      "line": 16,
+      "line": 11,
       "match": "undefined3 extraout_var",
       "severity": "moderate",
       "text": "undefined3 extraout_var;",
@@ -515,162 +504,50 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 11,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "undefined3 extraout_var;",
       "type": "extra_output"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0263cf80",
-      "severity": "mild",
-      "text": "if ((*(int *)(&DAT_0263cf80 + iVar1) == 0) ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "(this_ptr != *(CSfxSample **)(&DAT_0263cf84 + iVar1))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_0263cf7c",
-      "severity": "mild",
-      "text": "if (*(int *)(&DAT_0263cf7c + iVar1) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "(*(CSfxSample **)(&DAT_0263cf84 + iVar1));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "(this_ptr_00 = *(CSfxSample **)(&DAT_0263cf84 + iVar1),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_02630cb8",
-      "severity": "mild",
-      "text": "output_buffer = (short *)&DAT_02630cb8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 158,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "count = *(int *)(*(int *)(&DAT_0263cf84 + iVar1) + 0x108) * iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 159,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "uVar8 = *(uint *)(*(int *)(&DAT_0263cf84 + iVar1) + 0x104);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 176,
+      "line": 167,
       "match": "extraout_var",
       "severity": "moderate",
-      "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",
+      "text": "if (CONCAT31(extraout_var,bVar3) == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 189,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)(&DAT_0263cf84 + iVar1) + 0x104) == 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 190,
-      "match": "DAT_0263cf84",
-      "severity": "mild",
-      "text": "for (iVar6 = 0; iVar6 < *(int *)(*(int *)(&DAT_0263cf84 + iVar1) + 0x108) * iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 207,
-      "match": "DAT_02630cb8",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)&DAT_02630cb8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(uint *)((int)puVar11",
+      "description": "Raw hex address 0x54df15 assigned to bare local `iVar12`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar12` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 71,
+      "match": "0x54df15",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 216,
-      "match": "(uint *)((int)puVar7",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 215,
-      "match": "(int)puVar11",
-      "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 216,
-      "match": "(int)puVar7",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
-      "type": "pointer_truncation"
+      "text": "iVar12 = 0x54df15;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 208,
+      "line": 199,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar10 = uVar8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {",
+      "text": "for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 213,
+      "line": 204,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {",
+      "text": "for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 176,
+      "line": 167,
       "match": "CONCAT31",
       "severity": "moderate",
-      "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",
+      "text": "if (CONCAT31(extraout_var,bVar3) == 0) {",
       "type": "concat_reconstruction"
     },
     {
@@ -678,7 +555,7 @@
       "line": 373,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0054e213: MOVSD.REP ES:EDI,ESI  ; DAT_02630cb8 | DAT_02630cbc",
+      "text": "// 0054e213: MOVSD.REP ES:EDI,ESI  ; g_SfxStreamReadBuffer | g_SfxStreamReadBuffer+4",
       "type": "unrolled_memcpy"
     }
   ]

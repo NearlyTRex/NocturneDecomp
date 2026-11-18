@@ -12,8 +12,8 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c038f4
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   int g_INT_01c038f4
 ;   undefined4 g_CGameInstance.render_mode
 ;   undefined4 g_CDemonSetInstance.skip_normal_normalization
 ;
@@ -53,7 +53,7 @@ section .text
         ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00542d59
     MOV EDX,dword ptr [0x005ae704]      ; 00542d5c | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 00542d62 | DAT_01b4d738
+    PUSH EDX                            ; 00542d62 | g_CDemonRenderer_01b4d738
     MOV EBX,EAX                         ; 00542d63
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00542d65
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
@@ -61,7 +61,7 @@ section .text
     TEST EAX,EAX                        ; 00542d6d
     JNZ 0x00542e20                      ; 00542d6f
         ;   XREF to: 00542e20 (CONDITIONAL_JUMP)  ; LAB_00542e20
-    CMP dword ptr [0x01c038f4],0x4000   ; 00542d75 | DAT_01c038f4
+    CMP dword ptr [0x01c038f4],0x4000   ; 00542d75 | g_INT_01c038f4
     JGE 0x00542e20                      ; 00542d7f
         ;   XREF to: 00542e20 (CONDITIONAL_JUMP)  ; LAB_00542e20
     MOV EAX,ESI                         ; 00542d85
@@ -80,7 +80,7 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 00542db5 | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [ESI + EAX*0x4 + 0x2290],0x1 ; 00542dbb
     MOV EAX,[0x005b9354]                ; 00542dc6 | g_CGamePtr
-    PUSH EBP                            ; 00542dcb | DAT_01b4d738
+    PUSH EBP                            ; 00542dcb | g_CDemonRenderer_01b4d738
     MOV EDI,dword ptr [EAX + 0x1f4]     ; 00542dcc | g_CGameInstance.render_mode
     MOV dword ptr [EAX + 0x1f4],0x2     ; 00542dd2 | g_CGameInstance.render_mode
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 00542ddc
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x8                         ; 00542de1
     PUSH 0xbb80                         ; 00542de4
     MOV EAX,[0x005ae704]                ; 00542de9 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 00542dee | DAT_01b4d738
+    PUSH EAX                            ; 00542dee | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00542def
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00542df4

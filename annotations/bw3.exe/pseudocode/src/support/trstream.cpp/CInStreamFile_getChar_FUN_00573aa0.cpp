@@ -11,15 +11,15 @@ int __cdecl support_trstream_cpp_CInStreamFile_getChar_FUN_00573aa0(CInStreamFil
 {
   uint uVar1;
   uint uVar2;
-  int iVar3;
+  int position;
   
   uVar1 = support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(this_ptr,this_ptr->position);
   if (-1 < (int)uVar1) {
-    iVar3 = this_ptr->position + 1;
-    this_ptr->position = iVar3;
+    position = this_ptr->position + 1;
+    this_ptr->position = position;
     if ((this_ptr->binary_mode == 0) && (uVar1 == 0xd)) {
       uVar1 = 10;
-      uVar2 = support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(this_ptr,iVar3);
+      uVar2 = support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(this_ptr,position);
       if (uVar2 == 10) {
         this_ptr->position = this_ptr->position + 1;
         return 10;

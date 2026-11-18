@@ -1,0 +1,350 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 274,
+    "complexity_score": 248,
+    "cross_reference_count": 1,
+    "function_call_count": 17,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 98,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_param",
+      "stack_ref"
+    ],
+    "total_lines": 372
+  },
+  "cross_references": [
+    {
+      "addr": "0051b8d0",
+      "from_addr": "0051b8fe",
+      "name": "engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051aa80",
+    "address_range": [
+      [
+        "0051aa80",
+        "0051ad48"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80",
+    "signature": "int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_0051aa80(CPodFile *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b8180",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005b8180"
+    },
+    {
+      "addr": "005b910c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005b87c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005b87c0"
+    },
+    {
+      "addr": "005b929c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005b929c"
+    },
+    {
+      "addr": "00460aa0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_00460aa0"
+    },
+    {
+      "addr": "0051af80",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af80"
+    },
+    {
+      "addr": "00519cb0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_00519cb0"
+    },
+    {
+      "addr": "0047be90",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047be90"
+    },
+    {
+      "addr": "0047e760",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760"
+    },
+    {
+      "addr": "0047db40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047db40"
+    },
+    {
+      "addr": "0047dc40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40"
+    },
+    {
+      "addr": "00481fc0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_00481fc0"
+    },
+    {
+      "addr": "00482250",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250"
+    },
+    {
+      "addr": "004820b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004820b0"
+    },
+    {
+      "addr": "00480e70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_00480e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "01d046a0",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051b8fe",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 222,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 21,
+      "CBRANCH": 13,
+      "COPY": 204,
+      "FLOAT2FLOAT": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 84,
+      "INT_AND": 120,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 114,
+      "INT_LESS": 15,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 29,
+      "INT_SEXT": 3,
+      "INT_SLESS": 57,
+      "INT_SUB": 85,
+      "INT_XOR": 6,
+      "INT_ZEXT": 1,
+      "LOAD": 42,
+      "POPCOUNT": 57,
+      "RETURN": 4,
+      "STORE": 75,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 999
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0053bfc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00513d20",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00550230",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6748
+    },
+    "nocturne.exe": {
+      "addr": "004f8240",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1756
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPodFile *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffc20",
+      "severity": "moderate",
+      "text": "byte *in_stack_fffffc20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xfffffc20",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_00481fc0((CPickList *)&stack0xfffffc20);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_fffffc20",
+      "severity": "moderate",
+      "text": "in_stack_fffffc20 = (byte *)pCVar7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_fffffc20",
+      "severity": "moderate",
+      "text": "if (in_stack_fffffc20 != (byte *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xfffffc20",
+      "severity": "moderate",
+      "text": "((CPickList *)&stack0xfffffc20,\"!!!CRC CHECK FAILED!! on these files:\",-1,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 53,
+      "match": "&stack0xfffffc20",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004820b0((CPickList *)&stack0xfffffc20,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffc20",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004820b0((CPickList *)&stack0xfffffc20,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&pCVar1->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&pCVar1->offset",
+      "severity": "moderate",
+      "text": "iStack_14 = *(int *)((int)&pCVar1->offset + iVar4) - pCVar1->offset;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&pCVar1->checksum",
+      "severity": "moderate",
+      "text": "if (uVar5 != *(uint *)((int)&pCVar1->checksum + iVar4)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "(aCStack_3d8,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iStack_14 = *(int *)((int)&pCVar1->offset + iVar4) - pCVar1->offset;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (uVar5 != *(uint *)((int)&pCVar1->checksum + iVar4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(aCStack_3d8,*(char **)((int)&this_ptr->directory_entries->name + iVar4));",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 108,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 63,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 236
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 237
   },
   "cross_references": [
     {
@@ -54,7 +52,7 @@
   "globals": [
     {
       "addr": "00629024",
-      "name": "DAT_00629024",
+      "name": "g_SRenderVertex_ARRAY_00629014[0].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     }
@@ -268,38 +266,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_00629024",
-      "severity": "mild",
-      "text": "uVar2 = (&DAT_00629024)[this_ptr->vertex_indices[3] * 0xc] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_00629024",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[iVar1 * 0xc] & (&DAT_00629024)[this_ptr->vertex_indices[1] * 0xc] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_00629024",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[iVar1 * 0xc] & (&DAT_00629024)[this_ptr->vertex_indices[1] * 0xc] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00629024",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[this_ptr->vertex_indices[2] * 0xc];",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

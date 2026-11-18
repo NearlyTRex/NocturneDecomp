@@ -11,7 +11,7 @@ CRobin * __cdecl core_weaver_cpp_factoryFuncRobin_FUN_005a5e40(void)
 {
   CRobin *pCVar1;
   
-  pCVar1 = (CRobin *)operator_new(0x11858);
+  pCVar1 = operator_new(0x11858);
   if (pCVar1 == (CRobin *)0x0) {
     return (CRobin *)0x0;
   }

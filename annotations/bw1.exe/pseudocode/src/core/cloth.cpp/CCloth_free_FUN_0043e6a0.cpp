@@ -12,7 +12,7 @@ void __cdecl core_cloth_cpp_CCloth_free_FUN_0043e6a0(CCloth *this_ptr)
   if (this_ptr->vertex_sort_buffer == (int *)0x0) {
     return;
   }
-  FUN_005c0336(this_ptr->vertex_sort_buffer);
+  free(this_ptr->vertex_sort_buffer);
   this_ptr->vertex_sort_buffer = (int *)0x0;
   return;
 }

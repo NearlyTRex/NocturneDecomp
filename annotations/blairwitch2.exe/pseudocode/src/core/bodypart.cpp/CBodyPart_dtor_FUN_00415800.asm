@@ -14,11 +14,11 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
-;   core_bodypart.cpp_FUN_00417d10
+;   core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10
 ;   core_box.cpp_CBox_dtor_FUN_005b1c70
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x0                            ; 00415834
     SUB EAX,0x834                       ; 00415836
     PUSH EAX                            ; 0041583b
-    CALL core_bodypart.cpp_FUN_00417d10 ; 0041583c
-        ;   XREF to: 00417d10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00417d10()
+    CALL core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10 ; 0041583c
+        ;   XREF to: 00417d10 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00417d10(SBodyPartFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00415841
     PUSH 0x1                            ; 00415844
     LEA EBX,[EAX + 0xfffff754]          ; 00415846
@@ -70,16 +70,16 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0041586f
     PUSH EAX                            ; 00415872
-    CALL crt_unknown.c_FUN_005b7fce     ; 00415873
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 00415873
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 00415878
     MOV EAX,EBX                         ; 0041587b
     POP EBX                             ; 0041587d
     RET                                 ; 0041587e
     PUSH EAX                            ; 0041587f
         ;   Label: LAB_0041587f
-    CALL crt_unknown.c_FUN_005b7fdc     ; 00415880
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 00415880
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 00415885
     MOV EAX,EBX                         ; 00415888
     POP EBX                             ; 0041588a

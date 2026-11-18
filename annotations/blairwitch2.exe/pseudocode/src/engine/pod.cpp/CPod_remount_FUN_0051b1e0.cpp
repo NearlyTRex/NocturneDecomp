@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_pod_cpp_CPod_remount_FUN_0051b1e0(CPod *this_ptr)
 
 {
@@ -36,9 +34,9 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_0051b1e0(CPod *this_ptr)
       } while (cVar1 != '\0');
       iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(pCVar3->pod_files[0],acStack_110);
       if (iVar2 == 0) {
-        _DAT_01d046a4 = 0x404;
-        _DAT_01d046a0 = "..\\engine\\pod.cpp";
-        core_main_c_FUN_004e4500("Can't re-mount %s",acStack_110);
+        g_INT_01d046a4 = 0x404;
+        g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Can't re-mount %s");
       }
       iVar4 = iVar4 + 1;
       pCVar3 = (CPod *)pCVar3->pod_files;

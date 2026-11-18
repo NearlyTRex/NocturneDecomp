@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 54,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 29,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 130
   },
   "cross_references": [],
@@ -68,8 +66,8 @@
     },
     {
       "addr": "005bc730",
-      "name": "DAT_005bc730",
-      "type": "undefined4",
+      "name": "s_type_005bc730",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -86,8 +84,8 @@
     },
     {
       "addr": "005bc746",
-      "name": "DAT_005bc746",
-      "type": "undefined4",
+      "name": "s_vel_005bc746",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -209,24 +207,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005bc730",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->type,&DAT_005bc730);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005bc746",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->vel,&DAT_005bc746);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

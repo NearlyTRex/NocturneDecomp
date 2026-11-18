@@ -56,7 +56,7 @@ section .text
         ;   Label: LAB_005a0b43
     PUSH EBX                            ; 005a0b44
     CALL support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0 ; 005a0b45
-        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int param_2)
+        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int position)
     ADD ESP,0x8                         ; 005a0b4a
     CMP EAX,0xa                         ; 005a0b4d
     JNZ 0x005a0b37                      ; 005a0b50
@@ -66,7 +66,7 @@ section .text
     PUSH EAX                            ; 005a0b56
     PUSH EBX                            ; 005a0b57
     CALL support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0 ; 005a0b58
-        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int param_2)
+        ;   XREF to: 005a0ba0 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile * this_ptr, int position)
     ADD ESP,0x8                         ; 005a0b5d
     CMP EAX,0xd                         ; 005a0b60
     JNZ 0x005a0b37                      ; 005a0b63

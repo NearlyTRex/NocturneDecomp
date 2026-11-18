@@ -10,7 +10,7 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590 at 004fb9aa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270
@@ -34,7 +34,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x14]      ; 004dc823
         ;   Label: LAB_004dc823
     PUSH ECX                            ; 004dc826
-    MOV EBP,dword ptr [0x00618170]      ; 004dc827 | DAT_00618170
+    MOV EBP,dword ptr [0x00618170]      ; 004dc827 | g_CDemonMission_PTR_00618170
     PUSH EBP                            ; 004dc82d
     ADD ESI,0x4                         ; 004dc82e
     INC EBX                             ; 004dc831

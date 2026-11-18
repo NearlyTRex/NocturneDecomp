@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0057b441
 ;   TerminatedCString s_lastPlatform_0057b44b
-;   int g_INT_005ad3c4 = 0x2
+;   int g_CCrateClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -32,7 +32,7 @@ section .text
     PUSH EAX                            ; 0043cc69
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0043cc6a
         ;   XREF to: 0040ca00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00(CKeyFramedModelInstance * model_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005ad3c4]      ; 0043cc6f | g_INT_005ad3c4
+    MOV EDX,dword ptr [0x005ad3c4]      ; 0043cc6f | g_CCrateClassVersion
     ADD ESP,0x8                         ; 0043cc75
     CMP EDX,0x2                         ; 0043cc78
     JGE 0x0043cc7f                      ; 0043cc7b

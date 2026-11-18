@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 33,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 54
+    "total_lines": 53
   },
   "cross_references": [],
   "function": {
@@ -31,13 +31,13 @@
   "globals": [
     {
       "addr": "01d09c00",
-      "name": "DAT_01d09c00",
-      "type": "undefined4",
+      "name": "g_SimFrameCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d09c68",
-      "name": "DAT_01d09c68",
+      "name": "g_SimFrameHistory[1].sequence_number",
       "type": "undefined4",
       "value": null
     }
@@ -80,11 +80,23 @@
     "pcode_op_count": 234
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050b110",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
     "bw1.exe": {
       "addr": "0052c2e0",
       "by": "name",
       "class": "logic-change",
       "ratio": 0.9153
+    },
+    "bw3.exe": {
+      "addr": "00503bf0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
     },
     "nocedit.exe": {
       "addr": "0053f550",
@@ -111,12 +123,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)g_SimFrameHistory",
+      "severity": "moderate",
+      "text": "if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {",
+      "type": "pointer_cast"
     }
   ]
 }

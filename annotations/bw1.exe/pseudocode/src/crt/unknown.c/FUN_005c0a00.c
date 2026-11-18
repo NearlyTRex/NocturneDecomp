@@ -2,47 +2,50 @@
 // Address: 005c0a00
 // Address Range: [[005c0a00, 005c0b05]]
 // Convention: unknown
-// Signature: void crt_unknown_c_FUN_005c0a00(int *param_1)
+// Signature: void crt_unknown_c_FUN_005c0a00(Heap *param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_005c0a00(int *param_1)
+void FUN_005c0a00(Heap *param_1)
 
 {
-  int *piVar1;
-  int *piVar2;
+  Heap *pHVar1;
+  Heap *pHVar2;
   
-  if (param_1 != (int *)0x0) {
+  if (param_1 != (Heap *)0x0) {
     (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626618)();
-    if (((_DAT_02c9f040 == (int *)0x0) ||
-        ((((param_1 < _DAT_02c9f040 ||
-           (piVar2 = _DAT_02c9f040, (int *)(*_DAT_02c9f040 + (int)_DAT_02c9f040) <= param_1)) &&
-          ((piVar2 = (int *)_DAT_02c9f040[1], piVar2 == (int *)0x0 ||
-           ((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&
-         ((piVar2 = (int *)_DAT_02c9f040[2], piVar2 == (int *)0x0 ||
-          ((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))) &&
-       ((piVar1 = DAT_00626220, DAT_00626224 == (int *)0x0 ||
-        ((((param_1 < DAT_00626224 ||
-           (piVar2 = DAT_00626224, (int *)(*DAT_00626224 + (int)DAT_00626224) <= param_1)) &&
-          ((piVar2 = (int *)DAT_00626224[1], piVar2 == (int *)0x0 ||
-           ((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&
-         ((piVar2 = (int *)DAT_00626224[2], piVar2 == (int *)0x0 ||
-          ((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))))) {
-      while (piVar2 = piVar1, piVar2 != (int *)0x0) {
-        if ((piVar2 <= param_1) && (param_1 < (int *)(*piVar2 + (int)piVar2))) goto LAB_005c0abc;
-        piVar1 = (int *)piVar2[2];
+    if (((g_INT_02c9f040 == 0) ||
+        ((((param_1 < (uint)g_INT_02c9f040 ||
+           (pHVar2 = (Heap *)g_INT_02c9f040,
+           (Heap *)(*(int *)g_INT_02c9f040 + g_INT_02c9f040) <= param_1)) &&
+          ((pHVar2 = *(Heap **)(g_INT_02c9f040 + 4), pHVar2 == (Heap *)0x0 ||
+           ((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))
+           )))) && ((pHVar2 = *(Heap **)(g_INT_02c9f040 + 8), pHVar2 == (Heap *)0x0 ||
+                    ((param_1 < pHVar2 ||
+                     ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1)))))))) &&
+       ((pHVar1 = g_MainHeap, g_SecondaryHeap == (Heap *)0x0 ||
+        ((((param_1 < g_SecondaryHeap ||
+           (pHVar2 = g_SecondaryHeap,
+           (Heap *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= param_1)) &&
+          ((pHVar2 = g_SecondaryHeap->heap_base, pHVar2 == (Heap *)0x0 ||
+           ((param_1 < pHVar2 || ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1))
+           )))) && ((pHVar2 = g_SecondaryHeap->next_heap_block, pHVar2 == (Heap *)0x0 ||
+                    ((param_1 < pHVar2 ||
+                     ((Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= param_1)))))))))) {
+      while (pHVar2 = pHVar1, pHVar2 != (Heap *)0x0) {
+        if ((pHVar2 <= param_1) && (param_1 < (Heap *)((int)&pHVar2->heap_size + pHVar2->heap_size))
+           ) goto LAB_005c0abc;
+        pHVar1 = pHVar2->next_heap_block;
       }
     }
     else {
 LAB_005c0abc:
       FUN_005c6750();
-      if ((piVar2 < DAT_00626224) && (DAT_00626228 < (uint)piVar2[5])) {
-        DAT_00626228 = piVar2[5];
+      if ((pHVar2 < g_SecondaryHeap) && ((uint)g_INT_00626228 < pHVar2[1].next_heap_block)) {
+        g_INT_00626228 = (int)pHVar2[1].next_heap_block;
       }
-      DAT_02c9f690 = 0;
-      _DAT_02c9f040 = piVar2;
+      g_CHAR_ARRAY_02c9f690[0] = '\0';
+      g_INT_02c9f040 = (int)pHVar2;
     }
     (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626620)();
   }

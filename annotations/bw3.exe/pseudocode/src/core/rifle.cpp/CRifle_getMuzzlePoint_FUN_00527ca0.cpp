@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *this_ptr,CVector3f *out_point)
 
 {
@@ -39,14 +37,14 @@ CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *th
   iVar2 = _strcmp
                     ((this_ptr->base).model.model_name,"LITEDESLILE.kfm");
   if (iVar2 == 0) {
-    afStack_14[1] = fStack_1c + (float)_DAT_005cdb11;
-    afStack_14[0] = fStack_20 + (float)_DAT_005cdb09;
+    afStack_14[1] = fStack_1c + (float)-0.20000000000000001;
+    afStack_14[0] = fStack_20 + (float)-0.10000000000000001;
   }
   else {
     afStack_14[0] = fStack_20;
     afStack_14[1] = fStack_1c;
   }
-  fStack_18 = fStack_24 * _DAT_005cdb19;
+  fStack_18 = fStack_24 * 0.5f;
   core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80(&CStack_23d4,0);
   pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
   unaff_ESI->x = fStack_18;

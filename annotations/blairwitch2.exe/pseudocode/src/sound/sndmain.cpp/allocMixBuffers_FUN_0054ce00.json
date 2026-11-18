@@ -2,21 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 166,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 9,
+    "pseudocode_lines": 53,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 183
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -42,7 +39,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8ce0",
@@ -65,62 +62,62 @@
     },
     {
       "addr": "0061bc9c",
-      "name": "DAT_0061bc9c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e90",
-      "name": "DAT_02648e90",
-      "type": "undefined4",
+      "name": "g_MixBufferReadIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e94",
-      "name": "DAT_02648e94",
-      "type": "undefined4",
+      "name": "g_MixBufferWriteIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e98",
-      "name": "DAT_02648e98",
-      "type": "undefined4",
+      "name": "g_MixBufferSize",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648e9c",
-      "name": "DAT_02648e9c",
-      "type": "undefined4",
+      "name": "g_NumMixBuffers",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02648ea0",
-      "name": "DAT_02648ea0",
-      "type": "undefined4",
+      "name": "g_TertiaryMixBuffer",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "02648ec4",
-      "name": "DAT_02648ec4",
-      "type": "undefined4",
+      "name": "g_PrimaryMixBuffer",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "02648ee8",
-      "name": "DAT_02648ee8",
-      "type": "undefined4",
+      "name": "g_SecondaryMixBuffer",
+      "type": "float*",
       "value": null
     }
   ],
@@ -257,75 +254,91 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "realloc(_DAT_02648ec4,num_buffers * iVar4 * DAT_0061bc9c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "_DAT_02648ee8 = realloc(_DAT_02648ee8,DAT_0061bc9c * iVar4 * 2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "_DAT_02648ea0 = realloc(_DAT_02648ea0,iVar4 * DAT_0061bc9c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "if (0 < DAT_0061bc9c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 41,
-      "match": "*(void **)(iVar2 + 0x2648ec8",
-      "severity": "moderate",
-      "text": "*(void **)(iVar2 + 0x2648ec8) =",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(void *)((int)_DAT_02648ec4",
+      "match": "(float **)((int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
-      "text": "(void *)((int)_DAT_02648ec4 + _DAT_02648e98 * iVar4 * _DAT_02648e9c * 4);",
+      "text": "*(float **)((int)g_ChannelPrimaryBuffers + iVar2) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_0061bc9c",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_0061bc9c);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(int *)((int)g_ChannelTertiaryBuffers",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelTertiaryBuffers + iVar2) = (int)g_TertiaryMixBuffer + iVar3;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Complex pointer cast",
       "line": 46,
-      "match": "(int)pvVar1",
+      "match": "(int *)((int)g_ChannelSecondaryBuffersA",
       "severity": "moderate",
-      "text": "*(int *)(iVar2 + 0x2648f0c) = (int)pvVar1 + iVar5;",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersA + iVar2) = (int)g_SecondaryMixBuffer + iVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)g_ChannelSecondaryBuffersB",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)g_ChannelPrimaryBuffers",
+      "severity": "moderate",
+      "text": "*(float **)((int)g_ChannelPrimaryBuffers + iVar2) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ChannelTertiaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)g_ChannelTertiaryBuffers",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelTertiaryBuffers + iVar2) = (int)g_TertiaryMixBuffer + iVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_TertiaryMixBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)g_TertiaryMixBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelTertiaryBuffers + iVar2) = (int)g_TertiaryMixBuffer + iVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ChannelSecondaryBuffersA` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_ChannelSecondaryBuffersA",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersA + iVar2) = (int)g_SecondaryMixBuffer + iVar6;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_SecondaryMixBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_SecondaryMixBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersA + iVar2) = (int)g_SecondaryMixBuffer + iVar6;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ChannelSecondaryBuffersB` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)g_ChannelSecondaryBuffersB",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pfVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)pfVar1",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;",
       "type": "pointer_truncation"
     }
   ]

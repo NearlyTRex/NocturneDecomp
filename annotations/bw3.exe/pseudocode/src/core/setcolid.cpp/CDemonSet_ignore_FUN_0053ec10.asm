@@ -17,17 +17,17 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417f1f
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424790
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426a16
-;   core_charactr.cpp_FUN_0042c230 at 0042c385
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 0043299f
 ;   ... and 29 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005d0bf4
 ;   TerminatedCString s_CDemonSet_ignore_ignore_005d0c09
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -61,10 +61,10 @@ section .text
     MOV EDI,0x5d0bf4                    ; 0053ec47 | = "..\\core\\setcolid.cpp"
     MOV EBP,0x473                       ; 0053ec4c
     PUSH 0x5d0c09                       ; 0053ec51 | = "CDemonSet::ignore - ignore list is full"
-    MOV dword ptr [0x01d71de0],EDI      ; 0053ec56 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0053ec5c | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0053ec62
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 0053ec56 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 0053ec5c | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053ec62
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0053ec67
     POP EDI                             ; 0053ec6a
     JMP 0x0053ec2c                      ; 0053ec6b

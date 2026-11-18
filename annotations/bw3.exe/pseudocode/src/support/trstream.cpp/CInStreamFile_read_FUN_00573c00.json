@@ -17,21 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "00438ef0",
-      "from_addr": "00438f74",
-      "name": "cockpit_ckptutil.c_FUN_00438ef0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004350a0",
       "from_addr": "00435174",
       "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401590",
-      "from_addr": "004015ca",
-      "name": "engine_2d.c_FUN_00401590",
+      "addr": "00438ef0",
+      "from_addr": "00438f74",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,15 +41,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00401590",
+      "from_addr": "004015ca",
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004afbf0",
       "from_addr": "004afda4",
-      "name": "engine_font.cpp_FUN_004afbf0",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004afbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00512fb0",
       "from_addr": "0051315c",
-      "name": "engine_pod.cpp_FUN_00512fb0",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00512fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,7 +67,7 @@
     {
       "addr": "0056ad60",
       "from_addr": "0056ae86",
-      "name": "engine_texture.cpp_FUN_0056ad60",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_0056ad60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,7 +120,7 @@
       {
         "call_addr": "004015ca",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401590",
+        "caller": "engine_2d.c_loadPaletteFile_FUN_00401590",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +142,7 @@
       {
         "call_addr": "00438f74",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_00438ef0",
+        "caller": "cockpit_ckptutil.c_readBitmapFile_FUN_00438ef0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 139,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
       "unnamed_param"
     ],
     "total_lines": 75
@@ -57,7 +58,7 @@
   "globals": [
     {
       "addr": "00607b6d",
-      "name": "DAT_00607b6d",
+      "name": "g_DOUBLE_00607b68+5",
       "type": "undefined4",
       "value": null
     },
@@ -227,16 +228,24 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "error_code = *(int *)(&DAT_00607b6d + param_1) >> 0x18;",
+      "text": "error_code = *(int *)((int)&g_DOUBLE_00607b68 + param_1 + 5) >> 0x18;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `&g_DOUBLE_00607b68` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 23,
-      "match": "DAT_00607b6d",
-      "severity": "mild",
-      "text": "error_code = *(int *)(&DAT_00607b6d + param_1) >> 0x18;",
-      "type": "undefined_data"
+      "match": "(int)&g_DOUBLE_00607b68",
+      "severity": "moderate",
+      "text": "error_code = *(int *)((int)&g_DOUBLE_00607b68 + param_1 + 5) >> 0x18;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "error_code = *(int *)((int)&g_DOUBLE_00607b68 + param_1 + 5) >> 0x18;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

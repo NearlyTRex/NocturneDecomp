@@ -11,9 +11,9 @@
 ;   TerminatedCString s_pGemOrient_005dc6ae
 ;   TerminatedCString s_pEmitterPos_005dc6b9
 ;   TerminatedCString s_exists_005dc6c5
-;   undefined4 DAT_005dc6cc
-;   undefined4 DAT_005dc6ce
-;   undefined4 DAT_005dc6d0
+;   TerminatedCString s_r_005dc6cc
+;   TerminatedCString s_g_005dc6ce
+;   TerminatedCString s_b_005dc6d0
 ;   int g_CMansionPuzzleCircleClassVersion = 0x3
 ;
 ; Called Functions:
@@ -60,17 +60,17 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 004e74c9
         ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b960(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e74ce
-    PUSH 0x5dc6cc                       ; 004e74d1 | DAT_005dc6cc
+    PUSH 0x5dc6cc                       ; 004e74d1 | = "r"
     PUSH ESI                            ; 004e74d6
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 004e74d7
         ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b960(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e74dc
-    PUSH 0x5dc6ce                       ; 004e74df | DAT_005dc6ce
+    PUSH 0x5dc6ce                       ; 004e74df | = "g"
     PUSH EDI                            ; 004e74e4
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 004e74e5
         ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b960(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e74ea
-    PUSH 0x5dc6d0                       ; 004e74ed | DAT_005dc6d0
+    PUSH 0x5dc6d0                       ; 004e74ed | = "b"
     INC EBX                             ; 004e74f2
     PUSH EBP                            ; 004e74f3
     ADD ESI,0x64                        ; 004e74f4

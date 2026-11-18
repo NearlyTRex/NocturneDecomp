@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 435,
-    "complexity_score": 201,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 171,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 128,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "dropped_loop_counter",
+      "suspect_float",
+      "warning_unreachable"
     ],
-    "total_lines": 606
+    "total_lines": 563
   },
   "cross_references": [
     {
@@ -51,20 +52,20 @@
   "globals": [
     {
       "addr": "005d1d27",
-      "name": "DAT_005d1d27",
-      "type": "undefined4",
-      "value": null
+      "name": "g_VoxelSizeReciprocal2",
+      "type": "float",
+      "value": "0.125"
     },
     {
       "addr": "005d1d2b",
-      "name": "DAT_005d1d2b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RaycastStepScale",
+      "type": "float",
+      "value": "2.684355E+8"
     },
     {
       "addr": "00613888",
-      "name": "DAT_00613888",
-      "type": "undefined4",
+      "name": "g_VoxelYBitMasks",
+      "type": "uchar[8]",
       "value": null
     }
   ],
@@ -418,20 +419,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unreachable code block removed",
       "line": 2,
-      "match": "WARNING: Globals starting with",
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "/* WARNING: Removing unreachable block (ram,0x004768f2) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 147,
-      "match": "DAT_00613888",
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "(&DAT_00613888)[local_38 % 8]) != 0)) {",
-      "type": "undefined_data"
+      "text": "/* WARNING: Removing unreachable block (ram,0x004768c4) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00476920) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 69,
+      "match": "6.556736e-39",
+      "severity": "mild",
+      "text": "dVar14 = round((double)(fVar3 * 6.556736e-39));",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 71,
+      "match": "6.556726e-39",
+      "severity": "mild",
+      "text": "dVar14 = round((double)(fVar3 * 6.556726e-39));",
+      "type": "suspect_float"
+    },
+    {
+      "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
+      "line": 131,
+      "match": "} while( true );",
+      "severity": "moderate",
+      "text": "} while( true );",
+      "type": "dropped_loop_counter"
     }
   ]
 }

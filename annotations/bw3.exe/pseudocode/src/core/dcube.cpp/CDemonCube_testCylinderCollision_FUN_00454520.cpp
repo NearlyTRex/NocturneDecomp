@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder)
 
 {
@@ -34,22 +32,22 @@ void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemon
   }
   if (-1 < iVar4) {
     pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[0];
-    if (pCVar1 != (CVector3f *)&DAT_01548b58) {
-      _DAT_01548b58 = pCVar1->x;
-      _DAT_01548b60 = pCVar1->z;
-      _DAT_01548b5c = pCVar1->y;
+    if (pCVar1 != (CVector3f *)&g_FLOAT_01548b58) {
+      g_FLOAT_01548b58 = pCVar1->x;
+      g_FLOAT_01548b60 = pCVar1->z;
+      g_INT_01548b5c = (int)pCVar1->y;
     }
     pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[1];
-    if (pCVar1 != (CVector3f *)&DAT_01548b64) {
-      _DAT_01548b64 = pCVar1->x;
-      _DAT_01548b6c = pCVar1->z;
-      _DAT_01548b68 = pCVar1->y;
+    if (pCVar1 != (CVector3f *)&g_FLOAT_01548b64) {
+      g_FLOAT_01548b64 = pCVar1->x;
+      g_FLOAT_01548b6c = pCVar1->z;
+      g_INT_01548b68 = (int)pCVar1->y;
     }
     pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[2];
-    if (pCVar1 != (CVector3f *)&DAT_01548b70) {
-      _DAT_01548b74 = pCVar1->y;
-      _DAT_01548b78 = pCVar1->z;
-      _DAT_01548b70 = pCVar1->x;
+    if (pCVar1 != (CVector3f *)&g_FLOAT_01548b70) {
+      g_INT_01548b74 = (int)pCVar1->y;
+      g_FLOAT_01548b78 = pCVar1->z;
+      g_FLOAT_01548b70 = pCVar1->x;
       return;
     }
   }

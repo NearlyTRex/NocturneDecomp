@@ -8,13 +8,13 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 s_imp_die_wav_005c567f+1
+;   TerminatedCString s_imp_die_wav_005c5680
 ;   TerminatedCString s_imp_hurt_wav_005c568d
-;   undefined4 DAT_005c56a0
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005c56a0 = 2
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004d7bd0
@@ -46,15 +46,15 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004d7e94
     ADD EAX,0x1c                        ; 004d7e97
     FLD ST0                             ; 004d7e9a
-    FMUL double ptr [0x005c56a0]        ; 004d7e9c | DAT_005c56a0
+    FMUL double ptr [0x005c56a0]        ; 004d7e9c | g_DOUBLE_005c56a0
     PUSH EAX                            ; 004d7ea2
     LEA ESI,[ESP + 0xc]                 ; 004d7ea3
     LEA EDI,[ESP + 0x18]                ; 004d7ea7
     PUSH EBP                            ; 004d7eab
     FSTP ST1                            ; 004d7eac
     FSTP float ptr [EAX + -0x18]        ; 004d7eae
-    CALL core_actor.cpp_FUN_00408b80    ; 004d7eb1
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 004d7eb1
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x10]                ; 004d7eb6
     ADD ESP,0x8                         ; 004d7eba
     XOR EBX,EBX                         ; 004d7ebd
@@ -70,7 +70,7 @@ section .text
     PUSH 0x0                            ; 004d7ed0
     LEA EAX,[ESP + 0x28]                ; 004d7ed2
     PUSH EAX                            ; 004d7ed6
-    MOV EDI,dword ptr [0x005fc5a0]      ; 004d7ed7 | DAT_005fc5a0
+    MOV EDI,dword ptr [0x005fc5a0]      ; 004d7ed7 | g_CFireEffect_PTR_005fc5a0
     PUSH EDI                            ; 004d7edd
     INC EBX                             ; 004d7ede
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 004d7edf
@@ -122,7 +122,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00556be0 ; 004d7f52
         ;   XREF to: 00556be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00556be0(uint sfx_handle)
     ADD ESP,0x4                         ; 004d7f57
-    PUSH 0x5c5680                       ; 004d7f5a | s_imp_die_wav_005c567f+1
+    PUSH 0x5c5680                       ; 004d7f5a | = "imp-die?.wav"
     MOV EAX,dword ptr [EBP + 0x154]     ; 004d7f5f
         ;   Label: LAB_004d7f5f
     PUSH EBP                            ; 004d7f65

@@ -17,7 +17,7 @@ void __cdecl core_grave_cpp_CGrave_process_FUN_004e69e0(CGrave *this_ptr,float d
   if (this_ptr->animation_started == 0) {
     if (this_ptr->grave_state == 0) {
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                        (0x01C51D80,this_ptr->start_condition);
+                        (g_CEventListPtr,this_ptr->start_condition);
       if (iVar3 != 0) {
         core_grave_cpp_CGrave_startAnimation_FUN_004e6bf0(this_ptr);
       }

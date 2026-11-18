@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 44,
-    "cross_reference_count": 15,
+    "complexity_score": 14,
+    "cross_reference_count": 16,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 50
   },
   "cross_references": [
@@ -37,7 +34,7 @@
     {
       "addr": "005a14e0",
       "from_addr": "005a1727",
-      "name": "core_confedrt.cpp_FUN_005a14e0",
+      "name": "core_confedrt.cpp_CConfederate_fireShotgun_FUN_005a14e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,15 +92,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004ac4c0",
+      "from_addr": "004ac6fb",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004ac4c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005a3560",
       "from_addr": "005a39b1",
-      "name": "core_schngeis.cpp_FUN_005a3560",
+      "name": "core_schngeis.cpp_CSchnellGeist_processAI_FUN_005a3560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a5460",
       "from_addr": "005a56a7",
-      "name": "core_union.cpp_FUN_005a5460",
+      "name": "core_union.cpp_CUnion_fireShotgun_FUN_005a5460",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -129,13 +132,13 @@
   "globals": [
     {
       "addr": "01c3f8dc",
-      "name": "DAT_01c3f8dc",
-      "type": "undefined4",
+      "name": "g_SmokeParticleAllocIndex",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 17,
+    "call_site_count": 18,
     "call_sites": [
       {
         "call_addr": "004999b1",
@@ -237,9 +240,9 @@
         "stack_params": 5
       },
       {
-        "call_addr": "0042a91e",
+        "call_addr": "004ac6fb",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004ac4c0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -353,22 +356,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c3f8e0",
-      "severity": "mild",
-      "text": "((CSmokeParticle *)(&DAT_01c3f8e0 + iVar1),position,drag_factor,wind_influence,",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

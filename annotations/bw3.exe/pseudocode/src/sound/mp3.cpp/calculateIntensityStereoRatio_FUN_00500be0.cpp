@@ -19,14 +19,12 @@ void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00500be0(int intens
   }
   else {
     if (intensity_position % 2 != 1) {
-      fVar2 = (float10)ratio;
-      pow(intensity_position / 2);
+      fVar2 = pow((float10)ratio,(float10)(intensity_position / 2));
       *pfVar1 = 1.0;
       pfVar1[0x240] = (float)fVar2;
       return;
     }
-    fVar2 = (float10)ratio;
-    pow((intensity_position + 1) / 2);
+    fVar2 = pow((float10)ratio,(float10)((intensity_position + 1) / 2));
     pfVar1[0x240] = 1.0;
     *pfVar1 = (float)fVar2;
   }

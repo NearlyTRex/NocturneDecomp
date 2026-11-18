@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 93,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 102
   },
@@ -39,8 +38,8 @@
   "globals": [
     {
       "addr": "005bbdf0",
-      "name": "DAT_005bbdf0",
-      "type": "undefined4",
+      "name": "g_MpegScalefactorTable",
+      "type": "double[64]",
       "value": null
     }
   ],
@@ -189,30 +188,6 @@
       "severity": "moderate",
       "text": "pfVar4 = (float *)((int)spectral_samples + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005bbdf0",
-      "severity": "mild",
-      "text": "*pfVar4 = *pfVar4 * (float)*(double *)(&DAT_005bbdf0 + *piVar6 * 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005bbdf0",
-      "severity": "mild",
-      "text": "pfVar4[0x20] = pfVar4[0x20] * (float)*(double *)(&DAT_005bbdf0 + *piVar6 * 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005bbdf0",
-      "severity": "mild",
-      "text": "pfVar4[0x40] = pfVar4[0x40] * (float)*(double *)(&DAT_005bbdf0 + iVar3 * 8);",
-      "type": "undefined_data"
     }
   ]
 }

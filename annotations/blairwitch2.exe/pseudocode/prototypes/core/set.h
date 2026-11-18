@@ -9,13 +9,13 @@
 // Address: 0052bbe0
 void __cdecl staticInit(void);
 
-// Original: core_set.cpp_FUN_0052bc60
+// Original: core_set.cpp_updateHighlightedActors_FUN_0052bc60
 // Address: 0052bc60
-CGame * FUN_0052bc60(void);
+void __cdecl updateHighlightedActors(void);
 
-// Original: core_set.cpp_FUN_0052bca0
+// Original: core_set.cpp_applyActorFlatColor_FUN_0052bca0
 // Address: 0052bca0
-void FUN_0052bca0(int param_1);
+void __cdecl applyActorFlatColor(CDemonActor *actor);
 
 // Original: core_set.cpp_CDemonSet_ctor_FUN_0052bd20
 // Address: 0052bd20
@@ -37,9 +37,9 @@ void __cdecl CDemonSet::load(CDemonSet *this_ptr,char *filename);
 // Address: 0052d0e0
 void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_param,int render_mode);
 
-// Original: core_set.cpp_FUN_0052d3c0
+// Original: core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0
 // Address: 0052d3c0
-void FUN_0052d3c0(void);
+void __cdecl CDemonSet::precomputeLightVisibility(CDemonSet *this_ptr,int light_index);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_0052d980
 // Address: 0052d980
@@ -73,25 +73,25 @@ void __cdecl CDemonSet::processActors(CDemonSet *this_ptr);
 // Address: 0052ef80
 void __cdecl CDemonSet::renderStaticLights(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_0052f2a0
+// Original: core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0
 // Address: 0052f2a0
-void __cdecl FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl CDemonSet::renderScene(CDemonSet *this_ptr,int skip_prerender);
 
-// Original: core_set.cpp_FUN_0052fad0
+// Original: core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0
 // Address: 0052fad0
-void __cdecl FUN_0052fad0(CDemonSet *this_ptr);
+void __cdecl CDemonSet::renderGogglesView(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_0052fea0
+// Original: core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_0052fea0
 // Address: 0052fea0
-void FUN_0052fea0(CDemonSet *param_1);
+void __cdecl CDemonSet::renderMonsterVisionView(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_005301d0
+// Original: core_set.cpp_CDemonSet_renderOpaqueActors_FUN_005301d0
 // Address: 005301d0
-void FUN_005301d0(CDemonSet *param_1);
+void __cdecl CDemonSet::renderOpaqueActors(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00530410
+// Original: core_set.cpp_CDemonSet_renderTransparentActors_FUN_00530410
 // Address: 00530410
-void FUN_00530410(CDemonSet *param_1);
+void __cdecl CDemonSet::renderTransparentActors(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630
 // Address: 00530630
@@ -101,9 +101,9 @@ void __cdecl CDemonSet::addDynamicLight(CDemonSet *this_ptr,CDemonLight *light);
 // Address: 005306b0
 void __cdecl CDemonSet::addCoronaGlobe(CDemonSet *this_ptr,CDemonGlobe *globe);
 
-// Original: core_set.cpp_FUN_005306e0
+// Original: core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_005306e0
 // Address: 005306e0
-void FUN_005306e0(undefined4 param_1,int param_2);
+void __cdecl CDemonSet::removeCoronaGlobe(CDemonSet *this_ptr,CDemonGlobe *globe);
 
 // Original: core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00530750
 // Address: 00530750
@@ -137,9 +137,9 @@ void __cdecl CDemonSet::lightVertexColor(CDemonSet *this_ptr,CVector3i *world_po
 // Address: 005317c0
 void __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
 
-// Original: core_set.cpp_FUN_00531a90
+// Original: core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_00531a90
 // Address: 00531a90
-void __cdecl FUN_00531a90(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
+void __cdecl CDemonSet::computeVertexOmniLighting(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
 
 // Original: core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00531ca0
 // Address: 00531ca0
@@ -165,9 +165,9 @@ void __cdecl CDemonSet::lightVerticies(CDemonSet *this_ptr,int vertex_count,int 
 // Address: 00533010
 void __cdecl CDemonSet::process(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_FUN_00533190
+// Original: core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_00533190
 // Address: 00533190
-float FUN_00533190(int param_1,float *param_2);
+int __cdecl CDemonSet::getReverbPresetAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
 // Original: core_set.cpp_CDemonSet_loadAssets_FUN_005332a0
 // Address: 005332a0
@@ -197,9 +197,9 @@ void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,SMRGLHeaderPr
 // Address: 00533a80
 void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 
-// Original: core_set.cpp_FUN_00533ed0
+// Original: core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00533ed0
 // Address: 00533ed0
-void FUN_00533ed0(void);
+void __cdecl CDemonSet::renderFaceBatchOrEnvMap(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int flags);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40
 // Address: 00533f40
@@ -257,9 +257,9 @@ int __cdecl CDemonSet::renderSinglePrimitive(CDemonSet *this_ptr,SMRGLHeaderPrim
 // Address: 00534640
 void __cdecl CDemonSet::setCameraAmbientValue(CDemonSet *this_ptr,int index,float value);
 
-// Original: core_set.cpp_FUN_00534680
+// Original: core_set.cpp_CDemonSet_setSunlight_FUN_00534680
 // Address: 00534680
-void FUN_00534680(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl CDemonSet::setSunlight(CDemonSet *this_ptr,float dir_x,float dir_y,float dir_z,float intensity);
 
 // Original: core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_005346c0
 // Address: 005346c0
@@ -321,6 +321,6 @@ SRoom * __cdecl SRoom::ctor(SRoom *this_ptr);
 // Address: 00534d10
 SVDBox * __cdecl SVDBox::ctor(SVDBox *this_ptr);
 
-// Original: core_set.cpp_FUN_00534d80
+// Original: core_set.cpp_C3DSCamera_arrdtor250_FUN_00534d80
 // Address: 00534d80
-void FUN_00534d80(void *param_1);
+C3DSCamera * __cdecl C3DSCamera::arrdtor250(C3DSCamera *objs,uint flags);

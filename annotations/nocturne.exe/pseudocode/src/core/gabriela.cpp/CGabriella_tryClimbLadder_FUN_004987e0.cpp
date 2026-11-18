@@ -43,7 +43,7 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004987e0(CGabriella 
     this_ptr_00 = (CLadder *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
-                             g_CLadderActorType_01cc30e8.name_hash);
+                             g_CLadderClassInfo.name_hash);
     local_24 = this_ptr_00;
     if (this_ptr_00 != (CLadder *)0x0) {
       input_world_point_00 = &(this_ptr_00->base).location;

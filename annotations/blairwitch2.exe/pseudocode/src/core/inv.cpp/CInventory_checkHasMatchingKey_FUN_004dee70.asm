@@ -13,7 +13,7 @@
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230 at 004cf259
 ;
 ; Referenced Globals:
-;   undefined4 s_You_used_a_key_005dbb29+1
+;   TerminatedCString s_You_used_a_key_005dbb2a
 ;   TerminatedCString s_key_unlock_wav_005dbb3a
 ;   TerminatedCString s_This_door_will_not_open_005dbb49
 ;   CGame* g_CGamePtr = 01cb6900
@@ -62,7 +62,7 @@ section .text
     JZ 0x004deef3                       ; 004deeb6
         ;   XREF to: 004deef3 (CONDITIONAL_JUMP)  ; LAB_004deef3
     PUSH 0x40a00000                     ; 004deeb8
-    PUSH 0x5dbb2a                       ; 004deebd | s_You_used_a_key_005dbb29+1
+    PUSH 0x5dbb2a                       ; 004deebd | = "You used a key."
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004deec2
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 004deec7

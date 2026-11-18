@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00562e60(CSkeleton *this_ptr,int bone_count,int frame_count)
 
 {
@@ -16,28 +14,26 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00562e60(CSkeleton *thi
   
   core_skeleton_cpp_CSkeleton_free_FUN_00562f70(this_ptr,0);
   if (100 < bone_count) {
-    _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-    _DAT_01d1d404 = 200;
-    core_main_c_FUN_005030e0("Too bony!");
+    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+    g_INT_01d1d404 = 200;
+    core_main_c_displayErrorAndQuit_FUN_005030e0("Too bony!");
   }
   this_ptr->bone_count = bone_count;
   this_ptr->frame_count = frame_count;
-  pCVar1 = (CQuaternion4f *)
-           operator_new_array
+  pCVar1 = operator_new_array
                      (this_ptr->bone_count * this_ptr->frame_count * 0x10);
   this_ptr->bone_angle_frames = pCVar1;
-  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  pCVar2 = operator_new_array(this_ptr->frame_count * 0xc);
   this_ptr->frame_positions_1 = pCVar2;
-  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  pCVar2 = operator_new_array(this_ptr->frame_count * 0xc);
   this_ptr->frame_positions_2 = pCVar2;
   if (((this_ptr->bone_angle_frames != (CQuaternion4f *)0x0) &&
       (this_ptr->frame_positions_1 != (CVector3f *)0x0)) &&
      (this_ptr->frame_positions_2 != (CVector3f *)0x0)) {
     return;
   }
-  _DAT_01d1d400 = "..\\core\\skeleton.cpp";
-  _DAT_01d1d404 = 0xdc;
-  core_main_c_FUN_005030e0
-            ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",this_ptr->bone_count,this_ptr->frame_count);
+  g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
+  g_INT_01d1d404 = 0xdc;
+  core_main_c_displayErrorAndQuit_FUN_005030e0("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d");
   return;
 }

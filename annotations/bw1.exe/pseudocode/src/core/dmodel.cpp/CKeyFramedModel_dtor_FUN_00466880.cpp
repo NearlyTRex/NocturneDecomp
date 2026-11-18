@@ -9,6 +9,6 @@
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00466880(CKeyFramedModel *this_ptr,uint flags)
 
 {
-  core_dmodel_cpp_FUN_00467160(this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00467160(this_ptr);
   return this_ptr;
 }

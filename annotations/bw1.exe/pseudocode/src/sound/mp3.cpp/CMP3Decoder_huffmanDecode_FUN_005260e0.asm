@@ -19,12 +19,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005eb21a
 ;   TerminatedCString s_Illegal_Huffman_code_in_005eb22b
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01d40dec
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   undefined4 g_HuffmanTables[0].table_size
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_mp3.cpp_CMP3Decoder_readBit_FUN_00525fe0
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_00525f00
 ;
@@ -203,7 +203,7 @@ section .text
     TEST EDI,EDI                        ; 0052625f
     JNZ 0x00526117                      ; 00526261
         ;   XREF to: 00526117 (CONDITIONAL_JUMP)  ; LAB_00526117
-    CMP EBX,dword ptr [0x01d40dec]      ; 00526267 | DAT_01d40dec
+    CMP EBX,dword ptr [0x01d40dec]      ; 00526267 | g_HuffmanTables[0].table_size
     JC 0x00526117                       ; 0052626d
         ;   XREF to: 00526117 (CONDITIONAL_JUMP)  ; LAB_00526117
     CMP dword ptr [ESP],0x0             ; 00526273
@@ -213,10 +213,10 @@ section .text
     MOV ECX,0x5eb21a                    ; 00526282 | = "..\\sound\\mp3.cpp"
     MOV EBX,0x36f                       ; 00526287
     PUSH 0x5eb22b                       ; 0052628c | = "Illegal Huffman code in data.  File: %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 00526291 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00526297 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052629d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00526291 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 00526297 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052629d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 005262a2
     JMP 0x00526149                      ; 005262a5
         ;   XREF to: 00526149 (UNCONDITIONAL_JUMP)  ; LAB_00526149

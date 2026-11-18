@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem *this_ptr,int param_2)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem *this_ptr,int fade_in)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   fade_in
 ;
 ; XREF[6]:
-;   core_actor.cpp_FUN_0040ce40 at 0040ce60
+;   core_actor.cpp_CDemonActor_startParticleSystem_FUN_0040ce40 at 0040ce60
 ;   core_confzomb.cpp_CConfederateZombie_setup_FUN_005a1d90 at 005a1df8
 ;   core_ghostchi.cpp_CGhostChild_setup_FUN_005a9440 at 005a94b4
 ;   core_hellhag.cpp_CHag_setup_FUN_005aa8c0 at 005aa934

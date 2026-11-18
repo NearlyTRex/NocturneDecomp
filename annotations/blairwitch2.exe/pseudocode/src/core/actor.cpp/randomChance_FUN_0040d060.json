@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 31,
+    "complexity_score": 15,
     "cross_reference_count": 47,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 45
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -70,21 +68,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00426f30",
+      "from_addr": "00426f9c",
+      "name": "core_charactr.cpp_CCharacter_processDamageDecals_FUN_00426f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00427130",
       "from_addr": "0042714f",
       "name": "core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00426f30",
-      "from_addr": "00426f9c",
-      "name": "core_charactr.cpp_FUN_00426f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00427060",
       "from_addr": "0042707f",
-      "name": "core_charactr.cpp_FUN_00427060",
+      "name": "core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00427060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -174,7 +172,7 @@
     {
       "addr": "004c5bb0",
       "from_addr": "004c5c02",
-      "name": "core_glass.cpp_FUN_004c5bb0",
+      "name": "core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -204,7 +202,7 @@
     {
       "addr": "004fc820",
       "from_addr": "004fc885",
-      "name": "core_mission.cpp_FUN_004fc820",
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -228,7 +226,7 @@
     {
       "addr": "005a3560",
       "from_addr": "005a37f8",
-      "name": "core_schngeis.cpp_FUN_005a3560",
+      "name": "core_schngeis.cpp_CSchnellGeist_processAI_FUN_005a3560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -325,15 +323,15 @@
   "globals": [
     {
       "addr": "005caf36",
-      "name": "DAT_005caf36",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RandChanceScale",
+      "type": "float",
+      "value": "0.00003051851"
     },
     {
       "addr": "005caf3a",
-      "name": "DAT_005caf3a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_GenRandChanceScale",
+      "type": "float",
+      "value": "5.960465E-8"
     },
     {
       "addr": "00616494",
@@ -398,7 +396,7 @@
       {
         "call_addr": "004fc885",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fc820",
+        "caller": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004fc820",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -409,7 +407,7 @@
       {
         "call_addr": "004c5c02",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004c5bb0",
+        "caller": "core_glass.cpp_CGlass_createShatterParticles_FUN_004c5bb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -559,14 +557,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

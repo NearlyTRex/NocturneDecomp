@@ -11,12 +11,12 @@
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_expireDecals_FUN_0053ba00 at 0053ba26
 ;   core_set.cpp_CDemonSet_renderDecals_FUN_0053ba40 at 0053ba7e
+;   core_set.cpp_CDemonSet_renderScene_FUN_00535da0 at 0053621f
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 005352f0
-;   core_set.cpp_FUN_00535da0 at 0053621f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c8aea0
-;   undefined4 DAT_01c8eea8
+;   int g_INT_01c8aea0
+;   int g_INT_01c8eea8
 ;   undefined4 g_StakePool[0].physics_box.is_valid
 ;   undefined4 g_StakePool[1].physics_box.is_valid
 ;
@@ -43,7 +43,7 @@ section .text
     CMP dword ptr [ESP + 0x18],0x0      ; 004a1ea5
     JZ 0x004a1f75                       ; 004a1eaa
         ;   XREF to: 004a1f75 (CONDITIONAL_JUMP)  ; LAB_004a1f75
-    MOV EBX,dword ptr [0x01c8aea0]      ; 004a1eb0 | DAT_01c8aea0
+    MOV EBX,dword ptr [0x01c8aea0]      ; 004a1eb0 | g_INT_01c8aea0
     XOR ESI,ESI                         ; 004a1eb6
     TEST EBX,EBX                        ; 004a1eb8
     JLE 0x004a1ee4                      ; 004a1eba
@@ -59,7 +59,7 @@ section .text
     CALL core_fire.cpp_CBulletHole_render_FUN_00497610 ; 004a1ecf
         ;   XREF to: 00497610 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_00497610(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 004a1ed4
-    MOV EAX,[0x01c8aea0]                ; 004a1ed7 | DAT_01c8aea0
+    MOV EAX,[0x01c8aea0]                ; 004a1ed7 | g_INT_01c8aea0
         ;   Label: LAB_004a1ed7
     INC ESI                             ; 004a1edc
     ADD EBX,0x40                        ; 004a1edd
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_004a1ee4
     JZ 0x004a1f3c                       ; 004a1ee9
         ;   XREF to: 004a1f3c (CONDITIONAL_JUMP)  ; LAB_004a1f3c
-    MOV ECX,dword ptr [0x01c8eea8]      ; 004a1eeb | DAT_01c8eea8
+    MOV ECX,dword ptr [0x01c8eea8]      ; 004a1eeb | g_INT_01c8eea8
     XOR ESI,ESI                         ; 004a1ef1
     TEST ECX,ECX                        ; 004a1ef3
     JLE 0x004a1f3c                      ; 004a1ef5
@@ -92,7 +92,7 @@ section .text
     CALL core_fire.cpp_CStake_render_FUN_00497dc0 ; 004a1f1d
         ;   XREF to: 00497dc0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_render_FUN_00497dc0(CStake * this_ptr)
     ADD ESP,0x4                         ; 004a1f22
-    MOV ECX,dword ptr [0x01c8eea8]      ; 004a1f25 | DAT_01c8eea8
+    MOV ECX,dword ptr [0x01c8eea8]      ; 004a1f25 | g_INT_01c8eea8
         ;   Label: LAB_004a1f25
     ADD EBX,0x260                       ; 004a1f2b
     INC ESI                             ; 004a1f31
@@ -125,7 +125,7 @@ section .text
     POP ESI                             ; 004a1f72
     POP EBX                             ; 004a1f73
     RET                                 ; 004a1f74
-    MOV ECX,dword ptr [0x01c8aea0]      ; 004a1f75 | DAT_01c8aea0
+    MOV ECX,dword ptr [0x01c8aea0]      ; 004a1f75 | g_INT_01c8aea0
         ;   Label: LAB_004a1f75
     XOR ESI,ESI                         ; 004a1f7b
     TEST ECX,ECX                        ; 004a1f7d
@@ -150,7 +150,7 @@ section .text
     JZ 0x004a1fb3                       ; 004a1fab
         ;   XREF to: 004a1fb3 (CONDITIONAL_JUMP)  ; LAB_004a1fb3
     MOV dword ptr [EBX + 0x1c8aeb4],EDI ; 004a1fad
-    MOV ECX,dword ptr [0x01c8aea0]      ; 004a1fb3 | DAT_01c8aea0
+    MOV ECX,dword ptr [0x01c8aea0]      ; 004a1fb3 | g_INT_01c8aea0
         ;   Label: LAB_004a1fb3
     INC ESI                             ; 004a1fb9
     ADD EBX,0x40                        ; 004a1fba

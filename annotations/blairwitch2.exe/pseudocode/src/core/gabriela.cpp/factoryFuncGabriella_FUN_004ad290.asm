@@ -15,7 +15,7 @@ section .text
     PUSH 0x601b4                        ; 004ad290
         ;   Label: core_gabriela.cpp_factoryFuncGabriella_FUN_004ad290
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004ad295
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004ad29a
     TEST EAX,EAX                        ; 004ad29d
     JNZ 0x004ad2a2                      ; 004ad29f

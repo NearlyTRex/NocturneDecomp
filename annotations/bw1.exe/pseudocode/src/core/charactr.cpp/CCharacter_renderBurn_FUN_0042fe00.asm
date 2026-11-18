@@ -18,13 +18,13 @@
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960 at 0042e98c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d5a27
-;   undefined4 DAT_005fd610
-;   undefined4 DAT_00610cdc
-;   undefined4 DAT_00612560
-;   undefined4 DAT_007c6384
-;   undefined4 DAT_007c6388
-;   undefined4 DAT_01bc120c
+;   double g_DOUBLE_005d5a27 = 65535
+;   float g_FLOAT_005fd610 = 3
+;   SMRGLTextureBasic g_BurnCharTexture
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   float[100] g_BoneBurnIntensity
+;   undefined4 g_BoneBurnIntensity[1]
+;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
@@ -55,10 +55,10 @@ section .text
     POP ESI                             ; 0042fe1c
     POP EBX                             ; 0042fe1d
     RET                                 ; 0042fe1e
-    PUSH 0x610cdc                       ; 0042fe1f | DAT_00610cdc
+    PUSH 0x610cdc                       ; 0042fe1f | g_BurnCharTexture
         ;   Label: LAB_0042fe1f
-    MOV ECX,dword ptr [0x00612560]      ; 0042fe24 | DAT_00612560
-    PUSH ECX                            ; 0042fe2a | DAT_01bc120c
+    MOV ECX,dword ptr [0x00612560]      ; 0042fe24 | g_CDemonRenderer_PTR_00612560
+    PUSH ECX                            ; 0042fe2a | g_CDemonRenderer_01bc120c
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 0042fe2b
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0042fe30
@@ -91,7 +91,7 @@ section .text
     XOR EDX,EDX                         ; 0042fe80
     XOR ECX,ECX                         ; 0042fe82
         ;   Label: LAB_0042fe82
-    MOV dword ptr [EDX + 0x7c6384],ECX  ; 0042fe84 | DAT_007c6384 | DAT_007c6388
+    MOV dword ptr [EDX + 0x7c6384],ECX  ; 0042fe84 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
     INC EAX                             ; 0042fe8a
     MOV ESI,dword ptr [EBX + 0x1de78]   ; 0042fe8b
     ADD EDX,0x4                         ; 0042fe91
@@ -107,18 +107,18 @@ section .text
     TEST EDI,EDI                        ; 0042feab
     JLE 0x0042fef4                      ; 0042fead
         ;   XREF to: 0042fef4 (CONDITIONAL_JUMP)  ; LAB_0042fef4
-    FLD float ptr [0x005fd610]          ; 0042feaf | DAT_005fd610
-    FLD double ptr [0x005d5a27]         ; 0042feb5 | DAT_005d5a27
+    FLD float ptr [0x005fd610]          ; 0042feaf | g_FLOAT_005fd610
+    FLD double ptr [0x005d5a27]         ; 0042feb5 | g_DOUBLE_005d5a27
     MOV EDX,EAX                         ; 0042febb
     FLD float ptr [EDX + 0x3140]        ; 0042febd
         ;   Label: LAB_0042febd
     MOV EAX,dword ptr [EDX + 0x3130]    ; 0042fec3
     FMUL ST1                            ; 0042fec9
-    FLD float ptr [EAX*0x4 + 0x7c6384]  ; 0042fecb | DAT_007c6384
+    FLD float ptr [EAX*0x4 + 0x7c6384]  ; 0042fecb | g_BoneBurnIntensity
     FLD ST3                             ; 0042fed2
     FDIVP ST2,ST0                       ; 0042fed4
     FADDP                               ; 0042fed6
-    FSTP float ptr [EAX*0x4 + 0x7c6384] ; 0042fed8 | DAT_007c6384
+    FSTP float ptr [EAX*0x4 + 0x7c6384] ; 0042fed8 | g_BoneBurnIntensity
     MOV EAX,dword ptr [EBP + 0x14]      ; 0042fedf
     INC ECX                             ; 0042fee2
     MOV ESI,dword ptr [EAX + 0x3120]    ; 0042fee3
@@ -136,9 +136,9 @@ section .text
     JLE 0x0042ff31                      ; 0042ff00
         ;   XREF to: 0042ff31 (CONDITIONAL_JUMP)  ; LAB_0042ff31
     MOV EDI,dword ptr [ESP + 0x10]      ; 0042ff02
-    FLD float ptr [ECX*0x4 + 0x7c6384]  ; 0042ff06 | DAT_007c6384 | DAT_007c6388
+    FLD float ptr [ECX*0x4 + 0x7c6384]  ; 0042ff06 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
         ;   Label: LAB_0042ff06
-    FCOMP double ptr [0x005d5a27]       ; 0042ff0d | DAT_005d5a27
+    FCOMP double ptr [0x005d5a27]       ; 0042ff0d | g_DOUBLE_005d5a27
     FNSTSW AX                           ; 0042ff13
     SAHF                                ; 0042ff15
     JC 0x0042ff19                       ; 0042ff16
@@ -190,9 +190,9 @@ section .text
     XOR EAX,EAX                         ; 0042ff83
     MOV AL,byte ptr [EBX + 0x1]         ; 0042ff85
     FLD float ptr [ECX + 0x4]           ; 0042ff88
-    FMUL float ptr [EAX*0x4 + 0x7c6384] ; 0042ff8b | DAT_007c6384
+    FMUL float ptr [EAX*0x4 + 0x7c6384] ; 0042ff8b | g_BoneBurnIntensity
     CALL crt_math.c_round_FUN_005c03a0  ; 0042ff92
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 0042ff97
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0042ff9b
     ADD ECX,0x4                         ; 0042ff9f
@@ -227,7 +227,7 @@ section .text
         ;   XREF to: 0042ff3d (UNCONDITIONAL_JUMP)  ; LAB_0042ff3d
     FLD float ptr [ESP]                 ; 0042ffeb
         ;   Label: LAB_0042ffeb
-    FCOMP double ptr [0x005d5a27]       ; 0042ffee | DAT_005d5a27
+    FCOMP double ptr [0x005d5a27]       ; 0042ffee | g_DOUBLE_005d5a27
     FNSTSW AX                           ; 0042fff4
     SAHF                                ; 0042fff6
     JBE 0x00430000                      ; 0042fff7
@@ -237,9 +237,9 @@ section .text
         ;   Label: LAB_00430000
     MOV ECX,dword ptr [ESP + 0x18]      ; 00430003
     MOV EBX,dword ptr [ESP + 0x14]      ; 00430007
-    MOV EAX,[0x00612560]                ; 0043000b | DAT_00612560
+    MOV EAX,[0x00612560]                ; 0043000b | g_CDemonRenderer_PTR_00612560
     CALL crt_math.c_round_FUN_005c03a0  ; 00430010
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     INC EDI                             ; 00430015
     FISTP dword ptr [ESP + 0x1c]        ; 00430016
     ADD EBX,0x34                        ; 0043001a

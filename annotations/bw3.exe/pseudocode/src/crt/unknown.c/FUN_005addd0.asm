@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005a3650
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_FUN_005afd50
 ;   GetModuleFileNameA
 ;   GetModuleFileNameW
@@ -66,8 +66,8 @@ section .text
     JNZ 0x005ade39                      ; 005ade27
         ;   XREF to: 005ade39 (CONDITIONAL_JUMP)  ; LAB_005ade39
     PUSH EBX                            ; 005ade29
-    CALL crt_unknown.c_FUN_005a3770     ; 005ade2a
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005ade2a
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005ade2f
     XOR EAX,EAX                         ; 005ade32
     POP EBP                             ; 005ade34
@@ -85,8 +85,8 @@ section .text
     CALL dword ptr CS:[0x5b3604]        ; 005ade42 | PTR_MultiByteToWideChar_005b3604
     PUSH EBX                            ; 005ade49
     MOV EDI,EAX                         ; 005ade4a
-    CALL crt_unknown.c_FUN_005a3770     ; 005ade4c
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005ade4c
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005ade51
     TEST EDI,EDI                        ; 005ade54
     JNZ 0x005ade5f                      ; 005ade56

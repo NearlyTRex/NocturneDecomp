@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 50,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 70
   },
   "cross_references": [
@@ -49,14 +47,14 @@
   "globals": [
     {
       "addr": "027902bc",
-      "name": "DAT_027902bc",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_027902bc",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "02c5fc1c",
-      "name": "DAT_02c5fc1c",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_02c5fc1c",
+      "type": "char[188]",
       "value": null
     }
   ],
@@ -129,22 +127,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_027902bc",
-      "severity": "mild",
-      "text": "if (*(int *)(&DAT_027902bc + iVar1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_02c5fc1c",
-      "severity": "mild",
-      "text": "if (*(int *)(&DAT_02c5fc1c + iVar1) == 0) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

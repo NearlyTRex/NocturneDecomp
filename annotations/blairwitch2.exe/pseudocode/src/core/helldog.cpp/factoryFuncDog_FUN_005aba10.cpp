@@ -11,7 +11,7 @@ CDog * __cdecl core_helldog_cpp_factoryFuncDog_FUN_005aba10(void)
 {
   CDog *pCVar1;
   
-  pCVar1 = (CDog *)operator_new(0x11870);
+  pCVar1 = operator_new(0x11870);
   if (pCVar1 == (CDog *)0x0) {
     return (CDog *)0x0;
   }

@@ -18,12 +18,12 @@
 ;   TerminatedCString s_Out_of_memory_005dfbf9
 ;   TerminatedCString s_core_fldnotes_cpp_005dfc08
 ;   TerminatedCString s_Entry_name_s_is_too_long_005dfc1d
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesEntry_ctor_FUN_004bbcb0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
@@ -43,7 +43,7 @@ section .text
     PUSH 0x15c                          ; 004bc039
         ;   Label: LAB_004bc039
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004bc03e
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004bc043
     TEST EAX,EAX                        ; 004bc046
     JZ 0x004bc053                       ; 004bc048
@@ -60,10 +60,10 @@ section .text
     MOV EDI,0x5dfbe4                    ; 004bc059 | = "..\\core\\fldnotes.cpp"
     MOV EAX,0x731                       ; 004bc05e
     PUSH 0x5dfbf9                       ; 004bc063 | = "Out of memory!"
-    MOV dword ptr [0x01d1d400],EDI      ; 004bc068 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 004bc06e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004bc073
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 004bc068 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 004bc06e | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bc073
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004bc078
     MOV EDI,ESI                         ; 004bc07b
         ;   Label: LAB_004bc07b
@@ -113,10 +113,10 @@ section .text
     MOV ECX,0x5dfb94                    ; 004bc0d5 | = "..\\core\\fldnotes.cpp"
     MOV EBX,0x72b                       ; 004bc0da
     PUSH 0x5dfba9                       ; 004bc0df | = "Too many field note entries in sectio..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004bc0e4 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 004bc0ea | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004bc0f0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 004bc0e4 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 004bc0ea | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bc0f0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 004bc0f5
     JMP 0x004bc039                      ; 004bc0f8
         ;   XREF to: 004bc039 (UNCONDITIONAL_JUMP)  ; LAB_004bc039
@@ -125,10 +125,10 @@ section .text
     MOV EDX,0x5dfc08                    ; 004bc0fe | = "..\\core\\fldnotes.cpp"
     MOV ECX,0x736                       ; 004bc103
     PUSH 0x5dfc1d                       ; 004bc108 | = "Entry name '%s' is too long"
-    MOV dword ptr [0x01d1d400],EDX      ; 004bc10d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004bc113 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004bc119
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 004bc10d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 004bc113 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004bc119
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004bc11e
     JMP 0x004bc08c                      ; 004bc121
         ;   XREF to: 004bc08c (UNCONDITIONAL_JUMP)  ; LAB_004bc08c

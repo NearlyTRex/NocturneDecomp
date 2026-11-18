@@ -16,7 +16,7 @@ void __cdecl core_skeleton_cpp_freeUnusedModelsAndSkeletons_FUN_005491b0(void)
   this_ptr = g_DeformableModelPool;
   iVar1 = 0;
   do {
-    if (*(int *)(&DAT_02177ff4 + iVar1) == 0) {
+    if (*(int *)(g_CHAR_ARRAY_02177ff4 + iVar1) == 0) {
       core_skeleton_cpp_CDeformableModel_free_FUN_00541160(this_ptr);
     }
     iVar1 = iVar1 + 4;
@@ -25,7 +25,7 @@ void __cdecl core_skeleton_cpp_freeUnusedModelsAndSkeletons_FUN_005491b0(void)
   this_ptr_00 = g_SkeletonPool;
   iVar1 = 0;
   do {
-    if (*(int *)(&DAT_02628554 + iVar1) == 0) {
+    if (*(int *)(g_CHAR_ARRAY_02628554 + iVar1) == 0) {
       core_skeleton_cpp_CSkeleton_free_FUN_00540980(this_ptr_00,1);
     }
     iVar1 = iVar1 + 4;

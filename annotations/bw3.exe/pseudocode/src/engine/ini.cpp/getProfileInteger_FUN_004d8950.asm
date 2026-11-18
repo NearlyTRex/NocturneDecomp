@@ -10,11 +10,11 @@
 ; char *           Stack[0x10]:4   filename
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_stdlib.c_atoi_FUN_005a5f50
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_ini.cpp_CIni_getProfileString_FUN_004d8290
@@ -70,10 +70,10 @@ section .text
     MOV EDI,0x5c57a8                    ; 004d89c7
     MOV EBP,0x23d                       ; 004d89cc
     PUSH 0x5c57ba                       ; 004d89d1
-    MOV dword ptr [0x01d71de0],EDI      ; 004d89d6 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 004d89dc | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004d89e2
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 004d89d6 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 004d89dc | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d89e2
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d89e7
     POP EDI                             ; 004d89ea
     JMP 0x004d89b1                      ; 004d89eb

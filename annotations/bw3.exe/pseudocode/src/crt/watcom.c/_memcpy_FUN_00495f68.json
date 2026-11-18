@@ -2,20 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 647,
+    "complexity_score": 662,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 54,
+    "suspect_count": 55,
     "suspect_types": [
+      "displaced_global_access",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unresolved_funcptr",
       "warning_indirect_jump",
-      "warning_jumptable"
+      "warning_jumptable",
+      "wrong_global"
     ],
     "total_lines": 143
   },
@@ -89,9 +90,9 @@
     },
     {
       "addr": "005fc4b4",
-      "name": "DAT_005fc4b4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fc4b4",
+      "type": "int",
+      "value": "0x496004"
     }
   ],
   "pcode_summary": {
@@ -220,16 +221,8 @@
       "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005fc4b4",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -284,16 +277,8 @@
       "line": 38,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005fc4b4",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -348,16 +333,8 @@
       "line": 48,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005fc4b4",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -428,16 +405,8 @@
       "line": 61,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_005fc4b4",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Jump table recovery failed",
@@ -460,16 +429,48 @@
       "line": 78,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_INT_005fc4b4 accessed via (&g_INT_005fc4b4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilmReelClassVersion (at 0x005fc4b8, +4 bytes).",
+      "line": 27,
+      "match": "g_INT_005fc4b4",
+      "severity": "moderate",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_INT_005fc4b4 accessed via (&g_INT_005fc4b4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilmReelClassVersion (at 0x005fc4b8, +4 bytes).",
+      "line": 38,
+      "match": "g_INT_005fc4b4",
+      "severity": "moderate",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_INT_005fc4b4 accessed via (&g_INT_005fc4b4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilmReelClassVersion (at 0x005fc4b8, +4 bytes).",
+      "line": 48,
+      "match": "g_INT_005fc4b4",
+      "severity": "moderate",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_INT_005fc4b4 accessed via (&g_INT_005fc4b4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilmReelClassVersion (at 0x005fc4b8, +4 bytes).",
+      "line": 61,
+      "match": "g_INT_005fc4b4",
+      "severity": "moderate",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_INT_005fc4b4 accessed via (&g_INT_005fc4b4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilmReelClassVersion (at 0x005fc4b8, +4 bytes).",
       "line": 78,
-      "match": "DAT_005fc4b4",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_005fc4b4 + uVar2 * 4))();",
-      "type": "undefined_data"
+      "match": "g_INT_005fc4b4",
+      "severity": "moderate",
+      "text": "(*(code *)(&g_INT_005fc4b4)[uVar2])();",
+      "type": "wrong_global"
     },
     {
       "description": "Pointer value `plVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -598,6 +599,19 @@
       "severity": "moderate",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x5fc4b4] lands in g_INT_005fc4b4 but intended target is g_CFilmReelClassVersion at 0x5fc4b8 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_005fc4b4",
+      "displacement": "0x5fc4b4",
+      "instruction_address": "",
+      "intended_global": "g_CFilmReelClassVersion",
+      "line": 27,
+      "match": "0x5fc4b4",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 00495f9c: JMP dword ptr [EAX*0x4 + 0x5fc4b4]  ; g_INT_005fc4b4",
+      "type": "displaced_global_access"
     }
   ]
 }

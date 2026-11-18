@@ -12,6 +12,6 @@ CExamplePuzzle * __cdecl core_bmppuzzl_cpp_CExamplePuzzle_ctor_FUN_0059bf50(CExa
   CExamplePuzzle *pCVar1;
   
   pCVar1 = (CExamplePuzzle *)core_bmppuzzl_cpp_CPuzzle_ctor_FUN_0059ab30(&this_ptr->base);
-  (pCVar1->base).vtable = &g_CExamplePuzzleVTable;
+  (pCVar1->base).vtable = g_CExamplePuzzleVTable;
   return pCVar1;
 }

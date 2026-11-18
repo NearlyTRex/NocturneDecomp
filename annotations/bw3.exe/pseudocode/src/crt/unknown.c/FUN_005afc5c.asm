@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005afc5c(int param_1)
+; void crt_unknown_c_FUN_005afc5c(undefined *param_1)
 ;
 ;
 ; XREF[1]:
@@ -10,10 +10,10 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079cc = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d0 = 005a7f44
-;   undefined4 DAT_02d261f0
+;   void* g_PTR_02d261f0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;   crt_unknown.c_FUN_005a7f44
 ;
 ; *****************************************************************************
@@ -26,7 +26,7 @@ section .text
     PUSH EDI                            ; 005afc5e
     MOV EDI,dword ptr [ESP + 0x10]      ; 005afc5f
     CALL dword ptr [0x006079cc]         ; 005afc63 | PTR_crt_unknown.c_FUN_005a7f44_006079cc
-    MOV EBX,dword ptr [0x02d261f0]      ; 005afc69 | DAT_02d261f0
+    MOV EBX,dword ptr [0x02d261f0]      ; 005afc69 | g_PTR_02d261f0
     MOV ESI,0x2d261f0                   ; 005afc6f
     TEST EBX,EBX                        ; 005afc74
     JZ 0x005afca6                       ; 005afc76
@@ -40,15 +40,15 @@ section .text
         ;   XREF to: 005afc8f (CONDITIONAL_JUMP)  ; LAB_005afc8f
     MOV EDI,dword ptr [EBX + 0x8]       ; 005afc83
     PUSH EDI                            ; 005afc86
-    CALL crt_unknown.c_FUN_005a3770     ; 005afc87
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005afc87
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005afc8c
     MOV EDI,dword ptr [EBX]             ; 005afc8f
         ;   Label: LAB_005afc8f
     PUSH EBX                            ; 005afc91
-    MOV dword ptr [ESI],EDI             ; 005afc92 | DAT_02d261f0
-    CALL crt_unknown.c_FUN_005a3770     ; 005afc94
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    MOV dword ptr [ESI],EDI             ; 005afc92 | g_PTR_02d261f0
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005afc94
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005afc99
     JMP 0x005afca6                      ; 005afc9c
         ;   XREF to: 005afca6 (UNCONDITIONAL_JUMP)  ; LAB_005afca6

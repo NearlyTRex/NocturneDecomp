@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 69,
+    "complexity_score": 18,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 68
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
   },
   "cross_references": [
     {
@@ -37,7 +34,7 @@
     {
       "addr": "004bcbf0",
       "from_addr": "004bcfb0",
-      "name": "core_game.cpp_FUN_004bcbf0",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,15 +88,15 @@
   "globals": [
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00616044",
@@ -127,20 +124,20 @@
     },
     {
       "addr": "01cb7528",
-      "name": "DAT_01cb7528",
-      "type": "undefined4",
+      "name": "g_PrevKeyboardState",
+      "type": "char[600]",
       "value": null
     },
     {
       "addr": "01cb7780",
-      "name": "DAT_01cb7780",
-      "type": "undefined4",
+      "name": "g_InputResetFlag",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cb7784",
-      "name": "DAT_01cb7784",
-      "type": "undefined4",
+      "name": "g_StoredCameraValue",
+      "type": "int",
       "value": null
     },
     {
@@ -157,8 +154,8 @@
     },
     {
       "addr": "026677e0",
-      "name": "DAT_026677e0",
-      "type": "undefined4",
+      "name": "g_INT_026677e0",
+      "type": "int",
       "value": null
     }
   ],
@@ -190,7 +187,7 @@
       {
         "call_addr": "004bcfb0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bcbf0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,7 +198,7 @@
       {
         "call_addr": "004bd1f6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bcbf0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -299,6 +296,18 @@
     "pcode_op_count": 224
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "004d19d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8864
+    },
+    "bw3.exe": {
+      "addr": "004ba490",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8864
+    },
     "nocedit.exe": {
       "addr": "004dce70",
       "by": "name",
@@ -328,38 +337,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01cb7528",
-      "severity": "mild",
-      "text": "memset(&DAT_01cb7528,0,600);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "wincore_winrun_cpp_setCursorPosition_FUN_0058ed10(DAT_006141b8 / 2,DAT_006141bc / 2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "wincore_winrun_cpp_setCursorPosition_FUN_0058ed10(DAT_006141b8 / 2,DAT_006141bc / 2);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

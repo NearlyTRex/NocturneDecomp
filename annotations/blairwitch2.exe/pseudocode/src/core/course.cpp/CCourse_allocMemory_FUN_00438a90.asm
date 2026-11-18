@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00438a90(CCourse *this_ptr,int param_2)
+; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00438a90(CCourse *this_ptr,int count)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   count
 ;
 ; XREF[1]:
 ;   core_course.cpp_CCourse_load_FUN_00438af0 at 00438b7b
@@ -13,12 +13,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_course_cpp_005cdfe2
 ;   TerminatedCString s_CCourse_allocMemory_out_005cdff5
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00438c20
-;   core_main.c_FUN_004e4500
+;   core_course.cpp_CCourse_free_FUN_00438c20
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
         ;   Label: core_course.cpp_CCourse_allocMemory_FUN_00438a90
     MOV EBX,dword ptr [ESP + 0x8]       ; 00438a91
     PUSH EBX                            ; 00438a95
-    CALL core_course.cpp_FUN_00438c20   ; 00438a96
-        ;   XREF to: 00438c20 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00438c20()
+    CALL core_course.cpp_CCourse_free_FUN_00438c20 ; 00438a96
+        ;   XREF to: 00438c20 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_00438c20(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00438a9b
     MOV EAX,dword ptr [ESP + 0xc]       ; 00438a9e
     MOV dword ptr [EBX],EAX             ; 00438aa2
@@ -40,7 +40,7 @@ section .text
     SUB EAX,EDX                         ; 00438aac
     PUSH EAX                            ; 00438aae
     CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 00438aaf
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005b8df8(uint size)
     ADD ESP,0x4                         ; 00438ab4
     MOV dword ptr [EBX + 0x4],EAX       ; 00438ab7
     TEST EAX,EAX                        ; 00438aba
@@ -52,10 +52,10 @@ section .text
         ;   Label: LAB_00438ac0
     MOV EBX,0x6e                        ; 00438ac5
     PUSH 0x5cdff5                       ; 00438aca | = "CCourse::allocMemory - out of hunk!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00438acf | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00438ad5 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00438adb
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00438acf | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 00438ad5 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00438adb
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00438ae0
     POP EBX                             ; 00438ae3
     RET                                 ; 00438ae4

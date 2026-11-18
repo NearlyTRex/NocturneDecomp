@@ -22,13 +22,13 @@
     {
       "addr": "004a17f0",
       "from_addr": "004a180b",
-      "name": "core_flashlit.cpp_FUN_004a17f0",
+      "name": "core_flashlit.cpp_loadNotesBitmap_FUN_004a17f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a1870",
       "from_addr": "004a1940",
-      "name": "core_flashlit.cpp_FUN_004a1870",
+      "name": "core_flashlit.cpp_loadNotesBitmaps_FUN_004a1870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,7 +52,7 @@
     {
       "addr": "004b5190",
       "from_addr": "004b56be",
-      "name": "core_game.cpp_FUN_004b5190",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,21 +68,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004611a0",
+      "from_addr": "004611c6",
+      "name": "engine_dosio.cpp_changeFileExtension_FUN_004611a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004610d0",
       "from_addr": "00461102",
-      "name": "engine_dosio.cpp_FUN_004610d0",
+      "name": "engine_dosio.cpp_ensureTrailingSlash_FUN_004610d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00461260",
       "from_addr": "00461298",
-      "name": "engine_dosio.cpp_FUN_00461260",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004611a0",
-      "from_addr": "004611c6",
-      "name": "engine_dosio.cpp_changeFileExtension_FUN_004611a0",
+      "name": "engine_dosio.cpp_resolveRelativePath_FUN_00461260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,7 +94,7 @@
     {
       "addr": "004a7fd0",
       "from_addr": "004a80ed",
-      "name": "engine_font.cpp_FUN_004a7fd0",
+      "name": "engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,7 +112,13 @@
     {
       "addr": "00575150",
       "from_addr": "00575298",
-      "name": "engine_texture.cpp_FUN_00575150",
+      "name": "engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cb20",
+      "from_addr": "0047ce5c",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047cb20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -134,15 +140,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047cb20",
-      "from_addr": "0047ce5c",
-      "name": "shape_edittool.cpp_FUN_0047cb20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00481e20",
       "from_addr": "00481e56",
-      "name": "shape_edittool.cpp_FUN_00481e20",
+      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00481e20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -285,7 +285,7 @@
       {
         "call_addr": "004b56be",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b5190",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b5190",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

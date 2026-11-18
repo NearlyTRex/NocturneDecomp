@@ -6,38 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 
 {
-  uint uVar1;
-  int iVar2;
-  UIntegerFloat UVar3;
-  CDemonRenderer *this_ptr_00;
-  CDemonRenderer *this_ptr_01;
-  CDemonRenderer *this_ptr_02;
-  CDemonRenderer *this_ptr_03;
-  CDemonRenderer *this_ptr_04;
-  CDemonRenderer *this_ptr_05;
-  float10 fVar4;
-  SMRGLHeaderPrimitive *pSVar5;
-  SMRGLHeaderPrimitive SStack_d4;
-  UIntegerFloat local_bc;
-  uint local_b8;
-  uint local_b4;
-  uint local_b0;
-  float local_ac;
-  float local_a8;
-  float local_a4;
+  CDemonRenderer *pCVar1;
+  uint uVar2;
+  int iVar3;
+  int unaff_EBX;
+  float unaff_ESI;
+  int unaff_EDI;
+  SMRGLHeaderPrimitive *pSVar4;
   CVector3i local_a0;
   CVector3i local_94;
   CVector3i local_88;
   CVector3i local_7c;
   CVector3i local_70;
-  CVector3i local_64;
+  CVector3f local_64;
   CVector3i local_58;
-  CVector3f local_4c;
+  CDemonCube *local_4c;
   CVector3i local_40;
   CDemonCube *local_34;
   float local_30;
@@ -49,7 +35,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemon
   int local_18;
   int local_14;
   
-  _DAT_01bef208 = _DAT_01bef208 + 1;
+  g_CubesTestedCount = g_CubesTestedCount + 1;
   if ((((((this_ptr->grid_bounds_min).x <= grid_x) && ((this_ptr->grid_bounds_min).y <= grid_y)) &&
        ((this_ptr->grid_bounds_min).z <= grid_z)) &&
       ((grid_x <= (this_ptr->grid_bounds_max).x && (grid_y <= (this_ptr->grid_bounds_max).y)))) &&
@@ -60,172 +46,144 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemon
       local_18 = grid_y;
       local_14 = grid_z;
       local_20 = (float)grid_y;
-      local_ac = local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_30 = (float)grid_z;
-      local_a8 = local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      _DAT_01bef20c = _DAT_01bef20c + 1;
-      local_a4 = local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_64.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_64.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_64.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)*0x01BC120C,&local_64);
+      g_CubesWithVoxelsCount = g_CubesWithVoxelsCount + 1;
+      local_64.x = (float)(int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                                     256.0f);
+      local_64.y = (float)(int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                                     256.0f);
+      local_64.z = (float)(int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                                     256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr->projected_vertex,
+                 (CVector3i *)&local_64);
       local_14 = grid_x + 1;
       local_2c = (float)local_14;
-      local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
-      local_a8 = local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      local_a4 = local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_7c.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_7c.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_7c.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0x30),&local_7c);
+      local_7c.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256.0f);
+      local_7c.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256.0f);
+      local_7c.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr[1].projected_vertex,&local_7c);
       local_14 = grid_z + 1;
-      local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_24 = (float)local_14;
-      local_a8 = local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      local_a4 = local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_40.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_40.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_40.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0x60),&local_40);
-      local_ac = local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
-      local_a8 = local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      local_a4 = local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_58.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_58.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_58.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0x90),&local_58);
+      local_40.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256.0f);
+      local_40.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256.0f);
+      local_40.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr[2].projected_vertex,&local_40);
+      local_58.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256.0f);
+      local_58.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256.0f);
+      local_58.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr[3].projected_vertex,&local_58);
       local_14 = grid_y + 1;
-      local_ac = local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_1c = (float)local_14;
-      local_a8 = local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      local_a4 = local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_a0.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_a0.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_a0.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0xc0),&local_a0);
-      local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
-      local_a8 = local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      local_a4 = local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_94.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_94.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_94.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0xf0),&local_94);
-      local_ac = local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
-      local_a8 = local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      local_a4 = local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_70.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_70.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_70.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0x120),&local_70);
-      local_ac = local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
-      local_a8 = local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-      local_a4 = local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-      local_88.x = (int)ROUND(local_ac * _DAT_005ff620);
-      local_88.y = (int)ROUND(local_a8 * _DAT_005ff620);
-      local_88.z = (int)ROUND(local_a4 * _DAT_005ff620);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + 0x150),&local_88);
-      uVar1 = DAT_00629024 & DAT_00629054 & DAT_00629084 & DAT_006290b4 & DAT_006290e4 &
-              DAT_00629114 & DAT_00629144 & DAT_00629174;
-      pSVar5 = &SStack_d4;
-      if (((uVar1 & 0x80000000) == 0) || ((char)uVar1 == '\0')) {
-        _DAT_01bef210 = _DAT_01bef210 + 1;
+      local_a0.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256.0f);
+      local_a0.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256.0f);
+      local_a0.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr[4].projected_vertex,&local_a0);
+      local_94.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256.0f);
+      local_94.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256.0f);
+      local_94.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr[5].projected_vertex,&local_94);
+      local_70.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256.0f);
+      local_70.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256.0f);
+      local_70.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr[6].projected_vertex,&local_70);
+      local_88.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256.0f);
+      local_88.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256.0f);
+      local_88.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_00580173
+                (&g_CDemonRenderer_PTR_0061255c->vertex_buffer_ptr[7].projected_vertex,&local_88);
+      pCVar1 = g_CDemonRenderer_PTR_0061255c;
+      uVar2 = g_SRenderVertex_ARRAY_00629014[0].projected_vertex.screen_x &
+              g_SRenderVertex_ARRAY_00629014[1].projected_vertex.screen_x &
+              g_SRenderVertex_ARRAY_00629014[2].projected_vertex.screen_x &
+              g_SRenderVertex_ARRAY_00629014[3].projected_vertex.screen_x &
+              g_SRenderVertex_ARRAY_00629014[4].projected_vertex.screen_x &
+              g_SRenderVertex_ARRAY_00629014[5].projected_vertex.screen_x &
+              g_SRenderVertex_ARRAY_00629014[6].projected_vertex.screen_x &
+              g_SRenderVertex_ARRAY_00629014[7].projected_vertex.screen_x;
+      if (((uVar2 & 0x80000000) == 0) || ((char)uVar2 == '\0')) {
+        g_CubesVisibleCount = g_CubesVisibleCount + 1;
         if (1 < render_mode) {
           local_14 = grid_z;
-          SStack_d4.base.count = 4;
-          SStack_d4.surface_normal.A.i = 0;
-          SStack_d4.surface_normal.B.i = 0;
-          SStack_d4.surface_normal.C.i = -1;
-          fVar4 = ((float10)grid_z * (float10)(this_ptr->cell_size).z +
-                  (float10)(this_ptr->bbox_min).z) * (float10)_DAT_005db9ac;
-          local_bc.i = 0;
-          local_b4 = 5;
-          local_b0 = 4;
-          round();
-          SStack_d4.surface_normal.D.i = (int)ROUND(fVar4);
-          local_b8 = 1;
-          UVar3.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
-                              (this_ptr_00,pSVar5);
-          pSVar5 = &SStack_d4;
-          if (UVar3.i == 0) {
-            local_14 = grid_z + 1;
-            SStack_d4.surface_normal.C.i = 1;
-            fVar4 = ((float10)local_14 * (float10)(this_ptr->cell_size).z +
-                    (float10)(this_ptr->bbox_min).z) * (float10)_DAT_005db9b4;
-            local_bc.i = 2;
-            local_b8 = 3;
-            local_b4 = 7;
-            local_b0 = 6;
-            SStack_d4.surface_normal.A.i = UVar3.i;
-            SStack_d4.surface_normal.B.i = UVar3.i;
-            round();
-            SStack_d4.surface_normal.D.i = (int)ROUND(fVar4);
-            UVar3.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
-                                (this_ptr_01,pSVar5);
-            pSVar5 = &SStack_d4;
-            if (UVar3.i == 0) {
-              local_14 = grid_x;
-              SStack_d4.surface_normal.A.i = -1;
-              fVar4 = ((float10)grid_x * (float10)(this_ptr->cell_size).x +
-                      (float10)(this_ptr->bbox_min).x) * (float10)_DAT_005db9ac;
-              local_b8 = 4;
-              local_b4 = 7;
-              local_b0 = 3;
-              SStack_d4.surface_normal.B.i = UVar3.i;
-              SStack_d4.surface_normal.C.i = UVar3.i;
-              local_bc.i = UVar3.i;
-              round();
-              SStack_d4.surface_normal.D.i = (int)ROUND(fVar4);
-              UVar3.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
-                                  (this_ptr_02,pSVar5);
-              pSVar5 = &SStack_d4;
-              if (UVar3.i == 0) {
-                local_14 = grid_x + 1;
-                SStack_d4.surface_normal.A.i = 1;
-                fVar4 = ((float10)local_14 * (float10)(this_ptr->cell_size).x +
-                        (float10)(this_ptr->bbox_min).x) * (float10)_DAT_005db9b4;
-                local_bc.i = 1;
-                local_b4 = 6;
-                local_b0 = 5;
-                SStack_d4.surface_normal.B.i = UVar3.i;
-                SStack_d4.surface_normal.C.i = UVar3.i;
-                round();
-                SStack_d4.surface_normal.D.i = (int)ROUND(fVar4);
-                local_b8 = 2;
-                UVar3.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
-                                    (this_ptr_03,pSVar5);
-                pSVar5 = &SStack_d4;
-                if (UVar3.i == 0) {
-                  SStack_d4.surface_normal.B.i = 1;
-                  local_14 = grid_y + 1;
-                  SStack_d4.surface_normal.C.i = 0;
-                  fVar4 = ((float10)local_14 * (float10)(this_ptr->cell_size).y +
-                          (float10)(this_ptr->bbox_min).y) * (float10)_DAT_005db9b4;
-                  local_bc.i = 4;
-                  local_b8 = 5;
-                  local_b4 = 6;
-                  local_b0 = 7;
-                  SStack_d4.surface_normal.A.i = UVar3.i;
-                  round();
-                  SStack_d4.surface_normal.D.i = (int)ROUND(fVar4);
-                  UVar3.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
-                                      (this_ptr_04,pSVar5);
-                  pSVar5 = &SStack_d4;
-                  if (UVar3.i == 0) {
-                    SStack_d4.surface_normal.B.i = -1;
-                    local_14 = grid_y;
-                    SStack_d4.surface_normal.C.i = 0;
-                    fVar4 = ((float10)grid_y * (float10)(this_ptr->cell_size).y +
-                            (float10)(this_ptr->bbox_min).y) * (float10)_DAT_005db9ac;
-                    local_bc.i = 0;
-                    local_b4 = 2;
-                    local_b0 = 3;
-                    SStack_d4.surface_normal.A.i = UVar3.i;
-                    round();
-                    SStack_d4.surface_normal.D.i = (int)ROUND(fVar4);
-                    local_b8 = 1;
-                    iVar2 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
-                                      (this_ptr_05,pSVar5);
-                    if (iVar2 == 0) {
+          pSVar4 = (SMRGLHeaderPrimitive *)0x48d284;
+          round
+                    ((double)(((float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                             (float)-256));
+          iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
+                            (pCVar1,pSVar4);
+          pCVar1 = g_CDemonRenderer_PTR_0061255c;
+          if (iVar3 == 0) {
+            local_18 = grid_z + 1;
+            pSVar4 = (SMRGLHeaderPrimitive *)0x48d2f8;
+            round
+                      ((double)(((float)local_18 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z)
+                               * (float)256));
+            iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
+                              (pCVar1,pSVar4);
+            pCVar1 = g_CDemonRenderer_PTR_0061255c;
+            if (iVar3 == 0) {
+              local_1c = (float)grid_x;
+              pSVar4 = (SMRGLHeaderPrimitive *)0x48d365;
+              round
+                        ((double)(((float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x)
+                                 * (float)-256));
+              iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
+                                (pCVar1,pSVar4);
+              pCVar1 = g_CDemonRenderer_PTR_0061255c;
+              if (iVar3 == 0) {
+                local_20 = (float)(grid_x + 1);
+                pSVar4 = (SMRGLHeaderPrimitive *)0x48d3d1;
+                round
+                          ((double)(((float)(int)local_20 * (this_ptr->cell_size).x +
+                                    (this_ptr->bbox_min).x) * (float)256));
+                iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
+                                  (pCVar1,pSVar4);
+                pCVar1 = g_CDemonRenderer_PTR_0061255c;
+                if (iVar3 == 0) {
+                  local_24 = (float)(unaff_EBX + 1);
+                  pSVar4 = (SMRGLHeaderPrimitive *)0x48d450;
+                  round
+                            ((double)(((float)(int)local_24 * (this_ptr->cell_size).y +
+                                      (this_ptr->bbox_min).y) * (float)256));
+                  iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
+                                    (pCVar1,pSVar4);
+                  pCVar1 = g_CDemonRenderer_PTR_0061255c;
+                  if (iVar3 == 0) {
+                    pSVar4 = (SMRGLHeaderPrimitive *)0x48d4c3;
+                    local_28 = unaff_ESI;
+                    round
+                              ((double)(((float)(int)unaff_ESI * (this_ptr->cell_size).y +
+                                        (this_ptr->bbox_min).y) * (float)-256));
+                    iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
+                                      (pCVar1,pSVar4);
+                    if (iVar3 == 0) {
                       return;
                     }
                   }
@@ -234,29 +192,28 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0(CDemon
             }
           }
         }
-        local_4c.x = (float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
-        local_14 = grid_z;
-        local_4c.y = (float)grid_y * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
-        _DAT_01bef214 = _DAT_01bef214 + 1;
-        local_4c.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
+        local_64.x = (float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
+        local_2c = (float)grid_z;
+        local_64.y = (float)unaff_EDI * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
+        g_CubesRenderedCount = g_CubesRenderedCount + 1;
+        local_64.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-                  (DAT_00612560,&local_4c);
-        core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457f70(local_34,this_ptr->rendering_mode);
+                  (g_CDemonRenderer_PTR_00612560,&local_64);
+        core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457f70(local_4c,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-                  (DAT_00612560,(CVector3f *)&DAT_02c8af28);
-        iVar2 = _DAT_01bef218;
-        *(CDemonCube **)(_DAT_01bef218 * 4 + 0x1bef220) = local_34;
-        iVar2 = iVar2 * 0xc;
-        if ((CVector3f *)(&DAT_01c02aa0 + iVar2) != &local_4c) {
-          ((CVector3f *)(&DAT_01c02aa0 + iVar2))->x = local_4c.x;
-          *(float *)(&DAT_01c02aa4 + iVar2) = local_4c.y;
-          *(float *)(&DAT_01c02aa8 + iVar2) = local_4c.z;
+                  (g_CDemonRenderer_PTR_00612560,&g_ZeroVector);
+        iVar3 = g_PVSDrawnCubeCount;
+        g_PVSCubePointers[g_PVSDrawnCubeCount] = local_4c;
+        if (g_PVSCubePositions + iVar3 != &local_64) {
+          g_PVSCubePositions[iVar3].x = local_64.x;
+          g_PVSCubePositions[iVar3].y = local_64.y;
+          g_PVSCubePositions[iVar3].z = local_64.z;
         }
-        _DAT_01bef218 = _DAT_01bef218 + 1;
-        if (19999 < _DAT_01bef218) {
-          _DAT_01d1d400 = "..\\core\\dtrace.cpp";
-          _DAT_01d1d404 = 0x792;
-          core_main_c_FUN_005030e0("Too many drawn cubes.  Need to recompile.");
+        g_PVSDrawnCubeCount = g_PVSDrawnCubeCount + 1;
+        if (19999 < g_PVSDrawnCubeCount) {
+          g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
+          g_INT_01d1d404 = 0x792;
+          core_main_c_displayErrorAndQuit_FUN_005030e0("Too many drawn cubes.  Need to recompile.");
           return;
         }
       }

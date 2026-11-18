@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007e3e88
+;   int g_ClippedVertexCount
 ;
 ; *****************************************************************************
 
@@ -16,7 +16,7 @@ section .text
     PUSH ESI                            ; 00587c21
     PUSH EDI                            ; 00587c22
     PUSH EBP                            ; 00587c23
-    MOV ESI,dword ptr [0x007e3e88]      ; 00587c24 | DAT_007e3e88
+    MOV ESI,dword ptr [0x007e3e88]      ; 00587c24 | g_ClippedVertexCount
     MOV EAX,0x7e3e8c                    ; 00587c2a
     XOR ECX,ECX                         ; 00587c2f
     TEST ESI,ESI                        ; 00587c31
@@ -38,7 +38,7 @@ section .text
     CMP ECX,ESI                         ; 00587c49
     JL 0x00587c35                       ; 00587c4b
         ;   XREF to: 00587c35 (CONDITIONAL_JUMP)  ; LAB_00587c35
-    MOV dword ptr [0x007e3e88],ESI      ; 00587c4d | DAT_007e3e88
+    MOV dword ptr [0x007e3e88],ESI      ; 00587c4d | g_ClippedVertexCount
         ;   Label: LAB_00587c4d
     POP EBP                             ; 00587c53
     POP EDI                             ; 00587c54

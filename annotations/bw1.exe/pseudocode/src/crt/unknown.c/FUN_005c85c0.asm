@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005ce510 at 005ce68c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006267c9
+;   undefined4 g_DOUBLE_006267c4+5
 ;   undefined4 DAT_006267dc
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     JBE 0x005c8613                      ; 005c860c
         ;   XREF to: 005c8613 (CONDITIONAL_JUMP)  ; LAB_005c8613
     MOV EBX,0x13                        ; 005c860e
-    MOV EBX,dword ptr [EBX + 0x6267c9]  ; 005c8613 | DAT_006267dc | DAT_006267c9
+    MOV EBX,dword ptr [EBX + 0x6267c9]  ; 005c8613 | DAT_006267dc | g_DOUBLE_006267c4+5
         ;   Label: LAB_005c8613
     SAR EBX,0x18                        ; 005c8619
     PUSH EBX                            ; 005c861c

@@ -7,7 +7,7 @@
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ;
-; XREF[76]:
+; XREF[77]:
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 at 0040ba91
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0 at 0040ddea
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240 at 0040e2b4
@@ -18,7 +18,7 @@
 ;   core_bat.cpp_CBat_ctor_FUN_00410fd0 at 0041106d
 ;   core_battery.cpp_CBattery_ctor_FUN_00414720 at 00414758
 ;   core_biggs.cpp_CBiggs_ctor_FUN_00414d10 at 00414d77
-;   ... and 66 more
+;   ... and 67 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_0044fca0

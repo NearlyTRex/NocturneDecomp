@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 698,
+    "complexity_score": 658,
     "cross_reference_count": 6,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 138,
-    "suspect_count": 54,
+    "suspect_count": 50,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -39,19 +39,19 @@
     {
       "addr": "00480f00",
       "from_addr": "00480ff8",
-      "name": "shape_edittool.cpp_FUN_00480f00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00481200",
-      "from_addr": "00481332",
-      "name": "shape_edittool.cpp_FUN_00481200",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00481350",
       "from_addr": "004815cc",
-      "name": "shape_edittool.cpp_FUN_00481350",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481200",
+      "from_addr": "00481332",
+      "name": "shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -114,14 +114,14 @@
     },
     {
       "addr": "0072ff44",
-      "name": "DAT_0072ff44",
-      "type": "undefined4",
+      "name": "g_INT_0072ff44",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0072ff48",
-      "name": "DAT_0072ff48",
-      "type": "undefined4",
+      "name": "g_INT_0072ff48",
+      "type": "int",
       "value": null
     },
     {
@@ -138,14 +138,14 @@
     },
     {
       "addr": "0072ff74",
-      "name": "DAT_0072ff74",
-      "type": "undefined4",
+      "name": "g_INT_0072ff74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0072ff78",
-      "name": "DAT_0072ff78",
-      "type": "undefined4",
+      "name": "g_INT_0072ff78",
+      "type": "int",
       "value": null
     }
   ],
@@ -177,7 +177,7 @@
       {
         "call_addr": "00480ff8",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +188,7 @@
       {
         "call_addr": "00481041",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "00481092",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00480f00",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +210,7 @@
       {
         "call_addr": "00481332",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481200",
+        "caller": "shape_edittool.cpp_draw3DInterpolatedLine_FUN_00481200",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +221,7 @@
       {
         "call_addr": "004815cc",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481350",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
       {
         "call_addr": "0048175e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481350",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +243,7 @@
       {
         "call_addr": "004818de",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00481350",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00481350",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -519,38 +519,6 @@
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_0072ff44",
-      "severity": "mild",
-      "text": "(DAT_0072ff44 >> 0x10,DAT_0072ff48 >> 0x10,DAT_0072ff74 >> 0x10,DAT_0072ff78 >> 0x10",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_0072ff48",
-      "severity": "mild",
-      "text": "(DAT_0072ff44 >> 0x10,DAT_0072ff48 >> 0x10,DAT_0072ff74 >> 0x10,DAT_0072ff78 >> 0x10",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_0072ff74",
-      "severity": "mild",
-      "text": "(DAT_0072ff44 >> 0x10,DAT_0072ff48 >> 0x10,DAT_0072ff74 >> 0x10,DAT_0072ff78 >> 0x10",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_0072ff78",
-      "severity": "mild",
-      "text": "(DAT_0072ff44 >> 0x10,DAT_0072ff48 >> 0x10,DAT_0072ff74 >> 0x10,DAT_0072ff78 >> 0x10",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

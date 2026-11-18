@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   index2
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00483e10 at 00483e23
+;   shape_edittool.cpp_CPickList_swap_FUN_00483e10 at 00483e23
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d2796
 ;   TerminatedCString s_CStrList_swap_invalid_in_005d27ac
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -43,10 +43,10 @@ section .text
         ;   Label: LAB_004814da
     MOV EAX,0xcae                       ; 004814df
     PUSH 0x5d27ac                       ; 004814e4 | = "CStrList::swap - invalid indices"
-    MOV dword ptr [0x01d046a0],EBP      ; 004814e9 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 004814ef | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004814f4
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 004814e9 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 004814ef | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004814f4
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004814f9
     CMP EDI,ESI                         ; 004814fc
     JNZ 0x00481516                      ; 004814fe

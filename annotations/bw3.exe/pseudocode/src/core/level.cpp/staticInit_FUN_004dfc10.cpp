@@ -9,7 +9,7 @@
 void __cdecl core_level_cpp_staticInit_FUN_004dfc10(void)
 
 {
-  core_level_cpp_FUN_004dfc40(0x1d70ab8);
+  core_level_cpp_CLevelLoader_reset_FUN_004dfc40(&g_CLevelLoaderInstance);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0(&CAlphaBitmap_01d70be8);
   _atexit(&WatcomStaticDestructorNode_0060029c);
   return;

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   wincore_winrun.cpp_FUN_0058ed90 at 0058eefd
+;   wincore_winrun.cpp_mainWindowProc_FUN_0058ed90 at 0058eefd
 ;
 ; *****************************************************************************
 

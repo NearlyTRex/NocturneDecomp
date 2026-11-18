@@ -40,8 +40,7 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421ca0(CBoxActor *thi
   pCVar3[1].angular_velocity_temp.z = pCVar3[1].angular_momentum.x;
   pCVar3[1].angular_velocity_temp.y = pCVar3[1].angular_velocity_temp.z;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar3[-1].rotation_matrix.m[0].y,
-             "?question.kfm" + 1);
+            ((CKeyFramedModelInstance *)&pCVar3[-1].rotation_matrix.m[0].y,"question.kfm");
   pCVar3->is_valid = -1;
   pCVar3[1].position.z = 1.4013e-45;
   pCVar3[1].orientation.x = 1.4013e-45;

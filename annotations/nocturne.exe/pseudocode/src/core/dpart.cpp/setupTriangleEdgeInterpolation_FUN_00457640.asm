@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   int g_TexturesDisabled
-;   undefined4 DAT_01b4cd30
-;   undefined4 DAT_01b4cd34
-;   undefined4 DAT_01b4d1b4
-;   undefined4 DAT_01b4d1b8
+;   int g_RenderTriangleEdgeCount
+;   SSoftwareEdge[16] g_EdgeInterpolationArray
+;   int g_RenderTriangleMinScanlineY
+;   int g_RenderTriangleMaxScanlineY
 ;   undefined4 g_RenderStateFlags+1
 ;
 ; *****************************************************************************
@@ -46,24 +46,24 @@ section .text
     MOV EAX,EDI                         ; 00457671
     MOV EDI,EBX                         ; 00457673
     MOV EBX,EAX                         ; 00457675
-    MOV EAX,[0x01b4cd30]                ; 00457677 | DAT_01b4cd30
+    MOV EAX,[0x01b4cd30]                ; 00457677 | g_RenderTriangleEdgeCount
         ;   Label: LAB_00457677
     LEA ECX,[EAX*0x8 + 0x0]             ; 0045767c
     ADD ECX,EAX                         ; 00457683
     SHL ECX,0x3                         ; 00457685
     ADD ECX,0x1b4cd34                   ; 00457688
-    MOV dword ptr [ECX],EDI             ; 0045768e | DAT_01b4cd34
-    MOV EAX,[0x01b4d1b4]                ; 00457690 | DAT_01b4d1b4
+    MOV dword ptr [ECX],EDI             ; 0045768e | g_EdgeInterpolationArray
+    MOV EAX,[0x01b4d1b4]                ; 00457690 | g_RenderTriangleMinScanlineY
     MOV dword ptr [ECX + 0x4],EBX       ; 00457695
     CMP EDI,EAX                         ; 00457698
     JGE 0x004576a2                      ; 0045769a
         ;   XREF to: 004576a2 (CONDITIONAL_JUMP)  ; LAB_004576a2
-    MOV dword ptr [0x01b4d1b4],EDI      ; 0045769c | DAT_01b4d1b4
-    CMP EBX,dword ptr [0x01b4d1b8]      ; 004576a2 | DAT_01b4d1b8
+    MOV dword ptr [0x01b4d1b4],EDI      ; 0045769c | g_RenderTriangleMinScanlineY
+    CMP EBX,dword ptr [0x01b4d1b8]      ; 004576a2 | g_RenderTriangleMaxScanlineY
         ;   Label: LAB_004576a2
     JLE 0x004576b0                      ; 004576a8
         ;   XREF to: 004576b0 (CONDITIONAL_JUMP)  ; LAB_004576b0
-    MOV dword ptr [0x01b4d1b8],EBX      ; 004576aa | DAT_01b4d1b8
+    MOV dword ptr [0x01b4d1b8],EBX      ; 004576aa | g_RenderTriangleMaxScanlineY
     MOV EDI,dword ptr [ESI + 0x14]      ; 004576b0
         ;   Label: LAB_004576b0
     MOV EBX,dword ptr [EBP + 0x14]      ; 004576b3
@@ -216,7 +216,7 @@ section .text
     MOV EBX,dword ptr [ESI + 0x28]      ; 00457841
     ADD EBX,EAX                         ; 00457844
     MOV dword ptr [ECX + 0x40],EBX      ; 00457846
-    INC dword ptr [0x01b4cd30]          ; 00457849 | DAT_01b4cd30
+    INC dword ptr [0x01b4cd30]          ; 00457849 | g_RenderTriangleEdgeCount
         ;   Label: LAB_00457849
     ADD ESP,0x4                         ; 0045784f
         ;   Label: LAB_0045784f

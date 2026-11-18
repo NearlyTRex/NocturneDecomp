@@ -1,0 +1,581 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 475,
+    "complexity_score": 646,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 221,
+    "suspect_count": 40,
+    "suspect_types": [
+      "raw_address_constant",
+      "stack_alignment_array",
+      "stack_ref",
+      "unknown_field",
+      "unknown_type"
+    ],
+    "total_lines": 696
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00464990",
+    "address_range": [
+      [
+        "00464990",
+        "00465053"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990",
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990(CDemonLight *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045f840",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045f840"
+    },
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "00483850",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850"
+    },
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    },
+    {
+      "addr": "004837b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0"
+    },
+    {
+      "addr": "00482e30",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "004839a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_pop_FUN_004839a0"
+    },
+    {
+      "addr": "00580173",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d91f4",
+      "name": "g_DOUBLE_005d91f4",
+      "type": "double",
+      "value": "0.0625"
+    },
+    {
+      "addr": "005d91fc",
+      "name": "g_FLOAT_005d91fc",
+      "type": "float",
+      "value": "0.0625"
+    },
+    {
+      "addr": "005d9200",
+      "name": "g_FLOAT_005d9200",
+      "type": "float",
+      "value": "3.141593"
+    },
+    {
+      "addr": "005d9204",
+      "name": "g_DOUBLE_005d9204",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "005d920c",
+      "name": "g_DOUBLE_005d920c",
+      "type": "double",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "005d9214",
+      "name": "g_FLOAT_005d9214",
+      "type": "float",
+      "value": "0.25"
+    },
+    {
+      "addr": "005d921c",
+      "name": "g_DOUBLE_005d921c",
+      "type": "double",
+      "value": "1024"
+    },
+    {
+      "addr": "005d9224",
+      "name": "g_DOUBLE_005d9224",
+      "type": "double",
+      "value": "18"
+    },
+    {
+      "addr": "005febd0",
+      "name": "g_FLOAT_005febd0",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "00612560",
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.735023041474655,
+    "instruction_count": 434,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 4,
+      "BRANCH": 4,
+      "CALL": 16,
+      "CALLOTHER": 6,
+      "CBRANCH": 8,
+      "COPY": 1246,
+      "FLOAT2FLOAT": 84,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 44,
+      "FLOAT_NAN": 8,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 10,
+      "INT_ADD": 219,
+      "INT_AND": 123,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 80,
+      "INT_LEFT": 16,
+      "INT_LESS": 7,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 32,
+      "INT_OR": 28,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 23,
+      "INT_SEXT": 3,
+      "INT_SLESS": 39,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 58,
+      "INT_XOR": 4,
+      "INT_ZEXT": 22,
+      "LOAD": 133,
+      "POPCOUNT": 39,
+      "RETURN": 2,
+      "ROUND": 16,
+      "STORE": 128,
+      "SUBPIECE": 2,
+      "TRUNC": 16
+    },
+    "pcode_op_count": 2489
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044c160",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045e6a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00475210",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9059
+    },
+    "nocturne.exe": {
+      "addr": "00450c90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9059
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0046499c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unknown/unresolved type",
+      "line": 16,
+      "match": "unkbyte10",
+      "severity": "mild",
+      "text": "unkbyte10 Var12;",
+      "type": "unknown_type"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 20,
+      "match": "aUStackY_109c",
+      "severity": "moderate",
+      "text": "UIntegerFloat aUStackY_109c [997];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = CStack_b4.x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 131,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_38;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 133,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_30;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 135,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_b4.z = (float)auStack_a8._4_4_ * fStack_4c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 136,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 136,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 138,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "aCStack_d0[0].y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 139,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "aCStack_d0[0].z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 143,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 145,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_30;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_b4.z = (float)auStack_a8._4_4_ * fStack_54;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 148,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_50;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 148,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_50;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 149,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_a8._8_4_ = (uint)ROUND(CStack_b4.z * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 150,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "iStack_9c = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 151,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "iStack_98 = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 155,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 157,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_34;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 159,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_b4.z = (float)auStack_a8._4_4_ * fStack_54;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 160,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_50;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 160,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_50;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 162,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_94.y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_94.z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 167,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_38;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._4_4_ = fStack_34;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 171,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_b4.z = (float)auStack_a8._4_4_ * fStack_4c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a8._0_4_ = (float)auStack_a8._4_4_ * fStack_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 174,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "aCStack_88[0].y = (int)ROUND((float)auStack_a8._0_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 175,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "aCStack_88[0].z = (int)ROUND((float)auStack_a8._4_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 214,
+      "match": "&stack0xffffff08",
+      "severity": "moderate",
+      "text": "(pCVar16,(SMRGLHeaderPrimitive *)&stack0xffffff08);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 184,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 185,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 191,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 202,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4649f6 assigned to bare local `uStack_100`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_100` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 72,
+      "match": "0x4649f6",
+      "severity": "moderate",
+      "text": "uStack_100 = 0x4649f6;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x464c65 assigned to bare local `iVar17`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar17` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 124,
+      "match": "0x464c65",
+      "severity": "moderate",
+      "text": "iVar17 = 0x464c65;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x464c6c assigned to bare local `uStack_100`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_100` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 127,
+      "match": "0x464c6c",
+      "severity": "moderate",
+      "text": "uStack_100 = 0x464c6c;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

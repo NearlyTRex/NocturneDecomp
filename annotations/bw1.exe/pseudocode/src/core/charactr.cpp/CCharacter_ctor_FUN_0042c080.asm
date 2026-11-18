@@ -30,7 +30,7 @@
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   WatcomTypeInfo g_CFlameTypeInfo
-;   undefined4 DAT_005fd618
+;   float g_FLOAT_005fd618 = 6
 ;   CCharacter_full_vtable g_CCharacterVTable
 ;   WatcomTypeInfo g_SFireTypeInfo
 ;
@@ -258,7 +258,7 @@ section .text
     MOV dword ptr [ESI + 0xc18c],0x0    ; 0042c4b2
     MOV dword ptr [ESI + 0xc198],0x0    ; 0042c4bc
     MOV dword ptr [ESI + 0xc190],0x0    ; 0042c4c6
-    FLD float ptr [0x005fd618]          ; 0042c4d0 | DAT_005fd618
+    FLD float ptr [0x005fd618]          ; 0042c4d0 | g_FLOAT_005fd618
     MOV dword ptr [ESI + 0xc19c],0xfffffffe ; 0042c4d6
     MOV EAX,ESI                         ; 0042c4e0
     FSTP float ptr [ESI + 0xc194]       ; 0042c4e2

@@ -11,7 +11,7 @@
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 at 004914d8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c5014
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
 ;
 ; Called Functions:
 ;   engine_matrix.c_projectTransformedPoint_FUN_004cd260
@@ -25,7 +25,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004cd244
     SUB EAX,EDX                         ; 004cd24b
     SHL EAX,0x4                         ; 004cd24d
-    ADD EAX,0x5c5014                    ; 004cd250 | DAT_005c5014
+    ADD EAX,0x5c5014                    ; 004cd250 | g_SRenderVertex_ARRAY_005c5014
     PUSH EAX                            ; 004cd255
     CALL engine_matrix.c_projectTransformedPoint_FUN_004cd260 ; 004cd256
         ;   XREF to: 004cd260 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_004cd260(SProjectedVertex * point)

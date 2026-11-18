@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_0045a260(CDraculaBride *this_ptr)
 
 {
@@ -69,7 +67,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_0045a260(CDraculaBr
                       (g_CDemonRenderer_PTR_005ae704);
           }
         }
-        if (_DAT_01cd4318 != 0) {
+        if (g_RenderMotionDebug != 0) {
           iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                             (g_CDemonRenderer_PTR_005ae704);
           if (iVar2 == 0) {

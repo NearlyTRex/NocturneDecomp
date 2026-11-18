@@ -19,7 +19,8 @@ CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_00485370(CDrip *this_ptr)
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CDripVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(this_ptr_00,(char *)0x5db56c);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
+            (this_ptr_00,"stalag.kfm");
   this_ptr_00[1].part_visibility_flags[0] = 2;
   this_ptr_00[1].part_visibility_flags[1] = 1;
   this_ptr_00[1].part_visibility_flags[0xe] = 0;
@@ -28,7 +29,7 @@ CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_00485370(CDrip *this_ptr)
   this_ptr_00[1].part_visibility_flags[3] = 0x40a00000;
   this_ptr_00[1].part_visibility_flags[4] = 0x41200000;
   this_ptr_00[1].part_visibility_flags[2] = 0;
-  pcVar3 = (char *)0x5db577;
+  pcVar3 = "rock-x.wav";
   this_ptr_00[1].part_visibility_flags[5] = 0;
   this_ptr_00[1].part_visibility_flags[0xf] = 0x41200000;
   piVar4 = this_ptr_00[1].part_visibility_flags + 0x10;

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2)
+; void __cdecl core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *owner)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   owner
 ;
 ; XREF[9]:
 ;   core_confedrt.cpp_CConfederate_setup_FUN_005a0a90 at 005a0b0e
@@ -19,7 +19,7 @@
 ;   core_weaver.cpp_CRobin_setup_FUN_005a6030 at 005a6099
 ;
 ; Called Functions:
-;   core_bwspart.cpp_FUN_005a84c0
+;   core_bwspart.cpp_initSimpleParticle_FUN_005a84c0
 ;   crt_memory.c_malloc_FUN_005b8580
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     ADD EAX,ESI                         ; 005a8091
     PUSH EAX                            ; 005a8093
     INC EBX                             ; 005a8094
-    CALL core_bwspart.cpp_FUN_005a84c0  ; 005a8095
-        ;   XREF to: 005a84c0 (UNCONDITIONAL_CALL)  ; undefined core_bwspart.cpp_FUN_005a84c0()
+    CALL core_bwspart.cpp_initSimpleParticle_FUN_005a84c0 ; 005a8095
+        ;   XREF to: 005a84c0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_initSimpleParticle_FUN_005a84c0(void * particle)
     ADD ESI,0x60                        ; 005a809a
     MOV EBP,dword ptr [EDI + 0x18]      ; 005a809d
     ADD ESP,0x4                         ; 005a80a0

@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01b4d76c
-;   undefined4 DAT_01b4d770
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -47,7 +47,7 @@ section .text
     XOR ECX,ECX                         ; 0045fd0a
     MOV ESI,dword ptr [EAX + 0x18]      ; 0045fd0c
         ;   Label: LAB_0045fd0c
-    MOV dword ptr [ECX + 0x1b4d76c],ESI ; 0045fd0f | DAT_01b4d76c | DAT_01b4d770
+    MOV dword ptr [ECX + 0x1b4d76c],ESI ; 0045fd0f | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     IMUL ESI,ESI,0x30                   ; 0045fd15
     MOV EDI,dword ptr [EBX]             ; 0045fd18
     MOV ESI,dword ptr [EDI + ESI*0x1 + 0x10] ; 0045fd1a
@@ -86,7 +86,7 @@ section .text
     LEA EAX,[EAX]                       ; 0045fd7d
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0045fd80
         ;   Label: LAB_0045fd80
-    PUSH 0x1b4d76c                      ; 0045fd84 | DAT_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045fd84 | g_VertexIndexBuffer
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045fd89
     PUSH EDX                            ; 0045fd8c
     PUSH EBX                            ; 0045fd8d
@@ -133,7 +133,7 @@ section .text
     JLE 0x0045fd80                      ; 0045fdf2
         ;   XREF to: 0045fd80 (CONDITIONAL_JUMP)  ; LAB_0045fd80
     XOR EDX,EDX                         ; 0045fdf4
-    MOV ESI,dword ptr [EDX + 0x1b4d76c] ; 0045fdf6 | DAT_01b4d76c | DAT_01b4d770
+    MOV ESI,dword ptr [EDX + 0x1b4d76c] ; 0045fdf6 | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
         ;   Label: LAB_0045fdf6
     IMUL ESI,ESI,0x30                   ; 0045fdfc
     MOV EDI,dword ptr [EBX]             ; 0045fdff

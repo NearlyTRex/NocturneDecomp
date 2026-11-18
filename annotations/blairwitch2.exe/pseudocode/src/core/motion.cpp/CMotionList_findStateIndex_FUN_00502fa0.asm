@@ -11,7 +11,7 @@
 ; XREF[12]:
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00429ce0 at 00429d2e
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0 at 00428639
-;   core_event.cpp_FUN_00489670 at 0048d2e1
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048d2e1
 ;   core_hero.cpp_CHero_canBeGrabbed_FUN_004cea00 at 004cea2f
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004cea50 at 004ceac7
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004ceb80 at 004cebc6
@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005dfb2e
 ;   TerminatedCString s_Can_t_find_state_s_in_mo_005dfb41
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
@@ -85,10 +85,10 @@ section .text
     MOV ESI,0x5dfb2e                    ; 00502fe8 | = "..\\core\\motion.cpp"
     MOV EDI,0x13e                       ; 00502fed
     PUSH 0x5dfb41                       ; 00502ff2 | = "Can't find state \"%s\" in motion list"
-    MOV dword ptr [0x01d046a0],ESI      ; 00502ff7 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00502ffd | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00503003
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 00502ff7 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00502ffd | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00503003
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00503008
     MOV EAX,0xffffffff                  ; 0050300b
     POP EBP                             ; 00503010

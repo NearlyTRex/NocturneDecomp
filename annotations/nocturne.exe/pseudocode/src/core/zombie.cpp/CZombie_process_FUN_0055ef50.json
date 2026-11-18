@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1223,
+    "complexity_score": 1208,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 70,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1028,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
       "raw_address_constant",
       "self_copy_guard",
-      "undefined_data",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
@@ -612,9 +611,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b9354",
@@ -636,8 +635,8 @@
     },
     {
       "addr": "00765a9c",
-      "name": "DAT_00765a9c",
-      "type": "undefined4",
+      "name": "g_LastCollisionActor",
+      "type": "CDemonActor*",
       "value": null
     },
     {
@@ -648,7 +647,7 @@
     },
     {
       "addr": "01af4ed4",
-      "name": "g_CDoorActorType_01af4e9c.name_hash",
+      "name": "g_CDoorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -1828,14 +1827,6 @@
       "severity": "moderate",
       "text": "iVar19 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0xdc))(iVar10,this_ptr);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 940,
-      "match": "DAT_00765a9c",
-      "severity": "mild",
-      "text": "(DAT_00765a9c,g_CDoorActorType_01af4e9c.name_hash),",
-      "type": "undefined_data"
     },
     {
       "description": "Raw hex address 0x55f37c assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

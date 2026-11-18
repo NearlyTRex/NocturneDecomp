@@ -6,54 +6,54 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(CDemonSet *this_ptr,int mirror_index,int enable_flag)
 
 {
   byte bVar1;
   float afStackY_102c [1014];
-  uint local_44;
-  uint local_38;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
+  float in_stack_ffffffbc;
+  CVector3f local_38;
+  float local_2c;
+  float local_28 [4];
+  float local_18;
   float local_14;
   
   bVar1 = 0;
-  engine_drender_cpp_FUN_0046d1c0();
-  local_20 = local_44;
-  *(uint *)((int)&stack0xffffffe4 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffc0 + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffe8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if (&stack0x00000000 != (byte *)0x21221f4) {
-    _DAT_021221d4 = local_20;
-    _DAT_021221d8 = local_1c;
-    _DAT_021221dc = local_18;
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0046d1c0
+            (g_CDemonRenderer_PTR_005f2afc,(CVector3f *)&stack0xffffffbc);
+  local_28[2] = in_stack_ffffffbc;
+  local_28[(uint)bVar1 * -2 + 3] = *(float *)(&stack0xffffffc0 + (uint)bVar1 * -8);
+  local_28[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4] =
+       *(float *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+  if ((SRaytraceState *)&stack0x00000000 != g_RaytraceStateStack) {
+    g_UVector3_021221d4.f.x = local_28[2];
+    g_UVector3_021221d4.f.y = local_28[3];
+    g_UVector3_021221d4.f.z = local_18;
   }
-  engine_drender_cpp_FUN_0046d250();
-  local_2c = local_38;
-  *(uint *)((int)&stack0xffffffd8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffcc + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffdc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffd0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if (&stack0x00000000 != (byte *)0x212220c) {
-    _DAT_021221e0 = local_2c;
-    _DAT_021221e4 = local_28;
-    _DAT_021221e8 = local_24;
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250
+            (g_CDemonRenderer_PTR_005f2afc,&local_38);
+  local_2c = local_38.x;
+  local_28[(uint)bVar1 * -2] = *(float *)((int)&local_38 + (uint)bVar1 * -8 + 4);
+  local_28[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+       *(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  if ((int *)&stack0x00000000 != &g_RaytraceStateStack[0].collision_flag) {
+    g_CVector3f_021221e0.x = local_2c;
+    g_CVector3f_021221e0.y = local_28[0];
+    g_CVector3f_021221e0.z = local_28[1];
   }
-  _DAT_021221ec = (float)engine_drender_cpp_FUN_0046d2d0();
-  local_14 = _DAT_021221ec;
+  g_SavedProjectionFactor =
+       engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0046d2d0
+                 (g_CDemonRenderer_PTR_005f2afc);
+  local_14 = g_SavedProjectionFactor;
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,
-             (CVector3f *)&DAT_021221d4,(CVector3f *)&DAT_021221e0,_DAT_021221ec);
-  engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046d870(DAT_005f2afc,1);
-  (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 0x10))(DAT_007e2a54);
-  engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0046d850(DAT_005f2afc,mirror_index + 1);
+             &g_UVector3_021221d4.f,&g_CVector3f_021221e0,g_SavedProjectionFactor);
+  engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046d870
+            (g_CDemonRenderer_PTR_005f2afc,1);
+  (*((g_CurrentSceneCamera->base).vtable)->saveAlphaTransform)
+            (g_CurrentSceneCamera,mirror_index + 1);
+  engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0046d850
+            (g_CDemonRenderer_PTR_005f2afc,mirror_index + 1);
   this_ptr->active_mirror = &this_ptr->mirror_glass_actors[mirror_index]->mirror;
   return;
 }

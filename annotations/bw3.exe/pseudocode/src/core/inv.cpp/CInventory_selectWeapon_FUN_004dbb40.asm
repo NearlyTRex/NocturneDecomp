@@ -12,10 +12,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_game.cpp_FUN_004b9960 at 004b9c7d
-;   core_game.cpp_FUN_004c07b0 at 004c0a31
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004b9960 at 004b9c7d
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0 at 004c0a31
+;   core_inv.cpp_CInventory_addItem_FUN_004da880 at 004db62d
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40 at 004dcc5b
-;   core_inv.cpp_FUN_004da880 at 004db62d
 ;   core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430 at 005184c7
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052e6de
 ;
@@ -24,9 +24,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
+;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd340
-;   core_inv.cpp_FUN_004dd2d0
-;   core_inv.cpp_FUN_004dd310
+;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0
 ;
 ; *****************************************************************************
 
@@ -122,8 +122,8 @@ section .text
     PUSH ECX                            ; 004dbbd9
     PUSH EAX                            ; 004dbbda
     PUSH ESI                            ; 004dbbdb
-    CALL core_inv.cpp_FUN_004dd310      ; 004dbbdc
-        ;   XREF to: 004dd310 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd310()
+    CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310 ; 004dbbdc
+        ;   XREF to: 004dd310 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004dd310(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004dbbe1
     TEST EAX,EAX                        ; 004dbbe4
     JZ 0x004dbbb1                       ; 004dbbe6
@@ -154,8 +154,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004dbc20
     PUSH ESI                            ; 004dbc24
     MOV dword ptr [ESI + 0x338],EAX     ; 004dbc25
-    CALL core_inv.cpp_FUN_004dd2d0      ; 004dbc2b
-        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dd2d0()
+    CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0 ; 004dbc2b
+        ;   XREF to: 004dd2d0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd2d0(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004dbc30
     ADD ESP,0x4                         ; 004dbc33
     POP EBP                             ; 004dbc36

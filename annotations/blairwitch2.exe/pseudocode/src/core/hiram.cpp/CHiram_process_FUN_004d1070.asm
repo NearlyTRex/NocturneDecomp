@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_GlassHiram_005da0f3
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_00618170
+;   CEventList* g_CEventListPtr = 01c38bc0
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   undefined4 DAT_01d182f0
 ;
@@ -21,12 +21,12 @@
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
-;   core_glass.cpp_FUN_004c6d40
+;   core_glass.cpp_CGlass_shatter_FUN_004c6d40
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     LEA ESI,[EBX + 0x2b4]               ; 004d1096
         ;   Label: LAB_004d1096
     PUSH ESI                            ; 004d109c
-    CALL core_motion.cpp_FUN_005035c0   ; 004d109d
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d109d
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d10a2
     ADD ESP,0x4                         ; 004d10a5
     CMP EAX,0x1                         ; 004d10a8
@@ -95,17 +95,17 @@ section .text
         ;   XREF to: 004d1171 (CONDITIONAL_JUMP)  ; LAB_004d1171
     PUSH 0x1                            ; 004d10f8
     PUSH EBX                            ; 004d10fa
-    MOV EDI,dword ptr [0x00618170]      ; 004d10fb | DAT_00618170
+    MOV EDI,dword ptr [0x00618170]      ; 004d10fb | g_CDemonMission_PTR_00618170
     PUSH EDI                            ; 004d1101 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004d1102
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004d1107
     JMP 0x004d10d1                      ; 004d110a
         ;   XREF to: 004d10d1 (UNCONDITIONAL_JUMP)  ; LAB_004d10d1
     LEA EAX,[EBX + 0x24348]             ; 004d110c
         ;   Label: LAB_004d110c
     PUSH EAX                            ; 004d1112
-    MOV EDX,dword ptr [0x006141f0]      ; 004d1113 | DAT_006141f0
+    MOV EDX,dword ptr [0x006141f0]      ; 004d1113 | g_CEventListPtr
     PUSH EDX                            ; 004d1119
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 004d111a
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -122,7 +122,7 @@ section .text
     MOV ECX,dword ptr [0x01cb8280]      ; 004d1133 | g_CGlassClassInfo.name_hash
     PUSH ECX                            ; 004d1139
     PUSH 0x5da0f3                       ; 004d113a | = "GlassHiram"
-    MOV ESI,dword ptr [0x00618170]      ; 004d113f | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 004d113f | g_CDemonMission_PTR_00618170
     PUSH ESI                            ; 004d1145 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740 ; 004d1146
         ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission * this_ptr, char * name)
@@ -137,8 +137,8 @@ section .text
     LEA ESI,[EAX + 0x20]                ; 004d115f
     PUSH ESI                            ; 004d1162
     PUSH EAX                            ; 004d1163
-    CALL core_glass.cpp_FUN_004c6d40    ; 004d1164
-        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004c6d40()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004c6d40 ; 004d1164
+        ;   XREF to: 004c6d40 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004c6d40(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 004d1169
     JMP 0x004d10ad                      ; 004d116c
         ;   XREF to: 004d10ad (UNCONDITIONAL_JUMP)  ; LAB_004d10ad

@@ -10,20 +10,20 @@
 ; Referenced Globals:
 ;   TerminatedCString s_werewolf_die_wav_005ee7d5
 ;   TerminatedCString s_werewolf_hurt_wav_005ee7e7
-;   undefined4 DAT_005ee7fa
-;   undefined4 DAT_005ee802
-;   undefined4 DAT_005ee80a
-;   undefined4 DAT_00614d30
+;   double g_DOUBLE_005ee7fa = 2
+;   double g_DOUBLE_005ee802 = 5
+;   double g_DOUBLE_005ee80a = -5
+;   CFireEffect* g_CFireEffectPtr = 01c3deb4
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408d70
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
 ;   core_werewolf.cpp_CWerewolf_playHowl_FUN_0058d060
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058d988
     PUSH EBX                            ; 0058d98b
     MOV dword ptr [EAX + 0x25a8],0x0    ; 0058d98c
-    CALL core_motion.cpp_FUN_005035c0   ; 0058d996
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058d996
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058d99b
     ADD ESP,0x4                         ; 0058d99e
     CMP EAX,0xd                         ; 0058d9a1
@@ -99,7 +99,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058d9da
     FLD float ptr [EAX + 0x20]          ; 0058d9dd
     FST double ptr [ESP]                ; 0058d9e0
-    FCOMP double ptr [0x005ee802]       ; 0058d9e3 | DAT_005ee802
+    FCOMP double ptr [0x005ee802]       ; 0058d9e3 | g_DOUBLE_005ee802
     FNSTSW AX                           ; 0058d9e9
     SAHF                                ; 0058d9eb
     JBE 0x0058daed                      ; 0058d9ec
@@ -170,7 +170,7 @@ section .text
         ;   Label: LAB_0058da8d
     ADD EAX,0x1c                        ; 0058da90
     FLD ST0                             ; 0058da93
-    FMUL double ptr [0x005ee7fa]        ; 0058da95 | DAT_005ee7fa
+    FMUL double ptr [0x005ee7fa]        ; 0058da95 | g_DOUBLE_005ee7fa
     PUSH EAX                            ; 0058da9b
     MOV ESI,dword ptr [EBP + 0x14]      ; 0058da9c
     LEA EDI,[ESP + 0x18]                ; 0058da9f
@@ -178,8 +178,8 @@ section .text
     FSTP ST1                            ; 0058daa4
     LEA ESI,[ESP + 0x10]                ; 0058daa6
     FSTP float ptr [EAX + -0x18]        ; 0058daaa
-    CALL core_actor.cpp_FUN_00408d70    ; 0058daad
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70 ; 0058daad
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x10]                ; 0058dab2
     ADD ESP,0x8                         ; 0058dab6
     XOR EBX,EBX                         ; 0058dab9
@@ -195,7 +195,7 @@ section .text
     PUSH 0x0                            ; 0058dacc
     LEA EAX,[ESP + 0x28]                ; 0058dace
     PUSH EAX                            ; 0058dad2
-    MOV ECX,dword ptr [0x00614d30]      ; 0058dad3 | DAT_00614d30
+    MOV ECX,dword ptr [0x00614d30]      ; 0058dad3 | g_CFireEffectPtr
     PUSH ECX                            ; 0058dad9
     INC EBX                             ; 0058dada
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 0058dadb
@@ -208,7 +208,7 @@ section .text
         ;   XREF to: 0058d960 (UNCONDITIONAL_JUMP)  ; LAB_0058d960
     FLD double ptr [ESP]                ; 0058daed
         ;   Label: LAB_0058daed
-    FCOMP double ptr [0x005ee80a]       ; 0058daf0 | DAT_005ee80a
+    FCOMP double ptr [0x005ee80a]       ; 0058daf0 | g_DOUBLE_005ee80a
     FNSTSW AX                           ; 0058daf6
     SAHF                                ; 0058daf8
     JNC 0x0058d9fc                      ; 0058daf9
@@ -223,8 +223,8 @@ section .text
     JZ 0x0058db89                       ; 0058db18
         ;   XREF to: 0058db89 (CONDITIONAL_JUMP)  ; LAB_0058db89
     PUSH EBX                            ; 0058db1a
-    CALL core_motion.cpp_FUN_005035c0   ; 0058db1b
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 0058db1b
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0058db20
     ADD ESP,0x4                         ; 0058db23
     CMP EAX,0xe                         ; 0058db26

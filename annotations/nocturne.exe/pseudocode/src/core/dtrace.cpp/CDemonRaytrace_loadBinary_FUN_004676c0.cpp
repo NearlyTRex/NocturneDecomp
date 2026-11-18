@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004676c0(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 {
@@ -19,14 +17,14 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004676c0(CDemonRaytra
   int local_14;
   
   core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_004673a0(this_ptr);
-  _DAT_01bc994c = 0;
+  g_INT_01bc994c = 0;
   _fread(&local_14,4,1,file_handle);
   if (local_14 < 1) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 328;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::loadBinary - invalid version");
   }
-  if (0x00000004 < local_14) {
+  if (g_GeoFileFormatVersion < local_14) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 331;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::loadBinary - file is newer than .exe!");

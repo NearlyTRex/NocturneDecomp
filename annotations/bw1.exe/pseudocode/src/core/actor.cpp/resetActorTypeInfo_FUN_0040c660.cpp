@@ -14,14 +14,14 @@ void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c660(void)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < DAT_007c3044) {
+  if (0 < g_NumActorClassTypes) {
     iVar2 = 0;
     do {
-      piVar1 = (int *)((int)&DAT_007c3048 + iVar2);
+      piVar1 = (int *)((int)g_ActorClassRegistrations + iVar2);
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
       **(uint **)(*piVar1 + 0x30) = 1;
-    } while (iVar3 < DAT_007c3044);
+    } while (iVar3 < g_NumActorClassTypes);
   }
   return;
 }

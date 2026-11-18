@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320(CDrawSurface *this_ptr)
 
 {
-  if (_DAT_01b4d718 != 0) {
-    return *(int *)(_DAT_01b4d718 + 0x3170);
+  if (g_CurrentFont != (CBitFont *)0x0) {
+    return g_CurrentFont->current_line_height;
   }
   return 0xb;
 }

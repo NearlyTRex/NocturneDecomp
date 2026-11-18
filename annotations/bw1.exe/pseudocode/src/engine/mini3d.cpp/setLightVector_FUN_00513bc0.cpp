@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_setLightVector_FUN_00513bc0(CVector3f *direction,float intensity)
 
 {
-  int iVar1;
+  byte *puVar1;
   float fStack_14;
   float fStack_10;
   float fStack_c;
@@ -21,15 +19,15 @@ void __cdecl engine_mini3d_cpp_setLightVector_FUN_00513bc0(CVector3f *direction,
   fStack_8 = intensity /
              SQRT(direction->z * direction->z +
                   direction->x * direction->x + direction->y * direction->y);
-  if ((_DAT_02c8344c != (code *)0x0) && (_DAT_01c50948 != 0)) {
+  if ((g_PTR_02c8344c != (byte *)0x0) && (g_INT_01c50948 != 0)) {
     fStack_14 = direction->x * fStack_8;
     fStack_10 = direction->y * fStack_8;
     fStack_c = fStack_8 * direction->z;
-    (*_DAT_02c8344c)(&fStack_14,intensity);
+    (*(code *)g_PTR_02c8344c)(&fStack_14,intensity);
   }
-  iVar1 = _DAT_01d2257c;
-  *(float *)(_DAT_01d2257c + 0x30) = direction->x * fStack_8;
-  *(float *)(iVar1 + 0x34) = direction->y * fStack_8;
-  *(float *)(iVar1 + 0x38) = fStack_8 * direction->z;
+  puVar1 = g_PTR_01d2257c;
+  *(float *)(g_PTR_01d2257c + 0x30) = direction->x * fStack_8;
+  *(float *)(puVar1 + 0x34) = direction->y * fStack_8;
+  *(float *)(puVar1 + 0x38) = fStack_8 * direction->z;
   return;
 }

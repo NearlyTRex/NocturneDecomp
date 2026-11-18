@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 387,
-    "complexity_score": 351,
+    "complexity_score": 335,
     "cross_reference_count": 5,
     "function_call_count": 9,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 151,
-    "suspect_count": 18,
+    "pseudocode_lines": 150,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 538
+    "total_lines": 537
   },
   "cross_references": [
     {
@@ -207,9 +206,9 @@
     },
     {
       "addr": "0059b368",
-      "name": "DAT_0059b368",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059b368",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "0059b378",
@@ -531,16 +530,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 129,
+      "line": 127,
       "match": "(CVector3f *)((int)(local_18 + 0xe) +",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
@@ -548,7 +539,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 132,
+      "line": 130,
       "match": "(CVector3f *)((int)(local_24 + 0xe) +",
       "severity": "moderate",
       "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
@@ -556,7 +547,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 149,
+      "line": 147,
       "match": "(CVector3f *)((int)(pCVar10 + 0x17) +",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
@@ -564,7 +555,7 @@
     },
     {
       "description": "Pointer value `(local_18 + 0xe)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 129,
+      "line": 127,
       "match": "(int)(local_18 + 0xe)",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
@@ -572,7 +563,7 @@
     },
     {
       "description": "Pointer value `(local_24 + 0xe)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 132,
+      "line": 130,
       "match": "(int)(local_24 + 0xe)",
       "severity": "moderate",
       "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
@@ -580,7 +571,7 @@
     },
     {
       "description": "Pointer value `(pCVar10 + 0x17)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 149,
+      "line": 147,
       "match": "(int)(pCVar10 + 0x17)",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
@@ -588,7 +579,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 144,
+      "line": 142,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar14 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);",
@@ -596,7 +587,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pfVar12` was initialized to the address of an array element's subfield (`pfVar12 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar12)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar12->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 127,
+      "line": 125,
       "match": "pfVar12 = pfVar12 + N",
       "severity": "moderate",
       "text": "pfVar12 = pfVar12 + 0x2b;",
@@ -604,7 +595,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` was initialized to the address of an array element's subfield (`local_14 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 128,
+      "line": 126,
       "match": "local_14 = local_14 + N",
       "severity": "moderate",
       "text": "local_14 = local_14 + 0x2b;",
@@ -612,7 +603,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via element-arithmetic `(int)(local_18 + N) + M`, where `N*sizeof(*local_18) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_18->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 129,
+      "line": 127,
       "match": "local_18 = (T *)((int)(local_18 + N) + M)",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
@@ -620,7 +611,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_20` was initialized to the address of an array element's subfield (`local_20 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_20)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_20->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 130,
+      "line": 128,
       "match": "local_20 = local_20 + N",
       "severity": "moderate",
       "text": "local_20 = local_20 + 0x2b;",
@@ -628,7 +619,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_1c` was initialized to the address of an array element's subfield (`local_1c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_1c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_1c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 131,
+      "line": 129,
       "match": "local_1c = local_1c + N",
       "severity": "moderate",
       "text": "local_1c = local_1c + 0x2b;",
@@ -636,7 +627,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via element-arithmetic `(int)(local_24 + N) + M`, where `N*sizeof(*local_24) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_24->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 132,
+      "line": 130,
       "match": "local_24 = (T *)((int)(local_24 + N) + M)",
       "severity": "moderate",
       "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
@@ -644,7 +635,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_2c` was initialized to the address of an array element's subfield (`local_2c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_2c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_2c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 133,
+      "line": 131,
       "match": "local_2c = local_2c + N",
       "severity": "moderate",
       "text": "local_2c = local_2c + 0x2b;",
@@ -652,7 +643,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_28` was initialized to the address of an array element's subfield (`local_28 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_28)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_28->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 134,
+      "line": 132,
       "match": "local_28 = local_28 + N",
       "severity": "moderate",
       "text": "local_28 = local_28 + 0x2b;",
@@ -660,7 +651,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pfVar15` was initialized to the address of an array element's subfield (`pfVar15 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar15)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar15->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 135,
+      "line": 133,
       "match": "pfVar15 = pfVar15 + N",
       "severity": "moderate",
       "text": "pfVar15 = pfVar15 + 0x2b;",
@@ -668,7 +659,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via element-arithmetic `(int)(pCVar10 + N) + M`, where `N*sizeof(*pCVar10) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar10->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 149,
+      "line": 147,
       "match": "pCVar10 = (T *)((int)(pCVar10 + N) + M)",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",

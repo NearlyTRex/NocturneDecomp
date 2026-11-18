@@ -7,7 +7,7 @@
 ; CSchnellGeist *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_BreathState_005f0204+2
+;   TerminatedCString s_BreathState_005f0206
 ;   int g_CSchnellGeistClassVersion = 0x2
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     RET                                 ; 005a3c08
     MOV EAX,dword ptr [ESP + 0x4]       ; 005a3c09
         ;   Label: LAB_005a3c09
-    PUSH 0x5f0206                       ; 005a3c0d | s_BreathState_005f0204+2
+    PUSH 0x5f0206                       ; 005a3c0d | = "BreathState"
     ADD EAX,0x11864                     ; 005a3c12
     PUSH EAX                            ; 005a3c17
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 005a3c18

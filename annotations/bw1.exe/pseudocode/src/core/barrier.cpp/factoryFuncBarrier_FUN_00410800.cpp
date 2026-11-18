@@ -11,7 +11,7 @@ CBarrier * __cdecl core_barrier_cpp_factoryFuncBarrier_FUN_00410800(void)
 {
   CBarrier *pCVar1;
   
-  pCVar1 = (CBarrier *)operator_new(0x230);
+  pCVar1 = operator_new(0x230);
   if (pCVar1 == (CBarrier *)0x0) {
     return (CBarrier *)0x0;
   }

@@ -13,8 +13,8 @@
 ;   core_hotdemon.cpp_factoryFuncHotDemon_FUN_004d5400 at 004d5413
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e1900
-;   undefined4 DAT_005e1904
+;   float g_FLOAT_005e1900 = 50
+;   float g_FLOAT_005e1904 = 100
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
@@ -38,8 +38,8 @@ section .text
     MOV dword ptr [EAX + -0x4],0x5e1914 ; 004d544b
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 004d5452
         ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x005e1900]          ; 004d5457 | DAT_005e1900
-    FLD float ptr [0x005e1904]          ; 004d545d | DAT_005e1904
+    FLD float ptr [0x005e1900]          ; 004d5457 | g_FLOAT_005e1900
+    FLD float ptr [0x005e1904]          ; 004d545d | g_FLOAT_005e1904
     MOV dword ptr [EBX + 0x326c],0x3f19999a ; 004d5463
     ADD ESP,0x8                         ; 004d546d
     MOV dword ptr [EBX + 0x3270],0x3f666666 ; 004d5470

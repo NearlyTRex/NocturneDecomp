@@ -39,11 +39,11 @@ int __cdecl CEnemy::testAttackLine(CEnemy *this_ptr,CVector3f *start,CVector3f *
 
 // Original: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00489530
 // Address: 00489530
-CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
+CVector3f * __stack_esi CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
 
-// Original: core_enemy.cpp_FUN_00489600
+// Original: core_enemy.cpp_CEnemy_canSeeTarget_FUN_00489600
 // Address: 00489600
-bool FUN_00489600(int param_1,int param_2);
+int __cdecl CEnemy::canSeeTarget(CEnemy *this_ptr,CDemonActor *target);
 
 // Original: core_enemy.cpp_CEnemy_updateVictim_FUN_00489730
 // Address: 00489730
@@ -57,9 +57,9 @@ void __cdecl CEnemy::setVictim(CEnemy *this_ptr,CDemonActor *victim);
 // Address: 00489b80
 void __cdecl CEnemy::processDamage(CEnemy *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_enemy.cpp_FUN_00489c90
+// Original: core_enemy.cpp_CEnemy_spawnItems_FUN_00489c90
 // Address: 00489c90
-void FUN_00489c90(int param_1);
+void __cdecl CEnemy::spawnItems(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_renderBackground_FUN_00489fc0
 // Address: 00489fc0
@@ -77,13 +77,13 @@ void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 // Address: 0048a100
 void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
-// Original: core_enemy.cpp_FUN_0048a130
+// Original: core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_0048a130
 // Address: 0048a130
-int FUN_0048a130(void);
+int __cdecl CEnemy::countSameClassAttackingHero(CEnemy *this_ptr);
 
-// Original: core_enemy.cpp_FUN_0048a1b0
+// Original: core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0
 // Address: 0048a1b0
-undefined4 FUN_0048a1b0(int param_1,float param_2);
+int __cdecl CEnemy::testPainThreshold(CEnemy *this_ptr,float damage);
 
 // Original: core_enemy.cpp_CEnemy_isGrabbable_FUN_0048a200
 // Address: 0048a200

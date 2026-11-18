@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)
 
 {
@@ -33,9 +31,9 @@ void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(CMo
     do {
       pSVar1 = this_ptr->points;
       iVar2 = iVar2 + 1;
-      *(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * _DAT_005a0cc8;
-      *(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * _DAT_005a0cc8;
-      *(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * _DAT_005a0cc8;
+      *(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * 0.00390625f;
+      *(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * 0.00390625f;
+      *(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * 0.00390625f;
       iVar3 = iVar3 + 0x10;
       vertex_buffer = vertex_buffer + 1;
     } while (iVar2 < vertex_count);

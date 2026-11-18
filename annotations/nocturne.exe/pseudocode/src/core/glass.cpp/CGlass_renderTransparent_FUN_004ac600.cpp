@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CGlass *this_ptr)
 
 {
@@ -37,9 +35,9 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CGlass *this_pt
     pCVar3 = input_vertices;
     if (0 < this_ptr->broken_vertex_count) {
       do {
-        pCVar3->x = (int)ROUND(pCVar4->x * _DAT_0059e390);
-        pCVar3->y = (int)ROUND(pCVar4->y * _DAT_0059e390);
-        pCVar3->z = (int)ROUND(pCVar4->z * _DAT_0059e390);
+        pCVar3->x = (int)ROUND(pCVar4->x * 256.0f);
+        pCVar3->y = (int)ROUND(pCVar4->y * 256.0f);
+        pCVar3->z = (int)ROUND(pCVar4->z * 256.0f);
         iVar2 = iVar2 + 1;
         pCVar4 = pCVar4 + 1;
         pCVar3 = pCVar3 + 1;
@@ -47,7 +45,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CGlass *this_pt
     }
     core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,input_vertices);
-    lVar1 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)this_ptr->opacity;
+    lVar1 = (longlong)(0xffff - g_INT_01c038f4) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (g_CDemonRenderer_PTR_005ae704,
                (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

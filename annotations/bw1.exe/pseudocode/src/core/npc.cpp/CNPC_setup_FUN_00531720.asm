@@ -17,7 +17,7 @@
 ;   TerminatedCString s_priest_dfm_005ec720
 ;   TerminatedCString s_Bip01_L_Hand_005ec72b
 ;   TerminatedCString s_Bip01_R_Hand_005ec738
-;   undefined4 DAT_01d81364
+;   int g_INT_01d81364
 ;   undefined4 DAT_01d81368
 ;
 ; Called Functions:
@@ -66,10 +66,10 @@ section .text
     PUSH 0x0                            ; 00531774
     PUSH 0x5ec738                       ; 00531776 | = "Bip01 R Hand"
     PUSH ESI                            ; 0053177b
-    MOV [0x01d81364],EAX                ; 0053177c | DAT_01d81364
+    MOV [0x01d81364],EAX                ; 0053177c | g_INT_01d81364
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0 ; 00531781
         ;   XREF to: 005634f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
-    MOV ESI,dword ptr [0x01d81364]      ; 00531786 | DAT_01d81364
+    MOV ESI,dword ptr [0x01d81364]      ; 00531786 | g_INT_01d81364
     ADD ESP,0xc                         ; 0053178c
     MOV dword ptr [EBX + 0x2620],EAX    ; 0053178f
     MOV [0x01d81368],EAX                ; 00531795 | DAT_01d81368

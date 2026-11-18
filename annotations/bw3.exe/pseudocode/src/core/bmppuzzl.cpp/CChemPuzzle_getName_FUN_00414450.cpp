@@ -9,5 +9,5 @@
 char * __cdecl core_bmppuzzl_cpp_CChemPuzzle_getName_FUN_00414450(CChemPuzzle *this_ptr)
 
 {
-  return &DAT_005b67fc;
+  return "Chem";
 }

@@ -23,7 +23,7 @@
 ;   double DOUBLE_0063ea30 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   SMRGLPrimitiveQuad SMRGLPrimitiveQuad_030d4fd0
+;   SMRGLPrimitiveQuad g_PathMapQuad
 ;   undefined4 g_CDemonRaytraceInstance.bbox_min.y
 ;   undefined4 g_CDemonRaytraceInstance.adjusted_size.x
 ;   undefined4 g_CDemonRaytraceInstance.adjusted_size.y
@@ -188,7 +188,7 @@ section .text
     MOV dword ptr [EDX + 0xb4],ESI      ; 00547f8f
     MOV EDX,dword ptr [EAX]             ; 00547f95 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xb8],EDI      ; 00547f97
-    PUSH 0x30d4fd0                      ; 00547f9d | SMRGLPrimitiveQuad_030d4fd0
+    PUSH 0x30d4fd0                      ; 00547f9d | g_PathMapQuad
     MOV EDX,dword ptr [EAX]             ; 00547fa2 | g_CDemonRendererInstance
     PUSH EAX                            ; 00547fa4 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xbc],ECX      ; 00547fa5

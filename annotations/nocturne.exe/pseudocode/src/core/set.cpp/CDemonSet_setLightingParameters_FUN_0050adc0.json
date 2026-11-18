@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 152,
+    "complexity_score": 97,
     "cross_reference_count": 11,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 8,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -101,14 +100,14 @@
   "globals": [
     {
       "addr": "01fff548",
-      "name": "DAT_01fff548",
-      "type": "undefined4",
+      "name": "g_LightingSystemDirty",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01fff54c",
-      "name": "DAT_01fff54c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff54c",
+      "type": "float",
       "value": null
     },
     {
@@ -119,14 +118,14 @@
     },
     {
       "addr": "01fff554",
-      "name": "DAT_01fff554",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff554",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01fff558",
-      "name": "DAT_01fff558",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff558",
+      "type": "float",
       "value": null
     },
     {
@@ -137,14 +136,14 @@
     },
     {
       "addr": "01fff560",
-      "name": "DAT_01fff560",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff560",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01fff564",
-      "name": "DAT_01fff564",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff564",
+      "type": "float",
       "value": null
     },
     {
@@ -155,14 +154,14 @@
     },
     {
       "addr": "01fff56c",
-      "name": "DAT_01fff56c",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff56c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01fff570",
-      "name": "DAT_01fff570",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff570",
+      "type": "float",
       "value": null
     },
     {
@@ -173,61 +172,61 @@
     },
     {
       "addr": "01fff578",
-      "name": "DAT_01fff578",
-      "type": "undefined4",
+      "name": "g_FLOAT_01fff578",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01fff57c",
-      "name": "DAT_01fff57c",
-      "type": "undefined4",
+      "name": "g_LightingRotationMatrix",
+      "type": "CMatrix3x3f",
       "value": null
     },
     {
       "addr": "01fff580",
-      "name": "DAT_01fff580",
+      "name": "g_LightingRotationMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff584",
-      "name": "DAT_01fff584",
+      "name": "g_LightingRotationMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff588",
-      "name": "DAT_01fff588",
+      "name": "g_LightingRotationMatrix.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff58c",
-      "name": "DAT_01fff58c",
+      "name": "g_LightingRotationMatrix.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff590",
-      "name": "DAT_01fff590",
+      "name": "g_LightingRotationMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff594",
-      "name": "DAT_01fff594",
+      "name": "g_LightingRotationMatrix.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff598",
-      "name": "DAT_01fff598",
+      "name": "g_LightingRotationMatrix.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fff59c",
-      "name": "DAT_01fff59c",
+      "name": "g_LightingRotationMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -464,46 +463,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01fff54c",
-      "severity": "mild",
-      "text": "if (position != (CVector3f *)&DAT_01fff54c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01fff558",
-      "severity": "mild",
-      "text": "if (orientation != (UOrientationVector *)&DAT_01fff558) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01fff564",
-      "severity": "mild",
-      "text": "if (aabb_min != (CVector3f *)&DAT_01fff564) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01fff570",
-      "severity": "mild",
-      "text": "if (aabb_max != (CVector3f *)&DAT_01fff570) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_01fff57c",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)&DAT_01fff57c;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(CMatrix3x3f *)((int)rotation_matrix",
@@ -516,7 +475,7 @@
       "line": 52,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0050ae5b: MOVSD.REP ES:EDI,ESI  ; DAT_01fff57c | DAT_01fff580",
+      "text": "// 0050ae5b: MOVSD.REP ES:EDI,ESI  ; g_LightingRotationMatrix | g_LightingRotationMatrix.m[0].y",
       "type": "unrolled_memcpy"
     }
   ]

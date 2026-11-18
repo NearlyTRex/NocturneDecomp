@@ -8,20 +8,20 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_0047e760 at 0047e760
-;   shape_edittool.cpp_FUN_0047e870 at 0047e8ed
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870 at 0047e8ed
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760 at 0047e760
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d1f6c
 ;   TerminatedCString s_paintWindowBackground_ca_005d1f82
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c2559c
-;   undefined4 DAT_01c2a38c
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_006141c0 = 0x8
+;   int g_WindowStackCount
+;   void*[1200] g_ScreenBufferArray
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -33,10 +33,10 @@ section .text
     PUSH EDI                            ; 0047bca2
     PUSH EBP                            ; 0047bca3
     SUB ESP,0x8                         ; 0047bca4
-    CMP dword ptr [0x01c2559c],0x1      ; 0047bca7 | DAT_01c2559c
+    CMP dword ptr [0x01c2559c],0x1      ; 0047bca7 | g_WindowStackCount
     JL 0x0047bd37                       ; 0047bcae
         ;   XREF to: 0047bd37 (CONDITIONAL_JUMP)  ; LAB_0047bd37
-    MOV EAX,[0x01c2559c]                ; 0047bcb4 | DAT_01c2559c
+    MOV EAX,[0x01c2559c]                ; 0047bcb4 | g_WindowStackCount
         ;   Label: LAB_0047bcb4
     DEC EAX                             ; 0047bcb9
     SHL EAX,0x3                         ; 0047bcba
@@ -50,7 +50,7 @@ section .text
     TEST EBX,EBX                        ; 0047bcd5
     JZ 0x0047bd2f                       ; 0047bcd7
         ;   XREF to: 0047bd2f (CONDITIONAL_JUMP)  ; LAB_0047bd2f
-    MOV ESI,dword ptr [0x006141c0]      ; 0047bcd9 | DAT_006141c0
+    MOV ESI,dword ptr [0x006141c0]      ; 0047bcd9 | g_INT_006141c0
     MOV EDX,dword ptr [EDX + 0x1e4]     ; 0047bcdf
     IMUL EDX,ESI                        ; 0047bce5
     MOV EAX,EDX                         ; 0047bce8
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_0047bd08
     MOV EDI,dword ptr [EDI + 0x1e0]     ; 0047bd0c
     ADD EDI,EBP                         ; 0047bd12
-    MOV EDI,dword ptr [EDI*0x4 + 0x1c2a38c] ; 0047bd14 | DAT_01c2a38c
+    MOV EDI,dword ptr [EDI*0x4 + 0x1c2a38c] ; 0047bd14 | g_ScreenBufferArray
     TEST EDI,EDI                        ; 0047bd1b
     JNZ 0x0047bd5f                      ; 0047bd1d
         ;   XREF to: 0047bd5f (CONDITIONAL_JUMP)  ; LAB_0047bd5f
@@ -91,16 +91,16 @@ section .text
         ;   Label: LAB_0047bd37
     MOV EBX,0x3b8                       ; 0047bd3c
     PUSH 0x5d1f82                       ; 0047bd41 | = "paintWindowBackground called but no w..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0047bd46 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0047bd4c | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0047bd52
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0047bd46 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 0047bd4c | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047bd52
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047bd57
     JMP 0x0047bcb4                      ; 0047bd5a
         ;   XREF to: 0047bcb4 (UNCONDITIONAL_JUMP)  ; LAB_0047bcb4
     MOV EDX,dword ptr [ESP + 0x4]       ; 0047bd5f
         ;   Label: LAB_0047bd5f
-    MOV ECX,dword ptr [0x006141c0]      ; 0047bd63 | DAT_006141c0
+    MOV ECX,dword ptr [0x006141c0]      ; 0047bd63 | g_INT_006141c0
     MOV EDX,dword ptr [EDX + 0x1dc]     ; 0047bd69
     IMUL EDX,ECX                        ; 0047bd6f
     MOV EAX,EDX                         ; 0047bd72

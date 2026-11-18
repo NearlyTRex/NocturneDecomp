@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 261,
+    "complexity_score": 245,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 17,
+    "pseudocode_lines": 55,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 143
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -51,15 +50,15 @@
   "globals": [
     {
       "addr": "005d2d9d",
-      "name": "DAT_005d2d9d",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d2d9d",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005d2da1",
-      "name": "DAT_005d2da1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d2da1",
+      "type": "double",
+      "value": "0.300000000000000"
     }
   ],
   "param_estimates": {
@@ -207,16 +206,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 10,
       "match": "afStackY_1028",
       "severity": "moderate",
       "text": "float afStackY_1028 [1003];",
@@ -224,7 +215,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff88;",
@@ -232,7 +223,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_ffffff88",
       "severity": "moderate",
       "text": "(*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,in_stack_ffffff88);",
@@ -240,7 +231,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 30,
+      "line": 28,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffff90;",
@@ -248,7 +239,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 31,
+      "line": 29,
       "match": "&stack0xffffffa0",
       "severity": "moderate",
       "text": "puVar4 = (uint *)&stack0xffffffa0;",
@@ -256,7 +247,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 48,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar5 * -8);",
@@ -264,7 +255,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 52,
+      "line": 50,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
@@ -272,7 +263,7 @@
     },
     {
       "description": "Pointer value `&CStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
+      "line": 47,
       "match": "(int)&CStack_34",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =",
@@ -280,7 +271,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "(int)&stack0xffffffc4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar5 * -8);",
@@ -288,7 +279,7 @@
     },
     {
       "description": "Pointer value `&CStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "(int)&CStack_34",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -296,7 +287,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffc8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
@@ -304,7 +295,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -312,7 +303,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 49,
+      "line": 47,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =",
@@ -320,7 +311,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar5 * -8);",
@@ -328,7 +319,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -336,7 +327,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
@@ -346,27 +337,27 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 92,
         "vtable_addr": "005fec04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 92,
         "vtable_addr": "005f3e44"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 92,
         "vtable_addr": "00600c64"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 92,
         "vtable_addr": "005f6074"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 92,
         "vtable_addr": "005ff374"
       }

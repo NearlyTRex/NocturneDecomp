@@ -18,8 +18,8 @@ extern CEdScrollBar g_ThumbnailScrollBar;
 extern int g_SavedWindowWidth;
 extern int g_SavedWindowHeight;
 extern int g_VDIsActorAreaInvalid;
-extern int INT_03365cb8;
-extern int INT_03365cbc;
+extern int g_S3DAppendWarningShown;
+extern int g_LastRoomReverbChoice;
 
 // int[250]
 extern int g_VDCameraSortIndices[250];

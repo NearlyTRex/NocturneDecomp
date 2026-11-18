@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 78,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 109
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 112
   },
   "cross_references": [],
   "function": {
@@ -31,43 +29,43 @@
   "globals": [
     {
       "addr": "00766c70",
-      "name": "DAT_00766c70",
-      "type": "undefined4",
+      "name": "g_ClippedVertexCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00766c74",
-      "name": "DAT_00766c74",
-      "type": "undefined4",
+      "name": "g_ClippedVertexBuffer",
+      "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "00766c7c",
-      "name": "DAT_00766c7c",
+      "name": "g_ClippedVertexBuffer[0].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766ca4",
-      "name": "DAT_00766ca4",
+      "name": "g_ClippedVertexBuffer[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766ca8",
-      "name": "DAT_00766ca8",
+      "name": "g_ClippedVertexBuffer[1].projected_vertex.transformed_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766cac",
-      "name": "DAT_00766cac",
+      "name": "g_ClippedVertexBuffer[1].projected_vertex.transformed_z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00766cd4",
-      "name": "DAT_00766cd4",
+      "name": "g_ClippedVertexBuffer[2].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     }
@@ -115,6 +113,12 @@
       "class": "identical",
       "ratio": 1.0
     },
+    "bw1.exe": {
+      "addr": "0043d630",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
     "bw3.exe": {
       "addr": "0043b280",
       "by": "name",
@@ -136,30 +140,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_00766c74",
-      "severity": "mild",
-      "text": "piVar3 = &DAT_00766c74;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00766c70",
-      "severity": "mild",
-      "text": "if (0 < DAT_00766c70) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_00766c70",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_00766c70);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

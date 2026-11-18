@@ -7,12 +7,12 @@
 ; CDemnfolk *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_demnfolk.cpp_FUN_00454b30 at 00454b43
+;   core_demnfolk.cpp_factoryFuncDemnfolk_FUN_00454b30 at 00454b43
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005de05c
-;   undefined4 DAT_005de060
-;   undefined4 DAT_005fba60
+;   float g_FLOAT_005de05c = 50
+;   float g_FLOAT_005de060 = 100
+;   CEventList* g_CEventListPtr = 01c6e360
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -48,9 +48,9 @@ section .text
     MOV dword ptr [EBX + 0x326c],0x3f000000 ; 00454b94
     LEA EDI,[EBX + 0xd074]              ; 00454b9e
     MOV dword ptr [EBX + 0x3270],0x3f800000 ; 00454ba4
-    FLD float ptr [0x005de05c]          ; 00454bae | DAT_005de05c
+    FLD float ptr [0x005de05c]          ; 00454bae | g_FLOAT_005de05c
     MOV dword ptr [EBX + 0xd064],0x0    ; 00454bb4
-    FLD float ptr [0x005de060]          ; 00454bbe | DAT_005de060
+    FLD float ptr [0x005de060]          ; 00454bbe | g_FLOAT_005de060
     MOV dword ptr [EBX + 0xd060],0x0    ; 00454bc4
     ADD ESP,0x8                         ; 00454bce
     FXCH                                ; 00454bd1
@@ -102,7 +102,7 @@ section .text
     ADD ESP,0x8                         ; 00454cbb
     MOV dword ptr [EBX + 0xd13c],0x0    ; 00454cbe
     PUSH 0x5ba3cc                       ; 00454cc8
-    MOV EDX,dword ptr [0x005fba60]      ; 00454ccd | DAT_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 00454ccd | g_CEventListPtr
     MOV dword ptr [EBX + 0xd058],EAX    ; 00454cd3
     PUSH EDX                            ; 00454cd9
     MOV dword ptr [EBX + 0xd0d8],0x0    ; 00454cda

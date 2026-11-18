@@ -1,0 +1,206 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 167,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 62,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "warning_type_propagation"
+    ],
+    "total_lines": 172
+  },
+  "cross_references": [
+    {
+      "addr": "0059ed50",
+      "from_addr": "0059ed5b",
+      "name": "core_basicene.cpp_CBasicEnemy_processAlertInvisibleState_FUN_0059ed50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e8c0",
+      "from_addr": "0059ea43",
+      "name": "core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059ec10",
+    "address_range": [
+      [
+        "0059ec10",
+        "0059ed47"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_basicene.cpp_CBasicEnemy_processAlertState_FUN_0059ec10",
+    "signature": "void __cdecl core_basicene_cpp_CBasicEnemy_processAlertState_FUN_0059ec10(CBasicEnemy *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00423000",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "0059d8e0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ef960",
+      "name": "s_Chasing_005ef960",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.648936170212766,
+    "instruction_count": 94,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 102,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 59,
+      "INT_AND": 39,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 36,
+      "INT_LESS": 3,
+      "INT_MULT": 6,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 18,
+      "INT_SUB": 35,
+      "INT_ZEXT": 6,
+      "LOAD": 32,
+      "POPCOUNT": 18,
+      "RETURN": 3,
+      "STORE": 39
+    },
+    "pcode_op_count": 437
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBasicEnemy *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0059eca5",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_1004",
+      "severity": "moderate",
+      "text": "float afStackY_1004 [1012];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar7 * -8 + 0x2580);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 43,
+      "match": "&stack0xffffffe8",
+      "severity": "moderate",
+      "text": "(&stack0xffffffe8)[(uint)bVar7 * 0xfffffffe] = (float)*puVar6;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xffffffe4",
+      "severity": "moderate",
+      "text": "if (pCVar1 != (CVector3f *)&stack0xffffffe4) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "pointer_cast"
+    }
+  ]
+}

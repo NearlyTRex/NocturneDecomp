@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 38,
+    "complexity_score": 22,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 76
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 75
   },
   "cross_references": [
     {
-      "addr": "004dc8c0",
-      "from_addr": "004dcb52",
-      "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004dadb0",
       "from_addr": "004dae7d",
-      "name": "core_inv.cpp_FUN_004dadb0",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004dd9b0",
       "from_addr": "004ddbf2",
-      "name": "core_inv.cpp_FUN_004dd9b0",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc8c0",
+      "from_addr": "004dcb52",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,8 +71,8 @@
     },
     {
       "addr": "01cf0200",
-      "name": "DAT_01cf0200",
-      "type": "undefined4",
+      "name": "g_ItemDefinitionCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -84,7 +82,7 @@
       {
         "call_addr": "004dae7d",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dadb0",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -95,7 +93,7 @@
       {
         "call_addr": "004ddbf2",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -106,7 +104,7 @@
       {
         "call_addr": "004ddef0",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +115,7 @@
       {
         "call_addr": "004ddfad",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +126,7 @@
       {
         "call_addr": "004decdf",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,7 +137,7 @@
       {
         "call_addr": "004ded0d",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +148,7 @@
       {
         "call_addr": "004ded87",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "caller": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,14 +242,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

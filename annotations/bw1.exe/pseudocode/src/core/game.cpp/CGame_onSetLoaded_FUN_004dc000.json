@@ -1,0 +1,147 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "0051b610",
+      "from_addr": "0051b6a2",
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_0051b610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dc000",
+    "address_range": [
+      [
+        "004dc000",
+        "004dc037"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_onSetLoaded_FUN_004dc000",
+    "signature": "void __cdecl core_game_cpp_CGame_onSetLoaded_FUN_004dc000(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00555830",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setGamma_FUN_00555830"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01cd0c24",
+      "name": "g_INT_01cd0c24",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd0c64",
+      "name": "g_CHero_PTR_ARRAY_01cd0c60[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c94",
+      "name": "g_INT_01cd0c94",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051b6a2",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_loadSet_FUN_0051b610",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.235294117647059,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 17,
+      "INT_ADD": 6,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 55
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004bfa70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1053
+    },
+    "bw3.exe": {
+      "addr": "004c4870",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
+}

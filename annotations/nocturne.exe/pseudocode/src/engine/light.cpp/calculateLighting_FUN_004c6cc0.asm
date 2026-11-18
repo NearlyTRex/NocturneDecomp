@@ -19,10 +19,10 @@
 ;   engine_3d.c_renderPolygonWithRenderFlags_FUN_00408c10 at 00408c68
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bacd0
-;   undefined4 DAT_01c039dc
-;   undefined4 DAT_01c039e0
-;   undefined4 DAT_01c039e4
+;   int g_AmbientLightLevel = 0x8000
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
 ;
 ; *****************************************************************************
 
@@ -30,15 +30,15 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004c6cc0
         ;   Label: engine_light.cpp_calculateLighting_FUN_004c6cc0
-    MOV EDX,dword ptr [0x01c039dc]      ; 004c6cc4 | DAT_01c039dc
+    MOV EDX,dword ptr [0x01c039dc]      ; 004c6cc4 | g_LightDirectionX
     IMUL EDX                            ; 004c6cca
     SHRD EAX,EDX,0x10                   ; 004c6ccc
-    MOV EDX,dword ptr [0x01c039e0]      ; 004c6cd0 | DAT_01c039e0
+    MOV EDX,dword ptr [0x01c039e0]      ; 004c6cd0 | g_LightDirectionY
     MOV ECX,EAX                         ; 004c6cd6
     MOV EAX,dword ptr [ESP + 0x8]       ; 004c6cd8
     IMUL EDX                            ; 004c6cdc
     SHRD EAX,EDX,0x10                   ; 004c6cde
-    MOV EDX,dword ptr [0x01c039e4]      ; 004c6ce2 | DAT_01c039e4
+    MOV EDX,dword ptr [0x01c039e4]      ; 004c6ce2 | g_LightDirectionZ
     ADD ECX,EAX                         ; 004c6ce8
     MOV EAX,dword ptr [ESP + 0xc]       ; 004c6cea
     IMUL EDX                            ; 004c6cee
@@ -54,12 +54,12 @@ section .text
     MOV EDX,0xffff                      ; 004c6d05
     MOV ECX,0xffff                      ; 004c6d0a
         ;   Label: LAB_004c6d0a
-    SUB ECX,dword ptr [0x005bacd0]      ; 004c6d0f | DAT_005bacd0
+    SUB ECX,dword ptr [0x005bacd0]      ; 004c6d0f | g_AmbientLightLevel
     MOV EAX,EDX                         ; 004c6d15
     MOV EDX,ECX                         ; 004c6d17
     IMUL EDX                            ; 004c6d19
     SHRD EAX,EDX,0x10                   ; 004c6d1b
-    MOV EDX,dword ptr [0x005bacd0]      ; 004c6d1f | DAT_005bacd0
+    MOV EDX,dword ptr [0x005bacd0]      ; 004c6d1f | g_AmbientLightLevel
     ADD EDX,EAX                         ; 004c6d25
     TEST EDX,EDX                        ; 004c6d27
     JL 0x004c6d4f                       ; 004c6d29

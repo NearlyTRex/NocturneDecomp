@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00(CDeformableModelInstance *this_ptr)
 
 {
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_00544f80
             (this_ptr,(this_ptr->base).current_motion_index,(this_ptr->base).current_frame_number,-1
             );
-  if ((this_ptr->base).tween_progress <= (float)_DAT_005e72cf) {
+  if ((this_ptr->base).tween_progress <= (float)0.001) {
     return;
   }
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00545a60

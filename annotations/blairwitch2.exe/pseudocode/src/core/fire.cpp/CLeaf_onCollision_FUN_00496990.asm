@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_00496990(CLeaf *this_ptr)
+; int __cdecl core_fire_cpp_CLeaf_onCollision_FUN_00496990(CLeaf *this_ptr,CVector3f *collision_normal)
 ;
 ; Parameters:
 ; CLeaf *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   collision_normal
 ;
 ; *****************************************************************************
 

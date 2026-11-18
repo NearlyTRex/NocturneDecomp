@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_00534cf0(CTempleStone *this_ptr)
 
 {
-  return &g_CTempleStoneActorType_02dc9ee4;
+  return &g_CTempleStoneClassInfo;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CLantern * __cdecl core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_ptr)
 
 {
@@ -34,7 +32,7 @@ CLantern * __cdecl core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_pt
   pCVar2->flicker_timer = 0.0;
   pCVar2->brightness = 0.0;
   pCVar2->flicker = 0.0;
-  fVar1 = _DAT_005fe8dc;
+  fVar1 = 10.0f;
   pCVar2->light = &g_CDemonLightInstance;
   this_ptr_01 = pCVar2->light;
   pCVar2->unused_6fc = 0;

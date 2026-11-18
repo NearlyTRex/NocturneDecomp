@@ -96,7 +96,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(CDemonRay
       if (pCVar16 != (CDemonCube *)0x0) {
         if ((pCVar16->voxel_buffer1 != (SVoxelGrid *)0x0) &&
            ((pCVar16->voxel_buffer1->voxels[local_54 % 8][(int)local_5c % 8] &
-            (&DAT_005b6d08)[(int)local_60 % 8]) != 0)) {
+            g_VoxelYBitMasks[(int)local_60 % 8]) != 0)) {
           return 1;
         }
       }

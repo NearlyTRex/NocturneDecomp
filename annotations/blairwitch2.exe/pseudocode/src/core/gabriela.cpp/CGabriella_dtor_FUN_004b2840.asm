@@ -11,11 +11,11 @@
 ;   WatcomTypeInfo g_CGabriellaTypeInfo
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_dtor_FUN_005ade00
 ;   core_hero.cpp_CHero_dtor_FUN_004ce3d0
-;   core_necklace.cpp_FUN_005ade00
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 004b284c
     ADD EBX,0x25680                     ; 004b284e
     PUSH EBX                            ; 004b2854
-    CALL core_necklace.cpp_FUN_005ade00 ; 004b2855
-        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; undefined core_necklace.cpp_FUN_005ade00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_005ade00 ; 004b2855
+        ;   XREF to: 005ade00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_005ade00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b285a
     PUSH 0x1                            ; 004b285d
     LEA EBX,[EAX + 0xfffda980]          ; 004b285f
@@ -54,16 +54,16 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004b2888
     PUSH EAX                            ; 004b288b
-    CALL crt_unknown.c_FUN_005b7fce     ; 004b288c
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 004b288c
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 004b2891
     MOV EAX,EBX                         ; 004b2894
     POP EBX                             ; 004b2896
     RET                                 ; 004b2897
     PUSH EAX                            ; 004b2898
         ;   Label: LAB_004b2898
-    CALL crt_unknown.c_FUN_005b7fdc     ; 004b2899
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 004b2899
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 004b289e
     MOV EAX,EBX                         ; 004b28a1
     POP EBX                             ; 004b28a3

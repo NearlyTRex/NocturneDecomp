@@ -25,11 +25,11 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
+;   core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_00421570
-;   core_box.cpp_FUN_00420570
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
-;   core_xform.cpp_FUN_005b5080
+;   core_xform.cpp_transformVector3x4_FUN_005b5080
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     PUSH ESI                            ; 0056af38
     LEA ESI,[ESP + 0x30]                ; 0056af39
     LEA EDI,[ESP + 0x3c]                ; 0056af3d
-    CALL core_box.cpp_FUN_00420570      ; 0056af41
-        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420570()
+    CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570 ; 0056af41
+        ;   XREF to: 00420570 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_00420570(CBoundingBox3D * this_ptr, uint corner_index, CVector3f * out_point)
     LEA ESI,[ESP + 0x30]                ; 0056af46
     ADD ESP,0x8                         ; 0056af4a
     MOVSD ES:EDI,ESI                    ; 0056af4d
@@ -125,8 +125,8 @@ section .text
     PUSH ESI                            ; 0056af54
     LEA ESI,[ESP + 0x44]                ; 0056af55
     LEA EDI,[ESP + 0x20]                ; 0056af59
-    CALL core_xform.cpp_FUN_005b5080    ; 0056af5d
-        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5080()
+    CALL core_xform.cpp_transformVector3x4_FUN_005b5080 ; 0056af5d
+        ;   XREF to: 005b5080 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005b5080(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x44]                ; 0056af62
     ADD ESP,0x8                         ; 0056af66
     MOVSD ES:EDI,ESI                    ; 0056af69

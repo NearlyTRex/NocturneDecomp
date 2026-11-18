@@ -9,14 +9,14 @@
 void FUN_005bcca0(void)
 
 {
-  char cVar1;
+  byte bVar1;
   
-  if (DAT_0061ee9c == '\0') {
-    DAT_0061ee9d = DAT_0061ee9c;
-    cVar1 = FUN_005bcc64();
+  if (g_BYTE_0061ee9c == 0) {
+    g_BYTE_0061ee9d = g_BYTE_0061ee9c;
+    bVar1 = FUN_005bcc64();
     if (DAT_0061f27c == '\0') {
-      DAT_0061ee9c = cVar1;
-      DAT_0061ee9d = cVar1;
+      g_BYTE_0061ee9c = bVar1;
+      g_BYTE_0061ee9d = bVar1;
     }
   }
   return;

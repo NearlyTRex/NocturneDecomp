@@ -14,7 +14,7 @@ void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemo
   char local_2c [32];
   
   actor->actor_name[0] = '\0';
-  pcVar2 = (char *)core_actor_cpp_FUN_00408a50(actor);
+  pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(actor);
   if (*pcVar2 == 'C') {
     pcVar2 = pcVar2 + 1;
   }

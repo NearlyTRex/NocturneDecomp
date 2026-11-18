@@ -74635,12 +74635,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0",
+    "name":"sound_sndmain.cpp_setReverb_FUN_005ab6e0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"orient_right_x",
+          "name":"volume",
           "storage":{
             "offset":4,
             "size":4,
@@ -74656,7 +74656,7 @@
           "type":"float"
         },
         {
-          "name":"orient_right_y",
+          "name":"decay_time",
           "storage":{
             "offset":8,
             "size":4,
@@ -74672,7 +74672,7 @@
           "type":"float"
         },
         {
-          "name":"orient_right_z",
+          "name":"damping",
           "storage":{
             "offset":12,
             "size":4,
@@ -75642,6 +75642,38 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"offset",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]

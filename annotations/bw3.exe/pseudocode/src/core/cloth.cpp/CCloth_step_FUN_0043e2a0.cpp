@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr)
 
 {
@@ -33,12 +31,9 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   float local_2b4;
   float local_2b0 [4];
   float local_2a0;
-  float local_29c [3];
+  CVector3f local_29c;
   float local_290;
-  float local_28c;
-  float local_288;
-  float local_284;
-  float local_280;
+  float local_28c [4];
   float local_27c;
   float local_278;
   float local_274;
@@ -64,13 +59,10 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   float local_224;
   float local_220;
   float local_21c;
-  float local_218;
+  CVector3f local_218;
   float local_20c;
-  float local_208;
-  float local_204;
-  float local_200;
-  float local_1fc;
-  uint local_1f8;
+  float local_208 [2];
+  CVector3f local_200;
   float local_1f4;
   float local_1f0 [4];
   float local_1e0;
@@ -92,16 +84,13 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   float local_1a0;
   float local_19c;
   float local_198;
-  float local_194;
+  CVector3f local_194;
   float local_188;
-  float local_184;
-  float local_180;
-  float local_17c;
-  float local_178;
+  float local_184 [4];
   float local_174;
-  float local_170;
-  float local_164;
-  float local_158 [3];
+  CVector3f local_170;
+  CVector3f local_164;
+  CVector3f local_158;
   float local_14c;
   float local_148 [5];
   float local_134;
@@ -119,21 +108,17 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   float local_104;
   float local_100;
   float local_fc;
-  float local_f8;
+  CVector3f local_f8;
   float local_ec;
-  float local_e8;
-  float local_e4;
-  float local_e0;
-  float local_dc;
-  float local_d8;
-  float local_d4;
+  float local_e8 [6];
   float local_d0;
   float local_cc;
   float local_c8;
   float local_c4;
   float local_c0;
   float local_bc;
-  float local_b8 [5];
+  float local_b8 [2];
+  CVector3f local_b0;
   int local_a4;
   CMatrix3x4f *local_a0;
   int local_9c;
@@ -168,10 +153,10 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   
   bVar16 = 0;
   local_a4 = 0;
-  if ((float)_DAT_005b9128 <= floor_y) {
+  if ((float)9999 <= floor_y) {
     floor_y = -9999.0;
   }
-  if (delta_time < (float)_DAT_005b9130) {
+  if (delta_time < (float)0.01) {
     delta_time = 0.01;
   }
   this_ptr->inv_delta_time = 1.0 / delta_time;
@@ -194,22 +179,24 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
           local_50 = pSVar10->bone_positions;
           local_4c = pSVar10;
           do {
-            core_xform_cpp_FUN_00583260(local_50,local_a0 + local_4c->bone_index[0]);
-            local_248 = local_194;
-            local_2b0[(uint)bVar16 * -2 + 0x1b] = local_1f0[(uint)bVar16 * -2 + 0x18];
-            local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1c] =
-                 local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x19];
+            core_xform_cpp_transformVector3x4_FUN_00583260
+                      (local_50,local_a0 + local_4c->bone_index[0],&local_194);
+            local_248 = local_194.x;
+            local_28c[(uint)bVar16 * -2 + 0x12] =
+                 *(float *)((int)&local_194 + (uint)bVar16 * -8 + 4);
+            local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x13] =
+                 *(float *)((int)&local_194 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
             fVar7 = *local_48;
             local_ec = local_248 * fVar7;
-            local_e8 = local_244 * *local_48;
+            local_e8[0] = local_244 * *local_48;
             fVar2 = *local_48;
             iVar8 = local_7c + 1;
             local_48 = local_48 + 1;
-            local_e4 = local_240 * fVar2;
+            local_e8[1] = local_240 * fVar2;
             local_bc = local_248 * fVar7;
-            local_b8[(uint)bVar16 * -2] = local_148[(uint)bVar16 * -2 + 0x18];
+            local_b8[(uint)bVar16 * -2] = local_e8[(uint)bVar16 * -2];
             local_b8[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
-                 local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x19];
+                 local_e8[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
             iVar11 = pSVar10->bone_influence_count;
             local_50 = local_50 + 1;
             local_4c = (SClothVertex *)&(local_4c->position).y;
@@ -245,24 +232,25 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
       iVar8 = local_40->vertices[0].collide_bone_index;
       if (iVar8 != -1) {
         local_98 = local_80 + iVar8;
-        local_158[2] = local_98->child_distance;
-        local_158[0] = 0.0;
-        local_158[1] = 0.0;
-        core_dirmat_cpp_FUN_0045b800(&local_98->local_matrix,local_1f0 + 0x26);
+        local_158.z = local_98->child_distance;
+        local_158.x = 0.0;
+        local_158.y = 0.0;
+        core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0045b800
+                  (&local_98->local_matrix,&local_158,&local_218);
         pSVar5 = local_98;
-        local_2b0[2] = local_218;
-        local_2b0[(uint)bVar16 * -2 + 3] = local_2b0[(uint)bVar16 * -2 + 0x27];
+        local_2b0[2] = local_218.x;
+        local_2b0[(uint)bVar16 * -2 + 3] = *(float *)((int)&local_218 + (uint)bVar16 * -8 + 4);
         local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
-             local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x28];
+             *(float *)((int)&local_218 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
         local_1f0[2] = (pSVar5->position_offset).x + local_2b0[2];
         local_1f0[3] = (pSVar5->position_offset).y + local_2b0[3];
         local_1e0 = (pSVar5->position_offset).z + local_2a0;
         pfVar14 = (float *)((int)local_90->connected_indices + local_9c + -0x34);
         local_26c = local_1f0[2];
-        local_2b0[(uint)bVar16 * -2 + 0x12] = local_1f0[(uint)bVar16 * -2 + 3];
-        local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x13] =
+        local_28c[(uint)bVar16 * -2 + 9] = local_1f0[(uint)bVar16 * -2 + 3];
+        local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10] =
              local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4];
-        if (pfVar14 != local_2b0 + 0x11) {
+        if (pfVar14 != local_28c + 8) {
           *pfVar14 = local_26c;
           pfVar14[1] = local_268;
           pfVar14[2] = local_264;
@@ -274,50 +262,51 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(&local_2dc,euler);
   pfVar14 = (float *)((int)g_CDemonSetPtr + (uint)bVar16 * -8 + 0x15ac74);
-  local_e0 = (g_CDemonSetPtr->active_fog).scroll.x;
-  local_148[(uint)bVar16 * -2 + 0x1b] = *pfVar14;
-  local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1c] = pfVar14[(uint)bVar16 * -2 + 1];
+  local_e8[2] = (g_CDemonSetPtr->active_fog).scroll.x;
+  local_e8[(uint)bVar16 * -2 + 3] = *pfVar14;
+  local_e8[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] = pfVar14[(uint)bVar16 * -2 + 1];
   local_c8 = local_2dc.m[0].z;
   local_c4 = local_2dc.m[1].z;
   local_c0 = local_2dc.m[2].z;
-  local_8c = SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc);
+  local_8c = SQRT(local_e8[4] * local_e8[4] + local_e8[2] * local_e8[2] + local_e8[3] * local_e8[3])
+  ;
   if (local_8c <= 0.0) {
-    local_dc = 0.0;
-    local_e0 = 0.0;
-    local_d8 = 0.0;
+    local_e8[3] = 0.0;
+    local_e8[2] = 0.0;
+    local_e8[4] = 0.0;
   }
   else {
     fVar7 = 1.0 / local_8c;
-    local_e0 = local_e0 * fVar7;
-    local_dc = local_dc * fVar7;
-    local_d8 = local_d8 * fVar7;
+    local_e8[2] = local_e8[2] * fVar7;
+    local_e8[3] = local_e8[3] * fVar7;
+    local_e8[4] = local_e8[4] * fVar7;
   }
-  local_2e0 = local_d8 * local_2dc.m[2].z +
-              local_e0 * local_2dc.m[0].z + local_dc * local_2dc.m[1].z;
+  local_2e0 = local_e8[4] * local_2dc.m[2].z +
+              local_e8[2] * local_2dc.m[0].z + local_e8[3] * local_2dc.m[1].z;
   local_84 = local_2e0;
   if (0.0 < local_2e0) {
     local_2e0 = 0.0;
   }
-  local_2e0 = local_2e0 * (float)_DAT_005b9138;
+  local_2e0 = local_2e0 * (float)-1;
   local_23c = (g_CDemonSetPtr->active_fog).scroll.x * local_2e0;
   local_238 = (g_CDemonSetPtr->active_fog).scroll.y * local_2e0;
-  pfVar14 = local_b8 + 2;
+  pCVar15 = &local_b0;
   local_234 = (g_CDemonSetPtr->active_fog).scroll.z * local_2e0;
-  local_b8[2] = local_23c;
-  local_b8[(uint)bVar16 * -2 + 3] = local_2b0[(uint)bVar16 * -2 + 0x1e];
-  local_b8[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
-       local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1f];
-  core_dirmat_cpp_FUN_0045b870(&local_2dc,pfVar14);
-  local_284 = local_164;
-  local_2b0[(uint)bVar16 * -2 + 0xc] = local_1f0[(uint)bVar16 * -2 + 0x24];
-  local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0xd] =
-       local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x25];
-  local_110 = local_284 + (this_ptr->wind_velocity).x;
-  local_10c = local_280 + (this_ptr->wind_velocity).y;
+  local_b0.x = local_23c;
+  *(float *)((int)&local_b0 + (uint)bVar16 * -8 + 4) = local_28c[(uint)bVar16 * -2 + 0x15];
+  *(float *)((int)&local_b0 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8) =
+       local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x16];
+  core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(&local_2dc,pCVar15,&local_164);
+  local_28c[2] = local_164.x;
+  local_28c[(uint)bVar16 * -2 + 3] = *(float *)((int)&local_164 + (uint)bVar16 * -8 + 4);
+  local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
+       *(float *)((int)&local_164 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+  local_110 = local_28c[2] + (this_ptr->wind_velocity).x;
+  local_10c = local_28c[3] + (this_ptr->wind_velocity).y;
   local_108 = local_27c + (this_ptr->wind_velocity).z;
   local_188 = local_110;
-  local_1f0[(uint)bVar16 * -2 + 0x1b] = local_148[(uint)bVar16 * -2 + 0xf];
-  local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1c] =
+  local_184[(uint)bVar16 * -2] = local_148[(uint)bVar16 * -2 + 0xf];
+  local_184[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
        local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x10];
   pCVar15 = &this_ptr->last_position;
   (this_ptr->wind_velocity).z = 0.0;
@@ -326,35 +315,36 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   local_1dc = position->x - pCVar15->x;
   local_1d8 = position->y - (this_ptr->last_position).y;
   local_1d4 = position->z - (this_ptr->last_position).z;
-  local_29c[0] = local_1dc;
-  local_2b0[(uint)bVar16 * -2 + 6] = local_1f0[(uint)bVar16 * -2 + 6];
-  local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7] =
+  local_29c.x = local_1dc;
+  *(float *)((int)&local_29c + (uint)bVar16 * -8 + 4) = local_1f0[(uint)bVar16 * -2 + 6];
+  *(float *)((int)&local_29c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8) =
        local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7];
   if (pCVar15 != position) {
     pCVar15->x = position->x;
     (this_ptr->last_position).y = position->y;
     (this_ptr->last_position).z = position->z;
   }
-  core_dirmat_cpp_FUN_0045b870(&local_2dc,local_2b0 + 5);
-  local_278 = local_f8;
-  local_2b0[(uint)bVar16 * -2 + 0xf] = local_148[(uint)bVar16 * -2 + 0x15];
-  local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x10] =
-       local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x16];
+  core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870(&local_2dc,&local_29c,&local_f8)
+  ;
+  local_278 = local_f8.x;
+  local_28c[(uint)bVar16 * -2 + 6] = *(float *)((int)&local_f8 + (uint)bVar16 * -8 + 4);
+  local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7] =
+       *(float *)((int)&local_f8 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
   fVar7 = 1.0 / delta_time;
   local_1a0 = local_278 * fVar7;
   local_19c = local_274 * fVar7;
   local_198 = local_270 * fVar7;
   local_20c = local_278 * fVar7;
-  local_2b0[(uint)bVar16 * -2 + 0x2a] = local_1f0[(uint)bVar16 * -2 + 0x15];
-  local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x2b] =
+  local_208[(uint)bVar16 * -2] = local_1f0[(uint)bVar16 * -2 + 0x15];
+  local_208[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
        local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x16];
   local_290 = local_20c - local_188;
-  local_28c = local_208 - local_184;
-  local_288 = local_204 - local_180;
+  local_28c[0] = local_208[0] - local_184[0];
+  local_28c[1] = local_208[1] - local_184[1];
   local_230 = local_20c - local_188;
-  local_2b0[(uint)bVar16 * -2 + 0x21] = local_2b0[(uint)bVar16 * -2 + 9];
-  local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x22] =
-       local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10];
+  local_28c[(uint)bVar16 * -2 + 0x18] = local_28c[(uint)bVar16 * -2];
+  local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x19] =
+       local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
   local_11c = local_230 * fVar7;
   local_118 = local_22c * fVar7;
   local_114 = local_228 * fVar7;
@@ -362,13 +352,13 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
   local_148[(uint)bVar16 * -2 + 9] = local_148[(uint)bVar16 * -2 + 0xc];
   local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10] =
        local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0xd];
-  local_17c = euler->x - (this_ptr->last_euler).x;
-  local_178 = euler->y - (this_ptr->last_euler).y;
+  local_184[2] = euler->x - (this_ptr->last_euler).x;
+  local_184[3] = euler->y - (this_ptr->last_euler).y;
   local_174 = euler->z - (this_ptr->last_euler).z;
-  local_148[2] = local_17c;
-  local_148[(uint)bVar16 * -2 + 3] = local_1f0[(uint)bVar16 * -2 + 0x1e];
+  local_148[2] = local_184[2];
+  local_148[(uint)bVar16 * -2 + 3] = local_184[(uint)bVar16 * -2 + 3];
   local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
-       local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1f];
+       local_184[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4];
   if (&this_ptr->last_euler != euler) {
     (this_ptr->last_euler).x = euler->x;
     (this_ptr->last_euler).y = euler->y;
@@ -400,15 +390,16 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
       pCVar15 = (CVector3f *)((int)(pCVar15 + 0x17) + 8);
     } while (iVar11 < (this_ptr->model).vertex_count);
   }
-  local_1fc = -this_ptr->gravity;
-  local_200 = 0.0;
-  local_1f8 = 0;
-  local_18 = local_1fc;
-  core_dirmat_cpp_FUN_0045b870(&local_2dc,local_2b0 + 0x2c);
-  local_254 = local_170;
-  local_2b0[(uint)bVar16 * -2 + 0x18] = local_1f0[(uint)bVar16 * -2 + 0x21];
-  local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x19] =
-       local_1f0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x22];
+  local_200.y = -this_ptr->gravity;
+  local_200.x = 0.0;
+  local_200.z = 0.0;
+  local_18 = local_200.y;
+  core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045b870
+            (&local_2dc,&local_200,&local_170);
+  local_254 = local_170.x;
+  local_28c[(uint)bVar16 * -2 + 0xf] = *(float *)((int)&local_170 + (uint)bVar16 * -8 + 4);
+  local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x10] =
+       *(float *)((int)&local_170 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
   local_28 = this_ptr->gravity / this_ptr->dampen;
   local_38 = 0;
   if (0 < (this_ptr->model).vertex_count) {
@@ -438,11 +429,11 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
         local_100 = local_1a8 * *local_2c;
         local_fc = local_1a4 * *local_2c;
         pCVar12 = &pSVar10->force;
-        local_d4 = local_1ac * *local_2c;
-        local_148[(uint)bVar16 * -2 + 0x1e] = local_148[(uint)bVar16 * -2 + 0x12];
-        local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1f] =
+        local_e8[5] = local_1ac * *local_2c;
+        local_e8[(uint)bVar16 * -2 + 6] = local_148[(uint)bVar16 * -2 + 0x12];
+        local_e8[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7] =
              local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x13];
-        pCVar12->x = pCVar12->x - local_d4;
+        pCVar12->x = pCVar12->x - local_e8[5];
         (pSVar10->force).y = (pSVar10->force).y - local_d0;
         (pSVar10->force).z = (pSVar10->force).z - local_cc;
         pCVar12->x = pCVar12->x + local_254;
@@ -454,23 +445,23 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
         local_148[0] = (pSVar10->position).z * 0.0 - (pSVar10->position).x * 0.0;
         local_148[1] = (pSVar10->position).x * fVar7 - fVar2;
         local_260 = local_14c;
-        local_2b0[(uint)bVar16 * -2 + 0x15] = local_148[(uint)bVar16 * -2];
-        local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x16] =
+        local_28c[(uint)bVar16 * -2 + 0xc] = local_148[(uint)bVar16 * -2];
+        local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0xd] =
              local_148[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
         pCVar12->x = pCVar12->x + local_260;
         (pSVar10->force).y = (pSVar10->force).y + local_25c;
         (pSVar10->force).z = (pSVar10->force).z + local_258;
         if ((local_a4 == 0) ||
            (fVar7 = (pSVar10->secondary_velocity).y, fVar2 = (pSVar10->secondary_velocity).z,
-           _DAT_005b9140 <= SQRT(fVar2 * fVar2 + pCVar15->x * pCVar15->x + fVar7 * fVar7))) {
+           0.1f <= SQRT(fVar2 * fVar2 + pCVar15->x * pCVar15->x + fVar7 * fVar7))) {
           fVar7 = 1.0 / local_28;
           local_224 = (pSVar10->force).x * fVar7;
           local_220 = (pSVar10->force).y * fVar7;
           local_21c = fVar7 * (pSVar10->force).z;
           local_2b4 = local_224;
-          local_2b0[(uint)bVar16 * -2] = local_2b0[(uint)bVar16 * -2 + 0x24];
+          local_2b0[(uint)bVar16 * -2] = local_28c[(uint)bVar16 * -2 + 0x1b];
           local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
-               local_2b0[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x25];
+               local_28c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x1c];
           if (&pSVar10->velocity != (CVector3f *)&local_2b4) {
             (pSVar10->velocity).x = local_2b4;
             (pSVar10->velocity).y = local_2b0[0];
@@ -516,7 +507,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
            ((local_a4 == 0 ||
             (fVar7 = (pSVar10->secondary_velocity).y, fVar2 = (pSVar10->secondary_velocity).x,
             fVar3 = (pSVar10->secondary_velocity).z,
-            _DAT_005b9140 <= SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar7 * fVar7))))) {
+            0.1f <= SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar7 * fVar7))))) {
           core_cloth_cpp_CCloth_applyConstraints_FUN_0043d9b0(this_ptr,pSVar10);
         }
         iVar11 = iVar11 + 1;
@@ -558,9 +549,9 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f 
     iVar8 = 0;
     do {
       piVar13 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar8);
-      *piVar13 = (int)ROUND((pSVar10->position).x * _DAT_005dd3b0);
-      piVar13[1] = (int)ROUND((pSVar10->position).y * _DAT_005dd3b0);
-      piVar13[2] = (int)ROUND((pSVar10->position).z * _DAT_005dd3b0);
+      *piVar13 = (int)ROUND((pSVar10->position).x * 256.0f);
+      piVar13[1] = (int)ROUND((pSVar10->position).y * 256.0f);
+      piVar13[2] = (int)ROUND((pSVar10->position).z * 256.0f);
       iVar11 = iVar11 + 1;
       pSVar10 = pSVar10 + 1;
       iVar8 = iVar8 + 0xc;

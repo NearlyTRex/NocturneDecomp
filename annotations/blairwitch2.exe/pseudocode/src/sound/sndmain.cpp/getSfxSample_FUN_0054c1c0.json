@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 490,
-    "complexity_score": 317,
+    "complexity_score": 247,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 202,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
     "total_lines": 692
   },
@@ -48,7 +46,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8d8c",
@@ -173,7 +171,7 @@
     {
       "addr": "0058ffc0",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_0058ffc0"
+      "name": "wincore_winrun.cpp_outputDebugString_FUN_0058ffc0"
     }
   ],
   "globals": [
@@ -185,8 +183,8 @@
     },
     {
       "addr": "005e7db1",
-      "name": "DAT_005e7db1",
-      "type": "undefined4",
+      "name": "s_wav_005e7db1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -221,8 +219,8 @@
     },
     {
       "addr": "005e7e18",
-      "name": "DAT_005e7e18",
-      "type": "undefined4",
+      "name": "s_mp3_005e7e18",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -275,14 +273,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
@@ -299,14 +297,14 @@
     },
     {
       "addr": "02630cb0",
-      "name": "DAT_02630cb0",
-      "type": "undefined4",
+      "name": "g_BYTE_02630cb0",
+      "type": "byte",
       "value": null
     },
     {
       "addr": "02641920",
-      "name": "DAT_02641920",
-      "type": "undefined4",
+      "name": "g_LastSampleAccessIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -482,56 +480,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_02630cb0",
-      "severity": "mild",
-      "text": "if ((DAT_02630cb0 & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_02630cb0",
-      "severity": "mild",
-      "text": "DAT_02630cb0 = DAT_02630cb0 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_02630cb0",
-      "severity": "mild",
-      "text": "DAT_02630cb0 = DAT_02630cb0 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005e7db1",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&local_238,&DAT_005e7db1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 145,
-      "match": "DAT_005e7e18",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&local_238,&DAT_005e7e18);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 65,
+      "line": 64,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -539,7 +489,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 72,
+      "line": 71,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CSfxSample *)((pCVar6->sample_info).name + 2);",
@@ -547,7 +497,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 79,
+      "line": 78,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 144,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 43,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 94,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 343
@@ -249,8 +248,8 @@
     },
     {
       "addr": "0076459c",
-      "name": "DAT_0076459c",
-      "type": "undefined4",
+      "name": "g_INT_0076459c",
+      "type": "int",
       "value": null
     },
     {
@@ -261,8 +260,8 @@
     },
     {
       "addr": "007645a4",
-      "name": "DAT_007645a4",
-      "type": "undefined4",
+      "name": "g_INT_007645a4",
+      "type": "int",
       "value": null
     },
     {
@@ -279,14 +278,14 @@
     },
     {
       "addr": "007645b0",
-      "name": "DAT_007645b0",
-      "type": "undefined4",
+      "name": "g_INT_007645b0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007645b4",
-      "name": "DAT_007645b4",
-      "type": "undefined4",
+      "name": "g_INT_007645b4",
+      "type": "int",
       "value": null
     },
     {
@@ -303,8 +302,8 @@
     },
     {
       "addr": "007645c0",
-      "name": "DAT_007645c0",
-      "type": "undefined4",
+      "name": "g_INT_007645c0",
+      "type": "int",
       "value": null
     },
     {
@@ -315,8 +314,8 @@
     },
     {
       "addr": "007645c8",
-      "name": "DAT_007645c8",
-      "type": "undefined4",
+      "name": "g_INT_007645c8",
+      "type": "int",
       "value": null
     }
   ],
@@ -393,30 +392,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_0076459c",
-      "severity": "mild",
-      "text": "DAT_0076459c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_007645a4",
-      "severity": "mild",
-      "text": "DAT_007645a4 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_0076459c",
-      "severity": "mild",
-      "text": "DAT_0076459c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

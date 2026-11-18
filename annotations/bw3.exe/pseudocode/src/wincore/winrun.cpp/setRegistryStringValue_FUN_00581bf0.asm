@@ -18,7 +18,7 @@
 ;   void* PTR_RegCloseKey_005b33e8 = 001b377e
 ;   void* PTR_RegCreateKeyExA_005b33ec = 001b378c
 ;   void* PTR_RegSetValueExA_005b33f8 = 001b37c2
-;   undefined4 DAT_005d7eb9
+;   TerminatedCString s_suck_005d7eb9
 ;
 ; Called Functions:
 ;   RegCloseKey
@@ -40,7 +40,7 @@ section .text
     PUSH 0x0                            ; 00581c02
     PUSH 0x20006                        ; 00581c04
     PUSH 0x0                            ; 00581c09
-    PUSH 0x5d7eb9                       ; 00581c0b | DAT_005d7eb9
+    PUSH 0x5d7eb9                       ; 00581c0b | = "suck"
     PUSH 0x0                            ; 00581c10
     MOV EDX,dword ptr [ESP + 0x2c]      ; 00581c12
     PUSH EDX                            ; 00581c16

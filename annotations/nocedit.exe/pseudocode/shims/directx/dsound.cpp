@@ -120,7 +120,7 @@ static DSound3DListener_ShimData *g_ds3d_listener = nullptr;
 // DirectSound's distance attenuation for a 3D buffer, as a linear gain.
 //
 // The engine leans on this entirely for positional sounds. CDirectSoundDevice::
-// setSfxPos divides the channel volume back OUT of the value it passes to
+// applySfxChanges divides the channel volume back OUT of the value it passes to
 // SetVolume and folds it into flMinDistance/flMaxDistance instead, leaving the
 // falloff to DirectSound. Ignoring these parameters therefore plays every
 // positional sound at its raw volume; only the software-mixed path attenuates
@@ -665,7 +665,7 @@ static HRESULT dsbuf_SetVolume(LPDIRECTSOUNDBUFFER this_ptr, long lVolume) {
     return DS_OK;
 }
 
-// The rate the buffer plays at; DSBFREQUENCY_ORIGINAL, which setSfxPos sends
+// The rate the buffer plays at; DSBFREQUENCY_ORIGINAL, which applySfxChanges sends
 // for a sound with no frequency scale, is the buffer's own.
 static HRESULT dsbuf_SetFrequency(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwFrequency) {
     DSoundBuffer_ShimData *buf = reinterpret_cast<DSoundBuffer_ShimData *>(this_ptr);

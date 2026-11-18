@@ -13,7 +13,7 @@
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00413c40 at 00413c60
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422f90 at 0042306a
 ;   core_bride.cpp_CBride_processDismemberment_FUN_004248e0 at 00424903
-;   core_carved.cpp_FUN_0042b580 at 0042b5a0
+;   core_carved.cpp_CCarved_processDismemberment_FUN_0042b580 at 0042b5a0
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060 at 004300ca
 ;   ... and 30 more
 ;

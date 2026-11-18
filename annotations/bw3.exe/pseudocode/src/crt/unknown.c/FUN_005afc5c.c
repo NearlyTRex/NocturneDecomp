@@ -2,36 +2,34 @@
 // Address: 005afc5c
 // Address Range: [[005afc5c, 005afcaf]]
 // Convention: unknown
-// Signature: void crt_unknown_c_FUN_005afc5c(int param_1)
+// Signature: void crt_unknown_c_FUN_005afc5c(undefined *param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_005afc5c(int param_1)
+void FUN_005afc5c(byte *param_1)
 
 {
-  uint *puVar1;
-  uint *puVar2;
+  byte **ppuVar1;
+  byte **ptr;
   
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079cc)();
-  puVar1 = (uint *)&DAT_02d261f0;
-  puVar2 = _DAT_02d261f0;
+  ppuVar1 = &g_PTR_02d261f0;
+  ptr = (byte **)g_PTR_02d261f0;
   do {
-    if (puVar2 == (uint *)0x0) {
+    if (ptr == (byte **)0x0) {
 LAB_005afca6:
       (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079d0)();
       return;
     }
-    if (param_1 == puVar2[1]) {
-      if (puVar2[3] != 0) {
-        FUN_005a3770(puVar2[2]);
+    if (param_1 == ptr[1]) {
+      if (ptr[3] != (byte *)0x0) {
+        debugFree(ptr[2]);
       }
-      *puVar1 = *puVar2;
-      FUN_005a3770(puVar2);
+      *ppuVar1 = *ptr;
+      debugFree(ptr);
       goto LAB_005afca6;
     }
-    puVar1 = puVar2;
-    puVar2 = (uint *)*puVar2;
+    ppuVar1 = ptr;
+    ptr = (byte **)*ptr;
   } while( true );
 }

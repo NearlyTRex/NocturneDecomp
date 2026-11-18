@@ -9,8 +9,8 @@
 char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870(CMotionController *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   
-  iVar1 = core_motion_cpp_FUN_005035c0(this_ptr);
-  return this_ptr->motion_list_ptr->state_names[*(int *)(iVar1 + 0x24)];
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(this_ptr);
+  return this_ptr->motion_list_ptr->state_names[pSVar1->state_index];
 }

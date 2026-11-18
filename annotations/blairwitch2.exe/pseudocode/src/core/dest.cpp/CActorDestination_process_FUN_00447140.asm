@@ -11,9 +11,9 @@
 ;   core_filmreel.cpp_CFilmProjector_process_FUN_00492d10 at 00492d43
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cea5a
-;   undefined4 DAT_005cea62
-;   undefined4 DAT_006141f0
+;   double g_DOUBLE_005cea5a = 0.25
+;   double g_DOUBLE_005cea62 = 0.100000000000000
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;
 ; Called Functions:
@@ -81,7 +81,7 @@ section .text
     FMUL ST0                            ; 004471dc
     FADDP                               ; 004471de
     FSQRT                               ; 004471e0
-    FCOMP double ptr [0x005cea62]       ; 004471e2 | DAT_005cea62
+    FCOMP double ptr [0x005cea62]       ; 004471e2 | g_DOUBLE_005cea62
     FNSTSW AX                           ; 004471e8
     SAHF                                ; 004471ea
     JC 0x00447206                       ; 004471eb
@@ -138,21 +138,21 @@ section .text
     FLD float ptr [ESP]                 ; 0044726a
         ;   Label: LAB_0044726a
     FABS                                ; 0044726d
-    FCOMP double ptr [0x005cea5a]       ; 0044726f | DAT_005cea5a
+    FCOMP double ptr [0x005cea5a]       ; 0044726f | g_DOUBLE_005cea5a
     FNSTSW AX                           ; 00447275
     SAHF                                ; 00447277
     JNC 0x00447325                      ; 00447278
         ;   XREF to: 00447325 (CONDITIONAL_JUMP)  ; LAB_00447325
     FLD float ptr [ESP + 0x4]           ; 0044727e
     FABS                                ; 00447282
-    FCOMP double ptr [0x005cea5a]       ; 00447284 | DAT_005cea5a
+    FCOMP double ptr [0x005cea5a]       ; 00447284 | g_DOUBLE_005cea5a
     FNSTSW AX                           ; 0044728a
     SAHF                                ; 0044728c
     JNC 0x00447325                      ; 0044728d
         ;   XREF to: 00447325 (CONDITIONAL_JUMP)  ; LAB_00447325
     FLD float ptr [ESP + 0x8]           ; 00447293
     FABS                                ; 00447297
-    FCOMP double ptr [0x005cea5a]       ; 00447299 | DAT_005cea5a
+    FCOMP double ptr [0x005cea5a]       ; 00447299 | g_DOUBLE_005cea5a
     FNSTSW AX                           ; 0044729f
     SAHF                                ; 004472a1
     JNC 0x00447325                      ; 004472a2
@@ -171,7 +171,7 @@ section .text
     JNZ 0x004472df                      ; 004472cd
         ;   XREF to: 004472df (CONDITIONAL_JUMP)  ; LAB_004472df
     PUSH EAX                            ; 004472cf
-    MOV EDI,dword ptr [0x006141f0]      ; 004472d0 | DAT_006141f0
+    MOV EDI,dword ptr [0x006141f0]      ; 004472d0 | g_CEventListPtr
     PUSH EDI                            ; 004472d6
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 004472d7
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -200,7 +200,7 @@ section .text
         ;   XREF to: 0044726a (UNCONDITIONAL_JUMP)  ; LAB_0044726a
     PUSH EAX                            ; 0044731c
         ;   Label: LAB_0044731c
-    MOV EAX,[0x006141f0]                ; 0044731d | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 0044731d | g_CEventListPtr
     PUSH EAX                            ; 00447322
     JMP 0x004472d7                      ; 00447323
         ;   XREF to: 004472d7 (UNCONDITIONAL_JUMP)  ; LAB_004472d7

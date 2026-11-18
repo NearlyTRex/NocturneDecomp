@@ -11,18 +11,18 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[8]:
+;   core_game.cpp_CGame_loadGame_FUN_004bdfb0 at 004be41c
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb9e4
-;   core_game.cpp_FUN_004bdfb0 at 004be41c
 ;   core_game.cpp_setupMovieRecording_FUN_004b3d70 at 004b3e35
-;   core_main.c_FUN_004e4400 at 004e44ad
-;   core_mission.cpp_FUN_004f7a20 at 004f7b79
+;   core_main.c_showDeveloperToolsMenu_FUN_004e4400 at 004e44ad
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b79
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_005043b0 at 00504519
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505d5d
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c0f6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Message_005bce6f
-;   undefined4 DAT_01c5bb04
+;   int g_WindowFontColor
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005a2898
@@ -46,7 +46,7 @@ section .text
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0047ceaa
         ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047ceaf
-    MOV EBX,dword ptr [0x01c5bb04]      ; 0047ceb2 | DAT_01c5bb04
+    MOV EBX,dword ptr [0x01c5bb04]      ; 0047ceb2 | g_WindowFontColor
     PUSH EBX                            ; 0047ceb8
     LEA EAX,[ESP + 0x4]                 ; 0047ceb9
     PUSH EAX                            ; 0047cebd

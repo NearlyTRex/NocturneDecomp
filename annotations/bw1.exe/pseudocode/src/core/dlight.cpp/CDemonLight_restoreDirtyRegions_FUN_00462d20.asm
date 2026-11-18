@@ -17,20 +17,20 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 0055086a
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f136
-;   core_set.cpp_FUN_00550580 at 0055086a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005d9114
 ;   TerminatedCString s_CDemonLight_blitZBuffer_005d9127
-;   undefined4 DAT_01b2e638
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   int g_DirtySpanCount
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00462a10
 ;   core_dstrendr.cpp_memcpyMMX_FUN_004886f1
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -135,7 +135,7 @@ section .text
         ;   Label: LAB_00462e0d
     MOV ESI,dword ptr [EBP + 0x1d0]     ; 00462e0f
     MOV dword ptr [ESP + 0x18],ECX      ; 00462e15
-    MOV dword ptr [0x01b2e638],ECX      ; 00462e19 | DAT_01b2e638
+    MOV dword ptr [0x01b2e638],ECX      ; 00462e19 | g_DirtySpanCount
     TEST ESI,ESI                        ; 00462e1f
     JLE 0x00462eaf                      ; 00462e21
         ;   XREF to: 00462eaf (CONDITIONAL_JUMP)  ; LAB_00462eaf
@@ -151,7 +151,7 @@ section .text
     CMP EAX,dword ptr [EDI + 0xc]       ; 00462e3c
     JG 0x00462e99                       ; 00462e3f
         ;   XREF to: 00462e99 (CONDITIONAL_JUMP)  ; LAB_00462e99
-    MOV EBX,dword ptr [0x01b2e638]      ; 00462e41 | DAT_01b2e638
+    MOV EBX,dword ptr [0x01b2e638]      ; 00462e41 | g_DirtySpanCount
     XOR ECX,ECX                         ; 00462e47
     TEST EBX,EBX                        ; 00462e49
     JLE 0x00462e6c                      ; 00462e4b
@@ -178,10 +178,10 @@ section .text
     MOV EAX,dword ptr [EDX + 0x4]       ; 00462e7c
     LEA EDX,[ECX + 0x4]                 ; 00462e7f
     MOV dword ptr [ECX + 0x1b2ea3c],EAX ; 00462e82
-    MOV ECX,dword ptr [0x01b2e638]      ; 00462e88 | DAT_01b2e638
+    MOV ECX,dword ptr [0x01b2e638]      ; 00462e88 | g_DirtySpanCount
     INC ECX                             ; 00462e8e
     MOV dword ptr [ESP + 0x20],EDX      ; 00462e8f
-    MOV dword ptr [0x01b2e638],ECX      ; 00462e93 | DAT_01b2e638
+    MOV dword ptr [0x01b2e638],ECX      ; 00462e93 | g_DirtySpanCount
     MOV EAX,dword ptr [ESP + 0x18]      ; 00462e99
         ;   Label: LAB_00462e99
     ADD EDI,0x10                        ; 00462e9d
@@ -191,7 +191,7 @@ section .text
     CMP EAX,EDX                         ; 00462eab
     JL 0x00462e2f                       ; 00462ead
         ;   XREF to: 00462e2f (CONDITIONAL_JUMP)  ; LAB_00462e2f
-    MOV ECX,dword ptr [0x01b2e638]      ; 00462eaf | DAT_01b2e638
+    MOV ECX,dword ptr [0x01b2e638]      ; 00462eaf | g_DirtySpanCount
         ;   Label: LAB_00462eaf
     XOR EDI,EDI                         ; 00462eb5
     TEST ECX,ECX                        ; 00462eb7
@@ -220,7 +220,7 @@ section .text
     INC EDI                             ; 00462efb
     CALL core_dstrendr.cpp_memcpyMMX_FUN_004886f1 ; 00462efc
         ;   XREF to: 004886f1 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_004886f1(void * dest, void * src, int byte_count)
-    MOV EAX,[0x01b2e638]                ; 00462f01 | DAT_01b2e638
+    MOV EAX,[0x01b2e638]                ; 00462f01 | g_DirtySpanCount
     ADD ESP,0xc                         ; 00462f06
     CMP EDI,EAX                         ; 00462f09
     JL 0x00462ebd                       ; 00462f0b
@@ -268,10 +268,10 @@ section .text
         ;   Label: LAB_00462f71
     MOV EDI,0x202                       ; 00462f76
     PUSH 0x5d9127                       ; 00462f7b | = "CDemonLight::blitZBuffer - No master ..."
-    MOV dword ptr [0x01d1d400],ESI      ; 00462f80 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00462f86 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00462f8c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 00462f80 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00462f86 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00462f8c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00462f91
     JMP 0x00462d55                      ; 00462f94
         ;   XREF to: 00462d55 (UNCONDITIONAL_JUMP)  ; LAB_00462d55

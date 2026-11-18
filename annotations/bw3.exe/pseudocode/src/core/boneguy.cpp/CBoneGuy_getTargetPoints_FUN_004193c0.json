@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 615,
+    "complexity_score": 560,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 80,
-    "suspect_count": 51,
+    "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 228
@@ -41,32 +40,32 @@
   "globals": [
     {
       "addr": "007e1620",
-      "name": "DAT_007e1620",
-      "type": "undefined4",
+      "name": "g_INT_007e1620",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007e1634",
-      "name": "DAT_007e1634",
-      "type": "undefined4",
+      "name": "g_INT_007e1634",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007e1638",
-      "name": "DAT_007e1638",
-      "type": "undefined4",
+      "name": "g_INT_007e1638",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007e1644",
-      "name": "DAT_007e1644",
-      "type": "undefined4",
+      "name": "g_INT_007e1644",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007e1648",
-      "name": "DAT_007e1648",
-      "type": "undefined4",
+      "name": "g_INT_007e1648",
+      "type": "int",
       "value": null
     }
   ],
@@ -162,46 +161,6 @@
       "severity": "moderate",
       "text": "float afStackY_1068 [1014];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_007e1620",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,DAT_007e1620,&CStack_38);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_007e1634",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,DAT_007e1634,&CStack_80);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_007e1638",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,DAT_007e1638,&CStack_14);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_007e1644",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,DAT_007e1644,&CStack_50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_007e1648",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,DAT_007e1648,&CStack_20);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&CStack_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

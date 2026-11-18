@@ -10,10 +10,10 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00442015
-;   support_codec.cpp_FUN_004340f0 at 0043412c
+;   support_codec.cpp_CCodec_processFiles_FUN_004340f0 at 0043412c
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamFileVTable = 0057dc10
+;   void*[10] g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_0057d860

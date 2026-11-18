@@ -1,0 +1,53 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_path_cpp_queuePush_FUN_00532ee0(int grid_x,int cost,int grid_z,char direction)
+;
+; Parameters:
+; int              Stack[0x4]:4   grid_x
+; int              Stack[0x8]:4   cost
+; int              Stack[0xc]:4   grid_z
+; char             Stack[0x10]:1   direction
+;
+; Referenced Globals:
+;   int g_PathfindingQueueTail
+;   int g_PathfindingNodesExpanded
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00532ee0
+        ;   Label: core_path.cpp_queuePush_FUN_00532ee0
+    MOV ECX,dword ptr [0x01e7abe0]      ; 00532ee1 | g_PathfindingQueueTail
+    MOV EDX,dword ptr [ESP + 0x10]      ; 00532ee7
+    LEA EAX,[EDX*0x4 + 0x0]             ; 00532eeb
+    SUB EAX,EDX                         ; 00532ef2
+    SHL EAX,0x3                         ; 00532ef4
+    ADD EAX,EDX                         ; 00532ef7
+    MOV EDX,dword ptr [ESP + 0x8]       ; 00532ef9
+    SHL EAX,0x2                         ; 00532efd
+    ADD EAX,EDX                         ; 00532f00
+    MOV DL,byte ptr [ESP + 0x14]        ; 00532f02
+    MOV byte ptr [EAX + 0x1e7abe8],DL   ; 00532f06
+    LEA EAX,[ECX*0x4 + 0x0]             ; 00532f0c
+    MOV EBX,dword ptr [0x01e7d35c]      ; 00532f13 | g_PathfindingNodesExpanded
+    SUB EAX,ECX                         ; 00532f19
+    MOV EDX,dword ptr [ESP + 0x8]       ; 00532f1b
+    INC EBX                             ; 00532f1f
+    MOV dword ptr [EAX*0x4 + 0x1e6c17c],EDX ; 00532f20
+    MOV EDX,dword ptr [ESP + 0xc]       ; 00532f27
+    MOV dword ptr [0x01e7d35c],EBX      ; 00532f2b | g_PathfindingNodesExpanded
+    MOV dword ptr [EAX*0x4 + 0x1e6c180],EDX ; 00532f31
+    MOV EDX,dword ptr [ESP + 0x10]      ; 00532f38
+    INC ECX                             ; 00532f3c
+    MOV dword ptr [EAX*0x4 + 0x1e6c184],EDX ; 00532f3d
+    CMP ECX,0x1388                      ; 00532f44
+    JL 0x00532f4e                       ; 00532f4a
+        ;   XREF to: 00532f4e (CONDITIONAL_JUMP)  ; LAB_00532f4e
+    XOR ECX,ECX                         ; 00532f4c
+    MOV dword ptr [0x01e7abe0],ECX      ; 00532f4e | g_PathfindingQueueTail
+        ;   Label: LAB_00532f4e
+    POP EBX                             ; 00532f54
+    RET                                 ; 00532f55
+

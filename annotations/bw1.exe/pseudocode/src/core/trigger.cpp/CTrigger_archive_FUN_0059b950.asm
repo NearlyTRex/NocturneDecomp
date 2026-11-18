@@ -10,7 +10,7 @@
 ;   core_waypoint.cpp_CWayPoint_archive_FUN_005abae0 at 005abaec
 ;
 ; Referenced Globals:
-;   undefined4 s_triggerState_005f80bb+1
+;   TerminatedCString s_triggerState_005f80bc
 ;   TerminatedCString s_triggerSize_005f80c9
 ;   TerminatedCString s_triggerType_005f80d5
 ;   TerminatedCString s_onName_005f80e1
@@ -34,7 +34,7 @@
 ;   core_actor.cpp_archiveString_FUN_0040b440
 ;   core_actor.cpp_archiveVector_FUN_0040b1c0
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040
-;   core_trigger.cpp_FUN_0059bee0
+;   core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0
 ;
 ; *****************************************************************************
 
@@ -48,7 +48,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 0059b957
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0059b95c
-    PUSH 0x5f80bc                       ; 0059b95f | s_triggerState_005f80bb+1
+    PUSH 0x5f80bc                       ; 0059b95f | = "triggerState"
     LEA EAX,[EBX + 0x16c]               ; 0059b964
     PUSH EAX                            ; 0059b96a
     CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 0059b96b
@@ -272,8 +272,8 @@ section .text
     RET                                 ; 0059bbf6
     PUSH EBX                            ; 0059bbf7
         ;   Label: LAB_0059bbf7
-    CALL core_trigger.cpp_FUN_0059bee0  ; 0059bbf8
-        ;   XREF to: 0059bee0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_FUN_0059bee0()
+    CALL core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0 ; 0059bbf8
+        ;   XREF to: 0059bee0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_calculateTestRadius_FUN_0059bee0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 0059bbfd
     JMP 0x0059bb7c                      ; 0059bc00
         ;   XREF to: 0059bb7c (UNCONDITIONAL_JUMP)  ; LAB_0059bb7c

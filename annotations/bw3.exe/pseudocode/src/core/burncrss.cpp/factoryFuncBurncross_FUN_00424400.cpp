@@ -11,7 +11,7 @@ CBurncross * __cdecl core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
 {
   CBurncross *pCVar1;
   
-  pCVar1 = (CBurncross *)operator_new(0x1acc);
+  pCVar1 = operator_new(0x1acc);
   if (pCVar1 == (CBurncross *)0x0) {
     return (CBurncross *)0x0;
   }

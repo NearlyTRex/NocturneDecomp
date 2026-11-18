@@ -8,19 +8,19 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cedef4
+;   int g_INT_01cedef4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090
-;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
-;   core_mine.cpp_FUN_005ad940
-;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00594380
+;   core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 005ad551
     MOV dword ptr [EBP + 0x72],EAX      ; 005ad552
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ad555
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005ad55a
     PUSH dword ptr [EBP + 0x92]         ; 005ad55d
     PUSH EBX                            ; 005ad563
@@ -48,9 +48,9 @@ section .text
         ;   XREF to: 0041c090 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_process_FUN_0041c090(CBoxActor * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005ad569
     PUSH EBX                            ; 005ad56c
-    CALL core_mine.cpp_FUN_005ad940     ; 005ad56d
-        ;   XREF to: 005ad940 (UNCONDITIONAL_CALL)  ; undefined core_mine.cpp_FUN_005ad940()
-    MOV ESI,dword ptr [0x01cedef4]      ; 005ad572 | DAT_01cedef4
+    CALL core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940 ; 005ad56d
+        ;   XREF to: 005ad940 (UNCONDITIONAL_CALL)  ; void core_mine.cpp_CSpiritMine_updateGlobe_FUN_005ad940(CSpiritMine * this_ptr)
+    MOV ESI,dword ptr [0x01cedef4]      ; 005ad572 | g_INT_01cedef4
     LEA EAX,[EBX + 0x20]                ; 005ad578
     MOV ESI,dword ptr [ESI*0x4 + 0x1cedee4] ; 005ad57b
     FLD float ptr [EAX]                 ; 005ad582
@@ -124,8 +124,8 @@ section .text
     PUSH EAX                            ; 005ad65b
     LEA ESI,[EBP + -0x46]               ; 005ad65c
     LEA EDI,[EBP + -0x36]               ; 005ad65f
-    CALL core_xform.cpp_FUN_00594380    ; 005ad662
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 005ad662
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[EBP + -0x46]               ; 005ad667
     LEA EAX,[EBP + -0x36]               ; 005ad66a
     ADD ESP,0x4                         ; 005ad66d
@@ -152,8 +152,8 @@ section .text
     PUSH EAX                            ; 005ad6a7
     MOV dword ptr [EBP + -0x16],ECX     ; 005ad6a8
     MOV dword ptr [EBP + -0x12],EDI     ; 005ad6ab
-    CALL core_xform.cpp_FUN_00591530    ; 005ad6ae
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 005ad6ae
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     ADD ESP,0x8                         ; 005ad6b3
     LEA EDI,[EBP + 0x22]                ; 005ad6b6
     XOR EAX,EAX                         ; 005ad6b9
@@ -199,7 +199,7 @@ section .text
     PUSH 0x40000000                     ; 005ad72f
     PUSH ESI                            ; 005ad734
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005ad735
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005ad73a
     FLD float ptr [EBP + 0x6a]          ; 005ad73d
         ;   Label: LAB_005ad73d
@@ -222,7 +222,7 @@ section .text
         ;   XREF to: 004222d0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInfo * this_ptr)
     FLD float ptr [EBX + 0x7e4]         ; 005ad75f
     FMUL float ptr [EBP + 0x92]         ; 005ad765
-    MOV EAX,[0x01cedef4]                ; 005ad76b | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005ad76b | g_INT_01cedef4
     ADD ESP,0x4                         ; 005ad770
     MOV dword ptr [EBP + 0xffffff16],EBX ; 005ad773
     MOV dword ptr [EBP + 0xffffff1a],EBX ; 005ad779
@@ -250,8 +250,8 @@ section .text
         ;   XREF to: 005ad74b (CONDITIONAL_JUMP)  ; LAB_005ad74b
     MOV EDI,dword ptr [EBP + 0x72]      ; 005ad7c3
     XOR ESI,ESI                         ; 005ad7c6
-    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005ad7c8
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0 ; 005ad7c8
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; int core_bwgrndma.cpp_shouldSpawnParticle_FUN_005a7ed0()
         ;   Label: LAB_005ad7c8
     TEST EAX,EAX                        ; 005ad7cd
     JNZ 0x005ad83e                      ; 005ad7cf
@@ -266,7 +266,7 @@ section .text
     MOV ESI,0x40a00000                  ; 005ad7de
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0 ; 005ad7e3
         ;   XREF to: 004222d0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0(SDamageInfo * this_ptr)
-    MOV EAX,[0x01cedef4]                ; 005ad7e8 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005ad7e8 | g_INT_01cedef4
     ADD ESP,0x4                         ; 005ad7ed
     MOV dword ptr [EBP + 0xffffff22],ESI ; 005ad7f0
     MOV dword ptr [EBP + 0xffffff52],EBX ; 005ad7f6
@@ -347,7 +347,7 @@ section .text
     MOV dword ptr [EBP + 0xa],EDX       ; 005ad8e2
     MOV dword ptr [EBP + 0x12],EDX      ; 005ad8e5
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005ad8e8
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 005ad8ed
     JMP 0x005ad7d1                      ; 005ad8f0
         ;   XREF to: 005ad7d1 (UNCONDITIONAL_JUMP)  ; LAB_005ad7d1

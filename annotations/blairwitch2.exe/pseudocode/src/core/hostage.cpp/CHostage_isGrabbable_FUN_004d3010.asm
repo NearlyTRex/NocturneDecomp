@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   grabber
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     ADD EAX,0x2b4                       ; 004d3030
         ;   Label: LAB_004d3030
     PUSH EAX                            ; 004d3035
-    CALL core_motion.cpp_FUN_005035c0   ; 004d3036
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 004d3036
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d303b
     ADD ESP,0x4                         ; 004d303e
     CMP EAX,0xa                         ; 004d3041

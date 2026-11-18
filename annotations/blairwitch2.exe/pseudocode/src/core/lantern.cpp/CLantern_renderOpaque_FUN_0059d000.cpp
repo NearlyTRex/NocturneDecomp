@@ -15,7 +15,7 @@ int __cdecl core_lantern_cpp_CLantern_renderOpaque_FUN_0059d000(CLantern *this_p
     iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90(&this_ptr->base);
     return iVar1;
   }
-  core_lantern_cpp_FUN_0059ced0(this_ptr);
+  core_lantern_cpp_CLantern_updateLightTransform_FUN_0059ced0(this_ptr);
   iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90(&this_ptr->base);
   return iVar1;
 }

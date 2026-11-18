@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 61
@@ -90,15 +89,15 @@
     },
     {
       "addr": "005c1f54",
-      "name": "DAT_005c1f54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     },
     {
       "addr": "005c1f90",
-      "name": "DAT_005c1f90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
     }
   ],
   "param_estimates": {
@@ -215,14 +214,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005c1f54",
-      "severity": "mild",
-      "text": "hFile = *(HANDLE *)(DAT_005c1f54 + file_handle_index * 4);",
-      "type": "undefined_data"
-    },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 10,

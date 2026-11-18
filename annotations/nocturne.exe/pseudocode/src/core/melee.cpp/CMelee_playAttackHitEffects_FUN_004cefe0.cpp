@@ -13,8 +13,7 @@ void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *thi
   
   core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0
             ((CDemonActor *)this_ptr,attack_flags,damage_info,victim);
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (victim,g_CCharacterActorType_00765a60.name_hash);
+  pCVar1 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040d890(victim,g_CCharacterClassInfo.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090
               (this_ptr,0x14,(int)pCVar1[0x1c].prev_actor);

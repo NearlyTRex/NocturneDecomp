@@ -9,16 +9,16 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ShotShadowWithLead_005f197c
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_shadowsc.cpp_FUN_00561060
-;   core_shadowsc.cpp_FUN_005610a0
+;   core_shadowsc.cpp_CShadowsc_playDeathSound_FUN_005610a0
+;   core_shadowsc.cpp_CShadowsc_playHurtSound_FUN_00561060
 ;
 ; *****************************************************************************
 
@@ -92,8 +92,8 @@ section .text
         ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 005613e7
     PUSH EDI                            ; 005613ea
-    CALL core_shadowsc.cpp_FUN_005610a0 ; 005613eb
-        ;   XREF to: 005610a0 (UNCONDITIONAL_CALL)  ; undefined core_shadowsc.cpp_FUN_005610a0()
+    CALL core_shadowsc.cpp_CShadowsc_playDeathSound_FUN_005610a0 ; 005613eb
+        ;   XREF to: 005610a0 (UNCONDITIONAL_CALL)  ; void core_shadowsc.cpp_CShadowsc_playDeathSound_FUN_005610a0(CShadowsc * this_ptr)
     ADD ESP,0x4                         ; 005613f0
     PUSH EBX                            ; 005613f3
         ;   Label: LAB_005613f3
@@ -109,7 +109,7 @@ section .text
     RET                                 ; 00561403
     PUSH 0x5f197c                       ; 00561404 | = "ShotShadowWithLead"
         ;   Label: LAB_00561404
-    MOV EDX,dword ptr [0x0061b4d0]      ; 00561409 | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 00561409 | g_CEventListPtr
     PUSH EDX                            ; 0056140f
     CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 00561410
         ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
@@ -124,15 +124,15 @@ section .text
     PUSH EAX                            ; 00561428
     PUSH EDI                            ; 00561429
     LEA ESI,[ESP + 0xc]                 ; 0056142a
-    CALL core_actor.cpp_FUN_00408b40    ; 0056142e
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 0056142e
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00561433
     JMP 0x0056139b                      ; 00561436
         ;   XREF to: 0056139b (UNCONDITIONAL_JUMP)  ; LAB_0056139b
     PUSH EDI                            ; 0056143b
         ;   Label: LAB_0056143b
-    CALL core_shadowsc.cpp_FUN_00561060 ; 0056143c
-        ;   XREF to: 00561060 (UNCONDITIONAL_CALL)  ; undefined core_shadowsc.cpp_FUN_00561060()
+    CALL core_shadowsc.cpp_CShadowsc_playHurtSound_FUN_00561060 ; 0056143c
+        ;   XREF to: 00561060 (UNCONDITIONAL_CALL)  ; void core_shadowsc.cpp_CShadowsc_playHurtSound_FUN_00561060(CShadowsc * this_ptr)
     ADD ESP,0x4                         ; 00561441
     PUSH EBX                            ; 00561444
     PUSH EDI                            ; 00561445

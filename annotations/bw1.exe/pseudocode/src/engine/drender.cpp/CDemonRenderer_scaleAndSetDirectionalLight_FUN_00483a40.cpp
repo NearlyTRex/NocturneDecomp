@@ -6,25 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00483a40(CDemonRenderer *this_ptr,CVector3f *light_direction)
 
 {
-  int dir_y;
-  float10 fVar1;
-  float10 fVar2;
-  float10 fVar3;
+  double dVar1;
+  double dVar2;
   int dir_z;
   
-  fVar1 = (float10)_DAT_005db3bc;
-  fVar2 = (float10)light_direction->z * fVar1;
-  fVar3 = (float10)light_direction->y * fVar1;
-  fVar1 = (float10)light_direction->x * fVar1;
-  round();
-  round();
-  dir_z = (int)ROUND(fVar2);
-  round(dir_z,dir_z,(int)ROUND(fVar3));
-  engine_light_cpp_setDirectionalLightVector_FUN_004ffa90((int)ROUND(fVar1),dir_y,dir_z);
+  dVar1 = (double)light_direction->y * 65536;
+  dVar2 = (double)light_direction->x * 65536;
+  round((double)light_direction->z * 65536);
+  dVar1 = round(dVar1);
+  dir_z = 0x483a80;
+  dVar2 = round(dVar2);
+  engine_light_cpp_setDirectionalLightVector_FUN_004ffa90((int)ROUND(dVar2),(int)ROUND(dVar1),dir_z)
+  ;
   return;
 }

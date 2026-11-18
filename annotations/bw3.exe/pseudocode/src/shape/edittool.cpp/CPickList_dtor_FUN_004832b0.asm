@@ -9,22 +9,22 @@
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8b3c
-;   core_menu.cpp_FUN_004e94f0 at 004e9d58
-;   core_menu.cpp_FUN_004eae80 at 004ebe0c
-;   core_mission.cpp_FUN_004f7a20 at 004f7b88
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004eae80 at 004ebe0c
+;   core_menu.cpp_configureSoundOptions_FUN_004e94f0 at 004e9d58
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004f7a20 at 004f7b88
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_00560c90 at 00560cfd
-;   engine_pod.cpp_FUN_00513d20 at 00513f56
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00513d20 at 00513f56
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0047dd20 at 0047e00e
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047dcc2
-;   shape_edittool.cpp_FUN_0047dd20 at 0047e00e
 ;
 ; Referenced Globals:
-;   undefined1* g_CPickListVTable = 004832b0
+;   CPickList_full_vtable g_CPickListVTable
 ;   WatcomTypeInfo g_CPickListTypeInfo
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005a308f
-;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a30c4
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
+;   crt_unknown.c_free_FUN_005a30b6
 ;   shape_edittool.cpp_CEdButton_dtor_FUN_00486050
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_00485550
 ;   shape_edittool.cpp_CPickList_clear_FUN_00484f10
@@ -84,16 +84,16 @@ section .text
         ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00483326
     PUSH EAX                            ; 00483329
-    CALL crt_unknown.c_FUN_005a30b6     ; 0048332a
-        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005a30b6(void * ptr)
+    CALL crt_unknown.c_free_FUN_005a30b6 ; 0048332a
+        ;   XREF to: 005a30b6 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005a30b6(void * ptr)
     ADD ESP,0x4                         ; 0048332f
     MOV EAX,EBX                         ; 00483332
     POP EBX                             ; 00483334
     RET                                 ; 00483335
     PUSH EAX                            ; 00483336
         ;   Label: LAB_00483336
-    CALL crt_unknown.c_FUN_005a30c4     ; 00483337
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 00483337
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 0048333c
     MOV EAX,EBX                         ; 0048333f
     POP EBX                             ; 00483341

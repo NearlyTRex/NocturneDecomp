@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 DAT_01ca13e8
+;   int g_INT_01ca13e8
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e765
     PUSH dword ptr [ESP + 0x1c]         ; 0049e769
     PUSH EDX                            ; 0049e76d
-    MOV EDX,dword ptr [0x01ca13e8]      ; 0049e76e | DAT_01ca13e8
+    MOV EDX,dword ptr [0x01ca13e8]      ; 0049e76e | g_INT_01ca13e8
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049e774
     SUB EAX,EDX                         ; 0049e77b
     SHL EAX,0x2                         ; 0049e77d
@@ -46,10 +46,10 @@ section .text
     PUSH EAX                            ; 0049e78f
     CALL core_fire.cpp_CLightningBolt_activateDirectional_FUN_0049ab30 ; 0049e790
         ;   XREF to: 0049ab30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activateDirectional_FUN_0049ab30(CLightningBolt * this_ptr, CVector3f * start_position, CVector3f * end_position, float end_width, ...)
-    MOV EBX,dword ptr [0x01ca13e8]      ; 0049e795 | DAT_01ca13e8
+    MOV EBX,dword ptr [0x01ca13e8]      ; 0049e795 | g_INT_01ca13e8
     INC EBX                             ; 0049e79b
     ADD ESP,0x14                        ; 0049e79c
-    MOV dword ptr [0x01ca13e8],EBX      ; 0049e79f | DAT_01ca13e8
+    MOV dword ptr [0x01ca13e8],EBX      ; 0049e79f | g_INT_01ca13e8
     CMP EBX,0xa                         ; 0049e7a5
     JGE 0x0049e7b3                      ; 0049e7a8
         ;   XREF to: 0049e7b3 (CONDITIONAL_JUMP)  ; LAB_0049e7b3
@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 0049e7b3
         ;   Label: LAB_0049e7b3
     XOR EDI,EDI                         ; 0049e7b4
-    MOV dword ptr [0x01ca13e8],EDI      ; 0049e7b6 | DAT_01ca13e8
+    MOV dword ptr [0x01ca13e8],EDI      ; 0049e7b6 | g_INT_01ca13e8
     POP EDI                             ; 0049e7bc
     CMP dword ptr [ESP + 0x14],0x0      ; 0049e7bd
     JNZ 0x0049e7c6                      ; 0049e7c2

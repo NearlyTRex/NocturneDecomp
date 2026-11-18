@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index)
 
 {
@@ -16,18 +14,19 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474
   int y;
   int iVar2;
   
-  if (_DAT_01bcd070 == (CBitFont *)0x0) {
+  if (g_CBitFont_PTR_01bcd070 == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 139;
     core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
-  _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
-  _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
-  y = _DAT_01bd1d90;
-  x = _DAT_01bd1d8c;
-  iVar1 = INT_005b7630;
+  g_EditorFontMaxCharWidth = g_CBitFont_PTR_01bcd070->max_char_width;
+  g_INT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_01bcd070,0x6a)
+  ;
+  y = g_MouseY;
+  x = g_MouseX;
+  iVar1 = g_InputKeyMask;
   if (0 < (this_ptr->base).item_count) {
-    INT_005b7630 = 0x7f;
+    g_InputKeyMask = 0x7f;
     shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70
               (this_ptr,dialog_title,initial_selected_index,0);
     do {
@@ -38,7 +37,7 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474
     wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorToolsPtr);
-    INT_005b7630 = iVar1;
+    g_InputKeyMask = iVar1;
     return iVar2;
   }
   return -1;

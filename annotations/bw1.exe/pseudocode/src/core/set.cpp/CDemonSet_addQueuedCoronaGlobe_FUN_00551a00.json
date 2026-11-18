@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 60,
+    "complexity_score": 14,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
-    "suspect_count": 3,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 43
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -46,20 +42,20 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -76,8 +72,8 @@
     },
     {
       "addr": "01fe5764",
-      "name": "DAT_01fe5764",
-      "type": "undefined4",
+      "name": "g_QueuedCoronaGlobeCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -177,30 +173,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 12,
-      "match": "*(CDemonGlobe **)(_DAT_01fe5764 * 4 + 0x1fe5768",
-      "severity": "moderate",
-      "text": "*(CDemonGlobe **)(_DAT_01fe5764 * 4 + 0x1fe5768) = globe;",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

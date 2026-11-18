@@ -10,16 +10,16 @@
 ; int              Stack[0x10]:4   binary_mode
 ;
 ; XREF[15]:
-;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b31e
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 00437546
-;   engine_2d.c_FUN_00401590 at 004015af
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0 at 0043b31e
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010c0
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029dc
+;   engine_2d.c_loadPaletteFile_FUN_00401590 at 004015af
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0e6c
-;   engine_font.cpp_FUN_004c0fa0 at 004c1121
-;   engine_font.cpp_FUN_004c1580 at 004c15e5
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004c1580 at 004c15e5
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004c0fa0 at 004c1121
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0 at 00596a9a
-;   engine_texture.cpp_FUN_00597d70 at 00597e6b
+;   engine_texture.cpp_cacheTextureAtFullSize_FUN_00597d70 at 00597e6b
 ;   ... and 5 more
 ;
 ; Referenced Globals:
@@ -27,8 +27,8 @@
 ;
 ; Called Functions:
 ;   CreateFileA
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20
 ;   engine_dosio.cpp_findFile_FUN_00478e90
-;   engine_dosio.cpp_FUN_00478e20
 ;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_005a0e10
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005a0ff7
     PUSH EAX                            ; 005a0ffb
     MOV dword ptr [EBX + 0x10],0x0      ; 005a0ffc
-    CALL engine_dosio.cpp_FUN_00478e20  ; 005a1003
-        ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00478e20()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20 ; 005a1003
+        ;   XREF to: 00478e20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00478e20(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 005a1008
     MOV EAX,ESP                         ; 005a100b
     PUSH EAX                            ; 005a100d

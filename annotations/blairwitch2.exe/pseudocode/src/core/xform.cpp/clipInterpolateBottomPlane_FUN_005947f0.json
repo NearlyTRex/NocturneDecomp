@@ -2,21 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 112,
-    "cross_reference_count": 1,
+    "complexity_score": 97,
+    "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "carry_arith_idiom",
-      "concat_reconstruction",
-      "undefined_data"
+      "concat_reconstruction"
     ],
     "total_lines": 138
   },
   "cross_references": [
+    {
+      "addr": "00594d20",
+      "from_addr": "00594dfc",
+      "name": "core_xform.cpp_clipPolygonStage4_FUN_00594d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00594f40",
       "from_addr": "005955a9",
@@ -40,13 +45,13 @@
   "globals": [
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "005955a9",
@@ -63,6 +68,28 @@
         "call_addr": "0059561a",
         "call_type": "direct",
         "caller": "core_xform.cpp_transformAndClipGeometry_FUN_00594f40",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00594dfc",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_clipPolygonStage4_FUN_00594d20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00594e6a",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_clipPolygonStage4_FUN_00594d20",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,14 +215,6 @@
       "severity": "moderate",
       "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +",
       "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_01c38b54",
-      "severity": "mild",
-      "text": "bVar2 = DAT_01c38b54;",
-      "type": "undefined_data"
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",

@@ -9,6 +9,8 @@
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CPickList.h"
 #include "types/classes/CScript.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1E60000
@@ -31,4 +33,42 @@ extern CPickList g_ScriptPickList;
 
 // CScript
 extern CScript g_CScriptInstance;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_PathMapQuad;
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e6164c[16];
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e61b60[16];
+
+// char[10][1024]
+extern char g_ScriptSubtitleLines[10][1024];
+
+// char[2048]
+extern char g_ScriptLineBuffer[2048];
+extern char g_CHAR_ARRAY_01e65100[2048];
+
+// float
+extern float g_ScriptTimeScale;
+
+// int
+extern int g_PathfindingNodesExpanded;
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
+extern int g_RenderedTriangleCount;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
+extern int g_PreviousLetterboxMode;
+extern int g_ScriptEventsEnabled;
+extern int g_INT_01e65904;
+extern int g_ScriptLoopWarningShown;
+extern int g_ActorLookedUpByVariable;
+
+// int[12]
+extern int g_SentinelIndices[12];
+
+// int[18]
+extern int g_ScatIndices[18];
 

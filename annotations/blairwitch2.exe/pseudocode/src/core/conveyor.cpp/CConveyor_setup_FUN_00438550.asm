@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_CPlatform_setup_FUN_00518280
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_00438583
     PUSH EAX                            ; 00438586
     LEA ESI,[ESP + 0x4]                 ; 00438587
-    CALL core_xform.cpp_FUN_00594380    ; 0043858b
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 0043858b
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x4]                 ; 00438590
     LEA EDI,[EBX + 0x4a0]               ; 00438594
     ADD ESP,0x4                         ; 0043859a

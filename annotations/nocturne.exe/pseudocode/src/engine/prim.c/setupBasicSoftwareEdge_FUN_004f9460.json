@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 117,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 87,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 257
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 86,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 256
   },
   "cross_references": [],
   "function": {
@@ -32,26 +29,26 @@
   "globals": [
     {
       "addr": "01e52a68",
-      "name": "DAT_01e52a68",
-      "type": "undefined4",
+      "name": "g_SoftwareEdgeCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e52a6c",
-      "name": "DAT_01e52a6c",
-      "type": "undefined4",
+      "name": "g_SoftwareEdgeBuffer",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "01e52eec",
-      "name": "DAT_01e52eec",
-      "type": "undefined4",
+      "name": "g_SoftwareMinScanline",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e52ef0",
-      "name": "DAT_01e52ef0",
-      "type": "undefined4",
+      "name": "g_SoftwareMaxScanline",
+      "type": "int",
       "value": null
     }
   ],
@@ -102,6 +99,24 @@
     "pcode_op_count": 1185
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051c1b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053d7b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00515510",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "00551ba0",
       "by": "name",
@@ -139,22 +154,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01e52a6c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e52a6c + iVar2) = iVar4;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -842,7 +842,7 @@ section .text
     CMP dword ptr [EAX + 0x4],0x1       ; 00540e3d
     JNZ 0x0054044c                      ; 00540e41
         ;   XREF to: 0054044c (CONDITIONAL_JUMP)  ; caseD_0
-    MOV EAX,[0x02f7c8c4]                ; 00540e47 | INT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 00540e47 | g_NetNextPlayerId
     CMP EAX,dword ptr [ESI + 0x5]       ; 00540e4c
     JGE 0x00540e6e                      ; 00540e4f
         ;   XREF to: 00540e6e (CONDITIONAL_JUMP)  ; LAB_00540e6e
@@ -856,11 +856,11 @@ section .text
     JZ 0x0054044c                       ; 00540e60
         ;   XREF to: 0054044c (CONDITIONAL_JUMP)  ; caseD_0
     MOV EAX,dword ptr [ESI + 0x5]       ; 00540e66
-    MOV [0x02f7c8c4],EAX                ; 00540e69 | INT_02f7c8c4
+    MOV [0x02f7c8c4],EAX                ; 00540e69 | g_NetNextPlayerId
     MOV dword ptr [ESP + 0x8c],0x9      ; 00540e6e
         ;   Label: LAB_00540e6e
     MOV byte ptr [ESP + 0x90],0xc       ; 00540e79
-    MOV EAX,[0x02f7c8c4]                ; 00540e81 | INT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 00540e81 | g_NetNextPlayerId
     MOV dword ptr [ESP + 0x91],EAX      ; 00540e86
     LEA EAX,[ESP + 0x8c]                ; 00540e8d
     PUSH EAX                            ; 00540e94
@@ -1182,7 +1182,7 @@ section .text
     MOV dword ptr [EDI + 0x4],ECX       ; 0060cb32
     ADD ESI,0x8                         ; 0060cb35
     ADD EDI,0x8                         ; 0060cb38
-    MOV dword ptr [0x02f7c8c4],0xffffffff ; 0060cb3b | INT_02f7c8c4
+    MOV dword ptr [0x02f7c8c4],0xffffffff ; 0060cb3b | g_NetNextPlayerId
     JMP 0x00540978                      ; 0060cb45
         ;   XREF to: 00540978 (UNCONDITIONAL_JUMP)  ; LAB_00540978
     MOV ECX,0xb                         ; 03fc521d

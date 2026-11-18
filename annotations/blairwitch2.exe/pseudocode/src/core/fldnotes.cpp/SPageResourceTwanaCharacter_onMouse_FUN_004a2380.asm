@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cab780
+;   int g_INT_01cab780
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620
@@ -19,7 +19,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01cab780]      ; 004a2380 | DAT_01cab780
+    MOV EDX,dword ptr [0x01cab780]      ; 004a2380 | g_INT_01cab780
         ;   Label: core_fldnotes.cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a2380
     TEST EDX,EDX                        ; 004a2386
     JZ 0x004a2397                       ; 004a2388

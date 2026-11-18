@@ -15,7 +15,7 @@ section .text
     PUSH 0xc1f4                         ; 005212d0
         ;   Label: core_moocow.cpp_factoryFuncMooCow_FUN_005212d0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005212d5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005212da
     TEST EAX,EAX                        ; 005212dd
     JNZ 0x005212e2                      ; 005212df

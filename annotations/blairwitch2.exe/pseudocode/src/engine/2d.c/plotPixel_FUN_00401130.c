@@ -6,24 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_plotPixel_FUN_00401130(int x,int y)
 
 {
-  int iVar1;
-  
-  iVar1 = y * 4;
-  if (DAT_006141c0 == 8) {
-    *(byte *)(x + *(int *)(&DAT_01c2a38c + iVar1)) = DAT_01c35e60;
+  if (g_INT_006141c0 == 8) {
+    g_ScreenBufferArray[y][x] = (byte)g_INT_01c35e60;
     return;
   }
-  if (DAT_006141c0 == 0x10) {
-    *(ushort *)(x * 2 + *(int *)(&DAT_01c2a38c + iVar1)) =
-         *(ushort *)(&DAT_01c34910 + (_DAT_01c35e60 & 0xff) * 2);
+  if (g_INT_006141c0 == 0x10) {
+    *(ushort *)(g_ScreenBufferArray[y] + x * 2) = g_ColorTable16[g_INT_01c35e60 & 0xffU];
     return;
   }
-  *(uint *)(x * 4 + *(int *)(&DAT_01c2a38c + iVar1)) =
-       *(uint *)((_DAT_01c35e60 & 0xff) * 4 + 0x1c34b10);
+  *(uint *)(g_ScreenBufferArray[y] + x * 4) = g_ColorTable32[g_INT_01c35e60 & 0xffU];
   return;
 }

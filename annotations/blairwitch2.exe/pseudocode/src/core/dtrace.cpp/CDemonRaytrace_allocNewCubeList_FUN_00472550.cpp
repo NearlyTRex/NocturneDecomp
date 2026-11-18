@@ -6,25 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00472550(CDemonRaytrace *this_ptr)
 
 {
-  uint uVar1;
-  CDemonCube *pCVar2;
-  int iVar3;
+  void *array_memory;
+  CDemonCube *pCVar1;
+  int element_count;
+  WatcomTypeInfo *type_info;
   
-  iVar3 = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
-  uVar1 = operator_new_array(iVar3 * 0x34 + 4,iVar3,&g_CDemonCubeTypeInfo)
-  ;
-  pCVar2 = (CDemonCube *)__vec_new(uVar1);
-  this_ptr->cube_data = pCVar2;
-  if (pCVar2 != (CDemonCube *)0x0) {
+  element_count = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
+  type_info = &g_CDemonCubeTypeInfo;
+  array_memory = operator_new_array(element_count * 0x34 + 4);
+  pCVar1 = (CDemonCube *)__vec_new(array_memory,element_count,type_info);
+  this_ptr->cube_data = pCVar1;
+  if (pCVar1 != (CDemonCube *)0x0) {
     return;
   }
-  _DAT_01d046a0 = "..\\core\\dtrace.cpp";
-  _DAT_01d046a4 = 0xae;
-  core_main_c_FUN_004e4500("CDemonRaytrace::allocNewCubeList - Out of memory!");
+  g_CHAR_PTR_01d046a0 = "..\\core\\dtrace.cpp";
+  g_INT_01d046a4 = 0xae;
+  core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonRaytrace::allocNewCubeList - Out of memory!");
   return;
 }

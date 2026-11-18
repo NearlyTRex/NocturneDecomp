@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 63,
+    "complexity_score": 47,
     "cross_reference_count": 74,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 2,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 91
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -31,7 +30,7 @@
     {
       "addr": "005a86a0",
       "from_addr": "005a8969",
-      "name": "core_bwspart.cpp_FUN_005a86a0",
+      "name": "core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,13 +48,13 @@
     {
       "addr": "00424c80",
       "from_addr": "00424ce8",
-      "name": "core_charactr.cpp_FUN_00424c80",
+      "name": "core_charactr.cpp_CCharacter_renderCollision_FUN_00424c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042b760",
       "from_addr": "0042be24",
-      "name": "core_charactr.cpp_FUN_0042b760",
+      "name": "core_charactr.cpp_CCharacter_renderEyeGlow_FUN_0042b760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -71,21 +70,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0044b960",
-      "from_addr": "0044bf9c",
-      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0044b020",
       "from_addr": "0044b4f9",
-      "name": "core_dlight.cpp_FUN_0044b020",
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044b020",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0044c160",
       "from_addr": "0044c1d5",
-      "name": "core_dlight.cpp_FUN_0044c160",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_0044c160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044b960",
+      "from_addr": "0044bf9c",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -235,7 +234,7 @@
     {
       "addr": "004bb620",
       "from_addr": "004bb799",
-      "name": "core_game.cpp_FUN_004bb620",
+      "name": "core_game.cpp_CGame_renderAlphaFade_FUN_004bb620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -277,7 +276,31 @@
     {
       "addr": "004c6d40",
       "from_addr": "004c705a",
-      "name": "core_glass.cpp_FUN_004c6d40",
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004c6d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c7580",
+      "from_addr": "004c777b",
+      "name": "core_gore.cpp_CBloodParticle_render_FUN_004c7580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c88a0",
+      "from_addr": "004c8928",
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004c88a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c8010",
+      "from_addr": "004c80dc",
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004c8010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c9000",
+      "from_addr": "004c90b7",
+      "name": "core_gore.cpp_CFootstep_render_FUN_004c9000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -287,39 +310,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c7580",
-      "from_addr": "004c777b",
-      "name": "core_gore.cpp_FUN_004c7580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c8010",
-      "from_addr": "004c80dc",
-      "name": "core_gore.cpp_FUN_004c8010",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c88a0",
-      "from_addr": "004c8928",
-      "name": "core_gore.cpp_FUN_004c88a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c9000",
-      "from_addr": "004c90b7",
-      "name": "core_gore.cpp_FUN_004c9000",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004da130",
-      "from_addr": "004da6c4",
-      "name": "core_inv.cpp_FUN_004da130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004dd9b0",
       "from_addr": "004de988",
-      "name": "core_inv.cpp_FUN_004dd9b0",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -335,9 +328,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004da130",
+      "from_addr": "004da6c4",
+      "name": "core_inv.cpp_renderCompass_FUN_004da130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e1480",
       "from_addr": "004e1519",
-      "name": "core_level.cpp_FUN_004e1480",
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004e1480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -361,7 +360,7 @@
     {
       "addr": "004eaf30",
       "from_addr": "004eb088",
-      "name": "core_menu.cpp_FUN_004eaf30",
+      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_004eaf30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -397,7 +396,7 @@
     {
       "addr": "0053e080",
       "from_addr": "0053e5f8",
-      "name": "core_shadow.cpp_FUN_0053e080",
+      "name": "core_shadow.cpp_CShadow_renderDebugMarker_FUN_0053e080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -477,12 +476,12 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "00574e00",
       "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_00574e00"
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_00574e00"
     }
   ],
   "globals": [
@@ -500,20 +499,20 @@
     },
     {
       "addr": "01ba5cc8",
-      "name": "DAT_01ba5cc8",
-      "type": "undefined4",
+      "name": "g_CaptureTextureCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -598,16 +597,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 24,
+      "line": 22,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

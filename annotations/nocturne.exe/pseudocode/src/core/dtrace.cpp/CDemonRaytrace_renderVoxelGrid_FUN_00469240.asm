@@ -24,9 +24,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0057e1fa
-;   undefined1 DAT_005b6d08
-;   undefined1 DAT_005b6d09
+;   float g_VoxelSubGridScale = 0.125
+;   uchar[8] g_VoxelYBitMasks
+;   undefined4 g_VoxelYBitMasks+1
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00
@@ -91,14 +91,14 @@ section .text
     MOV AL,byte ptr [EAX]               ; 004692da
     XOR EDX,EDX                         ; 004692dc
     AND EAX,0xff                        ; 004692de
-    MOV DL,byte ptr [EBX + 0x5b6d08]    ; 004692e3 | DAT_005b6d08 | DAT_005b6d09
+    MOV DL,byte ptr [EBX + 0x5b6d08]    ; 004692e3 | g_VoxelYBitMasks | g_VoxelYBitMasks+1
     TEST EAX,EDX                        ; 004692e9
     JZ 0x00469349                       ; 004692eb
         ;   XREF to: 00469349 (CONDITIONAL_JUMP)  ; LAB_00469349
     MOV dword ptr [ESP + 0x2c],EBX      ; 004692ed
     FILD dword ptr [ESP + 0x2c]         ; 004692f1
     FMUL float ptr [ESI + 0x28]         ; 004692f5
-    FLD float ptr [0x0057e1fa]          ; 004692f8 | DAT_0057e1fa
+    FLD float ptr [0x0057e1fa]          ; 004692f8 | g_VoxelSubGridScale
     FXCH                                ; 004692fe
     FMUL ST1                            ; 00469300
     MOV dword ptr [ESP + 0x2c],EDI      ; 00469302

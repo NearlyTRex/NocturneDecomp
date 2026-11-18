@@ -14,18 +14,19 @@ void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(char *pro
   char *pcVar3;
   CDemonActor *pCVar4;
   
-  pCVar1 = DAT_00763e8c;
+  pCVar1 = g_CurrentActorBeingProcessed;
   pcVar2 = "(unknown)";
   pCVar4 = (CDemonActor *)"(unknown)";
-  if (DAT_00763e8c != (CDemonActor *)0x0) {
-    pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);
+  if (g_CurrentActorBeingProcessed != (CDemonActor *)0x0) {
+    pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(g_CurrentActorBeingProcessed)
+    ;
     pCVar4 = pCVar1;
   }
   if (property_type == (char *)0x0) {
     property_type = "(unknown)";
   }
   pcVar3 = "load";
-  if (DAT_00763e88 == 2) {
+  if (g_ActorReadingMode == 2) {
     pcVar3 = "save";
   }
   g_CurrentFilename = "..\\core\\actor.cpp";

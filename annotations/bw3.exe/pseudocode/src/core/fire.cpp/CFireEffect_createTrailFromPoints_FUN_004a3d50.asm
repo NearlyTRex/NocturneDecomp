@@ -13,7 +13,7 @@
 ; SMRGLTextureBasic * Stack[0x1c]:4   texture_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0a48
+;   double g_DOUBLE_005c0a48 = 8
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createTrailSegment_FUN_004a3cf0
@@ -62,12 +62,12 @@ section .text
     FADDP                               ; 004a3da7
     MOV ESI,EAX                         ; 004a3da9
     FSQRT                               ; 004a3dab
-    FMUL double ptr [0x005c0a48]        ; 004a3dad | DAT_005c0a48
+    FMUL double ptr [0x005c0a48]        ; 004a3dad | g_DOUBLE_005c0a48
     FDIV float ptr [EBP + 0x20]         ; 004a3db3
     FLD1                                ; 004a3db6
     FADDP                               ; 004a3db8
     CALL crt_math.c_round_FUN_005a3120  ; 004a3dba
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP dword ptr [ESP]               ; 004a3dbf
     MOV EAX,dword ptr [ESP]             ; 004a3dc2
     MOV dword ptr [ESP + 0x2c],EAX      ; 004a3dc5

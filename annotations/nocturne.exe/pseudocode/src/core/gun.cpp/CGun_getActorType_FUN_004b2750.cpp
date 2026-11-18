@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_gun_cpp_CGun_getActorType_FUN_004b2750(CGun *this_ptr)
 
 {
-  return &g_CGunActorType_01cadfdc;
+  return &g_CGunClassInfo;
 }

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 83,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 38,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 199
   },
   "cross_references": [],
@@ -57,8 +55,8 @@
   "globals": [
     {
       "addr": "005f9322",
-      "name": "DAT_005f9322",
-      "type": "undefined4",
+      "name": "s_size_005f9322",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -165,20 +163,20 @@
     },
     {
       "addr": "005f93dc",
-      "name": "DAT_005f93dc",
-      "type": "undefined4",
+      "name": "s_colR_005f93dc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f93e1",
-      "name": "DAT_005f93e1",
-      "type": "undefined4",
+      "name": "s_colG_005f93e1",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005f93e6",
-      "name": "DAT_005f93e6",
-      "type": "undefined4",
+      "name": "s_colB_005f93e6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -264,40 +262,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_005f9322",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->size,&DAT_005f9322);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005f93dc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670(&(this_ptr->color).r,&DAT_005f93dc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005f93e1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670(&(this_ptr->color).g,&DAT_005f93e1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005f93e6",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670(&(this_ptr->color).b,&DAT_005f93e6);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

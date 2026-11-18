@@ -11,28 +11,28 @@
 ;   undefined1* switchdataD_0052145c = 0052172c
 ;   TerminatedCString s_s_confused_while_walking_005ea37e
 ;   TerminatedCString s_cow_wav_005ea3a8
-;   undefined4 DAT_005ea3b2
-;   undefined4 DAT_005ea3ba
+;   double g_DOUBLE_005ea3b2 = 0.980000000000000
+;   double g_DOUBLE_005ea3ba = 0.900000000000000
 ;   CConsole* g_CConsolePtr = 007db5f0
-;   undefined4 DAT_006236b8
+;   CSound* g_CSound_PTR_006236b8 = 02c82a60
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
-;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_00432f10
-;   core_charactr.cpp_FUN_00435320
+;   core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_motion.cpp_FUN_00525020
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_005214a6
     PUSH dword ptr [EBP + 0x18]         ; 005214a8
     PUSH EBX                            ; 005214ab
-    CALL core_charactr.cpp_FUN_00432f10 ; 005214ac
-        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432f10()
+    CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10 ; 005214ac
+        ;   XREF to: 00432f10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432f10(CCharacter * this_ptr, float delta_time, int disable_search)
     LEA EAX,[EBX + 0x249c]              ; 005214b1
     MOV dword ptr [EAX + 0x8],0x0       ; 005214b7
     ADD ESP,0xc                         ; 005214be
@@ -104,8 +104,8 @@ section .text
     FLD float ptr [EBX + 0x24a4]        ; 005214ff
     PUSH EBX                            ; 00521505
     FSTP float ptr [EBX + 0x2524]       ; 00521506
-    CALL core_charactr.cpp_FUN_00435320 ; 0052150c
-        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00435320()
+    CALL core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320 ; 0052150c
+        ;   XREF to: 00435320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00521511
     PUSH ESI                            ; 00521514
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770 ; 00521515
@@ -155,8 +155,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00521588
     PUSH EBX                            ; 0052158b
     LEA ESI,[EBX + 0x2518]              ; 0052158c
-    CALL core_charactr.cpp_FUN_0042d700 ; 00521592
-        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d700()
+    CALL core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700 ; 00521592
+        ;   XREF to: 0042d700 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00521597
     FLD float ptr [ESI]                 ; 0052159a
     FMUL float ptr [EBP + 0x18]         ; 0052159c
@@ -226,8 +226,8 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 0052165e
     PUSH EAX                            ; 00521662
     PUSH EBX                            ; 00521663
-    CALL core_charactr.cpp_FUN_0042d750 ; 00521664
-        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750 ; 00521664
+        ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00521669
     PUSH EBX                            ; 0052166c
         ;   Label: LAB_0052166c
@@ -252,12 +252,12 @@ section .text
     RET                                 ; 00521696
     PUSH ESI                            ; 00521697
         ;   Label: LAB_00521697
-    CALL core_motion.cpp_FUN_00525020   ; 00521698
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 00521698
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x50],EAX      ; 0052169d
     FLD float ptr [ESP + 0x50]          ; 005216a1
     ADD ESP,0x4                         ; 005216a5
-    FCOMP double ptr [0x005ea3ba]       ; 005216a8 | DAT_005ea3ba
+    FCOMP double ptr [0x005ea3ba]       ; 005216a8 | g_DOUBLE_005ea3ba
     FNSTSW AX                           ; 005216ae
     SAHF                                ; 005216b0
     JBE 0x0052155f                      ; 005216b1
@@ -290,12 +290,12 @@ section .text
     LEA ESI,[EBX + 0x158]               ; 005216f1
         ;   Label: LAB_005216f1
     PUSH ESI                            ; 005216f7
-    CALL core_motion.cpp_FUN_00525020   ; 005216f8
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 005216f8
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x50],EAX      ; 005216fd
     FLD float ptr [ESP + 0x50]          ; 00521701
     ADD ESP,0x4                         ; 00521705
-    FCOMP double ptr [0x005ea3ba]       ; 00521708 | DAT_005ea3ba
+    FCOMP double ptr [0x005ea3ba]       ; 00521708 | g_DOUBLE_005ea3ba
     FNSTSW AX                           ; 0052170e
     SAHF                                ; 00521710
     JBE 0x0052155f                      ; 00521711
@@ -313,12 +313,12 @@ section .text
     LEA ESI,[EBX + 0x158]               ; 0052172c
         ;   Label: caseD_0
     PUSH ESI                            ; 00521732
-    CALL core_motion.cpp_FUN_00525020   ; 00521733
-        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00525020(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020 ; 00521733
+        ;   XREF to: 00525020 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00525020(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x50],EAX      ; 00521738
     FLD float ptr [ESP + 0x50]          ; 0052173c
     ADD ESP,0x4                         ; 00521740
-    FCOMP double ptr [0x005ea3b2]       ; 00521743 | DAT_005ea3b2
+    FCOMP double ptr [0x005ea3b2]       ; 00521743 | g_DOUBLE_005ea3b2
     FNSTSW AX                           ; 00521749
     SAHF                                ; 0052174b
     JBE 0x00521577                      ; 0052174c
@@ -344,7 +344,7 @@ section .text
         ;   XREF to: 00521577 (CONDITIONAL_JUMP)  ; caseD_5
     MOV EDX,dword ptr [EBX + 0xc1d8]    ; 0052177f
     PUSH EDX                            ; 00521785
-    MOV ECX,dword ptr [0x006236b8]      ; 00521786 | DAT_006236b8
+    MOV ECX,dword ptr [0x006236b8]      ; 00521786 | g_CSound_PTR_006236b8
     PUSH ECX                            ; 0052178c
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 0052178d
         ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)

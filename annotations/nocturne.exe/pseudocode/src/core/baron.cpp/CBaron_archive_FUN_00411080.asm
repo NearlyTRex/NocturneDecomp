@@ -10,7 +10,7 @@
 ;   TerminatedCString s_summonEvent_00578698
 ;   TerminatedCString s_goAwayEvent_005786a4
 ;   TerminatedCString s_summoned_005786b0
-;   int g_INT_005acf3c = 0x2
+;   int g_CBaronClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 00411085
     CALL core_hero.cpp_CHero_archive_FUN_004b49a0 ; 00411086
         ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_archive_FUN_004b49a0(CHero * this_ptr)
-    MOV EDX,dword ptr [0x005acf3c]      ; 0041108b | g_INT_005acf3c
+    MOV EDX,dword ptr [0x005acf3c]      ; 0041108b | g_CBaronClassVersion
     ADD ESP,0x4                         ; 00411091
     CMP EDX,0x2                         ; 00411094
     JGE 0x0041109b                      ; 00411097

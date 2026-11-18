@@ -5,8 +5,11 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonCamera.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonRaytrace.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CRect.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1FC0000
@@ -15,9 +18,40 @@
 // CDemonCamera
 extern CDemonCamera g_CDemonCameraInstance;
 
+// CDemonGlobe*[100]
+extern CDemonGlobe* g_CoronaGlobes[100];
+extern CDemonGlobe* g_QueuedCoronaGlobes[100];
+extern CDemonGlobe* g_VisibleCoronaGlobes[100];
+
+// CDemonLight*[4]
+extern CDemonLight* g_DynamicLights[4];
+
+// CDemonLight*[96]
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_01fc8d04[96];
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_01fc8e88[96];
+
 // CDemonRaytrace
 extern CDemonRaytrace g_CDemonRaytraceInstance;
 
 // CKeyFramedModel
 extern CKeyFramedModel g_CKeyFramedModelInstance;
+
+// CRect[96]
+extern CRect g_SpotLightBounds[96];
+
+// int
+extern int g_MasterLightCount;
+extern int g_SpotLightCount;
+extern int g_INT_01fc9608;
+extern int g_INT_01fc961c;
+extern int g_QueuedCoronaGlobeCount;
+extern int g_VisibleCoronaGlobeCount;
+extern int g_INT_01fc9cd4;
+extern int g_INT_01fc9cd8;
+
+// int[100]
+extern int g_QueuedCoronaGlobeAlphaMasks[100];
+
+// int[65536]
+extern int g_IntensityToValueLookupTable[65536];
 

@@ -12,12 +12,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b8f78
 ;   TerminatedCString s_CCloth_allocMemory_Out_o_005b8f8a
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_free_FUN_0043c300
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
 ; *****************************************************************************
@@ -35,7 +35,7 @@ section .text
     SHL EAX,0x2                         ; 0043c2b4
     PUSH EAX                            ; 0043c2b7
     CALL crt_memory.c_operator_new_array_FUN_005a40df ; 0043c2b8
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005a40df(uint size)
     ADD ESP,0x4                         ; 0043c2bd
     MOV dword ptr [EBX + 0x3aafc],EAX   ; 0043c2c0
     TEST EAX,EAX                        ; 0043c2c6
@@ -47,10 +47,10 @@ section .text
         ;   Label: LAB_0043c2cc
     MOV EBX,0x77                        ; 0043c2d1
     PUSH 0x5b8f8a                       ; 0043c2d6 | = "CCloth::allocMemory - Out of memory"
-    MOV dword ptr [0x01d71de0],ECX      ; 0043c2db | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0043c2e1 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0043c2e7
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 0043c2db | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 0043c2e1 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043c2e7
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0043c2ec
     POP EBX                             ; 0043c2ef
     RET                                 ; 0043c2f0

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_005146c0(char *filename)
 
 {
@@ -48,11 +46,11 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_005146c0(char *filename)
   pcVar7 = (char *)0x0;
 LAB_00514703:
   if (pcVar7 == (char *)0x0) {
-    _DAT_01d046a0 = "..\\engine\\pcx.c";
-    _DAT_01d046a4 = 0x67;
-    core_main_c_FUN_004e4500("saveScreenRaw16 - No ext found");
+    g_CHAR_PTR_01d046a0 = "..\\engine\\pcx.c";
+    g_INT_01d046a4 = 0x67;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("saveScreenRaw16 - No ext found");
   }
-  pcVar5 = &DAT_005e191e;
+  pcVar5 = ".RAW";
   do {
     cVar1 = *pcVar5;
     *pcVar7 = cVar1;
@@ -62,34 +60,35 @@ LAB_00514703:
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  file = _fopen(local_70,&DAT_005e1923);
+  file = _fopen(local_70,"wb");
   if (file == (_FILE *)0x0) {
-    _DAT_01d046a0 = "..\\engine\\pcx.c";
-    _DAT_01d046a4 = 0x6d;
-    core_main_c_FUN_004e4500("saveScreenRaw16 - Unable to open output");
+    g_CHAR_PTR_01d046a0 = "..\\engine\\pcx.c";
+    g_INT_01d046a4 = 0x6d;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("saveScreenRaw16 - Unable to open output");
   }
   local_14 = 0;
-  if (0 < DAT_006141bc) {
+  if (0 < g_INT_006141bc) {
     local_18 = 0;
     do {
       iVar3 = 0;
-      puVar6 = *(ushort **)(&DAT_01c2a38c + local_18);
-      if (0 < DAT_006141b8) {
+      puVar6 = *(ushort **)((int)g_ScreenBufferArray + local_18);
+      if (0 < g_INT_006141b8) {
         do {
           uVar2 = *puVar6;
-          local_20 = (uint)(uVar2 >> (DAT_01c35814 & 0x1f)) * _DAT_01c35818 & 0xff;
-          local_1c = (uint)(uVar2 >> (DAT_01c35820 & 0x1f)) * _DAT_01c35824 & 0xff;
-          uVar4 = (uint)(uVar2 >> (DAT_01c3582c & 0x1f)) * _DAT_01c35830;
+          local_20 = (uint)(uVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) * g_RedScaleFactor & 0xff;
+          local_1c = (uint)(uVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor &
+                     0xff;
+          uVar4 = (uint)(uVar2 >> (g_BlueBitPosition.bytes[0] & 0x1f)) * g_BlueScaleFactor;
           _fputc(local_20,file);
           _fputc(local_1c,file);
           puVar6 = puVar6 + 1;
           iVar3 = iVar3 + 1;
           _fputc(uVar4 & 0xff,file);
-        } while (iVar3 < DAT_006141b8);
+        } while (iVar3 < g_INT_006141b8);
       }
       local_18 = local_18 + 4;
       local_14 = local_14 + 1;
-    } while (local_14 < DAT_006141bc);
+    } while (local_14 < g_INT_006141bc);
   }
   _fclose(file);
   return;

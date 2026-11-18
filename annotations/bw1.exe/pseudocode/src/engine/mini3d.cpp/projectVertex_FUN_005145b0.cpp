@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_projectVertex_FUN_005145b0(float *vertex)
 
 {
@@ -31,11 +29,11 @@ void __cdecl engine_mini3d_cpp_projectVertex_FUN_005145b0(float *vertex)
     if (vertex[4] != 0.0) {
       return;
     }
-    fVar1 = *vertex * _DAT_01d224dc;
-    fVar2 = vertex[1] * _DAT_01d224e0;
+    fVar1 = *vertex * g_FLOAT_01d224dc;
+    fVar2 = vertex[1] * g_FLOAT_01d224e0;
     vertex[3] = 1.0 / vertex[2];
-    fVar2 = _DAT_01d224e8 + fVar2 * vertex[3];
-    vertex[5] = _DAT_01d224e4 + fVar1 * vertex[3];
+    fVar2 = g_FLOAT_01d224e8 + fVar2 * vertex[3];
+    vertex[5] = g_FLOAT_01d224e4 + fVar1 * vertex[3];
     vertex[6] = fVar2;
     return;
   }

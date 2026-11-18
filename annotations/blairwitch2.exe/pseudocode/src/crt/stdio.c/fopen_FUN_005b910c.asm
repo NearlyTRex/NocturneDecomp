@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   mode
 ;
 ; XREF[23]:
-;   cockpit_pkbitmap.cpp_FUN_00516de0 at 00516def
-;   core_game.cpp_FUN_004bb9b0 at 004bba8a
-;   core_game.cpp_FUN_004bbf70 at 004bc2ee
-;   core_game.cpp_FUN_004bc840 at 004bc8c3
+;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_00516de0 at 00516def
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc2ee
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bba8a
+;   core_game.cpp_CGame_showChapterSelect_FUN_004bc840 at 004bc8c3
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e46f7
 ;   core_podmain.cpp_CDemonPod_load_FUN_0051c000 at 0051c019
 ;   engine_console.cpp_CConsole_printf_FUN_00436710 at 004367a7
-;   engine_dosio.cpp_FUN_00460c70 at 00460cca
+;   engine_dosio.cpp_getFile_FUN_00460c70 at 00460cca
+;   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004d8360 at 004d8388
 ;   engine_ini.cpp_CIni_getProfileString_FUN_004d8180 at 004d81a7
-;   engine_ini.cpp_CIni_writeProfileString_FUN_004d8530 at 004d8591
 ;   ... and 13 more
 ;
 ; Called Functions:

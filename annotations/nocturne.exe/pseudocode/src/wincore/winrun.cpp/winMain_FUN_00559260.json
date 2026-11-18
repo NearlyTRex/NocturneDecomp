@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 311,
+    "complexity_score": 316,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 126,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "undefined_data",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -309,7 +308,7 @@
     },
     {
       "addr": "02de2098",
-      "name": "g_HWND_02de2098",
+      "name": "g_MainWindowHandle",
       "type": "HWND",
       "value": null
     },
@@ -321,14 +320,14 @@
     },
     {
       "addr": "02de20a8",
-      "name": "DAT_02de20a8",
-      "type": "undefined4",
+      "name": "g_TotalPhysicalMemory",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de20ac",
-      "name": "DAT_02de20ac",
-      "type": "undefined4",
+      "name": "g_AvailableSwapSpace",
+      "type": "int",
       "value": null
     },
     {
@@ -375,8 +374,8 @@
     },
     {
       "addr": "02de2d10",
-      "name": "DAT_02de2d10",
-      "type": "undefined4",
+      "name": "g_INT_02de2d10",
+      "type": "int",
       "value": null
     },
     {
@@ -638,14 +637,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 70,
-      "match": "*(char **)(iVar8 + 0x2de2d14",
-      "severity": "moderate",
-      "text": "*(char **)(iVar8 + 0x2de2d14) = pcVar11;",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 83,
       "match": "DAT_02de2a10",
@@ -702,12 +693,28 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&g_CHAR_PTR_02de2d14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)&g_CHAR_PTR_02de2d14",
+      "severity": "moderate",
+      "text": "*(char **)((int)&g_CHAR_PTR_02de2d14 + iVar8) = pcVar11;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 50,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 70,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char **)((int)&g_CHAR_PTR_02de2d14 + iVar8) = pcVar11;",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 71,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 93
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 92
   },
   "cross_references": [
     {
       "addr": "00535da0",
       "from_addr": "00536053",
-      "name": "core_set.cpp_FUN_00535da0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,32 +41,32 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
-    },
-    {
-      "addr": "00565820",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00565820"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005658b0",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005658b0"
+      "name": "engine_special.cpp_beginScene_FUN_005658b0"
+    },
+    {
+      "addr": "00565820",
+      "is_variadic": false,
+      "name": "engine_special.cpp_lockFrame_FUN_00565820"
     },
     {
       "addr": "00566440",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00566440"
-    },
-    {
-      "addr": "00566460",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00566460"
+      "name": "engine_special.cpp_lockHoldBuffer_FUN_00566440"
     },
     {
       "addr": "00565870",
       "is_variadic": false,
       "name": "engine_special.cpp_unlockFrame_FUN_00565870"
+    },
+    {
+      "addr": "00566460",
+      "is_variadic": false,
+      "name": "engine_special.cpp_unlockHoldBuffer_FUN_00566460"
     }
   ],
   "globals": [
@@ -87,26 +84,26 @@
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02cf5fcc",
-      "name": "DAT_02cf5fcc",
-      "type": "undefined4",
+      "name": "g_INT_02cf5fcc",
+      "type": "int",
       "value": null
     }
   ],
@@ -116,7 +113,7 @@
       {
         "call_addr": "00536053",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00535da0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_00535da0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,30 +198,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (DAT_005fba1c < 0x1e1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (DAT_005fba1c < 0x1e1) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

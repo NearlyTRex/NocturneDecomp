@@ -20,7 +20,7 @@
 ;   core_fire.cpp_CToss_create_FUN_004b1c50 at 004b1d52
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f700
+;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH EAX                            ; 00420485
     LEA ESI,[ESP + 0x8]                 ; 00420486
     LEA EDI,[ESP + 0x14]                ; 0042048a
-    CALL core_dirmat.cpp_FUN_0045f700   ; 0042048e
-        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045f700()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700 ; 0042048e
+        ;   XREF to: 0045f700 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x8]                 ; 00420493
     LEA EAX,[ESP + 0x14]                ; 00420497
     ADD ESP,0x8                         ; 0042049b

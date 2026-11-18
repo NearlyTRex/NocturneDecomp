@@ -17,8 +17,8 @@
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 0055117b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4d76c
-;   undefined4 DAT_01b4d770
+;   int[16] g_VertexIndexBuffer
+;   undefined4 g_VertexIndexBuffer[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -52,7 +52,7 @@ section .text
     ADD ECX,0x4                         ; 0045eeff
         ;   Label: LAB_0045eeff
     MOV EBX,dword ptr [EAX + 0x18]      ; 0045ef02
-    MOV dword ptr [ECX + 0x1b4d768],EBX ; 0045ef05 | DAT_01b4d76c | DAT_01b4d770
+    MOV dword ptr [ECX + 0x1b4d768],EBX ; 0045ef05 | g_VertexIndexBuffer | g_VertexIndexBuffer[1]
     INC EDX                             ; 0045ef0b
     MOV EBX,dword ptr [ESI + 0x4]       ; 0045ef0c
     ADD EAX,0xc                         ; 0045ef0f
@@ -70,7 +70,7 @@ section .text
     MOV dword ptr [0x01c039a0],EBP      ; 0045ef2d | g_RenderStateFlags
     MOV dword ptr [0x01c039a4],EBP      ; 0045ef33 | g_VertexPreprocessMode
     MOV dword ptr [0x01c00c7c],EBX      ; 0045ef39 | g_ScanlineRenderFunc
-    PUSH 0x1b4d76c                      ; 0045ef3f | DAT_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045ef3f | g_VertexIndexBuffer
         ;   Label: LAB_0045ef3f
     MOV EDX,dword ptr [ESI + 0x4]       ; 0045ef44
     PUSH EDX                            ; 0045ef47

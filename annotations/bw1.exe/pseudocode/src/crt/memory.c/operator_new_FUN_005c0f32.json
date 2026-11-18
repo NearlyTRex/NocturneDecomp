@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 130,
+    "complexity_score": 60,
     "cross_reference_count": 146,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -237,7 +235,7 @@
     {
       "addr": "0045e000",
       "from_addr": "0045e009",
-      "name": "core_dfont.cpp_FUN_0045e000",
+      "name": "core_dfont.cpp_initFonts_FUN_0045e000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -423,7 +421,7 @@
     {
       "addr": "004e63e0",
       "from_addr": "004e63f0",
-      "name": "core_gore.cpp_FUN_004e63e0",
+      "name": "core_gore.cpp_CGore_spawnFlies_FUN_004e63e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -501,7 +499,7 @@
     {
       "addr": "004f8b70",
       "from_addr": "004f8b87",
-      "name": "core_inv.cpp_FUN_004f8b70",
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004f8b70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -585,7 +583,7 @@
     {
       "addr": "0051c240",
       "from_addr": "0051c316",
-      "name": "core_mission.cpp_FUN_0051c240",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -879,13 +877,13 @@
     {
       "addr": "0053c650",
       "from_addr": "0053c661",
-      "name": "engine_pod.cpp_FUN_0053c650",
+      "name": "engine_pod.cpp_CPod_mount_FUN_0053c650",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00597970",
       "from_addr": "00597975",
-      "name": "engine_texture.cpp_FUN_00597970",
+      "name": "engine_texture.cpp_initTextureCache_FUN_00597970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -903,9 +901,9 @@
         "005c0f74"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_memory.c_operator_new_FUN_005c0f32",
-    "signature": "void * crt_memory_c_operator_new_FUN_005c0f32(ulong param_1)"
+    "signature": "void * __cdecl crt_memory_c_operator_new_FUN_005c0f32(uint size)"
   },
   "function_calls": [
     {
@@ -935,12 +933,10 @@
         "call_addr": "004bc03e",
         "call_type": "direct",
         "caller": "core_fldnotes.cpp_SNotesSection_addEntry_FUN_004bc020",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -1002,7 +998,7 @@
       {
         "call_addr": "00597975",
         "call_type": "direct",
-        "caller": "engine_texture.cpp_FUN_00597970",
+        "caller": "engine_texture.cpp_initTextureCache_FUN_00597970",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1013,7 +1009,7 @@
       {
         "call_addr": "0045e009",
         "call_type": "direct",
-        "caller": "core_dfont.cpp_FUN_0045e000",
+        "caller": "core_dfont.cpp_initFonts_FUN_0045e000",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1024,7 +1020,7 @@
       {
         "call_addr": "0045e0b7",
         "call_type": "direct",
-        "caller": "core_dfont.cpp_FUN_0045e000",
+        "caller": "core_dfont.cpp_initFonts_FUN_0045e000",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1035,7 +1031,7 @@
       {
         "call_addr": "0045e14f",
         "call_type": "direct",
-        "caller": "core_dfont.cpp_FUN_0045e000",
+        "caller": "core_dfont.cpp_initFonts_FUN_0045e000",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1044,11 +1040,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
@@ -1095,12 +1091,20 @@
     }
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
     {
@@ -1112,52 +1116,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void * operator_new(ulong param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pvVar1 = malloc(param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "} while ((_DAT_02c9f6bc != (code *)0x0) && (iVar2 = (*_DAT_02c9f6bc)(param_1), iVar2 != 0));",
+      "text": "} while ((_DAT_02c9f6bc != (code *)0x0) && (iVar2 = (*_DAT_02c9f6bc)(size), iVar2 != 0));",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while ((_DAT_02c9f6bc != (code *)0x0) && (iVar2 = (*_DAT_02c9f6bc)(param_1), iVar2 != 0));",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -1166,17 +1130,6 @@
       "severity": "moderate",
       "text": "if (_DAT_02c9f6b8 == (code *)0x0) break;",
       "type": "unresolved_funcptr"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

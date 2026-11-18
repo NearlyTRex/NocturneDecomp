@@ -7,7 +7,7 @@
 ; CBride *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005cc888+1
+;   TerminatedCString s_speed_005cc889
 ;   TerminatedCString s_modelName_005cc88f
 ;   TerminatedCString s_guardDistance_005cc899
 ;   TerminatedCString s_state_005cc8a7
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 0041e872 (CONDITIONAL_JUMP)  ; LAB_0041e872
     POP EBX                             ; 0041e85a
     RET                                 ; 0041e85b
-    PUSH 0x5cc889                       ; 0041e85c | s_speed_005cc888+1
+    PUSH 0x5cc889                       ; 0041e85c | = "speed"
         ;   Label: LAB_0041e85c
     LEA EAX,[EBX + 0x10a60]             ; 0041e861
     PUSH EAX                            ; 0041e867

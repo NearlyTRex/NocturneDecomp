@@ -8,17 +8,17 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1592
-;   undefined4 DAT_005d1596
-;   undefined4 DAT_005d159e
-;   undefined4 DAT_005d15a6
-;   undefined4 DAT_005d15ae
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_00600284
+;   float g_FLOAT_005d1592 = 0.00003051851
+;   double g_DOUBLE_005d1596 = -0.5
+;   double g_DOUBLE_005d159e = 3.14159265350000
+;   float g_FLOAT_005d15a6 = 3.141593
+;   double g_DOUBLE_005d15ae = 2
+;   CEventList* g_CEventListPtr = 01c6e360
+;   CKeys* g_CKeysPtr = 01d70a78
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041b410
-;   core_dirmat.cpp_FUN_0045b800
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   crt_stdlib.c_rand_FUN_005a35cc
 ;
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00547490 (CONDITIONAL_JUMP)  ; LAB_00547490
     LEA EAX,[EBX + 0x2dc]               ; 005473e4
     PUSH EAX                            ; 005473ea
-    MOV ESI,dword ptr [0x005fba60]      ; 005473eb | DAT_005fba60
+    MOV ESI,dword ptr [0x005fba60]      ; 005473eb | g_CEventListPtr
     PUSH ESI                            ; 005473f1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005473f2
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -79,8 +79,8 @@ section .text
     PUSH EAX                            ; 00547459
     LEA ESI,[ESP + 0x14]                ; 0054745a
     LEA EDI,[ESP + 0x8]                 ; 0054745e
-    CALL core_dirmat.cpp_FUN_0045b800   ; 00547462
-        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_FUN_0045b800()
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800 ; 00547462
+        ;   XREF to: 0045b800 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0045b800(CMatrix3x3f * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x14]                ; 00547467
     ADD ESP,0x8                         ; 0054746b
     MOVSD ES:EDI,ESI                    ; 0054746e
@@ -102,7 +102,7 @@ section .text
     JNZ 0x0054753f                      ; 00547497
         ;   XREF to: 0054753f (CONDITIONAL_JUMP)  ; LAB_0054753f
     PUSH 0x13                           ; 0054749d
-    MOV EAX,[0x00600284]                ; 0054749f | DAT_00600284
+    MOV EAX,[0x00600284]                ; 0054749f | g_CKeysPtr
     PUSH EAX                            ; 005474a4
     MOV ESI,dword ptr [EAX]             ; 005474a5
     CALL dword ptr [ESI]                ; 005474a7
@@ -122,25 +122,25 @@ section .text
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()
     MOV dword ptr [ESP + 0x18],EAX      ; 005474d2
     FILD dword ptr [ESP + 0x18]         ; 005474d6
-    FMUL float ptr [0x005d1592]         ; 005474da | DAT_005d1592
-    FADD double ptr [0x005d1596]        ; 005474e0 | DAT_005d1596
-    FMUL double ptr [0x005d159e]        ; 005474e6 | DAT_005d159e
+    FMUL float ptr [0x005d1592]         ; 005474da | g_FLOAT_005d1592
+    FADD double ptr [0x005d1596]        ; 005474e0 | g_DOUBLE_005d1596
+    FMUL double ptr [0x005d159e]        ; 005474e6 | g_DOUBLE_005d159e
     FSTP float ptr [EBX + 0x30]         ; 005474ec
     CALL crt_stdlib.c_rand_FUN_005a35cc ; 005474ef
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()
     MOV dword ptr [ESP + 0x18],EAX      ; 005474f4
     FILD dword ptr [ESP + 0x18]         ; 005474f8
-    FMUL float ptr [0x005d1592]         ; 005474fc | DAT_005d1592
-    FMUL float ptr [0x005d15a6]         ; 00547502 | DAT_005d15a6
-    FMUL double ptr [0x005d15ae]        ; 00547508 | DAT_005d15ae
+    FMUL float ptr [0x005d1592]         ; 005474fc | g_FLOAT_005d1592
+    FMUL float ptr [0x005d15a6]         ; 00547502 | g_FLOAT_005d15a6
+    FMUL double ptr [0x005d15ae]        ; 00547508 | g_DOUBLE_005d15ae
     FSTP float ptr [EBX + 0x38]         ; 0054750e
     CALL crt_stdlib.c_rand_FUN_005a35cc ; 00547511
         ;   XREF to: 005a35cc (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005a35cc()
     MOV dword ptr [ESP + 0x18],EAX      ; 00547516
     FILD dword ptr [ESP + 0x18]         ; 0054751a
-    FMUL float ptr [0x005d1592]         ; 0054751e | DAT_005d1592
-    FMUL float ptr [0x005d15a6]         ; 00547524 | DAT_005d15a6
-    FMUL double ptr [0x005d15ae]        ; 0054752a | DAT_005d15ae
+    FMUL float ptr [0x005d1592]         ; 0054751e | g_FLOAT_005d1592
+    FMUL float ptr [0x005d15a6]         ; 00547524 | g_FLOAT_005d15a6
+    FMUL double ptr [0x005d15ae]        ; 0054752a | g_DOUBLE_005d15ae
     PUSH EBX                            ; 00547530
     MOV EAX,dword ptr [EBX + 0x154]     ; 00547531
     FSTP float ptr [EBX + 0x34]         ; 00547537

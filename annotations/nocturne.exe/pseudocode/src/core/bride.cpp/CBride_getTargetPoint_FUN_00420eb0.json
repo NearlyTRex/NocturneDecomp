@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 115,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 66
@@ -46,8 +45,8 @@
   "globals": [
     {
       "addr": "00764b2c",
-      "name": "DAT_00764b2c",
-      "type": "undefined4",
+      "name": "g_BrideIndices",
+      "type": "int[11]",
       "value": null
     }
   ],
@@ -166,14 +165,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00764b2c",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model,DAT_00764b2c,&local_4c);",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 20,

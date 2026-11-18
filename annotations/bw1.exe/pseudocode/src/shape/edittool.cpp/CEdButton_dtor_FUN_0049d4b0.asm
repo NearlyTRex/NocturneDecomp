@@ -13,7 +13,7 @@
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 00493a22
 ;
 ; Called Functions:
-;   shape_edittool.cpp_FUN_0049d4d0
+;   shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_0049d4d0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: shape_edittool.cpp_CEdButton_dtor_FUN_0049d4b0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0049d4b1
     PUSH EBX                            ; 0049d4b5
-    CALL shape_edittool.cpp_FUN_0049d4d0 ; 0049d4b6
-        ;   XREF to: 0049d4d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0049d4d0(CEdButton * this_ptr)
+    CALL shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_0049d4d0 ; 0049d4b6
+        ;   XREF to: 0049d4d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_0049d4d0(CEdButton * this_ptr)
     ADD ESP,0x4                         ; 0049d4bb
     MOV EAX,EBX                         ; 0049d4be
     POP EBX                             ; 0049d4c0

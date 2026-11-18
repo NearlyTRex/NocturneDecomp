@@ -7,12 +7,12 @@
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ea575
-;   undefined4 DAT_0264b0f4
-;   undefined4 DAT_0264b0f8
-;   undefined4 DAT_0264b0fc
-;   undefined4 DAT_0264b100
-;   undefined4 DAT_0264b104
+;   double g_DOUBLE_005ea575 = 0.333333333333333
+;   int g_WaveOutBitsPerSample
+;   int g_WaveOutChannels
+;   int g_WaveOutSampleRate
+;   int g_WaveOutBufferSize
+;   int g_WaveOutNumBuffers
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -27,7 +27,7 @@ section .text
         ;   Label: sound_sndwav.cpp_CWavOutDevice_start_FUN_00557dc0
     PUSH ESI                            ; 00557dc1
     PUSH EDI                            ; 00557dc2
-    MOV EDX,dword ptr [0x0264b104]      ; 00557dc3 | DAT_0264b104
+    MOV EDX,dword ptr [0x0264b104]      ; 00557dc3 | g_WaveOutNumBuffers
     XOR ESI,ESI                         ; 00557dc9
     TEST EDX,EDX                        ; 00557dcb
     JLE 0x00557e41                      ; 00557dcd
@@ -45,14 +45,14 @@ section .text
     MOV dword ptr [EDX],EAX             ; 00557ded
     MOV EAX,dword ptr [EBX + 0x264b094] ; 00557def
     MOV dword ptr [EAX + 0xc],ESI       ; 00557df5
-    MOV EAX,[0x0264b0f4]                ; 00557df8 | DAT_0264b0f4
+    MOV EAX,[0x0264b0f4]                ; 00557df8 | g_WaveOutBitsPerSample
     MOV EDX,EAX                         ; 00557dfd
     SAR EDX,0x1f                        ; 00557dff
     SHL EDX,0x3                         ; 00557e02
     SBB EAX,EDX                         ; 00557e05
     SAR EAX,0x3                         ; 00557e07
-    IMUL EAX,dword ptr [0x0264b100]     ; 00557e0a | DAT_0264b100
-    MOV EDX,dword ptr [0x0264b0f8]      ; 00557e11 | DAT_0264b0f8
+    IMUL EAX,dword ptr [0x0264b100]     ; 00557e0a | g_WaveOutBufferSize
+    MOV EDX,dword ptr [0x0264b0f8]      ; 00557e11 | g_WaveOutChannels
     IMUL EDX,EAX                        ; 00557e17
     ADD ESP,0xc                         ; 00557e1a
     MOV EAX,dword ptr [EBX + 0x264b094] ; 00557e1d
@@ -64,17 +64,17 @@ section .text
     TEST EAX,EAX                        ; 00557e2f
     JZ 0x00557e70                       ; 00557e31
         ;   XREF to: 00557e70 (CONDITIONAL_JUMP)  ; LAB_00557e70
-    MOV ECX,dword ptr [0x0264b104]      ; 00557e33 | DAT_0264b104
+    MOV ECX,dword ptr [0x0264b104]      ; 00557e33 | g_WaveOutNumBuffers
     INC ESI                             ; 00557e39
     ADD EBX,0x4                         ; 00557e3a
     CMP ESI,ECX                         ; 00557e3d
     JL 0x00557dd1                       ; 00557e3f
         ;   XREF to: 00557dd1 (CONDITIONAL_JUMP)  ; LAB_00557dd1
-    FILD dword ptr [0x0264b100]         ; 00557e41 | DAT_0264b100
+    FILD dword ptr [0x0264b100]         ; 00557e41 | g_WaveOutBufferSize
         ;   Label: LAB_00557e41
-    FILD dword ptr [0x0264b0fc]         ; 00557e47 | DAT_0264b0fc
+    FILD dword ptr [0x0264b0fc]         ; 00557e47 | g_WaveOutSampleRate
     FDIVP                               ; 00557e4d
-    FMUL double ptr [0x005ea575]        ; 00557e4f | DAT_005ea575
+    FMUL double ptr [0x005ea575]        ; 00557e4f | g_DOUBLE_005ea575
     SUB ESP,0x4                         ; 00557e55
     FSTP float ptr [ESP]                ; 00557e58
     CALL sound_sndmain.cpp_startSoundThread_FUN_005531d0 ; 00557e5b

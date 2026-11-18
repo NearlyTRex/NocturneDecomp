@@ -93,7 +93,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
           uStack_18 = 1;
           (*g_DirectSoundPropertySet->vtable->Set)
-                    (g_DirectSoundPropertySet,&g_KSPROPSETID_DirectSound3DListener,0,(LPVOID)0x0,0,
+                    (g_DirectSoundPropertySet,&g_DSPROPSETID_VoiceManager,0,(LPVOID)0x0,0,
                      &uStack_18,4);
         }
         if (g_DirectSound3DListener != (IDirectSound3DListener *)0x0) {

@@ -9,6 +9,6 @@
 void __cdecl cockpit_drawsurf_cpp_setDashAnimationThreshold_FUN_0045d100(float threshold)
 
 {
-  DAT_005ae6f8 = threshold;
+  g_DashAnimationThreshold = threshold;
   return;
 }

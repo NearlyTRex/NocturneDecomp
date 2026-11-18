@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 105,
+    "complexity_score": 60,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 60,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 218
   },
   "cross_references": [
@@ -149,15 +147,15 @@
     },
     {
       "addr": "0061b498",
-      "name": "DAT_0061b498",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b498",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     }
   ],
   "param_estimates": {
@@ -390,38 +388,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0061b498",
-      "severity": "mild",
-      "text": "width = DAT_0061b498;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "this_ptr->top < height) || this_ptr->bpp != DAT_0061b4a0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "local_48.bmiHeader.biBitCount = (WORD)DAT_0061b4a0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "this_ptr->bpp = DAT_0061b4a0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

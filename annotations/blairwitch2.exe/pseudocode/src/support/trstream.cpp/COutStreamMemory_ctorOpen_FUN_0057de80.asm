@@ -9,12 +9,12 @@
 ; int              Stack[0xc]:4   capacity
 ;
 ; XREF[3]:
+;   support_codec.cpp_CCodec_finalizeBuffer_FUN_004341e0 at 004341f8
+;   support_codec.cpp_CCodec_processToBuffer_FUN_00433f60 at 00433f7b
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00435300 at 0043533a
-;   support_codec.cpp_FUN_00433f60 at 00433f7b
-;   support_codec.cpp_FUN_004341e0 at 004341f8
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamMemoryVTable = 0057df10
+;   void*[7] g_COutStreamMemoryVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_0057d860
@@ -45,7 +45,7 @@ section .text
     MOV EBX,EAX                         ; 0057debc
     MOV dword ptr [EAX + 0x14],0x1      ; 0057debe
     CALL support_trstream.cpp_COutStreamMemory_open_FUN_0057e110 ; 0057dec5
-        ;   XREF to: 0057e110 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_COutStreamMemory_open_FUN_0057e110(COutStreamMemory * this_ptr, int param_2, int param_3)
+        ;   XREF to: 0057e110 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_COutStreamMemory_open_FUN_0057e110(COutStreamMemory * this_ptr, int buffer, int capacity)
     ADD ESP,0xc                         ; 0057deca
     MOV EAX,EBX                         ; 0057decd
     POP ESI                             ; 0057decf

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 203,
+    "complexity_score": 148,
     "cross_reference_count": 6,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
-    "suspect_count": 11,
+    "pseudocode_lines": 83,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "stack_param",
+      "unknown_field",
+      "unrolled_memcpy"
     ],
-    "total_lines": 245
+    "total_lines": 250
   },
   "cross_references": [
     {
@@ -80,17 +80,17 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
+    },
+    {
+      "addr": "0042d8e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0"
     },
     {
       "addr": "0042f6f0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0"
-    },
-    {
-      "addr": "0042d8e0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042d8e0"
     },
     {
       "addr": "0045ab30",
@@ -110,21 +110,21 @@
     {
       "addr": "00537320",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_00537320"
+      "name": "core_set.cpp_CDemonSet_removeCoronaGlobe_FUN_00537320"
     }
   ],
   "globals": [
     {
       "addr": "005b837a",
-      "name": "DAT_005b837a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005b837a",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "005b837e",
-      "name": "DAT_005b837e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005b837e",
+      "type": "float",
+      "value": "3"
     },
     {
       "addr": "00603b28",
@@ -134,38 +134,38 @@
     },
     {
       "addr": "007e2af0",
-      "name": "DAT_007e2af0",
-      "type": "undefined4",
+      "name": "g_CDemonGlobe_007e2af0",
+      "type": "CDemonGlobe",
       "value": null
     },
     {
       "addr": "007e2b0c",
-      "name": "DAT_007e2b0c",
+      "name": "g_CDemonGlobe_007e2af0.intensity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007e2b10",
-      "name": "DAT_007e2b10",
+      "name": "g_CDemonGlobe_007e2af0.corona_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007e2b2c",
-      "name": "DAT_007e2b2c",
+      "name": "g_CDemonGlobe_007e2af0.intensity_multiplier",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007e2b30",
-      "name": "DAT_007e2b30",
-      "type": "undefined1",
+      "name": "g_BYTE_007e2b30",
+      "type": "byte",
       "value": null
     },
     {
       "addr": "007e2cb0",
-      "name": "DAT_007e2cb0",
-      "type": "undefined4",
+      "name": "g_FLOAT_007e2cb0",
+      "type": "float",
       "value": null
     },
     {
@@ -443,91 +443,43 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffff90",
+      "severity": "moderate",
+      "text": "int in_stack_ffffff90;",
+      "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_007e2b30",
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._16_4_",
       "severity": "mild",
-      "text": "if ((DAT_007e2b30 & 1) == 0) {",
-      "type": "undefined_data"
+      "text": "auStack_54._16_4_ = local_14;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_007e2b30",
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._16_4_",
       "severity": "mild",
-      "text": "DAT_007e2b30 = DAT_007e2b30 | 1;",
-      "type": "undefined_data"
+      "text": "auStack_54._16_4_ = local_38;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_007e2b30",
-      "severity": "mild",
-      "text": "DAT_007e2b30 = DAT_007e2b30 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_007e2af0",
-      "severity": "mild",
-      "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045aae0((CDemonGlobe *)&DAT_007e2af0,&local_44);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_007e2b0c",
-      "severity": "mild",
-      "text": "DAT_007e2b0c = 0x2b;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_007e2af0",
-      "severity": "mild",
-      "text": "core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30((CDemonGlobe *)&DAT_007e2af0,3.0)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_007e2af0",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(g_CDemonSetPtr,(CDemonGlobe *)&DAT_007e2af0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_007e2af0",
-      "severity": "mild",
-      "text": "core_set_cpp_FUN_00537320(g_CDemonSetPtr,&DAT_007e2af0);",
-      "type": "undefined_data"
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_ffffff90",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)auStack_54,in_stack_ffffff90);",
+      "type": "stack_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 63,
+      "line": 66,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 43,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_44.x = local_38.x;",
       "type": "unrolled_memcpy"
     }
   ],

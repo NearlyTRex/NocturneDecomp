@@ -45,7 +45,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
   pCVar9 = &(this_ptr->base).base.model;
   if (this_ptr->summoned == 0) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->summon_event);
+                      (g_CEventListPtr,this_ptr->summon_event);
     if (iVar3 != 0) {
       this_ptr->summoned = 1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,6,1);
@@ -54,7 +54,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
   }
   else {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->go_away_event);
+                      (g_CEventListPtr,this_ptr->go_away_event);
     if (iVar3 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,7,1);
     }
@@ -123,7 +123,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_84,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                          DAT_0076431c);
+                          g_INT_0076431c);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_48,pCVar4);
       if (&local_30 != pCVar4) {
@@ -134,7 +134,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_24,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                          DAT_00764320);
+                          g_INT_00764320);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_78,pCVar4);
       if (&local_54 != pCVar4) {
@@ -144,11 +144,11 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
       }
       if (this_ptr->new_attack == 0) {
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_0048c590
-                  (g_CFireEffect_PTR_005b80f0,&local_30,&this_ptr->left_hand_pos,2.0,0.5,0.5,
-                   (SMRGLTextureBasic *)&DAT_005acf40);
+                  (g_CFireEffectPtr,&local_30,&this_ptr->left_hand_pos,2.0,0.5,0.5,
+                   &g_SMRGLTextureBasic_005acf40);
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_0048c590
-                  (g_CFireEffect_PTR_005b80f0,&local_54,&this_ptr->right_hand_pos,2.0,0.5,0.5,
-                   (SMRGLTextureBasic *)&DAT_005acf40);
+                  (g_CFireEffectPtr,&local_54,&this_ptr->right_hand_pos,2.0,0.5,0.5,
+                   &g_SMRGLTextureBasic_005acf40);
       }
       if (&this_ptr->left_hand_pos != &local_30) {
         (this_ptr->left_hand_pos).x = local_30.x;
@@ -207,7 +207,7 @@ switchD_00410a6d_default:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar9);
   blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
   fVar10 = this_ptr->head_blend_weight;
-  iVar3 = DAT_007642e8;
+  iVar3 = g_INT_007642e8;
   core_xform_cpp_eulerToQuaternion_FUN_0055d610(&this_ptr->head_rotation,&local_a4);
   source_quaternions = &local_94;
   local_94.w = local_a4.w;
@@ -231,8 +231,8 @@ switchD_00410a6d_default:
     local_60.y = local_60.y + (this_ptr->base).base.base.location.position.y;
     local_60.z = local_10 + (this_ptr->base).base.base.location.position.z;
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-              (g_CFireEffect_PTR_005b80f0,&local_60,2.0,(CVector3f *)0x0,0xffff);
+              (g_CFireEffectPtr,&local_60,2.0,(CVector3f *)0x0,0xffff);
   } while (iVar3 < 2);
-  DAT_0076432c = DAT_0076432c + delta_time;
+  g_FLOAT_0076432c = g_FLOAT_0076432c + delta_time;
   return;
 }

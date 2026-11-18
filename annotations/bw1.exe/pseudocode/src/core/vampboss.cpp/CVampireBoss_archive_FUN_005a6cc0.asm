@@ -7,13 +7,13 @@
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_human_model_motion_state_005f8e27+1
+;   TerminatedCString s_human_model_motion_state_005f8e28
 ;   TerminatedCString s_bat_model_motion_state_005f8e41
 ;   TerminatedCString s_wayPoint0_005f8e58
 ;   TerminatedCString s_wayPoint1_005f8e62
 ;   TerminatedCString s_wayPoint2_005f8e6c
 ;   TerminatedCString s_wayPoint3_005f8e76
-;   undefined4 DAT_005f8e80
+;   TerminatedCString s_form_005f8e80
 ;   TerminatedCString s_morphT_005f8e85
 ;   int g_CVampireBossClassVersion = 0x4
 ;
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 005a6d6a (CONDITIONAL_JUMP)  ; LAB_005a6d6a
     POP EBX                             ; 005a6d3b
     RET                                 ; 005a6d3c
-    PUSH 0x5f8e28                       ; 005a6d3d | s_human_model_motion_state_005f8e27+1
+    PUSH 0x5f8e28                       ; 005a6d3d | = "human model motion state"
         ;   Label: LAB_005a6d3d
     LEA EAX,[EBX + 0x158]               ; 005a6d42
     PUSH EAX                            ; 005a6d48
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x8                         ; 005a6d62
     JMP 0x005a6cd9                      ; 005a6d65
         ;   XREF to: 005a6cd9 (UNCONDITIONAL_JUMP)  ; LAB_005a6cd9
-    PUSH 0x5f8e80                       ; 005a6d6a | DAT_005f8e80
+    PUSH 0x5f8e80                       ; 005a6d6a | = "form"
         ;   Label: LAB_005a6d6a
     LEA EAX,[EBX + 0xbe79c]             ; 005a6d6f
     PUSH EAX                            ; 005a6d75

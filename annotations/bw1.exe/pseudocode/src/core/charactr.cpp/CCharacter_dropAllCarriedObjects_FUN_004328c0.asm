@@ -13,7 +13,7 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_004319e0 at 00431c14
 ;   core_construc.cpp_CConstruct_explode_FUN_004472a0 at 004472ac
 ;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00445f36
-;   core_game.cpp_FUN_004d9260 at 004d9e85
+;   core_game.cpp_CGame_processPointAndClickControls_FUN_004d9260 at 004d9e85
 ;   core_npc.cpp_CNPC_processDamage_FUN_00531da0 at 00531e49
 ;
 ; *****************************************************************************

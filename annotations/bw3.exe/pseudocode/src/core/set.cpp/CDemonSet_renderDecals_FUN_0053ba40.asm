@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005fc5a0
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CGore* g_CGorePtr = 01d22e44
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     ADD ESP,0xc                         ; 0053ba70
     PUSH 0x0                            ; 0053ba73
     PUSH 0x1                            ; 0053ba75
-    MOV ESI,dword ptr [0x005fc5a0]      ; 0053ba77 | DAT_005fc5a0
+    MOV ESI,dword ptr [0x005fc5a0]      ; 0053ba77 | g_CFireEffect_PTR_005fc5a0
     PUSH ESI                            ; 0053ba7d
     CALL core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90 ; 0053ba7e
         ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect * this_ptr, int render_mode, int render_completeness)

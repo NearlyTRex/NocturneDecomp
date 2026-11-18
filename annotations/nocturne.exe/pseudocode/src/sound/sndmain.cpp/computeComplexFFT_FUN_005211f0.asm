@@ -30,8 +30,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059210e
-;   undefined4 DAT_00592116
+;   double g_DOUBLE_0059210e = 2
+;   double g_DOUBLE_00592116 = 3.14159265350000
 ;
 ; *****************************************************************************
 
@@ -114,11 +114,11 @@ section .text
     MOV dword ptr [ESP + 0x88],EAX      ; 005212a4
     MOV dword ptr [ESP + 0x28],EAX      ; 005212ab
     FILD dword ptr [ESP + 0x88]         ; 005212af
-    FDIVR double ptr [0x00592116]       ; 005212b6 | DAT_00592116
+    FDIVR double ptr [0x00592116]       ; 005212b6 | g_DOUBLE_00592116
     FLD ST0                             ; 005212bc
     FSINCOS                             ; 005212be
     FXCH ST2                            ; 005212c0
-    FLD double ptr [0x0059210e]         ; 005212c2 | DAT_0059210e
+    FLD double ptr [0x0059210e]         ; 005212c2 | g_DOUBLE_0059210e
     FXCH                                ; 005212c8
     FMUL ST1                            ; 005212ca
     FLD ST0                             ; 005212cc

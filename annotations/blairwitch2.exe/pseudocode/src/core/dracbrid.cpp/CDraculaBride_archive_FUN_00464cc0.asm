@@ -7,7 +7,7 @@
 ; CDraculaBride *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d10cb+1
+;   TerminatedCString s_speed_005d10cc
 ;   TerminatedCString s_modelName_005d10d2
 ;   TerminatedCString s_guardDistance_005d10dc
 ;   TerminatedCString s_riseEvent_005d10ea
@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 00464d4c
     CALL core_actor.cpp_archiveInteger_FUN_0040b960 ; 00464d4d
         ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b960(int * int_ptr, char * property_name)
-    MOV EAX,[0x007bc038]                ; 00464d52 | DAT_007bc038
+    MOV EAX,[0x007bc038]                ; 00464d52 | g_ActorReadingMode
     ADD ESP,0x8                         ; 00464d57
     CMP EAX,0x1                         ; 00464d5a
     JNZ 0x00464d81                      ; 00464d5d
@@ -212,7 +212,7 @@ section .text
     POP ESI                             ; 00464e9e
     POP EBX                             ; 00464e9f
     RET                                 ; 00464ea0
-    PUSH 0x5d10cc                       ; 00464ea1 | s_speed_005d10cb+1
+    PUSH 0x5d10cc                       ; 00464ea1 | = "speed"
         ;   Label: LAB_00464ea1
     LEA EAX,[EDI + 0x10a60]             ; 00464ea6
     PUSH EAX                            ; 00464eac

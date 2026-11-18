@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CLightPis * __cdecl core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr)
 
 {
@@ -28,9 +26,9 @@ CLightPis * __cdecl core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *thi
   (pCVar3->base).bolt_velocity = 32.0;
   (pCVar3->base).fire_cooldown = 0;
   pCVar3->unknown_0x58c = 1;
-  fVar1 = _DAT_0060316c;
+  fVar1 = 8.0f;
   (pCVar3->base).can_attach_light = 1;
-  fVar2 = _DAT_00603170;
+  fVar2 = 1.5f;
   pCVar3->hit_enemy = 0;
   pCVar3->charge_ratio = 1.0;
   (pCVar3->base).weight = fVar1;

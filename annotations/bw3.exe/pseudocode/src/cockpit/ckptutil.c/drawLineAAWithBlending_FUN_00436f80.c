@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_00436f80(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)
 
 {
@@ -22,11 +20,11 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_00436f80(int x0,int y
   byte bStack_18;
   
   if ((y0 <= y1) &&
-     ((_DAT_007e3e84 != 0 ||
-      ((((_DAT_01c6b5a8 <= x0 || (_DAT_01c6b5a8 <= x1)) &&
-        ((x0 <= _DAT_01c6b5b0 || (x1 <= _DAT_01c6b5b0)))) &&
-       (((_DAT_01c6b5ac <= y0 || (_DAT_01c6b5ac <= y1)) &&
-        ((y0 <= _DAT_01c6b5b4 || (y1 <= _DAT_01c6b5b4)))))))))) {
+     ((g_INT_007e3e84 != 0 ||
+      ((((g_INT_01c6b5a8 <= x0 || (g_INT_01c6b5a8 <= x1)) &&
+        ((x0 <= g_INT_01c6b5b0 || (x1 <= g_INT_01c6b5b0)))) &&
+       (((g_INT_01c6b5ac <= y0 || (g_INT_01c6b5ac <= y1)) &&
+        ((y0 <= g_INT_01c6b5b4 || (y1 <= g_INT_01c6b5b4)))))))))) {
     uStack_24 = x1 - x0;
     if ((int)uStack_24 < 0) {
       uStack_24 = -uStack_24;

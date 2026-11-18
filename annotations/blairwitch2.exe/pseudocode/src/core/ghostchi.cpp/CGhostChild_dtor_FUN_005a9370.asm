@@ -13,15 +13,15 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_armour.cpp_FUN_0040f2b0
+;   core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0
 ;   core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220
 ;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
-;   core_muzzle.cpp_FUN_0059df70
+;   core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
-;   crt_unknown.c_FUN_005b7fce
-;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_debugFreeChecked_FUN_005b7fdc
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     PUSH ESI                            ; 005a9389
     MOV dword ptr [EBX + 0x2b0],0x6006c4 ; 005a938a | g_CGhostChildVTable
     CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005a9394
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int fade_out)
     ADD ESP,0x8                         ; 005a9399
     PUSH ESI                            ; 005a939c
     CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005a939d
@@ -48,14 +48,14 @@ section .text
     PUSH 0x0                            ; 005a93a5
     ADD EBX,0x3a20                      ; 005a93a7
     PUSH EBX                            ; 005a93ad
-    CALL core_armour.cpp_FUN_0040f2b0   ; 005a93ae
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0 ; 005a93ae
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor50_FUN_0040f2b0(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a93b3
     PUSH 0x0                            ; 005a93b6
     SUB EAX,0x9c8                       ; 005a93b8
     PUSH EAX                            ; 005a93bd
-    CALL core_muzzle.cpp_FUN_0059df70   ; 005a93be
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70 ; 005a93be
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; SFollowFormation * core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70(SFollowFormation * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a93c3
     PUSH 0x0                            ; 005a93c6
     SUB EAX,0x34c                       ; 005a93c8
@@ -91,8 +91,8 @@ section .text
         ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005a9412
     PUSH EAX                            ; 005a9415
-    CALL crt_unknown.c_FUN_005b7fce     ; 005a9416
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 005a9416
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 005a941b
     MOV EAX,EBX                         ; 005a941e
     POP ESI                             ; 005a9420
@@ -100,8 +100,8 @@ section .text
     RET                                 ; 005a9422
     PUSH EAX                            ; 005a9423
         ;   Label: LAB_005a9423
-    CALL crt_unknown.c_FUN_005b7fdc     ; 005a9424
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005b7fdc ; 005a9424
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005b7fdc(void * ptr)
     ADD ESP,0x4                         ; 005a9429
     MOV EAX,EBX                         ; 005a942c
     POP ESI                             ; 005a942e

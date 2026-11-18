@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 73,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
-      "tautological_addr_guard",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "tautological_addr_guard"
     ],
-    "total_lines": 42
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -58,26 +56,26 @@
     },
     {
       "addr": "02dc9d44",
-      "name": "DAT_02dc9d44",
-      "type": "undefined4",
+      "name": "g_TrainVelocityVector",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02dc9d48",
-      "name": "DAT_02dc9d48",
+      "name": "g_TrainVelocityVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d4c",
-      "name": "DAT_02dc9d4c",
+      "name": "g_TrainVelocityVector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9d54",
-      "name": "DAT_02dc9d54",
-      "type": "undefined4",
+      "name": "g_TrainLastCameraIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -116,6 +114,24 @@
     "pcode_op_count": 136
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00559ab0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6471
+    },
+    "bw1.exe": {
+      "addr": "0057c4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6471
+    },
+    "bw3.exe": {
+      "addr": "0055f610",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6471
+    },
     "nocedit.exe": {
       "addr": "005b26f0",
       "by": "name",
@@ -155,35 +171,19 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 7,
+      "line": 5,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 == &DAT_02dc9d50) {",
+      "text": "if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_02dc9d50",
-      "severity": "mild",
-      "text": "if (&stack0x00000000 == &DAT_02dc9d50) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Tautological address-of guard: `if (... == ...)` comparing a null literal against `&DAT_02dc9d50` is always FALSE (the address of `DAT_02dc9d50` is never null), so the guarded statement is dead and never executes. Resolve in a .keep per the asm (drop the dead branch, or restore a dropped copy if one was folded away).",
-      "line": 7,
-      "match": "if ((T *)0x0 == &DAT_02dc9d50)",
+      "description": "Tautological address-of guard: `if (... == ...)` comparing a null literal against `&g_TrainNoiseCooldown` is always FALSE (the address of `g_TrainNoiseCooldown` is never null), so the guarded statement is dead and never executes. Resolve in a .keep per the asm (drop the dead branch, or restore a dropped copy if one was folded away).",
+      "line": 5,
+      "match": "if ((T *)0x0 == &g_TrainNoiseCooldown)",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 == &DAT_02dc9d50) {",
+      "text": "if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {",
       "type": "tautological_addr_guard"
     }
   ]

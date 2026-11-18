@@ -6,30 +6,28 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_kill_FUN_004ec820(void)
 
 {
-  engine_mini3d_cpp_free32_FUN_004f04c0(_DAT_01d7f4f4);
-  _DAT_01d7f4f4 = (void *)0x0;
-  if (_DAT_01d76f5c == 0) {
-    if (_DAT_01d7a6ac == 0) {
+  engine_mini3d_cpp_free32_FUN_004f04c0(g_FLOAT_PTR_01d7f4f4);
+  g_FLOAT_PTR_01d7f4f4 = (float *)0x0;
+  if (g_INT_01d76f5c == 0) {
+    if (g_PTR_01d7a6ac == (byte *)0x0) {
       return;
     }
   }
   else {
-    FUN_005a3770(_DAT_01d76f5c);
-    _DAT_01d76f5c = 0;
-    _DAT_01d76f60 = 0;
-    _DAT_01d76f64 = 0;
-    if (_DAT_01d7a6ac == 0) {
+    debugFree((void *)g_INT_01d76f5c);
+    g_INT_01d76f5c = 0;
+    g_FLOAT_PTR_01d76f60 = (float *)0x0;
+    g_FLOAT_PTR_01d76f64 = (float *)0x0;
+    if (g_PTR_01d7a6ac == (byte *)0x0) {
       return;
     }
   }
-  FUN_005a3770(_DAT_01d7a6ac);
-  FUN_005a3770(_DAT_01d7a6b0);
-  _DAT_01d7a6ac = 0;
-  _DAT_01d7a6b0 = 0;
+  debugFree(g_PTR_01d7a6ac);
+  debugFree(g_PTR_01d7a6b0);
+  g_PTR_01d7a6ac = (byte *)0x0;
+  g_PTR_01d7a6b0 = (byte *)0x0;
   return;
 }

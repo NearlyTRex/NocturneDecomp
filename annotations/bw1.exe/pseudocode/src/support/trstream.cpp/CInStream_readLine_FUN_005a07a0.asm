@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   size
 ;
 ; XREF[2]:
-;   engine_font.cpp_FUN_004c1580 at 004c1623
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004c1580 at 004c1623
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130 at 0056e2bc
 ;
 ; *****************************************************************************

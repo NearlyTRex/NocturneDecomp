@@ -15,14 +15,14 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetFullPathNameA_005d05ac = 001d0eec
-;   undefined4 DAT_005faa1c
-;   undefined4 DAT_006e6f63
+;   TerminatedCString s_con_005faa1c
+;   undefined4 g_SRenderVertex_ARRAY_00629014[16209].v+3
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005c6450
 ;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_string.c__stricmp_FUN_005c04e0
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;   crt_unknown.c_FUN_005c862c
 ;   crt_unknown.c_FUN_005c91d0
 ;   GetFullPathNameA
@@ -80,7 +80,7 @@ section .text
     POP ESI                             ; 005c2556
     POP EBX                             ; 005c2557
     RET                                 ; 005c2558
-    PUSH 0x5faa1c                       ; 005c2559 | DAT_005faa1c
+    PUSH 0x5faa1c                       ; 005c2559 | = "con"
         ;   Label: LAB_005c2559
     PUSH ESI                            ; 005c255e
     CALL crt_string.c__stricmp_FUN_005c04e0 ; 005c255f
@@ -93,8 +93,8 @@ section .text
     JNC 0x005c258d                      ; 005c256e
         ;   XREF to: 005c258d (CONDITIONAL_JUMP)  ; LAB_005c258d
     PUSH EBP                            ; 005c2570
-    CALL crt_unknown.c_FUN_005c09f0     ; 005c2571
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 005c2571
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 005c2576
     PUSH 0xe                            ; 005c2579
     CALL crt_errno.c_setErrno_FUN_005c6450 ; 005c257b
@@ -107,9 +107,9 @@ section .text
     POP ESI                             ; 005c258a
     POP EBX                             ; 005c258b
     RET                                 ; 005c258c
-    MOV EAX,[0x005faa1c]                ; 005c258d | DAT_005faa1c
+    MOV EAX,[0x005faa1c]                ; 005c258d | = "con"
         ;   Label: LAB_005c258d
-    MOV dword ptr [EBX],EAX             ; 005c2592 | DAT_006e6f63
+    MOV dword ptr [EBX],EAX             ; 005c2592 | g_SRenderVertex_ARRAY_00629014[16209].v+3
     JMP 0x005c25b6                      ; 005c2594
         ;   XREF to: 005c25b6 (UNCONDITIONAL_JUMP)  ; LAB_005c25b6
     MOV EAX,ESP                         ; 005c2596

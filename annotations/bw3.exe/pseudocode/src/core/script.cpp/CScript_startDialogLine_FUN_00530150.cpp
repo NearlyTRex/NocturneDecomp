@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00530150(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
 
 {
@@ -23,9 +21,10 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00530150(CScript *this
   bVar7 = 0;
   bVar2 = false;
   if (this_ptr->message_duration < 0.0) {
-    iVar4 = sscanf(sound_name,&DAT_005cfa50);
+    iVar4 = sscanf(sound_name,"%f");
     if (iVar4 != 1) {
-      local_28 = core_sound_cpp_CSound_getSoundDuration_FUN_00560b10(0x02CF5680,sound_name);
+      local_28 = core_sound_cpp_CSound_getSoundDuration_FUN_00560b10
+                           (g_CSound_PTR_006045f8,sound_name);
       if (local_28 < 0.0) {
         shape_edittool_cpp_CStrList_add_FUN_00482070(&g_ScriptPickList.base,sound_name);
         uVar5 = 0xffffffff;
@@ -36,9 +35,10 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00530150(CScript *this
           cVar1 = *pcVar6;
           pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
         } while (cVar1 != '\0');
-        local_28 = (float)((float10)(~uVar5 - 1) * (float10)_DAT_005cfa58 + (float10)_DAT_005cfa60);
+        local_28 = (float)((float10)(~uVar5 - 1) * (float10)0.029999999999999999 +
+                          (float10)0.40000000000000002);
       }
-      if (_DAT_01ed6808 == 0) {
+      if (g_INT_01ed6808 == 0) {
         bVar2 = true;
       }
     }
@@ -50,7 +50,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00530150(CScript *this
                      (actor_specifier,g_CCharacterClassInfo.name_hash,&g_CCharacterClassInfo);
   this_ptr->who_is_speaking = pCVar3;
   if (pCVar3 == (CDemonActor *)0x0) {
-    if (_DAT_01ed701c != 0) {
+    if (g_INT_01ed701c != 0) {
       return 0.0;
     }
     return -1.0;
@@ -60,7 +60,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00530150(CScript *this
     this_ptr->focus_actor_changed = 1;
     this_ptr->focus_actor = this_ptr->who_is_speaking;
   }
-  if (_DAT_01ed6808 == 0) {
+  if (g_INT_01ed6808 == 0) {
     pcVar6 = this_ptr->current_message;
     do {
       cVar1 = *dialog_text;
@@ -77,7 +77,8 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00530150(CScript *this
     if (bVar2) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
       sound_sndmain_cpp_setNextSfxChannel_FUN_00555e90(2);
-      uVar5 = core_sound_cpp_CSound_playSound_FUN_005609b0(0x02CF5680,this_ptr,sound_name);
+      uVar5 = core_sound_cpp_CSound_playSound_FUN_005609b0
+                        (g_CSound_PTR_006045f8,this_ptr,sound_name);
       this_ptr->current_sfx_handle = uVar5;
       sound_sndmain_cpp_popSfxOptions_FUN_00556050();
     }

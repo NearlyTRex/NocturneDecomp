@@ -8,16 +8,16 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 at 005548bf
-;   core_set.cpp_FUN_00550580 at 00550c2d
+;   core_set.cpp_CDemonSet_renderScene_FUN_00550580 at 00550c2d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005f0d45
 ;   TerminatedCString s_CDemonSet_isCameraPannin_005f0d55
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -38,10 +38,10 @@ section .text
     MOV ECX,0x5f0d45                    ; 00556002 | = "..\\core\\set.cpp"
     MOV ESI,0x14d5                      ; 00556007
     PUSH 0x5f0d55                       ; 0055600c | = "CDemonSet::isCameraPanning - no camer..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00556011 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00556017 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0055601d
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 00556011 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00556017 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055601d
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00556022
     POP ESI                             ; 00556025
     IMUL EAX,dword ptr [EBX + 0x15aeb8],0x1a4 ; 00556026

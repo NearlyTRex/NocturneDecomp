@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[39]:
-;   core_armour.cpp_FUN_00410370 at 0041037c
+;   core_armour.cpp_CFlame_arrdtor50_FUN_00410370 at 0041037c
 ;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_004144a0 at 004144ac
 ;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004144c0 at 004144cc
-;   core_bodypart.cpp_FUN_00416dc0 at 00416dcc
+;   core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00416dc0 at 00416dcc
 ;   core_boxactor.cpp_CDemonFilter_arrdtor8_FUN_00420e20 at 00420e2c
-;   core_burncrss.cpp_FUN_00425490 at 0042549c
+;   core_burncrss.cpp_CFlame_arrdtor8_FUN_00425490 at 0042549c
 ;   core_dcube.cpp_CVector3f_arrdtor16_FUN_004de7b0 at 004de7bc
 ;   core_dfilter.cpp_CDemonFilter_arrdtor4_FUN_00459f30 at 00459f3c
 ;   core_dmodel.cpp_CKeyFramedModel_arrdtor256_FUN_00462630 at 0046263f

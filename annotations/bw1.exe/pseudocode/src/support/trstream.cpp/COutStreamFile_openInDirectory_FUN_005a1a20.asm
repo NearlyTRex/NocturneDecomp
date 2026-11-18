@@ -13,7 +13,7 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a15
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_00479180
+;   engine_dosio.cpp_getFile_FUN_00479180
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH ECX                            ; 005a1a38
     MOV ESI,dword ptr [ESP + 0x18]      ; 005a1a39
     PUSH ESI                            ; 005a1a3d
-    CALL engine_dosio.cpp_FUN_00479180  ; 005a1a3e
-        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00479180(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00479180 ; 005a1a3e
+        ;   XREF to: 00479180 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00479180(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005a1a43
     MOV dword ptr [EBX + 0x4],EAX       ; 005a1a46
     TEST EAX,EAX                        ; 005a1a49

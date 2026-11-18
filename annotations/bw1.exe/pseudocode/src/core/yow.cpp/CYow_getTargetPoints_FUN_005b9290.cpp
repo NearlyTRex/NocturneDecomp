@@ -2,14 +2,13 @@
 // Address: 005b9290
 // Address Range: [[005b9290, 005b959d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *param_2)
+// Signature: int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *out_points_array)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *param_2)
+int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float *out_points_array)
 
 {
   EDeathState EVar1;
@@ -48,10 +47,10 @@ int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float 
   afStack_54[(uint)bVar4 * -2] = *(float *)((int)&CStack_34 + (uint)bVar4 * -8 + 4);
   afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        *(float *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  if (&fStack_58 != param_2) {
-    *param_2 = fStack_58;
-    param_2[1] = afStack_54[0];
-    param_2[2] = afStack_54[1];
+  if (&fStack_58 != out_points_array) {
+    *out_points_array = fStack_58;
+    out_points_array[1] = afStack_54[0];
+    out_points_array[2] = afStack_54[1];
   }
   pCStack_18 = &(this_ptr->base).base.model;
   iStack_1c = 0;
@@ -71,10 +70,12 @@ int __cdecl core_yow_cpp_CYow_getTargetPoints_FUN_005b9290(CYow *this_ptr,float 
           afStack_84[3] = fStack_3c;
           fStack_74 = fStack_38;
         }
-        afStack_84[3] = afStack_54[0] * (float)_DAT_005fa3bc + afStack_84[3] * (float)_DAT_005fa3b4;
-        afStack_84[2] = fStack_58 * (float)_DAT_005fa3ac + afStack_84[2] * (float)_DAT_005fa3ac;
+        afStack_84[3] =
+             afStack_54[0] * (float)0.29999999999999999 + afStack_84[3] * (float)0.69999999999999996;
+        afStack_84[2] =
+             fStack_58 * (float)0.5 + afStack_84[2] * (float)0.5;
 LAB_005b93d6:
-        pfVar3 = param_2 + iStack_14 * 3;
+        pfVar3 = out_points_array + iStack_14 * 3;
         if (pfVar3 != afStack_84 + 2) {
           *pfVar3 = afStack_84[2];
           pfVar3[1] = afStack_84[3];
@@ -98,8 +99,10 @@ LAB_005b93f2:
           afStack_84[3] = afStack_84[0];
           fStack_74 = afStack_84[1];
         }
-        afStack_84[3] = afStack_54[0] * (float)_DAT_005fa3bc + afStack_84[3] * (float)_DAT_005fa3b4;
-        afStack_84[2] = fStack_58 * (float)_DAT_005fa3ac + afStack_84[2] * (float)_DAT_005fa3ac;
+        afStack_84[3] =
+             afStack_54[0] * (float)0.29999999999999999 + afStack_84[3] * (float)0.69999999999999996;
+        afStack_84[2] =
+             fStack_58 * (float)0.5 + afStack_84[2] * (float)0.5;
         goto LAB_005b93d6;
       }
       break;
@@ -107,7 +110,7 @@ LAB_005b93f2:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->bone_indices[4]] != 0) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
                   (pCStack_18,this_ptr->bone_indices[4],&CStack_64);
-        pfVar3 = param_2 + iStack_14 * 3;
+        pfVar3 = out_points_array + iStack_14 * 3;
         afStack_54[2] = CStack_64.x;
         afStack_54[(uint)bVar4 * -2 + 3] = *(float *)((int)&CStack_64 + (uint)bVar4 * -8 + 4);
         afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
@@ -129,7 +132,7 @@ LAB_005b93ef:
         afStack_6c[(uint)bVar4 * -2] = *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + 4);
         afStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
              *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-        pfVar3 = param_2 + iStack_14 * 3;
+        pfVar3 = out_points_array + iStack_14 * 3;
         if (pfVar3 != &fStack_70) {
           *pfVar3 = fStack_70;
           pfVar3[1] = afStack_6c[0];

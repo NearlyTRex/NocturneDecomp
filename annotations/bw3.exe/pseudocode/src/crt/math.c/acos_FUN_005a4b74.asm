@@ -1,24 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined2 crt_math_c_acos_FUN_005a4b74(void)
+; double __fpustack_safe crt_math_c_acos_FUN_005a4b74(double x)
 ;
 ;
 ; XREF[13]:
-;   core_dirmat.cpp_FUN_0045b9b0 at 0045bcfc
+;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0045b9b0 at 0045bcfc
 ;   core_dirmat.cpp_angleFromSinCos_FUN_0045b8e0 at 0045b991
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20 at 004a36b4
 ;   core_fire.cpp_safeAcos_FUN_00496c10 at 00496c4f
 ;   core_prye.cpp_CPrye_aimLeftPistol_FUN_00523800 at 00523d2a
-;   core_prye.cpp_FUN_0051c1c0 at 0051c4f4
-;   core_prye.cpp_FUN_005228c0 at 0052290d
-;   core_prye.cpp_FUN_00522950 at 00522a10
-;   core_prye.cpp_FUN_00522b00 at 00523463
+;   core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00 at 00523463
+;   core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0 at 0051c4f4
+;   core_prye.cpp_adjustAimAngleForOffset_FUN_005228c0 at 0052290d
+;   core_prye.cpp_calculateAimAnglesWithOffset_FUN_00522950 at 00522a10
 ;   core_xform.cpp_angleFromSinCos_FUN_00583a40 at 00583af2
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006075d0
+;   float10 g_PiOver2 = 1.570796326794896558
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_005a5cc1
@@ -61,8 +61,8 @@ section .text
         ;   XREF to: 005a4bae (CONDITIONAL_JUMP)  ; LAB_005a4bae
     FXCH                                ; 005a4b9f
     CALL crt_math.c_atan2_FUN_005a5cc1  ; 005a4ba1
-        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_005a5cc1()
-    FLD extended double ptr [0x006075d0] ; 005a4ba6 | DAT_006075d0
+        ;   XREF to: 005a5cc1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_005a5cc1(float10 y, float10 x)
+    FLD extended double ptr [0x006075d0] ; 005a4ba6 | g_PiOver2
     FSUBRP                              ; 005a4bac
     POP AX                              ; 005a4bae
         ;   Label: LAB_005a4bae

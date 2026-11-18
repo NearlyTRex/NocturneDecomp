@@ -35,7 +35,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005918d5
 ;   TerminatedCString s_Out_of_memory_005918ea
-;   undefined4 DAT_005a1eb0
+;   float g_FLOAT_005a1eb0 = 0.00390625
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -228,13 +228,13 @@ section .text
     LEA EBX,[ESP + 0x10]                ; 00519db0
     ADD EAX,EDX                         ; 00519db4
     FILD dword ptr [EAX]                ; 00519db6
-    FMUL float ptr [0x005a1eb0]         ; 00519db8 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 00519db8 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX]                ; 00519dbe
     FILD dword ptr [EAX + 0x4]          ; 00519dc0
-    FMUL float ptr [0x005a1eb0]         ; 00519dc3 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 00519dc3 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x4]          ; 00519dc9
     FILD dword ptr [EAX + 0x8]          ; 00519dcc
-    FMUL float ptr [0x005a1eb0]         ; 00519dcf | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 00519dcf | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x8]          ; 00519dd5
     FLD float ptr [ESP + 0x10]          ; 00519dd8
     FSUB float ptr [ESP + 0x4]          ; 00519ddc

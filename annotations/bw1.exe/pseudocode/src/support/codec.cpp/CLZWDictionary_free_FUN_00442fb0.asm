@@ -10,7 +10,7 @@
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00442f90 at 00442f96
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     RET                                 ; 00442fc9
     PUSH EDX                            ; 00442fca
         ;   Label: LAB_00442fca
-    CALL crt_unknown.c_FUN_005c09f0     ; 00442fcb
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00442fcb
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 00442fd0
     MOV dword ptr [EBX + 0x10],0x0      ; 00442fd3
     MOV dword ptr [EBX + 0xc],0x0       ; 00442fda

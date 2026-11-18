@@ -11,14 +11,16 @@ void __cdecl core_actor_cpp_archiveActor_FUN_0040b930(CDemonActor **actor_ptr,ch
 {
   CDemonActor *pCVar1;
   
-  if (DAT_007df9b8 == 1) {
+  if (g_ActorReadingMode == 1) {
     pCVar1 = core_mission_cpp_CDemonMission_loadActor_FUN_004f6770
-                       (0x01D81080,DAT_007df9b4,DAT_007df9bc,property_name);
+                       (g_CDemonMission_PTR_00600530,g_ActorDataFile,g_CurrentActorBeingProcessed,
+                        property_name);
     *actor_ptr = pCVar1;
     return;
   }
-  FUN_005a3140(DAT_007df9b4,&DAT_005b5afd,&DAT_005f0990);
+  _fprintf(g_ActorDataFile,"%s");
   core_mission_cpp_CDemonMission_saveActor_FUN_004f68d0
-            (0x01D81080,*actor_ptr,DAT_007df9b4,DAT_007df9bc,property_name);
+            (g_CDemonMission_PTR_00600530,*actor_ptr,g_ActorDataFile,g_CurrentActorBeingProcessed,
+             property_name);
   return;
 }

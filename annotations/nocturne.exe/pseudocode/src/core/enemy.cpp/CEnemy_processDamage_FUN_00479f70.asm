@@ -21,7 +21,7 @@
 ;   ... and 14 more
 ;
 ; Referenced Globals:
-;   undefined4 g_CCharacterActorType_00765a60.name_hash
+;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -58,7 +58,7 @@ section .text
     POP ESI                             ; 00479fa2
     POP EBX                             ; 00479fa3
     RET                                 ; 00479fa4
-    MOV EDX,dword ptr [0x00765a98]      ; 00479fa5 | g_CCharacterActorType_00765a60.name_hash
+    MOV EDX,dword ptr [0x00765a98]      ; 00479fa5 | g_CCharacterClassInfo.name_hash
         ;   Label: LAB_00479fa5
     PUSH EDX                            ; 00479fab
     MOV ECX,dword ptr [ESI + 0x38]      ; 00479fac
@@ -71,7 +71,7 @@ section .text
     JNZ 0x00479fd5                      ; 00479fbc
         ;   XREF to: 00479fd5 (CONDITIONAL_JUMP)  ; LAB_00479fd5
     PUSH EDI                            ; 00479fbe
-    MOV EDI,dword ptr [0x00765a98]      ; 00479fbf | g_CCharacterActorType_00765a60.name_hash
+    MOV EDI,dword ptr [0x00765a98]      ; 00479fbf | g_CCharacterClassInfo.name_hash
     PUSH EDI                            ; 00479fc5
     MOV EBP,dword ptr [ESI + 0x34]      ; 00479fc6
     PUSH EBP                            ; 00479fc9

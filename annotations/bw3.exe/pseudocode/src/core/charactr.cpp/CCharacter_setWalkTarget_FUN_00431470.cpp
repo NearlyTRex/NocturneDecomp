@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
 
 {
@@ -25,7 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470(CCharacter 
     if (((this_ptr->walk_state != WALK_STATE_IDLE) &&
         (this_ptr->walk_to_target != (CDemonActor *)0x0)) &&
        ((this_ptr->model).model_name[0] != '\0')) {
-      state_name = "?STAND" + 1;
+      state_name = "STAND";
       error_on_not_found = target;
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310
                               (&(this_ptr->model).base);
@@ -47,9 +45,9 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470(CCharacter 
       fVar2 = (this_ptr->base).location.position.x - (target->location).position.x;
       fVar4 = (this_ptr->base).location.position.y - (target->location).position.y;
       fVar3 = (this_ptr->base).location.position.z - (target->location).position.z;
-      local_10 = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) * (float)_DAT_005b84ae;
-      if (_DAT_005b84b6 <= local_10) {
-        if (_DAT_005b84ba < local_10) {
+      local_10 = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) * (float)0.5;
+      if (5.0f <= local_10) {
+        if (60.0f < local_10) {
           local_10 = 60.0;
         }
       }

@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 129,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 99,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 303
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 98,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 302
   },
   "cross_references": [],
   "function": {
@@ -32,26 +29,26 @@
   "globals": [
     {
       "addr": "01e52efc",
-      "name": "DAT_01e52efc",
-      "type": "undefined4",
+      "name": "g_ActiveEdgeCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e52f00",
-      "name": "DAT_01e52f00",
-      "type": "undefined4",
+      "name": "g_SoftwareEdgeTable",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
       "addr": "01e53380",
-      "name": "DAT_01e53380",
-      "type": "undefined4",
+      "name": "g_MinScanline",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01e53384",
-      "name": "DAT_01e53384",
-      "type": "undefined4",
+      "name": "g_MaxScanline",
+      "type": "int",
       "value": null
     }
   ],
@@ -139,22 +136,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01e52f00",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e52f00 + iVar2) = iVar7;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

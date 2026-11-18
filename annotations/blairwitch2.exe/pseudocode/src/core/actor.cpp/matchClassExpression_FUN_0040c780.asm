@@ -12,7 +12,7 @@
 ;   core_actor.cpp_matchesClassName_FUN_0040c8a0 at 0040c8aa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061ed94
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_matchClassTerm_FUN_0040c660
@@ -38,7 +38,7 @@ section .text
     XOR ECX,ECX                         ; 0040c796
     INC BL                              ; 0040c798
     MOV CL,BL                           ; 0040c79a
-    TEST byte ptr [ECX + 0x61ed94],BH   ; 0040c79c | DAT_0061ed94
+    TEST byte ptr [ECX + 0x61ed94],BH   ; 0040c79c | g_CharacterClassificationTable
     JNZ 0x0040c7d8                      ; 0040c7a2
         ;   XREF to: 0040c7d8 (CONDITIONAL_JUMP)  ; LAB_0040c7d8
     MOV EAX,dword ptr [ESI]             ; 0040c7a4

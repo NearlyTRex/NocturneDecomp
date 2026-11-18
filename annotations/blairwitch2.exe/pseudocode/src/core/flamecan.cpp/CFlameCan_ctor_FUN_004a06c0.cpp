@@ -21,7 +21,7 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004a06c0(CFlameCan *thi
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0049f180
                      ((CFlame *)(pCVar3[1].part_visibility_flags + 0x1b));
-  pcVar5 = (char *)0x5d594c;
+  pcVar5 = "none";
   pCVar4[-1].base.particle_systems[2].standalone = (int)&g_CFlameCanVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)&pCVar4[-1].base.particle_systems[2].particles,

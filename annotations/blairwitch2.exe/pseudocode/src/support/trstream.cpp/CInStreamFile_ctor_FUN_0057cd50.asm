@@ -7,20 +7,20 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[16]:
-;   cockpit_ckptutil.c_FUN_0042c520 at 0042c549
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780 at 0042c79f
-;   core_game.cpp_FUN_004bb9b0 at 004bbc60
-;   core_game.cpp_FUN_004bbf70 at 004bc1da
-;   engine_2d.c_FUN_00401590 at 00401596
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042c520 at 0042c549
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc1da
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbc60
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010a7
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402954
+;   engine_2d.c_loadPaletteFile_FUN_00401590 at 00401596
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7e7d
-;   engine_font.cpp_FUN_004a7fd0 at 004a811e
-;   engine_font.cpp_FUN_004a85a0 at 004a85c0
+;   engine_font.cpp_CBitFont_loadFromFile_FUN_004a85a0 at 004a85c0
+;   engine_font.cpp_CBitFont_setAcceleration_FUN_004a7fd0 at 004a811e
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   undefined1* g_CInStreamFileVTable = 0057cec0
+;   void*[13] g_CInStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStream_ctor_FUN_0057b9c0

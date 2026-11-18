@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 122,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
-    "suspect_count": 2,
+    "pseudocode_lines": 91,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 370
+    "total_lines": 369
   },
   "cross_references": [],
   "function": {
@@ -68,8 +67,8 @@
   "globals": [
     {
       "addr": "005d0a20",
-      "name": "s_modelName_005d0a1f+1",
-      "type": "undefined4",
+      "name": "s_modelName_005d0a20",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -200,26 +199,26 @@
     },
     {
       "addr": "005d0b16",
-      "name": "DAT_005d0b16",
-      "type": "undefined1",
+      "name": "s_true_005d0b16",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d0b17",
-      "name": "DAT_005d0b17",
-      "type": "undefined1",
+      "name": "s_rue_005d0b16+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d0b18",
-      "name": "DAT_005d0b18",
-      "type": "undefined1",
+      "name": "s_ue_005d0b16+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d0b19",
-      "name": "DAT_005d0b19",
-      "type": "undefined1",
+      "name": "s_e_005d0b16+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -356,16 +355,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005d0b16",
-      "severity": "mild",
-      "text": "pcVar2 = &DAT_005d0b16;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -375,7 +366,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "005f54e4"
       }

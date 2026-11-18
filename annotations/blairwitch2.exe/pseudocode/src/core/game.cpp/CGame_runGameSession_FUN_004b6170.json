@@ -2,21 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1071,
-    "complexity_score": 541,
+    "complexity_score": 395,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 74,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 376,
-    "suspect_count": 14,
+    "pseudocode_lines": 380,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "undefined_data",
-      "unresolved_funcptr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 1447
+    "total_lines": 1451
   },
   "cross_references": [
     {
@@ -76,9 +72,19 @@
       "name": "core_game.cpp_CGame_playerControls_FUN_004b7050"
     },
     {
+      "addr": "004b5190",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b5190"
+    },
+    {
       "addr": "004b39d0",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_processFudge_FUN_004b39d0"
+    },
+    {
+      "addr": "004b82e0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004b82e0"
     },
     {
       "addr": "004bdb10",
@@ -91,9 +97,19 @@
       "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250"
     },
     {
+      "addr": "004bb090",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetIrisFade_FUN_004bb090"
+    },
+    {
       "addr": "004b3000",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_saveClockTime_FUN_004b3000"
+    },
+    {
+      "addr": "004bb9b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bb9b0"
     },
     {
       "addr": "004b5fd0",
@@ -106,34 +122,14 @@
       "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0"
     },
     {
+      "addr": "004bcbf0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bcbf0"
+    },
+    {
       "addr": "004b3820",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_updateStatusDisplays_FUN_004b3820"
-    },
-    {
-      "addr": "004b5190",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b5190"
-    },
-    {
-      "addr": "004b82e0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b82e0"
-    },
-    {
-      "addr": "004bb090",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004bb090"
-    },
-    {
-      "addr": "004bb9b0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004bb9b0"
-    },
-    {
-      "addr": "004bcbf0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004bcbf0"
     },
     {
       "addr": "0059c2c0",
@@ -153,12 +149,12 @@
     {
       "addr": "004ee1a0",
       "is_variadic": false,
-      "name": "core_menu.cpp_FUN_004ee1a0"
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004ee1a0"
     },
     {
       "addr": "004fd450",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fd450"
+      "name": "core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_004fd450"
     },
     {
       "addr": "0050b8d0",
@@ -208,17 +204,17 @@
     {
       "addr": "00538d10",
       "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_00538d10"
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00538d10"
+    },
+    {
+      "addr": "0055a1d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_init_FUN_0055a1d0"
     },
     {
       "addr": "0055a360",
       "is_variadic": false,
       "name": "core_sound.cpp_CSound_shutdown_FUN_0055a360"
-    },
-    {
-      "addr": "0055a1d0",
-      "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0055a1d0"
     },
     {
       "addr": "005bac90",
@@ -254,6 +250,11 @@
       "addr": "004807e0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0"
+    },
+    {
+      "addr": "0047e760",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760"
     },
     {
       "addr": "0047c760",
@@ -299,11 +300,6 @@
       "addr": "00480e70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_00480e70"
-    },
-    {
-      "addr": "0047e760",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047e760"
     },
     {
       "addr": "0050fe80",
@@ -365,14 +361,14 @@
     },
     {
       "addr": "005d7738",
-      "name": "DAT_005d7738",
-      "type": "undefined4",
+      "name": "s_anon_005d7738",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d773a",
-      "name": "DAT_005d773a",
-      "type": "undefined4",
+      "name": "s_s_005d773a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -473,8 +469,8 @@
     },
     {
       "addr": "005d7845",
-      "name": "DAT_005d7845",
-      "type": "undefined4",
+      "name": "s_Quit_005d7845",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -491,8 +487,8 @@
     },
     {
       "addr": "005d7866",
-      "name": "DAT_005d7866",
-      "type": "undefined4",
+      "name": "s_Quit_005d7866",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -503,8 +499,8 @@
     },
     {
       "addr": "005d7875",
-      "name": "DAT_005d7875",
-      "type": "undefined4",
+      "name": "s_Quit_005d7875",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -527,15 +523,15 @@
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "00614d30",
-      "name": "DAT_00614d30",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "01c3deb4"
     },
     {
       "addr": "00616044",
@@ -545,21 +541,21 @@
     },
     {
       "addr": "00617dd4",
-      "name": "DAT_00617dd4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
     },
     {
       "addr": "00617e10",
-      "name": "DAT_00617e10",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "01d03000"
     },
     {
       "addr": "00618170",
-      "name": "DAT_00618170",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_00618170",
+      "type": "CDemonMission*",
+      "value": "01d182f0"
     },
     {
       "addr": "0061b120",
@@ -581,9 +577,9 @@
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     },
     {
       "addr": "0061ea5c",
@@ -599,26 +595,26 @@
     },
     {
       "addr": "01511cc0",
-      "name": "DAT_01511cc0",
-      "type": "undefined4",
+      "name": "g_ThemeFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01511cc4",
-      "name": "DAT_01511cc4",
-      "type": "undefined4",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c25590",
-      "name": "DAT_01c25590",
-      "type": "undefined4",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c37788",
-      "name": "DAT_01c37788",
-      "type": "undefined4",
+      "name": "g_INT_01c37788",
+      "type": "int",
       "value": null
     },
     {
@@ -665,8 +661,8 @@
     },
     {
       "addr": "01cb7788",
-      "name": "DAT_01cb7788",
-      "type": "undefined4",
+      "name": "g_INT_01cb7788",
+      "type": "int",
       "value": null
     },
     {
@@ -677,32 +673,32 @@
     },
     {
       "addr": "01cb7c50",
-      "name": "DAT_01cb7c50",
-      "type": "undefined4",
+      "name": "g_HasSavedLightState",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cb7c54",
-      "name": "DAT_01cb7c54",
-      "type": "undefined4",
+      "name": "g_MasterLightStateSaveBuffer",
+      "type": "int[201]",
       "value": null
     },
     {
       "addr": "01cb80e0",
-      "name": "DAT_01cb80e0",
-      "type": "undefined4",
+      "name": "g_IrisFadeType",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d02f84",
-      "name": "DAT_01d02f84",
-      "type": "undefined4",
+      "name": "g_PTR_01d02f84",
+      "type": "void*",
       "value": null
     },
     {
@@ -749,26 +745,26 @@
     },
     {
       "addr": "02664634",
-      "name": "DAT_02664634",
-      "type": "undefined4",
+      "name": "g_INT_02664634",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02664638",
-      "name": "DAT_02664638",
-      "type": "undefined4",
+      "name": "g_TotalPhysicalMemory",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0266463c",
-      "name": "DAT_0266463c",
-      "type": "undefined4",
+      "name": "g_INT_0266463c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "026677e0",
-      "name": "DAT_026677e0",
-      "type": "undefined4",
+      "name": "g_INT_026677e0",
+      "type": "int",
       "value": null
     }
   ],
@@ -911,110 +907,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005d7738",
-      "severity": "mild",
-      "text": "engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d7738);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005d773a",
-      "severity": "mild",
-      "text": "engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d773a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_01cb7c54",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00534990(g_CDemonSetPtr,(int *)&DAT_01cb7c54);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 142,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5), pCVar2 = g_CFieldNotesPtr,",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 174,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0x114))(iVar6);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 217,
-      "match": "DAT_005d7845",
-      "severity": "mild",
-      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7845);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 242,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "if (0xf0 < DAT_006141bc) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 253,
-      "match": "DAT_005d7866",
-      "severity": "mild",
-      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7866);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 324,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 347,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x114))(iVar4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 352,
-      "match": "DAT_005d7875",
-      "severity": "mild",
-      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7875);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x1d02f84 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 368,
-      "match": "0x1d02f84",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01D02F84;",
-      "type": "raw_address_constant"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 83,

@@ -12,6 +12,6 @@ CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_copy_FUN_005a0a20(CIn
   CInStreamFile *pCVar1;
   
   pCVar1 = (CInStreamFile *)support_trstream_cpp_CInStream_ctor_FUN_0059f540(&this_ptr->base);
-  (pCVar1->base).vtable = &g_CInStreamFileVTable;
+  (pCVar1->base).vtable = g_CInStreamFileVTable;
   return pCVar1;
 }

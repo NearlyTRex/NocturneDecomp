@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 175,
+    "complexity_score": 1547,
     "cross_reference_count": 10,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 110,
-    "suspect_count": 5,
+    "pseudocode_lines": 252,
+    "suspect_count": 128,
     "suspect_types": [
+      "pointer_cast",
       "pointer_truncation",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 282
+    "total_lines": 424
   },
   "cross_references": [
     {
@@ -102,77 +102,77 @@
       "name": "core_enemy.cpp_CEnemy_ctor_FUN_00487db0"
     },
     {
-      "addr": "0059d610",
-      "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d610"
-    },
-    {
       "addr": "0059d6f0",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d6f0"
-    },
-    {
-      "addr": "0059d8e0",
-      "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d8e0"
-    },
-    {
-      "addr": "0059d990",
-      "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059d990"
+      "name": "core_muzzle.cpp_SStateMachine_addRefState_FUN_0059d6f0"
     },
     {
       "addr": "0059da70",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059da70"
+      "name": "core_muzzle.cpp_SStateMachine_applyNextState_FUN_0059da70"
     },
     {
       "addr": "0059db90",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059db90"
+      "name": "core_muzzle.cpp_SStateMachine_getInitialStateName_FUN_0059db90"
+    },
+    {
+      "addr": "0059d610",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_SStateMachine_init_FUN_0059d610"
     },
     {
       "addr": "0059dc80",
       "is_variadic": false,
-      "name": "core_muzzle.cpp_FUN_0059dc80"
+      "name": "core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80"
+    },
+    {
+      "addr": "0059d990",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990"
+    },
+    {
+      "addr": "0059d8e0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0"
     }
   ],
   "globals": [
     {
       "addr": "005febdc",
-      "name": "DAT_005febdc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005febdc",
+      "type": "float",
+      "value": "200"
     },
     {
       "addr": "005febe0",
-      "name": "DAT_005febe0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005febe0",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005febe4",
-      "name": "DAT_005febe4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005febe4",
+      "type": "float",
+      "value": "5"
     },
     {
       "addr": "005febe8",
-      "name": "DAT_005febe8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005febe8",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "005febec",
-      "name": "DAT_005febec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005febec",
+      "type": "float",
+      "value": "999"
     },
     {
       "addr": "005febf0",
-      "name": "DAT_005febf0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005febf0",
+      "type": "float",
+      "value": "10"
     }
   ],
   "param_estimates": {
@@ -339,16 +339,1000 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 27,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x10) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 28,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x11) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 29,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x12) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 30,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x13) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 32,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 8) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 33,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 9) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 34,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 10) = -0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 35,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 0xb) = '?';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 37,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x15) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 38,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x16) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 39,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x17) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 40,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x18) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 42,
+      "match": "(char *)((int)(pSVar4->state_names + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 4) + 0) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 43,
+      "match": "(char *)((int)(pSVar4->state_names + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 4) + 1) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 44,
+      "match": "(char *)((int)(pSVar4->state_names + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 4) + 2) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 45,
+      "match": "(char *)((int)(pSVar4->state_names + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 4) + 3) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 47,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 4) = '\\x02';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 48,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 5) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 49,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 6) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 50,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 7) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 52,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 10) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 53,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0xb) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 54,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0xc) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 55,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0xd) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 57,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0xe) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 58,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0xf) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 59,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0x10) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 60,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0x11) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 62,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0x12) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 63,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0x13) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 64,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0x14) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 65,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 0x15) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 68,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 1) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 69,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 2) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 70,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 3) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 71,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 4) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 73,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 5) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 74,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 6) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 75,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 7) = ' ';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 76,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 8) = 'A';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 78,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 9) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 79,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 10) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 80,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0xb) = -0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 81,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0xc) = 'A';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 83,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x11) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 84,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x12) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 85,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x13) = -0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 86,
+      "match": "(char *)((int)(pacVar3 + 3) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 3) + 0x14) = 'A';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 87,
+      "match": "(char *)((int)(this_ptr_01[1].state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(this_ptr_01[1].state_names + 0) + 0) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 88,
+      "match": "(char *)((int)(this_ptr_01[1].state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(this_ptr_01[1].state_names + 0) + 1) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 89,
+      "match": "(char *)((int)(this_ptr_01[1].state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(this_ptr_01[1].state_names + 0) + 2) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 90,
+      "match": "(char *)((int)(this_ptr_01[1].state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(this_ptr_01[1].state_names + 0) + 3) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 92,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x14) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 93,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x15) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 94,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x16) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 95,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x17) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 98,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0xb) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 100,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0xc) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 101,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0xd) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 102,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0xe) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 104,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 7) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 106,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 8) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 107,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 9) = -0x60;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 108,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 10) = '@';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 110,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 3) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 112,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 4) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 113,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 5) = -0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 114,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 6) = '?';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 116,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x10) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 118,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x11) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 119,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x12) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 120,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0x13) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 122,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0xc) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 124,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0xd) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 125,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0xe) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 126,
+      "match": "(char *)((int)(pacVar3 + 4) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 4) + 0xf) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 128,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0xc) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 129,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0xd) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 130,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0xe) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 131,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0xf) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 139,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0xf) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 140,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0x10) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 141,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0x11) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 142,
+      "match": "(char *)((int)(pacVar3 + 5) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 5) + 0x12) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 157,
+      "match": "(char *)((int)(pSVar4->state_names + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 8) + 0) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 158,
+      "match": "(char *)((int)(pSVar4->state_names + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 8) + 1) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 159,
+      "match": "(char *)((int)(pSVar4->state_names + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 8) + 2) = -0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 160,
+      "match": "(char *)((int)(pSVar4->state_names + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 8) + 3) = '>';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 162,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 4) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 163,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 5) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 164,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 6) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 165,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 7) = '?';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 167,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 8) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 168,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 9) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 169,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 10) = -0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 170,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0xb) = '>';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 182,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x14) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 183,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x15) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 184,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x16) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 185,
+      "match": "(char *)((int)(pacVar3 + 8) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 8) + 0x17) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 187,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 6) = '\\x19';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 188,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 7) = -4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 189,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 8) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 190,
+      "match": "(char *)((int)(pacVar3 + 2) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 2) + 9) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 192,
+      "match": "(char *)((int)(pacVar3 + 7) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 7) + 9) = '\\x19';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 193,
+      "match": "(char *)((int)(pacVar3 + 7) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 7) + 10) = -4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 194,
+      "match": "(char *)((int)(pacVar3 + 7) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 7) + 0xb) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 195,
+      "match": "(char *)((int)(pacVar3 + 7) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 7) + 0xc) = -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 199,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 3) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 200,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 4) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 201,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 5) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 202,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 6) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 205,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 7) = -0x33;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 206,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 8) = -0x34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 207,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 9) = 'L';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 208,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 10) = '>';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 211,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 0xb) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 212,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 0xc) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 213,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 0xd) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 214,
+      "match": "(char *)((int)(pacVar3 + 9) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar3 + 9) + 0xe) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 216,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 4) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 217,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 5) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 218,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 6) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 219,
+      "match": "(char *)((int)(pSVar4->state_names + 0) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pSVar4->state_names + 0) + 7) = '\\0';",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `this_ptr_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 247,
       "match": "(int)this_ptr_00",
       "severity": "moderate",
       "text": "return (int)this_ptr_00;",
@@ -356,7 +1340,7 @@
     },
     {
       "description": "Pointer value `this_ptr_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 113,
+      "line": 254,
       "match": "(int)this_ptr_00",
       "severity": "moderate",
       "text": "return (int)this_ptr_00;",
@@ -364,7 +1348,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 146,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -372,7 +1356,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 102,
+      "line": 243,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

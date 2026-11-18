@@ -15,7 +15,7 @@
 extern CKeyFramedModel g_SkeleditViewModel;
 
 // SPose
-extern SPose SPose_036644d8;
+extern SPose g_ViewModelSavedPose;
 
 // char[20480]
 extern char g_SkeleditClipboardBuffer[20480];

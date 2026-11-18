@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00521816) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl sound_sndmain_cpp_computeFFT_FUN_005214e0(float *input,int size,float *output_real,float *output_imag)
 
@@ -64,10 +63,10 @@ void __cdecl sound_sndmain_cpp_computeFFT_FUN_005214e0(float *input,int size,flo
   if (1 < size) {
     do {
       iVar10 = local_30 / 2;
-      fVar17 = (float10)_DAT_00592126 / (float10)iVar10;
+      fVar17 = (float10)3.1415926535000001 / (float10)iVar10;
       fVar3 = (float10)fcos(fVar17);
       fVar18 = (float10)fsin(fVar17);
-      fVar19 = (float10)_DAT_0059211e;
+      fVar19 = (float10)2;
       fVar17 = fVar17 * fVar19;
       fVar20 = (float10)fsin(fVar17);
       fVar17 = (float10)fcos(fVar17);

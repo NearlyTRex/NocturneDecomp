@@ -2,23 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 43,
+    "complexity_score": 27,
     "cross_reference_count": 18,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 98
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 97
   },
   "cross_references": [
     {
       "addr": "004a16b0",
       "from_addr": "004a16fb",
-      "name": "core_flashlit.cpp_FUN_004a16b0",
+      "name": "core_flashlit.cpp_drawTooltip_FUN_004a16b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b32c0",
-      "from_addr": "004b35f8",
-      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b32c0",
+      "addr": "004bb3d0",
+      "from_addr": "004bb42e",
+      "name": "core_game.cpp_CGame_renderIrisFade_FUN_004bb3d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bb3d0",
-      "from_addr": "004bb42e",
-      "name": "core_game.cpp_FUN_004bb3d0",
+      "addr": "004b32c0",
+      "from_addr": "004b35f8",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b32c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,7 +46,7 @@
     {
       "addr": "004dd9b0",
       "from_addr": "004de139",
-      "name": "core_inv.cpp_FUN_004dd9b0",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dd9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,19 +58,19 @@
     {
       "addr": "004eba50",
       "from_addr": "004ebbc5",
-      "name": "core_menu.cpp_FUN_004eba50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ebf10",
-      "from_addr": "004ecadc",
-      "name": "core_menu.cpp_FUN_004ebf10",
+      "name": "core_menu.cpp_adjustFixedPointSlider_FUN_004eba50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eb7c0",
       "from_addr": "004eb935",
       "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebf10",
+      "from_addr": "004ecadc",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004ebf10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -88,39 +86,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047e870",
+      "from_addr": "0047efab",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dc40",
+      "from_addr": "0047e1b6",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047dc40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047afb0",
+      "from_addr": "0047b187",
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0047afb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004831d0",
       "from_addr": "00483719",
       "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047a890",
-      "from_addr": "0047a919",
-      "name": "shape_edittool.cpp_FUN_0047a890",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047afb0",
-      "from_addr": "0047b187",
-      "name": "shape_edittool.cpp_FUN_0047afb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047dc40",
-      "from_addr": "0047e1b6",
-      "name": "shape_edittool.cpp_FUN_0047dc40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047e870",
-      "from_addr": "0047efab",
-      "name": "shape_edittool.cpp_FUN_0047e870",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00483ea0",
       "from_addr": "004840d7",
-      "name": "shape_edittool.cpp_FUN_00483ea0",
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_00483ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a890",
+      "from_addr": "0047a919",
+      "name": "shape_edittool.cpp_editorFillRectColor_FUN_0047a890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -146,32 +144,32 @@
   "globals": [
     {
       "addr": "01c35e48",
-      "name": "DAT_01c35e48",
-      "type": "undefined4",
+      "name": "g_INT_01c35e48",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e4c",
-      "name": "DAT_01c35e4c",
-      "type": "undefined4",
+      "name": "g_INT_01c35e4c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e50",
-      "name": "DAT_01c35e50",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e54",
-      "name": "DAT_01c35e54",
-      "type": "undefined4",
+      "name": "g_INT_01c35e54",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e60",
-      "name": "DAT_01c35e60",
-      "type": "undefined4",
+      "name": "g_INT_01c35e60",
+      "type": "int",
       "value": null
     }
   ],
@@ -181,7 +179,7 @@
       {
         "call_addr": "0047efab",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e870",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +201,7 @@
       {
         "call_addr": "004840d7",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00483ea0",
+        "caller": "shape_edittool.cpp_draw3DBorder_FUN_00483ea0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -399,14 +397,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

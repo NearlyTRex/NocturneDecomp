@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 161,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 96,
-    "suspect_count": 5,
+    "pseudocode_lines": 100,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 253
+    "total_lines": 257
   },
   "cross_references": [
     {
       "addr": "00517400",
       "from_addr": "0051744f",
-      "name": "cockpit_pkbitmap.cpp_FUN_00517400",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +54,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005ba2b4",
@@ -76,14 +75,14 @@
   "globals": [
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -93,7 +92,7 @@
       {
         "call_addr": "0051744f",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_00517400",
+        "caller": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_00517400",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,16 +216,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "int in_stack_00000018;",
@@ -234,7 +225,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 67,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "if (1 < in_stack_00000018) {",
@@ -242,7 +233,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
+      "line": 70,
       "match": "&stack0xffffffa4",
       "severity": "moderate",
       "text": "((CPackedBitmap *)&stack0xffffffa4);",
@@ -250,7 +241,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 75,
+      "line": 78,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
       "text": "((CPackedBitmap *)&stack0xffffffb4,0);",

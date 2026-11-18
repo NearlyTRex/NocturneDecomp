@@ -11,7 +11,7 @@ CConfederate * __cdecl core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(voi
 {
   CConfederate *pCVar1;
   
-  pCVar1 = (CConfederate *)operator_new(0x11868);
+  pCVar1 = operator_new(0x11868);
   if (pCVar1 == (CConfederate *)0x0) {
     return (CConfederate *)0x0;
   }

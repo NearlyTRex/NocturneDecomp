@@ -89,7 +89,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
     local_17c = local_19c;
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_17c,&local_16c,&local_ac);
     local_18c = local_ac;
-    core_xform_cpp_slerpQuaternion_FUN_005f77e0(&CQuaternion4f_00665998,&local_1cc,0.95,&local_9c);
+    core_xform_cpp_slerpQuaternion_FUN_005f77e0(&g_IdentityQuaternion,&local_1cc,0.95,&local_9c);
     local_15c = local_9c;
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_15c,&local_18c,&local_bc);
     local_14c = local_bc;

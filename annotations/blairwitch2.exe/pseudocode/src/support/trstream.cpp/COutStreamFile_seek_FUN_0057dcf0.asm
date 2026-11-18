@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_0057dcf0(COutStreamFile *this_ptr,long param_2,int param_3)
+; int __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_0057dcf0(COutStreamFile *this_ptr,int offset,int origin)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   offset
+; int              Stack[0xc]:4   origin
 ;
 ; Called Functions:
 ;   crt_stdio.c_fseek_FUN_005b929c

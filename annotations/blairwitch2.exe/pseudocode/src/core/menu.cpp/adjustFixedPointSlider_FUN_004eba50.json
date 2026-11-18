@@ -1,0 +1,241 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 240,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 11,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 82,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 322
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004eba50",
+    "address_range": [
+      [
+        "004eba50",
+        "004ebcdf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_menu.cpp_adjustFixedPointSlider_FUN_004eba50",
+    "signature": "void __cdecl core_menu_cpp_adjustFixedPointSlider_FUN_004eba50(int *value_ptr,char *window_title)"
+  },
+  "function_calls": [
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "004031c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_004031c0"
+    },
+    {
+      "addr": "00403250",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403250"
+    },
+    {
+      "addr": "004a93f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "0047e1d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0"
+    },
+    {
+      "addr": "0047e870",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047e870"
+    },
+    {
+      "addr": "0047e760",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_0047e760"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    },
+    {
+      "addr": "0058ed10",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_0058ed10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dcb3d",
+      "name": "g_DOUBLE_005dcb3d",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "006141b8",
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00617dd4",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d02f84"
+    },
+    {
+      "addr": "01c25590",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01c2a37c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c2a380",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e48",
+      "name": "g_INT_01c35e48",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e4c",
+      "name": "g_INT_01c35e4c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e50",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e54",
+      "name": "g_INT_01c35e54",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.845,
+    "instruction_count": 200,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 1,
+      "BRANCH": 4,
+      "CALL": 10,
+      "CALLIND": 5,
+      "CBRANCH": 12,
+      "COPY": 167,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 46,
+      "INT_AND": 149,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 104,
+      "INT_LEFT": 5,
+      "INT_LESS": 16,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 20,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 18,
+      "INT_SDIV": 3,
+      "INT_SEXT": 12,
+      "INT_SLESS": 51,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 7,
+      "INT_SUB": 82,
+      "INT_XOR": 2,
+      "INT_ZEXT": 7,
+      "LOAD": 26,
+      "POPCOUNT": 49,
+      "RETURN": 1,
+      "STORE": 68,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 969
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "value_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "window_title",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004eba59",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

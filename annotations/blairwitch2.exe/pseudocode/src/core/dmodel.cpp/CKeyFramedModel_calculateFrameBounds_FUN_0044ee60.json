@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 273,
+    "complexity_score": 257,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 19,
+    "pseudocode_lines": 62,
+    "suspect_count": 18,
     "suspect_types": [
       "phantom_float_to_int",
       "pointer_cast",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 207
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -47,9 +46,9 @@
   "globals": [
     {
       "addr": "005cf927",
-      "name": "DAT_005cf927",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005cf927",
+      "type": "double",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -193,16 +192,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 50,
       "match": "(CBoundingBox3D *)((int)local_28",
       "severity": "moderate",
       "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_01) {",
@@ -210,7 +201,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 51,
       "match": "(CVector3f *)((int)local_28",
       "severity": "moderate",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;",
@@ -218,7 +209,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 52,
       "match": "(CVector3f *)((int)local_28",
       "severity": "moderate",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_01->min).y;",
@@ -226,7 +217,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(CVector3f *)((int)local_28",
       "severity": "moderate",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_01->min).z;",
@@ -234,7 +225,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 25,
+      "line": 23,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr_01->min).x = local_28.min.x;",
@@ -242,7 +233,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 30,
+      "line": 28,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr_01->max).x = local_28.min.x;",
@@ -250,7 +241,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 48,
+      "line": 46,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "((CVector3f *)local_28.max.z)->x = (this_ptr_01->min).x;",
@@ -258,7 +249,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 53,
+      "line": 51,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;",
@@ -266,7 +257,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);",
@@ -274,7 +265,7 @@
     },
     {
       "description": "`(int)local_28.max.x` numerically converts float field `local_28.max.x` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 18,
+      "line": 16,
       "match": "(int)local_28.max.x",
       "severity": "moderate",
       "text": "this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);",
@@ -282,7 +273,7 @@
     },
     {
       "description": "`(int)local_28.max.y` numerically converts float field `local_28.max.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 19,
+      "line": 17,
       "match": "(int)local_28.max.y",
       "severity": "moderate",
       "text": "pCVar1 = this_ptr->vertex_list + (int)local_28.max.y * this_ptr->vertex_count;",
@@ -290,7 +281,7 @@
     },
     {
       "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 52,
+      "line": 50,
       "match": "(int)local_28.max.z",
       "severity": "moderate",
       "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_01) {",
@@ -298,7 +289,7 @@
     },
     {
       "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 53,
+      "line": 51,
       "match": "(int)local_28.max.z",
       "severity": "moderate",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;",
@@ -306,7 +297,7 @@
     },
     {
       "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 54,
+      "line": 52,
       "match": "(int)local_28.max.z",
       "severity": "moderate",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_01->min).y;",
@@ -314,7 +305,7 @@
     },
     {
       "description": "`(int)local_28.max.z` numerically converts float field `local_28.max.z` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 55,
+      "line": 53,
       "match": "(int)local_28.max.z",
       "severity": "moderate",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_01->min).z;",
@@ -322,7 +313,7 @@
     },
     {
       "description": "`(int)local_28.max.x` numerically converts float field `local_28.max.x` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 62,
+      "line": 60,
       "match": "(int)local_28.max.x",
       "severity": "moderate",
       "text": "local_28.max.x = (float)((int)local_28.max.x + 0x18);",
@@ -330,7 +321,7 @@
     },
     {
       "description": "`(int)local_28.max.y` numerically converts float field `local_28.max.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 63,
+      "line": 61,
       "match": "(int)local_28.max.y",
       "severity": "moderate",
       "text": "local_28.max.y = (float)((int)local_28.max.y + 1);",
@@ -338,7 +329,7 @@
     },
     {
       "description": "`(int)local_28.max.y` numerically converts float field `local_28.max.y` to an integer, but this function's `.asm` contains no `FIST`/`FISTP` \u2014 the binary never performs a float-to-int conversion here, so the cast is fabricated. Ghidra lost the real integer (usually a local or global it dropped) and reached for a float field sharing the stack slot. See \u00a732 \u2014 recover the true value from the asm; do not keep the cast.",
-      "line": 64,
+      "line": 62,
       "match": "(int)local_28.max.y",
       "severity": "moderate",
       "text": "} while ((int)local_28.max.y < this_ptr->frame_count);",

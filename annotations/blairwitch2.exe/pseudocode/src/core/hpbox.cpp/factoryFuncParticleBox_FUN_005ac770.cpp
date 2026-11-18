@@ -11,7 +11,7 @@ CParticleBox * __cdecl core_hpbox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
 {
   CParticleBox *pCVar1;
   
-  pCVar1 = (CParticleBox *)operator_new(0x7d8);
+  pCVar1 = operator_new(0x7d8);
   if (pCVar1 == (CParticleBox *)0x0) {
     return (CParticleBox *)0x0;
   }

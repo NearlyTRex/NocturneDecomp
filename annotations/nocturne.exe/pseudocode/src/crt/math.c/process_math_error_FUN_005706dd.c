@@ -9,10 +9,8 @@
 double __cdecl process_math_error(int errorFlags,double *value1,double *value2)
 
 {
-  uint uVar1;
-  uint uVar2;
   int unaff_EBX;
-  double dVar3;
+  double dVar1;
   MathErrorContext local_3c;
   
   local_3c.inputValue1._0_4_ = *(uint *)value1;
@@ -47,17 +45,14 @@ double __cdecl process_math_error(int errorFlags,double *value1,double *value2)
   else {
     unaff_EBX = 1;
   }
-  local_3c.errorData = (char *)(&DAT_005c206c)[errorFlags & 0x1f];
+  local_3c.errorData = (char *)(&g_INT_005c206c)[errorFlags & 0x1f];
   if ((errorFlags & 0x1000U) == 0) {
     if ((errorFlags & 0x2000U) == 0) {
       if ((errorFlags & 0x4000U) == 0) {
-        uVar2 = 0x7FF00000;
-        uVar1 = DAT_005a4b78;
+        local_3c.resultValue = INFINITY;
         if ((errorFlags & 0x8000U) == 0) {
-          uVar2 = *(uint *)((int)value2 + 4);
-          uVar1 = *(uint *)value2;
+          local_3c.resultValue = *value2;
         }
-        local_3c.resultValue = __BITCAST_DOUBLE(CONCAT44(uVar2,uVar1));
       }
       else {
         local_3c.resultValue = 1.0;
@@ -68,9 +63,9 @@ double __cdecl process_math_error(int errorFlags,double *value1,double *value2)
     }
   }
   else {
-    local_3c.resultValue = -__BITCAST_DOUBLE(CONCAT44(0x7FF00000,DAT_005a4b78));
+    local_3c.resultValue = -INFINITY;
   }
   local_3c.errorType = unaff_EBX;
-  dVar3 = report_math_error(&local_3c);
-  return dVar3;
+  dVar1 = report_math_error(&local_3c);
+  return dVar1;
 }

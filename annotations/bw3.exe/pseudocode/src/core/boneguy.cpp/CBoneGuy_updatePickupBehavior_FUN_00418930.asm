@@ -21,16 +21,16 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00418556
 ;
 ; Referenced Globals:
-;   undefined4 s_s_can_t_pick_up_s_sombod_005b6f89+1
+;   TerminatedCString s_s_can_t_pick_up_s_sombod_005b6f8a
 ;   TerminatedCString s_s_can_t_pick_up_s_giving_005b6fbc
 ;   TerminatedCString s_s_beginning_to_pickup_s_005b6fe0
 ;   TerminatedCString s_CBodyPart_005b6ffb
 ;   TerminatedCString s_s_is_going_to_try_to_pic_005b7005
-;   undefined4 DAT_005b702a
-;   undefined4 DAT_005b7032
-;   undefined4 DAT_005b703a
-;   undefined4 DAT_005b7042
-;   undefined4 DAT_005b704a
+;   double g_DOUBLE_005b702a = 0.333333333333333
+;   double g_DOUBLE_005b7032 = 5
+;   double g_DOUBLE_005b703a = 0.400000000000000
+;   double g_DOUBLE_005b7042 = 2
+;   double g_DOUBLE_005b704a = 6
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CConsole g_CConsoleInstance
@@ -38,12 +38,12 @@
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_actor.cpp_isOfClass_FUN_0040c790
-;   core_bodypart.cpp_FUN_00416bd0
-;   core_bodypart.cpp_FUN_00416c50
+;   core_bodypart.cpp_addVector_FUN_00416c50
+;   core_bodypart.cpp_scaleVector_FUN_00416bd0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
@@ -178,8 +178,8 @@ section .text
     FMUL ST0                            ; 00418ab8
     FADDP                               ; 00418aba
     FSQRT                               ; 00418abc
-    FMUL double ptr [0x005b702a]        ; 00418abe | DAT_005b702a
-    FSUBR double ptr [0x005b7032]       ; 00418ac4 | DAT_005b7032
+    FMUL double ptr [0x005b702a]        ; 00418abe | g_DOUBLE_005b702a
+    FSUBR double ptr [0x005b7032]       ; 00418ac4 | g_DOUBLE_005b7032
     FLD1                                ; 00418aca
     FCOMPP                              ; 00418acc
     FNSTSW AX                           ; 00418ace
@@ -224,8 +224,8 @@ section .text
     PUSH EAX                            ; 00418b5b
     LEA ESI,[ESP + 0xc4]                ; 00418b5c
     LEA EDI,[ESP + 0x124]               ; 00418b63
-    CALL core_bodypart.cpp_FUN_00416c50 ; 00418b6a
-        ;   XREF to: 00416c50 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00416c50()
+    CALL core_bodypart.cpp_addVector_FUN_00416c50 ; 00418b6a
+        ;   XREF to: 00416c50 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_addVector_FUN_00416c50(CVector3f * a, CVector3f * b, CVector3f * dst)
     LEA ESI,[ESP + 0xc4]                ; 00418b6f
     ADD ESP,0x8                         ; 00418b76
     LEA EAX,[ESP + 0x11c]               ; 00418b79
@@ -235,8 +235,8 @@ section .text
     PUSH EAX                            ; 00418b83
     LEA ESI,[ESP + 0x108]               ; 00418b84
     LEA EDI,[ESP + 0xd8]                ; 00418b8b
-    CALL core_bodypart.cpp_FUN_00416bd0 ; 00418b92
-        ;   XREF to: 00416bd0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00416bd0()
+    CALL core_bodypart.cpp_scaleVector_FUN_00416bd0 ; 00418b92
+        ;   XREF to: 00416bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_scaleVector_FUN_00416bd0(CVector3f * src, float * scalar, CVector3f * dst)
     LEA ESI,[ESP + 0x108]               ; 00418b97
     ADD ESP,0x8                         ; 00418b9e
     LEA EAX,[ESP + 0xdc]                ; 00418ba1
@@ -246,7 +246,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00418bae
     PUSH EAX                            ; 00418baf
     LEA EDI,[ESP + 0xe0]                ; 00418bb0
-    FADD double ptr [0x005b703a]        ; 00418bb7 | DAT_005b703a
+    FADD double ptr [0x005b703a]        ; 00418bb7 | g_DOUBLE_005b703a
     LEA ESI,[ESP + 0xd4]                ; 00418bbd
     FSTP float ptr [ESP + 0xdc]         ; 00418bc4
     MOVSD ES:EDI,ESI                    ; 00418bcb
@@ -254,8 +254,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00418bcd
     PUSH EBX                            ; 00418bce
     LEA ESI,[ESP + 0x114]               ; 00418bcf
-    CALL core_actor.cpp_FUN_00408b80    ; 00418bd6
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00418bd6
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 00418bdb
     LEA EDI,[ESP + 0xc4]                ; 00418bde
     LEA ESI,[ESP + 0x10c]               ; 00418be5
@@ -300,7 +300,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0xd064]    ; 00418c50
     PUSH EDX                            ; 00418c56
     PUSH EAX                            ; 00418c57
-    PUSH 0x5b6f8a                       ; 00418c58 | s_s_can_t_pick_up_s_sombod_005b6f89+1
+    PUSH 0x5b6f8a                       ; 00418c58 | = "%s can't pick up %s, sombody else bea..."
     MOV EBX,dword ptr [0x005f1690]      ; 00418c5d | g_CConsolePtr
     PUSH EBX                            ; 00418c63 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00418c64
@@ -430,13 +430,13 @@ section .text
         ;   XREF to: 00418a66 (CONDITIONAL_JUMP)  ; LAB_00418a66
     FLD float ptr [ESP + 0x9c]          ; 00418dd3
     FST double ptr [ESP]                ; 00418dda
-    FCOMP double ptr [0x005b7042]       ; 00418ddd | DAT_005b7042
+    FCOMP double ptr [0x005b7042]       ; 00418ddd | g_DOUBLE_005b7042
     FNSTSW AX                           ; 00418de3
     SAHF                                ; 00418de5
     JBE 0x00418a66                      ; 00418de6
         ;   XREF to: 00418a66 (CONDITIONAL_JUMP)  ; LAB_00418a66
     FLD double ptr [ESP]                ; 00418dec
-    FCOMP double ptr [0x005b704a]       ; 00418def | DAT_005b704a
+    FCOMP double ptr [0x005b704a]       ; 00418def | g_DOUBLE_005b704a
     FNSTSW AX                           ; 00418df5
     SAHF                                ; 00418df7
     JNC 0x00418a66                      ; 00418df8
@@ -484,7 +484,7 @@ section .text
     FADDP                               ; 00418e97
     FSQRT                               ; 00418e99
     FST float ptr [ESP + 0x8]           ; 00418e9b
-    FCOMP double ptr [0x005b7032]       ; 00418e9f | DAT_005b7032
+    FCOMP double ptr [0x005b7032]       ; 00418e9f | g_DOUBLE_005b7032
     FNSTSW AX                           ; 00418ea5
     SAHF                                ; 00418ea7
     JC 0x00418a66                       ; 00418ea8

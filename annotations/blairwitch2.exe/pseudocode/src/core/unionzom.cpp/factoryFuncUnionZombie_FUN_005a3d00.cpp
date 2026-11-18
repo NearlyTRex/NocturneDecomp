@@ -11,7 +11,7 @@ CUnionZombie * __cdecl core_unionzom_cpp_factoryFuncUnionZombie_FUN_005a3d00(voi
 {
   CUnionZombie *pCVar1;
   
-  pCVar1 = (CUnionZombie *)operator_new(0x1185c);
+  pCVar1 = operator_new(0x1185c);
   if (pCVar1 == (CUnionZombie *)0x0) {
     return (CUnionZombie *)0x0;
   }

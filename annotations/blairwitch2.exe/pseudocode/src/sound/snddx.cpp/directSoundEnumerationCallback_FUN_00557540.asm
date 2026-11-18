@@ -13,17 +13,17 @@
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860 at 00557887
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061bf80
-;   undefined4 DAT_0264ac0c
+;   int g_DirectSoundDeviceCount = -0x1
+;   int g_INT_0264ac0c
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_string.c__strncpy_FUN_005b9cf0
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   sound_snddx.cpp_FUN_00554ad0
+;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0
 ;   sound_sndmain.cpp_logSoundError_FUN_005549c0
-;   wincore_winrun.cpp_FUN_0058ffc0
+;   wincore_winrun.cpp_outputDebugString_FUN_0058ffc0
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     PUSH EBP                            ; 00557543
     SUB ESP,0x384                       ; 00557544
     MOV ESI,dword ptr [ESP + 0x398]     ; 0055754a
-    CMP dword ptr [0x0061bf80],0xc      ; 00557551 | DAT_0061bf80
+    CMP dword ptr [0x0061bf80],0xc      ; 00557551 | g_DirectSoundDeviceCount
     JL 0x00557569                       ; 00557558
         ;   XREF to: 00557569 (CONDITIONAL_JUMP)  ; LAB_00557569
     XOR EAX,EAX                         ; 0055755a
@@ -70,8 +70,8 @@ section .text
     RET 0x10                            ; 0055759e
     PUSH EAX                            ; 005575a1
         ;   Label: LAB_005575a1
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 005575a2
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 005575a2
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 005575a7
     PUSH EAX                            ; 005575aa
     PUSH 0x5ea397                       ; 005575ab
@@ -139,8 +139,8 @@ section .text
     RET 0x10                            ; 00557659
     PUSH EAX                            ; 0055765c
         ;   Label: LAB_0055765c
-    CALL sound_snddx.cpp_FUN_00554ad0   ; 0055765d
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
+    CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0 ; 0055765d
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00557662
     PUSH EAX                            ; 00557665
     PUSH 0x5ea3b1                       ; 00557666
@@ -158,7 +158,7 @@ section .text
     XOR EAX,EAX                         ; 00557690
     JMP 0x00557623                      ; 00557692
         ;   XREF to: 00557623 (UNCONDITIONAL_JUMP)  ; LAB_00557623
-    MOV EBX,dword ptr [0x0061bf80]      ; 00557694 | DAT_0061bf80
+    MOV EBX,dword ptr [0x0061bf80]      ; 00557694 | g_DirectSoundDeviceCount
         ;   Label: LAB_00557694
     LEA EAX,[EBX*0x8 + 0x0]             ; 0055769a
     ADD EAX,EBX                         ; 005576a1
@@ -192,10 +192,10 @@ section .text
     CALL crt_string.c__strncpy_FUN_005b9cf0 ; 005576fb
         ;   XREF to: 005b9cf0 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_005b9cf0(char * dest, char * src, SIZE_T count)
     MOV EAX,0x1                         ; 00557700
-    MOV EBX,dword ptr [0x0061bf80]      ; 00557705 | DAT_0061bf80
+    MOV EBX,dword ptr [0x0061bf80]      ; 00557705 | g_DirectSoundDeviceCount
     ADD EBX,EAX                         ; 0055770b
     ADD ESP,0xc                         ; 0055770d
-    MOV dword ptr [0x0061bf80],EBX      ; 00557710 | DAT_0061bf80
+    MOV dword ptr [0x0061bf80],EBX      ; 00557710 | g_DirectSoundDeviceCount
     ADD ESP,0x384                       ; 00557716
     POP EBP                             ; 0055771c
     POP EDI                             ; 0055771d
@@ -228,18 +228,18 @@ section .text
         ;   XREF to: 0055778a (CONDITIONAL_JUMP)  ; LAB_0055778a
     MOV EAX,0x1                         ; 0055776e
     PUSH 0x5ea41d                       ; 00557773
-    MOV [0x0264ac0c],EAX                ; 00557778 | DAT_0264ac0c
-    CALL wincore_winrun.cpp_FUN_0058ffc0 ; 0055777d
-        ;   XREF to: 0058ffc0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058ffc0()
+    MOV [0x0264ac0c],EAX                ; 00557778 | g_INT_0264ac0c
+    CALL wincore_winrun.cpp_outputDebugString_FUN_0058ffc0 ; 0055777d
+        ;   XREF to: 0058ffc0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_0058ffc0(LPCSTR message)
     ADD ESP,0x4                         ; 00557782
     JMP 0x005576ea                      ; 00557785
         ;   XREF to: 005576ea (UNCONDITIONAL_JUMP)  ; LAB_005576ea
     MOV EDX,0x1                         ; 0055778a
         ;   Label: LAB_0055778a
     PUSH 0x5ea3d1                       ; 0055778f
-    MOV dword ptr [0x0264ac0c],EDX      ; 00557794 | DAT_0264ac0c
-    CALL wincore_winrun.cpp_FUN_0058ffc0 ; 0055779a
-        ;   XREF to: 0058ffc0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058ffc0()
+    MOV dword ptr [0x0264ac0c],EDX      ; 00557794 | g_INT_0264ac0c
+    CALL wincore_winrun.cpp_outputDebugString_FUN_0058ffc0 ; 0055779a
+        ;   XREF to: 0058ffc0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_outputDebugString_FUN_0058ffc0(LPCSTR message)
     ADD ESP,0x4                         ; 0055779f
     JMP 0x005576ea                      ; 005577a2
         ;   XREF to: 005576ea (UNCONDITIONAL_JUMP)  ; LAB_005576ea

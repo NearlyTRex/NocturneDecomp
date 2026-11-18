@@ -45,17 +45,29 @@ void __cdecl cylinderTriangleTest(CDemonTriangle *triangle,SIntersectXZCylinder 
 // Address: 00479450
 int __cdecl rayEdgeHeightTest(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 
-// Original: core_dtri.cpp_FUN_004795c0
+// Original: core_dtri.cpp_rayTriangleFloorTest_FUN_004795c0
 // Address: 004795c0
-int __cdecl FUN_004795c0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
+int __cdecl rayTriangleFloorTest(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 
 // Original: core_dtri.cpp_clipLineToPlane_FUN_00479970
 // Address: 00479970
 void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
+// Original: core_dtri.cpp_clipPolygonToTop_FUN_00479b10
+// Address: 00479b10
+void __cdecl clipPolygonToTop(float y_max);
+
+// Original: core_dtri.cpp_clipPolygonToBottom_FUN_00479c70
+// Address: 00479c70
+void __cdecl clipPolygonToBottom(float y_min);
+
 // Original: core_dtri.cpp_clipPolygonToRight_FUN_00479de0
 // Address: 00479de0
 void __cdecl clipPolygonToRight(float x_max);
+
+// Original: core_dtri.cpp_clipPolygonToNear_FUN_0047a0a0
+// Address: 0047a0a0
+void __cdecl clipPolygonToNear(float z_near);
 
 // Original: core_dtri.cpp_clipPolygonToFar_FUN_0047a210
 // Address: 0047a210
@@ -73,17 +85,17 @@ int __cdecl getClippedTriangleCount(int flags);
 // Address: 0047ae10
 CDemonTriangle * __cdecl buildClipTriangleFan(int flags);
 
-// Original: core_dtri.cpp_FUN_0047ae80
+// Original: core_dtri.cpp_getClippedVertexCount_FUN_0047ae80
 // Address: 0047ae80
-undefined4 FUN_0047ae80(void);
+int __cdecl getClippedVertexCount(void);
 
-// Original: core_dtri.cpp_FUN_0047ae90
+// Original: core_dtri.cpp_getClippedVertices_FUN_0047ae90
 // Address: 0047ae90
-undefined * FUN_0047ae90(void);
+CVector3f * __cdecl getClippedVertices(void);
 
-// Original: core_dtri.cpp_FUN_0047aea0
+// Original: core_dtri.cpp_CDemonTriangle_render_FUN_0047aea0
 // Address: 0047aea0
-void FUN_0047aea0(void);
+void __cdecl CDemonTriangle::render(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_CDemonTriangle_ctor_FUN_0047aff0
 // Address: 0047aff0

@@ -13,7 +13,7 @@ int __cdecl core_fldnotes_cpp_SPageResource_dtor_FUN_004a1e90(SPageResource *thi
   if (this_ptr->link == (char *)0x0) {
     return (int)this_ptr;
   }
-  FUN_005b86a0(this_ptr->link);
+  debugFree(this_ptr->link);
   this_ptr->link = (char *)0x0;
   return (int)this_ptr;
 }

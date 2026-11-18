@@ -16,7 +16,7 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(CHero *this_pt
   uint class_name_hash;
   
   core_inv_cpp_CInventory_initialize_FUN_004bef10(&this_ptr->inventory);
-  class_name_hash = g_CWeaponActorType_02ddf970.name_hash;
+  class_name_hash = g_CWeaponClassInfo.name_hash;
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040d540("CGun");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,class_name_hash);
   if (pCVar2 == (CDemonActor *)0x0) {

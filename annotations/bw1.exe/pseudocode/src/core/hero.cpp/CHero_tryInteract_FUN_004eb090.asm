@@ -13,19 +13,19 @@
 ;   core_colonel.cpp_CColonel_process_FUN_00444550 at 0044499f
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c7887
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e96cd
-;   core_hero.cpp_FUN_004eca10 at 004eca40
+;   core_hero.cpp_CHero_findHeroAction_FUN_004eca10 at 004eca40
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f13ee
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 005912e6
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005936b7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4831
+;   float g_FLOAT_005e4831 = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;
 ; *****************************************************************************
 
@@ -69,7 +69,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004eb0f9
     MOVSD ES:EDI,ESI                    ; 004eb0fa
     MOVSD ES:EDI,ESI                    ; 004eb0fb
-    FLD float ptr [0x005e4831]          ; 004eb0fc | DAT_005e4831
+    FLD float ptr [0x005e4831]          ; 004eb0fc | g_FLOAT_005e4831
     FLD float ptr [ESP + 0x40]          ; 004eb102
     FMUL ST1                            ; 004eb106
     FLD float ptr [ESP + 0x44]          ; 004eb108
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 004eb149
     LEA ESI,[ESP + 0x78]                ; 004eb14a
     LEA EDI,[ESP + 0x84]                ; 004eb14e
-    CALL core_actor.cpp_FUN_00408b40    ; 004eb155
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004eb155
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x78]                ; 004eb15a
     ADD ESP,0x8                         ; 004eb15e
     MOVSD ES:EDI,ESI                    ; 004eb161

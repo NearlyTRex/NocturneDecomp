@@ -11,7 +11,7 @@ CAsgaya * __cdecl core_asgaya_cpp_factoryFuncAsgaya_FUN_005a09e0(void)
 {
   CAsgaya *pCVar1;
   
-  pCVar1 = (CAsgaya *)operator_new(0x33fd4);
+  pCVar1 = operator_new(0x33fd4);
   if (pCVar1 == (CAsgaya *)0x0) {
     return (CAsgaya *)0x0;
   }

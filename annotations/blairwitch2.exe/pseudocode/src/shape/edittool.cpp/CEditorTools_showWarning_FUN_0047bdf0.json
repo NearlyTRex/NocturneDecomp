@@ -2,30 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 41,
-    "cross_reference_count": 10,
+    "complexity_score": 25,
+    "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 36
+    "total_lines": 35
   },
   "cross_references": [
     {
       "addr": "00453250",
       "from_addr": "00453bcb",
-      "name": "core_doc.cpp_FUN_00453250",
+      "name": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00458320",
       "from_addr": "0045838e",
-      "name": "core_doc.cpp_FUN_00458320",
+      "name": "core_doc.cpp_CDoc_processPickupComplete_FUN_00458320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458e80",
+      "from_addr": "0045920e",
+      "name": "core_doc.cpp_CDoc_tryPlaceObject_FUN_00458e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,6 +58,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005656f0",
+      "from_addr": "00565e3c",
+      "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005656f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056a160",
+      "from_addr": "0056a1ce",
+      "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_0056a160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0056acd0",
       "from_addr": "0056b05b",
       "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_0056acd0",
@@ -62,18 +79,6 @@
       "addr": "0056db50",
       "from_addr": "0056e444",
       "name": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005656f0",
-      "from_addr": "00565e3c",
-      "name": "core_stranger.cpp_FUN_005656f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056a160",
-      "from_addr": "0056a1ce",
-      "name": "core_stranger.cpp_FUN_0056a160",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +92,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools *this_ptr,char *format)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools *this_ptr,char *format,...)"
   },
   "function_calls": [
     {
@@ -110,13 +115,13 @@
     },
     {
       "addr": "01c263a0",
-      "name": "DAT_01c263a0",
-      "type": "undefined4",
+      "name": "g_WarningTextColor",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 23,
+    "call_site_count": 24,
     "call_sites": [
       {
         "call_addr": "004a63a7",
@@ -176,7 +181,7 @@
       {
         "call_addr": "00453bcb",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00453250",
+        "caller": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,7 +192,7 @@
       {
         "call_addr": "00453659",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00453250",
+        "caller": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
         "estimated_params": 4,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -198,7 +203,7 @@
       {
         "call_addr": "00453b18",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00453250",
+        "caller": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,7 +214,7 @@
       {
         "call_addr": "0045342c",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00453250",
+        "caller": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +225,7 @@
       {
         "call_addr": "0045348a",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00453250",
+        "caller": "core_doc.cpp_CDoc_processMotionEvents_FUN_00453250",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,6 +264,18 @@
     "pcode_op_count": 91
   },
   "siblings": {
+    "bw1.exe": {
+      "addr": "00494340",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8261
+    },
+    "bw3.exe": {
+      "addr": "0047cee0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8261
+    },
     "nocedit.exe": {
       "addr": "0049e6f0",
       "by": "name",
@@ -304,16 +321,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 9,
+      "line": 7,
       "match": "&stack0x0000000c",
       "severity": "moderate",
       "text": "local_8 = &stack0x0000000c;",

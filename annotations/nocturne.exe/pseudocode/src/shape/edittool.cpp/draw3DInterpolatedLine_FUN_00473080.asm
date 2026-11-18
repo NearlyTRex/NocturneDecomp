@@ -14,11 +14,11 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057eaa2 = 0.000878906456455297
 ;   undefined4 DOUBLE_0057eaa2+4
-;   undefined4 DAT_0059ca4c
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_005c5018
-;   undefined4 DAT_005c5044
-;   undefined4 DAT_005c5048
+;   float g_WorldToScreenScale2 = 256
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_y
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290
@@ -38,13 +38,13 @@ section .text
     LEA EBX,[ESP + 0x18]                ; 0047308e
     MOV EAX,EDI                         ; 00473092
     FLD float ptr [EAX]                 ; 00473094
-    FMUL float ptr [0x0059ca4c]         ; 00473096 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00473096 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 0047309c
     FLD float ptr [EAX + 0x4]           ; 0047309e
-    FMUL float ptr [0x0059ca4c]         ; 004730a1 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004730a1 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004730a7
     FLD float ptr [EAX + 0x8]           ; 004730aa
-    FMUL float ptr [0x0059ca4c]         ; 004730ad | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 004730ad | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004730b3
     LEA EAX,[ESP + 0x18]                ; 004730b6
     PUSH EAX                            ; 004730ba
@@ -84,13 +84,13 @@ section .text
     FSTP float ptr [ESP + 0x28]         ; 00473125
     FSTP float ptr [ESP + 0x2c]         ; 00473129
     FLD float ptr [EAX]                 ; 0047312d
-    FMUL float ptr [0x0059ca4c]         ; 0047312f | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 0047312f | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 00473135
     FLD float ptr [EAX + 0x4]           ; 00473137
-    FMUL float ptr [0x0059ca4c]         ; 0047313a | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 0047313a | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 00473140
     FLD float ptr [EAX + 0x8]           ; 00473143
-    FMUL float ptr [0x0059ca4c]         ; 00473146 | DAT_0059ca4c
+    FMUL float ptr [0x0059ca4c]         ; 00473146 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 0047314c
     LEA EAX,[ESP + 0x18]                ; 0047314f
     PUSH EAX                            ; 00473153
@@ -98,16 +98,16 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00473156
         ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_004cd210(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 0047315b
-    MOV ESI,0x5c5044                    ; 0047315e | DAT_005c5044
+    MOV ESI,0x5c5044                    ; 0047315e | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 00473163
     MOV ECX,0xc                         ; 00473166
     MOV EDI,ESP                         ; 0047316b
-    MOVSD.REP ES:EDI,ESI                ; 0047316d | DAT_005c5044 | DAT_005c5048
+    MOVSD.REP ES:EDI,ESI                ; 0047316d | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 0047316f
     MOV ECX,0xc                         ; 00473172
-    MOV ESI,0x5c5014                    ; 00473177 | DAT_005c5014
+    MOV ESI,0x5c5014                    ; 00473177 | g_SRenderVertex_ARRAY_005c5014
     MOV EDI,ESP                         ; 0047317c
-    MOVSD.REP ES:EDI,ESI                ; 0047317e | DAT_005c5014 | DAT_005c5018
+    MOVSD.REP ES:EDI,ESI                ; 0047317e | g_SRenderVertex_ARRAY_005c5014 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 00473180
         ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00473185

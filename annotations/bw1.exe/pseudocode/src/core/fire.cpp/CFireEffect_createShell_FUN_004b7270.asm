@@ -18,7 +18,7 @@
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 00598853
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cbae44
+;   int g_INT_01cbae44
 ;
 ; Called Functions:
 ;   core_fire.cpp_CShell_setup_FUN_004b4000
@@ -35,7 +35,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004b7277
     PUSH EDX                            ; 004b727b
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004b727c
-    MOV EDX,dword ptr [0x01cbae44]      ; 004b7280 | DAT_01cbae44
+    MOV EDX,dword ptr [0x01cbae44]      ; 004b7280 | g_INT_01cbae44
     PUSH ECX                            ; 004b7286
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b7287
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004b728e
@@ -47,10 +47,10 @@ section .text
     PUSH EAX                            ; 004b729e
     CALL core_fire.cpp_CShell_setup_FUN_004b4000 ; 004b729f
         ;   XREF to: 004b4000 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CShell_setup_FUN_004b4000(CShell * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
-    MOV EDI,dword ptr [0x01cbae44]      ; 004b72a4 | DAT_01cbae44
+    MOV EDI,dword ptr [0x01cbae44]      ; 004b72a4 | g_INT_01cbae44
     INC EDI                             ; 004b72aa
     ADD ESP,0x14                        ; 004b72ab
-    MOV dword ptr [0x01cbae44],EDI      ; 004b72ae | DAT_01cbae44
+    MOV dword ptr [0x01cbae44],EDI      ; 004b72ae | g_INT_01cbae44
     CMP EDI,0x32                        ; 004b72b4
     JGE 0x004b72bd                      ; 004b72b7
         ;   XREF to: 004b72bd (CONDITIONAL_JUMP)  ; LAB_004b72bd
@@ -60,7 +60,7 @@ section .text
     RET                                 ; 004b72bc
     XOR EAX,EAX                         ; 004b72bd
         ;   Label: LAB_004b72bd
-    MOV [0x01cbae44],EAX                ; 004b72bf | DAT_01cbae44
+    MOV [0x01cbae44],EAX                ; 004b72bf | g_INT_01cbae44
     POP EDI                             ; 004b72c4
     POP ESI                             ; 004b72c5
     POP EBX                             ; 004b72c6

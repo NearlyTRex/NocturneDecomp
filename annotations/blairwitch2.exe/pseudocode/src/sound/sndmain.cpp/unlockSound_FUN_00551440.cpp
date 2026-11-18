@@ -6,20 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_unlockSound_FUN_00551440(void)
 
 {
-  if (_DAT_0264901c < 1) {
-    _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
-    _DAT_01d046a4 = 0x1845;
-    core_main_c_FUN_004e4500("unlockSound - sound was not locked!");
+  if (g_SoundLockCount < 1) {
+    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+    g_INT_01d046a4 = 0x1845;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("unlockSound - sound was not locked!");
   }
-  if (_DAT_0264901c == 1) {
+  if (g_SoundLockCount == 1) {
     sound_sndmain_cpp_flushSoundChanges_FUN_00553380();
   }
-  _DAT_0264901c = _DAT_0264901c + -1;
-  wincore_winrun_cpp_releaseMutex_FUN_0058fd00(_DAT_02649018);
+  g_SoundLockCount = g_SoundLockCount + -1;
+  wincore_winrun_cpp_releaseMutex_FUN_0058fd00(g_SoundMutex);
   return;
 }

@@ -11,16 +11,16 @@
 ;
 ; XREF[8]:
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041aef0 at 0041af1d
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_00430960 at 00430a82
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60 at 00430bf8
-;   core_charactr.cpp_FUN_00430960 at 00430a82
-;   core_charactr.cpp_FUN_00430a90 at 00430b45
+;   core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_00430a90 at 00430b45
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060 at 004e6094
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ede00
 ;   core_melee.cpp_CMelee_process_FUN_005099a0 at 00509a5c
 ;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 00595741
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cd0ea8
+;   int g_BloodParticleIndex
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004e3e20
@@ -36,19 +36,19 @@ section .text
     JZ 0x004e5f90                       ; 004e5f48
         ;   XREF to: 004e5f90 (CONDITIONAL_JUMP)  ; LAB_004e5f90
     PUSH EDI                            ; 004e5f4a
-    MOV EDX,dword ptr [0x01cd0ea8]      ; 004e5f4b | DAT_01cd0ea8
+    MOV EDX,dword ptr [0x01cd0ea8]      ; 004e5f4b | g_BloodParticleIndex
     LEA EAX,[EDX*0x8 + 0x0]             ; 004e5f51
     ADD EAX,EDX                         ; 004e5f58
     SHL EAX,0x3                         ; 004e5f5a
     INC EDX                             ; 004e5f5d
     ADD EAX,0x1cd0eac                   ; 004e5f5e
-    MOV dword ptr [0x01cd0ea8],EDX      ; 004e5f63 | DAT_01cd0ea8
+    MOV dword ptr [0x01cd0ea8],EDX      ; 004e5f63 | g_BloodParticleIndex
     CMP EDX,0x100                       ; 004e5f69
     JL 0x004e5f7b                       ; 004e5f6f
         ;   XREF to: 004e5f7b (CONDITIONAL_JUMP)  ; LAB_004e5f7b
     PUSH ESI                            ; 004e5f71
     XOR ESI,ESI                         ; 004e5f72
-    MOV dword ptr [0x01cd0ea8],ESI      ; 004e5f74 | DAT_01cd0ea8
+    MOV dword ptr [0x01cd0ea8],ESI      ; 004e5f74 | g_BloodParticleIndex
     POP ESI                             ; 004e5f7a
     PUSH ECX                            ; 004e5f7b
         ;   Label: LAB_004e5f7b

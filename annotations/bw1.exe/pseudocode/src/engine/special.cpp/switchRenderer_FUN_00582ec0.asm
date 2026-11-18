@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_special_cpp_switchRenderer_FUN_00582ec0(void)
+; int __cdecl engine_special_cpp_switchRenderer_FUN_00582ec0(char *new_dll_name,int card_index)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   new_dll_name
+; int              Stack[0x8]:4   card_index
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c83374
-;   undefined4 DAT_02c834c0
+;   int g_INT_02c83374
+;   HWND g_StoredWindowHandle
 ;
 ; Called Functions:
 ;   engine_special.cpp_kill_FUN_00581f20
@@ -24,7 +27,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00582ec7
     MOV ESI,dword ptr [ESP + 0xc]       ; 00582ecb
     MOV EDI,0x6257d0                    ; 00582ecf
-    MOV [0x02c83374],EAX                ; 00582ed4 | DAT_02c83374
+    MOV [0x02c83374],EAX                ; 00582ed4 | g_INT_02c83374
     PUSH EDI                            ; 00582ed9
     MOV AL,byte ptr [ESI]               ; 00582eda
         ;   Label: LAB_00582eda
@@ -41,7 +44,7 @@ section .text
         ;   XREF to: 00582eda (CONDITIONAL_JUMP)  ; LAB_00582eda
     POP EDI                             ; 00582ef2
         ;   Label: LAB_00582ef2
-    MOV EDX,dword ptr [0x02c834c0]      ; 00582ef3 | DAT_02c834c0
+    MOV EDX,dword ptr [0x02c834c0]      ; 00582ef3 | g_StoredWindowHandle
     PUSH EDX                            ; 00582ef9
     CALL engine_special.cpp_loadExternalRenderer_FUN_00581310 ; 00582efa
         ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00581310(HWND window_handle)

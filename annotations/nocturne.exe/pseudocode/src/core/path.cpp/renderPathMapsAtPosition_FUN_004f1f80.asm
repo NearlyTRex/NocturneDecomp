@@ -20,7 +20,7 @@
 ;   TerminatedCString s_Global_pathmap_list_corr_0058ceb0
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01e312f8
+;   int g_PathMapCount
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -51,7 +51,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004f1fa9
     MOVSD ES:EDI,ESI                    ; 004f1faa
     MOVSD ES:EDI,ESI                    ; 004f1fab
-    MOV ECX,dword ptr [0x01e312f8]      ; 004f1fac | DAT_01e312f8
+    MOV ECX,dword ptr [0x01e312f8]      ; 004f1fac | g_PathMapCount
     XOR ESI,ESI                         ; 004f1fb2
     TEST ECX,ECX                        ; 004f1fb4
     JLE 0x004f1fe3                      ; 004f1fb6
@@ -66,7 +66,7 @@ section .text
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 004f1fc9
     JLE 0x004f2010                      ; 004f1fd3
         ;   XREF to: 004f2010 (CONDITIONAL_JUMP)  ; LAB_004f2010
-    MOV EDI,dword ptr [0x01e312f8]      ; 004f1fd5 | DAT_01e312f8
+    MOV EDI,dword ptr [0x01e312f8]      ; 004f1fd5 | g_PathMapCount
         ;   Label: LAB_004f1fd5
     INC ESI                             ; 004f1fdb
     ADD EBX,0x4                         ; 004f1fdc

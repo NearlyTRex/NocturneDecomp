@@ -8,13 +8,13 @@
 ;
 ; XREF[4]:
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_00502790 at 00502796
-;   sound_mp3.cpp_FUN_00502890 at 0050289c
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00502890 at 0050289c
 ;   sound_sndmain.cpp_getSampleInfo_FUN_00557570 at 00557798
 ;   sound_sndmain.cpp_getSfxSample_FUN_00551d20 at 00551f9d
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005a3a90
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -45,7 +45,7 @@ section .text
     PUSH EDX                            ; 00502a47
         ;   Label: LAB_00502a47
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00502a48
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005a3a90(_FILE * file_handle)
     ADD ESP,0x4                         ; 00502a4d
     MOV dword ptr [EBX],0x0             ; 00502a50
     MOV EBX,dword ptr [ESI + 0x4]       ; 00502a56
@@ -59,8 +59,8 @@ section .text
     RET                                 ; 00502a63
     PUSH EBX                            ; 00502a64
         ;   Label: LAB_00502a64
-    CALL crt_unknown.c_FUN_005a3770     ; 00502a65
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00502a65
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 00502a6a
     MOV dword ptr [ESI + 0x4],0x0       ; 00502a6d
     MOV byte ptr [EDI],0x0              ; 00502a74

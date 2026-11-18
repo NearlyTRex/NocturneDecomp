@@ -9,18 +9,18 @@
 ; int              Stack[0xc]:4   value
 ;
 ; XREF[2]:
-;   core_event.cpp_FUN_00489670 at 0048b8ba
+;   core_event.cpp_CEventList_executeCommand_FUN_00489670 at 0048b8ba
 ;   core_script.cpp_CScript_step_FUN_00522350 at 00525688
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_005d4e0b
 ;   TerminatedCString s_CEventList_setCounter_to_005d4e1d
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findCounter_FUN_00491630
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_string.c_memmove_FUN_005ba1f0
 ;
 ; *****************************************************************************
@@ -101,10 +101,10 @@ section .text
     MOV ESI,0x5d4e0b                    ; 0049149b | = "..\\core\\event.cpp"
     MOV EDI,0xdc4                       ; 004914a0
     PUSH 0x5d4e1d                       ; 004914a5 | = "CEventList::setCounter - too many cou..."
-    MOV dword ptr [0x01d046a0],ESI      ; 004914aa | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004914b0 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004914b6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 004914aa | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 004914b0 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004914b6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004914bb
     MOV EAX,dword ptr [EBX + 0x337c]    ; 004914be
         ;   Label: LAB_004914be

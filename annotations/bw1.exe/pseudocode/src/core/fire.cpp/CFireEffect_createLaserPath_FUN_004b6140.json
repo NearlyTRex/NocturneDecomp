@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 290,
+    "complexity_score": 274,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 120,
-    "suspect_count": 14,
+    "pseudocode_lines": 119,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 348
+    "total_lines": 347
   },
   "cross_references": [
     {
@@ -56,33 +55,33 @@
   "globals": [
     {
       "addr": "005df610",
-      "name": "DAT_005df610",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005df610",
+      "type": "float",
+      "value": "0.05000000"
     },
     {
       "addr": "005df614",
-      "name": "DAT_005df614",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df614",
+      "type": "double",
+      "value": "0.0500000000000000"
     },
     {
       "addr": "005df61c",
-      "name": "DAT_005df61c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005df61c",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005df624",
-      "name": "DAT_005df624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005df624",
+      "type": "float",
+      "value": "-32"
     },
     {
       "addr": "005fffac",
-      "name": "DAT_005fffac",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fffac",
+      "type": "float",
+      "value": "0.02000000"
     }
   ],
   "param_estimates": {
@@ -560,16 +559,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 11,
       "match": "afStackY_1094",
       "severity": "moderate",
       "text": "float afStackY_1094 [1005];",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 113,
+      "line": 111,
       "match": "&stack0xffffff58",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar6 * -8) = local_6c[(uint)bVar6 * -2 + 0xf];",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 114,
+      "line": 112,
       "match": "&stack0xffffff5c",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Pointer value `&local_a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 97,
+      "line": 95,
       "match": "(int)&local_a0",
       "severity": "moderate",
       "text": "*(float *)((int)&local_a0 + (uint)bVar6 * -8 + 4) = local_6c[(uint)bVar6 * -2];",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Pointer value `&local_a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 96,
       "match": "(int)&local_a0",
       "severity": "moderate",
       "text": "*(float *)((int)&local_a0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 113,
+      "line": 111,
       "match": "(int)&stack0xffffff58",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar6 * -8) = local_6c[(uint)bVar6 * -2 + 0xf];",
@@ -617,7 +608,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff5c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 112,
       "match": "(int)&stack0xffffff5c",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
@@ -625,7 +616,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 53,
+      "line": 51,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_88.x = start_position->x;",
@@ -633,7 +624,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 105,
+      "line": 103,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_88.x = local_a0.x;",
@@ -641,7 +632,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 97,
+      "line": 95,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_a0 + (uint)bVar6 * -8 + 4) = local_6c[(uint)bVar6 * -2];",
@@ -649,7 +640,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 98,
+      "line": 96,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_a0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -657,7 +648,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 113,
+      "line": 111,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar6 * -8) = local_6c[(uint)bVar6 * -2 + 0xf];",
@@ -665,7 +656,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 114,
+      "line": 112,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",

@@ -13,9 +13,9 @@
 ;   core_sound.cpp_CSound_setReverbPreset_FUN_0052ece0 at 0052ed0a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc9474
-;   undefined4 DAT_02dc9478
-;   undefined4 DAT_02dc947c
+;   SReverbSettings g_SoundReverb
+;   undefined4 g_SoundReverb.decay_time
+;   undefined4 g_SoundReverb.damping
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_00528630
@@ -26,14 +26,14 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 0052ecb0
         ;   Label: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0052ecb0
-    MOV [0x02dc9474],EAX                ; 0052ecb4 | DAT_02dc9474
+    MOV [0x02dc9474],EAX                ; 0052ecb4 | g_SoundReverb
     MOV EAX,dword ptr [ESP + 0xc]       ; 0052ecb9
-    MOV [0x02dc9478],EAX                ; 0052ecbd | DAT_02dc9478
+    MOV [0x02dc9478],EAX                ; 0052ecbd | g_SoundReverb.decay_time
     MOV EAX,dword ptr [ESP + 0x10]      ; 0052ecc2
     PUSH EAX                            ; 0052ecc6
     PUSH dword ptr [ESP + 0x10]         ; 0052ecc7
     PUSH dword ptr [ESP + 0x10]         ; 0052eccb
-    MOV [0x02dc947c],EAX                ; 0052eccf | DAT_02dc947c
+    MOV [0x02dc947c],EAX                ; 0052eccf | g_SoundReverb.damping
     CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_00528630 ; 0052ecd4
         ;   XREF to: 00528630 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_00528630(float orient_right_x, float orient_right_y, float orient_right_z)
     ADD ESP,0xc                         ; 0052ecd9

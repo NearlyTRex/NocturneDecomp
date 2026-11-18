@@ -9,6 +9,6 @@
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_004464f0(CDemonCube *this_ptr,uint flags)
 
 {
-  core_dcube_cpp_FUN_004466c0(this_ptr);
+  core_dcube_cpp_CDemonCube_freeMemory_FUN_004466c0(this_ptr);
   return this_ptr;
 }

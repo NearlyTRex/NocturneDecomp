@@ -15,7 +15,7 @@ section .text
     PUSH 0xc2e0                         ; 00599040
         ;   Label: core_thehand.cpp_factoryFuncTheHand_FUN_00599040
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00599045
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 0059904a
     TEST EAX,EAX                        ; 0059904d
     JNZ 0x00599052                      ; 0059904f

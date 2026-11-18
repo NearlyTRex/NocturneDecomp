@@ -12,7 +12,7 @@ void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004f7460(CDemonMi
   char cVar1;
   char *pcVar2;
   
-  pcVar2 = &DAT_01d882a0;
+  pcVar2 = &g_CHAR_01d882a0;
   do {
     cVar1 = *name;
     *pcVar2 = cVar1;

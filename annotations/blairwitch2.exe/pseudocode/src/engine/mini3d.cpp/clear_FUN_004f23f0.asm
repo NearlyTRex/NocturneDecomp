@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37788
+;   int g_INT_01c37788
 ;
 ; Called Functions:
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
@@ -14,7 +14,7 @@
 
 section .text
 
-    CMP dword ptr [0x01c37788],0x0      ; 004f23f0 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 004f23f0 | g_INT_01c37788
         ;   Label: engine_mini3d.cpp_clear_FUN_004f23f0
     JNZ 0x0055fd40                      ; 004f23f7
         ;   XREF to: 0055fd40 (CONDITIONAL_JUMP)

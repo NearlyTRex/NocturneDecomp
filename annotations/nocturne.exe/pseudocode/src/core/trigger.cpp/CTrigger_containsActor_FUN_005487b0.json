@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 94,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 78,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 319
+    "total_lines": 318
   },
   "cross_references": [
     {
@@ -95,7 +95,7 @@
     },
     {
       "addr": "00765a98",
-      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "name": "g_CCharacterClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -206,6 +206,24 @@
     "pcode_op_count": 1308
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00578800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5625
+    },
+    "bw1.exe": {
+      "addr": "0059c090",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5625
+    },
+    "bw3.exe": {
+      "addr": "0056f080",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5625
+    },
     "nocedit.exe": {
       "addr": "005e0cd0",
       "by": "name",
@@ -246,7 +264,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 46,
+      "line": 45,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_40.x = pCVar5->x;",

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte param_2)
+; uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte value)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr
-; byte             Stack[0x8]:1   param_2
+; byte             Stack[0x8]:1   value
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CCheesyCipher_process_FUN_00441750 at 0044178d
@@ -15,11 +15,11 @@
 ;   TerminatedCString s_Invalid_mode_005b9317
 ;   undefined4 DAT_005f1368
 ;   undefined4 DAT_005f1468
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   support_codec.cpp_CCheesyCipher_advanceKey_FUN_004417d0
 ;
 ; *****************************************************************************
@@ -59,10 +59,10 @@ section .text
         ;   Label: LAB_00441723
     MOV EBX,0x70b                       ; 00441728
     PUSH 0x5b9317                       ; 0044172d | = "Invalid mode."
-    MOV dword ptr [0x01d71de0],ECX      ; 00441732 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00441738 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0044173e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00441732 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBX      ; 00441738 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0044173e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00441743
     XOR AL,AL                           ; 00441746
     POP EBX                             ; 00441748

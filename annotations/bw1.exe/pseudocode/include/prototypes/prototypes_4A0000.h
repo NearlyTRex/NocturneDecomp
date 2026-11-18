@@ -10,6 +10,7 @@
 #include "types/classes/CBulletTrail.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonSet.h"
 #include "types/classes/CEmitter.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CEventList.h"
@@ -41,7 +42,7 @@
 // =============================================================================
 
 ECollisionType __cdecl core_emitter_cpp_CEmitter_getCollisionType_FUN_004a02d0(CEmitter *this_ptr,SCollisionInfo *collision_info);
-void core_emitter_cpp_FUN_004a02e0(int param_1);
+CVector3f * __stack_esi core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a02e0(CEmitter *this_ptr,CVector3f *out_point);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a0390(CEmitter *this_ptr,uint flags);
 void __cdecl core_enemy_cpp_staticInit_FUN_004a03e0(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a0410(CEnemy *this_ptr);
@@ -51,7 +52,7 @@ int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_004a0680(CEnemy *this_ptr,
 int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
 int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_004a0810(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
 CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a08b0(CEnemy *this_ptr,CVector3f *out_point);
-bool core_enemy_cpp_FUN_004a0980(int param_1,int param_2);
+int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a0980(CEnemy *this_ptr,CDemonActor *target);
 void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_004a0ee0(CEnemy *this_ptr,CDemonActor *victim);
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(CEnemy *this_ptr,SDamageInfo *damage_info);
@@ -59,7 +60,7 @@ void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_004a0fb0(CEnemy *this_pt
 int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_004a0fe0(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_004a1040(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_004a10f0(CEnemy *this_ptr,CDemonActor *lost_actor);
-int core_enemy_cpp_FUN_004a1120(void);
+int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_004a1120(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_004a11a0(void);
 int __cdecl core_event_cpp_setEventError_FUN_004a11e0(char *source_file,int source_line,char *error_message);
 int __cdecl core_event_cpp_formatEventError_FUN_004a1210(char *format);
@@ -70,7 +71,7 @@ int __cdecl core_event_cpp_parseIntOrCounter_FUN_004a1330(char *str);
 CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004a1370(char *name,uint class_hash,char *class_name);
 int __cdecl core_event_cpp_parseVectorLocation_FUN_004a14a0(char *buffer,int *offset,CVector3f *out_position);
 void __cdecl core_event_cpp_trimWhitespace_FUN_004a15c0(char *str);
-char * core_event_cpp_extractParenArg_FUN_004a1630(int *param_1,char *param_2,int param_3,int param_4);
+char * __cdecl core_event_cpp_extractParenArg_FUN_004a1630(char **cursor,char *out_buf,int max_len,int require_open_paren);
 int __cdecl core_event_cpp_parseDeathType_FUN_004a1750(char *type_name,int *out_type_id);
 int __cdecl core_event_cpp_parseDamageType_FUN_004a18e0(char *type_name,int *out_type_id);
 CEventList * __cdecl core_event_cpp_CEventList_ctor_FUN_004a19d0(CEventList *this_ptr);
@@ -78,7 +79,7 @@ void __cdecl core_event_cpp_CEventList_reset_FUN_004a19f0(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_process_FUN_004a1a40(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004a1b70(CEventList *this_ptr,char *commands);
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventList *this_ptr,char *command_string);
-int core_event_cpp_FUN_004a1d00(CEventList *param_1,char *param_2);
+int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004a1d00(CEventList *this_ptr,char *command_buffer);
 int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004a6ba0(CEventList *this_ptr,char *identifier);
 int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList *this_ptr,char *condition_expression);
 char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004a6c90(CEventList *this_ptr,char *expression);
@@ -87,9 +88,9 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004a6d10(CEventList
 void __cdecl core_event_cpp_CEventList_render_FUN_004a6d80(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this_ptr,char *expression,int *parse_position);
 int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0(CEventList *this_ptr,char *expression,int *parse_position);
-void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3);
-void core_event_cpp_FUN_004a9a00(int param_1);
-void core_event_cpp_FUN_004a9a60(CEventList *param_1,char *param_2,int param_3);
+void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004a9870(CEventList *this_ptr,char *name,int add_flag);
+void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_004a9a00(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004a9a60(CEventList *this_ptr,char *name,int add_flag);
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004a9bf0(CEventList *this_ptr,char *name,float duration);
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_004a9d70(CEventList *this_ptr,char *name,int value);
 int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004a9e80(CEventList *this_ptr,char *str);
@@ -109,12 +110,12 @@ int __cdecl core_event_cpp_isValidIdentifierChar_FUN_004aa5e0(int ch);
 int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_ptr,_FILE *file_handle);
 int __cdecl core_event_cpp_CEventList_saveState_FUN_004aa9d0(CEventList *this_ptr,_FILE *file_handle);
 void __cdecl core_event_cpp_CRuleList_clear_FUN_004aacc0(CRuleList *this_ptr);
-void core_event_cpp_FUN_004aacd0(void);
-void core_event_cpp_FUN_004aae10(void);
+void __cdecl core_event_cpp_CRuleList_insert_FUN_004aacd0(CRuleList *this_ptr,int index,char *condition,char *event);
+void __cdecl core_event_cpp_CRuleList_remove_FUN_004aae10(CRuleList *this_ptr,int index);
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004aaee0(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30(CRuleList *this_ptr);
 CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_004aafc0(CQuaternion4f *dest,CQuaternion4f *src);
-undefined4 core_event_cpp_FUN_004aafe0(int param_1);
+int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_004aafe0(CDemonSet *set_ptr);
 void __fastcall crt_watcom_c__memset_FUN_004ab020(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_004ab090(void);
 void crt_unknown_c_FUN_004ab098(void);
@@ -137,7 +138,7 @@ int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004ab440(CFilmReel *thi
 void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_004ab4c0(CFilmReel *this_ptr,int layer_flag);
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004ab4e0(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004ab530(CFilmReel *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004ab550(CFilmReel *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004ab550(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004ab5b0(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004ab5c0(CFilmProjector *this_ptr);
@@ -180,11 +181,11 @@ void __cdecl core_fire_cpp_CRock_setup_FUN_004aef90(CRock *this_ptr,CVector3f *p
 void __cdecl core_fire_cpp_loadRockAssets_FUN_004aefb0(void);
 void __cdecl core_fire_cpp_CRock_process_FUN_004aefc0(CRock *this_ptr);
 void __cdecl core_fire_cpp_CRock_render_FUN_004af040(CRock *this_ptr);
-void __cdecl core_fire_cpp_CLeaf_init_FUN_004af0f0(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl core_fire_cpp_CLeaf_init_FUN_004af0f0(CLeaf *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model,float drag);
 void __cdecl core_fire_cpp_loadLeafAssets_FUN_004af120(void);
 void __cdecl core_fire_cpp_CLeaf_process_FUN_004af170(CLeaf *this_ptr);
 void __cdecl core_fire_cpp_CLeaf_render_FUN_004af270(CLeaf *this_ptr);
-undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_004af330(CLeaf *this_ptr);
+int __cdecl core_fire_cpp_CLeaf_onCollision_FUN_004af330(CLeaf *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_004af400(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004af430(CMuzzleFlash *this_ptr);

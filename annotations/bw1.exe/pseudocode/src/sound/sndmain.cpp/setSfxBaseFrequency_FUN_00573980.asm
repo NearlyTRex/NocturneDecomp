@@ -16,7 +16,7 @@
 ;   core_vehicle.cpp_CVehicle_process_FUN_005a7b50 at 005a80d9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c80650
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10
@@ -46,7 +46,7 @@ section .text
     TEST ECX,ECX                        ; 005739ad
     JZ 0x005739c7                       ; 005739af
         ;   XREF to: 005739c7 (CONDITIONAL_JUMP)  ; LAB_005739c7
-    MOV EBX,dword ptr [0x02c80650]      ; 005739b1 | DAT_02c80650
+    MOV EBX,dword ptr [0x02c80650]      ; 005739b1 | g_CSoundDevicePtr
     TEST EBX,EBX                        ; 005739b7
     JZ 0x005739c7                       ; 005739b9
         ;   XREF to: 005739c7 (CONDITIONAL_JUMP)  ; LAB_005739c7

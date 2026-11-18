@@ -13,7 +13,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417a3b
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442dd9
 ;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 0059891c
-;   core_event.cpp_FUN_0048c2e0 at 00490ce6
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 00490ce6
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710 at 004f7810
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_004fbf20 at 004fbf9a
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0 at 004fc411
@@ -22,7 +22,7 @@
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c9d68
+;   float g_MotionControllerTargetFrameEnd2 = -1
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_004fc480
@@ -36,7 +36,7 @@ section .text
     SUB ESP,0x4                         ; 004fc421
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fc424
     FLD float ptr [ESP + 0x14]          ; 004fc428
-    FCOMP float ptr [0x005c9d68]        ; 004fc42c | DAT_005c9d68
+    FCOMP float ptr [0x005c9d68]        ; 004fc42c | g_MotionControllerTargetFrameEnd2
     FNSTSW AX                           ; 004fc432
     SAHF                                ; 004fc434
     JZ 0x004fc45a                       ; 004fc435

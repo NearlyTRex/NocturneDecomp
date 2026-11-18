@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )
 
 {
@@ -32,7 +30,7 @@ uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint para
     else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {
       return uVar2;
     }
-    fVar3 = fVar1 * (float10)_DAT_00609f10;
+    fVar3 = fVar1 * (float10)9.223372e+18f;
     param_1 = SUB104(fVar3,0);
     param_3 = (ushort)((unkuint10)fVar3 >> 0x40);
     param_2 = (uint)((unkuint10)fVar3 >> 0x20);
@@ -42,7 +40,7 @@ uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint para
     return uVar2;
   }
   uVar2 = (param_2 & 0x7fffffff) >> 0x1b;
-  if ((&DAT_00609ef8)[uVar2] != '\0') {
+  if (g_IEEE754ExponentClassTable[uVar2] != 0) {
     if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {
       if ((param_6 & 0x7fff) != 1) {
         return param_6 & 0x7fff;

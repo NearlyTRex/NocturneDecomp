@@ -11,7 +11,7 @@
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626600 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626604 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50e8_0062660c = 005c50e8
-;   undefined4 DAT_006267e0
+;   uint g_MaxHandleCount = 0x14
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005c6450
@@ -28,7 +28,7 @@ section .text
     TEST EBX,EBX                        ; 005cc386
     JL 0x005cc392                       ; 005cc388
         ;   XREF to: 005cc392 (CONDITIONAL_JUMP)  ; LAB_005cc392
-    CMP EBX,dword ptr [0x006267e0]      ; 005cc38a | DAT_006267e0
+    CMP EBX,dword ptr [0x006267e0]      ; 005cc38a | g_MaxHandleCount
     JBE 0x005cc3a4                      ; 005cc390
         ;   XREF to: 005cc3a4 (CONDITIONAL_JUMP)  ; LAB_005cc3a4
     PUSH 0x4                            ; 005cc392

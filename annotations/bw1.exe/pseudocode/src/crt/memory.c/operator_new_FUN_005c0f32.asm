@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * crt_memory_c_operator_new_FUN_005c0f32(ulong param_1)
+; void * __cdecl crt_memory_c_operator_new_FUN_005c0f32(uint size)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   size
 ;
 ; XREF[146]:
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040db90 at 0040db95

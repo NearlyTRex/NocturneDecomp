@@ -7,7 +7,7 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_speed_005d4840+1
+;   TerminatedCString s_speed_005d4841
 ;   TerminatedCString s_modelName_005d4847
 ;   TerminatedCString s_guardDistance_005d4851
 ;   TerminatedCString s_motion_state_005d485f
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 004a0520 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004a0520(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0041d0e1
     MOV EAX,dword ptr [ESP + 0x20]      ; 0041d0e4
-    PUSH 0x5d4841                       ; 0041d0e8 | s_speed_005d4840+1
+    PUSH 0x5d4841                       ; 0041d0e8 | = "speed"
     ADD EAX,0xc1d0                      ; 0041d0ed
     PUSH EAX                            ; 0041d0f2
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0041d0f3

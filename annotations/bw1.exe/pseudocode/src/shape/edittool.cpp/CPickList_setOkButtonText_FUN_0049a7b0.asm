@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   text
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050d640 at 0050e65c
+;   core_menu.cpp_configureCustomKeyBindings_FUN_0050d640 at 0050e65c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc60f
 ;   TerminatedCString s_CPickList_setOkButtonTex_005dc625
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -48,10 +48,10 @@ section .text
     MOV EDX,0x5dc60f                    ; 0049a7d5 | = "..\\shape\\edittool.cpp"
     MOV ECX,0xeb5                       ; 0049a7da
     PUSH 0x5dc625                       ; 0049a7df | = "CPickList::setOkButtonText - too long!"
-    MOV dword ptr [0x01d1d400],EDX      ; 0049a7e4 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0049a7ea | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0049a7f0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 0049a7e4 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0049a7ea | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049a7f0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049a7f5
     MOV EDI,dword ptr [ESP + 0xc]       ; 0049a7f8
         ;   Label: LAB_0049a7f8

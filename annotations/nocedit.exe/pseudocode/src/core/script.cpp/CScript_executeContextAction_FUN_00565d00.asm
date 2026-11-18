@@ -20,9 +20,9 @@
 ;   char*[141] g_CommandTemplates
 ;   CEditorTools g_CEditorToolsInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   CCmdParse CCmdParse_0310aa4c
-;   undefined4 CCmdParse_0310aa4c.params[0].prefix_text[0]
-;   undefined4 CCmdParse_0310aa4c.params[0].param_type
+;   CCmdParse g_ContextActionParser
+;   undefined4 g_ContextActionParser.params[0].prefix_text[0]
+;   undefined4 g_ContextActionParser.params[0].param_type
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00565d43
     PUSH EAX                            ; 00565d46
-    PUSH 0x310aa4c                      ; 00565d47 | CCmdParse_0310aa4c
+    PUSH 0x310aa4c                      ; 00565d47 | g_ContextActionParser
     CALL core_script.cpp_CCmdParse_bestParse_FUN_00561db0 ; 00565d4c
         ;   XREF to: 00561db0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse * this_ptr, char * input_text, int cursor_position, char * * templates, ...)
     ADD ESP,0x14                        ; 00565d51
@@ -95,7 +95,7 @@ section .text
     JL 0x00565d10                       ; 00565d58
         ;   XREF to: 00565d10 (CONDITIONAL_JUMP)  ; caseD_f
     IMUL EAX,EAX,0x328                  ; 00565d5a
-    MOV EAX,dword ptr [EAX + 0x310ad74] ; 00565d60 | CCmdParse_0310aa4c.params[0].param_type
+    MOV EAX,dword ptr [EAX + 0x310ad74] ; 00565d60 | g_ContextActionParser.params[0].param_type
     CMP EAX,0x20                        ; 00565d66
     JA 0x00565d10                       ; 00565d69
         ;   XREF to: 00565d10 (CONDITIONAL_JUMP)  ; caseD_f
@@ -103,7 +103,7 @@ section .text
         ;   Label: switchD
     IMUL EAX,ESI,0x328                  ; 00565d72
         ;   Label: caseD_3
-    MOV EBX,0x310ab1c                   ; 00565d78 | CCmdParse_0310aa4c.params[0].prefix_text[0]
+    MOV EBX,0x310ab1c                   ; 00565d78 | g_ContextActionParser.params[0].prefix_text[0]
     ADD EAX,EBX                         ; 00565d7d
     ADD EAX,0x64                        ; 00565d7f
     PUSH EAX                            ; 00565d82
@@ -148,7 +148,7 @@ section .text
     CALL core_script.cpp_CScript_buildParsedLines_FUN_0055a370 ; 00565dd1
         ;   XREF to: 0055a370 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_buildParsedLines_FUN_0055a370(CScript * this_ptr)
     IMUL EAX,ESI,0x328                  ; 00565dd6
-    MOV EDI,0x310ab1c                   ; 00565ddc | CCmdParse_0310aa4c.params[0].prefix_text[0]
+    MOV EDI,0x310ab1c                   ; 00565ddc | g_ContextActionParser.params[0].prefix_text[0]
     ADD EAX,EDI                         ; 00565de1
     ADD ESP,0x4                         ; 00565de3
     ADD EAX,0x64                        ; 00565de6
@@ -199,7 +199,7 @@ section .text
     RET                                 ; 00565e4b
     IMUL ESI,ESI,0x328                  ; 00565e4c
         ;   Label: caseD_19
-    ADD ESI,0x310ab1c                   ; 00565e52 | CCmdParse_0310aa4c.params[0].prefix_text[0]
+    ADD ESI,0x310ab1c                   ; 00565e52 | g_ContextActionParser.params[0].prefix_text[0]
     ADD ESI,0x64                        ; 00565e58
     PUSH ESI                            ; 00565e5b
     MOV ECX,dword ptr [0x0067d550]      ; 00565e5c | g_CDemonMissionInstance | g_CDemonMissionPtr

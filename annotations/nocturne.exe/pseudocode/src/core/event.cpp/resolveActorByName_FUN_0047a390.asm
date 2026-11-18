@@ -22,13 +22,13 @@
 ;   TerminatedCString s_Can_t_use_actor_specifie_0057f3e0
 ;   TerminatedCString s_Actor_s_does_not_exist_0057f40e
 ;   TerminatedCString s_Actor_s_is_of_type_s_thi_0057f429
-;   undefined4 DAT_0059cf1c
-;   undefined4 DAT_005b7650
+;   CDemonActor* g_ActorNameSentinel = 0fffffff
+;   CEventList* g_CEventListPtr = 01c03a10
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CNetGame* g_CNetGamePtr = 01cea280
-;   undefined4 DAT_01c08b60
-;   undefined4 DAT_01c08b61
-;   undefined4 DAT_01c08b62
+;   char[256] g_EventErrorMessageBuffer
+;   undefined4 g_EventErrorMessageBuffer+1
+;   undefined4 g_EventErrorMessageBuffer+2
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     JNZ 0x0047a3f2                      ; 0047a3a5
         ;   XREF to: 0047a3f2 (CONDITIONAL_JUMP)  ; LAB_0047a3f2
     PUSH EBX                            ; 0047a3a7
-    MOV ESI,dword ptr [0x005b7650]      ; 0047a3a8 | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 0047a3a8 | g_CEventListPtr
     PUSH ESI                            ; 0047a3ae
     CALL core_event.cpp_CEventList_getActorByVarName_FUN_00480b30 ; 0047a3af
         ;   XREF to: 00480b30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_CEventList_getActorByVarName_FUN_00480b30(CEventList * this_ptr, char * name)
@@ -69,7 +69,7 @@ section .text
     TEST EAX,EAX                        ; 0047a3b9
     JNZ 0x0047a41f                      ; 0047a3bb
         ;   XREF to: 0047a41f (CONDITIONAL_JUMP)  ; LAB_0047a41f
-    MOV EAX,[0x0059cf1c]                ; 0047a3bd | DAT_0059cf1c
+    MOV EAX,[0x0059cf1c]                ; 0047a3bd | g_ActorNameSentinel
         ;   Label: LAB_0047a3bd
     POP EBP                             ; 0047a3c2
     POP EDI                             ; 0047a3c3
@@ -79,16 +79,16 @@ section .text
     MOV ESI,0x57f3c6                    ; 0047a3c7 | = "Must specify actor name"
         ;   Label: LAB_0047a3c7
     MOV EDI,0x1c08b60                   ; 0047a3cc
-    PUSH EDI                            ; 0047a3d1 | DAT_01c08b60
+    PUSH EDI                            ; 0047a3d1 | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 0047a3d2 | = "Must specify actor name" | s_st_specify_actor_name_0057f3c6+2
         ;   Label: LAB_0047a3d2
-    MOV byte ptr [EDI],AL               ; 0047a3d4 | DAT_01c08b60 | DAT_01c08b62
+    MOV byte ptr [EDI],AL               ; 0047a3d4 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 0047a3d6
     JZ 0x0047a3ea                       ; 0047a3d8
         ;   XREF to: 0047a3ea (CONDITIONAL_JUMP)  ; LAB_0047a3ea
     MOV AL,byte ptr [ESI + 0x1]         ; 0047a3da | s_ust_specify_actor_name_0057f3c6+1 | s_t_specify_actor_name_0057f3c6+3
     ADD ESI,0x2                         ; 0047a3dd
-    MOV byte ptr [EDI + 0x1],AL         ; 0047a3e0 | DAT_01c08b61 | DAT_01c08b63
+    MOV byte ptr [EDI + 0x1],AL         ; 0047a3e0 | g_EventErrorMessageBuffer+1 | g_EventErrorMessageBuffer+3
     ADD EDI,0x2                         ; 0047a3e3
     CMP AL,0x0                          ; 0047a3e6
     JNZ 0x0047a3d2                      ; 0047a3e8
@@ -132,7 +132,7 @@ section .text
     CMP byte ptr [EBX],0x40             ; 0047a435
     JNZ 0x0047a48d                      ; 0047a438
         ;   XREF to: 0047a48d (CONDITIONAL_JUMP)  ; LAB_0047a48d
-    MOV EAX,[0x0059cf1c]                ; 0047a43a | DAT_0059cf1c
+    MOV EAX,[0x0059cf1c]                ; 0047a43a | g_ActorNameSentinel
     POP EBP                             ; 0047a43f
     POP EDI                             ; 0047a440
     POP ESI                             ; 0047a441
@@ -140,7 +140,7 @@ section .text
     RET                                 ; 0047a443
     PUSH 0x57f3e0                       ; 0047a444 | = "Can't use '$' actor specifier in mult..."
         ;   Label: LAB_0047a444
-    PUSH 0x1c08b60                      ; 0047a449 | DAT_01c08b60
+    PUSH 0x1c08b60                      ; 0047a449 | g_EventErrorMessageBuffer
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047a44e
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 0047a453
@@ -163,7 +163,7 @@ section .text
         ;   XREF to: 0047a41f (CONDITIONAL_JUMP)  ; LAB_0047a41f
     PUSH EBX                            ; 0047a473
     PUSH 0x57f40e                       ; 0047a474 | = "Actor \"%s\" does not exist."
-    PUSH 0x1c08b60                      ; 0047a479 | DAT_01c08b60
+    PUSH 0x1c08b60                      ; 0047a479 | g_EventErrorMessageBuffer
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047a47e
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047a483
@@ -183,7 +183,7 @@ section .text
     PUSH EAX                            ; 0047a49b
     PUSH EBX                            ; 0047a49c
     PUSH 0x57f429                       ; 0047a49d | = "Actor \"%s\" is of type %s, this comm..."
-    PUSH 0x1c08b60                      ; 0047a4a2 | DAT_01c08b60
+    PUSH 0x1c08b60                      ; 0047a4a2 | g_EventErrorMessageBuffer
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0047a4a7
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x14                        ; 0047a4ac

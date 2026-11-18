@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(undefined4 *param_1,undefined4 *param_2,float param_3)
+; CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_a
+; CMatrix3x4f *    Stack[0x8]:4   matrix_b
+; float            Stack[0xc]:4   t
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ; undefined4       Stack[-0xc4]:4  local_c4
@@ -18,10 +22,10 @@
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 00432b8e
-;   core_doc.cpp_FUN_0046f740 at 0046fa08
-;   core_stranger.cpp_FUN_0058afe0 at 0058b2b5
+;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740 at 0046fa08
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0058afe0 at 0058b2b5
 ;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_00595d40 at 00595d84
-;   core_tentacle.cpp_FUN_00595f10 at 00595f62
+;   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00595f10 at 00595f62
 ;   core_thehand.cpp_CTheHand_attractActorToward_FUN_00599a10 at 00599a54
 ;
 ; Called Functions:
@@ -76,7 +80,7 @@ section .text
     LEA ESI,[ESP + 0x94]                ; 005b732d
     LEA EDI,[ESP + 0x74]                ; 005b7334
     CALL core_xform.cpp_matrixToQuaternion_FUN_005b75a0 ; 005b7338
-        ;   XREF to: 005b75a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToQuaternion_FUN_005b75a0()
+        ;   XREF to: 005b75a0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005b75a0(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x94]                ; 005b733d
     ADD ESP,0x4                         ; 005b7344
     MOVSD ES:EDI,ESI                    ; 005b7347
@@ -87,7 +91,7 @@ section .text
     LEA ESI,[ESP + 0xb4]                ; 005b734c
     LEA EDI,[ESP + 0x84]                ; 005b7353
     CALL core_xform.cpp_matrixToQuaternion_FUN_005b75a0 ; 005b735a
-        ;   XREF to: 005b75a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToQuaternion_FUN_005b75a0()
+        ;   XREF to: 005b75a0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005b75a0(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xb4]                ; 005b735f
     ADD ESP,0x4                         ; 005b7366
     MOVSD ES:EDI,ESI                    ; 005b7369
@@ -102,7 +106,7 @@ section .text
     LEA ESI,[ESP + 0xac]                ; 005b7381
     LEA EDI,[ESP + 0x6c]                ; 005b7388
     CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 005b738c
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005b7940(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xac]                ; 005b7391
     ADD ESP,0xc                         ; 005b7398
     MOVSD ES:EDI,ESI                    ; 005b739b

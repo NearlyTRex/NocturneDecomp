@@ -15,7 +15,7 @@ section .text
     PUSH 0x243ac                        ; 004d0f00
         ;   Label: core_hiram.cpp_factoryFuncHiram_FUN_004d0f00
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004d0f05
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004d0f0a
     TEST EAX,EAX                        ; 004d0f0d
     JNZ 0x004d0f12                      ; 004d0f0f

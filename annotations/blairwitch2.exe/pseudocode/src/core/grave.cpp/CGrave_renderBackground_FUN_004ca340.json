@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 49,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 1,
+    "pseudocode_lines": 36,
+    "suspect_count": 3,
     "suspect_types": [
+      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 91
+    "total_lines": 93
   },
   "cross_references": [],
   "function": {
@@ -41,7 +42,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "0044fcc0",
@@ -138,8 +139,24 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_1c + 2),unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 24,
+      "line": 25,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -149,7 +166,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 32,
         "vtable_addr": "005f7cb4"
       }

@@ -15,15 +15,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_00448ca0(CDemonCa
   int iVar4;
   int iVar5;
   int iVar6;
-  uint local_18;
-  uint local_14;
+  int local_18;
+  int local_14;
   
-  if (DAT_007fa460 == 0) {
+  if (g_INT_007fa460 == 0) {
     core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00450980(this_ptr,0x10000);
-    DAT_007fa460 = 1;
+    g_INT_007fa460 = 1;
   }
-  iVar6 = DAT_005fba1c;
-  if (0x1e0 < DAT_005fba1c) {
+  iVar6 = g_INT_005fba1c;
+  if (0x1e0 < g_INT_005fba1c) {
     iVar6 = 0x1e0;
   }
   core_dcamera_cpp_CDemonCamera_init_FUN_00448d70(this_ptr,iVar6);
@@ -39,7 +39,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_00448ca0(CDemonCa
       iVar3 = iVar1 >> 0x1f;
       iVar5 = iVar4 + 1;
       iVar2 = iVar2 + local_14;
-      *(char *)(iVar4 + 0x135dab0) =
+      g_CameraLookupTable[iVar4] =
            (char)((int)(((iVar1 >> 4) + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2);
       iVar4 = iVar5;
     } while (iVar5 != local_18);

@@ -26,11 +26,11 @@
 ;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00436420 at 00436463
 ;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043732e
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439524
-;   core_doc.cpp_FUN_00453250 at 00453c12
+;   core_doc.cpp_CDoc_processMotionEvents_FUN_00453250 at 00453c12
 ;   ... and 25 more
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_L_Foot_005cd275+1
+;   TerminatedCString s_Bip01_L_Foot_005cd276
 ;   TerminatedCString s_Bip01_R_Foot_005cd283
 ;   TerminatedCString s_Bip01_L_Foot_005cd290
 ;   TerminatedCString s_Bip01_R_Foot_005cd29d
@@ -71,7 +71,7 @@ section .text
     RET                                 ; 0042aa33
     PUSH 0x0                            ; 0042aa34
         ;   Label: LAB_0042aa34
-    PUSH 0x5cd276                       ; 0042aa36 | s_Bip01_L_Foot_005cd275+1
+    PUSH 0x5cd276                       ; 0042aa36 | = "Bip01 L Foot"
     PUSH ESI                            ; 0042aa3b
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890 ; 0042aa3c
         ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)

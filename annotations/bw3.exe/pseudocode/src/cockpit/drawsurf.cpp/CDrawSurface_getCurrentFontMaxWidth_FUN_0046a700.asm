@@ -10,13 +10,13 @@
 ;   core_script.cpp_CScript_renderEditor_FUN_00529210 at 00529287
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bdd7c4
+;   CBitFont* g_CurrentFont
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01bdd7c4]      ; 0046a700 | DAT_01bdd7c4
+    MOV EDX,dword ptr [0x01bdd7c4]      ; 0046a700 | g_CurrentFont
         ;   Label: cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0046a700
     TEST EDX,EDX                        ; 0046a706
     JZ 0x0046a711                       ; 0046a708

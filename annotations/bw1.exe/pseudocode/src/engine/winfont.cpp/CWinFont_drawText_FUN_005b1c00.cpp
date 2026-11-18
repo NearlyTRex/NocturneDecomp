@@ -15,7 +15,7 @@ int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005b1c00(CWinFont *this_ptr
   if (iVar1 == 0) {
     return 0;
   }
-  engine_winfont_cpp_FUN_005b1c50
+  engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005b1c50
             (this_ptr,this_ptr->device_context_handle,text_string,x,y,foreground_color,
              background_color);
   return 0;

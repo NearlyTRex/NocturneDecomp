@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 32,
+    "complexity_score": 16,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 65
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
   },
   "cross_references": [
     {
       "addr": "00577cd0",
       "from_addr": "00577d0e",
-      "name": "sound_snddx.cpp_FUN_00577cd0",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_reset_FUN_00577cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,20 +60,20 @@
   "globals": [
     {
       "addr": "005f43a0",
-      "name": "s_Mb_killSoundThread_faile_005f439c+4",
-      "type": "undefined4",
+      "name": "s_killSoundThread_failed_005f43a0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "02c807e0",
-      "name": "DAT_02c807e0",
-      "type": "undefined4",
+      "name": "g_AudioThreadRunning",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c807e4",
-      "name": "DAT_02c807e4",
-      "type": "undefined4",
+      "name": "g_AudioThreadShutdownFlag",
+      "type": "int",
       "value": null
     }
   ],
@@ -155,14 +153,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

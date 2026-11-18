@@ -6,22 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_winvideo_cpp_playMovie_FUN_005b4cd0(char *directory_path,char *movie_filename)
 
 {
   byte *pbVar1;
   byte bVar2;
-  _FILE *p_Var3;
-  MCIERROR MVar4;
-  byte *pbVar5;
+  _FILE *file_handle;
+  MCIERROR MVar3;
+  byte *pbVar4;
   HANDLE hThread;
   int nPriority;
-  int iVar6;
-  bool bVar7;
+  int iVar5;
+  bool bVar6;
   char *lpstrCommand;
-  HWND pHVar8;
+  HWND pHVar7;
   char local_1f8 [260];
   byte local_f4;
   byte local_f3 [127];
@@ -30,72 +28,72 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005b4cd0(char *directory_path,cha
   tagRECT local_14;
   
   _sprintf(local_74,"%s\\%s");
-  p_Var3 = _fopen(local_74,&DAT_005fa085);
-  if (p_Var3 == (_FILE *)0x0) {
+  file_handle = _fopen(local_74,"rb");
+  if (file_handle == (_FILE *)0x0) {
     return 0;
   }
-  _fclose(p_Var3);
+  _fclose(file_handle);
   engine_special_cpp_clearScreen_FUN_0057dc40();
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
-  pHVar8 = _DAT_02c9be68;
-  if (_DAT_02c9d2a0 != 0) {
-    wincore_winvideo_cpp_closeMovie_FUN_005b4980(_DAT_02c9be68);
+  pHVar7 = g_MainWindowHandle;
+  if (g_MoviePlaying != 0) {
+    wincore_winvideo_cpp_closeMovie_FUN_005b4980(g_MainWindowHandle);
   }
   _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d");
-  MVar4 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
-  if (MVar4 == 0) {
-    _DAT_02c9d2a0 = 1;
-    MVar4 = mciSendStringA("status mov window handle",local_1f8,0x104,(HWND)0x0);
-    if (MVar4 == 0) {
-      _DAT_02c9d298 = (HWND)atoi(local_1f8);
+  MVar3 = mciSendStringA(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
+  if (MVar3 == 0) {
+    g_MoviePlaying = 1;
+    MVar3 = mciSendStringA("status mov window handle",local_1f8,0x104,(HWND)0x0);
+    if (MVar3 == 0) {
+      g_MovieWindowHandle = atoi(local_1f8);
     }
     else {
-      mciGetErrorStringA(MVar4,local_1f8,0x104);
-      MessageBoxA(pHVar8,local_1f8,(LPCSTR)0x0,0x30);
+      mciGetErrorStringA(MVar3,local_1f8,0x104);
+      MessageBoxA(pHVar7,local_1f8,(LPCSTR)0x0,0x30);
     }
-    if ((_DAT_02c9d2a8 == 0) && (_DAT_02c9d2a0 != 0)) {
-      GetClientRect(pHVar8,&local_14);
+    if ((g_FullscreenMovie == 0) && (g_MoviePlaying != 0)) {
+      GetClientRect(pHVar7,&local_14);
       mciSendStringA("where mov source",(LPSTR)&local_f4,0x80,(HWND)0x0);
       SetRectEmpty(&local_24);
-      pbVar5 = &local_f4;
+      pbVar4 = &local_f4;
       while (local_f4 == 0x20) {
-        pbVar1 = pbVar5 + 1;
-        pbVar5 = pbVar5 + 1;
+        pbVar1 = pbVar4 + 1;
+        pbVar4 = pbVar4 + 1;
         local_f4 = *pbVar1;
       }
-      for (; *pbVar5 != 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 != 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 == 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; *pbVar5 != 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 != 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 == 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; (0x2f < *pbVar5 && (*pbVar5 < 0x3a)); pbVar5 = pbVar5 + 1) {
-        local_24.right = local_24.right * 10 + (*pbVar5 - 0x30);
+      for (; (0x2f < *pbVar4 && (*pbVar4 < 0x3a)); pbVar4 = pbVar4 + 1) {
+        local_24.right = local_24.right * 10 + (*pbVar4 - 0x30);
       }
-      for (; *pbVar5 == 0x20; pbVar5 = pbVar5 + 1) {
+      for (; *pbVar4 == 0x20; pbVar4 = pbVar4 + 1) {
       }
-      for (; (bVar2 = *pbVar5, 0x2f < bVar2 && (bVar2 < 0x3a)); pbVar5 = pbVar5 + 1) {
+      for (; (bVar2 = *pbVar4, 0x2f < bVar2 && (bVar2 < 0x3a)); pbVar4 = pbVar4 + 1) {
         local_24.bottom = local_24.bottom * 10 + (bVar2 - 0x30);
       }
       if ((400 < local_14.right) || (300 < local_14.bottom)) {
         local_24.right = local_24.right * 2;
         local_24.bottom = local_24.bottom * 2;
       }
-      MoveWindow(_DAT_02c9d298,local_14.right / 2 - local_24.right / 2,
+      MoveWindow((HWND)g_MovieWindowHandle,local_14.right / 2 - local_24.right / 2,
                  local_14.bottom / 2 - local_24.bottom / 2,local_24.right,local_24.bottom,1);
     }
   }
   else {
-    MessageBoxA(pHVar8,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
-    _DAT_02c9d2a0 = 0;
+    MessageBoxA(pHVar7,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
+    g_MoviePlaying = 0;
   }
-  bVar7 = _DAT_02c9d29c == 0;
-  _DAT_02c9d29c = (uint)bVar7;
-  if (bVar7) {
-    pHVar8 = _DAT_02c9be68;
-    if (_DAT_02c9d2a8 == 0) {
+  bVar6 = g_MovieHandle == 0;
+  g_MovieHandle = (int)bVar6;
+  if (bVar6) {
+    pHVar7 = g_MainWindowHandle;
+    if (g_FullscreenMovie == 0) {
       lpstrCommand = "play mov window notify";
     }
     else {
@@ -103,20 +101,20 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005b4cd0(char *directory_path,cha
     }
   }
   else {
-    pHVar8 = (HWND)0x0;
+    pHVar7 = (HWND)0x0;
     lpstrCommand = "pause mov";
   }
-  mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar8);
+  mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar7);
   hThread = GetCurrentProcess();
   nPriority = GetThreadPriority(hThread);
   SetThreadPriority(hThread,-0xf);
-  while (((wincore_winrun_cpp_FUN_005b2cf0(), _DAT_02c9d29c != 0 &&
-          (iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(), iVar6 == 0)) &&
-         (_DAT_02c9d2a0 != 0))) {
+  while (((wincore_winrun_cpp_processWindowMessages_FUN_005b2cf0(), g_MovieHandle != 0 &&
+          (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(), iVar5 == 0)) &&
+         (g_MoviePlaying != 0))) {
     Sleep(0x14);
   }
   SetThreadPriority(hThread,nPriority);
-  wincore_winvideo_cpp_closeMovie_FUN_005b4980(_DAT_02c9be68);
+  wincore_winvideo_cpp_closeMovie_FUN_005b4980(g_MainWindowHandle);
   engine_special_cpp_clearScreen_FUN_0057dc40();
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   engine_2d_c_clearInputAndWait_FUN_004032b0();

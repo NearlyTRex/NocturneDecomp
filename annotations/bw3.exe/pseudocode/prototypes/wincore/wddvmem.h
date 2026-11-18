@@ -21,29 +21,29 @@ void __cdecl cleanupDirectDrawSurfaces(void);
 // Address: 00579690
 int __cdecl reinitializeDirectDraw(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005797d0
+// Original: wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005797d0
 // Address: 005797d0
-void FUN_005797d0(void);
+void __cdecl allocateRenderBuffers(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005798a0
+// Original: wincore_wddvmem.cpp_freeRenderBuffers_FUN_005798a0
 // Address: 005798a0
-void FUN_005798a0(void);
+void __cdecl freeRenderBuffers(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005798f0
+// Original: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005798f0
 // Address: 005798f0
-int __cdecl FUN_005798f0(int width,int height);
+int __cdecl initializeGraphicsSystem(int width,int height);
 
-// Original: wincore_wddvmem.cpp_FUN_00579a60
+// Original: wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_00579a60
 // Address: 00579a60
-void __cdecl FUN_00579a60(void);
+void __cdecl cleanupGraphicsSystem(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00579b20
+// Original: wincore_wddvmem.cpp_initializeScanlinePointers_FUN_00579b20
 // Address: 00579b20
-void FUN_00579b20(void);
+void __cdecl initializeScanlinePointers(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00579bb0
+// Original: wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0
 // Address: 00579bb0
-undefined4 FUN_00579bb0(int param_1,int param_2,int param_3);
+int __cdecl setScreenResolution(int width,int height,int bits_per_pixel);
 
 // Original: wincore_wddvmem.cpp_resetGraphicsSystem_FUN_0057a0e0
 // Address: 0057a0e0
@@ -73,9 +73,9 @@ void __cdecl setupColorPalette(void);
 // Address: 0057a8a0
 void __cdecl swapBuffers(void);
 
-// Original: wincore_wddvmem.cpp_FUN_0057ab20
+// Original: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_0057ab20
 // Address: 0057ab20
-void FUN_0057ab20(void);
+void __cdecl restoreVideoAndMinimizeWindow(void);
 
 // Original: wincore_wddvmem.cpp_videoRestore_FUN_0057ab70
 // Address: 0057ab70

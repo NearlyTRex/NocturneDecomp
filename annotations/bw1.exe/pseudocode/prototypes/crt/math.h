@@ -7,7 +7,7 @@
 
 // Original: crt_math.c_round_FUN_005c03a0
 // Address: 005c03a0
-void round(void);
+double __fpureg_safe round(double value);
 
 // Original: crt_math.c_floor_FUN_005c0880
 // Address: 005c0880
@@ -15,19 +15,19 @@ double __crtmath floor(double input_value);
 
 // Original: crt_math.c_pow_FUN_005c18f4
 // Address: 005c18f4
-void pow(void);
+float10 __fpustack_safe pow(float10 base,float10 exp);
 
 // Original: crt_math.c_asin_FUN_005c1cd6
 // Address: 005c1cd6
-void asin(void);
+float10 __fpustack_safe asin(float10 sine_value);
 
 // Original: crt_math.c_acos_FUN_005c1d04
 // Address: 005c1d04
-undefined2 acos(void);
+double __fpustack_safe acos(double x);
 
 // Original: crt_math.c_atan2_FUN_005c1d69
 // Address: 005c1d69
-void atan2(void);
+float10 __fpureg atan2(float10 y,float10 x);
 
 // Original: crt_math.c_modf_FUN_005c3166
 // Address: 005c3166

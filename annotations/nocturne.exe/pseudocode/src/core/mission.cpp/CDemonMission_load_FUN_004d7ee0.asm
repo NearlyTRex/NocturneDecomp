@@ -19,7 +19,7 @@
 ;   TerminatedCString s_core_mission_cpp_0058961b
 ;   TerminatedCString s_CDemonMission_load_Unabl_0058962f
 ;   TerminatedCString s_Loading_mission_00589659
-;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
+;   CLevelLoader* g_CLevelLoaderPtr = 01cc3160
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d7f0c
     PUSH EAX                            ; 004d7f0f
-    MOV EDI,dword ptr [0x005baca0]      ; 004d7f10 | g_CLevelLoader_PTR_005baca0
+    MOV EDI,dword ptr [0x005baca0]      ; 004d7f10 | g_CLevelLoaderPtr
     PUSH EDI                            ; 004d7f16
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d7f17
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)

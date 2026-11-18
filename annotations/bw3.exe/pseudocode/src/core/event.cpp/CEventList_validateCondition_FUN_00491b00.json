@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 44,
+    "complexity_score": 13,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 41
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
   },
   "cross_references": [
     {
       "addr": "0048c2e0",
       "from_addr": "0048c81a",
-      "name": "core_event.cpp_FUN_0048c2e0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,14 +54,14 @@
   "globals": [
     {
       "addr": "01c734ac",
-      "name": "DAT_01c734ac",
-      "type": "undefined4",
+      "name": "g_EventDryRun",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c734b0",
-      "name": "DAT_01c734b0",
-      "type": "undefined4",
+      "name": "g_EventErrorMessageBuffer",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -74,7 +71,7 @@
       {
         "call_addr": "0048c81a",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -85,7 +82,7 @@
       {
         "call_addr": "0048d776",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +93,7 @@
       {
         "call_addr": "0048f7b9",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +104,7 @@
       {
         "call_addr": "00490258",
         "call_type": "direct",
-        "caller": "core_event.cpp_FUN_0048c2e0",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,22 +248,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c734b0",
-      "severity": "mild",
-      "text": "return &DAT_01c734b0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

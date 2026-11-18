@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 42,
+    "complexity_score": 11,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 31
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
   },
   "cross_references": [
     {
       "addr": "004e4e20",
       "from_addr": "004e4e64",
-      "name": "core_main.c_FUN_004e4e20",
+      "name": "core_main.c_finalizeGameSystems_FUN_004e4e20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -45,14 +42,14 @@
     {
       "addr": "0044e590",
       "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_0044e590"
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590"
     }
   ],
   "globals": [
     {
       "addr": "01b13a1c",
-      "name": "DAT_01b13a1c",
-      "type": "undefined4",
+      "name": "g_KeyframeModelCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -62,7 +59,7 @@
       {
         "call_addr": "004e4e64",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e4e20",
+        "caller": "core_main.c_finalizeGameSystems_FUN_004e4e20",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -147,22 +144,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01b4d220",
-      "severity": "mild",
-      "text": "} while (pCVar1 != (CKeyFramedModel *)&DAT_01b4d220);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

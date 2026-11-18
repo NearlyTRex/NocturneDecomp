@@ -25,13 +25,13 @@ CWaterActor * __cdecl CWaterActor::ctor(CWaterActor *this_ptr);
 // Address: 00577ee0
 void __cdecl CWaterActor::setup(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00578490
+// Original: core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_00578490
 // Address: 00578490
-void FUN_00578490(int param_1);
+void __cdecl CWaterActor::updateWorldPositions(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00578570
+// Original: core_wateract.cpp_CWaterActor_updateLocalPositions_FUN_00578570
 // Address: 00578570
-void FUN_00578570(int param_1);
+void __cdecl CWaterActor::updateLocalPositions(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_process_FUN_00578670
 // Address: 00578670
@@ -65,9 +65,9 @@ float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *r
 // Address: 00578fc0
 void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_info);
 
-// Original: core_wateract.cpp_FUN_00578ff0
+// Original: core_wateract.cpp_factoryFuncLava_FUN_00578ff0
 // Address: 00578ff0
-void FUN_00578ff0(void);
+CLava * __cdecl factoryFuncLava(void);
 
 // Original: core_wateract.cpp_CLava_getActorType_FUN_00579010
 // Address: 00579010

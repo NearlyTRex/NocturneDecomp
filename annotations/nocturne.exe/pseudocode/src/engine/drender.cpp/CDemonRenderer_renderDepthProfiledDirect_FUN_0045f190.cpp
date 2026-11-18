@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   
-  _DAT_01b4d764 = 0;
+  g_INT_01b4d764 = 0;
   if (this_ptr->plane_culling_enabled != 0) {
     iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
     if (iVar1 == 0) {
@@ -39,5 +37,5 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045
   if (g_UseExternalRenderer != 0) {
     engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00461070(this_ptr,iVar1);
   }
-  return (uint)(INT_005ae708 <= _DAT_01b4d764);
+  return (uint)(INT_005ae708 <= g_INT_01b4d764);
 }

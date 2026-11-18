@@ -43,7 +43,7 @@ CNetGame::~CNetGame() = default;
 //   CNetGame::processChatOut
 // deferred: disconnect(0)'s other resets: server_player_index -1, mission_name emptied,
 //   player_count 0, has_pending_sim_frame 0, g_RemoteSyncStage 0 and the game-settings version
-//   INT_02f7c8c4 0, with CNetGame::disconnect
+//   g_NetNextPlayerId 0, with CNetGame::disconnect
 // nocedit 0x0053f780
 void CNetGame::init() {
     owners_.file_system.removeFile("netlog.txt");

@@ -19,11 +19,11 @@
 ;   engine_mini3d.cpp_clipBatchTriangle_FUN_004f1020 at 004f10ab
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d76cf8
-;   undefined4 DAT_01d76f60
-;   undefined4 DAT_01d7a6c8
-;   undefined4 DAT_01d7a6cc
-;   undefined4 DAT_01d7a6d0
+;   int g_INT_01d76cf8
+;   float* g_FLOAT_PTR_01d76f60
+;   int g_INT_01d7a6c8
+;   int g_INT_01d7a6cc
+;   short[2] g_SHORT_ARRAY_01d7a6d0
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_flushTriangleBatch_FUN_004f0f20
@@ -60,7 +60,7 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 004f0e04
     FLD float ptr [ESP + 0x4]           ; 004f0e08
     FMUL float ptr [ESP + 0x8]          ; 004f0e0c
-    MOV EDX,dword ptr [0x01d76cf8]      ; 004f0e10 | DAT_01d76cf8
+    MOV EDX,dword ptr [0x01d76cf8]      ; 004f0e10 | g_INT_01d76cf8
     FXCH                                ; 004f0e16
     FSTP float ptr [ESP + 0x10]         ; 004f0e18
     FSTP float ptr [ESP + 0x14]         ; 004f0e1c
@@ -73,9 +73,9 @@ section .text
     SAHF                                ; 004f0e32
     JBE 0x004f0ee4                      ; 004f0e33
         ;   XREF to: 004f0ee4 (CONDITIONAL_JUMP)  ; LAB_004f0ee4
-    MOV ECX,dword ptr [0x01d7a6cc]      ; 004f0e39 | DAT_01d7a6cc
+    MOV ECX,dword ptr [0x01d7a6cc]      ; 004f0e39 | g_INT_01d7a6cc
         ;   Label: LAB_004f0e39
-    MOV EAX,[0x01d7a6c8]                ; 004f0e3f | DAT_01d7a6c8
+    MOV EAX,[0x01d7a6c8]                ; 004f0e3f | g_INT_01d7a6c8
     ADD EAX,ECX                         ; 004f0e44
     ADD EAX,0x3                         ; 004f0e46
     CMP EAX,0x2710                      ; 004f0e49
@@ -86,10 +86,10 @@ section .text
         ;   Label: LAB_004f0e54
     PUSH EDI                            ; 004f0e59
         ;   Label: LAB_004f0e59
-    MOV EDI,dword ptr [0x01d7a6cc]      ; 004f0e5a | DAT_01d7a6cc
-    MOV EDX,dword ptr [0x01d7a6c8]      ; 004f0e60 | DAT_01d7a6c8
+    MOV EDI,dword ptr [0x01d7a6cc]      ; 004f0e5a | g_INT_01d7a6cc
+    MOV EDX,dword ptr [0x01d7a6c8]      ; 004f0e60 | g_INT_01d7a6c8
     ADD EDX,EDI                         ; 004f0e66
-    MOV EAX,[0x01d76f60]                ; 004f0e68 | DAT_01d76f60
+    MOV EAX,[0x01d76f60]                ; 004f0e68 | g_FLOAT_PTR_01d76f60
     SHL EDX,0x6                         ; 004f0e6d
     ADD EAX,EDX                         ; 004f0e70
     MOV ECX,0x10                        ; 004f0e72
@@ -102,22 +102,22 @@ section .text
     MOV ECX,0x10                        ; 004f0e87
     MOV ESI,EBP                         ; 004f0e8c
     LEA EDI,[EAX + 0x80]                ; 004f0e8e
-    MOV EDX,dword ptr [0x01d7a6d0]      ; 004f0e94 | DAT_01d7a6d0
-    MOV AX,[0x01d7a6cc]                 ; 004f0e9a | DAT_01d7a6cc
+    MOV EDX,dword ptr [0x01d7a6d0]      ; 004f0e94 | g_SHORT_ARRAY_01d7a6d0
+    MOV AX,[0x01d7a6cc]                 ; 004f0e9a | g_INT_01d7a6cc
     MOVSD.REP ES:EDI,ESI                ; 004f0ea0
-    MOV EBP,dword ptr [0x01d7a6cc]      ; 004f0ea2 | DAT_01d7a6cc
-    MOV SI,word ptr [0x01d7a6cc]        ; 004f0ea8 | DAT_01d7a6cc
+    MOV EBP,dword ptr [0x01d7a6cc]      ; 004f0ea2 | g_INT_01d7a6cc
+    MOV SI,word ptr [0x01d7a6cc]        ; 004f0ea8 | g_INT_01d7a6cc
     MOV word ptr [EDX*0x2 + 0x1d7a6d4],AX ; 004f0eaf
     MOV EDX,EAX                         ; 004f0eb7
-    MOV EAX,[0x01d7a6d0]                ; 004f0eb9 | DAT_01d7a6d0
+    MOV EAX,[0x01d7a6d0]                ; 004f0eb9 | g_SHORT_ARRAY_01d7a6d0
     ADD EBP,0x3                         ; 004f0ebe
     ADD EAX,0x3                         ; 004f0ec1
     INC EDX                             ; 004f0ec4
     ADD ESI,0x2                         ; 004f0ec5
-    MOV word ptr [EAX*0x2 + 0x1d7a6d0],DX ; 004f0ec8 | DAT_01d7a6d0
-    MOV dword ptr [0x01d7a6cc],EBP      ; 004f0ed0 | DAT_01d7a6cc
+    MOV word ptr [EAX*0x2 + 0x1d7a6d0],DX ; 004f0ec8 | g_SHORT_ARRAY_01d7a6d0
+    MOV dword ptr [0x01d7a6cc],EBP      ; 004f0ed0 | g_INT_01d7a6cc
     MOV word ptr [EAX*0x2 + 0x1d7a6d2],SI ; 004f0ed6
-    MOV [0x01d7a6d0],EAX                ; 004f0ede | DAT_01d7a6d0
+    MOV [0x01d7a6d0],EAX                ; 004f0ede | g_SHORT_ARRAY_01d7a6d0
     POP EDI                             ; 004f0ee3
     ADD ESP,0x18                        ; 004f0ee4
         ;   Label: LAB_004f0ee4
@@ -134,7 +134,7 @@ section .text
         ;   XREF to: 004f0ee4 (CONDITIONAL_JUMP)  ; LAB_004f0ee4
     JMP 0x004f0e39                      ; 004f0ef8
         ;   XREF to: 004f0e39 (UNCONDITIONAL_JUMP)  ; LAB_004f0e39
-    MOV EAX,[0x01d7a6d0]                ; 004f0efd | DAT_01d7a6d0
+    MOV EAX,[0x01d7a6d0]                ; 004f0efd | g_SHORT_ARRAY_01d7a6d0
         ;   Label: LAB_004f0efd
     ADD EAX,0x3                         ; 004f0f02
     CMP EAX,0x2710                      ; 004f0f05

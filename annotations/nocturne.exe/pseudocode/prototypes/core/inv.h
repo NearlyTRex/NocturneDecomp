@@ -55,7 +55,7 @@ int __cdecl CInventory::addItem(CInventory *this_ptr,CDemonActor *item_actor,int
 
 // Original: core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640
 // Address: 004c0640
-void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,int param_2);
+void __cdecl CInventory::createAmmoFromWeapon(CInventory *this_ptr,int weapon);
 
 // Original: core_inv.cpp_CInventory_findItemByName_FUN_004c0710
 // Address: 004c0710

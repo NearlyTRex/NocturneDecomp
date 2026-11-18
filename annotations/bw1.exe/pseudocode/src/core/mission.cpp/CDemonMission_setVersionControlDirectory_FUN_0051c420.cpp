@@ -12,7 +12,7 @@ void __cdecl core_mission_cpp_CDemonMission_setVersionControlDirectory_FUN_0051c
   char cVar1;
   char *pcVar2;
   
-  pcVar2 = &DAT_01d33b88;
+  pcVar2 = &g_CHAR_01d33b88;
   do {
     cVar1 = *directory;
     *pcVar2 = cVar1;

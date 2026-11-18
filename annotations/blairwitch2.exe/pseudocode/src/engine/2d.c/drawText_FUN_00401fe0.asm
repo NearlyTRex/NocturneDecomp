@@ -9,22 +9,22 @@
 ; int              Stack[0xc]:4   y
 ;
 ; XREF[22]:
-;   core_basicene.cpp_FUN_0059fae0 at 0059fbe8
+;   core_basicene.cpp_CBasicEnemy_renderDebugInfo_FUN_0059fae0 at 0059fbe8
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 004259e6
-;   core_dcube.cpp_FUN_00446f50 at 00446fae
 ;   core_event.cpp_CEventList_render_FUN_0048e490 at 0048e4e0
-;   core_game.cpp_FUN_004b5190 at 004b5711
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b5711
 ;   core_game.cpp_captureDebugMovieFrame_FUN_004b2a50 at 004b2d2d
-;   core_main.c_FUN_004e45e0 at 004e45fc
+;   core_main.c_showDeveloperToolsMenu_FUN_004e45e0 at 004e45fc
 ;   core_menu.cpp_calibrateGamepad_FUN_004eb490 at 004eb55f
 ;   core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3d0 at 004eb46e
-;   core_motion.cpp_FUN_005042e0 at 005043c6
+;   core_motion.cpp_CMotionController_render_FUN_005042e0 at 005043c6
+;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d003
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060936c
-;   undefined4 DAT_01c35e50
-;   undefined4 DAT_01c35e54
+;   int g_TextWrapEnabled = 0x1
+;   int g_ClipRight
+;   int g_INT_01c35e54
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextMultiline_FUN_00401d00
@@ -41,13 +41,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00401fe3
     MOV ECX,dword ptr [ESP + 0x14]      ; 00401fe7
     MOV EDX,dword ptr [ESP + 0x18]      ; 00401feb
-    CMP dword ptr [0x0060936c],0x0      ; 00401fef | DAT_0060936c
+    CMP dword ptr [0x0060936c],0x0      ; 00401fef | g_TextWrapEnabled
     JZ 0x00402017                       ; 00401ff6
         ;   XREF to: 00402017 (CONDITIONAL_JUMP)  ; LAB_00402017
     PUSH EBX                            ; 00401ff8
-    MOV EBP,dword ptr [0x01c35e54]      ; 00401ff9 | DAT_01c35e54
+    MOV EBP,dword ptr [0x01c35e54]      ; 00401ff9 | g_INT_01c35e54
     PUSH EBP                            ; 00401fff
-    MOV EBX,dword ptr [0x01c35e50]      ; 00402000 | DAT_01c35e50
+    MOV EBX,dword ptr [0x01c35e50]      ; 00402000 | g_ClipRight
     PUSH EBX                            ; 00402006
     PUSH EDX                            ; 00402007
     PUSH ECX                            ; 00402008
@@ -60,10 +60,10 @@ section .text
     POP EDI                             ; 00402014
     POP ESI                             ; 00402015
     RET                                 ; 00402016
-    MOV ESI,dword ptr [0x01c35e54]      ; 00402017 | DAT_01c35e54
+    MOV ESI,dword ptr [0x01c35e54]      ; 00402017 | g_INT_01c35e54
         ;   Label: LAB_00402017
     PUSH ESI                            ; 0040201d
-    MOV EDI,dword ptr [0x01c35e50]      ; 0040201e | DAT_01c35e50
+    MOV EDI,dword ptr [0x01c35e50]      ; 0040201e | g_ClipRight
     PUSH EDI                            ; 00402024
     PUSH EDX                            ; 00402025
     PUSH ECX                            ; 00402026

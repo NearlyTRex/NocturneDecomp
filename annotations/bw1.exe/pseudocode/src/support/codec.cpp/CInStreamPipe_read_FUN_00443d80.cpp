@@ -2,11 +2,11 @@
 // Address: 00443d80
 // Address Range: [[00443d80, 00443e3a]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *this_ptr,undefined4 *param_2,uint param_3)
+// Signature: int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *this_ptr,void *buffer,int count)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *this_ptr,uint *param_2,uint param_3)
+int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *this_ptr,void *buffer,int count)
 
 {
   int iVar1;
@@ -24,15 +24,15 @@ int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *thi
   }
   else {
     iStack_18 = 0;
-    pcStack_14 = (char *)param_2;
-    if (0 < (int)param_3) {
+    pcStack_14 = buffer;
+    if (0 < count) {
       while( true ) {
         if (this_ptr->position < this_ptr->buffer_length) {
           uVar3 = this_ptr->buffer_length - this_ptr->position;
-          if ((int)param_3 < (int)uVar3) {
-            uVar3 = param_3;
+          if (count < (int)uVar3) {
+            uVar3 = count;
           }
-          param_3 = param_3 - uVar3;
+          count = count - uVar3;
           pcVar4 = this_ptr->buffer + this_ptr->position;
           pcVar5 = pcStack_14;
           for (uVar2 = uVar3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
@@ -49,7 +49,7 @@ int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *thi
           iStack_18 = iStack_18 + uVar3;
           this_ptr->position = this_ptr->position + uVar3;
         }
-        if ((int)param_3 < 1) {
+        if (count < 1) {
           return iStack_18;
         }
         iVar1 = support_codec_cpp_CInStreamPipe_fillBuffer_FUN_00444020(this_ptr);
@@ -57,7 +57,7 @@ int __cdecl support_codec_cpp_CInStreamPipe_read_FUN_00443d80(CInStreamPipe *thi
           return iVar1;
         }
         if (iVar1 < 0) break;
-        if ((int)param_3 < 1) {
+        if (count < 1) {
           return iStack_18;
         }
       }

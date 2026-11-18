@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CGhoul *this_ptr,CVector3f *out_attract_position)
 
 {
@@ -44,9 +42,9 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CGhoul *this_ptr,C
     return 0;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (this_ptr_00,&local_40,_DAT_01c78c18);
+                     (this_ptr_00,&local_40,g_INT_01c78c18);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (this_ptr_00,&local_88,_DAT_01c78c20);
+                     (this_ptr_00,&local_88,g_INT_01c78c20);
   local_34 = pCVar2->x + pCVar1->x;
   local_30 = pCVar2->y + pCVar1->y;
   local_58 = local_34 * 0.5f;
@@ -54,9 +52,9 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CGhoul *this_ptr,C
   local_54 = local_30 * 0.5f;
   local_50 = local_2c * 0.5f;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (this_ptr_00,&local_94,_DAT_01c78c1c);
+                     (this_ptr_00,&local_94,g_INT_01c78c1c);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (this_ptr_00,&local_4c,_DAT_01c78c24);
+                     (this_ptr_00,&local_4c,g_INT_01c78c24);
   local_7c = pCVar2->x + pCVar1->x;
   local_78 = pCVar2->y + pCVar1->y;
   local_64 = local_7c * 0.5f;

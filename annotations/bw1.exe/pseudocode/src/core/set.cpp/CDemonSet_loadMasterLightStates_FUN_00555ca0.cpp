@@ -6,23 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00555ca0(CDemonSet *this_ptr,int *light_state_buffer)
 
 {
   int *piVar1;
-  int iVar2;
+  CDemonLight **ppCVar2;
   int iVar3;
   
-  if ((_DAT_01fe4cb4 == *light_state_buffer) && (iVar3 = 0, 0 < *light_state_buffer)) {
+  if ((g_MasterLightCount == *light_state_buffer) && (iVar3 = 0, 0 < *light_state_buffer)) {
     do {
-      iVar2 = iVar3 * 4;
+      ppCVar2 = g_CDemonLight_PTR_ARRAY_01fe4cb8 + iVar3;
       piVar1 = light_state_buffer + 1;
       light_state_buffer = light_state_buffer + 1;
       iVar3 = iVar3 + 1;
-      *(int *)(*(int *)(&DAT_01fe4cb8 + iVar2) + 0x1cb4) = *piVar1;
-    } while (iVar3 < _DAT_01fe4cb4);
+      (*ppCVar2)->light_enabled_flag = *piVar1;
+    } while (iVar3 < g_MasterLightCount);
   }
   return;
 }

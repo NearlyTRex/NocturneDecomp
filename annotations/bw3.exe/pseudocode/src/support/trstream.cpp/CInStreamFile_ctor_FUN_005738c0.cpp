@@ -12,7 +12,7 @@ CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(CIn
   CInStreamFile *pCVar1;
   
   pCVar1 = (CInStreamFile *)support_trstream_cpp_CInStream_ctor_FUN_00572530(&this_ptr->base);
-  (pCVar1->base).vtable = &g_CInStreamFileVTable;
+  (pCVar1->base).vtable = g_CInStreamFileVTable;
   pCVar1->file_handle = (HANDLE)0x0;
   pCVar1->file_size = 0;
   pCVar1->file_offset = 0;

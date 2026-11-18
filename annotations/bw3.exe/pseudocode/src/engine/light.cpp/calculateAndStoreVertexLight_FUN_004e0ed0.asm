@@ -11,7 +11,7 @@
 ;   engine_3d.c_processVertexLighting_FUN_004039f0 at 00403a17
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0060b034
+;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].r
 ;
 ; Called Functions:
 ;   engine_light.cpp_calculatePhongLighting_FUN_004e0bb0
@@ -37,7 +37,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004e0eee
     SUB EAX,EDX                         ; 004e0ef5
     SHL EAX,0x4                         ; 004e0ef7
-    MOV dword ptr [EAX + 0x60b034],ECX  ; 004e0efa | DAT_0060b034
+    MOV dword ptr [EAX + 0x60b034],ECX  ; 004e0efa | g_SRenderVertex_ARRAY_0060b014[0].r
     POP EBX                             ; 004e0f00
     RET                                 ; 004e0f01
 

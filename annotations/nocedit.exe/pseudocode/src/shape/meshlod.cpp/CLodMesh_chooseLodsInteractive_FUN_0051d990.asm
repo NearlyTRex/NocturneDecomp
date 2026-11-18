@@ -341,12 +341,12 @@ section .text
     LEA EAX,[ESP + 0x600]               ; 0051dd58
     XOR EDI,EDI                         ; 0051dd5f
     PUSH EAX                            ; 0051dd61
-    MOV EBX,dword ptr [0x0067d39c]      ; 0051dd62 | INT_0067d39c
-    MOV dword ptr [0x0067d39c],EDI      ; 0051dd68 | INT_0067d39c
+    MOV EBX,dword ptr [0x0067d39c]      ; 0051dd62 | g_LodChooserSelectedLod
+    MOV dword ptr [0x0067d39c],EDI      ; 0051dd68 | g_LodChooserSelectedLod
     CALL shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 ; 0051dd6e
         ;   XREF to: 0051bac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051dd73
-    MOV dword ptr [0x0067d39c],EBX      ; 0051dd76 | INT_0067d39c
+    MOV dword ptr [0x0067d39c],EBX      ; 0051dd76 | g_LodChooserSelectedLod
     TEST ESI,ESI                        ; 0051dd7c
         ;   Label: LAB_0051dd7c
     JLE 0x0051dda8                      ; 0051dd7e

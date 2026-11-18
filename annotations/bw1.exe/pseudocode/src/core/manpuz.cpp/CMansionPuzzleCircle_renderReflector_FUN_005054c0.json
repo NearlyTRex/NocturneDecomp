@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 36,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 87
   },
   "cross_references": [
@@ -60,15 +58,15 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     }
   ],
   "param_estimates": {
@@ -130,6 +128,12 @@
     "pcode_op_count": 336
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e6820",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "0050a1f0",
       "by": "name",
@@ -166,14 +170,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&this_ptr->reflectors[reflector_index].rotation,",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -8,46 +8,10 @@ import sys
 import pytest
 
 # Local imports
+from fake_sibling_image import FakeImage, shape
 from repo_paths import SCRIPTS_DIR
 import map_sibling_functions as msf
 import sibling_match as sm
-
-
-def shape(strict, relaxed = None, ninsn = 10):
-    return sm.Shape(strict, relaxed or strict, (), ninsn * 2, ninsn)
-
-
-class FakeImage:
-    """What the matcher reads from an Image, set directly."""
-
-    def __init__(self, program, names, shapes = None, callsites = None, callers = None, vtables = None,
-                 strings = None):
-        self.program = program
-        self.functions = [{"addr": a, "name": n} for a, n in names.items()]
-        self.by_addr = {f["addr"]: f for f in self.functions}
-        self.shapes = shapes or {}
-        self.callsites = callsites or {}
-        self._callers = callers or {}
-        self.vtables = vtables or []
-        self._strings = strings or {}
-
-    @property
-    def addrs_sorted(self):
-        return sorted(int(a, 16) for a in self.by_addr)
-
-    def tu_groups(self):
-        out = {}
-        for addr in sorted(self.by_addr, key = lambda a: int(a, 16)):
-            unit = sm.tu_of(self.by_addr[addr]["name"])
-            if unit:
-                out.setdefault(unit, []).append(addr)
-        return out
-
-    def callers_of(self):
-        return self._callers
-
-    def string_refs(self):
-        return self._strings
 
 
 @pytest.fixture(autouse = True)

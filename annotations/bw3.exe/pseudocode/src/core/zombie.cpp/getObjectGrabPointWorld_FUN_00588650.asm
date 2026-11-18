@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_getObjectGrabPointWorld_FUN_00588650(int param_1)
+; CVector3f * __stack_esi core_zombie_cpp_getObjectGrabPointWorld_FUN_00588650(CDemonActor *actor,CVector3f *out_point)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d83af
-;   undefined4 DAT_005d83b7
+;   float g_FLOAT_005d83af = 0.5
+;   double g_DOUBLE_005d83b7 = 0.400000000000000
 ;
 ; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_CVector3f_ctor_FUN_0040d220
-;   core_actor.cpp_FUN_00408b80
 ;
 ; *****************************************************************************
 
@@ -64,7 +66,7 @@ section .text
     CALL core_actor.cpp_CVector3f_ctor_FUN_0040d220 ; 005886cc
         ;   XREF to: 0040d220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040d220(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 005886d1
-    FLD float ptr [0x005d83af]          ; 005886d4 | DAT_005d83af
+    FLD float ptr [0x005d83af]          ; 005886d4 | g_FLOAT_005d83af
     FLD float ptr [ESP + 0x6c]          ; 005886da
     FMUL ST1                            ; 005886de
     FLD float ptr [ESP + 0x70]          ; 005886e0
@@ -82,7 +84,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00588708
     MOVSD ES:EDI,ESI                    ; 00588709
     MOVSD ES:EDI,ESI                    ; 0058870a
-    FADD double ptr [0x005d83b7]        ; 0058870b | DAT_005d83b7
+    FADD double ptr [0x005d83b7]        ; 0058870b | g_DOUBLE_005d83b7
     LEA EDI,[ESP + 0x48]                ; 00588711
     LEA ESI,[ESP + 0x3c]                ; 00588715
     FSTP float ptr [ESP + 0x44]         ; 00588719
@@ -95,8 +97,8 @@ section .text
     PUSH ECX                            ; 00588728
     LEA ESI,[ESP + 0x5c]                ; 00588729
     MOV EDI,EBX                         ; 0058872d
-    CALL core_actor.cpp_FUN_00408b80    ; 0058872f
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0058872f
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x5c]                ; 00588734
     ADD ESP,0x8                         ; 00588738
     MOVSD ES:EDI,ESI                    ; 0058873b

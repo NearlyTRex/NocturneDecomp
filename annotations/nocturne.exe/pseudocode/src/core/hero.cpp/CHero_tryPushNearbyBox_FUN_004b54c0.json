@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 114,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 83,
     "suspect_count": 2,
     "suspect_types": [
       "derived_field_index_pun",
       "pointer_cast"
     ],
-    "total_lines": 284
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -107,7 +107,7 @@
     },
     {
       "addr": "00764838",
-      "name": "g_CBoxActorActorType_00764800.name_hash",
+      "name": "g_CBoxActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -200,6 +200,24 @@
     "pcode_op_count": 940
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cf4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0898
+    },
+    "bw1.exe": {
+      "addr": "004eb890",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0898
+    },
+    "bw3.exe": {
+      "addr": "004d3500",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0898
+    },
     "nocedit.exe": {
       "addr": "004f3120",
       "by": "name",
@@ -258,7 +276,7 @@
     },
     {
       "description": "'this_ptr_00[2].create_event + 0xc' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0xc = 0x324, which is exactly offsetof(CAmmoBox, open_sound[4]). Ghidra had no CAmmoBox type here and reached the field by index arithmetic; write it as ((CAmmoBox *)this_ptr_00)->open_sound[4] (\u00a7de-pun/\u00a712). Ambiguous: CAnvil::drop_condition[88], CBat::periodic_sound[24], CBoxActor::push_sound also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 76,
+      "line": 75,
       "severity": "moderate",
       "text": "(this_ptr_00,this_ptr_00[2].create_event + 0xc);",
       "type": "derived_field_index_pun"

@@ -20,7 +20,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_0
   pSVar4 = prim + 1;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar2 == 0) goto LAB_0040571f;
-  if (DAT_006b027c == 0) {
+  if (g_INT_006b027c == 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
 LAB_00405589:
@@ -55,7 +55,7 @@ LAB_00405670:
   iVar6 = 0;
   g_VertexPreprocessMode = 0;
   for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
-    *(int *)((int)&DAT_006b029c + iVar6) = (pSVar4->base).type;
+    *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
     iVar3 = (pSVar4->base).count;
     iVar5 = (pSVar4->surface_normal).A.i;
     if (g_UseExternalRenderer == 0) {
@@ -86,14 +86,14 @@ LAB_00405670:
         iVar5 = 0xfdffff;
       }
     }
-    (&DAT_005c502c)[(pSVar4->base).type * 0xc] = iVar3;
+    g_SRenderVertex_ARRAY_005c5014[(pSVar4->base).type].u = iVar3;
     pSVar1 = &pSVar4->base;
     iVar6 = iVar6 + 4;
     vertex_count = vertex_count + 1;
     pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-    *(int *)(&DAT_005c5030 + pSVar1->type * 0x30) = iVar5;
+    g_SRenderVertex_ARRAY_005c5014[pSVar1->type].v = iVar5;
   }
-  engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,&DAT_006b029c);
+  engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,g_ProcessedVertexIndices);
 LAB_0040571f:
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

@@ -11,6 +11,8 @@ This research documents the complete MP3 audio decoding and playback pipeline in
 
 - **[mp3_audio_system_analysis.md](./mp3_audio_system_analysis.md)** - Comprehensive technical analysis (main document)
 - **[QUICK_REFERENCE.md](./QUICK_REFERENCE.md)** - Quick lookup guide for developers
+- **[sound_device.md](./sound_device.md)** - The `CSoundDevice` slots in nocedit and BW
+- **[eax.md](./eax.md)** - EAX 1.0 reverb: the property set, the payload, the 27 presets, per-camera choice, the port
 
 ## Key Findings
 

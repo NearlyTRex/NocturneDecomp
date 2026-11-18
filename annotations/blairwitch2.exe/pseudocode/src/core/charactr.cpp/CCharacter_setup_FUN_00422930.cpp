@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_ptr)
 
 {
@@ -25,12 +23,11 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_pt
   int iVar8;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
-  this_ptr->closest_distance_threshold = _DAT_005f4084;
+  this_ptr->closest_distance_threshold = 9999.0f;
   this_ptr->damage_decal_count = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&DAT_007bdadc,"stake_b.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
-            ((CKeyFramedModelInstance *)&DAT_007bdadc);
+            (&g_StakeModelInstance,"stake_b.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&g_StakeModelInstance);
   pCVar4 = this_ptr;
   do {
     this_ptr_00 = pCVar4->carry_hands[0].carry_actor;
@@ -40,10 +37,9 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_pt
         (*((this_ptr_00->vtable)._ub)->pickup)(this_ptr_00,&this_ptr->base);
       }
       else if (pCVar5 != this_ptr) {
-        _DAT_01d046a0 = "..\\core\\charactr.cpp";
-        _DAT_01d046a4 = 0x151;
-        core_main_c_FUN_004e4500
-                  ("%s is carrying %s, but %s thinks it is being carried by %s",this_ptr,this_ptr_00,this_ptr_00,pCVar5);
+        g_CHAR_PTR_01d046a0 = "..\\core\\charactr.cpp";
+        g_INT_01d046a4 = 0x151;
+        core_main_c_displayErrorAndQuit_FUN_004e4500("%s is carrying %s, but %s thinks it is being carried by %s");
       }
     }
     pCVar4 = (CCharacter *)(pCVar4->base).create_event;
@@ -102,8 +98,8 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00422930(CCharacter *this_pt
     this_ptr->sfx_handle = 0;
     return;
   }
-  iVar8 = core_actor_cpp_FUN_00408a50(this_ptr);
-  pcVar7 = (char *)(iVar8 + 1);
+  pcVar7 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408a50(&this_ptr->base);
+  pcVar7 = pcVar7 + 1;
   pcVar6 = this_ptr->descriptive_name;
   do {
     cVar1 = *pcVar7;

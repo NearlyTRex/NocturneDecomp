@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_pure_virtual_function_ca_00598af4
-;   undefined2 DAT_005c1f4c
+;   short g_PureVirtualCallFlag = 0x0
 ;
 ; Called Functions:
 ;   crt_cpp.c_reportPureVirtualError_FUN_0056af76
@@ -15,7 +15,7 @@
 
 section .text
 
-    CMP word ptr [0x005c1f4c],0x0       ; 00566ed7 | DAT_005c1f4c
+    CMP word ptr [0x005c1f4c],0x0       ; 00566ed7 | g_PureVirtualCallFlag
         ;   Label: crt_cpp.c_pureVirtual_FUN_00566ed7
     JZ 0x00566ee2                       ; 00566edf
         ;   XREF to: 00566ee2 (CONDITIONAL_JUMP)  ; LAB_00566ee2
@@ -25,7 +25,7 @@ section .text
     PUSH 0x1                            ; 00566ee3
     MOV EBX,0x1                         ; 00566ee5
     PUSH 0x598af4                       ; 00566eea | = "pure virtual function called!"
-    MOV word ptr [0x005c1f4c],BX        ; 00566eef | DAT_005c1f4c
+    MOV word ptr [0x005c1f4c],BX        ; 00566eef | g_PureVirtualCallFlag
     CALL crt_cpp.c_reportPureVirtualError_FUN_0056af76 ; 00566ef6
         ;   XREF to: 0056af76 (UNCONDITIONAL_CALL)  ; void crt_cpp.c_reportPureVirtualError_FUN_0056af76(char * error_message, int exit_code)
     ADD ESP,0x8                         ; 00566efb

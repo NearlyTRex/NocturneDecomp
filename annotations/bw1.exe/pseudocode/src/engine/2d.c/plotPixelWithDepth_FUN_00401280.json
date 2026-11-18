@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 115,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 77
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -39,14 +36,14 @@
   "globals": [
     {
       "addr": "0061b4a0",
-      "name": "DAT_0061b4a0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_0061b4a0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c4f020",
-      "name": "DAT_01c4f020",
-      "type": "undefined4",
+      "name": "g_INT_01c4f020",
+      "type": "int",
       "value": null
     }
   ],
@@ -167,70 +164,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061b4a0",
-      "severity": "mild",
-      "text": "iVar1 = DAT_0061b4a0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01c4480c",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)(*(int *)(&DAT_01c4480c + iVar2) + x_coord * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01c4354c + iVar2) + x_coord) = DAT_01c4f020;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_01c4f020",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01c4354c + iVar2) + x_coord) = DAT_01c4f020;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "*(uint *)(x_coord * 4 + *(int *)(&DAT_01c4354c + iVar2)) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "*(ushort *)(x_coord * 2 + *(int *)(&DAT_01c4354c + iVar2)) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01c4dad0",
-      "severity": "mild",
-      "text": "*(ushort *)(&DAT_01c4dad0 + (_DAT_01c4f020 & 0xff) * 2);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

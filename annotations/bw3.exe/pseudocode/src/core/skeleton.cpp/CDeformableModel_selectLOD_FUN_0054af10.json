@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 87,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 4,
-    "suspect_types": [
-      "extra_output",
-      "undefined_data"
-    ],
-    "total_lines": 116
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
   },
   "cross_references": [
     {
       "addr": "0042f310",
       "from_addr": "0042f42d",
-      "name": "core_charactr.cpp_FUN_0042f310",
+      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -45,7 +42,7 @@
     {
       "addr": "0041e100",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041e100"
+      "name": "core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041e100"
     },
     {
       "addr": "005a3120",
@@ -61,9 +58,9 @@
   "globals": [
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005fe9dc",
@@ -73,8 +70,8 @@
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -90,7 +87,7 @@
       {
         "call_addr": "0042f42d",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042f310",
+        "caller": "core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,38 +208,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "iVar1 = extraout_ECX + -1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "piVar3 = &this_ptr->lod_info[extraout_ECX + -2].shadow_only_flag;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

@@ -12,11 +12,11 @@
 ;   core_inv.cpp_CInventory_clear_FUN_004da440 at 004da463
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0 at 004de71c
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40 at 004dcd3d
-;   core_prye.cpp_FUN_00524940 at 00524c0c
+;   core_prye.cpp_CPrye_updateWeaponLayerActions_FUN_00524940 at 00524c0c
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052e150
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_004085a0
+;   core_actor.cpp_deleteActor_FUN_004085a0
 ;   crt_string.c_memmove_FUN_005a54c0
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
     JZ 0x004dbaea                       ; 004dbb27
         ;   XREF to: 004dbaea (CONDITIONAL_JUMP)  ; LAB_004dbaea
     PUSH EDI                            ; 004dbb29
-    CALL core_actor.cpp_FUN_004085a0    ; 004dbb2a
-        ;   XREF to: 004085a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004085a0()
+    CALL core_actor.cpp_deleteActor_FUN_004085a0 ; 004dbb2a
+        ;   XREF to: 004085a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_004085a0(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004dbb2f
     POP EBP                             ; 004dbb32
     POP EDI                             ; 004dbb33

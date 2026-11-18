@@ -12,7 +12,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_00447c30(CFilterFX *this_ptr)
   if (this_ptr->movie_data == (SMovieFrame *)0x0) {
     return;
   }
-  FUN_005b86a0(this_ptr->movie_data);
+  debugFree(this_ptr->movie_data);
   this_ptr->movie_data = (SMovieFrame *)0x0;
   return;
 }

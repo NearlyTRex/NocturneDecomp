@@ -23,9 +23,9 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10 at 00426cfb
-;   core_doc.cpp_FUN_004568e0 at 00456a06
+;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_004568e0 at 00456a06
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004b0210 at 004b02e1
-;   core_stranger.cpp_FUN_00568500 at 005685ef
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500 at 005685ef
 ;
 ; *****************************************************************************
 

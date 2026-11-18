@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004cab10(CGabriella *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -26,7 +24,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004cab10(CGabriella 
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).invincibility_timer = 0x3F000000;
+  (this_ptr->base).invincibility_timer = 0.5f;
   fVar3 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar3;
@@ -52,7 +50,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004cab10(CGabriella 
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  (&(this_ptr->base).base.model.base,(fVar3 <= _DAT_005e122c) + 9,force_immediate);
+                  (&(this_ptr->base).base.model.base,(fVar3 <= 50.0f) + 9,force_immediate
+                  );
         if (g_CGamePtr->hero_number != HERO_TYPE_STRANGER) {
           pCVar1 = (this_ptr->base).base.base.vtable._ub;
           fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.25,0.4);

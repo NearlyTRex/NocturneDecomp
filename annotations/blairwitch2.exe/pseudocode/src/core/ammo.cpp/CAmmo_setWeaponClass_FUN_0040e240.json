@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 213,
-    "complexity_score": 120,
+    "complexity_score": 105,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 303
@@ -25,7 +24,7 @@
     {
       "addr": "004b90d0",
       "from_addr": "004ba0e1",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,21 +34,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dd020",
-      "from_addr": "004dd08e",
-      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004dadb0",
       "from_addr": "004db288",
-      "name": "core_inv.cpp_FUN_004dadb0",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004db760",
       "from_addr": "004db7da",
-      "name": "core_inv.cpp_FUN_004db760",
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd020",
+      "from_addr": "004dd08e",
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -91,8 +90,8 @@
     },
     {
       "addr": "005cb10b",
-      "name": "DAT_005cb10b",
-      "type": "undefined4",
+      "name": "s_CGun_005cb10b",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -234,7 +233,7 @@
       {
         "call_addr": "004ba0e1",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,7 +244,7 @@
       {
         "call_addr": "004db288",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dadb0",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004dadb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -289,7 +288,7 @@
       {
         "call_addr": "004db7da",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004db760",
+        "caller": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004db760",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -387,14 +386,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005cb10b",
-      "severity": "mild",
-      "text": "iVar2 = _strcmp(weapon_class_name,&DAT_005cb10b);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 13,

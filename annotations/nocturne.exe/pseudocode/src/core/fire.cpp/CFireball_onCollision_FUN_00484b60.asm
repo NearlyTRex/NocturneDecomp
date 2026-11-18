@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rock_x_wav_0058111c
 ;   TerminatedCString s_rock_x_wav_00581127
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -55,7 +55,7 @@ section .text
     PUSH 0x1                            ; 00484b84
     PUSH EDI                            ; 00484b86
     PUSH EBX                            ; 00484b87
-    MOV EAX,[0x005b80f0]                ; 00484b88 | g_CFireEffect_PTR_005b80f0
+    MOV EAX,[0x005b80f0]                ; 00484b88 | g_CFireEffectPtr
     PUSH EAX                            ; 00484b8d
     CALL core_fire.cpp_CFireEffect_createFireball_FUN_0048b270 ; 00484b8e
         ;   XREF to: 0048b270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)
@@ -66,7 +66,7 @@ section .text
     PUSH 0x10000                        ; 00484ba1
     PUSH EDI                            ; 00484ba6
     PUSH EBX                            ; 00484ba7
-    MOV EDX,dword ptr [0x005b80f0]      ; 00484ba8 | g_CFireEffect_PTR_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 00484ba8 | g_CFireEffectPtr
     PUSH EDX                            ; 00484bae
     INC ESI                             ; 00484baf
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00484bb0
@@ -124,7 +124,7 @@ section .text
     PUSH EDI                            ; 00484c31
     PUSH 0x0                            ; 00484c32
     PUSH EBX                            ; 00484c34
-    MOV EBP,dword ptr [0x005b80f0]      ; 00484c35 | g_CFireEffect_PTR_005b80f0
+    MOV EBP,dword ptr [0x005b80f0]      ; 00484c35 | g_CFireEffectPtr
     PUSH EBP                            ; 00484c3b
     INC ESI                             ; 00484c3c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00484c3d

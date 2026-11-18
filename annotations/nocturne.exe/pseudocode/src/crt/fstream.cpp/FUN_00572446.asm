@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_00570630 at 0057066b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1795
-;   undefined4 DAT_005c1d98
+;   byte g_BYTE_005c1795 = 0x0
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0056c488
@@ -39,7 +39,7 @@ section .text
     RET                                 ; 0057245d
     RCR EDX,0x1                         ; 0057245e
         ;   Label: LAB_0057245e
-    CMP byte ptr [0x005c1795],0x0       ; 00572460 | DAT_005c1795
+    CMP byte ptr [0x005c1795],0x0       ; 00572460 | g_BYTE_005c1795
         ;   Label: LAB_00572460
     JZ 0x00572499                       ; 00572467
         ;   XREF to: 00572499 (CONDITIONAL_JUMP)  ; LAB_00572499
@@ -48,7 +48,7 @@ section .text
     FLD double ptr [ESP]                ; 0057246b
     PUSH ECX                            ; 0057246e
     PUSH EBX                            ; 0057246f
-    TEST byte ptr [0x005c1d98],0x1      ; 00572470 | DAT_005c1d98
+    TEST byte ptr [0x005c1d98],0x1      ; 00572470 | g_UseSoftwareMath
     JZ 0x00572480                       ; 00572477
         ;   XREF to: 00572480 (CONDITIONAL_JUMP)  ; LAB_00572480
     CALL crt_unknown.c_FUN_0056c488     ; 00572479

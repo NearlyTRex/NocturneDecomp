@@ -24,20 +24,24 @@ def load_struct_definitions(data_types_path):
     return data.get('structs', [])
 
 
-_DEFAULT_FIELD_RE = re.compile(r'^field_\d+$')
+# Ghidra's names for a field nobody named: field_0x14, field_20, field3_0xc
+_DEFAULT_FIELD_RE = re.compile(r'^field\d*_(?:0x)?[0-9a-fA-F]+$')
+# pad, padding, pad2, padding_0x44 -- but not a real name such as padding_char
+_PADDING_FIELD_RE = re.compile(r'^pad(?:ding)?(?:_?(?:0x)?[0-9a-f]+)?$', re.IGNORECASE)
 
 
 def classify_field(field_name):
     """Classify a field name as problematic or clean.
 
     Returns:
-        'unknown' for unk*, 'padding' for pad*, 'reserved' for reserved*,
-        'default' for field_<number> (Ghidra defaults), or None if clean
+        'unknown' for unk*, 'padding' for a pad/padding placeholder,
+        'reserved' for reserved*, 'default' for Ghidra's field_<offset>
+        names, or None if clean
     """
     lower = field_name.lower()
     if lower.startswith('unk'):
         return 'unknown'
-    if lower.startswith('pad'):
+    if _PADDING_FIELD_RE.match(field_name):
         return 'padding'
     if lower.startswith('reserved'):
         return 'reserved'
@@ -212,9 +216,14 @@ def generate_struct_report(data_types_path, src_dir, output_path):
 
     # Derive additional scan directories by walking up to the pseudocode/ parent
     # Scan include subdirs except types/ (which just contains the struct definitions)
-    pseudocode_dir = src_dir
-    while pseudocode_dir and os.path.basename(pseudocode_dir) != 'pseudocode':
-        pseudocode_dir = os.path.dirname(pseudocode_dir)
+    # Stops at the root, whose dirname is itself, when no ancestor is pseudocode/
+    pseudocode_dir = os.path.abspath(src_dir)
+    while os.path.basename(pseudocode_dir) != 'pseudocode':
+        parent = os.path.dirname(pseudocode_dir)
+        if parent == pseudocode_dir:
+            pseudocode_dir = None
+            break
+        pseudocode_dir = parent
     extra_dirs = []
     if pseudocode_dir:
         include_dir = os.path.join(pseudocode_dir, 'include')
@@ -274,14 +283,9 @@ def generate_struct_report(data_types_path, src_dir, output_path):
     lines.append('-' * 70)
     lines.append('These structs are not referenced in any source or header file.')
     lines.append('')
+    category = {a['name']: a['category'] for a in analysis}
     for name in sorted(unreferenced):
-        # Find its category
-        cat = ''
-        for a in analysis:
-            if a['name'] == name:
-                cat = a['category']
-                break
-        lines.append('  %-40s  %s' % (name, cat))
+        lines.append('  %-40s  %s' % (name, category[name]))
     lines.append('')
 
     # Structs with issues (sorted worst first)

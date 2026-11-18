@@ -15,14 +15,14 @@ void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(CInventory *
   
   if ((this_ptr->selected_item == (CDemonActor *)0x0) ||
      (pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (this_ptr->selected_item,g_CHealthItemActorType_01cae098.name_hash),
+                         (this_ptr->selected_item,g_CHealthItemClassInfo.name_hash),
      pCVar1 == (CDemonActor *)0x0)) {
     iVar2 = 0;
     pCVar3 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
         pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (pCVar3->items[0],g_CHealthItemActorType_01cae098.name_hash);
+                           (pCVar3->items[0],g_CHealthItemClassInfo.name_hash);
         if (pCVar1 != (CDemonActor *)0x0) {
           core_inv_cpp_CInventory_select_FUN_004c1580(this_ptr,pCVar1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"Auto use health\n");

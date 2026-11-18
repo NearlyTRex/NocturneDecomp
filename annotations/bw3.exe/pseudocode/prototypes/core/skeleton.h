@@ -457,6 +457,6 @@ CSkeleton * __cdecl CSkeleton::arrdtor40(CSkeleton *this_ptr,uint flags);
 // Address: 00550560
 CDeformableModel * __cdecl CDeformableModel::arrdtor64(CDeformableModel *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_FUN_00550580
+// Original: core_skeleton.cpp_staticInit_FUN_00550580
 // Address: 00550580
-void FUN_00550580(void);
+void __cdecl staticInit(void);

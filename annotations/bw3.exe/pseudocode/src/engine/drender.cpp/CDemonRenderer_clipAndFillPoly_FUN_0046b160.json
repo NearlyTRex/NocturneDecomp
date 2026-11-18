@@ -2,24 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 135,
+    "complexity_score": 36,
     "cross_reference_count": 25,
     "function_call_count": 7,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 9,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 146
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 147
   },
   "cross_references": [
     {
       "addr": "0046b470",
       "from_addr": "0046b51f",
       "name": "engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046bb90",
+      "from_addr": "0046bbcb",
+      "name": "engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0046bb90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046bd60",
+      "from_addr": "0046bde1",
+      "name": "engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0046bd60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,6 +62,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046c2d0",
+      "from_addr": "0046c349",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0046c2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046c3b0",
       "from_addr": "0046c45e",
       "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0",
@@ -62,6 +77,24 @@
       "addr": "0046c090",
       "from_addr": "0046c109",
       "name": "engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046c090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046c170",
+      "from_addr": "0046c21e",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0046c170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b670",
+      "from_addr": "0046b731",
+      "name": "engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0046b670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046c950",
+      "from_addr": "0046c9c4",
+      "name": "engine_drender.cpp_CDemonRenderer_renderOverlayDirect_FUN_0046c950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -129,42 +162,6 @@
       "from_addr": "0046b41f",
       "name": "engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046b670",
-      "from_addr": "0046b731",
-      "name": "engine_drender.cpp_FUN_0046b670",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046bb90",
-      "from_addr": "0046bbcb",
-      "name": "engine_drender.cpp_FUN_0046bb90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046bd80",
-      "from_addr": "0046bde1",
-      "name": "engine_drender.cpp_FUN_0046bd80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046c170",
-      "from_addr": "0046c21e",
-      "name": "engine_drender.cpp_FUN_0046c170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046c2d0",
-      "from_addr": "0046c349",
-      "name": "engine_drender.cpp_FUN_0046c2d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046c950",
-      "from_addr": "0046c9c4",
-      "name": "engine_drender.cpp_FUN_0046c950",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -181,24 +178,9 @@
   },
   "function_calls": [
     {
-      "addr": "005a1ea0",
-      "is_variadic": false,
-      "name": "core_asgaya.cpp_FUN_005a1ea0"
-    },
-    {
-      "addr": "00466d50",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_00466d50"
-    },
-    {
-      "addr": "004673d0",
-      "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_004673d0"
-    },
-    {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "00587cd0",
@@ -214,6 +196,21 @@
       "addr": "0043bac0",
       "is_variadic": false,
       "name": "engine_clipper.c_clipPolygonToViewport_FUN_0043bac0"
+    },
+    {
+      "addr": "004673d0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004673d0"
+    },
+    {
+      "addr": "00466d50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00466d50"
+    },
+    {
+      "addr": "005a1ea0",
+      "is_variadic": false,
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_005a1ea0"
     }
   ],
   "globals": [
@@ -231,38 +228,38 @@
     },
     {
       "addr": "007e3e88",
-      "name": "DAT_007e3e88",
-      "type": "undefined4",
+      "name": "g_ClippedVertexCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007e3e8c",
-      "name": "DAT_007e3e8c",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_007e3e8c",
+      "type": "SRenderVertex[16]",
       "value": null
     },
     {
       "addr": "01c6e2b4",
-      "name": "DAT_01c6e2b4",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c6e2b5",
-      "name": "DAT_01c6e2b5",
+      "name": "g_RenderStateFlags+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -349,78 +346,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01c6e2b4",
-      "severity": "mild",
-      "text": "if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c6e2b4 & 1) != 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c6e2b4",
-      "severity": "mild",
-      "text": "((DAT_01c6e2b4 & 5) != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c6e2b4",
-      "severity": "mild",
-      "text": "if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c6e2b4 & 1) != 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_01c6e2b4",
-      "severity": "mild",
-      "text": "((DAT_01c6e2b4 & 5) != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01c6e2b5",
-      "severity": "mild",
-      "text": "if ((DAT_01c6e2b5 & 2) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_007e3e88",
-      "severity": "mild",
-      "text": "if (2 < DAT_007e3e88) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_007e3e8c",
-      "severity": "mild",
-      "text": "core_asgaya_cpp_FUN_005a1ea0(&DAT_007e3e8c,DAT_007e3e88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_007e3e88",
-      "severity": "mild",
-      "text": "core_asgaya_cpp_FUN_005a1ea0(&DAT_007e3e8c,DAT_007e3e88);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

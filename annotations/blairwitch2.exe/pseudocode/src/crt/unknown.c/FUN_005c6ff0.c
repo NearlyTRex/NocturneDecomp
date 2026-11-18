@@ -13,7 +13,7 @@ byte FUN_005c6ff0(uint param_1)
   
   iVar1 = FUN_005c7040(param_1);
   if (iVar1 == 0) {
-    return (&DAT_0061ed94)[(byte)((char)param_1 + 1)] & 0x80;
+    return g_CharacterClassificationTable[(byte)((char)param_1 + 1)] & 0x80;
   }
   if ((0x8280 < param_1) && (param_1 < 0x829b)) {
     return 1;

@@ -15,7 +15,7 @@ section .text
     PUSH 0x1fb1c                        ; 004f0960
         ;   Label: core_hpriest.cpp_factoryFuncHighPriestOfGardath_FUN_004f0960
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004f0965
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004f096a
     TEST EAX,EAX                        ; 004f096d
     JNZ 0x004f0972                      ; 004f096f

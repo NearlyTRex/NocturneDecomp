@@ -11,7 +11,7 @@ CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_00420330(void)
 {
   CLightActor *pCVar1;
   
-  pCVar1 = (CLightActor *)operator_new(0x36f4);
+  pCVar1 = operator_new(0x36f4);
   if (pCVar1 == (CLightActor *)0x0) {
     return (CLightActor *)0x0;
   }

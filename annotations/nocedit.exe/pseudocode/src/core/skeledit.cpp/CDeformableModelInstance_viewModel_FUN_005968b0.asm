@@ -1069,7 +1069,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 005972ee
         ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; SPose * core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 005972f3
-    PUSH 0x36644d8                      ; 005972f6 | SPose_036644d8
+    PUSH 0x36644d8                      ; 005972f6 | g_ViewModelSavedPose
     PUSH EBX                            ; 005972fb
     CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 ; 005972fc
         ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SPose * bone_transform)
@@ -1210,7 +1210,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffd2e],ESI ; 005974a2 | g_LightBufferPool[12][269816]
     XOR EAX,EAX                         ; 005974a8
     MOV EDI,0x1                         ; 005974aa
-    PUSH 0x6819e4                       ; 005974af | SMRGLTextureBasic_006819e4
+    PUSH 0x6819e4                       ; 005974af | g_ViewModelTexture
     MOV ESI,dword ptr [0x006703ec]      ; 005974b4 | g_CDemonRendererPtr2
     MOV dword ptr [EBP + 0xfffffcfe],EAX ; 005974ba
     MOV dword ptr [EBP + 0xfffffcfa],EAX ; 005974c0
@@ -3019,7 +3019,7 @@ section .text
     TEST EAX,EAX                        ; 00598920
     JZ 0x00598e1f                       ; 00598922
         ;   XREF to: 00598e1f (CONDITIONAL_JUMP)  ; LAB_00598e1f
-    PUSH 0x36644d8                      ; 00598928 | SPose_036644d8
+    PUSH 0x36644d8                      ; 00598928 | g_ViewModelSavedPose
     MOV EDX,dword ptr [EBP + 0x92]      ; 0059892d
     PUSH EDX                            ; 00598933
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 00598934

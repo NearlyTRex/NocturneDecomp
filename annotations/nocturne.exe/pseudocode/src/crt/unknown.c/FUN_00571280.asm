@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec = 005671e4
-;   undefined4 DAT_02de5d70
+;   void* g_PTR_02de5d70
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_00565c50
@@ -60,8 +60,8 @@ section .text
     XOR EAX,EAX                         ; 005712c7
     MOV AL,byte ptr [EDI + 0x52]        ; 005712c9
     MOV dword ptr [EBX + 0xc],EAX       ; 005712cc
-    MOV EAX,[0x02de5d70]                ; 005712cf | DAT_02de5d70
-    MOV dword ptr [0x02de5d70],EBX      ; 005712d4 | DAT_02de5d70
+    MOV EAX,[0x02de5d70]                ; 005712cf | g_PTR_02de5d70
+    MOV dword ptr [0x02de5d70],EBX      ; 005712d4 | g_PTR_02de5d70
     MOV dword ptr [EBX],EAX             ; 005712da
     JMP 0x005712e0                      ; 005712dc
         ;   XREF to: 005712e0 (UNCONDITIONAL_JUMP)  ; LAB_005712e0

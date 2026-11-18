@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 6,
-    "cross_reference_count": 18,
+    "cross_reference_count": 19,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -32,15 +32,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00460230",
-      "from_addr": "004606e3",
-      "name": "core_djien.cpp_CDjien_process_FUN_00460230",
+      "addr": "004609c0",
+      "from_addr": "00460c6c",
+      "name": "core_djien.cpp_CDjien_doStumpAttack_FUN_004609c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004609c0",
-      "from_addr": "00460c6c",
-      "name": "core_djien.cpp_FUN_004609c0",
+      "addr": "00460230",
+      "from_addr": "004606e3",
+      "name": "core_djien.cpp_CDjien_process_FUN_00460230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,21 +74,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004f9f10",
+      "from_addr": "004fa23c",
+      "name": "core_inv.cpp_CInventory_updateInventory_FUN_004f9f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f6b50",
       "from_addr": "004f6b61",
-      "name": "core_inv.cpp_FUN_004f6b50",
+      "name": "core_inv.cpp_playSpsSound_FUN_004f6b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f6bb0",
       "from_addr": "004f6c5a",
-      "name": "core_inv.cpp_FUN_004f6bb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f9f10",
-      "from_addr": "004fa23c",
-      "name": "core_inv.cpp_FUN_004f9f10",
+      "name": "core_inv.cpp_updateSps_FUN_004f6bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,6 +120,12 @@
       "from_addr": "0057ced6",
       "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b8440",
+      "from_addr": "005b88d7",
+      "name": "core_yow.cpp_CYow_process_FUN_005b8440",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -143,7 +149,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 28,
+    "call_site_count": 33,
     "call_sites": [
       {
         "call_addr": "0057ced6",
@@ -181,7 +187,7 @@
       {
         "call_addr": "004fa23c",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f9f10",
+        "caller": "core_inv.cpp_CInventory_updateInventory_FUN_004f9f10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,7 +198,7 @@
       {
         "call_addr": "004fa2b6",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f9f10",
+        "caller": "core_inv.cpp_CInventory_updateInventory_FUN_004f9f10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +209,7 @@
       {
         "call_addr": "004fa335",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f9f10",
+        "caller": "core_inv.cpp_CInventory_updateInventory_FUN_004f9f10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +220,7 @@
       {
         "call_addr": "004fa3b4",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f9f10",
+        "caller": "core_inv.cpp_CInventory_updateInventory_FUN_004f9f10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +231,7 @@
       {
         "call_addr": "004fa420",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f9f10",
+        "caller": "core_inv.cpp_CInventory_updateInventory_FUN_004f9f10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

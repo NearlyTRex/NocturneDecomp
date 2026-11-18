@@ -17,18 +17,10 @@ CMatrix3x4f * __stack2_esi core_asgaya_cpp_CAsgaya_getCarryObjToBodyXForm_FUN_00
   byte bVar4;
   CMatrix3x4f CStack_a8;
   CMatrix3x4f CStack_78;
-  uint uStack_48;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  uint uStack_38;
-  uint uStack_34;
-  uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
   uint uStack_18;
   uint uStack_14;
   uint uStack_10;
@@ -36,27 +28,28 @@ CMatrix3x4f * __stack2_esi core_asgaya_cpp_CAsgaya_getCarryObjToBodyXForm_FUN_00
   bVar4 = 0;
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 0) {
-    uStack_2c = 0xbf6c7086;
-    uStack_28 = 0x3d5b9b16;
-    uStack_30 = 0xbf204945;
-    if (&uStack_3c != &uStack_30) {
-      uStack_38 = 0xbf6c7086;
-      uStack_34 = 0x3d5b9b16;
-      uStack_3c = 0xbf204945;
+    CStack_30.y = -0.923592;
+    CStack_30.z = 0.0536147;
+    CStack_30.x = -0.626118;
+    if (&CStack_3c != &CStack_30) {
+      CStack_3c.y = -0.923592;
+      CStack_3c.z = 0.0536147;
+      CStack_3c.x = -0.626118;
     }
     uStack_10 = 0xc01bd399;
     uStack_18 = 0xbbd21c02;
     uStack_14 = 0x3d9ba527;
-    uStack_48 = 0xbbd21c02;
-    uStack_44 = 0x3d9ba527;
-    uStack_40 = 0xc01bd399;
-    if (&uStack_24 != &uStack_48) {
-      uStack_24 = 0xbbd21c02;
-      uStack_20 = 0x3d9ba527;
-      uStack_1c = 0xc01bd399;
+    CStack_48.x = -0.00641203;
+    CStack_48.y = 0.0759986;
+    CStack_48.z = -2.43479;
+    if (&CStack_24 != &CStack_48) {
+      CStack_24.x = -0.00641203;
+      CStack_24.y = 0.0759986;
+      CStack_24.z = -2.43479;
     }
   }
-  core_xform_cpp_FUN_00583940(&CStack_78,&uStack_3c,&uStack_24);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00583940
+            (&CStack_78,&CStack_3c,&CStack_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
             (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
              &CStack_a8);

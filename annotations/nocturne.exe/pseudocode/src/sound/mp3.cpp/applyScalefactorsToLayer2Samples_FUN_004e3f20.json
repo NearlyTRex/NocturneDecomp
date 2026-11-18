@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 67
   },
@@ -32,8 +31,8 @@
   "globals": [
     {
       "addr": "005bbdf0",
-      "name": "DAT_005bbdf0",
-      "type": "undefined4",
+      "name": "g_MpegScalefactorTable",
+      "type": "double[64]",
       "value": null
     }
   ],
@@ -147,14 +146,6 @@
       "severity": "moderate",
       "text": "pfVar3 = (float *)((int)sample_array + iVar6);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005bbdf0",
-      "severity": "mild",
-      "text": "*pfVar3 = *pfVar3 * (float)*(double *)(&DAT_005bbdf0 + iVar2 * 8);",
-      "type": "undefined_data"
     }
   ]
 }

@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_bwspart.cpp_FUN_005a86a0 at 005a8748
+;   core_bwspart.cpp_renderSimpleParticle_FUN_005a86a0 at 005a8748
 ;   core_fire.cpp_CFireball_setupRenderState_FUN_00495bb0 at 00495c11
 ;   core_fire.cpp_CFirefly_setupRenderState_FUN_00495020 at 004950bb
 ;   core_fire.cpp_CPopcorn_render_FUN_0049b9d0 at 0049ba5c

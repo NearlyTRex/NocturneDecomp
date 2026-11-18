@@ -6,34 +6,35 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_processActivePuzzle_FUN_00415cd0(void)
 
 {
   uint uVar1;
-  uint uVar2;
-  int iVar3;
+  _BIT_INTEGER32 _Var2;
+  uint uVar3;
+  int iVar4;
   
-  uVar1 = DAT_007c3980;
-  if (DAT_007c3978 != (int *)0x0) {
-    iVar3 = 0;
-    uVar2 = _DAT_01c43544;
-    while ((DAT_007c3980 = uVar2, _DAT_01c43544 = DAT_007c3980, DAT_007c3978 != (int *)0x0 &&
-           ((uVar2 = 1 << ((byte)iVar3 & 0x1f), (DAT_007c3980 & uVar2) == (uVar1 & uVar2) ||
-            ((**(code **)(*DAT_007c3978 + 0x24))
-                       (DAT_007c3978,_DAT_01c4353c,_DAT_01c43540,iVar3,(uVar2 & DAT_007c3980) != 0),
-            uVar1 = DAT_007c3980, DAT_007c3978 != (int *)0x0))))) {
-      DAT_007c3980 = uVar1;
-      iVar3 = iVar3 + 1;
-      uVar2 = _DAT_01c43544;
-      uVar1 = DAT_007c3980;
-      if (2 < iVar3) {
-        (**(code **)(*DAT_007c3978 + 0x20))(DAT_007c3978,g_CGamePtr->delta_time_float);
+  uVar1 = g_INT_007c3980;
+  if (g_CPuzzle_PTR_007c3978 != (CPuzzle *)0x0) {
+    iVar4 = 0;
+    _Var2 = g_MouseButtonFlags;
+    while ((g_INT_007c3980 = (int)_Var2, g_MouseButtonFlags = (_BIT_INTEGER32)g_INT_007c3980,
+           g_CPuzzle_PTR_007c3978 != (CPuzzle *)0x0 &&
+           ((uVar3 = 1 << ((byte)iVar4 & 0x1f), (g_INT_007c3980 & uVar3) == (uVar1 & uVar3) ||
+            ((**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x24))
+                       (g_CPuzzle_PTR_007c3978,g_MouseX,g_MouseY,iVar4,(uVar3 & g_INT_007c3980) != 0
+                       ), uVar1 = g_INT_007c3980, g_CPuzzle_PTR_007c3978 != (CPuzzle *)0x0))))) {
+      g_INT_007c3980 = uVar1;
+      iVar4 = iVar4 + 1;
+      _Var2 = g_MouseButtonFlags;
+      uVar1 = g_INT_007c3980;
+      if (2 < iVar4) {
+        (**(code **)((int)g_CPuzzle_PTR_007c3978->vtable + 0x20))
+                  (g_CPuzzle_PTR_007c3978,g_CGamePtr->delta_time_float);
         return;
       }
     }
   }
-  DAT_007c3980 = uVar1;
+  g_INT_007c3980 = uVar1;
   return;
 }

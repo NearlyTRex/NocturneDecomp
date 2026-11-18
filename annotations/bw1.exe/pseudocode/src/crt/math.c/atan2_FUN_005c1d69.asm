@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_atan2_FUN_005c1d69(void)
+; float10 __fpureg crt_math_c_atan2_FUN_005c1d69(float10 y,float10 x)
 ;
 ;
 ; XREF[16]:
-;   core_doc.cpp_FUN_0046caa0 at 0046e15e
+;   core_doc.cpp_CDoc_updateProceduralAnimation_FUN_0046caa0 at 0046e15e
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0 at 0049f1c3
 ;   core_fire.cpp_CBulletHole_init_FUN_004ac3e0 at 004ac4ca
 ;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004e4830 at 004e486f
@@ -18,7 +18,7 @@
 ;   ... and 6 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006267b8
+;   byte g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c7f44
@@ -29,7 +29,7 @@ section .text
 
     FXCH                                ; 005c1d69
         ;   Label: crt_math.c_atan2_FUN_005c1d69
-    TEST byte ptr [0x006267b8],0x1      ; 005c1d6b | DAT_006267b8
+    TEST byte ptr [0x006267b8],0x1      ; 005c1d6b | g_UseSoftwareMath
     JNZ 0x005c1d78                      ; 005c1d72
         ;   XREF to: 005c1d78 (CONDITIONAL_JUMP)  ; LAB_005c1d78
     FPATAN                              ; 005c1d74

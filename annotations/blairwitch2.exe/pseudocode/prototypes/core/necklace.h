@@ -28,11 +28,3 @@ void __cdecl CNecklace::process(CNecklace *this_ptr,float delta_time);
 // Original: core_necklace.cpp_CNecklace_dtor_FUN_005add30
 // Address: 005add30
 CNecklace * __cdecl CNecklace::dtor(CNecklace *this_ptr,uint flags);
-
-// Original: core_necklace.cpp_FUN_005adda0
-// Address: 005adda0
-int FUN_005adda0(CKeyFramedModel *param_1);
-
-// Original: core_necklace.cpp_FUN_005ade00
-// Address: 005ade00
-void FUN_005ade00(CCloth *param_1);

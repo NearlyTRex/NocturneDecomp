@@ -1,32 +1,33 @@
 // Name: support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0
 // Address: 0056f7c0
 // Address Range: [[0056f7c0, 0056f816]]
-// Convention: unknown
-// Signature: void support_trisock_cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr *param_1)
+// Convention: __stack_esi
+// Signature: SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
 
 #include "nocturne.h"
 
-void support_trisock_cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr *param_1)
+SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
 
 {
   ushort uVar1;
-  uint *unaff_ESI;
   uint *puVar2;
-  byte bVar3;
+  uint *puVar3;
+  byte bVar4;
   uint auStackY_17f4 [1524];
   uint local_18;
   uint auStack_10 [2];
   
-  bVar3 = 0;
-  uVar1 = htons(param_1->port);
-  local_18 = CONCAT22(uVar1,2);
-  support_trisock_cpp_getIPAddress_FUN_0056f6f0(param_1);
+  bVar4 = 0;
+  uVar1 = htons(net_addr->port);
+  support_trisock_cpp_getIPAddress_FUN_0056f6f0(net_addr);
   memset(auStack_10,0,8);
-  puVar2 = unaff_ESI + (uint)bVar3 * -2 + 1;
-  *unaff_ESI = local_18;
-  *puVar2 = auStack_10[(uint)bVar3 * -2 + -1];
-  puVar2[(uint)bVar3 * -2 + 1] = auStack_10[(uint)bVar3 * -2 + (uint)bVar3 * -2];
-  (puVar2 + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1] =
-       (auStack_10 + (uint)bVar3 * -2 + (uint)bVar3 * -2)[(uint)bVar3 * -2 + 1];
-  return;
+  puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);
+  dest_buffer->sin_family = 2;
+  dest_buffer->sin_port = uVar1;
+  puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
+  *puVar2 = auStack_10[(uint)bVar4 * -2 + -1];
+  *puVar3 = auStack_10[(uint)bVar4 * -2 + (uint)bVar4 * -2];
+  puVar3[(uint)bVar4 * -2 + 1] =
+       (auStack_10 + (uint)bVar4 * -2 + (uint)bVar4 * -2)[(uint)bVar4 * -2 + 1];
+  return dest_buffer;
 }

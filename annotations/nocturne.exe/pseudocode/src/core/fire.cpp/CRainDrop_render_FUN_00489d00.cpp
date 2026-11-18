@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
 
 {
@@ -89,32 +87,32 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_50);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b8bbc);
+            (g_CDemonRenderer_PTR_005ae704,&g_FireEffectRainDropTexture);
   core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-            (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
-  local_14 = 0xffff - _DAT_01c038f4;
-  _DAT_005c5030 = 0xdc0000;
-  _DAT_005c505c = 0xd00000;
-  _DAT_005c5060 = 0xdc0000;
-  DAT_005c502c = 0x800000;
-  _DAT_005c508c = 0x800000;
-  _DAT_005c50bc = 0x800000;
-  _DAT_005c5090 = 0x900000;
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+  local_14 = 0xffff - g_INT_01c038f4;
+  g_SRenderVertex_ARRAY_005c5014[0].v = 0xdc0000;
+  g_SRenderVertex_ARRAY_005c5014[1].u = 0xd00000;
+  g_SRenderVertex_ARRAY_005c5014[1].v = 0xdc0000;
+  g_SRenderVertex_ARRAY_005c5014[0].u = 0x800000;
+  g_SRenderVertex_ARRAY_005c5014[2].u = 0x800000;
+  g_SRenderVertex_ARRAY_005c5014[3].u = 0x800000;
+  g_SRenderVertex_ARRAY_005c5014[2].v = 0x900000;
   local_10 = local_14;
   dVar3 = round
                     ((double)((float)local_14 *
                              (this_ptr->base).lifetime_remaining * (float)4));
-  DAT_005c5040 = (int)ROUND(dVar3);
-  _DAT_005c50c0 = 0x900000;
+  g_SRenderVertex_ARRAY_005c5014[0].a = (int)ROUND(dVar3);
+  g_SRenderVertex_ARRAY_005c5014[3].v = 0x900000;
   local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);
   local_2c = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_28 = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  DAT_005c5070 = DAT_005c5040;
-  _DAT_005c50a0 = DAT_005c5040;
-  _DAT_005c50d0 = DAT_005c5040;
-  local_20.z = DAT_005c5040;
+  g_SRenderVertex_ARRAY_005c5014[1].a = g_SRenderVertex_ARRAY_005c5014[0].a;
+  g_SRenderVertex_ARRAY_005c5014[2].a = g_SRenderVertex_ARRAY_005c5014[0].a;
+  g_SRenderVertex_ARRAY_005c5014[3].a = g_SRenderVertex_ARRAY_005c5014[0].a;
+  local_20.z = g_SRenderVertex_ARRAY_005c5014[0].a;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (g_CDemonSetPtr,(CVector3i *)(local_38 + 8),(CVector3i *)&DAT_01c08d14,0,4);
+            (g_CDemonSetPtr,(CVector3i *)(local_38 + 8),&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   local_a8 = 4;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080

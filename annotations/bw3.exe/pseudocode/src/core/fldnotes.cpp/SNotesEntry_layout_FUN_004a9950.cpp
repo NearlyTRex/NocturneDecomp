@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a9950(SNotesEntry *this_ptr,STextView *view)
 
 {
@@ -19,7 +17,7 @@ int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a9950(SNotesEntry *this_
   int iVar4;
   int local_14;
   
-  iVar3 = _DAT_01d0d008;
+  iVar3 = g_INT_01d0d008;
   this_ptr->page = view->page_index;
   if (iVar3 == 0) {
     iVar3 = this_ptr->kind;
@@ -61,7 +59,7 @@ int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a9950(SNotesEntry *this_
     while (cVar1 != '\0') {
       if (iVar3 != view->page_index) {
         if ((this_ptr->title[0] != '\0') && (this_ptr->title[0] != '*')) {
-          iVar2 = core_fldnotes_cpp_STextView_addText_FUN_004a8ed0(view,&DAT_005c1050);
+          iVar2 = core_fldnotes_cpp_STextView_addText_FUN_004a8ed0(view,"<ul>");
           if (iVar2 == 0) {
             return 0;
           }

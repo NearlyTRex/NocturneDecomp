@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 138,
+    "complexity_score": 103,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 71
@@ -58,15 +57,15 @@
     },
     {
       "addr": "00607983",
-      "name": "DAT_00607983",
-      "type": "undefined1",
-      "value": null
+      "name": "g_WindowsMinorVersion",
+      "type": "byte",
+      "value": "0x0"
     },
     {
       "addr": "00607985",
-      "name": "DAT_00607985",
-      "type": "undefined2",
-      "value": null
+      "name": "g_WindowsPlatformVersion",
+      "type": "short",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -207,30 +206,6 @@
       "severity": "mild",
       "text": "void FUN_005adf10(int *param_1,int *param_2)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00607985",
-      "severity": "mild",
-      "text": "if (DAT_00607985 < 0x8000) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00607985",
-      "severity": "mild",
-      "text": "else if ((DAT_00607985 < 0x8000) || (3 < DAT_00607983)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00607983",
-      "severity": "mild",
-      "text": "else if ((DAT_00607985 < 0x8000) || (3 < DAT_00607983)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004a6fa0(CFlameCan *this_ptr)
 
@@ -82,7 +81,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004a6fa0(CFlameCan *this_ptr)
   }
   fVar2 = (this_ptr->flame).flame_size.x;
   (this_ptr->flame).which_flame = FLAME_TYPE_TORCH;
-  fVar2 = fVar2 * (float)_DAT_005c0cac;
+  fVar2 = fVar2 * (float)2;
   fVar3 = (this_ptr->flame).flame_size.y;
   (this_ptr->flame).globe_scalar = 0.0;
   if (fVar3 < fVar2) {

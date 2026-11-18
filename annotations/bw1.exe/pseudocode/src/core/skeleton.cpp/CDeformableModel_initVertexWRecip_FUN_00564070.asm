@@ -12,9 +12,9 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005699c0 at 005699ea
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
-;   undefined4 DAT_01bc120c
-;   undefined4 DAT_01c51cac
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
+;   CDemonRenderer g_CDemonRenderer_01bc120c
+;   int g_PerspectiveReciprocal
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH ESI                            ; 00564071
     PUSH EDI                            ; 00564072
     PUSH EBP                            ; 00564073
-    MOV EDI,dword ptr [0x00612560]      ; 00564074 | DAT_00612560
-    MOV EBP,dword ptr [0x01c51cac]      ; 0056407a | DAT_01c51cac
+    MOV EDI,dword ptr [0x00612560]      ; 00564074 | g_CDemonRenderer_PTR_00612560
+    MOV EBP,dword ptr [0x01c51cac]      ; 0056407a | g_PerspectiveReciprocal
     MOV ESI,dword ptr [ESP + 0x18]      ; 00564080
     MOV ECX,dword ptr [ESP + 0x14]      ; 00564084
     SHL ESI,0x2                         ; 00564088
@@ -37,7 +37,7 @@ section .text
     TEST EBX,EBX                        ; 00564094
     JLE 0x005640b0                      ; 00564096
         ;   XREF to: 005640b0 (CONDITIONAL_JUMP)  ; LAB_005640b0
-    MOV ECX,dword ptr [EDI]             ; 00564098 | DAT_01bc120c
+    MOV ECX,dword ptr [EDI]             ; 00564098 | g_CDemonRenderer_01bc120c
         ;   Label: LAB_00564098
     MOV dword ptr [ECX + EAX*0x1 + 0x2c],EBP ; 0056409a
     INC EDX                             ; 0056409e
@@ -48,9 +48,9 @@ section .text
         ;   XREF to: 00564098 (CONDITIONAL_JUMP)  ; LAB_00564098
     LEA EAX,[EAX]                       ; 005640a9
     NOP                                 ; 005640af
-    MOV dword ptr [0x01c51cac],EBP      ; 005640b0 | DAT_01c51cac
+    MOV dword ptr [0x01c51cac],EBP      ; 005640b0 | g_PerspectiveReciprocal
         ;   Label: LAB_005640b0
-    MOV dword ptr [0x00612560],EDI      ; 005640b6 | DAT_00612560
+    MOV dword ptr [0x00612560],EDI      ; 005640b6 | g_CDemonRenderer_PTR_00612560
     POP EBP                             ; 005640bc
     POP EDI                             ; 005640bd
     POP ESI                             ; 005640be

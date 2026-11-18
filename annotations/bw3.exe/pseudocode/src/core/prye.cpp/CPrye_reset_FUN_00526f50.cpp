@@ -12,7 +12,7 @@ void __cdecl core_prye_cpp_CPrye_reset_FUN_00526f50(CPrye *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   
   this_ptr_00 = &(this_ptr->base).base.model;
-  core_hero_cpp_FUN_004d4410(this_ptr);
+  core_hero_cpp_CHero_reset_FUN_004d4410(&this_ptr->base);
   this_ptr->ladder_to_descend = (CLadder *)0x0;
   this_ptr->weapon = (CWeapon *)0x0;
   (this_ptr->base).action_pending = 0;

@@ -7,7 +7,7 @@
 ; CLadder *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_model_005dbd75+1
+;   TerminatedCString s_model_005dbd76
 ;   TerminatedCString s_ladderSize_005dbd7c
 ;   TerminatedCString s_masterActor_005dbd87
 ;   TerminatedCString s_groundType_005dbd93
@@ -32,7 +32,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 004e0196
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004e019b
-    PUSH 0x5dbd76                       ; 004e019e | s_model_005dbd75+1
+    PUSH 0x5dbd76                       ; 004e019e | = "model"
     LEA EAX,[EBX + 0x2b4]               ; 004e01a3
     PUSH EAX                            ; 004e01a9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 004e01aa

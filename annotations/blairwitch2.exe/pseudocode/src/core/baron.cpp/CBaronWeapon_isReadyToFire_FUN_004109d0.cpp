@@ -10,7 +10,7 @@ int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_004109d0(CBaronWeapon 
 
 {
   CBaron *pCVar1;
-  int iVar2;
+  SMotion *pSVar2;
   
   core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0(this_ptr);
   pCVar1 = this_ptr->baron;
@@ -18,8 +18,9 @@ int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_004109d0(CBaronWeapon 
     if ((pCVar1->base).player_input.action_state.fire != 0) {
       return 0;
     }
-    iVar2 = core_motion_cpp_FUN_005035c0(&(pCVar1->base).base.model);
-    switch(*(uint *)(iVar2 + 0x24)) {
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0
+                       (&(pCVar1->base).base.model.base);
+    switch(pSVar2->state_index) {
     case 0:
     case 1:
     case 2:

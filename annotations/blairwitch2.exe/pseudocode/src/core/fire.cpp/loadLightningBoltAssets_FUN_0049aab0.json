@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 45,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 29
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
   },
   "cross_references": [
     {
@@ -44,32 +42,32 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "006157cc",
-      "name": "DAT_006157cc",
-      "type": "undefined4",
+      "name": "g_FireEffectLightningBoltTextures",
+      "type": "SMRGLTextureBasic[6]",
       "value": null
     },
     {
       "addr": "006157e4",
-      "name": "DAT_006157e4",
+      "name": "g_FireEffectLightningBoltTextures[1].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061585c",
-      "name": "DAT_0061585c",
-      "type": "undefined4",
+      "name": "g_FireEffectPopcornTexture",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     }
   ],
@@ -152,30 +150,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_006157cc",
-      "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)&DAT_006157cc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0061585c",
-      "severity": "mild",
-      "text": "} while (texture != (SMRGLTextureBasic *)&DAT_0061585c);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

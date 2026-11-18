@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 55,
+    "complexity_score": 30,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 127
   },
   "cross_references": [
     {
-      "addr": "004b2970",
-      "from_addr": "004b29ce",
-      "name": "core_game.cpp_FUN_004b2970",
+      "addr": "004b90d0",
+      "from_addr": "004b98c7",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b90d0",
-      "from_addr": "004b98c7",
-      "name": "core_game.cpp_FUN_004b90d0",
+      "addr": "004b2970",
+      "from_addr": "004b29ce",
+      "name": "core_game.cpp_setupMovieRecording_FUN_004b2970",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -65,14 +63,14 @@
   "globals": [
     {
       "addr": "005d2136",
-      "name": "DAT_005d2136",
-      "type": "undefined1",
+      "name": "s_d_005d2136",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d2139",
-      "name": "DAT_005d2139",
-      "type": "undefined4",
+      "name": "s_d_005d2139",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -94,7 +92,7 @@
       {
         "call_addr": "004b98c7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -105,7 +103,7 @@
       {
         "call_addr": "004b98ef",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,7 +114,7 @@
       {
         "call_addr": "004b9917",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b90d0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004b90d0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -127,7 +125,7 @@
       {
         "call_addr": "004b29ce",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b2970",
+        "caller": "core_game.cpp_setupMovieRecording_FUN_004b2970",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -138,7 +136,7 @@
       {
         "call_addr": "004b29f6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b2970",
+        "caller": "core_game.cpp_setupMovieRecording_FUN_004b2970",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -149,7 +147,7 @@
       {
         "call_addr": "004b2a1e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b2970",
+        "caller": "core_game.cpp_setupMovieRecording_FUN_004b2970",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -290,22 +288,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005d2136",
-      "severity": "mild",
-      "text": "_sprintf(local_34,&DAT_005d2136);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005d2139",
-      "severity": "mild",
-      "text": "iVar1 = sscanf(local_34,&DAT_005d2139);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

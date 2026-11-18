@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [],
@@ -53,6 +51,78 @@
       "RETURN": 1
     },
     "pcode_op_count": 18
+  },
+  "possible_indirect_callers": {
+    "method_name": "getKeyState",
+    "param_analysis": {
+      "call_site_count": 80,
+      "caller_details": [
+        {
+          "caller": "CGame_processCheatCodes_FUN_004bb100",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processCheatCodes_FUN_004bb100",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFrame_FUN_004b6f30",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFudge_FUN_004b4f00",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processFudge_FUN_004b4f00",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processHotkeys_FUN_004ba540",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processHotkeys_FUN_004ba540",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processHotkeys_FUN_004ba540",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processHotkeys_FUN_004ba540",
+          "estimated_params": 0
+        },
+        {
+          "caller": "CGame_processHotkeys_FUN_004ba540",
+          "estimated_params": 0
+        }
+      ],
+      "estimated_params": 0,
+      "param_estimates": [
+        0
+      ]
+    },
+    "possible_callers": [
+      "CGame_processCheatCodes_FUN_004bb100",
+      "CGame_processFrame_FUN_004b6f30",
+      "CGame_processFudge_FUN_004b4f00",
+      "CGame_processHotkeys_FUN_004ba540",
+      "CGame_rollCredits_FUN_004c02a0",
+      "CGame_showFullscreenBitmap_FUN_004bec20",
+      "CInputString_handleKeyboardInput_FUN_0047bd50",
+      "CPickList_handleInput_FUN_00483550",
+      "CSimBox_process_FUN_005473c0",
+      "CSlew_processInput_FUN_005505e0",
+      "CSpotView_handleInput_FUN_00567d10",
+      "captureDebugMovieFrame_FUN_004b3e50",
+      "configureCustomKeyBindings_FUN_004eae80",
+      "getSinglePressedKey_FUN_004eadf0",
+      "showMainGameMenu_FUN_004ea4d0",
+      "showMultiChoiceDialog_FUN_0047d230",
+      "showTextInputDialog_FUN_0047c2c0"
+    ],
+    "vtable_offset": 0
   },
   "siblings": {
     "blairwitch2.exe": {
@@ -103,16 +173,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_01c6cef0",
-      "severity": "mild",
-      "text": "return (uint)(byte)(&DAT_01c6cef0)[key_code];",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -9,9 +9,9 @@
 // Address: 00519cb0
 uint __cdecl crc32UpdateByte(uint current_crc,uchar data_byte);
 
-// Original: engine_pod.cpp_FUN_00519dc0
+// Original: engine_pod.cpp_crc32ComputeFileRange_FUN_00519dc0
 // Address: 00519dc0
-uint FUN_00519dc0(char *param_1,int param_2);
+uint __cdecl crc32ComputeFileRange(char *filename,int start_offset);
 
 // Original: engine_pod.cpp_CPodFile_ctor_FUN_00519e50
 // Address: 00519e50
@@ -41,21 +41,21 @@ int __cdecl CPodFile::findFileIndex(CPodFile *this_ptr,char *filename);
 // Address: 0051aa00
 void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 
-// Original: engine_pod.cpp_FUN_0051aa80
+// Original: engine_pod.cpp_CPodFile_verifyChecksum_FUN_0051aa80
 // Address: 0051aa80
-bool FUN_0051aa80(int *param_1);
+int __cdecl CPodFile::verifyChecksum(CPodFile *this_ptr);
 
-// Original: engine_pod.cpp_FUN_0051ad50
+// Original: engine_pod.cpp_CPodFile_getAuditRecord_FUN_0051ad50
 // Address: 0051ad50
-void FUN_0051ad50(int param_1,int param_2);
+CPodAuditRecord * __stack2_esi CPodFile::getAuditRecord(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
 
-// Original: engine_pod.cpp_FUN_0051ae70
+// Original: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0051ae70
 // Address: 0051ae70
-void FUN_0051ae70(int param_1,int param_2);
+CPodDependencyRecord * __stack2_esi CPodFile::getDependencyRecord(CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record);
 
-// Original: engine_pod.cpp_FUN_0051af80
+// Original: engine_pod.cpp_CPodFile_computeFileCRC_FUN_0051af80
 // Address: 0051af80
-uint FUN_0051af80(int param_1,int param_2);
+uint __cdecl CPodFile::computeFileCRC(CPodFile *this_ptr,int file_index);
 
 // Original: engine_pod.cpp_CPod_ctor_FUN_0051b080
 // Address: 0051b080
@@ -65,9 +65,9 @@ CPod * __cdecl CPod::ctor(CPod *this_ptr);
 // Address: 0051b0b0
 CPod * __cdecl CPod::dtor(CPod *this_ptr,uint flags);
 
-// Original: engine_pod.cpp_FUN_0051b110
+// Original: engine_pod.cpp_CPod_mount_FUN_0051b110
 // Address: 0051b110
-void FUN_0051b110(int *param_1,char *param_2);
+void __cdecl CPod::mount(CPod *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPod_remount_FUN_0051b1e0
 // Address: 0051b1e0
@@ -97,13 +97,13 @@ void __cdecl CPod::initSearch(CPod *this_ptr,char *search_pattern,CPodSearchCont
 // Address: 0051b5d0
 int __cdecl CPod::getNextSearchResult(CPod *this_ptr,CPodSearchContext *search_context);
 
-// Original: engine_pod.cpp_FUN_0051b6e0
+// Original: engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0051b6e0
 // Address: 0051b6e0
-void FUN_0051b6e0(void);
+void __cdecl CPod::computeAndStoreCRC(CPod *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0
 // Address: 0051b8d0
-undefined4 __cdecl CPod::verifyIntegrity(CPod *this_ptr,char *param_2);
+int __cdecl CPod::verifyIntegrity(CPod *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPod_findFile_FUN_0051b9d0
 // Address: 0051b9d0

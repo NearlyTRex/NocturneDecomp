@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 61,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 61
   },
@@ -32,26 +32,26 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     }
   ],
   "globals": [
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "020b0258",
-      "name": "DAT_020b0258",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArrayBackup",
+      "type": "uint*[1200]",
       "value": null
     }
   ],
@@ -118,28 +118,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2) =",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01c2b64c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2b64c + iVar2) = *(uint *)(&DAT_020b0258 + iVar2);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)g_ZBufferScanlineArrayBackup",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_020b0258",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2b64c + iVar2) = *(uint *)(&DAT_020b0258 + iVar2);",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ZBufferScanlineArrayBackup` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)g_ZBufferScanlineArrayBackup",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2);",
+      "type": "pointer_truncation"
     }
   ]
 }

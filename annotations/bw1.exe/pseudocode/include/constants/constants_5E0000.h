@@ -11,6 +11,7 @@
 // =============================================================================
 
 // TerminatedCString constants
+static TerminatedCString s_set_005e001c = ".set";
 static TerminatedCString s_annotation_005e0021 = "annotation";
 static TerminatedCString s_Can_only_use_annotation_005e002c = "Can only use \\annotation in a \\map entry on line %d.";
 static TerminatedCString s_core_fldnotes_cpp_005e0061 = "..\\core\\fldnotes.cpp";
@@ -18,6 +19,7 @@ static TerminatedCString s_Hell_froze_005e0076 = "Hell froze!";
 static TerminatedCString s_Too_many_annotations_in_005e0082 = "Too many \\annotations in map %s at line %d.";
 static TerminatedCString s_d_d_005e00ae = "%[^,], %d , %d , \"%[^\"]\"";
 static TerminatedCString s_Syntax_error_in_annotati_005e00c7 = "Syntax error in \\annotation parms on line %d";
+static TerminatedCString s_end_005e00f4 = "end";
 static TerminatedCString s_Unknown_tag_s_in_s_line_005e00f8 = "Unknown tag: '%s' in %s, line %d";
 static TerminatedCString s_No_entry_started_in_s_li_005e0119 = "No entry started in %s, line %d";
 static TerminatedCString s_fieldnote_005e0139 = "fieldnote";
@@ -32,16 +34,21 @@ static TerminatedCString s_CFieldNotes_completeTask_005e0227 = "CFieldNotes::com
 static TerminatedCString s_CFieldNotes_completeTask_005e0258 = "CFieldNotes::completeTask - entry '%s' was not a task";
 static TerminatedCString s_core_fldnotes_cpp_005e028e = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_Field_note_s_has_invalid_005e02a3 = "Field note %s has invalid type %d";
+static TerminatedCString s_Exit_005e02c5 = "Exit";
 static TerminatedCString s_anon_005e02ca = "%*[^\n]\n";
 static TerminatedCString s_anon_005e02d2 = "%*[^\n]\n";
+static TerminatedCString s_d_005e02da = "%d\n";
 static TerminatedCString s_core_fldnotes_cpp_005e02de = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_Invalid_field_notes_file_005e02f3 = "Invalid field notes file version: %d, latest this .exe supports is %d";
 static TerminatedCString s_anon_005e0339 = "%*[^\n]\n";
 static TerminatedCString s_anon_005e0341 = " \"%[^\"]";
+static TerminatedCString s_anon_005e0349 = "\"\n";
 static TerminatedCString s_anon_005e034c = "%*[^\n]\n";
+static TerminatedCString s_d_005e0354 = "%d\n";
 static TerminatedCString s_d_005e0358 = "\"%[^\"]\", %d\n";
 static TerminatedCString s_Ignoring_saved_game_refe_005e0365 = "Ignoring saved game reference to field notes entry %s which doesn't exist in %s";
 static TerminatedCString s_anon_005e03b5 = "%*[^\n]\n";
+static TerminatedCString s_d_005e03bd = "%d\n";
 static TerminatedCString s_anon_005e03c1 = "%*[^\n]\n";
 static TerminatedCString s_d_d_005e03c9 = " %[^,], %d, %d\n";
 static TerminatedCString s_core_fldnotes_cpp_005e03d9 = "..\\core\\fldnotes.cpp";
@@ -51,27 +58,39 @@ static TerminatedCString s_CFieldNotes_loadState_En_005e042d = "CFieldNotes::loa
 static TerminatedCString s_core_fldnotes_cpp_005e0467 = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_CFieldNotes_loadState_Ma_005e047c = "CFieldNotes::loadState - Map '%s' has changed size";
 static TerminatedCString s_anon_005e04af = "%*[^\n]\n";
+static TerminatedCString s_anon_005e04b7 = " ";
+static TerminatedCString s_s_2X_005e04b9 = "%2X";
+static TerminatedCString s_anon_005e04bd = " ";
 static TerminatedCString s_anon_005e04bf = "%*[^\n]\n";
+static TerminatedCString s_d_005e04c7 = "%d\n";
+static TerminatedCString s_s_005e04cb = "%s\n";
 static TerminatedCString s_anon_005e04cf = "%*[^\n]\n";
 static TerminatedCString s_BEGIN_FIELD_NOTES_005e04d7 = "//-- BEGIN FIELD NOTES ------------------------------\n";
 static TerminatedCString s_field_notes_file_version_005e050e = "// field notes file version\n";
+static TerminatedCString s_d_005e052b = "%d\n";
 static TerminatedCString s_filename_005e052f = "// filename\n";
 static TerminatedCString s_s_005e053c = "\"%s\"\n";
 static TerminatedCString s_core_fldnotes_cpp_005e0542 = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_Invalid_entry_item_type_005e0557 = "Invalid entry item type";
 static TerminatedCString s_entry_count_list_name_ty_005e056f = "// entry count, list(\"name\", type)\n";
+static TerminatedCString s_d_005e0593 = "%d\n";
 static TerminatedCString s_s_d_005e0597 = "\"%s\", %d\n";
 static TerminatedCString s_core_fldnotes_cpp_005e05a1 = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_Invalid_entry_item_type_005e05b6 = "Invalid entry item type";
 static TerminatedCString s_core_fldnotes_cpp_005e05ce = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_Hell_froze_005e05e3 = "Hell froze";
 static TerminatedCString s_map_coverage_count_005e05ee = "// map coverage count\n";
+static TerminatedCString s_d_005e0605 = "%d\n";
 static TerminatedCString s_core_fldnotes_cpp_005e0609 = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_Hell_froze_005e061e = "Hell froze";
 static TerminatedCString s_map_entry_name_xSize_ySi_005e0629 = "// map entry name, xSize, ySize\n";
 static TerminatedCString s_s_d_d_005e064a = "%s, %d, %d\n";
 static TerminatedCString s_map_coverage_data_005e0656 = "\t// map coverage data\n";
+static TerminatedCString s_anon_005e066d = "\t\t";
+static TerminatedCString s_s_02X_005e0670 = "%02X";
+static TerminatedCString s_anon_005e0675 = "\n";
 static TerminatedCString s_map_annotation_count_lis_005e0677 = "\t// map annotation count, list\n";
+static TerminatedCString s_d_005e0697 = "\t%d\n";
 static TerminatedCString s_s_005e069c = "\t\t%s\n";
 static TerminatedCString s_core_fldnotes_cpp_005e06a2 = "..\\core\\fldnotes.cpp";
 static TerminatedCString s_Hell_froze_005e06b7 = "Hell froze.";
@@ -86,20 +105,32 @@ static TerminatedCString s_gatherTime_005e073f = "gatherTime";
 static TerminatedCString s_boxSize_005e074a = "boxSize";
 static TerminatedCString s_engine_font_cpp_005e07a6 = "..\\engine\\font.cpp";
 static TerminatedCString s_Too_many_bitmaps_005e07b9 = "Too many bitmaps";
+static TerminatedCString s_art_005e07ca = "art";
 static TerminatedCString s_Invalid_font_file_size_s_005e07ce = "Invalid font file size (%s).";
 static TerminatedCString s_engine_font_cpp_005e07eb = "..\\engine\\font.cpp";
 static TerminatedCString s_Unable_to_allocate_memor_005e07fe = "Unable to allocate memory for font bitmap (%s).";
 static TerminatedCString s_engine_font_cpp_005e082e = "..\\engine\\font.cpp";
+static TerminatedCString s_act_005e0841 = "act";
+static TerminatedCString s_art_005e0845 = "art";
 static TerminatedCString s_engine_font_cpp_005e0849 = "..\\engine\\font.cpp";
 static TerminatedCString s_CBitFont_addBitmap_File_005e085c = "CBitFont::addBitmap - File not found : %s";
 static TerminatedCString s_engine_font_cpp_005e0886 = "..\\engine\\font.cpp";
 static TerminatedCString s_CBitFont_setAcceleration_005e0899 = "CBitFont::setAcceleration - Out of memory";
+static TerminatedCString s_opa_005e08c3 = "opa";
+static TerminatedCString s_art_005e08c7 = "art";
 static TerminatedCString s_engine_font_cpp_005e08cb = "..\\engine\\font.cpp";
 static TerminatedCString s_CBitFont_setAcceleration_005e08de = "CBitFont::setAcceleration - No opacity file found: %s";
 static TerminatedCString s_engine_font_cpp_005e0914 = "..\\engine\\font.cpp";
 static TerminatedCString s_Out_of_memory_loading_op_005e0927 = "Out of memory loading opacity mapped font : ";
 static TerminatedCString s_engine_font_cpp_005e0954 = "..\\engine\\font.cpp";
 static TerminatedCString s_Out_of_memory_loading_op_005e0967 = "Out of memory loading opacity mapped font : ";
+static TerminatedCString s_art_005e0994 = "art";
+static TerminatedCString s_s_005e0998 = "%s\n";
+static TerminatedCString s_d_d_005e099c = "%d,%d\n";
+static TerminatedCString s_d_d_005e09a3 = "%d,%d\n";
+static TerminatedCString s_d_005e09aa = "%d\n";
+static TerminatedCString s_d_005e09ae = "%d\n";
+static TerminatedCString s_d_d_005e09b2 = "%d,%d\n";
 static TerminatedCString s_engine_font_cpp_005e09b9 = "..\\engine\\font.cpp";
 static TerminatedCString s_Out_of_memory_005e09cc = "Out of memory";
 static TerminatedCString s_No_character_markers_fou_005e09da = "No character markers found in font file (%s).";
@@ -141,13 +172,16 @@ static TerminatedCString s_frankx_flap_up_wav_005e0c9b = "frankx-flap-up.wav";
 static TerminatedCString s_frankx_flap_down_wav_005e0cae = "frankx-flap-down.wav";
 static TerminatedCString s_frankx_big_ramp_wav_005e0cc3 = "frankx-big-ramp.wav";
 static TerminatedCString s_core_frankgen_cpp_005e0cd7 = "..\\core\\frankgen.cpp";
+static TerminatedCString s_WTF_005e0cec = "WTF!";
 static TerminatedCString s_core_frankgen_cpp_005e0d4a = "..\\core\\frankgen.cpp";
+static TerminatedCString s_WTF_005e0d5f = "WTF!";
 static TerminatedCString s_core_frankgen_cpp_005e0d64 = "..\\core\\frankgen.cpp";
 static TerminatedCString s_CFrankenstienMachine_fin_005e0d79 = "CFrankenstienMachine::findLeader - no leader found!";
 static TerminatedCString s_core_frankgen_cpp_005e0dad = "..\\core\\frankgen.cpp";
 static TerminatedCString s_CFrankenstienMachine_set_005e0dc2 = "CFrankenstienMachine::setCourseFrame - no course!";
 static TerminatedCString s_CGabriella_005e0df4 = "CGabriella";
-static TerminatedCString s_gabriela_dfm_005e0e3b = "?gabriela.dfm";
+static TerminatedCString s_gabriela_dfm_005e0e3c = "gabriela.dfm";
+static TerminatedCString s_gabgun_kfm_005e0e49 = "gabgun.kfm";
 static TerminatedCString s_gabriela_dfm_005e0e54 = "gabriela.dfm";
 static TerminatedCString s_gabcoat_cth_005e0e61 = "gabcoat.cth";
 static TerminatedCString s_Bip01_head_005e0e6d = "Bip01 head";
@@ -177,10 +211,11 @@ static TerminatedCString s_undraw_s_wav_7_005e0fcd = "undraw-s.wav @ .7";
 static TerminatedCString s_kick1_wav_005e1074 = "kick1.wav";
 static TerminatedCString s_hit_gh_4_7_wav_005e107e = "hit-gh[4,7].wav";
 static TerminatedCString s_gb_fall1_wav_005e108e = "gb-fall1.wav";
-static TerminatedCString s_CCrossbow_005e10e3 = "?CCrossbow";
+static TerminatedCString s_CGun_005e10b0 = "CGun";
+static TerminatedCString s_CCrossbow_005e10e4 = "CCrossbow";
 static TerminatedCString s_core_gabriela_cpp_005e10ee = "..\\core\\gabriela.cpp";
 static TerminatedCString s_Hell_froze_invalid_pickU_005e1103 = "Hell froze - invalid pickUpType: %d";
-static TerminatedCString s_objectToPickUp_005e1163 = "?objectToPickUp";
+static TerminatedCString s_objectToPickUp_005e1164 = "objectToPickUp";
 static TerminatedCString s_doorToOpen_005e1173 = "doorToOpen";
 static TerminatedCString s_leverToPull_005e117e = "leverToPull";
 static TerminatedCString s_ladderToClimb_005e118a = "ladderToClimb";
@@ -190,16 +225,17 @@ static TerminatedCString s_gb_die_1_6_wav_005e120c = "gb-die[1,6].wav";
 static TerminatedCString s_gb_hit_1_6_wav_005e121c = "gb-hit[1,6].wav";
 static TerminatedCString s_core_gabriela_cpp_005e123c = "..\\core\\gabriela.cpp";
 static TerminatedCString s_Don_t_know_how_to_carry_005e1251 = "Don't know how to carry light %s";
-static TerminatedCString s_Enter_Movie_FPS_005e128f = "?Enter Movie FPS";
+static TerminatedCString s_Enter_Movie_FPS_005e1290 = "Enter Movie FPS";
 static TerminatedCString s_Enter_number_of_frames_t_005e12a0 = "Enter number of frames to record (or 0 to record until CTRL+V is pressed)";
 static TerminatedCString s_Enter_image_width_005e12ea = "Enter image width";
 static TerminatedCString s_Enter_image_height_005e12fc = "Enter image height";
 static TerminatedCString s_Press_CTRL_V_to_begin_re_005e130f = "Press CTRL+V to begin recording.";
 static TerminatedCString s_noc_05d_raw_005e1330 = "noc%05d.raw";
 static TerminatedCString s_Movie_recording_active_m_005e133c = "Movie recording active: movie\\%s";
+static TerminatedCString s_wb_005e135d = "wb";
 static TerminatedCString s_movie_005e1360 = "movie";
-static TerminatedCString s_d_s_005e139b = "?%d - %s";
-static TerminatedCString s_s_s_005e13c3 = "?%s = %s";
+static TerminatedCString s_d_s_005e139c = "%d - %s";
+static TerminatedCString s_s_s_005e13c4 = "%s = %s";
 static TerminatedCString s_Quick_help_005e13cc = "Quick help";
 static TerminatedCString s_F1_Toggle_help_005e13d7 = "F1 = Toggle help";
 static TerminatedCString s_F2_Save_game_005e13e8 = "F2 = Save game";
@@ -209,6 +245,9 @@ static TerminatedCString s_F6_Quick_save_005e141a = "F6 = Quick save";
 static TerminatedCString s_F9_Quick_load_005e142a = "F9 = Quick load";
 static TerminatedCString s_ESC_Pause_game_005e143a = "ESC = Pause game";
 static TerminatedCString s_Forward_005e144b = "Forward";
+static TerminatedCString s_Back_005e1453 = "Back";
+static TerminatedCString s_Walk_005e1458 = "Walk";
+static TerminatedCString s_Run_005e145d = "Run";
 static TerminatedCString s_Strafe_on_005e1461 = "Strafe on";
 static TerminatedCString s_Strafe_left_005e146b = "Strafe left";
 static TerminatedCString s_Strafe_right_005e1477 = "Strafe right";
@@ -219,7 +258,10 @@ static TerminatedCString s_Use_item_005e14a7 = "Use item";
 static TerminatedCString s_Flashlight_005e14b0 = "Flashlight";
 static TerminatedCString s_Night_Vision_005e14bb = "Night Vision";
 static TerminatedCString s_Journal_005e14c8 = "Journal";
+static TerminatedCString s_Map_005e14d0 = "Map";
 static TerminatedCString s_Compass_005e14d4 = "Compass";
+static TerminatedCString s_SPS_005e14dc = "SPS";
+static TerminatedCString s_Draw_005e14e0 = "Draw";
 static TerminatedCString s_Point_up_005e14e5 = "Point up";
 static TerminatedCString s_Point_down_005e14ee = "Point down";
 static TerminatedCString s_Quick_turn_005e14f9 = "Quick turn";
@@ -285,7 +327,9 @@ static TerminatedCString s_UseSPS_005e1a20 = "UseSPS";
 static TerminatedCString s_SPOOKHOUSE_005e1a27 = "SPOOKHOUSE";
 static TerminatedCString s_quicksavedgame_noc_005e1a32 = "quicksavedgame.noc";
 static TerminatedCString s_Quick_Save_005e1a45 = "Quick Save";
+static TerminatedCString s_rb_005e1a50 = "rb";
 static TerminatedCString s_quicksavedgame_noc_005e1a53 = "quicksavedgame.noc";
+static TerminatedCString s_save_005e1a66 = "save";
 static TerminatedCString s_Restore_quick_saved_game_005e1a6b = "Restore quick saved game?";
 static TerminatedCString s_quicksavedgame_noc_005e1a85 = "quicksavedgame.noc";
 static TerminatedCString s_No_quicked_saved_game_to_005e1a98 = "No quicked saved game to load";
@@ -342,6 +386,9 @@ static TerminatedCString s_You_have_the_elephant_gu_005e21ed = "You have the ele
 static TerminatedCString s_CElephantGun_005e2207 = "CElephantGun";
 static TerminatedCString s_You_have_the_charged_rad_005e224e = "You have the charged radiance emitter";
 static TerminatedCString s_CLightGun_005e2274 = "CLightGun";
+static TerminatedCString s_CGun_005e22f0 = "CGun";
+static TerminatedCString s_CGun_005e22f5 = "CGun";
+static TerminatedCString s_CGun_005e22fa = "CGun";
 static TerminatedCString s_CShotgun_005e22ff = "CShotgun";
 static TerminatedCString s_CRifle_005e2308 = "CRifle";
 static TerminatedCString s_CCrossbow_005e230f = "CCrossbow";
@@ -418,6 +465,10 @@ static TerminatedCString s_cheat_1_wav_005e2d7f = "cheat-1.wav";
 static TerminatedCString s_CGun_005e2dc1 = "CGun";
 static TerminatedCString s_CGun_005e2dfe = "CGun";
 static TerminatedCString s_CGun_005e2e3c = "CGun";
+static TerminatedCString s_noc_005e2eac = "noc";
+static TerminatedCString s_noc_005e2eb0 = ".noc";
+static TerminatedCString s_noc_005e2eb5 = "noc";
+static TerminatedCString s_save_005e2eb9 = "save";
 static TerminatedCString s_Save_game_005e2ebe = "Save game";
 static TerminatedCString s_s_noc_005e2ec8 = "%s.noc";
 static TerminatedCString s_save_005e2ecf = "save";
@@ -426,29 +477,50 @@ static TerminatedCString s_wt_005e2ed7 = "wt";
 static TerminatedCString s_save_005e2eda = "save";
 static TerminatedCString s_Warning_Your_game_didn_t_005e2edf = "Warning!  Your game didn't save.";
 static TerminatedCString s_NOC_file_version_005e2f00 = "// .NOC file version\n";
+static TerminatedCString s_d_005e2f16 = "%d\n";
 static TerminatedCString s_Hero_count_local_hero_in_005e2f1a = "// Hero count, local hero index, hero list\n";
 static TerminatedCString s_d_d_005e2f46 = "%d, %d\n";
+static TerminatedCString s_s_005e2f4e = "%s\n";
 static TerminatedCString s_Light_state_005e2f52 = "Light state\n";
+static TerminatedCString s_d_005e2f5f = "%d\n";
+static TerminatedCString s_d_005e2f63 = "%d\n";
 static TerminatedCString s_Game_stats_005e2f67 = "Game stats\n";
 static TerminatedCString s_f_f_d_d_005e2f73 = "%f,%f,%d,%d\n";
 static TerminatedCString s_Warning_Your_game_didn_t_005e2f80 = "Warning!  Your game didn't save.";
+static TerminatedCString s_save_005e2fa1 = "save";
 static TerminatedCString s_s_s_005e2fa6 = "%s\\%s";
+static TerminatedCString s_wb_005e2fac = "wb";
+static TerminatedCString s_noc_005e2faf = "noc";
+static TerminatedCString s_noc_005e2fb3 = ".noc";
 static TerminatedCString s_noc_005e2fb8 = "*.noc";
+static TerminatedCString s_save_005e2fbe = "save";
 static TerminatedCString s_Select_file_to_load_005e2fc3 = "Select file to load";
+static TerminatedCString s_rt_005e2fd7 = "rt";
+static TerminatedCString s_save_005e2fda = "save";
+static TerminatedCString s_LZW_005e2fdf = "LZW";
+static TerminatedCString s_save_005e2fe3 = "save";
 static TerminatedCString s_s_s_005e2fe8 = "%s\\%s";
 static TerminatedCString s_Can_t_open_saved_game_fi_005e2fee = "Can't open saved game file.";
+static TerminatedCString s_wb_005e300a = "wb";
 static TerminatedCString s_Can_t_create_temp_file_t_005e300d = "Can't create temp file to load saved game file.";
+static TerminatedCString s_rt_005e303d = "rt";
 static TerminatedCString s_core_game_cpp_005e3040 = "..\\core\\game.cpp";
 static TerminatedCString s_Can_t_reopen_s_005e3051 = "Can't reopen %s";
 static TerminatedCString s_CInventory_005e3061 = "CInventory";
 static TerminatedCString s_Can_t_load_old_save_game_005e306c = "Can't load old save game file %s.  Sorry.";
+static TerminatedCString s_d_005e3096 = "%d\n";
 static TerminatedCString s_Can_t_load_old_save_game_005e309a = "Can't load old save game file %s.  Sorry.";
 static TerminatedCString s_d_d_005e30c4 = "%d, %d\n";
 static TerminatedCString s_anon_005e30cc = "%[^\n]\n";
 static TerminatedCString s_Can_t_find_hero_s_Sorry_005e30d3 = "Can't find hero %s.  Sorry.";
+static TerminatedCString s_d_005e30ef = "%d\n";
+static TerminatedCString s_d_005e30f3 = "%d\n";
 static TerminatedCString s_f_f_d_d_005e30f7 = "%f,%f,%d,%d\n";
+static TerminatedCString s_rb_005e3104 = "rb";
 static TerminatedCString s_blairhero_pod_005e3107 = "blairhero.pod";
+static TerminatedCString s_rt_005e3116 = "rt";
 static TerminatedCString s_pod_ini_005e3119 = "pod.ini";
+static TerminatedCString s_Game_005e3121 = "Game";
 static TerminatedCString s_system_nocturne_ini_005e3126 = "system\\nocturne.ini";
 static TerminatedCString s_Act1Code_005e313a = "Act1Code";
 static TerminatedCString s_The_Rustin_Parr_Investig_005e3143 = "The Rustin Parr Investigation";
@@ -473,6 +545,8 @@ static TerminatedCString s_act_005e32e6 = ".act";
 static TerminatedCString s_rb_005e32eb = "rb";
 static TerminatedCString s_art_005e32ee = "art";
 static TerminatedCString s_Can_t_open_s_005e32f2 = "Can't open %s";
+static TerminatedCString s_rb_005e3300 = "rb";
+static TerminatedCString s_art_005e3303 = "art";
 static TerminatedCString s_core_game_cpp_005e3307 = "..\\core\\game.cpp";
 static TerminatedCString s_Can_t_open_s_005e3318 = "Can't open %s";
 static TerminatedCString s_Can_t_init_network_to_ho_005e3326 = "Can't init network to host game.";
@@ -481,7 +555,7 @@ static TerminatedCString s_Select_mission_to_play_005e3353 = "Select mission to 
 static TerminatedCString s_Enter_Server_IP_005e336a = "Enter Server IP";
 static TerminatedCString s_core_game_cpp_005e337a = "..\\core\\game.cpp";
 static TerminatedCString s_CGame_slamDT_invalid_dt_005e338b = "CGame::slamDT - invalid dt!";
-static TerminatedCString s_G_s_3_2f_ms_005e33ab = "G%s : %3.2f ms\n";
+static TerminatedCString s_s_3_2f_ms_005e33ac = "%s : %3.2f ms\n";
 static TerminatedCString s_gFilterFX_process_005e33d4 = "gFilterFX->process()";
 static TerminatedCString s_gScript_process_005e33e9 = "gScript->process()";
 static TerminatedCString s_gSet_process_005e33fc = "gSet->process()";
@@ -497,28 +571,38 @@ static TerminatedCString s_save_005e3493 = "save";
 static TerminatedCString s_Select_file_to_load_005e3498 = "Select file to load";
 static TerminatedCString s_stats_005e34ac = "stats";
 static TerminatedCString s_Level_time_005e34b2 = "Level time";
+static TerminatedCString s_anon_005e34bd = "\n\n";
 static TerminatedCString s_s_2d_2d_2d_2d_005e34c0 = "%2d:%2d:%2d.%2d\n\n";
 static TerminatedCString s_Body_count_005e34d2 = "Body count";
 static TerminatedCString s_anon_005e34dd = "\n\n";
+static TerminatedCString s_d_005e34e0 = "%d\n\n";
 static TerminatedCString s_stats_005e3514 = "stats";
 static TerminatedCString s_Mission_time_005e351a = "Mission time";
+static TerminatedCString s_anon_005e3527 = "\n\n";
 static TerminatedCString s_s_2d_2d_2d_2d_005e352a = "%2d:%2d:%2d.%2d\n\n";
 static TerminatedCString s_Total_body_count_005e353c = "Total body count";
+static TerminatedCString s_anon_005e354d = "\n\n";
+static TerminatedCString s_d_005e3550 = "%d\n\n";
 static TerminatedCString s_stats_005e3584 = "stats";
+static TerminatedCString s_rt_005e358a = "rt";
 static TerminatedCString s_credits_txt_005e358d = "credits.txt";
+static TerminatedCString s_data_005e3599 = "data";
+static TerminatedCString s_end_005e359e = "end\n";
 static TerminatedCString s_core_game_cpp_005e35a3 = "..\\core\\game.cpp";
 static TerminatedCString s_CGame_rollCredits_Out_of_005e35b4 = "CGame::rollCredits - Out of memory";
 static TerminatedCString s_splash_music_44_wav_005e35d7 = "splash-music-44.wav";
 static TerminatedCString s_CEnemy_005e35f0 = "CEnemy";
 static TerminatedCString s_CEnemy_005e35f7 = "CEnemy";
-static TerminatedCString s_cursor_005e3653 = "@cursor";
+static TerminatedCString s_cursor_005e3654 = "cursor";
 static TerminatedCString s_upwhite_005e365b = "upwhite";
 static TerminatedCString s_downwhite_005e3663 = "downwhite";
 static TerminatedCString s_leftwhite_005e366d = "leftwhite";
 static TerminatedCString s_rightwhite_005e3677 = "rightwhite";
 static TerminatedCString s_crosshairsgreen_005e3682 = "crosshairsgreen";
 static TerminatedCString s_crosshairsred_005e3692 = "crosshairsred";
-static TerminatedCString s_bw1_msn_005e36ae = "bw1.msn";
+static TerminatedCString s_dot_005e36a0 = "dot";
+static TerminatedCString s_Off_005e36a4 = "Off";
+static TerminatedCString s_hq_bw1_msn_005e36ab = "hq-bw1.msn";
 static TerminatedCString s_train_msn_005e36b6 = "train.msn";
 static TerminatedCString s_town_msn_005e36c0 = "town.msn";
 static TerminatedCString s_mine_msn_005e36c9 = "mine.msn";
@@ -572,24 +656,26 @@ static TerminatedCString s_ass01_005e3900 = "ass01";
 static TerminatedCString s_torso01_005e3906 = "torso01";
 static TerminatedCString s_head01_005e390e = "head01";
 static TerminatedCString s_tail01_005e3915 = "tail01";
-static TerminatedCString s_s_confused_while_walking_005e3923 = ">%s confused while walking to scriptDest!\n";
+static TerminatedCString s_s_confused_while_walking_005e3924 = "%s confused while walking to scriptDest!\n";
 static TerminatedCString s_gargoyle_alive_wav_005e394e = "gargoyle-alive?.wav";
 static TerminatedCString s_gargoyle_stone_wav_005e3962 = "gargoyle-stone.wav";
 static TerminatedCString s_gargoyle_stone_wav_005e3975 = "gargoyle-stone.wav";
-static TerminatedCString s_speed_005e3993 = "?speed";
+static TerminatedCString s_speed_005e3994 = "speed";
 static TerminatedCString s_modelName_005e399a = "modelName";
 static TerminatedCString s_motion_state_005e39a4 = "motion state";
 static TerminatedCString s_stoneRed_005e39b1 = "stoneRed";
 static TerminatedCString s_stoneGreen_005e39ba = "stoneGreen";
 static TerminatedCString s_stoneBlue_005e39c5 = "stoneBlue";
 static TerminatedCString s_homeBase_005e39cf = "homeBase";
-static TerminatedCString s_gargoyle_shatter_wav_005e39f3 = "@gargoyle-shatter.wav";
+static TerminatedCString s_gargoyle_shatter_wav_005e39f4 = "gargoyle-shatter.wav";
 static TerminatedCString s_gargoyle_hurt_wav_005e3a09 = "gargoyle-hurt?.wav";
 static TerminatedCString s_CGasMask_005e3a1c = "CGasMask";
 static TerminatedCString s_gasmask_kfm_005e3a25 = "gasmask.kfm";
 static TerminatedCString s_CHero_005e3a31 = "CHero";
 static TerminatedCString s_modelName_005e3a37 = "modelName";
-static TerminatedCString s_Bip01_Head_005e3a58 = "@Bip01 Head";
+static TerminatedCString s_CGhoul_005e3a41 = "CGhoul";
+static TerminatedCString s_guul_dfm_005e3a48 = "guul.dfm";
+static TerminatedCString s_Bip01_Head_005e3a59 = "Bip01 Head";
 static TerminatedCString s_Bip01_L_ForeArm_005e3a64 = "Bip01 L ForeArm";
 static TerminatedCString s_Bip01_R_ForeArm_005e3a74 = "Bip01 R ForeArm";
 static TerminatedCString s_Bip01_L_UpperArm_005e3a84 = "Bip01 L UpperArm";
@@ -625,7 +711,7 @@ static TerminatedCString s_gh_hits_wav_005e3c62 = "gh-hits?.wav";
 static TerminatedCString s_gh_hits_wav_005e3c6f = "gh-hits?.wav";
 static TerminatedCString s_burp_1_2_wav_005e3c7c = "burp[1,2].wav";
 static TerminatedCString s_ghoul_walk_wav_f_005e3c8a = "ghoul-walk-?.wav *%f";
-static TerminatedCString s_speed_005e3d30 = "?speed";
+static TerminatedCString s_speed_005e3d31 = "speed";
 static TerminatedCString s_modelName_005e3d37 = "modelName";
 static TerminatedCString s_guardDistance_005e3d41 = "guardDistance";
 static TerminatedCString s_livesLeft_005e3d4f = "livesLeft";
@@ -635,7 +721,7 @@ static TerminatedCString s_spasmCount_005e3d71 = "spasmCount";
 static TerminatedCString s_livesLeft_005e3d7c = "livesLeft";
 static TerminatedCString s_ariseTimer_005e3d86 = "ariseTimer";
 static TerminatedCString s_limb_wav_005e3d95 = "limb?.wav";
-static TerminatedCString s_go_berzerk_005e3db8 = "@go berzerk\n";
+static TerminatedCString s_go_berzerk_005e3db9 = "go berzerk\n";
 static TerminatedCString s_ghoul_die_wav_1_6_005e3dc5 = "ghoul-die-!-?.wav @1.6";
 static TerminatedCString s_guul_flinch_d_005e3ddc = "guul flinch%d";
 static TerminatedCString s_ghoul_mad_wav_005e3dea = "ghoul-mad-!-?.wav";
@@ -656,7 +742,7 @@ static TerminatedCString s_windo10_raw_005e3ed9 = "windo10.raw";
 static TerminatedCString s_windo10x_raw_005e3ee5 = "windo10x.raw";
 static TerminatedCString s_windo11_raw_005e3ef2 = "windo11.raw";
 static TerminatedCString s_windo11x_raw_005e3efe = "windo11x.raw";
-static TerminatedCString s_glassSize_005e3f3b = "?glassSize";
+static TerminatedCString s_glassSize_005e3f3c = "glassSize";
 static TerminatedCString s_glassTexture_005e3f46 = "glassTexture";
 static TerminatedCString s_opacity_005e3f53 = "opacity";
 static TerminatedCString s_shattered_005e3f5b = "shattered";
@@ -665,9 +751,9 @@ static TerminatedCString s_mirrorFlag_005e3f70 = "mirrorFlag";
 static TerminatedCString s_breakableCondition_005e3f7b = "breakableCondition";
 static TerminatedCString s_backgroundFlag_005e3f8e = "backgroundFlag";
 static TerminatedCString s_brokenTexture_005e3f9d = "brokenTexture";
-static TerminatedCString s_s_7YEARS_RAW_005e3fb3 = ">7YEARS.RAW";
+static TerminatedCString s_s_7YEARS_RAW_005e3fb4 = "7YEARS.RAW";
 static TerminatedCString s_glass_1_wav_2_0_005e3fbf = "glass-1.wav@2.0";
-static TerminatedCString s_CGoggles_005e3feb = "?CGoggles";
+static TerminatedCString s_CGoggles_005e3fec = "CGoggles";
 static TerminatedCString s_doc_goggles_kfm_005e3ff5 = "doc-goggles.kfm";
 static TerminatedCString s_CHero_005e4005 = "CHero";
 static TerminatedCString s_modelName_005e400b = "modelName";
@@ -687,9 +773,15 @@ static TerminatedCString s_d_d_005e40fc = "%d,%d\n";
 static TerminatedCString s_d_f_d_d_d_005e4103 = "%d,%f,%d,%d,%d\n";
 static TerminatedCString s_core_gore_cpp_005e412d = "..\\core\\gore.cpp";
 static TerminatedCString s_Can_t_create_flies_005e413e = "Can't create flies!";
+static TerminatedCString s_d_005e416d = "%d\n";
+static TerminatedCString s_d_005e4171 = "%d\n";
 static TerminatedCString s_Gore_005e4175 = "--- Gore ---\n";
+static TerminatedCString s_d_005e4183 = "%d\n";
+static TerminatedCString s_d_005e4187 = "%d\n";
 static TerminatedCString s_CGrave_005e418b = "CGrave";
+static TerminatedCString s_grave1_kfm_005e4192 = "grave1.kfm";
 static TerminatedCString s_model_name_005e419d = "model name";
+static TerminatedCString s_fps_005e41a8 = "fps";
 static TerminatedCString s_active_005e41ac = "active";
 static TerminatedCString s_graveState_005e41b3 = "graveState";
 static TerminatedCString s_curFrame_005e41be = "curFrame";
@@ -700,6 +792,20 @@ static TerminatedCString s_core_ground_cpp_005e41f2 = "..\\core\\ground.cpp";
 static TerminatedCString s_eopen_ext_not_found_005e4205 = "eopen - ext not found!";
 static TerminatedCString s_core_ground_cpp_005e421c = "..\\core\\ground.cpp";
 static TerminatedCString s_eopen_Cannot_open_file_005e422f = "eopen - Cannot open file";
+static TerminatedCString s_no_005e4248 = "no";
+static TerminatedCString s_ct_005e424b = "ct";
+static TerminatedCString s_dt_005e424e = "dt";
+static TerminatedCString s_dt_005e4251 = "dt";
+static TerminatedCString s_mt_005e4254 = "mt";
+static TerminatedCString s_wt_005e4257 = "wt";
+static TerminatedCString s_wd_005e425a = "wd";
+static TerminatedCString s_mb_005e425d = "mb";
+static TerminatedCString s_md_005e4260 = "md";
+static TerminatedCString s_cp_005e4263 = "cp";
+static TerminatedCString s_bd_005e4266 = "bd";
+static TerminatedCString s_gl_005e4269 = "gl";
+static TerminatedCString s_gr_005e426c = "gr";
+static TerminatedCString s_lv_005e426f = "lv";
 static TerminatedCString s_GROUND_NONE_005e4275 = "GROUND_NONE";
 static TerminatedCString s_GROUND_CONCRETE_005e4281 = "GROUND_CONCRETE";
 static TerminatedCString s_GROUND_DIRT_005e4291 = "GROUND_DIRT";
@@ -793,6 +899,7 @@ static TerminatedCString s_We_are_grabbed_005e47b3 = "  We are grabbed\n";
 static TerminatedCString s_CHero_stopGettingGrabbed_005e47c5 = "CHero::stopGettingGrabbed by %s, type %d\n";
 static TerminatedCString s_GETGRABBED_005e47ef = "GETGRABBED";
 static TerminatedCString s_STAND_005e47fa = "STAND";
+static TerminatedCString s_CGun_005e4800 = "CGun";
 static TerminatedCString s_core_hero_cpp_005e4805 = "..\\core\\hero.cpp";
 static TerminatedCString s_Out_of_memory_005e4816 = "Out of memory!";
 static TerminatedCString s_Your_weapon_005e4825 = "Your_weapon";
@@ -911,7 +1018,7 @@ static TerminatedCString s_modelName_005e51d0 = "modelName";
 static TerminatedCString s_motion_state_005e51da = "motion state";
 static TerminatedCString s_hotdemon_die_wav_005e51e7 = "hotdemon-die.wav";
 static TerminatedCString s_hotdemon_hurt_wav_005e51f8 = "hotdemon-hurt?.wav";
-static TerminatedCString s_CHighPriestOfGardath_005e5219 = "@CHighPriestOfGardath";
+static TerminatedCString s_CHighPriestOfGardath_005e521a = "CHighPriestOfGardath";
 static TerminatedCString s_priest_dfm_005e522f = "priest.dfm";
 static TerminatedCString s_killPriest_005e523a = "killPriest";
 static TerminatedCString s_killEvent_005e5245 = "killEvent";
@@ -978,7 +1085,7 @@ static TerminatedCString s_s_confused_while_walking_005e55e9 = "%s confused whil
 static TerminatedCString s_imp_jump_wav_005e5613 = "imp-jump?.wav";
 static TerminatedCString s_imp_laugh_wav_005e5621 = "imp-laugh?.wav";
 static TerminatedCString s_imp_laugh_wav_005e5630 = "imp-laugh?.wav";
-static TerminatedCString s_speed_005e5679 = "@speed";
+static TerminatedCString s_speed_005e567a = "speed";
 static TerminatedCString s_modelName_005e5680 = "modelName";
 static TerminatedCString s_motion_state_005e568a = "motion state";
 static TerminatedCString s_limb_wav_005e5697 = "limb?.wav";
@@ -1000,6 +1107,7 @@ static TerminatedCString s_s_005e57c4 = "[%s]\n";
 static TerminatedCString s_s_s_005e57ca = "%s=%s\n";
 static TerminatedCString s_s_s_005e57d1 = "%s=%s\n";
 static TerminatedCString s_s_s_005e57d8 = "%s=%s\n";
+static TerminatedCString s_d_005e57df = "%d";
 static TerminatedCString s_engine_ini_cpp_005e57e2 = "..\\engine\\ini.cpp";
 static TerminatedCString s_Bad_ini_read_005e57f4 = "Bad ini read!";
 static TerminatedCString s_engine_ini_cpp_005e5802 = "..\\engine\\ini.cpp";
@@ -1010,6 +1118,15 @@ static TerminatedCString s_engine_ini_cpp_005e5875 = "..\\engine\\ini.cpp";
 static TerminatedCString s_CIniFile_setString_filen_005e5887 = "CIniFile::setString - filename not set!";
 static TerminatedCString s_engine_ini_cpp_005e58af = "..\\engine\\ini.cpp";
 static TerminatedCString s_CIniFile_setString_secti_005e58c1 = "CIniFile::setString - section not set!";
+static TerminatedCString s_d_005e58e8 = "%d";
+static TerminatedCString s_d_005e58eb = "%d";
+static TerminatedCString s_d_005e58ee = "%d";
+static TerminatedCString s_g_005e58f1 = "%g";
+static TerminatedCString s_f_005e58f4 = "%f";
+static TerminatedCString s_g_005e58f7 = "%g";
+static TerminatedCString s_lg_005e58fa = "%lg";
+static TerminatedCString s_lf_005e58fe = "%lf";
+static TerminatedCString s_lg_005e5902 = "%lg";
 static TerminatedCString s_core_inivar_cpp_005e5906 = "..\\core\\inivar.cpp";
 static TerminatedCString s_Please_copy_Nocturne_to_005e5919 = "Please copy Nocturne to your hard drive";
 static TerminatedCString s_gamePIXX_005e5941 = "gamePIXX";
@@ -1162,7 +1279,9 @@ static TerminatedCString s_sps_long_wav_3_005e5ff4 = "sps_long?.wav @ .3";
 static TerminatedCString s_sps_full_wav_3_005e6007 = "sps_full?.wav @ .3";
 static TerminatedCString s_anon_005e6040 = "\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"\n";
 static TerminatedCString s_CAmmo_005e605b = "CAmmo";
+static TerminatedCString s_rt_005e6078 = "rt";
 static TerminatedCString s_invsize_txt_005e607b = "invsize.txt";
+static TerminatedCString s_data_005e6087 = "data";
 static TerminatedCString s_d_d_005e608c = "%d,%d\n";
 static TerminatedCString s_invback_005e6093 = "invback";
 static TerminatedCString s_invback2_005e609b = "invback2";
@@ -1197,8 +1316,10 @@ static TerminatedCString s_spss3_005e6195 = "spss3";
 static TerminatedCString s_spss4_005e619b = "spss4";
 static TerminatedCString s_compass_background_005e61a1 = "compass_background";
 static TerminatedCString s_compass_arrow_raw_005e61b4 = "compass_arrow.raw";
+static TerminatedCString s_rt_005e61c6 = "rt";
 static TerminatedCString s_itemlist_txt_005e61c9 = "itemlist.txt";
 static TerminatedCString s_You_ve_found_005e61d7 = "You've found : ";
+static TerminatedCString s_d_005e61e7 = "%d ";
 static TerminatedCString s_CHealthItem_005e61eb = "CHealthItem";
 static TerminatedCString s_Press_005e61f7 = "Press ";
 static TerminatedCString s_and_005e61fe = " and ";
@@ -1227,10 +1348,12 @@ static TerminatedCString s_This_ammo_is_for_your_005e63bf = "This ammo is for yo
 static TerminatedCString s_Select_your_005e63d6 = ".  Select your ";
 static TerminatedCString s_with_005e63e6 = " with ";
 static TerminatedCString s_and_005e63ed = " and ";
+static TerminatedCString s_anon_005e63f3 = ".";
 static TerminatedCString s_CWeapon_005e63f5 = "CWeapon";
 static TerminatedCString s_Select_your_005e63fd = "Select your ";
 static TerminatedCString s_with_005e640a = " with ";
 static TerminatedCString s_and_005e6411 = " and ";
+static TerminatedCString s_anon_005e6417 = ".";
 static TerminatedCString s_Found_existing_ammo_but_005e6419 = "Found existing ammo, but no weapon\n";
 static TerminatedCString s_Found_weapon_to_put_this_005e643d = "Found weapon to put this ammo into\n";
 static TerminatedCString s_Found_new_type_of_ammo_f_005e6461 = "Found new type of ammo for existing weapon.  Making new weapon for it\n";
@@ -1265,6 +1388,10 @@ static TerminatedCString s_s_actor_name_list_005e6653 = "%s// actor name list\n"
 static TerminatedCString s_s_actor_data_list_005e6669 = "%s// actor data list\n";
 static TerminatedCString s_s_End_inventory_005e667f = "%s} // End inventory\n";
 static TerminatedCString s_s_s_s_005e6695 = "%s%s \"%s\"\n";
+static TerminatedCString s_d_005e66a0 = "%d\n";
+static TerminatedCString s_d_005e66a4 = "%d\n";
+static TerminatedCString s_d_005e66a8 = "%d\n";
+static TerminatedCString s_f_005e66ac = "%f\n";
 static TerminatedCString s_s_005e66b0 = " %s \"%[^\"]\"\n";
 static TerminatedCString s_core_inv_cpp_005e66bd = "..\\core\\inv.cpp";
 static TerminatedCString s_CInventory_load_Can_t_fi_005e66cd = "CInventory::load - Can't find your weapon";
@@ -1278,9 +1405,11 @@ static TerminatedCString s_CHealthItem_005e6783 = "CHealthItem";
 static TerminatedCString s_core_inv_cpp_005e678f = "..\\core\\inv.cpp";
 static TerminatedCString s_CInventory_select_Catch_005e679f = "CInventory::select - Catch 22";
 static TerminatedCString s_You_have_used_005e67bd = "You have used : ";
+static TerminatedCString s_anon_005e67ce = ".";
 static TerminatedCString s_CGasMask_005e67d0 = "CGasMask";
 static TerminatedCString s_CGoggles_005e67d9 = "CGoggles";
 static TerminatedCString s_CBoxActor_005e67e2 = "CBoxActor";
+static TerminatedCString s_CGun_005e6818 = "CGun";
 static TerminatedCString s_CShotgun_005e681d = "CShotgun";
 static TerminatedCString s_CCrossbow_005e6826 = "CCrossbow";
 static TerminatedCString s_CTommyGun_005e6830 = "CTommyGun";
@@ -1292,16 +1421,21 @@ static TerminatedCString s_CLightpis_005e6866 = "CLightpis";
 static TerminatedCString s_CMelee_005e6870 = "CMelee";
 static TerminatedCString s_CDynamite_005e6877 = "CDynamite";
 static TerminatedCString s_CFlashlight_005e6881 = "CFlashlight";
+static TerminatedCString s_d_005e6894 = "%d%%";
+static TerminatedCString s_d_005e6899 = "%d%%";
 static TerminatedCString s_CTommyGun_005e689e = "CTommyGun";
 static TerminatedCString s_CShotgun_005e68a8 = "CShotgun";
 static TerminatedCString s_CElephantGun_005e68b1 = "CElephantGun";
+static TerminatedCString s_CGun_005e68be = "CGun";
 static TerminatedCString s_CFlashlight_005e68c3 = "CFlashlight";
+static TerminatedCString s_d_005e68cf = "%d";
 static TerminatedCString s_s_d_005e68d2 = "%s %d";
 static TerminatedCString s_s_s_005e68d8 = "%s\n\n%s";
 static TerminatedCString s_s_s_s_005e68df = "%s\n\n%s %s";
 static TerminatedCString s_are_loaded_005e68e9 = " are loaded.";
 static TerminatedCString s_s_s_005e68f6 = "%s\n\n%s";
 static TerminatedCString s_d_x_3_0f_005e68fd = "%d x%3.0f%%";
+static TerminatedCString s_s_005e6909 = "%s";
 static TerminatedCString s_s_s_005e690c = "%s\n\n%s";
 static TerminatedCString s_You_used_a_key_005e6938 = "You used a key.";
 static TerminatedCString s_key_unlock_wav_005e6948 = "key-unlock.wav";
@@ -1343,6 +1477,9 @@ static TerminatedCString s_speed_005e6c63 = "speed";
 static TerminatedCString s_modelName_005e6c69 = "modelName";
 static TerminatedCString s_guardDistance_005e6c73 = "guardDistance";
 static TerminatedCString s_motion_state_005e6c81 = "motion state";
+static TerminatedCString s_sml_005e6c8e = "sml";
+static TerminatedCString s_med_005e6c92 = "med";
+static TerminatedCString s_big_005e6c96 = "big";
 static TerminatedCString s_l_s_die_wav_005e6cab = "l%s-die?.wav";
 static TerminatedCString s_l_s_shot_wav_005e6cb8 = "l%s-shot?.wav";
 static TerminatedCString s_moon_kfm_005e6cdb = "moon.kfm";
@@ -1408,6 +1545,7 @@ static TerminatedCString s_spark2_raw_005e7011 = "spark2.raw";
 static TerminatedCString s_CLightCone_005e7042 = "CLightCone";
 static TerminatedCString s_none_005e704d = "none";
 static TerminatedCString s_none_005e7052 = "none";
+static TerminatedCString s_fov_005e7062 = "fov";
 static TerminatedCString s_falloff_005e7066 = "falloff";
 static TerminatedCString s_state_005e706e = "state";
 static TerminatedCString s_onEvent_005e7074 = "onEvent";
@@ -1415,6 +1553,7 @@ static TerminatedCString s_offEvent_005e707c = "offEvent";
 static TerminatedCString s_Nocturne_R_Debug_editor_005e7085 = "Nocturne(R) Debug/editor Menu";
 static TerminatedCString s_s_1_Play_a_mission_005e70a3 = "1. Play a mission";
 static TerminatedCString s_Z_Display_memory_usage_i_005e70b5 = "Z. Display memory usage info";
+static TerminatedCString s_rb_005e70d2 = "rb";
 static TerminatedCString s_stderr_txt_005e70d5 = "stderr.txt";
 static TerminatedCString s_stderr_txt_005e70e0 = "stderr.txt";
 static TerminatedCString s_core_main_c_005e70eb = "..\\core\\main.c";
@@ -1451,8 +1590,10 @@ static TerminatedCString s_fangs_005e738e = "fangs";
 static TerminatedCString s_s_0_005e7394 = "0";
 static TerminatedCString s_Flip_on_VBlank_005e7396 = "Flip on VBlank";
 static TerminatedCString s_SOFTWARE_Matrox_PowerDes_005e73a5 = "SOFTWARE\\Matrox\\PowerDesk\\Current Settings";
-static TerminatedCString s_CMansionPuzzleCircle_005e73e4 = "?CMansionPuzzleCircle";
+static TerminatedCString s_CMansionPuzzleCircle_005e73e5 = "CMansionPuzzleCircle";
 static TerminatedCString s_CMirrorHack_005e73fa = "CMirrorHack";
+static TerminatedCString s_doorpuzz_kfm_005e7406 = "doorpuzz.kfm";
+static TerminatedCString s_puzz_rec_kfm_005e7413 = "puzz-rec.kfm";
 static TerminatedCString s_mirrhack_kfm_005e7420 = "mirrhack.kfm";
 static TerminatedCString s_headlite_raw_005e742d = "headlite.raw";
 static TerminatedCString s_core_manpuz_cpp_005e7485 = "..\\core\\manpuz.cpp";
@@ -1477,10 +1618,12 @@ static TerminatedCString s_core_manpuz_cpp_005e7622 = "..\\core\\manpuz.cpp";
 static TerminatedCString s_CMansionPuzzleCircle_pan_005e7635 = "CMansionPuzzleCircle::panelOccupied - invalid index: %d";
 static TerminatedCString s_mirrhack_kfm_005e766d = "mirrhack.kfm";
 static TerminatedCString s_CMarquee_005e7695 = "CMarquee";
+static TerminatedCString s_menu1_pth_005e769e = "menu1.pth";
 static TerminatedCString s_courseName_005e76a8 = "courseName";
 static TerminatedCString s_totalTime_005e76b3 = "totalTime";
 static TerminatedCString s_param_005e76bd = "param";
 static TerminatedCString s_phase_005e76c3 = "phase";
+static TerminatedCString s_type_005e76c9 = "type";
 static TerminatedCString s_engine_matrix_c_005e76ee = "..\\engine\\matrix.c";
 static TerminatedCString s_Matrix_unbalance_005e7701 = "Matrix unbalance";
 static TerminatedCString s_engine_matrix_c_005e7712 = "..\\engine\\matrix.c";
@@ -1566,6 +1709,7 @@ static TerminatedCString s_No_3D_Hardware_detected_005e7e08 = "No 3D Hardware de
 static TerminatedCString s_s_3D_Card_005e7e20 = "3D Card : ";
 static TerminatedCString s_d_005e7e2b = " (%d)";
 static TerminatedCString s_Bits_per_pixel_005e7e31 = "Bits per pixel : ";
+static TerminatedCString s_d_005e7e43 = "%d";
 static TerminatedCString s_Monitor_calibration_005e7e46 = "Monitor calibration";
 static TerminatedCString s_Subtitles_On_005e7e5a = "Subtitles : On";
 static TerminatedCString s_Subtitles_Off_005e7e69 = "Subtitles : Off";
@@ -1592,16 +1736,27 @@ static TerminatedCString s_Calibrate_005e7fcc = "Calibrate";
 static TerminatedCString s_Control_Options_005e7fd6 = "Control Options";
 static TerminatedCString s_Adjust_X_Axis_sensitivit_005e7fe6 = "Adjust X-Axis sensitivity";
 static TerminatedCString s_Adjust_Y_Axis_sensitivit_005e8000 = "Adjust Y-Axis sensitivity";
-static TerminatedCString s_Sound_005e8021 = ">Sound : ";
+static TerminatedCString s_Sound_005e8022 = "Sound : ";
 static TerminatedCString s_Muted_005e802b = "Muted";
+static TerminatedCString s_On_005e8031 = "On";
 static TerminatedCString s_Sound_effects_005e8034 = "Sound effects : ";
+static TerminatedCString s_d_005e8045 = "%d";
+static TerminatedCString s_anon_005e8048 = "%.";
 static TerminatedCString s_Sound_effects_Off_005e804b = "Sound effects : Off";
 static TerminatedCString s_Dialog_005e805f = "Dialog : ";
+static TerminatedCString s_d_005e8069 = "%d";
+static TerminatedCString s_anon_005e806c = "%.";
 static TerminatedCString s_Dialog_Off_005e806f = "Dialog : Off";
 static TerminatedCString s_Music_Vol_005e807c = "Music Vol : ";
+static TerminatedCString s_d_005e8089 = "%d";
+static TerminatedCString s_anon_005e808c = "%.";
 static TerminatedCString s_Music_Vol_Off_005e808f = "Music Vol : Off";
 static TerminatedCString s_Output_rate_005e809f = "Output rate : ";
+static TerminatedCString s_d_005e80ae = "%d";
+static TerminatedCString s_hz_005e80b1 = "hz";
 static TerminatedCString s_Output_quality_005e80b4 = "Output quality : ";
+static TerminatedCString s_d_005e80c6 = "%d";
+static TerminatedCString s_bit_005e80c9 = "bit";
 static TerminatedCString s_Output_type_MONO_005e80cd = "Output type : MONO";
 static TerminatedCString s_Output_type_STEREO_005e80e0 = "Output type : STEREO";
 static TerminatedCString s_Device_005e80f5 = "Device : ";
@@ -1650,6 +1805,7 @@ static TerminatedCString s_Gamepad_forward_005e8356 = "Gamepad forward";
 static TerminatedCString s_Gamepad_back_005e8366 = "Gamepad back";
 static TerminatedCString s_Fire_Action_005e8373 = "Fire / Action";
 static TerminatedCString s_Forward_005e8381 = "Forward";
+static TerminatedCString s_Back_005e8389 = "Back";
 static TerminatedCString s_Strafe_on_005e838e = "Strafe on";
 static TerminatedCString s_Strafe_left_005e8398 = "Strafe left";
 static TerminatedCString s_Strafe_right_005e83a4 = "Strafe right";
@@ -1758,7 +1914,7 @@ static TerminatedCString s_core_mimic_cpp_005e8962 = "..\\core\\mimic.cpp";
 static TerminatedCString s_CMimic_setup_can_t_use_m_005e8974 = "CMimic::setup - can't use mimic in multi-player!";
 static TerminatedCString s_gh_alrt_1_4_wav_005e89a5 = "gh-alrt[1,4].wav";
 static TerminatedCString s_gh_hits_1_4_wav_005e89b6 = "gh-hits[1,4].wav";
-static TerminatedCString s_s_attacking_hero_005e89fe = ">@%s attacking hero\n";
+static TerminatedCString s_s_attacking_hero_005e8a00 = "%s attacking hero\n";
 static TerminatedCString s_speed_005e8a13 = "speed";
 static TerminatedCString s_modelName_005e8a19 = "modelName";
 static TerminatedCString s_attackCondition_005e8a23 = "attackCondition";
@@ -1832,9 +1988,15 @@ static TerminatedCString s_core_mission_cpp_005e918e = "..\\core\\mission.cpp";
 static TerminatedCString s_This_mission_uses_actor_005e91a2 = "This mission uses actor format version %d, which we don't support anymore!";
 static TerminatedCString s_core_mission_cpp_005e91ed = "..\\core\\mission.cpp";
 static TerminatedCString s_No_name_in_mission_005e9201 = "No name in mission";
+static TerminatedCString s_s_005e9214 = "%s\n";
+static TerminatedCString s_d_005e9218 = "%d\n";
+static TerminatedCString s_s_005e921c = "%s\n";
+static TerminatedCString s_d_005e9220 = "%d\n";
 static TerminatedCString s_s_d_005e9224 = "%s %d\n";
 static TerminatedCString s_core_mission_cpp_005e922b = "..\\core\\mission.cpp";
 static TerminatedCString s_Actor_type_s_is_saved_in_005e923f = "Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!";
+static TerminatedCString s_d_005e92a8 = "%d\n";
+static TerminatedCString s_d_005e92ac = "%d\n";
 static TerminatedCString s_s_005e92b0 = "%s \"%[^\"]\"\n";
 static TerminatedCString s_core_mission_cpp_005e92bc = "..\\core\\mission.cpp";
 static TerminatedCString s_Too_many_actors_005e92d0 = "Too many actors";
@@ -1850,14 +2012,21 @@ static TerminatedCString s_core_mission_cpp_005e9400 = "..\\core\\mission.cpp";
 static TerminatedCString s_CDemonMission_getNextLoa_005e9414 = "CDemonMission::getNextLoadedInventoryActor - no more!";
 static TerminatedCString s_core_mission_cpp_005e944a = "..\\core\\mission.cpp";
 static TerminatedCString s_CDemonMission_getNextLoa_005e945e = "CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!";
+static TerminatedCString s_scr_005e94b0 = "scr";
 static TerminatedCString s_mission_version_actor_ve_005e94b4 = "// mission version, actor version\n";
 static TerminatedCString s_d_d_005e94d7 = "%d,%d\n";
 static TerminatedCString s_Root_name_of_mission_005e94de = "// Root name of mission\n";
+static TerminatedCString s_s_005e94f7 = "%s\n";
 static TerminatedCString s_setList_005e94fb = "// setList\n";
+static TerminatedCString s_d_005e9507 = "%d\n";
+static TerminatedCString s_s_005e950b = "%s\n";
 static TerminatedCString s_actorTypeList_005e950f = "// actorTypeList\n";
+static TerminatedCString s_d_005e9521 = "%d\n";
 static TerminatedCString s_s_d_005e9525 = "%s %d\n";
 static TerminatedCString s_actor_count_005e952c = "// actor count\n";
+static TerminatedCString s_d_005e953c = "%d\n";
 static TerminatedCString s_inventory_actor_count_005e9540 = "// inventory actor count\n";
+static TerminatedCString s_d_005e955a = "%d\n";
 static TerminatedCString s_actor_name_list_005e955e = "// actor name list\n";
 static TerminatedCString s_s_s_005e9572 = "%s \"%s\"\n";
 static TerminatedCString s_core_mission_cpp_005e957b = "..\\core\\mission.cpp";
@@ -1871,7 +2040,11 @@ static TerminatedCString s_core_mission_cpp_005e95eb = "..\\core\\mission.cpp";
 static TerminatedCString s_Error_reading_actor_poin_005e95ff = "Error reading actor pointer.\nOwner: %s\nDescription: %s\n";
 static TerminatedCString s_anon_005e9637 = "%[^\"]";
 static TerminatedCString s_WARNING_Can_t_find_actor_005e963d = "WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)";
+static TerminatedCString s_x_005e9697 = "%x";
+static TerminatedCString s_s_08x_005e969a = "%08x";
+static TerminatedCString s_s_005e969f = "%s";
 static TerminatedCString s_s_005e96a4 = "\t\t// %s\n";
+static TerminatedCString s_anon_005e96ad = "\n";
 static TerminatedCString s_Setting_up_actors_005e96af = "Setting up actors";
 static TerminatedCString s_Setting_up_actors_005e96c1 = "Setting up actors";
 static TerminatedCString s_Setting_up_actors_005e96d3 = "Setting up actors";
@@ -1948,7 +2121,7 @@ static TerminatedCString s_s_confused_while_walking_005e9dd2 = "%s confused whil
 static TerminatedCString s_core_mobster_cpp_005e9e1a = "..\\core\\mobster.cpp";
 static TerminatedCString s_CMobster_aimTommyGun_I_m_005e9e2e = "CMobster::aimTommyGun - I'm not carrying one!";
 static TerminatedCString s_CTommyGun_005e9e72 = "CTommyGun";
-static TerminatedCString s_speed_005e9e99 = "?speed";
+static TerminatedCString s_speed_005e9e9a = "speed";
 static TerminatedCString s_modelName_005e9ea0 = "modelName";
 static TerminatedCString s_guardDistance_005e9eaa = "guardDistance";
 static TerminatedCString s_motion_state_005e9eb8 = "motion state";
@@ -1960,7 +2133,7 @@ static TerminatedCString s_sideOfCar_005e9ee8 = "sideOfCar";
 static TerminatedCString s_holdPosFlag_005e9ef2 = "holdPosFlag";
 static TerminatedCString s_holdPosCond_005e9efe = "holdPosCond";
 static TerminatedCString s_limb_wav_005e9f0a = "limb?.wav";
-static TerminatedCString s_mobster_die_wav_005e9f41 = "@mobster-die-?.wav";
+static TerminatedCString s_mobster_die_wav_005e9f42 = "mobster-die-?.wav";
 static TerminatedCString s_mobster_hit_wav_005e9f54 = "mobster-hit-?.wav";
 static TerminatedCString s_mobster_cheese_c_c_d_wav_005e9f66 = "mobster-cheese-%c-%c-%d.wav";
 static TerminatedCString s_engine_model_c_005e9f86 = "..\\engine\\model.c";
@@ -1968,6 +2141,7 @@ static TerminatedCString s_Need_a_new_byteswap_005e9f98 = "Need a new byteswap!"
 static TerminatedCString s_models_005e9fad = "models";
 static TerminatedCString s_Unable_to_get_file_size_005e9fb4 = "Unable to get file size: %s";
 static TerminatedCString s_engine_model_c_005e9fd0 = "..\\engine\\model.c";
+static TerminatedCString s_rb_005e9fe2 = "rb";
 static TerminatedCString s_models_005e9fe5 = "models";
 static TerminatedCString s_Unable_to_open_model_s_005e9fec = "Unable to open model: %s";
 static TerminatedCString s_engine_model_c_005ea005 = "..\\engine\\model.c";
@@ -1983,6 +2157,7 @@ static TerminatedCString s_Unable_to_read_verticies_005ea0bb = "Unable to read v
 static TerminatedCString s_engine_model_c_005ea0de = "..\\engine\\model.c";
 static TerminatedCString s_MRGLSize_Bad_type_d_005ea0f0 = "MRGLSize: Bad type : %d";
 static TerminatedCString s_engine_model_c_005ea108 = "..\\engine\\model.c";
+static TerminatedCString s_rb_005ea11a = "rb";
 static TerminatedCString s_models_005ea11d = "models";
 static TerminatedCString s_Unable_to_open_model_s_005ea124 = "Unable to open model: %s";
 static TerminatedCString s_engine_model_c_005ea13d = "..\\engine\\model.c";
@@ -2016,6 +2191,7 @@ static TerminatedCString s_CMooCow_005ea32a = "CMooCow";
 static TerminatedCString s_moocow_dfm_005ea332 = "moocow.dfm";
 static TerminatedCString s_Bip01_Spine2_005ea33d = "Bip01 Spine2";
 static TerminatedCString s_Bip01_Head_005ea34a = "Bip01 Head";
+static TerminatedCString s_head_005ea355 = "head";
 static TerminatedCString s_lforearm_005ea35a = "lforearm";
 static TerminatedCString s_rforearm_005ea363 = "rforearm";
 static TerminatedCString s_lshin_005ea36c = "lshin";
@@ -2089,22 +2265,34 @@ static TerminatedCString s_core_morph_cpp_005ea89a = "..\\core\\morph.cpp";
 static TerminatedCString s_CMorphModel_rotatePoints_005ea8ac = "CMorphModel::rotatePoints - too many points!";
 static TerminatedCString s_core_morph_cpp_005ea8e6 = "..\\core\\morph.cpp";
 static TerminatedCString s_CMorph_getReady_can_t_do_005ea8f8 = "CMorph::getReady - can't do this unless we have setup both models!";
+static TerminatedCString s_d_005ea93b = "%d\n";
 static TerminatedCString s_core_motion_cpp_005ea93f = "..\\core\\motion.cpp";
 static TerminatedCString s_Error_reading_motion_lis_005ea952 = "Error reading motion list.";
 static TerminatedCString s_core_motion_cpp_005ea96d = "..\\core\\motion.cpp";
 static TerminatedCString s_Can_t_read_motion_list_i_005ea980 = "Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)";
+static TerminatedCString s_d_005ea9f3 = "%d\n";
+static TerminatedCString s_s_005ea9f7 = "%s\n";
+static TerminatedCString s_d_005ea9fb = "%d\n";
 static TerminatedCString s_f_d_d_d_005ea9ff = "\"%[^\"]\",%f,%d,%d,%d\n";
 static TerminatedCString s_d_d_f_005eaa14 = "%d,%d,%f\n";
 static TerminatedCString s_d_f_d_005eaa1e = "%d,%f,%d\n";
 static TerminatedCString s_d_f_005eaa28 = "%d,%f\n";
 static TerminatedCString s_d_d_005eaa2f = "%d,%d\n";
+static TerminatedCString s_d_005eaa36 = "%d\n";
 static TerminatedCString s_core_motion_cpp_005eaa3a = "..\\core\\motion.cpp";
 static TerminatedCString s_Out_of_memory_005eaa4d = "Out of memory";
 static TerminatedCString s_d_d_d_f_f_d_005eaa5b = "%d,%d,%d,%f,%f,%d\n";
+static TerminatedCString s_d_005eaa6e = "%d\n";
 static TerminatedCString s_d_d_005eaa72 = "%d,%d\n";
+static TerminatedCString s_d_005eaa79 = "%d";
+static TerminatedCString s_d_005eaa7c = "%d";
 static TerminatedCString s_motion_list_version_005eaa7f = "// motion list version\n";
+static TerminatedCString s_d_005eaa97 = "%d\n";
 static TerminatedCString s_state_list_005eaa9b = "// state list\n";
+static TerminatedCString s_d_005eaaaa = "%d\n";
+static TerminatedCString s_s_005eaaae = "%s\n";
 static TerminatedCString s_motion_count_005eaab2 = "// motion count\n";
+static TerminatedCString s_d_005eaac3 = "%d\n";
 static TerminatedCString s_motion_d_name_fps_state_005eaac7 = "// motion %d: \"name\",fps,state,frameStart,frameCount\n";
 static TerminatedCString s_s_g_d_d_d_005eaafd = "\"%s\",%g,%d,%d,%d\n";
 static TerminatedCString s_motion_d_exitForwardFrom_005eab0f = "// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\n";
@@ -2138,6 +2326,7 @@ static TerminatedCString s_core_motion_cpp_005eaea3 = "..\\core\\motion.cpp";
 static TerminatedCString s_CMotionController_setDes_005eaeb6 = "CMotionController::setDesiredState - invalid state index";
 static TerminatedCString s_core_motion_cpp_005eaef3 = "..\\core\\motion.cpp";
 static TerminatedCString s_CMotionController_findPa_005eaf06 = "CMotionController::findPatchToFrame should never be called for this base class!";
+static TerminatedCString s_anon_005eaf8b = " ";
 static TerminatedCString s_d_f_005eaf8d = "%d,%f";
 static TerminatedCString s_f_005eaf93 = "\"%[^\"]\" , %f";
 static TerminatedCString s_core_motion_cpp_005eafa0 = "..\\core\\motion.cpp";
@@ -2180,9 +2369,10 @@ static TerminatedCString s_sound_mp3_cpp_005eb438 = "..\\sound\\mp3.cpp";
 static TerminatedCString s_decoder_table_read_error_005eb449 = "decoder table read error.  File: %s";
 static TerminatedCString s_sound_mp3_cpp_005eb486 = "..\\sound\\mp3.cpp";
 static TerminatedCString s_Error_in_streo_processin_005eb497 = "Error in streo processing.  File: %s";
-static TerminatedCString s_sound_005eb50d = ">sound";
+static TerminatedCString s_sound_005eb50e = "sound";
 static TerminatedCString s_sound_mp3_cpp_005eb514 = "..\\sound\\mp3.cpp";
 static TerminatedCString s_Can_t_open_s_005eb525 = "Can't open %s";
+static TerminatedCString s_rb_005eb533 = "rb";
 static TerminatedCString s_sound_005eb536 = "sound";
 static TerminatedCString s_sound_mp3_cpp_005eb53c = "..\\sound\\mp3.cpp";
 static TerminatedCString s_Can_t_open_s_005eb54d = "Can't open %s";
@@ -2221,12 +2411,12 @@ static TerminatedCString s_CNetGame_syncPlayers_don_005eb914 = "CNetGame::syncPl
 static TerminatedCString s_CNetGame_sync_d_005eb939 = "CNetGame::sync(%d)";
 static TerminatedCString s_Syncing_stage_d_005eb94c = "Syncing stage %d.";
 static TerminatedCString s_Waiting_on_005eb95e = "Waiting on:";
+static TerminatedCString s_d_005eb96a = "%d";
 static TerminatedCString s_All_players_synced_to_co_005eb96d = "All players synced to code %d";
 static TerminatedCString s_Sending_packet_to_player_005eb98b = "Sending packet to player %d, %s";
 static TerminatedCString s_Waiting_on_sync_code_d_f_005eb9ab = "Waiting on sync code %d from server...";
 static TerminatedCString s_core_netgame_cpp_005eb9d2 = "..\\core\\netgame.cpp";
 static TerminatedCString s_CNetGame_syncPlayers_inv_005eb9e6 = "CNetGame::syncPlayers - invalid mode";
-static TerminatedCString s_Received_join_request_fr_005eba27 = "?Received join request from %s";
 static TerminatedCString s_Refuse_join_request_not_005eba46 = "Refuse join request, not in lobby";
 static TerminatedCString s_Join_request_is_from_new_005eba68 = "Join request is from new player";
 static TerminatedCString s_Join_request_is_from_pla_005eba88 = "Join request is from player already in the game";
@@ -2264,6 +2454,8 @@ static TerminatedCString s_dms_005ebdbb = "%dms";
 static TerminatedCString s_anon_005ebdc0 = "?";
 static TerminatedCString s_Ready_005ebdc2 = "Ready";
 static TerminatedCString s_Not_ready_005ebdc8 = "Not ready";
+static TerminatedCString s_d_005ebdd2 = "%d";
+static TerminatedCString s_d_005ebdd5 = "%d";
 static TerminatedCString s_Loading_s_005ebdd8 = "Loading %s";
 static TerminatedCString s_Loading_s_005ebde3 = "Loading %s";
 static TerminatedCString s_Send_chat_005ebdee = "Send chat";
@@ -2309,9 +2501,13 @@ static TerminatedCString s_core_netgame_cpp_005ec467 = "..\\core\\netgame.cpp";
 static TerminatedCString s_CNetGame_sendSimFrameAck_005ec47b = "CNetGame::sendSimFrameAck - server not in player list";
 static TerminatedCString s_core_netgame_cpp_005ec4b1 = "..\\core\\netgame.cpp";
 static TerminatedCString s_CNetGame_sendSimFrameAck_005ec4c5 = "CNetGame::sendSimFrameAck - I'm not in player list";
+static TerminatedCString s_rt_005ec4f9 = "rt";
+static TerminatedCString s_d_005ec4fd = "%d\n";
+static TerminatedCString s_d_005ec501 = "%d\n";
 static TerminatedCString s_support_newmsg_cpp_005ec505 = "..\\support\\newmsg.cpp";
 static TerminatedCString s_Unknown_message_file_ver_005ec51b = "Unknown message file version";
 static TerminatedCString s_anon_005ec538 = "\"%[^\"]\"\n";
+static TerminatedCString s_anon_005ec541 = " ";
 static TerminatedCString s_anon_005ec543 = "\"%[^\"]\", \"%[^\"]\"\n";
 static TerminatedCString s_support_newmsg_cpp_005ec555 = "..\\support\\newmsg.cpp";
 static TerminatedCString s_Error_reading_s_005ec56b = "Error reading %s";
@@ -2331,12 +2527,15 @@ static TerminatedCString s_crsr_d_005ec6eb = "crsr%d";
 static TerminatedCString s_flame_d_005ec6f2 = "flame%d";
 static TerminatedCString s_crsrskll_d_005ec6fa = "crsrskll%d";
 static TerminatedCString s_crsrskll7_005ec705 = "crsrskll7";
+static TerminatedCString s_CNPC_005ec70f = "CNPC";
 static TerminatedCString s_nocchar_dfm_005ec714 = "nocchar.dfm";
 static TerminatedCString s_priest_dfm_005ec720 = "priest.dfm";
 static TerminatedCString s_Bip01_L_Hand_005ec72b = "Bip01 L Hand";
 static TerminatedCString s_Bip01_R_Hand_005ec738 = "Bip01 R Hand";
 static TerminatedCString s_STAND_005ec745 = "STAND";
 static TerminatedCString s_s_confused_while_walking_005ec74b = "%s confused while walking to scriptDest!\n";
+static TerminatedCString s_RUN_005ec775 = "RUN";
+static TerminatedCString s_WALK_005ec779 = "WALK";
 static TerminatedCString s_STAND_005ec77e = "STAND";
 static TerminatedCString s_heroCanSee_005ec784 = "heroCanSee";
 static TerminatedCString s_heroCanSee_005ec78f = "heroCanSee";
@@ -2348,7 +2547,10 @@ static TerminatedCString s_poolMe_005ec7c3 = "poolMe";
 static TerminatedCString s_speed_005ec7ca = "speed";
 static TerminatedCString s_s_d_005ec7d0 = "%s_%d";
 static TerminatedCString s_s_d_005ec7d6 = "%s_%d";
+static TerminatedCString s_DIE_005ec7dc = "DIE";
+static TerminatedCString s_HURT_005ec7e0 = "HURT";
 static TerminatedCString s_DAMAGE_005ec7e5 = "DAMAGE";
+static TerminatedCString s_SHOT_005ec7ec = "SHOT";
 static TerminatedCString s_core_particle_cpp_005ec801 = "..\\core\\particle.cpp";
 static TerminatedCString s_Base_class_shouldn_t_ren_005ec816 = "Base class shouldn't render";
 static TerminatedCString s_CPassenger_005ec832 = "CPassenger";
@@ -2382,15 +2584,26 @@ static TerminatedCString s_core_path_cpp_005eca3e = "..\\core\\path.cpp";
 static TerminatedCString s_Out_of_bounds3_005eca4f = "Out of bounds3!";
 static TerminatedCString s_core_path_cpp_005eca5f = "..\\core\\path.cpp";
 static TerminatedCString s_Out_of_bounds4_005eca70 = "Out of bounds4!";
+static TerminatedCString s_s_005eca80 = "%s";
 static TerminatedCString s_core_path_cpp_005ecaa4 = "..\\core\\path.cpp";
 static TerminatedCString s_Global_pathmap_list_corr_005ecab5 = "Global pathmap list corruption";
 static TerminatedCString s_core_path_cpp_005ecad4 = "..\\core\\path.cpp";
 static TerminatedCString s_Global_pathmap_list_corr_005ecae5 = "Global pathmap list corruption";
 static TerminatedCString s_core_path_cpp_005ecb04 = "..\\core\\path.cpp";
 static TerminatedCString s_Global_pathmap_list_corr_005ecb15 = "Global pathmap list corruption";
+static TerminatedCString s_x_005ecb34 = "x";
+static TerminatedCString s_N_005ecb36 = "N";
+static TerminatedCString s_S_005ecb38 = "S";
+static TerminatedCString s_E_005ecb3a = "E";
+static TerminatedCString s_W_005ecb3c = "W";
+static TerminatedCString s_NE_005ecb3e = "NE";
+static TerminatedCString s_NW_005ecb41 = "NW";
+static TerminatedCString s_SE_005ecb44 = "SE";
+static TerminatedCString s_SW_005ecb47 = "SW";
 static TerminatedCString s_engine_pcx_c_005ecb4a = "..\\engine\\pcx.c";
 static TerminatedCString s_saveScreenRaw16_No_ext_f_005ecb5a = "saveScreenRaw16 - No ext found";
 static TerminatedCString s_RAW_005ecb79 = ".RAW";
+static TerminatedCString s_wb_005ecb7e = "wb";
 static TerminatedCString s_engine_pcx_c_005ecb81 = "..\\engine\\pcx.c";
 static TerminatedCString s_saveScreenRaw16_Unable_t_005ecb91 = "saveScreenRaw16 - Unable to open output";
 static TerminatedCString s_engine_pcx_c_005ecbb9 = "..\\engine\\pcx.c";
@@ -2406,7 +2619,7 @@ static TerminatedCString s_CPendulum_005ecc4d = "CPendulum";
 static TerminatedCString s_pend_kfm_005ecc57 = "pend.kfm";
 static TerminatedCString s_true_005ecc60 = "true";
 static TerminatedCString s_none_005ecc65 = "none";
-static TerminatedCString s_modelName_005eccf4 = "?modelName";
+static TerminatedCString s_modelName_005eccf5 = "modelName";
 static TerminatedCString s_startEvent_005eccff = "startEvent";
 static TerminatedCString s_moving_005ecd0a = "moving";
 static TerminatedCString s_param_005ecd11 = "param";
@@ -2441,6 +2654,8 @@ static TerminatedCString s_cockpit_pkbitmap_cpp_005ecf4e = "..\\cockpit\\pkbitma
 static TerminatedCString s_Corrupt_data_detected_re_005ecf66 = "Corrupt data detected reading PBM.";
 static TerminatedCString s_cockpit_pkbitmap_cpp_005ecf89 = "..\\cockpit\\pkbitmap.cpp";
 static TerminatedCString s_Out_of_memory_reading_PB_005ecfa1 = "Out of memory reading PBM";
+static TerminatedCString s_rb_005ecfbb = "rb";
+static TerminatedCString s_art_005ecfbe = "art";
 static TerminatedCString s_Unable_to_open_PBM_file_005ecfc2 = "Unable to open PBM file %s";
 static TerminatedCString s_cockpit_pkbitmap_cpp_005ecfdd = "..\\cockpit\\pkbitmap.cpp";
 static TerminatedCString s_cockpit_pkbitmap_cpp_005ecff5 = "..\\cockpit\\pkbitmap.cpp";
@@ -2476,6 +2691,8 @@ static TerminatedCString s_Can_t_allocate_u_bytes_f_005ed34e = "Can't allocate %
 static TerminatedCString s_cockpit_pkbmpset_cpp_005ed398 = "..\\cockpit\\pkbmpset.cpp";
 static TerminatedCString s_Error_reading_from_s_in_005ed3b0 = "Error reading from %s in CPackedBitmapSet::loadJoinedRAW";
 static TerminatedCString s_cockpit_pkbmpset_cpp_005ed3e9 = "..\\cockpit\\pkbmpset.cpp";
+static TerminatedCString s_raw_005ed401 = ".raw";
+static TerminatedCString s_pbg_005ed406 = ".pbg";
 static TerminatedCString s_CPlatform_005ed40b = "CPlatform";
 static TerminatedCString s_question_kfm_005ed415 = "question.kfm";
 static TerminatedCString s_modelName_005ed43b = "modelName";
@@ -2513,8 +2730,11 @@ static TerminatedCString s_recomputeFog_005ed5fa = "recomputeFog";
 static TerminatedCString s_plotInShadowFlag_005ed607 = "plotInShadowFlag";
 static TerminatedCString s_core_platfrm_cpp_005ed627 = "..\\core\\platfrm.cpp";
 static TerminatedCString s_CPlatform_attachActor_to_005ed63b = "CPlatform::attachActor - too many!";
+static TerminatedCString s_rb_005ed65f = "rb";
 static TerminatedCString s_File_not_found_005ed662 = "File not found";
 static TerminatedCString s_Unable_to_open_file_s_005ed671 = "Unable to open file '%s'";
+static TerminatedCString s_epd_005ed68a = "epd";
+static TerminatedCString s_epd_005ed68e = ".epd";
 static TerminatedCString s_I_O_Error_accessing_file_005ed693 = "I/O Error accessing file, or file is corrupt";
 static TerminatedCString s_File_is_corrupt_005ed6c0 = "File is corrupt";
 static TerminatedCString s_Out_of_memory_005ed6d0 = "Out of memory";
@@ -2525,20 +2745,24 @@ static TerminatedCString s_CRC_CHECK_FAILED_on_thes_005ed747 = "!!!CRC CHECK FAI
 static TerminatedCString s_engine_pod_cpp_005ed76d = "..\\engine\\pod.cpp";
 static TerminatedCString s_Invalid_pod_version_for_005ed77f = "Invalid pod version for %s: %d";
 static TerminatedCString s_Verifying_CRC_for_s_005ed79e = "Verifying CRC for %s...";
+static TerminatedCString s_rb_005ed7b6 = "rb";
 static TerminatedCString s_engine_pod_cpp_005ed7b9 = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_getAuditRecord_005ed7cb = "CPodFile::getAuditRecord - invalid index.  Pod not mounted?";
+static TerminatedCString s_rb_005ed807 = "rb";
 static TerminatedCString s_engine_pod_cpp_005ed80a = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_getAuditRecord_005ed81c = "CPodFile::getAuditRecord - can't open %s";
 static TerminatedCString s_engine_pod_cpp_005ed845 = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_getAuditRecord_005ed857 = "CPodFile::getAuditRecord - error reading %s";
 static TerminatedCString s_engine_pod_cpp_005ed883 = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_getDependencyRe_005ed895 = "CPodFile::getDependencyRecord - invalid index.  Pod not mounted?";
+static TerminatedCString s_rb_005ed8d6 = "rb";
 static TerminatedCString s_engine_pod_cpp_005ed8d9 = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_getDependencyRe_005ed8eb = "CPodFile::getDependencyRecord - can't open %s";
 static TerminatedCString s_engine_pod_cpp_005ed919 = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_getDependencyRe_005ed92b = "CPodFile::getDependencyRecord - error reading %s";
 static TerminatedCString s_engine_pod_cpp_005ed95c = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_computeOneFileC_005ed96e = "CPodFile::computeOneFileCRC - invalid index";
+static TerminatedCString s_rb_005ed99a = "rb";
 static TerminatedCString s_engine_pod_cpp_005ed99d = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPodFile_computeOneFileC_005ed9af = "CPodFile::computeOneFileCRC - can't open %s";
 static TerminatedCString s_Out_of_memory_005ed9db = "Out of memory";
@@ -2559,20 +2783,25 @@ static TerminatedCString s_engine_pod_cpp_005edb24 = "..\\engine\\pod.cpp";
 static TerminatedCString s_Circular_POD_mount_order_005edb36 = "Circular POD mount order dependency detected.";
 static TerminatedCString s_engine_pod_cpp_005edb64 = "..\\engine\\pod.cpp";
 static TerminatedCString s_CPod_dismountPod_invalid_005edb76 = "CPod::dismountPod - invalid index";
+static TerminatedCString s_rt_005edb98 = "rt";
 static TerminatedCString s_pod_ini_005edb9b = "pod.ini";
 static TerminatedCString s_pod_005edba3 = "*.pod";
 static TerminatedCString s_core_podmain_cpp_005edba9 = "..\\core\\podmain.cpp";
 static TerminatedCString s_Can_t_mount_s_s_005edbbd = "Can't mount %s: %s";
+static TerminatedCString s_d_005edbd0 = "%d\n";
+static TerminatedCString s_s_005edbd4 = "%s\n";
 static TerminatedCString s_core_podmain_cpp_005edbd8 = "..\\core\\podmain.cpp";
 static TerminatedCString s_Can_t_mount_s_s_005edbec = "Can't mount %s: %s";
 static TerminatedCString s_CRifle_005edbff = "CRifle";
 static TerminatedCString s_delisle_kfm_005edc06 = "delisle.kfm";
 static TerminatedCString s_LITEDESLILE_kfm_005edc12 = "LITEDESLILE.kfm";
-static TerminatedCString s_shotgun_noammo_wav_005edc3a = "?shotgun-noammo.wav";
+static TerminatedCString s_shotgun_noammo_wav_005edc3b = "shotgun-noammo.wav";
 static TerminatedCString s_rifle_silencer_wav_005edc4e = "rifle-silencer.wav";
-static TerminatedCString s_rifbullet_kfm_005edc7d = "$@rifbullet.kfm";
+static TerminatedCString s_rifbullet_kfm_005edc7f = "rifbullet.kfm";
 static TerminatedCString s_shotgun_cock_wav_3_005edc8d = "shotgun-cock.wav @ .3";
 static TerminatedCString s_COMBATMODEHARD_005edca3 = "COMBATMODEHARD";
+static TerminatedCString s_CScat_005edcb7 = "CScat";
+static TerminatedCString s_scat_dfm_005edcc3 = "scat.dfm";
 static TerminatedCString s_draw_stand2coatPocket_005edccc = "draw_stand2coatPocket";
 static TerminatedCString s_draw_coatPocket2aimPisto_005edce2 = "draw_coatPocket2aimPistols";
 static TerminatedCString s_Bip01_head_005edcfd = "Bip01 head";
@@ -2597,37 +2826,50 @@ static TerminatedCString s_Bip01_Spine1_005eddfc = "Bip01 Spine1";
 static TerminatedCString s_CBaronWeapon_005ede09 = "CBaronWeapon";
 static TerminatedCString s_BaronProxy_005ede16 = "BaronProxy";
 static TerminatedCString s_s_confused_while_walking_005ede21 = "%s confused while walking to scriptDest!\n";
-static TerminatedCString s_scat_die_wav_005ede9e = "?scat-die-?.wav";
+static TerminatedCString s_scat_die_wav_005ede9f = "scat-die-?.wav";
 static TerminatedCString s_scat_hurt_wav_005edeae = "scat-hurt-?.wav";
-static TerminatedCString s_Actor_variable_name_must_005edf16 = "?Actor variable name must begin with '@'";
+static TerminatedCString s_Actor_variable_name_must_005edf17 = "Actor variable name must begin with '@'";
 static TerminatedCString s_Actor_variable_name_s_is_005edf3f = "Actor variable name \"%s\" is too long";
 static TerminatedCString s_Actor_variable_name_s_is_005edf64 = "Actor variable name \"%s\" is not valid";
+static TerminatedCString s_anon_005edf8a = "//";
 static TerminatedCString s_No_opening_parenthesis_005edf8d = "No opening parenthesis";
 static TerminatedCString s_Argument_too_long_005edfa4 = "Argument too long";
 static TerminatedCString s_Can_t_find_closing_paren_005edfb6 = "Can't find closing parenthesis";
 static TerminatedCString s_Must_specify_actor_name_005edfd5 = "Must specify actor name";
 static TerminatedCString s_Actor_variable_s_not_def_005edfed = "Actor variable %s not defined, or doesn't reference an existing actor";
+static TerminatedCString s_anon_005ee033 = "$";
 static TerminatedCString s_Can_t_use_actor_specifie_005ee035 = "Can't use '$' actor specifier in multi-player";
 static TerminatedCString s_Hero_doesn_t_exist_005ee063 = "Hero doesn't exist!!?!";
 static TerminatedCString s_Actor_s_does_not_exist_005ee07a = "Actor \"%s\" does not exist.";
 static TerminatedCString s_Actor_s_is_of_type_s_thi_005ee095 = "Actor \"%s\" is of type %s, this command requires an actor of type %s.";
+static TerminatedCString s_walk_005ee0da = "walk";
 static TerminatedCString s_backup_005ee0df = "backup";
+static TerminatedCString s_run_005ee0e6 = "run";
+static TerminatedCString s_fire_005ee0ea = "fire";
 static TerminatedCString s_useItem_005ee0ef = "useItem";
 static TerminatedCString s_light_005ee0f7 = "light";
+static TerminatedCString s_draw_005ee0fd = "draw";
+static TerminatedCString s_jump_005ee102 = "jump";
 static TerminatedCString s_n_005ee107 = " %[^ \t),]%n";
 static TerminatedCString s_Character_s_model_s_does_005ee113 = "Character %s model %s does not have a part '%s'";
 static TerminatedCString s_Error_processing_script_005ee143 = "Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n";
 static TerminatedCString s_WARNING_Infinite_loop_de_005ee180 = "!WARNING!  Infinite loop detected in script at line %d";
+static TerminatedCString s_d_005ee1bb = "%d";
 static TerminatedCString s_No_script_loaded_005ee1be = "(No script loaded.)";
 static TerminatedCString s_world_005ee1d2 = "world";
+static TerminatedCString s_txt_005ee1d8 = ".txt";
+static TerminatedCString s_rt_005ee1dd = "rt";
 static TerminatedCString s_world_005ee1e0 = "world";
 static TerminatedCString s_Probable_non_text_file_s_005ee1e6 = "Probable non-text file %s detected near line %d.  Cannot use script.";
 static TerminatedCString s_core_script_cpp_005ee22b = "..\\core\\script.cpp";
 static TerminatedCString s_Out_of_memory_loading_sc_005ee23e = "Out of memory loading script at line %d";
 static TerminatedCString s_core_script_cpp_005ee266 = "..\\core\\script.cpp";
 static TerminatedCString s_Out_of_memory_loading_sc_005ee279 = "Out of memory loading script at line %d";
+static TerminatedCString s_wav_005ee2a1 = ".wav";
 static TerminatedCString s_smill_wav_005ee2a6 = "smill.wav";
+static TerminatedCString s_s_0_85_005ee2b0 = "@0.85";
 static TerminatedCString s_town_wav_005ee2b6 = "town.wav";
+static TerminatedCString s_s_0_85_005ee2bf = "@0.85";
 static TerminatedCString s_initSection_005ee2c5 = "initSection";
 static TerminatedCString s_initSectionEnd_005ee2d1 = "initSectionEnd";
 static TerminatedCString s_core_script_cpp_005ee2e0 = "..\\core\\script.cpp";
@@ -2695,6 +2937,7 @@ static TerminatedCString s_addLightFilter_005ee7d3 = "addLightFilter";
 static TerminatedCString s_f_n_005ee7e2 = "( %[^,], %[^,], %f )%n";
 static TerminatedCString s_Error_parsing_addLightFi_005ee7f9 = "Error parsing addLightFilter command parms";
 static TerminatedCString s_Light_s_does_not_exist_005ee824 = "Light \"%s\" does not exist";
+static TerminatedCString s_art_005ee83e = "art";
 static TerminatedCString s_Can_t_open_filter_s_005ee842 = "Can't open filter \"%s\"";
 static TerminatedCString s_allowEnemyAttack_005ee859 = "allowEnemyAttack";
 static TerminatedCString s_allowHeroControls_005ee86a = "allowHeroControls";
@@ -2708,93 +2951,12 @@ static TerminatedCString s_breakPoint_005ee8fe = "breakPoint";
 static TerminatedCString s_Script_breakpoint_reache_005ee909 = "Script breakpoint reached at line %d";
 static TerminatedCString s_cancelCameraHold_005ee92e = "cancelCameraHold";
 static TerminatedCString s_cancelWalkTo_005ee93f = "cancelWalkTo";
+static TerminatedCString s_all_005ee94c = "all";
 static TerminatedCString s_chainToMission_005ee950 = "chainToMission";
 static TerminatedCString s_changeSetFilename_005ee95f = "changeSetFilename";
 static TerminatedCString s_d_n_005ee971 = "(%d , %[^)])%n";
 static TerminatedCString s_Error_parsing_changeSetF_005ee980 = "Error parsing changeSetFilename command parms";
 static TerminatedCString s_Invalid_set_index_005ee9ae = "Invalid set index";
-static TerminatedCString s_models_005ee9c5 = "models";
-static TerminatedCString s_File_models_s_doesn_t_ex_005ee9cc = "File models\\%s doesn't exist";
-static TerminatedCString s_dbSay_005ee9e9 = "dbSay";
-static TerminatedCString s_n_005ee9ef = "(%[^)])%n";
-static TerminatedCString s_Error_parsing_dbSay_argu_005ee9f9 = "Error parsing dbSay arguments";
-static TerminatedCString s_Can_t_find_s_in_database_005eea19 = "[Can't find %s in database]";
-static TerminatedCString s_dbStartSay_005eea35 = "dbStartSay";
-static TerminatedCString s_n_005eea40 = "(%[^)])%n";
-static TerminatedCString s_Error_parsing_dbSay_argu_005eea4a = "Error parsing dbSay arguments";
-static TerminatedCString s_Can_t_find_s_in_database_005eea6a = "[Can't find %s in database]";
-static TerminatedCString s_dbTimedDisplay_005eea86 = "dbTimedDisplay";
-static TerminatedCString s_f_n_005eea95 = "(%[^,], %f)%n";
-static TerminatedCString s_Error_parsing_dbTimedDis_005eeaa3 = "Error parsing dbTimedDisplay arguments";
-static TerminatedCString s_Can_t_find_s_in_database_005eeaca = "[Can't find %s in database]";
-static TerminatedCString s_debug_005eeae6 = "debug";
-static TerminatedCString s_Script_debug_message_at_005eeaec = "Script debug message at line %d:\n%s";
-static TerminatedCString s_dismember_005eeb10 = "dismember";
-static TerminatedCString s_n_005eeb1a = "(%[^,], %[^,)]%n";
-static TerminatedCString s_Error_parsing_dismember_005eeb2b = "Error parsing dismember command parms";
-static TerminatedCString s_f_f_f_f_n_005eeb51 = ",%f ,%f ,%f ,%f %n";
-static TerminatedCString s_Error_parsing_dismember_005eeb64 = "Error parsing dismember command parms";
-static TerminatedCString s_Error_parsing_dismember_005eeb8a = "Error parsing dismember command parms near '%s'";
-static TerminatedCString s_display_005eebba = "display";
-static TerminatedCString s_Error_parsing_message_te_005eebc2 = "Error parsing message text on display statament: %s";
-static TerminatedCString s_Can_t_skip_next_command_005eebfb = "Can't skip next command after else statement on line %d";
-static TerminatedCString s_enableCamera_005eec33 = "enableCamera";
-static TerminatedCString s_n_005eec40 = "(%[^,], %[^)])%n";
-static TerminatedCString s_Error_parsing_enableCame_005eec51 = "Error parsing enableCamera parms";
-static TerminatedCString s_Camera_s_does_not_exist_005eec72 = "Camera \"%s\" does not exist.";
-static TerminatedCString s_enableCameraGroup_005eec8e = "enableCameraGroup";
-static TerminatedCString s_d_n_005eeca0 = "(%d , %[^)])%n";
-static TerminatedCString s_Error_parsing_enableCame_005eecaf = "Error parsing enableCameraGroup parms";
-static TerminatedCString s_enableHealthBar_005eecd5 = "enableHealthBar";
-static TerminatedCString s_n_005eece5 = "(%[^,], %[^)])%n";
-static TerminatedCString s_Error_parsing_enableHeal_005eecf6 = "Error parsing enableHealthBar parms";
-static TerminatedCString s_false_005eed1a = "false";
-static TerminatedCString s_always_005eed25 = "always";
-static TerminatedCString s_Invalid_health_bar_mode_005eed2c = "Invalid health bar mode '%s'";
-static TerminatedCString s_fadeIn_005eed4d = "fadeIn";
-static TerminatedCString s_fadeOut_005eed54 = "fadeOut";
-static TerminatedCString s_gesture_005eed5c = "gesture";
-static TerminatedCString s_n_005eed64 = "(%[^,], %[^,)]%n";
-static TerminatedCString s_Error_parsing_gesture_co_005eed75 = "Error parsing gesture command parms";
-static TerminatedCString s_d_n_005eed99 = ", %d %n";
-static TerminatedCString s_Error_parsing_gesture_lo_005eeda1 = "Error parsing gesture loop parms";
-static TerminatedCString s_Error_parsing_gesture_co_005eedc2 = "Error parsing gesture command parms - eating last paren";
-static TerminatedCString s_Gesture_name_s_is_not_va_005eedfa = "Gesture name %s is not valid for actor %s, model %s";
-static TerminatedCString s_getIniInt_005eee2e = "getIniInt";
-static TerminatedCString s_n_005eee38 = "(%[^,], %[^,)] )%n";
-static TerminatedCString s_Error_parsing_getIniInt_005eee4b = "Error parsing getIniInt command parms";
-static TerminatedCString s_system_nocturne_ini_005eee76 = "system\\nocturne.ini";
-static TerminatedCString s_getTriggerActor_005eee8a = "getTriggerActor";
-static TerminatedCString s_n_005eee9a = "(%[^,], %[^)])%n";
-static TerminatedCString s_Error_parsing_getTrigger_005eeeab = "Error parsing getTriggerActor command parms";
-static TerminatedCString s_gosub_005eeed7 = "gosub";
-static TerminatedCString s_Undefined_label_s_used_i_005eeedd = "Undefined label %s used in gosub statement on line %d";
-static TerminatedCString s_stack_txt_005eef16 = "stack.txt";
-static TerminatedCString s_line_6d_s_005eef20 = "line%6d: %s\n";
-static TerminatedCString s_line_6d_s_005eef2d = "line%6d: %s\n";
-static TerminatedCString s_Call_stack_overflow_dete_005eef3a = "Call stack overflow detected on script line %d.  Check stack.txt for details.";
-static TerminatedCString s_Undefined_label_s_used_i_005eef8e = "Undefined label %s used in goto statement on line %d";
-static TerminatedCString s_Script_GTFO_at_line_d_s_005eefc9 = "Script GTFO at line %d:\n%s\nTerminating mission.";
-static TerminatedCString s_holsterWeapon_005eeff9 = "holsterWeapon";
-static TerminatedCString s_n_005ef007 = "(%[^,)]%n";
-static TerminatedCString s_Error_parsing_holsterWea_005ef011 = "Error parsing holsterWeapon command parms";
-static TerminatedCString s_Error_parsing_holsterWea_005ef03b = "Error parsing holsterWeapon command parms";
-static TerminatedCString s_Missing_closing_in_holst_005ef065 = "Missing closing ')' in holsterWeapon command";
-static TerminatedCString s_Can_t_skip_next_command_005ef09a = "Can't skip next command after if statement on line %d";
-static TerminatedCString s_finishedAct_005ef0d5 = "finishedAct";
-static TerminatedCString s_n_005ef0e1 = " ( )%n";
-static TerminatedCString s_Error_parsing_finishedAc_005ef0e8 = "Error parsing finishedAct command";
-static TerminatedCString s_letterbox_005ef10a = "letterbox";
-static TerminatedCString s_false_005ef114 = "false";
-static TerminatedCString s_bottom_005ef11f = "bottom";
-static TerminatedCString s_Invalid_letterBox_mode_s_005ef126 = "Invalid letterBox mode: %s";
-static TerminatedCString s_loadFieldNotes_005ef141 = "loadFieldNotes";
-static TerminatedCString s_lockFocusActor_005ef150 = "lockFocusActor";
-static TerminatedCString s_lookAt_005ef15f = "lookAt";
-static TerminatedCString s_n_005ef166 = "(%[^,)]%n";
-static TerminatedCString s_Error_parsing_lookAt_com_005ef170 = "Error parsing lookAt command parms";
-static TerminatedCString s_n_005ef193 = ", %[^)]%n";
-static TerminatedCString s_Error_parsing_lookAt_com_005ef19d = "Error parsing lookAt command parms";
 static TerminatedCString s_Missing_closing_in_lookA_005ef1c0 = "Missing closing ')' in lookAt command";
 static TerminatedCString s_monsterVision_005ef1e6 = "monsterVision";
 static TerminatedCString s_d_n_005ef1f4 = "(%[^,], %d )%n";
@@ -2835,6 +2997,7 @@ static TerminatedCString s_Return_without_gosub_det_005ef597 = "Return without g
 static TerminatedCString s_rollCredits_005ef5c8 = "rollCredits";
 static TerminatedCString s_n_005ef5d4 = " ( )%n";
 static TerminatedCString s_Error_parsing_rollCredit_005ef5db = "Error parsing rollCredits command";
+static TerminatedCString s_say_005ef5fd = "say";
 static TerminatedCString s_n_005ef601 = "%[^,], %[^,], %n";
 static TerminatedCString s_Error_parsing_speaker_an_005ef612 = "Error parsing speaker and wav arguments";
 static TerminatedCString s_selectWeapon_005ef63a = "selectWeapon";
@@ -2865,12 +3028,14 @@ static TerminatedCString s_n_005ef85a = " (%[^,], %[^)])%n";
 static TerminatedCString s_Error_parsing_setHeroTas_005ef86c = "Error parsing setHeroTask parameters.";
 static TerminatedCString s_stand_005ef892 = "stand";
 static TerminatedCString s_follow_005ef898 = "follow";
+static TerminatedCString s_kill_005ef89f = "kill";
 static TerminatedCString s_guard_005ef8a4 = "guard";
 static TerminatedCString s_suspend_005ef8aa = "suspend";
 static TerminatedCString s_Invalid_Task_s_005ef8b2 = "Invalid Task: %s";
 static TerminatedCString s_setIniInt_005ef8c3 = "setIniInt";
 static TerminatedCString s_d_n_005ef8cd = "(%[^,], %d )%n";
 static TerminatedCString s_Error_parsing_setIniInt_005ef8dc = "Error parsing setIniInt command parms";
+static TerminatedCString s_Game_005ef902 = "Game";
 static TerminatedCString s_system_nocturne_ini_005ef907 = "system\\nocturne.ini";
 static TerminatedCString s_setMouth_005ef91b = "setMouth";
 static TerminatedCString s_d_f_n_005ef924 = "(%[^,], %d, %f)%n";
@@ -2884,6 +3049,7 @@ static TerminatedCString s_setSkipLabel_005ef9cf = "setSkipLabel";
 static TerminatedCString s_Undefined_label_s_005ef9dc = "Undefined label '%s'";
 static TerminatedCString s_setSpeaker_005ef9f1 = "setSpeaker";
 static TerminatedCString s_setTimeFactor_005ef9fc = "setTimeFactor";
+static TerminatedCString s_f_005efa0a = "%f";
 static TerminatedCString s_Invalid_time_factor_s_005efa0d = "Invalid time factor %s";
 static TerminatedCString s_setVictim_005efa24 = "setVictim";
 static TerminatedCString s_n_005efa2e = "(%[^,)]%n";
@@ -2902,8 +3068,9 @@ static TerminatedCString s_startSay_005efb42 = "startSay";
 static TerminatedCString s_n_005efb4b = "%[^,], %[^,], %n";
 static TerminatedCString s_Error_parsing_speaker_an_005efb5c = "Error parsing speaker and wav arguments";
 static TerminatedCString s_switchCamera_005efb84 = "switchCamera";
-static TerminatedCString s_n_005efb94 = "[^,],%n";
+static TerminatedCString s_n_005efb93 = "%[^,],%n";
 static TerminatedCString s_Error_parsing_out_camera_005efb9c = "Error parsing out camera name";
+static TerminatedCString s_f_005efbba = "%f";
 static TerminatedCString s_Invalid_hold_time_value_005efbbd = "Invalid hold time value";
 static TerminatedCString s_timedDisplay_005efbd5 = "timedDisplay";
 static TerminatedCString s_f_n_005efbe2 = "%f,%n";
@@ -2911,6 +3078,7 @@ static TerminatedCString s_Error_parsing_time_value_005efbe8 = "Error parsing ti
 static TerminatedCString s_turnToFace_005efc01 = "turnToFace";
 static TerminatedCString s_n_005efc0c = "(%[^,], %[^)])%n";
 static TerminatedCString s_Error_parsing_turnToFace_005efc1d = "Error parsing turnToFace command parms";
+static TerminatedCString s_wait_005efc44 = "wait";
 static TerminatedCString s_f_n_005efc49 = "(%f)%n";
 static TerminatedCString s_Error_parsing_time_value_005efc50 = "Error parsing time value on wait statament";
 static TerminatedCString s_waitFor_005efc7b = "waitFor";
@@ -2925,15 +3093,20 @@ static TerminatedCString s_Missing_closing_parenthe_005efd13 = "Missing closing 
 static TerminatedCString s_Unknown_command_on_line_005efd3f = "Unknown command on line %d: %s";
 static TerminatedCString s_Extra_characters_s_on_li_005efd5e = "Extra characters \"%s\" on line %d";
 static TerminatedCString s_Overrun_past_the_end_of_005efd7f = "Overrun past the end of the script.";
+static TerminatedCString s_f_005efdbf = "%f";
 static TerminatedCString s_core_script_cpp_005efdd7 = "..\\core\\script.cpp";
 static TerminatedCString s_CScript_processTimer_inv_005efdea = "CScript::processTimer - invalidTimeToWait";
+static TerminatedCString s_if_005efe14 = "if";
+static TerminatedCString s_else_005efe17 = "else";
 static TerminatedCString s_Error_processing_script_005efe1c = "Error processing script to skip cinematic.\nLine: %d\nText: %s\nWhat's wrong: %s\n";
 static TerminatedCString s_core_script_cpp_005efe6b = "..\\core\\script.cpp";
 static TerminatedCString s_Infinite_loop_detected_t_005efe7e = "Infinite loop detected trying to skip cinematic, at script line %d";
 static TerminatedCString s_world_005efec1 = "world";
+static TerminatedCString s_rt_005efec7 = "rt";
 static TerminatedCString s_world_005efeca = "world";
 static TerminatedCString s_core_script_cpp_005efed0 = "..\\core\\script.cpp";
 static TerminatedCString s_Can_t_open_world_s_005efee3 = "Can't open world\\%s";
+static TerminatedCString s_anon_005efef7 = " ";
 static TerminatedCString s_anon_005efef9 = "%[^,], ";
 static TerminatedCString s_core_script_cpp_005eff01 = "..\\core\\script.cpp";
 static TerminatedCString s_SCScipt_dbLoad_error_par_005eff14 = "SCScipt::dbLoad - error parsing %s record %d";
@@ -2945,41 +3118,988 @@ static TerminatedCString s_core_script_cpp_005eff90 = "..\\core\\script.cpp";
 static TerminatedCString s_SCScipt_dbLoad_error_par_005effa3 = "SCScipt::dbLoad - error parsing %s record %d";
 static TerminatedCString s_Warning_Duplicate_wav_st_005effd0 = "Warning! Duplicate wav string %s detected in %s";
 
+// char[2048] constants
+static char g_CHAR_ARRAY_005ee9c0[2048] = ".set";
+
+// char[2] constants
+static char g_MenuTrademarkGlyph[2] = {(char)0x99, (char)0x00};
+
+// char[50] constants
+static char g_CheatStr_AutoAim[50] = {
+    (char)0xC0, (char)0x77, (char)0xFE, (char)0xFF, (char)0x40, (char)0x42, (char)0x62, (char)0x3E, (char)0x18, (char)0xFA, (char)0x08, (char)0xAD,
+    (char)0x93, (char)0xBB, (char)0x1B, (char)0x78, (char)0x67, (char)0x48, (char)0xA3, (char)0x70, (char)0x69, (char)0xB2, (char)0x07, (char)0xAC,
+    (char)0xAF, (char)0xC7, (char)0xC7, (char)0x69, (char)0xDB, (char)0xAA, (char)0x3A, (char)0xE6, (char)0x80, (char)0x52, (char)0x70, (char)0xF5,
+    (char)0x9B, (char)0xA3, (char)0xD3, (char)0x10, (char)0xEF, (char)0xD0, (char)0xEB, (char)0x98, (char)0x71, (char)0x9A, (char)0x98, (char)0x29,
+    (char)0xBE, (char)0x00
+};
+static char g_CheatStr_TimeFactor[50] = {
+    (char)0x6C, (char)0x33, (char)0x52, (char)0x83, (char)0xB4, (char)0xA6, (char)0xD6, (char)0x7A, (char)0x44, (char)0x66, (char)0xD4, (char)0x21,
+    (char)0x27, (char)0x1F, (char)0x6F, (char)0x3C, (char)0x2B, (char)0x64, (char)0xCF, (char)0x6C, (char)0x7D, (char)0x96, (char)0x93, (char)0xFD,
+    (char)0x8F, (char)0x62, (char)0xF1, (char)0xE5, (char)0x4F, (char)0x0E, (char)0x2E, (char)0xA2, (char)0x4C, (char)0x7E, (char)0x9C, (char)0xC9,
+    (char)0xAF, (char)0x87, (char)0xA7, (char)0x54, (char)0x33, (char)0x4C, (char)0xB7, (char)0x14, (char)0x85, (char)0x7E, (char)0xAC, (char)0x6D,
+    (char)0xF2, (char)0x00
+};
+static char g_CheatStr_ResetEffects[50] = {
+    (char)0x29, (char)0x27, (char)0x17, (char)0x78, (char)0x91, (char)0x71, (char)0x2B, (char)0xD1, (char)0x99, (char)0xB9, (char)0x31, (char)0xCA,
+    (char)0xE2, (char)0x08, (char)0x42, (char)0x27, (char)0x06, (char)0x2B, (char)0xCA, (char)0xB7, (char)0xD8, (char)0x21, (char)0x8E, (char)0x06,
+    (char)0xFA, (char)0x42, (char)0x9A, (char)0x4E, (char)0xCA, (char)0x39, (char)0xC3, (char)0x59, (char)0x61, (char)0xF1, (char)0x59, (char)0xF2,
+    (char)0xCA, (char)0xD0, (char)0x1A, (char)0xBF, (char)0xEE, (char)0x13, (char)0x12, (char)0xBF, (char)0xC0, (char)0xE9, (char)0xC1, (char)0xF6,
+    (char)0x1F, (char)0x00
+};
+static char g_CheatStr_SingleStep[50] = {
+    (char)0x63, (char)0x96, (char)0x5D, (char)0x26, (char)0x87, (char)0xD3, (char)0xF1, (char)0x47, (char)0xA7, (char)0xBB, (char)0x8B, (char)0xE4,
+    (char)0xB4, (char)0xAA, (char)0xE8, (char)0x51, (char)0xE8, (char)0xE9, (char)0x00, (char)0x09, (char)0x6E, (char)0x03, (char)0xF4, (char)0x67,
+    (char)0x31, (char)0xD7, (char)0x9B, (char)0xE0, (char)0x3C, (char)0xDB, (char)0xE9, (char)0x0F, (char)0x4F, (char)0x33, (char)0x13, (char)0x2C,
+    (char)0xDC, (char)0xB2, (char)0xC0, (char)0x29, (char)0x90, (char)0x11, (char)0xE8, (char)0x51, (char)0x96, (char)0x0B, (char)0xAB, (char)0x40,
+    (char)0xB1, (char)0x00
+};
+
+// char[51] constants
+static char g_CheatStr_EventDebug[51] = {
+    (char)0xF9, (char)0xE4, (char)0xC7, (char)0xE8, (char)0xC1, (char)0x01, (char)0x7B, (char)0x61, (char)0x49, (char)0xA9, (char)0x61, (char)0x7A,
+    (char)0xB2, (char)0x18, (char)0xB2, (char)0xB7, (char)0xD6, (char)0xDB, (char)0x3A, (char)0xC7, (char)0xA8, (char)0x31, (char)0xFE, (char)0x97,
+    (char)0x5D, (char)0x65, (char)0xEF, (char)0x8A, (char)0xE7, (char)0xD1, (char)0x18, (char)0xE4, (char)0xC0, (char)0xEA, (char)0x80, (char)0x66,
+    (char)0x8B, (char)0xE1, (char)0x51, (char)0xDD, (char)0xB6, (char)0x15, (char)0x42, (char)0xDD, (char)0x96, (char)0xFB, (char)0x88, (char)0x66,
+    (char)0x4F, (char)0xD4, (char)0x00
+};
+static char g_CheatStr_MovieRecording[51] = {
+    (char)0x2B, (char)0x6F, (char)0x15, (char)0xFE, (char)0xFF, (char)0x3B, (char)0x49, (char)0x6F, (char)0x2F, (char)0x13, (char)0xF3, (char)0x0C,
+    (char)0xBC, (char)0x92, (char)0xA0, (char)0x09, (char)0x70, (char)0x71, (char)0x48, (char)0xB1, (char)0x76, (char)0x6B, (char)0xAC, (char)0x11,
+    (char)0xA2, (char)0xAC, (char)0xDA, (char)0xCD, (char)0x69, (char)0xDB, (char)0xAA, (char)0x3A, (char)0xE6, (char)0x80, (char)0x52, (char)0x70,
+    (char)0xF5, (char)0x9B, (char)0xA3, (char)0xD3, (char)0x10, (char)0xEF, (char)0xD0, (char)0xEB, (char)0x98, (char)0x71, (char)0x9A, (char)0x98,
+    (char)0x29, (char)0xBE, (char)0x00
+};
+static char g_CheatStr_RaiseEvent[51] = {
+    (char)0x19, (char)0x7F, (char)0x27, (char)0x48, (char)0x21, (char)0xA1, (char)0x1B, (char)0x81, (char)0x69, (char)0xC9, (char)0x01, (char)0x9A,
+    (char)0x52, (char)0xB8, (char)0x52, (char)0xD7, (char)0xF6, (char)0x7B, (char)0xDA, (char)0x67, (char)0x48, (char)0x51, (char)0x9E, (char)0x20,
+    (char)0x6A, (char)0x89, (char)0x92, (char)0x3B, (char)0x07, (char)0x71, (char)0x38, (char)0x04, (char)0xE0, (char)0x0A, (char)0xA0, (char)0x86,
+    (char)0xAB, (char)0x01, (char)0x71, (char)0x7D, (char)0x56, (char)0xB5, (char)0x62, (char)0x7D, (char)0xB6, (char)0x1B, (char)0xA8, (char)0xC6,
+    (char)0xAF, (char)0xB4, (char)0x00
+};
+static char g_CheatStr_NoD3D[51] = {
+    (char)0xFC, (char)0x7E, (char)0xC2, (char)0x33, (char)0xA4, (char)0xF6, (char)0x66, (char)0xCA, (char)0x74, (char)0x56, (char)0x44, (char)0x91,
+    (char)0x37, (char)0x6F, (char)0x9F, (char)0x8C, (char)0x3B, (char)0x54, (char)0x7F, (char)0x3C, (char)0x0D, (char)0xE6, (char)0x03, (char)0xB7,
+    (char)0x99, (char)0xBB, (char)0x77, (char)0x71, (char)0x22, (char)0x46, (char)0xB5, (char)0x7F, (char)0x6D, (char)0xA5, (char)0x05, (char)0xBD,
+    (char)0xAE, (char)0xD6, (char)0xCC, (char)0x36, (char)0xCB, (char)0xAA, (char)0x27, (char)0xF6, (char)0x93, (char)0x4C, (char)0x65, (char)0x9D,
+    (char)0xE2, (char)0xDB, (char)0x00
+};
+static char g_CheatStr_ToggleRenderMode[51] = {
+    (char)0x17, (char)0x34, (char)0x29, (char)0xC2, (char)0x33, (char)0xDF, (char)0xFD, (char)0x6B, (char)0xDB, (char)0x7F, (char)0x5F, (char)0x40,
+    (char)0x80, (char)0x36, (char)0x74, (char)0x8D, (char)0x84, (char)0x2D, (char)0x54, (char)0x6D, (char)0x3A, (char)0x0F, (char)0xF8, (char)0x0C,
+    (char)0xCB, (char)0xE6, (char)0xCF, (char)0x74, (char)0x35, (char)0x7F, (char)0x5E, (char)0xBE, (char)0x72, (char)0x7C, (char)0xAE, (char)0x0C,
+    (char)0xB9, (char)0xBF, (char)0xD7, (char)0xD7, (char)0x24, (char)0xC3, (char)0xBC, (char)0x27, (char)0xE4, (char)0x95, (char)0x4E, (char)0x1C,
+    (char)0x9D, (char)0xE2, (char)0x00
+};
+static char g_CheatStr_ClearFramebuffer[51] = {
+    (char)0x0E, (char)0x72, (char)0x30, (char)0x69, (char)0x02, (char)0x08, (char)0x94, (char)0xB0, (char)0x3A, (char)0x90, (char)0x36, (char)0x1B,
+    (char)0x11, (char)0x41, (char)0xED, (char)0x26, (char)0x45, (char)0x52, (char)0xED, (char)0x06, (char)0x2B, (char)0xF8, (char)0xD1, (char)0xA1,
+    (char)0xD4, (char)0x78, (char)0x58, (char)0x74, (char)0x84, (char)0x28, (char)0x27, (char)0x15, (char)0x73, (char)0x23, (char)0x37, (char)0x67,
+    (char)0xC8, (char)0x68, (char)0x7E, (char)0x8C, (char)0x85, (char)0xEC, (char)0x95, (char)0x7C, (char)0xF5, (char)0xA2, (char)0x57, (char)0x77,
+    (char)0x5C, (char)0xDD, (char)0x00
+};
+
+// char[52] constants
+static char g_CheatStr_ShowFPS[52] = {
+    (char)0x10, (char)0x70, (char)0x2E, (char)0xEF, (char)0x70, (char)0xD2, (char)0x32, (char)0xCE, (char)0x48, (char)0x6A, (char)0xF8, (char)0x5D,
+    (char)0xE3, (char)0xCB, (char)0xCB, (char)0x08, (char)0xB7, (char)0xF8, (char)0x13, (char)0x00, (char)0xB9, (char)0xC2, (char)0xF7, (char)0xB3,
+    (char)0x85, (char)0x6F, (char)0x97, (char)0x3A, (char)0x1D, (char)0x7F, (char)0x99, (char)0xF0, (char)0xEC, (char)0xD8, (char)0x22, (char)0xE8,
+    (char)0xFE, (char)0x23, (char)0x99, (char)0x29, (char)0x25, (char)0x5E, (char)0x4D, (char)0xBA, (char)0x55, (char)0x2E, (char)0xB3, (char)0x60,
+    (char)0x6E, (char)0xB7, (char)0x9C, (char)0x00
+};
+static char g_CheatStr_ScriptDebug[52] = {
+    (char)0x8F, (char)0xCA, (char)0xB1, (char)0xAA, (char)0x7B, (char)0xB7, (char)0xE5, (char)0x03, (char)0x13, (char)0xA7, (char)0xD7, (char)0xF8,
+    (char)0xB8, (char)0x8E, (char)0x7C, (char)0x95, (char)0x3C, (char)0x05, (char)0x2C, (char)0x85, (char)0xF2, (char)0xE7, (char)0xC0, (char)0x23,
+    (char)0xF2, (char)0xFC, (char)0x3E, (char)0x8C, (char)0x39, (char)0x7A, (char)0x4E, (char)0x4D, (char)0xA7, (char)0x45, (char)0x3D, (char)0xAD,
+    (char)0x75, (char)0x06, (char)0xCE, (char)0xE4, (char)0x7E, (char)0x13, (char)0x22, (char)0x5F, (char)0x8E, (char)0x6B, (char)0x44, (char)0x7D,
+    (char)0x65, (char)0x8A, (char)0x63, (char)0x00
+};
+static char g_CheatStr_MemoryDebug[52] = {
+    (char)0x94, (char)0xAC, (char)0xAA, (char)0x7B, (char)0xCC, (char)0xEE, (char)0x0E, (char)0x02, (char)0xAC, (char)0xDE, (char)0xFC, (char)0xA9,
+    (char)0x8F, (char)0x67, (char)0x87, (char)0x34, (char)0x13, (char)0x2C, (char)0x97, (char)0xF4, (char)0xE5, (char)0xDE, (char)0x2B, (char)0xFC,
+    (char)0xEB, (char)0x3A, (char)0x93, (char)0x3F, (char)0x23, (char)0x13, (char)0x55, (char)0xAC, (char)0x48, (char)0x2C, (char)0xA6, (char)0x7C,
+    (char)0x02, (char)0xDF, (char)0xE5, (char)0x65, (char)0x01, (char)0x2A, (char)0x49, (char)0x8E, (char)0x79, (char)0x42, (char)0x7F, (char)0x1C,
+    (char)0x8A, (char)0x63, (char)0x18, (char)0x00
+};
+static char g_CheatStr_ManualAim[52] = {
+    (char)0xC1, (char)0x2F, (char)0xFF, (char)0x40, (char)0x39, (char)0x69, (char)0x33, (char)0x09, (char)0xF1, (char)0x01, (char)0xA9, (char)0x82,
+    (char)0xBA, (char)0x00, (char)0x6A, (char)0x6F, (char)0x5E, (char)0xA3, (char)0x62, (char)0x6F, (char)0xB0, (char)0x19, (char)0xB6, (char)0xB7,
+    (char)0xD2, (char)0xC6, (char)0x3C, (char)0xC7, (char)0xA3, (char)0x74, (char)0xF8, (char)0x97, (char)0x45, (char)0x63, (char)0xF3, (char)0x87,
+    (char)0xB7, (char)0xD8, (char)0x18, (char)0xEE, (char)0xDC, (char)0xF5, (char)0x9C, (char)0x65, (char)0x8C, (char)0xE5, (char)0x52, (char)0xC7,
+    (char)0xC7, (char)0x6C, (char)0x2D, (char)0x00
+};
+static char g_CheatStr_Dynamite[52] = {
+    (char)0xD4, (char)0x24, (char)0xEA, (char)0xBB, (char)0x0C, (char)0xAE, (char)0xCE, (char)0xC2, (char)0x6C, (char)0x9E, (char)0xBC, (char)0x69,
+    (char)0x4F, (char)0x27, (char)0x47, (char)0xF4, (char)0xD3, (char)0xEC, (char)0x57, (char)0xB4, (char)0xA5, (char)0x9E, (char)0xEB, (char)0xBC,
+    (char)0xAB, (char)0xF3, (char)0x55, (char)0xF8, (char)0xF7, (char)0x01, (char)0x09, (char)0x7B, (char)0x03, (char)0xAF, (char)0x69, (char)0x20,
+    (char)0xDC, (char)0x88, (char)0xB2, (char)0x38, (char)0xCE, (char)0xF3, (char)0x09, (char)0x59, (char)0x35, (char)0x0E, (char)0x3D, (char)0xCA,
+    (char)0xA5, (char)0xDE, (char)0x23, (char)0x90
+};
+static char g_CheatStr_ElephantGun[52] = {
+    (char)0x26, (char)0x21, (char)0x18, (char)0x31, (char)0x2A, (char)0x80, (char)0x3C, (char)0x68, (char)0x92, (char)0x98, (char)0x2E, (char)0x53,
+    (char)0x69, (char)0x39, (char)0x15, (char)0xEE, (char)0x1D, (char)0xAA, (char)0x85, (char)0xBE, (char)0x03, (char)0x70, (char)0x79, (char)0x52,
+    (char)0xBE, (char)0x62, (char)0x7A, (char)0xB6, (char)0x12, (char)0xB9, (char)0xB9, (char)0xC1, (char)0xC9, (char)0x3A, (char)0xCE, (char)0xEF,
+    (char)0x29, (char)0xE0, (char)0x9C, (char)0x48, (char)0x72, (char)0xF8, (char)0x8E, (char)0xB3, (char)0xC9, (char)0x19, (char)0xF5, (char)0xCE,
+    (char)0xFD, (char)0x8A, (char)0x65, (char)0x9E
+};
+static char g_CheatStr_GeometryDebug[52] = {
+    (char)0xAE, (char)0x40, (char)0x90, (char)0x49, (char)0xE2, (char)0x28, (char)0x34, (char)0x50, (char)0x5A, (char)0xB0, (char)0x56, (char)0x3B,
+    (char)0xB1, (char)0x61, (char)0x0D, (char)0xC6, (char)0xE5, (char)0x72, (char)0x0D, (char)0x26, (char)0x4B, (char)0x98, (char)0x71, (char)0x44,
+    (char)0x77, (char)0x17, (char)0xF3, (char)0x1E, (char)0x73, (char)0xDD, (char)0x4B, (char)0x37, (char)0x95, (char)0x91, (char)0x53, (char)0x12,
+    (char)0x72, (char)0x0E, (char)0x88, (char)0xAA, (char)0x38, (char)0x9D, (char)0x23, (char)0x0B, (char)0x0B, (char)0x48, (char)0xF7, (char)0x38,
+    (char)0x53, (char)0x40, (char)0xF9, (char)0x02
+};
+static char g_CheatStr_RestoreHealth[52] = {
+    (char)0x56, (char)0xF4, (char)0x68, (char)0x41, (char)0xFA, (char)0xF0, (char)0xEC, (char)0xD8, (char)0x22, (char)0xE8, (char)0xFE, (char)0x23,
+    (char)0x99, (char)0x29, (char)0x25, (char)0x5E, (char)0x4D, (char)0xBA, (char)0x55, (char)0x2E, (char)0xB3, (char)0x60, (char)0x09, (char)0xC2,
+    (char)0xE3, (char)0x60, (char)0x10, (char)0x34, (char)0x49, (char)0x98, (char)0x2A, (char)0x5E, (char)0x7D, (char)0x17, (char)0xF5, (char)0x0D,
+    (char)0x7D, (char)0xC5, (char)0x56, (char)0x3E, (char)0x94, (char)0xCE, (char)0x43, (char)0x12, (char)0x6F, (char)0x1E, (char)0x9B, (char)0xB4,
+    (char)0x2D, (char)0xF5, (char)0x5A, (char)0x73
+};
+static char g_CheatStr_OldHat[52] = {
+    (char)0x87, (char)0x10, (char)0xB9, (char)0x92, (char)0xC3, (char)0x8F, (char)0x6D, (char)0x9B, (char)0x2B, (char)0x0F, (char)0x2F, (char)0x90,
+    (char)0xF0, (char)0xE6, (char)0xC4, (char)0x3D, (char)0xF4, (char)0xFD, (char)0x24, (char)0x9D, (char)0x2A, (char)0x3F, (char)0x48, (char)0x47,
+    (char)0xA5, (char)0x42, (char)0x27, (char)0xB5, (char)0x71, (char)0x52, (char)0xD6, (char)0xE5, (char)0x6F, (char)0x1D, (char)0x35, (char)0x55,
+    (char)0x8D, (char)0x7E, (char)0x46, (char)0x7C, (char)0x06, (char)0xFB, (char)0x1A, (char)0x77, (char)0xC6, (char)0x43, (char)0x3C, (char)0x95,
+    (char)0xAD, (char)0x32, (char)0x6B, (char)0x00
+};
+static char g_CheatStr_SilverAmmo[52] = {
+    (char)0x5E, (char)0xB7, (char)0x60, (char)0x59, (char)0x32, (char)0x98, (char)0x64, (char)0x40, (char)0x6A, (char)0x00, (char)0xE6, (char)0x0B,
+    (char)0x61, (char)0xD1, (char)0x5D, (char)0x36, (char)0x95, (char)0xC2, (char)0x5D, (char)0x16, (char)0x7B, (char)0x08, (char)0x81, (char)0xA4,
+    (char)0x3F, (char)0x8B, (char)0x23, (char)0x18, (char)0x15, (char)0x57, (char)0xF7, (char)0x6B, (char)0x5D, (char)0x44, (char)0xF0, (char)0x04,
+    (char)0x3E, (char)0xE4, (char)0xDA, (char)0xB7, (char)0xDD, (char)0x7D, (char)0x49, (char)0x72, (char)0xC1, (char)0x26, (char)0x31, (char)0x1A,
+    (char)0x77, (char)0x34, (char)0x52, (char)0x0B
+};
+
+// char[53] constants
+static char g_CheatStr_ProfileMode[53] = {
+    (char)0x50, (char)0x79, (char)0x6E, (char)0x2F, (char)0xB0, (char)0x92, (char)0xF2, (char)0x8E, (char)0x08, (char)0x2A, (char)0xB8, (char)0x1D,
+    (char)0xA3, (char)0x8B, (char)0x8B, (char)0xC8, (char)0x77, (char)0xB8, (char)0xD3, (char)0xC0, (char)0x79, (char)0x82, (char)0xB7, (char)0x6D,
+    (char)0x58, (char)0x2C, (char)0x5E, (char)0xF0, (char)0xDA, (char)0xFA, (char)0x04, (char)0xA8, (char)0xA7, (char)0x95, (char)0xF3, (char)0xA3,
+    (char)0xB7, (char)0xE7, (char)0x48, (char)0xE8, (char)0xFE, (char)0x0C, (char)0x05, (char)0x6C, (char)0x15, (char)0xFC, (char)0x75, (char)0x22,
+    (char)0xD7, (char)0xF7, (char)0xDC, (char)0x5D, (char)0x00
+};
+static char g_CheatStr_FreezeEnemies[53] = {
+    (char)0x74, (char)0x84, (char)0x4A, (char)0x9B, (char)0xEC, (char)0x4E, (char)0x6E, (char)0xE2, (char)0x8C, (char)0xBE, (char)0xDC, (char)0x09,
+    (char)0xEF, (char)0xC7, (char)0xE7, (char)0x94, (char)0x73, (char)0x8C, (char)0xF7, (char)0x54, (char)0xC5, (char)0xBE, (char)0x0B, (char)0x59,
+    (char)0xCB, (char)0x9B, (char)0xF0, (char)0x8B, (char)0x08, (char)0x3C, (char)0xB2, (char)0x0C, (char)0xA9, (char)0x99, (char)0x91, (char)0xD7,
+    (char)0x32, (char)0xB6, (char)0xC5, (char)0xCF, (char)0x7D, (char)0x95, (char)0xB5, (char)0x6D, (char)0x5E, (char)0x26, (char)0x5C, (char)0xE6,
+    (char)0xDB, (char)0xFA, (char)0x57, (char)0xA6, (char)0xA3
+};
+static char g_CheatStr_LightGun[53] = {
+    (char)0x2B, (char)0x03, (char)0x15, (char)0xFE, (char)0xFF, (char)0x3B, (char)0x49, (char)0x6F, (char)0x2F, (char)0x13, (char)0xF3, (char)0x0C,
+    (char)0xBC, (char)0x92, (char)0xA0, (char)0x09, (char)0x70, (char)0x71, (char)0x48, (char)0xB1, (char)0x76, (char)0x6B, (char)0xAC, (char)0x0F,
+    (char)0xA0, (char)0xB3, (char)0xDF, (char)0xCD, (char)0x30, (char)0xC8, (char)0xA0, (char)0x39, (char)0xEA, (char)0x80, (char)0x4E, (char)0x20,
+    (char)0xFC, (char)0x9B, (char)0xA9, (char)0xCF, (char)0x0F, (char)0xF3, (char)0xD3, (char)0xEC, (char)0x9C, (char)0x72, (char)0x80, (char)0xE9,
+    (char)0x50, (char)0xD1, (char)0xA8, (char)0x11, (char)0x56
+};
+static char g_CheatStr_KillNearby[53] = {
+    (char)0x5F, (char)0x22, (char)0x61, (char)0x1A, (char)0xAB, (char)0x47, (char)0x35, (char)0x93, (char)0xC3, (char)0x57, (char)0x07, (char)0x68,
+    (char)0x08, (char)0x9E, (char)0xAC, (char)0x25, (char)0x8C, (char)0x35, (char)0x1C, (char)0x15, (char)0x42, (char)0xF7, (char)0x30, (char)0x4E,
+    (char)0x54, (char)0xF5, (char)0x02, (char)0x2A, (char)0xFC, (char)0xD8, (char)0xB7, (char)0x98, (char)0x64, (char)0x53, (char)0x71, (char)0xC7,
+    (char)0x27, (char)0x3B, (char)0x0B, (char)0x64, (char)0x34, (char)0x2A, (char)0x68, (char)0xD1, (char)0x68, (char)0x69, (char)0x80, (char)0x89,
+    (char)0xEE, (char)0x83, (char)0x13, (char)0x88, (char)0xD9
+};
+static char g_CheatStr_BigHat[53] = {
+    (char)0x75, (char)0x89, (char)0x4B, (char)0x5C, (char)0x65, (char)0x75, (char)0x3F, (char)0x2D, (char)0x65, (char)0xC5, (char)0x7D, (char)0x6E,
+    (char)0x96, (char)0x8C, (char)0xF6, (char)0x8B, (char)0x6A, (char)0xE7, (char)0xB6, (char)0x53, (char)0x0C, (char)0x25, (char)0xBA, (char)0x5C,
+    (char)0x6E, (char)0x8B, (char)0xD5, (char)0xAF, (char)0x82, (char)0xBC, (char)0x19, (char)0x2B, (char)0x5A, (char)0xAA, (char)0x16, (char)0x90,
+    (char)0x62, (char)0xC0, (char)0x05, (char)0x8B, (char)0x53, (char)0xA3, (char)0x40, (char)0xDF, (char)0xE0, (char)0x7B, (char)0xC8, (char)0x61,
+    (char)0x4A, (char)0x28, (char)0xF9, (char)0x4E, (char)0x00
+};
+static char g_CheatStr_GasMask[53] = {
+    (char)0xC6, (char)0xA8, (char)0xF8, (char)0x11, (char)0x8A, (char)0xA0, (char)0x5C, (char)0x08, (char)0x32, (char)0xB8, (char)0x4E, (char)0x73,
+    (char)0x89, (char)0xD9, (char)0xB5, (char)0x8E, (char)0xBD, (char)0x4A, (char)0x25, (char)0x5E, (char)0xA3, (char)0x10, (char)0x99, (char)0x6F,
+    (char)0xD8, (char)0x14, (char)0x8A, (char)0x58, (char)0xBB, (char)0x4B, (char)0xDB, (char)0xE1, (char)0x7C, (char)0xCC, (char)0x62, (char)0x0F,
+    (char)0x49, (char)0x80, (char)0x3C, (char)0x68, (char)0x92, (char)0x98, (char)0x2E, (char)0x53, (char)0x69, (char)0x39, (char)0x15, (char)0xEE,
+    (char)0x1D, (char)0xAA, (char)0x85, (char)0xBE, (char)0x03
+};
+
+// char[54] constants
+static char g_CheatStr_DebugMode[54] = {
+    (char)0x9F, (char)0xDE, (char)0xA1, (char)0x5A, (char)0xEB, (char)0x07, (char)0xF5, (char)0x53, (char)0x83, (char)0x17, (char)0xC7, (char)0x28,
+    (char)0xC8, (char)0x5E, (char)0x6C, (char)0xE5, (char)0x4C, (char)0xF5, (char)0xDC, (char)0xD5, (char)0x02, (char)0xB7, (char)0xF0, (char)0x09,
+    (char)0x15, (char)0xB7, (char)0xD4, (char)0xE8, (char)0xBC, (char)0x98, (char)0x68, (char)0x96, (char)0x36, (char)0x01, (char)0x7F, (char)0x99,
+    (char)0xF0, (char)0xEC, (char)0xD8, (char)0x22, (char)0xE8, (char)0xFE, (char)0x23, (char)0x99, (char)0x29, (char)0x25, (char)0x5E, (char)0x4D,
+    (char)0xBA, (char)0x55, (char)0x2E, (char)0xB3, (char)0x60, (char)0x6E
+};
+static char g_CheatStr_GodMode[54] = {
+    (char)0x6C, (char)0x55, (char)0x52, (char)0x83, (char)0xB4, (char)0xA6, (char)0xD6, (char)0x7A, (char)0x44, (char)0x66, (char)0xD4, (char)0x21,
+    (char)0x27, (char)0x1F, (char)0x6F, (char)0x3C, (char)0x2B, (char)0x64, (char)0xCF, (char)0x6C, (char)0x7D, (char)0x96, (char)0x93, (char)0xE0,
+    (char)0x91, (char)0x60, (char)0xE6, (char)0xAE, (char)0x54, (char)0x04, (char)0x32, (char)0xA6, (char)0x51, (char)0x63, (char)0xCC, (char)0xC0,
+    (char)0xAF, (char)0x8D, (char)0xBB, (char)0x4B, (char)0x2F, (char)0x4F, (char)0xB0, (char)0x10, (char)0x86, (char)0x64, (char)0xDD, (char)0x14,
+    (char)0x9D, (char)0x44, (char)0xBD, (char)0x4A, (char)0xDF, (char)0x8F
+};
+static char g_CheatStr_Crossbow[54] = {
+    (char)0x63, (char)0x93, (char)0x5D, (char)0x26, (char)0x87, (char)0xD3, (char)0xF1, (char)0x47, (char)0xA7, (char)0xBB, (char)0x8B, (char)0xE4,
+    (char)0xB4, (char)0xAA, (char)0xE8, (char)0x51, (char)0xE8, (char)0xE9, (char)0x00, (char)0x09, (char)0x6E, (char)0x03, (char)0xF4, (char)0x76,
+    (char)0x2C, (char)0xD5, (char)0x98, (char)0xB4, (char)0x28, (char)0xDD, (char)0xEC, (char)0x03, (char)0x5B, (char)0x2E, (char)0x06, (char)0x39,
+    (char)0xCD, (char)0xBE, (char)0x9F, (char)0x39, (char)0x90, (char)0x0C, (char)0xF8, (char)0x42, (char)0x88, (char)0x1E, (char)0xC3, (char)0x39,
+    (char)0xC9, (char)0x45, (char)0x7E, (char)0xED, (char)0x5A, (char)0xF5
+};
+static char g_CheatStr_FlameThrower[54] = {
+    (char)0xF5, (char)0x73, (char)0xCB, (char)0xDC, (char)0xE5, (char)0xF5, (char)0xBF, (char)0xAD, (char)0xE5, (char)0x45, (char)0xFD, (char)0xEE,
+    (char)0x16, (char)0x0C, (char)0x76, (char)0x0B, (char)0xEA, (char)0x67, (char)0x36, (char)0xD3, (char)0x8C, (char)0xA5, (char)0x3A, (char)0xD9,
+    (char)0xE8, (char)0x03, (char)0x59, (char)0x3E, (char)0x0A, (char)0x35, (char)0xDC, (char)0xA5, (char)0xD2, (char)0x25, (char)0x9B, (char)0x42,
+    (char)0xE6, (char)0x55, (char)0x9F, (char)0x0D, (char)0xC5, (char)0x25, (char)0xDD, (char)0x4E, (char)0x76, (char)0xEC, (char)0x56, (char)0xEB,
+    (char)0xCA, (char)0xC7, (char)0x16, (char)0xB3, (char)0xEC, (char)0x05
+};
+static char g_CheatStr_BaronWeapon[54] = {
+    (char)0x68, (char)0x9A, (char)0x56, (char)0xF7, (char)0x58, (char)0x0A, (char)0x1A, (char)0x46, (char)0xE0, (char)0x32, (char)0x50, (char)0x55,
+    (char)0xFB, (char)0x03, (char)0x33, (char)0xF0, (char)0xCF, (char)0xB0, (char)0xCB, (char)0x78, (char)0x51, (char)0x7A, (char)0xDF, (char)0x38,
+    (char)0x27, (char)0x1E, (char)0x64, (char)0x3C, (char)0x37, (char)0x67, (char)0xDD, (char)0x61, (char)0x6E, (char)0x9C, (char)0x85, (char)0xE4,
+    (char)0x9F, (char)0x2F, (char)0xE9, (char)0xA0, (char)0x5C, (char)0x08, (char)0x32, (char)0xB8, (char)0x4E, (char)0x73, (char)0x89, (char)0xD9,
+    (char)0xB5, (char)0x8E, (char)0xBD, (char)0x4A, (char)0x25, (char)0x5E
+};
+static char g_CheatStr_AllWeapons[54] = {
+    (char)0x4B, (char)0x9A, (char)0x75, (char)0x5E, (char)0xDF, (char)0x5B, (char)0x69, (char)0x8F, (char)0xCF, (char)0xB3, (char)0x93, (char)0xAC,
+    (char)0x5C, (char)0x32, (char)0x40, (char)0xA9, (char)0x10, (char)0x91, (char)0x68, (char)0xD1, (char)0x16, (char)0x8B, (char)0x4C, (char)0xBB,
+    (char)0x48, (char)0xCE, (char)0xFA, (char)0x66, (char)0xDD, (char)0x69, (char)0x42, (char)0x4D, (char)0x87, (char)0x37, (char)0x67, (char)0x8C,
+    (char)0x98, (char)0x7E, (char)0x5A, (char)0x69, (char)0x33, (char)0x09, (char)0xF1, (char)0x01, (char)0xA9, (char)0x82, (char)0xBA, (char)0x00,
+    (char)0x6A, (char)0x6F, (char)0x5E, (char)0xA3, (char)0x62, (char)0x6F
+};
+static char g_CheatStr_MoreAmmo[54] = {
+    (char)0x36, (char)0xA4, (char)0x08, (char)0xE1, (char)0x9A, (char)0x50, (char)0xCC, (char)0xB8, (char)0x02, (char)0x48, (char)0xDE, (char)0x83,
+    (char)0xF9, (char)0x89, (char)0x05, (char)0x3E, (char)0xAD, (char)0x1A, (char)0xB5, (char)0x8E, (char)0x93, (char)0xC0, (char)0x69, (char)0xA2,
+    (char)0xC1, (char)0xCC, (char)0x7F, (char)0x90, (char)0xA5, (char)0x70, (char)0x5A, (char)0x25, (char)0x57, (char)0xEB, (char)0xC2, (char)0xF7,
+    (char)0x4D, (char)0xA6, (char)0xE2, (char)0x86, (char)0xF5, (char)0xBF, (char)0xAD, (char)0xE5, (char)0x45, (char)0xFD, (char)0xEE, (char)0x16,
+    (char)0x0C, (char)0x76, (char)0x0B, (char)0xEA, (char)0x67, (char)0x36
+};
+static char g_CheatStr_Dismemberment[54] = {
+    (char)0xE9, (char)0xD3, (char)0xD7, (char)0x38, (char)0x51, (char)0xB1, (char)0x6B, (char)0x11, (char)0xD9, (char)0xF9, (char)0x71, (char)0x0A,
+    (char)0x22, (char)0x48, (char)0x82, (char)0x67, (char)0x46, (char)0x6B, (char)0x0A, (char)0xF7, (char)0x18, (char)0x61, (char)0xCE, (char)0x45,
+    (char)0x32, (char)0x92, (char)0xDF, (char)0x5E, (char)0x1B, (char)0x79, (char)0x03, (char)0x8E, (char)0xAA, (char)0x68, (char)0x94, (char)0x23,
+    (char)0x01, (char)0x17, (char)0x57, (char)0xEB, (char)0x3B, (char)0x54, (char)0x44, (char)0xFA, (char)0x18, (char)0x21, (char)0xF8, (char)0xD9,
+    (char)0xB0, (char)0xD9, (char)0x7E, (char)0x53, (char)0x03, (char)0xB8
+};
+static char g_CheatStr_RestoreBattery[54] = {
+    (char)0x8A, (char)0x7F, (char)0xB4, (char)0xDD, (char)0xA6, (char)0x7C, (char)0x58, (char)0x7C, (char)0xD6, (char)0x2C, (char)0x32, (char)0x0F,
+    (char)0x75, (char)0x35, (char)0x31, (char)0x7A, (char)0xD9, (char)0x7E, (char)0x69, (char)0x92, (char)0x8F, (char)0xEC, (char)0x9D, (char)0x7D,
+    (char)0xF1, (char)0xA6, (char)0x5A, (char)0x0A, (char)0x32, (char)0xA6, (char)0x5B, (char)0x27, (char)0x91, (char)0xD8, (char)0xA4, (char)0x80,
+    (char)0xAA, (char)0x40, (char)0x26, (char)0x4B, (char)0xA1, (char)0x11, (char)0x9D, (char)0x76, (char)0xD5, (char)0x02, (char)0x9D, (char)0x56,
+    (char)0xBB, (char)0x48, (char)0xA6, (char)0x8F, (char)0x14, (char)0x00
+};
+
+// char[55] constants
+static char g_CheatStr_CollisionDebug[55] = {
+    (char)0x8A, (char)0x32, (char)0xB4, (char)0xDD, (char)0xA6, (char)0x7C, (char)0x58, (char)0x7C, (char)0xD6, (char)0x2C, (char)0x32, (char)0x0F,
+    (char)0x75, (char)0x35, (char)0x31, (char)0x7A, (char)0xD9, (char)0x7E, (char)0x69, (char)0x92, (char)0x8F, (char)0xEC, (char)0x9D, (char)0x6C,
+    (char)0xFB, (char)0xA9, (char)0x5E, (char)0x02, (char)0x33, (char)0xA8, (char)0x51, (char)0x69, (char)0xCC, (char)0xC0, (char)0xAF, (char)0x8D,
+    (char)0xBB, (char)0x4B, (char)0x2F, (char)0x4F, (char)0xB0, (char)0x10, (char)0x86, (char)0x64, (char)0xDD, (char)0x14, (char)0x9D, (char)0x44,
+    (char)0xBD, (char)0x4A, (char)0xDF, (char)0x8F, (char)0x14, (char)0xB5, (char)0x00
+};
+static char g_CheatStr_WeatherSnow[55] = {
+    (char)0x82, (char)0x75, (char)0xBC, (char)0xC5, (char)0x6E, (char)0x54, (char)0xC0, (char)0x94, (char)0xEE, (char)0x94, (char)0x0A, (char)0x27,
+    (char)0xAD, (char)0x0D, (char)0xB9, (char)0x82, (char)0x91, (char)0xD6, (char)0x61, (char)0xAA, (char)0xC7, (char)0xC4, (char)0x65, (char)0x94,
+    (char)0xA2, (char)0x72, (char)0x5D, (char)0x30, (char)0x4C, (char)0xF6, (char)0xC4, (char)0xF2, (char)0x04, (char)0xA8, (char)0xA7, (char)0x95,
+    (char)0xF3, (char)0xA3, (char)0xB7, (char)0xE7, (char)0x48, (char)0xE8, (char)0xFE, (char)0x0C, (char)0x05, (char)0x6C, (char)0x15, (char)0xFC,
+    (char)0x75, (char)0x22, (char)0xD7, (char)0xF7, (char)0xDC, (char)0x5D, (char)0x00
+};
+
+// char[56] constants
+static char g_CheatStr_TommyGun[56] = {
+    (char)0xF7, (char)0x08, (char)0xC9, (char)0x62, (char)0xD3, (char)0xBF, (char)0xDD, (char)0xCB, (char)0x3B, (char)0xDF, (char)0xBF, (char)0x20,
+    (char)0xE0, (char)0x96, (char)0x54, (char)0x6D, (char)0xE4, (char)0x8D, (char)0xB4, (char)0xCD, (char)0x1A, (char)0xEF, (char)0xD8, (char)0xFA,
+    (char)0x8C, (char)0x64, (char)0x91, (char)0xFD, (char)0x5A, (char)0xD7, (char)0xA9, (char)0x11, (char)0x42, (char)0xDD, (char)0x98, (char)0xFA,
+    (char)0x8B, (char)0x5A, (char)0x2E, (char)0xAD, (char)0x07, (char)0xA5, (char)0x9D, (char)0x8D, (char)0xD5, (char)0x66, (char)0xAE, (char)0xC4,
+    (char)0xDE, (char)0x73, (char)0x82, (char)0xBF, (char)0x6E, (char)0x4B, (char)0x24, (char)0x5D
+};
+
+// char[57] constants
+static char g_CheatStr_SkeletonKey[57] = {
+    (char)0x7D, (char)0x46, (char)0x43, (char)0x74, (char)0x9D, (char)0x1D, (char)0xB7, (char)0x95, (char)0xAD, (char)0x1D, (char)0x65, (char)0x76,
+    (char)0x5E, (char)0xB4, (char)0x6E, (char)0x63, (char)0xB2, (char)0x0F, (char)0xBE, (char)0xBB, (char)0xD4, (char)0xCD, (char)0x32, (char)0xD5,
+    (char)0xA4, (char)0x31, (char)0xE9, (char)0x97, (char)0x5F, (char)0x6F, (char)0xEF, (char)0x95, (char)0xA2, (char)0xD5, (char)0x5D, (char)0xF7,
+    (char)0xC6, (char)0xF6, (char)0x9A, (char)0x64, (char)0x86, (char)0xF4, (char)0x41, (char)0xC7, (char)0xBF, (char)0x0F, (char)0x5C, (char)0xCB,
+    (char)0x84, (char)0xEF, (char)0x8C, (char)0x1D, (char)0x36, (char)0xD4, (char)0x75, (char)0xDA, (char)0x00
+};
+
+// char[58] constants
+static char g_CheatStr_FlamingAmmo[58] = {
+    (char)0x32, (char)0xE9, (char)0x0C, (char)0xD5, (char)0xBE, (char)0xC4, (char)0x70, (char)0x84, (char)0xBE, (char)0x64, (char)0x5A, (char)0x37,
+    (char)0x5D, (char)0xFD, (char)0xC9, (char)0xF2, (char)0x41, (char)0xA6, (char)0xB1, (char)0x9A, (char)0xF7, (char)0xB4, (char)0xB5, (char)0xF1,
+    (char)0x50, (char)0xEC, (char)0xF7, (char)0x16, (char)0x07, (char)0x67, (char)0x07, (char)0xFC, (char)0x60, (char)0x2C, (char)0xD1, (char)0x80,
+    (char)0xE0, (char)0x3C, (char)0xDB, (char)0xE9, (char)0x0F, (char)0x4F, (char)0x33, (char)0x13, (char)0x2C, (char)0xDC, (char)0xB2, (char)0xC0,
+    (char)0x29, (char)0x90, (char)0x11, (char)0xE8, (char)0x51, (char)0x96, (char)0x0B, (char)0xAB, (char)0x40, (char)0xB1
+};
+static char g_CheatStr_WeatherRain[58] = {
+    (char)0x20, (char)0x65, (char)0x1E, (char)0x9F, (char)0xE0, (char)0xA2, (char)0xC2, (char)0x1E, (char)0xF8, (char)0xDA, (char)0xE8, (char)0x8D,
+    (char)0x73, (char)0x9B, (char)0xFB, (char)0x58, (char)0xC7, (char)0xA8, (char)0x03, (char)0x50, (char)0xC9, (char)0x92, (char)0xE7, (char)0x99,
+    (char)0x12, (char)0x26, (char)0xA6, (char)0x0D, (char)0xA3, (char)0x9D, (char)0x87, (char)0xD1, (char)0x7D, (char)0xB9, (char)0xCD, (char)0x81,
+    (char)0x63, (char)0x82, (char)0xA2, (char)0x7E, (char)0x58, (char)0x3A, (char)0x48, (char)0xED, (char)0xD3, (char)0xFB, (char)0x5B, (char)0xB8,
+    (char)0xA7, (char)0x88, (char)0xE3, (char)0xB0, (char)0xA9, (char)0xF2, (char)0x20, (char)0x91, (char)0x86, (char)0x00
+};
+
+// char[59] constants
+static char g_CheatStr_SoundDebug[59] = {
+    (char)0xAC, (char)0x89, (char)0x92, (char)0xC3, (char)0xF4, (char)0x66, (char)0x96, (char)0x3A, (char)0x04, (char)0x26, (char)0x94, (char)0xE1,
+    (char)0xE7, (char)0xDF, (char)0x2F, (char)0xFC, (char)0xEB, (char)0x24, (char)0x8F, (char)0x2C, (char)0x3D, (char)0x56, (char)0x53, (char)0xBA,
+    (char)0x40, (char)0x37, (char)0xB0, (char)0x60, (char)0x10, (char)0xDE, (char)0xE7, (char)0x21, (char)0x03, (char)0x22, (char)0x42, (char)0x9E,
+    (char)0x78, (char)0x5A, (char)0x68, (char)0x0D, (char)0xF3, (char)0x1B, (char)0x7B, (char)0xD8, (char)0x47, (char)0x28, (char)0x83, (char)0xD0,
+    (char)0x49, (char)0x12, (char)0x00, (char)0x71, (char)0xE6, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00
+};
+
+// double constants
+static double g_DOUBLE_005e075a = 2;
+static double g_DOUBLE_005e0762 = 0.015625;
+static double g_DOUBLE_005e0772 = 0.5;
+static double g_DOUBLE_005e077a = -0.5;
+static double g_DOUBLE_005e0782 = 0.5;
+static double g_DOUBLE_005e078a = 0.5;
+static double g_DOUBLE_005e0792 = -0.5;
+static double g_DOUBLE_005e079a = 4;
+static double g_DOUBLE_005e0a56 = 255;
+static double g_DOUBLE_005e0cfa = 0.01;
+static double g_DOUBLE_005e0d02 = 50;
+static double g_DOUBLE_005e0d12 = 30;
+static double g_DOUBLE_005e0d22 = 3;
+static double g_DOUBLE_005e0d32 = 200;
+static double g_DOUBLE_005e0e04 = 0.94999999999999996;
+static double g_DOUBLE_005e0e0c = 0.90000000000000002;
+static double g_DOUBLE_005e0e14 = 0.69999999999999996;
+static double g_DOUBLE_005e0e1c = 0.80000000000000004;
+static double g_DOUBLE_005e0e24 = 0.59999999999999998;
+static double g_DOUBLE_005e0e2c = 0.40000000000000002;
+static double g_DOUBLE_005e0e34 = 0.20000000000000001;
+static double g_DOUBLE_005e0fe4 = 3;
+static double g_DOUBLE_005e0fec = 5;
+static double g_DOUBLE_005e0ff4 = 0.78539816337500001;
+static double g_DOUBLE_005e100c = 0.01;
+static double g_DOUBLE_005e1014 = 2;
+static double g_DOUBLE_005e101c = 0.14000000000000001;
+static double g_DOUBLE_005e1024 = -0.14999999999999999;
+static double g_DOUBLE_005e102c = 0.90000000000000002;
+static double g_DOUBLE_005e1034 = 25;
+static double g_DOUBLE_005e103c = 4;
+static double g_DOUBLE_005e104c = 10;
+static double g_DOUBLE_005e1054 = 30;
+static double g_DOUBLE_005e105c = -0.050000000000000003;
+static double g_DOUBLE_005e1064 = 0.050000000000000003;
+static double g_DOUBLE_005e109c = 0.20000000000000001;
+static double g_DOUBLE_005e10a4 = 0.40000000000000002;
+static double g_DOUBLE_005e10bc = 0.001;
+static double g_DOUBLE_005e10c4 = 0.90000000000000002;
+static double g_DOUBLE_005e10dc = 1.3;
+static double g_DOUBLE_005e112c = -0.80000000000000004;
+static double g_DOUBLE_005e1134 = 2;
+static double g_DOUBLE_005e113c = 5;
+static double g_DOUBLE_005e1144 = 3;
+static double g_DOUBLE_005e114c = 0.29999999999999999;
+static double g_DOUBLE_005e1154 = 0.5;
+static double g_DOUBLE_005e115c = 0.17453292519444399;
+static double g_DOUBLE_005e11b4 = 0.90000000000000002;
+static double g_DOUBLE_005e11bc = 30;
+static double g_DOUBLE_005e11c4 = -0.78149070982587099;
+static double g_DOUBLE_005e11cc = 1.56298141965174;
+static double g_DOUBLE_005e11d4 = 35;
+static double g_DOUBLE_005e11ec = 2;
+static double g_DOUBLE_005e11fc = 0.5;
+static double g_DOUBLE_005e1204 = 1.5;
+static double g_DOUBLE_005e1234 = 0.5;
+static double g_DOUBLE_005e127c = 0.69999999999999996;
+static double g_DOUBLE_005e1284 = 0.29999999999999999;
+static double g_DOUBLE_005e136c = 0.90000000000000002;
+static double g_DOUBLE_005e1374 = 0.10000000000000001;
+static double g_DeltaTimeToSeconds = 1.52587890625e-05;
+static double g_DOUBLE_005e138c = 0.59999999999999998;
+static double g_DOUBLE_005e1394 = 0.34999999999999998;
+static double g_AlphaConversionFactor = 65535;
+static double g_StatusThresholdHigh = 0.59999999999999998;
+static double g_StatusThresholdLow = 0.34999999999999998;
+static double g_DOUBLE_005e13bc = 0.10000000000000001;
+static double g_DOUBLE_005e171c = 0.055555555555555601;
+static double g_DOUBLE_005e1724 = 1.52587890625e-05;
+static double g_DOUBLE_005e172c = 1000;
+static double g_DOUBLE_005e173c = 180;
+static double g_DOUBLE_005e1744 = 0.0009765625;
+static double g_DOUBLE_005e197c = 4;
+static double g_DOUBLE_005e19d4 = 0.29999999999999999;
+static double g_DOUBLE_005e19dc = 1.52587890625e-05;
+static double g_DOUBLE_005e19ec = 0.20000000000000001;
+static double g_DOUBLE_005e19f4 = 1.52587890625e-05;
+static double g_DOUBLE_005e19fc = 0.75;
+static double g_DOUBLE_005e1a04 = -1;
+static double g_DOUBLE_005e1adc = 1.52587890625e-05;
+static double g_DOUBLE_005e1ae4 = 1.5259021896696401e-05;
+static double g_DOUBLE_005e2e7c = 0.055555555555555601;
+static double g_DOUBLE_005e2e84 = 1.52587890625e-05;
+static double g_DOUBLE_005e2e8c = 50;
+static double g_DOUBLE_005e2e9c = 31457280;
+static double g_DOUBLE_005e2ea4 = 256;
+static double g_DOUBLE_005e33bc = 0.055555555555555601;
+static double g_DOUBLE_005e33c4 = 1.52587890625e-05;
+static double g_DOUBLE_005e33cc = 1000;
+static double g_DOUBLE_005e346c = 0.055555555555555601;
+static double g_DOUBLE_005e3474 = 1.52587890625e-05;
+static double g_DOUBLE_005e347c = 1000;
+static double g_DOUBLE_005e34ec = 0.00027777777777777799;
+static double g_DOUBLE_005e34f4 = 3600;
+static double g_DOUBLE_005e34fc = 0.016666666666666701;
+static double g_DOUBLE_005e3504 = 60;
+static double g_DOUBLE_005e350c = 100;
+static double g_DOUBLE_005e355c = 0.00027777777777777799;
+static double g_DOUBLE_005e3564 = 3600;
+static double g_DOUBLE_005e356c = 0.016666666666666701;
+static double g_DOUBLE_005e3574 = 60;
+static double g_DOUBLE_005e357c = 100;
+static double g_DOUBLE_005e360c = 9.9999999999999991e+28;
+static double g_DOUBLE_005e3614 = 0.25;
+static double g_DOUBLE_005e3624 = 4;
+static double g_DOUBLE_005e362c = 2;
+static double g_DOUBLE_005e3634 = 0.080000000000000002;
+static double g_DOUBLE_005e363c = 1.5;
+static double g_DOUBLE_005e364c = 2.8274333881499998;
+static double g_DOUBLE_005e398c = 0.52359877558333301;
+static double g_DOUBLE_005e39dc = 7;
+static double g_DOUBLE_005e39e4 = 0.5;
+static double g_DOUBLE_005e39ec = 2.5;
+static double g_DOUBLE_005e3a51 = 65536;
+static double g_DOUBLE_005e3ca1 = 3;
+static double g_DOUBLE_005e3ca9 = 8;
+static double g_DOUBLE_005e3cb1 = 4;
+static double g_DOUBLE_005e3cb9 = 65536;
+static double g_DOUBLE_005e3cc1 = 2;
+static double g_DOUBLE_005e3cc9 = 0.5;
+static double g_DOUBLE_005e3cd9 = 25;
+static double g_DOUBLE_005e3ce1 = 0.29999999999999999;
+static double g_DOUBLE_005e3ce9 = 0.40000000000000002;
+static double g_DOUBLE_005e3cf1 = 100;
+static double g_DOUBLE_005e3cf9 = 0.25;
+static double g_DOUBLE_005e3d01 = 0.69999999999999996;
+static double g_DOUBLE_005e3d09 = 2.5;
+static double g_DOUBLE_005e3d19 = 0.050000000000000003;
+static double g_DOUBLE_005e3d21 = 10;
+static double g_DOUBLE_005e3d29 = 0.01;
+static double g_DOUBLE_005e3da1 = 7;
+static double g_DOUBLE_005e3da9 = 0.5;
+static double g_DOUBLE_005e3db1 = 2.5;
+static double g_DOUBLE_005e3e01 = 65536;
+static double g_DOUBLE_005e3e09 = 0.5;
+static double g_DOUBLE_005e3e11 = 0.69999999999999996;
+static double g_DOUBLE_005e3e19 = 0.29999999999999999;
+static double g_DOUBLE_005e3f14 = 0.5;
+static double g_DOUBLE_005e3f1c = 16515072;
+static double g_DOUBLE_005e3f24 = 131072;
+static double g_DOUBLE_005e3f2c = 0.5;
+static double g_DOUBLE_005e3f34 = 0.10000000000000001;
+static double g_DOUBLE_005e3fd4 = 0.5;
+static double g_DOUBLE_005e3fdc = 1.5259021896696401e-05;
+static double g_DOUBLE_005e3fe4 = 0.5;
+static double g_DOUBLE_005e4015 = -65536;
+static double g_DOUBLE_005e401d = 0.69999999999999996;
+static double g_DOUBLE_005e4025 = -0.10000000000000001;
+static double g_DOUBLE_005e402d = 0.10000000000000001;
+static double g_DOUBLE_005e4035 = 0.90000000000000002;
+static double g_DOUBLE_005e403d = 8;
+static double g_DOUBLE_005e4045 = 4;
+static double g_DOUBLE_005e404d = 2;
+static double g_DOUBLE_005e40bd = 8;
+static double g_DOUBLE_005e40c5 = 3.625;
+static double g_DOUBLE_005e4115 = 0.5;
+static double g_DOUBLE_005e411d = 4;
+static double g_DOUBLE_005e4155 = 60;
+static double g_DOUBLE_005e415d = 0.5;
+static double g_DOUBLE_005e4165 = 1.333;
+static double g_DOUBLE_005e43d3 = 1.5;
+static double g_DOUBLE_005e43e3 = 10;
+static double g_DOUBLE_005e4547 = 20;
+static double g_DOUBLE_005e454f = 6;
+static double g_DOUBLE_005e455f = 4;
+static double g_DOUBLE_005e4567 = 10;
+static double g_DOUBLE_005e456f = -0.25;
+static double g_DOUBLE_005e4577 = 0.25;
+static double g_DOUBLE_005e45f5 = 100;
+static double g_DOUBLE_005e4835 = 4;
+static double g_DOUBLE_005e483d = 0.34906585038888899;
+static double g_DOUBLE_005e4845 = 10;
+static double g_DOUBLE_005e4855 = 5;
+static double g_DOUBLE_005e485d = 5;
+static double g_DOUBLE_005e4865 = 3;
+static double g_DOUBLE_005e48cd = 1.2;
+static double g_DOUBLE_005e48d5 = 5;
+static double g_DOUBLE_005e48dd = 0.61086523818055505;
+static double g_DOUBLE_005e48e5 = 10;
+static double g_DOUBLE_005e48ed = 1.04719755116667;
+static double g_DOUBLE_005e48f5 = 5;
+static double g_DOUBLE_005e48fd = 6;
+static double g_DOUBLE_005e4905 = 0.5;
+static double g_DOUBLE_005e490d = 3;
+static double g_DOUBLE_005e4915 = 60;
+static double g_DOUBLE_005e492d = 10;
+static double g_DOUBLE_005e4935 = 0.10000000000000001;
+static double g_DOUBLE_005e493d = 2;
+static double g_DOUBLE_005e4e9f = 0.5;
+static double g_DOUBLE_005e4ea7 = 2;
+static double g_DOUBLE_005e4eaf = 0.01;
+static double g_DOUBLE_005e4eb7 = 0.017453292519444399;
+static double g_DOUBLE_005e4ec7 = 40;
+static double g_DOUBLE_005e4edf = 0.59999999999999998;
+static double g_DOUBLE_005e4ee7 = 0.40000000000000002;
+static double g_DOUBLE_005e4eef = 0.65000000000000002;
+static double g_DOUBLE_005e4ef7 = 0.34999999999999998;
+static double g_DOUBLE_005e4eff = 5;
+static double g_DOUBLE_005e4f07 = 1.5;
+static double g_DOUBLE_005e51c2 = 0.52359877558333301;
+static double g_DOUBLE_005e5212 = 2;
+static double g_DOUBLE_005e53b7 = 2;
+static double g_DOUBLE_005e53c7 = 2;
+static double g_DOUBLE_005e5417 = 6;
+static double g_DOUBLE_005e5427 = 4;
+static double g_DOUBLE_005e542f = 10;
+static double g_DOUBLE_005e5437 = -0.25;
+static double g_DOUBLE_005e543f = 0.25;
+static double g_DOUBLE_005e5642 = 0.75;
+static double g_DOUBLE_005e5652 = 0.52359877558333301;
+static double g_DOUBLE_005e565a = 2.5;
+static double g_DOUBLE_005e5662 = 0.25;
+static double g_DOUBLE_005e566a = 0.80000000000000004;
+static double g_DOUBLE_005e5672 = 4;
+static double g_DOUBLE_005e56a2 = 7;
+static double g_DOUBLE_005e56aa = 0.5;
+static double g_DOUBLE_005e56b2 = 2.5;
+static double g_DOUBLE_005e56da = 2;
+static double g_DOUBLE_005e5fb8 = 65536;
+static double g_DOUBLE_005e5fc0 = 0.5;
+static double g_DOUBLE_005e6020 = 1600;
+static double g_DOUBLE_005e6028 = 900;
+static double g_DOUBLE_005e6030 = 400;
+static double g_DOUBLE_005e6038 = 100;
+static double g_InventoryRandTwoFactor = 2;
+static double g_DOUBLE_005e6540 = 0.025000000000000001;
+static double g_InventoryDoubleScale = 2;
+static double g_DOUBLE_005e67f0 = 98;
+static double g_DOUBLE_005e67f8 = 1600;
+static double g_DOUBLE_005e6800 = 900;
+static double g_DOUBLE_005e6808 = 400;
+static double g_DOUBLE_005e6810 = 100;
+static double g_DOUBLE_005e6918 = 100;
+static double g_DOUBLE_005e6920 = 0.01;
+static double g_DOUBLE_005e6928 = 65535;
+static double g_DOUBLE_005e6930 = 0.5;
+static double g_DOUBLE_005e69cb = 8192;
+static double g_DOUBLE_005e69d3 = 16384;
+static double g_NormalTo16BitScale1 = 65535;
+static double g_NormalTo16BitScale2 = 65535;
+static double g_SplineNormalizer = 1.52587890625e-05;
+static double g_SplineCoeff_Scale = 65536;
+static double g_DOUBLE_005e6b73 = 0.5;
+static double g_DOUBLE_005e6b7b = 0.10000000000000001;
+static double g_DOUBLE_005e6c2b = 0.39269908168750001;
+static double g_DOUBLE_005e6c33 = 12;
+static double g_DOUBLE_005e6c3b = -0.20000000000000001;
+static double g_DOUBLE_005e6c43 = 32;
+static double g_DOUBLE_005e6c53 = -0.52359877558333301;
+static double g_DOUBLE_005e6c5b = 0.52359877558333301;
+static double g_DOUBLE_005e6c9b = 0.29999999999999999;
+static double g_DOUBLE_005e6ca3 = 0.69999999999999996;
+static double g_DOUBLE_005e6ccb = 0.29999999999999999;
+static double g_DOUBLE_005e6cd3 = 0.69999999999999996;
+static double g_DOUBLE_005e6d42 = 6;
+static double g_DOUBLE_005e6d4a = 0.10000000000000001;
+static double g_DOUBLE_005e6d52 = 0.90000000000000002;
+static double g_DOUBLE_005e6d5a = 0.5;
+static double g_DOUBLE_005e6e7a = -0.29999999999999999;
+static double g_DOUBLE_005e6ed2 = 4;
+static double g_DOUBLE_005e6efa = 18;
+static double g_DOUBLE_005e6f02 = 0.10000000000000001;
+static double g_DOUBLE_005e6f0a = 0.015625;
+static double g_DOUBLE_005e6f12 = 0.14999999999999999;
+static double g_DOUBLE_005e6fa2 = -0.29999999999999999;
+static double g_DOUBLE_005e6ffa = 4;
+static double g_DOUBLE_005e7022 = 18;
+static double g_DOUBLE_005e702a = 0.10000000000000001;
+static double g_DOUBLE_005e7032 = 0.015625;
+static double g_DOUBLE_005e703a = 0.14999999999999999;
+static double g_DOUBLE_005e705a = 18;
+static double g_DOUBLE_005e73d5 = 0.125;
+static double g_DOUBLE_005e73dd = 0.25;
+static double g_DOUBLE_005e743d = 0.5;
+static double g_DOUBLE_005e7445 = 2;
+static double g_DOUBLE_005e744d = 0.75;
+static double g_DOUBLE_005e7455 = 0.25;
+static double g_DOUBLE_005e7465 = 0.0039215686274509803;
+static double g_DOUBLE_005e746d = 0.25;
+static double g_DOUBLE_005e747d = 0.01;
+static double g_DOUBLE_005e74d5 = 0.0039215686274509803;
+static double g_DOUBLE_005e7685 = 0.20000000000000001;
+static double g_DOUBLE_005e768d = -0.01;
+static double g_DOUBLE_005e76d6 = 65536;
+static double g_FixedToFloat = 1.52587890625e-05;
+static double g_Fixed16Scale = 65536;
+static double g_NormalizationScale = 65535;
+static double g_DOUBLE_005e7976 = 1.1499999999999999;
+static double g_MouseSensitivityScale = 1.52587890625e-05;
+static double g_DOUBLE_005e801a = 1.52587890625e-05;
+static double g_DOUBLE_005e816a = 0.001;
+static double g_DOUBLE_005e8172 = 50;
+static double g_DOUBLE_005e8182 = 1.01;
+static double g_DOUBLE_005e818a = 0.98999999999999999;
+static double g_DOUBLE_005e8192 = 0.01;
+static double g_DOUBLE_005e89c8 = 2;
+static double g_DOUBLE_005e89d8 = 0.78539816337500001;
+static double g_DOUBLE_005e89e0 = 15;
+static double g_DOUBLE_005e89e8 = 0.63661977238577705;
+static double g_DOUBLE_005e89f0 = 25;
+static double g_DOUBLE_005e89f8 = 30;
+static double g_DOUBLE_005e8a80 = 1.3;
+static double g_DOUBLE_005e8c83 = 255;
+static double g_DOUBLE_005e8e8b = 2;
+static double g_DOUBLE_005e8f3b = 256;
+static double g_DOUBLE_005e8f43 = 65536;
+static double g_DOUBLE_005e906b = 1.52587890625e-05;
+static double g_DOUBLE_005e9c42 = 0.40000000000000002;
+static double g_DOUBLE_005e9c52 = 0.40000000000000002;
+static double g_DOUBLE_005e9e02 = 0.5;
+static double g_DOUBLE_005e9e0a = 0.52359877558333301;
+static double g_DOUBLE_005e9e12 = 2;
+static double g_DOUBLE_005e9e6a = 2;
+static double g_DOUBLE_005e9e82 = 0.33333333333333298;
+static double g_DOUBLE_005e9e8a = 5;
+static double g_DOUBLE_005e9e92 = 0.40000000000000002;
+static double g_DOUBLE_005e9f1a = 0.33300000000000002;
+static double g_DOUBLE_005e9f22 = 0.66600000000000004;
+static double g_DOUBLE_005e9f2a = 7;
+static double g_DOUBLE_005e9f32 = 0.5;
+static double g_DOUBLE_005e9f3a = 2.5;
+static double g_DOUBLE_005ea296 = 6;
+static double g_DOUBLE_005ea2a6 = 4;
+static double g_DOUBLE_005ea3b2 = 0.97999999999999998;
+static double g_DOUBLE_005ea3ba = 0.90000000000000002;
+static double g_DOUBLE_005ea3ea = 7;
+static double g_DOUBLE_005ea3f2 = 0.5;
+static double g_DOUBLE_005ea3fa = 2.5;
+static double g_DOUBLE_005ea453 = 12;
+static double g_DOUBLE_005ea45b = 30;
+static double g_DOUBLE_005ea46b = 30;
+static double g_DOUBLE_005ea892 = 0.01;
+static double g_DOUBLE_005ea8da = 65535;
+static double g_DOUBLE_005eae83 = 1.0000000000000001e-05;
+static double g_DOUBLE_005eae8b = 0.5;
+static double g_DOUBLE_005eae93 = 0.49990000000000001;
+static double g_DOUBLE_005eae9b = 0.0001;
+static double g_DOUBLE_005eaf5b = -0.0001;
+static double g_DOUBLE_005eaf6b = 0.001;
+static double g_DOUBLE_005eaf73 = -0.0001;
+static double g_DOUBLE_005eaf7b = 0.001;
+static double g_DOUBLE_005eaf83 = 0.001;
+static double g_DOUBLE_005eb256 = 0.049087385211999998;
+static double g_DOUBLE_005eb25e = 1000000000;
+static double g_DOUBLE_005eb266 = 1.0000000000000001e-09;
+static double g_DOUBLE_005eb26e = 0.78539816339699997;
+static double g_DOUBLE_005eb276 = -0.5;
+static double g_DOUBLE_005eb27e = 0.5;
+static double g_DOUBLE_005eb286 = 0.049087385211999998;
+static double g_DOUBLE_005eb28e = 1000000000;
+static double g_DOUBLE_005eb296 = 1.0000000000000001e-09;
+static double g_DOUBLE_005eb29e = 0.78539816339699997;
+static double g_DOUBLE_005eb2a6 = -0.5;
+static double g_DOUBLE_005eb2ae = 0.5;
+static double g_DOUBLE_005eb2b6 = 0.00035;
+static double g_DOUBLE_005eb46e = 0.25;
+static double g_DOUBLE_005eb476 = 1.3333333333333299;
+static double g_DOUBLE_005eb47e = 2;
+static double g_DOUBLE_005eb4be = 0.26179938779914902;
+static double g_DOUBLE_005eb4c6 = 0.70710678237309499;
+static double g_DOUBLE_005eb4ce = 0.087266463000000002;
+static double g_DOUBLE_005eb4d6 = 0.26179938800000002;
+static double g_DOUBLE_005eb4de = 0.13089969389957501;
+static double g_DOUBLE_005eb4e6 = 0.043633231299858202;
+static double g_DOUBLE_005eb4ee = 0.5;
+static double g_DOUBLE_005eb4f6 = -18;
+static double g_DOUBLE_005eb4fe = -6;
+static double g_DOUBLE_005eb506 = 1.0000000000000001e-05;
+static double g_DOUBLE_005eb58e = 1000;
+static double g_DOUBLE_005eb5d0 = 1.52587890625e-05;
+static double g_DOUBLE_005eb5d8 = -30;
+static double g_DOUBLE_005eb5e0 = 30;
+static double g_DOUBLE_005eb5e8 = 1.52587890625e-05;
+static double g_DOUBLE_005eb5f0 = 30;
+static double g_DOUBLE_005eb790 = 1.52587890625e-05;
+static double g_DOUBLE_005eb798 = 30;
+static double g_DOUBLE_005eb7a0 = 0.20000000000000001;
+static double g_DOUBLE_005eb8e0 = 1.52587890625e-05;
+static double g_DOUBLE_005eb8f0 = 30;
+static double g_DOUBLE_005eb8f8 = 0.10000000000000001;
+static double g_TimeoutScale = 1.52587890625e-05;
+static double g_MaxTimeout = 30;
+static double g_SyncTimeout = 0.10000000000000001;
+static double g_DOUBLE_005ebca8 = 1.52587890625e-05;
+static double g_DOUBLE_005ebcb0 = -30;
+static double g_DOUBLE_005ebcb8 = 30;
+static double g_DOUBLE_005ebe00 = 1.52587890625e-05;
+static double g_DOUBLE_005ebe08 = 30;
+static double g_DOUBLE_005ebe10 = 0.20000000000000001;
+static double g_TimeToSeconds = 1.52587890625e-05;
+static double g_MaxPingTime = 30;
+static double g_PingCheckThreshold = 0.40000000000000002;
+static double g_BadConnectionTime = 5;
+static double g_DOUBLE_005ebed0 = 1.52587890625e-05;
+static double g_DOUBLE_005ebed8 = 4;
+static double g_DOUBLE_005ebee0 = 30;
+static double g_DOUBLE_005ebee8 = 20;
+static double g_DOUBLE_005ebef0 = 2;
+static double g_DOUBLE_005ebef8 = 5;
+static double g_DOUBLE_005ec308 = 1.52587890625e-05;
+static double g_DOUBLE_005ec310 = 30;
+static double g_DOUBLE_005ec318 = 0.10000000000000001;
+static double g_PathAngleNeg3PiOver4 = -2.356194490125;
+static double g_PathAngle3PiOver4 = 2.356194490125;
+static double g_PathAngleNegPiOver4 = -0.78539816337500001;
+static double g_PathAnglePiOver4 = 0.78539816337500001;
+static double g_PathAngleNegPiOver2 = -1.57079632675;
+static double g_PathAnglePiOver2 = 1.57079632675;
+static double g_PathUpdateDistanceThreshold = 4;
+static double g_DOUBLE_005eca8c = 256;
+static double g_DOUBLE_005eca9c = 256;
+static double g_DOUBLE_005ecc6d = 0.03125;
+static double g_DOUBLE_005ecc75 = 6.2831853070000001;
+static double g_DOUBLE_005ecc85 = -0.5;
+static double g_DOUBLE_005ecc8d = 0.5;
+static double g_DOUBLE_005ecc9d = 2;
+static double g_DOUBLE_005ecca5 = 3.1415926535000001;
+static double g_DOUBLE_005eccad = -1;
+static double g_DOUBLE_005eccb5 = 0.10000000000000001;
+static double g_DOUBLE_005eccbd = -0.5;
+static double g_DOUBLE_005eccc5 = 0.5;
+static double g_DOUBLE_005eccd5 = 0.25;
+static double g_DOUBLE_005eccdd = 0.75;
+static double g_DOUBLE_005ecce5 = -1;
+static double g_DOUBLE_005ecced = 0.10000000000000001;
+static double g_DOUBLE_005ed423 = -20;
+static double g_DOUBLE_005ed42b = 10;
+static double g_DOUBLE_005ed433 = 0.050000000000000003;
+static double g_DOUBLE_005ed61b = 0.01;
+static double g_DOUBLE_005edc27 = -0.10000000000000001;
+static double g_DOUBLE_005edc2f = -1;
+static double g_DOUBLE_005edc67 = 1.5;
+static double g_DOUBLE_005edc77 = 10;
+static double g_DOUBLE_005ede5f = 15;
+static double g_DOUBLE_005ede67 = 0.90000000000000002;
+static double g_DOUBLE_005ede6f = 8;
+static double g_DOUBLE_005ede7f = 4;
+static double g_DOUBLE_005ede87 = 10;
+static double g_DOUBLE_005ede97 = 0.94999999999999996;
+static double g_DOUBLE_005edebf = 0.0001;
+static double g_DOUBLE_005edecf = 2;
+static double g_DOUBLE_005ededf = 1.5;
+static double g_DOUBLE_005edee7 = 0.02;
+static double g_DOUBLE_005edeef = 30;
+static double g_DOUBLE_005edef7 = -0.78149070982587099;
+static double g_DOUBLE_005edeff = 1.56298141965174;
+static double g_DOUBLE_005edf07 = 35;
+static double g_DOUBLE_005efdaf = 4;
+static double g_DOUBLE_005efdb7 = 99999;
+static double g_DOUBLE_005efdc7 = 0.029999999999999999;
+static double g_DOUBLE_005efdcf = 0.40000000000000002;
+
+// float constants
+static float g_FLOAT_005e0752 = 0.5f;
+static float g_FLOAT_005e076a = 64.0f;
+static float g_FLOAT_005e07a2 = 4.0f;
+static float g_FLOAT_005e0ae2 = 255.0f;
+static float g_FLOAT_005e0ae6 = -0.5f;
+static float g_FLOAT_005e0cf2 = 1580.0f;
+static float g_FLOAT_005e0d0a = -1380.0f;
+static float g_FLOAT_005e0d1a = 20.0f;
+static float g_FLOAT_005e0d1e = -2000.0f;
+static float g_FLOAT_005e0d2a = 0.005f;
+static float g_FLOAT_005e0d3a = 100.0f;
+static float g_FLOAT_005e0d3e = 200.0f;
+static float g_FLOAT_005e0d42 = 99.0f;
+static float g_FLOAT_005e0d46 = -1800.0f;
+static float g_FLOAT_005e0fe0 = 0.5f;
+static float g_FLOAT_005e0ffc = 3.141593f;
+static float g_FLOAT_005e1000 = -1.570796f;
+static float g_FLOAT_005e1004 = 1.570796f;
+static float g_FLOAT_005e1008 = -3.141593f;
+static float g_FLOAT_005e1044 = 0.3183099f;
+static float g_FLOAT_005e106c = 0.5f;
+static float g_FLOAT_005e1070 = 3.0f;
+static float g_FLOAT_005e10ac = 0.5f;
+static float g_FLOAT_005e10cc = 3.141593f;
+static float g_FLOAT_005e10d0 = 0.005555556f;
+static float g_FLOAT_005e10d4 = -1.22173f;
+static float g_FLOAT_005e11dc = -0.7853982f;
+static float g_FLOAT_005e11e0 = 0.5f;
+static float g_FLOAT_005e11e4 = 3.141593f;
+static float g_FLOAT_005e11f4 = -1.570796f;
+static float g_FLOAT_005e11f8 = 0.5f;
+static float g_FLOAT_005e122c = 50.0f;
+static float g_FLOAT_005e1230 = -0.3f;
+static float g_FLOAT_005e1274 = 0.5f;
+static float g_MovieRecordingFrameBase = 65536.0f;
+static float g_FLOAT_005e1734 = 0.3183099f;
+static float g_FLOAT_005e19c4 = 0.01f;
+static float g_FLOAT_005e19c8 = -1.0f;
+static float g_FLOAT_005e19cc = 0.25f;
+static float g_FLOAT_005e19d0 = 0.05f;
+static float g_FLOAT_005e19e4 = -0.25f;
+static float g_FLOAT_005e19e8 = 0.1f;
+static float g_FLOAT_005e2e94 = 0.5f;
+static float g_DeltaTimeScale = 65536.0f;
+static float g_FLOAT_005e35ec = 32.0f;
+static float g_FLOAT_005e3600 = 0.25f;
+static float g_FLOAT_005e3604 = 0.5f;
+static float g_FLOAT_005e361c = 0.3183099f;
+static float g_FLOAT_005e3644 = 0.4f;
+static float g_FLOAT_005e391c = -0.3141593f;
+static float g_FLOAT_005e3920 = 0.3141593f;
+static float g_FLOAT_005e3cd1 = 65536.0f;
+static float g_FLOAT_005e3d11 = 6.283185f;
+static float g_FLOAT_005e3d15 = 0.25f;
+static float g_FLOAT_005e3d91 = 0.5f;
+static float g_FLOAT_005e3f0c = 0.5f;
+static float g_FLOAT_005e3fac = 0.5f;
+static float g_FLOAT_005e3fb0 = 0.25f;
+static float g_FLOAT_005e40cd = 0.1f;
+static float g_FLOAT_005e4125 = -3.0f;
+static float g_FLOAT_005e4129 = 0.08333334f;
+static float g_FLOAT_005e43db = -0.125f;
+static float g_FLOAT_005e43fb = 2.0f;
+static float g_FLOAT_005e4533 = -1.570796f;
+static float g_FLOAT_005e4537 = 3.141593f;
+static float g_FLOAT_005e453b = 1.570796f;
+static float g_FLOAT_005e453f = -3.141593f;
+static float g_FLOAT_005e4543 = 20.0f;
+static float g_FLOAT_005e4557 = 0.3183099f;
+static float g_FLOAT_005e457f = 3.141593f;
+static float g_FLOAT_005e4583 = -3.141593f;
+static float g_FLOAT_005e4831 = 0.5f;
+static float g_FLOAT_005e484d = 1.047198f;
+static float g_FLOAT_005e48c9 = 0.5f;
+static float g_FLOAT_005e4ebf = 3.141593f;
+static float g_FLOAT_005e4ecf = -1.570796f;
+static float g_FLOAT_005e4ed3 = 1.570796f;
+static float g_FLOAT_005e4ed7 = -3.141593f;
+static float g_FLOAT_005e4edb = 0.2f;
+static float g_FLOAT_005e539f = -1.570796f;
+static float g_FLOAT_005e53a3 = 3.141593f;
+static float g_FLOAT_005e53a7 = 1.570796f;
+static float g_FLOAT_005e53ab = -3.141593f;
+static float g_FLOAT_005e53bf = 3.141593f;
+static float g_FLOAT_005e53c3 = -0.7853982f;
+static float g_FLOAT_005e541f = 0.3183099f;
+static float g_FLOAT_005e5447 = 3.141593f;
+static float g_FLOAT_005e544b = -3.141593f;
+static float g_FLOAT_005e564a = 4.0f;
+static float g_InventoryRandNormalizationFactor = 3.051851e-05f;
+static float g_FLOAT_005e6068 = 3.141593f;
+static float g_FLOAT_005e65c0 = 0.5f;
+static float g_FLOAT_005e65d0 = -0.5f;
+static float g_InventoryPiOver2 = 1.570796f;
+static float g_InventoryNegativePiOver2 = -1.570796f;
+static float g_FLOAT_005e6890 = 65535.0f;
+static float g_FLOAT_005e6914 = 65535.0f;
+static float g_FLOAT_005e69c7 = 3.141593f;
+static float g_SplineCoeff_T3_W0 = -0.5f;
+static float g_SplineCoeff_T1_W0 = 0.5f;
+static float g_SplineCoeff_T3_W2 = 1.5f;
+static float g_SplineCoeff_T2_W2 = -2.5f;
+static float g_SplineCoeff_T2_W3 = 2.0f;
+static float g_SplineCoeff_T3_W3 = -1.5f;
+static float g_FLOAT_005e6c4b = 2.0f;
+static float g_FLOAT_005e6eca = -4.0f;
+static float g_FLOAT_005e6ece = 0.5f;
+static float g_FLOAT_005e6ef6 = 2.0f;
+static float g_FLOAT_005e6fee = -4.0f;
+static float g_FLOAT_005e6ff2 = 0.5f;
+static float g_FLOAT_005e701e = 2.0f;
+static float g_FLOAT_005e73d1 = 9.536743e-07f;
+static float g_FLOAT_005e745d = -4.0f;
+static float g_FLOAT_005e7475 = 256.0f;
+static float g_FLOAT_005e7539 = 255.0f;
+static float g_FLOAT_005e753d = 2.0f;
+static float g_FLOAT_005e7541 = 4.0f;
+static float g_FLOAT_005e767d = 6.283185f;
+static float g_FLOAT_005e7681 = 30.0f;
+static float g_FLOAT_005e76ce = 3.141593f;
+static float g_FLOAT_005e76d2 = 0.0078125f;
+static float g_FLOAT_005e815e = 100.0f;
+static float g_FLOAT_005e8162 = 0.25f;
+static float g_FLOAT_005e817a = 0.2f;
+static float g_FLOAT_005e89d0 = 4.242857f;
+static float g_FLOAT_005e89d4 = 12.22222f;
+static float g_FLOAT_005e8a88 = 0.5f;
+static float g_FLOAT_005e8b63 = 0.05555556f;
+static float g_FLOAT_005e8b67 = 65536.0f;
+static float g_FLOAT_005e8b6b = 0.05555556f;
+static float g_FLOAT_005e8b6f = 0.5f;
+static float g_FLOAT_005e8b73 = -1.0f;
+static float g_FLOAT_005e8c8b = 255.0f;
+static float g_FLOAT_005e8c8f = 0.003921569f;
+static float g_FLOAT_005e8da3 = 0.003921569f;
+static float g_FLOAT_005e8e7b = 0.003921569f;
+static float g_FLOAT_005e8e7f = 240.0f;
+static float g_FLOAT_005e8e83 = 1.333f;
+static float g_FLOAT_005e8e93 = 255.0f;
+static float g_FLOAT_005e8f2b = 256.0f;
+static float g_FLOAT_005e8f2f = 8388607.0f;
+static float g_FLOAT_005e8f33 = 65536.0f;
+static float g_FLOAT_005e8f37 = 65535.0f;
+static float g_FLOAT_005e902b = 255.0f;
+static float g_FLOAT_005e902f = 255.0f;
+static float g_FLOAT_005e9033 = 0.003921569f;
+static float g_FLOAT_005e9037 = 255.0f;
+static float g_FLOAT_005e903b = 0.003921569f;
+static float g_FLOAT_005e903f = -0.5f;
+static float g_FLOAT_005e9043 = 0.5f;
+static float g_FLOAT_005e9047 = -0.01f;
+static float g_FLOAT_005e9c3a = 0.5f;
+static float g_FLOAT_005e9c4a = 0.5f;
+static float g_FLOAT_005e9db2 = 1.570796f;
+static float g_FLOAT_005e9db6 = -1.570796f;
+static float g_FLOAT_005e9dba = 1.570796f;
+static float g_FLOAT_005e9dbe = -1.570796f;
+static float g_FLOAT_005e9e5e = 3.0f;
+static float g_FLOAT_005e9e62 = 4.0f;
+static float g_FLOAT_005e9f82 = 5.0f;
+static float g_FLOAT_005ea282 = -1.570796f;
+static float g_FLOAT_005ea286 = 3.141593f;
+static float g_FLOAT_005ea28a = 1.570796f;
+static float g_FLOAT_005ea28e = -3.141593f;
+static float g_FLOAT_005ea29e = 0.3183099f;
+static float g_FLOAT_005ea2ae = 3.141593f;
+static float g_FLOAT_005ea2b2 = -3.141593f;
+static float g_FLOAT_005ea463 = -30.0f;
+static float g_FLOAT_005ea8e2 = 2.0f;
+static float g_MotionControllerAutoDetermineFrame = -1.0f;
+static float g_MotionControllerTargetFrameEnd2 = -1.0f;
+static float g_FLOAT_005eaf63 = -1.0f;
+static float g_FLOAT_005eb8e8 = 1000.0f;
+static float g_FLOAT_005ebdf8 = 1000.0f;
+static float g_FLOAT_005ec7f1 = 10.0f;
+static float g_FLOAT_005ec7f5 = 0.8f;
+static float g_FLOAT_005ec7f9 = 2.0f;
+static float g_FLOAT_005ec7fd = -0.7f;
+static float g_PathRotationScaleFactor = 0.01f;
+static float g_PathNegativeOne = -1.0f;
+static float g_FLOAT_005ec9ec = 3.141593f;
+static float g_FLOAT_005eca84 = 256.0f;
+static float g_FLOAT_005eca94 = 256.0f;
+static float g_FLOAT_005ecc7d = 0.5f;
+static float g_FLOAT_005ecc81 = 0.5f;
+static float g_FLOAT_005ecc95 = -1.0f;
+static float g_FLOAT_005ecc99 = 0.5f;
+static float g_FLOAT_005ecccd = -1.0f;
+static float g_FLOAT_005ed623 = -1.0f;
+static float g_FLOAT_005edc37 = 0.5f;
+static float g_FLOAT_005edc6f = -0.25f;
+static float g_FLOAT_005edcb3 = 2.0f;
+static float g_FLOAT_005ede4b = -1.570796f;
+static float g_FLOAT_005ede4f = 3.141593f;
+static float g_FLOAT_005ede53 = 1.570796f;
+static float g_FLOAT_005ede57 = -3.141593f;
+static float g_FLOAT_005ede77 = 0.3183099f;
+static float g_FLOAT_005ede8f = 3.141593f;
+static float g_FLOAT_005ede93 = -3.141593f;
+static float g_FLOAT_005edec7 = 3.141593f;
+static float g_FLOAT_005eded7 = -1.570796f;
+static float g_FLOAT_005ededb = 0.5f;
+static float g_FLOAT_005edf0f = -0.7853982f;
+static float g_FLOAT_005edf13 = 0.5f;
+static float g_FLOAT_005ee1b7 = 0.35f;
+static float g_FLOAT_005efda3 = 3.141593f;
+static float g_FLOAT_005efda7 = 0.005555556f;
+
 // undefined1 constants
-static undefined1 DAT_005e00f4 = 0x65;
-static undefined1 DAT_005e00f5 = 0x6E;
-static undefined1 DAT_005e2fdf = 0x4C;
-static undefined1 DAT_005e2fe0 = 0x5A;
-static undefined1 DAT_005e34bd = 0x0A;
-static undefined1 DAT_005e34be = 0x0A;
-static undefined1 DAT_005e3527 = 0x0A;
-static undefined1 DAT_005e3528 = 0x0A;
-static undefined1 DAT_005e354d = 0x0A;
-static undefined1 DAT_005e354e = 0x0A;
-static undefined1 DAT_005e3550 = 0x25;
-static undefined1 DAT_005e36ab = 0x68;
-static undefined1 DAT_005e36ac = 0x71;
-static undefined1 DAT_005e36ad = 0x2D;
-static undefined1 DAT_005ee1d8 = 0x2E;
-static undefined1 DAT_005ee1d9 = 0x74;
-static undefined1 DAT_005ee1da = 0x78;
-static undefined1 DAT_005ee1db = 0x74;
-static undefined1 DAT_005ee2a1 = 0x2E;
-static undefined1 DAT_005ee2a2 = 0x77;
-static undefined1 DAT_005ee2a3 = 0x61;
-static undefined1 DAT_005ee2a4 = 0x76;
-static undefined1 DAT_005ee2b0 = 0x40;
-static undefined1 DAT_005ee2b1 = 0x30;
-static undefined1 DAT_005ee2b2 = 0x2E;
-static undefined1 DAT_005ee2b3 = 0x38;
-static undefined1 DAT_005ee2bf = 0x40;
-static undefined1 DAT_005ee2c0 = 0x30;
-static undefined1 DAT_005ee2c1 = 0x2E;
-static undefined1 DAT_005ee2c2 = 0x38;
-static undefined1 DAT_005ee9c0 = 0x2E;
-static undefined1 DAT_005ee9c1 = 0x73;
-static undefined1 DAT_005ee9c2 = 0x65;
-static undefined1 DAT_005ee9c3 = 0x74;
 static undefined1 DAT_005efb91 = 0x2C;
-static undefined1 DAT_005efb93 = 0x25;
 

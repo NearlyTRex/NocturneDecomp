@@ -9,6 +9,6 @@
 CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004cbf00(CGame *this_ptr,uint flags)
 
 {
-  this_ptr->vtable = (void *)0x600f94;
+  this_ptr->vtable = g_ARRAY_PTR_00600f94;
   return this_ptr;
 }

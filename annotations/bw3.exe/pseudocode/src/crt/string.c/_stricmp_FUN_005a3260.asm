@@ -7,18 +7,18 @@
 ; char *           Stack[0x4]:4   str1
 ; char *           Stack[0x8]:4   str2
 ;
-; XREF[108]:
+; XREF[110]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0050fda0 at 0050fdcf
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_00510da0 at 00510e2c
 ;   core_actor.cpp_CDemonActor_load_FUN_0040b110 at 0040b15a
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_00416890 at 004168b0
-;   core_carved.cpp_FUN_00428520 at 0042853a
+;   core_carved.cpp_CCarved_getPickupHandIndex_FUN_00428520 at 0042853a
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431000 at 00431081
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b1df
+;   core_demnfolk.cpp_CDemnfolk_getPickupHandIndex_FUN_004580a0 at 004580ba
 ;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_00458950 at 00458a2b
-;   core_demnfolk.cpp_FUN_004580a0 at 004580ba
 ;   core_dmodel.cpp_loadModel_FUN_00462420 at 0046243c
-;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492149
-;   ... and 98 more
+;   ... and 100 more
 ;
 ; *****************************************************************************
 

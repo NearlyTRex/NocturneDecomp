@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 46,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
+    "total_lines": 124
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005326b0",
+    "address_range": [
+      [
+        "005326b0",
+        "005327b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_applyActorFlatColor_FUN_005326b0",
+    "signature": "void __cdecl core_set_cpp_applyActorFlatColor_FUN_005326b0(CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "0053b100",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "0207bab8",
+      "name": "g_INT_0207bab8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0207babc",
+      "name": "g_INT_0207babc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0207bac0",
+      "name": "g_FLOAT_0207bac0",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.060975609756097,
+    "instruction_count": 82,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 162,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 4,
+      "INT_ADD": 31,
+      "INT_AND": 70,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 37,
+      "INT_LESS": 9,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 12,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 17,
+      "INT_SRIGHT": 9,
+      "INT_SUB": 23,
+      "LOAD": 20,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 23,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 497
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0052bca0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4262
+    },
+    "bw1.exe": {
+      "addr": "0054cf80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4262
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Raw hex address 0x532734 assigned to bare local `iStack_28`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_28` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 26,
+      "match": "0x532734",
+      "severity": "moderate",
+      "text": "iStack_28 = 0x532734;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(CMotionController *this_ptr,CDemonActor *actor)
 
 {
@@ -25,15 +23,15 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(CMotionContro
   uint local_18;
   int local_14;
   
-  if ((_DAT_01cd4318 != 0) &&
+  if ((g_RenderMotionDebug != 0) &&
      (local_20 = (float)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                                   (g_CDemonRenderer_PTR_005ae704), local_20 == 0.0)) {
     pCVar3 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&local_44);
     local_1c = (pCVar3->max).y;
     local_18 = 0;
-    local_2c.x = (int)ROUND(local_20 * _DAT_005a0d00);
-    local_2c.y = (int)ROUND(local_1c * _DAT_005a0d00);
-    local_2c.z = (int)ROUND(_DAT_005a0d00 * 0.0);
+    local_2c.x = (int)ROUND(local_20 * 256.0f);
+    local_2c.y = (int)ROUND(local_1c * 256.0f);
+    local_2c.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
     pSVar2 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;

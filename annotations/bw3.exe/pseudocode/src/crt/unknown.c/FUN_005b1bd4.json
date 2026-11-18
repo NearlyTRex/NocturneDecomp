@@ -2,21 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 262,
+    "complexity_score": 281,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 16,
+    "pseudocode_lines": 76,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "pointer_truncation",
       "register_param",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 267
+    "total_lines": 266
   },
   "cross_references": [
     {
@@ -73,14 +73,14 @@
   "globals": [
     {
       "addr": "02d25920",
-      "name": "DAT_02d25920",
-      "type": "undefined4",
+      "name": "g_EnvironStringArea",
+      "type": "char**",
       "value": null
     },
     {
       "addr": "02d25928",
-      "name": "DAT_02d25928",
-      "type": "undefined4",
+      "name": "g_EnvironInitialized",
+      "type": "int",
       "value": null
     }
   ],
@@ -174,16 +174,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint FUN_005b1bd4(short *param_1)",
@@ -191,7 +183,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_EAX",
       "severity": "mild",
       "text": "short *in_EAX;",
@@ -199,7 +191,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 == (short *)0x0) {",
@@ -207,7 +199,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 != 0) {",
@@ -215,7 +207,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "sVar1 = param_1[1];",
@@ -223,7 +215,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "psVar2 = param_1;",
@@ -231,7 +223,15 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 23,
+      "line": 21,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "while ((in_EAX = psVar2 + 1, sVar1 != 0 && (*in_EAX != 0x3d))) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
       "match": "in_EAX",
       "severity": "mild",
       "text": "while ((in_EAX = psVar2 + 1, sVar1 != 0 && (*in_EAX != 0x3d))) {",
@@ -240,14 +240,6 @@
     {
       "description": "Inferred register parameter",
       "line": 23,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "while ((in_EAX = psVar2 + 1, sVar1 != 0 && (*in_EAX != 0x3d))) {",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 25,
       "match": "in_EAX",
       "severity": "mild",
       "text": "psVar2 = in_EAX;",
@@ -255,7 +247,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 28,
+      "line": 26,
       "match": "in_EAX",
       "severity": "mild",
       "text": "if (*in_EAX == 0) {",
@@ -263,7 +255,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_EAX",
       "severity": "mild",
       "text": "bVar4 = in_EAX[1] == 0;",
@@ -271,7 +263,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = FUN_005b1d74(param_1,bVar4);",
@@ -279,7 +271,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "ptr[n] = param_1;",
@@ -287,11 +279,35 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(byte *)(n + (int)_DAT_02d25920",
+      "line": 77,
+      "match": "(byte *)(n + (int)g_EnvironStringArea",
       "severity": "moderate",
-      "text": "*(byte *)(n + (int)_DAT_02d25920) = 0;",
+      "text": "*(byte *)(n + (int)g_EnvironStringArea) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "g_EnvironInitialized = (int)ptr;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "g_EnvironInitialized = (int)ptr;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_EnvironStringArea` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)g_EnvironStringArea",
+      "severity": "moderate",
+      "text": "*(byte *)(n + (int)g_EnvironStringArea) = 0;",
+      "type": "pointer_truncation"
     },
     {
       "call_site_count": 1,

@@ -17,6 +17,21 @@ extern CMP3Decoder g_CMP3DecoderInstanceOther;
 // CSfxSlot[64]
 extern CSfxSlot g_CSfxSlot_ARRAY_02dbd374[64];
 
+// byte
+extern byte g_BYTE_02dbd348;
+
+// char[15360]
+extern char g_SfxStreamReadBuffer[15360];
+
 // float
-extern float g_FLOAT_02dbd370;
+extern float g_SoundReferenceVolumeDistance;
+
+// int
+extern int g_ShutdownInProgress;
+
+// int[8]
+extern int g_ChannelFFTTimestamps[8];
+
+// uchar
+extern uchar g_GlobalMP3DecoderInitialized;
 

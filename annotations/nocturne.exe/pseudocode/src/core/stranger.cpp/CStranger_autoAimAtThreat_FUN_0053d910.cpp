@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger *this_ptr,int hand_index,float delta_time)
 
 {
@@ -88,12 +85,12 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     }
     local_30 = -1.3089969;
     local_2c = 0.5235988;
-    iVar9 = _DAT_02dc9f84;
-    iVar10 = _DAT_02dc9f5c;
+    iVar9 = g_StrangerIndices[0xd];
+    iVar10 = g_StrangerIndices[3];
   }
   else {
-    iVar9 = _DAT_02dc9f88;
-    iVar10 = _DAT_02dc9f60;
+    iVar9 = g_StrangerIndices[0xe];
+    iVar10 = g_StrangerIndices[4];
     if (local_48 == WEAPON_TYPE_GUN) {
       local_2c = 1.3089969;
       local_30 = -0.5235988;
@@ -179,7 +176,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
       pCVar7 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040d890
                          (*(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_3c),
-                          g_CCharacterActorType_00765a60.name_hash);
+                          g_CCharacterClassInfo.name_hash);
       if ((pCVar7 == (CCharacter *)0x0) ||
          ((EVar8 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7),
           EVar8 == DEATH_STATE_ALIVE &&

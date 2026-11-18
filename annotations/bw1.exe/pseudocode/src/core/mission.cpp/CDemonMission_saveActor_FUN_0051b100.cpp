@@ -9,25 +9,19 @@
 void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_0051b100(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description)
 
 {
-  char *pcVar1;
-  byte *puVar2;
+  char *format;
   
   if (actor_ptr < (CDemonActor *)0xff000000) {
-    pcVar1 = "(none)";
-    if (actor_ptr != (CDemonActor *)0x0) {
-      pcVar1 = actor_ptr->actor_name;
-    }
-    puVar2 = &DAT_005e969f;
+    format = "\"%s\"";
   }
   else {
-    puVar2 = &DAT_005e969a;
-    pcVar1 = actor_ptr->actor_name;
+    format = "%08x";
   }
-  FUN_005c03c0(file,puVar2,pcVar1);
+  _fprintf(file,format);
   if (description != (char *)0x0) {
-    FUN_005c03c0(file,"\t\t// %s\n",description);
+    _fprintf(file,"\t\t// %s\n");
     return;
   }
-  FUN_005c03c0(file,&DAT_005e96ad);
+  _fprintf(file,"\n");
   return;
 }

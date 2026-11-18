@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e8730(void)
 
 {
@@ -24,66 +22,55 @@ void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e8730(void)
   float fVar11;
   float fVar12;
   float fVar13;
-  float10 fVar14;
-  float10 fVar15;
-  float10 fVar16;
-  float10 fVar17;
-  float10 fVar18;
-  float10 fVar19;
-  float10 fVar20;
-  float10 fVar21;
+  double dVar14;
+  double dVar15;
+  double dVar16;
+  double dVar17;
+  double dVar18;
+  double dVar19;
+  double dVar20;
+  uint uStack_54;
   
-  fVar3 = (float)_DAT_01c38b9c * (float)_DAT_005dc78e;
-  fVar8 = (float)_DAT_01c38ba0 * (float)_DAT_005dc78e;
-  fVar9 = (float)_DAT_01c38ba4 * (float)_DAT_005dc78e;
-  fVar11 = (float)_DAT_01c38ba8 * (float)_DAT_005dc78e;
-  fVar4 = (float)_DAT_01c38bac * (float)_DAT_005dc78e;
-  fVar5 = (float)_DAT_01c38bb0 * (float)_DAT_005dc78e;
-  fVar12 = (float)_DAT_01c38bb4 * (float)_DAT_005dc78e;
-  fVar7 = (float)_DAT_01c38bb8 * (float)_DAT_005dc78e;
-  fVar6 = (float)_DAT_01c38bbc * (float)_DAT_005dc78e;
+  fVar3 = (float)g_INT_01c38b9c * (float)1.52587890625e-05;
+  fVar8 = (float)g_INT_01c38ba0 * (float)1.52587890625e-05;
+  fVar9 = (float)g_INT_01c38ba4 * (float)1.52587890625e-05;
+  fVar11 = (float)g_INT_01c38ba8 * (float)1.52587890625e-05;
+  fVar4 = (float)g_INT_01c38bac * (float)1.52587890625e-05;
+  fVar5 = (float)g_INT_01c38bb0 * (float)1.52587890625e-05;
+  fVar12 = (float)g_INT_01c38bb4 * (float)1.52587890625e-05;
+  fVar7 = (float)g_INT_01c38bb8 * (float)1.52587890625e-05;
+  fVar6 = (float)g_INT_01c38bbc * (float)1.52587890625e-05;
   fVar1 = fVar4 * fVar6 - fVar5 * fVar7;
   fVar10 = fVar11 * fVar6 - fVar5 * fVar12;
-  _DAT_01d04fe0 = _DAT_01c38b9c;
-  _DAT_01d04fe4 = _DAT_01c38ba0;
-  _DAT_01d04fe8 = _DAT_01c38ba4;
+  g_TransformMatrixCopy.m[0].x = g_INT_01c38b9c;
+  g_TransformMatrixCopy.m[0].y = g_INT_01c38ba0;
+  g_TransformMatrixCopy.m[0].z = g_INT_01c38ba4;
   fVar2 = fVar11 * fVar7 - fVar4 * fVar12;
-  _DAT_01d04fec = _DAT_01c38ba8;
-  _DAT_01d04ff0 = _DAT_01c38bac;
-  _DAT_01d04ff4 = _DAT_01c38bb0;
-  _DAT_01d04ff8 = _DAT_01c38bb4;
-  _DAT_01d04ffc = _DAT_01c38bb8;
-  _DAT_01d05000 = _DAT_01c38bbc;
-  fVar13 = (float)_DAT_005dc796 / ((fVar3 * fVar1 - fVar8 * fVar10) + fVar9 * fVar2);
-  fVar14 = (float10)fVar3;
-  fVar15 = (float10)fVar1 * (float10)fVar13;
-  fVar16 = (float10)-(fVar8 * fVar6 - fVar9 * fVar7) * (float10)fVar13;
-  fVar17 = ((float10)fVar8 * (float10)fVar5 - (float10)fVar9 * (float10)fVar4) * (float10)fVar13;
-  fVar18 = (float10)-fVar10 * (float10)fVar13;
-  fVar19 = (float10)(fVar3 * fVar6 - fVar9 * fVar12) * (float10)fVar13;
-  fVar20 = -(fVar14 * (float10)fVar5 - (float10)fVar9 * (float10)fVar11) * (float10)fVar13;
-  fVar21 = (float10)fVar2 * (float10)fVar13;
-  round();
-  _DAT_01d04fb8 = (int)ROUND(fVar15);
-  fVar15 = (float10)(float)-(fVar14 * (float10)fVar7 - (float10)fVar8 * (float10)fVar12) *
-           (float10)fVar13;
-  round();
-  _DAT_01d04fbc = (int)ROUND(fVar16);
-  fVar14 = (float10)(float)(fVar14 * (float10)fVar4 - (float10)fVar8 * (float10)fVar11) *
-           (float10)fVar13;
-  round();
-  round();
-  round();
-  round();
-  round();
-  round();
-  round();
-  _DAT_01d04fc0 = (int)ROUND(fVar17);
-  _DAT_01d04fc4 = (int)ROUND(fVar18);
-  _DAT_01d04fc8 = (int)ROUND(fVar19);
-  _DAT_01d04fcc = (int)ROUND(fVar20);
-  _DAT_01d04fd0 = (int)ROUND(fVar21);
-  _DAT_01d04fd4 = (int)ROUND(fVar15);
-  _DAT_01d04fd8 = (int)ROUND(fVar14);
+  g_TransformMatrixCopy.m[1].x = g_INT_01c38ba8;
+  g_TransformMatrixCopy.m[1].y = g_INT_01c38bac;
+  g_TransformMatrixCopy.m[1].z = g_INT_01c38bb0;
+  g_TransformMatrixCopy.m[2].x = g_INT_01c38bb4;
+  g_TransformMatrixCopy.m[2].y = g_INT_01c38bb8;
+  g_TransformMatrixCopy.m[2].z = g_INT_01c38bbc;
+  fVar13 = (float)65536 / ((fVar3 * fVar1 - fVar8 * fVar10) + fVar9 * fVar2);
+  dVar14 = round((double)(fVar1 * fVar13));
+  g_INT_01d04fb8 = (int)ROUND(dVar14);
+  dVar14 = round((double)(-(fVar8 * fVar6 - fVar9 * fVar7) * fVar13));
+  g_INT_01d04fbc = (int)ROUND(dVar14);
+  dVar14 = round((double)((fVar8 * fVar5 - fVar9 * fVar4) * fVar13));
+  dVar15 = round((double)(-fVar10 * fVar13));
+  dVar16 = round((double)((fVar3 * fVar6 - fVar9 * fVar12) * fVar13));
+  dVar17 = round((double)(-(fVar3 * fVar5 - fVar9 * fVar11) * fVar13));
+  dVar18 = round((double)(fVar2 * fVar13));
+  dVar19 = round((double)(uStack_54 * 7.212494e-39));
+  dVar20 = round((double)(-(fVar3 * fVar7 - fVar8 * fVar12) * 7.212522e-39))
+  ;
+  g_INT_01d04fc0 = (int)ROUND(dVar14);
+  g_INT_01d04fc4 = (int)ROUND(dVar15);
+  g_INT_01d04fc8 = (int)ROUND(dVar16);
+  g_INT_01d04fcc = (int)ROUND(dVar17);
+  g_INT_01d04fd0 = (int)ROUND(dVar18);
+  g_INT_01d04fd4 = (int)ROUND(dVar19);
+  g_INT_01d04fd8 = (int)ROUND(dVar20);
   return;
 }

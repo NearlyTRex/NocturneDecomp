@@ -2,42 +2,29 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 69,
-    "cross_reference_count": 11,
+    "complexity_score": 54,
+    "cross_reference_count": 12,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "sign_compare_idiom",
-      "undefined_data"
+      "sign_compare_idiom"
     ],
     "total_lines": 99
   },
   "cross_references": [
     {
-      "addr": "00461f70",
-      "from_addr": "00462051",
-      "name": "core_dpart.cpp_FUN_00461f70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004625f0",
-      "from_addr": "004626cd",
-      "name": "core_dpart.cpp_FUN_004625f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059a0b0",
-      "from_addr": "0059a371",
-      "name": "core_zombie.cpp_FUN_0059a0b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0059a5d0",
       "from_addr": "0059a833",
       "name": "core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432880",
+      "from_addr": "0043293c",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00432880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,13 +42,19 @@
     {
       "addr": "0046c290",
       "from_addr": "0046c3a5",
-      "name": "engine_drender.cpp_FUN_0046c290",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0046c290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051da80",
-      "from_addr": "0051db31",
-      "name": "engine_prim.c_FUN_0051da80",
+      "addr": "004625f0",
+      "from_addr": "004626cd",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00461f70",
+      "from_addr": "00462051",
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -80,6 +73,18 @@
       "addr": "0051cb20",
       "from_addr": "0051cbd3",
       "name": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051da80",
+      "from_addr": "0051db31",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0051da80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a0b0",
+      "from_addr": "0059a371",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_0059a0b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -100,13 +105,13 @@
   "globals": [
     {
       "addr": "0070ca7c",
-      "name": "DAT_0070ca7c",
-      "type": "undefined4",
+      "name": "g_CullingMode",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 18,
+    "call_site_count": 20,
     "call_sites": [
       {
         "call_addr": "00431414",
@@ -155,7 +160,7 @@
       {
         "call_addr": "00462051",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00461f70",
+        "caller": "engine_drender.cpp_renderTriangleTextured_FUN_00461f70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +171,7 @@
       {
         "call_addr": "004626cd",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_004625f0",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_004625f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -346,14 +351,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0070ca7c",
-      "severity": "mild",
-      "text": "if (DAT_0070ca7c == 1) {",
-      "type": "undefined_data"
-    },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
       "line": 31,

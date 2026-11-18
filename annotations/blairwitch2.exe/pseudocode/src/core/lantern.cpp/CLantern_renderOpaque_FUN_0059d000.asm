@@ -7,7 +7,7 @@
 ; CLantern *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_lantern.cpp_FUN_0059ced0
+;   core_lantern.cpp_CLantern_updateLightTransform_FUN_0059ced0
 ;   core_weapon.cpp_CWeapon_renderOpaque_FUN_00589b90
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     RET                                 ; 0059d01e
     PUSH EBX                            ; 0059d01f
         ;   Label: LAB_0059d01f
-    CALL core_lantern.cpp_FUN_0059ced0  ; 0059d020
-        ;   XREF to: 0059ced0 (UNCONDITIONAL_CALL)  ; undefined core_lantern.cpp_FUN_0059ced0()
+    CALL core_lantern.cpp_CLantern_updateLightTransform_FUN_0059ced0 ; 0059d020
+        ;   XREF to: 0059ced0 (UNCONDITIONAL_CALL)  ; void core_lantern.cpp_CLantern_updateLightTransform_FUN_0059ced0(CLantern * this_ptr)
     ADD ESP,0x4                         ; 0059d025
     PUSH EBX                            ; 0059d028
     CALL core_weapon.cpp_CWeapon_renderOpaque_FUN_00589b90 ; 0059d029

@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   position_source_ptr
 ;
 ; XREF[8]:
-;   core_dracbrid.cpp_FUN_0047d920 at 0047dd8d
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 at 0047dd8d
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004c59f0 at 004c5a22
 ;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500ed7
 ;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 00502637
@@ -17,13 +17,13 @@
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005a89c0 at 005a89cf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c78cec
+;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c78cec]      ; 005727e0 | DAT_02c78cec
+    MOV EDX,dword ptr [0x02c78cec]      ; 005727e0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
     LEA EAX,[EDX*0x4 + 0x0]             ; 005727e6
     SUB EAX,EDX                         ; 005727ed

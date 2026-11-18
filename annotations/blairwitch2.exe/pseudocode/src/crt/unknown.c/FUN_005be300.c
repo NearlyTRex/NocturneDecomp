@@ -14,21 +14,21 @@ DWORD FUN_005be300(uint param_1,LPVOID param_2,DWORD param_3)
   BOOL BVar3;
   DWORD DStack_14;
   
-  if (((int)param_1 < 0) || (0x00000014 < param_1)) {
+  if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {
     setErrno(4);
     DStack_14 = 0xffffffff;
   }
   else {
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2a8)(param_1);
-    if (DAT_0061f43c != (code *)0x0) {
-      iVar1 = (*DAT_0061f414)(param_1);
+    if (g_PTR_0061f43c != (byte *)0x0) {
+      iVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(param_1);
       if (iVar1 != 0) {
-        uVar2 = (*DAT_0061f43c)(iVar1,param_2,param_3);
+        uVar2 = (*(code *)g_PTR_0061f43c)(iVar1,param_2,param_3);
         (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);
         return uVar2;
       }
     }
-    BVar3 = ReadFile(*(HANDLE *)(DAT_0061f4d8 + param_1 * 4),param_2,param_3,&DStack_14,
+    BVar3 = ReadFile(g_IOControlBlock->standard_handles[param_1],param_2,param_3,&DStack_14,
                      (LPOVERLAPPED)0x0);
     if (BVar3 == 0) {
       (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);

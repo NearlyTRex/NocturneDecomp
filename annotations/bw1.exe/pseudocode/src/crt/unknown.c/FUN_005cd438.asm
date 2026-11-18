@@ -6,8 +6,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50cc_006265fc = 005c50cc
-;   undefined4 DAT_00626a4c
-;   undefined4 DAT_00626a50
+;   void* g_UserExceptionFilter = 00000000
+;   void* g_ExceptionCleanup = 00000000
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
         ;   XREF to: 005cd441 (CONDITIONAL_JUMP)  ; LAB_005cd441
     MOV EDX,0x5cd18c                    ; 005cd461
     MOV EBX,0x5cd3b8                    ; 005cd466
-    MOV dword ptr [0x00626a4c],EDX      ; 005cd46b | DAT_00626a4c
-    MOV dword ptr [0x00626a50],EBX      ; 005cd471 | DAT_00626a50
+    MOV dword ptr [0x00626a4c],EDX      ; 005cd46b | g_UserExceptionFilter
+    MOV dword ptr [0x00626a50],EBX      ; 005cd471 | g_ExceptionCleanup
     POP ES                              ; 005cd477
     POP EDI                             ; 005cd478
     POP ESI                             ; 005cd479

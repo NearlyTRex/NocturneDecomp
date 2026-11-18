@@ -76,12 +76,8 @@ def init_context(globals_list, global_symbols):
         if not name:
             continue
         m = _ARRAY_TYPE_RE.match(type_str)
-        if not m:
-            continue
-        try:
+        if m:
             pools[name] = int(m.group(2))
-        except ValueError:
-            pass
 
     name_to_addr = {}
     for addr_str, info in global_symbols.items():
@@ -165,21 +161,17 @@ _SENTINEL_PATTERNS = [
 ]
 
 
-def _find_iter_origin(text, iter_name, loop_offset, depth=0, visited=None):
+def _find_iter_origin(text, iter_name, loop_offset, depth=0):
     """Backward-scan for what pool `iter_name` was derived from.
 
     Handles both direct (`iter = g_Pool`) and transitive
     (`iter = other; other = g_Pool`) forms. Self-referential updates like
     `iter = iter + 1` inside the loop body are skipped so we find the
-    pre-loop init. Bounded recursion to guard cycles.
+    pre-loop init. Each step looks only before the assignment it came from,
+    so the chain cannot cycle; its length is bounded all the same.
     """
     if depth > 5:
         return None
-    if visited is None:
-        visited = set()
-    if iter_name in visited:
-        return None
-    visited = visited | {iter_name}
 
     prefix = text[:loop_offset]
     assign_re = re.compile(
@@ -196,10 +188,7 @@ def _find_iter_origin(text, iter_name, loop_offset, depth=0, visited=None):
             return direct.group(1)
         local = re.search(r'\b([A-Za-z_][A-Za-z_0-9]*)\b', rhs)
         if local and local.group(1) != iter_name:
-            result = _find_iter_origin(
-                text, local.group(1), m.start(),
-                depth=depth + 1, visited=visited,
-            )
+            result = _find_iter_origin(text, local.group(1), m.start(), depth=depth + 1)
             if result:
                 return result
     return None
@@ -219,12 +208,11 @@ def transform_adjacency_sentinels(code, func_name=None):
     if not pools or not pool_adjacency:
         return code
 
+    # The three shapes are exclusive (the cast sits before the operator, after
+    # it, or nowhere), so no loop is matched twice
     replacements = []
-    seen_positions = set()
     for pattern in _SENTINEL_PATTERNS:
         for m in pattern.finditer(code):
-            if m.start() in seen_positions:
-                continue
             iter_name = m.group(1)
             sentinel_name = m.group(2)
             pool_name = _find_iter_origin(code, iter_name, m.start())
@@ -232,7 +220,6 @@ def transform_adjacency_sentinels(code, func_name=None):
                 continue
             if pool_adjacency.get(pool_name) != sentinel_name:
                 continue
-            count = pools[pool_name]
             old_cond = m.group(0)
             # Bound the loop by an expression over the pool itself rather than
             # by the literal count. Both forms are identical today (`count` is
@@ -248,7 +235,6 @@ def transform_adjacency_sentinels(code, func_name=None):
             # arithmetic this replaces.
             new_cond = 'while (%s != %s + sizeof(%s) / sizeof(%s[0]))' % (
                 iter_name, pool_name, pool_name, pool_name)
-            seen_positions.add(m.start())
             replacements.append((m.start(), m.end(), old_cond, new_cond,
                                  pool_name, sentinel_name))
 
@@ -277,11 +263,15 @@ def transform_adjacency_sentinels(code, func_name=None):
 def write_rewrite_report(reports_dir):
     """Write accumulated rewrites from this export to a markdown report.
 
-    Called by the exporter after all functions are processed. No-op if
-    the transform was never initialized or no rewrites happened.
+    Called by the exporter after all functions are processed. With no
+    rewrites there is no report, and one left by an earlier export is removed
+    so it cannot claim rewrites this export no longer makes.
     """
+    out_path = os.path.join(reports_dir, 'adjacency_sentinel_rewrites.md')
     rewrites = _context['rewrites']
     if not rewrites:
+        if os.path.exists(out_path):
+            os.remove(out_path)
         return None
 
     by_func = defaultdict(list)
@@ -315,7 +305,6 @@ def write_rewrite_report(reports_dir):
             lines.append('  - After:  `%s`' % r['new'])
         lines.append('')
 
-    out_path = os.path.join(reports_dir, 'adjacency_sentinel_rewrites.md')
     with open(out_path, 'w') as f:
         f.write('\n'.join(lines))
     log_info('Adjacency-sentinel: wrote %d rewrites to %s' % (len(rewrites), out_path))

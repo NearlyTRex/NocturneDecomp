@@ -7,7 +7,7 @@
 ; CSpike *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005eb013+1
+;   TerminatedCString s_modelName_005eb014
 ;   TerminatedCString s_spikeType_005eb01e
 ;   TerminatedCString s_spikeState_005eb028
 ;   TerminatedCString s_areWeActive_005eb033
@@ -42,7 +42,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 00560b56
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00560b5b
-    PUSH 0x5eb014                       ; 00560b5e | s_modelName_005eb013+1
+    PUSH 0x5eb014                       ; 00560b5e | = "modelName"
     LEA EAX,[EBX + 0x2b4]               ; 00560b63
     PUSH EAX                            ; 00560b69
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 00560b6a

@@ -6,38 +6,36 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_00552b30(void)
 
 {
   int iVar1;
   int iVar2;
   
-  if (_DAT_02cf32c8 != 0) {
-    FUN_005a3770(_DAT_02cf32c8);
-    _DAT_02cf32c8 = 0;
+  if (g_PrimaryMixBuffer != (float *)0x0) {
+    debugFree(g_PrimaryMixBuffer);
+    g_PrimaryMixBuffer = (float *)0x0;
   }
-  if (_DAT_02cf32ec != 0) {
-    FUN_005a3770(_DAT_02cf32ec);
-    _DAT_02cf32ec = 0;
+  if (g_SecondaryMixBuffer != (float *)0x0) {
+    debugFree(g_SecondaryMixBuffer);
+    g_SecondaryMixBuffer = (float *)0x0;
   }
-  if (_DAT_02cf32a4 != 0) {
-    FUN_005a3770(_DAT_02cf32a4);
-    _DAT_02cf32a4 = 0;
+  if (g_TertiaryMixBuffer != (float *)0x0) {
+    debugFree(g_TertiaryMixBuffer);
+    g_TertiaryMixBuffer = (float *)0x0;
   }
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 4;
-    *(uint *)(iVar2 + 0x2cf32a8) = 0;
-    *(uint *)(iVar2 + 0x2cf32f0) = 0;
-    *(uint *)(iVar2 + 0x2cf3310) = 0;
-    *(uint *)(iVar2 + 0x2cf32cc) = 0;
+    *(uint *)((int)g_ChannelTertiaryBuffers + iVar2) = 0;
+    *(uint *)((int)g_ChannelSecondaryBuffersA + iVar2) = 0;
+    *(uint *)((int)g_ChannelSecondaryBuffersB + iVar2) = 0;
+    *(uint *)((int)g_ChannelPrimaryBuffers + iVar2) = 0;
     iVar2 = iVar1;
   } while (iVar1 != 0x20);
-  _DAT_02cf32a0 = 0;
-  _DAT_02cf3294 = 0;
-  _DAT_02cf3298 = 0;
-  _DAT_02cf329c = 0;
+  g_NumMixBuffers = 0;
+  g_MixBufferReadIndex = 0;
+  g_MixBufferWriteIndex = 0;
+  g_MixBufferSize = 0;
   return;
 }

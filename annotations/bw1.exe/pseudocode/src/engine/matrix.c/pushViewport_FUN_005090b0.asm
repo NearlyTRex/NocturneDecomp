@@ -11,28 +11,28 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10 at 00483c26
-;   shape_edittool.cpp_FUN_00496ee0 at 00497415
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0 at 00497415
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005e77c6
 ;   TerminatedCString s_Too_many_3D_windows_005e77d9
-;   undefined4 DAT_0061b4c4
-;   undefined4 DAT_01c4eff8
-;   undefined4 DAT_01c4effc
-;   undefined4 DAT_01c4f000
-;   undefined4 DAT_01c4f004
-;   undefined4 DAT_01c4f008
-;   undefined4 DAT_01c4f00c
-;   undefined4 DAT_01c4f010
-;   undefined4 DAT_01c4f014
-;   undefined4 DAT_01c51d38
-;   undefined4 DAT_01c51d3c
-;   undefined4 DAT_01c51d40
-;   undefined4 DAT_01c51d44
+;   int g_ProjectionScale = 0x10000
+;   int g_INT_01c4eff8
+;   int g_INT_01c4effc
+;   int g_INT_01c4f000
+;   int g_INT_01c4f004
+;   int g_INT_01c4f008
+;   int g_INT_01c4f00c
+;   int g_ClipRight
+;   int g_INT_01c4f014
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
+;   int g_CameraRotationPitch
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;
 ; *****************************************************************************
@@ -41,45 +41,45 @@ section .text
 
     PUSH EBP                            ; 005090b0
         ;   Label: engine_matrix.c_pushViewport_FUN_005090b0
-    MOV EAX,[0x01d1dfd0]                ; 005090b1 | DAT_01d1dfd0
-    MOV EDX,dword ptr [0x01c51d38]      ; 005090b6 | DAT_01c51d38
+    MOV EAX,[0x01d1dfd0]                ; 005090b1 | g_ViewportStackIndex
+    MOV EDX,dword ptr [0x01c51d38]      ; 005090b6 | g_CameraOriginX
     MOV dword ptr [EAX*0x4 + 0x1d1e09c],EDX ; 005090bc
-    MOV EDX,dword ptr [0x01c51d3c]      ; 005090c3 | DAT_01c51d3c
+    MOV EDX,dword ptr [0x01c51d3c]      ; 005090c3 | g_CameraOriginY
     MOV dword ptr [EAX*0x4 + 0x1d1e0c4],EDX ; 005090c9
-    MOV EDX,dword ptr [0x01c51d40]      ; 005090d0 | DAT_01c51d40
+    MOV EDX,dword ptr [0x01c51d40]      ; 005090d0 | g_CameraOriginZ
     MOV dword ptr [EAX*0x4 + 0x1d1e0ec],EDX ; 005090d6
-    MOV EDX,dword ptr [0x01c51d44]      ; 005090dd | DAT_01c51d44
+    MOV EDX,dword ptr [0x01c51d44]      ; 005090dd | g_CameraRotationPitch
     MOV dword ptr [EAX*0x4 + 0x1d1e114],EDX ; 005090e3
-    MOV EDX,dword ptr [0x01c51d48]      ; 005090ea | DAT_01c51d48
+    MOV EDX,dword ptr [0x01c51d48]      ; 005090ea | g_CameraRotationYaw
     MOV dword ptr [EAX*0x4 + 0x1d1e13c],EDX ; 005090f0
-    MOV EDX,dword ptr [0x01c51d4c]      ; 005090f7 | DAT_01c51d4c
+    MOV EDX,dword ptr [0x01c51d4c]      ; 005090f7 | g_CameraRotationRoll
     MOV dword ptr [EAX*0x4 + 0x1d1e164],EDX ; 005090fd
-    MOV EDX,dword ptr [0x01c51d50]      ; 00509104 | DAT_01c51d50
+    MOV EDX,dword ptr [0x01c51d50]      ; 00509104 | g_LightDirectionX
     MOV dword ptr [EAX*0x4 + 0x1d1e18c],EDX ; 0050910a
-    MOV EDX,dword ptr [0x01c51d54]      ; 00509111 | DAT_01c51d54
+    MOV EDX,dword ptr [0x01c51d54]      ; 00509111 | g_LightDirectionY
     MOV dword ptr [EAX*0x4 + 0x1d1e1b4],EDX ; 00509117
-    MOV EDX,dword ptr [0x01c51d58]      ; 0050911e | DAT_01c51d58
+    MOV EDX,dword ptr [0x01c51d58]      ; 0050911e | g_LightDirectionZ
     MOV dword ptr [EAX*0x4 + 0x1d1e1dc],EDX ; 00509124
-    MOV EDX,dword ptr [0x01c4eff8]      ; 0050912b | DAT_01c4eff8
+    MOV EDX,dword ptr [0x01c4eff8]      ; 0050912b | g_INT_01c4eff8
     MOV dword ptr [EAX*0x4 + 0x1d1dfd4],EDX ; 00509131
-    MOV EDX,dword ptr [0x01c4effc]      ; 00509138 | DAT_01c4effc
+    MOV EDX,dword ptr [0x01c4effc]      ; 00509138 | g_INT_01c4effc
     MOV dword ptr [EAX*0x4 + 0x1d1dffc],EDX ; 0050913e
-    MOV EDX,dword ptr [0x01c4f000]      ; 00509145 | DAT_01c4f000
+    MOV EDX,dword ptr [0x01c4f000]      ; 00509145 | g_INT_01c4f000
     MOV dword ptr [EAX*0x4 + 0x1d1e024],EDX ; 0050914b
-    MOV EDX,dword ptr [0x01c4f004]      ; 00509152 | DAT_01c4f004
+    MOV EDX,dword ptr [0x01c4f004]      ; 00509152 | g_INT_01c4f004
     MOV dword ptr [EAX*0x4 + 0x1d1e04c],EDX ; 00509158
-    MOV EDX,dword ptr [0x0061b4c4]      ; 0050915f | DAT_0061b4c4
+    MOV EDX,dword ptr [0x0061b4c4]      ; 0050915f | g_ProjectionScale
     MOV dword ptr [EAX*0x4 + 0x1d1e074],EDX ; 00509165
-    MOV EDX,dword ptr [0x01c4f008]      ; 0050916c | DAT_01c4f008
+    MOV EDX,dword ptr [0x01c4f008]      ; 0050916c | g_INT_01c4f008
     MOV dword ptr [EAX*0x4 + 0x1d1e204],EDX ; 00509172
-    MOV EDX,dword ptr [0x01c4f010]      ; 00509179 | DAT_01c4f010
+    MOV EDX,dword ptr [0x01c4f010]      ; 00509179 | g_ClipRight
     MOV dword ptr [EAX*0x4 + 0x1d1e22c],EDX ; 0050917f
-    MOV EDX,dword ptr [0x01c4f00c]      ; 00509186 | DAT_01c4f00c
+    MOV EDX,dword ptr [0x01c4f00c]      ; 00509186 | g_INT_01c4f00c
     MOV dword ptr [EAX*0x4 + 0x1d1e254],EDX ; 0050918c
-    MOV EDX,dword ptr [0x01c4f014]      ; 00509193 | DAT_01c4f014
+    MOV EDX,dword ptr [0x01c4f014]      ; 00509193 | g_INT_01c4f014
     MOV dword ptr [EAX*0x4 + 0x1d1e27c],EDX ; 00509199
     LEA EDX,[EAX + 0x1]                 ; 005091a0
-    MOV dword ptr [0x01d1dfd0],EDX      ; 005091a3 | DAT_01d1dfd0
+    MOV dword ptr [0x01d1dfd0],EDX      ; 005091a3 | g_ViewportStackIndex
     CMP EDX,0xa                         ; 005091a9
     JGE 0x005091e1                      ; 005091ac
         ;   XREF to: 005091e1 (CONDITIONAL_JUMP)  ; LAB_005091e1
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 00401810 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setupViewportAndClipping_FUN_00401810(int left, int top, int right, int bottom)
     MOV ECX,0x10000                     ; 005091d1
     ADD ESP,0x10                        ; 005091d6
-    MOV dword ptr [0x0061b4c4],ECX      ; 005091d9 | DAT_0061b4c4
+    MOV dword ptr [0x0061b4c4],ECX      ; 005091d9 | g_ProjectionScale
     POP EBP                             ; 005091df
     RET                                 ; 005091e0
     PUSH ESI                            ; 005091e1
@@ -108,10 +108,10 @@ section .text
     MOV EBX,0x5e77c6                    ; 005091e3 | = "..\\engine\\matrix.c"
     MOV ESI,0x540                       ; 005091e8
     PUSH 0x5e77d9                       ; 005091ed | = "Too many 3D windows"
-    MOV dword ptr [0x01d1d400],EBX      ; 005091f2 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005091f8 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005091fe
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 005091f2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 005091f8 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005091fe
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00509203
     POP EBX                             ; 00509206
     POP ESI                             ; 00509207

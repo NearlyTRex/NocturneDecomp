@@ -11,7 +11,7 @@
 ;   TerminatedCString s_modelName_0057b3c8
 ;   TerminatedCString s_guardDistance_0057b3d2
 ;   TerminatedCString s_motion_state_0057b3e0
-;   int g_INT_005ad3ac = 0x2
+;   int g_CZombieCowClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
@@ -41,7 +41,7 @@ section .text
     PUSH EAX                            ; 0043c30d
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 0043c30e
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005ad3ac]      ; 0043c313 | g_INT_005ad3ac
+    MOV EDX,dword ptr [0x005ad3ac]      ; 0043c313 | g_CZombieCowClassVersion
     ADD ESP,0x8                         ; 0043c319
     CMP EDX,0x2                         ; 0043c31c
     JL 0x0043c337                       ; 0043c31f

@@ -11,13 +11,13 @@ void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00540be0(CDemonSet *thi
 {
   _FILE *file;
   
-  file = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc1,filename,&DAT_005d0cbe);
+  file = engine_dosio_cpp_getFile_FUN_004659c0("data",filename,"rb");
   if (file == (_FILE *)0x0) {
-    core_setdir_cpp_FUN_00540cf0(this_ptr);
-    core_setdir_cpp_FUN_00540c40(this_ptr,filename);
+    core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00540cf0(this_ptr);
+    core_setdir_cpp_CDemonSet_writeThumbs_FUN_00540c40(this_ptr,filename);
     return;
   }
-  _fread(&DAT_0212551c,0x3000,this_ptr->camera_count,file);
+  _fread(g_CHAR_ARRAY_0212551c,0x3000,this_ptr->camera_count,file);
   _fclose(file);
   return;
 }

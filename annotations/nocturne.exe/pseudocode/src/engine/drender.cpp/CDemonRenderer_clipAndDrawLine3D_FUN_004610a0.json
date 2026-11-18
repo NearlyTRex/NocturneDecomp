@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 770,
+    "complexity_score": 755,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 165,
-    "suspect_count": 58,
+    "suspect_count": 57,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_memcpy"
     ],
     "total_lines": 463
@@ -90,8 +89,8 @@
   "globals": [
     {
       "addr": "006b0260",
-      "name": "DAT_006b0260",
-      "type": "undefined4",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
       "value": null
     },
     {
@@ -315,14 +314,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_006b0260",
-      "severity": "mild",
-      "text": "g_ActiveRenderColor = DAT_006b0260;",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 28,

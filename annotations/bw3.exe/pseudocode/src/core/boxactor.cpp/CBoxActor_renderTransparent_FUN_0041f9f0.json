@@ -2,7 +2,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 95,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 4,
@@ -10,9 +10,8 @@
     "pseudocode_lines": 50,
     "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unaffected_reg",
+      "unrolled_memcpy"
     ],
     "total_lines": 160
   },
@@ -33,7 +32,7 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
     },
     {
       "addr": "004625a0",
@@ -74,21 +73,21 @@
   "globals": [
     {
       "addr": "005b7505",
-      "name": "DAT_005b7505",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005b7505",
+      "type": "float",
+      "value": "65536"
     },
     {
       "addr": "005f2af8",
-      "name": "DAT_005f2af8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2af8",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "00603b28",
@@ -192,24 +191,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->fade_alpha)",
-      "type": "undefined_data"
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_24 + 2),unaff_EDI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",

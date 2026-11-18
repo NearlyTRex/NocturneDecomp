@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_icepick_cpp_005e53cf
 ;   TerminatedCString s_CIcePick_getCarryObjToBo_005e53e3
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
-;   core_xform.cpp_FUN_005b5760
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
+;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
     PUSH EAX                            ; 004f1ab2
     LEA EAX,[ESP + 0x38]                ; 004f1ab3
     PUSH EAX                            ; 004f1ab7
-    CALL core_xform.cpp_FUN_005b5760    ; 004f1ab8
-        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760 ; 004f1ab8
+        ;   XREF to: 005b5760 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005b5760(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     LEA EAX,[EBP*0x4 + 0x0]             ; 004f1abd
     ADD ESP,0xc                         ; 004f1ac4
     SUB EAX,EBP                         ; 004f1ac7
@@ -117,10 +117,10 @@ section .text
         ;   Label: LAB_004f1b21
     MOV ESI,0x289                       ; 004f1b26
     PUSH 0x5e53e3                       ; 004f1b2b | = "CIcePick::getCarryObjToBodyXForm - wr..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004f1b30 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004f1b36 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 004f1b3c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 004f1b30 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 004f1b36 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f1b3c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f1b41
     JMP 0x004f1aa6                      ; 004f1b44
         ;   XREF to: 004f1aa6 (UNCONDITIONAL_JUMP)  ; LAB_004f1aa6

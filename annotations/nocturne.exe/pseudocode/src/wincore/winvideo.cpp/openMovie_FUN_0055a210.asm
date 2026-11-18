@@ -33,9 +33,9 @@
 ;   TerminatedCString s_open_s_alias_mov_style_c_00598199
 ;   TerminatedCString s_status_mov_window_handle_005981c3
 ;   TerminatedCString s_Unable_to_open_AVI_005981dc
-;   undefined4 DAT_02de311c
-;   undefined4 DAT_02de3124
-;   undefined4 DAT_02de312c
+;   HWND g_MovieWindowHandle
+;   int g_MoviePlaying
+;   int g_FullscreenMovie
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -59,7 +59,7 @@ section .text
     PUSH EBP                            ; 0055a213
     SUB ESP,0x1a4                       ; 0055a214
     MOV EBX,dword ptr [ESP + 0x1b8]     ; 0055a21a
-    CMP dword ptr [0x02de3124],0x0      ; 0055a221 | DAT_02de3124
+    CMP dword ptr [0x02de3124],0x0      ; 0055a221 | g_MoviePlaying
     JZ 0x0055a233                       ; 0055a228
         ;   XREF to: 0055a233 (CONDITIONAL_JUMP)  ; LAB_0055a233
     PUSH EBX                            ; 0055a22a
@@ -91,7 +91,7 @@ section .text
     PUSH EAX                            ; 0055a272
     MOV ESI,0x1                         ; 0055a273
     PUSH 0x5981c3                       ; 0055a278 | = "status mov window handle"
-    MOV dword ptr [0x02de3124],ESI      ; 0055a27d | DAT_02de3124
+    MOV dword ptr [0x02de3124],ESI      ; 0055a27d | g_MoviePlaying
     CALL dword ptr CS:[0x5753e0]        ; 0055a283 | PTR_mciSendStringA_005753e0
     TEST EAX,EAX                        ; 0055a28a
     JNZ 0x0055a2bc                      ; 0055a28c
@@ -101,13 +101,13 @@ section .text
     CALL crt_stdlib.c_atoi_FUN_00566f30 ; 0055a291
         ;   XREF to: 00566f30 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_00566f30(char * string_ptr)
     ADD ESP,0x4                         ; 0055a296
-    MOV [0x02de311c],EAX                ; 0055a299 | DAT_02de311c
-    MOV EDI,dword ptr [0x02de312c]      ; 0055a29e | DAT_02de312c
+    MOV [0x02de311c],EAX                ; 0055a299 | g_MovieWindowHandle
+    MOV EDI,dword ptr [0x02de312c]      ; 0055a29e | g_FullscreenMovie
         ;   Label: LAB_0055a29e
     TEST EDI,EDI                        ; 0055a2a4
     JNZ 0x0055a2b1                      ; 0055a2a6
         ;   XREF to: 0055a2b1 (CONDITIONAL_JUMP)  ; LAB_0055a2b1
-    CMP dword ptr [0x02de3124],0x0      ; 0055a2a8 | DAT_02de3124
+    CMP dword ptr [0x02de3124],0x0      ; 0055a2a8 | g_MoviePlaying
     JNZ 0x0055a2e1                      ; 0055a2af
         ;   XREF to: 0055a2e1 (CONDITIONAL_JUMP)  ; LAB_0055a2e1
     ADD ESP,0x1a4                       ; 0055a2b1
@@ -271,7 +271,7 @@ section .text
     PUSH EDX                            ; 0055a43e
     PUSH ECX                            ; 0055a43f
     PUSH EBX                            ; 0055a440
-    MOV ECX,dword ptr [0x02de311c]      ; 0055a441 | DAT_02de311c
+    MOV ECX,dword ptr [0x02de311c]      ; 0055a441 | g_MovieWindowHandle
     PUSH ECX                            ; 0055a447
     CALL dword ptr CS:[0x575450]        ; 0055a448 | PTR_MoveWindow_00575450
     ADD ESP,0x1a4                       ; 0055a44f
@@ -293,7 +293,7 @@ section .text
     PUSH EBX                            ; 0055a479
     XOR EBX,EBX                         ; 0055a47a
     CALL dword ptr CS:[0x57544c]        ; 0055a47c | PTR_MessageBoxA_0057544c
-    MOV dword ptr [0x02de3124],EBX      ; 0055a483 | DAT_02de3124
+    MOV dword ptr [0x02de3124],EBX      ; 0055a483 | g_MoviePlaying
     ADD ESP,0x1a4                       ; 0055a489
     POP EBP                             ; 0055a48f
     POP EDI                             ; 0055a490

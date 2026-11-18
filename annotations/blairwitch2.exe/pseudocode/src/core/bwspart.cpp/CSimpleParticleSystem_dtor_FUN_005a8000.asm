@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b86a0
+;   crt_unknown.c_debugFree_FUN_005b86a0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x3c]      ; 005a8017
         ;   Label: LAB_005a8017
     PUSH ECX                            ; 005a801a
-    CALL crt_unknown.c_FUN_005b86a0     ; 005a801b
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
+    CALL crt_unknown.c_debugFree_FUN_005b86a0 ; 005a801b
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005b86a0(void * ptr)
     ADD ESP,0x4                         ; 005a8020
     MOV EAX,EBX                         ; 005a8023
     POP EBX                             ; 005a8025

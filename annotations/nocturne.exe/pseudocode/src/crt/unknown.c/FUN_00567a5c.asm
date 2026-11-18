@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable
-;   undefined4 DAT_02de5c30
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_locale.c_mbtowc_FUN_0056f040
@@ -120,7 +120,7 @@ section .text
     MOV byte ptr ES:[EDI],BL            ; 00567b0c
     JMP 0x00567b62                      ; 00567b0f
         ;   XREF to: 00567b62 (UNCONDITIONAL_JUMP)  ; LAB_00567b62
-    MOV EAX,[0x02de5c30]                ; 00567b11 | DAT_02de5c30
+    MOV EAX,[0x02de5c30]                ; 00567b11 | g_MultibyteLocaleActive
         ;   Label: LAB_00567b11
     MOV byte ptr [ESP + 0x4],BL         ; 00567b16
     TEST EAX,EAX                        ; 00567b1a

@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a63cf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd1d80
+;   int g_GlobalDeltaTimeInt
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00549410
         ;   Label: core_terrain.cpp_CTerrain_process_FUN_00549410
     MOV EDX,0x6270                      ; 00549414
-    MOV EAX,[0x01bd1d80]                ; 00549419 | DAT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 00549419 | g_GlobalDeltaTimeInt
     IMUL EDX                            ; 0054941e
     SHRD EAX,EDX,0x10                   ; 00549420
     MOV EDX,dword ptr [ECX]             ; 00549424

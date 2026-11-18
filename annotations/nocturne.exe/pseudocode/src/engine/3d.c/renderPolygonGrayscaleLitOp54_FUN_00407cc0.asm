@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_006b0260
+;   int g_CurrentPolygonColor
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
 ;   MainScanlineFunc* g_ScanlineRenderFunc
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004c6cc0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00407d1f
     PUSH EAX                            ; 00407d22
-    MOV EDI,dword ptr [0x006b0260]      ; 00407d23 | DAT_006b0260
+    MOV EDI,dword ptr [0x006b0260]      ; 00407d23 | g_CurrentPolygonColor
     PUSH EDI                            ; 00407d29
     MOV [0x01c00c74],EAX                ; 00407d2a | g_CurrentLightingValue
     CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 00407d2f

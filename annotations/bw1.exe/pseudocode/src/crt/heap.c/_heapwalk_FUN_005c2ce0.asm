@@ -7,7 +7,7 @@
 ; WatcomHeapInfo * Stack[0x4]:4   heap_info
 ;
 ; XREF[2]:
-;   core_melee.cpp_FUN_00509b00 at 00509b1b
+;   core_melee.cpp_dumpHeap_FUN_00509b00 at 00509b1b
 ;   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e40 at 00498e5f
 ;
 ; Called Functions:

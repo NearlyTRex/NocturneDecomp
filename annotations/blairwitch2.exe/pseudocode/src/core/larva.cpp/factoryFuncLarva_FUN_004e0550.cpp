@@ -11,7 +11,7 @@ CLarva * __cdecl core_larva_cpp_factoryFuncLarva_FUN_004e0550(void)
 {
   CLarva *pCVar1;
   
-  pCVar1 = (CLarva *)operator_new(0x10b04);
+  pCVar1 = operator_new(0x10b04);
   if (pCVar1 == (CLarva *)0x0) {
     return (CLarva *)0x0;
   }

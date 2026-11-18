@@ -6,11 +6,16 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBloodParticle.h"
+#include "types/classes/CBloodSplat.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D20000
@@ -21,6 +26,9 @@ extern CAlphaBitmap CAlphaBitmap_ARRAY_01d22b4c[8];
 
 // CBloodParticle[256]
 extern CBloodParticle g_BloodParticles[256];
+
+// CBloodSplat[2000]
+extern CBloodSplat g_CBloodSplat_ARRAY_01d276bc[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CGargoyleClassInfo;
@@ -40,4 +48,80 @@ extern CGore g_CGoreInstance;
 
 // CPickList
 extern CPickList g_CPickList;
+
+// CVector3f
+extern CVector3f g_GhoulOffsetMinusX;
+extern CVector3f g_GhoulOffsetPlusX;
+
+// CVector3i
+extern CVector3i g_ParticleCameraRotation;
+extern CVector3i g_BloodParticleViewDirection;
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d22e88;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d22e48;
+
+// char[20]
+extern char g_CHAR_ARRAY_01d22c6f[20];
+
+// char[256]
+extern char g_ScreenshotFilename[256];
+extern char g_CurrentSaveFile[256];
+extern char g_ChapterDisplayName[256];
+
+// char[600]
+extern char g_PrevKeyboardState[600];
+
+// float
+extern float g_OverlayDisplayTimer;
+extern float g_FLOAT_01d22c30;
+extern float g_FLOAT_01d22c34;
+extern float g_FLOAT_01d22c38;
+extern float g_IrisFadeRadius;
+
+// int
+extern int g_ScreenshotIndex;
+extern int g_InputResetFlag;
+extern int g_INT_01d221fc;
+extern int g_INT_01d22200;
+extern int g_INT_01d226c8;
+extern int g_ChapterDisplayYear;
+extern int g_INT_01d22b44;
+extern int g_INT_01d22b48;
+extern int g_INT_01d22c2c;
+extern int g_INT_01d22c3c;
+extern int g_MovieRecordingArmed;
+extern int g_MovieRecordingActive;
+extern int g_MovieRecordingMaxFrames;
+extern int g_MovieRecordingFrameCounter;
+extern int g_SoundDebugEnabled;
+extern int g_INT_01d22c54;
+extern int g_INT_01d22c58;
+extern int g_INT_01d22c5c;
+extern int g_HelpCharWidth;
+extern int g_INT_01d22c64;
+extern int g_INT_01d22c68;
+extern int g_INT_01d22c84;
+extern int g_IrisFadeCenterX;
+extern int g_IrisFadeCenterY;
+extern int g_INT_01d22c94;
+extern int g_ProfileStartTime;
+extern int g_INT_01d22c9c;
+extern int g_BloodParticleIndex;
+extern int g_BloodSplatIndex;
+extern int g_BloodSplatCount;
+
+// int[11]
+extern int g_GhoulIndices[11];
+
+// int[12]
+extern int g_GargoyleIndices[12];
+
+// int[16]
+extern int g_INT_ARRAY_01d22bec[16];
+
+// int[201]
+extern int g_MasterLightStateSaveBuffer[201];
 

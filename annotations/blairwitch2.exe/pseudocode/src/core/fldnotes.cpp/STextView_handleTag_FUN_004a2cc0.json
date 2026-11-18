@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 386,
-    "complexity_score": 239,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 134,
-    "suspect_count": 9,
+    "pseudocode_lines": 133,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 520
+    "total_lines": 519
   },
   "cross_references": [
     {
@@ -75,7 +73,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "005b8be2",
@@ -106,26 +104,26 @@
   "globals": [
     {
       "addr": "005d5b91",
-      "name": "DAT_005d5b91",
-      "type": "undefined4",
+      "name": "s_br_005d5b91",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5b94",
-      "name": "DAT_005d5b94",
-      "type": "undefined4",
+      "name": "s_pg_005d5b94",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5b97",
-      "name": "DAT_005d5b97",
-      "type": "undefined4",
+      "name": "s_ul_005d5b97",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5b9a",
-      "name": "DAT_005d5b9a",
-      "type": "undefined4",
+      "name": "s_ul_005d5b9a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -214,20 +212,20 @@
     },
     {
       "addr": "01cab7f0",
-      "name": "DAT_01cab7f0",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cab7f0",
+      "type": "char[512]",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -377,76 +375,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005d5b91",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(tag,&DAT_005d5b91);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005d5b94",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(tag,&DAT_005d5b94);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005d5b97",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(tag,&DAT_005d5b97);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005d5b9a",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(tag,&DAT_005d5b9a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01cab7f0",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01cab7f0,\"Error parsing 'twanachar' parms: '%s'\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_01cab7f0",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01cab7f0,\"Ignoring unknown markup tag: %s\");",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 107,
+      "line": 105,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(((SPageResourceBitmap *)&resource_00->base)->base).vtable)(resource_00,2);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_01cab7f0",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_01cab7f0,\"Error parsing 'image' tag parms: '%s'\");",
-      "type": "undefined_data"
     }
   ]
 }

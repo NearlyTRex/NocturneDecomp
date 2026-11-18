@@ -10,11 +10,11 @@
 ;   engine_matrix.c_normalizeVector3DFixed_FUN_004e9a60 at 004e9a82
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -98,10 +98,10 @@ section .text
         ;   Label: LAB_004e9a29
     MOV ECX,0x391                       ; 004e9a2e
     PUSH 0x5dc81e                       ; 004e9a33
-    MOV dword ptr [0x01d046a0],EDX      ; 004e9a38 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004e9a3e | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004e9a44
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 004e9a38 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 004e9a3e | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e9a44
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e9a49
     JMP 0x004e998e                      ; 004e9a4c
         ;   XREF to: 004e998e (UNCONDITIONAL_JUMP)  ; LAB_004e998e

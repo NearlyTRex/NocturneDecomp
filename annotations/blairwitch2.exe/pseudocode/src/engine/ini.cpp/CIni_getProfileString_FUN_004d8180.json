@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 255,
+    "complexity_score": 240,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "unaffected_reg",
-      "undefined_data",
       "unrolled_strchr",
       "unrolled_strcpy",
       "unrolled_strlen"
@@ -84,8 +83,8 @@
   "globals": [
     {
       "addr": "005dab81",
-      "name": "DAT_005dab81",
-      "type": "undefined4",
+      "name": "s_rt_005dab81",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -301,14 +300,6 @@
       "severity": "moderate",
       "text": "char *unaff_EBP;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005dab81",
-      "severity": "mild",
-      "text": "stream = _fopen(filename,&DAT_005dab81);",
-      "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",

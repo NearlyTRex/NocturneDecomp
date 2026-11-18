@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_code)
 
 {
@@ -16,7 +14,7 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_c
   char *pcVar3;
   char *pcVar4;
   
-  _DAT_01d737d8 = g_CGamePtr->game_control;
+  g_INT_01d737d8 = g_CGamePtr->game_control;
   pcVar3 = (char *)0x0;
   if (key_code == INPUT_NONE) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("(none)");
@@ -79,11 +77,11 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_c
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Gamepad back");
   }
   if (pcVar3 == (char *)0x0) {
-    pcVar3 = wincore_winrun_cpp_FUN_00581360(key_code);
+    pcVar3 = wincore_winrun_cpp_getKeyName_FUN_00581360(key_code);
   }
-  pcVar2 = (char *)(_DAT_01d76220 * 0x100 + 0x1d76228);
+  pcVar2 = g_StringBuffers[g_StringBufferIndex];
   pcVar4 = pcVar2;
-  _DAT_01d76220 = (_DAT_01d76220 + 1) % 10;
+  g_StringBufferIndex = (g_StringBufferIndex + 1) % 10;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

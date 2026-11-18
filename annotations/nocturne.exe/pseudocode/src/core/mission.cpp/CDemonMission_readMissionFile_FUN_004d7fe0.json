@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 340,
+    "complexity_score": 313,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 235,
-    "suspect_count": 8,
+    "pseudocode_lines": 233,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
-    "total_lines": 805
+    "total_lines": 803
   },
   "cross_references": [
     {
@@ -299,31 +298,31 @@
     },
     {
       "addr": "005bb000",
-      "name": "DAT_005bb000",
-      "type": "undefined4",
+      "name": "g_DefaultMissionActorClass",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "005bb004",
-      "name": "DAT_005bb004",
+      "name": "g_DefaultMissionActorClass+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005bb068",
-      "name": "DAT_005bb068",
-      "type": "undefined4",
+      "name": "g_DefaultMissionActorName",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "005bb06c",
-      "name": "DAT_005bb06c",
+      "name": "g_DefaultMissionActorName+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cae124",
-      "name": "g_CHeroActorType_01cae0ec.name_hash",
+      "name": "g_CHeroClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -539,39 +538,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(char *)((int)pcVar10",
+      "line": 86,
+      "match": "(char *)((int)pcVar9",
       "severity": "moderate",
-      "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_005bb000",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_005bb000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 136,
-      "match": "DAT_005bb068",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_005bb068;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `pcVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
-      "match": "(int)pcVar10",
+      "description": "Pointer value `pcVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(int)pcVar9",
       "severity": "moderate",
-      "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 148,
+      "line": 147,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -579,7 +562,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 84,
+      "line": 83,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -587,7 +570,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 131,
+      "line": 130,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -595,7 +578,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 138,
+      "line": 137,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",

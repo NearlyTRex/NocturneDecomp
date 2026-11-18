@@ -12,7 +12,7 @@
 ;   core_inv.cpp_CInventory_load_FUN_004f97a0 at 004f97b2
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004f8d00
+;   core_inv.cpp_CInventory_removeItem_FUN_004f8d00
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0x14]      ; 004f6fbe
     PUSH ESI                            ; 004f6fc1
     PUSH EBX                            ; 004f6fc2
-    CALL core_inv.cpp_FUN_004f8d00      ; 004f6fc3
-        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004f8d00 ; 004f6fc3
+        ;   XREF to: 004f8d00 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004f8d00(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     MOV EDI,dword ptr [EBX + 0x10]      ; 004f6fc8
     ADD ESP,0xc                         ; 004f6fcb
     TEST EDI,EDI                        ; 004f6fce

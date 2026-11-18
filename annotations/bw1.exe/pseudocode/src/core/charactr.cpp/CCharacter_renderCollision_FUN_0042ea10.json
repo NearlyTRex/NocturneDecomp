@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 577,
-    "complexity_score": 1023,
+    "complexity_score": 811,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 273,
-    "suspect_count": 72,
+    "pseudocode_lines": 276,
+    "suspect_count": 51,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "self_copy_guard",
       "stack_alignment_array",
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 850
+    "total_lines": 853
   },
   "cross_references": [
     {
@@ -44,7 +43,7 @@
     {
       "addr": "00408bb0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408bb0"
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408bb0"
     },
     {
       "addr": "00484f00",
@@ -69,121 +68,121 @@
     {
       "addr": "00580173",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00580173"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
     }
   ],
   "globals": [
     {
       "addr": "005d5993",
-      "name": "s_s_7headlite_raw_005d5992+1",
-      "type": "undefined4",
+      "name": "s_headlite_raw_005d5993",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d5994",
-      "name": "s_s_7headlite_raw_005d5992+2",
+      "name": "s_headlite_raw_005d5993+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d5995",
-      "name": "s_s_7headlite_raw_005d5992+3",
+      "name": "s_headlite_raw_005d5993+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d5996",
-      "name": "s_s_7headlite_raw_005d5992+4",
+      "name": "s_headlite_raw_005d5993+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d59a7",
-      "name": "DAT_005d59a7",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d59a7",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "005d59af",
-      "name": "DAT_005d59af",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d59af",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005d59b3",
-      "name": "DAT_005d59b3",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005d59b3",
+      "type": "float",
+      "value": "0.04166667"
     },
     {
       "addr": "005fd5f0",
-      "name": "DAT_005fd5f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005fd5f0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "007c6160",
-      "name": "DAT_007c6160",
-      "type": "undefined4",
+      "name": "g_CollisionTexture",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "007c6168",
-      "name": "DAT_007c6168",
-      "type": "undefined1",
+      "name": "g_CollisionTexture.texture_name[0]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c6169",
-      "name": "DAT_007c6169",
-      "type": "undefined1",
+      "name": "g_CollisionTexture.texture_name[1]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c616a",
-      "name": "DAT_007c616a",
-      "type": "undefined1",
+      "name": "g_CollisionTexture.texture_name[2]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c616b",
-      "name": "DAT_007c616b",
-      "type": "undefined1",
+      "name": "g_CollisionTexture.texture_name[3]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00800000",
-      "name": "DAT_00800000",
+      "name": "g_CameraLoadImageReadBuffer+0x2244c",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "02c8af28",
-      "name": "DAT_02c8af28",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02c8af2c",
-      "name": "DAT_02c8af2c",
+      "name": "g_ZeroVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c8af30",
-      "name": "DAT_02c8af30",
+      "name": "g_ZeroVector.z",
       "type": "undefined4",
       "value": null
     }
@@ -257,6 +256,18 @@
     "pcode_op_count": 2687
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00424c80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0042d9f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
     "nocedit.exe": {
       "addr": "00429b40",
       "by": "name",
@@ -718,288 +729,40 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 14,
       "match": "afStackY_10d8",
       "severity": "moderate",
       "text": "float afStackY_10d8 [1003];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_007c6168",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_007c6168;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_007c6160);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_007c6160",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_007c6160);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->u + iVar5) = 0x800000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,local_3c / 5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_1c) = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&local_118,0x267);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 136,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,local_44 / 5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_20) = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + local_20",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 166,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&local_118,local_40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 197,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar5),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 199,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 200,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar5) = 0xffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 212,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 213,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 224,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&local_118,local_40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 233,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 234,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 235,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "DAT_00612560->vertex_buffer_ptr->r = 0xffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 256,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 258,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_00612560;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 259,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 269,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,&local_118,local_40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 275,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&DAT_00612560->vertex_buffer_ptr->u` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
-      "match": "(int)&DAT_00612560->vertex_buffer_ptr->u",
+      "description": "Pointer value `&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->u` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->u",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->u + iVar5) = 0x800000;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->u + iVar5) = 0x800000;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
+      "line": 83,
       "match": "(int)&pCVar2->vertex_buffer_ptr->v",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar5) = 0x800000;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
-      "match": "(int)&DAT_00612560->vertex_buffer_ptr->r",
+      "description": "Pointer value `&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 102,
+      "match": "(int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_1c) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + local_1c) = 0;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 104,
+      "line": 103,
       "match": "(int)&pCVar2->vertex_buffer_ptr->g",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + local_1c) = 0xffff;",
@@ -1007,18 +770,34 @@
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 105,
+      "line": 104,
       "match": "(int)&pCVar2->vertex_buffer_ptr->b",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + local_1c) = 0;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
-      "match": "(int)&DAT_00612560->vertex_buffer_ptr->r",
+      "description": "Pointer value `&local_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(int)&local_f0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_20) = 0;",
+      "text": "local_74[(uint)bVar7 * -2] = *(float *)((int)&local_f0 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)&local_f0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_f0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 141,
+      "match": "(int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + local_20) = 0;",
       "type": "pointer_truncation"
     },
     {
@@ -1038,11 +817,27 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 200,
-      "match": "(int)&DAT_00612560->vertex_buffer_ptr->r",
+      "description": "Pointer value `&local_84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)&local_84",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar5) = 0xffff;",
+      "text": "local_e0[(uint)bVar7 * -2] = *(float *)((int)&local_84 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)&local_84",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 200,
+      "match": "(int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + iVar5) = 0xffff;",
       "type": "pointer_truncation"
     },
     {
@@ -1062,11 +857,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 213,
-      "match": "(int)&DAT_00612560->vertex_buffer_ptr->r",
+      "match": "(int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
       "type": "pointer_truncation"
     },
     {
@@ -1086,16 +881,16 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 259,
-      "match": "(int)&DAT_00612560->vertex_buffer_ptr->r",
+      "description": "Pointer value `&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 260,
+      "match": "(int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 260,
+      "line": 261,
       "match": "(int)&pCVar2->vertex_buffer_ptr->g",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0;",
@@ -1103,7 +898,7 @@
     },
     {
       "description": "Pointer value `&pCVar2->vertex_buffer_ptr->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 261,
+      "line": 262,
       "match": "(int)&pCVar2->vertex_buffer_ptr->b",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0;",
@@ -1111,23 +906,39 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_78)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 111,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_c0 != &local_78) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_e4)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 150,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_c0 != &local_e4) {",
+      "type": "self_copy_guard"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->u + iVar5) = 0x800000;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->u + iVar5) = 0x800000;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 85,
+      "line": 83,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar5) = 0x800000;",
@@ -1135,15 +946,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 103,
+      "line": 102,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_1c) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + local_1c) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 104,
+      "line": 103,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + local_1c) = 0xffff;",
@@ -1151,7 +962,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 105,
+      "line": 104,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + local_1c) = 0;",
@@ -1159,10 +970,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 122,
+      "line": 107,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c",
+      "text": "local_74[(uint)bVar7 * -2] = *(float *)((int)&local_f0 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 110,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_f0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -1170,7 +989,7 @@
       "line": 141,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + local_20) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + local_20) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -1191,18 +1010,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 160,
+      "line": 146,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + local_20",
+      "text": "local_e0[(uint)bVar7 * -2] = *(float *)((int)&local_84 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 197,
+      "line": 149,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar5),",
+      "text": "*(float *)((int)&local_84 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -1210,7 +1029,7 @@
       "line": 200,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar5) = 0xffff;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + iVar5) = 0xffff;",
       "type": "pointer_cast"
     },
     {
@@ -1242,7 +1061,7 @@
       "line": 213,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
       "type": "pointer_cast"
     },
     {
@@ -1263,26 +1082,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 256,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 259,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 260,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->r + iVar3) = 0xffff;",
       "type": "pointer_cast"
     },
     {
@@ -1290,7 +1093,47 @@
       "line": 261,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
+      "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 262,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
       "text": "*(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 121,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 160,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 197,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 257,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     }
   ]

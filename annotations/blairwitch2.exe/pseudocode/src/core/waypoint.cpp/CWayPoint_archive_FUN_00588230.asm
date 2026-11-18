@@ -7,7 +7,7 @@
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_nextWayPoint_005ee10a+1
+;   TerminatedCString s_nextWayPoint_005ee10b
 ;   TerminatedCString s_adjCount_005ee118
 ;   int g_CWayPointClassVersion = 0x2
 ;
@@ -48,7 +48,7 @@ section .text
     POP ESI                             ; 00588265
     POP EBX                             ; 00588266
     RET                                 ; 00588267
-    PUSH 0x5ee10b                       ; 00588268 | s_nextWayPoint_005ee10a+1
+    PUSH 0x5ee10b                       ; 00588268 | = "nextWayPoint"
         ;   Label: LAB_00588268
     LEA EBX,[ESP + 0x4]                 ; 0058826d
     PUSH EBX                            ; 00588271

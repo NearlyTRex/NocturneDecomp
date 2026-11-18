@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_inv.cpp_FUN_004f70e0 at 004f7443
+;   core_inv.cpp_loadAssets_FUN_004f70e0 at 004f7443
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050ccda
 ;
 ; *****************************************************************************

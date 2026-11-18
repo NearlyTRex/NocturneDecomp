@@ -31,7 +31,7 @@ void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
   if ((g_PolygonCount < 1) || (g_VertexCount < 1)) {
     return;
   }
-  _sprintf(local_100,"reduce\\cube%04d.txt",INT_03f6bbe4);
+  _sprintf(local_100,"reduce\\cube%04d.txt",g_CubeReduceFileIndex);
   iVar5 = 0;
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (local_100,(char *)0x0,"wt","..\\shape\\superopt.cpp",9519);
@@ -145,7 +145,7 @@ LAB_005d7a1a:
   iVar6 = shape_superopt_cpp_COptimize_optimize_FUN_005d7290(&local_9c);
   if (iVar6 == 0) {
     shape_design_c_optimizePolygonMesh_FUN_004658e0(1.0,0,-1);
-    INT_03f6bbe4 = INT_03f6bbe4 + 1;
+    g_CubeReduceFileIndex = g_CubeReduceFileIndex + 1;
   }
   else {
     shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(&local_9c);

@@ -10,7 +10,7 @@ void __cdecl core_confzomb_cpp_staticInit_FUN_005a1ae0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CConfederateZombieClassInfo,"$@CConfederateZombie" + 2,
+            (&g_CConfederateZombieClassInfo,"CConfederateZombie",
              core_confzomb_cpp_factoryFuncConfederateZombie_FUN_005a1b10,
              &g_CConfederateZombieClassVersion,1,&g_CBasicEnemyClassInfo);
   return;

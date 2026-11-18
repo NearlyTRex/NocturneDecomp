@@ -12,12 +12,12 @@ CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
   CSimpleParticleSystem *this_ptr_00;
   CBox *pCVar1;
   CDemonActor *pCVar2;
-  CDoc *pCVar3;
-  void *ptr;
+  CDoc *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CDocTypeInfo);
-    FUN_005b7fce(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CDocTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
   this_ptr_00 = (this_ptr->base).base.base.particle_systems;
@@ -27,11 +27,10 @@ CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
   pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70(&(this_ptr->lantern_box).physics_box,0);
   pCVar2 = core_actor_cpp_CDemonActor_dtor_FUN_00408930
                      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);
-  pCVar3 = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ce3d0
-                             ((CHero *)&pCVar2[-0xdf].blood_effect_color,1);
+  ptr = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)&pCVar2[-0xdf].blood_effect_color,1);
   if ((flags & 2) == 0) {
-    return pCVar3;
+    return ptr;
   }
-  FUN_005b7fdc(pCVar3);
-  return pCVar3;
+  debugFreeChecked(ptr);
+  return ptr;
 }

@@ -9,8 +9,8 @@
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00442502
-;   core_game.cpp_FUN_004bb9b0 at 004bbd86
-;   core_game.cpp_FUN_004bbf70 at 004bc32e
+;   core_game.cpp_CGame_loadGame_FUN_004bbf70 at 004bc32e
+;   core_game.cpp_CGame_saveGame_FUN_004bb9b0 at 004bbd86
 ;   support_codec.cpp_CLZWCompress_dtor_FUN_00435550 at 00435562
 ;   support_codec.cpp_CLZWDecompress_dtor_FUN_004354f0 at 00435502
 ;

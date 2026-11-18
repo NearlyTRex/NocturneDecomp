@@ -12,8 +12,8 @@
 ;   TerminatedCString s_Too_many_custom_keys_00588d53
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cc8120
-;   undefined4 DAT_01cc8124
+;   int g_CustomKeyCount
+;   int*[31] g_CustomKeyPointers
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -25,13 +25,13 @@ section .text
     PUSH ESI                            ; 004d2880
         ;   Label: core_menu.cpp_addCustomKeyBinding_FUN_004d2880
     PUSH EDI                            ; 004d2881
-    CMP dword ptr [0x01cc8120],0x1e     ; 004d2882 | DAT_01cc8120
+    CMP dword ptr [0x01cc8120],0x1e     ; 004d2882 | g_CustomKeyCount
     JGE 0x004d28d3                      ; 004d2889
         ;   XREF to: 004d28d3 (CONDITIONAL_JUMP)  ; LAB_004d28d3
-    MOV EAX,[0x01cc8120]                ; 004d288b | DAT_01cc8120
+    MOV EAX,[0x01cc8120]                ; 004d288b | g_CustomKeyCount
         ;   Label: LAB_004d288b
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d2890
-    MOV dword ptr [EAX*0x4 + 0x1cc8124],EDX ; 004d2894 | DAT_01cc8124
+    MOV dword ptr [EAX*0x4 + 0x1cc8124],EDX ; 004d2894 | g_CustomKeyPointers
     MOV EDX,EAX                         ; 004d289b
     SHL EAX,0x2                         ; 004d289d
     ADD EAX,EDX                         ; 004d28a0
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 004d28b1 (CONDITIONAL_JUMP)  ; LAB_004d28b1
     POP EDI                             ; 004d28c9
         ;   Label: LAB_004d28c9
-    INC dword ptr [0x01cc8120]          ; 004d28ca | DAT_01cc8120
+    INC dword ptr [0x01cc8120]          ; 004d28ca | g_CustomKeyCount
     POP EDI                             ; 004d28d0
     POP ESI                             ; 004d28d1
     RET                                 ; 004d28d2

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 20,
+    "complexity_score": 4,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 10
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
   },
   "cross_references": [
     {
@@ -50,8 +48,8 @@
   "globals": [
     {
       "addr": "02c81038",
-      "name": "DAT_02c81038",
-      "type": "undefined4",
+      "name": "g_RecordingDeviceInterface",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -135,12 +133,6 @@
       "by": "name",
       "class": "identical",
       "ratio": 1.0
-    },
-    "nocturne.exe": {
-      "addr": "0052aa40",
-      "by": "body",
-      "class": "identical",
-      "ratio": 1.0
     }
   },
   "stack_frame": {
@@ -151,14 +143,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

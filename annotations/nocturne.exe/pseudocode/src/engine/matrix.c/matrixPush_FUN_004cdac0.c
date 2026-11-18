@@ -6,28 +6,26 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
 
 {
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = g_RelativeX;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5308) = g_RelativeY;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5330) = g_RelativeZ;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5358) = _DAT_01c039dc;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5380) = _DAT_01c039e0;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc53a8) = _DAT_01c039e4;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5178) = g_TransformMatrix.m[0].x;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51a0) = g_TransformMatrix.m[0].y;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51c8) = g_TransformMatrix.m[0].z;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51f0) = g_TransformMatrix.m[1].x;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5218) = g_TransformMatrix.m[1].y;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5240) = g_TransformMatrix.m[1].z;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5268) = g_TransformMatrix.m[2].x;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5290) = g_TransformMatrix.m[2].y;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52b8) = g_TransformMatrix.m[2].z;
-  _DAT_01cc5174 = _DAT_01cc5174 + 1;
-  if (_DAT_01cc5174 < 10) {
+  g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
+  g_MatrixStack_RelY[g_MatrixStackIndex] = g_RelativeY;
+  g_MatrixStack_RelZ[g_MatrixStackIndex] = g_RelativeZ;
+  g_MatrixStack_Unk1[g_MatrixStackIndex] = g_LightDirectionX;
+  g_MatrixStack_Unk2[g_MatrixStackIndex] = g_LightDirectionY;
+  g_MatrixStack_Unk3[g_MatrixStackIndex] = g_LightDirectionZ;
+  g_MatrixStack_M00[g_MatrixStackIndex] = g_TransformMatrix.m[0].x;
+  g_MatrixStack_M01[g_MatrixStackIndex] = g_TransformMatrix.m[0].y;
+  g_MatrixStack_M02[g_MatrixStackIndex] = g_TransformMatrix.m[0].z;
+  g_MatrixStack_M10[g_MatrixStackIndex] = g_TransformMatrix.m[1].x;
+  g_MatrixStack_M11[g_MatrixStackIndex] = g_TransformMatrix.m[1].y;
+  g_MatrixStack_M12[g_MatrixStackIndex] = g_TransformMatrix.m[1].z;
+  g_MatrixStack_M20[g_MatrixStackIndex] = g_TransformMatrix.m[2].x;
+  g_MatrixStack_M21[g_MatrixStackIndex] = g_TransformMatrix.m[2].y;
+  g_MatrixStack_M22[g_MatrixStackIndex] = g_TransformMatrix.m[2].z;
+  g_MatrixStackIndex = g_MatrixStackIndex + 1;
+  if (g_MatrixStackIndex < 10) {
     return;
   }
   g_CurrentFilename = "..\\engine\\matrix.c";

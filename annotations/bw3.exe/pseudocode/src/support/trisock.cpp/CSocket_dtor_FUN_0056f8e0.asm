@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_dtor_FUN_00503e00 at 00503e0c
-;   support_trisock.cpp_FUN_0056fef0 at 00570087
+;   support_trisock.cpp_httpConnectToUrl_FUN_0056fef0 at 00570087
 ;
 ; Called Functions:
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_0056fc30

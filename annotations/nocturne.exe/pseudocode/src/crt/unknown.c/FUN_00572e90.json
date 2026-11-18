@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 60,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 5,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
+      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -46,9 +47,9 @@
   "globals": [
     {
       "addr": "005c2170",
-      "name": "PTR_crt_unknown.c_FUN_00572e60_005c2170",
-      "type": "undefined1*",
-      "value": "00572e60"
+      "name": "g_CHAR_ARRAY_005c2170",
+      "type": "char[145]",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -132,11 +133,19 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 5,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(*(code *)g_CHAR_ARRAY_005c2170._0_4_)(param_1);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 5,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_00572e60_005c2170)(param_1);",
+      "text": "(*(code *)g_CHAR_ARRAY_005c2170._0_4_)(param_1);",
       "type": "unresolved_funcptr"
     },
     {
@@ -144,7 +153,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_00572e60_005c2170)(param_1);",
+      "text": "(*(code *)g_CHAR_ARRAY_005c2170._0_4_)(param_1);",
       "type": "unnamed_param"
     },
     {

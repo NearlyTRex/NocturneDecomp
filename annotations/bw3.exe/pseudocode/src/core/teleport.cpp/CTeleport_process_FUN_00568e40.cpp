@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_teleport_cpp_CTeleport_process_FUN_00568e40(CTeleport *this_ptr,float delta_time)
 
 {
@@ -25,17 +23,19 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_00568e40(CTeleport *this_pt
   float fStack_38;
   float fStack_24;
   float fStack_1c;
-  float fStack_18;
-  float fStack_14;
+  CVector3f CStack_18;
   
   bVar4 = 0;
   if (this_ptr->destination != (CDemonActor *)0x0) {
-    core_actor_cpp_FUN_00408bf0(this_ptr,*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x20);
-    fStack_24 = fStack_18;
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408bf0
+              (&this_ptr->base,
+               &(g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->base).base.location.position,&CStack_18
+              );
+    fStack_24 = CStack_18.x;
     *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffffec + (uint)bVar4 * -8);
+         *(uint *)((int)&CStack_18 + (uint)bVar4 * -8 + 4);
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+         *(uint *)((int)&CStack_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffffac);
     puVar2 = (uint *)&stack0xffffffcc;
     puVar3 = (uint *)&stack0xffffffac;
@@ -44,10 +44,10 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_00568e40(CTeleport *this_pt
       puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    if ((((fStack_4c <= fStack_1c) && (fStack_48 <= fStack_18)) && (fStack_44 <= fStack_14)) &&
-       (((fStack_1c <= fStack_40 && (fStack_18 <= fStack_3c)) && (fStack_14 <= fStack_38)))) {
+    if ((((fStack_4c <= fStack_1c) && (fStack_48 <= CStack_18.x)) && (fStack_44 <= CStack_18.y)) &&
+       (((fStack_1c <= fStack_40 && (CStack_18.x <= fStack_3c)) && (CStack_18.y <= fStack_38)))) {
       core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0
-                (0x01D81080,&this_ptr->destination->location);
+                (g_CDemonMission_PTR_00600530,&this_ptr->destination->location);
       return;
     }
   }

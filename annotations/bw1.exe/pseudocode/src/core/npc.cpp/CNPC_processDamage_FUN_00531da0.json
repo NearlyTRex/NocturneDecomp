@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 72,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 130
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -54,14 +52,14 @@
   "globals": [
     {
       "addr": "005ec7dc",
-      "name": "DAT_005ec7dc",
-      "type": "undefined4",
+      "name": "s_DIE_005ec7dc",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ec7e0",
-      "name": "DAT_005ec7e0",
-      "type": "undefined4",
+      "name": "s_HURT_005ec7e0",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -72,8 +70,8 @@
     },
     {
       "addr": "005ec7ec",
-      "name": "DAT_005ec7ec",
-      "type": "undefined4",
+      "name": "s_SHOT_005ec7ec",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -163,30 +161,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005ec7dc",
-      "severity": "mild",
-      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00531cc0((CNPC *)this_ptr_00,&DAT_005ec7dc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005ec7e0",
-      "severity": "mild",
-      "text": "((CNPC *)this_ptr_00,&DAT_005ec7e0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005ec7ec",
-      "severity": "mild",
-      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00531cc0((CNPC *)this_ptr_00,&DAT_005ec7ec);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

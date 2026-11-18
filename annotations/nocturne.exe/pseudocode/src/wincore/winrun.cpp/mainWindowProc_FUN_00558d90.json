@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 377,
-    "complexity_score": 381,
+    "complexity_score": 160,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 21,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 161,
-    "suspect_count": 21,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 538
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 160,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 537
   },
   "cross_references": [
     {
@@ -125,15 +122,15 @@
     },
     {
       "addr": "005b7630",
-      "name": "INT_005b7630",
+      "name": "g_InputKeyMask",
       "type": "int",
       "value": "0x7f"
     },
     {
       "addr": "005c1660",
-      "name": "DAT_005c1660",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowActive",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "005c1668",
@@ -143,79 +140,79 @@
     },
     {
       "addr": "01bd1d8c",
-      "name": "DAT_01bd1d8c",
-      "type": "undefined4",
+      "name": "g_MouseX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bd1d90",
-      "name": "DAT_01bd1d90",
-      "type": "undefined4",
+      "name": "g_MouseY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bd1d94",
-      "name": "DAT_01bd1d94",
-      "type": "undefined4",
+      "name": "g_MouseButtonFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c02598",
-      "name": "DAT_01c02598",
-      "type": "undefined4",
+      "name": "g_KeyboardState",
+      "type": "char[4952]",
       "value": null
     },
     {
       "addr": "01c02798",
-      "name": "DAT_01c02798",
+      "name": "g_KeyboardState+0x200",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c02799",
-      "name": "DAT_01c02799",
+      "name": "g_KeyboardState+0x201",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c027a4",
-      "name": "DAT_01c027a4",
+      "name": "g_KeyboardState+0x20c",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02de2098",
-      "name": "g_HWND_02de2098",
+      "name": "g_MainWindowHandle",
       "type": "HWND",
       "value": null
     },
     {
       "addr": "02de20a0",
-      "name": "DAT_02de20a0",
-      "type": "undefined4",
+      "name": "g_InputDisabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de20a4",
-      "name": "DAT_02de20a4",
-      "type": "undefined4",
+      "name": "g_FocusRegained",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de28b0",
-      "name": "DAT_02de28b0",
+      "name": "g_MessageFlags[512]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02de28b4",
-      "name": "DAT_02de28b4",
+      "name": "g_MessageFlags[513]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02de28e0",
-      "name": "DAT_02de28e0",
+      "name": "g_MessageFlags[524]",
       "type": "undefined4",
       "value": null
     }
@@ -263,6 +260,24 @@
     "pcode_op_count": 1235
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058ed90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0808
+    },
+    "bw1.exe": {
+      "addr": "005b27d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1111
+    },
+    "bw3.exe": {
+      "addr": "00580a50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1111
+    },
     "nocedit.exe": {
       "addr": "005f3150",
       "by": "name",
@@ -307,174 +322,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005c1660",
-      "severity": "mild",
-      "text": "WVar1 = DAT_005c1660;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_01c02798",
-      "severity": "mild",
-      "text": "DAT_01c02798 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_01c02799",
-      "severity": "mild",
-      "text": "DAT_01c02799 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 | 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 | 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 & 0xfd;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 & 0xfd;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 | 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 | 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_01c027a4",
-      "severity": "mild",
-      "text": "DAT_01c027a4 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 & 0xfb;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_01bd1d94",
-      "severity": "mild",
-      "text": "DAT_01bd1d94 = DAT_01bd1d94 & 0xfb;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_005c1660",
-      "severity": "mild",
-      "text": "INT_005c1668 = DAT_005c1660;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_005c1660",
-      "severity": "mild",
-      "text": "DAT_005c1660 = wParam;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_005c1660",
-      "severity": "mild",
-      "text": "if (DAT_005c1660 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 143,
-      "match": "DAT_01c02598",
-      "severity": "mild",
-      "text": "(&DAT_01c02598)[uVar3] = 1;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

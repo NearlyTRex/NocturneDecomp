@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(SMRGLHeaderPrimitive *prim)
 
 {
@@ -17,7 +15,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp4
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar1 != 0) {
-    if (_DAT_01c038f4 == 0) {
+    if (g_INT_01c038f4 == 0) {
       if (g_MMXSupported == 0) {
         if (g_BitsPerPixel == 0x20) {
           g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
@@ -52,17 +50,18 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp4
       g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FOG_COLOR | RENDER_SOLID_ALPHA_BLEND | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     }
     g_VertexPreprocessMode = 1;
-    piVar3 = &DAT_006b029c;
+    piVar3 = g_ProcessedVertexIndices;
     pSVar2 = prim + 1;
     for (iVar1 = 0; iVar1 < (prim->base).count * 3; iVar1 = iVar1 + 3) {
-      *piVar3 = (pSVar2->base).type + DAT_006b0264;
-      (&DAT_005c502c)[((pSVar2->base).type + DAT_006b0264) * 0xc] = (pSVar2->base).count;
+      *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
+      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_ProcessedVertexOffset].u =
+           (pSVar2->base).count;
       piVar3 = piVar3 + 1;
-      *(UIntegerFloat *)(&DAT_005c5030 + ((pSVar2->base).type + DAT_006b0264) * 0x30) =
-           (pSVar2->surface_normal).A;
+      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_ProcessedVertexOffset].v =
+           (int)(pSVar2->surface_normal).A;
       pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,&DAT_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_ProcessedVertexIndices);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

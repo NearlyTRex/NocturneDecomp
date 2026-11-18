@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flashlit_kfm_005816c2
-;   undefined4 DAT_0059d8ec
+;   float g_FLOAT_0059d8ec = 8
 ;   CWeapon_full_vtable g_CFlashlightVTable
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV dword ptr [EBX + 0x2d8],0x5     ; 0048ed9b
     MOV dword ptr [EBX + 0x2dc],0x0     ; 0048eda5
     MOV dword ptr [EBX + 0x2e0],0x0     ; 0048edaf
-    FLD float ptr [0x0059d8ec]          ; 0048edb9 | DAT_0059d8ec
+    FLD float ptr [0x0059d8ec]          ; 0048edb9 | g_FLOAT_0059d8ec
     MOV dword ptr [EBX + 0x2e4],0x0     ; 0048edbf
     ADD ESP,0x8                         ; 0048edc9
     MOV dword ptr [EBX + 0x560],0x0     ; 0048edcc

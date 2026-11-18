@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_particle_cpp_CParticle_render_FUN_00511370(CParticle *this_ptr)
 
 {
-  _DAT_01d046a0 = "..\\core\\particle.cpp";
-  _DAT_01d046a4 = 200;
-  core_main_c_FUN_004e4500("Base class shouldn't render");
+  g_CHAR_PTR_01d046a0 = "..\\core\\particle.cpp";
+  g_INT_01d046a4 = 200;
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Base class shouldn't render");
   return;
 }

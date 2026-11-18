@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 61,
+    "complexity_score": 10,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 37
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
   },
   "cross_references": [
     {
@@ -31,7 +28,7 @@
     {
       "addr": "0047ff50",
       "from_addr": "0047ff83",
-      "name": "shape_edittool.cpp_FUN_0047ff50",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_0047ff50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,56 +48,56 @@
   "globals": [
     {
       "addr": "0070ca88",
-      "name": "DAT_0070ca88",
-      "type": "undefined4",
+      "name": "g_StoredX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0070ca8c",
-      "name": "DAT_0070ca8c",
-      "type": "undefined4",
+      "name": "g_StoredY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0070ca90",
-      "name": "DAT_0070ca90",
-      "type": "undefined4",
+      "name": "g_StoredZ",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b6c",
-      "name": "DAT_01c38b6c",
-      "type": "undefined4",
+      "name": "g_RelativeX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b70",
-      "name": "DAT_01c38b70",
-      "type": "undefined4",
+      "name": "g_RelativeY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b74",
-      "name": "DAT_01c38b74",
-      "type": "undefined4",
+      "name": "g_RelativeZ",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b78",
-      "name": "DAT_01c38b78",
-      "type": "undefined4",
+      "name": "g_CameraOriginX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b7c",
-      "name": "DAT_01c38b7c",
-      "type": "undefined4",
+      "name": "g_CameraOriginY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b80",
-      "name": "DAT_01c38b80",
-      "type": "undefined4",
+      "name": "g_CameraOriginZ",
+      "type": "int",
       "value": null
     }
   ],
@@ -132,7 +129,7 @@
       {
         "call_addr": "0047ff83",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047ff50",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_0047ff50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,40 +207,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_0070ca88",
-      "severity": "mild",
-      "text": "DAT_0070ca88 = (block->point).x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0070ca8c",
-      "severity": "mild",
-      "text": "DAT_0070ca8c = (block->point).y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0070ca90",
-      "severity": "mild",
-      "text": "DAT_0070ca90 = (block->point).z;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

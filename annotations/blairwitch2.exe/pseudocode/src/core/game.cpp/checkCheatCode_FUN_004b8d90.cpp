@@ -27,7 +27,7 @@ int __cdecl core_game_cpp_checkCheatCode_FUN_004b8d90(char *cheat_string)
   } while (cVar1 != '\0');
   iVar6 = 0;
   for (iVar5 = ~uVar4 - 1; 0 < iVar5; iVar5 = iVar5 + -1) {
-    bVar2 = *(byte *)(iVar5 + 0x1cb80f7);
+    bVar2 = *(byte *)((int)&g_HelpCharWidth + iVar5 + 3);
     uVar3 = toupper((uint)(byte)*cheat_string);
     if (bVar2 == uVar3) {
       iVar6 = iVar6 + 1;
@@ -35,7 +35,7 @@ int __cdecl core_game_cpp_checkCheatCode_FUN_004b8d90(char *cheat_string)
     cheat_string = cheat_string + 1;
   }
   if (iVar6 == ~uVar4 - 1) {
-    DAT_01cb80f8 = 0;
+    g_BYTE_01cb80f8 = 0;
     return 1;
   }
   return 0;

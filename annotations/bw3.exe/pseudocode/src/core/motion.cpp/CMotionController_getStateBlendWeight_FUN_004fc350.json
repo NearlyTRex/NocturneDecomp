@@ -1,0 +1,360 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 23,
+    "cross_reference_count": 15,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "004286c0",
+      "from_addr": "004286d5",
+      "name": "core_carved.cpp_CCarved_canBeAttracted_FUN_004286c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004331a0",
+      "from_addr": "004331fc",
+      "name": "core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458530",
+      "from_addr": "00458545",
+      "name": "core_demnfolk.cpp_CDemnfolk_canBeAttracted_FUN_00458530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c8dd0",
+      "from_addr": "004c8def",
+      "name": "core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004c8dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6eb0",
+      "from_addr": "004c6f29",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2c20",
+      "from_addr": "004d2c74",
+      "name": "core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005260b0",
+      "from_addr": "005260db",
+      "name": "core_prye.cpp_CPrye_canDoHeroAction_FUN_005260b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527110",
+      "from_addr": "00527122",
+      "name": "core_prye.cpp_CPrye_isPerformingAction_FUN_00527110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051e6d0",
+      "from_addr": "0051e775",
+      "name": "core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00518cd0",
+      "from_addr": "005190ba",
+      "name": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051b550",
+      "from_addr": "0051b8ad",
+      "name": "core_prye.cpp_CPrye_processMotionEvents_FUN_0051b550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521880",
+      "from_addr": "005218e8",
+      "name": "core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051c1c0",
+      "from_addr": "0051c1e4",
+      "name": "core_prye.cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051e380",
+      "from_addr": "0051e3b0",
+      "name": "core_prye.cpp_CPrye_updateTurnBlending_FUN_0051e380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058c1e0",
+      "from_addr": "0058c1f5",
+      "name": "core_zombie.cpp_CZombie_canBeAttracted_FUN_0058c1e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fc350",
+    "address_range": [
+      [
+        "004fc350",
+        "004fc3ef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004fc350",
+    "signature": "float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004fc350(CMotionController *this_ptr,int desired_state_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "00527122",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_isPerformingAction_FUN_00527110",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527149",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_isPerformingAction_FUN_00527110",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c6f29",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005190ba",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519123",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519184",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519375",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519625",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519f26",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519f4c",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_processFrame_FUN_00518cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.2407407407407405,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CBRANCH": 4,
+      "COPY": 94,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 31,
+      "INT_AND": 63,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 10,
+      "INT_LESS": 4,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 20,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 9,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 22,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 391
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005038a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9643
+    },
+    "bw1.exe": {
+      "addr": "00524a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052dd20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8485
+    },
+    "nocturne.exe": {
+      "addr": "004e18d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8485
+    }
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "desired_state_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004fc357",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

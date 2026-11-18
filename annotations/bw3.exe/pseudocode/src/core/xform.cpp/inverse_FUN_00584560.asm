@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_inverse_FUN_00584560(CMatrix3x4f *param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_00584560(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68
@@ -33,16 +35,16 @@
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043d830 at 0043d880
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0 at 004f44d1
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c3bf
-;   core_xform.cpp_FUN_00584490 at 005844a4
+;   core_xform.cpp_invertAndGetTranslation_FUN_00584490 at 005844a4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005d8147
 ;   TerminatedCString s_inverse_Singular_matrix_005d8159
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_xform.cpp_determinant_FUN_00584510
 ;
 ; *****************************************************************************
@@ -238,10 +240,10 @@ section .text
         ;   Label: LAB_00584762
     MOV ESI,0x23d                       ; 00584767
     PUSH 0x5d8159                       ; 0058476c | = "inverse() - Singular matrix"
-    MOV dword ptr [0x01d71de0],ECX      ; 00584771 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00584777 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0058477d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 00584771 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00584777 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0058477d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00584782
     JMP 0x00584593                      ; 00584785
         ;   XREF to: 00584593 (UNCONDITIONAL_JUMP)  ; LAB_00584593

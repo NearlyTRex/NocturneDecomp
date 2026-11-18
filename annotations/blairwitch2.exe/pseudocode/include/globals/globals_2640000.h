@@ -4,10 +4,31 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/dsound.h"
+#include "system/ksproxy.h"
+#include "system/mmsystem.h"
+#include "system/windef.h"
+#include "system/winnt.h"
+#include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDirectSoundDevice.h"
+#include "types/classes/CLever.h"
+#include "types/classes/CSfxOptions.h"
 #include "types/classes/CSfxSample.h"
+#include "types/classes/CSound.h"
+#include "types/classes/CSoundDevice.h"
+#include "types/classes/CSpotView.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CTextureList.h"
+#include "types/classes/CVector3d.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWavInDevice.h"
+#include "types/classes/CWavOutDevice.h"
+#include "types/structs/SDirectSoundDeviceInfo.h"
+#include "types/structs/SRecordingDeviceInfo.h"
+#include "types/structs/SReverbSettings.h"
+#include "types/structs/SSoundDeviceInfo.h"
+#include "types/structs/STrainNoise.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2640000
@@ -21,15 +42,323 @@ extern CDemonActorType g_CStrangerClassInfo;
 extern CDemonActorType g_CSuccubusClassInfo;
 extern CDemonActorType g_CSvetlanaClassInfo;
 extern CDemonActorType g_CBassPlayerClassInfo;
+extern CDemonActorType g_CDemonActorType_0264bffc;
 extern CDemonActorType g_CTeleportDestClassInfo;
+extern CDemonActorType g_CDemonActorType_0264c074;
 extern CDemonActorType g_CTentacleClassInfo;
+
+// CDirectSoundDevice
+extern CDirectSoundDevice g_CDirectSoundDeviceInstance;
+
+// CLever*
+extern CLever* g_CLever_PTR_0264be0c;
+
+// CSfxOptions[8]
+extern CSfxOptions g_CSfxOptions_ARRAY_02641620[8];
 
 // CSfxSample[64]
 extern CSfxSample g_SfxSamples[64];
+
+// CSound
+extern CSound g_CSoundInstance;
+
+// CSoundDevice*
+extern CSoundDevice* g_CSoundDevicePtr;
+extern CSoundDevice* g_RecordingDeviceInterface;
+
+// CSpotView
+extern CSpotView g_CSpotView_0264bd44;
 
 // CStrList
 extern CStrList g_CStrListInstance;
 
 // CTextureList
 extern CTextureList g_CTextureListInstance;
+
+// CVector3d
+extern CVector3d g_CVector3d_02648458;
+
+// CVector3f
+extern CVector3f g_CVector3f_0264bb84;
+extern CVector3f g_CVector3f_0264be00;
+extern CVector3f g_StrangerWeaponEulerPlusX;
+extern CVector3f g_StrangerWeaponEulerMinusX;
+
+// CWavInDevice
+extern CWavInDevice g_CWavInDeviceInstance;
+
+// CWavOutDevice
+extern CWavOutDevice g_CWavOutDeviceInstance;
+
+// HANDLE
+extern HANDLE g_SoundMutex;
+
+// HGLOBAL[20]
+extern HGLOBAL g_WaveInHeaderHandles[20];
+extern HGLOBAL g_WaveInBufferHandles[20];
+
+// HGLOBAL[8]
+extern HGLOBAL g_WaveOutHeaderHandles[8];
+extern HGLOBAL g_WaveOutBufferHandles[8];
+
+// HMODULE
+extern HMODULE g_RendererDLLHandle;
+
+// HWND
+extern HWND g_StoredWindowHandle;
+
+// IDirectSound*
+extern IDirectSound* g_DirectSound;
+
+// IDirectSound3DListener*
+extern IDirectSound3DListener* g_DirectSound3DListener;
+
+// IDirectSoundBuffer*
+extern IDirectSoundBuffer* g_DirectSoundPrimaryBuffer;
+extern IDirectSoundBuffer* g_DirectSoundSecondaryBuffer;
+
+// IDirectSoundBuffer*[25]
+extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[25];
+
+// IDirectSoundBuffer*[31]
+extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[31];
+
+// IKsPropertySet*
+extern IKsPropertySet* g_DirectSoundPropertySet;
+
+// LPVOID[8]
+extern LPVOID g_WaveOutBuffers[8];
+
+// LPWAVEHDR[20]
+extern LPWAVEHDR g_WaveInHeaders[20];
+
+// LPWAVEHDR[8]
+extern LPWAVEHDR g_WaveOutHeaders[8];
+
+// SDirectSoundDeviceInfo[8]
+extern SDirectSoundDeviceInfo g_DirectSoundDevices[8];
+
+// SRecordingDeviceInfo[8]
+extern SRecordingDeviceInfo g_RecordingDevices[8];
+
+// SReverbSettings
+extern SReverbSettings g_CachedReverb;
+extern SReverbSettings g_SoundReverb;
+
+// SSoundDeviceInfo[8]
+extern SSoundDeviceInfo g_SoundDevices[8];
+
+// STrainNoise[10]
+extern STrainNoise g_TrainNoiseArray[10];
+
+// byte
+extern byte g_BYTE_02649024;
+extern byte g_BYTE_02649027;
+extern byte g_BYTE_0264be10;
+
+// char[40]
+extern char g_SoundAmbientSoundName[40];
+
+// char[40][40]
+extern char g_SoundMatchedFilenames[40][40];
+
+// double
+extern double g_DOUBLE_02648428;
+extern double g_DOUBLE_02648430;
+extern double g_DOUBLE_02648438;
+extern double g_DOUBLE_02648440;
+extern double g_DOUBLE_02648448;
+extern double g_DOUBLE_02648450;
+
+// double[8]
+extern double g_VirtualSpeakerXPositions[8];
+extern double g_VirtualSpeakerYPositions[8];
+extern double g_VirtualSpeakerZPositions[8];
+
+// float
+extern float g_FLOAT_0264900c;
+extern float g_FLOAT_0264b29c;
+extern float g_FLOAT_0264b2a0;
+extern float g_FLOAT_0264b2a4;
+extern float g_FLOAT_0264b2a8;
+extern float g_FLOAT_0264b2ac;
+extern float g_FLOAT_0264b2b0;
+extern float g_CurrentVolumeMultiplier;
+extern float g_TargetVolumeMultiplier;
+extern float g_VolumeFadeTimeRemaining;
+extern float g_TrainNoiseCooldown;
+extern float g_FLOAT_0264bd80;
+extern float g_FLOAT_0264bd84;
+extern float g_FLOAT_0264bec8;
+
+// float*
+extern float* g_TertiaryMixBuffer;
+extern float* g_PrimaryMixBuffer;
+extern float* g_SecondaryMixBuffer;
+
+// float*[8]
+extern float* g_ChannelTertiaryBuffers[8];
+extern float* g_ChannelPrimaryBuffers[8];
+extern float* g_ChannelSecondaryBuffersA[8];
+extern float* g_ChannelSecondaryBuffersB[8];
+
+// float[32]
+extern float g_SfxChannelVolumes[32];
+
+// int
+extern int g_SfxLastSlot;
+extern int g_LastSampleAccessIndex;
+extern int g_INT_026484b8;
+extern int g_INT_026484bc;
+extern int g_SoundBusyFlag;
+extern int g_HasHardware3DSound;
+extern int g_SoundMuted;
+extern int g_MixBufferReadIndex;
+extern int g_MixBufferWriteIndex;
+extern int g_MixBufferSize;
+extern int g_NumMixBuffers;
+extern int g_MixBufferCount;
+extern int g_AudioThreadRunning;
+extern int g_AudioThreadShutdownFlag;
+extern int g_SoundLockCount;
+extern int g_SoundStartTime;
+extern int isRecordingStarted;
+extern int g_RecordingSamplesSigned;
+extern int g_StreamBitsPerSample;
+extern int g_StreamSampleRate;
+extern int g_StreamChannelCount;
+extern int g_StreamSamplesPerBlock;
+extern int g_StreamBlockSizeBytes;
+extern int g_StreamBlockCount;
+extern int g_StreamCurrentBlock;
+extern int g_INT_0264ac0c;
+extern int g_WaveOutHandle;
+extern int g_WaveOutBitsPerSample;
+extern int g_WaveOutChannels;
+extern int g_WaveOutSampleRate;
+extern int g_WaveOutBufferSize;
+extern int g_WaveOutNumBuffers;
+extern int g_WaveInHandle;
+extern int g_WaveInBitsPerSample;
+extern int g_WaveInChannels;
+extern int g_WaveInSampleRate;
+extern int g_WaveInIs8Bit;
+extern int g_WaveInBufferSizeSamples;
+extern int g_WaveInNumBuffers;
+extern int g_WaveInRequestedBitsPerSample;
+extern int g_WaveInRequestedChannels;
+extern int g_WaveInRequestedSampleRate;
+extern int g_WaveInStereoRequested;
+extern int g_WaveInCurrentBufferIndex;
+extern int g_WaveInCurrentSampleOffset;
+extern int g_SoundMatchCount;
+extern int g_SoundAmbientSfxHandle;
+extern int g_SoundAudioInitialized;
+extern int g_TrainLastCameraIndex;
+extern int g_INT_0264bba0;
+extern int g_INT_0264bba4;
+extern int g_INT_0264bbac;
+extern int g_FrameBufferTestResult;
+extern int g_INT_0264bbc4;
+extern int g_LoadedExternalDLLRenderer;
+extern int g_FogColorRed;
+extern int g_FogColorGreen;
+extern int g_FogColorBlue;
+extern int g_ExternalBitsPerPixel;
+extern int g_INT_0264bcf8;
+extern int g_INT_0264bcfc;
+extern int g_ExternalFrameLocked;
+extern int g_INT_0264bd04;
+extern int g_INT_0264becc;
+extern int g_INT_0264bee0;
+extern int g_INT_0264bee4;
+extern int g_INT_0264bef0;
+extern int g_INT_0264bef8;
+
+// int[19]
+extern int g_SvetlanaBoneIndices[19];
+
+// int[20]
+extern int g_WaveInBuffers[20];
+
+// int[23]
+extern int g_StrangerIndices[23];
+
+// int[32]
+extern int g_SfxChannelEnabled[32];
+
+// int[4]
+extern int g_TentacleIndices[4];
+
+// uint
+extern uint g_WindSoundHandle;
+extern uint g_UINT_0264b298;
+extern uint g_TrainRailNoiseHandle;
+extern uint g_TrainExteriorAmbientHandle;
+
+// void*
+extern void* g_APIDLL_init;
+extern void* g_PTR_0264bbbc;
+extern void* g_PTR_0264bbc0;
+extern void* g_PTR_0264bbc8;
+extern void* g_PTR_0264bbcc;
+extern void* g_PTR_0264bbd0;
+extern void* g_PTR_0264bbd4;
+extern void* g_PTR_0264bbd8;
+extern void* g_PTR_0264bbdc;
+extern void* g_PTR_0264bbe0;
+extern void* g_PTR_0264bbe4;
+extern void* g_PTR_0264bbe8;
+extern void* g_PTR_0264bbec;
+extern void* g_PTR_0264bbf0;
+extern void* g_PTR_0264bbf4;
+extern void* g_PTR_0264bbf8;
+extern void* g_PTR_0264bbfc;
+extern void* g_PTR_0264bc00;
+extern void* g_PTR_0264bc04;
+extern void* g_PTR_0264bc08;
+extern void* g_PTR_0264bc0c;
+extern void* g_PTR_0264bc10;
+extern void* g_PTR_0264bc14;
+extern void* g_PTR_0264bc18;
+extern void* g_PTR_0264bc1c;
+extern void* g_PTR_0264bc20;
+extern void* g_PTR_0264bc24;
+extern void* g_PTR_0264bc28;
+extern void* g_PTR_0264bc2c;
+extern void* g_PTR_0264bc38;
+extern void* g_PTR_0264bc3c;
+extern void* g_PTR_0264bc40;
+extern void* g_PTR_0264bc44;
+extern void* g_PTR_0264bc48;
+extern void* g_PTR_0264bc4c;
+extern void* g_PTR_0264bc50;
+extern void* g_PTR_0264bc54;
+extern void* g_PTR_0264bc58;
+extern void* g_PTR_0264bc5c;
+extern void* g_PTR_0264bc60;
+extern void* g_APIDLL_getDisplayContext;
+extern void* g_PTR_0264bc70;
+extern void* g_PTR_0264bc74;
+extern void* g_PTR_0264bc78;
+extern void* g_PTR_0264bc7c;
+extern void* g_PTR_0264bc80;
+extern void* g_APIDLL_lockHoldBuffer;
+extern void* g_APIDLL_unlockHoldBuffer;
+extern void* g_APIDLL_lockTexture;
+extern void* g_APIDLL_unlockTexture;
+extern void* g_APIDLL_getTextureInfo;
+extern void* g_APIDLL_setVideoModeX;
+extern void* g_APIDLL_restoreVideoModeX;
+extern void* g_APIDLL_lockFrameX;
+extern void* g_APIDLL_setLightConstants;
+extern void* g_APIDLL_setLightVector;
+extern void* g_APIDLL_setAmbientLight;
+extern void* g_APIDLL_setTransform;
+extern void* g_APIDLL_getTextureHandle;
+extern void* g_APIDLL_selectTextureByHandle;
+extern void* g_APIDLL_enableCulling;
+extern void* g_APIDLL_enableClipping;
+extern void* g_APIDLL_setTextureClamp;
+extern void* g_APIDLL_setFog;
 

@@ -11,7 +11,7 @@ int __cdecl core_carved_cpp_CCarved_isGrabbable_FUN_0042bd50(CCarved *this_ptr,C
 {
   int iVar1;
   
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(grabber,"?CTentacle" + 1);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(grabber,"CTentacle");
   if (iVar1 != 0) {
     return 1;
   }

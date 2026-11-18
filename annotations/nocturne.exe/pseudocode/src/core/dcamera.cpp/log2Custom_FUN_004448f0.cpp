@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 double __cdecl core_dcamera_cpp_log2Custom_FUN_004448f0(double val)
 
 {
-  return val * 0.3010299956639812 * _DAT_0057b96b;
+  return val * 0.3010299956639812 * 3.3219280948900001;
 }

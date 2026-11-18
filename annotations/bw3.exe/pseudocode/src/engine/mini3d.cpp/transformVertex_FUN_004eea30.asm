@@ -13,11 +13,11 @@
 ;   engine_mini3d.cpp_polyList_FUN_004edea0 at 004ee056
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d76c5c
-;   undefined4 DAT_01d76c60
-;   undefined4 DAT_01d76c64
-;   undefined4 DAT_01d76c68
-;   undefined4 DAT_01d76cfc
+;   float g_FLOAT_01d76c5c
+;   float g_FLOAT_01d76c60
+;   float g_FLOAT_01d76c64
+;   float g_FLOAT_01d76c68
+;   void* g_PTR_01d76cfc
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
         ;   Label: engine_mini3d.cpp_transformVertex_FUN_004eea30
     MOV ECX,dword ptr [ESP + 0x10]      ; 004eea33
     MOV EDX,dword ptr [ESP + 0x14]      ; 004eea37
-    MOV EAX,[0x01d76cfc]                ; 004eea3b | DAT_01d76cfc
+    MOV EAX,[0x01d76cfc]                ; 004eea3b | g_PTR_01d76cfc
     FLD float ptr [ECX + 0x4]           ; 004eea40
     FSUB float ptr [EAX + 0x28]         ; 004eea43
     FLD ST0                             ; 004eea46
@@ -117,16 +117,16 @@ section .text
     FLD1                                ; 004eeaf3
     FDIVRP                              ; 004eeaf5
     FLD float ptr [EDX]                 ; 004eeaf7
-    FMUL float ptr [0x01d76c5c]         ; 004eeaf9 | DAT_01d76c5c
+    FMUL float ptr [0x01d76c5c]         ; 004eeaf9 | g_FLOAT_01d76c5c
     FLD float ptr [EDX + 0x4]           ; 004eeaff
-    FMUL float ptr [0x01d76c60]         ; 004eeb02 | DAT_01d76c60
+    FMUL float ptr [0x01d76c60]         ; 004eeb02 | g_FLOAT_01d76c60
     FXCH ST2                            ; 004eeb08
     FSTP float ptr [EDX + 0xc]          ; 004eeb0a
     FMUL float ptr [EDX + 0xc]          ; 004eeb0d
     FXCH                                ; 004eeb10
     FMUL float ptr [EDX + 0xc]          ; 004eeb12
-    FLD float ptr [0x01d76c68]          ; 004eeb15 | DAT_01d76c68
-    FLD float ptr [0x01d76c64]          ; 004eeb1b | DAT_01d76c64
+    FLD float ptr [0x01d76c68]          ; 004eeb15 | g_FLOAT_01d76c68
+    FLD float ptr [0x01d76c64]          ; 004eeb1b | g_FLOAT_01d76c64
     FADDP ST3,ST0                       ; 004eeb21
     FADDP                               ; 004eeb23
     FXCH                                ; 004eeb25

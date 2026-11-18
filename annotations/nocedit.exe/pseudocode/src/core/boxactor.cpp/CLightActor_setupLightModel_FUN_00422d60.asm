@@ -33,8 +33,8 @@
 ;   TerminatedCString s_lantern_d_raw_0061696e
 ;   float FLOAT_0061697f = 0.5
 ;   double DOUBLE_00616987 = 0.100000000000000
-;   int INT_008229ac
-;   CDemonFilter[8] CDemonFilter_ARRAY_008229ec
+;   int g_LightActorFiltersInitialized
+;   CDemonFilter[8] g_LightActorFilters
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
@@ -227,12 +227,12 @@ section .text
     MOV dword ptr [EDI + 0x2324],0x0    ; 00422fdf
     MOV dword ptr [EAX + 0x38],0x42600000 ; 00422fe9
     MOV dword ptr [EDI + 0x7b0],0x42000000 ; 00422ff0
-    MOV EDX,dword ptr [0x008229ac]      ; 00422ffa | INT_008229ac
+    MOV EDX,dword ptr [0x008229ac]      ; 00422ffa | g_LightActorFiltersInitialized
     MOV dword ptr [EDI + 0x314],0x3     ; 00423000
     TEST EDX,EDX                        ; 0042300a
     JNZ 0x00423047                      ; 0042300c
         ;   XREF to: 00423047 (CONDITIONAL_JUMP)  ; LAB_00423047
-    MOV ESI,0x8229ec                    ; 0042300e | CDemonFilter_ARRAY_008229ec
+    MOV ESI,0x8229ec                    ; 0042300e | g_LightActorFilters
     XOR EBX,EBX                         ; 00423013
     PUSH EBX                            ; 00423015
         ;   Label: LAB_00423015
@@ -244,7 +244,7 @@ section .text
     ADD ESP,0xc                         ; 00423025
     MOV EAX,ESP                         ; 00423028
     PUSH EAX                            ; 0042302a
-    PUSH ESI                            ; 0042302b | CDemonFilter_ARRAY_008229ec
+    PUSH ESI                            ; 0042302b | g_LightActorFilters
     INC EBX                             ; 0042302c
     CALL core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 ; 0042302d
         ;   XREF to: 004702f0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter * this_ptr, char * filename)
@@ -253,12 +253,12 @@ section .text
     CMP EBX,0x8                         ; 00423038
     JL 0x00423015                       ; 0042303b
         ;   XREF to: 00423015 (CONDITIONAL_JUMP)  ; LAB_00423015
-    MOV dword ptr [0x008229ac],0x1      ; 0042303d | INT_008229ac
+    MOV dword ptr [0x008229ac],0x1      ; 0042303d | g_LightActorFiltersInitialized
     PUSH 0x0                            ; 00423047
         ;   Label: LAB_00423047
     PUSH 0x0                            ; 00423049
     PUSH 0x0                            ; 0042304b
-    PUSH 0x8229ec                       ; 0042304d | CDemonFilter_ARRAY_008229ec
+    PUSH 0x8229ec                       ; 0042304d | g_LightActorFilters
     ADD EDI,0x670                       ; 00423052
     PUSH EDI                            ; 00423058
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 00423059

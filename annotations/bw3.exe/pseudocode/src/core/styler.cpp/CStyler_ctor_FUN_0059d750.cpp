@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CStyler * __cdecl core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
 
 {
   SMRGLTextureModel *pSVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   CEnemy *pCVar4;
   CCloth *pCVar5;
   CMorph *pCVar6;
@@ -34,12 +32,12 @@ CStyler * __cdecl core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
   pSVar1[0xe].texture_name[0x13] = '?';
   pSVar1 = pCVar6[-0x5b].models[1].textures;
   pSVar1[0xe].texture_name[0x14] = '\0';
-  uVar2 = _DAT_005e8348;
+  fVar2 = 50.0f;
   pSVar1[0xe].texture_name[0x15] = '\0';
   pSVar1[0xe].texture_name[0x16] = -0x40;
   pSVar1[0xe].texture_name[0x17] = '?';
   pCVar6[-0xffffffff00000001].dead[0x10] = '\0';
-  uVar3 = _DAT_005e834c;
+  fVar3 = 100.0f;
   pCVar6[-0xffffffff00000001].dead[0x11] = '\0';
   pCVar6[-0xffffffff00000001].dead[0x12] = '\0';
   pCVar6[-0xffffffff00000001].dead[0x13] = '\0';
@@ -48,7 +46,7 @@ CStyler * __cdecl core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
   pCVar6[-0xffffffff00000001].dead[0x15] = '\0';
   pCVar6[-0xffffffff00000001].dead[0x16] = '\0';
   pCVar6[-0xffffffff00000001].dead[0x17] = '\0';
-  *(uint *)(pCVar6[-0x5b].models[1].textures[0xe].texture_name + 0x18) = uVar2;
-  *(uint *)(pCVar6[-0x5b].models[1].textures[0xe].texture_name + 0x1c) = uVar3;
+  *(float *)(pCVar6[-0x5b].models[1].textures[0xe].texture_name + 0x18) = fVar2;
+  *(float *)(pCVar6[-0x5b].models[1].textures[0xe].texture_name + 0x1c) = fVar3;
   return (CStyler *)(pCVar6[-0x5f].models[1].textures[8].texture_name + 4);
 }

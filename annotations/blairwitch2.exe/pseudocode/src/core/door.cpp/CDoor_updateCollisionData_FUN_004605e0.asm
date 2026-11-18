@@ -7,7 +7,7 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00618170
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_01d182f0
 ;   undefined4 DAT_01d192f8
@@ -24,7 +24,7 @@ section .text
     PUSH EBX                            ; 004605e0
         ;   Label: core_door.cpp_CDoor_updateCollisionData_FUN_004605e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004605e1
-    MOV EAX,[0x00618170]                ; 004605e5 | DAT_00618170 | DAT_01d182f0
+    MOV EAX,[0x00618170]                ; 004605e5 | g_CDemonMission_PTR_00618170 | DAT_01d182f0
     CMP dword ptr [EAX + 0x1008],0x0    ; 004605ea | DAT_01d192f8
     JNZ 0x004605fc                      ; 004605f1
         ;   XREF to: 004605fc (CONDITIONAL_JUMP)  ; LAB_004605fc

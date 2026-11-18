@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
-;   undefined4 DAT_005c20d8
+;   SIGNAL_HANDLER_TYPE[26] g_GlobalSignalHandlers
 ;
 ; Called Functions:
 ;   crt_thread.c_GetTLS_FUN_005671dc
@@ -34,7 +34,7 @@ section .text
     CMP EBX,0x4                         ; 0057156e
     JNZ 0x0057157c                      ; 00571571
         ;   XREF to: 0057157c (CONDITIONAL_JUMP)  ; LAB_0057157c
-    MOV EAX,dword ptr [EBX*0x8 + 0x5c20d8] ; 00571573 | DAT_005c20d8
+    MOV EAX,dword ptr [EBX*0x8 + 0x5c20d8] ; 00571573 | g_GlobalSignalHandlers
         ;   Label: LAB_00571573
     POP EBX                             ; 0057157a
     RET                                 ; 0057157b

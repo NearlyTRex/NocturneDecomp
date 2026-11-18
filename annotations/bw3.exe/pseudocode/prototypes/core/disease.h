@@ -33,6 +33,6 @@ void __cdecl CDisease::setup(CDisease *this_ptr);
 // Address: 0045c110
 CDisease * __cdecl CDisease::dtor(CDisease *this_ptr,uint flags);
 
-// Original: core_disease.cpp_FUN_0045c160
+// Original: core_disease.cpp_staticInit_FUN_0045c160
 // Address: 0045c160
-void FUN_0045c160(void);
+void __cdecl staticInit(void);

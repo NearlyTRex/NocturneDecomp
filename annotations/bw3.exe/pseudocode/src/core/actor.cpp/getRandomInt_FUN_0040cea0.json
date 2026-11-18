@@ -2,23 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 40,
+    "complexity_score": 22,
     "cross_reference_count": 73,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 93
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 90
   },
   "cross_references": [
     {
       "addr": "0040cab0",
       "from_addr": "0040cd9f",
       "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597700",
+      "from_addr": "005977a9",
+      "name": "core_baal.cpp_CBaal_chooseAttack_FUN_00597700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597be0",
+      "from_addr": "00597bff",
+      "name": "core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,18 +44,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00597700",
-      "from_addr": "005977a9",
-      "name": "core_baal.cpp_FUN_00597700",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00597be0",
-      "from_addr": "00597bff",
-      "name": "core_baal.cpp_FUN_00597be0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0040fe90",
       "from_addr": "0040ff09",
       "name": "core_bird.cpp_CBird_renderOpaque_FUN_0040fe90",
@@ -54,7 +52,7 @@
     {
       "addr": "00410030",
       "from_addr": "0041008b",
-      "name": "core_bird.cpp_FUN_00410030",
+      "name": "core_bird.cpp_setRandomMotionVariant_FUN_00410030",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,27 +122,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00427bc0",
+      "from_addr": "004284b6",
+      "name": "core_carved.cpp_CCarved_processPickup_FUN_00427bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00425da0",
       "from_addr": "00426f81",
       "name": "core_carved.cpp_CCarved_process_FUN_00425da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00427bc0",
-      "from_addr": "004284b6",
-      "name": "core_carved.cpp_FUN_00427bc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00429090",
       "from_addr": "0042914b",
-      "name": "core_carved.cpp_FUN_00429090",
+      "name": "core_carved.cpp_CCarved_resetChaseState_FUN_00429090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004348b0",
       "from_addr": "00434900",
-      "name": "core_charactr.cpp_FUN_004348b0",
+      "name": "core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -172,21 +170,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00457740",
+      "from_addr": "00458041",
+      "name": "core_demnfolk.cpp_CDemnfolk_processPickup_FUN_00457740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00455080",
       "from_addr": "0045608b",
       "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00457740",
-      "from_addr": "00458041",
-      "name": "core_demnfolk.cpp_FUN_00457740",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00458fb0",
       "from_addr": "00458fcc",
-      "name": "core_demnfolk.cpp_FUN_00458fb0",
+      "name": "core_demnfolk.cpp_CDemnfolk_resetChaseState_FUN_00458fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -216,7 +214,7 @@
     {
       "addr": "0048a1b0",
       "from_addr": "0048a1e3",
-      "name": "core_enemy.cpp_FUN_0048a1b0",
+      "name": "core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -306,19 +304,19 @@
     {
       "addr": "005919a0",
       "from_addr": "005919b8",
-      "name": "core_kedward.cpp_FUN_005919a0",
+      "name": "core_kedward.cpp_CKedward_resetChaseState_FUN_005919a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00593a90",
+      "from_addr": "00593ab2",
+      "name": "core_mattnntt.cpp_CMattanntote_chooseMoveState_FUN_00593a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591f30",
       "from_addr": "00592d61",
       "name": "core_mattnntt.cpp_CMattanntote_process_FUN_00591f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00593a90",
-      "from_addr": "00593ab2",
-      "name": "core_mattnntt.cpp_FUN_00593a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -342,7 +340,7 @@
     {
       "addr": "005263c0",
       "from_addr": "00526552",
-      "name": "core_prye.cpp_FUN_005263c0",
+      "name": "core_prye.cpp_CPrye_handleFireButton_FUN_005263c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -352,15 +350,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005438d0",
-      "from_addr": "00543f1e",
-      "name": "core_shadow.cpp_FUN_005438d0",
+      "addr": "005459b0",
+      "from_addr": "00545a28",
+      "name": "core_shadow.cpp_CShadow_processDamage_FUN_005459b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005459b0",
-      "from_addr": "00545a28",
-      "name": "core_shadow.cpp_FUN_005459b0",
+      "addr": "005438d0",
+      "from_addr": "00543f1e",
+      "name": "core_shadow.cpp_CShadow_process_FUN_005438d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -372,7 +370,7 @@
     {
       "addr": "00599c80",
       "from_addr": "00599cdb",
-      "name": "core_spireagl.cpp_FUN_00599c80",
+      "name": "core_spireagl.cpp_playRandomMotionVariant_FUN_00599c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -384,7 +382,7 @@
     {
       "addr": "005a0480",
       "from_addr": "005a04c1",
-      "name": "core_styldemo.cpp_FUN_005a0480",
+      "name": "core_styldemo.cpp_CStylerDemon_tryAttack_FUN_005a0480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -438,7 +436,7 @@
     {
       "addr": "0058cc20",
       "from_addr": "0058cc6b",
-      "name": "core_zombie.cpp_FUN_0058cc20",
+      "name": "core_zombie.cpp_CZombie_resetChaseState_FUN_0058cc20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -450,7 +448,7 @@
     {
       "addr": "0058efb0",
       "from_addr": "0058f44d",
-      "name": "core_zombiepriest.cpp_FUN_0058efb0",
+      "name": "core_zombiepriest.cpp_CZombiePriest_processWeaponPickup_FUN_0058efb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -487,21 +485,21 @@
   "globals": [
     {
       "addr": "005b5ef1",
-      "name": "DAT_005b5ef1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005b5ef1",
+      "type": "double",
+      "value": "0.999990000000000"
     },
     {
       "addr": "005b5ef9",
-      "name": "DAT_005b5ef9",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RandIntScale",
+      "type": "float",
+      "value": "0.00003051851"
     },
     {
       "addr": "005b5efd",
-      "name": "DAT_005b5efd",
-      "type": "undefined4",
-      "value": null
+      "name": "g_GenRandIntScale",
+      "type": "float",
+      "value": "5.960465E-8"
     },
     {
       "addr": "005fe9dc",
@@ -555,7 +553,7 @@
       {
         "call_addr": "00434900",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_004348b0",
+        "caller": "core_charactr.cpp_CCharacter_pickRandomNamedWaypoint_FUN_004348b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -599,7 +597,7 @@
       {
         "call_addr": "0042914b",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00429090",
+        "caller": "core_carved.cpp_CCarved_resetChaseState_FUN_00429090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -610,7 +608,7 @@
       {
         "call_addr": "0042915d",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00429090",
+        "caller": "core_carved.cpp_CCarved_resetChaseState_FUN_00429090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -621,7 +619,7 @@
       {
         "call_addr": "00429185",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00429090",
+        "caller": "core_carved.cpp_CCarved_resetChaseState_FUN_00429090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -760,14 +758,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

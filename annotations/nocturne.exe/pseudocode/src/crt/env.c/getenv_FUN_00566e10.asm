@@ -17,7 +17,7 @@
 ;   crt_unknown.c_FUN_00572b70 at 00572b7c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de54a4
+;   char** g_EnvironmentBlock
 ;
 ; Called Functions:
 ;   crt_string.c__mbstrnicmp_FUN_0056dcd0
@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 00566e12
     PUSH EBP                            ; 00566e13
     MOV EBP,dword ptr [ESP + 0x14]      ; 00566e14
-    MOV ESI,dword ptr [0x02de54a4]      ; 00566e18 | DAT_02de54a4
+    MOV ESI,dword ptr [0x02de54a4]      ; 00566e18 | g_EnvironmentBlock
     TEST ESI,ESI                        ; 00566e1e
     JZ 0x00566e64                       ; 00566e20
         ;   XREF to: 00566e64 (CONDITIONAL_JUMP)  ; LAB_00566e64

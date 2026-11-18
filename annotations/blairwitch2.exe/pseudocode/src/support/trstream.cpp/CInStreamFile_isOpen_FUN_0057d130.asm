@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054e305
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50 at 0054dd7f
-;   support_codec.cpp_FUN_004340f0 at 0043410d
+;   support_codec.cpp_CCodec_processFiles_FUN_004340f0 at 0043410d
 ;
 ; *****************************************************************************
 

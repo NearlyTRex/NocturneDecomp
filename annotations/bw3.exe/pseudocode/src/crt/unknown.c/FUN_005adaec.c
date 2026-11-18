@@ -9,13 +9,13 @@
 bool FUN_005adaec(void)
 
 {
-  if (DAT_0060799c == 0xffffffff) {
-    DAT_0060799c = TlsAlloc();
-    if ((0x7fff < DAT_00607985) && (DAT_00607983 < 4)) {
-      while ((DAT_0060799c != 0xffffffff && (DAT_0060799c < 3))) {
-        DAT_0060799c = TlsAlloc();
+  if (g_INT_0060799c == -1) {
+    g_INT_0060799c = TlsAlloc();
+    if ((0x7fff < (ushort)g_WindowsPlatformVersion) && (g_WindowsMinorVersion < 4)) {
+      while ((g_INT_0060799c != 0xffffffff && ((uint)g_INT_0060799c < 3))) {
+        g_INT_0060799c = TlsAlloc();
       }
     }
   }
-  return DAT_0060799c != 0xffffffff;
+  return g_INT_0060799c != 0xffffffff;
 }

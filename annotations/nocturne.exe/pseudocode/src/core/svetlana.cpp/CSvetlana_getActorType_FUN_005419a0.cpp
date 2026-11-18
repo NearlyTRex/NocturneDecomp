@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_005419a0(CSvetlana *this_ptr)
 
 {
-  return &g_CSvetlanaActorType_02dca0a4;
+  return &g_CSvetlanaClassInfo;
 }

@@ -12,7 +12,7 @@
 ; undefined1[16]   Stack[-0x14]:16  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059293e
+;   double g_DOUBLE_0059293e = 4294967296
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005648c0
@@ -45,7 +45,7 @@ section .text
     FILD qword ptr [ESP]                ; 005235e6
     FSUBR double ptr [ESP + 0x10]       ; 005235e9
     MOV EDX,dword ptr [ESP + 0x18]      ; 005235ed
-    FMUL double ptr [0x0059293e]        ; 005235f1 | DAT_0059293e
+    FMUL double ptr [0x0059293e]        ; 005235f1 | g_DOUBLE_0059293e
     MOV dword ptr [EDX],EAX             ; 005235f7
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005235f9
     CALL crt_math.c_round_FUN_00563a30  ; 005235fd

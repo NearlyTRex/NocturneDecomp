@@ -41,8 +41,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDr
   local_28 = &g_CDemonCameraInstance.position.z;
   local_30 = &local_64;
   local_2c = &local_60;
-  local_34 = g_SFreaky_ARRAY_01b4d280;
-  local_38 = (SFreaky *)&DAT_01b4d478;
+  local_34 = g_FreakySounds;
+  local_38 = (SFreaky *)&g_DashAnimationAccumulator;
   do {
     local_20 = local_34;
     if (this_ptr == local_34->owner) {

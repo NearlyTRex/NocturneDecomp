@@ -15,16 +15,16 @@
 ;   core_prye.cpp_CPrye_getDeathState_FUN_00526fc0 at 00526fe0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b83d7
+;   TerminatedCString s_die_005b83d7
 ;   TerminatedCString s_DEAD_POSSUM_005b83db
-;   undefined4 DAT_005b83e7
+;   TerminatedCString s_dead_005b83e7
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentStateName_FUN_004fc320
 ;   crt_string.c__stricmp_FUN_005a3260
+;   crt_string.c__strlwr_FUN_005a3ff0
 ;   crt_string.c__strnicmp_FUN_005a3f90
 ;   crt_string.c_strstr_FUN_005a4010
-;   crt_unknown.c_FUN_005a3ff0
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
         ;   Label: LAB_00431036
     MOV EAX,ESP                         ; 00431037
     PUSH EAX                            ; 00431039
-    CALL crt_unknown.c_FUN_005a3ff0     ; 0043103a
-        ;   XREF to: 005a3ff0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3ff0()
+    CALL crt_string.c__strlwr_FUN_005a3ff0 ; 0043103a
+        ;   XREF to: 005a3ff0 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strlwr_FUN_005a3ff0(char * str)
     MOV EDX,dword ptr [EBX + 0x70]      ; 0043103f
     ADD ESP,0x4                         ; 00431042
     CMP EDX,0x2                         ; 00431045
@@ -76,7 +76,7 @@ section .text
     RET                                 ; 00431052
     PUSH 0x3                            ; 00431053
         ;   Label: LAB_00431053
-    PUSH 0x5b83d7                       ; 00431055 | DAT_005b83d7
+    PUSH 0x5b83d7                       ; 00431055 | = "die"
     LEA EAX,[ESP + 0x8]                 ; 0043105a
     PUSH EAX                            ; 0043105e
     CALL crt_string.c__strnicmp_FUN_005a3f90 ; 0043105f
@@ -107,7 +107,7 @@ section .text
     POP ESI                             ; 00431096
     POP EBX                             ; 00431097
     RET                                 ; 00431098
-    PUSH 0x5b83e7                       ; 00431099 | DAT_005b83e7
+    PUSH 0x5b83e7                       ; 00431099 | = "dead"
         ;   Label: LAB_00431099
     LEA EAX,[ESP + 0x4]                 ; 0043109e
     PUSH EAX                            ; 004310a2

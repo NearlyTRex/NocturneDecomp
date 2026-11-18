@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_00490f80 at 00490f9a
 ;   core_event.cpp_CEventList_resolveVariable_FUN_0048e2b0 at 0048e2fe
-;   core_event.cpp_FUN_00490f80 at 00490f9a
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

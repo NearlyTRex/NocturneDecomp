@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_resolveVariable_FUN_0048e2b0 at 0048e324
 ;   core_event.cpp_CEventList_setTimerEvent_FUN_00491280 at 004912d7
-;   core_game.cpp_FUN_004b5190 at 004b552c
+;   core_game.cpp_CGame_processFrame_FUN_004b5190 at 004b552c
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

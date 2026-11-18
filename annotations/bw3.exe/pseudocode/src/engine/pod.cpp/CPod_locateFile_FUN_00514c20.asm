@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_pod_cpp_CPod_locateFile_FUN_00514c20(CPod *this_ptr,undefined4 param_2,undefined4 param_3,int *param_4)
+; CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_00514c20(CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; int *            Stack[0x10]:4   param_4
+; char *           Stack[0x8]:4   base_path
+; char *           Stack[0xc]:4   filename
+; int *            Stack[0x10]:4   file_index_out
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_00465660
+;   engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00513c30
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00514c41
     PUSH EAX                            ; 00514c45
     XOR EBX,EBX                         ; 00514c46
-    CALL engine_dosio.cpp_FUN_00465660  ; 00514c48
-        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00465660()
+    CALL engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660 ; 00514c48
+        ;   XREF to: 00465660 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_callRelativeFilePathHook_FUN_00465660(char * dest_path, char * directory, char * filename)
     MOV ESI,dword ptr [EDI]             ; 00514c4d
     ADD ESP,0xc                         ; 00514c4f
     TEST ESI,ESI                        ; 00514c52

@@ -10,8 +10,8 @@
 ;   crt_stdio.c_fopenWithFlags_FUN_00601a20 at 00601a3e
 ;
 ; Referenced Globals:
-;   _FILE* g_StaticFilePoolStart = 00000000
-;   int INT_00684cd0 = 0x1
+;   _FILE g_StaticFilePoolStart
+;   undefined4 g_StaticFilePoolStart._flag
 ;   _FILE g_StdoutLogFile
 ;   undefined4 g_StdoutLogFile._flag
 ;   undefined4 g_StaticFilePoolEnd
@@ -52,7 +52,7 @@ section .text
     CMP EBX,0x684ecc                    ; 00609321 | g_StaticFilePoolEnd
     JNC 0x00609351                      ; 00609327
         ;   XREF to: 00609351 (CONDITIONAL_JUMP)  ; LAB_00609351
-    TEST byte ptr [EBX + 0xc],0x3       ; 00609329 | INT_00684cd0 | g_StdoutLogFile._flag
+    TEST byte ptr [EBX + 0xc],0x3       ; 00609329 | g_StaticFilePoolStart._flag | g_StdoutLogFile._flag
         ;   Label: LAB_00609329
     JNZ 0x00609346                      ; 0060932d
         ;   XREF to: 00609346 (CONDITIONAL_JUMP)  ; LAB_00609346

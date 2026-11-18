@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(CDeformableModelInstance *this_ptr)
 
 {
@@ -77,13 +75,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
     } while (iVar9 < iVar4 * 0xc);
   }
   pCVar1 = &this_ptr->bounding_box;
-  (pCVar1->min).x = (float)local_34 * _DAT_005a1eb0;
-  (this_ptr->bounding_box).min.y = (float)local_30 * _DAT_005a1eb0;
-  (this_ptr->bounding_box).min.z = (float)local_2c * _DAT_005a1eb0;
+  (pCVar1->min).x = (float)local_34 * 0.00390625f;
+  (this_ptr->bounding_box).min.y = (float)local_30 * 0.00390625f;
+  (this_ptr->bounding_box).min.z = (float)local_2c * 0.00390625f;
   pCVar10 = &(this_ptr->bounding_box).max;
-  pCVar10->x = (float)local_4c * _DAT_005a1eb0;
-  (this_ptr->bounding_box).max.y = (float)local_48 * _DAT_005a1eb0;
-  (this_ptr->bounding_box).max.z = (float)local_44 * _DAT_005a1eb0;
+  pCVar10->x = (float)local_4c * 0.00390625f;
+  (this_ptr->bounding_box).max.y = (float)local_48 * 0.00390625f;
+  (this_ptr->bounding_box).max.z = (float)local_44 * 0.00390625f;
   fVar5 = (pCVar10->x - (pCVar1->min).x) * 0.05f;
   fVar6 = ((this_ptr->bounding_box).max.y - (this_ptr->bounding_box).min.y) * 0.05f;
   fVar7 = ((this_ptr->bounding_box).max.z - (this_ptr->bounding_box).min.z) * 0.05f;

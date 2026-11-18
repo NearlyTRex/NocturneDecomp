@@ -10,12 +10,12 @@
 ; char *           Stack[0x10]:4   open_mode
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
-;   engine_dosio.cpp_FUN_004659c0
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
+;   engine_dosio.cpp_getFile_FUN_004659c0
 ;
 ; *****************************************************************************
 
@@ -74,10 +74,10 @@ section .text
     MOV EDX,0x5c4816                    ; 004cf8c9
     MOV ECX,0x40                        ; 004cf8ce
     PUSH 0x5c4829                       ; 004cf8d3
-    MOV dword ptr [0x01d71de0],EDX      ; 004cf8d8 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004cf8de | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004cf8e4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 004cf8d8 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 004cf8de | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004cf8e4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004cf8e9
     MOV ESI,dword ptr [ESP + 0x6c]      ; 004cf8ec
         ;   Label: LAB_004cf8ec
@@ -104,8 +104,8 @@ section .text
     PUSH EAX                            ; 004cf914
     MOV ESI,dword ptr [ESP + 0x6c]      ; 004cf915
     PUSH ESI                            ; 004cf919
-    CALL engine_dosio.cpp_FUN_004659c0  ; 004cf91a
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_004659c0 ; 004cf91a
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004cf91f
     MOV ESI,EAX                         ; 004cf922
     TEST EAX,EAX                        ; 004cf924
@@ -122,10 +122,10 @@ section .text
         ;   Label: LAB_004cf932
     MOV EBP,0x44                        ; 004cf937
     PUSH 0x5c4853                       ; 004cf93c
-    MOV dword ptr [0x01d71de0],EDI      ; 004cf941 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 004cf947 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004cf94d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDI      ; 004cf941 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 004cf947 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004cf94d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004cf952
     MOV EAX,ESI                         ; 004cf955
     ADD ESP,0x50                        ; 004cf957

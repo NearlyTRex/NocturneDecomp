@@ -1,0 +1,188 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 135,
+    "complexity_score": 103,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 188
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046b670",
+    "address_range": [
+      [
+        "0046b670",
+        "0046b7cd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0046b670",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0046b670(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "0046b160",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c6b5cc",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b8",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.785046728971962,
+    "instruction_count": 107,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 11,
+      "COPY": 91,
+      "INT_ADD": 48,
+      "INT_AND": 81,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 65,
+      "INT_LEFT": 2,
+      "INT_LESS": 8,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 3,
+      "INT_SLESS": 34,
+      "INT_SUB": 19,
+      "INT_XOR": 6,
+      "LOAD": 33,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 512
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00469a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8708
+    },
+    "bw1.exe": {
+      "addr": "00481fa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8708
+    },
+    "nocedit.exe": {
+      "addr": "0048ac40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8708
+    },
+    "nocturne.exe": {
+      "addr": "0045f270",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8708
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "poly",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLPrimitivePoly *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 23,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 36,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

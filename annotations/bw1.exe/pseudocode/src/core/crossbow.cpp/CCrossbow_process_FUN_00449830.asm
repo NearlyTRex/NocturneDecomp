@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_flame.cpp_CFlame_hide_FUN_004b8ab0
 ;   core_flame.cpp_CFlame_process_FUN_004b7b90
 ;   core_weapon.cpp_CWeapon_process_FUN_005ad770
@@ -43,8 +43,8 @@ section .text
     PUSH EBX                            ; 0044986b
     LEA ESI,[ESP + 0x2c]                ; 0044986c
     LEA EDI,[ESP + 0x8]                 ; 00449870
-    CALL core_actor.cpp_FUN_00408b40    ; 00449874
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 00449874
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x2c]                ; 00449879
     ADD ESP,0x8                         ; 0044987d
     MOVSD ES:EDI,ESI                    ; 00449880

@@ -15,10 +15,10 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_004f2cdc = 004f2dda
 ;   undefined1* PTR_caseD_3_004f2ce4 = 004f2dbc
-;   undefined4 DAT_01d7a69c
-;   undefined4 DAT_01d7a6a0
-;   undefined4 DAT_01d7a6a4
-;   undefined4 DAT_01d7a6a8
+;   float g_FLOAT_01d7a69c
+;   float g_FLOAT_01d7a6a0
+;   float g_FLOAT_01d7a6a4
+;   float g_FLOAT_01d7a6a8
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_intersectUserClipPlane_FUN_004f2bb0
@@ -52,19 +52,19 @@ section .text
     XOR ECX,EAX                         ; 004f2d22
     IMUL ECX,ECX,0x24                   ; 004f2d24
         ;   Label: LAB_004f2d24
-    FLD float ptr [0x01d7a6a0]          ; 004f2d27 | DAT_01d7a6a0
+    FLD float ptr [0x01d7a6a0]          ; 004f2d27 | g_FLOAT_01d7a6a0
     FMUL float ptr [EBP + 0x4]          ; 004f2d2d
-    FLD float ptr [0x01d7a69c]          ; 004f2d30 | DAT_01d7a69c
+    FLD float ptr [0x01d7a69c]          ; 004f2d30 | g_FLOAT_01d7a69c
     FMUL float ptr [EBP]                ; 004f2d36
     FADDP                               ; 004f2d39
-    FLD float ptr [0x01d7a6a4]          ; 004f2d3b | DAT_01d7a6a4
+    FLD float ptr [0x01d7a6a4]          ; 004f2d3b | g_FLOAT_01d7a6a4
     FMUL float ptr [EBP + 0x8]          ; 004f2d41
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004f2d44
     MOV EDX,EBP                         ; 004f2d48
     ADD EDI,ECX                         ; 004f2d4a
     FADDP                               ; 004f2d4c
     MOV dword ptr [ESP + 0x4],EDI       ; 004f2d4e
-    FADD float ptr [0x01d7a6a8]         ; 004f2d52 | DAT_01d7a6a8
+    FADD float ptr [0x01d7a6a8]         ; 004f2d52 | g_FLOAT_01d7a6a8
     XOR ECX,ECX                         ; 004f2d58
     FLDZ                                ; 004f2d5a
     FCOMPP                              ; 004f2d5c
@@ -75,15 +75,15 @@ section .text
     MOV ECX,0x1                         ; 004f2d63
     MOV EDI,dword ptr [ESP + 0x4]       ; 004f2d68
         ;   Label: LAB_004f2d68
-    FLD float ptr [0x01d7a6a0]          ; 004f2d6c | DAT_01d7a6a0
+    FLD float ptr [0x01d7a6a0]          ; 004f2d6c | g_FLOAT_01d7a6a0
     FMUL float ptr [EDI + 0x4]          ; 004f2d72
-    FLD float ptr [0x01d7a69c]          ; 004f2d75 | DAT_01d7a69c
+    FLD float ptr [0x01d7a69c]          ; 004f2d75 | g_FLOAT_01d7a69c
     FMUL float ptr [EDI]                ; 004f2d7b
     FADDP                               ; 004f2d7d
-    FLD float ptr [0x01d7a6a4]          ; 004f2d7f | DAT_01d7a6a4
+    FLD float ptr [0x01d7a6a4]          ; 004f2d7f | g_FLOAT_01d7a6a4
     FMUL float ptr [EDI + 0x8]          ; 004f2d85
     FADDP                               ; 004f2d88
-    FADD float ptr [0x01d7a6a8]         ; 004f2d8a | DAT_01d7a6a8
+    FADD float ptr [0x01d7a6a8]         ; 004f2d8a | g_FLOAT_01d7a6a8
     FLDZ                                ; 004f2d90
     FCOMPP                              ; 004f2d92
     FNSTSW AX                           ; 004f2d94

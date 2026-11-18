@@ -81,13 +81,13 @@ void __cdecl CDemonLight::clearCircularShadowMapEdges(CDemonLight *this_ptr);
 // Address: 00463460
 void __cdecl CDemonLight::renderCoronaGeometry(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_00463820
+// Original: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00463820
 // Address: 00463820
-void __cdecl FUN_00463820(CDemonLight *this_ptr);
+void __cdecl CDemonLight::renderLightBloomQuad(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_00463850
+// Original: core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00463850
 // Address: 00463850
-void FUN_00463850(void);
+void __cdecl CDemonLight::renderLightGlowSprites(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_allocateFilter_FUN_00463de0
 // Address: 00463de0
@@ -105,9 +105,9 @@ void __cdecl captureLightTextures(void);
 // Address: 00464190
 void __cdecl CDemonLight::renderVolumetricLightShaft(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_00464990
+// Original: core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990
 // Address: 00464990
-void FUN_00464990(void);
+void __cdecl CDemonLight::renderRadialVolumetricScattering(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060
 // Address: 00465060
@@ -133,9 +133,9 @@ void __cdecl CDemonLight::setVolumetricIntensity(CDemonLight *this_ptr,float int
 // Address: 00465e30
 void __cdecl CDemonLight::drawShadowDepthBuffer(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 
-// Original: core_dlight.cpp_FUN_00466220
+// Original: core_dlight.cpp_CDemonLight_drawMonsterVisionBuffer_FUN_00466220
 // Address: 00466220
-void FUN_00466220(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CDemonLight::drawMonsterVisionBuffer(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset,int tint_mode);
 
 // Original: core_dlight.cpp_CDemonLight_testVisibility_FUN_004665c0
 // Address: 004665c0

@@ -8,11 +8,11 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c207
 ;   core_boxactor.cpp_CBoxActor_process_FUN_00422000 at 00422291
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0 at 0042fcd7
-;   core_doc.cpp_FUN_00469550 at 0046bd0f
-;   core_dracbrid.cpp_FUN_0047d920 at 0047dddb
+;   core_doc.cpp_CDoc_processFrame_FUN_00469550 at 0046bd0f
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_0047d920 at 0047dddb
 ;   core_drone.cpp_CDrone_process_FUN_00485d70 at 00486447
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a4a97
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004aa550 at 004aa5b4
-;   core_event.cpp_FUN_004a1d00 at 004a4a97
 ;   core_fire.cpp_CFireball_onCollision_FUN_004aee60 at 004aef0e
 ;   core_flame.cpp_CFlame_process_FUN_004b7b90 at 004b7f60
 ;   ... and 19 more
@@ -20,21 +20,21 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3e4d
 ;   TerminatedCString s_popSfxOptions_stack_empt_005f3e62
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c78cec
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   int g_SfxLastSlot
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02c78cec]      ; 00572b40 | DAT_02c78cec
+    MOV EDX,dword ptr [0x02c78cec]      ; 00572b40 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_popSfxOptions_FUN_00572b40
     DEC EDX                             ; 00572b46
-    MOV dword ptr [0x02c78cec],EDX      ; 00572b47 | DAT_02c78cec
+    MOV dword ptr [0x02c78cec],EDX      ; 00572b47 | g_SfxLastSlot
     TEST EDX,EDX                        ; 00572b4d
     JL 0x00572b52                       ; 00572b4f
         ;   XREF to: 00572b52 (CONDITIONAL_JUMP)  ; LAB_00572b52
@@ -45,10 +45,10 @@ section .text
     MOV EBX,0x5f3e4d                    ; 00572b54 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xea7                       ; 00572b59
     PUSH 0x5f3e62                       ; 00572b5e | = "popSfxOptions - stack empty"
-    MOV dword ptr [0x01d1d400],EBX      ; 00572b63 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00572b69 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00572b6f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 00572b63 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 00572b69 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572b6f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572b74
     POP EBX                             ; 00572b77
     POP ESI                             ; 00572b78

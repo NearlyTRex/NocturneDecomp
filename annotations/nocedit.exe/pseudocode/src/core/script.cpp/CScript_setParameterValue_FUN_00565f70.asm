@@ -12,12 +12,12 @@
 ;
 ; Referenced Globals:
 ;   char*[141] g_CommandTemplates
-;   CCmdParse CCmdParse_0310cb74
-;   undefined4 CCmdParse_0310cb74.params[0].prefix_text[0]
-;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[0]
-;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[1]
-;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[2]
-;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[3]
+;   CCmdParse g_ParameterValueParser
+;   undefined4 g_ParameterValueParser.params[0].prefix_text[0]
+;   undefined4 g_ParameterValueParser.params[0].parsed_value[0]
+;   undefined4 g_ParameterValueParser.params[0].parsed_value[1]
+;   undefined4 g_ParameterValueParser.params[0].parsed_value[2]
+;   undefined4 g_ParameterValueParser.params[0].parsed_value[3]
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;   undefined4 g_CurrentLineBuffer
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00565fc6
     PUSH EAX                            ; 00565fc9
-    PUSH 0x310cb74                      ; 00565fca | CCmdParse_0310cb74
+    PUSH 0x310cb74                      ; 00565fca | g_ParameterValueParser
     CALL core_script.cpp_CCmdParse_bestParse_FUN_00561db0 ; 00565fcf
         ;   XREF to: 00561db0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse * this_ptr, char * input_text, int cursor_position, char * * templates, ...)
     MOV EBP,EAX                         ; 00565fd4
@@ -92,18 +92,18 @@ section .text
     JL 0x0056606b                       ; 00565fdb
         ;   XREF to: 0056606b (CONDITIONAL_JUMP)  ; LAB_0056606b
     IMUL EAX,EAX,0x328                  ; 00565fe1
-    ADD EAX,0x310cc44                   ; 00565fe7 | CCmdParse_0310cb74.params[0].prefix_text[0]
+    ADD EAX,0x310cc44                   ; 00565fe7 | g_ParameterValueParser.params[0].prefix_text[0]
     LEA EDI,[EAX + 0x64]                ; 00565fec
     PUSH EDI                            ; 00565fef
     MOV AL,byte ptr [ESI]               ; 00565ff0
         ;   Label: LAB_00565ff0
-    MOV byte ptr [EDI],AL               ; 00565ff2 | CCmdParse_0310cb74.params[0].parsed_value[0] | CCmdParse_0310cb74.params[0].parsed_value[2]
+    MOV byte ptr [EDI],AL               ; 00565ff2 | g_ParameterValueParser.params[0].parsed_value[0] | g_ParameterValueParser.params[0].parsed_value[2]
     CMP AL,0x0                          ; 00565ff4
     JZ 0x00566008                       ; 00565ff6
         ;   XREF to: 00566008 (CONDITIONAL_JUMP)  ; LAB_00566008
     MOV AL,byte ptr [ESI + 0x1]         ; 00565ff8
     ADD ESI,0x2                         ; 00565ffb
-    MOV byte ptr [EDI + 0x1],AL         ; 00565ffe | CCmdParse_0310cb74.params[0].parsed_value[1] | CCmdParse_0310cb74.params[0].parsed_value[3]
+    MOV byte ptr [EDI + 0x1],AL         ; 00565ffe | g_ParameterValueParser.params[0].parsed_value[1] | g_ParameterValueParser.params[0].parsed_value[3]
     ADD EDI,0x2                         ; 00566001
     CMP AL,0x0                          ; 00566004
     JNZ 0x00565ff0                      ; 00566006
@@ -111,7 +111,7 @@ section .text
     POP EDI                             ; 00566008
         ;   Label: LAB_00566008
     PUSH 0x31101c0                      ; 00566009 | g_CurrentLineBuffer
-    PUSH 0x310cb74                      ; 0056600e | CCmdParse_0310cb74
+    PUSH 0x310cb74                      ; 0056600e | g_ParameterValueParser
     CALL core_script.cpp_CCmdParse_toString_FUN_005624f0 ; 00566013
         ;   XREF to: 005624f0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CCmdParse_toString_FUN_005624f0(CCmdParse * this_ptr, char * output_buffer)
     ADD ESP,0x8                         ; 00566018
@@ -122,7 +122,7 @@ section .text
         ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorPutLine_FUN_005662a0(CScript * this_ptr, int line_number)
     ADD ESP,0x8                         ; 00566028
     PUSH EBP                            ; 0056602b
-    PUSH 0x310cb74                      ; 0056602c | CCmdParse_0310cb74
+    PUSH 0x310cb74                      ; 0056602c | g_ParameterValueParser
     CALL core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760 ; 00566031
         ;   XREF to: 00562760 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse * this_ptr, int param_index)
     ADD ESP,0x8                         ; 00566036

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004a23c0(SPageResourceTwanaEntry *this_ptr)
 
 {
@@ -23,16 +21,16 @@ SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor
   *(byte ***)((int)pvVar3 + -0xc4) = &g_SPageResourceTwanaEntryVTable;
   memset((void *)((int)pvVar3 + -0xc0),0,0x60);
   memset((void *)((int)pvVar3 + -0x60),0,0x60);
-  iVar2 = (int)_DAT_01cab780;
+  iVar2 = g_INT_01cab780;
   *(uint *)((int)pvVar3 + -0xd0) = 0x69;
   *(uint *)((int)pvVar3 + -0xcc) = 0x2f;
   if (iVar2 == 0) {
-    _DAT_01cab780 = pSVar1;
+    g_INT_01cab780 = (int)pSVar1;
     return pSVar1;
   }
-  _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
-  _DAT_01d046a4 = 0x3f9;
-  core_main_c_FUN_004e4500("Can't have more than one twana entry right now");
-  _DAT_01cab780 = pSVar1;
+  g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
+  g_INT_01d046a4 = 0x3f9;
+  core_main_c_displayErrorAndQuit_FUN_004e4500("Can't have more than one twana entry right now");
+  g_INT_01cab780 = (int)pSVar1;
   return pSVar1;
 }

@@ -23,7 +23,7 @@ int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0(CInventory 
   if (0 < this_ptr->item_count) {
     do {
       pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (pCVar3->items[0],g_CKeyActorActorType_01cc30a8.name_hash);
+                         (pCVar3->items[0],g_CKeyActorClassInfo.name_hash);
       if ((pCVar1 != (CDemonActor *)0x0) && ((pCVar1[2].location.area_id & key_mask) != 0)) {
         if (show_message == 0) {
           return 1;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0(CDemonLight *this_ptr)
 
 {
@@ -58,9 +56,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0(CDemo
     fVar6 = (float10)fsin(fVar6);
     local_40 = (float)(fVar7 * (float10)(float)local_a8._0_4_);
     local_3c = (float)(fVar6 * (float10)(float)local_a8._0_4_);
-    local_64.x = (int)ROUND(local_40 * _DAT_0059c030);
-    local_64.y = (int)ROUND(local_3c * _DAT_0059c030);
-    local_64.z = (int)ROUND(local_38 * _DAT_0059c030);
+    local_64.x = (int)ROUND(local_40 * 256.0f);
+    local_64.y = (int)ROUND(local_3c * 256.0f);
+    local_64.z = (int)ROUND(local_38 * 256.0f);
     local_14 = iVar5;
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               ((SProjectedVertex *)
@@ -71,9 +69,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0044f0b0(CDemo
     *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar4) = 0;
     iVar4 = iVar4 + 0x30;
   } while (iVar5 < 0x10);
-  local_7c.x = (int)ROUND(CVector3f_01abb4b8.x * _DAT_0059c030);
-  local_7c.y = (int)ROUND(CVector3f_01abb4b8.y * _DAT_0059c030);
-  local_7c.z = (int)ROUND(CVector3f_01abb4b8.z * _DAT_0059c030);
+  local_7c.x = (int)ROUND(g_CoronaGeometryOrigin.x * 256.0f);
+  local_7c.y = (int)ROUND(g_CoronaGeometryOrigin.y * 256.0f);
+  local_7c.z = (int)ROUND(g_CoronaGeometryOrigin.z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&pCVar1->vertex_buffer_ptr[0x10].projected_vertex,&local_7c);
   pCVar1 = g_CDemonRenderer_PTR_005ae704;

@@ -7,7 +7,7 @@
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_modelName_005df7a2+1
+;   TerminatedCString s_modelName_005df7a3
 ;   TerminatedCString s_onFire_005df7ad
 ;   TerminatedCString s_timeToExplode_005df7b4
 ;   TerminatedCString s_onFireCondition_005df7c2
@@ -30,7 +30,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 004b9446
         ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004b944b
-    PUSH 0x5df7a3                       ; 004b944e | s_modelName_005df7a2+1
+    PUSH 0x5df7a3                       ; 004b944e | = "modelName"
     LEA EAX,[EBX + 0x158]               ; 004b9453
     PUSH EAX                            ; 004b9459
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 004b945a

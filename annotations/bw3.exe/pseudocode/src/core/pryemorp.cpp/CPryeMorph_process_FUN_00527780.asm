@@ -8,13 +8,13 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e36d8
-;   undefined4 DAT_005fba60
-;   undefined4 DAT_00600530
+;   float g_FLOAT_005e36d8 = 2
+;   CEventList* g_CEventListPtr = 01c6e360
+;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   undefined4 DAT_01d81080
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 0052786f (CONDITIONAL_JUMP)  ; LAB_0052786f
     LEA EAX,[EBX + 0x206c8]             ; 005277cf
     PUSH EAX                            ; 005277d5
-    MOV EDX,dword ptr [0x005fba60]      ; 005277d6 | DAT_005fba60
+    MOV EDX,dword ptr [0x005fba60]      ; 005277d6 | g_CEventListPtr
     PUSH EDX                            ; 005277dc
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0 ; 005277dd
         ;   XREF to: 00491aa0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0(CEventList * this_ptr, char * condition_expression)
@@ -131,7 +131,7 @@ section .text
     JNZ 0x005277e9                      ; 00527875
         ;   XREF to: 005277e9 (CONDITIONAL_JUMP)  ; LAB_005277e9
     FLD float ptr [EBP + 0x18]          ; 0052787b
-    FDIV float ptr [0x005e36d8]         ; 0052787e | DAT_005e36d8
+    FDIV float ptr [0x005e36d8]         ; 0052787e | g_FLOAT_005e36d8
     FADD float ptr [EBX + 0x21440]      ; 00527884
     FST float ptr [EBX + 0x21440]       ; 0052788a
     FLD1                                ; 00527890
@@ -145,18 +145,18 @@ section .text
     JZ 0x005277e9                       ; 005278a5
         ;   XREF to: 005277e9 (CONDITIONAL_JUMP)  ; LAB_005277e9
     PUSH EDX                            ; 005278ab
-    MOV ESI,dword ptr [0x00600530]      ; 005278ac | DAT_00600530
+    MOV ESI,dword ptr [0x00600530]      ; 005278ac | g_CDemonMission_PTR_00600530
     PUSH ESI                            ; 005278b2 | DAT_01d81080
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 005278b3
         ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005278b8
     PUSH 0x1                            ; 005278bb
     PUSH EBX                            ; 005278bd
-    MOV EAX,[0x00600530]                ; 005278be | DAT_00600530
+    MOV EAX,[0x00600530]                ; 005278be | g_CDemonMission_PTR_00600530
     PUSH EAX                            ; 005278c3 | DAT_01d81080
     MOV dword ptr [EBX + 0x20810],0x0   ; 005278c4
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 005278ce
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 005278d3
     JMP 0x005277e9                      ; 005278d6
         ;   XREF to: 005277e9 (UNCONDITIONAL_JUMP)  ; LAB_005277e9
@@ -169,8 +169,8 @@ section .text
     PUSH EBX                            ; 005278e6
     LEA ESI,[ESP + 0x18]                ; 005278e7
     LEA EDI,[ESP + 0xc]                 ; 005278eb
-    CALL core_actor.cpp_FUN_00408b00    ; 005278ef
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 005278ef
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[ESP + 0x18]                ; 005278f4
     ADD ESP,0x8                         ; 005278f8
     LEA EAX,[EBX + 0x20]                ; 005278fb

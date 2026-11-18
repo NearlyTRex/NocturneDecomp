@@ -9,26 +9,26 @@
 // Address: 004bf740
 void __cdecl staticInit(void);
 
-// Original: core_flattn.cpp_FUN_004bf770
+// Original: core_flattn.cpp_doNothing_FUN_004bf770
 // Address: 004bf770
-void FUN_004bf770(void);
+void __cdecl doNothing(void);
 
-// Original: core_flattn.cpp_FUN_004bf780
+// Original: core_flattn.cpp_setFlattenMatrix_FUN_004bf780
 // Address: 004bf780
-void FUN_004bf780(undefined4 *param_1);
+void __cdecl setFlattenMatrix(CMatrix3x3f *matrix);
 
-// Original: core_flattn.cpp_FUN_004bf800
+// Original: core_flattn.cpp_setFlattenMatrixAndOffset_FUN_004bf800
 // Address: 004bf800
-void FUN_004bf800(undefined4 *param_1,undefined4 *param_2);
+void __cdecl setFlattenMatrixAndOffset(CMatrix3x3f *matrix,CVector3f *offset);
 
-// Original: core_flattn.cpp_FUN_004bf890
+// Original: core_flattn.cpp_setFlattenMatrixTransposed_FUN_004bf890
 // Address: 004bf890
-void FUN_004bf890(undefined4 *param_1);
+void __cdecl setFlattenMatrixTransposed(CMatrix3x3f *matrix);
 
-// Original: core_flattn.cpp_FUN_004bf910
+// Original: core_flattn.cpp_flattenTransformPoint_FUN_004bf910
 // Address: 004bf910
-void FUN_004bf910(float *param_1,float *param_2);
+void __cdecl flattenTransformPoint(CVector3f *point_out,CVector3f *point_in);
 
-// Original: core_flattn.cpp_FUN_004bf990
+// Original: core_flattn.cpp_flattenTransformVector_FUN_004bf990
 // Address: 004bf990
-void FUN_004bf990(float *param_1,float *param_2);
+void __cdecl flattenTransformVector(CVector3f *vector_out,CVector3f *vector_in);

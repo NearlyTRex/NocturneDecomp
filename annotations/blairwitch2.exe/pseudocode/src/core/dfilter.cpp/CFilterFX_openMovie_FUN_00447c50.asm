@@ -12,20 +12,20 @@
 ;
 ; Referenced Globals:
 ;   CFilterCache* g_CFilterCachePtr = 015111a8
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004478d0
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_004477a0
 ;   core_dfilter.cpp_CFilterFX_free_FUN_00447c30
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fread_FUN_005b87c0
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   crt_unknown.c_sprintf_FUN_005b7790
-;   engine_dosio.cpp_FUN_00460c70
+;   engine_dosio.cpp_getFile_FUN_00460c70
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00447c91
     PUSH EAX                            ; 00447c95
     PUSH EBX                            ; 00447c96
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00447c97
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00447c97
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00447c9c
     MOV EDI,EAX                         ; 00447c9f
     TEST EAX,EAX                        ; 00447ca1
@@ -68,10 +68,10 @@ section .text
     MOV EDX,0x5cecda                    ; 00447ca6
     MOV ECX,0x15a                       ; 00447cab
     PUSH 0x5cecee                       ; 00447cb0
-    MOV dword ptr [0x01d046a0],EDX      ; 00447cb5 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00447cbb | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00447cc1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDX      ; 00447cb5 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ECX      ; 00447cbb | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447cc1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00447cc6
     PUSH ESI                            ; 00447cc9
         ;   Label: LAB_00447cc9
@@ -82,7 +82,7 @@ section .text
     ADD ESP,0xc                         ; 00447cd5
     PUSH EDI                            ; 00447cd8
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00447cd9
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     MOV EAX,dword ptr [ESI]             ; 00447cde
     ADD ESP,0x4                         ; 00447ce0
     SHL EAX,0xd                         ; 00447ce3
@@ -102,8 +102,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00447d0a
     PUSH EAX                            ; 00447d0e
     PUSH EBX                            ; 00447d0f
-    CALL engine_dosio.cpp_FUN_00460c70  ; 00447d10
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_00460c70(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00460c70 ; 00447d10
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00460c70(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00447d15
     MOV EDI,EAX                         ; 00447d18
     TEST EAX,EAX                        ; 00447d1a
@@ -121,7 +121,7 @@ section .text
     ADD ESP,0x10                        ; 00447d34
     PUSH EDI                            ; 00447d37
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00447d38
-        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
+        ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_005b89c0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00447d3d
     XOR ECX,ECX                         ; 00447d40
     POP EDI                             ; 00447d42
@@ -169,10 +169,10 @@ section .text
     MOV EBP,0x5ced14                    ; 00447d9e
     MOV EAX,0x166                       ; 00447da3
     PUSH 0x5ced28                       ; 00447da8
-    MOV dword ptr [0x01d046a0],EBP      ; 00447dad | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 00447db3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00447db8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 00447dad | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 00447db3 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00447db8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00447dbd
     JMP 0x00447d22                      ; 00447dc0
         ;   XREF to: 00447d22 (UNCONDITIONAL_JUMP)  ; LAB_00447d22

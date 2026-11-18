@@ -6,17 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420450(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity)
 
 {
   byte bVar1;
   float afStackY_1010 [1016];
-  float local_28;
+  CVector3f local_28;
   float local_1c;
-  float local_18;
-  float local_14;
+  float local_18 [2];
   
   bVar1 = 0;
   if (linear_velocity != (CVector3f *)0x0) {
@@ -25,16 +22,16 @@ void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420450(CBox *this_ptr,CVect
       (this_ptr->linear_velocity).y = linear_velocity->y;
       (this_ptr->linear_velocity).z = linear_velocity->z;
     }
-    core_dirmat_cpp_FUN_0045f700(&this_ptr->rotation_matrix,&this_ptr->linear_velocity);
-    local_1c = local_28;
-    (&stack0xffffffe8)[(uint)bVar1 * 0xfffffffe] =
-         (float)*(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
-    *(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-    if (&this_ptr->linear_velocity_local != (CVector3f *)&stack0xffffffe4) {
+    core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0045f700
+              (&this_ptr->rotation_matrix,&this_ptr->linear_velocity,&local_28);
+    local_1c = local_28.x;
+    local_18[(uint)bVar1 * -2] = *(float *)((int)&local_28 + (uint)bVar1 * -8 + 4);
+    local_18[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+         *(float *)((int)&local_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+    if (&this_ptr->linear_velocity_local != (CVector3f *)&local_1c) {
       (this_ptr->linear_velocity_local).x = local_1c;
-      (this_ptr->linear_velocity_local).y = local_18;
-      (this_ptr->linear_velocity_local).z = local_14;
+      (this_ptr->linear_velocity_local).y = local_18[0];
+      (this_ptr->linear_velocity_local).z = local_18[1];
     }
   }
   if ((angular_velocity != (CVector3f *)0x0) && (&this_ptr->angular_velocity != angular_velocity)) {

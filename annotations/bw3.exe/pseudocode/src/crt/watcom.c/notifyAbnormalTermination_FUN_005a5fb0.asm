@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e4330 at 004e43c6
+;   core_main.c_displayErrorAndQuit_FUN_004e4330 at 004e43c6
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a5fb8_00607674 = 005a5fb8

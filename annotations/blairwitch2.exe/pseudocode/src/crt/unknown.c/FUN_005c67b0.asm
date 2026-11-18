@@ -11,10 +11,10 @@
 ;   void* PTR_GetCurrentThreadId_005c8580 = 001c8e42
 ;   void* PTR_GetCurrentThread_005c8584 = 001c8e58
 ;   void* PTR_WaitForSingleObject_005c866c = 001c9290
-;   undefined4 DAT_005f2114
-;   undefined4 DAT_005f2118
-;   undefined1 DAT_005f211c
-;   undefined4 DAT_0061f2a0
+;   TerminatedCString s_bgnthd_005f2114
+;   undefined4 s_bgnthd_005f2114+4
+;   undefined4 s_bgnthd_005f2114+8
+;   int g_INT_0061f2a0 = -0x1
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -39,7 +39,7 @@ section .text
     PUSH EBP                            ; 005c67b4
     SUB ESP,0x38                        ; 005c67b5
     MOV EBX,dword ptr [ESP + 0x54]      ; 005c67b8
-    CMP dword ptr [0x0061f2a0],-0x1     ; 005c67bc | DAT_0061f2a0
+    CMP dword ptr [0x0061f2a0],-0x1     ; 005c67bc | g_INT_0061f2a0
     JNZ 0x005c67d7                      ; 005c67c3
         ;   XREF to: 005c67d7 (CONDITIONAL_JUMP)  ; LAB_005c67d7
     CALL crt_unknown.c_FUN_005c297c     ; 005c67c5
@@ -66,12 +66,12 @@ section .text
     XOR ECX,ECX                         ; 005c6805
     MOV ES,AX                           ; 005c6807
     LEA EAX,[ESP + 0xc]                 ; 005c6809
-    MOV ESI,0x5f2114                    ; 005c680d | DAT_005f2114
+    MOV ESI,0x5f2114                    ; 005c680d | = "__bgnthd"
     MOV dword ptr [ESP + 0x34],ECX      ; 005c6812
     PUSH EAX                            ; 005c6816
-    MOVSD ES:EDI,ESI                    ; 005c6817 | DAT_005f2114
-    MOVSD ES:EDI,ESI                    ; 005c6818 | DAT_005f2118
-    MOVSB ES:EDI,ESI                    ; 005c6819 | DAT_005f211c
+    MOVSD ES:EDI,ESI                    ; 005c6817 | = "__bgnthd"
+    MOVSD ES:EDI,ESI                    ; 005c6818 | s_bgnthd_005f2114+4
+    MOVSB ES:EDI,ESI                    ; 005c6819 | s_bgnthd_005f2114+8
     CALL dword ptr CS:[0x5c8580]        ; 005c681a | PTR_GetCurrentThreadId_005c8580
     PUSH EAX                            ; 005c6821
     CALL crt_stdio.c_IntegerToString_FUN_005bafd8 ; 005c6822

@@ -16,7 +16,7 @@
 ;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a0e3
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043cb00
+;   core_cloth.cpp_CCloth_setup_FUN_0043cb00
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH EDX                            ; 0043fbe7
     ADD EBX,0x4                         ; 0043fbe8
     INC ESI                             ; 0043fbeb
-    CALL core_cloth.cpp_FUN_0043cb00    ; 0043fbec
-        ;   XREF to: 0043cb00 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043cb00()
+    CALL core_cloth.cpp_CCloth_setup_FUN_0043cb00 ; 0043fbec
+        ;   XREF to: 0043cb00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_0043cb00(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     MOV ECX,dword ptr [EDI]             ; 0043fbf1
     ADD ESP,0x10                        ; 0043fbf3
     CMP ESI,ECX                         ; 0043fbf6

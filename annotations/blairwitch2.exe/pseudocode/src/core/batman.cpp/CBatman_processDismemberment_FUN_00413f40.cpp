@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_00413f40(CBatman *this_ptr,SDamageInfo *damage_info)
 
@@ -21,11 +20,8 @@ void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_00413f40(CBatman *
   CVector3f *impact_point;
   float fVar3;
   CVector3f local_40;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
-  float local_28;
-  float afStack_24 [4];
+  CVector3f local_34;
+  CVector3f local_28;
   float local_14;
   
   bVar2 = 0;
@@ -110,39 +106,41 @@ switchD_00413f76_default:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] == 0) {
         damage_info->damage_amount = 9999.0;
       }
-      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005cbbce;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
   iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[0]) {
-    fVar3 = damage_info->damage_amount * (float)_DAT_005cbbde;
+    fVar3 = damage_info->damage_amount * (float)2.5;
   }
   else {
     if ((iVar1 == this_ptr->part_indices[6]) || (iVar1 == this_ptr->part_indices[1])) {
       damage_info->damage_amount = damage_info->damage_amount;
       goto LAB_00414131;
     }
-    fVar3 = damage_info->damage_amount * (float)_DAT_005cbbd6;
+    fVar3 = damage_info->damage_amount * (float)0.5;
   }
   damage_info->damage_amount = fVar3;
 LAB_00414131:
   this_ptr_00 = g_CConsolePtr;
   if ((this_ptr->part_indices[1] == damage_info->hit_part_index) &&
      (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE)) {
-    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005cbbe6;
+    damage_info->damage_amount = damage_info->damage_amount * (float)20;
     engine_console_cpp_CConsole_printf_FUN_00436710(this_ptr_00,"Shot thru the heart\n");
     iVar1 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
     if (iVar1 != 0) {
-      local_30 = 0x41a00000;
-      local_2c = 0x41a00000;
-      local_34 = 0;
-      core_actor_cpp_FUN_00408cf0(this_ptr,&local_34);
+      local_34.y = 20.0;
+      local_34.z = 20.0;
+      local_34.x = 0.0;
+      core_actor_cpp_CDemonActor_transformVector_FUN_00408cf0
+                ((CDemonActor *)this_ptr,&local_34,&local_28);
       iVar1 = 1;
       fVar3 = -1.0;
-      local_40.x = local_28;
-      *(float *)((int)&local_40 + (uint)bVar2 * -8 + 4) = afStack_24[(uint)bVar2 * -2];
-      *(float *)((int)&local_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-           afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+      local_40.x = local_28.x;
+      *(uint *)((int)&local_40 + (uint)bVar2 * -8 + 4) =
+           *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4);
+      *(uint *)((int)&local_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+           *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
       core_charactr_cpp_CCharacter_dismember_FUN_00427360
                 ((CCharacter *)this_ptr,impact_point,fVar3,iVar1);
       return;

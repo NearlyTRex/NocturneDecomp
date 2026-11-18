@@ -6,17 +6,17 @@
 ;
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0 at 0043ba1a
-;   core_set.cpp_FUN_0052fad0 at 0052fe38
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0052fad0 at 0052fe38
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 at 005385a6
 ;   engine_mini3d.cpp_clearZBuffer_FUN_004f2410 at 004f241e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141b8
-;   undefined8 DAT_0061c78c
-;   undefined4 DAT_0061c794
-;   undefined4 DAT_01c2b64c
-;   undefined4 DAT_01c35e4c
-;   undefined4 DAT_01c35e54
+;   int g_INT_006141b8 = 0x140
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_INT_01c35e4c
+;   int g_INT_01c35e54
 ;
 ; *****************************************************************************
 
@@ -29,19 +29,19 @@ section .text
     CLD                                 ; 0055b257
     PUSH DS                             ; 0055b258
     POP ES                              ; 0055b259
-    MOV EDI,dword ptr [0x01c2b64c]      ; 0055b25a | DAT_01c2b64c
-    MOV EAX,[0x01c35e4c]                ; 0055b260 | DAT_01c35e4c
-    MOV ECX,dword ptr [0x006141b8]      ; 0055b265 | DAT_006141b8
+    MOV EDI,dword ptr [0x01c2b64c]      ; 0055b25a | g_ZBufferScanlineArray
+    MOV EAX,[0x01c35e4c]                ; 0055b260 | g_INT_01c35e4c
+    MOV ECX,dword ptr [0x006141b8]      ; 0055b265 | g_INT_006141b8
     MUL ECX                             ; 0055b26b
     SHL EAX,0x2                         ; 0055b26d
     ADD EDI,EAX                         ; 0055b270
-    MOV EAX,[0x01c35e54]                ; 0055b272 | DAT_01c35e54
-    SUB EAX,dword ptr [0x01c35e4c]      ; 0055b277 | DAT_01c35e4c
+    MOV EAX,[0x01c35e54]                ; 0055b272 | g_INT_01c35e54
+    SUB EAX,dword ptr [0x01c35e4c]      ; 0055b277 | g_INT_01c35e4c
     INC EAX                             ; 0055b27d
-    MOV ECX,dword ptr [0x006141b8]      ; 0055b27e | DAT_006141b8
+    MOV ECX,dword ptr [0x006141b8]      ; 0055b27e | g_INT_006141b8
     MUL ECX                             ; 0055b284
     MOV ECX,EAX                         ; 0055b286
-    FLD double ptr [0x0061c78c]         ; 0055b288 | DAT_0061c78c
+    FLD double ptr [0x0061c78c]         ; 0055b288 | g_BufferFillZeroQword
     FST double ptr [EDI]                ; 0055b28e
         ;   Label: LAB_0055b28e
     FST double ptr [EDI + 0x8]          ; 0055b290
@@ -55,7 +55,7 @@ section .text
     SUB ECX,0x10                        ; 0055b2a8
     JG 0x0055b28e                       ; 0055b2ab
         ;   XREF to: 0055b28e (CONDITIONAL_JUMP)  ; LAB_0055b28e
-    FSTP double ptr [0x0061c794]        ; 0055b2ad | DAT_0061c794
+    FSTP double ptr [0x0061c794]        ; 0055b2ad | g_BufferFillFpuPopST0
     POPAD                               ; 0055b2b3
     POP EDI                             ; 0055b2b4
     POP ESI                             ; 0055b2b5

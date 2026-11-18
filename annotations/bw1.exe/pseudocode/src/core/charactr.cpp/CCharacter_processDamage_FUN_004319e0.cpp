@@ -6,53 +6,49 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(CCharacter *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;
-  float fVar2;
-  EDamageType EVar3;
+  EDamageType EVar2;
   CVector3f *impact_point;
-  byte bVar4;
-  float10 fVar5;
-  float afStackY_1040 [1012];
+  byte bVar3;
+  double dVar4;
+  float afStackY_1044 [1013];
+  float fVar5;
   float fVar6;
-  int include_hero;
-  float local_58;
-  CVector3f local_4c;
-  CVector3f local_40;
-  float local_34;
-  uint auStack_30 [5];
+  byte local_4c [12];
+  float local_40 [3];
+  CVector3f local_34;
+  CVector3f local_28;
   int local_1c;
-  int local_18;
   
-  bVar4 = 0;
+  bVar3 = 0;
   if (this_ptr->is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_004a1b70
-              (0x01C51D80,"?ShotInvulnerable" + 1);
+              (g_CEventListPtr,"ShotInvulnerable");
     return;
   }
   if (damage_info->damage_amount <= 0.0) {
     return;
   }
-  fVar6 = (damage_info->impact_point).y;
-  fVar1 = (damage_info->impact_point).x;
-  fVar2 = (damage_info->impact_point).z;
+  fVar5 = (damage_info->impact_point).y;
+  fVar6 = (damage_info->impact_point).x;
+  fVar1 = (damage_info->impact_point).z;
   impact_point = (CVector3f *)0x0;
-  if (0.0 < SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar6 * fVar6)) {
+  if (0.0 < SQRT(fVar1 * fVar1 + fVar6 * fVar6 + fVar5 * fVar5)) {
     impact_point = &damage_info->impact_point;
   }
-  EVar3 = damage_info->damage_type;
-  if (EVar3 < DAMAGE_TYPE_ELECTROCUTE) {
-    if (EVar3 < DAMAGE_TYPE_FALL_APART) {
-      if (EVar3 == DAMAGE_TYPE_EXPLODE) {
-        core_charactr_cpp_FUN_00430c90(this_ptr,impact_point,damage_info->impact_force);
+  EVar2 = damage_info->damage_type;
+  if (EVar2 < DAMAGE_TYPE_ELECTROCUTE) {
+    if (EVar2 < DAMAGE_TYPE_FALL_APART) {
+      if (EVar2 == DAMAGE_TYPE_EXPLODE) {
+        core_charactr_cpp_CCharacter_explode_FUN_00430c90
+                  (this_ptr,impact_point,damage_info->impact_force);
       }
       goto LAB_00431a64;
     }
-    if (DAMAGE_TYPE_FALL_APART < EVar3) {
+    if (DAMAGE_TYPE_FALL_APART < EVar2) {
       core_charactr_cpp_CCharacter_shatter_FUN_00430c40(this_ptr);
       goto LAB_00431a64;
     }
@@ -61,51 +57,56 @@ LAB_00431bb2:
               (this_ptr,impact_point,damage_info->impact_force,0);
   }
   else {
-    if (DAMAGE_TYPE_ELECTROCUTE < EVar3) {
-      if (EVar3 < DAMAGE_TYPE_ATTACK_STAKE) {
-        if (EVar3 != DAMAGE_TYPE_CHOPPED) goto LAB_00431a64;
+    if (DAMAGE_TYPE_ELECTROCUTE < EVar2) {
+      if (EVar2 < DAMAGE_TYPE_ATTACK_STAKE) {
+        if (EVar2 != DAMAGE_TYPE_CHOPPED) goto LAB_00431a64;
         goto LAB_00431bb2;
       }
-      if (EVar3 < DAMAGE_TYPE_ATTACK_GAS) {
+      if (EVar2 < DAMAGE_TYPE_ATTACK_GAS) {
         core_charactr_cpp_CCharacter_addDamageDecal_FUN_00430440(this_ptr);
         goto LAB_00431a64;
       }
-      if (EVar3 != DAMAGE_TYPE_ATTACK_ELECTROCUTE) goto LAB_00431a64;
+      if (EVar2 != DAMAGE_TYPE_ATTACK_ELECTROCUTE) goto LAB_00431a64;
     }
     this_ptr->stagger_amount = 3.0;
   }
 LAB_00431a64:
   if (damage_info->ammo_type == AMMO_TYPE_FLAMING) {
-    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
-    include_hero = 0;
-    fVar6 = 1.0;
-    local_4c.x = local_34;
-    *(uint *)((int)&local_4c + (uint)bVar4 * -8 + 4) = auStack_30[(uint)bVar4 * -2];
-    *(uint *)((int)&local_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         auStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              (&this_ptr->base,&damage_info->impact_direction,&local_34);
+    fVar6 = 0.0;
+    fVar5 = 1.0;
+    local_4c._0_4_ = local_34.x;
+    *(uint *)(local_4c + (uint)bVar3 * -8 + 4) =
+         *(uint *)((int)&local_34 + (uint)bVar3 * -8 + 4);
+    local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + -1] =
+         *(float *)((int)&local_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     core_charactr_cpp_CCharacter_igniteBone_FUN_004308a0
-              (this_ptr,&local_4c,damage_info->hit_part_index,0,fVar6,include_hero);
+              (this_ptr,(CVector3f *)local_4c,damage_info->hit_part_index,0,fVar5,(int)fVar6);
   }
   if (damage_info->ammo_type == AMMO_TYPE_STAGGER) {
-    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              (&this_ptr->base,&damage_info->impact_direction,&local_28);
     this_ptr->stagger_amount = 0.5;
   }
   if (0.0 < damage_info->gore_multiplier) {
-    fVar5 = (float10)damage_info->damage_amount * (float10)damage_info->gore_multiplier;
-    round();
-    local_1c = (int)ROUND(fVar5);
-    local_18 = local_1c + 1;
-    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
-    local_40.x = local_58;
-    *(uint *)((int)&local_40 + (uint)bVar4 * -8 + 4) =
-         *(uint *)(&stack0xffffffac + (uint)bVar4 * -8);
-    *(uint *)((int)&local_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         *(uint *)(&stack0xffffffb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    fVar5 = 6.162629e-39;
+    dVar4 = round
+                      ((double)(damage_info->damage_amount * damage_info->gore_multiplier));
+    local_28.z = (float)(int)ROUND(dVar4);
+    local_1c = (int)local_28.z + 1;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408b40
+              (&this_ptr->base,&damage_info->impact_direction,(CVector3f *)&stack0xffffffa4);
+    local_4c._8_4_ = fVar5;
+    local_40[(uint)bVar3 * -2] = *(float *)(&stack0xffffffa8 + (uint)bVar3 * -8);
+    local_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+         *(float *)(&stack0xffffffac + (uint)bVar3 * -8 + (uint)bVar3 * -8);
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060
-              (g_CGorePtr,&local_40,&damage_info->impact_point,local_18,this_ptr->blood_type);
+              (g_CGorePtr,(CVector3f *)(local_4c + 8),&damage_info->impact_point,local_1c,
+               this_ptr->blood_type);
   }
   if ((this_ptr->health_bar_mode == HEALTH_BAR_WHEN_HURT) &&
-     (this_ptr != *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4))) {
+     ((CHero *)this_ptr != g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004d6340
               (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
                ,5.0);

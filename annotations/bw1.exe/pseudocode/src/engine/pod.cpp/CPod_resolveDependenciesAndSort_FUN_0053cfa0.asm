@@ -7,14 +7,14 @@
 ; CPod *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   engine_pod.cpp_CPod_dismountPod_FUN_0053d490
 ;   engine_pod.cpp_CPod_getPodIndexByFilename_FUN_0053d3f0
-;   engine_pod.cpp_FUN_0053c3b0
+;   engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0
 ;
 ; *****************************************************************************
 
@@ -129,8 +129,8 @@ section .text
     PUSH EAX                            ; 0053d0e4
     LEA ESI,[ESP + 0x648]               ; 0053d0e5
     LEA EDI,[ESP + 0x960]               ; 0053d0ec
-    CALL engine_pod.cpp_FUN_0053c3b0    ; 0053d0f3
-        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0053c3b0()
+    CALL engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0 ; 0053d0f3
+        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
     MOV ECX,0x42                        ; 0053d0f8
     LEA ESI,[ESP + 0x648]               ; 0053d0fd
     ADD ESP,0x8                         ; 0053d104
@@ -152,8 +152,8 @@ section .text
     PUSH ESI                            ; 0053d12e
     LEA ESI,[ESP + 0x858]               ; 0053d12f
     LEA EDI,[ESP + 0x750]               ; 0053d136
-    CALL engine_pod.cpp_FUN_0053c3b0    ; 0053d13d
-        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0053c3b0()
+    CALL engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0 ; 0053d13d
+        ;   XREF to: 0053c3b0 (UNCONDITIONAL_CALL)  ; CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_0053c3b0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
     MOV ECX,0x42                        ; 0053d142
     LEA ESI,[ESP + 0x858]               ; 0053d147
     ADD ESP,0x8                         ; 0053d14e
@@ -213,10 +213,10 @@ section .text
     MOV EAX,0x5edb24                    ; 0053d1f9
     MOV EDX,0x685                       ; 0053d1fe
     PUSH 0x5edb36                       ; 0053d203
-    MOV [0x01d1d400],EAX                ; 0053d208 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0053d20d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053d213
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 0053d208 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0053d20d | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053d213
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053d218
     MOV EAX,dword ptr [ESP + 0xa7c]     ; 0053d21b
         ;   Label: LAB_0053d21b
@@ -269,10 +269,10 @@ section .text
     MOV EDI,0x5edaeb                    ; 0053d296
     MOV EAX,0x633                       ; 0053d29b
     PUSH 0x5edafd                       ; 0053d2a0
-    MOV dword ptr [0x01d1d400],EDI      ; 0053d2a5 | DAT_01d1d400
-    MOV [0x01d1d404],EAX                ; 0053d2ab | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0053d2b0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 0053d2a5 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d404],EAX                ; 0053d2ab | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053d2b0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053d2b5
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053d2b8
         ;   Label: LAB_0053d2b8

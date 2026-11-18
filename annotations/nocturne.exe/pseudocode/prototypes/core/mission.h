@@ -63,7 +63,7 @@ void __cdecl CDemonMission::addActorToList(CDemonMission *this_ptr,CDemonActor *
 
 // Original: core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
 // Address: 004d8cd0
-void __cdecl CDemonMission::removeActorFromList(CDemonMission *this_ptr,CDemonActor *param_2);
+void __cdecl CDemonMission::removeActorFromList(CDemonMission *this_ptr,CDemonActor *actor_ptr);
 
 // Original: core_mission.cpp_CDemonMission_countActors_FUN_004d8d80
 // Address: 004d8d80
@@ -111,7 +111,7 @@ void __cdecl CDemonMission::process(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0
 // Address: 004d93d0
-void __cdecl CDemonMission::createFromSingleSet(CDemonMission *this_ptr,char *param_2);
+void __cdecl CDemonMission::createFromSingleSet(CDemonMission *this_ptr,char *set_name);
 
 // Original: core_mission.cpp_CDemonMission_run_FUN_004d9440
 // Address: 004d9440

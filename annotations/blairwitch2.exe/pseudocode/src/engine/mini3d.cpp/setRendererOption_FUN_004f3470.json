@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 21,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 10
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
   },
   "cross_references": [
     {
       "addr": "004a97a0",
       "from_addr": "004a9806",
-      "name": "engine_font.cpp_FUN_004a97a0",
+      "name": "engine_font.cpp_CBitFont_flushAccelBatch_FUN_004a97a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,9 +36,9 @@
   "globals": [
     {
       "addr": "0061e280",
-      "name": "DAT_0061e280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SystemInitialized",
+      "type": "int",
+      "value": "0x1"
     }
   ],
   "param_estimates": {
@@ -49,7 +47,7 @@
       {
         "call_addr": "004a9806",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004a97a0",
+        "caller": "engine_font.cpp_CBitFont_flushAccelBatch_FUN_004a97a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -60,7 +58,7 @@
       {
         "call_addr": "004a9854",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004a97a0",
+        "caller": "engine_font.cpp_CBitFont_flushAccelBatch_FUN_004a97a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,14 +114,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

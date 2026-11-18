@@ -1,0 +1,40 @@
+// Name: core_prye.cpp_CPrye_updateClothSimulation_FUN_00526cf0
+// Address: 00526cf0
+// Address Range: [[00526cf0, 00526db1]]
+// Convention: __cdecl
+// Signature: void __cdecl core_prye_cpp_CPrye_updateClothSimulation_FUN_00526cf0(CPrye *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_prye_cpp_CPrye_updateClothSimulation_FUN_00526cf0(CPrye *this_ptr)
+
+{
+  CVector3f *pCVar1;
+  CCloth *pCVar2;
+  SMotion *pSVar3;
+  uint auStack_24 [3];
+  uint auStack_18 [3];
+  
+  if (0 < (this_ptr->base).base.cloth_list.count) {
+    (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+    pCVar2 = (this_ptr->base).base.cloth_list.cloths[0];
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
+                       (&(this_ptr->base).base.model.base);
+    pCVar1 = &pCVar2->wind_velocity;
+    if (pSVar3->state_index == 0x37) {
+      if (pCVar1 != (CVector3f *)auStack_18) {
+        (pCVar2->wind_velocity).y = 0.0;
+        pCVar1->x = 0.0;
+        (pCVar2->wind_velocity).z = -20.0;
+        return;
+      }
+    }
+    else if ((pSVar3->state_index == 0x38) && (pCVar1 != (CVector3f *)auStack_24)) {
+      (pCVar2->wind_velocity).y = 0.0;
+      pCVar1->x = 0.0;
+      (pCVar2->wind_velocity).z = 20.0;
+      return;
+    }
+  }
+  return;
+}

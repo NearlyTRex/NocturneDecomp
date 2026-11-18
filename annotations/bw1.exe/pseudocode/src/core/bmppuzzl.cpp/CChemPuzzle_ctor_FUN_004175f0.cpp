@@ -16,6 +16,6 @@ CChemPuzzle * __cdecl core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_004175f0(CChemPuzzl
   pCVar1 = core_bmppuzzl_cpp_CPuzzle_ctor_FUN_00415ba0(&this_ptr->base);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0((CAlphaBitmap *)(pCVar1 + 1));
   pvVar3 = __arrinit(&pCVar2[5].act,0x32,(WatcomTypeInfo *)&DAT_005fca90);
-  (((CChemPuzzle *)((int)pvVar3 + -0x70))->base).vtable = &g_CChemPuzzleVTable;
+  (((CChemPuzzle *)((int)pvVar3 + -0x70))->base).vtable = g_CChemPuzzleVTable;
   return (CChemPuzzle *)((int)pvVar3 + -0x70);
 }

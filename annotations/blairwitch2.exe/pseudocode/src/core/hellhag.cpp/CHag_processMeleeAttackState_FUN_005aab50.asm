@@ -10,17 +10,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f0bca
 ;   TerminatedCString s_Chasing_005f0bd2
-;   undefined4 DAT_005f0bde
-;   undefined4 DAT_00600a6c
-;   undefined4 DAT_00600a70
+;   double g_DOUBLE_005f0bde = 0.800000000000000
+;   float g_FLOAT_00600a6c = 6
+;   float g_FLOAT_00600a70 = 4
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
+;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_005035c0
-;   core_motion.cpp_FUN_00503e60
-;   core_muzzle.cpp_FUN_0059d8e0
-;   core_muzzle.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -52,7 +52,7 @@ section .text
     FSQRT                               ; 005aab8d
     ADD EDX,0x20                        ; 005aab8f
     FST float ptr [ESP + 0x8]           ; 005aab92
-    FCOMP float ptr [0x00600a6c]        ; 005aab96 | DAT_00600a6c
+    FCOMP float ptr [0x00600a6c]        ; 005aab96 | g_FLOAT_00600a6c
     FNSTSW AX                           ; 005aab9c
     SAHF                                ; 005aab9e
     JA 0x005aabf0                       ; 005aab9f
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 00423850 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850(CCharacter * this_ptr, CVector3f * target)
     ADD ESP,0x8                         ; 005aaba8
     FLD float ptr [ESP + 0x8]           ; 005aabab
-    FCOMP float ptr [0x00600a70]        ; 005aabaf | DAT_00600a70
+    FCOMP float ptr [0x00600a70]        ; 005aabaf | g_FLOAT_00600a70
     FNSTSW AX                           ; 005aabb5
     SAHF                                ; 005aabb7
     JA 0x005aac20                       ; 005aabb8
@@ -72,8 +72,8 @@ section .text
     LEA EDI,[EBX + 0x2b4]               ; 005aabbf
         ;   Label: LAB_005aabbf
     PUSH EDI                            ; 005aabc5
-    CALL core_motion.cpp_FUN_005035c0   ; 005aabc6
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 005aabc6
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005aabcb
     ADD ESP,0x4                         ; 005aabce
     MOV EBP,EAX                         ; 005aabd1
@@ -101,22 +101,22 @@ section .text
     PUSH 0x3f000000                     ; 005aabf0
         ;   Label: LAB_005aabf0
     ADD EBX,0x10af8                     ; 005aabf5
-    FLD float ptr [0x00600a6c]          ; 005aabfb | DAT_00600a6c
+    FLD float ptr [0x00600a6c]          ; 005aabfb | g_FLOAT_00600a6c
     PUSH EBX                            ; 005aac01
     FSTP float ptr [EBX + 0x89c]        ; 005aac02
-    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005aac08
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0 ; 005aac08
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(SStateMachine * this_ptr, float delay)
     ADD ESP,0x8                         ; 005aac0d
     PUSH 0x5f0bca                       ; 005aac10 | = "Chasing"
     PUSH EBX                            ; 005aac15
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aac16
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aac16
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aac1b
     JMP 0x005aabe8                      ; 005aac1e
         ;   XREF to: 005aabe8 (UNCONDITIONAL_JUMP)  ; LAB_005aabe8
     FLD float ptr [ESP + 0x8]           ; 005aac20
         ;   Label: LAB_005aac20
-    FCOMP float ptr [0x00600a6c]        ; 005aac24 | DAT_00600a6c
+    FCOMP float ptr [0x00600a6c]        ; 005aac24 | g_FLOAT_00600a6c
     FNSTSW AX                           ; 005aac2a
     SAHF                                ; 005aac2c
     JA 0x005aac36                       ; 005aac2d
@@ -142,23 +142,23 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 005aac4a
         ;   Label: LAB_005aac4a
     PUSH EAX                            ; 005aac50
-    CALL core_motion.cpp_FUN_00503e60   ; 005aac51
-        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_FUN_00503e60(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60 ; 005aac51
+        ;   XREF to: 00503e60 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(CMotionController * this_ptr)
     MOV dword ptr [ESP + 0x10],EAX      ; 005aac56
     FLD float ptr [ESP + 0x10]          ; 005aac5a
     ADD ESP,0x4                         ; 005aac5e
-    FCOMP double ptr [0x005f0bde]       ; 005aac61 | DAT_005f0bde
+    FCOMP double ptr [0x005f0bde]       ; 005aac61 | g_DOUBLE_005f0bde
     FNSTSW AX                           ; 005aac67
     SAHF                                ; 005aac69
     JBE 0x005aabe8                      ; 005aac6a
         ;   XREF to: 005aabe8 (CONDITIONAL_JUMP)  ; LAB_005aabe8
     PUSH 0x5f0bd2                       ; 005aac70 | = "Chasing"
     ADD EBX,0x10af8                     ; 005aac75
-    FLD float ptr [0x00600a70]          ; 005aac7b | DAT_00600a70
+    FLD float ptr [0x00600a70]          ; 005aac7b | g_FLOAT_00600a70
     PUSH EBX                            ; 005aac81
     FSTP float ptr [EBX + 0x89c]        ; 005aac82
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aac88
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 005aac88
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 005aac8d
     ADD ESP,0x10                        ; 005aac90
     POP EBP                             ; 005aac93

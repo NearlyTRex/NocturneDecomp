@@ -9,8 +9,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
-;   core_box.cpp_FUN_0041daf0
-;   core_charactr.cpp_FUN_0042d8e0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0
 ;   core_morph.cpp_CMorph_render_FUN_004fb0e0
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004fab90
 ;
@@ -56,8 +56,8 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005279c2
     PUSH EAX                            ; 005279c6
     MOVSD.REP ES:EDI,ESI                ; 005279c7
-    CALL core_box.cpp_FUN_0041daf0      ; 005279c9
-        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041daf0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0 ; 005279c9
+        ;   XREF to: 0041daf0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 005279ce
     MOV EDI,EAX                         ; 005279d1
     TEST EAX,EAX                        ; 005279d3
@@ -67,8 +67,8 @@ section .text
     JNZ 0x005279fe                      ; 005279e1
         ;   XREF to: 005279fe (CONDITIONAL_JUMP)  ; LAB_005279fe
     PUSH EBX                            ; 005279e3
-    CALL core_charactr.cpp_FUN_0042d8e0 ; 005279e4
-        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042d8e0()
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0 ; 005279e4
+        ;   XREF to: 0042d8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_0042d8e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005279e9
     PUSH EBX                            ; 005279ec
         ;   Label: LAB_005279ec

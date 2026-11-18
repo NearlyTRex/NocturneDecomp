@@ -46,8 +46,8 @@
   "globals": [
     {
       "addr": "0061f7f8",
-      "name": "PTR_crt_unknown.c_FUN_005c5cd0_0061f7f8",
-      "type": "undefined1*",
+      "name": "g_PTR_0061f7f8",
+      "type": "void*",
       "value": "005c5cd0"
     }
   ],
@@ -136,7 +136,7 @@
       "line": 5,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c5cd0_0061f7f8)(param_1);",
+      "text": "(*(code *)g_PTR_0061f7f8)(param_1);",
       "type": "unresolved_funcptr"
     },
     {
@@ -144,7 +144,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c5cd0_0061f7f8)(param_1);",
+      "text": "(*(code *)g_PTR_0061f7f8)(param_1);",
       "type": "unnamed_param"
     },
     {

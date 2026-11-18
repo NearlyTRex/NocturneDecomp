@@ -11,13 +11,13 @@
 ;   undefined1* switchdataD_0059f410 = 0059f48a
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059f5b0
-;   core_basicene.cpp_FUN_0059f660
+;   core_basicene.cpp_CBasicEnemy_updateFade_FUN_0059f5b0
+;   core_basicene.cpp_CBasicEnemy_updateFlinch_FUN_0059f660
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_0042b5e0
+;   core_charactr.cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_muzzle.cpp_FUN_0059da20
+;   core_muzzle.cpp_SStateMachine_process_FUN_0059da20
 ;
 ; *****************************************************************************
 
@@ -84,19 +84,19 @@ section .text
         ;   XREF to: 0059f4cd (CONDITIONAL_JUMP)  ; LAB_0059f4cd
     PUSH dword ptr [ESP + 0x14]         ; 0059f4c0
     PUSH EBX                            ; 0059f4c4
-    CALL core_basicene.cpp_FUN_0059f5b0 ; 0059f4c5
-        ;   XREF to: 0059f5b0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f5b0()
+    CALL core_basicene.cpp_CBasicEnemy_updateFade_FUN_0059f5b0 ; 0059f4c5
+        ;   XREF to: 0059f5b0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_updateFade_FUN_0059f5b0(CBasicEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059f4ca
     PUSH dword ptr [ESP + 0x14]         ; 0059f4cd
         ;   Label: LAB_0059f4cd
     PUSH EBX                            ; 0059f4d1
-    CALL core_basicene.cpp_FUN_0059f660 ; 0059f4d2
-        ;   XREF to: 0059f660 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f660()
+    CALL core_basicene.cpp_CBasicEnemy_updateFlinch_FUN_0059f660 ; 0059f4d2
+        ;   XREF to: 0059f660 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_updateFlinch_FUN_0059f660(CBasicEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059f4d7
     PUSH dword ptr [ESP + 0x14]         ; 0059f4da
     PUSH EBX                            ; 0059f4de
-    CALL core_charactr.cpp_FUN_0042b5e0 ; 0059f4df
-        ;   XREF to: 0042b5e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b5e0()
+    CALL core_charactr.cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0 ; 0059f4df
+        ;   XREF to: 0042b5e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updatePhantomEyes_FUN_0042b5e0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059f4e4
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 0059f4e7
     PUSH dword ptr [ESP + 0x14]         ; 0059f4ed
@@ -142,8 +142,8 @@ section .text
         ;   Label: LAB_0059f545
     PUSH dword ptr [ESP + 0x14]         ; 0059f54b
     PUSH EAX                            ; 0059f54f
-    CALL core_muzzle.cpp_FUN_0059da20   ; 0059f550
-        ;   XREF to: 0059da20 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059da20()
+    CALL core_muzzle.cpp_SStateMachine_process_FUN_0059da20 ; 0059f550
+        ;   XREF to: 0059da20 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_SStateMachine_process_FUN_0059da20(SStateMachine * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0059f555
     PUSH 0x1                            ; 0059f558
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 0059f55a

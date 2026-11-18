@@ -1,0 +1,210 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 89,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array"
+    ],
+    "total_lines": 87
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ea6a0",
+    "address_range": [
+      [
+        "004ea6a0",
+        "004ea72a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "engine_matrix.c_projectToScreen_FUN_004ea6a0",
+    "signature": "int __cdecl engine_matrix_c_projectToScreen_FUN_004ea6a0(int input_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "004e8d30",
+      "is_variadic": false,
+      "name": "engine_matrix.c_transformWorldToView_FUN_004e8d30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141e4",
+      "name": "g_ProjectionScale",
+      "type": "int",
+      "value": "0x10000"
+    },
+    {
+      "addr": "01c35e3c",
+      "name": "g_INT_01c35e3c",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.226415094339623,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 127,
+      "FLOAT_DIV": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NEG": 1,
+      "INT2FLOAT": 4,
+      "INT_ADD": 33,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 20,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 17,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 277
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00509340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e6d80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050e5b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8908
+    },
+    "nocturne.exe": {
+      "addr": "004cea50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "input_value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ea6a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "004ea6b3",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 7,
+      "match": "aiStackY_1038",
+      "severity": "moderate",
+      "text": "int aiStackY_1038 [1017];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)aCStack_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)aCStack_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)aCStack_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + -4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)((int)aCStack_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

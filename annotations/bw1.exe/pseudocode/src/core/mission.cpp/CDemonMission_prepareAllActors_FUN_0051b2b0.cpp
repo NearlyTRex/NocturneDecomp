@@ -18,7 +18,7 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(CDemon
   
   iVar5 = 0;
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Setting up actors");
-  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar1,iVar5);
+  core_level_cpp_CLevelLoader_update_FUN_004fe9c0(g_CLevelLoaderPtr,pcVar1,iVar5);
   core_skeleton_cpp_clearModelAndSkeletonInUseFlags_FUN_0056b830();
   iVar5 = 0;
   for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
@@ -38,17 +38,17 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(CDemon
       if (iVar4 == (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2) {
         iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Setting up actors");
-        core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar1,iVar6);
+        core_level_cpp_CLevelLoader_update_FUN_004fe9c0(g_CLevelLoaderPtr,pcVar1,iVar6);
       }
       if (iVar4 == iVar5 / 2) {
         iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Setting up actors");
-        core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar1,iVar6);
+        core_level_cpp_CLevelLoader_update_FUN_004fe9c0(g_CLevelLoaderPtr,pcVar1,iVar6);
       }
       if (iVar4 == (int)((iVar5 * 3 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2) {
         iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Setting up actors");
-        core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar1,iVar6);
+        core_level_cpp_CLevelLoader_update_FUN_004fe9c0(g_CLevelLoaderPtr,pcVar1,iVar6);
       }
       pCVar3 = pCVar3->next_actor;
     } while (pCVar3 != (CDemonActor *)0x0);

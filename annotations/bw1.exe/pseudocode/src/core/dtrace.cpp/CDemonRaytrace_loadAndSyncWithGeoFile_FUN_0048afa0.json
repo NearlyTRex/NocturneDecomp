@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 36,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 40
   },
   "cross_references": [
     {
       "addr": "0054d3c0",
       "from_addr": "0054de47",
-      "name": "core_set.cpp_FUN_0054d3c0",
+      "name": "core_set.cpp_CDemonSet_load_FUN_0054d3c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,20 +46,20 @@
     {
       "addr": "00479180",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479180"
+      "name": "engine_dosio.cpp_getFile_FUN_00479180"
     }
   ],
   "globals": [
     {
       "addr": "005db944",
-      "name": "DAT_005db944",
-      "type": "undefined4",
+      "name": "s_rb_005db944",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005db947",
-      "name": "DAT_005db947",
-      "type": "undefined4",
+      "name": "s_data_005db947",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -71,7 +69,7 @@
       {
         "call_addr": "0054de47",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0054d3c0",
+        "caller": "core_set.cpp_CDemonSet_load_FUN_0054d3c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,22 +155,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005db947",
-      "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_00479180(&DAT_005db947,filename,&DAT_005db944);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005db944",
-      "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_00479180(&DAT_005db947,filename,&DAT_005db944);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

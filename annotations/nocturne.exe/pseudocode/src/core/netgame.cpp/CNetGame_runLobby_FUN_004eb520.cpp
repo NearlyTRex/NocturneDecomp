@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
 
 {
@@ -24,7 +22,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
   float fStack_138;
   float fStack_134;
   char acStack_130 [256];
-  uint uStack_30;
+  int iStack_30;
   char *pcStack_2c;
   char *pcStack_28;
   int iStack_24;
@@ -33,10 +31,10 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
   int iStack_18;
   
   if (this_ptr->connection_type != CONNECTION_NONE) {
-    uStack_30 = DAT_005c1664;
+    iStack_30 = g_ForceMessagePump;
     this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
     this_ptr->players[this_ptr->local_player_index].ready_flag = 0;
-    DAT_005c1664 = 0;
+    g_ForceMessagePump = 0;
     this_ptr->network_mode = NET_MODE_LOBBY;
     if (this_ptr->connection_type == CONNECTION_HOST) {
       uVar3 = rand();
@@ -51,7 +49,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
       engine_special_cpp_clearScreen_FUN_0052ee70();
       _sprintf(acStack_130,"Mission: %s",pcStack_2c);
       engine_2d_c_drawText_FUN_00402600(acStack_130,0,0xb);
-      _sprintf(acStack_130,"MyGameSettigsId: %d",_DAT_01cea404);
+      _sprintf(acStack_130,"MyGameSettigsId: %d",g_NetNextPlayerId);
       engine_2d_c_drawText_FUN_00402600(acStack_130,400,0xb);
       engine_2d_c_drawText_FUN_00402600("Player",0,0x21);
       engine_2d_c_drawText_FUN_00402600("IP",100,0x21);
@@ -66,7 +64,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
       for (iStack_20 = 0; iStack_20 < g_CNetGamePtr->player_count; iStack_20 = iStack_20 + 1) {
         pcStack_1c = g_CNetGamePtr->players[0].name + iStack_24;
         engine_2d_c_drawText_FUN_00402600(pcStack_1c,0,iVar4);
-        if (((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address == _DAT_02dd10c4) {
+        if ((uchar  [4])((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address == g_AnyAddressIP) {
           pcVar6 = "(Local)";
           pcVar8 = acStack_130;
           do {
@@ -138,13 +136,13 @@ LAB_004eb75b:
         iStack_24 = iStack_24 + 0x78;
       }
       iVar4 = iVar4 + 0x2c;
-      iVar7 = (_DAT_01cea40c - (g_WindowHeight - iVar4) / 0xb) + 1;
+      iVar7 = (g_ChatHistoryCount - (g_WindowHeight - iVar4) / 0xb) + 1;
       if (iVar7 < 0) {
         iVar7 = 0;
       }
-      pcStack_28 = g_SChatHistory_ARRAY_01cea410[iVar7].message;
-      pcVar8 = g_SChatHistory_ARRAY_01cea410[iVar7].sender_name;
-      for (; iVar7 < _DAT_01cea40c; iVar7 = iVar7 + 1) {
+      pcStack_28 = g_ChatHistory[iVar7].message;
+      pcVar8 = g_ChatHistory[iVar7].sender_name;
+      for (; iVar7 < g_ChatHistoryCount; iVar7 = iVar7 + 1) {
         engine_2d_c_drawText_FUN_00402600(pcVar8,0,iVar4);
         engine_2d_c_drawText_FUN_00402600(pcStack_28,100,iVar4);
         pcVar8 = pcVar8 + 0x120;
@@ -164,7 +162,7 @@ LAB_004eb75b:
       }
       this_ptr->has_pending_sim_frame = 0;
       if (this_ptr->connection_type == CONNECTION_HOST) {
-        this_ptr->players[this_ptr->local_player_index].player_id = _DAT_01cea404;
+        this_ptr->players[this_ptr->local_player_index].player_id = g_NetNextPlayerId;
         iVar4 = 0;
         bVar2 = true;
         pCVar5 = this_ptr;
@@ -173,8 +171,8 @@ LAB_004eb75b:
             if (pCVar5->players[0].ready_flag == 0) {
               bVar2 = false;
             }
-            if (_DAT_01cea404 != pCVar5->players[0].player_id) {
-              iStack_18 = _DAT_01cea3f8 - pCVar5->players[0].last_update_time;
+            if (g_NetNextPlayerId != pCVar5->players[0].player_id) {
+              iStack_18 = g_CurrentGameTime - pCVar5->players[0].last_update_time;
               fStack_138 = (float)iStack_18 * (float)1.52587890625e-05;
               if (fStack_138 < 0.0) {
                 fStack_138 = 0.0;
@@ -231,24 +229,24 @@ LAB_004eb75b:
           iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(this_ptr,2);
           if (iVar4 != 0) {
             iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
-            iVar7 = iVar4 / 0x12 - _DAT_01cea3f4;
-            _DAT_01cea3f4 = iVar4 / 0x12;
+            iVar7 = iVar4 / 0x12 - g_LastPingTime;
+            g_LastPingTime = iVar4 / 0x12;
             if (iVar7 < 0) {
               iVar7 = 0;
             }
             else if (0x20000 < iVar7) {
               iVar7 = 0x20000;
             }
-            _DAT_01cea3f8 = _DAT_01cea3f8 + iVar7;
-            _DAT_01cea408 = _DAT_01cea3f8 + -0x1e0000;
+            g_CurrentGameTime = g_CurrentGameTime + iVar7;
+            g_NetLastSimFrameAckTime = g_CurrentGameTime - 0x1e0000;
             return 1;
           }
         }
         this_ptr->network_mode = NET_MODE_LOBBY;
         goto LAB_004eb861;
       }
-      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (g_INT_005bdee4 != 0)) {
-        iStack_18 = _DAT_01cea3f8 -
+      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (g_NetLobbyStateChanged != 0)) {
+        iStack_18 = g_CurrentGameTime -
                     this_ptr->players[this_ptr->local_player_index].state_change_time;
         fStack_134 = (float)iStack_18 * (float)1.52587890625e-05;
         if (fStack_134 < 0.0) {
@@ -277,9 +275,9 @@ LAB_004eb75b:
       iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_S);
       if ((iVar4 != 0) &&
          (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600
-                            (g_CEditorToolsPtr,"Send chat",(char *)0x1cea180,0x100,1),
+                            (g_CEditorToolsPtr,"Send chat",g_ChatMessageBuffer,0x100,1),
          iVar4 != 0)) {
-        core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(this_ptr,(char *)0x1cea180,-1);
+        core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(this_ptr,g_ChatMessageBuffer,-1);
       }
       for (iVar4 = 0; iVar4 < g_CNetGamePtr->player_count; iVar4 = iVar4 + 1) {
         core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(this_ptr,iVar4,2.0);
@@ -291,7 +289,7 @@ LAB_004eb861:
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,1);
     engine_2d_c_clearInputAndWait_FUN_00403f50();
-    DAT_005c1664 = uStack_30;
+    g_ForceMessagePump = iStack_30;
   }
   return 0;
 }

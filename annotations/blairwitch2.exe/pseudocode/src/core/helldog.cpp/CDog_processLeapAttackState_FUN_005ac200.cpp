@@ -6,38 +6,38 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_helldog_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *this_ptr,float delta_time)
 
 {
   CDeformableModelInstance *pCVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
-  float fVar4;
-  SStateMachine *pSVar5;
+  int iVar2;
+  CDemonActor *pCVar3;
+  SMotion *pSVar4;
+  float fVar5;
+  SStateMachine *this_ptr_00;
   
-  pCVar2 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
-  if (pCVar2 == (CDemonActor *)0x0) {
+  pCVar3 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar3 == (CDemonActor *)0x0) {
     return;
   }
   pCVar1 = &(this_ptr->base).base.base.model;
-  iVar3 = core_motion_cpp_FUN_005035c0(pCVar1);
-  iVar3 = *(int *)(iVar3 + 0x24);
-  fVar4 = core_motion_cpp_FUN_00503e60(&pCVar1->base);
-  if ((iVar3 == 3) && (fVar4 < (float)_DAT_005f0df6)) {
+  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
+  iVar2 = pSVar4->state_index;
+  fVar5 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_00503e60(&pCVar1->base);
+  if ((iVar2 == 3) && (fVar5 < (float)0.29999999999999999)) {
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
               ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
   }
   pCVar1 = &(this_ptr->base).base.base.model;
-  if (iVar3 != 7) {
+  if (iVar2 != 7) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,3,1);
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,0,1);
-  pSVar5 = &(this_ptr->base).state_machine;
-  (this_ptr->base).attack_range = _DAT_00600c50;
-  core_muzzle_cpp_FUN_0059d7f0(pSVar5,"ChaseComplete","MeleeAttack");
-  core_muzzle_cpp_FUN_0059d8e0(pSVar5,"Chasing");
+  this_ptr_00 = &(this_ptr->base).state_machine;
+  (this_ptr->base).attack_range = 12.0f;
+  core_muzzle_cpp_SStateMachine_setRefState_FUN_0059d7f0
+            (this_ptr_00,"ChaseComplete","MeleeAttack");
+  core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_00,"Chasing");
   return;
 }

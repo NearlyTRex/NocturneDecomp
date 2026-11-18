@@ -10,12 +10,12 @@ void __cdecl core_manpuz_cpp_staticInit_FUN_00503ac0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CMansionPuzzleCircleClassInfo,"?CMansionPuzzleCircle" + 1,
+            (&g_CMansionPuzzleCircleClassInfo,"CMansionPuzzleCircle",
              core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FUN_00503b10,
              &g_CMansionPuzzleCircleClassVersion,3,&g_CDemonActorClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c160
-            ((CDemonActorType *)0x1d1d498,"CMirrorHack",
-             core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420,(int *)0x61f3ac,1,
+            (&g_CMirrorHackClassInfo,"CMirrorHack",
+             core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420,&g_INT_0061f3ac,1,
              &g_CDemonActorClassInfo);
   return;
 }

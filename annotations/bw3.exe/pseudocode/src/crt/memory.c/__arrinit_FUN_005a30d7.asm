@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[80]:
+; XREF[81]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409980 at 0040999d
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50 at 00411b74
 ;   core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_00413200 at 00413224
@@ -23,7 +23,7 @@
 ;   core_boxactor.cpp_staticInit_FUN_0041ef40 at 0041ef6f
 ;   core_bugs.cpp_CBugs_ctor_FUN_00420ea0 at 00420ec0
 ;   core_burncrss.cpp_CBurncross_ctor_FUN_00424430 at 0042444b
-;   ... and 70 more
+;   ... and 71 more
 ;
 ; *****************************************************************************
 

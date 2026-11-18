@@ -2,27 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 167,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 7,
+    "pseudocode_lines": 71,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
       "shadow_pointer_walk",
-      "warning_deadcode_restart",
-      "warning_overlapping_globals"
+      "warning_deadcode_restart"
     ],
-    "total_lines": 214
+    "total_lines": 213
   },
   "cross_references": [
     {
       "addr": "0052f2a0",
       "from_addr": "0052f36e",
-      "name": "core_set.cpp_FUN_0052f2a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,8 +41,8 @@
   "globals": [
     {
       "addr": "0150f454",
-      "name": "DAT_0150f454",
-      "type": "undefined4",
+      "name": "g_CoronaLightingTextureData",
+      "type": "char*",
       "value": null
     }
   ],
@@ -54,7 +52,7 @@
       {
         "call_addr": "0052f36e",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052f2a0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0052f2a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,16 +213,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Deadcode elimination delayed",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Restarted to delay deadcode elimination",
       "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
@@ -232,7 +222,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(uint *)((int)light_source",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
@@ -240,31 +230,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(int *)((int)light_source",
       "severity": "moderate",
       "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",
       "type": "pointer_cast"
     },
     {
-      "description": "Raw hex address 0xaf5218 assigned to bare local `local_20`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_20` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 25,
-      "match": "0xaf5218",
-      "severity": "moderate",
-      "text": "local_20 = 0xaf5218;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 32,
+      "line": 31,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)",
+      "text": "puVar8 = (uint *)",
       "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 69,
+      "line": 68,
       "match": "local_14 = (T *)&(local_14->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "local_14 = (CDemonLight *)&(local_14->base).base.position;",

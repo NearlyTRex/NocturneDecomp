@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 92,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 84
+    "total_lines": 85
   },
   "cross_references": [
     {
@@ -151,7 +151,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(char *)((int)pCVar4",
       "severity": "moderate",
       "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
@@ -159,7 +159,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 26,
       "match": "(CKeyFramedModelInstance *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
@@ -167,7 +167,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 34,
+      "line": 35,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
       "text": "return (CAmmoBox *)(this_ptr_00[-2].part_visibility_flags + 0x11);",
@@ -175,7 +175,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(byte *)(this_ptr_00[1].part_visibility_flags + 0x15) = 0;",

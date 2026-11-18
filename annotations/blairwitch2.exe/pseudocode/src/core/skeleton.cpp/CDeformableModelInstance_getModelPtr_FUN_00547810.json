@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 31,
+    "complexity_score": 15,
     "cross_reference_count": 52,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 59
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
   },
   "cross_references": [
     {
       "addr": "004093a0",
       "from_addr": "004097dc",
-      "name": "core_actor.cpp_FUN_004093a0",
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +58,7 @@
     {
       "addr": "00420e90",
       "from_addr": "0042119b",
-      "name": "core_bugs.cpp_FUN_00420e90",
+      "name": "core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00420e90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -102,13 +100,13 @@
     {
       "addr": "004247f0",
       "from_addr": "00424826",
-      "name": "core_charactr.cpp_FUN_004247f0",
+      "name": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_004247f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ae680",
       "from_addr": "005ae9a0",
-      "name": "core_cloth.cpp_FUN_005ae680",
+      "name": "core_cloth.cpp_CCloth_setup_FUN_005ae680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -344,7 +342,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     }
   ],
   "globals": [
@@ -374,14 +372,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -457,7 +455,7 @@
       {
         "call_addr": "004097dc",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_004093a0",
+        "caller": "core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -571,14 +569,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

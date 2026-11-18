@@ -26,11 +26,11 @@
 ;   TerminatedCString s_Error_seeking_s_to_d_005f3447
 ;   TerminatedCString s_sound_sndmain_cpp_005f345e
 ;   TerminatedCString s_SfxSample_seek_no_MP3_an_005f3473
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_0052b2b0
 ;   sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00572400
@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EDX      ; 005702fa
     FLD double ptr [ESP + 0x10]         ; 005702fe
     CALL crt_math.c_round_FUN_005c03a0  ; 00570302
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [EBX + 0x16c]       ; 00570307
     MOV EBP,dword ptr [EBX + 0x16c]     ; 0057030d
     ADD ESP,0x10                        ; 00570313
@@ -85,10 +85,10 @@ section .text
         ;   Label: LAB_0057032a
     MOV ECX,0x8e9                       ; 0057032f
     PUSH 0x5f3410                       ; 00570334 | = "SfxSample::seek - invalid destPtr"
-    MOV dword ptr [0x01d1d400],EDX      ; 00570339 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0057033f | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00570345
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00570339 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0057033f | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00570345
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0057034a
     MOV dword ptr [EBX + 0x170],ESI     ; 0057034d
         ;   Label: LAB_0057034d
@@ -116,10 +116,10 @@ section .text
     MOV ECX,0x5f33bf                    ; 0057037e | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x8de                       ; 00570383
     PUSH 0x5f33d4                       ; 00570388 | = "SfxSample::seek - '%s' isn't streamed!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0057038d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00570393 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00570399
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0057038d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00570393 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00570399
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0057039e
     JMP 0x005702dc                      ; 005703a1
         ;   XREF to: 005702dc (UNCONDITIONAL_JUMP)  ; LAB_005702dc
@@ -134,10 +134,10 @@ section .text
     MOV EDI,0x5f3432                    ; 005703bd | = "..\\sound\\sndmain.cpp"
     MOV EBP,0x8f2                       ; 005703c2
     PUSH 0x5f3447                       ; 005703c7 | = "Error seeking %s to %d"
-    MOV dword ptr [0x01d1d400],EDI      ; 005703cc | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 005703d2 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005703d8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 005703cc | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 005703d2 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005703d8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 005703dd
     ADD ESP,0xc                         ; 005703e0
     POP EBP                             ; 005703e3
@@ -179,10 +179,10 @@ section .text
     MOV EDI,0x5f345e                    ; 00570428 | = "..\\sound\\sndmain.cpp"
     MOV EBP,0x8fd                       ; 0057042d
     PUSH 0x5f3473                       ; 00570432 | = "SfxSample::seek - no MP3 and no wavFi..."
-    MOV dword ptr [0x01d1d400],EDI      ; 00570437 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0057043d | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00570443
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDI      ; 00570437 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBP      ; 0057043d | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00570443
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00570448
     ADD ESP,0xc                         ; 0057044b
     POP EBP                             ; 0057044e

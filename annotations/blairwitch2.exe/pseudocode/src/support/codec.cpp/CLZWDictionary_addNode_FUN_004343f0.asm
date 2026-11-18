@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   parent_index
 ;
 ; XREF[2]:
-;   support_codec.cpp_FUN_00434810 at 0043489b
-;   support_codec.cpp_FUN_00434a70 at 00434ab3
+;   support_codec.cpp_CLZWCompress_process_FUN_00434810 at 0043489b
+;   support_codec.cpp_CLZWDecompress_finalize_FUN_00434a70 at 00434ab3
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_initTable_FUN_00434350

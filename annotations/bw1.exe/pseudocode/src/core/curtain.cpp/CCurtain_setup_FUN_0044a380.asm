@@ -7,15 +7,15 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d73e2
-;   undefined4 DAT_005d73ea
-;   undefined4 DAT_005d73f2
-;   undefined4 DAT_005d73fa
-;   undefined4 DAT_00612560
+;   double g_DOUBLE_005d73e2 = 2
+;   double g_DOUBLE_005d73ea = 0.5
+;   double g_DOUBLE_005d73f2 = 252
+;   double g_DOUBLE_005d73fa = 65536
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850
-;   core_curtain.cpp_FUN_0044aa10
+;   core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0044aa10
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;
@@ -38,7 +38,7 @@ section .text
     ADD ESP,0x4                         ; 0044a398
     LEA EAX,[EBX + 0x164]               ; 0044a39b
     PUSH EAX                            ; 0044a3a1
-    MOV EDX,dword ptr [0x00612560]      ; 0044a3a2 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 0044a3a2 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 0044a3a8
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 0044a3a9
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -53,11 +53,11 @@ section .text
     FLD float ptr [EBX + 0x15c]         ; 0044a3c5
     FMULP ST2                           ; 0044a3cb
     CALL crt_math.c_round_FUN_005c03a0  ; 0044a3cd
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x84]        ; 0044a3d2
     MOV EAX,dword ptr [ESP + 0x84]      ; 0044a3d9
     CALL crt_math.c_round_FUN_005c03a0  ; 0044a3e0
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     INC EAX                             ; 0044a3e5
     FISTP dword ptr [ESP + 0x88]        ; 0044a3e6
     MOV dword ptr [ESP + 0x64],EAX      ; 0044a3ed
@@ -108,7 +108,7 @@ section .text
     FLD float ptr [EBX + 0x158]         ; 0044a4b1
         ;   Label: LAB_0044a4b1
     FCHS                                ; 0044a4b7
-    FMUL double ptr [0x005d73ea]        ; 0044a4b9 | DAT_005d73ea
+    FMUL double ptr [0x005d73ea]        ; 0044a4b9 | g_DOUBLE_005d73ea
     MOV ECX,dword ptr [ESP + 0x64]      ; 0044a4bf
     XOR EDX,EDX                         ; 0044a4c3
     FSTP float ptr [ESP + 0x70]         ; 0044a4c5
@@ -202,17 +202,17 @@ section .text
     FLD float ptr [EBX + 0x158]         ; 0044a5b5
         ;   Label: LAB_0044a5b5
     FLD ST0                             ; 0044a5bb
-    FMUL double ptr [0x005d73ea]        ; 0044a5bd | DAT_005d73ea
+    FMUL double ptr [0x005d73ea]        ; 0044a5bd | g_DOUBLE_005d73ea
     FADD float ptr [EAX + 0xc]          ; 0044a5c3
     FDIVRP                              ; 0044a5c6
-    FLD double ptr [0x005d73f2]         ; 0044a5c8 | DAT_005d73f2
+    FLD double ptr [0x005d73f2]         ; 0044a5c8 | g_DOUBLE_005d73f2
     FXCH                                ; 0044a5ce
     FMUL ST1                            ; 0044a5d0
-    FLD double ptr [0x005d73fa]         ; 0044a5d2 | DAT_005d73fa
+    FLD double ptr [0x005d73fa]         ; 0044a5d2 | g_DOUBLE_005d73fa
     FXCH                                ; 0044a5d8
     FMUL ST1                            ; 0044a5da
     CALL crt_math.c_round_FUN_005c03a0  ; 0044a5dc
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x84]        ; 0044a5e1
     MOV ECX,dword ptr [ESP + 0x84]      ; 0044a5e8
     ADD ECX,0x20000                     ; 0044a5ef
@@ -230,7 +230,7 @@ section .text
     ADD EDI,0x74                        ; 0044a619
     FSTP float ptr [ESP + 0x70]         ; 0044a61c
     CALL crt_math.c_round_FUN_005c03a0  ; 0044a620
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x84]        ; 0044a625
     MOV ECX,dword ptr [ESP + 0x84]      ; 0044a62c
     MOV dword ptr [ESP + 0x80],EDI      ; 0044a633
@@ -508,8 +508,8 @@ section .text
         ;   XREF to: 0044a7b8 (CONDITIONAL_JUMP)  ; LAB_0044a7b8
     PUSH EBX                            ; 0044a981
         ;   Label: LAB_0044a981
-    CALL core_curtain.cpp_FUN_0044aa10  ; 0044a982
-        ;   XREF to: 0044aa10 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_0044aa10()
+    CALL core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0044aa10 ; 0044a982
+        ;   XREF to: 0044aa10 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_updateWorldPositions_FUN_0044aa10(CCurtain * this_ptr)
     MOV EDX,dword ptr [EBX + 0x17c]     ; 0044a987
     ADD ESP,0x4                         ; 0044a98d
     CMP EDX,0xfde8                      ; 0044a990
@@ -525,7 +525,7 @@ section .text
     FLD float ptr [EBX + 0x1fc]         ; 0044a9ab
         ;   Label: LAB_0044a9ab
     FLD ST0                             ; 0044a9b1
-    FMUL double ptr [0x005d73e2]        ; 0044a9b3 | DAT_005d73e2
+    FMUL double ptr [0x005d73e2]        ; 0044a9b3 | g_DOUBLE_005d73e2
     FSTP ST1                            ; 0044a9b9
     FSTP float ptr [EBX + 0x1fc]        ; 0044a9bb
     JMP 0x0044a3b1                      ; 0044a9c1

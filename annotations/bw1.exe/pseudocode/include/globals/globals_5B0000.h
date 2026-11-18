@@ -14,6 +14,7 @@ extern string caseD_0;
 extern string caseD_2;
 
 // undefined1*
+extern undefined1* switchdataD_005b83dc;
 extern undefined1* switchdataD_005b9280;
 extern undefined1* switchdataD_005b992c;
 extern undefined1* switchdataD_005b9aa0;

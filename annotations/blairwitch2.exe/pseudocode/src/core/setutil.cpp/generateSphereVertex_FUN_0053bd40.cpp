@@ -6,38 +6,36 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_generateSphereVertex_FUN_0053bd40(int longitude_index,int latitude_index,int vertex_buffer_index,float radius)
 
 {
-  int *piVar1;
-  int iVar2;
+  CDemonRenderer *pCVar1;
+  float10 fVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
-  float10 fVar7;
   CVector3i aCStack_38 [3];
   int iStack_c;
   
-  fVar3 = (float10)longitude_index * (float10)_DAT_005e64ad * (float10)_DAT_005e64b1 *
-          (float10)_DAT_005e64b9;
+  fVar2 = (float10)longitude_index * (float10)0.0625f * (float10)3.141593f *
+          (float10)2;
   iStack_c = latitude_index;
-  fVar4 = (float10)fsin(fVar3);
-  fVar3 = (float10)fcos(fVar3);
-  fVar5 = (float10)radius;
-  fVar6 = (float10)latitude_index * (float10)_DAT_005e64c1 * (float10)_DAT_005e64b1 *
-          (float10)_DAT_005e64c9;
-  fVar7 = (float10)fcos(fVar6);
-  fVar6 = (float10)fsin(fVar6);
-  aCStack_38[0].x = (int)ROUND((float)(fVar4 * fVar5 * fVar7) * _DAT_005fb3c0);
-  aCStack_38[0].y = (int)ROUND((float)(fVar6 * fVar5) * _DAT_005fb3c0);
-  aCStack_38[0].z = (int)ROUND((float)(fVar3 * fVar5 * fVar7) * _DAT_005fb3c0);
-  iVar2 = vertex_buffer_index * 0x30;
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*DAT_0060b280 + iVar2),aCStack_38);
-  piVar1 = DAT_0060b280;
-  *(uint *)(*DAT_0060b280 + 0x18 + iVar2) = 0x800000;
-  *(uint *)(iVar2 + 0x1c + *piVar1) = 0x800000;
+  fVar3 = (float10)fsin(fVar2);
+  fVar2 = (float10)fcos(fVar2);
+  fVar4 = (float10)radius;
+  fVar5 = (float10)latitude_index * (float10)0.25f * (float10)3.141593f *
+          (float10)0.5;
+  fVar6 = (float10)fcos(fVar5);
+  fVar5 = (float10)fsin(fVar5);
+  aCStack_38[0].x = (int)ROUND((float)(fVar3 * fVar4 * fVar6) * 256.0f);
+  aCStack_38[0].y = (int)ROUND((float)(fVar5 * fVar4) * 256.0f);
+  aCStack_38[0].z = (int)ROUND((float)(fVar2 * fVar4 * fVar6) * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0055d723
+            (&g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[vertex_buffer_index].projected_vertex
+             ,aCStack_38);
+  pCVar1 = g_CDemonRenderer_PTR_0060b280;
+  g_CDemonRenderer_PTR_0060b280->vertex_buffer_ptr[vertex_buffer_index].u = 0x800000;
+  pCVar1->vertex_buffer_ptr[vertex_buffer_index].v = 0x800000;
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)
 
 {
@@ -33,22 +31,23 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
   float local_2c;
   float local_28;
   int *local_24;
-  int *local_20;
-  uint uStack_1c;
+  LPDIRECTSOUNDBUFFER local_20;
+  long lStack_1c;
   float local_18;
   
   iVar1 = slot->hardware_buffer_handle;
-  if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
-     (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
+  if ((((iVar1 < 1) || (0x1e < iVar1)) ||
+      (g_DirectSoundHardwareSfxBuffers[iVar1] == (IDirectSoundBuffer *)0x0)) ||
+     (g_INT_ARRAY_02dc9324[iVar1] == 0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 755;
     core_main_c_displayErrorAndQuit_FUN_004c8440("DirectSoundDevice::setSfxPos - invalid handle");
   }
   uVar7 = 1;
-  local_20 = *(int **)(iVar1 * 4 + 0x2dc92a8);
+  local_20 = g_DirectSoundHardwareSfxBuffers[iVar1];
   local_24 = (int *)0x0;
-  piVar2 = *(int **)(iVar1 * 4 + 0x2dc9324);
-  if ((local_20 == (int *)0x0) || (piVar2 == (int *)0x0)) {
+  piVar2 = (int *)g_INT_ARRAY_02dc9324[iVar1];
+  if ((local_20 == (IDirectSoundBuffer *)0x0) || (piVar2 == (int *)0x0)) {
     return 0;
   }
   if ((update_flags & 0x88U) != 0) {
@@ -96,23 +95,23 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSou
         uStack_38._4_4_ = SUB84(__BITCAST_UINT64(dVar8),0);
         uStack_30 = (uint)((ulonglong)dVar8 >> 0x20);
         dVar8 = round(dVar8);
-        local_20 = (int *)(int)ROUND(dVar8);
+        local_20 = (LPDIRECTSOUNDBUFFER)(int)ROUND(dVar8);
         if ((int)local_20 < 1) {
           if ((int)local_20 < -10000) goto LAB_0052b3c8;
         }
         else {
-          local_20 = (int *)0x0;
+          local_20 = (LPDIRECTSOUNDBUFFER)0x0;
         }
       }
       else {
-        uStack_1c = 0;
+        lStack_1c = 0;
       }
     }
     else {
 LAB_0052b3c8:
-      uStack_1c = 0xffffd8f0;
+      lStack_1c = -10000;
     }
-    uVar4 = (**(code **)(*local_20 + 0x3c))(local_20);
+    uVar4 = (*local_20->vtable->SetVolume)(local_20,lStack_1c);
     if (uVar4 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
       _sprintf(acStack_4e4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer volume")
@@ -175,12 +174,12 @@ LAB_0052b3c8:
       sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_cb4);
     }
 LAB_0052b4a2:
-    if (_DAT_02dc9220 == (int *)0x0) {
+    if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
       g_CurrentLineNumber = 892;
       core_main_c_displayErrorAndQuit_FUN_004c8440("DirectSoundDevice::setSfxOpt - no 3d listener allocated?!");
     }
-    uVar4 = (**(code **)(*_DAT_02dc9220 + 0x44))();
+    uVar4 = (*g_DirectSound3DListener->vtable->CommitDeferredSettings)(g_DirectSound3DListener);
     if (uVar4 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar4);
       _sprintf(acStack_1c4,"DirectSux: Unable to %s.  (%s)","Commit hardware sfx 3d buffer settings")

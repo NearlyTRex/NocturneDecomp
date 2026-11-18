@@ -14,20 +14,20 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_0045bdc0 at 0045c132
+;   core_doc.cpp_CDoc_updateWeaponLayerActions_FUN_0045bdc0 at 0045c132
 ;   core_scat.cpp_CScat_updateWeaponState_FUN_0051fd00 at 0051fe79
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50 at 0056de02
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005cd1d8
 ;   TerminatedCString s_CCharacter_chooseNextLay_005cd1ed
-;   undefined4 DAT_005cd22e
-;   undefined4 DAT_005cd236
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   double g_DOUBLE_005cd22e = 0.0000100000000000000
+;   double g_DOUBLE_005cd236 = 0.999990000000000
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -54,15 +54,15 @@ section .text
         ;   Label: LAB_0042a644
     MOV EAX,0x11fe                      ; 0042a649
     PUSH 0x5cd1ed                       ; 0042a64e | = "CCharacter::chooseNextLayerAction - i..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0042a653 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0042a659 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0042a65e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 0042a653 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0042a659 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042a65e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042a663
     FLD float ptr [EBX + 0x2d08]        ; 0042a666
         ;   Label: LAB_0042a666
     FST double ptr [ESP]                ; 0042a66c
-    FCOMP double ptr [0x005cd22e]       ; 0042a66f | DAT_005cd22e
+    FCOMP double ptr [0x005cd22e]       ; 0042a66f | g_DOUBLE_005cd22e
     FNSTSW AX                           ; 0042a675
     SAHF                                ; 0042a677
     JNC 0x0042a6ed                      ; 0042a678
@@ -117,7 +117,7 @@ section .text
     RET                                 ; 0042a6ec
     FLD double ptr [ESP]                ; 0042a6ed
         ;   Label: LAB_0042a6ed
-    FCOMP double ptr [0x005cd236]       ; 0042a6f0 | DAT_005cd236
+    FCOMP double ptr [0x005cd236]       ; 0042a6f0 | g_DOUBLE_005cd236
     FNSTSW AX                           ; 0042a6f6
     SAHF                                ; 0042a6f8
     JBE 0x0042a6e6                      ; 0042a6f9

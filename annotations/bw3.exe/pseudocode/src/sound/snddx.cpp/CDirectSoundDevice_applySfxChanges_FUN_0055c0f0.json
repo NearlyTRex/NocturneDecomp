@@ -1,0 +1,570 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 822,
+    "complexity_score": 588,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 273,
+    "suspect_count": 28,
+    "suspect_types": [
+      "pointer_cast",
+      "raw_address_constant",
+      "shadow_pointer_walk",
+      "stack_param",
+      "stack_ref",
+      "suspect_float",
+      "unknown_field"
+    ],
+    "total_lines": 1095
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055c0f0",
+    "address_range": [
+      [
+        "0055c0f0",
+        "0055ca6d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_applySfxChanges_FUN_0055c0f0(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3600",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005a3600"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "0055abc0",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_clampDirectSoundFrequency_FUN_0055abc0"
+    },
+    {
+      "addr": "0055a670",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_0055a670"
+    },
+    {
+      "addr": "0055ab20",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_volumeToDirectSoundAttenuation_FUN_0055ab20"
+    },
+    {
+      "addr": "005583b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getAudioChannelCount_FUN_005583b0"
+    },
+    {
+      "addr": "00556d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20"
+    },
+    {
+      "addr": "0055a560",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_0055a560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d452f",
+      "name": "s_DirectSux_Unable_to_s_s_005d452f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d491f",
+      "name": "s_sound_snddx_cpp_005d491f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4932",
+      "name": "s_DirectSoundDevice_setSfx_005d4932",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4960",
+      "name": "s_Set_hardware_sfx_seconda_005d4960",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4989",
+      "name": "s_Set_hardware_sfx_seconda_005d4989",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d49af",
+      "name": "s_Set_hardware_sfx_seconda_005d49af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d49db",
+      "name": "s_Set_hardware_sfx_seconda_005d49db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4a0f",
+      "name": "s_Set_hardware_sfx_3d_buff_005d4a0f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4a33",
+      "name": "s_Set_hardware_sfx_3d_buff_005d4a33",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4a57",
+      "name": "s_Set_hardware_sfx_seconda_005d4a57",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4a80",
+      "name": "s_Set_hardware_sfx_seconda_005d4a80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4aac",
+      "name": "s_Set_hardware_sfx_3d_buff_005d4aac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4acc",
+      "name": "s_Set_hardware_sfx_3d_buff_005d4acc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4af8",
+      "name": "s_Set_hardware_sfx_3d_buff_005d4af8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4b24",
+      "name": "s_Set_hardware_sfx_seconda_005d4b24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4b58",
+      "name": "s_DirectSoundDevice_setSfx_005d4b58",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4b85",
+      "name": "g_DOUBLE_005d4b85",
+      "type": "double",
+      "value": "-868.589000000000"
+    },
+    {
+      "addr": "005d4b8d",
+      "name": "g_DOUBLE_005d4b8d",
+      "type": "double",
+      "value": "868.589000000000"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.334389857369255,
+    "instruction_count": 631,
+    "opcode_distribution": {
+      "BOOL_AND": 6,
+      "BOOL_NEGATE": 33,
+      "BOOL_OR": 11,
+      "BRANCH": 24,
+      "CALL": 50,
+      "CALLIND": 12,
+      "CBRANCH": 57,
+      "COPY": 949,
+      "FLOAT2FLOAT": 47,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 7,
+      "FLOAT_LESS": 7,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 14,
+      "INT2FLOAT": 6,
+      "INT_ADD": 243,
+      "INT_AND": 365,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 294,
+      "INT_LEFT": 30,
+      "INT_LESS": 38,
+      "INT_MULT": 3,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 43,
+      "INT_OR": 41,
+      "INT_SBORROW": 38,
+      "INT_SCARRY": 50,
+      "INT_SEXT": 5,
+      "INT_SLESS": 145,
+      "INT_SUB": 211,
+      "INT_XOR": 21,
+      "INT_ZEXT": 28,
+      "LOAD": 142,
+      "POPCOUNT": 143,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 227,
+      "SUBPIECE": 5,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 3366
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00556550",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00578f80",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005af750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1059
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "slot",
+        "offset": 8,
+        "size": 4,
+        "type": "CSfxSlot *"
+      },
+      {
+        "is_param": true,
+        "name": "update_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0055c0fc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "char *in_stack_ffffecec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "in_stack_ffffecec = (char *)(float)(slot->options).position.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "(DWORD)in_stack_ffffecec,(LPVOID)(float)(slot->options).position.z,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "in_stack_ffffecec = \"DirectSux: Unable to %s.  (%s)\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "in_stack_ffffecec = (char *)(slot->options).velocity.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_ffffecec",
+      "severity": "moderate",
+      "text": "((slot->options).current_volume * (float)in_stack_ffffecec),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "(uVar3 = iStack_48 - *(int *)((int)fStack_28 + 0x14), uVar5 = (int)uVar3 >> 0x1f,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "*(int *)((int)fStack_28 + 0x14) = iStack_48;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "(uVar3 = DStack_44 - *(int *)((int)fStack_28 + 0x1c), uVar5 = (int)uVar3 >> 0x1f,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(DWORD *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)fStack_28 + 0x1c) = DStack_44;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "if ((update_flags == -1) || (iStack_34 != *(int *)((int)fStack_28 + 0x20))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)fStack_30",
+      "severity": "moderate",
+      "text": "*(int *)((int)fStack_30 + 0x20) = uStack_40._4_4_;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 137,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(int *)((int)fStack_30 + 0x20) = uStack_40._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 165,
+      "match": "&stack0xffffecec",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xffffecec,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 166,
+      "match": "&stack0xffffecec",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_logSoundError_FUN_0055a560(&stack0xffffecec,uVar7);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 206,
+      "match": "1.4013e-41",
+      "severity": "mild",
+      "text": "fStack_30 = 1.4013e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "uVar3 = uStack_40._4_4_ - *(int *)((int)fStack_28 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 219,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uVar3 = uStack_40._4_4_ - *(int *)((int)fStack_28 + 0x14);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 221,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uVar3 = (*this_ptr_00->vtable->SetVolume)(this_ptr_00,uStack_40._4_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 228,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "*(int *)((int)fStack_28 + 0x14) = uStack_40._4_4_;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 228,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(int *)((int)fStack_28 + 0x14) = uStack_40._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 230,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "uVar3 = (int)fStack_30 - *(int *)((int)fStack_28 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 239,
+      "match": "(float *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "*(float *)((int)fStack_28 + 0x18) = fStack_30;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(int *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "uVar3 = dwFrequency - *(int *)((int)fStack_28 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 255,
+      "match": "(DWORD *)((int)fStack_28",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)fStack_28 + 0x1c) = dwFrequency;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex address 0x55c7ab assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 159,
+      "match": "0x55c7ab",
+      "severity": "moderate",
+      "text": "uVar7 = 0x55c7ab;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x55c303 assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 259,
+      "match": "0x55c303",
+      "severity": "moderate",
+      "text": "uVar7 = 0x55c303;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 183,
+      "match": "pCVar1 = (T *)&(pCVar1->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CSfxSlot *)&(pCVar1->options).position;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 68,
+        "vtable_addr": "005e48dc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

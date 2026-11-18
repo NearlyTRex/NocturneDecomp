@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_2d_c_getInputWithPrompt_FUN_00403310(void)
+; int __cdecl engine_2d_c_getInputWithPrompt_FUN_00403310(char *buffer,int max_length,int x,int y,char *prompt)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; int              Stack[0x8]:4   max_length
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; char *           Stack[0x14]:4   prompt
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005bfb40

@@ -48,7 +48,7 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_004dc690(CMobster *this
     goto LAB_004dc755;
   }
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (damage_info->attacker,g_CTommyGunActorType_02dd0fd0.name_hash);
+                     (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
   if (pCVar2 == (CDemonActor *)0x0) {
 LAB_004dc731:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,3,1);

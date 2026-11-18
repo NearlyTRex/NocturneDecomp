@@ -10,7 +10,7 @@ void __cdecl core_barrier_cpp_CBarrier_archive_FUN_0040ebd0(CBarrier *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->size,&DAT_005b61f7);
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->size,"size");
   if (g_CBarrierClassVersion < 2) {
     return;
   }

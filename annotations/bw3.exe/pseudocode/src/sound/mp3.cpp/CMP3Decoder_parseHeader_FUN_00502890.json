@@ -1,0 +1,307 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 131,
+    "complexity_score": 74,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 59,
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
+    "total_lines": 190
+  },
+  "cross_references": [
+    {
+      "addr": "005027b0",
+      "from_addr": "0050280f",
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_005027b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00502890",
+    "address_range": [
+      [
+        "00502890",
+        "00502a0e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00502890",
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00502890(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a457c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005a457c"
+    },
+    {
+      "addr": "005a5d00",
+      "is_variadic": false,
+      "name": "crt_stdio.c_ftell_FUN_005a5d00"
+    },
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugFree_FUN_005a3770"
+    },
+    {
+      "addr": "004fd150",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_calculateMpegFrame_FUN_004fd150"
+    },
+    {
+      "addr": "004fdc50",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50"
+    },
+    {
+      "addr": "004fd780",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_004fd780"
+    },
+    {
+      "addr": "00502a10",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_00502a10"
+    },
+    {
+      "addr": "00502bc0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c9f4e",
+      "name": "s_sound_mp3_cpp_005c9f4e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9f5f",
+      "name": "s_Out_of_memory_File_s_005c9f5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca39f",
+      "name": "g_DOUBLE_005ca39f",
+      "type": "double",
+      "value": "1000"
+    },
+    {
+      "addr": "006011b8",
+      "name": "g_MpegSampleRateTable",
+      "type": "double[2][4]",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050280f",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_005027b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.12962962962963,
+    "instruction_count": 108,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 12,
+      "CBRANCH": 3,
+      "COPY": 100,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 52,
+      "INT_AND": 48,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 36,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 53,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 446
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00509db0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0052af80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00534630",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1467
+    },
+    "nocturne.exe": {
+      "addr": "004e7ed0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1492
+    }
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 108,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "file_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Raw hex address 0x5029ad assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 54,
+      "match": "0x5029ad",
+      "severity": "moderate",
+      "text": "iVar5 = 0x5029ad;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

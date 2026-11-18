@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f *point,float horizontal_radius,float vertical_tolerance)
 
 {
@@ -16,10 +14,10 @@ int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f *point,
   float fVar3;
   int iVar4;
   
-  if (0 < _DAT_01d06aa0) {
+  if (0 < g_HeroCount) {
     iVar4 = 0;
     do {
-      iVar1 = *(int *)(iVar4 + 0x1d06aa4);
+      iVar1 = *(int *)((int)g_CHero_PTR_ARRAY_01d06aa4 + iVar4);
       if (iVar1 != 0) {
         fVar2 = *(float *)(iVar1 + 0x20) - point->x;
         fVar3 = *(float *)(iVar1 + 0x28) - point->z;
@@ -30,7 +28,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f *point,
         }
       }
       iVar4 = iVar4 + 4;
-    } while (iVar4 < _DAT_01d06aa0 * 4);
+    } while (iVar4 < g_HeroCount * 4);
   }
   return 0;
 }

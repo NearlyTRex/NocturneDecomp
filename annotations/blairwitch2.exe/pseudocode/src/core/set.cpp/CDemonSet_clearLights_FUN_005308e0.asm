@@ -9,10 +9,10 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6807
 ;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca4b
-;   core_set.cpp_FUN_0052d3c0 at 0052d95c
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0 at 0052d95c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fc8d00
+;   int g_MasterLightCount
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0043b730
@@ -29,7 +29,7 @@ section .text
     PUSH EDI                            ; 005308e2
     PUSH EBP                            ; 005308e3
     MOV EDI,dword ptr [ESP + 0x14]      ; 005308e4
-    MOV EDX,dword ptr [0x01fc8d00]      ; 005308e8 | DAT_01fc8d00
+    MOV EDX,dword ptr [0x01fc8d00]      ; 005308e8 | g_MasterLightCount
     XOR ESI,ESI                         ; 005308ee
     TEST EDX,EDX                        ; 005308f0
     JLE 0x00530916                      ; 005308f2
@@ -40,7 +40,7 @@ section .text
     TEST EAX,EAX                        ; 005308fc
     JNZ 0x00530967                      ; 005308fe
         ;   XREF to: 00530967 (CONDITIONAL_JUMP)  ; LAB_00530967
-    MOV EBP,dword ptr [0x01fc8d00]      ; 00530900 | DAT_01fc8d00
+    MOV EBP,dword ptr [0x01fc8d00]      ; 00530900 | g_MasterLightCount
         ;   Label: LAB_00530900
     ADD EBX,0x4                         ; 00530906
     XOR ECX,ECX                         ; 00530909
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00530916
     XOR EAX,EAX                         ; 0053091c
     XOR ESI,ESI                         ; 0053091e
-    MOV [0x01fc8d00],EAX                ; 00530920 | DAT_01fc8d00
+    MOV [0x01fc8d00],EAX                ; 00530920 | g_MasterLightCount
     TEST EDX,EDX                        ; 00530925
     JLE 0x00530950                      ; 00530927
         ;   XREF to: 00530950 (CONDITIONAL_JUMP)  ; LAB_00530950

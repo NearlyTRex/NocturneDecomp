@@ -1,18 +1,15 @@
 // Name: engine_2d.c_drawCharacterMasked_FUN_00401910
 // Address: 00401910
 // Address Range: [[00401910, 00401a1c]]
-// Convention: unknown
-// Signature: int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
+// Convention: __cdecl
+// Signature: int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
+int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos)
 
 {
-  char *pcVar1;
+  uchar *puVar1;
   int iVar2;
   int iVar3;
   ushort *puVar4;
@@ -20,34 +17,29 @@ int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
   ushort uVar6;
   uint uVar7;
   int iVar8;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   
-  iVar3 = (in_stack_00000004 + -0x20) * 0x91;
-  uVar7 = (uint)(byte)(&DAT_00601440)[iVar3];
-  if ((((in_stack_00000008 < _DAT_01c35e48) || (in_stack_0000000c < _DAT_01c35e4c)) ||
-      ((int)((_DAT_01c35e50 + 1) - uVar7) < in_stack_00000008)) ||
-     (_DAT_01c35e54 + -10 < in_stack_0000000c)) {
+  uVar7 = (uint)g_FontTable[char_code + -0x20].width;
+  if ((((x_pos < g_INT_01c35e48) || (y_pos < g_INT_01c35e4c)) ||
+      ((int)((g_ClipRight + 1) - uVar7) < x_pos)) || (g_INT_01c35e54 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
-    iVar8 = in_stack_0000000c * 4;
-    pcVar1 = &DAT_00601441 + iVar3;
+    iVar8 = y_pos * 4;
+    puVar1 = g_FontTable[char_code + -0x20].bitmap;
     iVar3 = iVar8 + 0x2c;
-    if (DAT_006141c0 == 8) {
+    if (g_INT_006141c0 == 8) {
       do {
         iVar2 = 0;
-        puVar5 = (byte *)(*(int *)(&DAT_01c2a38c + iVar8) + in_stack_00000008);
+        puVar5 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos);
         if (uVar7 != 0) {
           do {
-            if (*pcVar1 == '\0') {
+            if (*puVar1 == '\0') {
               *puVar5 = 0;
             }
             else {
               *puVar5 = 2;
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar5 = puVar5 + 1;
           } while (iVar2 < (int)uVar7);
@@ -58,22 +50,22 @@ int engine_2d_c_drawCharacterMasked_FUN_00401910(void)
     }
     else {
       do {
-        puVar4 = (ushort *)(*(int *)(&DAT_01c2a38c + iVar8) + in_stack_00000008 * 2);
+        puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos * 2);
         iVar2 = 0;
         if (uVar7 != 0) {
           do {
-            uVar6 = _DAT_01c34910;
-            if (*pcVar1 != '\0') {
-              uVar6 = _DAT_01c34914;
+            uVar6 = g_ColorTable16[0];
+            if (*puVar1 != '\0') {
+              uVar6 = g_ColorTable16[2];
             }
             *puVar4 = uVar6;
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar4 = puVar4 + 1;
           } while (iVar2 < (int)uVar7);
         }
         iVar8 = iVar8 + 4;
-        *puVar4 = _DAT_01c34910;
+        *puVar4 = g_ColorTable16[0];
       } while (iVar8 != iVar3);
     }
     iVar3 = uVar7 + 1;

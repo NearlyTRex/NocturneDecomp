@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_scat_cpp_CScat_getActorType_FUN_004fbbf0(CScat *this_ptr)
 
 {
-  return &g_CScatActorType_01e533d0;
+  return &g_CScatClassInfo;
 }

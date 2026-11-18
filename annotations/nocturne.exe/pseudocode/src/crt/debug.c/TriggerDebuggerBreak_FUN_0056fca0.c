@@ -12,7 +12,7 @@ int __cdecl TriggerDebuggerBreak(char *error_message,ushort flags)
   code *pcVar1;
   int iVar2;
   
-  if (DAT_005c2050 != '\0') {
+  if (g_DebuggerIsAttached != 0) {
     pcVar1 = (code *)swi(3);
     iVar2 = (*pcVar1)(flags);
     return iVar2;

@@ -38,23 +38,23 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
   pCStack_14 = this_ptr_02;
-  _DAT_01b4d258 =
+  g_INT_01b4d258 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 head",1);
-  _DAT_01b4d25c =
+  g_INT_01b4d25c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 L Clavicle",1);
-  _DAT_01b4d260 =
+  g_INT_01b4d260 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 R Clavicle",1);
-  _DAT_01b4d264 =
+  g_INT_01b4d264 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 L UpperArm",1);
-  _DAT_01b4d268 =
+  g_INT_01b4d268 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 R UpperArm",1);
-  _DAT_01b4d26c =
+  g_INT_01b4d26c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 L ForeArm",1);
-  _DAT_01b4d270 =
+  g_INT_01b4d270 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 R ForeArm",1);
-  _DAT_01b4d274 =
+  g_INT_01b4d274 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 L Foot",1);
-  _DAT_01b4d278 =
+  g_INT_01b4d278 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 R Foot",1);
   _DAT_01b4d27c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 L Thigh",1);
@@ -62,17 +62,17 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 R Thigh",1);
   _DAT_01b4d284 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 L Calf",1);
-  _DAT_01b4d288 =
+  g_INT_01b4d288 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 R Calf",1);
-  _DAT_01b4d28c =
+  g_INT_01b4d28c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 L Hand",1);
-  _DAT_01b4d290 =
+  g_INT_01b4d290 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 R Hand",1);
   _DAT_01b4d294 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 Neck",1);
-  _DAT_01b4d298 =
+  g_INT_01b4d298 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 Spine2",1);
-  _DAT_01b4d29c =
+  g_INT_01b4d29c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 Spine1",1);
   _DAT_01b4d2a0 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 Spine",1);
@@ -80,14 +80,14 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_02,"Bip01 Pelvis",1);
   iVar6 = 1;
   pcVar5 = "turnlstart";
-  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01b4d28c;
-  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_01b4d290;
+  (this_ptr->base).base.carry_hands[0].bone_index = g_INT_01b4d28c;
+  (this_ptr->base).base.carry_hands[1].bone_index = g_INT_01b4d290;
   pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
-  _DAT_01b4d2a8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar2,pcVar5,iVar6);
+  g_INT_01b4d2a8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar2,pcVar5,iVar6);
   iVar6 = 1;
   pcVar5 = "turnrstart";
   pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
-  _DAT_01b4d2ac = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar2,pcVar5,iVar6);
+  g_INT_01b4d2ac = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar2,pcVar5,iVar6);
   iVar6 = 1;
   pcVar5 = "pickup";
   pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
@@ -95,7 +95,7 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50
             (this_ptr_00,iVar6,22.0);
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-            (this_ptr_00,_DAT_01b4d290,&CStack_2c);
+            (this_ptr_00,g_INT_01b4d290,&CStack_2c);
   fStack_44 = CStack_2c.x;
   (&stack0xffffffc0)[(uint)bVar4 * 0xfffffffe] =
        (float)*(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
@@ -107,7 +107,7 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
     (this_ptr->ref_r_hand_bone_pos).z = fStack_3c;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
-            (&(this_ptr->base).base.model,_DAT_01b4d268,&CStack_20);
+            (&(this_ptr->base).base.model,g_INT_01b4d268,&CStack_20);
   fStack_38 = CStack_20.x;
   (&stack0xffffffcc)[(uint)bVar4 * 0xfffffffe] =
        (float)*(uint *)((int)&CStack_20 + (uint)bVar4 * -8 + 4);
@@ -118,14 +118,14 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
     (this_ptr->ref_r_upperarm_bone_pos).y = fStack_34;
     (this_ptr->ref_r_upperarm_bone_pos).z = fStack_30;
   }
-  core_doc_cpp_FUN_00453d80(this_ptr);
+  core_doc_cpp_CDoc_updateProceduralAnimation_FUN_00453d80(this_ptr);
   this_ptr->grab_timer = 0.0;
   this_ptr->ladder_blend_time = 0.0;
   this_ptr->fall_velocity_snapshot = 0.0;
   this_ptr->goggle_sfx_handles[0] = 0;
   this_ptr->goggle_sfx_handles[1] = 0;
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(&(this_ptr->base).base.model);
-  _DAT_01b4d2b0 = 0;
+  g_INT_01b4d2b0 = 0;
   iVar6 = _strcmp
                     ((this_ptr->base).base.model.model_name,this_ptr->model_name);
   if (iVar6 == 0) {
@@ -134,7 +134,7 @@ void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr)
     if (iVar6 == 0) goto LAB_0045096f;
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(this_ptr->base).base.model,&DAT_005cfe17);
+            (&(this_ptr->base).base.model,&g_CHAR_005cfe17);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).setCharacterModel)
             ((CCharacter *)this_ptr,this_ptr->model_name,this_ptr->cloth_name);
 LAB_0045096f:
@@ -146,7 +146,7 @@ LAB_0045096f:
              (this_ptr->base).base.closest_distance_threshold,&(this_ptr->base).base.model);
   this_ptr_01 = (this_ptr->base).base.base.particle_systems;
   core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_01,0x100);
-  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_01,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_01,(CDemonActor *)this_ptr);
   pcVar5 = "LANTERN";
   pCVar3 = &this_ptr->lantern_box;
   do {

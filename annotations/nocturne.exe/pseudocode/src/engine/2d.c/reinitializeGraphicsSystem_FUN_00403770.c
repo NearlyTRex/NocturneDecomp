@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00403770(void)
 
 {
   HRESULT HVar1;
   
-  _DAT_02ddf568 = 0;
+  g_GraphicsResetFlag = 0;
   if (g_UseDirect3D == 0) {
     return;
   }
@@ -37,7 +35,7 @@ void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00403770(void)
   }
   HVar1 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
   if (HVar1 == 0) {
-    (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_HWND_02de2098,0x11);
+    (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_MainWindowHandle,0x11);
   }
   wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
   return;

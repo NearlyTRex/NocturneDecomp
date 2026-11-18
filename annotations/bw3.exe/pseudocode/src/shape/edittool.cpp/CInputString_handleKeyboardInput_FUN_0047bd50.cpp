@@ -13,38 +13,38 @@ void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0047bd50(CI
   int iVar2;
   
   bVar1 = false;
-  iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4b);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
   if (iVar2 != 0) {
     bVar1 = true;
     if (0 < this_ptr->cursor_position) {
       this_ptr->cursor_position = this_ptr->cursor_position + -1;
     }
   }
-  iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4d);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
   if (iVar2 != 0) {
     bVar1 = true;
     if (this_ptr->cursor_position < this_ptr->current_length) {
       this_ptr->cursor_position = this_ptr->cursor_position + 1;
     }
   }
-  iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x47);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
   if (iVar2 != 0) {
     bVar1 = true;
     this_ptr->cursor_position = 0;
   }
-  iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x4f);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD1);
   if (iVar2 != 0) {
     bVar1 = true;
     this_ptr->cursor_position = this_ptr->current_length;
   }
-  iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar2 == 0) {
-    iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,0x2a);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if (iVar2 == 0) {
       if (bVar1) {
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0047baf0(this_ptr);
       }
-      iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x53);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_DECIMAL);
       if (iVar2 != 0) {
         iVar2 = this_ptr->cursor_position;
         if (iVar2 != this_ptr->selection_start) {
@@ -56,12 +56,12 @@ void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0047bd50(CI
       }
     }
     else {
-      iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x52);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD0);
       if (iVar2 != 0) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(this_ptr);
         shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0047bcf0(this_ptr);
       }
-      iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x53);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_DECIMAL);
       if (iVar2 != 0) {
         shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047bca0(this_ptr);
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(this_ptr);
@@ -70,25 +70,25 @@ void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0047bd50(CI
     }
   }
   else {
-    iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x2d);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_X);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047bca0(this_ptr);
       shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(this_ptr);
     }
-    iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x52);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD0);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047bca0(this_ptr);
     }
-    iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x2e);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047bca0(this_ptr);
     }
-    iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x2f);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(this_ptr);
       shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0047bcf0(this_ptr);
     }
-    iVar2 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x53);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_DECIMAL);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(this_ptr);
     }

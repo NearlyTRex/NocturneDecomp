@@ -43,7 +43,7 @@ void __cdecl CFlame::renderBackground(CFlame *this_ptr,int layer_flag);
 
 // Original: core_flame.cpp_CFlame_getBoundingBox_FUN_004b8c90
 // Address: 004b8c90
-CBoundingBox3D * __cdecl CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flame.cpp_CFlame_archive_FUN_004b8d10
 // Address: 004b8d10
@@ -53,6 +53,6 @@ void __cdecl CFlame::archive(CFlame *this_ptr);
 // Address: 004b8e30
 ECollisionType __cdecl CFlame::getCollisionType(CFlame *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flame.cpp_FUN_004b8e40
+// Original: core_flame.cpp_CFlame_updateGlobe_FUN_004b8e40
 // Address: 004b8e40
-void __cdecl FUN_004b8e40(CFlame *this_ptr);
+void __cdecl CFlame::updateGlobe(CFlame *this_ptr);

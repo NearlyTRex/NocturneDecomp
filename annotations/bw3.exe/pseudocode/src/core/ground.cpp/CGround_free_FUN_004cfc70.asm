@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   core_texlist.cpp_CTextureList_dtor_FUN_005690b0
-;   crt_unknown.c_FUN_005a30c4
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
+;   crt_unknown.c_debugFreeChecked_FUN_005a30c4
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     RET                                 ; 004cfc8b
     PUSH EDX                            ; 004cfc8c
         ;   Label: LAB_004cfc8c
-    CALL crt_unknown.c_FUN_005a3770     ; 004cfc8d
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 004cfc8d
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 004cfc92
     MOV dword ptr [EBX + 0x24],0x0      ; 004cfc95
     MOV EAX,dword ptr [EBX + 0x28]      ; 004cfc9c
@@ -54,8 +54,8 @@ section .text
         ;   XREF to: 005690b0 (UNCONDITIONAL_CALL)  ; CTextureList * core_texlist.cpp_CTextureList_dtor_FUN_005690b0(CTextureList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cfcb4
     PUSH EAX                            ; 004cfcb7
-    CALL crt_unknown.c_FUN_005a30c4     ; 004cfcb8
-        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a30c4()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005a30c4 ; 004cfcb8
+        ;   XREF to: 005a30c4 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005a30c4(void * ptr)
     ADD ESP,0x4                         ; 004cfcbd
     MOV dword ptr [EBX + 0x28],0x0      ; 004cfcc0
     POP EBX                             ; 004cfcc7

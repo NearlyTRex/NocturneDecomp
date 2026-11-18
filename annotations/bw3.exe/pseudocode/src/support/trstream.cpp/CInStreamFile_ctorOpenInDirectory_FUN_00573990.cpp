@@ -12,7 +12,7 @@ CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_F
   CInStreamFile *this_ptr_00;
   
   this_ptr_00 = (CInStreamFile *)support_trstream_cpp_CInStream_ctor_FUN_00572530(&this_ptr->base);
-  (this_ptr_00->base).vtable = &g_CInStreamFileVTable;
+  (this_ptr_00->base).vtable = g_CInStreamFileVTable;
   this_ptr_00->file_handle = (HANDLE)0x0;
   this_ptr_00->file_size = 0;
   this_ptr_00->file_offset = 0;

@@ -39,15 +39,15 @@ int __cdecl CTVBat::renderOpaque(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_getBoundingBox_FUN_00576070
 // Address: 00576070
-CBoundingBox3D * __cdecl CTVBat::getBoundingBox(CTVBat *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CTVBat::getBoundingBox(CTVBat *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_tvbat.cpp_CTVBat_getCollisionType_FUN_005760d0
 // Address: 005760d0
 ECollisionType __cdecl CTVBat::getCollisionType(CTVBat *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_tvbat.cpp_FUN_005760f0
+// Original: core_tvbat.cpp_CTVBat_getTargetPoints_FUN_005760f0
 // Address: 005760f0
-undefined4 FUN_005760f0(void);
+int __cdecl CTVBat::getTargetPoints(CTVBat *this_ptr,CVector3f *out_points_array);
 
 // Original: core_tvbat.cpp_CTVBat_getDeathState_FUN_00576100
 // Address: 00576100
@@ -61,6 +61,6 @@ void __cdecl CTVBat::processDamage(CTVBat *this_ptr,SDamageInfo *damage_info);
 // Address: 005761a0
 CTVBat * __cdecl CTVBat::dtor(CTVBat *this_ptr,uint flags);
 
-// Original: core_tvbat.cpp_FUN_00576230
+// Original: core_tvbat.cpp_staticInit_FUN_00576230
 // Address: 00576230
-void FUN_00576230(void);
+void __cdecl staticInit(void);

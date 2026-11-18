@@ -14,21 +14,9 @@
   },
   "cross_references": [
     {
-      "addr": "0047ab00",
-      "from_addr": "0047ae77",
-      "name": "core_dpart.cpp_FUN_0047ab00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004c0080",
       "from_addr": "004c046b",
       "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004c0080",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005bf120",
-      "from_addr": "005bf447",
-      "name": "core_zombie.cpp_FUN_005bf120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,6 +29,12 @@
       "addr": "00484fd0",
       "from_addr": "00485019",
       "name": "engine_drender.cpp_CDemonRenderer_depthTest_FUN_00484fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ab00",
+      "from_addr": "0047ae77",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_0047ab00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,6 +60,12 @@
       "from_addr": "005bf927",
       "name": "engine_zraster.c_rasterizePolygonCustom_FUN_005bf640",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bf120",
+      "from_addr": "005bf447",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_005bf120",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -88,7 +88,7 @@
       {
         "call_addr": "0047ae77",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_0047ab00",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_0047ab00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +110,7 @@
       {
         "call_addr": "005bf447",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_005bf120",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_005bf120",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

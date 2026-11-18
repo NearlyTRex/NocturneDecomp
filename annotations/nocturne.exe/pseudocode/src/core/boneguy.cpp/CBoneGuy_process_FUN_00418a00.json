@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 952,
-    "complexity_score": 743,
+    "complexity_score": 728,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 438,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
-      "undefined_data",
       "unknown_field",
       "unrolled_memcpy",
       "unrolled_memset",
@@ -322,9 +321,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005baf90",
@@ -340,8 +339,8 @@
     },
     {
       "addr": "00764794",
-      "name": "DAT_00764794",
-      "type": "undefined4",
+      "name": "g_BoneGuyIndices",
+      "type": "int[11]",
       "value": null
     },
     {
@@ -965,14 +964,6 @@
       "severity": "moderate",
       "text": "uint auStackY_1908 [1483];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 298,
-      "match": "DAT_00764794",
-      "severity": "mild",
-      "text": "DAT_00764794);",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

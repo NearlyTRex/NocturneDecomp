@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_005c50cc(void)
+; undefined * crt_unknown_c_FUN_005c50cc(void)
 ;
 ;
 ; XREF[12]:
@@ -18,13 +18,13 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c9f06c
+;   void* g_CurrentThreadTlsBlock
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x02c9f06c]                ; 005c50cc | DAT_02c9f06c
+    MOV EAX,[0x02c9f06c]                ; 005c50cc | g_CurrentThreadTlsBlock
         ;   Label: crt_unknown.c_FUN_005c50cc
     LEA EAX,[EAX]                       ; 005c50d1
 

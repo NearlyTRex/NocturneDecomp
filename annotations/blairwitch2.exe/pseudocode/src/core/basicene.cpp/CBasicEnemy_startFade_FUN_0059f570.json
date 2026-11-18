@@ -1,0 +1,235 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 9,
+    "cross_reference_count": 9,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [
+    {
+      "addr": "0059ed50",
+      "from_addr": "0059edb8",
+      "name": "core_basicene.cpp_CBasicEnemy_processAlertInvisibleState_FUN_0059ed50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a2240",
+      "from_addr": "005a23cb",
+      "name": "core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a1ed0",
+      "from_addr": "005a1f2e",
+      "name": "core_confzomb.cpp_CConfederateZombie_processDeathState_FUN_005a1ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9980",
+      "from_addr": "005a99de",
+      "name": "core_ghostchi.cpp_CGhostChild_processDeathState_FUN_005a9980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9770",
+      "from_addr": "005a97ce",
+      "name": "core_ghostchi.cpp_CGhostChild_processSleepState_FUN_005a9770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522350",
+      "from_addr": "00527abd",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4330",
+      "from_addr": "005a444f",
+      "name": "core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4080",
+      "from_addr": "005a40de",
+      "name": "core_unionzom.cpp_CUnionZombie_processDeathState_FUN_005a4080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a40f0",
+      "from_addr": "005a4136",
+      "name": "core_unionzom.cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059f570",
+    "address_range": [
+      [
+        "0059f570",
+        "0059f5aa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_basicene.cpp_CBasicEnemy_startFade_FUN_0059f570",
+    "signature": "void __cdecl core_basicene_cpp_CBasicEnemy_startFade_FUN_0059f570(CBasicEnemy *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "00527abd",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059edb8",
+        "call_type": "direct",
+        "caller": "core_basicene.cpp_CBasicEnemy_processAlertInvisibleState_FUN_0059ed50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059ede4",
+        "call_type": "direct",
+        "caller": "core_basicene.cpp_CBasicEnemy_processAlertInvisibleState_FUN_0059ed50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a1f2e",
+        "call_type": "direct",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processDeathState_FUN_005a1ed0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a23cb",
+        "call_type": "direct",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a40de",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_CUnionZombie_processDeathState_FUN_005a4080",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a4136",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a419a",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a444f",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a97ce",
+        "call_type": "direct",
+        "caller": "core_ghostchi.cpp_CGhostChild_processSleepState_FUN_005a9770",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "COPY": 24,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 9,
+      "LOAD": 4,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 45
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBasicEnemy *"
+      }
+    ]
+  },
+  "suspects": []
+}

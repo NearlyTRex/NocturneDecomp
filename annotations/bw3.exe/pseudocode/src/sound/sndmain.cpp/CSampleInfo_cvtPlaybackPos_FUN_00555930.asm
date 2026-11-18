@@ -26,11 +26,11 @@
 ;   TerminatedCString s_SampleInfo_cvtPlaybackPo_005d35cd
 ;   TerminatedCString s_sound_sndmain_cpp_005d362d
 ;   TerminatedCString s_SampleInfo_cvtPlaybackPo_005d3642
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;
 ; *****************************************************************************
 
@@ -67,10 +67,10 @@ section .text
         ;   Label: LAB_00555967
     MOV EDX,0xdd6                       ; 0055596c
     PUSH 0x5d3642                       ; 00555971 | = "SampleInfo::cvtPlaybackPos - Invalid ..."
-    MOV [0x01d71de0],EAX                ; 00555976 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0055597b | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00555981
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 00555976 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 0055597b | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555981
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00555986
     MOV EAX,dword ptr [EBP + 0x18]      ; 00555989
         ;   Label: LAB_00555989
@@ -105,10 +105,10 @@ section .text
     MOV ECX,0x5d34f3                    ; 005559ca | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xdbe                       ; 005559cf
     PUSH 0x5d3508                       ; 005559d4 | = "SampleInfo::cvtPlaybackPos - can't us..."
-    MOV dword ptr [0x01d71de0],ECX      ; 005559d9 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005559df | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 005559e5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 005559d9 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 005559df | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005559e5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005559ea
     FILD dword ptr [EBX + 0x110]        ; 005559ed
     FMUL double ptr [EBP + 0x18]        ; 005559f3
@@ -125,10 +125,10 @@ section .text
         ;   Label: LAB_00555a05
     MOV EDX,0xdc3                       ; 00555a0a
     PUSH 0x5d357d                       ; 00555a0f | = "SampleInfo::cvtPlaybackPos - Invalid ..."
-    MOV [0x01d71de0],EAX                ; 00555a14 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00555a19 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00555a1f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV [0x01d71de0],EAX                ; 00555a14 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDX      ; 00555a19 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555a1f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00555a24
     JMP 0x0055595a                      ; 00555a27
         ;   XREF to: 0055595a (UNCONDITIONAL_JUMP)  ; LAB_0055595a
@@ -152,10 +152,10 @@ section .text
     MOV ESI,0x5d35b8                    ; 00555a58 | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xdd1                       ; 00555a5d
     PUSH 0x5d35cd                       ; 00555a62 | = "SampleInfo::cvtPlaybackPos - can't us..."
-    MOV dword ptr [0x01d71de0],ESI      ; 00555a67 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00555a6d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00555a73
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ESI      ; 00555a67 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EDI      ; 00555a6d | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00555a73
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00555a78
     FILD dword ptr [EBX + 0x110]        ; 00555a7b
     FDIVR double ptr [EBP + 0x18]       ; 00555a81

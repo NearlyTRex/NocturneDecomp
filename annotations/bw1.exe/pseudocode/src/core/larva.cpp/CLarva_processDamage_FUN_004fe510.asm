@@ -8,17 +8,17 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e6c8e
-;   undefined4 DAT_005e6c92
-;   undefined4 DAT_005e6c96
+;   TerminatedCString s_sml_005e6c8e
+;   TerminatedCString s_med_005e6c92
+;   TerminatedCString s_big_005e6c96
 ;   TerminatedCString s_l_s_die_wav_005e6cab
 ;   TerminatedCString s_l_s_shot_wav_005e6cb8
-;   undefined4 DAT_005e6ccb
-;   undefined4 DAT_005e6cd3
+;   double g_DOUBLE_005e6ccb = 0.300000000000000
+;   double g_DOUBLE_005e6cd3 = 0.700000000000000
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -84,13 +84,13 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 004fe598
     FLD float ptr [ESP + 0x10]          ; 004fe59c
     FST double ptr [ESP + 0x8]          ; 004fe5a0
-    FCOMP double ptr [0x005e6ccb]       ; 004fe5a4 | DAT_005e6ccb
+    FCOMP double ptr [0x005e6ccb]       ; 004fe5a4 | g_DOUBLE_005e6ccb
     FNSTSW AX                           ; 004fe5aa
     SAHF                                ; 004fe5ac
     JNC 0x004fe644                      ; 004fe5ad
         ;   XREF to: 004fe644 (CONDITIONAL_JUMP)  ; LAB_004fe644
-    MOV EAX,0x5e6c8e                    ; 004fe5b3 | DAT_005e6c8e
-    PUSH EAX                            ; 004fe5b8 | DAT_005e6c8e | DAT_005e6c92 | DAT_005e6c96
+    MOV EAX,0x5e6c8e                    ; 004fe5b3 | = "sml"
+    PUSH EAX                            ; 004fe5b8 | = "sml" | s_med_005e6c92 | s_big_005e6c96
         ;   Label: LAB_004fe5b8
     PUSH 0x5e6cab                       ; 004fe5b9 | = "l%s-die?.wav"
     LEA EAX,[ESP + 0x84]                ; 004fe5be
@@ -112,8 +112,8 @@ section .text
     PUSH EBX                            ; 004fe5ed
     LEA ESI,[ESP + 0xe8]                ; 004fe5ee
     LEA EDI,[ESP + 0xf4]                ; 004fe5f5
-    CALL core_actor.cpp_FUN_00408b40    ; 004fe5fc
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40 ; 004fe5fc
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b40(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0xe8]                ; 004fe601
     ADD ESP,0x8                         ; 004fe608
     MOVSD ES:EDI,ESI                    ; 004fe60b
@@ -144,15 +144,15 @@ section .text
     RET                                 ; 004fe643
     FLD double ptr [ESP + 0x8]          ; 004fe644
         ;   Label: LAB_004fe644
-    FCOMP double ptr [0x005e6cd3]       ; 004fe648 | DAT_005e6cd3
+    FCOMP double ptr [0x005e6cd3]       ; 004fe648 | g_DOUBLE_005e6cd3
     FNSTSW AX                           ; 004fe64e
     SAHF                                ; 004fe650
     JNC 0x004fe65d                      ; 004fe651
         ;   XREF to: 004fe65d (CONDITIONAL_JUMP)  ; LAB_004fe65d
-    MOV EAX,0x5e6c92                    ; 004fe653 | DAT_005e6c92
+    MOV EAX,0x5e6c92                    ; 004fe653 | = "med"
     JMP 0x004fe5b8                      ; 004fe658
         ;   XREF to: 004fe5b8 (UNCONDITIONAL_JUMP)  ; LAB_004fe5b8
-    MOV EAX,0x5e6c96                    ; 004fe65d | DAT_005e6c96
+    MOV EAX,0x5e6c96                    ; 004fe65d | = "big"
         ;   Label: LAB_004fe65d
     JMP 0x004fe5b8                      ; 004fe662
         ;   XREF to: 004fe5b8 (UNCONDITIONAL_JUMP)  ; LAB_004fe5b8
@@ -174,13 +174,13 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 004fe68f
     FLD float ptr [ESP + 0x14]          ; 004fe693
     FST double ptr [ESP]                ; 004fe697
-    FCOMP double ptr [0x005e6ccb]       ; 004fe69a | DAT_005e6ccb
+    FCOMP double ptr [0x005e6ccb]       ; 004fe69a | g_DOUBLE_005e6ccb
     FNSTSW AX                           ; 004fe6a0
     SAHF                                ; 004fe6a2
     JNC 0x004fe6ed                      ; 004fe6a3
         ;   XREF to: 004fe6ed (CONDITIONAL_JUMP)  ; LAB_004fe6ed
-    MOV EAX,0x5e6c8e                    ; 004fe6a5 | DAT_005e6c8e
-    PUSH EAX                            ; 004fe6aa | DAT_005e6c8e | DAT_005e6c92 | DAT_005e6c96
+    MOV EAX,0x5e6c8e                    ; 004fe6a5 | = "sml"
+    PUSH EAX                            ; 004fe6aa | = "sml" | s_med_005e6c92 | s_big_005e6c96
         ;   Label: LAB_004fe6aa
     PUSH 0x5e6cb8                       ; 004fe6ab | = "l%s-shot?.wav"
     LEA EAX,[ESP + 0x20]                ; 004fe6b0
@@ -207,15 +207,15 @@ section .text
         ;   XREF to: 004fe5e6 (UNCONDITIONAL_JUMP)  ; LAB_004fe5e6
     FLD double ptr [ESP]                ; 004fe6ed
         ;   Label: LAB_004fe6ed
-    FCOMP double ptr [0x005e6cd3]       ; 004fe6f0 | DAT_005e6cd3
+    FCOMP double ptr [0x005e6cd3]       ; 004fe6f0 | g_DOUBLE_005e6cd3
     FNSTSW AX                           ; 004fe6f6
     SAHF                                ; 004fe6f8
     JNC 0x004fe702                      ; 004fe6f9
         ;   XREF to: 004fe702 (CONDITIONAL_JUMP)  ; LAB_004fe702
-    MOV EAX,0x5e6c92                    ; 004fe6fb | DAT_005e6c92
+    MOV EAX,0x5e6c92                    ; 004fe6fb | = "med"
     JMP 0x004fe6aa                      ; 004fe700
         ;   XREF to: 004fe6aa (UNCONDITIONAL_JUMP)  ; LAB_004fe6aa
-    MOV EAX,0x5e6c96                    ; 004fe702 | DAT_005e6c96
+    MOV EAX,0x5e6c96                    ; 004fe702 | = "big"
         ;   Label: LAB_004fe702
     JMP 0x004fe6aa                      ; 004fe707
         ;   XREF to: 004fe6aa (UNCONDITIONAL_JUMP)  ; LAB_004fe6aa

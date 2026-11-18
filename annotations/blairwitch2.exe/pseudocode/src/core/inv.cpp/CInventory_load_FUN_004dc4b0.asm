@@ -17,20 +17,20 @@
 ;   core_hero.cpp_CHero_archive_FUN_004ce590 at 004ce7f8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005db882
-;   undefined4 DAT_005db886
-;   undefined4 DAT_005db88a
-;   undefined4 DAT_005db88e
+;   TerminatedCString s_d_005db882
+;   TerminatedCString s_d_005db886
+;   TerminatedCString s_d_005db88a
+;   TerminatedCString s_f_005db88e
 ;   TerminatedCString s_s_005db892
 ;   TerminatedCString s_core_inv_cpp_005db89f
 ;   TerminatedCString s_CInventory_load_Can_t_fi_005db8af
-;   undefined4 DAT_00617cd8
-;   undefined4 DAT_00617cdc
-;   undefined4 DAT_00617d40
-;   undefined4 DAT_00617d44
-;   undefined4 DAT_00618170
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char[104] g_DefaultInventoryKey
+;   undefined4 g_DefaultInventoryKey+4
+;   char[100] g_DefaultInventoryValue
+;   undefined4 g_DefaultInventoryValue+4
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;   undefined4 DAT_01d182f0
 ;   ... and 2 more
 ;
@@ -41,7 +41,7 @@
 ;   core_inv.cpp_CInventory_clear_FUN_004da860
 ;   core_inv.cpp_CInventory_initialize_FUN_004da900
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004fbc00
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
@@ -84,7 +84,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004dc507
     ADD EAX,0x334                       ; 004dc50e
     PUSH EAX                            ; 004dc513
-    PUSH 0x5db882                       ; 004dc514 | DAT_005db882
+    PUSH 0x5db882                       ; 004dc514 | = "%d\n"
     PUSH EBX                            ; 004dc519
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004dc51a
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -99,7 +99,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004dc535
     ADD EAX,0x10                        ; 004dc53c
     PUSH EAX                            ; 004dc53f
-    PUSH 0x5db886                       ; 004dc540 | DAT_005db886
+    PUSH 0x5db886                       ; 004dc540 | = "%d\n"
     PUSH EBX                            ; 004dc545
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004dc546
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -113,7 +113,7 @@ section .text
     ADD ESP,0xc                         ; 004dc55e
     LEA EAX,[ESP + 0x1c8]               ; 004dc561
     PUSH EAX                            ; 004dc568
-    PUSH 0x5db88a                       ; 004dc569 | DAT_005db88a
+    PUSH 0x5db88a                       ; 004dc569 | = "%d\n"
     PUSH EBX                            ; 004dc56e
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004dc56f
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -142,21 +142,21 @@ section .text
         ;   Label: LAB_004dc5bb
     LEA EDI,[ESP + 0x100]               ; 004dc5c0
     LEA EAX,[ESP + 0x164]               ; 004dc5c7
-    MOV ESI,0x617cd8                    ; 004dc5ce | DAT_00617cd8
+    MOV ESI,0x617cd8                    ; 004dc5ce | g_DefaultInventoryKey
     PUSH EAX                            ; 004dc5d3
     LEA EAX,[ESP + 0x104]               ; 004dc5d4
-    MOVSD.REP ES:EDI,ESI                ; 004dc5db | DAT_00617cd8 | DAT_00617cdc
+    MOVSD.REP ES:EDI,ESI                ; 004dc5db | g_DefaultInventoryKey | g_DefaultInventoryKey+4
     PUSH EAX                            ; 004dc5dd
     MOV ECX,0x19                        ; 004dc5de
     LEA EDI,[ESP + 0x16c]               ; 004dc5e3
     PUSH 0x5db892                       ; 004dc5ea | = " %s \"%[^\"]\"\n"
     MOV EAX,dword ptr [ESP + 0x1f0]     ; 004dc5ef
-    MOV ESI,0x617d40                    ; 004dc5f6 | DAT_00617d40
+    MOV ESI,0x617d40                    ; 004dc5f6 | g_DefaultInventoryValue
     PUSH EAX                            ; 004dc5fb
-    MOVSD.REP ES:EDI,ESI                ; 004dc5fc | DAT_00617d40 | DAT_00617d44
+    MOVSD.REP ES:EDI,ESI                ; 004dc5fc | g_DefaultInventoryValue | g_DefaultInventoryValue+4
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004dc5fe
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
-    MOV ESI,dword ptr [0x00618170]      ; 004dc603 | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 004dc603 | g_CDemonMission_PTR_00618170
     MOV EDX,dword ptr [ESI + 0x1010]    ; 004dc609 | DAT_01d19300
     ADD ESP,0x10                        ; 004dc60f
     TEST EDX,EDX                        ; 004dc612
@@ -223,7 +223,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 004dc6c2
         ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004dc6c7
-    MOV EAX,[0x00618170]                ; 004dc6ca | DAT_00618170
+    MOV EAX,[0x00618170]                ; 004dc6ca | g_CDemonMission_PTR_00618170
         ;   Label: LAB_004dc6ca
     MOV EDX,dword ptr [ESP + 0x1e0]     ; 004dc6cf
     MOV EAX,dword ptr [EAX + 0x1010]    ; 004dc6d6 | DAT_01d19300
@@ -260,7 +260,7 @@ section .text
     ADD ESP,0xc                         ; 004dc73d
     MOV EDI,dword ptr [ESP + 0x1e0]     ; 004dc740
     PUSH EDI                            ; 004dc747
-    PUSH 0x5db88e                       ; 004dc748 | DAT_005db88e
+    PUSH 0x5db88e                       ; 004dc748 | = "%f\n"
     PUSH ESI                            ; 004dc74d
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004dc74e
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
@@ -322,10 +322,10 @@ section .text
     MOV EDI,0x5db89f                    ; 004dc7e4 | = "..\\core\\inv.cpp"
     MOV EBP,0x62b                       ; 004dc7e9
     PUSH 0x5db8af                       ; 004dc7ee | = "CInventory::load - Can't find your we..."
-    MOV dword ptr [0x01d046a0],EDI      ; 004dc7f3 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004dc7f9 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004dc7ff
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EDI      ; 004dc7f3 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBP      ; 004dc7f9 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004dc7ff
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004dc804
     JMP 0x004dc706                      ; 004dc807
         ;   XREF to: 004dc706 (UNCONDITIONAL_JUMP)  ; LAB_004dc706

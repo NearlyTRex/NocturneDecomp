@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *filename)
 
 {
@@ -60,7 +58,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *filename)
     pcVar16[1] = cVar2;
     pcVar16 = pcVar16 + 2;
   } while (cVar2 != '\0');
-  pCVar13 = g_CSfxOptions_ARRAY_02dc1b78 + _DAT_02dc1b74;
+  pCVar13 = g_CSfxOptions_ARRAY_02dc1b78 + g_SfxLastSlot;
   pCVar17 = &local_8c;
   for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
     pCVar17->channel_index = pCVar13->channel_index;
@@ -72,7 +70,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *filename)
     return 0;
   }
   sound_sndmain_cpp_lockSound_FUN_00528800();
-  if (_DAT_02dc84bc < 1) {
+  if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 502;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
@@ -116,13 +114,13 @@ LAB_005266dc:
     iVar3 = 0;
     local_20 = local_1c;
     do {
-      _DAT_02dc1ed8 = _DAT_02dc1ed8 + 1;
-      if (0x3f < _DAT_02dc1ed8) {
-        _DAT_02dc1ed8 = 0;
+      g_LastSampleAccessIndex = g_LastSampleAccessIndex + 1;
+      if (0x3f < g_LastSampleAccessIndex) {
+        g_LastSampleAccessIndex = 0;
       }
-      if ((g_SfxSamples[_DAT_02dc1ed8].taken == 0) && (g_SfxSamples[_DAT_02dc1ed8].ref_count == 0))
-      {
-        local_18 = g_SfxSamples + _DAT_02dc1ed8;
+      if ((g_SfxSamples[g_LastSampleAccessIndex].taken == 0) &&
+         (g_SfxSamples[g_LastSampleAccessIndex].ref_count == 0)) {
+        local_18 = g_SfxSamples + g_LastSampleAccessIndex;
         goto LAB_0052671f;
       }
       iVar3 = iVar3 + 1;
@@ -254,32 +252,32 @@ LAB_0052673b:
       pCVar4->channel_current_buffer_offsets[0] = -1;
       pCVar4 = (CSfxSlot *)pCVar5;
     } while (pCVar5 != (CVector3d *)&g_CSfxSlot_ARRAY_02dbd374[uVar12].options.position_format);
-    iVar3 = g_INT_005bea40 + 1;
+    iVar3 = g_SfxPlaybackStateCounter + 1;
     pCVar11 = g_CSfxSlot_ARRAY_02dbd374[uVar12].sample;
     g_CSfxSlot_ARRAY_02dbd374[uVar12].reference_distance =
          ((g_CSfxSlot_ARRAY_02dbd374[uVar12].sample)->sample_info).reference_distance;
     pCVar20 = g_CSfxSlot_ARRAY_02dbd374[uVar12].sample;
-    g_INT_005bea40 = iVar3;
+    g_SfxPlaybackStateCounter = iVar3;
     g_CSfxSlot_ARRAY_02dbd374[uVar12].min_distance =
          (pCVar11->sample_info).reference_volume_distance;
     g_CSfxSlot_ARRAY_02dbd374[uVar12].max_distance = (pCVar20->sample_info).max_distance;
     if (0xfffffe < iVar3) {
-      g_INT_005bea40 = 1;
+      g_SfxPlaybackStateCounter = 1;
     }
-    iVar3 = g_INT_005bea40;
+    iVar3 = g_SfxPlaybackStateCounter;
     pCVar11 = g_CSfxSlot_ARRAY_02dbd374[uVar12].sample;
-    g_CSfxSlot_ARRAY_02dbd374[uVar12].playback_state = g_INT_005bea40;
+    g_CSfxSlot_ARRAY_02dbd374[uVar12].playback_state = g_SfxPlaybackStateCounter;
     iVar6 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(pCVar11,999.0,999.0);
     if (iVar6 != 0) {
       sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr_00,0.0);
       uVar7 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
       if (uVar7 != 0) {
-        iVar6 = (**(code **)(*_DAT_02dc8318 + 0x3c))
-                          (_DAT_02dc8318,(g_CSfxSlot_ARRAY_02dbd374[uVar12].sample)->buffer_id);
+        iVar6 = (*g_CSoundDevicePtr->vtable->allocateSfx)
+                          (g_CSoundDevicePtr,(g_CSfxSlot_ARRAY_02dbd374[uVar12].sample)->buffer_id);
         g_CSfxSlot_ARRAY_02dbd374[uVar12].hardware_buffer_handle = iVar6;
         if ((iVar6 == 0) ||
-           (iVar6 = (**(code **)(*_DAT_02dc8318 + 0x48))(_DAT_02dc8318,this_ptr_00), iVar6 == 0))
-        goto LAB_00526c2e;
+           (iVar6 = (*g_CSoundDevicePtr->vtable->startSfx)(g_CSoundDevicePtr,this_ptr_00),
+           iVar6 == 0)) goto LAB_00526c2e;
       }
       sound_sndmain_cpp_unlockSound_FUN_00528890();
       return iVar3 << 6 | local_20;

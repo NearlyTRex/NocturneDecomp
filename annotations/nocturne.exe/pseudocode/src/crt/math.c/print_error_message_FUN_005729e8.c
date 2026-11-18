@@ -12,7 +12,7 @@ void __cdecl print_error_message(int errorType,char *errorData)
   _FILE *file;
   
   file = get_standard_file_handle(2);
-  _fputs(*(char **)(&DAT_005c2148 + errorType * 4),file);
+  _fputs(g_MathErrorMessages[errorType],file);
   _fputs(" in ",file);
   _fputs(errorData,file);
   _fputc(10,file);

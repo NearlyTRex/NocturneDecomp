@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 12,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 89
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -24,7 +22,7 @@
     {
       "addr": "0042d500",
       "from_addr": "0042d6ce",
-      "name": "core_charactr.cpp_FUN_0042d500",
+      "name": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,7 +102,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3260",
@@ -127,14 +125,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -155,7 +153,7 @@
       {
         "call_addr": "0042d6ce",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +164,7 @@
       {
         "call_addr": "0042d6ed",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +175,7 @@
       {
         "call_addr": "0042d70c",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +186,7 @@
       {
         "call_addr": "0042d722",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +197,7 @@
       {
         "call_addr": "0042d738",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +208,7 @@
       {
         "call_addr": "0042d74e",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +219,7 @@
       {
         "call_addr": "0042d764",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +230,7 @@
       {
         "call_addr": "0042d77a",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +241,7 @@
       {
         "call_addr": "0042d790",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042d500",
+        "caller": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042d500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -341,14 +339,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

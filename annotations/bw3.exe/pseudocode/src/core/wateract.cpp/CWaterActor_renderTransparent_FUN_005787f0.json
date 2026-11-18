@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 383,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 25,
+    "pseudocode_lines": 109,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unaffected_reg",
+      "unrolled_memcpy"
     ],
-    "total_lines": 326
+    "total_lines": 332
   },
   "cross_references": [],
   "function": {
@@ -46,7 +45,12 @@
     {
       "addr": "0041daf0",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041daf0"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0"
+    },
+    {
+      "addr": "005386d0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_005386d0"
     },
     {
       "addr": "0053ab80",
@@ -57,11 +61,6 @@
       "addr": "00538ad0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_rotateVerticies_FUN_00538ad0"
-    },
-    {
-      "addr": "005386d0",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_005386d0"
     },
     {
       "addr": "0046e5e0",
@@ -97,15 +96,15 @@
   "globals": [
     {
       "addr": "005e5ec0",
-      "name": "DAT_005e5ec0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005e5ec0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "00603b28",
@@ -207,88 +206,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->opacity);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_02cfd900",
-      "severity": "mild",
-      "text": "core_set_cpp_FUN_005386d0(g_CDemonSetPtr,pCVar7,&DAT_02cfd900,iVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "pSVar1 = DAT_005f2afc->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 81,
-      "match": "(CVector3f *)((int)(pCVar7 + 2) +",
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 2) + 8);",
-      "type": "pointer_cast"
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,poly,0x267);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 101,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);",
-      "type": "undefined_data"
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_20 + 2),unaff_EDI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 72,
       "match": "(int)&pSVar1->r",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)",
@@ -296,7 +231,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 74,
       "match": "(int)&pSVar1->r",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->r + iVar9) =",
@@ -304,7 +239,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 76,
       "match": "(int)&pSVar1->g",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar9)",
@@ -312,7 +247,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
+      "line": 78,
       "match": "(int)&pSVar1->g",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->g + iVar9) =",
@@ -320,7 +255,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
+      "line": 80,
       "match": "(int)&pSVar1->b",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->b + iVar9)",
@@ -328,18 +263,10 @@
     },
     {
       "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 82,
       "match": "(int)&pSVar1->b",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->b + iVar9) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `(pCVar7 + 2)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 81,
-      "match": "(int)(pCVar7 + 2)",
-      "severity": "moderate",
-      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 2) + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -352,7 +279,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
+      "line": 72,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar9)",
@@ -360,7 +287,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 70,
+      "line": 74,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->r + iVar9) =",
@@ -368,7 +295,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 76,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar9)",
@@ -376,7 +303,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 74,
+      "line": 78,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->g + iVar9) =",
@@ -384,7 +311,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 76,
+      "line": 80,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->b + iVar9)",
@@ -392,18 +319,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 78,
+      "line": 82,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->b + iVar9) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via element-arithmetic `(int)(pCVar7 + N) + M`, where `N*sizeof(*pCVar7) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar7->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 81,
-      "match": "pCVar7 = (T *)((int)(pCVar7 + N) + M)",
+      "description": "Watcom shadow-pointer walk \u2014 `vertex_position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*vertex_position) + offsetof(subfield)` equals the real array stride. Replace `vertex_position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 85,
+      "match": "vertex_position = (T *)&vertex_position[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 2) + 8);",
+      "text": "vertex_position = (CVector3f *)&vertex_position[2].z;",
       "type": "shadow_pointer_walk"
     }
   ],

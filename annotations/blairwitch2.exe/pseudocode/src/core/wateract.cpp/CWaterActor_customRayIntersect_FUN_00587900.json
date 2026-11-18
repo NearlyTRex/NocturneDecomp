@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 124,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 4,
+    "pseudocode_lines": 75,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_alignment_array",
+      "stack_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 265
+    "total_lines": 266
   },
   "cross_references": [],
   "function": {
@@ -33,7 +34,7 @@
     {
       "addr": "0041af70",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041af70"
+      "name": "core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041af70"
     },
     {
       "addr": "004779e0",
@@ -179,14 +180,46 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 11,
-      "match": "afStackY_1024",
+      "match": "afStackY_101c",
       "severity": "moderate",
-      "text": "float afStackY_1024 [979];",
+      "text": "float afStackY_101c [977];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffff38",
+      "severity": "moderate",
+      "text": "CVector3f *in_stack_ffffff38;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_ffffff3c",
+      "severity": "moderate",
+      "text": "CVector3f *in_stack_ffffff3c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_ffffff38",
+      "severity": "moderate",
+      "text": "(&CStack_70,ray_origin_00,in_stack_ffffff38,in_stack_ffffff3c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_ffffff3c",
+      "severity": "moderate",
+      "text": "(&CStack_70,ray_origin_00,in_stack_ffffff38,in_stack_ffffff3c);",
+      "type": "stack_param"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 29,
+      "line": 31,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -194,25 +227,25 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 60,
+      "line": 61,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_48.x = CStack_30.x;",
+      "text": "CStack_40.x = CStack_28.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 70,
+      "line": 71,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "out_normal->x = CStack_48.x;",
+      "text": "out_normal->x = CStack_40.x;",
       "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 192,
         "vtable_addr": "005fdcc4"
       }

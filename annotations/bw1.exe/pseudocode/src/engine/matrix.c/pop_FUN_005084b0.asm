@@ -6,72 +6,72 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_pop_FUN_004839a0 at 004839a0
-;   shape_edittool.cpp_FUN_004985b0 at 00498648
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004985b0 at 00498648
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005e7736
 ;   TerminatedCString s_Matrix_unbalance2_005e7749
-;   undefined4 DAT_01c51d2c
-;   undefined4 DAT_01c51d30
-;   undefined4 DAT_01c51d34
-;   undefined4 DAT_01c51d50
-;   undefined4 DAT_01c51d54
-;   undefined4 DAT_01c51d58
-;   undefined4 DAT_01c51d5c
-;   undefined4 DAT_01c51d60
-;   undefined4 DAT_01c51d64
-;   undefined4 DAT_01c51d68
-;   undefined4 DAT_01c51d6c
-;   undefined4 DAT_01c51d70
-;   undefined4 DAT_01c51d74
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_LightDirectionX
+;   int g_LightDirectionY
+;   int g_LightDirectionZ
+;   int g_INT_01c51d5c
+;   int g_INT_01c51d60
+;   int g_INT_01c51d64
+;   int g_INT_01c51d68
+;   int g_INT_01c51d6c
+;   int g_INT_01c51d70
+;   int g_INT_01c51d74
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x01d1dd74]      ; 005084b0 | DAT_01d1dd74
+    MOV EDX,dword ptr [0x01d1dd74]      ; 005084b0 | g_MatrixStackIndex
         ;   Label: engine_matrix.c_pop_FUN_005084b0
     DEC EDX                             ; 005084b6
-    MOV dword ptr [0x01d1dd74],EDX      ; 005084b7 | DAT_01d1dd74
+    MOV dword ptr [0x01d1dd74],EDX      ; 005084b7 | g_MatrixStackIndex
     TEST EDX,EDX                        ; 005084bd
     JL 0x0050858d                       ; 005084bf
         ;   XREF to: 0050858d (CONDITIONAL_JUMP)  ; LAB_0050858d
-    MOV EAX,[0x01d1dd74]                ; 005084c5 | DAT_01d1dd74
+    MOV EAX,[0x01d1dd74]                ; 005084c5 | g_MatrixStackIndex
         ;   Label: LAB_005084c5
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1dd78] ; 005084ca
-    MOV dword ptr [0x01c51d5c],EDX      ; 005084d1 | DAT_01c51d5c
+    MOV dword ptr [0x01c51d5c],EDX      ; 005084d1 | g_INT_01c51d5c
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1dda0] ; 005084d7
-    MOV dword ptr [0x01c51d60],EDX      ; 005084de | DAT_01c51d60
+    MOV dword ptr [0x01c51d60],EDX      ; 005084de | g_INT_01c51d60
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1ddc8] ; 005084e4
-    MOV dword ptr [0x01c51d64],EDX      ; 005084eb | DAT_01c51d64
+    MOV dword ptr [0x01c51d64],EDX      ; 005084eb | g_INT_01c51d64
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1ddf0] ; 005084f1
-    MOV dword ptr [0x01c51d68],EDX      ; 005084f8 | DAT_01c51d68
+    MOV dword ptr [0x01c51d68],EDX      ; 005084f8 | g_INT_01c51d68
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1de18] ; 005084fe
-    MOV dword ptr [0x01c51d6c],EDX      ; 00508505 | DAT_01c51d6c
+    MOV dword ptr [0x01c51d6c],EDX      ; 00508505 | g_INT_01c51d6c
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1de40] ; 0050850b
-    MOV dword ptr [0x01c51d70],EDX      ; 00508512 | DAT_01c51d70
+    MOV dword ptr [0x01c51d70],EDX      ; 00508512 | g_INT_01c51d70
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1de68] ; 00508518
-    MOV dword ptr [0x01c51d74],EDX      ; 0050851f | DAT_01c51d74
+    MOV dword ptr [0x01c51d74],EDX      ; 0050851f | g_INT_01c51d74
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1de90] ; 00508525
-    MOV dword ptr [0x01c51d78],EDX      ; 0050852c | DAT_01c51d78
+    MOV dword ptr [0x01c51d78],EDX      ; 0050852c | g_INT_01c51d78
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1deb8] ; 00508532
-    MOV dword ptr [0x01c51d7c],EDX      ; 00508539 | DAT_01c51d7c
+    MOV dword ptr [0x01c51d7c],EDX      ; 00508539 | g_INT_01c51d7c
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1dee0] ; 0050853f
-    MOV dword ptr [0x01c51d2c],EDX      ; 00508546 | DAT_01c51d2c
+    MOV dword ptr [0x01c51d2c],EDX      ; 00508546 | g_RelativeX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1df08] ; 0050854c
-    MOV dword ptr [0x01c51d30],EDX      ; 00508553 | DAT_01c51d30
+    MOV dword ptr [0x01c51d30],EDX      ; 00508553 | g_RelativeY
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1df30] ; 00508559
-    MOV dword ptr [0x01c51d34],EDX      ; 00508560 | DAT_01c51d34
+    MOV dword ptr [0x01c51d34],EDX      ; 00508560 | g_RelativeZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1df58] ; 00508566
-    MOV dword ptr [0x01c51d50],EDX      ; 0050856d | DAT_01c51d50
+    MOV dword ptr [0x01c51d50],EDX      ; 0050856d | g_LightDirectionX
     MOV EDX,dword ptr [EAX*0x4 + 0x1d1df80] ; 00508573
     MOV EAX,dword ptr [EAX*0x4 + 0x1d1dfa8] ; 0050857a
-    MOV dword ptr [0x01c51d54],EDX      ; 00508581 | DAT_01c51d54
-    MOV [0x01c51d58],EAX                ; 00508587 | DAT_01c51d58
+    MOV dword ptr [0x01c51d54],EDX      ; 00508581 | g_LightDirectionY
+    MOV [0x01c51d58],EAX                ; 00508587 | g_LightDirectionZ
     RET                                 ; 0050858c
     PUSH ESI                            ; 0050858d
         ;   Label: LAB_0050858d
@@ -79,10 +79,10 @@ section .text
     MOV EBX,0x5e7736                    ; 0050858f | = "..\\engine\\matrix.c"
     MOV ESI,0x358                       ; 00508594
     PUSH 0x5e7749                       ; 00508599 | = "Matrix unbalance2"
-    MOV dword ptr [0x01d1d400],EBX      ; 0050859e | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005085a4 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 005085aa
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EBX      ; 0050859e | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 005085a4 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005085aa
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005085af
     POP EBX                             ; 005085b2
     POP ESI                             ; 005085b3

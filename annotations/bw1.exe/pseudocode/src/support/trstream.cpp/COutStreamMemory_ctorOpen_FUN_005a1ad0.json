@@ -16,21 +16,21 @@
   },
   "cross_references": [
     {
-      "addr": "00444020",
-      "from_addr": "0044405a",
-      "name": "support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020",
+      "addr": "00442f00",
+      "from_addr": "00442f18",
+      "name": "support_codec.cpp_CCodec_finalizeBuffer_FUN_00442f00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00442c80",
       "from_addr": "00442c9b",
-      "name": "support_codec.cpp_FUN_00442c80",
+      "name": "support_codec.cpp_CCodec_processToBuffer_FUN_00442c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00442f00",
-      "from_addr": "00442f18",
-      "name": "support_codec.cpp_FUN_00442f00",
+      "addr": "00444020",
+      "from_addr": "0044405a",
+      "name": "support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,8 +62,8 @@
     {
       "addr": "00607454",
       "name": "g_COutStreamMemoryVTable",
-      "type": "undefined1*",
-      "value": "005a1b60"
+      "type": "void*[7]",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -72,7 +72,7 @@
       {
         "call_addr": "00442c9b",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00442c80",
+        "caller": "support_codec.cpp_CCodec_processToBuffer_FUN_00442c80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -83,7 +83,7 @@
       {
         "call_addr": "00442f18",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00442f00",
+        "caller": "support_codec.cpp_CCodec_finalizeBuffer_FUN_00442f00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

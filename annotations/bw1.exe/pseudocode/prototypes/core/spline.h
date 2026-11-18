@@ -5,9 +5,9 @@
 // Function prototypes for core/spline.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_spline.cpp_FUN_00583d60
+// Original: core_spline.cpp_computeSplineBasis_FUN_00583d60
 // Address: 00583d60
-void __cdecl FUN_00583d60(float *out_basis,float t,float tension);
+void __cdecl computeSplineBasis(float *out_basis,float t,float tension);
 
 // Original: core_spline.cpp_evaluateSplineScalar_FUN_00583ef0
 // Address: 00583ef0
@@ -17,14 +17,14 @@ float __cdecl evaluateSplineScalar(float *basis,float *cp0,float *cp1,float *cp2
 // Address: 00583f30
 int __cdecl evaluateSplintInt(float *basis,int v0,int v1,int v2,int v3);
 
-// Original: core_spline.cpp_FUN_00583f90
+// Original: core_spline.cpp_evaluateSplinePoint3D_FUN_00583f90
 // Address: 00583f90
-void FUN_00583f90(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+CVector3f * __stack5_esi evaluateSplinePoint3D(float *basis,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3,CVector3f *out);
 
 // Original: core_spline.cpp_evaluateSplineTangentScalar_FUN_00584130
 // Address: 00584130
 float __cdecl evaluateSplineTangentScalar(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 
-// Original: core_spline.cpp_FUN_005841d0
+// Original: core_spline.cpp_evaluateSplineTangent3D_FUN_005841d0
 // Address: 005841d0
-void FUN_005841d0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+CVector3f * __stack5_esi evaluateSplineTangent3D(float *basis,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3,CVector3f *out);

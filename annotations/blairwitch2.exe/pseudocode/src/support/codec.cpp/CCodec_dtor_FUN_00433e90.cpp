@@ -13,13 +13,13 @@ CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00433e90(CCodec *this_ptr,uin
   
   if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CCodecTypeInfo);
-    FUN_005b7fce(ptr);
+    free(ptr);
     return this_ptr;
   }
   this_ptr->vtable = &g_CCodecVTable;
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_005b7fdc(this_ptr);
+  debugFreeChecked(this_ptr);
   return this_ptr;
 }

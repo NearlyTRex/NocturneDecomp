@@ -18,8 +18,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004504b0 at 0045054b
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750 at 0044f9f0
-;   core_dcamera.cpp_FUN_004504b0 at 0045054b
 ;
 ; *****************************************************************************
 

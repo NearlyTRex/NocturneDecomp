@@ -43,9 +43,9 @@
 ;   TerminatedCString s_huffman_decodertable_err_0058b830
 ;   TerminatedCString s_sound_mp3_cpp_0058b862
 ;   TerminatedCString s_decoder_table_read_error_0058b873
-;   undefined4 DAT_005bc0fc
-;   undefined4 DAT_005bc100
-;   undefined4 DAT_005bdba0
+;   undefined4 g_Layer3BandIndex[0].l[1]
+;   undefined4 g_Layer3BandIndex[0].l[2]
+;   SHuffmanTableSource[34] g_HuffmanTableSources
 ;   ... and 9 more
 ;
 ; Called Functions:
@@ -75,7 +75,7 @@ section .text
     MOV EDX,dword ptr [ECX + 0x10]      ; 004e5218
     ADD EDX,EAX                         ; 004e521b
     MOV dword ptr [ESP + 0x14],EDX      ; 004e521d
-    MOV EDX,dword ptr [0x01cd6320]      ; 004e5221 | DAT_01cd6320
+    MOV EDX,dword ptr [0x01cd6320]      ; 004e5221 | g_HuffmanTablesInitialized
     TEST EDX,EDX                        ; 004e5227
     JZ 0x004e5460                       ; 004e5229
         ;   XREF to: 004e5460 (CONDITIONAL_JUMP)  ; LAB_004e5460
@@ -272,16 +272,16 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e5481
     MOV EAX,dword ptr [ESP + 0x30]      ; 004e5484
-    MOV EAX,dword ptr [EAX + 0x5bdba0]  ; 004e5488 | DAT_005bdba0
-    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e548e | DAT_01cd944c
+    MOV EAX,dword ptr [EAX + 0x5bdba0]  ; 004e5488 | g_HuffmanTableSources
+    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e548e | g_HuffmanTables[0].table_size
     MOV EAX,dword ptr [ESP + 0x30]      ; 004e5494
-    MOV EAX,dword ptr [EAX + 0x5bdba4]  ; 004e5498 | DAT_005bdba4
+    MOV EAX,dword ptr [EAX + 0x5bdba4]  ; 004e5498 | g_HuffmanTableSources[0].xlen
     MOV dword ptr [EBX + 0x1cd8c2c],EAX ; 004e549e
     MOV EAX,dword ptr [ESP + 0x30]      ; 004e54a4
-    MOV EAX,dword ptr [EAX + 0x5bdba8]  ; 004e54a8 | DAT_005bdba8
+    MOV EAX,dword ptr [EAX + 0x5bdba8]  ; 004e54a8 | g_HuffmanTableSources[0].ylen
     MOV dword ptr [EBX + 0x1cd8c30],EAX ; 004e54ae
     MOV EAX,dword ptr [ESP + 0x30]      ; 004e54b4
-    MOV EAX,dword ptr [EAX + 0x5bdbac]  ; 004e54b8 | DAT_005bdbac
+    MOV EAX,dword ptr [EAX + 0x5bdbac]  ; 004e54b8 | g_HuffmanTableSources[0].bits
     MOV dword ptr [EBX + 0x1cd8c34],EAX ; 004e54be
     MOV EAX,0x1                         ; 004e54c4
     MOV CL,byte ptr [EBX + 0x1cd8c34]   ; 004e54c9
@@ -310,7 +310,7 @@ section .text
     ADD ESP,0xc                         ; 004e5517
     MOV EAX,dword ptr [ESP + 0x30]      ; 004e551a
         ;   Label: LAB_004e551a
-    MOV EAX,dword ptr [EAX + 0x5bdbb0]  ; 004e551e | DAT_005bdbb0
+    MOV EAX,dword ptr [EAX + 0x5bdbb0]  ; 004e551e | g_HuffmanTableSources[0].reference_index
     TEST EAX,EAX                        ; 004e5524
     JL 0x004e561d                       ; 004e5526
         ;   XREF to: 004e561d (CONDITIONAL_JUMP)  ; LAB_004e561d
@@ -331,8 +331,8 @@ section .text
     AND CL,0x3                          ; 004e555b
     MOVSB.REP ES:EDI,ESI                ; 004e555e
     POP EDI                             ; 004e5560
-    MOV EAX,dword ptr [EDX + 0x1cd944c] ; 004e5561 | DAT_01cd944c
-    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e5567 | DAT_01cd944c
+    MOV EAX,dword ptr [EDX + 0x1cd944c] ; 004e5561 | g_HuffmanTables[0].table_size
+    MOV dword ptr [EBX + 0x1cd944c],EAX ; 004e5567 | g_HuffmanTables[0].table_size
     MOV EAX,dword ptr [EBX + 0x1cd8c2c] ; 004e556d
     CMP EAX,dword ptr [EDX + 0x1cd8c2c] ; 004e5573
     JZ 0x004e5609                       ; 004e5579
@@ -372,7 +372,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e55f2
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e55f7
-    MOV dword ptr [0x01cd6320],0x1      ; 004e55fa | DAT_01cd6320
+    MOV dword ptr [0x01cd6320],0x1      ; 004e55fa | g_HuffmanTablesInitialized
         ;   Label: LAB_004e55fa
     JMP 0x004e522f                      ; 004e5604
         ;   XREF to: 004e522f (UNCONDITIONAL_JUMP)  ; LAB_004e522f
@@ -387,7 +387,7 @@ section .text
         ;   Label: LAB_004e561d
     JNZ 0x004e56aa                      ; 004e5620
         ;   XREF to: 004e56aa (CONDITIONAL_JUMP)  ; LAB_004e56aa
-    MOV ECX,dword ptr [EBX + 0x1cd944c] ; 004e5626 | DAT_01cd944c
+    MOV ECX,dword ptr [EBX + 0x1cd944c] ; 004e5626 | g_HuffmanTables[0].table_size
     MOV dword ptr [EBX + 0x1cd8c3c],EAX ; 004e562c
     CMP ECX,0x401                       ; 004e5632
     JC 0x004e5662                       ; 004e5638
@@ -405,9 +405,9 @@ section .text
         ;   Label: LAB_004e5662
     MOV EDI,EBX                         ; 004e5666
     MOV ECX,EBX                         ; 004e5668
-    MOV EDX,dword ptr [EBX + 0x1cd944c] ; 004e566a | DAT_01cd944c
+    MOV EDX,dword ptr [EBX + 0x1cd944c] ; 004e566a | g_HuffmanTables[0].table_size
     XOR ESI,ESI                         ; 004e5670
-    MOV EAX,dword ptr [EAX + 0x5bdbb4]  ; 004e5672 | DAT_005bdbb4
+    MOV EAX,dword ptr [EAX + 0x5bdbb4]  ; 004e5672 | g_HuffmanTableSources[0].huffman_data_ptr
     TEST EDX,EDX                        ; 004e5678
     JBE 0x004e55a7                      ; 004e567a
         ;   XREF to: 004e55a7 (CONDITIONAL_JUMP)  ; LAB_004e55a7
@@ -421,7 +421,7 @@ section .text
     MOV DL,byte ptr [EDX]               ; 004e5690
     MOV byte ptr [ECX + 0x1cd8c47],DL   ; 004e5692
     INC ESI                             ; 004e5698
-    MOV EDX,dword ptr [EDI + 0x1cd944c] ; 004e5699 | DAT_01cd944c
+    MOV EDX,dword ptr [EDI + 0x1cd944c] ; 004e5699 | g_HuffmanTables[0].table_size
     INC EAX                             ; 004e569f
     CMP ESI,EDX                         ; 004e56a0
     JNC 0x004e55a7                      ; 004e56a2
@@ -455,11 +455,11 @@ section .text
     ADD EAX,EDX                         ; 004e56fc
     MOV EBX,dword ptr [ECX + 0x4c]      ; 004e56fe
     SHL EAX,0x2                         ; 004e5701
-    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x5bc0fc] ; 004e5704 | DAT_005bc0fc
+    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x5bc0fc] ; 004e5704 | g_Layer3BandIndex[0].l[1]
     MOV dword ptr [ESP + 0x28],EDX      ; 004e570b
     MOV EDX,dword ptr [ECX + 0x50]      ; 004e570f
     ADD EDX,EBX                         ; 004e5712
-    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x5bc100] ; 004e5714 | DAT_005bc100
+    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x5bc100] ; 004e5714 | g_Layer3BandIndex[0].l[2]
     JMP 0x004e5279                      ; 004e571b
         ;   XREF to: 004e5279 (UNCONDITIONAL_JUMP)  ; LAB_004e5279
     CMP ESI,dword ptr [ESP + 0x28]      ; 004e5720

@@ -10,6 +10,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
 #include "types/classes/CBulletTrail.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CCrater.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -104,8 +105,8 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEff
 void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004a27e0(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004a2830(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004a28e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
-void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
-void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,int param_4,int param_5,int param_6,int param_7,float param_8,float param_9);
+void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr,float drag);
+void __cdecl core_fire_cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int fade_rate,int intensity,int texture_index,int time_scale,float jitter,float size);
 void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_004a2aa0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004a2b10(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
@@ -128,7 +129,7 @@ void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004a3d50(CFireE
 void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004a3e70(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr);
 void __cdecl core_fire_cpp_CFireEffect_createPopcorn_FUN_004a3ed0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
 void __cdecl core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
-void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,undefined4 *param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect *this_ptr,CVector3f *position,int ring_type,CCharacter *owner);
 void __cdecl core_fire_cpp_CFireEffect_createStormEffect_FUN_004a3fd0(CFireEffect *this_ptr,CVector3f position);
 void __cdecl core_fire_cpp_CFireEffect_load_FUN_004a4030(CFireEffect *this_ptr,_FILE *file_handle);
 void __cdecl core_fire_cpp_CFireEffect_save_FUN_004a40b0(CFireEffect *this_ptr,_FILE *file_handle);
@@ -204,20 +205,20 @@ void __cdecl core_firestff_cpp_CFirestaff_setWeaponState_FUN_004a5770(CFirestaff
 int __cdecl core_firestff_cpp_CFirestaff_renderOpaque_FUN_004a57c0(CFirestaff *this_ptr);
 void __cdecl core_firestff_cpp_CFirestaff_setup_FUN_004a5870(CFirestaff *this_ptr);
 CFirestaff * __cdecl core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr,uint flags);
-void core_firestff_cpp_FUN_004a5930(void *param_1);
+void __cdecl core_firestff_cpp_CFlame_arrdtor12_FUN_004a5930(CFlame *this_ptr);
 void __cdecl core_flame_cpp_staticInit_FUN_004a5950(void);
 CFlame * __cdecl core_flame_cpp_factoryFuncFlame_FUN_004a5980(void);
 CDemonActorType * __cdecl core_flame_cpp_CFlame_getActorType_FUN_004a59a0(CFlame *this_ptr);
 CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_004a59b0(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_setup_FUN_004a5aa0(CFlame *this_ptr);
-void core_flame_cpp_FUN_004a5ad0(int param_1);
+void __cdecl core_flame_cpp_preloadFlameTextures_FUN_004a5ad0(int flame_type);
 void __cdecl core_flame_cpp_CFlame_process_FUN_004a5b10(CFlame *this_ptr,float delta_time);
 int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a6a50(CFlame *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004a6c20(CFlame *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_flame_cpp_CFlame_getBoundingBox_FUN_004a6c20(CFlame *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flame_cpp_CFlame_archive_FUN_004a6ca0(CFlame *this_ptr);
 ECollisionType __cdecl core_flame_cpp_CFlame_getCollisionType_FUN_004a6dc0(CFlame *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_flame_cpp_FUN_004a6dd0(CFlame *this_ptr);
+void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004a6dd0(CFlame *this_ptr);
 void __cdecl core_flamecan_cpp_staticInit_FUN_004a6ea0(void);
 CFlameCan * __cdecl core_flamecan_cpp_factoryFuncFlameCan_FUN_004a6ed0(void);
 CDemonActorType * __cdecl core_flamecan_cpp_CFlameCan_getActorType_FUN_004a6ef0(CFlameCan *this_ptr);
@@ -230,7 +231,7 @@ int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_004a72d0(CFlameCan
 int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004a7300(CFlameCan *this_ptr,CVector3f *out_points_array);
 void __cdecl core_flamecan_cpp_CFlameCan_archive_FUN_004a73d0(CFlameCan *this_ptr);
 ECollisionType __cdecl core_flamecan_cpp_CFlameCan_getCollisionType_FUN_004a7430(CFlameCan *this_ptr,SCollisionInfo *collision_info);
-CBoundingBox3D * __cdecl core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004a7440(CFlameCan *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004a7440(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004a7480(CFlameCan *this_ptr,uint flags);
 void __cdecl core_flashlit_cpp_staticInit_FUN_004a74f0(void);
 CFlashlight * __cdecl core_flashlit_cpp_factoryFuncFlashlight_FUN_004a7520(void);
@@ -241,25 +242,25 @@ void __cdecl core_flashlit_cpp_CFlashlight_renderAimBeam_FUN_004a75e0(CFlashligh
 float __cdecl core_flashlit_cpp_CFlashlight_getDamage_FUN_004a75f0(CFlashlight *this_ptr);
 CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004a7600(CFlashlight *this_ptr,CVector3f *out_point);
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004a76a0(CFlashlight *this_ptr,uint flags);
-void core_flashlit_cpp_FUN_004a76f0(void);
-void core_flashlit_cpp_FUN_004a7890(char *param_1);
-void core_flashlit_cpp_FUN_004a7920(char *param_1);
-undefined4 core_flashlit_cpp_FUN_004a7950(byte *param_1,byte *param_2,byte *param_3);
-SNotesEntry * core_flashlit_cpp_FUN_004a79f0(char *param_1,int *param_2);
-void core_flashlit_cpp_FUN_004a7a70(char *param_1);
-void core_flashlit_cpp_FUN_004a7bb0(void);
-void core_flashlit_cpp_FUN_004a7c30(void);
-void core_flashlit_cpp_FUN_004a7cf0(CAlphaBitmap *param_1,char *param_2,int param_3,int param_4);
-void core_flashlit_cpp_FUN_004a7d70(void);
-int core_flashlit_cpp_FUN_004a8080(int param_1);
-int core_flashlit_cpp_FUN_004a80d0(int param_1,int param_2);
-undefined4 core_flashlit_cpp_FUN_004a8180(int param_1,int param_2);
-undefined4 core_flashlit_cpp_FUN_004a8220(int param_1,int param_2);
-undefined4 core_flashlit_cpp_FUN_004a8270(void);
-void core_flashlit_cpp_FUN_004a82f0(void);
+void __cdecl core_flashlit_cpp_staticInit_FUN_004a76f0(void);
+void __cdecl core_flashlit_cpp_trimAndNormalizeWhitespace_FUN_004a7890(char *text);
+void __cdecl core_flashlit_cpp_stripCommentAndTrim_FUN_004a7920(char *line);
+int __cdecl core_flashlit_cpp_matchCommand_FUN_004a7950(char *line,char *keyword,char *out_args);
+SNotesEntry * __cdecl core_flashlit_cpp_findNotesEntry_FUN_004a79f0(char *name,int *out_section_index);
+void __cdecl core_flashlit_cpp_updateTooltip_FUN_004a7a70(char *text);
+void __cdecl core_flashlit_cpp_drawTooltip_FUN_004a7bb0(void);
+void __cdecl core_flashlit_cpp_freeNotesBitmaps_FUN_004a7c30(void);
+void __cdecl core_flashlit_cpp_loadNotesBitmap_FUN_004a7cf0(CAlphaBitmap *bitmap,char *filename,int width,int height);
+void __cdecl core_flashlit_cpp_loadNotesBitmaps_FUN_004a7d70(void);
+int __cdecl core_flashlit_cpp_findSectionForPage_FUN_004a8080(int page);
+int __cdecl core_flashlit_cpp_hitTestSectionTab_FUN_004a80d0(int x,int y);
+int __cdecl core_flashlit_cpp_hitTestPageArrows_FUN_004a8180(int x,int y);
+int __cdecl core_flashlit_cpp_hitTestExitButton_FUN_004a8220(int x,int y);
+int __cdecl core_flashlit_cpp_layoutSections_FUN_004a8270(void);
+void __cdecl core_flashlit_cpp_relayoutSectionsIfDirty_FUN_004a82f0(void);
 void __cdecl core_fldnotes_cpp_SPageResource_ctor_FUN_004a8370(SPageResource *this_ptr);
 int __cdecl core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0(SPageResource *this_ptr);
-void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource *this_ptr,char *link);
 bool __cdecl core_fldnotes_cpp_SPageResource_onMouse_FUN_004a8470(SPageResource *this_ptr);
 SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a8490(SPageResourceText *this_ptr,char *text,CBitFont *font);
 SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a8510(SPageResourceText *this_ptr,uint flags);
@@ -340,12 +341,12 @@ CAlphaBitmap * __cdecl core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004ad430(CAlp
 SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_arrdtor10_FUN_004ad450(SNotesMap *this_ptr,uint flags);
 SNotesSection * __cdecl core_fldnotes_cpp_SNotesSection_arrdtor6_FUN_004ad470(SNotesSection *this_ptr,uint flags);
 void __cdecl core_flattn_cpp_staticInit_FUN_004ad490(void);
-void core_flattn_cpp_FUN_004ad4c0(void);
-void core_flattn_cpp_FUN_004ad4d0(undefined4 *param_1);
-void core_flattn_cpp_FUN_004ad550(undefined4 *param_1,undefined4 *param_2);
-void core_flattn_cpp_FUN_004ad5e0(undefined4 *param_1);
-void core_flattn_cpp_FUN_004ad660(float *param_1,float *param_2);
-void core_flattn_cpp_FUN_004ad6e0(float *param_1,float *param_2);
+void __cdecl core_flattn_cpp_doNothing_FUN_004ad4c0(void);
+void __cdecl core_flattn_cpp_setFlattenMatrix_FUN_004ad4d0(CMatrix3x3f *matrix);
+void __cdecl core_flattn_cpp_setFlattenMatrixAndOffset_FUN_004ad550(CMatrix3x3f *matrix,CVector3f *offset);
+void __cdecl core_flattn_cpp_setFlattenMatrixTransposed_FUN_004ad5e0(CMatrix3x3f *matrix);
+void __cdecl core_flattn_cpp_flattenTransformPoint_FUN_004ad660(CVector3f *point_out,CVector3f *point_in);
+void __cdecl core_flattn_cpp_flattenTransformVector_FUN_004ad6e0(CVector3f *vector_out,CVector3f *vector_in);
 void __cdecl core_flies_cpp_staticInit_FUN_004ad750(void);
 CFlies * __cdecl core_flies_cpp_factoryFuncFlies_FUN_004ad780(void);
 CDemonActorType * __cdecl core_flies_cpp_CFlies_getActorType_FUN_004ad7a0(CFlies *this_ptr);
@@ -356,10 +357,10 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004ad950(CFlies *this_ptr,float d
 void __cdecl core_flies_cpp_drawFlyPixel_FUN_004add00(int screen_x,int screen_y,int z_depth);
 void __cdecl core_flies_cpp_drawFlyPixelClipped_FUN_004add90(int screen_x,int screen_y,int z_depth);
 int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr);
-CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004ae200(CFlies *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi core_flies_cpp_CFlies_getBoundingBox_FUN_004ae200(CFlies *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_flies_cpp_CFlies_getCollisionType_FUN_004ae270(CFlies *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_flies_cpp_CFlies_initFly_FUN_004ae280(CFlies *this_ptr,int fly_index);
-float * core_flies_cpp_FUN_004ae380(int param_1,float *param_2);
+CVector3f * __stack2_esi core_flies_cpp_CFlies_generateRandomPoint_FUN_004ae380(CFlies *this_ptr,CVector3f *reference_point,CVector3f *out_point);
 CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_004ae6c0(CDemonActor *actor);
 CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_004ae710(CFlies *this_ptr,uint flags);
 SFly * __cdecl core_flies_cpp_SFly_ctor_FUN_004ae760(SFly *this_ptr);
@@ -377,5 +378,5 @@ CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_004af7b0(CBitFont *this_ptr
 void __cdecl engine_font_cpp_CBitFont_reset_FUN_004af7d0(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004af8f0(CBitFont *this_ptr,char *filename,int width,int height,int load_flags);
 void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
-void engine_font_cpp_FUN_004afbf0(int param_1,int param_2);
+void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *this_ptr,int enable);
 

@@ -12,11 +12,11 @@
 ;   engine_3d.c_renderSortedPolygonList_FUN_00405b40 at 00405bdc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006b0268
-;   undefined4 DAT_006b02dc
-;   undefined4 DAT_006b02e0
-;   undefined4 DAT_006b02e4
-;   undefined4 DAT_006b415c
+;   uint g_ProcessedVertexBackupOffset
+;   undefined4 g_ProcessedVertexIndices[16]
+;   undefined4 g_ProcessedVertexIndices[17]
+;   undefined4 g_ProcessedVertexIndices[18]
+;   int[508] g_INT_ARRAY_006b415c
 ;
 ; Called Functions:
 ;   engine_3d.c_computeSortedPolygonKey_FUN_004059c0
@@ -29,7 +29,7 @@ section .text
     PUSH EBX                            ; 00405ab0
         ;   Label: engine_3d.c_queueSortedPolygon_FUN_00405ab0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00405ab1
-    CMP dword ptr [0x006b0268],0x1f4    ; 00405ab5 | DAT_006b0268
+    CMP dword ptr [0x006b0268],0x1f4    ; 00405ab5 | g_ProcessedVertexBackupOffset
     JL 0x00405ac3                       ; 00405abf
         ;   XREF to: 00405ac3 (CONDITIONAL_JUMP)  ; LAB_00405ac3
     POP EBX                             ; 00405ac1
@@ -44,25 +44,25 @@ section .text
     TEST EAX,EAX                        ; 00405acf
     JZ 0x00405ac1                       ; 00405ad1
         ;   XREF to: 00405ac1 (CONDITIONAL_JUMP)  ; LAB_00405ac1
-    MOV EAX,[0x006b0268]                ; 00405ad3 | DAT_006b0268
+    MOV EAX,[0x006b0268]                ; 00405ad3 | g_ProcessedVertexBackupOffset
     SHL EAX,0x5                         ; 00405ad8
     MOV EDX,dword ptr [ESP + 0xc]       ; 00405adb
-    MOV dword ptr [EAX + 0x6b02dc],EBX  ; 00405adf | DAT_006b02dc
-    MOV dword ptr [EAX + 0x6b02e0],EDX  ; 00405ae5 | DAT_006b02e0
+    MOV dword ptr [EAX + 0x6b02dc],EBX  ; 00405adf | g_ProcessedVertexIndices[16]
+    MOV dword ptr [EAX + 0x6b02e0],EDX  ; 00405ae5 | g_ProcessedVertexIndices[17]
     MOV EDX,dword ptr [ESP + 0x10]      ; 00405aeb
     PUSH EBX                            ; 00405aef
-    MOV dword ptr [EAX + 0x6b02e4],EDX  ; 00405af0 | DAT_006b02e4
+    MOV dword ptr [EAX + 0x6b02e4],EDX  ; 00405af0 | g_ProcessedVertexIndices[18]
     CALL engine_3d.c_computeSortedPolygonKey_FUN_004059c0 ; 00405af6
         ;   XREF to: 004059c0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_computeSortedPolygonKey_FUN_004059c0(SMRGLHeaderExtended * primitive)
-    MOV EAX,[0x006b0268]                ; 00405afb | DAT_006b0268
-    MOV EDX,0x6b02dc                    ; 00405b00 | DAT_006b02dc
+    MOV EAX,[0x006b0268]                ; 00405afb | g_ProcessedVertexBackupOffset
+    MOV EDX,0x6b02dc                    ; 00405b00 | g_ProcessedVertexIndices[16]
     SHL EAX,0x5                         ; 00405b05
     ADD EDX,EAX                         ; 00405b08
-    MOV EAX,[0x006b0268]                ; 00405b0a | DAT_006b0268
+    MOV EAX,[0x006b0268]                ; 00405b0a | g_ProcessedVertexBackupOffset
     ADD ESP,0x4                         ; 00405b0f
     LEA ECX,[EAX + 0x1]                 ; 00405b12
-    MOV dword ptr [EAX*0x4 + 0x6b415c],EDX ; 00405b15 | DAT_006b415c
-    MOV dword ptr [0x006b0268],ECX      ; 00405b1c | DAT_006b0268
+    MOV dword ptr [EAX*0x4 + 0x6b415c],EDX ; 00405b15 | g_INT_ARRAY_006b415c
+    MOV dword ptr [0x006b0268],ECX      ; 00405b1c | g_ProcessedVertexBackupOffset
     POP EBX                             ; 00405b22
     RET                                 ; 00405b23
 

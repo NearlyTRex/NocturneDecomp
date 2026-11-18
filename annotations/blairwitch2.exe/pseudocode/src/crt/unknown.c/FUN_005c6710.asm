@@ -14,8 +14,8 @@
 ;   void* PTR_SetEvent_005c8624 = 001c9160
 ;   void* PTR_crt_unknown.c_FUN_005bcdfc_0061f2a4 = 005bcdfc
 ;   void* PTR_crt_unknown.c_FUN_005bce28_0061f2e4 = 005bce28
-;   undefined4 DAT_0061f754
-;   undefined4 DAT_02680170
+;   ulong g_RuntimeBufferSize = 0xf4
+;   int g_EmergencyExitFlag
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
@@ -41,26 +41,26 @@ section .text
     MOV EBP,ESP                         ; 005c6719
     SUB ESP,0xc                         ; 005c671b
     MOV ESI,dword ptr [EBP + 0x20]      ; 005c671e
-    MOV EDX,dword ptr [0x02680170]      ; 005c6721 | DAT_02680170
+    MOV EDX,dword ptr [0x02680170]      ; 005c6721 | g_EmergencyExitFlag
     MOV EAX,dword ptr [ESI]             ; 005c6727
     MOV EDI,dword ptr [ESI + 0x4]       ; 005c6729
     MOV dword ptr [EBP + -0x4],EAX      ; 005c672c
     TEST EDX,EDX                        ; 005c672f
     JNZ 0x005c676a                      ; 005c6731
         ;   XREF to: 005c676a (CONDITIONAL_JUMP)  ; LAB_005c676a
-    MOV EAX,[0x0061f754]                ; 005c6733 | DAT_0061f754
+    MOV EAX,[0x0061f754]                ; 005c6733 | g_RuntimeBufferSize
     ADD EAX,0x3                         ; 005c6738
     AND AL,0xfc                         ; 005c673b
     SUB ESP,EAX                         ; 005c673d
     MOV EBX,ESP                         ; 005c673f
-    MOV ECX,dword ptr [0x0061f754]      ; 005c6741 | DAT_0061f754
+    MOV ECX,dword ptr [0x0061f754]      ; 005c6741 | g_RuntimeBufferSize
     PUSH ECX                            ; 005c6747
     PUSH EDX                            ; 005c6748
     PUSH EBX                            ; 005c6749
     CALL crt_memory.c_memset_FUN_005b77c0 ; 005c674a
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005c674f
-    MOV EAX,[0x0061f754]                ; 005c6752 | DAT_0061f754
+    MOV EAX,[0x0061f754]                ; 005c6752 | g_RuntimeBufferSize
     PUSH EBX                            ; 005c6757
     MOV dword ptr [EBX + 0xf0],EAX      ; 005c6758
     CALL crt_unknown.c_FUN_005c29d8     ; 005c675e

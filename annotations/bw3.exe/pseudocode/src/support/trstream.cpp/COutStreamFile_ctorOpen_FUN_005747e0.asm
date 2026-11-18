@@ -10,10 +10,10 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750 at 0044f815
-;   support_codec.cpp_FUN_00440a70 at 00440aae
+;   support_codec.cpp_CCodec_processFiles_FUN_00440a70 at 00440aae
 ;
 ; Referenced Globals:
-;   undefined1* g_COutStreamFileVTable = 00574850
+;   TerminatedCString g_COutStreamFileVTable
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_dtor_FUN_005744a0
@@ -35,7 +35,7 @@ section .text
     PUSH ECX                            ; 005747f3
     MOV ESI,dword ptr [ESP + 0x14]      ; 005747f4
     PUSH ESI                            ; 005747f8
-    MOV dword ptr [EAX],0x5e5b24        ; 005747f9 | g_COutStreamFileVTable
+    MOV dword ptr [EAX],0x5e5b24        ; 005747f9 | = "PHW"
     PUSH EAX                            ; 005747ff
     MOV EBX,EAX                         ; 00574800
     MOV dword ptr [EAX + 0x4],0x0       ; 00574802

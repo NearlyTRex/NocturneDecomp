@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407e30(SRenderVertex vertex1,SRenderVertex vertex2)
 
 {
@@ -142,8 +140,8 @@ void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407e30(SRenderVertex vertex1,SR
       engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(24999);
       engine_prim_c_prepareDepthBuffer_FUN_00515920((SRenderVertex *)&DAT_0072ff34,2);
       engine_2d_c_drawLine3D_FUN_00401310
-                (DAT_0072ff44 >> 0x10,DAT_0072ff48 >> 0x10,_DAT_0072ff3c,DAT_0072ff74 >> 0x10,
-                 DAT_0072ff78 >> 0x10,_DAT_0072ff6c);
+                (g_INT_0072ff44 >> 0x10,g_INT_0072ff48 >> 0x10,g_UINT_0072ff3c,
+                 g_INT_0072ff74 >> 0x10,g_INT_0072ff78 >> 0x10,g_UINT_0072ff6c);
       return;
     }
   }

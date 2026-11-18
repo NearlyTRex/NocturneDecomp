@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 42,
+    "complexity_score": 12,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 58
   },
   "cross_references": [
@@ -51,44 +48,44 @@
   "globals": [
     {
       "addr": "02dc78f8",
-      "name": "DAT_02dc78f8",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02dc78f8",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02dc78fc",
-      "name": "DAT_02dc78fc",
+      "name": "g_DOUBLE_02dc78f8+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc7900",
-      "name": "DAT_02dc7900",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02dc7900",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02dc7904",
-      "name": "DAT_02dc7904",
+      "name": "g_DOUBLE_02dc7900+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc7908",
-      "name": "DAT_02dc7908",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02dc7908",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02dc790c",
-      "name": "DAT_02dc790c",
+      "name": "g_DOUBLE_02dc7908+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc8318",
-      "name": "DAT_02dc8318",
-      "type": "undefined4",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
       "value": null
     }
   ],
@@ -213,22 +210,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc8318 + 0x20))(_DAT_02dc8318,x_velocity,y_velocity,z_velocity);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

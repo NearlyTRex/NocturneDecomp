@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 132,
+    "complexity_score": 146,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 5,
+    "pseudocode_lines": 66,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 220
+    "total_lines": 219
   },
   "cross_references": [],
   "function": {
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_00557f00",
-    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
   },
   "function_calls": [
     {
@@ -88,44 +87,44 @@
     },
     {
       "addr": "0061bf84",
-      "name": "DAT_0061bf84",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WaveOutDeviceID",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "0264b070",
-      "name": "DAT_0264b070",
-      "type": "undefined4",
+      "name": "g_WaveOutHandle",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264b0f4",
-      "name": "DAT_0264b0f4",
-      "type": "undefined4",
+      "name": "g_WaveOutBitsPerSample",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264b0f8",
-      "name": "DAT_0264b0f8",
-      "type": "undefined4",
+      "name": "g_WaveOutChannels",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264b0fc",
-      "name": "DAT_0264b0fc",
-      "type": "undefined4",
+      "name": "g_WaveOutSampleRate",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264b100",
-      "name": "DAT_0264b100",
-      "type": "undefined4",
+      "name": "g_WaveOutBufferSize",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0264b104",
-      "name": "DAT_0264b104",
-      "type": "undefined4",
+      "name": "g_WaveOutNumBuffers",
+      "type": "int",
       "value": null
     }
   ],
@@ -243,7 +242,7 @@
       },
       {
         "is_param": true,
-        "name": "out_buffer_size",
+        "name": "out_samples_per_block",
         "offset": 20,
         "size": 4,
         "type": "int *"
@@ -252,44 +251,60 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000018",
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(HGLOBAL *)((int)g_WaveOutBufferHandles",
       "severity": "moderate",
-      "text": "uint *in_stack_00000018;",
-      "type": "stack_param"
+      "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_0264b070",
-      "severity": "mild",
-      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)&WStack_20,0,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_0061bf84",
-      "severity": "mild",
-      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)&WStack_20,0,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000018",
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(LPVOID *)((int)g_WaveOutBuffers",
       "severity": "moderate",
-      "text": "*in_stack_00000018 = _DAT_0264b100;",
-      "type": "stack_param"
+      "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
+      "severity": "moderate",
+      "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
+      "severity": "moderate",
+      "text": "pvVar4 = GlobalLock(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(LPVOID *)((int)g_WaveOutHeaders",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 36,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(g_WaveOutBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 37,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) *",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "vtable_info": {

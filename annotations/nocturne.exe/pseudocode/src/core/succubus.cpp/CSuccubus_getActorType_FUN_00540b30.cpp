@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_succubus_cpp_CSuccubus_getActorType_FUN_00540b30(CSuccubus *this_ptr)
 
 {
-  return &g_CSuccubusActorType_02dca01c;
+  return &g_CSuccubusClassInfo;
 }

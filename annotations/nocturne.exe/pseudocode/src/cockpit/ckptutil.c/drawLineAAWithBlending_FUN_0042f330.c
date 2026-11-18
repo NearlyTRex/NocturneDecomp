@@ -20,7 +20,7 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330(int x0,int y
   byte local_18;
   
   if ((y0 <= y1) &&
-     ((DAT_00766c6c != 0 ||
+     ((g_LineBlendingDisabled != 0 ||
       ((((g_ClipLeft <= x0 || (g_ClipLeft <= x1)) && ((x0 <= g_ClipRight || (x1 <= g_ClipRight))))
        && (((g_ClipTop <= y0 || (g_ClipTop <= y1)) && ((y0 <= g_ClipBottom || (y1 <= g_ClipBottom)))
            ))))))) {

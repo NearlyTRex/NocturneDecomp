@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 128,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 86
@@ -89,21 +88,21 @@
     },
     {
       "addr": "005c1cf8",
-      "name": "DAT_005c1cf8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ConsoleInitializationFlag",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005c1d54",
-      "name": "DAT_005c1d54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_IsSpecialDeviceFuncPtr",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "005c1d88",
-      "name": "DAT_005c1d88",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SpecialConsoleInputHandler",
+      "type": "void*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -189,38 +188,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005c1cf8",
-      "severity": "mild",
-      "text": "iVar2 = DAT_005c1cf8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005c1cf8",
-      "severity": "mild",
-      "text": "if (DAT_005c1cf8 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if (DAT_005c1d88 == (code *)0x0) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005c1d88",
-      "severity": "mild",
-      "text": "if (DAT_005c1d88 == (code *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 15,
       "match": "code *",
@@ -237,28 +204,20 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 24,
-      "match": "DAT_005c1d54",
-      "severity": "mild",
-      "text": "uVar1 = (*DAT_005c1d54)(0);",
-      "type": "undefined_data"
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (*(code *)g_IsSpecialDeviceFuncPtr)(0);",
+      "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 25,
-      "match": "DAT_005c1d88",
-      "severity": "mild",
-      "text": "iVar2 = (*DAT_005c1d88)(uVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005c1cf8",
-      "severity": "mild",
-      "text": "DAT_005c1cf8 = 0;",
-      "type": "undefined_data"
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (*(code *)g_SpecialConsoleInputHandler)(uVar1);",
+      "type": "unresolved_funcptr"
     }
   ]
 }

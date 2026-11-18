@@ -2,31 +2,29 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 98,
-    "cross_reference_count": 81,
+    "complexity_score": 47,
+    "cross_reference_count": 82,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 6,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
-      "sign_compare_idiom",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "sign_compare_idiom"
     ],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
     {
       "addr": "0041dcd0",
       "from_addr": "0041de3c",
-      "name": "core_box.cpp_FUN_0041dcd0",
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00466830",
       "from_addr": "004668b5",
-      "name": "core_dpart.cpp_FUN_00466830",
+      "name": "core_dpart.cpp_CDemonPart_renderFaces_FUN_00466830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -306,6 +304,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00405400",
+      "from_addr": "00405440",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00405400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00405d10",
       "from_addr": "00405d1e",
       "name": "engine_3d.c_renderPolygonTexturedOp45_FUN_00405d10",
@@ -366,6 +370,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046bb90",
+      "from_addr": "0046bbdb",
+      "name": "engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0046bb90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046bc20",
       "from_addr": "0046bcb8",
       "name": "engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20",
@@ -402,6 +412,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046c2d0",
+      "from_addr": "0046c35a",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0046c2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046c3b0",
       "from_addr": "0046c476",
       "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0",
@@ -411,6 +427,24 @@
       "addr": "0046c090",
       "from_addr": "0046c11a",
       "name": "engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046c090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046c170",
+      "from_addr": "0046c236",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0046c170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b670",
+      "from_addr": "0046b749",
+      "name": "engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0046b670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046c950",
+      "from_addr": "0046c9d5",
+      "name": "engine_drender.cpp_CDemonRenderer_renderOverlayDirect_FUN_0046c950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -472,36 +506,6 @@
       "from_addr": "0046b436",
       "name": "engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046b670",
-      "from_addr": "0046b749",
-      "name": "engine_drender.cpp_FUN_0046b670",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046bb90",
-      "from_addr": "0046bbdb",
-      "name": "engine_drender.cpp_FUN_0046bb90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046c170",
-      "from_addr": "0046c236",
-      "name": "engine_drender.cpp_FUN_0046c170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046c2d0",
-      "from_addr": "0046c35a",
-      "name": "engine_drender.cpp_FUN_0046c2d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046c950",
-      "from_addr": "0046c9d5",
-      "name": "engine_drender.cpp_FUN_0046c950",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -520,32 +524,32 @@
   "globals": [
     {
       "addr": "007303e8",
-      "name": "DAT_007303e8",
-      "type": "undefined4",
+      "name": "g_PlaneTestCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007303fc",
-      "name": "DAT_007303fc",
-      "type": "undefined4",
+      "name": "g_CullingMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2cc",
-      "name": "DAT_01c6e2cc",
-      "type": "undefined4",
+      "name": "g_RelativeX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2d0",
-      "name": "DAT_01c6e2d0",
-      "type": "undefined4",
+      "name": "g_RelativeY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6e2d4",
-      "name": "DAT_01c6e2d4",
-      "type": "undefined4",
+      "name": "g_RelativeZ",
+      "type": "int",
       "value": null
     }
   ],
@@ -599,7 +603,7 @@
       {
         "call_addr": "0041de3c",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041dcd0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -610,7 +614,7 @@
       {
         "call_addr": "0041dea2",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041dcd0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -621,7 +625,7 @@
       {
         "call_addr": "0041df16",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041dcd0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -632,7 +636,7 @@
       {
         "call_addr": "0041df7c",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041dcd0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -643,7 +647,7 @@
       {
         "call_addr": "0041dff0",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041dcd0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -654,7 +658,7 @@
       {
         "call_addr": "0041e052",
         "call_type": "direct",
-        "caller": "core_box.cpp_FUN_0041dcd0",
+        "caller": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -744,40 +748,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_007303e8",
-      "severity": "mild",
-      "text": "DAT_007303e8 = DAT_007303e8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_007303e8",
-      "severity": "mild",
-      "text": "DAT_007303e8 = DAT_007303e8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_007303fc",
-      "severity": "mild",
-      "text": "if (((DAT_007303fc == 0) &&",
-      "type": "undefined_data"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "(SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {",
@@ -785,7 +757,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "(SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {",

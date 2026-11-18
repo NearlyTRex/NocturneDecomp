@@ -18,7 +18,7 @@ EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431c30(CCha
     return DEATH_STATE_DEAD;
   }
   iVar3 = 3;
-  pcVar2 = &DAT_005d5a90;
+  pcVar2 = "DIE";
   this_ptr_00 = &this_ptr->model;
   pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00524a10(&this_ptr_00->base);
   iVar3 = _strnicmp(pcVar1,pcVar2,iVar3);
@@ -26,7 +26,7 @@ EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431c30(CCha
     return DEATH_STATE_DYING;
   }
   iVar3 = 4;
-  pcVar2 = &DAT_005d5a94;
+  pcVar2 = "DEAD";
   pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00524a10(&this_ptr_00->base);
   iVar3 = _strnicmp(pcVar1,pcVar2,iVar3);
   if (iVar3 == 0) {

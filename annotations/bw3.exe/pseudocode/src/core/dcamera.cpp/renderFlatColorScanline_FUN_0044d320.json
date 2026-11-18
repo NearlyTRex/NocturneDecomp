@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 157,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
-    "suspect_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 237
+    "total_lines": 235
   },
   "cross_references": [
     {
@@ -39,32 +38,32 @@
   "globals": [
     {
       "addr": "013405b0",
-      "name": "DAT_013405b0",
-      "type": "undefined4",
+      "name": "g_CameraDownscaleIterations",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "0149d6d8",
-      "name": "DAT_0149d6d8",
-      "type": "undefined4",
+      "name": "g_ImageBytesPerPixel",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01547200",
-      "name": "DAT_01547200",
-      "type": "undefined4",
+      "name": "g_FlatShadingLightLevel",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5a8",
-      "name": "DAT_01c6b5a8",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5ac",
-      "name": "DAT_01c6b5ac",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
       "value": null
     }
   ],
@@ -172,68 +171,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 38,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "cVar2 = (char)((g_FlatShadingLightLevel + (g_FlatShadingLightLevel >> 0x1f) * -0x100) -",
+      "type": "signed_shift_global_idiom"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01c60dac",
-      "severity": "mild",
-      "text": "puStack_14 = (uint *)(*(int *)(&DAT_01c60dac + uVar7 * 4) + iVar11 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_013405b0",
-      "severity": "mild",
-      "text": "iStack_18 = iStack_18 >> (DAT_013405b0 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_013405b0",
-      "severity": "mild",
-      "text": "iVar11 = iVar11 >> (DAT_013405b0 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_013405b0",
-      "severity": "mild",
-      "text": "iVar4 = ((int)uVar7 >> (DAT_013405b0 & 0x1f)) * 0x140;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_0135ead0",
-      "severity": "mild",
-      "text": "puVar6 = &DAT_0135ead0 + iVar11 + iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_013405b0",
-      "severity": "mild",
-      "text": "puStack_14 = puStack_14 + (1 << (DAT_013405b0 & 0x1f));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_013405b0",
-      "severity": "mild",
-      "text": "bVar1 = DAT_013405b0 & 0x1f;",
-      "type": "undefined_data"
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 39,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_FlatShadingLightLevel >> 0x1f) << 7 < 0) >> 8);",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

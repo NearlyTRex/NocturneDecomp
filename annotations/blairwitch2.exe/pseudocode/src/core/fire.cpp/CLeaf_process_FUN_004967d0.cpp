@@ -6,48 +6,51 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CLeaf_process_FUN_004967d0(CLeaf *this_ptr)
 
 {
-  float fVar1;
-  longlong lVar2;
+  CVector3f *pCVar1;
+  float fVar2;
   float fVar3;
-  int iVar4;
+  float fVar4;
   int iVar5;
-  float *extraout_ECX;
-  float10 fVar6;
-  float10 fVar7;
-  float10 fVar8;
+  longlong lVar6;
+  int iVar7;
+  int iVar8;
+  double dVar9;
+  float fStack_28;
+  uint uStack_20;
   
-  core_particle_cpp_FUN_00510ef0(this_ptr);
-  fVar6 = (float10)(this_ptr->base).velocity.y;
-  fVar7 = (float10)(this_ptr->base).velocity.x;
-  fVar8 = (float10)(this_ptr->base).velocity.z;
-  fVar6 = SQRT(fVar8 * fVar8 + fVar7 * fVar7 + fVar6 * fVar6);
-  fVar1 = (float)fVar6;
-  fVar7 = fVar6 * (float10)_DAT_005d543a;
-  iVar5 = round();
-  iVar4 = _DAT_01c2a370;
-  lVar2 = (longlong)iVar5 * (longlong)(int)ROUND(fVar7);
+  core_particle_cpp_CParticle_process_FUN_00510ef0(&this_ptr->base);
+  pCVar1 = &(this_ptr->base).velocity;
+  fVar2 = (this_ptr->base).velocity.y;
+  fVar3 = (this_ptr->base).velocity.z;
+  fVar2 = SQRT(fVar3 * fVar3 + pCVar1->x * pCVar1->x + fVar2 * fVar2);
+  iVar8 = g_GlobalDeltaTimeInt >> 0x1f;
+  iVar5 = g_GlobalDeltaTimeInt + iVar8 * -4;
+  uStack_20 = SUB84(__BITCAST_UINT64((double)fVar2),0);
+  dVar9 = round((double)(fVar2 * (float)32767.700000000001));
+  iVar7 = g_GlobalDeltaTimeInt;
+  lVar6 = (longlong)((int)(iVar5 - (uint)(iVar8 << 1 < 0)) >> 2) * (longlong)(int)ROUND(dVar9);
   (this_ptr->rotation).x =
-       (this_ptr->rotation).x + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-  lVar2 = (longlong)(iVar4 / 2) * (longlong)(int)ROUND(fVar7);
+       (this_ptr->rotation).x + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
+  lVar6 = (longlong)(iVar7 / 2) * (longlong)(int)ROUND(dVar9);
   (this_ptr->rotation).y =
-       (this_ptr->rotation).y + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-  if (0.0 < (double)fVar6) {
-    fVar3 = fVar1 - fVar1 * this_ptr->drag * g_CGamePtr->delta_time_float;
-    if (0.0 < fVar3) {
-      fVar3 = fVar3 / fVar1;
-      *extraout_ECX = *extraout_ECX * fVar3;
-      extraout_ECX[1] = extraout_ECX[1] * fVar3;
-      extraout_ECX[2] = extraout_ECX[2] * fVar3;
+       (this_ptr->rotation).y + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
+  if (0.0 < __BITCAST_DOUBLE(CONCAT44(uStack_20,fVar2))) {
+    fVar2 = fStack_28 - fStack_28 * this_ptr->drag * g_CGamePtr->delta_time_float;
+    if (0.0 < fVar2) {
+      fVar2 = fVar2 / fStack_28;
+      fVar3 = (this_ptr->base).velocity.y;
+      fVar4 = (this_ptr->base).velocity.z;
+      pCVar1->x = pCVar1->x * fVar2;
+      (this_ptr->base).velocity.y = fVar3 * fVar2;
+      (this_ptr->base).velocity.z = fVar4 * fVar2;
       return;
     }
-    extraout_ECX[2] = 0.0;
-    extraout_ECX[1] = extraout_ECX[2];
-    *extraout_ECX = extraout_ECX[1];
+    (this_ptr->base).velocity.z = 0.0;
+    (this_ptr->base).velocity.y = (this_ptr->base).velocity.z;
+    pCVar1->x = (this_ptr->base).velocity.y;
   }
   return;
 }

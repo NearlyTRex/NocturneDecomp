@@ -8,14 +8,14 @@
 ; int              Stack[0x8]:4   particle_type
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c50948
-;   undefined4 DAT_02c833d8
+;   int g_INT_01c50948
+;   void* g_PTR_02c833d8
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c50948],0x0      ; 005826f0 | DAT_01c50948
+    CMP dword ptr [0x01c50948],0x0      ; 005826f0 | g_INT_01c50948
         ;   Label: engine_special.cpp_addParticle_FUN_005826f0
     JNZ 0x005826fc                      ; 005826f7
         ;   XREF to: 005826fc (CONDITIONAL_JUMP)  ; LAB_005826fc
@@ -27,7 +27,7 @@ section .text
     PUSH ECX                            ; 00582701
     MOV EBX,dword ptr [ESP + 0xc]       ; 00582702
     PUSH EBX                            ; 00582706
-    CALL dword ptr [0x02c833d8]         ; 00582707 | DAT_02c833d8
+    CALL dword ptr [0x02c833d8]         ; 00582707 | g_PTR_02c833d8
     ADD ESP,0x8                         ; 0058270d
     POP EBX                             ; 00582710
     RET                                 ; 00582711

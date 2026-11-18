@@ -28,12 +28,12 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_005c9565
 ;   TerminatedCString s_core_morph_cpp_005c9593
 ;   TerminatedCString s_CMorphModel_setFaceList_005c95a5
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d8e408
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_MorphReverseWinding
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004fa380
 ;
 ; *****************************************************************************
@@ -59,10 +59,10 @@ section .text
         ;   Label: LAB_004f9ffb
     MOV EBP,0x152                       ; 004fa000
     PUSH 0x5c9565                       ; 004fa005 | = "CMorphModel::setFaceList - invalid pa..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004fa00a | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 004fa010 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fa016
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],ECX      ; 004fa00a | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],EBP      ; 004fa010 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fa016
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fa01b
     MOV EAX,ESI                         ; 004fa01e
         ;   Label: LAB_004fa01e
@@ -79,10 +79,10 @@ section .text
     MOV EBP,0x5c9593                    ; 004fa039 | = "..\\core\\morph.cpp"
     MOV EAX,0x159                       ; 004fa03e
     PUSH 0x5c95a5                       ; 004fa043 | = "CMorphModel::setFaceList - invalid ve..."
-    MOV dword ptr [0x01d71de0],EBP      ; 004fa048 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 004fa04e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004fa053
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 004fa048 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 004fa04e | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fa053
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fa058
     MOV ECX,dword ptr [ESP + 0x48]      ; 004fa05b
         ;   Label: LAB_004fa05b
@@ -119,7 +119,7 @@ section .text
     IMUL EAX,ESI,0x3c                   ; 004fa0ba
     MOV ESI,dword ptr [EBX + 0x60]      ; 004fa0bd
         ;   Label: LAB_004fa0bd
-    MOV EDI,dword ptr [0x01d8e408]      ; 004fa0c0 | DAT_01d8e408
+    MOV EDI,dword ptr [0x01d8e408]      ; 004fa0c0 | g_MorphReverseWinding
     MOV dword ptr [ESI + EAX*0x1 + 0x4],0x3 ; 004fa0c6
     TEST EDI,EDI                        ; 004fa0ce
     JZ 0x004fa18f                       ; 004fa0d0

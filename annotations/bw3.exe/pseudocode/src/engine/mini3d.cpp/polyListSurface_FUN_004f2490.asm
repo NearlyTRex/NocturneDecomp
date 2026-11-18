@@ -20,15 +20,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005c824d
 ;   TerminatedCString s_CMini3D_polyList_Too_man_005c8262
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_01d76c34
-;   undefined4 DAT_01d76f64
-;   undefined4 DAT_01d7a694
-;   undefined4 DAT_01ed3198
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_01d76c34
+;   float* g_FLOAT_PTR_01d76f64
+;   int g_INT_01d7a694
+;   int g_RenderedTriangleCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   engine_mini3d.cpp_allocVertexList_FUN_004ede40
 ;   engine_mini3d.cpp_drawSurfaceTriangle_FUN_004f2a10
 ;   engine_mini3d.cpp_fillSurfaceTriangle_FUN_004f27a0
@@ -47,12 +47,12 @@ section .text
     SUB ESP,0x4                         ; 004f2494
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004f2497
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f249b
-    MOV EDX,dword ptr [0x01ed3198]      ; 004f249f | DAT_01ed3198
-    MOV ECX,dword ptr [0x01d76c34]      ; 004f24a5 | DAT_01d76c34
+    MOV EDX,dword ptr [0x01ed3198]      ; 004f249f | g_RenderedTriangleCount
+    MOV ECX,dword ptr [0x01d76c34]      ; 004f24a5 | g_INT_01d76c34
     ADD EDX,EAX                         ; 004f24ab
     ADD ECX,EBP                         ; 004f24ad
-    MOV dword ptr [0x01ed3198],EDX      ; 004f24af | DAT_01ed3198
-    MOV dword ptr [0x01d76c34],ECX      ; 004f24b5 | DAT_01d76c34
+    MOV dword ptr [0x01ed3198],EDX      ; 004f24af | g_RenderedTriangleCount
+    MOV dword ptr [0x01d76c34],ECX      ; 004f24b5 | g_INT_01d76c34
     CALL engine_mini3d.cpp_allocVertexList_FUN_004ede40 ; 004f24bb
         ;   XREF to: 004ede40 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_allocVertexList_FUN_004ede40()
     CMP EBP,0x2710                      ; 004f24c0
@@ -60,9 +60,9 @@ section .text
         ;   XREF to: 004f2568 (CONDITIONAL_JUMP)  ; LAB_004f2568
     MOV ESI,dword ptr [ESP + 0x18]      ; 004f24cc
         ;   Label: LAB_004f24cc
-    MOV EBX,dword ptr [0x01d76f64]      ; 004f24d0 | DAT_01d76f64
+    MOV EBX,dword ptr [0x01d76f64]      ; 004f24d0 | g_FLOAT_PTR_01d76f64
     XOR EDI,EDI                         ; 004f24d6
-    MOV EAX,[0x01d7a694]                ; 004f24d8 | DAT_01d7a694
+    MOV EAX,[0x01d7a694]                ; 004f24d8 | g_INT_01d7a694
     MOV dword ptr [ESP],EDI             ; 004f24dd
     CMP EAX,0x1                         ; 004f24e0
     JNZ 0x004f2591                      ; 004f24e3
@@ -99,7 +99,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 004f2524
     MOVZX EBP,word ptr [EBX + 0x4]      ; 004f2528
         ;   Label: LAB_004f2528
-    MOV ESI,dword ptr [0x01d76f64]      ; 004f252c | DAT_01d76f64
+    MOV ESI,dword ptr [0x01d76f64]      ; 004f252c | g_FLOAT_PTR_01d76f64
     SHL EBP,0x5                         ; 004f2532
     ADD EBP,ESI                         ; 004f2535
     PUSH EBP                            ; 004f2537
@@ -133,10 +133,10 @@ section .text
     MOV EBX,0x5c824d                    ; 004f2569 | = "..\\engine\\mini3d.cpp"
     MOV ESI,0x12de                      ; 004f256e
     PUSH 0x5c8262                       ; 004f2573 | = "CMini3D::polyList - Too many verticie..."
-    MOV dword ptr [0x01d71de0],EBX      ; 004f2578 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f257e | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 004f2584
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBX      ; 004f2578 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 004f257e | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f2584
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004f2589
     JMP 0x004f24cc                      ; 004f258c
         ;   XREF to: 004f24cc (UNCONDITIONAL_JUMP)  ; LAB_004f24cc
@@ -169,7 +169,7 @@ section .text
         ;   Label: LAB_004f25c1
     MOV SI,word ptr [EBX + 0x4]         ; 004f25c3
     MOV EBP,ESI                         ; 004f25c7
-    MOV ESI,dword ptr [0x01d76f64]      ; 004f25c9 | DAT_01d76f64
+    MOV ESI,dword ptr [0x01d76f64]      ; 004f25c9 | g_FLOAT_PTR_01d76f64
     SHL EBP,0x5                         ; 004f25cf
     ADD EBP,ESI                         ; 004f25d2
     PUSH EBP                            ; 004f25d4

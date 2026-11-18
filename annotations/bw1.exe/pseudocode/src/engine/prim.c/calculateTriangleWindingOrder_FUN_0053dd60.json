@@ -2,36 +2,23 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 69,
-    "cross_reference_count": 11,
+    "complexity_score": 54,
+    "cross_reference_count": 12,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "sign_compare_idiom",
-      "undefined_data"
+      "sign_compare_idiom"
     ],
     "total_lines": 99
   },
   "cross_references": [
     {
-      "addr": "0047a480",
-      "from_addr": "0047a561",
-      "name": "core_dpart.cpp_FUN_0047a480",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047ab00",
-      "from_addr": "0047abdd",
-      "name": "core_dpart.cpp_FUN_0047ab00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005bf120",
-      "from_addr": "005bf3e1",
-      "name": "core_zombie.cpp_FUN_005bf120",
+      "addr": "0043d6e0",
+      "from_addr": "0043d79c",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043d6e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,7 +36,19 @@
     {
       "addr": "00484790",
       "from_addr": "004848a5",
-      "name": "engine_drender.cpp_FUN_00484790",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ab00",
+      "from_addr": "0047abdd",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_0047ab00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a480",
+      "from_addr": "0047a561",
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_0047a480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -81,6 +80,12 @@
       "from_addr": "005bf8a3",
       "name": "engine_zraster.c_rasterizePolygonCustom_FUN_005bf640",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bf120",
+      "from_addr": "005bf3e1",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_005bf120",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -100,13 +105,13 @@
   "globals": [
     {
       "addr": "00713a7c",
-      "name": "DAT_00713a7c",
-      "type": "undefined4",
+      "name": "g_CullingMode",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 18,
+    "call_site_count": 20,
     "call_sites": [
       {
         "call_addr": "0043c274",
@@ -155,7 +160,7 @@
       {
         "call_addr": "0047a561",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_0047a480",
+        "caller": "engine_drender.cpp_renderTriangleTextured_FUN_0047a480",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +171,7 @@
       {
         "call_addr": "0047abdd",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_0047ab00",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_0047ab00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -346,14 +351,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00713a7c",
-      "severity": "mild",
-      "text": "if (DAT_00713a7c == 1) {",
-      "type": "undefined_data"
-    },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
       "line": 31,

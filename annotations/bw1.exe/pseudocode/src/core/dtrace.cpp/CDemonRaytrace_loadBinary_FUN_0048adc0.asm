@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *param_2)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(CDemonRaytrace *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
-; _FILE *          Stack[0x8]:4   param_2
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
@@ -27,17 +27,17 @@
 ;   TerminatedCString s_Release_build_doesn_t_su_005db8d2
 ;   TerminatedCString s_core_dtrace_cpp_005db8fd
 ;   TerminatedCString s_CDemonRaytrace_loadBinar_005db910
-;   undefined4 DAT_005db940
-;   undefined4 DAT_0061ab60
-;   undefined4 DAT_01c3d420
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   float g_FLOAT_005db940 = 0.125
+;   int g_INT_0061ab60 = 0x4
+;   int g_INT_01c3d420
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_load_FUN_00457e50
 ;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40
 ;   core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_0048aab0
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;
 ; *****************************************************************************
@@ -62,7 +62,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 0048addd
     XOR EDX,EDX                         ; 0048ade1
     PUSH EAX                            ; 0048ade3
-    MOV dword ptr [0x01c3d420],EDX      ; 0048ade4 | DAT_01c3d420
+    MOV dword ptr [0x01c3d420],EDX      ; 0048ade4 | g_INT_01c3d420
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 0048adea
         ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0048adef
@@ -71,16 +71,16 @@ section .text
         ;   XREF to: 0048af15 (CONDITIONAL_JUMP)  ; LAB_0048af15
     MOV EAX,dword ptr [ESP + 0x18]      ; 0048adfd
         ;   Label: LAB_0048adfd
-    CMP EAX,dword ptr [0x0061ab60]      ; 0048ae01 | DAT_0061ab60
+    CMP EAX,dword ptr [0x0061ab60]      ; 0048ae01 | g_INT_0061ab60
     JLE 0x0048ae2c                      ; 0048ae07
         ;   XREF to: 0048ae2c (CONDITIONAL_JUMP)  ; LAB_0048ae2c
     MOV ECX,0x5db876                    ; 0048ae09 | = "..\\core\\dtrace.cpp"
     MOV ESI,0x14b                       ; 0048ae0e
     PUSH 0x5db889                       ; 0048ae13 | = "CDemonRaytrace::loadBinary - file is ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0048ae18 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0048ae1e | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048ae24
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0048ae18 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ESI      ; 0048ae1e | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048ae24
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048ae29
     PUSH EBP                            ; 0048ae2c
         ;   Label: LAB_0048ae2c
@@ -130,7 +130,7 @@ section .text
     PUSH ESI                            ; 0048ae89
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 0048ae8a
         ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
-    FLD float ptr [0x005db940]          ; 0048ae8f | DAT_005db940
+    FLD float ptr [0x005db940]          ; 0048ae8f | g_FLOAT_005db940
     FLD float ptr [ESI]                 ; 0048ae95
     FMUL ST1                            ; 0048ae97
     FLD float ptr [ESI + 0x4]           ; 0048ae99
@@ -191,10 +191,10 @@ section .text
         ;   Label: LAB_0048af15
     MOV EDI,0x148                       ; 0048af1a
     PUSH 0x5db849                       ; 0048af1f | = "CDemonRaytrace::loadBinary - invalid ..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0048af24 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0048af2a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048af30
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 0048af24 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 0048af2a | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048af30
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048af35
     JMP 0x0048adfd                      ; 0048af38
         ;   XREF to: 0048adfd (UNCONDITIONAL_JUMP)  ; LAB_0048adfd
@@ -202,10 +202,10 @@ section .text
         ;   Label: LAB_0048af3d
     MOV EDX,0x1e2                       ; 0048af42
     PUSH 0x5db8d2                       ; 0048af47 | = "Release build doesn't support old geo..."
-    MOV [0x01d1d400],EAX                ; 0048af4c | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0048af51 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048af57
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV [0x01d1d400],EAX                ; 0048af4c | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDX      ; 0048af51 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048af57
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048af5c
     TEST byte ptr [EBP + 0xc],0x20      ; 0048af5f
         ;   Label: LAB_0048af5f
@@ -221,10 +221,10 @@ section .text
         ;   Label: LAB_0048af6d
     MOV EBX,0x1ff                       ; 0048af72
     PUSH 0x5db910                       ; 0048af77 | = "CDemonRaytrace::loadBinary - error re..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0048af7c | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0048af82 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0048af88
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ECX      ; 0048af7c | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EBX      ; 0048af82 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048af88
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048af8d
     ADD ESP,0x1c                        ; 0048af90
     POP EBP                             ; 0048af93

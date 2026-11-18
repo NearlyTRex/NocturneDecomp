@@ -27,12 +27,12 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
-;   int INT_005b7630 = 0x7f
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcd9b8
-;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01bd1d8c
-;   undefined4 DAT_01bd1d90
+;   int g_InputKeyMask = 0x7f
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_EditorFontMaxCharWidth
+;   int g_INT_01bcd9bc
+;   int g_MouseX
+;   int g_MouseY
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -58,7 +58,7 @@ section .text
     PUSH EBP                            ; 00474d73
     SUB ESP,0x4                         ; 00474d74
     MOV ESI,dword ptr [ESP + 0x18]      ; 00474d77
-    CMP dword ptr [0x01bcd070],0x0      ; 00474d7b | DAT_01bcd070
+    CMP dword ptr [0x01bcd070],0x0      ; 00474d7b | g_CBitFont_PTR_01bcd070
     JNZ 0x00474da7                      ; 00474d82
         ;   XREF to: 00474da7 (CONDITIONAL_JUMP)  ; LAB_00474da7
     MOV ECX,0x57e4fa                    ; 00474d84 | = "..\\shape\\edittool.cpp"
@@ -69,17 +69,17 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00474d9f
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00474da4
-    MOV EAX,[0x01bcd070]                ; 00474da7 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00474da7 | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_00474da7
     PUSH 0x6a                           ; 00474dac
     MOV EBX,dword ptr [EAX + 0x3168]    ; 00474dae
     PUSH EAX                            ; 00474db4
-    MOV dword ptr [0x01bcd9b8],EBX      ; 00474db5 | DAT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EBX      ; 00474db5 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00474dbb
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00474dc0
     MOV EDI,dword ptr [ESI]             ; 00474dc3
-    MOV [0x01bcd9bc],EAX                ; 00474dc5 | DAT_01bcd9bc
+    MOV [0x01bcd9bc],EAX                ; 00474dc5 | g_INT_01bcd9bc
     CMP EDI,0x1                         ; 00474dca
     JL 0x00474e56                       ; 00474dcd
         ;   XREF to: 00474e56 (CONDITIONAL_JUMP)  ; LAB_00474e56
@@ -88,12 +88,12 @@ section .text
     MOV EAX,0x7f                        ; 00474dd9
     PUSH EDX                            ; 00474dde
     MOV ECX,dword ptr [ESP + 0x24]      ; 00474ddf
-    MOV EBP,dword ptr [0x005b7630]      ; 00474de3 | INT_005b7630
+    MOV EBP,dword ptr [0x005b7630]      ; 00474de3 | g_InputKeyMask
     PUSH ECX                            ; 00474de9
-    MOV [0x005b7630],EAX                ; 00474dea | INT_005b7630
-    MOV EAX,[0x01bd1d90]                ; 00474def | DAT_01bd1d90
+    MOV [0x005b7630],EAX                ; 00474dea | g_InputKeyMask
+    MOV EAX,[0x01bd1d90]                ; 00474def | g_MouseY
     PUSH ESI                            ; 00474df4
-    MOV EDI,dword ptr [0x01bd1d8c]      ; 00474df5 | DAT_01bd1d8c
+    MOV EDI,dword ptr [0x01bd1d8c]      ; 00474df5 | g_MouseX
     MOV dword ptr [ESP + 0x10],EAX      ; 00474dfb
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70 ; 00474dff
         ;   XREF to: 00474e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
@@ -126,7 +126,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 00474e3e
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00474e43
-    MOV dword ptr [0x005b7630],EBP      ; 00474e46 | INT_005b7630
+    MOV dword ptr [0x005b7630],EBP      ; 00474e46 | g_InputKeyMask
     MOV EAX,EBX                         ; 00474e4c
     ADD ESP,0x4                         ; 00474e4e
     POP EBP                             ; 00474e51

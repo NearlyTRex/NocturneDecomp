@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_ptr)
 
 {
@@ -17,67 +15,71 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
   CDemonRenderer *this_ptr_00;
   int iVar4;
   SProjectedVertex *point;
+  int unaff_EBP;
   uint *puVar5;
   int iVar6;
+  int unaff_EDI;
   uint *puVar7;
   byte bVar8;
-  float10 fVar9;
-  int aiStackY_10b4 [974];
+  double dVar9;
+  UIntegerFloat aUStackY_10ac [973];
+  int in_stack_fffffe94;
   CVector3i *rotation;
-  SMRGLHeaderPrimitive SStack_170;
-  uint uStack_158;
-  uint uStack_154;
+  UIntegerFloat UStack_160;
+  UIntegerFloat UStack_15c;
+  UIntegerFloat UStack_158;
+  UIntegerFloat UStack_154;
   uint uStack_150;
   uint uStack_14c;
-  SMRGLHeaderPrimitive SStack_148;
-  uint uStack_130;
-  uint uStack_12c;
-  uint uStack_128;
-  uint uStack_124;
-  uint local_120 [6];
-  uint local_108 [6];
-  float fStack_f0;
-  float fStack_ec;
+  uint uStack_148;
+  uint uStack_144;
+  SMRGLHeaderPrimitive SStack_138;
+  uint local_120;
+  uint uStack_11c;
+  uint uStack_118;
+  uint uStack_114;
+  uint local_108 [2];
+  CBoundingBox3D CStack_100;
   float fStack_e8;
-  CVector3i CStack_e4;
-  CVector3f CStack_d8;
-  CVector3i CStack_cc;
-  CVector3i CStack_c0;
-  CVector3i CStack_b4;
-  CVector3i CStack_a8;
-  CVector3i CStack_9c;
-  CVector3i CStack_90;
-  CVector3i CStack_84;
-  CVector3i CStack_78;
-  float fStack_6c;
-  int aiStack_68 [2];
-  CVector3i CStack_60;
-  CVector3i CStack_54;
-  float fStack_48;
-  float fStack_44;
+  float fStack_e4;
+  float fStack_e0;
+  CVector3i CStack_dc;
+  CVector3f CStack_d0;
+  CVector3i CStack_c4;
+  CVector3i CStack_b8;
+  CVector3i CStack_ac;
+  CVector3i CStack_a0;
+  CVector3i CStack_94;
+  CVector3i CStack_88;
+  CVector3i CStack_7c;
+  CVector3i CStack_70;
+  CVector3f CStack_64;
+  CVector3i CStack_58;
+  CVector3i CStack_4c;
   float fStack_40;
-  CVector3i CStack_3c;
-  CVector3f CStack_30;
-  float fStack_24;
-  int iStack_20;
-  int iStack_1c;
-  float fStack_18;
+  float fStack_3c;
+  float fStack_38;
+  CVector3i CStack_34;
+  CVector3f CStack_28;
+  float fStack_1c;
+  int iStack_18;
+  int iStack_14;
   
   bVar8 = 0;
-  if (((this_ptr->flame_state != 0) || (*(int *)(0x01D81080 + 0x1008) != 0)) &&
-     (iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc), iVar4 == 0)
-     ) {
+  if (((this_ptr->flame_state != 0) || (g_CDemonMission_PTR_00600530->is_in_editor != 0)) &&
+     (iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+                        (g_CDemonRenderer_PTR_005f2afc), iVar4 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
     if (this_ptr->do_visibility_check != 0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-      puVar5 = local_120;
+      puVar5 = &uStack_118;
       puVar7 = local_108;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
         *puVar7 = *puVar5;
         puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
         puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
       }
-      iVar4 = core_box_cpp_FUN_0041daf0(local_108);
+      iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(&CStack_100,in_stack_fffffe94);
       this_ptr->is_visible = iVar4;
     }
     if ((this_ptr->is_visible != 0) &&
@@ -87,179 +89,188 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00537390(g_CDemonSetPtr,&this_ptr->globe);
     }
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != FLAME_TYPE_NONE)) {
-      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&CStack_90)
-      ;
+      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
+                (g_CDemonRenderer_PTR_005f2afc,&CStack_88);
       rotation = (CVector3i *)0x0;
-      CStack_60.x = CStack_90.x;
-      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + 4) =
-           *(uint *)((int)&CStack_90 + (uint)bVar8 * -8 + 4);
-      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-           *(uint *)((int)&CStack_90 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-      CStack_60.x = 0;
-      CStack_60.y = 0;
+      CStack_58.x = CStack_88.x;
+      *(uint *)((int)&CStack_58 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_88 + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_88 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      CStack_58.x = 0;
+      CStack_58.y = 0;
       engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
-                (DAT_005f2afc,&CStack_60,rotation);
-      iStack_20 = 1;
-      CStack_9c.x = 0;
-      CStack_9c.y = 0;
-      CStack_9c.z = 0;
-      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&CStack_cc)
-      ;
-      CStack_60.x = CStack_cc.x;
-      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + 4) =
-           *(uint *)((int)&CStack_cc + (uint)bVar8 * -8 + 4);
-      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-           *(uint *)((int)&CStack_cc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-      if ((0x2000 < CStack_60.x) || (CStack_60.x < -0x2000)) {
-        iStack_20 = 3;
+                (g_CDemonRenderer_PTR_005f2afc,&CStack_58,rotation);
+      iStack_18 = 1;
+      CStack_94.x = 0;
+      CStack_94.y = 0;
+      CStack_94.z = 0;
+      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
+                (g_CDemonRenderer_PTR_005f2afc,&CStack_c4);
+      CStack_58.x = CStack_c4.x;
+      *(uint *)((int)&CStack_58 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_c4 + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_c4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      if ((0x2000 < CStack_58.x) || (CStack_58.x < -0x2000)) {
+        iStack_18 = 3;
       }
       iVar4 = 0;
-      if (0 < iStack_20) {
+      if (0 < iStack_18) {
         do {
           engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
-                    (DAT_005f2afc,&CStack_9c,(CVector3i *)0x0);
-          fStack_48 = (this_ptr->flame_size).x * _DAT_005c0bdc;
-          fStack_44 = 0.0;
-          fStack_40 = 0.0;
-          CStack_e4.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
-          CStack_e4.y = (int)ROUND(_DAT_005dfe50 * 0.0);
-          CStack_e4.z = (int)ROUND(_DAT_005dfe50 * 0.0);
-          engine_special_cpp_FUN_005632a3
-                    (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_e4);
-          fStack_44 = (this_ptr->flame_size).y;
-          CStack_c0.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
-          CStack_c0.y = (int)ROUND(fStack_44 * _DAT_005dfe50);
-          CStack_c0.z = (int)ROUND(fStack_40 * _DAT_005dfe50);
-          engine_special_cpp_FUN_005632a3
-                    (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
-          fStack_48 = -fStack_48;
-          CStack_a8.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
-          CStack_a8.y = (int)ROUND(fStack_44 * _DAT_005dfe50);
-          CStack_a8.z = (int)ROUND(fStack_40 * _DAT_005dfe50);
-          engine_special_cpp_FUN_005632a3
-                    (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_a8);
-          fStack_44 = 0.0;
-          CStack_78.x = (int)ROUND(fStack_48 * _DAT_005dfe50);
-          CStack_78.y = (int)ROUND(_DAT_005dfe50 * 0.0);
-          CStack_78.z = (int)ROUND(fStack_40 * _DAT_005dfe50);
-          engine_special_cpp_FUN_005632a3
-                    (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_78);
-          (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))
-                    (DAT_007e2a54,&(this_ptr->base).location,0);
-          DAT_0060b040 = 0xffff - _DAT_01c6e24c;
-          if (iStack_20 == 3) {
-            DAT_0060b040 = DAT_0060b040 / 2;
+                    (g_CDemonRenderer_PTR_005f2afc,&CStack_94,(CVector3i *)0x0);
+          fStack_40 = (this_ptr->flame_size).x * 0.5f;
+          fStack_3c = 0.0;
+          fStack_38 = 0.0;
+          CStack_dc.x = (int)ROUND(fStack_40 * 256.0f);
+          CStack_dc.y = (int)ROUND(256.0f * 0.0);
+          CStack_dc.z = (int)ROUND(256.0f * 0.0);
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                    (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_dc)
+          ;
+          fStack_3c = (this_ptr->flame_size).y;
+          CStack_b8.x = (int)ROUND(fStack_40 * 256.0f);
+          CStack_b8.y = (int)ROUND(fStack_3c * 256.0f);
+          CStack_b8.z = (int)ROUND(fStack_38 * 256.0f);
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                    (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[1].projected_vertex,
+                     &CStack_b8);
+          fStack_40 = -fStack_40;
+          CStack_a0.x = (int)ROUND(fStack_40 * 256.0f);
+          CStack_a0.y = (int)ROUND(fStack_3c * 256.0f);
+          CStack_a0.z = (int)ROUND(fStack_38 * 256.0f);
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                    (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[2].projected_vertex,
+                     &CStack_a0);
+          fStack_3c = 0.0;
+          CStack_70.x = (int)ROUND(fStack_40 * 256.0f);
+          CStack_70.y = (int)ROUND(256.0f * 0.0);
+          CStack_70.z = (int)ROUND(fStack_38 * 256.0f);
+          engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                    (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[3].projected_vertex,
+                     &CStack_70);
+          (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+                    (g_CurrentSceneCamera,&(this_ptr->base).location.position,
+                     (SProjectedVertex *)0x0);
+          g_SRenderVertex_ARRAY_0060b014[0].a = 0xffff - g_PerspectiveReciprocal;
+          if (unaff_EDI == 3) {
+            g_SRenderVertex_ARRAY_0060b014[0].a = g_SRenderVertex_ARRAY_0060b014[0].a / 2;
           }
           if (this_ptr->which_flame == FLAME_TYPE_BODY) {
-            DAT_0060b040 = DAT_0060b040 / 4;
+            g_SRenderVertex_ARRAY_0060b014[0].a = g_SRenderVertex_ARRAY_0060b014[0].a / 4;
           }
           if (this_ptr->which_flame == FLAME_TYPE_CANDLE) {
-            DAT_0060b040 = DAT_0060b040 / 2;
+            g_SRenderVertex_ARRAY_0060b014[0].a = g_SRenderVertex_ARRAY_0060b014[0].a / 2;
           }
-          DAT_0060b034 = 0xffff;
-          DAT_0060b038 = 0xffff;
-          DAT_0060b03c = 0xffff;
-          DAT_0060b064 = 0xffff;
-          DAT_0060b068 = 0xffff;
-          DAT_0060b06c = 0xffff;
-          _DAT_0060b094 = 0xffff;
-          _DAT_0060b098 = 0xffff;
-          _DAT_0060b09c = 0xffff;
-          _DAT_0060b0c4 = 0xffff;
-          _DAT_0060b0c8 = 0xffff;
-          _DAT_0060b0cc = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[0].r = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[0].g = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[0].b = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[1].r = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[1].g = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[1].b = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[2].r = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[2].g = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[2].b = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[3].r = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[3].g = 0xffff;
+          g_SRenderVertex_ARRAY_0060b014[3].b = 0xffff;
           if (this_ptr->texture_flip == 0) {
-            DAT_0060b02c = 0x80000;
-            _DAT_0060b05c = 0x80000;
-            _DAT_0060b08c = 0xf80000;
-            _DAT_0060b0bc = 0xf80000;
+            g_SRenderVertex_ARRAY_0060b014[0].u = 0x80000;
+            g_SRenderVertex_ARRAY_0060b014[1].u = 0x80000;
+            g_SRenderVertex_ARRAY_0060b014[2].u = 0xf80000;
+            g_SRenderVertex_ARRAY_0060b014[3].u = 0xf80000;
           }
           else {
-            DAT_0060b02c = 0xf80000;
-            _DAT_0060b05c = 0xf80000;
-            _DAT_0060b08c = 0x80000;
-            _DAT_0060b0bc = 0x80000;
+            g_SRenderVertex_ARRAY_0060b014[0].u = 0xf80000;
+            g_SRenderVertex_ARRAY_0060b014[1].u = 0xf80000;
+            g_SRenderVertex_ARRAY_0060b014[2].u = 0x80000;
+            g_SRenderVertex_ARRAY_0060b014[3].u = 0x80000;
           }
-          _DAT_0060b0c0 = 0xf80000;
-          DAT_0060b090 = 0x80000;
-          _DAT_0060b060 = 0x80000;
-          _DAT_0060b030 = 0xf80000;
-          fVar9 = (float10)this_ptr->animation_time;
-          DAT_0060b070 = DAT_0060b040;
-          _DAT_0060b0a0 = DAT_0060b040;
-          _DAT_0060b0d0 = DAT_0060b040;
-          round();
-          fStack_18 = (float)(int)ROUND(fVar9);
+          g_SRenderVertex_ARRAY_0060b014[3].v = 0xf80000;
+          g_SRenderVertex_ARRAY_0060b014[2].v = 0x80000;
+          g_SRenderVertex_ARRAY_0060b014[1].v = 0x80000;
+          g_SRenderVertex_ARRAY_0060b014[0].v = 0xf80000;
+          UStack_160.f = 6.832088e-39;
+          g_SRenderVertex_ARRAY_0060b014[1].a = g_SRenderVertex_ARRAY_0060b014[0].a;
+          g_SRenderVertex_ARRAY_0060b014[2].a = g_SRenderVertex_ARRAY_0060b014[0].a;
+          g_SRenderVertex_ARRAY_0060b014[3].a = g_SRenderVertex_ARRAY_0060b014[0].a;
+          dVar9 = round((double)this_ptr->animation_time);
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-                    (DAT_005f2afc,
+                    (g_CDemonRenderer_PTR_005f2afc,
                      (SMRGLTextureBasic *)
-                     (&DAT_005fde88 + ((int)fStack_18 % 8) * 0x18 + this_ptr->which_flame * 0xc0));
-          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);
-          SStack_148.base.count = 4;
-          SStack_148.surface_normal.D.i = 0;
-          SStack_148.surface_normal.C.i = 0;
-          SStack_148.surface_normal.B.i = 0;
-          SStack_148.surface_normal.A.i = 0;
-          uStack_128 = 2;
-          uStack_130 = 0;
-          uStack_12c = 1;
-          uStack_124 = 3;
+                     (&DAT_005fde88 + ((int)ROUND(dVar9) % 8) * 0x18 + this_ptr->which_flame * 0xc0)
+                    );
+          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
+                    (g_CDemonRenderer_PTR_005f2afc,1);
+          SStack_138.base.count = 4;
+          SStack_138.surface_normal.D.i = 0;
+          SStack_138.surface_normal.C.i = 0;
+          SStack_138.surface_normal.B.i = 0;
+          SStack_138.surface_normal.A.i = 0;
+          uStack_118 = 2;
+          local_120 = 0;
+          uStack_11c = 1;
+          uStack_114 = 3;
           engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
-                    (DAT_005f2afc,&SStack_148);
-          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
+                    (g_CDemonRenderer_PTR_005f2afc,&SStack_138);
+          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
+                    (g_CDemonRenderer_PTR_005f2afc,0);
           engine_drender_cpp_pop_FUN_0046d080();
           iVar4 = iVar4 + 1;
-          CStack_9c.z = CStack_9c.z + 0x2aaa;
-        } while (iVar4 < iStack_20);
+          CStack_88.y = CStack_88.y + 0x2aaa;
+        } while (iVar4 < unaff_EBP);
       }
       engine_drender_cpp_pop_FUN_0046d080();
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
     if ((this_ptr->which_flame == FLAME_TYPE_CANDLE) &&
-       (fStack_24 = (this_ptr->flame_size).y * (float)_DAT_005c0be4, this_ptr->is_visible != 0)) {
-      engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
-      CStack_30.x = fStack_6c;
-      *(int *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) = aiStack_68[(uint)bVar8 * -2];
-      *(int *)((int)&CStack_30 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-           aiStack_68[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-      CStack_d8.y = (this_ptr->flame_size).y * (float)_DAT_005c0bec;
-      CStack_d8.x = 0.0;
-      CStack_d8.z = 0.0;
-      fStack_18 = CStack_d8.y;
+       (fStack_1c = (this_ptr->flame_size).y * (float)2, this_ptr->is_visible != 0))
+    {
+      engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0046d250
+                (g_CDemonRenderer_PTR_005f2afc,&CStack_64);
+      CStack_28.x = CStack_64.x;
+      *(uint *)((int)&CStack_28 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      CStack_d0.y = (this_ptr->flame_size).y * (float)0.5;
+      CStack_d0.x = 0.0;
+      CStack_d0.z = 0.0;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-                (DAT_005f2afc,&CStack_30,&CStack_d8);
-      fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.98,1.02);
-      fStack_f0 = fStack_18 * fStack_24;
-      fStack_e8 = 0.0;
-      CStack_54.x = (int)ROUND(fStack_f0 * _DAT_005dfe50);
-      CStack_54.y = (int)ROUND(fStack_f0 * _DAT_005dfe50);
-      CStack_54.z = (int)ROUND(_DAT_005dfe50 * 0.0);
-      fStack_ec = fStack_f0;
-      engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_54)
-      ;
-      fStack_f0 = -fStack_f0;
-      CStack_3c.x = (int)ROUND(fStack_f0 * _DAT_005dfe50);
-      CStack_3c.y = (int)ROUND(fStack_ec * _DAT_005dfe50);
-      CStack_3c.z = (int)ROUND(fStack_e8 * _DAT_005dfe50);
-      engine_special_cpp_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_3c);
-      fStack_ec = -fStack_ec;
-      CStack_b4.x = (int)ROUND(fStack_f0 * _DAT_005dfe50);
-      CStack_b4.y = (int)ROUND(fStack_ec * _DAT_005dfe50);
-      CStack_b4.z = (int)ROUND(fStack_e8 * _DAT_005dfe50);
-      engine_special_cpp_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_b4);
-      fStack_f0 = -fStack_f0;
-      CStack_84.x = (int)ROUND(fStack_f0 * _DAT_005dfe50);
-      CStack_84.y = (int)ROUND(fStack_ec * _DAT_005dfe50);
-      CStack_84.z = (int)ROUND(fStack_e8 * _DAT_005dfe50);
-      engine_special_cpp_FUN_005632a3
-                (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_84);
-      iStack_1c = 0;
+                (g_CDemonRenderer_PTR_005f2afc,&CStack_28,&CStack_d0);
+      fStack_e8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.98,1.02);
+      fStack_e8 = fStack_e8 * fStack_1c;
+      fStack_e0 = 0.0;
+      CStack_4c.x = (int)ROUND(fStack_e8 * 256.0f);
+      CStack_4c.y = (int)ROUND(fStack_e8 * 256.0f);
+      CStack_4c.z = (int)ROUND(256.0f * 0.0);
+      fStack_e4 = fStack_e8;
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_4c);
+      fStack_e8 = -fStack_e8;
+      CStack_34.x = (int)ROUND(fStack_e8 * 256.0f);
+      CStack_34.y = (int)ROUND(fStack_e4 * 256.0f);
+      CStack_34.z = (int)ROUND(fStack_e0 * 256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_34);
+      fStack_e4 = -fStack_e4;
+      CStack_ac.x = (int)ROUND(fStack_e8 * 256.0f);
+      CStack_ac.y = (int)ROUND(fStack_e4 * 256.0f);
+      CStack_ac.z = (int)ROUND(fStack_e0 * 256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_ac);
+      fStack_e8 = -fStack_e8;
+      CStack_7c.x = (int)ROUND(fStack_e8 * 256.0f);
+      CStack_7c.y = (int)ROUND(fStack_e4 * 256.0f);
+      CStack_7c.z = (int)ROUND(fStack_e0 * 256.0f);
+      engine_special_cpp_transformAndProjectPoint_FUN_005632a3
+                (&g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_7c);
+      iStack_14 = 0;
       do {
         point = (SProjectedVertex *)
-                ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c
-                );
+                ((int)&(g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->projected_vertex).
+                       transformed_x + iStack_14);
         iVar4 = point->transformed_z;
         if (0x200 < iVar4) {
           iVar6 = iVar4 + -0x100;
@@ -270,10 +281,10 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
           point->transformed_z = iVar6;
           engine_matrix_c_projectTransformedPoint_FUN_004e5590(point);
         }
-        this_ptr_00 = DAT_005f2afc;
-        iStack_1c = iStack_1c + 0x30;
-      } while (iStack_1c != 0xc0);
-      DAT_005f2afc->vertex_buffer_ptr->a = 0x4000;
+        this_ptr_00 = g_CDemonRenderer_PTR_005f2afc;
+        iStack_14 = iStack_14 + 0x30;
+      } while (iStack_14 != 0xc0);
+      g_CDemonRenderer_PTR_005f2afc->vertex_buffer_ptr->a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[1].a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[2].a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[3].a = 0x4000;
@@ -285,21 +296,20 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
       this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
       this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-      SStack_170.surface_normal.D.i = 0;
-      SStack_170.surface_normal.C.i = 0;
-      SStack_170.surface_normal.B.i = 0;
-      SStack_170.surface_normal.A.i = 0;
-      uStack_158 = 0;
-      uStack_150 = 2;
-      uStack_14c = 3;
-      SStack_170.base.count = 4;
-      uStack_154 = 1;
+      UStack_154.i = 0;
+      UStack_158.i = 0;
+      UStack_15c.i = 0;
+      UStack_160.i = 0;
+      uStack_150 = 0;
+      uStack_148 = 2;
+      uStack_144 = 3;
+      uStack_14c = 1;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-                (this_ptr_00,(SMRGLTextureBasic *)&DAT_005fde70);
-      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);
+                (this_ptr_00,&g_SMRGLTextureBasic_005fde70);
+      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,1);
       engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
-                (DAT_005f2afc,&SStack_170,0x163);
-      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
+                (g_CDemonRenderer_PTR_005f2afc,(SMRGLHeaderPrimitive *)&stack0xfffffe98,0x163);
+      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,0);
       engine_drender_cpp_pop_FUN_0046d080();
     }
     return this_ptr->is_visible;

@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 360,
+    "complexity_score": 335,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 45,
-    "suspect_count": 30,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 187
@@ -52,15 +51,15 @@
   "globals": [
     {
       "addr": "005e8804",
-      "name": "DAT_005e8804",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Normal",
+      "type": "short",
+      "value": "0x0"
     },
     {
       "addr": "005e881e",
-      "name": "DAT_005e881e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Leap",
+      "type": "short",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -381,22 +380,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005e8804",
-      "severity": "mild",
-      "text": "local_14 = &DAT_005e8804;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005e881e",
-      "severity": "mild",
-      "text": "local_14 = &DAT_005e881e;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_4",
@@ -409,7 +392,7 @@
       "line": 45,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4[3] = (uVar4 - (int)*(short *)(local_14 + uVar2 * 2)) + 1;",
+      "text": "param_4[3] = (uVar4 - (int)local_14[uVar2]) + 1;",
       "type": "unnamed_param"
     },
     {

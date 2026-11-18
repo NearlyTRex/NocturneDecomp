@@ -21,10 +21,10 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0263cf7c
-;   undefined4 DAT_0263cf80
-;   undefined4 DAT_0263cf84
-;   undefined4 DAT_02648e80
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].hardware_buffer_handle
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].sample
+;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700
@@ -61,7 +61,7 @@ section .text
     MOV EBX,0x263cf1c                   ; 0054d3d2
     SHL EAX,0x2                         ; 0054d3d7
     ADD EBX,EAX                         ; 0054d3da
-    CMP ESI,dword ptr [EBX + 0x64]      ; 0054d3dc | DAT_0263cf80
+    CMP ESI,dword ptr [EBX + 0x64]      ; 0054d3dc | g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
     JNZ 0x0054d3ed                      ; 0054d3df
         ;   XREF to: 0054d3ed (CONDITIONAL_JUMP)  ; LAB_0054d3ed
     CMP dword ptr [ESP + 0x10],0x0      ; 0054d3e1
@@ -80,16 +80,16 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_005532f0 ; 0054d3f2
         ;   XREF to: 005532f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005532f0()
         ;   Label: LAB_0054d3f2
-    CMP ESI,dword ptr [EBX + 0x64]      ; 0054d3f7 | DAT_0263cf80
+    CMP ESI,dword ptr [EBX + 0x64]      ; 0054d3f7 | g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
     JNZ 0x0054d420                      ; 0054d3fa
         ;   XREF to: 0054d420 (CONDITIONAL_JUMP)  ; LAB_0054d420
-    CMP dword ptr [EBX + 0x68],0x0      ; 0054d3fc | DAT_0263cf84
+    CMP dword ptr [EBX + 0x68],0x0      ; 0054d3fc | g_CSfxSlot_ARRAY_0263cf1c[0].sample
     JZ 0x0054d420                       ; 0054d400
         ;   XREF to: 0054d420 (CONDITIONAL_JUMP)  ; LAB_0054d420
-    CMP dword ptr [EBX + 0x60],0x0      ; 0054d402 | DAT_0263cf7c
+    CMP dword ptr [EBX + 0x60],0x0      ; 0054d402 | g_CSfxSlot_ARRAY_0263cf1c[0].hardware_buffer_handle
     JZ 0x0054d3e8                       ; 0054d406
         ;   XREF to: 0054d3e8 (CONDITIONAL_JUMP)  ; LAB_0054d3e8
-    MOV EDX,dword ptr [0x02648e80]      ; 0054d408 | DAT_02648e80
+    MOV EDX,dword ptr [0x02648e80]      ; 0054d408 | g_CSoundDevicePtr
     TEST EDX,EDX                        ; 0054d40e
     JZ 0x0054d42a                       ; 0054d410
         ;   XREF to: 0054d42a (CONDITIONAL_JUMP)  ; LAB_0054d42a

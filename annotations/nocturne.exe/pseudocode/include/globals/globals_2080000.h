@@ -4,14 +4,28 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SRaytraceState.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2080000
 // =============================================================================
 
+// CVector3f
+extern CVector3f g_SavedCameraOrigin;
+extern CVector3f g_SavedCameraRotation;
+
 // SRaytraceState[5]
-extern SRaytraceState g_SRaytraceState_ARRAY_020842d4[5];
+extern SRaytraceState g_RaytraceStateStack[5];
+
+// float
+extern float g_SavedProjectionFactor;
+
+// int
+extern int g_INT_02080430;
+extern int g_INT_02080438;
+extern int g_RaytraceStateStackDepth;
+extern int g_INT_020875f4;
 
 // uint[250][48][64]
 extern uint g_ThumbZBufferTable[250][48][64];

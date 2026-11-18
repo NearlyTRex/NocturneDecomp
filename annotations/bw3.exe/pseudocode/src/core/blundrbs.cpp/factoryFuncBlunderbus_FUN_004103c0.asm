@@ -15,7 +15,7 @@ section .text
     PUSH 0x598                          ; 004103c0
         ;   Label: core_blundrbs.cpp_factoryFuncBlunderbus_FUN_004103c0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004103c5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 004103ca
     TEST EAX,EAX                        ; 004103cd
     JNZ 0x004103d2                      ; 004103cf

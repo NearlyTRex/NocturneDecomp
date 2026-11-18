@@ -11,12 +11,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_00568500 at 0056937a
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0056acd0 at 0056b016
-;   core_stranger.cpp_FUN_00565ff0 at 00566f0b
-;   core_stranger.cpp_FUN_00568500 at 0056937a
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00565ff0 at 00566f0b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eb1b5
+;   double g_DOUBLE_005eb1b5 = 0.00390625
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CCryptVesselClassInfo.name_hash
 ;
@@ -120,7 +120,7 @@ section .text
     SUB ESI,EBP                         ; 0056279a
     MOV dword ptr [ESP + 0xc],ESI       ; 0056279c
     FILD dword ptr [ESP + 0xc]          ; 005627a0
-    FMUL double ptr [0x005eb1b5]        ; 005627a4 | DAT_005eb1b5
+    FMUL double ptr [0x005eb1b5]        ; 005627a4 | g_DOUBLE_005eb1b5
     FSTP float ptr [ESP + 0x4]          ; 005627aa
     POP EDI                             ; 005627ae
     MOV EAX,dword ptr [ESP]             ; 005627af

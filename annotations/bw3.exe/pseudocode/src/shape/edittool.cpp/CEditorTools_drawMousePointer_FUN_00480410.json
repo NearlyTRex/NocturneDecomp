@@ -1,0 +1,383 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 939,
+    "complexity_score": 244,
+    "cross_reference_count": 5,
+    "function_call_count": 5,
+    "global_count": 20,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 244,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1183
+  },
+  "cross_references": [
+    {
+      "addr": "004b6f30",
+      "from_addr": "004b796c",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004843d0",
+      "from_addr": "004849d2",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c8e0",
+      "from_addr": "0047cb5a",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d897",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c2c0",
+      "from_addr": "0047c4ff",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00480410",
+    "address_range": [
+      [
+        "00480410",
+        "00480da7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_00480410",
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_00480410(CEditorTools *this_ptr,int use_clipping)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
+    },
+    {
+      "addr": "00401130",
+      "is_variadic": false,
+      "name": "engine_2d.c_plotPixel_FUN_00401130"
+    },
+    {
+      "addr": "004f36e0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawPixel_FUN_004f36e0"
+    },
+    {
+      "addr": "004f3520",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_004f3520"
+    },
+    {
+      "addr": "004803d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bd2dd",
+      "name": "s_shape_edittool_cpp_005bd2dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd2f3",
+      "name": "s_CEditorTools_setMousePoi_005bd2f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fb144",
+      "name": "g_CursorSizeHorizontal",
+      "type": "int",
+      "value": "0x9"
+    },
+    {
+      "addr": "005fb148",
+      "name": "g_CursorSizeVertical",
+      "type": "int",
+      "value": "0x9"
+    },
+    {
+      "addr": "005fba18",
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005fba1c",
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "01c5bae8",
+      "name": "g_MouseCursorType",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5baec",
+      "name": "g_INT_01c5baec",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5fadc",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6af98",
+      "name": "g_UCHAR_ARRAY_01c6af98",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "01c6af99",
+      "name": "g_UCHAR_ARRAY_01c6af98+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6af9a",
+      "name": "g_UCHAR_ARRAY_01c6af98+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a8",
+      "name": "g_INT_01c6b5a8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6b5ac",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b0",
+      "name": "g_INT_01c6b5b0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b4",
+      "name": "g_INT_01c6b5b4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c6b5c0",
+      "name": "g_INT_01c6b5c0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0047cb5a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004849d2",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047d897",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b796c",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047c4ff",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.260596546310832,
+    "instruction_count": 637,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 46,
+      "BOOL_OR": 2,
+      "BRANCH": 34,
+      "CALL": 33,
+      "CBRANCH": 161,
+      "COPY": 396,
+      "INT_ADD": 74,
+      "INT_AND": 646,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 562,
+      "INT_LEFT": 6,
+      "INT_LESS": 129,
+      "INT_NOTEQUAL": 102,
+      "INT_OR": 37,
+      "INT_SBORROW": 130,
+      "INT_SCARRY": 54,
+      "INT_SLESS": 258,
+      "INT_SRIGHT": 15,
+      "INT_SUB": 238,
+      "INT_XOR": 7,
+      "LOAD": 18,
+      "POPCOUNT": 252,
+      "RETURN": 1,
+      "STORE": 104
+    },
+    "pcode_op_count": 3351
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047f210",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00497870",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a1380",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.362
+    },
+    "nocturne.exe": {
+      "addr": "004724e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.362
+    }
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "use_clipping",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

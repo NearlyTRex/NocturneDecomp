@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr,int expire_flag)
 
 {
@@ -44,14 +42,13 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
   if (this_ptr->is_wall_splat == 1) {
-    _DAT_01c78c88 = 0;
-    _DAT_01c78c8c = 0;
-    _DAT_01c78c94 = 0;
-    _DAT_01c78c90 = 0xffff;
+    g_GoreQuadPrimitive.base.surface_normal.A.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.B.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.D.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.C.i = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (g_CDemonRenderer_PTR_005ae704,
-               (SMRGLTextureBasic *)
-               (&DAT_005b974c + local_18 * 0x18 + this_ptr->texture_variant * 0x180));
+               g_BloodSplatAnimTextures + this_ptr->texture_variant * 0x10 + local_18);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
               (g_CDemonRenderer_PTR_005ae704,&this_ptr->rotation,(CVector3f *)0x0);
     local_48 = 0xbf000000;
@@ -88,13 +85,12 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
   }
   else {
     this_ptr->expired = 1;
-    _DAT_01c78c88 = 0;
-    _DAT_01c78c90 = 0;
-    _DAT_01c78c94 = 0;
-    _DAT_01c78c8c = 0xffff;
+    g_GoreQuadPrimitive.base.surface_normal.A.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.C.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.D.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.B.i = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (g_CDemonRenderer_PTR_005ae704,
-               (SMRGLTextureBasic *)(&DAT_005b96ec + this_ptr->texture_variant * 0x18));
+              (g_CDemonRenderer_PTR_005ae704,g_BloodSplatTextures + this_ptr->texture_variant);
     local_6c = 0xbf000000;
     local_68 = 0;
     local_64 = 0xbf000000;
@@ -132,70 +128,70 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
   EVar1 = this_ptr->blood_type;
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004aedaf:
-    DAT_005c5034 = 0x2000;
-    DAT_005c5038 = 0;
+    g_SRenderVertex_ARRAY_005c5014[0].r = 0x2000;
+    g_SRenderVertex_ARRAY_005c5014[0].g = 0;
   }
   else if (EVar1 < BLOOD_TYPE_NONE) {
-    DAT_005c5038 = 0x7f80;
-    DAT_005c5034 = 0;
+    g_SRenderVertex_ARRAY_005c5014[0].g = 0x7f80;
+    g_SRenderVertex_ARRAY_005c5014[0].r = 0;
   }
   else {
     if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004aedaf;
-    DAT_005c5038 = 0;
-    DAT_005c5034 = 0;
+    g_SRenderVertex_ARRAY_005c5014[0].g = 0;
+    g_SRenderVertex_ARRAY_005c5014[0].r = 0;
   }
-  DAT_005c503c = 0;
+  g_SRenderVertex_ARRAY_005c5014[0].b = 0;
   EVar1 = this_ptr->blood_type;
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004aeddc:
-    DAT_005c5064 = 0x2000;
-    DAT_005c5068 = 0;
+    g_SRenderVertex_ARRAY_005c5014[1].r = 0x2000;
+    g_SRenderVertex_ARRAY_005c5014[1].g = 0;
   }
   else if (EVar1 < BLOOD_TYPE_NONE) {
-    DAT_005c5068 = 0x7f80;
-    DAT_005c5064 = 0;
+    g_SRenderVertex_ARRAY_005c5014[1].g = 0x7f80;
+    g_SRenderVertex_ARRAY_005c5014[1].r = 0;
   }
   else {
     if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004aeddc;
-    DAT_005c5068 = 0;
-    DAT_005c5064 = 0;
+    g_SRenderVertex_ARRAY_005c5014[1].g = 0;
+    g_SRenderVertex_ARRAY_005c5014[1].r = 0;
   }
-  DAT_005c506c = 0;
+  g_SRenderVertex_ARRAY_005c5014[1].b = 0;
   EVar1 = this_ptr->blood_type;
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004aee09:
-    DAT_005c5094 = 0x2000;
-    DAT_005c5098 = 0;
+    g_SRenderVertex_ARRAY_005c5014[2].r = 0x2000;
+    g_SRenderVertex_ARRAY_005c5014[2].g = 0;
   }
   else if (EVar1 < BLOOD_TYPE_NONE) {
-    DAT_005c5098 = 0x7f80;
-    DAT_005c5094 = 0;
+    g_SRenderVertex_ARRAY_005c5014[2].g = 0x7f80;
+    g_SRenderVertex_ARRAY_005c5014[2].r = 0;
   }
   else {
     if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004aee09;
-    DAT_005c5098 = 0;
-    DAT_005c5094 = 0;
+    g_SRenderVertex_ARRAY_005c5014[2].g = 0;
+    g_SRenderVertex_ARRAY_005c5014[2].r = 0;
   }
-  DAT_005c509c = 0;
+  g_SRenderVertex_ARRAY_005c5014[2].b = 0;
   EVar1 = this_ptr->blood_type;
   if (EVar1 != BLOOD_TYPE_RED) {
     if (EVar1 < BLOOD_TYPE_NONE) {
-      DAT_005c50c8 = 0x7f80;
-      DAT_005c50c4 = 0;
+      g_SRenderVertex_ARRAY_005c5014[3].g = 0x7f80;
+      g_SRenderVertex_ARRAY_005c5014[3].r = 0;
       goto LAB_004aee48;
     }
     if (EVar1 == BLOOD_TYPE_NONE) {
-      DAT_005c50c8 = 0;
-      DAT_005c50c4 = 0;
+      g_SRenderVertex_ARRAY_005c5014[3].g = 0;
+      g_SRenderVertex_ARRAY_005c5014[3].r = 0;
       goto LAB_004aee48;
     }
   }
-  DAT_005c50c4 = 0x2000;
-  DAT_005c50c8 = 0;
+  g_SRenderVertex_ARRAY_005c5014[3].r = 0x2000;
+  g_SRenderVertex_ARRAY_005c5014[3].g = 0;
 LAB_004aee48:
-  DAT_005c50cc = 0;
+  g_SRenderVertex_ARRAY_005c5014[3].b = 0;
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);
+            (g_CDemonRenderer_PTR_005ae704,&g_GoreQuadPrimitive.base);
   if (this_ptr->is_wall_splat == 1) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     return;

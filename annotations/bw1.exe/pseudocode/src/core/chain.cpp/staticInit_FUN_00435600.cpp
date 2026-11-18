@@ -10,7 +10,7 @@ void __cdecl core_chain_cpp_staticInit_FUN_00435600(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160
-            (&g_CChainClassInfo," BCChain" + 2,core_chain_cpp_factoryFuncChain_FUN_00435630,
+            (&g_CChainClassInfo,"CChain",core_chain_cpp_factoryFuncChain_FUN_00435630,
              &g_CChainClassVersion,4,&g_CDemonActorClassInfo);
   return;
 }

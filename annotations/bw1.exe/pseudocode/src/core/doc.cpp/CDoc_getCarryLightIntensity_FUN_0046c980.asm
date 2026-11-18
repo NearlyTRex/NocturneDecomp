@@ -7,7 +7,7 @@
 ; CDoc *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007c5330
+;   undefined4 g_CLightActorClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
@@ -19,7 +19,7 @@ section .text
     PUSH EBX                            ; 0046c980
         ;   Label: core_doc.cpp_CDoc_getCarryLightIntensity_FUN_0046c980
     SUB ESP,0x4                         ; 0046c981
-    MOV EDX,dword ptr [0x007c5330]      ; 0046c984 | DAT_007c5330
+    MOV EDX,dword ptr [0x007c5330]      ; 0046c984 | g_CLightActorClassInfo.name_hash
     MOV EAX,dword ptr [ESP + 0xc]       ; 0046c98a
     PUSH EDX                            ; 0046c98e
     MOV ECX,dword ptr [EAX + 0x25b0]    ; 0046c98f

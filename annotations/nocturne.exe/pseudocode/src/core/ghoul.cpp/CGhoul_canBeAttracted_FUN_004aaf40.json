@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 99,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 2,
+    "pseudocode_lines": 68,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 222
+    "total_lines": 221
   },
   "cross_references": [],
   "function": {
@@ -54,26 +53,26 @@
     },
     {
       "addr": "01c78c18",
-      "name": "DAT_01c78c18",
-      "type": "undefined4",
+      "name": "g_INT_01c78c18",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78c1c",
-      "name": "DAT_01c78c1c",
-      "type": "undefined4",
+      "name": "g_INT_01c78c1c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78c20",
-      "name": "DAT_01c78c20",
-      "type": "undefined4",
+      "name": "g_INT_01c78c20",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78c24",
-      "name": "DAT_01c78c24",
-      "type": "undefined4",
+      "name": "g_INT_01c78c24",
+      "type": "int",
       "value": null
     }
   ],
@@ -341,16 +340,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 68,
+      "line": 66,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "out_attract_position->x = pCVar1->x;",

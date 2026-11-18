@@ -39,11 +39,15 @@ int __cdecl clipPolygonRightPlane(SRenderVertex **input_vertices,SRenderVertex *
 
 // Original: engine_clipper.c_clipPolygonLeftPlane_FUN_00439720
 // Address: 00439720
-int clipPolygonLeftPlane(void);
+int __cdecl clipPolygonLeftPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 
 // Original: engine_clipper.c_clipPolygonBottomPlane_FUN_004399a0
 // Address: 004399a0
-int clipPolygonBottomPlane(void);
+int __cdecl clipPolygonBottomPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+
+// Original: engine_clipper.c_clipPolygonFarPlane_FUN_00439ae0
+// Address: 00439ae0
+void __cdecl clipPolygonFarPlane(void);
 
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_00439ce0
 // Address: 00439ce0
@@ -73,29 +77,29 @@ void __cdecl interpolateVertexTopClipAdvanced(SRenderVertex *v1,SRenderVertex *v
 // Address: 0043ac50
 void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
-// Original: engine_clipper.c_FUN_0043ad90
+// Original: engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043ad90
 // Address: 0043ad90
-void FUN_0043ad90(void);
+void __cdecl clipPolygonRightPlaneGlobal(void);
 
-// Original: engine_clipper.c_FUN_0043aed0
+// Original: engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043aed0
 // Address: 0043aed0
-void FUN_0043aed0(void);
+void __cdecl clipPolygonLeftPlaneGlobal(void);
+
+// Original: engine_clipper.c_clipPolygonTopPlaneGlobal_FUN_0043b010
+// Address: 0043b010
+void __cdecl clipPolygonTopPlaneGlobal(void);
 
 // Original: engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043b150
 // Address: 0043b150
-void clipPolygonBottomPlaneGlobal(void);
+void __cdecl clipPolygonBottomPlaneGlobal(void);
 
 // Original: engine_clipper.c_perspectiveDivideVertices_FUN_0043b280
 // Address: 0043b280
 void __cdecl perspectiveDivideVertices(void);
 
-// Original: engine_clipper.c_FUN_0043b3c0
-// Address: 0043b3c0
-undefined4 FUN_0043b3c0(void);
-
-// Original: engine_clipper.c_FUN_0043b4e0
-// Address: 0043b4e0
-undefined4 FUN_0043b4e0(void);
+// Original: engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_0043b330
+// Address: 0043b330
+int __cdecl clipPolygonToViewFrustumAdvanced(int vertex_count,int *vertex_indices);
 
 // Original: engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
 // Address: 0043bac0

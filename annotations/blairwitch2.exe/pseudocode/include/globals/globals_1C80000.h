@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CFirefly.h"
 #include "types/classes/CGlassParticle.h"
+#include "types/classes/CMuzzleFlash.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C80000
@@ -16,4 +17,16 @@ extern CFirefly CFirefly_ARRAY_01c848f8[64];
 
 // CGlassParticle[256]
 extern CGlassParticle g_GlassParticlePool[256];
+
+// CMuzzleFlash
+extern CMuzzleFlash g_CMuzzleFlash_01c85ffc;
+
+// CMuzzleFlash[20]
+extern CMuzzleFlash g_CMuzzleFlash_ARRAY_01c86730[20];
+
+// int
+extern int g_INT_01c848f4;
+extern int g_INT_01c85ff8;
+extern int g_INT_01c8672c;
+extern int g_GlassParticleAllocIndex;
 

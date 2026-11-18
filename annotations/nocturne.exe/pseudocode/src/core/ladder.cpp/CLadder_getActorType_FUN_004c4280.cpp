@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_ladder_cpp_CLadder_getActorType_FUN_004c4280(CLadder *this_ptr)
 
 {
-  return &g_CLadderActorType_01cc30e8;
+  return &g_CLadderClassInfo;
 }

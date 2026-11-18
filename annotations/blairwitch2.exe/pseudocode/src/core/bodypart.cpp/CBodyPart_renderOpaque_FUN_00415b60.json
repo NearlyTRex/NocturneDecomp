@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 112,
+    "complexity_score": 113,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 58,
     "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
+      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 185
+    "total_lines": 186
   },
   "cross_references": [],
   "function": {
@@ -43,7 +43,7 @@
     {
       "addr": "0041a840",
       "is_variadic": false,
-      "name": "core_box.cpp_FUN_0041a840"
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041a840"
     },
     {
       "addr": "0044fcc0",
@@ -69,9 +69,9 @@
   "globals": [
     {
       "addr": "0060b280",
-      "name": "DAT_0060b280",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_0060b280",
+      "type": "CDemonRenderer*",
+      "value": "01ba5c50"
     },
     {
       "addr": "0061b5a8",
@@ -81,8 +81,8 @@
     },
     {
       "addr": "01ba5c50",
-      "name": "DAT_01ba5c50",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01ba5c50",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -178,20 +178,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),",
-      "type": "undefined_data"
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,euler_angles,&pSStack_8[iVar2].position_offset);",
-      "type": "undefined_data"
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((CBoundingBox3D *)(auStack_20 + 2),unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
@@ -203,7 +203,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `euler_angles` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*euler_angles) + offsetof(subfield)` equals the real array stride. Replace `euler_angles->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 46,
+      "line": 47,
       "match": "euler_angles = (T *)&euler_angles[N].SUBFIELD",
       "severity": "moderate",
       "text": "euler_angles = (CVector3f *)&euler_angles[0x21].z;",
@@ -213,7 +213,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 24,
         "vtable_addr": "005f36c4"
       }

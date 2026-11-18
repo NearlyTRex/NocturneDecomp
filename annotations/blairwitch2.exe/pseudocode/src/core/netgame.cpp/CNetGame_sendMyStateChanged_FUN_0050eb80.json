@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 96,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 158
   },
@@ -46,7 +44,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "0050cd90",
@@ -74,32 +72,32 @@
     },
     {
       "addr": "0061b124",
-      "name": "DAT_0061b124",
-      "type": "undefined4",
-      "value": null
+      "name": "g_NetLobbyStateChanged",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d34e34",
-      "name": "DAT_01d34e34",
-      "type": "undefined4",
+      "name": "g_LastPingTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d34e38",
-      "name": "DAT_01d34e38",
-      "type": "undefined4",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
       "value": null
     }
   ],
@@ -294,24 +292,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_0061b124",
-      "severity": "mild",
-      "text": "DAT_0061b124 = 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

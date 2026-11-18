@@ -9,15 +9,23 @@
 // GLOBAL VARIABLES - Range 0x720000
 // =============================================================================
 
+// int
+extern int g_INT_0072ff44;
+extern int g_INT_0072ff48;
+extern int g_INT_0072ff74;
+extern int g_INT_0072ff78;
+
+// uint
+extern uint g_UINT_0072ff3c;
+extern uint g_UINT_0072ff6c;
+
 // undefined4
 extern undefined4 DAT_0072ff34;
 extern undefined4 DAT_0072ff38;
-extern undefined4 DAT_0072ff44;
-extern undefined4 DAT_0072ff48;
 extern undefined4 DAT_0072ff64;
 extern undefined4 DAT_0072ff68;
-extern undefined4 DAT_0072ff74;
-extern undefined4 DAT_0072ff78;
-extern undefined4 DAT_0072ffac;
 extern undefined4 DAT_0072ffb8;
+
+// void*
+extern void* g_SoftwareZBuffer;
 

@@ -16,8 +16,8 @@ void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_00426e70(CCharacter *th
   
   if ((this_ptr->fire_count < 0x32) &&
      (((include_hero != 0 ||
-       (iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(&this_ptr->base,"KCHero" + 1),
-       iVar1 == 0)) && ((this_ptr->model).model_name[0] != '\0')))) {
+       (iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(&this_ptr->base,"CHero"), iVar1 == 0)
+       ) && ((this_ptr->model).model_name[0] != '\0')))) {
     iVar1 = core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_00548250
                       (&this_ptr->model,position);
     iVar2 = 0;

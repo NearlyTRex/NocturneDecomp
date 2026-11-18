@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_00508cb0(CMouse *this_ptr,uint button_mask,int use_skull_effect)
 
 {
-  if ((_DAT_01c5fae4 & button_mask) != 0) {
+  if ((g_MouseButtonFlags.dword & button_mask) != 0) {
     if (this_ptr->effect_mode == 0) {
       if (use_skull_effect == 0) {
         this_ptr->effect_mode = 1;
@@ -20,7 +18,7 @@ int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_00508cb0(CMouse *this_pt
         this_ptr->effect_mode = 2;
       }
     }
-    _DAT_01c5fae4 = _DAT_01c5fae4 & (button_mask ^ 0xff);
+    g_MouseButtonFlags.dword = g_MouseButtonFlags.dword & (button_mask ^ 0xff);
     return 1;
   }
   return 0;

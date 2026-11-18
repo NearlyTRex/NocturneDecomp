@@ -14,7 +14,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004b91d0(CFlameCan *this_pt
   CBoundingBox3D *unaff_ESI;
   
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
-                    (0x01C51D80,this_ptr->on_fire_condition);
+                    (g_CEventListPtr,this_ptr->on_fire_condition);
   if (iVar2 == 0) {
     if (this_ptr->on_fire == 0) {
       return;
@@ -32,9 +32,10 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004b91d0(CFlameCan *this_pt
   if (0.0 < fVar1) {
     return;
   }
-  core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,this_ptr,1);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740
+            (g_CDemonMission_PTR_0061f650,&this_ptr->base,1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
   core_fire_cpp_CFireEffect_createExplosion_FUN_004b6c60
-            (0x01C57074,&(this_ptr->flame).base.location.position,16.0,1500.0,4.0);
+            (g_CFireEffectPtr,&(this_ptr->flame).base.location.position,16.0,1500.0,4.0);
   return;
 }

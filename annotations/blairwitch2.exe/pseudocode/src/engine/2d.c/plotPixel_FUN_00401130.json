@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 108,
+    "complexity_score": 13,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 54
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -53,33 +50,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047a450",
-      "from_addr": "0047a46e",
-      "name": "shape_edittool.cpp_FUN_0047a450",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047a480",
-      "from_addr": "0047a4dd",
-      "name": "shape_edittool.cpp_FUN_0047a480",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047a590",
-      "from_addr": "0047a6e5",
-      "name": "shape_edittool.cpp_FUN_0047a590",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047f210",
       "from_addr": "0047f38e",
-      "name": "shape_edittool.cpp_FUN_0047f210",
+      "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004808b0",
       "from_addr": "004809b8",
-      "name": "shape_edittool.cpp_FUN_004808b0",
+      "name": "shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004808b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a590",
+      "from_addr": "0047a6e5",
+      "name": "shape_edittool.cpp_drawDashedLine_FUN_0047a590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a450",
+      "from_addr": "0047a46e",
+      "name": "shape_edittool.cpp_editorPlotPixel_FUN_0047a450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a480",
+      "from_addr": "0047a4dd",
+      "name": "shape_edittool.cpp_plotPixelWithClipping_FUN_0047a480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -111,20 +108,20 @@
   "globals": [
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c2a38c",
-      "name": "DAT_01c2a38c",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c35e60",
-      "name": "DAT_01c35e60",
-      "type": "undefined4",
+      "name": "g_INT_01c35e60",
+      "type": "int",
       "value": null
     }
   ],
@@ -134,7 +131,7 @@
       {
         "call_addr": "0047f38e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +142,7 @@
       {
         "call_addr": "0047f496",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +153,7 @@
       {
         "call_addr": "0047f4a5",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,7 +164,7 @@
       {
         "call_addr": "0047f50c",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,7 +175,7 @@
       {
         "call_addr": "0047f573",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,7 +186,7 @@
       {
         "call_addr": "0047f6b7",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +197,7 @@
       {
         "call_addr": "0047f71e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,7 +208,7 @@
       {
         "call_addr": "0047f785",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -222,7 +219,7 @@
       {
         "call_addr": "0047f7ec",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -233,7 +230,7 @@
       {
         "call_addr": "0047f854",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "caller": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_0047f210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -325,70 +322,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "*(byte *)(x + *(int *)(&DAT_01c2a38c + iVar1)) = DAT_01c35e60;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01c35e60",
-      "severity": "mild",
-      "text": "*(byte *)(x + *(int *)(&DAT_01c2a38c + iVar1)) = DAT_01c35e60;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "*(ushort *)(x * 2 + *(int *)(&DAT_01c2a38c + iVar1)) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c34910",
-      "severity": "mild",
-      "text": "*(ushort *)(&DAT_01c34910 + (_DAT_01c35e60 & 0xff) * 2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01c2a38c",
-      "severity": "mild",
-      "text": "*(uint *)(x * 4 + *(int *)(&DAT_01c2a38c + iVar1)) =",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

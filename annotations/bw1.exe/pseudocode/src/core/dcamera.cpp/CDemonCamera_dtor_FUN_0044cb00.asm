@@ -11,15 +11,15 @@
 ;   core_dlight.cpp_CDemonLight_dtor_FUN_00462530 at 0046254f
 ;
 ; Referenced Globals:
-;   undefined1* g_CDemonCameraVTable = 0044cb00
+;   CCameraView_vtable g_CDemonCameraVTable
 ;   WatcomTypeInfo g_CDemonCameraTypeInfo
 ;
 ; Called Functions:
 ;   core_camview.cpp_CCameraView_dtor_FUN_00428240
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0044cdf0
 ;   crt_memory.c___vec_delete_FUN_005c030f
-;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_debugFreeChecked_FUN_005c0344
+;   crt_unknown.c_free_FUN_005c0336
 ;
 ; *****************************************************************************
 
@@ -56,16 +56,16 @@ section .text
         ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0044cb41
     PUSH EAX                            ; 0044cb44
-    CALL crt_unknown.c_FUN_005c0336     ; 0044cb45
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 0044cb45
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 0044cb4a
     MOV EAX,EBX                         ; 0044cb4d
     POP EBX                             ; 0044cb4f
     RET                                 ; 0044cb50
     PUSH EAX                            ; 0044cb51
         ;   Label: LAB_0044cb51
-    CALL crt_unknown.c_FUN_005c0344     ; 0044cb52
-        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    CALL crt_unknown.c_debugFreeChecked_FUN_005c0344 ; 0044cb52
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFreeChecked_FUN_005c0344(void * ptr)
     ADD ESP,0x4                         ; 0044cb57
     MOV EAX,EBX                         ; 0044cb5a
     POP EBX                             ; 0044cb5c

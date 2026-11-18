@@ -13,7 +13,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_free_FUN_0055c100(C3DSCamera *this_ptr)
     this_ptr->pvs_count = 0;
     return;
   }
-  FUN_005c09f0(this_ptr->pvs_list);
+  debugFree(this_ptr->pvs_list);
   this_ptr->pvs_list = (int *)0x0;
   this_ptr->pvs_count = 0;
   return;

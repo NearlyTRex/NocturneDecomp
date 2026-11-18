@@ -14,9 +14,9 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01b4d720
-;   undefined4 DAT_01b4d730
-;   undefined4 DAT_01b4d734
+;   int g_OriginalColorValue
+;   int g_PackedPixelColor
+;   int g_DuplicatedPixelColor
 ;   void*[1200] g_ScreenBufferArray
 ;
 ; *****************************************************************************
@@ -27,7 +27,7 @@ section .text
         ;   Label: cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0045bc20
     PUSH ESI                            ; 0045bc21
     PUSH EDI                            ; 0045bc22
-    MOV EDI,dword ptr [0x01b4d730]      ; 0045bc23 | DAT_01b4d730
+    MOV EDI,dword ptr [0x01b4d730]      ; 0045bc23 | g_PackedPixelColor
     MOV ESI,dword ptr [ESP + 0x14]      ; 0045bc29
     MOV EBX,dword ptr [ESP + 0x18]      ; 0045bc2d
     MOV EDX,dword ptr [0x005b7624]      ; 0045bc31 | g_BitsPerPixel
@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 0045bc51 (CONDITIONAL_JUMP)  ; LAB_0045bc51
     LEA EAX,[EAX]                       ; 0045bc64
     LEA EDX,[EDX]                       ; 0045bc6a
-    MOV dword ptr [0x01b4d730],EDI      ; 0045bc70 | DAT_01b4d730
+    MOV dword ptr [0x01b4d730],EDI      ; 0045bc70 | g_PackedPixelColor
         ;   Label: LAB_0045bc70
     POP EDI                             ; 0045bc76
     POP ESI                             ; 0045bc77
@@ -74,7 +74,7 @@ section .text
     JZ 0x0045bcb5                       ; 0045bc9c
         ;   XREF to: 0045bcb5 (CONDITIONAL_JUMP)  ; LAB_0045bcb5
     XOR EDX,EDX                         ; 0045bc9e
-    MOV CL,byte ptr [0x01b4d720]        ; 0045bca0 | DAT_01b4d720
+    MOV CL,byte ptr [0x01b4d720]        ; 0045bca0 | g_OriginalColorValue
     MOV DX,word ptr [EAX]               ; 0045bca6
     SHR EDX,CL                          ; 0045bca9
     ADD EAX,0x2                         ; 0045bcab
@@ -85,11 +85,11 @@ section .text
         ;   Label: LAB_0045bcb5
     JGE 0x0045bce0                      ; 0045bcb7
         ;   XREF to: 0045bce0 (CONDITIONAL_JUMP)  ; LAB_0045bce0
-    MOV CL,byte ptr [0x01b4d720]        ; 0045bcb9 | DAT_01b4d720
+    MOV CL,byte ptr [0x01b4d720]        ; 0045bcb9 | g_OriginalColorValue
         ;   Label: LAB_0045bcb9
     MOV EDX,dword ptr [EAX]             ; 0045bcbf
     SHR EDX,CL                          ; 0045bcc1
-    MOV ECX,dword ptr [0x01b4d734]      ; 0045bcc3 | DAT_01b4d734
+    MOV ECX,dword ptr [0x01b4d734]      ; 0045bcc3 | g_DuplicatedPixelColor
     ADD EAX,0x4                         ; 0045bcc9
     AND EDX,ECX                         ; 0045bccc
     ADD EBX,0x2                         ; 0045bcce
@@ -103,12 +103,12 @@ section .text
         ;   XREF to: 0045bc70 (CONDITIONAL_JUMP)  ; LAB_0045bc70
         ;   Label: LAB_0045bce0
     XOR EDX,EDX                         ; 0045bce2
-    MOV CL,byte ptr [0x01b4d720]        ; 0045bce4 | DAT_01b4d720
+    MOV CL,byte ptr [0x01b4d720]        ; 0045bce4 | g_OriginalColorValue
     MOV DX,word ptr [EAX]               ; 0045bcea
     SHR EDX,CL                          ; 0045bced
     AND EDX,EDI                         ; 0045bcef
     MOV word ptr [EAX],DX               ; 0045bcf1
-    MOV dword ptr [0x01b4d730],EDI      ; 0045bcf4 | DAT_01b4d730
+    MOV dword ptr [0x01b4d730],EDI      ; 0045bcf4 | g_PackedPixelColor
     POP EDI                             ; 0045bcfa
     POP ESI                             ; 0045bcfb
     POP EBX                             ; 0045bcfc
@@ -125,7 +125,7 @@ section .text
     CMP ESI,EBX                         ; 0045bd1a
     JL 0x0045bc70                       ; 0045bd1c
         ;   XREF to: 0045bc70 (CONDITIONAL_JUMP)  ; LAB_0045bc70
-    MOV CL,byte ptr [0x01b4d720]        ; 0045bd22 | DAT_01b4d720
+    MOV CL,byte ptr [0x01b4d720]        ; 0045bd22 | g_OriginalColorValue
         ;   Label: LAB_0045bd22
     MOV EDX,dword ptr [EAX]             ; 0045bd28
     SHR EDX,CL                          ; 0045bd2a
@@ -136,7 +136,7 @@ section .text
     CMP EBX,ESI                         ; 0045bd35
     JLE 0x0045bd22                      ; 0045bd37
         ;   XREF to: 0045bd22 (CONDITIONAL_JUMP)  ; LAB_0045bd22
-    MOV dword ptr [0x01b4d730],EDI      ; 0045bd39 | DAT_01b4d730
+    MOV dword ptr [0x01b4d730],EDI      ; 0045bd39 | g_PackedPixelColor
     POP EDI                             ; 0045bd3f
     POP ESI                             ; 0045bd40
     POP EBX                             ; 0045bd41

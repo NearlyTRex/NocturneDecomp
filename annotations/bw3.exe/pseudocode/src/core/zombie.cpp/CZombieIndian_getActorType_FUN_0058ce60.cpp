@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_zombie_cpp_CZombieIndian_getActorType_FUN_0058ce60(CZombieIndian *this_ptr)
 
 {
-  return (CDemonActorType *)0x2d248f8;
+  return &g_CDemonActorType_02d248f8;
 }

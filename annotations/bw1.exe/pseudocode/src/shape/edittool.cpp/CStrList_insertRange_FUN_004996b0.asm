@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_004996b0(CStrList *this_ptr,int param_2,CStrList *param_3)
+; void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_004996b0(CStrList *this_ptr,int insert_index,CStrList *source_list)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; CStrList *       Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   insert_index
+; CStrList *       Stack[0xc]:4   source_list
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_allocate_FUN_00499600

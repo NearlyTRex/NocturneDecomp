@@ -16,7 +16,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_archive_FUN_004a8270(CGargoyle *this_pt
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(model_ptr,"modelName");
   core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
-  if (INT_005b9624 < 2) {
+  if (g_CGargoyleClassVersion < 2) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->stone_red,"stoneRed");

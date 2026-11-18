@@ -2,31 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 102,
+    "complexity_score": 76,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "pseudocode_lines": 46,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 146
+    "total_lines": 145
   },
   "cross_references": [
     {
-      "addr": "00559c10",
-      "from_addr": "00559c63",
-      "name": "core_setdir.cpp_FUN_00559c10",
+      "addr": "00559f80",
+      "from_addr": "0055ae07",
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00559f80",
-      "from_addr": "0055ae07",
-      "name": "core_setdir.cpp_FUN_00559f80",
+      "addr": "00559730",
+      "from_addr": "00559c63",
+      "name": "core_setdir.cpp_calculateActorVisibility_FUN_00559730",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +45,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00403920",
@@ -74,50 +73,50 @@
     },
     {
       "addr": "01bc1238",
-      "name": "DAT_01bc1238",
-      "type": "undefined4",
+      "name": "g_RenderPixelCounter",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bc1240",
-      "name": "DAT_01bc1240",
-      "type": "undefined4",
+      "name": "g_VertexIndexBuffer",
+      "type": "int[16]",
       "value": null
     },
     {
       "addr": "01bc1244",
-      "name": "DAT_01bc1244",
+      "name": "g_VertexIndexBuffer[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c4f02c",
-      "name": "DAT_01c4f02c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c51d14",
-      "name": "DAT_01c51d14",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c51d18",
-      "name": "DAT_01c51d18",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     }
   ],
@@ -127,7 +126,7 @@
       {
         "call_addr": "0055ae07",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00559f80",
+        "caller": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_00559f80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -138,7 +137,7 @@
       {
         "call_addr": "00559c63",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00559c10",
+        "caller": "core_setdir.cpp_calculateActorVisibility_FUN_00559730",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -242,32 +241,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_01bc1240",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bc1240 + iVar3) = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_01bc1240",
-      "severity": "mild",
-      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 27,
+      "line": 25,
       "match": "pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;",

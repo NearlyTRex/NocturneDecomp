@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x30]:4  local_30
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a47a0
+;   int g_DefaultStreamBufferSize = 0x1a4
 ;
 ; Called Functions:
 ;   crt_fstream.cpp_ifstream_ctor_FUN_00565072
@@ -33,7 +33,7 @@ section .text
     PUSH EBP                            ; 004391b3
     SUB ESP,0x100                       ; 004391b4
     MOV EBX,dword ptr [ESP + 0x114]     ; 004391ba
-    MOV EDX,dword ptr [0x005a47a0]      ; 004391c1 | DAT_005a47a0
+    MOV EDX,dword ptr [0x005a47a0]      ; 004391c1 | g_DefaultStreamBufferSize
     PUSH EDX                            ; 004391c7
     PUSH 0x101                          ; 004391c8
     MOV ECX,dword ptr [ESP + 0x120]     ; 004391cd
@@ -48,7 +48,7 @@ section .text
     TEST ESI,ESI                        ; 004391e8
     JNZ 0x0043929d                      ; 004391ea
         ;   XREF to: 0043929d (CONDITIONAL_JUMP)  ; LAB_0043929d
-    MOV EDI,dword ptr [0x005a47a0]      ; 004391f0 | DAT_005a47a0
+    MOV EDI,dword ptr [0x005a47a0]      ; 004391f0 | g_DefaultStreamBufferSize
     PUSH EDI                            ; 004391f6
     PUSH 0x112                          ; 004391f7
     MOV EBP,dword ptr [ESP + 0x124]     ; 004391fc

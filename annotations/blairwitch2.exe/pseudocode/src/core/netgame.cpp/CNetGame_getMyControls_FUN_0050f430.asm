@@ -13,12 +13,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e1116
 ;   TerminatedCString s_CNetGame_getMyControls_I_005e112a
-;   undefined4 DAT_01cedef4
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01cedef4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     ADD EAX,0x4c                        ; 0050f451
     POP EBX                             ; 0050f454
     RET                                 ; 0050f455
-    MOV EAX,[0x01cedef4]                ; 0050f456 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 0050f456 | g_INT_01cedef4
         ;   Label: LAB_0050f456
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 0050f45b
     ADD EAX,0x10a68                     ; 0050f462
@@ -52,10 +52,10 @@ section .text
     MOV ESI,0x5e1116                    ; 0050f46b | = "..\\core\\netgame.cpp"
     MOV EDI,0xa0f                       ; 0050f470
     PUSH 0x5e112a                       ; 0050f475 | = "CNetGame::getMyControls - I'm not in ..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0050f47a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0050f480 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0050f486
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ESI      ; 0050f47a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 0050f480 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f486
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f48b
     POP ESI                             ; 0050f48e
     POP EDI                             ; 0050f48f

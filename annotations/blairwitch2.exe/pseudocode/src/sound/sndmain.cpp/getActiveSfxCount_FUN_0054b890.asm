@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0263cf80
-;   undefined4 DAT_0264901c
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   undefined4 g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
+;   int g_SoundLockCount
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;
 ; *****************************************************************************
 
@@ -19,10 +19,10 @@ section .text
 
     PUSH ESI                            ; 0054b890
         ;   Label: sound_sndmain.cpp_getActiveSfxCount_FUN_0054b890
-    CMP dword ptr [0x0264901c],0x0      ; 0054b891 | DAT_0264901c
+    CMP dword ptr [0x0264901c],0x0      ; 0054b891 | g_SoundLockCount
     JLE 0x0054b8c2                      ; 0054b898
         ;   XREF to: 0054b8c2 (CONDITIONAL_JUMP)  ; LAB_0054b8c2
-    MOV ESI,dword ptr [0x0263cf80]      ; 0054b89a | DAT_0263cf80
+    MOV ESI,dword ptr [0x0263cf80]      ; 0054b89a | g_CSfxSlot_ARRAY_0263cf1c[0].playback_state
         ;   Label: LAB_0054b89a
     XOR EAX,EAX                         ; 0054b8a0
     XOR EDX,EDX                         ; 0054b8a2
@@ -47,10 +47,10 @@ section .text
     MOV ECX,0x5e7a23                    ; 0054b8c3
     MOV EBX,0x249                       ; 0054b8c8
     PUSH 0x5e7a38                       ; 0054b8cd
-    MOV dword ptr [0x01d046a0],ECX      ; 0054b8d2 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0054b8d8 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0054b8de
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0054b8d2 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EBX      ; 0054b8d8 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054b8de
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054b8e3
     POP EBX                             ; 0054b8e6
     JMP 0x0054b89a                      ; 0054b8e7

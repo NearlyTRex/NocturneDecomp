@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,int render_pass)
 
 {
@@ -22,7 +20,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,in
   int local_20;
   int local_1c;
   
-  if (_DAT_02dd10cc == 0) {
+  if (g_CTerrainInstance.initialized == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30

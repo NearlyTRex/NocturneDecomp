@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal)
 
 {
@@ -59,21 +57,21 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFram
           local_24 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)
                            .base.type + local_28;
           pCVar1 = local_38 + *(int *)(local_24 + 0x18);
-          local_68.x = (float)pCVar1->x * _DAT_0059c064;
-          local_68.y = (float)pCVar1->y * _DAT_0059c064;
-          local_68.z = (float)pCVar1->z * _DAT_0059c064;
+          local_68.x = (float)pCVar1->x * 0.00390625f;
+          local_68.y = (float)pCVar1->y * 0.00390625f;
+          local_68.z = (float)pCVar1->z * 0.00390625f;
           pCVar1 = local_38 + *(int *)(local_24 + 0x24);
-          local_5c.x = (float)pCVar1->x * _DAT_0059c064;
-          local_5c.y = (float)pCVar1->y * _DAT_0059c064;
-          local_5c.z = (float)pCVar1->z * _DAT_0059c064;
+          local_5c.x = (float)pCVar1->x * 0.00390625f;
+          local_5c.y = (float)pCVar1->y * 0.00390625f;
+          local_5c.z = (float)pCVar1->z * 0.00390625f;
           iVar3 = 2;
           if (2 < *(int *)(local_24 + 4)) {
             local_1c = local_24 + 0x18;
             do {
               pCVar1 = local_38 + *(int *)(local_1c + 0x18);
-              local_44.x = (float)pCVar1->x * _DAT_0059c064;
-              local_44.y = (float)pCVar1->y * _DAT_0059c064;
-              local_44.z = (float)pCVar1->z * _DAT_0059c064;
+              local_44.x = (float)pCVar1->x * 0.00390625f;
+              local_44.y = (float)pCVar1->y * 0.00390625f;
+              local_44.z = (float)pCVar1->z * 0.00390625f;
               core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
                         (&local_d0,&local_68,&local_5c,&local_44);
               if (&local_5c != &local_44) {

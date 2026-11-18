@@ -40,7 +40,7 @@
 ;   double DOUBLE_0058219a = 0.5
 ;   double DOUBLE_005821a2 = 0.174532925194444
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 g_CLadderActorType_01cc30e8.name_hash
+;   undefined4 g_CLadderClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;
@@ -91,7 +91,7 @@ section .text
         ;   XREF to: 00498808 (UNCONDITIONAL_JUMP)  ; LAB_00498808
     MOV EBX,dword ptr [ESP + 0x84]      ; 00498832
         ;   Label: LAB_00498832
-    MOV EDX,dword ptr [0x01cc3120]      ; 00498839 | g_CLadderActorType_01cc30e8.name_hash
+    MOV EDX,dword ptr [0x01cc3120]      ; 00498839 | g_CLadderClassInfo.name_hash
     ADD EAX,EBX                         ; 0049883f
     PUSH EDX                            ; 00498841
     MOV EAX,dword ptr [EAX + 0x14cd70]  ; 00498842 | g_CDemonSetInstance.actors[0]

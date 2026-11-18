@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408cf0
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410040
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     PUSH EAX                            ; 004100c4
     LEA ESI,[EBP + -0x34]               ; 004100c5
     LEA EDI,[EBP + -0x1c]               ; 004100c8
-    CALL core_actor.cpp_FUN_00408cf0    ; 004100cb
-        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408cf0()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0 ; 004100cb
+        ;   XREF to: 00408cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408cf0(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     LEA ESI,[EBP + -0x34]               ; 004100d0
     MOVSD ES:EDI,ESI                    ; 004100d3
     MOVSD ES:EDI,ESI                    ; 004100d4

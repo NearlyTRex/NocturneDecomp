@@ -27,9 +27,9 @@
 ;   core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00452770 at 00452799
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ba10a
-;   undefined4 DAT_005ba10e
-;   undefined4 DAT_005ba112
+;   float g_IntersectionConstantNegTwo = -2
+;   float g_IntersectionConstantFour = 4
+;   float g_IntersectionConstantTwo = 2
 ;
 ; *****************************************************************************
 
@@ -214,14 +214,14 @@ section .text
     FMULP                               ; 0045266a
     FXCH ST4                            ; 0045266c
     FST float ptr [ESP + 0x38]          ; 0045266e
-    FMUL float ptr [0x005ba10e]         ; 00452672 | DAT_005ba10e
+    FMUL float ptr [0x005ba10e]         ; 00452672 | g_IntersectionConstantFour
     FXCH ST4                            ; 00452678
     FADDP ST3,ST0                       ; 0045267a
     FADDP                               ; 0045267c
     FLD float ptr [EDX + 0x20]          ; 0045267e
     FMUL ST0                            ; 00452681
     FXCH                                ; 00452683
-    FMUL float ptr [0x005ba10a]         ; 00452685 | DAT_005ba10a
+    FMUL float ptr [0x005ba10a]         ; 00452685 | g_IntersectionConstantNegTwo
     FXCH                                ; 0045268b
     FSUBP ST2,ST0                       ; 0045268d
     FXCH ST2                            ; 0045268f
@@ -244,7 +244,7 @@ section .text
     FSQRT                               ; 004526ba
     FSUBP                               ; 004526bc
     FLD float ptr [ESP + 0x38]          ; 004526be
-    FMUL float ptr [0x005ba112]         ; 004526c2 | DAT_005ba112
+    FMUL float ptr [0x005ba112]         ; 004526c2 | g_IntersectionConstantTwo
     FDIVP                               ; 004526c8
     FLDZ                                ; 004526ca
     FXCH                                ; 004526cc

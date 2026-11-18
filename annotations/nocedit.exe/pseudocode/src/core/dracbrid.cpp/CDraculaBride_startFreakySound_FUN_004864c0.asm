@@ -41,19 +41,19 @@
 ; Referenced Globals:
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   int[8] g_DraculaBrideIndices
-;   SFreaky[6] SFreaky_ARRAY_02c6d0c0
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].position.x
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].position.y
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].position.z
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].tangent.x
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].tangent.y
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].tangent.z
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].t
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].control_points[0].x
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].control_points[0].y
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].control_points[0].z
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
-;   undefined4 SFreaky_ARRAY_02c6d0c0[0].control_points[1].y
+;   SFreaky[6] g_FreakySounds
+;   undefined4 g_FreakySounds[0].position.x
+;   undefined4 g_FreakySounds[0].position.y
+;   undefined4 g_FreakySounds[0].position.z
+;   undefined4 g_FreakySounds[0].tangent.x
+;   undefined4 g_FreakySounds[0].tangent.y
+;   undefined4 g_FreakySounds[0].tangent.z
+;   undefined4 g_FreakySounds[0].t
+;   undefined4 g_FreakySounds[0].control_points[0].x
+;   undefined4 g_FreakySounds[0].control_points[0].y
+;   undefined4 g_FreakySounds[0].control_points[0].z
+;   undefined4 g_FreakySounds[0].control_points[1].x
+;   undefined4 g_FreakySounds[0].control_points[1].y
 ;   ... and 13 more
 ;
 ; Called Functions:
@@ -97,9 +97,9 @@ section .text
     TEST EAX,EAX                        ; 004864fc
     JZ 0x00486521                       ; 004864fe
         ;   XREF to: 00486521 (CONDITIONAL_JUMP)  ; LAB_00486521
-    MOV EBX,0x2c6d0c0                   ; 00486500 | SFreaky_ARRAY_02c6d0c0
+    MOV EBX,0x2c6d0c0                   ; 00486500 | g_FreakySounds
     XOR ESI,ESI                         ; 00486505
-    MOV EDX,dword ptr [EBX]             ; 00486507 | SFreaky_ARRAY_02c6d0c0 | SFreaky_ARRAY_02c6d0c0[1].sfx_handle
+    MOV EDX,dword ptr [EBX]             ; 00486507 | g_FreakySounds | g_FreakySounds[1].sfx_handle
         ;   Label: LAB_00486507
     PUSH EDX                            ; 00486509
     MOV EDI,EBX                         ; 0048650a
@@ -110,7 +110,7 @@ section .text
     JZ 0x0048652c                       ; 00486516
         ;   XREF to: 0048652c (CONDITIONAL_JUMP)  ; LAB_0048652c
     INC ESI                             ; 00486518
-    ADD EBX,0x54                        ; 00486519 | SFreaky_ARRAY_02c6d0c0[1].sfx_handle
+    ADD EBX,0x54                        ; 00486519 | g_FreakySounds[1].sfx_handle
     CMP ESI,0x6                         ; 0048651c
     JL 0x00486507                       ; 0048651f
         ;   XREF to: 00486507 (CONDITIONAL_JUMP)  ; LAB_00486507
@@ -124,7 +124,7 @@ section .text
     MOV ECX,dword ptr [0x02c6d0a0]      ; 0048652c | g_DraculaBrideIndices
         ;   Label: LAB_0048652c
     PUSH ECX                            ; 00486532
-    MOV dword ptr [EBX + 0x1c],EAX      ; 00486533 | SFreaky_ARRAY_02c6d0c0[0].t
+    MOV dword ptr [EBX + 0x1c],EAX      ; 00486533 | g_FreakySounds[0].t
     LEA EAX,[ESP + 0x134]               ; 00486536
     PUSH EAX                            ; 0048653d
     LEA EAX,[EBP + 0x158]               ; 0048653e
@@ -136,7 +136,7 @@ section .text
     LEA EAX,[ESP + 0x128]               ; 0048654e
     PUSH EAX                            ; 00486555
     PUSH EBP                            ; 00486556
-    ADD EBX,0x2c                        ; 00486557 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
+    ADD EBX,0x2c                        ; 00486557 | g_FreakySounds[0].control_points[1].x
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0048655a
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0048655f
@@ -144,21 +144,21 @@ section .text
     JZ 0x00486576                       ; 00486564
         ;   XREF to: 00486576 (CONDITIONAL_JUMP)  ; LAB_00486576
     MOV EDX,dword ptr [EAX]             ; 00486566
-    MOV dword ptr [EBX],EDX             ; 00486568 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
+    MOV dword ptr [EBX],EDX             ; 00486568 | g_FreakySounds[0].control_points[1].x
     MOV EDX,dword ptr [EAX + 0x4]       ; 0048656a
-    MOV dword ptr [EBX + 0x4],EDX       ; 0048656d | SFreaky_ARRAY_02c6d0c0[0].control_points[1].y
+    MOV dword ptr [EBX + 0x4],EDX       ; 0048656d | g_FreakySounds[0].control_points[1].y
     MOV EDX,dword ptr [EAX + 0x8]       ; 00486570
-    MOV dword ptr [EBX + 0x8],EDX       ; 00486573 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].z
-    LEA EBX,[EDI + 0x2c]                ; 00486576 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
+    MOV dword ptr [EBX + 0x8],EDX       ; 00486573 | g_FreakySounds[0].control_points[1].z
+    LEA EBX,[EDI + 0x2c]                ; 00486576 | g_FreakySounds[0].control_points[1].x
         ;   Label: LAB_00486576
-    MOV EAX,dword ptr [EBX]             ; 00486579 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
+    MOV EAX,dword ptr [EBX]             ; 00486579 | g_FreakySounds[0].control_points[1].x
     MOV dword ptr [ESP + 0x148],EAX     ; 0048657b
-    LEA EAX,[EBX + 0x4]                 ; 00486582 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].y
-    MOV EAX,dword ptr [EAX]             ; 00486585 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].y
+    LEA EAX,[EBX + 0x4]                 ; 00486582 | g_FreakySounds[0].control_points[1].y
+    MOV EAX,dword ptr [EAX]             ; 00486585 | g_FreakySounds[0].control_points[1].y
     MOV dword ptr [ESP + 0x14c],EAX     ; 00486587
-    LEA EAX,[EBX + 0x8]                 ; 0048658e | SFreaky_ARRAY_02c6d0c0[0].control_points[1].z
+    LEA EAX,[EBX + 0x8]                 ; 0048658e | g_FreakySounds[0].control_points[1].z
     PUSH 0x40a00000                     ; 00486591
-    MOV EAX,dword ptr [EAX]             ; 00486596 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].z
+    MOV EAX,dword ptr [EAX]             ; 00486596 | g_FreakySounds[0].control_points[1].z
     PUSH 0xc0a00000                     ; 00486598
     MOV dword ptr [ESP + 0x158],EAX     ; 0048659d
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004865a4
@@ -193,28 +193,28 @@ section .text
     MOV dword ptr [ESP + 0x104],EAX     ; 0048663c
     LEA EAX,[ESP + 0x148]               ; 00486643
     MOV EAX,dword ptr [EAX + 0x8]       ; 0048664a
-    LEA EBX,[EDI + 0x20]                ; 0048664d | SFreaky_ARRAY_02c6d0c0[0].control_points[0].x
+    LEA EBX,[EDI + 0x20]                ; 0048664d | g_FreakySounds[0].control_points[0].x
     MOV dword ptr [ESP + 0x108],EAX     ; 00486650
     LEA EAX,[ESP + 0x100]               ; 00486657
     CMP EBX,EAX                         ; 0048665e
     JZ 0x0048667f                       ; 00486660
         ;   XREF to: 0048667f (CONDITIONAL_JUMP)  ; LAB_0048667f
     MOV EAX,dword ptr [ESP + 0x100]     ; 00486662
-    MOV dword ptr [EBX],EAX             ; 00486669 | SFreaky_ARRAY_02c6d0c0[0].control_points[0].x
+    MOV dword ptr [EBX],EAX             ; 00486669 | g_FreakySounds[0].control_points[0].x
     MOV EAX,dword ptr [ESP + 0x104]     ; 0048666b
-    MOV dword ptr [EBX + 0x4],EAX       ; 00486672 | SFreaky_ARRAY_02c6d0c0[0].control_points[0].y
+    MOV dword ptr [EBX + 0x4],EAX       ; 00486672 | g_FreakySounds[0].control_points[0].y
     MOV EAX,dword ptr [ESP + 0x108]     ; 00486675
-    MOV dword ptr [EBX + 0x8],EAX       ; 0048667c | SFreaky_ARRAY_02c6d0c0[0].control_points[0].z
-    LEA EBX,[EDI + 0x2c]                ; 0048667f | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
+    MOV dword ptr [EBX + 0x8],EAX       ; 0048667c | g_FreakySounds[0].control_points[0].z
+    LEA EBX,[EDI + 0x2c]                ; 0048667f | g_FreakySounds[0].control_points[1].x
         ;   Label: LAB_0048667f
-    MOV EAX,dword ptr [EBX]             ; 00486682 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
+    MOV EAX,dword ptr [EBX]             ; 00486682 | g_FreakySounds[0].control_points[1].x
     MOV dword ptr [ESP + 0xf4],EAX      ; 00486684
-    LEA EAX,[EBX + 0x4]                 ; 0048668b | SFreaky_ARRAY_02c6d0c0[0].control_points[1].y
-    MOV EAX,dword ptr [EAX]             ; 0048668e | SFreaky_ARRAY_02c6d0c0[0].control_points[1].y
+    LEA EAX,[EBX + 0x4]                 ; 0048668b | g_FreakySounds[0].control_points[1].y
+    MOV EAX,dword ptr [EAX]             ; 0048668e | g_FreakySounds[0].control_points[1].y
     MOV dword ptr [ESP + 0xf8],EAX      ; 00486690
-    LEA EAX,[EBX + 0x8]                 ; 00486697 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].z
+    LEA EAX,[EBX + 0x8]                 ; 00486697 | g_FreakySounds[0].control_points[1].z
     PUSH 0x40a00000                     ; 0048669a
-    MOV EAX,dword ptr [EAX]             ; 0048669f | SFreaky_ARRAY_02c6d0c0[0].control_points[1].z
+    MOV EAX,dword ptr [EAX]             ; 0048669f | g_FreakySounds[0].control_points[1].z
     PUSH 0xc0a00000                     ; 004866a1
     MOV dword ptr [ESP + 0x104],EAX     ; 004866a6
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004866ad
@@ -249,18 +249,18 @@ section .text
     MOV dword ptr [ESP + 0x11c],EAX     ; 00486745
     LEA EAX,[ESP + 0xf4]                ; 0048674c
     MOV EAX,dword ptr [EAX + 0x8]       ; 00486753
-    LEA EBX,[EDI + 0x38]                ; 00486756 | SFreaky_ARRAY_02c6d0c0[0].control_points[2].x
+    LEA EBX,[EDI + 0x38]                ; 00486756 | g_FreakySounds[0].control_points[2].x
     MOV dword ptr [ESP + 0x120],EAX     ; 00486759
     LEA EAX,[ESP + 0x118]               ; 00486760
     CMP EBX,EAX                         ; 00486767
     JZ 0x00486788                       ; 00486769
         ;   XREF to: 00486788 (CONDITIONAL_JUMP)  ; LAB_00486788
     MOV EAX,dword ptr [ESP + 0x118]     ; 0048676b
-    MOV dword ptr [EBX],EAX             ; 00486772 | SFreaky_ARRAY_02c6d0c0[0].control_points[2].x
+    MOV dword ptr [EBX],EAX             ; 00486772 | g_FreakySounds[0].control_points[2].x
     MOV EAX,dword ptr [ESP + 0x11c]     ; 00486774
-    MOV dword ptr [EBX + 0x4],EAX       ; 0048677b | SFreaky_ARRAY_02c6d0c0[0].control_points[2].y
+    MOV dword ptr [EBX + 0x4],EAX       ; 0048677b | g_FreakySounds[0].control_points[2].y
     MOV EAX,dword ptr [ESP + 0x120]     ; 0048677e
-    MOV dword ptr [EBX + 0x8],EAX       ; 00486785 | SFreaky_ARRAY_02c6d0c0[0].control_points[2].z
+    MOV dword ptr [EBX + 0x8],EAX       ; 00486785 | g_FreakySounds[0].control_points[2].z
     MOV EAX,[0x032758e8]                ; 00486788 | g_CDemonCameraInstance.base.position
         ;   Label: LAB_00486788
     MOV dword ptr [ESP + 0x10c],EAX     ; 0048678d
@@ -304,39 +304,39 @@ section .text
     MOV dword ptr [ESP + 0x140],EAX     ; 00486854
     LEA EAX,[ESP + 0x10c]               ; 0048685b
     MOV EAX,dword ptr [EAX + 0x8]       ; 00486862
-    LEA EBX,[EDI + 0x44]                ; 00486865 | SFreaky_ARRAY_02c6d0c0[0].control_points[3].x
+    LEA EBX,[EDI + 0x44]                ; 00486865 | g_FreakySounds[0].control_points[3].x
     MOV dword ptr [ESP + 0x144],EAX     ; 00486868
     LEA EAX,[ESP + 0x13c]               ; 0048686f
     CMP EBX,EAX                         ; 00486876
     JZ 0x00486897                       ; 00486878
         ;   XREF to: 00486897 (CONDITIONAL_JUMP)  ; LAB_00486897
     MOV EAX,dword ptr [ESP + 0x13c]     ; 0048687a
-    MOV dword ptr [EBX],EAX             ; 00486881 | SFreaky_ARRAY_02c6d0c0[0].control_points[3].x
+    MOV dword ptr [EBX],EAX             ; 00486881 | g_FreakySounds[0].control_points[3].x
     MOV EAX,dword ptr [ESP + 0x140]     ; 00486883
-    MOV dword ptr [EBX + 0x4],EAX       ; 0048688a | SFreaky_ARRAY_02c6d0c0[0].control_points[3].y
+    MOV dword ptr [EBX + 0x4],EAX       ; 0048688a | g_FreakySounds[0].control_points[3].y
     MOV EAX,dword ptr [ESP + 0x144]     ; 0048688d
-    MOV dword ptr [EBX + 0x8],EAX       ; 00486894 | SFreaky_ARRAY_02c6d0c0[0].control_points[3].z
+    MOV dword ptr [EBX + 0x8],EAX       ; 00486894 | g_FreakySounds[0].control_points[3].z
     PUSH 0x0                            ; 00486897
         ;   Label: LAB_00486897
     LEA EAX,[ESP + 0xcc]                ; 00486899
-    PUSH dword ptr [EDI + 0x1c]         ; 004868a0 | SFreaky_ARRAY_02c6d0c0[0].t
+    PUSH dword ptr [EDI + 0x1c]         ; 004868a0 | g_FreakySounds[0].t
     PUSH EAX                            ; 004868a3
     CALL core_spline.cpp_computeSplineBasis_FUN_005b90a0 ; 004868a4
         ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_005b90a0(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 004868a9
-    LEA EAX,[EDI + 0x44]                ; 004868ac | SFreaky_ARRAY_02c6d0c0[0].control_points[3].x
-    PUSH EAX                            ; 004868af | SFreaky_ARRAY_02c6d0c0[0].control_points[3].x
-    LEA EAX,[EDI + 0x38]                ; 004868b0 | SFreaky_ARRAY_02c6d0c0[0].control_points[2].x
-    PUSH EAX                            ; 004868b3 | SFreaky_ARRAY_02c6d0c0[0].control_points[2].x
-    LEA EAX,[EDI + 0x2c]                ; 004868b4 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
-    PUSH EAX                            ; 004868b7 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
-    LEA EAX,[EDI + 0x20]                ; 004868b8 | SFreaky_ARRAY_02c6d0c0[0].control_points[0].x
-    PUSH EAX                            ; 004868bb | SFreaky_ARRAY_02c6d0c0[0].control_points[0].x
+    LEA EAX,[EDI + 0x44]                ; 004868ac | g_FreakySounds[0].control_points[3].x
+    PUSH EAX                            ; 004868af | g_FreakySounds[0].control_points[3].x
+    LEA EAX,[EDI + 0x38]                ; 004868b0 | g_FreakySounds[0].control_points[2].x
+    PUSH EAX                            ; 004868b3 | g_FreakySounds[0].control_points[2].x
+    LEA EAX,[EDI + 0x2c]                ; 004868b4 | g_FreakySounds[0].control_points[1].x
+    PUSH EAX                            ; 004868b7 | g_FreakySounds[0].control_points[1].x
+    LEA EAX,[EDI + 0x20]                ; 004868b8 | g_FreakySounds[0].control_points[0].x
+    PUSH EAX                            ; 004868bb | g_FreakySounds[0].control_points[0].x
     LEA EAX,[ESP + 0xf8]                ; 004868bc
     PUSH EAX                            ; 004868c3
     LEA EAX,[ESP + 0xdc]                ; 004868c4
     PUSH EAX                            ; 004868cb
-    LEA EBX,[EDI + 0x4]                 ; 004868cc | SFreaky_ARRAY_02c6d0c0[0].position.x
+    LEA EBX,[EDI + 0x4]                 ; 004868cc | g_FreakySounds[0].position.x
     CALL core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0 ; 004868cf
         ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 004868d4
@@ -344,25 +344,25 @@ section .text
     JZ 0x004868eb                       ; 004868d9
         ;   XREF to: 004868eb (CONDITIONAL_JUMP)  ; LAB_004868eb
     MOV EDX,dword ptr [EAX]             ; 004868db
-    MOV dword ptr [EBX],EDX             ; 004868dd | SFreaky_ARRAY_02c6d0c0[0].position.x
+    MOV dword ptr [EBX],EDX             ; 004868dd | g_FreakySounds[0].position.x
     MOV EDX,dword ptr [EAX + 0x4]       ; 004868df
-    MOV dword ptr [EBX + 0x4],EDX       ; 004868e2 | SFreaky_ARRAY_02c6d0c0[0].position.y
+    MOV dword ptr [EBX + 0x4],EDX       ; 004868e2 | g_FreakySounds[0].position.y
     MOV EDX,dword ptr [EAX + 0x8]       ; 004868e5
-    MOV dword ptr [EBX + 0x8],EDX       ; 004868e8 | SFreaky_ARRAY_02c6d0c0[0].position.z
-    LEA EAX,[EDI + 0x44]                ; 004868eb | SFreaky_ARRAY_02c6d0c0[0].control_points[3].x
+    MOV dword ptr [EBX + 0x8],EDX       ; 004868e8 | g_FreakySounds[0].position.z
+    LEA EAX,[EDI + 0x44]                ; 004868eb | g_FreakySounds[0].control_points[3].x
         ;   Label: LAB_004868eb
-    PUSH EAX                            ; 004868ee | SFreaky_ARRAY_02c6d0c0[0].control_points[3].x
-    LEA EAX,[EDI + 0x38]                ; 004868ef | SFreaky_ARRAY_02c6d0c0[0].control_points[2].x
-    PUSH EAX                            ; 004868f2 | SFreaky_ARRAY_02c6d0c0[0].control_points[2].x
-    LEA EAX,[EDI + 0x2c]                ; 004868f3 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
-    PUSH EAX                            ; 004868f6 | SFreaky_ARRAY_02c6d0c0[0].control_points[1].x
-    LEA EAX,[EDI + 0x20]                ; 004868f7 | SFreaky_ARRAY_02c6d0c0[0].control_points[0].x
-    PUSH EAX                            ; 004868fa | SFreaky_ARRAY_02c6d0c0[0].control_points[0].x
+    PUSH EAX                            ; 004868ee | g_FreakySounds[0].control_points[3].x
+    LEA EAX,[EDI + 0x38]                ; 004868ef | g_FreakySounds[0].control_points[2].x
+    PUSH EAX                            ; 004868f2 | g_FreakySounds[0].control_points[2].x
+    LEA EAX,[EDI + 0x2c]                ; 004868f3 | g_FreakySounds[0].control_points[1].x
+    PUSH EAX                            ; 004868f6 | g_FreakySounds[0].control_points[1].x
+    LEA EAX,[EDI + 0x20]                ; 004868f7 | g_FreakySounds[0].control_points[0].x
+    PUSH EAX                            ; 004868fa | g_FreakySounds[0].control_points[0].x
     LEA EAX,[ESP + 0x164]               ; 004868fb
     PUSH EAX                            ; 00486902
     LEA EAX,[ESP + 0xdc]                ; 00486903
     PUSH EAX                            ; 0048690a
-    LEA EBX,[EDI + 0x10]                ; 0048690b | SFreaky_ARRAY_02c6d0c0[0].tangent.x
+    LEA EBX,[EDI + 0x10]                ; 0048690b | g_FreakySounds[0].tangent.x
     CALL core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490 ; 0048690e
         ;   XREF to: 005b9490 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 00486913
@@ -370,21 +370,21 @@ section .text
     JZ 0x0048692a                       ; 00486918
         ;   XREF to: 0048692a (CONDITIONAL_JUMP)  ; LAB_0048692a
     MOV EDX,dword ptr [EAX]             ; 0048691a
-    MOV dword ptr [EBX],EDX             ; 0048691c | SFreaky_ARRAY_02c6d0c0[0].tangent.x
+    MOV dword ptr [EBX],EDX             ; 0048691c | g_FreakySounds[0].tangent.x
     MOV EDX,dword ptr [EAX + 0x4]       ; 0048691e
-    MOV dword ptr [EBX + 0x4],EDX       ; 00486921 | SFreaky_ARRAY_02c6d0c0[0].tangent.y
+    MOV dword ptr [EBX + 0x4],EDX       ; 00486921 | g_FreakySounds[0].tangent.y
     MOV EDX,dword ptr [EAX + 0x8]       ; 00486924
-    MOV dword ptr [EBX + 0x8],EDX       ; 00486927 | SFreaky_ARRAY_02c6d0c0[0].tangent.z
+    MOV dword ptr [EBX + 0x8],EDX       ; 00486927 | g_FreakySounds[0].tangent.z
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 0048692a
         ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()
         ;   Label: LAB_0048692a
-    LEA EAX,[EDI + 0x4]                 ; 0048692f | SFreaky_ARRAY_02c6d0c0[0].position.x
-    PUSH EAX                            ; 00486932 | SFreaky_ARRAY_02c6d0c0[0].position.x
+    LEA EAX,[EDI + 0x4]                 ; 0048692f | g_FreakySounds[0].position.x
+    PUSH EAX                            ; 00486932 | g_FreakySounds[0].position.x
     CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940 ; 00486933
         ;   XREF to: 005a8940 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 00486938
-    LEA EAX,[EDI + 0x10]                ; 0048693b | SFreaky_ARRAY_02c6d0c0[0].tangent.x
-    PUSH EAX                            ; 0048693e | SFreaky_ARRAY_02c6d0c0[0].tangent.x
+    LEA EAX,[EDI + 0x10]                ; 0048693b | g_FreakySounds[0].tangent.x
+    PUSH EAX                            ; 0048693e | g_FreakySounds[0].tangent.x
     CALL sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00 ; 0048693f
         ;   XREF to: 005a8a00 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00(CVector3f * velocity_source_ptr)
     ADD ESP,0x4                         ; 00486944
@@ -406,10 +406,10 @@ section .text
     CALL sound_sndmain.cpp_startSfx_FUN_005a8e90 ; 00486975
         ;   XREF to: 005a8e90 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005a8e90(char * filename)
     ADD ESP,0x4                         ; 0048697a
-    MOV dword ptr [EDI],EAX             ; 0048697d | SFreaky_ARRAY_02c6d0c0
+    MOV dword ptr [EDI],EAX             ; 0048697d | g_FreakySounds
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 0048697f
         ;   XREF to: 005a8cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
-    MOV dword ptr [EDI + 0x50],EBP      ; 00486984 | SFreaky_ARRAY_02c6d0c0[0].owner
+    MOV dword ptr [EDI + 0x50],EBP      ; 00486984 | g_FreakySounds[0].owner
     ADD ESP,0x164                       ; 00486987
     POP EBP                             ; 0048698d
     POP EDI                             ; 0048698e

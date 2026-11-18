@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004f0280(void)
 
 {
   engine_matrix_c_matrixPush_FUN_004e9710();
-  _DAT_01c38b6c = -_DAT_01c38b6c;
-  _DAT_01c38b90 = -_DAT_01c38b90;
-  _DAT_01c38b9c = -_DAT_01c38b9c;
-  _DAT_01c38ba0 = -_DAT_01c38ba0;
-  _DAT_01c38ba4 = -_DAT_01c38ba4;
+  g_RelativeX = -g_RelativeX;
+  g_LightDirectionX = -g_LightDirectionX;
+  g_INT_01c38b9c = -g_INT_01c38b9c;
+  g_INT_01c38ba0 = -g_INT_01c38ba0;
+  g_INT_01c38ba4 = -g_INT_01c38ba4;
   return;
 }

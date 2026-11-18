@@ -223,7 +223,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 005b1ad4 | g_CGamePtr
     ADD ESP,0x48                        ; 005b1ad9
     MOV EDX,dword ptr [EAX + 0x240]     ; 005b1adc | g_CGameInstance.goggles_active
-    MOV dword ptr [0x03f6af7c],EBX      ; 005b1ae2 | CVector3f_03f6af7c
+    MOV dword ptr [0x03f6af7c],EBX      ; 005b1ae2 | g_WindVolume
     TEST EDX,EDX                        ; 005b1ae8
     JZ 0x005b1b91                       ; 005b1aea
         ;   XREF to: 005b1b91 (CONDITIONAL_JUMP)  ; LAB_005b1b91
@@ -345,9 +345,9 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 005b1c84
         ;   Label: LAB_005b1c84
     FMUL float ptr [0x0065252e]         ; 005b1c88 | FLOAT_0065252e
-    FADD float ptr [0x03f6af7c]         ; 005b1c8e | CVector3f_03f6af7c
+    FADD float ptr [0x03f6af7c]         ; 005b1c8e | g_WindVolume
     ADD EBX,0x2                         ; 005b1c94
-    FSTP float ptr [0x03f6af7c]         ; 005b1c97 | CVector3f_03f6af7c
+    FSTP float ptr [0x03f6af7c]         ; 005b1c97 | g_WindVolume
     CMP EBX,0x21                        ; 005b1c9d
     JNZ 0x005b1bd1                      ; 005b1ca0
         ;   XREF to: 005b1bd1 (CONDITIONAL_JUMP)  ; LAB_005b1bd1
@@ -357,20 +357,20 @@ section .text
     CMP EBX,0x21                        ; 005b1cb7
     JNZ 0x005b1bbe                      ; 005b1cba
         ;   XREF to: 005b1bbe (CONDITIONAL_JUMP)  ; LAB_005b1bbe
-    FLD float ptr [0x03f6af7c]          ; 005b1cc0 | CVector3f_03f6af7c
+    FLD float ptr [0x03f6af7c]          ; 005b1cc0 | g_WindVolume
         ;   Label: LAB_005b1cc0
     FMUL ST0                            ; 005b1cc6
-    FST float ptr [0x03f6af7c]          ; 005b1cc8 | CVector3f_03f6af7c
+    FST float ptr [0x03f6af7c]          ; 005b1cc8 | g_WindVolume
     FLDZ                                ; 005b1cce
     FCOMPP                              ; 005b1cd0
     FNSTSW AX                           ; 005b1cd2
     SAHF                                ; 005b1cd4
     JNC 0x005b1ce9                      ; 005b1cd5
         ;   XREF to: 005b1ce9 (CONDITIONAL_JUMP)  ; LAB_005b1ce9
-    FLD float ptr [0x03f6af7c]          ; 005b1cd7 | CVector3f_03f6af7c
+    FLD float ptr [0x03f6af7c]          ; 005b1cd7 | g_WindVolume
     FADD float ptr [0x00652532]         ; 005b1cdd | FLOAT_00652532
-    FSTP float ptr [0x03f6af7c]         ; 005b1ce3 | CVector3f_03f6af7c
-    FLD float ptr [0x03f6af7c]          ; 005b1ce9 | CVector3f_03f6af7c
+    FSTP float ptr [0x03f6af7c]         ; 005b1ce3 | g_WindVolume
+    FLD float ptr [0x03f6af7c]          ; 005b1ce9 | g_WindVolume
         ;   Label: LAB_005b1ce9
     FLD1                                ; 005b1cef
     FCOMPP                              ; 005b1cf1
@@ -378,7 +378,7 @@ section .text
     SAHF                                ; 005b1cf5
     JNC 0x005b1af0                      ; 005b1cf6
         ;   XREF to: 005b1af0 (CONDITIONAL_JUMP)  ; LAB_005b1af0
-    MOV dword ptr [0x03f6af7c],0x3f800000 ; 005b1cfc | CVector3f_03f6af7c
+    MOV dword ptr [0x03f6af7c],0x3f800000 ; 005b1cfc | g_WindVolume
     JMP 0x005b1af0                      ; 005b1d06
         ;   XREF to: 005b1af0 (UNCONDITIONAL_JUMP)  ; LAB_005b1af0
     LEA ECX,[EDX + 0xfffffd00]          ; 005b1d0b

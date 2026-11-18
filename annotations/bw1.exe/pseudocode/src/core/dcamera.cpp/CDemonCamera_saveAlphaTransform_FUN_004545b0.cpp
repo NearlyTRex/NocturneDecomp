@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0(CDemonCamera *this_ptr,int alpha_index)
 
 {
@@ -23,23 +21,23 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0(CDemo
   *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
   puVar1[(uint)bVar2 * -2 + 1] =
        *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  this_ptr->alpha_transform_matrices[0][alpha_index] = _DAT_01c51d5c;
-  this_ptr->alpha_transform_matrices[1][alpha_index] = _DAT_01c51d60;
-  this_ptr->alpha_transform_matrices[2][alpha_index] = _DAT_01c51d64;
-  this_ptr->alpha_transform_matrices[3][alpha_index] = _DAT_01c51d68;
-  this_ptr->alpha_transform_matrices[4][alpha_index] = _DAT_01c51d6c;
-  this_ptr->alpha_transform_matrices[5][alpha_index] = _DAT_01c51d70;
-  this_ptr->alpha_transform_matrices[6][alpha_index] = _DAT_01c51d74;
-  this_ptr->alpha_transform_matrices[7][alpha_index] = _DAT_01c51d78;
-  this_ptr->alpha_transform_matrices[8][alpha_index] = _DAT_01c51d7c;
-  this_ptr->alpha_transform_matrices[9][alpha_index] = _DAT_01d1dd18;
-  this_ptr->alpha_transform_matrices[10][alpha_index] = _DAT_01d1dd1c;
-  this_ptr->alpha_transform_matrices[0xb][alpha_index] = _DAT_01d1dd20;
-  this_ptr->alpha_transform_matrices[0xc][alpha_index] = _DAT_01d1dd24;
-  this_ptr->alpha_transform_matrices[0xd][alpha_index] = _DAT_01d1dd28;
-  this_ptr->alpha_transform_matrices[0xe][alpha_index] = _DAT_01d1dd2c;
-  this_ptr->alpha_transform_matrices[0xf][alpha_index] = _DAT_01d1dd30;
-  this_ptr->alpha_transform_matrices[0x10][alpha_index] = _DAT_01d1dd34;
-  this_ptr->alpha_transform_matrices[0x11][alpha_index] = _DAT_01d1dd38;
+  this_ptr->alpha_transform_matrices[0][alpha_index] = g_INT_01c51d5c;
+  this_ptr->alpha_transform_matrices[1][alpha_index] = g_INT_01c51d60;
+  this_ptr->alpha_transform_matrices[2][alpha_index] = g_INT_01c51d64;
+  this_ptr->alpha_transform_matrices[3][alpha_index] = g_INT_01c51d68;
+  this_ptr->alpha_transform_matrices[4][alpha_index] = g_INT_01c51d6c;
+  this_ptr->alpha_transform_matrices[5][alpha_index] = g_INT_01c51d70;
+  this_ptr->alpha_transform_matrices[6][alpha_index] = g_INT_01c51d74;
+  this_ptr->alpha_transform_matrices[7][alpha_index] = g_INT_01c51d78;
+  this_ptr->alpha_transform_matrices[8][alpha_index] = g_INT_01c51d7c;
+  this_ptr->alpha_transform_matrices[9][alpha_index] = g_INT_01d1dd18;
+  this_ptr->alpha_transform_matrices[10][alpha_index] = g_INT_01d1dd1c;
+  this_ptr->alpha_transform_matrices[0xb][alpha_index] = g_INT_01d1dd20;
+  this_ptr->alpha_transform_matrices[0xc][alpha_index] = g_INT_01d1dd24;
+  this_ptr->alpha_transform_matrices[0xd][alpha_index] = g_INT_01d1dd28;
+  this_ptr->alpha_transform_matrices[0xe][alpha_index] = g_INT_01d1dd2c;
+  this_ptr->alpha_transform_matrices[0xf][alpha_index] = g_INT_01d1dd30;
+  this_ptr->alpha_transform_matrices[0x10][alpha_index] = g_INT_01d1dd34;
+  this_ptr->alpha_transform_matrices[0x11][alpha_index] = g_INT_01d1dd38;
   return;
 }

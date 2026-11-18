@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 691,
-    "complexity_score": 930,
+    "complexity_score": 890,
     "cross_reference_count": 0,
     "function_call_count": 27,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 335,
-    "suspect_count": 54,
+    "suspect_count": 51,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
       "unrolled_memcpy",
       "unrolled_memset",
       "unrolled_strcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation",
       "warning_unreachable"
     ],
@@ -50,9 +48,19 @@
       "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80"
     },
     {
+      "addr": "0042d700",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_applyGravity_FUN_0042d700"
+    },
+    {
       "addr": "0042e120",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120"
+    },
+    {
+      "addr": "0042d750",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042d750"
     },
     {
       "addr": "0042e160",
@@ -75,24 +83,14 @@
       "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00432240"
     },
     {
+      "addr": "00435320",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_updateTurnSpeed_FUN_00435320"
+    },
+    {
       "addr": "0042ccf0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0"
-    },
-    {
-      "addr": "0042d700",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042d700"
-    },
-    {
-      "addr": "0042d750",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042d750"
-    },
-    {
-      "addr": "00435320",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00435320"
     },
     {
       "addr": "00441fa0",
@@ -178,8 +176,8 @@
   "globals": [
     {
       "addr": "005f7356",
-      "name": "s_s_confused_while_walking_005f7355+1",
-      "type": "undefined4",
+      "name": "s_s_confused_while_walking_005f7356",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -226,21 +224,21 @@
     },
     {
       "addr": "00606268",
-      "name": "DAT_00606268",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00606268",
+      "type": "float",
+      "value": "1.5"
     },
     {
       "addr": "00606274",
-      "name": "DAT_00606274",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00606274",
+      "type": "float",
+      "value": "15"
     },
     {
       "addr": "00606278",
-      "name": "DAT_00606278",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00606278",
+      "type": "float",
+      "value": "4"
     },
     {
       "addr": "00611100",
@@ -250,15 +248,15 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "007db5f0",
@@ -385,16 +383,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 4,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 28,
+      "line": 27,
       "match": "afStackY_1094",
       "severity": "moderate",
       "text": "float afStackY_1094 [1012];",
@@ -609,22 +599,6 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d2c900 assigned to bare local `pCVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 268,
-      "match": "0x1d2c900",
-      "severity": "moderate",
-      "text": "pCVar8 = 0x01D2C900;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1d2c900 assigned to bare local `pCVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 306,
-      "match": "0x1d2c900",
-      "severity": "moderate",
-      "text": "pCVar8 = 0x01D2C900;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 290,
       "match": "do {",
@@ -642,7 +616,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -650,7 +624,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 82,
+      "line": 81,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->hotdemon_model).accumulated_root_motion.z = 0.0;",

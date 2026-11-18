@@ -2,36 +2,39 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 87,
-    "cross_reference_count": 9,
+    "complexity_score": 26,
+    "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 110
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 109
   },
   "cross_references": [
     {
       "addr": "004eba50",
       "from_addr": "004eba88",
-      "name": "core_menu.cpp_FUN_004eba50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ebf10",
-      "from_addr": "004ec98e",
-      "name": "core_menu.cpp_FUN_004ebf10",
+      "name": "core_menu.cpp_adjustFixedPointSlider_FUN_004eba50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eb7c0",
       "from_addr": "004eb7f8",
       "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebf10",
+      "from_addr": "004ec98e",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_004ebf10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c060",
+      "from_addr": "0047c0af",
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0047c060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,15 +56,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047c0f0",
-      "from_addr": "0047c335",
-      "name": "shape_edittool.cpp_FUN_0047c0f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047b800",
       "from_addr": "0047b905",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c0f0",
+      "from_addr": "0047c335",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -87,7 +90,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "004ab560",
@@ -120,49 +123,49 @@
     },
     {
       "addr": "006141b8",
-      "name": "DAT_006141b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141b8",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "006141bc",
-      "name": "DAT_006141bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141bc",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c25590",
-      "name": "DAT_01c25590",
-      "type": "undefined4",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c25f78",
-      "name": "DAT_01c25f78",
-      "type": "undefined4",
+      "name": "g_EditorFontMaxCharWidth",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c25f7c",
-      "name": "DAT_01c25f7c",
-      "type": "undefined4",
+      "name": "g_INT_01c25f7c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 9,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "0047b905",
@@ -189,7 +192,7 @@
       {
         "call_addr": "0047c335",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047c0f0",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,7 +247,7 @@
       {
         "call_addr": "004ec98e",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ebf10",
+        "caller": "core_menu.cpp_configureGraphicsOptions_FUN_004ebf10",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -255,10 +258,21 @@
       {
         "call_addr": "004eba88",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eba50",
+        "caller": "core_menu.cpp_adjustFixedPointSlider_FUN_004eba50",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0047c0af",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0047c060",
+        "estimated_params": 5,
+        "instructions_analyzed": 16,
+        "method": "push_count",
         "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
@@ -369,46 +383,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "iVar1 = (DAT_006141b8 - min_width) / 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "iVar2 = (DAT_006141bc - min_height) / 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "(this_ptr,iVar1,iVar2,DAT_006141b8 - iVar1,DAT_006141bc - iVar2,text_content,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "(this_ptr,iVar1,iVar2,DAT_006141b8 - iVar1,DAT_006141bc - iVar2,text_content,",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

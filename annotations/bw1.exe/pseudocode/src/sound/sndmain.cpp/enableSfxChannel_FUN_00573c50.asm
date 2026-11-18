@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   enable_state
 ;
 ; XREF[6]:
-;   core_menu.cpp_FUN_0050ba70 at 0050c485
+;   core_menu.cpp_configureSoundOptions_FUN_0050ba70 at 0050c485
+;   core_sound.cpp_CSound_init_FUN_0057cc00 at 0057cca6
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d071
-;   core_sound.cpp_FUN_0057cc00 at 0057cca6
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0057cba0 at 0057cbb5
 ;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576326
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00574e00 at 00574e14
@@ -18,12 +18,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f402d
 ;   TerminatedCString s_enableSfxChannel_invalid_005f4042
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
-;   undefined4 DAT_02c74708
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
+;   undefined4 g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
 ;   sound_sndmain.cpp_unlockSound_FUN_00573e70
@@ -48,10 +48,10 @@ section .text
     MOV EDX,0x5f402d                    ; 00573c64 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0x1125                      ; 00573c69
     PUSH 0x5f4042                       ; 00573c6e | = "enableSfxChannel - invalid channel in..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00573c73 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00573c79 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00573c7f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00573c73 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00573c79 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00573c7f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00573c84
     MOV dword ptr [ESI*0x4 + 0x2c7fd10],EBX ; 00573c87
         ;   Label: LAB_00573c87
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 00573cc2 (CONDITIONAL_JUMP)  ; LAB_00573cc2
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00573c92
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
-    CMP ESI,dword ptr [EBX + 0x2c745ec] ; 00573c97 | DAT_02c74708
+    CMP ESI,dword ptr [EBX + 0x2c745ec] ; 00573c97 | g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
         ;   Label: LAB_00573c97
     JNZ 0x00573caf                      ; 00573c9d
         ;   XREF to: 00573caf (CONDITIONAL_JUMP)  ; LAB_00573caf

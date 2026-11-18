@@ -33,7 +33,7 @@
 ;   TerminatedCString s_Error_reading_s_0058c995
 ;   TerminatedCString s_support_newmsg_cpp_0058c9a6
 ;   TerminatedCString s_Too_many_messages_in_s_0058c9bc
-;   undefined4 DAT_005bdf50
+;   char[128] g_OSFontName
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -116,7 +116,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004ee062
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004ee067
-    PUSH 0x1d16810                      ; 004ee06a | DAT_01d16810
+    PUSH 0x1d16810                      ; 004ee06a | g_UseOSFonts
     PUSH 0x58c92b                       ; 004ee06f | = "%d\n"
     PUSH ESI                            ; 004ee074
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004ee075
@@ -133,7 +133,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004ee096
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004ee09b
-    PUSH 0x5bdf50                       ; 004ee09e | DAT_005bdf50
+    PUSH 0x5bdf50                       ; 004ee09e | g_OSFontName
     PUSH 0x58c962                       ; 004ee0a3 | = "\"%[^\"]\"\n"
     PUSH EBX                            ; 004ee0a8
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004ee0a9
@@ -155,7 +155,7 @@ section .text
     PUSH EBX                            ; 004ee0d5
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004ee0d6
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
-    MOV EBX,dword ptr [0x01d16818]      ; 004ee0db | DAT_01d16818
+    MOV EBX,dword ptr [0x01d16818]      ; 004ee0db | g_LocalizedStringCount
     ADD ESP,0x4                         ; 004ee0e1
     TEST EBX,EBX                        ; 004ee0e4
     JLE 0x004ee120                      ; 004ee0e6
@@ -164,9 +164,9 @@ section .text
     MOV EDX,0x1d271c0                   ; 004ee0ed
     SHL EBX,0x2                         ; 004ee0f2
     XOR EAX,EAX                         ; 004ee0f5
-    MOV dword ptr [EAX + 0x1d1681c],EBP ; 004ee0f7 | DAT_01d16820
+    MOV dword ptr [EAX + 0x1d1681c],EBP ; 004ee0f7 | g_MessageKeys[1]
         ;   Label: LAB_004ee0f7
-    MOV dword ptr [EAX + 0x1d16fec],EDX ; 004ee0fd | DAT_01d16ff0
+    MOV dword ptr [EAX + 0x1d16fec],EDX ; 004ee0fd | g_MessageTexts[1]
     ADD EAX,0x4                         ; 004ee103
     ADD EDX,0x100                       ; 004ee106
     ADD EBP,0x80                        ; 004ee10c
@@ -178,23 +178,23 @@ section .text
     XOR EBP,EBP                         ; 004ee120
         ;   Label: LAB_004ee120
     MOV dword ptr [ESP + 0x308],EBP     ; 004ee122
-    MOV EAX,[0x01d16818]                ; 004ee129 | DAT_01d16818
+    MOV EAX,[0x01d16818]                ; 004ee129 | g_LocalizedStringCount
         ;   Label: LAB_004ee129
     DEC EAX                             ; 004ee12e
     CMP EBP,EAX                         ; 004ee12f
     JGE 0x004ee2ce                      ; 004ee131
         ;   XREF to: 004ee2ce (CONDITIONAL_JUMP)  ; LAB_004ee2ce
-    MOV EAX,[0x01d16818]                ; 004ee137 | DAT_01d16818
+    MOV EAX,[0x01d16818]                ; 004ee137 | g_LocalizedStringCount
     LEA EDI,[EBP + 0x1]                 ; 004ee13c
     CMP EDI,EAX                         ; 004ee13f
     JGE 0x004ee1a9                      ; 004ee141
         ;   XREF to: 004ee1a9 (CONDITIONAL_JUMP)  ; LAB_004ee1a9
     MOV ESI,dword ptr [ESP + 0x308]     ; 004ee143
     LEA EBX,[EDI*0x4 + 0x0]             ; 004ee14a
-    MOV EAX,dword ptr [EBX + 0x1d1681c] ; 004ee151 | DAT_01d16820 | DAT_01d16824
+    MOV EAX,dword ptr [EBX + 0x1d1681c] ; 004ee151 | g_MessageKeys[1] | g_MessageKeys[2]
         ;   Label: LAB_004ee151
     PUSH EAX                            ; 004ee157
-    MOV EDX,dword ptr [ESI + 0x1d1681c] ; 004ee158 | DAT_01d16820
+    MOV EDX,dword ptr [ESI + 0x1d1681c] ; 004ee158 | g_MessageKeys[1]
     PUSH EDX                            ; 004ee15e
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004ee15f
         ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
@@ -202,15 +202,15 @@ section .text
     TEST EAX,EAX                        ; 004ee167
     JLE 0x004ee19b                      ; 004ee169
         ;   XREF to: 004ee19b (CONDITIONAL_JUMP)  ; LAB_004ee19b
-    MOV EDX,dword ptr [EBX + 0x1d1681c] ; 004ee16b | DAT_01d16820
+    MOV EDX,dword ptr [EBX + 0x1d1681c] ; 004ee16b | g_MessageKeys[1]
     MOV EAX,dword ptr [ESI + 0x1d1681c] ; 004ee171
     MOV dword ptr [ESI + 0x1d1681c],EDX ; 004ee177
-    MOV EDX,dword ptr [EBX + 0x1d16fec] ; 004ee17d | DAT_01d16ff0
-    MOV dword ptr [EBX + 0x1d1681c],EAX ; 004ee183 | DAT_01d16820
+    MOV EDX,dword ptr [EBX + 0x1d16fec] ; 004ee17d | g_MessageTexts[1]
+    MOV dword ptr [EBX + 0x1d1681c],EAX ; 004ee183 | g_MessageKeys[1]
     MOV EAX,dword ptr [ESI + 0x1d16fec] ; 004ee189
     MOV dword ptr [ESI + 0x1d16fec],EDX ; 004ee18f
-    MOV dword ptr [EBX + 0x1d16fec],EAX ; 004ee195 | DAT_01d16ff0
-    MOV EDX,dword ptr [0x01d16818]      ; 004ee19b | DAT_01d16818
+    MOV dword ptr [EBX + 0x1d16fec],EAX ; 004ee195 | g_MessageTexts[1]
+    MOV EDX,dword ptr [0x01d16818]      ; 004ee19b | g_LocalizedStringCount
         ;   Label: LAB_004ee19b
     INC EDI                             ; 004ee1a1
     ADD EBX,0x4                         ; 004ee1a2
@@ -257,11 +257,11 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ee227
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004ee22c
-    CMP dword ptr [0x01d16818],0x1f4    ; 004ee22f | DAT_01d16818
+    CMP dword ptr [0x01d16818],0x1f4    ; 004ee22f | g_LocalizedStringCount
         ;   Label: LAB_004ee22f
     JGE 0x004ee2a6                      ; 004ee239
         ;   XREF to: 004ee2a6 (CONDITIONAL_JUMP)  ; LAB_004ee2a6
-    MOV EDI,dword ptr [0x01d16818]      ; 004ee23b | DAT_01d16818
+    MOV EDI,dword ptr [0x01d16818]      ; 004ee23b | g_LocalizedStringCount
         ;   Label: LAB_004ee23b
     SHL EDI,0x7                         ; 004ee241
     LEA ESI,[ESP + 0x100]               ; 004ee244
@@ -282,7 +282,7 @@ section .text
         ;   XREF to: 004ee252 (CONDITIONAL_JUMP)  ; LAB_004ee252
     POP EDI                             ; 004ee26a
         ;   Label: LAB_004ee26a
-    MOV EDI,dword ptr [0x01d16818]      ; 004ee26b | DAT_01d16818
+    MOV EDI,dword ptr [0x01d16818]      ; 004ee26b | g_LocalizedStringCount
     SHL EDI,0x8                         ; 004ee271
     LEA ESI,[ESP + 0x200]               ; 004ee274
     ADD EDI,0x1d271c0                   ; 004ee27b
@@ -302,7 +302,7 @@ section .text
         ;   XREF to: 004ee282 (CONDITIONAL_JUMP)  ; LAB_004ee282
     POP EDI                             ; 004ee29a
         ;   Label: LAB_004ee29a
-    INC dword ptr [0x01d16818]          ; 004ee29b | DAT_01d16818
+    INC dword ptr [0x01d16818]          ; 004ee29b | g_LocalizedStringCount
     JMP 0x004ee0b1                      ; 004ee2a1
         ;   XREF to: 004ee0b1 (UNCONDITIONAL_JUMP)  ; LAB_004ee0b1
     PUSH EBP                            ; 004ee2a6
@@ -317,7 +317,7 @@ section .text
     ADD ESP,0x8                         ; 004ee2c6
     JMP 0x004ee23b                      ; 004ee2c9
         ;   XREF to: 004ee23b (UNCONDITIONAL_JUMP)  ; LAB_004ee23b
-    MOV dword ptr [0x01d16814],0x1      ; 004ee2ce | DAT_01d16814
+    MOV dword ptr [0x01d16814],0x1      ; 004ee2ce | g_LocalizationLoaded
         ;   Label: LAB_004ee2ce
     ADD ESP,0x30c                       ; 004ee2d8
     POP EBP                             ; 004ee2de

@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b498
-;   undefined4 DAT_0061b49c
+;   int g_INT_0061b498 = 0x140
+;   int g_INT_0061b49c = 0xc8
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
@@ -27,10 +27,10 @@ section .text
     TEST EDX,EDX                        ; 004096bc
     JL 0x004096d0                       ; 004096be
         ;   XREF to: 004096d0 (CONDITIONAL_JUMP)  ; LAB_004096d0
-    CMP EAX,dword ptr [0x0061b498]      ; 004096c0 | DAT_0061b498
+    CMP EAX,dword ptr [0x0061b498]      ; 004096c0 | g_INT_0061b498
     JGE 0x004096d0                      ; 004096c6
         ;   XREF to: 004096d0 (CONDITIONAL_JUMP)  ; LAB_004096d0
-    CMP EDX,dword ptr [0x0061b49c]      ; 004096c8 | DAT_0061b49c
+    CMP EDX,dword ptr [0x0061b49c]      ; 004096c8 | g_INT_0061b49c
     JL 0x004096d1                       ; 004096ce
         ;   XREF to: 004096d1 (CONDITIONAL_JUMP)  ; LAB_004096d1
     RET                                 ; 004096d0

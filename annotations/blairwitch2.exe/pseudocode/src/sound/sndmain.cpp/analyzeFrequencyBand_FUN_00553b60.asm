@@ -38,13 +38,13 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004ed260 at 004eda54
+;   core_menu.cpp_configureSoundOptions_FUN_004ed260 at 004eda54
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e93a6
-;   undefined4 DAT_005e93ae
-;   undefined4 DAT_0061bca0
-;   undefined4 DAT_02648e98
+;   double g_DOUBLE_005e93a6 = 2
+;   float g_FLOAT_005e93ae = 3.141593
+;   int g_AudioSampleRate = 0x5622
+;   int g_MixBufferSize
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005b84d0
@@ -74,7 +74,7 @@ section .text
     CMP dword ptr [EBX + 0x2648f0c],0x0 ; 00553b87
     JZ 0x00553b99                       ; 00553b8e
         ;   XREF to: 00553b99 (CONDITIONAL_JUMP)  ; LAB_00553b99
-    CMP dword ptr [0x02648e98],0x1      ; 00553b90 | DAT_02648e98
+    CMP dword ptr [0x02648e98],0x1      ; 00553b90 | g_MixBufferSize
     JGE 0x00553bb0                      ; 00553b97
         ;   XREF to: 00553bb0 (CONDITIONAL_JUMP)  ; LAB_00553bb0
     XOR EDI,EDI                         ; 00553b99
@@ -93,7 +93,7 @@ section .text
     CMP EAX,dword ptr [EBX + 0x263cef0] ; 00553bb5
     JZ 0x00553f0a                       ; 00553bbb
         ;   XREF to: 00553f0a (CONDITIONAL_JUMP)  ; LAB_00553f0a
-    MOV ESI,dword ptr [0x02648e98]      ; 00553bc1 | DAT_02648e98
+    MOV ESI,dword ptr [0x02648e98]      ; 00553bc1 | g_MixBufferSize
     MOV EDX,dword ptr [EBX + 0x2648eec] ; 00553bc7
     MOV ECX,dword ptr [EBX + 0x2648f0c] ; 00553bcd
     MOV EDI,dword ptr [EBX + 0x2648ec8] ; 00553bd3
@@ -175,11 +175,11 @@ section .text
     MOV dword ptr [ESP + 0xb0],EAX      ; 00553cbd
     MOV dword ptr [ESP + 0xa8],EAX      ; 00553cc4
     FILD dword ptr [ESP + 0xb0]         ; 00553ccb
-    FDIVR float ptr [0x005e93ae]        ; 00553cd2 | DAT_005e93ae
+    FDIVR float ptr [0x005e93ae]        ; 00553cd2 | g_FLOAT_005e93ae
     FLD ST0                             ; 00553cd8
     FSINCOS                             ; 00553cda
     FXCH ST2                            ; 00553cdc
-    FLD double ptr [0x005e93a6]         ; 00553cde | DAT_005e93a6
+    FLD double ptr [0x005e93a6]         ; 00553cde | g_DOUBLE_005e93a6
     FXCH                                ; 00553ce4
     FMUL ST1                            ; 00553ce6
     FLD ST0                             ; 00553ce8
@@ -342,7 +342,7 @@ section .text
         ;   Label: LAB_00553efb
     MOV EDX,dword ptr [EBP + 0x14]      ; 00553f00
     MOV dword ptr [EDX*0x4 + 0x263cef0],EAX ; 00553f03
-    MOV EAX,[0x02648e98]                ; 00553f0a | DAT_02648e98
+    MOV EAX,[0x02648e98]                ; 00553f0a | g_MixBufferSize
         ;   Label: LAB_00553f0a
     MOV EDX,EAX                         ; 00553f0f
     SAR EDX,0x1f                        ; 00553f11
@@ -354,7 +354,7 @@ section .text
     FILD dword ptr [ESP + 0xb0]         ; 00553f25
     FSTP float ptr [ESP + 0xb0]         ; 00553f2c
     FMUL float ptr [ESP + 0xb0]         ; 00553f33
-    FILD dword ptr [0x0061bca0]         ; 00553f3a | DAT_0061bca0
+    FILD dword ptr [0x0061bca0]         ; 00553f3a | g_AudioSampleRate
     FDIVP                               ; 00553f40
     SUB ESP,0x8                         ; 00553f42
     FSTP double ptr [ESP]               ; 00553f45
@@ -366,11 +366,11 @@ section .text
     ADD ESP,0x8                         ; 00553f62
     FLD float ptr [EBP + 0x1c]          ; 00553f65
     FMUL float ptr [ESP + 0xb0]         ; 00553f68
-    FILD dword ptr [0x0061bca0]         ; 00553f6f | DAT_0061bca0
+    FILD dword ptr [0x0061bca0]         ; 00553f6f | g_AudioSampleRate
     FDIVP                               ; 00553f75
     FXCH                                ; 00553f77
     CALL crt_math.c_round_FUN_005b7ff0  ; 00553f79
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x88]        ; 00553f7e
     SUB ESP,0x8                         ; 00553f85
     FSTP double ptr [ESP]               ; 00553f88
@@ -381,7 +381,7 @@ section .text
     FLD double ptr [ESP + 0x80]         ; 00553f9e
     ADD ESP,0x8                         ; 00553fa5
     CALL crt_math.c_round_FUN_005b7ff0  ; 00553fa8
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     MOV EAX,dword ptr [ESP + 0x88]      ; 00553fad
     FISTP dword ptr [ESP + 0x84]        ; 00553fb4
     CMP EDI,EAX                         ; 00553fbb
@@ -454,7 +454,7 @@ section .text
     FILD dword ptr [ESP + 0xb0]         ; 00554090
     FDIVP                               ; 00554097
     FSQRT                               ; 00554099
-    FMUL double ptr [0x005e93a6]        ; 0055409b | DAT_005e93a6
+    FMUL double ptr [0x005e93a6]        ; 0055409b | g_DOUBLE_005e93a6
     FST double ptr [ESP + 0x8]          ; 005540a1
     FSTP float ptr [ESP + 0xac]         ; 005540a5
     MOV EAX,dword ptr [ESP + 0xac]      ; 005540ac

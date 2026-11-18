@@ -20,11 +20,11 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057a002 = 65535
 ;   float FLOAT_0059b090 = 3
-;   undefined4 DAT_005ad1fc
+;   SMRGLTextureBasic g_SMRGLTextureBasic_005ad1fc
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_00765aa0
-;   undefined4 DAT_00765aa4
-;   undefined4 DAT_01b4d738
+;   float[100] g_BoneBurnIntensity
+;   undefined4 g_BoneBurnIntensity[1]
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
@@ -55,10 +55,10 @@ section .text
     POP ESI                             ; 00426e9c
     POP EBX                             ; 00426e9d
     RET                                 ; 00426e9e
-    PUSH 0x5ad1fc                       ; 00426e9f | DAT_005ad1fc
+    PUSH 0x5ad1fc                       ; 00426e9f | g_SMRGLTextureBasic_005ad1fc
         ;   Label: LAB_00426e9f
     MOV ECX,dword ptr [0x005ae704]      ; 00426ea4 | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 00426eaa | DAT_01b4d738
+    PUSH ECX                            ; 00426eaa | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00426eab
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 00426eb0
@@ -91,7 +91,7 @@ section .text
     XOR EDX,EDX                         ; 00426f00
     XOR ECX,ECX                         ; 00426f02
         ;   Label: LAB_00426f02
-    MOV dword ptr [EDX + 0x765aa0],ECX  ; 00426f04 | DAT_00765aa0 | DAT_00765aa4
+    MOV dword ptr [EDX + 0x765aa0],ECX  ; 00426f04 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
     INC EAX                             ; 00426f0a
     MOV ESI,dword ptr [EBX + 0x28558]   ; 00426f0b
     ADD EDX,0x4                         ; 00426f11
@@ -114,11 +114,11 @@ section .text
         ;   Label: LAB_00426f3d
     MOV EAX,dword ptr [EDX + 0x2f18]    ; 00426f43
     FMUL ST1                            ; 00426f49
-    FLD float ptr [EAX*0x4 + 0x765aa0]  ; 00426f4b | DAT_00765aa0
+    FLD float ptr [EAX*0x4 + 0x765aa0]  ; 00426f4b | g_BoneBurnIntensity
     FLD ST3                             ; 00426f52
     FDIVP ST2,ST0                       ; 00426f54
     FADDP                               ; 00426f56
-    FSTP float ptr [EAX*0x4 + 0x765aa0] ; 00426f58 | DAT_00765aa0
+    FSTP float ptr [EAX*0x4 + 0x765aa0] ; 00426f58 | g_BoneBurnIntensity
     MOV EAX,dword ptr [EBP + 0x14]      ; 00426f5f
     INC ECX                             ; 00426f62
     MOV ESI,dword ptr [EAX + 0x2f08]    ; 00426f63
@@ -136,7 +136,7 @@ section .text
     JLE 0x00426fb1                      ; 00426f80
         ;   XREF to: 00426fb1 (CONDITIONAL_JUMP)  ; LAB_00426fb1
     MOV EDI,dword ptr [ESP + 0x10]      ; 00426f82
-    FLD float ptr [ECX*0x4 + 0x765aa0]  ; 00426f86 | DAT_00765aa0 | DAT_00765aa4
+    FLD float ptr [ECX*0x4 + 0x765aa0]  ; 00426f86 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
         ;   Label: LAB_00426f86
     FCOMP double ptr [0x0057a002]       ; 00426f8d | DOUBLE_0057a002
     FNSTSW AX                           ; 00426f93
@@ -190,7 +190,7 @@ section .text
     XOR EAX,EAX                         ; 00427003
     MOV AL,byte ptr [EBX + 0x1]         ; 00427005
     FLD float ptr [ECX + 0x4]           ; 00427008
-    FMUL float ptr [EAX*0x4 + 0x765aa0] ; 0042700b | DAT_00765aa0
+    FMUL float ptr [EAX*0x4 + 0x765aa0] ; 0042700b | g_BoneBurnIntensity
     CALL crt_math.c_round_FUN_00563a30  ; 00427012
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 00427017

@@ -2,33 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 315,
-    "complexity_score": 279,
+    "complexity_score": 124,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
-    "suspect_count": 16,
+    "pseudocode_lines": 79,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 409
+    "total_lines": 394
   },
   "cross_references": [
     {
       "addr": "004bb9b0",
       "from_addr": "004bbac4",
-      "name": "core_game.cpp_FUN_004bb9b0",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fb530",
       "from_addr": "004fb555",
-      "name": "core_mission.cpp_FUN_004fb530",
+      "name": "core_mission.cpp_CDemonMission_save_FUN_004fb530",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,14 +49,14 @@
       "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
     },
     {
+      "addr": "00408a50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408a50"
+    },
+    {
       "addr": "0040b0a0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_save_FUN_0040b0a0"
-    },
-    {
-      "addr": "00408a50",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408a50"
     },
     {
       "addr": "0040c920",
@@ -78,7 +76,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     },
     {
       "addr": "004fc320",
@@ -88,7 +86,7 @@
     {
       "addr": "005b8010",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8010"
+      "name": "crt_stdio.c_fprintf_FUN_005b8010"
     }
   ],
   "globals": [
@@ -112,8 +110,8 @@
     },
     {
       "addr": "005de4b4",
-      "name": "DAT_005de4b4",
-      "type": "undefined4",
+      "name": "s_s_005de4b4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -124,14 +122,14 @@
     },
     {
       "addr": "005de4c4",
-      "name": "DAT_005de4c4",
-      "type": "undefined4",
+      "name": "s_d_005de4c4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005de4c8",
-      "name": "DAT_005de4c8",
-      "type": "undefined4",
+      "name": "s_s_005de4c8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -142,8 +140,8 @@
     },
     {
       "addr": "005de4de",
-      "name": "DAT_005de4de",
-      "type": "undefined4",
+      "name": "s_d_005de4de",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -160,8 +158,8 @@
     },
     {
       "addr": "005de4f9",
-      "name": "DAT_005de4f9",
-      "type": "undefined4",
+      "name": "s_d_005de4f9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -172,8 +170,8 @@
     },
     {
       "addr": "005de517",
-      "name": "DAT_005de517",
-      "type": "undefined4",
+      "name": "s_d_005de517",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -226,19 +224,19 @@
     },
     {
       "addr": "007bc044",
-      "name": "DAT_007bc044",
-      "type": "undefined4",
+      "name": "g_NumActorClassTypes",
+      "type": "int",
       "value": null
     },
     {
       "addr": "007bc048",
-      "name": "DAT_007bc048",
-      "type": "undefined4",
+      "name": "g_ActorClassRegistrations",
+      "type": "CDemonActorType*[200]",
       "value": null
     },
     {
       "addr": "007bc04c",
-      "name": "DAT_007bc04c",
+      "name": "g_ActorClassRegistrations[1]",
       "type": "undefined4",
       "value": null
     },
@@ -250,14 +248,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -267,7 +265,7 @@
       {
         "call_addr": "004bbac4",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb9b0",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004bb9b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -278,7 +276,7 @@
       {
         "call_addr": "004fb555",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fb530",
+        "caller": "core_mission.cpp_CDemonMission_save_FUN_004fb530",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -380,131 +378,27 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005de4b4",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005de4b4,this_ptr->mission_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005de4c4",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005de4c4,this_ptr->num_sets);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005de4c8",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005de4c8,pacVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005de4de",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005de4de,DAT_007bc044);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_007bc044",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005de4de,DAT_007bc044);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_007bc044",
-      "severity": "mild",
-      "text": "if (0 < DAT_007bc044) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_007bc048",
-      "severity": "mild",
-      "text": "piVar1 = (int *)((int)&DAT_007bc048 + iVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_007bc044",
-      "severity": "mild",
-      "text": "} while (iVar7 < DAT_007bc044);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005de4f9",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005de4f9,iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005de517",
-      "severity": "mild",
-      "text": "FUN_005b8010(file_handle,&DAT_005de517,iVar7);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 83,
-      "match": "(CDemonActor **)((int)(pCVar6 + 1) +",
+      "line": 67,
+      "match": "(CDemonActor **)((int)(pCVar3 + 1) +",
       "severity": "moderate",
-      "text": "*(CDemonActor **)((int)(pCVar6 + 1) + 8);",
+      "text": "*(CDemonActor **)((int)(pCVar3 + 1) + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `&DAT_007bc048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
-      "match": "(int)&DAT_007bc048",
+      "description": "Pointer value `(pCVar3 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)(pCVar3 + 1)",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_007bc048 + iVar8);",
+      "text": "*(CDemonActor **)((int)(pCVar3 + 1) + 8);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(pCVar6 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
-      "match": "(int)(pCVar6 + 1)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 68,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
       "severity": "moderate",
-      "text": "*(CDemonActor **)((int)(pCVar6 + 1) + 8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 39,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_007bc048 + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 84,
-      "match": "pCVar6 = (T *)&pCVar6->FIELD",
-      "severity": "moderate",
-      "text": "pCVar6 = (CVector3i *)&pCVar6->y;",
+      "text": "pCVar3 = (CVector3i *)&pCVar3->y;",
       "type": "shadow_pointer_walk"
     }
   ]

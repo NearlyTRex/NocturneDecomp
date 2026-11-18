@@ -22,11 +22,11 @@
 ; XREF[17]:
 ;   core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00 at 005a0bbc
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350 at 0043336e
-;   core_charactr.cpp_FUN_0042f310 at 0042f414
-;   core_cloth.cpp_FUN_0043cb00 at 0043cf48
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042f310 at 0042f414
+;   core_cloth.cpp_CCloth_setup_FUN_0043cb00 at 0043cf48
 ;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 00598944
 ;   core_passngr.cpp_CPassenger_setup_FUN_0050a610 at 0050a64e
-;   core_prye.cpp_FUN_00518cd0 at 00519c5d
+;   core_prye.cpp_CPrye_processFrame_FUN_00518cd0 at 00519c5d
 ;   core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0 at 005276e3
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110 at 0054c122
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0054c180 at 0054c19e
@@ -34,8 +34,8 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_xform.cpp_FUN_00583260
 ;   core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     PUSH EAX                            ; 0054ddc6
     LEA ESI,[ESP + 0x14]                ; 0054ddc7
     LEA EDI,[ESP + 0x8]                 ; 0054ddcb
-    CALL core_xform.cpp_FUN_00583260    ; 0054ddcf
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 0054ddcf
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x14]                ; 0054ddd4
     ADD ESP,0x8                         ; 0054ddd8
     MOVSD ES:EDI,ESI                    ; 0054dddb

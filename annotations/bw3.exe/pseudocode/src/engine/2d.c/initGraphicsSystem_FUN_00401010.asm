@@ -15,22 +15,22 @@
 ;   TerminatedCString s_vga_map_005b5014
 ;   TerminatedCString s_vga_act_005b501c
 ;   TerminatedCString s_default_act_005b5024
-;   undefined4 DAT_005b5030
-;   undefined4 DAT_005fba20
-;   undefined4 DAT_01c6b5d0
-;   undefined4 DAT_01c6b5d4
-;   undefined4 DAT_01c6b5d8
+;   TerminatedCString s_art_005b5030
+;   int g_INT_005fba20 = 0x8
+;   uint[1600] g_ReciprocalLookupTable
+;   undefined4 g_ReciprocalLookupTable[1]
+;   undefined4 g_ReciprocalLookupTable[2]
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00401590
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940
+;   engine_2d.c_loadPaletteFile_FUN_00401590
 ;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
 ;   support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0
 ;   support_trstream.cpp_CInStreamFile_read_FUN_00573c00
-;   wincore_wddvmem.cpp_FUN_005798f0
-;   wincore_wddvmem.cpp_FUN_00579bb0
+;   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005798f0
+;   wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_0057a770
 ;
 ; *****************************************************************************
@@ -43,19 +43,19 @@ section .text
     PUSH 0x1e0                          ; 00401014
     MOV EDX,0x20                        ; 00401019
     PUSH 0x280                          ; 0040101e
-    MOV dword ptr [0x005fba20],EDX      ; 00401023 | DAT_005fba20
-    CALL wincore_wddvmem.cpp_FUN_005798f0 ; 00401029
-        ;   XREF to: 005798f0 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_FUN_005798f0(int width, int height)
+    MOV dword ptr [0x005fba20],EDX      ; 00401023 | g_INT_005fba20
+    CALL wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005798f0 ; 00401029
+        ;   XREF to: 005798f0 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005798f0(int width, int height)
     ADD ESP,0x8                         ; 0040102e
     PUSH 0x20                           ; 00401031
     PUSH 0x1e0                          ; 00401033
     PUSH 0x280                          ; 00401038
-    CALL wincore_wddvmem.cpp_FUN_00579bb0 ; 0040103d
-        ;   XREF to: 00579bb0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00579bb0()
+    CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0 ; 0040103d
+        ;   XREF to: 00579bb0 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00579bb0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00401042
     PUSH 0x5b5004                       ; 00401045 | = "vga.act"
-    CALL engine_2d.c_FUN_00401590       ; 0040104a
-        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401590()
+    CALL engine_2d.c_loadPaletteFile_FUN_00401590 ; 0040104a
+        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadPaletteFile_FUN_00401590(char * filename)
     ADD ESP,0x4                         ; 0040104f
     PUSH 0x5b500c                       ; 00401052 | = "vga.lte"
     ADD ESP,0x4                         ; 00401057
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 0057a770 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_0057a770()
     MOV ECX,0xffffffff                  ; 00401074
     MOV EBX,0x4                         ; 00401079
-    MOV dword ptr [0x01c6b5d0],ECX      ; 0040107e | DAT_01c6b5d0
+    MOV dword ptr [0x01c6b5d0],ECX      ; 0040107e | g_ReciprocalLookupTable
     MOV ECX,0x1                         ; 00401084
     MOV EAX,0xffffffff                  ; 00401089
         ;   Label: LAB_00401089
@@ -77,7 +77,7 @@ section .text
     DIV ECX                             ; 00401090
     ADD EBX,0x4                         ; 00401092
     INC ECX                             ; 00401095
-    MOV dword ptr [EBX + 0x1c6b5cc],EAX ; 00401096 | DAT_01c6b5d4 | DAT_01c6b5d8
+    MOV dword ptr [EBX + 0x1c6b5cc],EAX ; 00401096 | g_ReciprocalLookupTable[1] | g_ReciprocalLookupTable[2]
     CMP ECX,0x640                       ; 0040109c
     JC 0x00401089                       ; 004010a2
         ;   XREF to: 00401089 (CONDITIONAL_JUMP)  ; LAB_00401089
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x4                         ; 004010ac
     PUSH 0x1                            ; 004010af
     PUSH 0x5b5024                       ; 004010b1 | = "default.act"
-    PUSH 0x5b5030                       ; 004010b6 | DAT_005b5030
+    PUSH 0x5b5030                       ; 004010b6 | = "art"
     LEA EAX,[ESP + 0xc]                 ; 004010bb
     PUSH EAX                            ; 004010bf
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 ; 004010c0

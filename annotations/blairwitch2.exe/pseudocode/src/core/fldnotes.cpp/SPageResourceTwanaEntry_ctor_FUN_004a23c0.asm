@@ -14,13 +14,13 @@
 ;   TerminatedCString s_Can_t_have_more_than_one_005d5a7c
 ;   void* g_SPageResourceTwanaEntryVTable = 004a2470
 ;   WatcomTypeInfo g_CAlphaBitmapTypeInfo
-;   undefined4 DAT_01cab780
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   int g_INT_01cab780
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SPageResource_ctor_FUN_004a1e60
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 004a2407
     CALL crt_memory.c_memset_FUN_005b77c0 ; 004a2408
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
-    MOV EDX,dword ptr [0x01cab780]      ; 004a240d | DAT_01cab780
+    MOV EDX,dword ptr [0x01cab780]      ; 004a240d | g_INT_01cab780
     MOV dword ptr [EBX + 0x8],0x69      ; 004a2413
     ADD ESP,0xc                         ; 004a241a
     MOV dword ptr [EBX + 0xc],0x2f      ; 004a241d
@@ -65,7 +65,7 @@ section .text
     JNZ 0x004a2432                      ; 004a2426
         ;   XREF to: 004a2432 (CONDITIONAL_JUMP)  ; LAB_004a2432
     MOV EAX,EBX                         ; 004a2428
-    MOV dword ptr [0x01cab780],EBX      ; 004a242a | DAT_01cab780
+    MOV dword ptr [0x01cab780],EBX      ; 004a242a | g_INT_01cab780
     POP EBX                             ; 004a2430
     RET                                 ; 004a2431
     PUSH ESI                            ; 004a2432
@@ -73,14 +73,14 @@ section .text
     MOV ECX,0x5d5a67                    ; 004a2433 | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x3f9                       ; 004a2438
     PUSH 0x5d5a7c                       ; 004a243d | = "Can't have more than one twana entry ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004a2442 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004a2448 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004a244e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 004a2442 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004a2448 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a244e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2453
     POP ESI                             ; 004a2456
     MOV EAX,EBX                         ; 004a2457
-    MOV dword ptr [0x01cab780],EBX      ; 004a2459 | DAT_01cab780
+    MOV dword ptr [0x01cab780],EBX      ; 004a2459 | g_INT_01cab780
     POP EBX                             ; 004a245f
     RET                                 ; 004a2460
 

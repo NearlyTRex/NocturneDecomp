@@ -339,7 +339,7 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the gore and fire decals in the lit frame, with CGore::renderDecals,
 //   CFireEffect::renderDecals and their decal pools' writers
 // deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the
-//   preset's listener vector went only to DirectSound)
+//   preset's EAX volume, decay time and damping went only to DirectSound)
 // deferred: the weather's origin and turn at the camera, with CWeather::setOriginAndRotation's
 //   readers
 // The original also worked out each renderable actor's box corners in 24.8 into a local nothing

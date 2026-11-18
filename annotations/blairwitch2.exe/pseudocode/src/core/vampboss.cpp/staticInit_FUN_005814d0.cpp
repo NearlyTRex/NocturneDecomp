@@ -10,7 +10,7 @@ void __cdecl core_vampboss_cpp_staticInit_FUN_005814d0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CVampireBossClassInfo,"?CVampireBoss" + 1,
+            (&g_CVampireBossClassInfo,"CVampireBoss",
              core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500,&g_CVampireBossClassVersion,4,
              &g_CEnemyClassInfo);
   return;

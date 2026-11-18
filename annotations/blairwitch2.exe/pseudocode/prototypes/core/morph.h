@@ -99,11 +99,11 @@ void __cdecl CMorph::setupModelFromKeyframed(CMorph *this_ptr,int model_index,CK
 
 // Original: core_morph.cpp_CMorph_addTriPartToModel_FUN_005b7000
 // Address: 005b7000
-void __cdecl CMorph::addTriPartToModel(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
+void __cdecl CMorph::addTriPartToModel(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorph_addQuadPartToModel_FUN_005b7050
 // Address: 005b7050
-void __cdecl CMorph::addQuadPartToModel(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
+void __cdecl CMorph::addQuadPartToModel(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_005b70d0
 // Address: 005b70d0
@@ -125,6 +125,6 @@ void __cdecl CMorph::getReady(CMorph *this_ptr);
 // Address: 005b76a0
 void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
 
-// Original: core_morph.cpp_FUN_005b7720
+// Original: core_morph.cpp_CMorphModel_arrdtor2_FUN_005b7720
 // Address: 005b7720
-CMorphModel * __cdecl FUN_005b7720(CMorphModel *this_ptr,uint flags);
+CMorphModel * __cdecl CMorphModel::arrdtor2(CMorphModel *this_ptr,uint flags);

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 35,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [],
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_construc.cpp_CConstruct_getCollisionType_FUN_00438370",
-    "signature": "ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_00438370(CConstruct *this_ptr,SCollisionInfo *param_2)"
+    "signature": "ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_00438370(CConstruct *this_ptr,SCollisionInfo *collision_info)"
   },
   "function_calls": [
     {
@@ -98,35 +96,18 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "collision_info",
         "offset": 8,
         "size": 4,
         "type": "SCollisionInfo *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "ECollisionType __cdecl core_construc_cpp_CConstruct_getCollisionType_FUN_00438370(CConstruct *this_ptr,SCollisionInfo *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680((CCharacter *)this_ptr,param_2)",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 68,
         "vtable_addr": "005f46b4"
       }

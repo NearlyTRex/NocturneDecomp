@@ -50,7 +50,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCh
           local_30.y = local_9c.m[1].z;
           local_30.z = local_9c.m[2].z;
           core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0
-                    (body_part,&DAT_0076595c,&local_30,euler_angles);
+                    (body_part,g_StakeModelInstance.model_name,&local_30,euler_angles);
         }
         pSVar1 = pSVar1 + 1;
         local_14 = local_14 + 1;

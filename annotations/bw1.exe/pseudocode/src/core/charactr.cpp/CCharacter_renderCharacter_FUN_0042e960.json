@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 40,
+    "complexity_score": 26,
     "cross_reference_count": 10,
     "function_call_count": 8,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 104
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 105
   },
   "cross_references": [
     {
@@ -112,7 +110,7 @@
     {
       "addr": "0042e580",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042e580"
+      "name": "core_charactr.cpp_CCharacter_updateFacialAnimation_FUN_0042e580"
     },
     {
       "addr": "00441ff0",
@@ -133,9 +131,9 @@
   "globals": [
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0061d95c",
@@ -145,8 +143,8 @@
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -324,6 +322,12 @@
       "class": "layout-drift",
       "ratio": 1.0
     },
+    "bw3.exe": {
+      "addr": "0042d8e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.604
+    },
     "nocedit.exe": {
       "addr": "00429aa0",
       "by": "name",
@@ -353,14 +357,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

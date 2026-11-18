@@ -11,10 +11,10 @@
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0 at 0052c115
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061e450
+;   CTerrain* g_CTerrainPtr = 0265364c
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_0044e590
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590
 ;   core_setdir.cpp_CDemonSet_freeThumbs_FUN_00539be0
 ;   core_setutil.cpp_C3DSCamera_free_FUN_0053a830
 ;   core_terrain.cpp_CTerrain_free_FUN_0057b840
@@ -27,8 +27,8 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_clear_FUN_0052c090
     PUSH ESI                            ; 0052c091
     PUSH 0x1fc9ff8                      ; 0052c092
-    CALL core_dmodel.cpp_FUN_0044e590   ; 0052c097
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044e590()
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590 ; 0052c097
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_0044e590(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0052c09c
     MOV ESI,dword ptr [ESP + 0xc]       ; 0052c09f
     ADD ESI,0x4                         ; 0052c0a3
@@ -43,7 +43,7 @@ section .text
     CMP EBX,ESI                         ; 0052c0bd
     JNZ 0x0052c0ae                      ; 0052c0bf
         ;   XREF to: 0052c0ae (CONDITIONAL_JUMP)  ; LAB_0052c0ae
-    MOV EDX,dword ptr [0x0061e450]      ; 0052c0c1 | DAT_0061e450
+    MOV EDX,dword ptr [0x0061e450]      ; 0052c0c1 | g_CTerrainPtr
     PUSH EDX                            ; 0052c0c7
     CALL core_terrain.cpp_CTerrain_free_FUN_0057b840 ; 0052c0c8
         ;   XREF to: 0057b840 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_free_FUN_0057b840(CTerrain * this_ptr)

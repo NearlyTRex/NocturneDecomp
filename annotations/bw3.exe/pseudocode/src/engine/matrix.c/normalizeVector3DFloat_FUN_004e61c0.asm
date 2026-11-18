@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0(int *param_1)
+; CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0(CVector3i *input_vector,CVector3i *output_vector)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input_vector
 ; Local Variables:
 ; undefined        Stack[-0x50]:1  local_50
 ; undefined4       Stack[-0x44]:4  local_44
@@ -20,7 +22,7 @@
 ;   engine_light.cpp_calculatePhongLighting_FUN_004e0bb0 at 004e0ccf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c6f72
+;   double g_NormalizationScale = 65535
 ;
 ; *****************************************************************************
 
@@ -63,7 +65,7 @@ section .text
     FDIV double ptr [EBP + -0x2c]       ; 004e620b
     FLD double ptr [EBP + -0x24]        ; 004e620e
     FMUL ST1                            ; 004e6211
-    FLD double ptr [0x005c6f72]         ; 004e6213 | DAT_005c6f72
+    FLD double ptr [0x005c6f72]         ; 004e6213 | g_NormalizationScale
     FXCH                                ; 004e6219
     FMUL ST1                            ; 004e621b
     FSTP double ptr [EBP + -0x24]       ; 004e621d

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 228,
+    "complexity_score": 227,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 128,
+    "pseudocode_lines": 127,
     "suspect_count": 8,
     "suspect_types": [
       "derived_field_index_pun",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 410
+    "total_lines": 409
   },
   "cross_references": [
     {
@@ -175,9 +175,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b9354",
@@ -187,13 +187,13 @@
     },
     {
       "addr": "007641f4",
-      "name": "g_CAmmoActorType_007641bc.name_hash",
+      "name": "g_CAmmoClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764838",
-      "name": "g_CBoxActorActorType_00764800.name_hash",
+      "name": "g_CBoxActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -205,13 +205,13 @@
     },
     {
       "addr": "01c78bbc",
-      "name": "g_CGasMaskActorType_01c78b84.name_hash",
+      "name": "g_CGasMaskClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cae0d0",
-      "name": "g_CHealthItemActorType_01cae098.name_hash",
+      "name": "g_CHealthItemClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -475,7 +475,7 @@
       "description": "'pCVar3[4].create_event + 0x40' walks 4 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x40 = 0x5f8, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 41,
       "severity": "moderate",
-      "text": "(0x01C03A10,pCVar3[4].create_event + 0x40);",
+      "text": "(g_CEventListPtr,pCVar3[4].create_event + 0x40);",
       "type": "derived_field_index_pun"
     }
   ]

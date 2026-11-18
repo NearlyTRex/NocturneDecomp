@@ -15,18 +15,18 @@ void __cdecl core_passngr_cpp_CPassenger_archive_FUN_004efb30(CPassenger *this_p
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->transform_event,"transformEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->wolf_model_name,"wolfModelName");
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->morph_time,"morphTime");
-  if ((1 < INT_005be078) && (INT_005be078 < 5)) {
+  if ((1 < g_CPassengerClassVersion) && (g_CPassengerClassVersion < 5)) {
     model_ptr = &(this_ptr->base).base.model;
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(model_ptr,"modelName");
     core_actor_cpp_archiveMotionState_FUN_0040cb00(&model_ptr->base,"motion state");
   }
-  if (2 < INT_005be078) {
+  if (2 < g_CPassengerClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->wolf_size,"wolfSize");
   }
-  if (3 < INT_005be078) {
+  if (3 < g_CPassengerClassVersion) {
     core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->name_of_wolf,"nameOfWolf");
   }
-  if (INT_005be078 < 6) {
+  if (g_CPassengerClassVersion < 6) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->transform_wav,"transformWav");

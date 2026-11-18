@@ -7,8 +7,9 @@
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ;
-; XREF[1]:
-;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538d34
+; XREF[2]:
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30 at 00538d34
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_00539040 at 00539074
 ;
 ; Called Functions:
 ;   crt_string.c__strncpy_FUN_005c20d0

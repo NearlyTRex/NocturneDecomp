@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_melee.cpp_FUN_004e7540 at 004e75ab
+;   core_melee.cpp_dumpHeap_FUN_004e7540 at 004e757a
 ;
 ; Called Functions:
 ;   support_trstream.cpp_COutStream_vprintf_FUN_005744e0

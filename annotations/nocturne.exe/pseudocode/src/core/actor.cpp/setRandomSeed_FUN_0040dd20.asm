@@ -12,7 +12,7 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb2a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007641b8
+;   uint g_RandomSeedValue
 ;
 ; *****************************************************************************
 
@@ -20,6 +20,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0040dd20
         ;   Label: core_actor.cpp_setRandomSeed_FUN_0040dd20
-    MOV [0x007641b8],EAX                ; 0040dd24 | DAT_007641b8
+    MOV [0x007641b8],EAX                ; 0040dd24 | g_RandomSeedValue
     RET                                 ; 0040dd29
 

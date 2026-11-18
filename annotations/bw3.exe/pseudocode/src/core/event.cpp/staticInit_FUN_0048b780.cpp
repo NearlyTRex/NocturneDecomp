@@ -11,7 +11,7 @@
 void __cdecl core_event_cpp_staticInit_FUN_0048b780(void)
 
 {
-  core_event_cpp_CEventList_ctor_FUN_0048bfb0((CEventList *)0x1c6e360);
+  core_event_cpp_CEventList_ctor_FUN_0048bfb0(&g_CEventList_01c6e360);
   DAT_005fbaa4 = 0x27a8;
   DAT_005fbaa8 = g_CCharacterClassInfo.name_hash;
   _DAT_005fbaec = 0x27b0;

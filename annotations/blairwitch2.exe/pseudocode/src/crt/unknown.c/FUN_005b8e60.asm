@@ -11,8 +11,8 @@
 ;   crt_unknown.c_FUN_005b90b0 at 005b90be
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061f160
-;   undefined4 DAT_0061f410
+;   int g_INT_0061f160 = 0x100
+;   int g_INT_0061f410 = 0x0
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
@@ -37,7 +37,7 @@ section .text
     TEST ESI,ESI                        ; 005b8e7d
     JZ 0x005b8e8f                       ; 005b8e7f
         ;   XREF to: 005b8e8f (CONDITIONAL_JUMP)  ; LAB_005b8e8f
-    CMP EDX,dword ptr [0x0061f410]      ; 005b8e81 | DAT_0061f410
+    CMP EDX,dword ptr [0x0061f410]      ; 005b8e81 | g_INT_0061f410
     JNZ 0x005b8e8d                      ; 005b8e87
         ;   XREF to: 005b8e8d (CONDITIONAL_JUMP)  ; LAB_005b8e8d
     MOV dword ptr [ESI],EDX             ; 005b8e89
@@ -192,7 +192,7 @@ section .text
         ;   Label: LAB_005b8f7d
     JNZ 0x005b8f90                      ; 005b8f7f
         ;   XREF to: 005b8f90 (CONDITIONAL_JUMP)  ; LAB_005b8f90
-    CMP dword ptr [0x0061f160],0x200    ; 005b8f81 | DAT_0061f160
+    CMP dword ptr [0x0061f160],0x200    ; 005b8f81 | g_INT_0061f160
     JNZ 0x005b8f90                      ; 005b8f8b
         ;   XREF to: 005b8f90 (CONDITIONAL_JUMP)  ; LAB_005b8f90
     OR BL,0x40                          ; 005b8f8d

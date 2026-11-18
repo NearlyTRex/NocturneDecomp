@@ -1,0 +1,957 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 173,
+    "complexity_score": 118,
+    "cross_reference_count": 75,
+    "function_call_count": 5,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 73,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_truncation",
+      "self_copy_guard",
+      "stack_alignment_array"
+    ],
+    "total_lines": 246
+  },
+  "cross_references": [
+    {
+      "addr": "0040df20",
+      "from_addr": "0040df5a",
+      "name": "core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e810",
+      "from_addr": "0040e848",
+      "name": "core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a1760",
+      "from_addr": "005a17aa",
+      "name": "core_asgaya.cpp_CAsgaya_renderOpaque_FUN_005a1760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a17e0",
+      "from_addr": "005a18ab",
+      "name": "core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597970",
+      "from_addr": "00597a1b",
+      "name": "core_baal.cpp_CBaal_renderTransparent_FUN_00597970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f200",
+      "from_addr": "0040f23a",
+      "name": "core_bat.cpp_CBat_renderOpaque_FUN_0040f200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f590",
+      "from_addr": "0040f5e9",
+      "name": "core_battery.cpp_CBattery_renderOpaque_FUN_0040f590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414d40",
+      "from_addr": "00414dec",
+      "name": "core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414bd0",
+      "from_addr": "00414c48",
+      "name": "core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00418f90",
+      "from_addr": "00418fdc",
+      "name": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041f8e0",
+      "from_addr": "0041f984",
+      "name": "core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041f8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041f9f0",
+      "from_addr": "0041fa94",
+      "name": "core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041f9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004215f0",
+      "from_addr": "00421655",
+      "name": "core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042a280",
+      "from_addr": "0042a2ef",
+      "name": "core_chain.cpp_CChain_renderTransparent_FUN_0042a280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042cd70",
+      "from_addr": "0042d339",
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042e300",
+      "from_addr": "0042e348",
+      "name": "core_charactr.cpp_CCharacter_renderBackground_FUN_0042e300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042e220",
+      "from_addr": "0042e27f",
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f510",
+      "from_addr": "0042f669",
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00445fa0",
+      "from_addr": "00445ff9",
+      "name": "core_crate.cpp_CCrate_renderOpaque_FUN_00445fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00448060",
+      "from_addr": "0044809a",
+      "name": "core_curtain.cpp_CCurtain_renderMesh_FUN_00448060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598e00",
+      "from_addr": "00598e59",
+      "name": "core_darkwolf.cpp_CDarkwolf_renderOpaque_FUN_00598e00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464b40",
+      "from_addr": "00464b99",
+      "name": "core_door.cpp_CDoor_renderBackground_FUN_00464b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464a60",
+      "from_addr": "00464aac",
+      "name": "core_door.cpp_CDoor_renderOpaque_FUN_00464a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f150",
+      "from_addr": "0046f194",
+      "name": "core_drip.cpp_CDrip_renderOpaque_FUN_0046f150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00488ac0",
+      "from_addr": "00488b06",
+      "name": "core_emitter.cpp_CEmitter_renderBackground_FUN_00488ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496740",
+      "from_addr": "0049677b",
+      "name": "core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_00496740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004962e0",
+      "from_addr": "00496339",
+      "name": "core_filmreel.cpp_CFilmReel_renderOpaque_FUN_004962e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499690",
+      "from_addr": "0049972c",
+      "name": "core_fire.cpp_CFireball_render_FUN_00499690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a2c0",
+      "from_addr": "0049a30b",
+      "name": "core_fire.cpp_CLeaf_render_FUN_0049a2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a090",
+      "from_addr": "0049a0db",
+      "name": "core_fire.cpp_CRock_render_FUN_0049a090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00497dc0",
+      "from_addr": "00497e1a",
+      "name": "core_fire.cpp_CStake_render_FUN_00497dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a6a50",
+      "from_addr": "004a6ac6",
+      "name": "core_flame.cpp_CFlame_renderBackground_FUN_004a6a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a6090",
+      "from_addr": "004a6112",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004a6090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7230",
+      "from_addr": "004a7289",
+      "name": "core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004a7230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004addd0",
+      "from_addr": "004ade3e",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004addd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c66e0",
+      "from_addr": "004c6739",
+      "name": "core_gasmask.cpp_CGasMask_renderOpaque_FUN_004c66e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cab40",
+      "from_addr": "004caba6",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004cab40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ca940",
+      "from_addr": "004ca982",
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ca5a0",
+      "from_addr": "004ca61e",
+      "name": "core_glass.cpp_CGlass_renderOpaque_FUN_004ca5a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ca770",
+      "from_addr": "004ca7e2",
+      "name": "core_glass.cpp_CGlass_renderTransparent_FUN_004ca770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc760",
+      "from_addr": "004cc7b9",
+      "name": "core_goggles.cpp_CGoggles_renderOpaque_FUN_004cc760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf4e0",
+      "from_addr": "004cf541",
+      "name": "core_grave.cpp_CGrave_renderBackground_FUN_004cf4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf430",
+      "from_addr": "004cf497",
+      "name": "core_grave.cpp_CGrave_renderOpaque_FUN_004cf430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1f10",
+      "from_addr": "004d1f4a",
+      "name": "core_health.cpp_CHealthItem_renderOpaque_FUN_004d1f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598480",
+      "from_addr": "005984cc",
+      "name": "core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d120",
+      "from_addr": "0059d21c",
+      "name": "core_hino.cpp_CHino_renderTransparent_FUN_0059d120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004de950",
+      "from_addr": "004de98a",
+      "name": "core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004de950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004df730",
+      "from_addr": "004df78b",
+      "name": "core_ladder.cpp_CLadder_renderOpaque_FUN_004df730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e0690",
+      "from_addr": "004e06c8",
+      "name": "core_lever.cpp_CLever_renderOpaque_FUN_004e0690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e40d0",
+      "from_addr": "004e412d",
+      "name": "core_litecone.cpp_CLightCone_renderTransparent_FUN_004e40d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00593710",
+      "from_addr": "00593832",
+      "name": "core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005095f0",
+      "from_addr": "005096de",
+      "name": "core_npc.cpp_CNPC_renderTransparent_FUN_005095f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a9b0",
+      "from_addr": "0050aa09",
+      "name": "core_passngr.cpp_CPassenger_renderOpaque_FUN_0050a9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ee70",
+      "from_addr": "0050eeaa",
+      "name": "core_pendulum.cpp_CPendulum_renderOpaque_FUN_0050ee70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512200",
+      "from_addr": "005122e4",
+      "name": "core_platfrm.cpp_CPlatform_renderBackground_FUN_00512200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005120b0",
+      "from_addr": "00512151",
+      "name": "core_platfrm.cpp_CPlatform_renderOpaque_FUN_005120b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527970",
+      "from_addr": "005279c9",
+      "name": "core_pryemorp.cpp_CPryeMorph_renderOpaque_FUN_00527970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053afa0",
+      "from_addr": "0053b02e",
+      "name": "core_set.cpp_CDemonSet_buildMirrorList_FUN_0053afa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00543380",
+      "from_addr": "005433f0",
+      "name": "core_setutil.cpp_C3DSLight_isVisible_FUN_00543380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545710",
+      "from_addr": "00545828",
+      "name": "core_shadow.cpp_CShadow_renderTransparent_FUN_00545710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005475a0",
+      "from_addr": "005475da",
+      "name": "core_simbox.cpp_CSimBox_renderOpaque_FUN_005475a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563970",
+      "from_addr": "00563b83",
+      "name": "core_spawner.cpp_CSpawner_process_FUN_00563970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566db0",
+      "from_addr": "00566dea",
+      "name": "core_spike.cpp_CSpike_renderOpaque_FUN_00566db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b2e0",
+      "from_addr": "0059b339",
+      "name": "core_spirbear.cpp_CSpiritBear_renderOpaque_FUN_0059b2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a760",
+      "from_addr": "0059a7b9",
+      "name": "core_spirindi.cpp_CSpiritIndian_renderOpaque_FUN_0059a760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a01c0",
+      "from_addr": "005a0219",
+      "name": "core_styldemo.cpp_CStylerDemon_renderOpaque_FUN_005a01c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ddb0",
+      "from_addr": "0059de09",
+      "name": "core_styler.cpp_CStyler_renderOpaque_FUN_0059ddb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056d000",
+      "from_addr": "0056d05a",
+      "name": "core_trap.cpp_CTrap_renderOpaque_FUN_0056d000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056dd30",
+      "from_addr": "0056dd6b",
+      "name": "core_trash.cpp_CTrash_renderOpaque_FUN_0056dd30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575fe0",
+      "from_addr": "0057602a",
+      "name": "core_tvbat.cpp_CTVBat_renderOpaque_FUN_00575fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576c90",
+      "from_addr": "00576cf2",
+      "name": "core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00576c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005787f0",
+      "from_addr": "00578844",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005787f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057af80",
+      "from_addr": "0057afba",
+      "name": "core_weapon.cpp_CWeapon_renderOpaque_FUN_0057af80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057b040",
+      "from_addr": "0057b072",
+      "name": "core_weapon.cpp_CWeapon_renderTransparent_FUN_0057b040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057c2e0",
+      "from_addr": "0057c44d",
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041daf0",
+    "address_range": [
+      [
+        "0041daf0",
+        "0041dcc6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041daf0",
+    "signature": "int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041daf0(CBoundingBox3D *this_ptr,int skip_shadow_test)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041dcd0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041dcd0"
+    },
+    {
+      "addr": "0041d920",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041d920"
+    },
+    {
+      "addr": "00450580",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00450580"
+    },
+    {
+      "addr": "0046d540",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540"
+    },
+    {
+      "addr": "005632a3",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_005632a3"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b74a9",
+      "name": "g_FLOAT_005b74a9",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "005dc948",
+      "name": "g_BoundingBoxWorldToIntegerScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "005dc950",
+      "name": "g_FLOAT_005dc950",
+      "type": "float",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "005f2afc",
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
+    },
+    {
+      "addr": "00730408",
+      "name": "g_StoredX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0073040c",
+      "name": "g_StoredY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00730410",
+      "name": "g_StoredZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "007e2a54",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "01c6e24c",
+      "name": "g_PerspectiveReciprocal",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "004ca982",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00497e1a",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CStake_render_FUN_00497dc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053b02e",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_buildMirrorList_FUN_0053afa0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057c44d",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_CWeather_createLightningStrike_FUN_0057c2e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042d339",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042cd70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042e348",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderBackground_FUN_0042e300",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042e27f",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042f669",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00414c48",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00414dec",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.052980132450331,
+    "instruction_count": 151,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 442,
+      "FLOAT2FLOAT": 37,
+      "FLOAT_ADD": 6,
+      "FLOAT_MULT": 9,
+      "INT2FLOAT": 3,
+      "INT_ADD": 88,
+      "INT_AND": 44,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 40,
+      "INT_LESS": 5,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 20,
+      "INT_SUB": 33,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 48,
+      "POPCOUNT": 20,
+      "RETURN": 4,
+      "ROUND": 3,
+      "STORE": 40,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 914
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041a840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004207b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004204f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.81
+    },
+    "nocturne.exe": {
+      "addr": "0041ceb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8351
+    }
+  },
+  "stack_frame": {
+    "frame_size": 156,
+    "local_size": 148,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      },
+      {
+        "is_param": true,
+        "name": "skip_shadow_test",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 7,
+      "match": "afStackY_103c",
+      "severity": "moderate",
+      "text": "float afStackY_103c [1000];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Pointer value `g_CurrentSceneCamera` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)g_CurrentSceneCamera",
+      "severity": "moderate",
+      "text": "g_PerspectiveReciprocal = (int)g_CurrentSceneCamera;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_60 != &local_24)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 44,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_60 != &local_24) {",
+      "type": "self_copy_guard"
+    }
+  ]
+}

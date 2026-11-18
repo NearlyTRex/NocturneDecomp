@@ -15,7 +15,7 @@ section .text
     PUSH 0xd114                         ; 0058d4b0
         ;   Label: core_zombiepriest.cpp_factoryFuncZombiePriest_FUN_0058d4b0
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0058d4b5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0058d4ba
     TEST EAX,EAX                        ; 0058d4bd
     JNZ 0x0058d4c2                      ; 0058d4bf

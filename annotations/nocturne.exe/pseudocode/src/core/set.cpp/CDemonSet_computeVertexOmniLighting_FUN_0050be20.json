@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 136,
+    "complexity_score": 105,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 6,
+    "pseudocode_lines": 60,
+    "suspect_count": 3,
     "suspect_types": [
       "fast_sqrt_inline",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 221
+    "total_lines": 220
   },
   "cross_references": [
     {
@@ -59,25 +59,25 @@
     },
     {
       "addr": "005c5014",
-      "name": "DAT_005c5014",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_005c5014",
+      "type": "SRenderVertex[20000]",
       "value": null
     },
     {
       "addr": "005c5034",
-      "name": "DAT_005c5034",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5038",
-      "name": "DAT_005c5038",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c503c",
-      "name": "DAT_005c503c",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].b",
       "type": "undefined4",
       "value": null
     },
@@ -89,19 +89,19 @@
     },
     {
       "addr": "01fba9a4",
-      "name": "DAT_01fba9a4",
-      "type": "undefined4",
+      "name": "g_INT_01fba9a4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01fba9a8",
-      "name": "DAT_01fba9a8",
-      "type": "undefined4",
+      "name": "g_C3DSLight_PTR_ARRAY_01fba9a8",
+      "type": "C3DSLight*[200]",
       "value": null
     },
     {
       "addr": "01fba9ac",
-      "name": "DAT_01fba9ac",
+      "name": "g_C3DSLight_PTR_ARRAY_01fba9a8[1]",
       "type": "undefined4",
       "value": null
     }
@@ -216,6 +216,24 @@
     "pcode_op_count": 1047
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00531a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.777
+    },
+    "bw1.exe": {
+      "addr": "00552d40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.777
+    },
+    "bw3.exe": {
+      "addr": "005386d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.777
+    },
     "nocedit.exe": {
       "addr": "0056e3e0",
       "by": "name",
@@ -363,48 +381,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)g_C3DSLight_PTR_ARRAY_01fba9a8",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_C3DSLight_PTR_ARRAY_01fba9a8 + iVar6);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01fba9a8",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_01fba9a8 + iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005c5034",
-      "severity": "mild",
-      "text": "(&DAT_005c5034)[vertex_index * 0xc] = (int)ROUND(dVar7) << 8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_005c5038",
-      "severity": "mild",
-      "text": "(&DAT_005c5038)[vertex_index * 0xc] = (int)ROUND(dVar8) << 8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005c503c",
-      "severity": "mild",
-      "text": "(&DAT_005c503c)[vertex_index * 0xc] = (int)ROUND(dVar7) << 8;",
-      "type": "undefined_data"
+      "description": "Pointer value `g_C3DSLight_PTR_ARRAY_01fba9a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)g_C3DSLight_PTR_ARRAY_01fba9a8",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_C3DSLight_PTR_ARRAY_01fba9a8 + iVar6);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
-      "line": 31,
+      "line": 29,
       "match": "fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + g_",
       "severity": "moderate",
       "text": "fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + g_FastSqrtMagic);",

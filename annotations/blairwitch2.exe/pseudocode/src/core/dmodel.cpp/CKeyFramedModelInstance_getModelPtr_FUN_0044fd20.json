@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 87,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 36
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
       "addr": "004093a0",
       "from_addr": "00409718",
-      "name": "core_actor.cpp_FUN_004093a0",
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -132,7 +130,7 @@
     {
       "addr": "0043a240",
       "from_addr": "0043a255",
-      "name": "core_crate.cpp_FUN_0043a240",
+      "name": "core_crate.cpp_CCrate_getBoundingBox_FUN_0043a240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -150,7 +148,7 @@
     {
       "addr": "0044ffd0",
       "from_addr": "0045000a",
-      "name": "core_doc.cpp_FUN_0044ffd0",
+      "name": "core_doc.cpp_getCarriedObjectVerticalOffset_FUN_0044ffd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -168,7 +166,7 @@
     {
       "addr": "0045fec0",
       "from_addr": "0045fed3",
-      "name": "core_door.cpp_FUN_0045fec0",
+      "name": "core_door.cpp_CDoor_getHandlePosition_FUN_0045fec0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -340,15 +338,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e2140",
-      "from_addr": "004e21a1",
-      "name": "core_lever.cpp_CLever_renderOpaque_FUN_004e2140",
+      "addr": "004e2220",
+      "from_addr": "004e2233",
+      "name": "core_lever.cpp_CLever_getHandlePosition_FUN_004e2220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e2220",
-      "from_addr": "004e2233",
-      "name": "core_lever.cpp_FUN_004e2220",
+      "addr": "004e2140",
+      "from_addr": "004e21a1",
+      "name": "core_lever.cpp_CLever_renderOpaque_FUN_004e2140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -370,6 +368,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e6820",
+      "from_addr": "004e6882",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e5080",
       "from_addr": "004e50fa",
       "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080",
@@ -379,12 +383,6 @@
       "addr": "004e7900",
       "from_addr": "004e7915",
       "name": "core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_004e7900",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e6820",
-      "from_addr": "004e6882",
-      "name": "core_manpuz.cpp_FUN_004e6820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -426,13 +424,13 @@
     {
       "addr": "00534ea0",
       "from_addr": "00535a51",
-      "name": "core_setcolid.cpp_FUN_00534ea0",
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00537030",
       "from_addr": "005373a9",
-      "name": "core_setcolid.cpp_FUN_00537030",
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00537030",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -554,7 +552,7 @@
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4500"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
     }
   ],
   "globals": [
@@ -572,14 +570,14 @@
     },
     {
       "addr": "01d046a0",
-      "name": "DAT_01d046a0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "DAT_01d046a4",
-      "type": "undefined4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
       "value": null
     }
   ],
@@ -644,7 +642,7 @@
       {
         "call_addr": "00535a51",
         "call_type": "direct",
-        "caller": "core_setcolid.cpp_FUN_00534ea0",
+        "caller": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_00534ea0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -655,7 +653,7 @@
       {
         "call_addr": "00409718",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_004093a0",
+        "caller": "core_actor.cpp_CDemonActor_rayIntersect_FUN_004093a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -666,7 +664,7 @@
       {
         "call_addr": "0045fed3",
         "call_type": "direct",
-        "caller": "core_door.cpp_FUN_0045fec0",
+        "caller": "core_door.cpp_CDoor_getHandlePosition_FUN_0045fec0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -677,7 +675,7 @@
       {
         "call_addr": "0045fee2",
         "call_type": "direct",
-        "caller": "core_door.cpp_FUN_0045fec0",
+        "caller": "core_door.cpp_CDoor_getHandlePosition_FUN_0045fec0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -688,7 +686,7 @@
       {
         "call_addr": "0045ff09",
         "call_type": "direct",
-        "caller": "core_door.cpp_FUN_0045fec0",
+        "caller": "core_door.cpp_CDoor_getHandlePosition_FUN_0045fec0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -768,14 +766,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

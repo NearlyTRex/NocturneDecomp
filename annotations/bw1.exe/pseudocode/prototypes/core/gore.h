@@ -17,9 +17,9 @@ void __cdecl CBloodParticle::setup(CBloodParticle *this_ptr,CVector3f *position,
 // Address: 004e3e50
 void __cdecl CBloodParticle::setupRenderState(CBloodParticle *this_ptr);
 
-// Original: core_gore.cpp_FUN_004e3f40
+// Original: core_gore.cpp_CBloodParticle_render_FUN_004e3f40
 // Address: 004e3f40
-void FUN_004e3f40(CVector3f *param_1);
+void __cdecl CBloodParticle::render(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_CBloodParticle_onCollision_FUN_004e4730
 // Address: 004e4730
@@ -141,9 +141,9 @@ void __cdecl CGore::createBloodPool(CGore *this_ptr,CVector3f *position,EBloodTy
 // Address: 004e6310
 void __cdecl CGore::loadAssets(CGore *this_ptr);
 
-// Original: core_gore.cpp_FUN_004e63e0
+// Original: core_gore.cpp_CGore_spawnFlies_FUN_004e63e0
 // Address: 004e63e0
-CFlies * FUN_004e63e0(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
+CFlies * __cdecl CGore::spawnFlies(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size);
 
 // Original: core_gore.cpp_CGore_spawnFliesOnActor_FUN_004e64d0
 // Address: 004e64d0

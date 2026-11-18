@@ -12,8 +12,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0045c180(CDemonLight 
   CDemonLight *pCVar1;
   
   pCVar1 = (CDemonLight *)core_dcamera_cpp_CDemonCamera_ctor_FUN_00448be0(&this_ptr->base);
-  (pCVar1->base).base.vtable =
-       (CCameraView_vtable *)&PTR_core_dlight_cpp_CDemonLight_dtor_FUN_0045c240_005de514;
+  (pCVar1->base).base.vtable = &g_CCameraView_vtable_005de514;
   pCVar1->light_enabled_flag = 1;
   pCVar1->shadow_bounds_mode = SHADOW_BOUNDS_CIRCULAR;
   pCVar1->shadow_depth_buffer = (ushort *)0x0;

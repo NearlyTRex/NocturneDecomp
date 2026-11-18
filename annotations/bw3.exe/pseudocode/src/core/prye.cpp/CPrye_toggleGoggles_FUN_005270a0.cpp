@@ -13,8 +13,8 @@ void __cdecl core_prye_cpp_CPrye_toggleGoggles_FUN_005270a0(CPrye *this_ptr)
   uint class_name_hash;
   
   class_name_hash = g_CGogglesClassInfo.name_hash;
-  pCVar1 = (CDemonActor *)core_inv_cpp_FUN_004db9e0(&(this_ptr->base).inventory,"CGoggles")
-  ;
+  pCVar1 = core_inv_cpp_CInventory_findItemOfClass_FUN_004db9e0
+                     (&(this_ptr->base).inventory,"CGoggles");
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar1,class_name_hash);
   if (pCVar1 == (CDemonActor *)0x0) {
     if (g_CGamePtr->goggles_active == 0) {

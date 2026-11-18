@@ -15,7 +15,7 @@ section .text
     PUSH 0x10b5c                        ; 0040ee10
         ;   Label: core_armour.cpp_factoryFuncArmour_FUN_0040ee10
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0040ee15
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 0040ee1a
     TEST EAX,EAX                        ; 0040ee1d
     JNZ 0x0040ee22                      ; 0040ee1f

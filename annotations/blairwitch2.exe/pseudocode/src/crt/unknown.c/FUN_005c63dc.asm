@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_005c6210 at 005c6346
 ;
 ; Referenced Globals:
-;   undefined4 DAT_026807e0
-;   undefined4 DAT_026807e4
+;   char** g_EnvironStringArea
+;   char** g_EnvironmentBlock
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005b8580
@@ -66,7 +66,7 @@ section .text
     CMP byte ptr [EAX + 0x1],0x0        ; 005c6421
         ;   Label: LAB_005c6421
     SETZ AL                             ; 005c6425
-    MOV EBX,dword ptr [0x026807e4]      ; 005c6428 | DAT_026807e4
+    MOV EBX,dword ptr [0x026807e4]      ; 005c6428 | g_EnvironmentBlock
     MOVZX EBP,AL                        ; 005c642e
     TEST EBX,EBX                        ; 005c6431
     JNZ 0x005c6472                      ; 005c6433
@@ -89,12 +89,12 @@ section .text
     POP ESI                             ; 005c6457
     POP EBX                             ; 005c6458
     RET                                 ; 005c6459
-    MOV [0x026807e4],EAX                ; 005c645a | DAT_026807e4
+    MOV [0x026807e4],EAX                ; 005c645a | g_EnvironmentBlock
         ;   Label: LAB_005c645a
     ADD EAX,0x8                         ; 005c645f
     MOV dword ptr [EAX + -0x8],EBP      ; 005c6462
     MOV dword ptr [EAX + -0x4],EBP      ; 005c6465
-    MOV [0x026807e0],EAX                ; 005c6468 | DAT_026807e0
+    MOV [0x026807e0],EAX                ; 005c6468 | g_EnvironStringArea
     JMP 0x005c655d                      ; 005c646d
         ;   XREF to: 005c655d (UNCONDITIONAL_JUMP)  ; LAB_005c655d
     PUSH EBP                            ; 005c6472
@@ -111,7 +111,7 @@ section .text
     JG 0x005c655a                       ; 005c648a
         ;   XREF to: 005c655a (CONDITIONAL_JUMP)  ; LAB_005c655a
     NEG EAX                             ; 005c6490
-    MOV EDX,dword ptr [0x026807e0]      ; 005c6492 | DAT_026807e0
+    MOV EDX,dword ptr [0x026807e0]      ; 005c6492 | g_EnvironStringArea
     MOV EBP,EAX                         ; 005c6498
     INC EAX                             ; 005c649a
     LEA ESI,[EBP*0x4 + 0x0]             ; 005c649b
@@ -139,7 +139,7 @@ section .text
     POP ESI                             ; 005c64d0
     POP EBX                             ; 005c64d1
     RET                                 ; 005c64d2
-    MOV EAX,[0x026807e4]                ; 005c64d3 | DAT_026807e4
+    MOV EAX,[0x026807e4]                ; 005c64d3 | g_EnvironmentBlock
         ;   Label: LAB_005c64d3
     MOV ECX,ESI                         ; 005c64d8
     MOV EDI,EDX                         ; 005c64da
@@ -162,7 +162,7 @@ section .text
     PUSH 0x0                            ; 005c64fc
     ADD EAX,EDX                         ; 005c64fe
     PUSH EAX                            ; 005c6500
-    MOV [0x026807e0],EAX                ; 005c6501 | DAT_026807e0
+    MOV [0x026807e0],EAX                ; 005c6501 | g_EnvironStringArea
     CALL crt_memory.c_memset_FUN_005b77c0 ; 005c6506
         ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005c650b
@@ -187,7 +187,7 @@ section .text
     RET                                 ; 005c652c
     PUSH EBP                            ; 005c652d
         ;   Label: LAB_005c652d
-    MOV ECX,dword ptr [0x026807e0]      ; 005c652e | DAT_026807e0
+    MOV ECX,dword ptr [0x026807e0]      ; 005c652e | g_EnvironStringArea
     MOV ESI,dword ptr [ESP + 0x8]       ; 005c6534
     PUSH ECX                            ; 005c6538
     ADD ESI,EAX                         ; 005c6539
@@ -195,10 +195,10 @@ section .text
     CALL crt_string.c_memmove_FUN_005ba1f0 ; 005c653c
         ;   XREF to: 005ba1f0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005ba1f0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 005c6541
-    MOV dword ptr [0x026807e0],ESI      ; 005c6544 | DAT_026807e0
+    MOV dword ptr [0x026807e0],ESI      ; 005c6544 | g_EnvironStringArea
     MOV dword ptr [EBX + EBP*0x4 + 0x4],0x0 ; 005c654a
         ;   Label: LAB_005c654a
-    MOV dword ptr [0x026807e4],EBX      ; 005c6552 | DAT_026807e4
+    MOV dword ptr [0x026807e4],EBX      ; 005c6552 | g_EnvironmentBlock
     JMP 0x005c655d                      ; 005c6558
         ;   XREF to: 005c655d (UNCONDITIONAL_JUMP)  ; LAB_005c655d
     LEA EBP,[EAX + -0x1]                ; 005c655a
@@ -208,7 +208,7 @@ section .text
     ADD EBX,EAX                         ; 005c6564
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005c6566
     MOV dword ptr [EBX],EAX             ; 005c656a
-    MOV EAX,[0x026807e0]                ; 005c656c | DAT_026807e0
+    MOV EAX,[0x026807e0]                ; 005c656c | g_EnvironStringArea
     MOV byte ptr [EAX + EBP*0x1],0x0    ; 005c6571
     XOR EAX,EAX                         ; 005c6575
         ;   Label: LAB_005c6575

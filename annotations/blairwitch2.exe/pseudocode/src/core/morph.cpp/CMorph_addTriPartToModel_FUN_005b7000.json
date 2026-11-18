@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 151,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 14,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 41
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [],
   "function": {
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_CMorph_addTriPartToModel_FUN_005b7000",
-    "signature": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)"
+    "signature": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,SMRGLTextureModel *texture_list,int *texture_index_list)"
   },
   "function_calls": [
     {
@@ -108,167 +106,54 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "model_index",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "vertex_count",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "vertex_data",
         "offset": 16,
         "size": 4,
         "type": "CVector3i *"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "poly_count",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_6",
+        "name": "poly_data",
         "offset": 24,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"
       },
       {
         "is_param": true,
-        "name": "param_7",
+        "name": "texture_list",
         "offset": 28,
         "size": 4,
         "type": "SMRGLTextureModel *"
       },
       {
         "is_param": true,
-        "name": "param_8",
+        "name": "texture_index_list",
         "offset": 32,
         "size": 4,
         "type": "int *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "(this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "(this_ptr->models + param_2,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

@@ -2,20 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 86,
+    "complexity_score": 57,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "suspect_float"
     ],
-    "total_lines": 77
+    "total_lines": 78
   },
   "cross_references": [
+    {
+      "addr": "004dc000",
+      "from_addr": "004dc021",
+      "name": "core_game.cpp_CGame_onSetLoaded_FUN_004dc000",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004d1a80",
       "from_addr": "004d1e21",
@@ -26,12 +32,6 @@
       "addr": "004cf5e0",
       "from_addr": "004cf8e0",
       "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dc000",
-      "from_addr": "004dc021",
-      "name": "core_game.cpp_FUN_004dc000",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -68,15 +68,15 @@
   "globals": [
     {
       "addr": "005f0bee",
-      "name": "DAT_005f0bee",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f0bee",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005f0bf6",
-      "name": "DAT_005f0bf6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005f0bf6",
+      "type": "double",
+      "value": "65536"
     }
   ],
   "param_estimates": {
@@ -118,7 +118,7 @@
       {
         "call_addr": "004dc021",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004dc000",
+        "caller": "core_game.cpp_CGame_onSetLoaded_FUN_004dc000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -253,44 +253,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "7.83778e-39",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "local_18 = 7.83778e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Complex pointer cast",
       "line": 26,
-      "match": "extraout_EDX",
+      "match": "(int *)((int)g_IntensityToValueLookupTable",
       "severity": "moderate",
-      "text": "iVar1 = extraout_EDX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "*(int *)(extraout_ECX + 0x1fe6344) = local_14;",
-      "type": "extra_output"
+      "text": "*(int *)((int)g_IntensityToValueLookupTable + iVar1) = iVar5;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -7,13 +7,13 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00b81ca4
+;   int g_LightBufferPoolIndex
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV ECX,dword ptr [0x00b81ca4]      ; 0044e8b0 | DAT_00b81ca4
+    MOV ECX,dword ptr [0x00b81ca4]      ; 0044e8b0 | g_LightBufferPoolIndex
         ;   Label: core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044e8b0
     LEA EAX,[ECX*0x4 + 0x0]             ; 0044e8b6
     ADD EAX,ECX                         ; 0044e8bd
@@ -27,7 +27,7 @@ section .text
     JBE 0x0044e8d6                      ; 0044e8d2
         ;   XREF to: 0044e8d6 (CONDITIONAL_JUMP)  ; LAB_0044e8d6
     XOR EAX,EAX                         ; 0044e8d4
-    MOV dword ptr [0x00b81ca4],ECX      ; 0044e8d6 | DAT_00b81ca4
+    MOV dword ptr [0x00b81ca4],ECX      ; 0044e8d6 | g_LightBufferPoolIndex
         ;   Label: LAB_0044e8d6
     RET                                 ; 0044e8dc
 

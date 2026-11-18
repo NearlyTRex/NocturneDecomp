@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; Called Functions:
-;   core_doc.cpp_FUN_0046f740
+;   core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ESI                            ; 00474272
     LEA ESI,[ESP + 0xc]                 ; 00474273
     MOV EDI,EBX                         ; 00474277
-    CALL core_doc.cpp_FUN_0046f740      ; 00474279
-        ;   XREF to: 0046f740 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0046f740()
+    CALL core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740 ; 00474279
+        ;   XREF to: 0046f740 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_doc.cpp_CDoc_computeWeaponAttachXForm_FUN_0046f740(CDoc * this_ptr, CDemonActor * carried_actor, int hand_index, CMatrix3x4f * output_matrix)
     MOV ECX,0xc                         ; 0047427e
     LEA ESI,[ESP + 0xc]                 ; 00474283
     ADD ESP,0xc                         ; 00474287

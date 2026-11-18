@@ -19,7 +19,7 @@
 ;   undefined4 s_r_weapon_0058581b+3
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CWeaponActorType_02ddf970.name_hash
+;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -43,7 +43,7 @@ section .text
     CALL core_inv.cpp_CInventory_initialize_FUN_004bef10 ; 004b4ddd
         ;   XREF to: 004bef10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_initialize_FUN_004bef10(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004b4de2
-    MOV EDX,dword ptr [0x02ddf9a8]      ; 004b4de5 | g_CWeaponActorType_02ddf970.name_hash
+    MOV EDX,dword ptr [0x02ddf9a8]      ; 004b4de5 | g_CWeaponClassInfo.name_hash
     PUSH EDX                            ; 004b4deb
     PUSH 0x5857f6                       ; 004b4dec | = "CGun"
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004b4df1

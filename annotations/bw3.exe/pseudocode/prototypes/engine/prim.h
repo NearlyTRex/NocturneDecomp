@@ -5,13 +5,13 @@
 // Function prototypes for engine/prim.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_prim.c_FUN_00515500
+// Original: engine_prim.c_setCullingMode_FUN_00515500
 // Address: 00515500
-void __cdecl FUN_00515500(int culling_mode);
+void __cdecl setCullingMode(int culling_mode);
 
-// Original: engine_prim.c_FUN_00515510
+// Original: engine_prim.c_setupBasicSoftwareEdge_FUN_00515510
 // Address: 00515510
-void FUN_00515510(int param_1,int param_2);
+void __cdecl setupBasicSoftwareEdge(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 
 // Original: engine_prim.c_findEdgeInBuffer_FUN_005158e0
 // Address: 005158e0

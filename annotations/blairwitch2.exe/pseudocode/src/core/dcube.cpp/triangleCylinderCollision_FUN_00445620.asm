@@ -36,18 +36,18 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dcube.cpp_FUN_00446df0 at 00446e1f
+;   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00446df0 at 00446e1f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ce7f6
-;   undefined4 DAT_005ce7fe
-;   undefined4 DAT_0151082c
-;   undefined4 DAT_01510830
-;   undefined4 DAT_01510834
-;   undefined4 DAT_01510838
+;   double g_CylinderCollisionMaxNormalY = -0.340000000000000
+;   double g_CylinderCollisionMinNormal2D = 0.0100000000000000
+;   CVector3f g_CVector3f_0151082c
+;   undefined4 g_CVector3f_0151082c.y
+;   undefined4 g_CVector3f_0151082c.z
+;   uchar g_UCHAR_01510838
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00444a40
+;   core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40
 ;   core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0
 ;
 ; *****************************************************************************
@@ -64,7 +64,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00445629
     MOV EBX,dword ptr [EBP + 0x14]      ; 0044562c
     FLD float ptr [EBX + 0x10]          ; 0044562f
-    FCOMP double ptr [0x005ce7f6]       ; 00445632 | DAT_005ce7f6
+    FCOMP double ptr [0x005ce7f6]       ; 00445632 | g_CylinderCollisionMaxNormalY
     FNSTSW AX                           ; 00445638
     SAHF                                ; 0044563a
     JA 0x00445895                       ; 0044563b
@@ -252,14 +252,14 @@ section .text
     OR ESI,EAX                          ; 00445826
     FSQRT                               ; 00445828
     ADD ESP,0x10                        ; 0044582a
-    MOV AH,byte ptr [0x01510838]        ; 0044582d | DAT_01510838
+    MOV AH,byte ptr [0x01510838]        ; 0044582d | g_UCHAR_01510838
     FSTP double ptr [ESP]               ; 00445833
     TEST AH,0x1                         ; 00445836
     JZ 0x0044590f                       ; 00445839
         ;   XREF to: 0044590f (CONDITIONAL_JUMP)  ; LAB_0044590f
     FLD double ptr [ESP]                ; 0044583f
         ;   Label: LAB_0044583f
-    FCOMP double ptr [0x005ce7fe]       ; 00445842 | DAT_005ce7fe
+    FCOMP double ptr [0x005ce7fe]       ; 00445842 | g_CylinderCollisionMinNormal2D
     FNSTSW AX                           ; 00445848
     SAHF                                ; 0044584a
     JNC 0x00445936                      ; 0044584b
@@ -267,12 +267,12 @@ section .text
     TEST ESI,ESI                        ; 00445851
     JNZ 0x0044588c                      ; 00445853
         ;   XREF to: 0044588c (CONDITIONAL_JUMP)  ; LAB_0044588c
-    PUSH 0x151082c                      ; 00445855 | DAT_0151082c
+    PUSH 0x151082c                      ; 00445855 | g_CVector3f_0151082c
     MOV EDI,dword ptr [EBP + 0x18]      ; 0044585a
     PUSH EDI                            ; 0044585d
     PUSH EBX                            ; 0044585e
-    CALL core_dcube.cpp_FUN_00444a40    ; 0044585f
-        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_00444a40()
+    CALL core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40 ; 0044585f
+        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40(CDemonCubeTriangle * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0x80],EAX      ; 00445864
     FLD float ptr [ESP + 0x80]          ; 0044586b
     FLDZ                                ; 00445872
@@ -348,11 +348,11 @@ section .text
         ;   Label: LAB_0044590f
     OR DL,0x1                           ; 00445911
     XOR EAX,EAX                         ; 00445914
-    MOV byte ptr [0x01510838],DL        ; 00445916 | DAT_01510838
-    MOV [0x0151082c],EAX                ; 0044591c | DAT_0151082c
+    MOV byte ptr [0x01510838],DL        ; 00445916 | g_UCHAR_01510838
+    MOV [0x0151082c],EAX                ; 0044591c | g_CVector3f_0151082c
     MOV EDX,0xc2c80000                  ; 00445921
-    MOV [0x01510834],EAX                ; 00445926 | DAT_01510834
-    MOV dword ptr [0x01510830],EDX      ; 0044592b | DAT_01510830
+    MOV [0x01510834],EAX                ; 00445926 | g_CVector3f_0151082c.z
+    MOV dword ptr [0x01510830],EDX      ; 0044592b | g_CVector3f_0151082c.y
     JMP 0x0044583f                      ; 00445931
         ;   XREF to: 0044583f (UNCONDITIONAL_JUMP)  ; LAB_0044583f
     FLD float ptr [EBX + 0xc]           ; 00445936
@@ -368,13 +368,13 @@ section .text
     FADD float ptr [EAX + 0x8]          ; 0044594f
     FSTP float ptr [ESP + 0x20]         ; 00445952
     MOV EAX,dword ptr [EAX + 0x4]       ; 00445956
-    PUSH 0x151082c                      ; 00445959 | DAT_0151082c
+    PUSH 0x151082c                      ; 00445959 | g_CVector3f_0151082c
     MOV dword ptr [ESP + 0x20],EAX      ; 0044595e
     LEA EAX,[ESP + 0x1c]                ; 00445962
     PUSH EAX                            ; 00445966
     PUSH EBX                            ; 00445967
-    CALL core_dcube.cpp_FUN_00444a40    ; 00445968
-        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_00444a40()
+    CALL core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40 ; 00445968
+        ;   XREF to: 00444a40 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00444a40(CDemonCubeTriangle * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0x80],EAX      ; 0044596d
     FLD float ptr [ESP + 0x80]          ; 00445974
     ADD ESP,0xc                         ; 0044597b
@@ -386,7 +386,7 @@ section .text
     JA 0x0044588c                       ; 00445989
         ;   XREF to: 0044588c (CONDITIONAL_JUMP)  ; LAB_0044588c
     FLD float ptr [ESP + 0x8]           ; 0044598f
-    FMUL float ptr [0x01510830]         ; 00445993 | DAT_01510830
+    FMUL float ptr [0x01510830]         ; 00445993 | g_CVector3f_0151082c.y
     FADD float ptr [ESP + 0x1c]         ; 00445999
     MOV EAX,dword ptr [EBP + 0x20]      ; 0044599d
     FST float ptr [ESP + 0x70]          ; 004459a0

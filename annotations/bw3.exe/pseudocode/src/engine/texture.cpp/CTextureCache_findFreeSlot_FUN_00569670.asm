@@ -7,21 +7,21 @@
 ; CTextureCache *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   engine_texture.cpp_CTextureCache_addPalettedTexture_FUN_00569e50 at 00569e57
+;   engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_00569ec0 at 00569ec7
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 0056985c
-;   engine_texture.cpp_FUN_00569e50 at 00569e57
-;   engine_texture.cpp_FUN_00569ec0 at 00569ec7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_005d5e3d
 ;   TerminatedCString s_CTextureCache_findFreeSl_005d5e53
-;   undefined4 DAT_01d71de0
-;   undefined4 DAT_01d71de4
-;   undefined4 DAT_02cfd0d4
+;   char* g_CHAR_PTR_01d71de0
+;   int g_INT_01d71de4
+;   int g_INT_02cfd0d4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   crt_memory.c_memset_FUN_005a28f0
-;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_debugFree_FUN_005a3770
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     JZ 0x005696c5                       ; 005696ba
         ;   XREF to: 005696c5 (CONDITIONAL_JUMP)  ; LAB_005696c5
     PUSH EAX                            ; 005696bc
-    CALL crt_unknown.c_FUN_005a3770     ; 005696bd
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005696bd
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005696c2
     MOV ECX,dword ptr [EBX + 0x48]      ; 005696c5
         ;   Label: LAB_005696c5
@@ -71,8 +71,8 @@ section .text
     JZ 0x005696d5                       ; 005696ca
         ;   XREF to: 005696d5 (CONDITIONAL_JUMP)  ; LAB_005696d5
     PUSH ECX                            ; 005696cc
-    CALL crt_unknown.c_FUN_005a3770     ; 005696cd
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005696cd
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005696d2
     MOV EBP,dword ptr [EBX + 0x4c]      ; 005696d5
         ;   Label: LAB_005696d5
@@ -80,8 +80,8 @@ section .text
     JZ 0x005696e5                       ; 005696da
         ;   XREF to: 005696e5 (CONDITIONAL_JUMP)  ; LAB_005696e5
     PUSH EBP                            ; 005696dc
-    CALL crt_unknown.c_FUN_005a3770     ; 005696dd
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 005696dd
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 005696e2
     MOV EDX,dword ptr [EBX + 0x50]      ; 005696e5
         ;   Label: LAB_005696e5
@@ -108,7 +108,7 @@ section .text
     JL 0x005696a4                       ; 00569718
         ;   XREF to: 005696a4 (CONDITIONAL_JUMP)  ; LAB_005696a4
     MOV dword ptr [ESI],0x1             ; 0056971a
-    MOV EBX,dword ptr [0x02cfd0d4]      ; 00569720 | DAT_02cfd0d4
+    MOV EBX,dword ptr [0x02cfd0d4]      ; 00569720 | g_INT_02cfd0d4
     MOV dword ptr [ESI + 0x18004],0x400 ; 00569726
     TEST EBX,EBX                        ; 00569730
     JZ 0x005696a4                       ; 00569732
@@ -116,10 +116,10 @@ section .text
     MOV EBP,0x5d5e3d                    ; 00569738 | = "..\\engine\\texture.cpp"
     MOV EAX,0xbc                        ; 0056973d
     PUSH 0x5d5e53                       ; 00569742 | = "CTextureCache::findFreeSlot - Cache h..."
-    MOV dword ptr [0x01d71de0],EBP      ; 00569747 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 0056974d | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00569752
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 00569747 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 0056974d | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569752
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569757
     JMP 0x005696a4                      ; 0056975a
         ;   XREF to: 005696a4 (UNCONDITIONAL_JUMP)  ; LAB_005696a4
@@ -134,8 +134,8 @@ section .text
         ;   XREF to: 00569696 (UNCONDITIONAL_JUMP)  ; LAB_00569696
     PUSH EDX                            ; 00569773
         ;   Label: LAB_00569773
-    CALL crt_unknown.c_FUN_005a3770     ; 00569774
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
+    CALL crt_unknown.c_debugFree_FUN_005a3770 ; 00569774
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005a3770(void * ptr)
     ADD ESP,0x4                         ; 00569779
     PUSH 0x60                           ; 0056977c
     PUSH 0x0                            ; 0056977e

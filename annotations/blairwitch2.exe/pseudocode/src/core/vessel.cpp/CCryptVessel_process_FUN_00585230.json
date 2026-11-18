@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 489,
-    "complexity_score": 738,
+    "complexity_score": 723,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 233,
-    "suspect_count": 47,
+    "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
     "total_lines": 722
@@ -59,50 +58,50 @@
   "globals": [
     {
       "addr": "005edde2",
-      "name": "DAT_005edde2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005edde2",
+      "type": "double",
+      "value": "8"
     },
     {
       "addr": "005eddea",
-      "name": "DAT_005eddea",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005eddea",
+      "type": "double",
+      "value": "16"
     },
     {
       "addr": "005eddf2",
-      "name": "DAT_005eddf2",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005eddf2",
+      "type": "float",
+      "value": "-16"
     },
     {
       "addr": "005eddf6",
-      "name": "DAT_005eddf6",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005eddf6",
+      "type": "float",
+      "value": "3.141593"
     },
     {
       "addr": "005eddfa",
-      "name": "DAT_005eddfa",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005eddfa",
+      "type": "float",
+      "value": "1.700000"
     },
     {
       "addr": "006141f0",
-      "name": "DAT_006141f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c38bc0"
     },
     {
       "addr": "00614d30",
-      "name": "DAT_00614d30",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "01c3deb4"
     },
     {
       "addr": "01cedef4",
-      "name": "DAT_01cedef4",
-      "type": "undefined4",
+      "name": "g_INT_01cedef4",
+      "type": "int",
       "value": null
     }
   ],
@@ -240,14 +239,6 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 16,
       "match": "afStackY_1058",
@@ -260,7 +251,7 @@
       "line": 186,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -268,7 +259,7 @@
       "line": 187,
       "match": "&stack0xffffffb8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -276,7 +267,7 @@
       "line": 188,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -284,7 +275,7 @@
       "line": 189,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -292,7 +283,7 @@
       "line": 197,
       "match": "&stack0xffffffa0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa0 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa0 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -300,7 +291,7 @@
       "line": 198,
       "match": "&stack0xffffffd0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -308,7 +299,7 @@
       "line": 199,
       "match": "&stack0xffffffa4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -316,7 +307,7 @@
       "line": 200,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -324,7 +315,7 @@
       "line": 209,
       "match": "&stack0xffffff94",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff94 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff94 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -332,7 +323,7 @@
       "line": 210,
       "match": "&stack0xffffffac",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -340,7 +331,7 @@
       "line": 211,
       "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -348,7 +339,7 @@
       "line": 212,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -356,7 +347,7 @@
       "line": 186,
       "match": "(int)&stack0xffffffc4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -364,7 +355,7 @@
       "line": 187,
       "match": "(int)&stack0xffffffb8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar9 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -372,7 +363,7 @@
       "line": 188,
       "match": "(int)&stack0xffffffc8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -380,7 +371,7 @@
       "line": 189,
       "match": "(int)&stack0xffffffbc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -388,7 +379,7 @@
       "line": 197,
       "match": "(int)&stack0xffffffa0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa0 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa0 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -396,7 +387,7 @@
       "line": 198,
       "match": "(int)&stack0xffffffd0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar9 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -404,7 +395,7 @@
       "line": 199,
       "match": "(int)&stack0xffffffa4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -412,7 +403,7 @@
       "line": 200,
       "match": "(int)&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -420,7 +411,7 @@
       "line": 209,
       "match": "(int)&stack0xffffff94",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff94 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff94 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -428,7 +419,7 @@
       "line": 210,
       "match": "(int)&stack0xffffffac",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -436,7 +427,7 @@
       "line": 211,
       "match": "(int)&stack0xffffff98",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -444,7 +435,7 @@
       "line": 212,
       "match": "(int)&stack0xffffffb0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -460,7 +451,7 @@
       "line": 50,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar7->vec).x = (pUVar1->vec).x;",
+      "text": "(pUVar8->vec).x = (pUVar1->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -476,7 +467,7 @@
       "line": 93,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar1->vec).x = (pUVar7->vec).x;",
+      "text": "(pUVar1->vec).x = (pUVar8->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -492,7 +483,7 @@
       "line": 122,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar1->vec).x = (pUVar7->vec).x;",
+      "text": "(pUVar1->vec).x = (pUVar8->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -508,7 +499,7 @@
       "line": 159,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar1->vec).x = (pUVar7->vec).x;",
+      "text": "(pUVar1->vec).x = (pUVar8->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -516,7 +507,7 @@
       "line": 186,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -524,7 +515,7 @@
       "line": 187,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar9 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -532,7 +523,7 @@
       "line": 188,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -540,7 +531,7 @@
       "line": 189,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -548,7 +539,7 @@
       "line": 197,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa0 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa0 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -556,7 +547,7 @@
       "line": 198,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar9 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -564,7 +555,7 @@
       "line": 199,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -572,7 +563,7 @@
       "line": 200,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -580,7 +571,7 @@
       "line": 209,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff94 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff94 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -588,7 +579,7 @@
       "line": 210,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -596,7 +587,7 @@
       "line": 211,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -604,14 +595,14 @@
       "line": 212,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "pointer_cast"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 20,
         "vtable_addr": "005fdb44"
       }

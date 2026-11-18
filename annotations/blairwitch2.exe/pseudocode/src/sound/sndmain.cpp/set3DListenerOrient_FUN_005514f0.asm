@@ -20,8 +20,8 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0 at 0055242e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_026484b8
-;   undefined4 DAT_02649027
+;   int g_INT_026484b8
+;   byte g_BYTE_02649027
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
@@ -34,7 +34,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_005532f0 ; 005514f0
         ;   XREF to: 005532f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005532f0()
         ;   Label: sound_sndmain.cpp_set3DListenerOrient_FUN_005514f0
-    MOV EAX,[0x026484b8]                ; 005514f5 | DAT_026484b8
+    MOV EAX,[0x026484b8]                ; 005514f5 | g_INT_026484b8
     MOV EDX,dword ptr [ESP + 0x4]       ; 005514fa
     MOV dword ptr [EAX*0x4 + 0x2648470],EDX ; 005514fe
     MOV EDX,dword ptr [ESP + 0x8]       ; 00551505
@@ -53,7 +53,7 @@ section .text
     MOV dword ptr [EAX*0x4 + 0x26484a8],EDX ; 0055154b
     MOV EDX,dword ptr [ESP + 0x24]      ; 00551552
     MOV dword ptr [EAX*0x4 + 0x26484b0],EDX ; 00551556
-    OR byte ptr [0x02649027],0x20       ; 0055155d | DAT_02649027
+    OR byte ptr [0x02649027],0x20       ; 0055155d | g_BYTE_02649027
     JMP 0x00551440                      ; 00551564
         ;   XREF to: 00551440 (UNCONDITIONAL_CALL)
 

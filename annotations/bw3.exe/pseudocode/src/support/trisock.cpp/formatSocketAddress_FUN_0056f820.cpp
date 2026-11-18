@@ -22,6 +22,6 @@ void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0056f820(SNetworkAddr *
   } while (*buffer != '\0');
   buffer = (char *)0x0;
 LAB_0056f860:
-  _sprintf(buffer,&DAT_005d68d7);
+  _sprintf(buffer,":%d");
   return;
 }

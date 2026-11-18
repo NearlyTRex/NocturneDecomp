@@ -5,14 +5,40 @@
       "004f1830",
       "004f2090"
     ],
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "instructions":358,
-    "method":"FUN_005625a3",
-    "name":"engine_special.cpp_FUN_005625a3",
+    "method":"renderMMXPerspectiveScanlineTrueColor16",
+    "name":"engine_special.cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_005625a3",
+    "params":[
+      {
+        "name":"left_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -90,6 +116,7 @@
       "004217c0",
       "0042d9f0",
       "0043f160",
+      "0044eeb0",
       "0044ef20",
       "004540c0",
       "0045abd0",
@@ -132,6 +159,7 @@
       "0050c750",
       "0050c980",
       "00538ad0",
+      "0053f0f0",
       "0053f940",
       "00542fd0",
       "005430e0",
@@ -146,8 +174,8 @@
     ],
     "conv":"__cdecl",
     "instructions":205,
-    "method":"FUN_005632a3",
-    "name":"engine_special.cpp_FUN_005632a3",
+    "method":"transformAndProjectPoint",
+    "name":"engine_special.cpp_transformAndProjectPoint_FUN_005632a3",
     "params":[
       {
         "name":"output",

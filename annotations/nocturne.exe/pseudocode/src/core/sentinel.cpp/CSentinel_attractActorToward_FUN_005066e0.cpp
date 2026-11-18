@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
@@ -24,12 +23,12 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CSentine
   }
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                      (&local_10,&g_ZeroVector.f,
-                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01e5721c
-                     );
+                      (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                      g_INT_01e5721c);
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                      (&local_34,&g_ZeroVector.f,
-                      (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01e57220
-                     );
+                      (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                      g_INT_01e57220);
   local_1c.x = (pCVar2->x + pCVar1->x) * 0.5f;
   local_1c.y = (pCVar2->y + pCVar1->y) * 0.5f;
   local_1c.z = (pCVar2->z + pCVar1->z) * 0.5f + -0.5f;

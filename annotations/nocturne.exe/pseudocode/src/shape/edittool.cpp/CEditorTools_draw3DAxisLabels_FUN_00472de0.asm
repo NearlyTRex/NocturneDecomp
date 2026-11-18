@@ -24,15 +24,15 @@
 ;   undefined4 s_YZ_0057ea93+1
 ;   TerminatedCString s_c_0057ea97
 ;   double DOUBLE_0057ea9a = 256
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_005c5018
-;   undefined4 DAT_005c5044
-;   undefined4 DAT_005c5048
-;   undefined4 DAT_005c5054+3
-;   undefined4 DAT_005c5074
-;   undefined4 DAT_005c5078
-;   undefined4 DAT_005c5084
-;   undefined4 DAT_005c5084+3
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.screen_x+3
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.transformed_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.transformed_y
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.screen_x
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.screen_x+3
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -55,22 +55,22 @@ section .text
     PUSH EDI                            ; 00472de2
     PUSH EBP                            ; 00472de3
     SUB ESP,0x24                        ; 00472de4
-    CMP dword ptr [0x01bcd070],0x0      ; 00472de7 | DAT_01bcd070
+    CMP dword ptr [0x01bcd070],0x0      ; 00472de7 | g_CBitFont_PTR_01bcd070
     JZ 0x00472f4f                       ; 00472dee
         ;   XREF to: 00472f4f (CONDITIONAL_JUMP)  ; LAB_00472f4f
-    MOV EAX,[0x01bcd070]                ; 00472df4 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00472df4 | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_00472df4
     PUSH 0x6a                           ; 00472df9
     MOV EBX,dword ptr [EAX + 0x3168]    ; 00472dfb
     PUSH EAX                            ; 00472e01
-    MOV dword ptr [0x01bcd9b8],EBX      ; 00472e02 | DAT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EBX      ; 00472e02 | g_EditorFontMaxCharWidth
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00472e08
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00472e0d
     FLD float ptr [ESP + 0x3c]          ; 00472e10
     FMUL double ptr [0x0057ea9a]        ; 00472e14 | DOUBLE_0057ea9a
     XOR ESI,ESI                         ; 00472e1a
-    MOV [0x01bcd9bc],EAX                ; 00472e1c | DAT_01bcd9bc
+    MOV [0x01bcd9bc],EAX                ; 00472e1c | g_INT_01bcd9bc
     MOV EAX,dword ptr [ESP + 0x40]      ; 00472e21
     MOV dword ptr [ESP + 0x14],ESI      ; 00472e25
     MOV dword ptr [ESP + 0x18],ESI      ; 00472e29
@@ -95,16 +95,16 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00472e64
         ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_004cd210(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 00472e69
-    MOV ESI,0x5c5044                    ; 00472e6c | DAT_005c5044
+    MOV ESI,0x5c5044                    ; 00472e6c | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 00472e71
     MOV ECX,0xc                         ; 00472e74
     MOV EDI,ESP                         ; 00472e79
-    MOVSD.REP ES:EDI,ESI                ; 00472e7b | DAT_005c5044 | DAT_005c5048
+    MOVSD.REP ES:EDI,ESI                ; 00472e7b | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 00472e7d
     MOV ECX,0xc                         ; 00472e80
-    MOV ESI,0x5c5014                    ; 00472e85 | DAT_005c5014
+    MOV ESI,0x5c5014                    ; 00472e85 | g_SRenderVertex_ARRAY_005c5014
     MOV EDI,ESP                         ; 00472e8a
-    MOVSD.REP ES:EDI,ESI                ; 00472e8c | DAT_005c5014 | DAT_005c5018
+    MOVSD.REP ES:EDI,ESI                ; 00472e8c | g_SRenderVertex_ARRAY_005c5014 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 00472e8e
         ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00472e93
@@ -119,16 +119,16 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00472eaf
         ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_004cd210(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 00472eb4
-    MOV ESI,0x5c5074                    ; 00472eb7 | DAT_005c5074
+    MOV ESI,0x5c5074                    ; 00472eb7 | g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 00472ebc
     MOV ECX,0xc                         ; 00472ebf
     MOV EDI,ESP                         ; 00472ec4
-    MOVSD.REP ES:EDI,ESI                ; 00472ec6 | DAT_005c5074 | DAT_005c5078
+    MOVSD.REP ES:EDI,ESI                ; 00472ec6 | g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 00472ec8
     MOV ECX,0xc                         ; 00472ecb
-    MOV ESI,0x5c5014                    ; 00472ed0 | DAT_005c5014
+    MOV ESI,0x5c5014                    ; 00472ed0 | g_SRenderVertex_ARRAY_005c5014
     MOV EDI,ESP                         ; 00472ed5
-    MOVSD.REP ES:EDI,ESI                ; 00472ed7 | DAT_005c5014 | DAT_005c5018
+    MOVSD.REP ES:EDI,ESI                ; 00472ed7 | g_SRenderVertex_ARRAY_005c5014 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 00472ed9
         ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00472ede
@@ -144,23 +144,23 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_004cd210 ; 00472efc
         ;   XREF to: 004cd210 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_004cd210(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 00472f01
-    MOV ESI,0x5c50a4                    ; 00472f04 | DAT_005c50a4
+    MOV ESI,0x5c50a4                    ; 00472f04 | g_SRenderVertex_ARRAY_005c5014[3].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 00472f09
     MOV ECX,0xc                         ; 00472f0c
     MOV EDI,ESP                         ; 00472f11
-    MOV EBX,0x5c5014                    ; 00472f13 | DAT_005c5014
-    MOVSD.REP ES:EDI,ESI                ; 00472f18 | DAT_005c50a4 | DAT_005c50a8
+    MOV EBX,0x5c5014                    ; 00472f13 | g_SRenderVertex_ARRAY_005c5014
+    MOVSD.REP ES:EDI,ESI                ; 00472f18 | g_SRenderVertex_ARRAY_005c5014[3].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_005c5014[3].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 00472f1a
     MOV ECX,0xc                         ; 00472f1d
-    MOV ESI,0x5c5014                    ; 00472f22 | DAT_005c5014
+    MOV ESI,0x5c5014                    ; 00472f22 | g_SRenderVertex_ARRAY_005c5014
     MOV EDI,ESP                         ; 00472f27
     ADD EBX,0x30                        ; 00472f29
-    MOVSD.REP ES:EDI,ESI                ; 00472f2c | DAT_005c5014 | DAT_005c5018
+    MOVSD.REP ES:EDI,ESI                ; 00472f2c | g_SRenderVertex_ARRAY_005c5014 | g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 00472f2e
         ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00472f33
     XOR ESI,ESI                         ; 00472f36
-    TEST byte ptr [EBX + 0x13],0x80     ; 00472f38 | DAT_005c5054+3 | DAT_005c5084+3
+    TEST byte ptr [EBX + 0x13],0x80     ; 00472f38 | g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.screen_x+3 | g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.screen_x+3
         ;   Label: LAB_00472f38
     JZ 0x00472f77                       ; 00472f3c
         ;   XREF to: 00472f77 (CONDITIONAL_JUMP)  ; LAB_00472f77
@@ -194,8 +194,8 @@ section .text
     PUSH 0x57ea97                       ; 00472f80 | = "%c"
     LEA EAX,[ESP + 0x8]                 ; 00472f85
     PUSH EAX                            ; 00472f89
-    MOV EBP,dword ptr [EBX + 0x10]      ; 00472f8a | DAT_005c5084
-    MOV EDI,dword ptr [EBX + 0x14]      ; 00472f8d | DAT_005c5088
+    MOV EBP,dword ptr [EBX + 0x10]      ; 00472f8a | g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.screen_x
+    MOV EDI,dword ptr [EBX + 0x14]      ; 00472f8d | g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.screen_y
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00472f90
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00472f95
@@ -204,7 +204,7 @@ section .text
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 00472fa2
     PUSH -0x1                           ; 00472fa5
-    MOV EAX,[0x01bcde04]                ; 00472fa7 | DAT_01bcde04
+    MOV EAX,[0x01bcde04]                ; 00472fa7 | g_AxisLabelTextColor
     PUSH EAX                            ; 00472fac
     SAR EDI,0x10                        ; 00472fad
     PUSH EDI                            ; 00472fb0
@@ -212,7 +212,7 @@ section .text
     PUSH EBP                            ; 00472fb4
     LEA EAX,[ESP + 0x10]                ; 00472fb5
     PUSH EAX                            ; 00472fb9
-    MOV EDX,dword ptr [0x01bcd070]      ; 00472fba | DAT_01bcd070
+    MOV EDX,dword ptr [0x01bcd070]      ; 00472fba | g_CBitFont_PTR_01bcd070
     PUSH EDX                            ; 00472fc0
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00472fc1
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

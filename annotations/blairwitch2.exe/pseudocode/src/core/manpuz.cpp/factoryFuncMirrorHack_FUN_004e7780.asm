@@ -15,7 +15,7 @@ section .text
     PUSH 0x434                          ; 004e7780
         ;   Label: core_manpuz.cpp_factoryFuncMirrorHack_FUN_004e7780
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004e7785
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004e778a
     TEST EAX,EAX                        ; 004e778d
     JNZ 0x004e7792                      ; 004e778f

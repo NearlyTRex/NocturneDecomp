@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   grabber
 ;
 ; Referenced Globals:
-;   undefined4 s_CTentacle_005d82c2+1
+;   TerminatedCString s_CTentacle_005d82c3
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c550
@@ -18,7 +18,7 @@
 
 section .text
 
-    PUSH 0x5d82c3                       ; 0045cd00 | s_CTentacle_005d82c2+1
+    PUSH 0x5d82c3                       ; 0045cd00 | = "CTentacle"
         ;   Label: core_demnfolk.cpp_CDemnfolk_isGrabbable_FUN_0045cd00
     MOV EDX,dword ptr [ESP + 0xc]       ; 0045cd05
     PUSH EDX                            ; 0045cd09

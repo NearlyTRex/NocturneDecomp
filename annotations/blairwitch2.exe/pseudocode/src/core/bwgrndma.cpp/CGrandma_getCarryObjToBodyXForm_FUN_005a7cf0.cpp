@@ -16,17 +16,16 @@ CMatrix3x4f * __stack2_esi core_bwgrndma_cpp_CGrandma_getCarryObjToBodyXForm_FUN
   CMatrix3x4f *pCVar3;
   float *pfVar4;
   byte bVar5;
-  int aiStackY_1010 [964];
-  int *piVar6;
+  float afStackY_1010 [964];
+  CVector3f *euler_angles;
   CMatrix3x4f CStack_f4;
   CMatrix3x4f CStack_c4;
   float afStack_94 [12];
   CMatrix3x4f CStack_64;
-  uint uStack_34;
-  uint uStack_30;
-  uint uStack_2c;
-  int iStack_28;
-  int aiStack_24 [5];
+  CVector3f CStack_34;
+  float fStack_28;
+  float afStack_24 [2];
+  CVector3f CStack_1c;
   char *pcStack_10;
   
   bVar5 = 0;
@@ -34,19 +33,21 @@ CMatrix3x4f * __stack2_esi core_bwgrndma_cpp_CGrandma_getCarryObjToBodyXForm_FUN
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                      (*(CDemonActor **)(pcStack_10 + 0x2620),g_CBoxActorClassInfo.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
-    iStack_28 = _strcmp(pCVar1[1].create_event,"BROOM.KFM");
-    if (iStack_28 == 0) {
-      piVar6 = aiStack_24 + 2;
-      aiStack_24[1] = 0x3fc7ae14;
-      aiStack_24[0] = 0x3fc7ae14;
-      uStack_34 = 0x3d8f5c29;
-      aiStack_24[2] = iStack_28;
-      aiStack_24[(uint)bVar5 * -2 + 3] = aiStack_24[(uint)bVar5 * -2];
-      aiStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-           aiStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-      uStack_30 = 0xbe19999a;
-      uStack_2c = 0;
-      core_xform_cpp_FUN_00591c10(&CStack_64,&uStack_34,piVar6);
+    fStack_28 = (float)_strcmp
+                                 (pCVar1[1].create_event,"BROOM.KFM");
+    if (fStack_28 == 0.0) {
+      euler_angles = &CStack_1c;
+      afStack_24[1] = 1.56;
+      afStack_24[0] = 1.56;
+      CStack_34.x = 0.07;
+      CStack_1c.x = fStack_28;
+      *(float *)((int)&CStack_1c + (uint)bVar5 * -8 + 4) = afStack_24[(uint)bVar5 * -2];
+      *(float *)((int)&CStack_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+           afStack_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      CStack_34.y = -0.15;
+      CStack_34.z = 0.0;
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_00591c10
+                (&CStack_64,&CStack_34,euler_angles);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
                 (&CStack_64,
                  (CMatrix3x4f *)

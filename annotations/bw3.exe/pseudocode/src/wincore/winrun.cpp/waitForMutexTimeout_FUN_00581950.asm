@@ -11,11 +11,11 @@
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_processAudio_FUN_00559120 at 00559143
-;   support_trisock.cpp_FUN_00570ae0 at 00570b32
+;   support_trisock.cpp_dnsLookupThreadProc_FUN_00570ae0 at 00570b32
 ;
 ; Referenced Globals:
 ;   void* PTR_WaitForSingleObject_005b3680 = 001b42d2
-;   undefined4 DAT_005d7e93
+;   double g_SecondsToMillisecondsWaitMultiplier = 1000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
@@ -36,9 +36,9 @@ section .text
     RET                                 ; 00581960
     FLD double ptr [ESP + 0x10]         ; 00581961
         ;   Label: LAB_00581961
-    FMUL double ptr [0x005d7e93]        ; 00581965 | DAT_005d7e93
+    FMUL double ptr [0x005d7e93]        ; 00581965 | g_SecondsToMillisecondsWaitMultiplier
     CALL crt_math.c_round_FUN_005a3120  ; 0058196b
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005a3120(double value)
     FISTP qword ptr [ESP]               ; 00581970
     MOV EAX,dword ptr [ESP]             ; 00581973
     PUSH EAX                            ; 00581976

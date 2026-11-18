@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 171,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
-    "suspect_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 75,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 215
+    "total_lines": 219
   },
   "cross_references": [],
   "function": {
@@ -53,62 +52,62 @@
   "globals": [
     {
       "addr": "006093bc",
-      "name": "DAT_006093bc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006093bc",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "006141c0",
-      "name": "DAT_006141c0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_006141c0",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "0070ca5c",
-      "name": "DAT_0070ca5c",
-      "type": "undefined4",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0070ca74",
-      "name": "DAT_0070ca74",
-      "type": "undefined4",
+      "name": "g_TexturesDisabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e60",
-      "name": "DAT_01c35e60",
-      "type": "undefined4",
+      "name": "g_INT_01c35e60",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e64",
-      "name": "DAT_01c35e64",
-      "type": "undefined4",
+      "name": "g_CurrentLightingValue",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c35e6c",
-      "name": "DAT_01c35e6c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c38b40",
-      "name": "DAT_01c38b40",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c38b54",
-      "name": "DAT_01c38b54",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c38b58",
-      "name": "DAT_01c38b58",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -194,76 +193,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0070ca74",
-      "severity": "mild",
-      "text": "if (DAT_0070ca74 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "else if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "else if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_006141c0",
-      "severity": "mild",
-      "text": "else if (DAT_006141c0 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_0070ca5c",
-      "severity": "mild",
-      "text": "_DAT_01c35e60 = engine_3d_c_lookupLitColor_FUN_004039e0(DAT_0070ca5c,_DAT_01c35e64);",
-      "type": "undefined_data"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 6,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar2;",
+      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

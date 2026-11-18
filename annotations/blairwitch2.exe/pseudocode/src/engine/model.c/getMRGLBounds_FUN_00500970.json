@@ -1,0 +1,524 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 339,
+    "complexity_score": 653,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 193,
+    "suspect_count": 43,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "subfield_vector_pun",
+      "unknown_field",
+      "unrolled_memcpy",
+      "warning_type_propagation"
+    ],
+    "total_lines": 532
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00500970",
+    "address_range": [
+      [
+        "00500970",
+        "00500e1a"
+      ]
+    ],
+    "convention": "__stack_esi",
+    "name": "engine_model.c_getMRGLBounds_FUN_00500970",
+    "signature": "SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00500970(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4500"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "0041a510",
+      "is_variadic": false,
+      "name": "engine_boss.c_modelStructNotSupported4_FUN_0041a510"
+    },
+    {
+      "addr": "005008f0",
+      "is_variadic": false,
+      "name": "engine_model.c_freeMRGLData_FUN_005008f0"
+    },
+    {
+      "addr": "00500720",
+      "is_variadic": false,
+      "name": "engine_model.c_loadModelFile_FUN_00500720"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "g_CHAR_PTR_01d046a0",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "g_INT_01d046a4",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.140410958904109,
+    "instruction_count": 292,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 51,
+      "BOOL_OR": 4,
+      "BRANCH": 6,
+      "CALL": 11,
+      "CBRANCH": 18,
+      "COPY": 509,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ADD": 5,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 6,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 8,
+      "INT_ADD": 130,
+      "INT_AND": 234,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 133,
+      "INT_LEFT": 10,
+      "INT_LESS": 24,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 44,
+      "INT_OR": 59,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 12,
+      "INT_SDIV": 1,
+      "INT_SEXT": 37,
+      "INT_SLESS": 75,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 74,
+      "INT_XOR": 19,
+      "INT_ZEXT": 8,
+      "LOAD": 68,
+      "POPCOUNT": 57,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 64,
+      "SUBPIECE": 29,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 1793
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0051f920",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f8170",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00528140",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004dcf60",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mrgl_data",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderBasic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 122,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "auStack_a4._12_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 125,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_a4._16_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 130,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_a4._0_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 133,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_a4._4_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 141,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_a4._8_4_ = uVar3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 144,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_a4._16_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 150,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_a4._16_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 154,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_a4._16_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 157,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "auStack_a4._24_4_ = (uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 159,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "if ((int)auStack_a4._24_4_ < (int)((uVar4 ^ uVar3) - uVar3)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 160,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "auStack_a4._24_4_ = (uVar4 ^ uVar3) - uVar3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 162,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "auStack_a4._28_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(auStack_a4._0_4_ ^ (int)auStack_a4._0_4_ >> 0x1f) - ((int)auStack_a4._0_4_ >> 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(auStack_a4._0_4_ ^ (int)auStack_a4._0_4_ >> 0x1f) - ((int)auStack_a4._0_4_ >> 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(auStack_a4._0_4_ ^ (int)auStack_a4._0_4_ >> 0x1f) - ((int)auStack_a4._0_4_ >> 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 165,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "if ((int)auStack_a4._28_4_ < (int)((SStack_dc.extent.y ^ uVar3) - uVar3)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 166,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "auStack_a4._28_4_ = (SStack_dc.extent.y ^ uVar3) - uVar3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 168,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "auStack_a4._32_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(auStack_a4._4_4_ ^ (int)auStack_a4._4_4_ >> 0x1f) - ((int)auStack_a4._4_4_ >> 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(auStack_a4._4_4_ ^ (int)auStack_a4._4_4_ >> 0x1f) - ((int)auStack_a4._4_4_ >> 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(auStack_a4._4_4_ ^ (int)auStack_a4._4_4_ >> 0x1f) - ((int)auStack_a4._4_4_ >> 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 171,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "if ((int)auStack_a4._32_4_ < (int)((SStack_dc.extent.z ^ uVar3) - uVar3)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "auStack_a4._32_4_ = (SStack_dc.extent.z ^ uVar3) - uVar3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 174,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "fStack_1c = (float)auStack_a4._32_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 177,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "(SQRT((double)(int)auStack_a4._32_4_ * (double)(int)auStack_a4._32_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 177,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "(SQRT((double)(int)auStack_a4._32_4_ * (double)(int)auStack_a4._32_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 178,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "(double)(int)auStack_a4._28_4_ * (double)(int)auStack_a4._28_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 178,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "(double)(int)auStack_a4._28_4_ * (double)(int)auStack_a4._28_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 179,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "(double)(int)auStack_a4._24_4_ * (double)(int)auStack_a4._24_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 179,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "(double)(int)auStack_a4._24_4_ * (double)(int)auStack_a4._24_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 180,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_a4._16_4_ = (int)ROUND(dVar15);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(SMRGLModelBounds *)((int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 194,
+      "match": "(SMRGLModelBounds *)((int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `piStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 151,
+      "match": "(int)piStack_34",
+      "severity": "moderate",
+      "text": "(uint)((longlong)(int)piStack_34 * (longlong)(int)fStack_18) >> 0x10 |",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 152,
+      "match": "(int)piStack_34",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)piStack_34 * (longlong)(int)fStack_18) >> 0x20) << 0x10;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 186,
+      "match": "(int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 194,
+      "match": "(int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)((int)pSVar10 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 184,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 191,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SMRGLModelBounds *)&SStack_dc.extent` takes the address of a field at offset 40 inside `SStack_dc` (a 52-byte SMRGLModelBounds), then casts it to SMRGLModelBounds * (same type as the local). A 52-byte access from that offset has only 12 bytes left and overruns `SStack_dc` by 40 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SMRGLModelBounds local (often just `&SStack_dc` itself).",
+      "line": 181,
+      "match": "(SMRGLModelBounds *)&SStack_dc.extent",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMRGLModelBounds *)&SStack_dc.extent;",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00500d6d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 286,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00500d6d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

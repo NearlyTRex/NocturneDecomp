@@ -9,32 +9,32 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[36]:
+; XREF[37]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d2a00
+;   core_game.cpp_CGame_processFrame_FUN_004ce580 at 004ce624
 ;   core_game.cpp_CGame_process_FUN_004d8060 at 004d8523
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10 at 004cbf10
-;   core_game.cpp_FUN_004cbf20 at 004cbfc5
-;   core_game.cpp_FUN_004ce580 at 004ce624
+;   core_game.cpp_CGame_updateDT_FUN_004cbf20 at 004cbfc5
 ;   core_game.cpp_beginProfileTimer_FUN_004d7fc0 at 004d7fcf
 ;   core_game.cpp_endProfileTimer_FUN_004d7fe0 at 004d7ff7
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0 at 0052cb39
 ;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0052fa80 at 0052faaa
 ;   core_netgame.cpp_CNetGame_init_FUN_0052c520 at 0052c53a
-;   ... and 26 more
+;   ... and 27 more
 ;
 ; Referenced Globals:
 ;   void* PTR_timeGetTime_005d0458 = 001d0934
 ;   void* PTR_QueryPerformanceCounter_005d060c = 001d10b0
-;   undefined4 DAT_005f9c2a
-;   undefined4 DAT_005f9c32
-;   undefined4 DAT_005f9c3a
-;   undefined4 DAT_02c9a5a0
-;   undefined4 DAT_02c9a5a4
-;   undefined4 DAT_02c9a5a8
-;   undefined4 DAT_02c9a5ac
-;   undefined4 DAT_02c9a5b8
-;   undefined4 DAT_02c9a5c0
-;   undefined4 DAT_02c9a5c4
+;   double g_HighPartMultiplier = 4294967296
+;   double g_TimeScaleFactor1 = 65536
+;   double g_TimeScaleFactor2 = 18
+;   DWORD g_PreviousCounterLow
+;   int g_PreviousCounterHigh
+;   _struct_19 g_PerformanceCounter
+;   undefined4 g_PerformanceCounter.HighPart
+;   double g_TimerCalibration
+;   int g_AccumulatedGameTime
+;   int[1] g_UseMultimediaTimer
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
@@ -52,25 +52,25 @@ section .text
     MOV EBP,ESP                         ; 005b2423
     SUB ESP,0x24                        ; 005b2425
     AND ESP,0xfffffff8                  ; 005b2428
-    CMP dword ptr [0x02c9a5c4],0x0      ; 005b242b | DAT_02c9a5c4
+    CMP dword ptr [0x02c9a5c4],0x0      ; 005b242b | g_UseMultimediaTimer
     JNZ 0x005b24da                      ; 005b2432
         ;   XREF to: 005b24da (CONDITIONAL_JUMP)  ; LAB_005b24da
     MOV EDI,0x2c9a5a0                   ; 005b2438
     MOV ESI,0x2c9a5a8                   ; 005b243d
-    PUSH 0x2c9a5a8                      ; 005b2442 | DAT_02c9a5a8
-    MOVSD ES:EDI,ESI                    ; 005b2447 | DAT_02c9a5a8 | DAT_02c9a5a0
-    MOVSD ES:EDI,ESI                    ; 005b2448 | DAT_02c9a5ac | DAT_02c9a5a4
+    PUSH 0x2c9a5a8                      ; 005b2442 | g_PerformanceCounter
+    MOVSD ES:EDI,ESI                    ; 005b2447 | g_PerformanceCounter | g_PreviousCounterLow
+    MOVSD ES:EDI,ESI                    ; 005b2448 | g_PerformanceCounter.HighPart | g_PreviousCounterHigh
     CALL dword ptr CS:[0x5d060c]        ; 005b2449 | PTR_QueryPerformanceCounter_005d060c
-    FLD double ptr [0x005f9c2a]         ; 005b2450 | DAT_005f9c2a
-    FILD dword ptr [0x02c9a5a4]         ; 005b2456 | DAT_02c9a5a4
+    FLD double ptr [0x005f9c2a]         ; 005b2450 | g_HighPartMultiplier
+    FILD dword ptr [0x02c9a5a4]         ; 005b2456 | g_PreviousCounterHigh
     FMUL ST1                            ; 005b245c
-    FILD dword ptr [0x02c9a5ac]         ; 005b245e | DAT_02c9a5ac
+    FILD dword ptr [0x02c9a5ac]         ; 005b245e | g_PerformanceCounter.HighPart
     FMULP ST2                           ; 005b2464
     XOR ECX,ECX                         ; 005b2466
-    MOV EAX,[0x02c9a5a0]                ; 005b2468 | DAT_02c9a5a0
+    MOV EAX,[0x02c9a5a0]                ; 005b2468 | g_PreviousCounterLow
     MOV dword ptr [ESP + 0x14],ECX      ; 005b246d
     MOV dword ptr [ESP + 0x10],EAX      ; 005b2471
-    MOV EAX,[0x02c9a5a8]                ; 005b2475 | DAT_02c9a5a8
+    MOV EAX,[0x02c9a5a8]                ; 005b2475 | g_PerformanceCounter
     MOV dword ptr [ESP + 0x1c],ECX      ; 005b247a
     MOV dword ptr [ESP + 0x18],EAX      ; 005b247e
     FILD qword ptr [ESP + 0x10]         ; 005b2482
@@ -78,9 +78,9 @@ section .text
     FADDP ST3,ST0                       ; 005b248a
     FADDP                               ; 005b248c
     FSUBP                               ; 005b248e
-    FDIV double ptr [0x02c9a5b8]        ; 005b2490 | DAT_02c9a5b8
-    FMUL double ptr [0x005f9c32]        ; 005b2496 | DAT_005f9c32
-    FMUL double ptr [0x005f9c3a]        ; 005b249c | DAT_005f9c3a
+    FDIV double ptr [0x02c9a5b8]        ; 005b2490 | g_TimerCalibration
+    FMUL double ptr [0x005f9c32]        ; 005b2496 | g_TimeScaleFactor1
+    FMUL double ptr [0x005f9c3a]        ; 005b249c | g_TimeScaleFactor2
     FLDZ                                ; 005b24a2
     FXCH                                ; 005b24a4
     FSTP double ptr [ESP]               ; 005b24a6
@@ -90,14 +90,14 @@ section .text
     JNC 0x005b24cf                      ; 005b24af
         ;   XREF to: 005b24cf (CONDITIONAL_JUMP)  ; LAB_005b24cf
     FLD double ptr [ESP]                ; 005b24b1
-    MOV ESI,dword ptr [0x02c9a5c0]      ; 005b24b4 | DAT_02c9a5c0
+    MOV ESI,dword ptr [0x02c9a5c0]      ; 005b24b4 | g_AccumulatedGameTime
     CALL crt_math.c_round_FUN_005c03a0  ; 005b24ba
-        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
+        ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x20]        ; 005b24bf
     MOV EAX,dword ptr [ESP + 0x20]      ; 005b24c3
     ADD ESI,EAX                         ; 005b24c7
-    MOV dword ptr [0x02c9a5c0],ESI      ; 005b24c9 | DAT_02c9a5c0
-    MOV EAX,[0x02c9a5c0]                ; 005b24cf | DAT_02c9a5c0
+    MOV dword ptr [0x02c9a5c0],ESI      ; 005b24c9 | g_AccumulatedGameTime
+    MOV EAX,[0x02c9a5c0]                ; 005b24cf | g_AccumulatedGameTime
         ;   Label: LAB_005b24cf
     MOV ESP,EBP                         ; 005b24d4
     POP EBP                             ; 005b24d6

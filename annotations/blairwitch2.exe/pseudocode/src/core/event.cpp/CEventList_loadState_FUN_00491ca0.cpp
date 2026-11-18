@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_ptr,_FILE *file_handle)
 
 {
@@ -21,15 +19,15 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   
   core_event_cpp_CEventList_reset_FUN_00489380(this_ptr);
   _fgets(local_120,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005d4f93);
+  _fscanf(file_handle,"%d\n");
   if (5 < local_20) {
-    _DAT_01d046a0 = "..\\core\\event.cpp";
-    _DAT_01d046a4 = 0xf3e;
-    core_main_c_FUN_004e4500("CEventList::loadState - file version %d is newer than .EXE, which can only handle up to version %d",local_20,5);
+    g_CHAR_PTR_01d046a0 = "..\\core\\event.cpp";
+    g_INT_01d046a4 = 0xf3e;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CEventList::loadState - file version %d is newer than .EXE, which can only handle up to version %d");
   }
   _fgets(local_120,0xff,file_handle);
   iVar1 = 0;
-  _fscanf(file_handle,&DAT_005d500c);
+  _fscanf(file_handle,"%d\n");
   if (0 < (this_ptr->events).count) {
     do {
       iVar1 = iVar1 + 1;
@@ -38,7 +36,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   }
   _fgets(local_120,0xff,file_handle);
   iVar1 = 0;
-  _fscanf(file_handle,&DAT_005d5017);
+  _fscanf(file_handle,"%d\n");
   if (0 < (this_ptr->current_events).count) {
     do {
       iVar1 = iVar1 + 1;
@@ -47,7 +45,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   }
   _fgets(local_120,0xff,file_handle);
   iVar2 = 0;
-  iVar1 = _fscanf(file_handle,&DAT_005d5022);
+  iVar1 = _fscanf(file_handle,"%d\n");
   if (0 < (this_ptr->persistent_events).count) {
     do {
       iVar2 = iVar2 + 1;
@@ -56,7 +54,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   }
   if (1 < local_20) {
     _fgets(local_120,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005d502d);
+    _fscanf(file_handle,"%d\n");
     iVar1 = (this_ptr->timers).count;
     local_14 = 0;
     if (0 < iVar1) {
@@ -69,7 +67,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   if (2 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    _fscanf(file_handle,&DAT_005d503c);
+    _fscanf(file_handle,"%d\n");
     iVar1 = (this_ptr->counters).count;
     if (0 < iVar1) {
       local_18 = (this_ptr->counters).names;
@@ -84,7 +82,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   if (3 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    iVar1 = _fscanf(file_handle,&DAT_005d504b);
+    iVar1 = _fscanf(file_handle,"%d\n");
     if (0 < (this_ptr->actor_vars).count) {
       local_1c = (this_ptr->actor_vars).actor_names;
       do {
@@ -97,7 +95,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   if (4 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    iVar1 = _fscanf(file_handle,&DAT_005d5062);
+    iVar1 = _fscanf(file_handle,"%d\n");
     if (0 < (this_ptr->game_flags).count) {
       do {
         iVar2 = iVar2 + 1;

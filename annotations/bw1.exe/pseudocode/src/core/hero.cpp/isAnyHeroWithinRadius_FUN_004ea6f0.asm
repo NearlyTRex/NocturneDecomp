@@ -7,14 +7,15 @@
 ; CVector3f *      Stack[0x4]:4   point
 ; float            Stack[0x8]:4   radius
 ;
-; XREF[4]:
+; XREF[5]:
 ;   core_fire.cpp_initProcess_FUN_004b2880 at 004b28e2
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400 at 0050440e
 ;   core_trash.cpp_CTrash_process_FUN_0059a370 at 0059a38b
+;   core_trigger.cpp_CTrigger_process_FUN_0059b240 at 0059b284
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a6634
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d06aa0
+;   int g_HeroCount
 ;
 ; *****************************************************************************
 
@@ -27,12 +28,12 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 004ea6f5
     FLD float ptr [ESP + 0x1c]          ; 004ea6f9
     FMUL ST0                            ; 004ea6fd
-    MOV EDX,dword ptr [0x01d06aa0]      ; 004ea6ff | DAT_01d06aa0
+    MOV EDX,dword ptr [0x01d06aa0]      ; 004ea6ff | g_HeroCount
     FSTP float ptr [ESP + 0x1c]         ; 004ea705
     TEST EDX,EDX                        ; 004ea709
     JLE 0x004ea729                      ; 004ea70b
         ;   XREF to: 004ea729 (CONDITIONAL_JUMP)  ; LAB_004ea729
-    MOV EBX,dword ptr [0x01d06aa0]      ; 004ea70d | DAT_01d06aa0
+    MOV EBX,dword ptr [0x01d06aa0]      ; 004ea70d | g_HeroCount
     XOR EDX,EDX                         ; 004ea713
     SHL EBX,0x2                         ; 004ea715
     MOV ESI,dword ptr [EDX + 0x1d06aa4] ; 004ea718

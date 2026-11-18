@@ -6,19 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_3d_c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
 
 {
-  DAT_005fba38 = alpha_color_value >> 8;
-  if ((int)DAT_005fba38 < 0) {
-    DAT_005fba38 = 0;
+  g_INT_005fba38 = alpha_color_value >> 8;
+  if (g_INT_005fba38 < 0) {
+    g_INT_005fba38 = 0;
   }
-  else if (0xff < (int)DAT_005fba38) {
-    DAT_005fba38 = 0xff;
+  else if (0xff < g_INT_005fba38) {
+    g_INT_005fba38 = 0xff;
   }
-  DAT_005f07c0 = DAT_005fba38 | DAT_005fba38 << 8 | DAT_005fba38 << 0x10;
-  _DAT_00730400 = DAT_005f07c0 ^ 0xffffff;
-  return _DAT_00730400;
+  g_CurrentRenderColor = g_INT_005fba38 | g_INT_005fba38 << 8 | g_INT_005fba38 << 0x10;
+  g_CurrentInvertedColor = g_CurrentRenderColor ^ 0xffffff;
+  return g_CurrentInvertedColor;
 }

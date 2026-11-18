@@ -1,12 +1,10 @@
 // Name: core_frankgen.cpp_CFrankenstienMachine_process_FUN_004ac4c0
 // Address: 004ac4c0
-// Address Range: [[004ac4c0, 004ac533] [004ac895, 004ac8d3] [004ac9a6, 004ac9d0]]
+// Address Range: [[004ac4c0, 004ac9d0]]
 // Convention: __cdecl
 // Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFrankenstienMachine *this_ptr,float delta_time)
 
 #include "nocturne.h"
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFrankenstienMachine *this_ptr,float delta_time)
 
@@ -35,29 +33,29 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFranke
   float fStack_5c;
   float fStack_58;
   CVector3f CStack_4c;
-  float fStack_40;
-  float afStack_3c [2];
-  CVector3f CStack_34;
+  CVector3f CStack_40;
+  byte auStack_34 [8];
+  float afStack_2c [2];
   CVector3f CStack_24;
   CVector3f CStack_18;
   int iStack_c;
   int iStack_8;
   
   bVar7 = 0;
-  _DAT_01cb0620 = this_ptr->master_frame;
+  g_FLOAT_01cb0620 = this_ptr->master_frame;
   pCVar1 = (CFrankenstienMachine *)core_frankgen_cpp_findLeader_FUN_004ace60();
   if (pCVar1 == this_ptr) {
-    fVar2 = delta_time * _DAT_005f71ec + this_ptr->master_frame;
+    fVar2 = delta_time * 30.0f + this_ptr->master_frame;
     this_ptr->master_frame = fVar2;
-    if (0x450FC000 <= fVar2) {
-      this_ptr->master_frame = this_ptr->master_frame - 0x450FC000;
+    if (2300.0f <= fVar2) {
+      this_ptr->master_frame = this_ptr->master_frame - 2300.0f;
     }
   }
   else {
     this_ptr->master_frame = pCVar1->master_frame;
   }
-  if (this_ptr->master_frame < _DAT_01cb0620) {
-    _DAT_01cb0620 = _DAT_01cb0620 - 0x450FC000;
+  if (this_ptr->master_frame < g_FLOAT_01cb0620) {
+    g_FLOAT_01cb0620 = g_FLOAT_01cb0620 - 2300.0f;
   }
   core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0(this_ptr);
   switch(this_ptr->which_part) {
@@ -65,12 +63,12 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFranke
     fVar2 = this_ptr->master_frame;
     if ((0x44ac8000 < (int)fVar2) && ((int)fVar2 < 0x44c58000)) {
       if ((int)fVar2 < 0x44b90000) {
-        CStack_18.z = (this_ptr->master_frame + _DAT_005d6c91) * (float)_DAT_005d6c81 *
-                      (float)_DAT_005d6c99 + _DAT_005d6ca1;
+        CStack_18.z = (this_ptr->master_frame + -1380.0f) * (float)0.01 *
+                      (float)30 + 20.0f;
       }
       else {
-        CStack_18.z = (_DAT_005d6c79 - this_ptr->master_frame) * (float)_DAT_005d6c81 *
-                      (float)_DAT_005d6c89;
+        CStack_18.z = (1580.0f - this_ptr->master_frame) * (float)0.01 *
+                      (float)50;
       }
       iStack_c = core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_004ac9e0
                            (this_ptr,CStack_18.z,delta_time);
@@ -90,12 +88,13 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFranke
           fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,0.4);
           CStack_18.y = (1.0 - fVar2) * fStack_68 + fStack_5c * fVar2;
           CStack_18.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fStack_64,fStack_58);
-          core_actor_cpp_FUN_00408d70(this_ptr,&CStack_18);
-          CStack_24.x = CStack_34.y;
-          afStack_3c[(uint)bVar7 * -2 + 7] = afStack_3c[(uint)bVar7 * -2 + 4];
-          afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 8] =
-               afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 5];
-          if (&CStack_18 != (CVector3f *)(afStack_3c + 6)) {
+          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                    (&this_ptr->base,&CStack_18,(CVector3f *)(auStack_34 + 4));
+          CStack_24.x = (float)auStack_34._4_4_;
+          *(float *)((int)&CStack_24 + (uint)bVar7 * -8 + 4) = afStack_2c[(uint)bVar7 * -2];
+          *(float *)((int)&CStack_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+               afStack_2c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+          if (&CStack_18 != &CStack_24) {
             CStack_18.x = CStack_24.x;
             CStack_18.y = CStack_24.y;
             CStack_18.z = CStack_24.z;
@@ -104,7 +103,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFranke
           wind_influence = (CVector3f *)0x0;
           fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.5,1.5);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-                    (0x01C3DEB4,&CStack_18,fVar2,wind_influence,iVar3);
+                    (g_CFireEffectPtr,&CStack_18,fVar2,wind_influence,iVar3);
           iVar4 = iVar4 + 1;
         } while (iVar4 < unaff_EBP);
       }
@@ -121,18 +120,20 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFranke
       CStack_4c.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fStack_7c,fStack_70);
       CStack_4c.y = fStack_78;
       CStack_4c.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fStack_74,fStack_68);
-      core_actor_cpp_FUN_00408d70(this_ptr,&CStack_4c);
-      CStack_34.x = fStack_40;
-      afStack_3c[(uint)bVar7 * -2 + 3] = afStack_3c[(uint)bVar7 * -2];
-      afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-           afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-      if (&CStack_4c != (CVector3f *)(afStack_3c + 2)) {
-        CStack_4c.x = CStack_34.x;
-        CStack_4c.y = CStack_34.y;
-        CStack_4c.z = CStack_34.z;
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408d70
+                (&this_ptr->base,&CStack_4c,&CStack_40);
+      auStack_34._0_4_ = CStack_40.x;
+      *(uint *)(auStack_34 + (uint)bVar7 * -8 + 4) =
+           *(uint *)((int)&CStack_40 + (uint)bVar7 * -8 + 4);
+      afStack_2c[(uint)bVar7 * -2 + (uint)bVar7 * -2] =
+           *(float *)((int)&CStack_40 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      if (&CStack_4c != (CVector3f *)auStack_34) {
+        CStack_4c.x = (float)auStack_34._0_4_;
+        CStack_4c.y = (float)auStack_34._4_4_;
+        CStack_4c.z = afStack_2c[0];
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-                (0x01C3DEB4,&CStack_4c,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
+                (g_CFireEffectPtr,&CStack_4c,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
     }
     core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40
               (this_ptr,1.0,"frankx-bed1.wav");
@@ -146,7 +147,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004ac4c0(CFranke
               (this_ptr,1380.0,"frankx-water-dip.wav");
     core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40
               (this_ptr,2040.0,"frankx-big-ramp-bed5.wav");
-LAB_004ac88d:
+switchD_004ac52d_caseD_4:
     return;
   case 1:
     core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40
@@ -162,7 +163,7 @@ LAB_004ac88d:
     return;
   case 4:
   case 7:
-    goto LAB_004ac88d;
+    goto switchD_004ac52d_caseD_4;
   case 5:
     core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40
               (this_ptr,864.0,"frankx-arm.wav");
@@ -178,9 +179,9 @@ LAB_004ac88d:
               (this_ptr,1950.0,"frankx-big-ramp.wav");
     return;
   default:
-    _DAT_01d046a0 = "..\\core\\frankgen.cpp";
-    _DAT_01d046a4 = 0x13e;
-    core_main_c_FUN_004e4500(0x5d6c73);
+    g_CHAR_PTR_01d046a0 = "..\\core\\frankgen.cpp";
+    g_INT_01d046a4 = 0x13e;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("WTF!");
     return;
   }
 }

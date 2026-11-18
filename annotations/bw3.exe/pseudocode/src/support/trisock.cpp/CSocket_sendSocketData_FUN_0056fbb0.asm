@@ -12,10 +12,11 @@
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_005058d0 at 005058ed
-;   support_trisock.cpp_FUN_00570750 at 005707ef
-;   support_trisock.cpp_FUN_00570840 at 00570910
+;   support_trisock.cpp_httpGetDocument_FUN_00570750 at 005707ef
+;   support_trisock.cpp_httpPostDocument_FUN_00570840 at 00570910
+;   support_trisock.cpp_httpRequestUpdate_FUN_00571340 at 00571663
 ;
 ; Called Functions:
 ;   crt_wsock32.c_send
@@ -60,7 +61,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0056fbe6
     LEA EDI,[ESP + 0x14]                ; 0056fbea
     CALL support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0 ; 0056fbee
-        ;   XREF to: 0056f7c0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0()
+        ;   XREF to: 0056f7c0 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
     LEA ESI,[ESP + 0x4]                 ; 0056fbf3
     ADD ESP,0x4                         ; 0056fbf7
     MOVSD ES:EDI,ESI                    ; 0056fbfa

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
 
 {
@@ -29,59 +27,58 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
   
   bVar9 = 0;
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
-    _DAT_01d046a0 = "..\\core\\mimic.cpp";
-    _DAT_01d046a4 = 0xb6;
-    core_main_c_FUN_004e4500("CMimic::setup - can't use mimic in multi-player!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\mimic.cpp";
+    g_INT_01d046a4 = 0xb6;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMimic::setup - can't use mimic in multi-player!");
   }
-  iVar7 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-  if (iVar7 == 0) {
+  if (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4] == (CHero *)0x0) {
     model_name = "stranger.dfm";
   }
   else {
-    model_name = (char *)(iVar7 + 0x2514);
+    model_name = (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).model.model_name;
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr->base).base.model,model_name);
   pCVar1 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(pCVar1);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar1);
-  _DAT_01d097c4 =
+  g_MimicIndices[0] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 head",1);
-  _DAT_01d097c8 =
+  g_MimicIndices[1] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Clavicle",1);
-  _DAT_01d097cc =
+  g_MimicIndices[2] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Clavicle",1);
-  _DAT_01d097d0 =
+  g_MimicIndices[3] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L UpperArm",1);
-  _DAT_01d097d4 =
+  g_MimicIndices[4] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R UpperArm",1);
-  _DAT_01d097d8 =
+  g_MimicIndices[5] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L ForeArm",1);
-  _DAT_01d097dc =
+  g_MimicIndices[6] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R ForeArm",1);
-  _DAT_01d097e0 =
+  g_MimicIndices[7] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Foot",1);
-  _DAT_01d097e4 =
+  g_MimicIndices[8] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Foot",1);
-  _DAT_01d097e8 =
+  g_MimicIndices[9] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Thigh",1);
-  _DAT_01d097ec =
+  g_MimicIndices[10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Thigh",1);
-  _DAT_01d097f0 =
+  g_MimicIndices[0xb] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Calf",1);
-  _DAT_01d097f4 =
+  g_MimicIndices[0xc] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Calf",1);
-  _DAT_01d09804 =
+  g_MimicIndices[0x10] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 L Hand",1);
-  _DAT_01d09808 =
+  g_MimicIndices[0x11] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 R Hand",1);
-  _DAT_01d0980c =
+  g_MimicIndices[0x12] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine2",1);
-  _DAT_01d09810 =
+  g_MimicIndices[0x13] =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
   core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->cloth,"strcoat.cth");
-  core_cloth_cpp_FUN_005ae680
+  core_cloth_cpp_CCloth_setup_FUN_005ae680
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,pCVar1);
   class_name_hash = g_CEnemyClassInfo.name_hash;
@@ -89,9 +86,9 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
   pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar5,class_name_hash);
   this_ptr->morph_target_actor = pCVar5;
   if (pCVar5 == (CDemonActor *)0x0) {
-    _DAT_01d046a0 = "..\\core\\mimic.cpp";
-    _DAT_01d046a4 = 0x101;
-    core_main_c_FUN_004e4500("CMimic failed to create morph target actor!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\mimic.cpp";
+    g_INT_01d046a4 = 0x101;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CMimic failed to create morph target actor!");
   }
   (*((this_ptr->morph_target_actor->vtable)._ub)->setup)(this_ptr->morph_target_actor);
   pCVar1 = &(this_ptr->base).base.model;

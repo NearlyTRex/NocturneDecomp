@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 40,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "fast_inv_sqrt_inline",
-      "warning_overlapping_globals"
+      "fast_inv_sqrt_inline"
     ],
-    "total_lines": 39
+    "total_lines": 38
   },
   "cross_references": [],
   "function": {
@@ -32,8 +31,8 @@
   "globals": [
     {
       "addr": "01cc8050",
-      "name": "DAT_01cc8050",
-      "type": "undefined4",
+      "name": "g_FastInvSqrtMagic",
+      "type": "int",
       "value": null
     }
   ],
@@ -116,19 +115,11 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01cc8050`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01cc8050` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 8,
-      "match": "fVar1 = (float)(_DAT_01cc8050 - ((int)(v->z * v->z + v->x * v->x + v->y * v->y) ",
+      "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
+      "line": 6,
+      "match": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)(v->z * v->z + v->x * v->x + v->y * v",
       "severity": "moderate",
-      "text": "fVar1 = (float)(_DAT_01cc8050 - ((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1));",
+      "text": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1));",
       "type": "fast_inv_sqrt_inline"
     }
   ]

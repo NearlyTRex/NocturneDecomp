@@ -8,10 +8,10 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005cb644
-;   undefined4 DAT_005cb648
+;   TerminatedCString s_DIE_005cb644
+;   TerminatedCString s_HURT_005cb648
 ;   TerminatedCString s_DAMAGE_005cb64d
-;   undefined4 DAT_005cb654
+;   TerminatedCString s_SHOT_005cb654
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0
@@ -55,7 +55,7 @@ section .text
     CMP dword ptr [EBX + 0x26fc],0x0    ; 00509a2c
     JNZ 0x00509a59                      ; 00509a33
         ;   XREF to: 00509a59 (CONDITIONAL_JUMP)  ; LAB_00509a59
-    PUSH 0x5cb648                       ; 00509a35 | DAT_005cb648
+    PUSH 0x5cb648                       ; 00509a35 | = "HURT"
     PUSH ESI                            ; 00509a3a
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900 ; 00509a3b
         ;   XREF to: 00509900 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900(CNPC * this_ptr, char * motion_name)
@@ -93,14 +93,14 @@ section .text
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0 ; 00509a89
         ;   XREF to: 00431ce0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00509a8e
-    PUSH 0x5cb644                       ; 00509a91 | DAT_005cb644
+    PUSH 0x5cb644                       ; 00509a91 | = "DIE"
     PUSH ESI                            ; 00509a96
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900 ; 00509a97
         ;   XREF to: 00509900 (UNCONDITIONAL_CALL)  ; int core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900(CNPC * this_ptr, char * motion_name)
     ADD ESP,0x8                         ; 00509a9c
     JMP 0x00509a59                      ; 00509a9f
         ;   XREF to: 00509a59 (UNCONDITIONAL_JUMP)  ; LAB_00509a59
-    PUSH 0x5cb654                       ; 00509aa1 | DAT_005cb654
+    PUSH 0x5cb654                       ; 00509aa1 | = "SHOT"
         ;   Label: LAB_00509aa1
     PUSH ESI                            ; 00509aa6
     CALL core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900 ; 00509aa7

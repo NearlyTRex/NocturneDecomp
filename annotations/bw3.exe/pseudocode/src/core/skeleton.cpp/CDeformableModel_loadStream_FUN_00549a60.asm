@@ -43,7 +43,7 @@
 ;   core_skeleton.cpp_CDeformableModel_load_FUN_005499d0 at 005499f6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d1b5a
+;   TerminatedCString s_d_005d1b5a
 ;   TerminatedCString s_core_skeleton_cpp_005d1b5e
 ;   TerminatedCString s_Deformable_model_file_is_005d1b73
 ;   TerminatedCString s_core_skeleton_cpp_005d1b94
@@ -55,13 +55,13 @@
 ;   TerminatedCString s_anon_005d1c34
 ;   TerminatedCString s_d_005d1c3b
 ;   TerminatedCString s_d_d_005d1c48
-;   undefined4 DAT_005d1c59
+;   TerminatedCString s_d_005d1c59
 ;   TerminatedCString s_d_d_005d1c5d
 ;   TerminatedCString s_d_d_d_005d1c64
 ;   ... and 15 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4330
+;   core_main.c_displayErrorAndQuit_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00548580
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00548460
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0
@@ -95,7 +95,7 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 00549a89
         ;   Label: LAB_00549a89
     PUSH EAX                            ; 00549a8d
-    PUSH 0x5d1b5a                       ; 00549a8e | DAT_005d1b5a
+    PUSH 0x5d1b5a                       ; 00549a8e | = "%d\n"
     PUSH ESI                            ; 00549a93
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00549a94
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -107,14 +107,14 @@ section .text
         ;   Label: LAB_00549aa1
     MOV ECX,0x4d7                       ; 00549aa6
     PUSH 0x5d1b73                       ; 00549aab | = "Deformable model file is corrupt"
-    MOV dword ptr [0x01d71de0],EDX      ; 00549ab0 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00549ab6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00549abc
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EDX      ; 00549ab0 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ECX      ; 00549ab6 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00549abc
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00549ac1
     MOV EAX,dword ptr [ESP + 0x28]      ; 00549ac4
         ;   Label: LAB_00549ac4
-    MOV EDI,dword ptr [0x00604174]      ; 00549ac8 | DAT_00604174
+    MOV EDI,dword ptr [0x00604174]      ; 00549ac8 | g_INT_00604174
     CMP EAX,EDI                         ; 00549ace
     JLE 0x00549afa                      ; 00549ad0
         ;   XREF to: 00549afa (CONDITIONAL_JUMP)  ; LAB_00549afa
@@ -124,10 +124,10 @@ section .text
     MOV EBP,0x5d1b94                    ; 00549ad8 | = "..\\core\\skeleton.cpp"
     MOV EAX,0x4da                       ; 00549add
     PUSH 0x5d1ba9                       ; 00549ae2 | = "Can't load model of version %d, this ..."
-    MOV dword ptr [0x01d71de0],EBP      ; 00549ae7 | DAT_01d71de0
-    MOV [0x01d71de4],EAX                ; 00549aed | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 00549af2
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBP      ; 00549ae7 | g_CHAR_PTR_01d71de0
+    MOV [0x01d71de4],EAX                ; 00549aed | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00549af2
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00549af7
     MOV EDI,dword ptr [ESP + 0x28]      ; 00549afa
         ;   Label: LAB_00549afa
@@ -399,7 +399,7 @@ section .text
     ADD EAX,0x4c                        ; 00549d5f
     ADD EAX,EDX                         ; 00549d62
     PUSH EAX                            ; 00549d64
-    PUSH 0x5d1c59                       ; 00549d65 | DAT_005d1c59
+    PUSH 0x5d1c59                       ; 00549d65 | = "%d\n"
     PUSH ESI                            ; 00549d6a
     INC EBP                             ; 00549d6b
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00549d6c
@@ -490,7 +490,7 @@ section .text
     ADD EDX,0x4c                        ; 00549e3b
     ADD EAX,EDX                         ; 00549e3e
     PUSH EAX                            ; 00549e40
-    PUSH 0x5d1c76                       ; 00549e41 | DAT_005d1c76
+    PUSH 0x5d1c76                       ; 00549e41 | = "%d\n"
     PUSH ESI                            ; 00549e46
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00549e47
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -546,7 +546,7 @@ section .text
     ADD EBP,EAX                         ; 00549eb6
     LEA EAX,[ESP + 0x5c]                ; 00549eb8
     PUSH EAX                            ; 00549ebc
-    PUSH 0x5d1c7a                       ; 00549ebd | DAT_005d1c7a
+    PUSH 0x5d1c7a                       ; 00549ebd | = "%d\n"
     PUSH ESI                            ; 00549ec2
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00549ec3
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -727,7 +727,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0xa4]      ; 0054a074
     ADD EAX,EDX                         ; 0054a07a
     PUSH EAX                            ; 0054a07c
-    PUSH 0x5d1cad                       ; 0054a07d | DAT_005d1cad
+    PUSH 0x5d1cad                       ; 0054a07d | = "%d\n"
     PUSH ESI                            ; 0054a082
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0054a083
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
@@ -917,7 +917,7 @@ section .text
     LEA EDX,[EBX + 0x323c]              ; 0054a215
     ADD EAX,EDX                         ; 0054a21b
     PUSH EAX                            ; 0054a21d
-    PUSH 0x5d1cd6                       ; 0054a21e | DAT_005d1cd6
+    PUSH 0x5d1cd6                       ; 0054a21e | = "%d\n"
     PUSH ESI                            ; 0054a223
     INC EDI                             ; 0054a224
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0054a225
@@ -964,10 +964,10 @@ section .text
         ;   Label: LAB_0054a291
     MOV ESI,0x5a6                       ; 0054a296
     PUSH 0x5d1cef                       ; 0054a29b | = "CDeformableModel::loadStream - error ..."
-    MOV dword ptr [0x01d71de0],EBX      ; 0054a2a0 | DAT_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0054a2a6 | DAT_01d71de4
-    CALL core_main.c_FUN_004e4330       ; 0054a2ac
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
+    MOV dword ptr [0x01d71de0],EBX      ; 0054a2a0 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 0054a2a6 | g_INT_01d71de4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054a2ac
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054a2b1
     ADD ESP,0x7c                        ; 0054a2b4
     POP EBP                             ; 0054a2b7

@@ -24,7 +24,7 @@ int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_0048ea60(CFlameThrower *thi
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_14,input_local_point);
   core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
-            (g_CFireEffect_PTR_005b80f0,&CStack_14,&(this_ptr->base).base.orient.vec,3,1);
+            (g_CFireEffectPtr,&CStack_14,&(this_ptr->base).base.orient.vec,3,1);
   if (this_ptr->was_firing_prev_frame == 0) {
     fVar2 = 1.0 / 4.0f;
     piVar1 = &(this_ptr->base).ammo_count;

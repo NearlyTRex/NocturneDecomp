@@ -12,11 +12,11 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CloseHandle_005c850c = 001c8c32
-;   undefined4 DAT_0061f414
-;   undefined4 DAT_0061f418
-;   undefined4 DAT_0061f420
-;   undefined4 DAT_0061f480
-;   undefined4 DAT_0061f4d8
+;   void* g_IsSpecialDeviceFuncPtr = 00000000
+;   void* g_SpecialDeviceCleanupFunc = 00000000
+;   void* g_SpecialDeviceCloseFunc = 00000000
+;   uint g_MaxHandleCount = 0x14
+;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -37,7 +37,7 @@ section .text
     TEST EBX,EBX                        ; 005bec4b
     JL 0x005bec57                       ; 005bec4d
         ;   XREF to: 005bec57 (CONDITIONAL_JUMP)  ; LAB_005bec57
-    CMP EBX,dword ptr [0x0061f480]      ; 005bec4f | DAT_0061f480
+    CMP EBX,dword ptr [0x0061f480]      ; 005bec4f | g_MaxHandleCount
     JBE 0x005bec6b                      ; 005bec55
         ;   XREF to: 005bec6b (CONDITIONAL_JUMP)  ; LAB_005bec6b
     PUSH 0x4                            ; 005bec57
@@ -48,9 +48,9 @@ section .text
     ADD ESP,0x4                         ; 005bec63
     JMP 0x005becdc                      ; 005bec66
         ;   XREF to: 005becdc (UNCONDITIONAL_JUMP)  ; LAB_005becdc
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005bec6b | DAT_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005bec6b | g_IOControlBlock
         ;   Label: LAB_005bec6b
-    MOV ECX,dword ptr [0x0061f420]      ; 005bec71 | DAT_0061f420
+    MOV ECX,dword ptr [0x0061f420]      ; 005bec71 | g_SpecialDeviceCloseFunc
     XOR EBP,EBP                         ; 005bec77
     MOV EAX,dword ptr [ESI + EBX*0x4]   ; 005bec79
     XOR EDI,EDI                         ; 005bec7c
@@ -59,17 +59,17 @@ section .text
     JZ 0x005becab                       ; 005bec83
         ;   XREF to: 005becab (CONDITIONAL_JUMP)  ; LAB_005becab
     PUSH EBX                            ; 005bec85
-    CALL dword ptr [0x0061f414]         ; 005bec86 | DAT_0061f414
+    CALL dword ptr [0x0061f414]         ; 005bec86 | g_IsSpecialDeviceFuncPtr
     MOV ESI,EAX                         ; 005bec8c
     ADD ESP,0x4                         ; 005bec8e
     TEST EAX,EAX                        ; 005bec91
     JZ 0x005becab                       ; 005bec93
         ;   XREF to: 005becab (CONDITIONAL_JUMP)  ; LAB_005becab
     PUSH EBX                            ; 005bec95
-    CALL dword ptr [0x0061f418]         ; 005bec96 | DAT_0061f418
+    CALL dword ptr [0x0061f418]         ; 005bec96 | g_SpecialDeviceCleanupFunc
     ADD ESP,0x4                         ; 005bec9c
     PUSH ESI                            ; 005bec9f
-    CALL dword ptr [0x0061f420]         ; 005beca0 | DAT_0061f420
+    CALL dword ptr [0x0061f420]         ; 005beca0 | g_SpecialDeviceCloseFunc
     ADD ESP,0x4                         ; 005beca6
     JMP 0x005beccf                      ; 005beca9
         ;   XREF to: 005beccf (UNCONDITIONAL_JUMP)  ; LAB_005beccf

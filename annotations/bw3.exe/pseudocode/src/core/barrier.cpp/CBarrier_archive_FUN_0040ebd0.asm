@@ -7,7 +7,7 @@
 ; CBarrier *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b61f7
+;   TerminatedCString s_size_005b61f7
 ;   TerminatedCString s_effectClassNameList_005b61fc
 ;   TerminatedCString s_addToPathGrid_005b6210
 ;   int g_CBarrierClassVersion = 0x2
@@ -29,7 +29,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c280 ; 0040ebd6
         ;   XREF to: 0040c280 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c280(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040ebdb
-    PUSH 0x5b61f7                       ; 0040ebde | DAT_005b61f7
+    PUSH 0x5b61f7                       ; 0040ebde | = "size"
     LEA EAX,[EBX + 0x158]               ; 0040ebe3
     PUSH EAX                            ; 0040ebe9
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0040ebea

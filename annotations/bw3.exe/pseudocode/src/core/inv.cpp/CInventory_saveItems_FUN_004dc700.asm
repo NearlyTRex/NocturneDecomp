@@ -13,11 +13,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_s_005c648c
-;   undefined1 DAT_005f0990
+;   char[104] g_PropertyNamePrefix
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
-;   crt_unknown.c_FUN_005a3140
+;   crt_stdio.c_fprintf_FUN_005a3140
 ;
 ; *****************************************************************************
 
@@ -44,13 +44,13 @@ section .text
         ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004dc721
     PUSH EAX                            ; 004dc724
-    PUSH 0x5f0990                       ; 004dc725 | DAT_005f0990
+    PUSH 0x5f0990                       ; 004dc725 | g_PropertyNamePrefix
     PUSH 0x5c648c                       ; 004dc72a | = "%s%s \"%s\"\n"
     PUSH EBP                            ; 004dc72f
     ADD EBX,0x4                         ; 004dc730
     INC ESI                             ; 004dc733
-    CALL crt_unknown.c_FUN_005a3140     ; 004dc734
-        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
+    CALL crt_stdio.c_fprintf_FUN_005a3140 ; 004dc734
+        ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005a3140(_FILE * file, char * format)
     MOV EDX,dword ptr [EDI + 0x10]      ; 004dc739
     ADD ESP,0x14                        ; 004dc73c
     CMP ESI,EDX                         ; 004dc73f

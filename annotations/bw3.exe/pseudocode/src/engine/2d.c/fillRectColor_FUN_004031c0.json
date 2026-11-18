@@ -2,23 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 43,
+    "complexity_score": 27,
     "cross_reference_count": 16,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 98
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 97
   },
   "cross_references": [
     {
       "addr": "004a7bb0",
       "from_addr": "004a7bfb",
-      "name": "core_flashlit.cpp_FUN_004a7bb0",
+      "name": "core_flashlit.cpp_drawTooltip_FUN_004a7bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,7 +52,7 @@
     {
       "addr": "004e0000",
       "from_addr": "004e007a",
-      "name": "core_level.cpp_FUN_004e0000",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004e0000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,39 +74,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047fa80",
+      "from_addr": "004801bb",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ee50",
+      "from_addr": "0047f3c6",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_0047ee50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c050",
+      "from_addr": "0047c251",
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0047c050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004843d0",
       "from_addr": "00484919",
       "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047b8e0",
-      "from_addr": "0047b969",
-      "name": "shape_edittool.cpp_FUN_0047b8e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047c050",
-      "from_addr": "0047c251",
-      "name": "shape_edittool.cpp_FUN_0047c050",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047ee50",
-      "from_addr": "0047f3c6",
-      "name": "shape_edittool.cpp_FUN_0047ee50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047fa80",
-      "from_addr": "004801bb",
-      "name": "shape_edittool.cpp_FUN_0047fa80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004850a0",
       "from_addr": "004852d7",
-      "name": "shape_edittool.cpp_FUN_004850a0",
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_004850a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b8e0",
+      "from_addr": "0047b969",
+      "name": "shape_edittool.cpp_editorFillRectColor_FUN_0047b8e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -134,32 +132,32 @@
   "globals": [
     {
       "addr": "01c6b5a8",
-      "name": "DAT_01c6b5a8",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5a8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5ac",
-      "name": "DAT_01c6b5ac",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5ac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b0",
-      "name": "DAT_01c6b5b0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5b0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5b4",
-      "name": "DAT_01c6b5b4",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5b4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c6b5c0",
-      "name": "DAT_01c6b5c0",
-      "type": "undefined4",
+      "name": "g_INT_01c6b5c0",
+      "type": "int",
       "value": null
     }
   ],
@@ -169,7 +167,7 @@
       {
         "call_addr": "004801bb",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047fa80",
+        "caller": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +189,7 @@
       {
         "call_addr": "004852d7",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004850a0",
+        "caller": "shape_edittool.cpp_draw3DBorder_FUN_004850a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,7 +211,7 @@
       {
         "call_addr": "004e007a",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e0000",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004e0000",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,7 +255,7 @@
       {
         "call_addr": "0047c251",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047c050",
+        "caller": "shape_edittool.cpp_CInputString_draw_FUN_0047c050",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -387,14 +385,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

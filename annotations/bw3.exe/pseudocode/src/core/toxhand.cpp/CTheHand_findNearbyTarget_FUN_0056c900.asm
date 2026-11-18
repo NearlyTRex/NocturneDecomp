@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   class_name
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d6553
+;   double g_DOUBLE_005d6553 = 3
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
@@ -85,7 +85,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0056c9a0
     FLD float ptr [ESP + 0x4]           ; 0056c9a1
     FLD ST0                             ; 0056c9a5
-    FMUL double ptr [0x005d6553]        ; 0056c9a7 | DAT_005d6553
+    FMUL double ptr [0x005d6553]        ; 0056c9a7 | g_DOUBLE_005d6553
     FSTP ST1                            ; 0056c9ad
     FST float ptr [ESP + 0x4]           ; 0056c9af
     FMUL float ptr [ESP + 0x4]          ; 0056c9b3

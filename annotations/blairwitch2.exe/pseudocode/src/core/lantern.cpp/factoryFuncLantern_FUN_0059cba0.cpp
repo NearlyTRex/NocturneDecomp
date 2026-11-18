@@ -11,7 +11,7 @@ CLantern * __cdecl core_lantern_cpp_factoryFuncLantern_FUN_0059cba0(void)
 {
   CLantern *pCVar1;
   
-  pCVar1 = (CLantern *)operator_new(0x708);
+  pCVar1 = operator_new(0x708);
   if (pCVar1 == (CLantern *)0x0) {
     return (CLantern *)0x0;
   }

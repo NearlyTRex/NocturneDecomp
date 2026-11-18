@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 119,
+    "complexity_score": 94,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 8,
+    "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 68
   },
@@ -62,15 +61,15 @@
   "globals": [
     {
       "addr": "005a4730",
-      "name": "DAT_005a4730",
-      "type": "undefined4",
+      "name": "g_IstrstreamLayoutInfo",
+      "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
       "addr": "005a4738",
-      "name": "DAT_005a4738",
-      "type": "undefined4",
-      "value": null
+      "name": "g_Istrstream_IstreamLastReadLength",
+      "type": "int",
+      "value": "0x48"
     },
     {
       "addr": "005a4744",
@@ -195,28 +194,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005a4730",
-      "severity": "mild",
-      "text": "*(byte **)this_ptr = &DAT_005a4730;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(byte **)((int)this_ptr",
+      "match": "(int **)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(byte **)((int)this_ptr + 0x48) = &DAT_005a4738;",
+      "text": "*(int **)((int)this_ptr + 0x48) = &g_Istrstream_IstreamLastReadLength;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005a4738",
-      "severity": "mild",
-      "text": "*(byte **)((int)this_ptr + 0x48) = &DAT_005a4738;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -245,9 +228,9 @@
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 13,
-      "match": "(byte **)((int)this_ptr + 0x48)",
+      "match": "(int **)((int)this_ptr + 0x48)",
       "severity": "moderate",
-      "text": "*(byte **)((int)this_ptr + 0x48) = &DAT_005a4738;",
+      "text": "*(int **)((int)this_ptr + 0x48) = &g_Istrstream_IstreamLastReadLength;",
       "type": "pointer_cast"
     },
     {

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 172,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 14,
+    "suspect_count": 2,
     "suspect_types": [
-      "concat_reconstruction",
-      "unnamed_param"
+      "concat_reconstruction"
     ],
     "total_lines": 64
   },
@@ -30,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamMemory_seek_FUN_005a1360",
-    "signature": "longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_005a1360(CInStreamMemory *this_ptr,int param_2,uint param_3)"
+    "signature": "longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_005a1360(CInStreamMemory *this_ptr,int offset,uint origin)"
   },
   "function_calls": [],
   "globals": [],
@@ -100,14 +99,14 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "offset",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "origin",
         "offset": 12,
         "size": 4,
         "type": "uint"
@@ -115,102 +114,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_005a1360(CInStreamMemory *this_ptr,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "longlong __cdecl support_trstream_cpp_CInStreamMemory_seek_FUN_005a1360(CInStreamMemory *this_ptr,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + this_ptr->position;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + this_ptr->position;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + this_ptr->size;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + this_ptr->size;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((-1 < param_2) && (param_2 <= this_ptr->size)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((-1 < param_2) && (param_2 <= this_ptr->size)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->position = param_2;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 6,

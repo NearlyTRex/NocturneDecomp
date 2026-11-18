@@ -12,9 +12,9 @@
 ;   core_dcube.cpp_CDemonCube_load_FUN_004467a0 at 00446821
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01510dcc
-;   undefined4 DAT_01510dd0
-;   undefined4 DAT_01510dd4
+;   uint[3] g_TempTriangleIndices
+;   undefined4 g_TempTriangleIndices[1]
+;   undefined4 g_TempTriangleIndices[2]
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005b87c0
@@ -32,16 +32,16 @@ section .text
     PUSH EDX                            ; 004447be
     PUSH 0x4                            ; 004447bf
     PUSH 0x3                            ; 004447c1
-    PUSH 0x1510dcc                      ; 004447c3 | DAT_01510dcc
+    PUSH 0x1510dcc                      ; 004447c3 | g_TempTriangleIndices
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004447c8
         ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
-    MOV EDX,dword ptr [0x01510dcc]      ; 004447cd | DAT_01510dcc
+    MOV EDX,dword ptr [0x01510dcc]      ; 004447cd | g_TempTriangleIndices
     LEA EAX,[EDX*0x4 + 0x0]             ; 004447d3
     SUB EAX,EDX                         ; 004447da
     SHL EAX,0x2                         ; 004447dc
     LEA EDX,[ESI + EAX*0x1]             ; 004447df
     MOV dword ptr [EBX],EDX             ; 004447e2
-    MOV EDX,dword ptr [0x01510dd0]      ; 004447e4 | DAT_01510dd0
+    MOV EDX,dword ptr [0x01510dd0]      ; 004447e4 | g_TempTriangleIndices[1]
     LEA EAX,[EDX*0x4 + 0x0]             ; 004447ea
     SUB EAX,EDX                         ; 004447f1
     SHL EAX,0x2                         ; 004447f3
@@ -49,7 +49,7 @@ section .text
     ADD ESP,0x10                        ; 004447f9
     MOV dword ptr [EBX + 0x4],EDX       ; 004447fc
     MOV ECX,dword ptr [ESP + 0x10]      ; 004447ff
-    MOV EDX,dword ptr [0x01510dd4]      ; 00444803 | DAT_01510dd4
+    MOV EDX,dword ptr [0x01510dd4]      ; 00444803 | g_TempTriangleIndices[2]
     PUSH ECX                            ; 00444809
     LEA EAX,[EDX*0x4 + 0x0]             ; 0044480a
     PUSH 0x1                            ; 00444811

@@ -14,7 +14,7 @@ void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_004c3650(CKeyActor *this_pt
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(&this_ptr->model,"modelName");
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->key_mask,"keyMask");
-  if (INT_005bac4c != 2) {
+  if (g_CKeyActorClassVersion != 2) {
     return;
   }
   core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(local_104,"descriptiveName");

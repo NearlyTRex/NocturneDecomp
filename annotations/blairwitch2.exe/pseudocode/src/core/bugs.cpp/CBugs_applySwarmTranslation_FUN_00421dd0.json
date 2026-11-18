@@ -1,0 +1,314 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 133,
+    "complexity_score": 189,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "unrolled_memcpy",
+      "warning_type_propagation"
+    ],
+    "total_lines": 197
+  },
+  "cross_references": [
+    {
+      "addr": "004203a0",
+      "from_addr": "0042062f",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420000",
+      "from_addr": "0042036f",
+      "name": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00421dd0",
+    "address_range": [
+      [
+        "00421dd0",
+        "00421f1f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00421dd0",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00421dd0(CBugs *this_ptr,CVector3f *new_position)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0042036f",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042062f",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004207cf",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.669354838709677,
+    "instruction_count": 124,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 469,
+      "FLOAT2FLOAT": 48,
+      "FLOAT_SUB": 16,
+      "INT_ADD": 71,
+      "INT_AND": 29,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 28,
+      "INT_LESS": 4,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 14,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 47,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 26,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 827
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00427e00",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00423fb0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004276c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6126
+    },
+    "nocturne.exe": {
+      "addr": "00423a50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6126
+    }
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      },
+      {
+        "is_param": true,
+        "name": "new_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00421dee",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 41,
+      "match": "(CVector3f *)((int)(pCVar9 + 5) +",
+      "severity": "moderate",
+      "text": "pCVar9 = (CVector3f *)((int)(pCVar9 + 5) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(float *)((int)pcVar10",
+      "severity": "moderate",
+      "text": "*(float *)((int)pcVar10 + 0x174f4) = *(float *)((int)pcVar10 + 0x174f4) - fVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(float *)((int)pcVar10",
+      "severity": "moderate",
+      "text": "*(float *)((int)pcVar10 + 0x174f4) = *(float *)((int)pcVar10 + 0x174f4) - fVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `(pCVar9 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)(pCVar9 + 5)",
+      "severity": "moderate",
+      "text": "pCVar9 = (CVector3f *)((int)(pCVar9 + 5) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)pcVar10",
+      "severity": "moderate",
+      "text": "*(float *)((int)pcVar10 + 0x174f4) = *(float *)((int)pcVar10 + 0x174f4) - fVar6;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)pcVar10",
+      "severity": "moderate",
+      "text": "*(float *)((int)pcVar10 + 0x174f4) = *(float *)((int)pcVar10 + 0x174f4) - fVar6;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->position).x = new_position->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via element-arithmetic `(int)(pCVar9 + N) + M`, where `N*sizeof(*pCVar9) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar9->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 41,
+      "match": "pCVar9 = (T *)((int)(pCVar9 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar9 = (CVector3f *)((int)(pCVar9 + 5) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 58,
+      "match": "pCVar12 = (T *)&(pCVar12->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar12 = (CBugs *)&(pCVar12->base).base.base.orient;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

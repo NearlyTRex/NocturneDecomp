@@ -9,5 +9,5 @@
 CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_00495690(CGabriella *this_ptr)
 
 {
-  return &g_CGabriellaActorType_01c713e8;
+  return &g_CGabriellaClassInfo;
 }

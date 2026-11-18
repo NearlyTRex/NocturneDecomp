@@ -15,7 +15,7 @@ section .text
     PUSH 0x23060                        ; 005202c0
         ;   Label: core_moloch.cpp_factoryFuncMoloch_FUN_005202c0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005202c5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 005202ca
     TEST EAX,EAX                        ; 005202cd
     JNZ 0x005202d2                      ; 005202cf

@@ -10,7 +10,7 @@
 ;   core_moloch.cpp_factoryFuncMoloch_FUN_00501310 at 00501323
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ce240
+;   core_hero.cpp_CHero_ctor_FUN_004ce240
 ;   core_morph.cpp_CMorph_ctor_FUN_005b6e60
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
@@ -25,8 +25,8 @@ section .text
     PUSH EDI                            ; 00501342
     MOV EBX,dword ptr [ESP + 0x10]      ; 00501343
     PUSH EBX                            ; 00501347
-    CALL core_hero.cpp_FUN_004ce240     ; 00501348
-        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce240()
+    CALL core_hero.cpp_CHero_ctor_FUN_004ce240 ; 00501348
+        ;   XREF to: 004ce240 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ce240(CHero * this_ptr)
     ADD ESP,0x4                         ; 0050134d
     ADD EAX,0x25640                     ; 00501350
     PUSH EAX                            ; 00501355

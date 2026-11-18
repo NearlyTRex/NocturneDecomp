@@ -23,7 +23,7 @@
 ;   core_ground.cpp_CGround_renderVisibleTerrain_FUN_004cb5e0 at 004cb66b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00622024
+;   undefined4 g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_x
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_getVertexIndex_FUN_004cadf0
@@ -97,21 +97,21 @@ section .text
     SUB EAX,ESI                         ; 004cb4a1
     MOV ESI,EAX                         ; 004cb4a3
     SHL ESI,0x4                         ; 004cb4a5
-    MOV EDX,dword ptr [ESI + 0x622024]  ; 004cb4a8 | DAT_00622024
+    MOV EDX,dword ptr [ESI + 0x622024]  ; 004cb4a8 | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_x
     MOV ESI,dword ptr [EBX + 0x54]      ; 004cb4ae
     LEA EAX,[ESI*0x4 + 0x0]             ; 004cb4b1
     SUB EAX,ESI                         ; 004cb4b8
     SHL EBP,0x4                         ; 004cb4ba
     SHL EAX,0x4                         ; 004cb4bd
     MOV ESI,dword ptr [EBX + 0x58]      ; 004cb4c0
-    MOV ECX,dword ptr [EAX + 0x622024]  ; 004cb4c3 | DAT_00622024
+    MOV ECX,dword ptr [EAX + 0x622024]  ; 004cb4c3 | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_x
     LEA EAX,[ESI*0x4 + 0x0]             ; 004cb4c9
-    MOV EBP,dword ptr [EBP + 0x622024]  ; 004cb4d0 | DAT_00622024
+    MOV EBP,dword ptr [EBP + 0x622024]  ; 004cb4d0 | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_x
     SUB EAX,ESI                         ; 004cb4d6
     AND EBP,EDX                         ; 004cb4d8
     SHL EAX,0x4                         ; 004cb4da
     AND EBP,ECX                         ; 004cb4dd
-    MOV EAX,dword ptr [EAX + 0x622024]  ; 004cb4df | DAT_00622024
+    MOV EAX,dword ptr [EAX + 0x622024]  ; 004cb4df | g_SRenderVertex_ARRAY_00622014[0].projected_vertex.screen_x
     AND EAX,EBP                         ; 004cb4e5
     ADD ESP,0xc                         ; 004cb4e7
     TEST EAX,0x80000000                 ; 004cb4ea

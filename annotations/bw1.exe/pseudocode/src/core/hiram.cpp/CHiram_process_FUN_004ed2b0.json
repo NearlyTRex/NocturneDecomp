@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 66,
+    "complexity_score": 70,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 55,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memset"
     ],
-    "total_lines": 192
+    "total_lines": 196
   },
   "cross_references": [],
   "function": {
@@ -62,7 +62,7 @@
     {
       "addr": "004e34b0",
       "is_variadic": false,
-      "name": "core_glass.cpp_FUN_004e34b0"
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004e34b0"
     },
     {
       "addr": "0051b6c0",
@@ -104,15 +104,15 @@
     },
     {
       "addr": "0061b4d0",
-      "name": "DAT_0061b4d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c51d80"
     },
     {
       "addr": "0061f650",
-      "name": "DAT_0061f650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
     },
     {
       "addr": "01cd0dfc",
@@ -234,7 +234,7 @@
   "suspects": [
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 34,
+      "line": 37,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

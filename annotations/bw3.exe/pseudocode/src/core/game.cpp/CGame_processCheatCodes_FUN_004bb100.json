@@ -2,27 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3113,
-    "complexity_score": 2906,
+    "complexity_score": 2081,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 149,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1581,
-    "suspect_count": 127,
+    "pseudocode_lines": 1576,
+    "suspect_count": 46,
     "suspect_types": [
       "concat_reconstruction",
-      "derived_field_index_pun",
       "nonstandard_int",
       "pointer_cast",
       "shadow_pointer_walk",
       "stack_alignment_array",
-      "undefined_data",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
-      "warning_overlapping_globals"
+      "warning_type_propagation"
     ],
-    "total_lines": 4694
+    "total_lines": 4689
   },
   "cross_references": [
     {
@@ -104,12 +102,12 @@
     {
       "addr": "004da880",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004da880"
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880"
     },
     {
       "addr": "004db990",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004db990"
+      "name": "core_inv.cpp_CInventory_findItemByName_FUN_004db990"
     },
     {
       "addr": "005353b0",
@@ -134,7 +132,7 @@
     {
       "addr": "0057d050",
       "is_variadic": false,
-      "name": "core_weather.cpp_FUN_0057d050"
+      "name": "core_weather.cpp_CWeather_setWeatherType_FUN_0057d050"
     },
     {
       "addr": "005a4120",
@@ -210,8 +208,8 @@
   "globals": [
     {
       "addr": "005c210c",
-      "name": "s_Enter_Movie_FPS_005c210b+1",
-      "type": "undefined4",
+      "name": "s_Enter_Movie_FPS_005c210c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -264,8 +262,8 @@
     },
     {
       "addr": "005c29a8",
-      "name": "DAT_005c29a8",
-      "type": "undefined4",
+      "name": "g_CheatStr_DebugMode",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -282,8 +280,8 @@
     },
     {
       "addr": "005c2a01",
-      "name": "DAT_005c2a01",
-      "type": "undefined4",
+      "name": "g_CheatStr_ShowFPS",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -294,14 +292,14 @@
     },
     {
       "addr": "005c2a41",
-      "name": "DAT_005c2a41",
-      "type": "undefined4",
+      "name": "g_CheatStr_ProfileMode",
+      "type": "char[53]",
       "value": null
     },
     {
       "addr": "005c2a76",
-      "name": "DAT_005c2a76",
-      "type": "undefined4",
+      "name": "g_CheatStr_EventDebug",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -324,8 +322,8 @@
     },
     {
       "addr": "005c2ad4",
-      "name": "DAT_005c2ad4",
-      "type": "undefined4",
+      "name": "g_CheatStr_ScriptDebug",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -348,8 +346,8 @@
     },
     {
       "addr": "005c2b35",
-      "name": "DAT_005c2b35",
-      "type": "undefined4",
+      "name": "g_CheatStr_MemoryDebug",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -372,8 +370,8 @@
     },
     {
       "addr": "005c2b9e",
-      "name": "DAT_005c2b9e",
-      "type": "undefined4",
+      "name": "g_CheatStr_ManualAim",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -390,8 +388,8 @@
     },
     {
       "addr": "005c2bf1",
-      "name": "DAT_005c2bf1",
-      "type": "undefined4",
+      "name": "g_CheatStr_AutoAim",
+      "type": "char[50]",
       "value": null
     },
     {
@@ -408,20 +406,20 @@
     },
     {
       "addr": "005c2c40",
-      "name": "DAT_005c2c40",
-      "type": "undefined4",
+      "name": "g_CheatStr_MovieRecording",
+      "type": "char[51]",
       "value": null
     },
     {
       "addr": "005c2c73",
-      "name": "DAT_005c2c73",
-      "type": "undefined4",
+      "name": "g_CheatStr_CollisionDebug",
+      "type": "char[55]",
       "value": null
     },
     {
       "addr": "005c2caa",
-      "name": "DAT_005c2caa",
-      "type": "undefined4",
+      "name": "g_CheatStr_SkeletonKey",
+      "type": "char[57]",
       "value": null
     },
     {
@@ -474,15 +472,15 @@
     },
     {
       "addr": "005c2d2d",
-      "name": "DAT_005c2d2d",
-      "type": "undefined4",
+      "name": "g_CheatStr_GodMode",
+      "type": "char[54]",
       "value": null
     },
     {
       "addr": "005c2d63",
-      "name": "DAT_005c2d63",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005c2d63",
+      "type": "char",
+      "value": "\u0096"
     },
     {
       "addr": "005c2d94",
@@ -504,8 +502,8 @@
     },
     {
       "addr": "005c2dc3",
-      "name": "DAT_005c2dc3",
-      "type": "undefined4",
+      "name": "g_CheatStr_FreezeEnemies",
+      "type": "char[53]",
       "value": null
     },
     {
@@ -528,15 +526,15 @@
     },
     {
       "addr": "005c2e22",
-      "name": "DAT_005c2e22",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005c2e22",
+      "type": "char",
+      "value": "1"
     },
     {
       "addr": "005c2e58",
-      "name": "DAT_005c2e58",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005c2e58",
+      "type": "char",
+      "value": "\u00ff"
     },
     {
       "addr": "005c2e8d",
@@ -606,8 +604,8 @@
     },
     {
       "addr": "005c2efb",
-      "name": "DAT_005c2efb",
-      "type": "undefined4",
+      "name": "s_CSps_005c2efb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -624,21 +622,21 @@
     },
     {
       "addr": "005c2f27",
-      "name": "DAT_005c2f27",
-      "type": "undefined4",
+      "name": "g_CheatStr_AllWeapons",
+      "type": "char[54]",
       "value": null
     },
     {
       "addr": "005c2f5b",
-      "name": "s_You_just_got_more_bullet_005c2f5b",
-      "type": "TerminatedCString",
+      "name": "g_CheatStr_AllWeapons+0x34",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c2f87",
-      "name": "DAT_005c2f87",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005c2f87",
+      "type": "char",
+      "value": "\u00ca"
     },
     {
       "addr": "005c2fbd",
@@ -654,8 +652,8 @@
     },
     {
       "addr": "005c2fe3",
-      "name": "DAT_005c2fe3",
-      "type": "undefined4",
+      "name": "g_CheatStr_RaiseEvent",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -672,8 +670,8 @@
     },
     {
       "addr": "005c3031",
-      "name": "DAT_005c3031",
-      "type": "undefined4",
+      "name": "g_CheatStr_KillNearby",
+      "type": "char[53]",
       "value": null
     },
     {
@@ -684,8 +682,8 @@
     },
     {
       "addr": "005c3072",
-      "name": "DAT_005c3072",
-      "type": "undefined4",
+      "name": "g_CheatStr_Dismemberment",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -708,8 +706,8 @@
     },
     {
       "addr": "005c30f7",
-      "name": "DAT_005c30f7",
-      "type": "undefined4",
+      "name": "g_CheatStr_TimeFactor",
+      "type": "char[50]",
       "value": null
     },
     {
@@ -726,8 +724,8 @@
     },
     {
       "addr": "005c3147",
-      "name": "DAT_005c3147",
-      "type": "undefined4",
+      "name": "g_CheatStr_NoD3D",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -738,8 +736,8 @@
     },
     {
       "addr": "005c3186",
-      "name": "DAT_005c3186",
-      "type": "undefined4",
+      "name": "g_CheatStr_ToggleRenderMode",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -750,8 +748,8 @@
     },
     {
       "addr": "005c31c5",
-      "name": "DAT_005c31c5",
-      "type": "undefined4",
+      "name": "g_CheatStr_FlamingAmmo",
+      "type": "char[58]",
       "value": null
     },
     {
@@ -786,8 +784,8 @@
     },
     {
       "addr": "005c3270",
-      "name": "DAT_005c3270",
-      "type": "undefined4",
+      "name": "g_CheatStr_ClearFramebuffer",
+      "type": "char[51]",
       "value": null
     },
     {
@@ -798,14 +796,14 @@
     },
     {
       "addr": "005c32af",
-      "name": "DAT_005c32af",
-      "type": "undefined4",
+      "name": "g_CheatStr_ResetEffects",
+      "type": "char[50]",
       "value": null
     },
     {
       "addr": "005c32e1",
-      "name": "DAT_005c32e1",
-      "type": "undefined4",
+      "name": "g_CheatStr_SingleStep",
+      "type": "char[50]",
       "value": null
     },
     {
@@ -822,8 +820,8 @@
     },
     {
       "addr": "005c333c",
-      "name": "DAT_005c333c",
-      "type": "undefined4",
+      "name": "g_CheatStr_RestoreBattery",
+      "type": "char[54]",
       "value": null
     },
     {
@@ -840,26 +838,26 @@
     },
     {
       "addr": "005c339a",
-      "name": "DAT_005c339a",
-      "type": "undefined4",
+      "name": "g_CheatStr_WeatherRain",
+      "type": "char[58]",
       "value": null
     },
     {
       "addr": "005c33d4",
-      "name": "DAT_005c33d4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_005c33d4",
+      "type": "char",
+      "value": "\u00eb"
     },
     {
       "addr": "005c340b",
-      "name": "DAT_005c340b",
-      "type": "undefined4",
+      "name": "g_CheatStr_WeatherSnow",
+      "type": "char[55]",
       "value": null
     },
     {
       "addr": "005c3440",
-      "name": "s_burp2_wav_005c3440",
-      "type": "TerminatedCString",
+      "name": "g_CheatStr_WeatherSnow+0x35",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -888,14 +886,14 @@
     },
     {
       "addr": "005c3473",
-      "name": "DAT_005c3473",
-      "type": "undefined4",
+      "name": "g_CheatStr_GeometryDebug",
+      "type": "char[52]",
       "value": null
     },
     {
       "addr": "005c34a7",
-      "name": "DAT_005c34a7",
-      "type": "undefined4",
+      "name": "g_CheatStr_RestoreHealth",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -906,27 +904,27 @@
     },
     {
       "addr": "005c34ec",
-      "name": "DAT_005c34ec",
-      "type": "undefined4",
+      "name": "g_CheatStr_SoundDebug",
+      "type": "char[59]",
       "value": null
     },
     {
       "addr": "005c3528",
-      "name": "DAT_005c3528",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c3528",
+      "type": "double",
+      "value": "0.0555555555555556"
     },
     {
       "addr": "005c3530",
-      "name": "DAT_005c3530",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c3530",
+      "type": "double",
+      "value": "0.0000152587890625"
     },
     {
       "addr": "005c3538",
-      "name": "DAT_005c3538",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c3538",
+      "type": "double",
+      "value": "50"
     },
     {
       "addr": "005fb140",
@@ -936,20 +934,20 @@
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005fba60",
-      "name": "DAT_005fba60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c6e360"
     },
     {
       "addr": "005fe970",
-      "name": "DAT_005fe970",
-      "type": "undefined4",
+      "name": "g_EventCommandBuffer",
+      "type": "char[100]",
       "value": null
     },
     {
@@ -960,27 +958,27 @@
     },
     {
       "addr": "005fe9e8",
-      "name": "DAT_005fe9e8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MovieRecordingTargetFPS",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "005fe9ec",
-      "name": "DAT_005fe9ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MovieRecordingWidth",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "005fe9f0",
-      "name": "DAT_005fe9f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MovieRecordingHeight",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "00600284",
-      "name": "DAT_00600284",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d70a78"
     },
     {
       "addr": "00603b28",
@@ -990,15 +988,15 @@
     },
     {
       "addr": "006045f8",
-      "name": "DAT_006045f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_006045f8",
+      "type": "CSound*",
+      "value": "02cf5680"
     },
     {
       "addr": "006071f0",
-      "name": "DAT_006071f0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWeatherPtr",
+      "type": "CWeather*",
+      "value": "02d0c1a0"
     },
     {
       "addr": "01d21544",
@@ -1008,55 +1006,55 @@
     },
     {
       "addr": "01d22200",
-      "name": "DAT_01d22200",
-      "type": "undefined4",
+      "name": "g_INT_01d22200",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c40",
-      "name": "DAT_01d22c40",
-      "type": "undefined4",
+      "name": "g_MovieRecordingArmed",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c44",
-      "name": "DAT_01d22c44",
-      "type": "undefined4",
+      "name": "g_MovieRecordingActive",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c48",
-      "name": "DAT_01d22c48",
-      "type": "undefined4",
+      "name": "g_MovieRecordingMaxFrames",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c4c",
-      "name": "DAT_01d22c4c",
-      "type": "undefined4",
+      "name": "g_MovieRecordingFrameCounter",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c50",
-      "name": "DAT_01d22c50",
-      "type": "undefined4",
+      "name": "g_SoundDebugEnabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d22c70",
-      "name": "DAT_01d22c70",
+      "name": "g_CHAR_ARRAY_01d22c6f+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22c81",
-      "name": "DAT_01d22c81",
+      "name": "g_CHAR_ARRAY_01d22c6f+0x12",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22c82",
-      "name": "DAT_01d22c82",
+      "name": "g_CHAR_ARRAY_01d22c6f+0x13",
       "type": "undefined4",
       "value": null
     },
@@ -1068,14 +1066,14 @@
     },
     {
       "addr": "01d5ba14",
-      "name": "DAT_01d5ba14",
-      "type": "undefined4",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d70a78",
-      "name": "DAT_01d70a78",
-      "type": "undefined4",
+      "name": "g_PTR_01d70a78",
+      "type": "void*",
       "value": null
     },
     {
@@ -1171,6 +1169,12 @@
     "pcode_op_count": 13220
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b90d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5705
+    },
     "bw1.exe": {
       "addr": "004d27b0",
       "by": "name",
@@ -1463,420 +1467,28 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 24,
+      "line": 25,
       "match": "afStackY_11d0",
       "severity": "moderate",
       "text": "float afStackY_11d0 [907];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 186,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "(&DAT_01d22c70)[iVar12] = uVar2;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 187,
+      "line": 188,
       "match": "int3",
       "severity": "mild",
-      "text": "iVar5 = CONCAT31((int3)((uint)iVar8 >> 8),uVar2);",
+      "text": "iVar5 = CONCAT31((int3)((uint)iVar8 >> 8),g_CHAR_ARRAY_01d22c6f[iVar12]);",
       "type": "nonstandard_int"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 190,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = (byte)((uint)iVar8 >> 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 191,
-      "match": "DAT_005c29a8",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c29a8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 216,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 229,
-      "match": "DAT_005c2a01",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2a01);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 254,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 272,
-      "match": "DAT_005c2a41",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2a41);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 297,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 306,
-      "match": "DAT_005c2a76",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2a76);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 331,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 348,
-      "match": "DAT_005c2ad4",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2ad4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 373,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 382,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "iVar5 = DAT_005fba1c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 399,
-      "match": "DAT_005c2b35",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2b35);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 424,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = (byte)local_19c ^ (byte)local_1a0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 440,
-      "match": "DAT_005c2b9e",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2b9e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 466,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 474,
-      "match": "DAT_005c2bf1",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2bf1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 500,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 509,
-      "match": "DAT_005c2c40",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2c40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 534,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 538,
-      "match": "DAT_005fe9e8",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"?Enter Movie FPS\" + 1,(float *)&DAT_005fe9e8",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 543,
-      "match": "DAT_01d22c48",
-      "severity": "mild",
-      "text": "(int *)&DAT_01d22c48,1,0,99999,1), iVar5 != 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 545,
-      "match": "DAT_005fe9ec",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter image width\",&DAT_005fe9ec,1,1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 548,
-      "match": "DAT_005fe9f0",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter image height\",&DAT_005fe9f0,1,1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 557,
-      "match": "DAT_005c2c73",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2c73);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 582,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 586,
-      "match": "DAT_005c2caa",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2caa);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 611,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = (byte)((uint)iVar5 >> 8) ^ (byte)((uint)local_180 >> 8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 641,
-      "match": "DAT_005c2d2d",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2d2d);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 667,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 685,
-      "match": "DAT_005c2d63",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2d63);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 711,
-      "match": "DAT_005c2dc3",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2dc3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 736,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 751,
-      "match": "DAT_005c2e22",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2e22);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 777,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 789,
-      "match": "DAT_005c2efb",
-      "severity": "mild",
-      "text": "core_game_cpp_giveHeroWeapon_FUN_004bafd0(&DAT_005c2efb);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 798,
-      "match": "DAT_005c2e58",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2e58);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 824,
-      "match": "DAT_005c2f27",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2f27);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 850,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 859,
-      "match": "DAT_005c2f87",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2f87);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 885,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 894,
-      "match": "DAT_005c2fe3",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c2fe3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 919,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 930,
-      "match": "DAT_005fe970",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Raise an event\",&DAT_005fe970,100,1),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 933,
-      "match": "DAT_005fe970",
-      "severity": "mild",
-      "text": "(0x01C6E360,&DAT_005fe970);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 935,
-      "match": "DAT_005fe970",
-      "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,&DAT_005fe970);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 942,
-      "match": "DAT_005c3031",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c3031);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 967,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1895,256 +1507,16 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 991,
-      "match": "DAT_005c3072",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c3072);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1016,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1032,
-      "match": "DAT_005c30f7",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c30f7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1057,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = (byte)iStack_138 ^ (byte)iStack_13c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1065,
-      "match": "DAT_005c3147",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c3147);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1090,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1095,
-      "match": "DAT_005c3186",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c3186);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1120,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1125,
-      "match": "DAT_005c31c5",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c31c5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1151,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1185,
-      "match": "DAT_005c3270",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c3270);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1210,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1218,
-      "match": "DAT_005c32af",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c32af);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1243,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1250,
-      "match": "DAT_005c32e1",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c32e1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1275,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1289,
-      "match": "DAT_005c333c",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c333c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1315,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1323,
-      "match": "DAT_005c339a",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c339a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1348,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1351,
-      "match": "DAT_005c33d4",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c33d4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1376,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1379,
-      "match": "DAT_005c340b",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c340b);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1404,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 1419,
+      "line": 1414,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "iVar5 = *(int *)((int)g_CDemonSetPtr->characters + iStack_2c);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 1492,
-      "match": "DAT_005c3473",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c3473);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1517,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1521,
-      "match": "DAT_005c34a7",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c34a7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1547,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1553,
-      "match": "DAT_005c34ec",
-      "severity": "mild",
-      "text": "pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_005089e0(&DAT_005c34ec);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1578,
-      "match": "DAT_01d22c70",
-      "severity": "mild",
-      "text": "DAT_01d22c70 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 621,
+      "line": 622,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2152,23 +1524,15 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 187,
+      "line": 188,
       "match": "CONCAT31",
       "severity": "moderate",
-      "text": "iVar5 = CONCAT31((int3)((uint)iVar8 >> 8),uVar2);",
+      "text": "iVar5 = CONCAT31((int3)((uint)iVar8 >> 8),g_CHAR_ARRAY_01d22c6f[iVar12]);",
       "type": "concat_reconstruction"
     },
     {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 1153,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (*(int *)(pCVar10[4].actor_name + 0xc) == 5) {",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar14->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1441,
+      "line": 1436,
       "match": "pCVar14 = (T *)((pCVar14->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
       "text": "pCVar14 = (CSkeleton *)((pCVar14->motion_list).state_names[1] + 2);",
@@ -2176,7 +1540,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar14->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1462,
+      "line": 1457,
       "match": "pCVar14 = (T *)((pCVar14->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
       "text": "pCVar14 = (CSkeleton *)((pCVar14->motion_list).state_names[1] + 2);",
@@ -2184,7 +1548,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar14->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1483,
+      "line": 1478,
       "match": "pCVar14 = (T *)((pCVar14->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
       "text": "pCVar14 = (CSkeleton *)((pCVar14->motion_list).state_names[1] + 2);",
@@ -2192,7 +1556,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 194,
+      "line": 195,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2200,7 +1564,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 233,
+      "line": 234,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2208,7 +1572,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 276,
+      "line": 277,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2216,7 +1580,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 310,
+      "line": 311,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2224,7 +1588,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 351,
+      "line": 352,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2232,7 +1596,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 403,
+      "line": 404,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2240,7 +1604,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 444,
+      "line": 445,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2248,7 +1612,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 478,
+      "line": 479,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2256,7 +1620,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 513,
+      "line": 514,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2264,7 +1628,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 561,
+      "line": 562,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2272,7 +1636,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 590,
+      "line": 591,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2328,7 +1692,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 863,
+      "line": 862,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2336,7 +1700,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 898,
+      "line": 897,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2392,7 +1756,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1188,
+      "line": 1183,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2400,7 +1764,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1222,
+      "line": 1217,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2408,7 +1772,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1253,
+      "line": 1248,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2416,7 +1780,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1293,
+      "line": 1288,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2424,7 +1788,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1327,
+      "line": 1322,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2432,7 +1796,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1355,
+      "line": 1350,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2440,7 +1804,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1383,
+      "line": 1378,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2448,7 +1812,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1496,
+      "line": 1491,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2456,7 +1820,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1525,
+      "line": 1520,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2464,18 +1828,11 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1557,
+      "line": 1552,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "description": "'pCVar10[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar10)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[11], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 1153,
-      "severity": "moderate",
-      "text": "if (*(int *)(pCVar10[4].actor_name + 0xc) == 5) {",
-      "type": "derived_field_index_pun"
     }
   ]
 }

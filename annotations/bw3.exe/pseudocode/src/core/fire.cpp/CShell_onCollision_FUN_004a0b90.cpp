@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_fire_cpp_CShell_onCollision_FUN_004a0b90(CShell *this_ptr,CVector3f *collision_normal)
 
 {
@@ -18,7 +16,7 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004a0b90(CShell *this_ptr,CVect
   int iVar5;
   float fStack_18;
   
-  fStack_18 = (float)(4 - this_ptr->bounce_count) * (float)_DAT_005c0970;
+  fStack_18 = (float)(4 - this_ptr->bounce_count) * (float)0.25;
   if (fStack_18 < 0.0) {
     fStack_18 = 0.0;
   }
@@ -31,7 +29,8 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004a0b90(CShell *this_ptr,CVect
     iVar5 = 0;
     iVar4 = 0;
     do {
-      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)(iVar4 + 0x1c74e90));
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700
+                        (*(uint *)((int)g_ShellBounceSoundHandles + iVar4));
       if (iVar2 == 0) break;
       iVar4 = iVar4 + 4;
       iVar5 = iVar5 + 1;
@@ -41,14 +40,16 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004a0b90(CShell *this_ptr,CVect
                         (this_ptr->model_ptr->model_filename,"shell.kfm");
       if (iVar4 == 0) {
         uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                          (0x02CF5680,0x01C73654,"sh-sh?c @ .15",(CVector3f *)this_ptr);
-        *(uint *)(iVar5 * 4 + 0x1c74e90) = uVar3;
+                          (g_CSound_PTR_006045f8,(CDemonActor *)g_CFireEffect_PTR_005fc5a0,
+                           "sh-sh?c @ .15",(CVector3f *)this_ptr);
+        g_ShellBounceSoundHandles[iVar5] = uVar3;
         this_ptr->bounce_count = this_ptr->bounce_count + 1;
         return 0;
       }
       uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                        (0x02CF5680,0x01C73654,"44-sh?c @ .2",(CVector3f *)this_ptr);
-      *(uint *)(iVar5 * 4 + 0x1c74e90) = uVar3;
+                        (g_CSound_PTR_006045f8,(CDemonActor *)g_CFireEffect_PTR_005fc5a0,
+                         "44-sh?c @ .2",(CVector3f *)this_ptr);
+      g_ShellBounceSoundHandles[iVar5] = uVar3;
       this_ptr->bounce_count = this_ptr->bounce_count + 1;
       return 0;
     }

@@ -11,7 +11,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_0051fd00(CScat *this_ptr,
 {
   CDeformableModelInstance *pCVar1;
   CCharacter *pCVar2;
-  int iVar3;
+  SMotion *pSVar3;
   CVector3f *damage_direction;
   CVector3f *pCVar4;
   CCharacter *this_ptr_00;
@@ -19,11 +19,13 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_0051fd00(CScat *this_ptr,
   CCharacter *pCVar5;
   CMotionController *this_ptr_01;
   CVector3f *pCVar6;
+  int iVar7;
   
   pCVar1 = &(this_ptr->base).base.model;
-  iVar3 = core_motion_cpp_FUN_005035c0(pCVar1);
-  if ((*(int *)(iVar3 + 0x24) != 0xc) &&
-     (iVar3 = core_motion_cpp_FUN_005035c0(pCVar1), *(int *)(iVar3 + 0x24) != 0xd)) {
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
+  if ((pSVar3->state_index != 0xc) &&
+     (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base),
+     pSVar3->state_index != 0xd)) {
     this_ptr_00 = (CCharacter *)
                   (this_ptr->base).inventories[0].selected_weapons
                   [(this_ptr->base).inventories[0].current_group];
@@ -34,8 +36,8 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_0051fd00(CScat *this_ptr,
     if (((pCVar5 != (CCharacter *)0x0) && (this_ptr_00 != pCVar5)) &&
        ((pCVar5->model).bone_origins[0x19].y == 1.26117e-44)) {
       pCVar1 = &(this_ptr->base).base.model;
-      iVar3 = core_motion_cpp_FUN_005035c0(pCVar1);
-      if (*(int *)(iVar3 + 0x24) == 0) {
+      pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&pCVar1->base);
+      if (pSVar3->state_index == 0) {
         this_ptr->weapon_actor = (CWeapon *)0x0;
       }
       else {
@@ -43,7 +45,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_0051fd00(CScat *this_ptr,
       }
     }
     this_ptr_01 = &(this_ptr->base).base.model.base;
-    iVar3 = 0;
+    iVar7 = 0;
     while (0.0 < delta_time) {
       pCVar5 = (CCharacter *)this_ptr->weapon_actor;
       if (this_ptr_00 == pCVar5) {
@@ -96,7 +98,7 @@ LAB_0051ff09:
                && ((*(((this_ptr_00->base).vtable._uc)->_uc).kill)
                              (this_ptr_00,2,damage_direction,(float)this_ptr_01),
                   this_ptr->weapon_actor->weapon_type == (WEAPON_TYPE_BARON|WEAPON_TYPE_SHOTGUN))) {
-              iVar3 = 1;
+              iVar7 = 1;
               this_ptr_01 = unaff_EDI;
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(unaff_EDI,6,1);
             }
@@ -105,8 +107,8 @@ LAB_0051ff09:
         core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620
                   ((CCharacter *)this_ptr,(int)pCVar5);
       }
-      iVar3 = iVar3 + 1;
-      if (1 < iVar3) {
+      iVar7 = iVar7 + 1;
+      if (1 < iVar7) {
         return;
       }
     }

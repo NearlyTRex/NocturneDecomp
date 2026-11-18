@@ -13,7 +13,7 @@
 ;   TerminatedCString s_Bip01_R_Finger0_005f180e
 ;   TerminatedCString s_Bip01_L_Finger0_005f181e
 ;   TerminatedCString s_Dummy05_005f182e
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
@@ -36,7 +36,7 @@ section .text
         ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00560522
     PUSH 0x5f17e7                       ; 00560525 | = "COMBATMODEHARD"
-    MOV EDX,dword ptr [0x0061b4d0]      ; 0056052a | DAT_0061b4d0
+    MOV EDX,dword ptr [0x0061b4d0]      ; 0056052a | g_CEventListPtr
     PUSH EDX                            ; 00560530
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 00560531
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

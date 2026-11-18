@@ -2,19 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 285,
+    "complexity_score": 322,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 25,
     "suspect_types": [
+      "displaced_global_access",
       "param_count_too_few",
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
+      "suspicious_cast",
       "unnamed_param"
     ],
-    "total_lines": 160
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -38,40 +41,40 @@
   },
   "function_calls": [
     {
+      "addr": "005c43e0",
+      "is_variadic": false,
+      "name": "crt_unknown.c__mktime_FUN_005c43e0"
+    },
+    {
       "addr": "005c1690",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c1690"
-    },
-    {
-      "addr": "005c43e0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c43e0"
     }
   ],
   "globals": [
     {
       "addr": "006013f2",
-      "name": "DAT_006013f2",
+      "name": "g_DOUBLE_006013ec+6",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006013f4",
-      "name": "DAT_006013f4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Normal",
+      "type": "short",
+      "value": "0x0"
     },
     {
       "addr": "0060140c",
-      "name": "DAT_0060140c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SHORT_0060140c",
+      "type": "short",
+      "value": "0x16d"
     },
     {
       "addr": "0060140e",
-      "name": "DAT_0060140e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DaysInMonth_Leap",
+      "type": "short",
+      "value": "0x0"
     }
   ],
   "param_estimates": {
@@ -264,7 +267,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x20) == 0) {",
@@ -272,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = FUN_005c1690(param_2 + 0x76c);",
@@ -280,95 +283,63 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_006013f4 + *(int *)(param_1 + 0x10) * 2);",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_006013f4",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_006013f4 + *(int *)(param_1 + 0x10) * 2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_006013f2 + *(int *)(param_1 + 0x10) * 2);",
+      "text": "iVar2 = *(int *)((int)&g_DOUBLE_006013ec + *(int *)(param_1 + 0x10) * 2 + 6);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_006013f2",
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_006013f2 + *(int *)(param_1 + 0x10) * 2);",
-      "type": "undefined_data"
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(&g_SHORT_0060140c + *(int *)(param_1 + 0x10));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_34.tm_mon = *(int *)(param_1 + 0x10);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_0060140e + *(int *)(param_1 + 0x10) * 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_0060140e",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_0060140e + *(int *)(param_1 + 0x10) * 2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_0060140c + *(int *)(param_1 + 0x10) * 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0060140c",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_0060140c + *(int *)(param_1 + 0x10) * 2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = *(uint *)(param_1 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_20 = param_2;",
+      "text": "local_34.tm_year = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = ((*(int *)(param_1 + 0x18) - local_1c) + 7) % 7;",
+      "text": "iVar4 = ((*(int *)(param_1 + 0x18) - local_34.tm_wday) + 7) % 7;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0xc) == 5) {",
@@ -376,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = *(int *)(param_1 + 0xc) + -2;",
@@ -384,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = *(int *)(param_1 + 0xc) + -1;",
@@ -392,7 +363,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x20) != 1) {",
@@ -400,7 +371,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "return *(int *)(param_1 + 0x1c);",
@@ -408,11 +379,51 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "return *(int *)(param_1 + 0x1c) + -1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_006013f6 (at 0x006013f6, +2 bytes).",
+      "line": 14,
+      "match": "g_DaysInMonth_Normal",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_FontTable (at 0x00601440, +50 bytes).",
+      "line": 18,
+      "match": "g_DaysInMonth_Leap",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_SHORT_0060140c \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DaysInMonth_Leap (at 0x0060140e, +2 bytes).",
+      "line": 19,
+      "match": "g_SHORT_0060140c",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(&g_SHORT_0060140c + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Pointer value `&g_DOUBLE_006013ec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)&g_DOUBLE_006013ec",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)&g_DOUBLE_006013ec + *(int *)(param_1 + 0x10) * 2 + 6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 15,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)&g_DOUBLE_006013ec + *(int *)(param_1 + 0x10) * 2 + 6);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,
@@ -424,6 +435,32 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*2 + 0x60140c] lands in g_SHORT_0060140c but intended target is g_DaysInMonth_Leap at 0x60140e (displaced by 2 bytes)",
+      "displaced_from": "g_SHORT_0060140c",
+      "displacement": "0x60140c",
+      "instruction_address": "",
+      "intended_global": "g_DaysInMonth_Leap",
+      "line": 23,
+      "match": "0x60140c",
+      "scale": 2,
+      "severity": "moderate",
+      "text": "// 005c16ff: MOV EAX,dword ptr [EAX*0x2 + 0x60140c]  ; g_SHORT_0060140c",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*2 + 0x6013f4] lands in g_DaysInMonth_Normal but intended target is g_INT_006013f6 at 0x6013f6 (displaced by 2 bytes)",
+      "displaced_from": "g_DaysInMonth_Normal",
+      "displacement": "0x6013f4",
+      "instruction_address": "",
+      "intended_global": "g_INT_006013f6",
+      "line": 28,
+      "match": "0x6013f4",
+      "scale": 2,
+      "severity": "moderate",
+      "text": "// 005c170b: MOV ESI,dword ptr [EAX*0x2 + 0x6013f4]  ; g_DaysInMonth_Normal",
+      "type": "displaced_global_access"
     }
   ]
 }

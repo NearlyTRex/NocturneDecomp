@@ -18,14 +18,14 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   int g_WindowWidth = 0x140
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bd1d8c
-;   undefined4 DAT_01bd1d90
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_MouseX
+;   int g_MouseY
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
 ;   int g_ClipBottom
-;   CKeys g_CKeys_01cc30e4
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
@@ -85,7 +85,7 @@ section .text
     MOV ESI,dword ptr [ESI]             ; 004cfc2b
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004cfc2d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV ECX,dword ptr [0x01bd1d90]      ; 004cfc32 | DAT_01bd1d90
+    MOV ECX,dword ptr [0x01bd1d90]      ; 004cfc32 | g_MouseY
     MOV EAX,[0x005b761c]                ; 004cfc38 | g_WindowWidth
     PUSH ECX                            ; 004cfc3d
     LEA EDX,[ESI + 0xffffc000]          ; 004cfc3e
@@ -104,7 +104,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 ; 004cfc5f
         ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004cfc64
-    MOV EDX,dword ptr [0x01bd1d8c]      ; 004cfc67 | DAT_01bd1d8c
+    MOV EDX,dword ptr [0x01bd1d8c]      ; 004cfc67 | g_MouseX
     CMP EDX,dword ptr [ESP + 0x8]       ; 004cfc6d
     JZ 0x004cfc94                       ; 004cfc71
         ;   XREF to: 004cfc94 (CONDITIONAL_JUMP)  ; LAB_004cfc94
@@ -115,13 +115,13 @@ section .text
     IMUL EDX                            ; 004cfc81
     IDIV EBX                            ; 004cfc83
     LEA ESI,[EAX + 0x4000]              ; 004cfc85
-    MOV EAX,[0x01bd1d8c]                ; 004cfc8b | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 004cfc8b | g_MouseX
     MOV dword ptr [ESP + 0x8],EAX       ; 004cfc90
     PUSH 0x4b                           ; 004cfc94
         ;   Label: LAB_004cfc94
     MOV EAX,[0x005bac64]                ; 004cfc96 | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004cfc9b | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cfc9c | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004cfc9b | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004cfc9c | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 004cfc9e
     ADD ESP,0x8                         ; 004cfca1
     TEST EAX,EAX                        ; 004cfca4
@@ -131,8 +131,8 @@ section .text
     PUSH 0x4d                           ; 004cfcae
         ;   Label: LAB_004cfcae
     MOV EAX,[0x005bac64]                ; 004cfcb0 | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004cfcb5 | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cfcb6 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004cfcb5 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004cfcb6 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 004cfcb8
     ADD ESP,0x8                         ; 004cfcbb
     TEST EAX,EAX                        ; 004cfcbe
@@ -192,7 +192,7 @@ section .text
     PUSH 0xff                           ; 004cfd58
     MOV EDX,dword ptr [0x01c00c5c]      ; 004cfd5d | g_ClipTop
     PUSH 0x41                           ; 004cfd63
-    MOV EDI,dword ptr [0x01bcd070]      ; 004cfd65 | DAT_01bcd070
+    MOV EDI,dword ptr [0x01bcd070]      ; 004cfd65 | g_CBitFont_PTR_01bcd070
     MOV EBX,dword ptr [0x01c00c64]      ; 004cfd6b | g_ClipBottom
     PUSH EDI                            ; 004cfd71
     ADD EBX,EDX                         ; 004cfd72
@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 004cfd8f
     MOV EDX,dword ptr [0x01c00c58]      ; 004cfd90 | g_ClipLeft
     PUSH EDX                            ; 004cfd96
-    MOV ECX,dword ptr [0x01bcd070]      ; 004cfd97 | DAT_01bcd070
+    MOV ECX,dword ptr [0x01bcd070]      ; 004cfd97 | g_CBitFont_PTR_01bcd070
     PUSH ECX                            ; 004cfd9d
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 ; 004cfd9e
         ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
@@ -219,8 +219,8 @@ section .text
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH 0x1                            ; 004cfdab
     MOV EAX,[0x005bac64]                ; 004cfdad | g_CKeys_PTR_005bac64
-    PUSH EAX                            ; 004cfdb2 | g_CKeys_01cc30e4
-    MOV EDX,dword ptr [EAX]             ; 004cfdb3 | g_CKeys_01cc30e4
+    PUSH EAX                            ; 004cfdb2 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004cfdb3 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 004cfdb5
     ADD ESP,0x8                         ; 004cfdb8
     TEST EAX,EAX                        ; 004cfdbb
@@ -228,8 +228,8 @@ section .text
         ;   XREF to: 004cfdf5 (CONDITIONAL_JUMP)  ; LAB_004cfdf5
     PUSH 0x1c                           ; 004cfdbf
     MOV EDX,dword ptr [0x005bac64]      ; 004cfdc1 | g_CKeys_PTR_005bac64
-    PUSH EDX                            ; 004cfdc7 | g_CKeys_01cc30e4
-    MOV EAX,dword ptr [EDX]             ; 004cfdc8 | g_CKeys_01cc30e4
+    PUSH EDX                            ; 004cfdc7 | g_CKeysInstance
+    MOV EAX,dword ptr [EDX]             ; 004cfdc8 | g_CKeysInstance
     CALL dword ptr [EAX + 0x4]          ; 004cfdca
     ADD ESP,0x8                         ; 004cfdcd
     TEST EAX,EAX                        ; 004cfdd0
@@ -237,8 +237,8 @@ section .text
         ;   XREF to: 004cfdf0 (CONDITIONAL_JUMP)  ; LAB_004cfdf0
     PUSH 0x200                          ; 004cfdd4
     MOV EDX,dword ptr [0x005bac64]      ; 004cfdd9 | g_CKeys_PTR_005bac64
-    PUSH EDX                            ; 004cfddf | g_CKeys_01cc30e4
-    MOV EAX,dword ptr [EDX]             ; 004cfde0 | g_CKeys_01cc30e4
+    PUSH EDX                            ; 004cfddf | g_CKeysInstance
+    MOV EAX,dword ptr [EDX]             ; 004cfde0 | g_CKeysInstance
     CALL dword ptr [EAX + 0x4]          ; 004cfde2
     ADD ESP,0x8                         ; 004cfde5
     TEST EAX,EAX                        ; 004cfde8

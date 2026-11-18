@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags)
 
 {
@@ -20,17 +18,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
   int local_14;
   
   if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
-     (DAT_00713a7c != 0)) {
+     (g_CullingMode != 0)) {
     if (this_ptr->shadow_pass_active == 0) {
-      if (DAT_0061b4a0 == 0x20) {
-        _DAT_01c4f02c = engine_special_cpp_FUN_0057de01;
+      if (g_INT_0061b4a0 == 0x20) {
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0057de01;
       }
       else {
-        _DAT_01c4f02c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3;
       }
-      _DAT_01c51d14 = render_flags;
-      _DAT_01c51d18 = 6;
-      if (_DAT_01c50948 == 0) {
+      g_RenderStateFlags.dword = render_flags;
+      g_VertexPreprocessMode = 6;
+      if (g_INT_01c50948 == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
           local_28.x = primitive_array->vertices[0].vertex_index;
           local_28.y = primitive_array->vertices[1].vertex_index;
@@ -50,7 +48,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
               this_ptr->vertex_buffer_ptr[local_1c].v = primitive_array->vertices[3].texture_v;
             }
           }
-          core_dpart_cpp_FUN_0047a480(&local_28.x,(primitive_array->base).base.count);
+          engine_drender_cpp_renderTriangleTextured_FUN_0047a480
+                    (&local_28.x,(primitive_array->base).base.count);
           primitive_array =
                (SMRGLPrimitiveQuad *)
                ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
@@ -68,12 +67,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
             if (iVar2 != 0) {
               iVar3 = iVar3 + 1;
               iVar2 = local_18 + 4;
-              *(SMRGLPrimitiveQuad **)(&DAT_00612568 + local_18) = primitive_array;
+              *(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_18) = primitive_array;
               local_18 = iVar2;
               if (1999 < iVar3) {
-                _DAT_01d1d400 = "..\\engine\\drender.cpp";
-                _DAT_01d1d404 = 0x9b6;
-                core_main_c_FUN_005030e0("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar3);
+                g_CHAR_PTR_01d1d400 = "..\\engine\\drender.cpp";
+                g_INT_01d1d404 = 0x9b6;
+                core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d");
               }
             }
             local_14 = local_14 + 1;
@@ -85,16 +84,16 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
         }
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_005823a0
-                    (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveQuad **)&DAT_00612568,iVar3,
-                     _DAT_01c51d14);
+                    (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,iVar3,
+                     g_RenderStateFlags.dword);
           return;
         }
       }
     }
     else {
-      _DAT_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
-      _DAT_01c51d14 = 0;
-      _DAT_01c51d18 = _DAT_01c51d14;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
+      g_RenderStateFlags.dword = 0;
+      g_VertexPreprocessMode = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
         local_28.x = primitive_array->vertices[0].vertex_index;
         local_28.y = primitive_array->vertices[1].vertex_index;
@@ -107,7 +106,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
              (SMRGLPrimitiveQuad *)
              ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
              primitive_stride);
-        core_dpart_cpp_FUN_0047ab00(&local_28,(pSVar1->base).count);
+        engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(&local_28,(pSVar1->base).count);
       }
     }
   }

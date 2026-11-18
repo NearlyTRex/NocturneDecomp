@@ -1,27 +1,27 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bits_per_sample
 ; int              Stack[0xc]:4   channels
 ; int              Stack[0x10]:4   sample_rate
-; int *            Stack[0x14]:4   out_buffer_size
+; int *            Stack[0x14]:4   out_samples_per_block
 ;
 ; Referenced Globals:
 ;   void* PTR_waveOutOpen_005c8478 = 001c89dc
 ;   void* PTR_GlobalAlloc_005c85c8 = 001c8f8e
 ;   void* PTR_GlobalLock_005c85d0 = 001c8faa
 ;   TerminatedCString s_waveOutOpen_failed_005ea592
-;   undefined4 DAT_0061bf84
-;   undefined4 DAT_0264b070
-;   undefined4 DAT_0264b0f4
-;   undefined4 DAT_0264b0f8
-;   undefined4 DAT_0264b0fc
-;   undefined4 DAT_0264b100
-;   undefined4 DAT_0264b104
+;   int g_WaveOutDeviceID = -0x1
+;   int g_WaveOutHandle
+;   int g_WaveOutBitsPerSample
+;   int g_WaveOutChannels
+;   int g_WaveOutSampleRate
+;   int g_WaveOutBufferSize
+;   int g_WaveOutNumBuffers
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
@@ -57,43 +57,43 @@ section .text
     RET                                 ; 00557f1e
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00557f1f
         ;   Label: LAB_00557f1f
-    MOV [0x0264b0f4],EAX                ; 00557f23 | DAT_0264b0f4
+    MOV [0x0264b0f4],EAX                ; 00557f23 | g_WaveOutBitsPerSample
     MOV EAX,dword ptr [ESP + 0x30]      ; 00557f28
     MOV EDX,0x4                         ; 00557f2c
-    MOV [0x0264b0f8],EAX                ; 00557f31 | DAT_0264b0f8
+    MOV [0x0264b0f8],EAX                ; 00557f31 | g_WaveOutChannels
     MOV EAX,dword ptr [ESP + 0x34]      ; 00557f36
-    MOV dword ptr [0x0264b104],EDX      ; 00557f3a | DAT_0264b104
-    MOV [0x0264b0fc],EAX                ; 00557f40 | DAT_0264b0fc
+    MOV dword ptr [0x0264b104],EDX      ; 00557f3a | g_WaveOutNumBuffers
+    MOV [0x0264b0fc],EAX                ; 00557f40 | g_WaveOutSampleRate
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00553600 ; 00557f45
         ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
     MOV dword ptr [ESP + 0x10],EAX      ; 00557f4a
     FLD float ptr [ESP + 0x10]          ; 00557f4e
-    FILD dword ptr [0x0264b0fc]         ; 00557f52 | DAT_0264b0fc
+    FILD dword ptr [0x0264b0fc]         ; 00557f52 | g_WaveOutSampleRate
     FMULP                               ; 00557f58
-    FILD dword ptr [0x0264b104]         ; 00557f5a | DAT_0264b104
+    FILD dword ptr [0x0264b104]         ; 00557f5a | g_WaveOutNumBuffers
     FDIVP                               ; 00557f60
     CALL crt_math.c_round_FUN_005b7ff0  ; 00557f62
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
-    FISTP dword ptr [0x0264b100]        ; 00557f67 | DAT_0264b100
-    MOV EAX,[0x0264b100]                ; 00557f6d | DAT_0264b100
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
+    FISTP dword ptr [0x0264b100]        ; 00557f67 | g_WaveOutBufferSize
+    MOV EAX,[0x0264b100]                ; 00557f6d | g_WaveOutBufferSize
     ADD EAX,0xf                         ; 00557f72
     XOR ESI,ESI                         ; 00557f75
     AND AL,0xf0                         ; 00557f77
-    MOV ECX,dword ptr [0x0264b104]      ; 00557f79 | DAT_0264b104
-    MOV [0x0264b100],EAX                ; 00557f7f | DAT_0264b100
+    MOV ECX,dword ptr [0x0264b104]      ; 00557f79 | g_WaveOutNumBuffers
+    MOV [0x0264b100],EAX                ; 00557f7f | g_WaveOutBufferSize
     TEST ECX,ECX                        ; 00557f84
     JLE 0x00558020                      ; 00557f86
         ;   XREF to: 00558020 (CONDITIONAL_JUMP)  ; LAB_00558020
     XOR EBX,EBX                         ; 00557f8c
-    MOV EAX,[0x0264b0f4]                ; 00557f8e | DAT_0264b0f4
+    MOV EAX,[0x0264b0f4]                ; 00557f8e | g_WaveOutBitsPerSample
         ;   Label: LAB_00557f8e
     MOV EDX,EAX                         ; 00557f93
     SAR EDX,0x1f                        ; 00557f95
     SHL EDX,0x3                         ; 00557f98
     SBB EAX,EDX                         ; 00557f9b
     SAR EAX,0x3                         ; 00557f9d
-    IMUL EAX,dword ptr [0x0264b100]     ; 00557fa0 | DAT_0264b100
-    IMUL EAX,dword ptr [0x0264b0f8]     ; 00557fa7 | DAT_0264b0f8
+    IMUL EAX,dword ptr [0x0264b100]     ; 00557fa0 | g_WaveOutBufferSize
+    IMUL EAX,dword ptr [0x0264b0f8]     ; 00557fa7 | g_WaveOutChannels
     PUSH EAX                            ; 00557fae
     PUSH 0x2002                         ; 00557faf
     CALL dword ptr CS:[0x5c85c8]        ; 00557fb4 | PTR_GlobalAlloc_005c85c8
@@ -119,18 +119,18 @@ section .text
     INC ESI                             ; 00558002
     CALL dword ptr CS:[0x5c85d0]        ; 00558003 | PTR_GlobalLock_005c85d0
     MOV dword ptr [EBX + 0x264b094],EAX ; 0055800a
-    MOV EAX,[0x0264b104]                ; 00558010 | DAT_0264b104
+    MOV EAX,[0x0264b104]                ; 00558010 | g_WaveOutNumBuffers
     ADD EBX,0x4                         ; 00558015
     CMP ESI,EAX                         ; 00558018
     JL 0x00557f8e                       ; 0055801a
         ;   XREF to: 00557f8e (CONDITIONAL_JUMP)  ; LAB_00557f8e
     MOV EDX,0x1                         ; 00558020
         ;   Label: LAB_00558020
-    MOV AX,[0x0264b0f4]                 ; 00558025 | DAT_0264b0f4
+    MOV AX,[0x0264b0f4]                 ; 00558025 | g_WaveOutBitsPerSample
     MOV word ptr [ESP],DX               ; 0055802b
     MOV word ptr [ESP + 0xe],AX         ; 0055802f
     XOR EDX,EDX                         ; 00558034
-    MOV AX,[0x0264b0f8]                 ; 00558036 | DAT_0264b0f8
+    MOV AX,[0x0264b0f8]                 ; 00558036 | g_WaveOutChannels
     MOV DX,word ptr [ESP + 0xe]         ; 0055803c
     MOV word ptr [ESP + 0x2],AX         ; 00558041
     MOV EAX,EDX                         ; 00558046
@@ -142,7 +142,7 @@ section .text
     MOV DX,word ptr [ESP + 0x2]         ; 00558055
     IMUL EAX,EDX                        ; 0055805a
     MOV word ptr [ESP + 0xc],AX         ; 0055805d
-    MOV EAX,[0x0264b0fc]                ; 00558062 | DAT_0264b0fc
+    MOV EAX,[0x0264b0fc]                ; 00558062 | g_WaveOutSampleRate
     MOV dword ptr [ESP + 0x4],EAX       ; 00558067
     XOR EAX,EAX                         ; 0055806b
     MOV EDX,dword ptr [ESP + 0x4]       ; 0055806d
@@ -154,9 +154,9 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0055807f
     PUSH EAX                            ; 00558083
     MOV dword ptr [ESP + 0x18],EDX      ; 00558084
-    MOV EDX,dword ptr [0x0061bf84]      ; 00558088 | DAT_0061bf84
+    MOV EDX,dword ptr [0x0061bf84]      ; 00558088 | g_WaveOutDeviceID
     PUSH EDX                            ; 0055808e
-    PUSH 0x264b070                      ; 0055808f | DAT_0264b070
+    PUSH 0x264b070                      ; 0055808f | g_WaveOutHandle
     CALL dword ptr CS:[0x5c8478]        ; 00558094 | PTR_waveOutOpen_005c8478
     TEST EAX,EAX                        ; 0055809b
     JZ 0x005580be                       ; 0055809d
@@ -179,7 +179,7 @@ section .text
     RET                                 ; 005580bd
     MOV EDX,dword ptr [ESP + 0x38]      ; 005580be
         ;   Label: LAB_005580be
-    MOV EAX,[0x0264b100]                ; 005580c2 | DAT_0264b100
+    MOV EAX,[0x0264b100]                ; 005580c2 | g_WaveOutBufferSize
     MOV dword ptr [EDX],EAX             ; 005580c7
     MOV EAX,0x1                         ; 005580c9
     ADD ESP,0x14                        ; 005580ce

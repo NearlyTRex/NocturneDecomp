@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520(void)
 
 {
@@ -19,9 +17,9 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520(void)
   int iVar6;
   int iVar7;
   
-  if (_DAT_02ddf56c == 0) {
+  if (g_Display24BitFallback == 0) {
     if (g_UseExternalRenderer != 0) {
-      _DAT_02ddf564 = 1;
+      g_FlipPending = 1;
       return;
     }
     if (0 < g_WindowHeight) {
@@ -47,7 +45,7 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520(void)
       g_CurrentLineNumber = 639;
       core_main_c_displayErrorAndQuit_FUN_004c8440("closeScreenDevice - Unable to unlock");
     }
-    _DAT_02ddf564 = 1;
+    g_FlipPending = 1;
   }
   return;
 }

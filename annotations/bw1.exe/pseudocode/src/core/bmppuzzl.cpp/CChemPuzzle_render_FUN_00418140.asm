@@ -7,8 +7,8 @@
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c4353c
-;   undefined4 DAT_01c43540
+;   int g_MouseX
+;   int g_MouseY
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0
@@ -71,13 +71,13 @@ section .text
         ;   XREF to: 004181ee (CONDITIONAL_JUMP)  ; LAB_004181ee
     MOV EDX,dword ptr [EDI + 0x18]      ; 004181a9
         ;   Label: LAB_004181a9
-    MOV EAX,[0x01c43540]                ; 004181ac | DAT_01c43540
+    MOV EAX,[0x01c43540]                ; 004181ac | g_MouseY
     MOV ECX,dword ptr [EDI + EDX*0x4 + 0x91c] ; 004181b1
     PUSH 0xffff                         ; 004181b8
     SUB EAX,ECX                         ; 004181bd
     MOV EBX,dword ptr [EDI + EDX*0x4 + 0x908] ; 004181bf
     PUSH EAX                            ; 004181c6
-    MOV EAX,[0x01c4353c]                ; 004181c7 | DAT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 004181c7 | g_MouseX
     SUB EAX,EBX                         ; 004181cc
     PUSH EAX                            ; 004181ce
     LEA EAX,[EDX*0x4 + 0x0]             ; 004181cf
@@ -93,14 +93,14 @@ section .text
     POP ESI                             ; 004181eb
     POP EBX                             ; 004181ec
     RET                                 ; 004181ed
-    MOV EAX,[0x01c43540]                ; 004181ee | DAT_01c43540
+    MOV EAX,[0x01c43540]                ; 004181ee | g_MouseY
         ;   Label: LAB_004181ee
     MOV ECX,dword ptr [EDI + 0x92c]     ; 004181f3
     PUSH 0xffff                         ; 004181f9
     SUB EAX,ECX                         ; 004181fe
     MOV EBX,dword ptr [EDI + 0x918]     ; 00418200
     PUSH EAX                            ; 00418206
-    MOV EAX,[0x01c4353c]                ; 00418207 | DAT_01c4353c
+    MOV EAX,[0x01c4353c]                ; 00418207 | g_MouseX
     SUB EAX,EBX                         ; 0041820c
     PUSH EAX                            ; 0041820e
     PUSH 0x7c3a24                       ; 0041820f

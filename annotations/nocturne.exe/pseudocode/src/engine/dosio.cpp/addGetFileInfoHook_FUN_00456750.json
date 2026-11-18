@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 42,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 38
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
   },
   "cross_references": [
     {
@@ -57,8 +54,8 @@
     },
     {
       "addr": "01af4ed8",
-      "name": "DAT_01af4ed8",
-      "type": "undefined4",
+      "name": "g_NumSearchHandlers",
+      "type": "int",
       "value": null
     },
     {
@@ -173,22 +170,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 12,
-      "match": "*(FileSearchHandlerFunc **)(_DAT_01af4ed8 * 4 + 0x1af4edc",
-      "severity": "moderate",
-      "text": "*(FileSearchHandlerFunc **)(_DAT_01af4ed8 * 4 + 0x1af4edc) = handler;",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

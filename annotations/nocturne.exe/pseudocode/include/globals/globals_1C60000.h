@@ -20,10 +20,10 @@
 extern CCrater g_CraterPool[20];
 
 // CGunFlame[500]
-extern CGunFlame g_CGunFlame_ARRAY_01c62ebc[500];
+extern CGunFlame g_GunFlamePool[500];
 
 // CLightningBolt[10]
-extern CLightningBolt g_CLightningBolt_ARRAY_01c67510[10];
+extern CLightningBolt g_LightningBoltPool[10];
 
 // CPopcorn[256]
 extern CPopcorn g_PopcornPool[256];
@@ -35,5 +35,14 @@ extern CRainDrop g_RainDropPool[256];
 extern CShell g_ShellPool[50];
 
 // CTrail[100]
-extern CTrail g_CTrail_ARRAY_01c676cc[100];
+extern CTrail g_TrailPool[100];
+
+// int
+extern int g_CraterAllocIndex;
+extern int g_GunFlameAllocIndex;
+extern int g_LightningBoltAllocIndex;
+extern int g_TrailAllocIndex;
+extern int g_ShellAllocIndex;
+extern int g_PopcornAllocIndex;
+extern int g_RainDropAllocIndex;
 

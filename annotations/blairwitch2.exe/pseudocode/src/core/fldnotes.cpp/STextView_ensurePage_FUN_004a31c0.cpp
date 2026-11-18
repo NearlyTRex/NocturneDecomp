@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fldnotes_cpp_STextView_ensurePage_FUN_004a31c0(STextView *this_ptr)
 
 {
@@ -20,9 +18,9 @@ void __cdecl core_fldnotes_cpp_STextView_ensurePage_FUN_004a31c0(STextView *this
       ;
       this_ptr->pages = pSVar1;
       if (pSVar1 == (STextPage *)0x0) {
-        _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
-        _DAT_01d046a4 = 0x62d;
-        core_main_c_FUN_004e4500("Out of memory");
+        g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
+        g_INT_01d046a4 = 0x62d;
+        core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
       }
       core_fldnotes_cpp_STextPage_init_FUN_004a2690(this_ptr->pages + this_ptr->page_count);
       iVar2 = this_ptr->page_count + 1;

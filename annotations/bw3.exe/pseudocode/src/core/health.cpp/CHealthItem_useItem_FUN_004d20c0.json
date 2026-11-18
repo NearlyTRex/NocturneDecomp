@@ -1,0 +1,176 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 29,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
+    "suspect_types": [
+      "bit_int_float_compare"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [
+    {
+      "addr": "004da880",
+      "from_addr": "004da904",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004da880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dcb40",
+      "from_addr": "004dcd29",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dcb40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d20c0",
+    "address_range": [
+      [
+        "004d20c0",
+        "004d2121"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_health.cpp_CHealthItem_useItem_FUN_004d20c0",
+    "signature": "int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004d20c0(CHealthItem *this_ptr,CCharacter *user)"
+  },
+  "function_calls": [
+    {
+      "addr": "004bd910",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004da904",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004da880",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dcd29",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dcb40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 38,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_ADD": 1,
+      "INT_ADD": 16,
+      "INT_AND": 8,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 12,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 125
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cdf90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.45
+    },
+    "bw1.exe": {
+      "addr": "004ea530",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.45
+    },
+    "nocedit.exe": {
+      "addr": "004f1fd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.45
+    },
+    "nocturne.exe": {
+      "addr": "004b43f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.45
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHealthItem *"
+      },
+      {
+        "is_param": true,
+        "name": "user",
+        "offset": 8,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
+      "line": 9,
+      "match": "0x42c80000 < (int)user->hit_points)",
+      "severity": "moderate",
+      "text": "if (0x42c80000 < (int)user->hit_points) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

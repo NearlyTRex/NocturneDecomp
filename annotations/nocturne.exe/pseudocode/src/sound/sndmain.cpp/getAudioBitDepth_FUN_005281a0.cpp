@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_getAudioBitDepth_FUN_005281a0(void)
 
 {
-  return DAT_005bea64;
+  return g_AudioBitsPerSample;
 }

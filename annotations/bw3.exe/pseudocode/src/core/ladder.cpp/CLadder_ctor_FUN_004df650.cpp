@@ -16,7 +16,8 @@ CLadder * __cdecl core_ladder_cpp_CLadder_ctor_FUN_004df650(CLadder *this_ptr)
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLadderVTable;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,(char *)0x5c6845);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,"null.kfm")
+  ;
   this_ptr_00[1].part_visibility_flags[0] = 0x40000000;
   this_ptr_00[1].part_visibility_flags[1] = 0x41200000;
   this_ptr_00[1].part_visibility_flags[2] = 0;

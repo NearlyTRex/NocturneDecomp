@@ -8,7 +8,6 @@
 #include "system/stdio.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPart.h"
@@ -17,10 +16,11 @@
 #include "types/classes/CDraculaBride.h"
 #include "types/classes/CDrawSurface.h"
 #include "types/classes/CFileFinder.h"
-#include "types/classes/CHero.h"
+#include "types/classes/CInventory.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
 #include "types/classes/CZombieDog.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
@@ -37,41 +37,41 @@
 // FUNCTION PROTOTYPES - Range 0x470000
 // =============================================================================
 
-void core_doc_cpp_FUN_00470750(int param_1);
-void core_doc_cpp_FUN_004707d0(int param_1);
-undefined4 core_doc_cpp_FUN_00470820(void);
-undefined4 core_doc_cpp_FUN_004712b0(CCharacter *param_1);
+void __cdecl core_doc_cpp_CDoc_processPickupComplete_FUN_00470750(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_dropRightHandObject_FUN_004707d0(CDoc *this_ptr);
+int __cdecl core_doc_cpp_CDoc_tryClimbLadder_FUN_00470820(CDoc *this_ptr);
+int __cdecl core_doc_cpp_CDoc_tryPlaceObject_FUN_004712b0(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_archive_FUN_00471970(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_00471af0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00472220(CDoc *this_ptr);
-void core_doc_cpp_FUN_00472260(void);
-float * core_doc_cpp_FUN_004722f0(void);
-void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3);
+void __cdecl core_doc_cpp_adjustAimAngleForOffset_FUN_00472260(float *angle,float distance,float offset);
+CVector3f * __stack2_esi core_doc_cpp_calculateAimAnglesWithOffset_FUN_004722f0(CVector3f *direction,float *offset_pair,CVector3f *out_angles);
+void __cdecl core_doc_cpp_CDoc_autoAimAtThreat_FUN_004724a0(CDoc *this_ptr,int hand_index,float delta_time);
 void __cdecl core_doc_cpp_CDoc_aimLeftPistol_FUN_00473160(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_processDamage_FUN_004737b0(CDoc *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(CDoc *this_ptr,float delta_time,int is_weapon_active);
 CMatrix3x4f * __stack2_esi core_doc_cpp_CDoc_getCarryObjToBodyXForm_FUN_00474250(CDoc *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-void core_doc_cpp_FUN_004742a0(int param_1);
-void core_doc_cpp_FUN_00474400(CHero *param_1,float param_2);
-void core_doc_cpp_FUN_00474ef0(int param_1);
+CVector3f * __stack_esi core_doc_cpp_CDoc_getThrowDirection_FUN_004742a0(CDoc *this_ptr,CVector3f *out_direction);
+void __cdecl core_doc_cpp_CDoc_updateWeaponLayerActions_FUN_00474400(CDoc *this_ptr,float delta_time);
+void __cdecl core_doc_cpp_CDoc_handleActionButton_FUN_00474ef0(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_00475650(CDoc *this_ptr,int action_type);
-undefined4 core_doc_cpp_FUN_00475890(int param_1);
-void core_doc_cpp_FUN_00475920(CCharacter *param_1);
+int __cdecl core_doc_cpp_CDoc_tryThrowDynamite_FUN_00475890(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_handleFireButton_FUN_00475920(CDoc *this_ptr,float delta_time);
 int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
-void core_doc_cpp_FUN_00476080(int param_1);
-void core_doc_cpp_FUN_00476150(int param_1,undefined4 param_2);
-undefined4 core_doc_cpp_FUN_00476210(int param_1);
-void core_doc_cpp_FUN_00476220(int param_1,int param_2);
+void __cdecl core_doc_cpp_CDoc_updateClothSimulation_FUN_00476080(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_processWeaponTick_FUN_00476150(CDoc *this_ptr,float delta_time);
+int __cdecl core_doc_cpp_CDoc_isWeaponDrawn_FUN_00476210(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_00476220(CDoc *this_ptr,int drawn);
 int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_00476260(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
-void core_doc_cpp_FUN_004763c0(CHero *param_1);
+void __cdecl core_doc_cpp_CDoc_reset_FUN_004763c0(CDoc *this_ptr);
 EDeathState __cdecl core_doc_cpp_CDoc_getDeathState_FUN_00476430(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_dropCarriedObject_FUN_00476460(CDoc *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_doc_cpp_CDoc_drop_FUN_004764c0(CDoc *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 void __cdecl core_doc_cpp_CDoc_toggleGoggles_FUN_00476510(CDoc *this_ptr);
-void core_doc_cpp_FUN_004765f0(float *param_1,float *param_2);
-void core_doc_cpp_FUN_00476620(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 core_doc_cpp_FUN_004766f0(int param_1);
+void __cdecl core_doc_cpp_divideVectorByScalar_FUN_004765f0(CVector3f *vector,float *divisor);
+CVector3f * __stack3_esi core_doc_cpp_makeVector_FUN_00476620(float x,float y,float z,CVector3f *out);
+CWeapon * __cdecl core_doc_cpp_getSelectedWeapon_FUN_004766f0(CInventory *inventory_ptr);
 CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00476700(CDoc *this_ptr,uint flags);
 void __cdecl core_dog_cpp_staticInit_FUN_00476750(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_00476780(void);
@@ -89,27 +89,27 @@ CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_00477260(CDoor *t
 CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00477270(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_00477450(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_onOpened_FUN_004774d0(CDoor *this_ptr);
-void core_door_cpp_FUN_004774f0(CDoor *param_1,EDoorState param_2);
+void __cdecl core_door_cpp_CDoor_setState_FUN_004774f0(CDoor *this_ptr,EDoorState state);
 void __cdecl core_door_cpp_CDoor_reposition_FUN_00477540(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_process_FUN_00477ab0(CDoor *this_ptr,float delta_time);
 int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00478220(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_00478300(CDoor *this_ptr,int layer_flag);
-CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00478390(CDoor *this_ptr,CBoundingBox3D *out_box);
-void core_door_cpp_FUN_004783d0(int param_1);
+CBoundingBox3D * __stack_esi core_door_cpp_CDoor_getBoundingBox_FUN_00478390(CDoor *this_ptr,CBoundingBox3D *out_box);
+CVector3f * __stack_esi core_door_cpp_CDoor_getHandlePosition_FUN_004783d0(CDoor *this_ptr,CVector3f *out_position);
 void __cdecl core_door_cpp_CDoor_archive_FUN_00478490(CDoor *this_ptr);
 ECollisionType __cdecl core_door_cpp_CDoor_getCollisionType_FUN_004787d0(CDoor *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00478810(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00478820(CDoor *this_ptr,float swing_range);
 int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00478830(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00478840(CDoor *this_ptr);
-float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor *this_ptr,float *param_2,undefined4 param_3);
+CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor *this_ptr,CVector3f *direction,CVector3f *actor_pos,CVector3f *out_pos);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00478af0(CDoor *this_ptr);
-int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00478b40(CDoor *this_ptr,CDemonActor *opener);
+int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00478b40(CDoor *this_ptr,CDemonActor *opener,int ignore_lock);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00478d10(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00478d70(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00478dc0(char *dest_path,char *directory,char *filename);
-void engine_dosio_cpp_FUN_00478e10(undefined *param_1);
-void engine_dosio_cpp_FUN_00478e20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl engine_dosio_cpp_setRelativeFilePathHook_FUN_00478e10(void *hook);
+void __cdecl engine_dosio_cpp_callRelativeFilePathHook_FUN_00478e20(char *dest_path,char *directory,char *filename);
 void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(FileSearchHandlerFunc *handler);
 template<typename T_func0>
 inline void engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(T_func0 handler) {
@@ -118,7 +118,7 @@ inline void engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(T_func0 handler) {
 int __cdecl engine_dosio_cpp_findFile_FUN_00478e90(SFoundFileInfo *context);
 int __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(SFoundFileInfo *info);
 int __cdecl engine_dosio_cpp_getFileSize_FUN_00478fb0(char *directory,char *filename);
-_FILE * __cdecl engine_dosio_cpp_FUN_00479180(char *directory,char *filename,char *mode);
+_FILE * __cdecl engine_dosio_cpp_getFile_FUN_00479180(char *directory,char *filename,char *mode);
 void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream);
 CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00479320(CFileFinder *this_ptr);
 CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_dtor_FUN_00479340(CFileFinder *this_ptr,uint flags);
@@ -126,28 +126,27 @@ int __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00479360(CFileFinder *th
 int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_004793e0(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_closeSearch_FUN_00479460(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_004794a0(CFileFinder *this_ptr);
-void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(CFileFinder *this_ptr,byte *param_2);
+void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(CFileFinder *this_ptr,byte *find_data);
 void __cdecl engine_dosio_cpp_splitPath_FUN_00479580(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_cpp_makePath_FUN_004795b0(char *full_path,char *drive,char *directory,char *filename,char *extension);
-void __cdecl engine_dosio_cpp_FUN_004795e0(char *input_path,char *drive,char *output_path);
+void __cdecl engine_dosio_cpp_ensureTrailingSlash_FUN_004795e0(char *input_path,char *drive,char *output_path);
 void __cdecl engine_dosio_cpp_changeFileExtension_FUN_004796b0(char *path,char *new_extension);
 int __cdecl engine_dosio_cpp_getFullPath_FUN_00479720(char *output_path,char *input_path);
-void engine_dosio_cpp_FUN_00479770(char *param_1,char *param_2,char *param_3);
-bool engine_dosio_cpp_FUN_004798c0(char *param_1);
-bool engine_dosio_cpp_FUN_00479950(char *param_1);
+void __cdecl engine_dosio_cpp_resolveRelativePath_FUN_00479770(char *base_path,char *path,char *out_path);
+int __cdecl engine_dosio_cpp_createDirectoryTree_FUN_004798c0(char *directory);
+int __cdecl engine_dosio_cpp_deleteFile_FUN_00479950(char *filename);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_004799c0(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004799e0(CDemonPart *this_ptr);
-void core_dpart_cpp_FUN_00479ae0(int param_1);
-void core_dpart_cpp_FUN_00479b22(void);
-void core_dpart_cpp_FUN_00479b40(void);
+void __cdecl core_dpart_cpp_CDemonPart_free_FUN_00479ae0(CDemonPart *this_ptr);
+void __cdecl core_dpart_cpp_CDemonPart_load_FUN_00479b40(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00479b70(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0(CDemonPart *this_ptr);
-void core_dpart_cpp_FUN_00479c70(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
-void core_dpart_cpp_FUN_00479f60(void);
+void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_00479c70(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
+void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_00479f60(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_0047a320(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_0047a440(int scanline_y,SSoftwareEdge *exclude_edge);
-void __cdecl core_dpart_cpp_FUN_0047a480(int *vertex_indices,int vertex_count);
-void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_count);
+void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_0047a480(int *vertex_indices,int vertex_count);
+void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_0047ab00(CVector3i *vertex_indices,int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_0047b000(void);
 CDraculaBride * __cdecl core_dracbrid_cpp_factoryFuncDraculaBride_FUN_0047b080(void);
 CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_0047b0a0(CDraculaBride *this_ptr);
@@ -163,17 +162,17 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0047d430(CDracul
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0047d750(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0047d790(CDraculaBride *this_ptr,CVector3f *out_points_array);
-void core_dracbrid_cpp_FUN_0047d890(float param_1,float param_2,float param_3);
-void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume);
-void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_time);
+CVector3f * __stack3_esi core_dracbrid_cpp_randomizePosition_FUN_0047d890(float src_x,float src_y,float src_z,CVector3f *dest);
+void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume);
+void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0047de00(CDraculaBride *this_ptr,float delta_time);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_0047e150(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_0047e170(SFreaky *this_ptr,uint flags);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_0047e180(CDraculaBride *this_ptr,uint flags);
-CDrawSurface * core_dracbrid_cpp_FUN_0047e210(void);
+CDrawSurface * __cdecl core_dracbrid_cpp_CDrawSurface_ctor_FUN_0047e210(CDrawSurface *this_ptr);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0047e240(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0047e280(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );
 void __cdecl cockpit_drawsurf_cpp_setColor_FUN_0047e3b0(int color_value);
-void __cdecl cockpit_drawsurf_cpp_FUN_0047e5c0(int red,int green,int blue);
+void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_0047e5c0(int red,int green,int blue);
 void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_0047e860(CBitFont *font_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0047e870(CDrawSurface *this_ptr,int x,int y);
 void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0047e9d0(int start_x,int end_x,int y);
@@ -185,7 +184,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0047ec80(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0047ed30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0047ee70(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void cockpit_drawsurf_cpp_FUN_0047ef60(CDrawSurface *param_1,int param_2,int param_3,int param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0047ef60(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_0047f170(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0047f1b0(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0047f4a0(CDrawSurface *this_ptr,int start_x,int y,int end_x);
@@ -193,13 +192,13 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0047f5c0(CDr
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0047f7a0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_0047f860(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_0047f8c0(CDrawSurface *this_ptr);
-void cockpit_drawsurf_cpp_FUN_0047f9c0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
-void __cdecl cockpit_drawsurf_cpp_FUN_0047fb20(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void __cdecl cockpit_drawsurf_cpp_FUN_0047fcf0(CDrawSurface *this_ptr);
-undefined4 cockpit_drawsurf_cpp_FUN_0047fdf0(void);
-undefined4 cockpit_drawsurf_cpp_FUN_0047fe00(void);
-void cockpit_drawsurf_cpp_FUN_0047fe10(void);
-void cockpit_drawsurf_cpp_FUN_0047fe20(undefined4 param_1);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_0047f9c0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0047fb20(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_0047fcf0(CDrawSurface *this_ptr);
+int __cdecl cockpit_drawsurf_cpp_getDashLength_FUN_0047fdf0(void);
+float __cdecl cockpit_drawsurf_cpp_getDashAnimationThreshold_FUN_0047fe00(void);
+void __cdecl cockpit_drawsurf_cpp_setDashLength_FUN_0047fe10(int length);
+void __cdecl cockpit_drawsurf_cpp_setDashAnimationThreshold_FUN_0047fe20(float threshold);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0047fe30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0047ffd0(CDrawSurface *this_ptr);
 

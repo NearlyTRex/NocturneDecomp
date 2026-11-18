@@ -1,0 +1,186 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 52,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [
+    {
+      "addr": "004b33d0",
+      "from_addr": "004b34d5",
+      "name": "engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004b33d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b13a0",
+    "address_range": [
+      [
+        "004b13a0",
+        "004b145a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_flushAccelBatch_FUN_004b13a0",
+    "signature": "void __cdecl engine_font_cpp_CBitFont_flushAccelBatch_FUN_004b13a0(CBitFont *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f02b0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_disableClipping_FUN_004f02b0"
+    },
+    {
+      "addr": "004edcb0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_disableExtraRenderState_FUN_004edcb0"
+    },
+    {
+      "addr": "004edc90",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_disableFog_FUN_004edc90"
+    },
+    {
+      "addr": "004edca0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_enableExtraRenderState_FUN_004edca0"
+    },
+    {
+      "addr": "004ee5b0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_polyListD3DTL_FUN_004ee5b0"
+    },
+    {
+      "addr": "004edad0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setRenderFlags_FUN_004edad0"
+    },
+    {
+      "addr": "004ed980",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_useTexture_FUN_004ed980"
+    },
+    {
+      "addr": "00509d90",
+      "is_variadic": false,
+      "name": "engine_palette.cpp_CFont_flushTextQueue_FUN_00509d90"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b34d5",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextAccelerated_FUN_004b33d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.769230769230769,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 36,
+      "INT_ADD": 24,
+      "INT_AND": 29,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 1,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 9,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 24,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 22,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 248
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a97a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9455
+    },
+    "bw1.exe": {
+      "addr": "004c2750",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&this_ptr->accel_texture` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 7,
+      "match": "(int)&this_ptr->accel_texture",
+      "severity": "moderate",
+      "text": "engine_mini3d_cpp_useTexture_FUN_004ed980((int)&this_ptr->accel_texture);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 7,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "engine_mini3d_cpp_useTexture_FUN_004ed980((int)&this_ptr->accel_texture);",
+      "type": "pointer_cast"
+    }
+  ]
+}

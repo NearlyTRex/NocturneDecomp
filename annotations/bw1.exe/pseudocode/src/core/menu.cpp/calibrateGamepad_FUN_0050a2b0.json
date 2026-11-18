@@ -2,38 +2,34 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 194,
+    "complexity_score": 90,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 9,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 354
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 90,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 355
   },
   "cross_references": [
-    {
-      "addr": "0050b470",
-      "from_addr": "0050b9ff",
-      "name": "core_menu.cpp_FUN_0050b470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050d640",
-      "from_addr": "0050e6db",
-      "name": "core_menu.cpp_FUN_0050d640",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0050b410",
       "from_addr": "0050b425",
       "name": "core_menu.cpp_checkAndCalibrateGamepad_FUN_0050b410",
       "type": "CONDITIONAL_JUMP"
+    },
+    {
+      "addr": "0050d640",
+      "from_addr": "0050e6db",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b470",
+      "from_addr": "0050b9ff",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_0050b470",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -75,6 +71,11 @@
       "name": "engine_2d.c_drawText_FUN_00401fe0"
     },
     {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004c1dd0"
+    },
+    {
       "addr": "004c4510",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
@@ -83,11 +84,6 @@
       "addr": "004c3ea0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
-    },
-    {
-      "addr": "004c1dd0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1dd0"
     },
     {
       "addr": "00531090",
@@ -127,9 +123,9 @@
     },
     {
       "addr": "0061f2a4",
-      "name": "DAT_0061f2a4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CKeys_PTR_0061f2a4",
+      "type": "CKeys*",
+      "value": "01d1bca0"
     },
     {
       "addr": "00622c18",
@@ -139,26 +135,26 @@
     },
     {
       "addr": "0152d23c",
-      "name": "DAT_0152d23c",
-      "type": "undefined4",
+      "name": "g_MediumFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "01c51cb0",
-      "name": "DAT_01c51cb0",
-      "type": "undefined4",
+      "name": "g_JoyXPos",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cb4",
-      "name": "DAT_01c51cb4",
-      "type": "undefined4",
+      "name": "g_JoyYPos",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51cc0",
-      "name": "DAT_01c51cc0",
-      "type": "undefined4",
+      "name": "g_JoyButtons",
+      "type": "DWORD",
       "value": null
     },
     {
@@ -211,8 +207,8 @@
     },
     {
       "addr": "01d1bca0",
-      "name": "DAT_01d1bca0",
-      "type": "undefined4",
+      "name": "g_PTR_01d1bca0",
+      "type": "void*",
       "value": null
     },
     {
@@ -321,78 +317,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 38,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 40,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 62,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 62,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 73,
-      "match": "*(code **)(*0x01D1BCA0",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 73,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

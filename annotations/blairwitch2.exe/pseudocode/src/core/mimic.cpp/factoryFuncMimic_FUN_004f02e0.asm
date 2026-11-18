@@ -15,7 +15,7 @@ section .text
     PUSH 0x4c354                        ; 004f02e0
         ;   Label: core_mimic.cpp_factoryFuncMimic_FUN_004f02e0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004f02e5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 004f02ea
     TEST EAX,EAX                        ; 004f02ed
     JNZ 0x004f02f2                      ; 004f02ef

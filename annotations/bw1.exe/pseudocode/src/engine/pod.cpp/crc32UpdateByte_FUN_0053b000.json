@@ -14,27 +14,27 @@
   },
   "cross_references": [
     {
-      "addr": "0053b110",
-      "from_addr": "0053b172",
-      "name": "engine_pod.cpp_FUN_0053b110",
+      "addr": "0053c4c0",
+      "from_addr": "0053c589",
+      "name": "engine_pod.cpp_CPodFile_computeFileCRC_FUN_0053c4c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053bfc0",
       "from_addr": "0053c0c0",
-      "name": "engine_pod.cpp_FUN_0053bfc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053c4c0",
-      "from_addr": "0053c589",
-      "name": "engine_pod.cpp_FUN_0053c4c0",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053cc60",
       "from_addr": "0053cd71",
-      "name": "engine_pod.cpp_FUN_0053cc60",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0053cc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b110",
+      "from_addr": "0053b172",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_0053b110",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +58,7 @@
       {
         "call_addr": "0053b172",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_0053b110",
+        "caller": "engine_pod.cpp_crc32ComputeFileRange_FUN_0053b110",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -69,7 +69,7 @@
       {
         "call_addr": "0053c0c0",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_0053bfc0",
+        "caller": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -80,7 +80,7 @@
       {
         "call_addr": "0053c589",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_0053c4c0",
+        "caller": "engine_pod.cpp_CPodFile_computeFileCRC_FUN_0053c4c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "0053cd71",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_0053cc60",
+        "caller": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_0053cc60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

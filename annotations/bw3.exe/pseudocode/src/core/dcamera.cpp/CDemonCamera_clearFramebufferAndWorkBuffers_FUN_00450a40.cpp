@@ -34,8 +34,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00
     iVar3 = iVar4 * 0x140;
     do {
       iVar2 = iVar3 + 1;
-      *(byte *)(iVar3 + 0x13716d0) = 0;
-      (&DAT_0135ead0)[iVar3] = 0;
+      g_CameraImageDecompressBuffer[iVar3] = '\0';
+      g_CameraPlaneWorkBuffer.pixels[0][iVar3] = '\0';
       iVar3 = iVar2;
     } while (iVar2 != iVar1);
     iVar4 = iVar4 + 1;

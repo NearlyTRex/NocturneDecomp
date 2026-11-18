@@ -26,7 +26,7 @@
 ;   double DOUBLE_00596590 = 12
 ;   double DOUBLE_00596598 = 6
 ;   double DOUBLE_005965a0 = 16
-;   undefined4 DAT_005a30f8
+;   float g_FLOAT_005a30f8 = 0.5
 ;   CGore* g_CGorePtr = 01c78c7c
 ;
 ; Called Functions:
@@ -146,7 +146,7 @@ section .text
     MOV dword ptr [EBX + 0xbd2c],0x0    ; 00543d65
     FLD float ptr [EBP + 0x18]          ; 00543d6f
         ;   Label: LAB_00543d6f
-    FDIV float ptr [0x005a30f8]         ; 00543d72 | DAT_005a30f8
+    FDIV float ptr [0x005a30f8]         ; 00543d72 | g_FLOAT_005a30f8
     FADD float ptr [EBX + 0xbd30]       ; 00543d78
     FST float ptr [EBX + 0xbd30]        ; 00543d7e
     FLD1                                ; 00543d84

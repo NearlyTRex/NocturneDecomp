@@ -4,12 +4,60 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/C3DSLight.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1FF0000
 // =============================================================================
 
+// C3DSLight*[200]
+extern C3DSLight* g_VisibleOmniLights[200];
+
+// CDemonActor*[2000]
+extern CDemonActor* g_ActorProfileActors[2000];
+
+// CDemonGlobe*[100]
+extern CDemonGlobe* g_GlobeLights[100];
+
+// CDemonLight*[4]
+extern CDemonLight* g_PrimaryDirectionalLights[4];
+
+// CDemonLight*[96]
+extern CDemonLight* g_SecondaryDirectionalLights[96];
+
+// CMatrix3x3f
+extern CMatrix3x3f g_LightingRotationMatrix;
+
 // CVector3f[4000]
-extern CVector3f g_CVector3f_ARRAY_01fff5b0[4000];
+extern CVector3f g_FaceNormalArray[4000];
+
+// float
+extern float g_FLOAT_01fff54c;
+extern float g_FLOAT_01fff554;
+extern float g_FLOAT_01fff558;
+extern float g_FLOAT_01fff560;
+extern float g_FLOAT_01fff564;
+extern float g_FLOAT_01fff56c;
+extern float g_FLOAT_01fff570;
+extern float g_FLOAT_01fff578;
+
+// int
+extern int g_InMirrorRenderPass;
+extern int g_RenderingShadows;
+extern int g_SecondaryDirectionalLightCount;
+extern int g_PrimaryDirectionalLightCount;
+extern int g_GlobeLightCount;
+extern int g_ColorCorrectionCount;
+extern int g_LightingSystemDirty;
+extern int g_ColorCorrectionLightMultiplier;
+extern int g_ColorCorrectionColorMultiplier;
+extern int g_ColorCorrectionFogMultiplier;
+
+// int[2000]
+extern int g_ActorProfileTimes[2000];
 

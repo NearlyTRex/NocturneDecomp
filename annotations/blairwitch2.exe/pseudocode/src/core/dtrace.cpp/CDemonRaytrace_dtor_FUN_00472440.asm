@@ -10,7 +10,7 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004724c0
 ;   core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_004725c0
-;   core_dtrace.cpp_FUN_004727f0
+;   core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004727f0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
         ;   XREF to: 004724c0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004724c0(CDemonRaytrace * this_ptr)
     ADD ESP,0x4                         ; 0047244b
     PUSH EBX                            ; 0047244e
-    CALL core_dtrace.cpp_FUN_004727f0   ; 0047244f
-        ;   XREF to: 004727f0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_004727f0()
+    CALL core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004727f0 ; 0047244f
+        ;   XREF to: 004727f0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004727f0(CDemonRaytrace * this_ptr)
     ADD ESP,0x4                         ; 00472454
     PUSH EBX                            ; 00472457
     CALL core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_004725c0 ; 00472458

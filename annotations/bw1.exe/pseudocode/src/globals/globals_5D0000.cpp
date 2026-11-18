@@ -4,6 +4,13 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x5D0000
 // =============================================================================
 
+// char
+char g_CHAR_005d5061 = '\0';
+char g_CHAR_005dbeaf = '\0';
+char g_CHAR_005dc4f9 = '\0';
+char g_CHAR_005dc604 = '\0';
+char g_DefaultButtonText = '\0';
+
 // dword
 dword DWORD_005d0000 = 0x1D00B4;
 dword DAT_005D0004 = 0;
@@ -25,8 +32,5 @@ dword DAT_005D0094 = 0;
 
 // undefined1
 undefined1 DAT_005d7eef = 0x00;
-undefined1 DAT_005dbed3 = 0x00;
 undefined1 DAT_005dc269 = 0x00;
-undefined1 DAT_005dc4f9 = 0x00;
-undefined1 DAT_005dcac4 = 0x00;
 

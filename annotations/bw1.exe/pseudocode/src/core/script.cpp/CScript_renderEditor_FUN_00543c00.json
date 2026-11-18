@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 83,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 68,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 252
   },
   "cross_references": [
     {
       "addr": "004ce580",
       "from_addr": "004ceecb",
-      "name": "core_game.cpp_FUN_004ce580",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004ce580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -81,21 +79,21 @@
       "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
+      "addr": "0049df50",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_0049df50"
+    },
+    {
       "addr": "004998a0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0"
-    },
-    {
-      "addr": "0049df50",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0049df50"
     }
   ],
   "globals": [
     {
       "addr": "005ee1bb",
-      "name": "DAT_005ee1bb",
-      "type": "undefined4",
+      "name": "s_d_005ee1bb",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -111,7 +109,7 @@
       {
         "call_addr": "004ceecb",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004ce580",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004ce580",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -275,14 +273,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005ee1bb",
-      "severity": "mild",
-      "text": "_sprintf(local_a4,&DAT_005ee1bb);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

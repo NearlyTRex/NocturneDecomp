@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 54,
+    "complexity_score": 39,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data"
+      "shadow_pointer_walk"
     ],
     "total_lines": 75
   },
@@ -19,13 +18,13 @@
     {
       "addr": "004ba630",
       "from_addr": "004ba682",
-      "name": "core_flashlit.cpp_FUN_004ba630",
+      "name": "core_flashlit.cpp_layoutSections_FUN_004ba630",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ba6b0",
       "from_addr": "004ba70f",
-      "name": "core_flashlit.cpp_FUN_004ba6b0",
+      "name": "core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004ba6b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,8 +73,8 @@
   "globals": [
     {
       "addr": "005dfc39",
-      "name": "DAT_005dfc39",
-      "type": "undefined4",
+      "name": "s_pg_005dfc39",
+      "type": "TerminatedCString",
       "value": null
     }
   ],
@@ -118,7 +117,7 @@
       {
         "call_addr": "004ba682",
         "call_type": "direct",
-        "caller": "core_flashlit.cpp_FUN_004ba630",
+        "caller": "core_flashlit.cpp_layoutSections_FUN_004ba630",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +128,7 @@
       {
         "call_addr": "004ba70f",
         "call_type": "direct",
-        "caller": "core_flashlit.cpp_FUN_004ba6b0",
+        "caller": "core_flashlit.cpp_relayoutSectionsIfDirty_FUN_004ba6b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,14 +207,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005dfc39",
-      "severity": "mild",
-      "text": "iVar2 = core_fldnotes_cpp_STextView_addText_FUN_004bb290(view,&DAT_005dfc39);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via pointer arithmetic on its own `name` field (which decays to a pointer), `+ CONST`; `offsetof(name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar3`. Replace those `pSVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
       "line": 19,

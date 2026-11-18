@@ -20,8 +20,8 @@
 ;   engine_2d.c_clipAndDrawLine_FUN_00402cf0 at 00402f15
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0 at 00407d5e
 ;   engine_console.cpp_CConsole_render_FUN_00445690 at 00445789
+;   shape_edittool.cpp_CInputString_draw_FUN_004934b0 at 004935c3
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049b9a6
-;   shape_edittool.cpp_FUN_004934b0 at 004935c3
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130

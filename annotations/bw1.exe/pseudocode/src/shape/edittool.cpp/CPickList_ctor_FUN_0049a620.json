@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 151,
+    "complexity_score": 136,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 149
@@ -26,7 +25,7 @@
     {
       "addr": "004d7250",
       "from_addr": "004d75b7",
-      "name": "core_game.cpp_FUN_004d7250",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004d7250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,21 +35,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050ba70",
-      "from_addr": "0050c890",
-      "name": "core_menu.cpp_FUN_0050ba70",
+      "addr": "0050d640",
+      "from_addr": "0050e5cf",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050d640",
-      "from_addr": "0050e5cf",
-      "name": "core_menu.cpp_FUN_0050d640",
+      "addr": "0050ba70",
+      "from_addr": "0050c890",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0051c240",
       "from_addr": "0051c253",
-      "name": "core_mission.cpp_FUN_0051c240",
+      "name": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,19 +67,19 @@
     {
       "addr": "0053bfc0",
       "from_addr": "0053c122",
-      "name": "engine_pod.cpp_FUN_0053bfc0",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495180",
+      "from_addr": "0049522c",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00495180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00494fd0",
       "from_addr": "00494fe4",
       "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00495180",
-      "from_addr": "0049522c",
-      "name": "shape_edittool.cpp_FUN_00495180",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -121,8 +120,8 @@
   "globals": [
     {
       "addr": "005dc605",
-      "name": "DAT_005dc605",
-      "type": "undefined4",
+      "name": "s_OK_005dc605",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -134,8 +133,8 @@
     {
       "addr": "005ff834",
       "name": "g_CPickListVTable",
-      "type": "undefined1*",
-      "value": "0049a710"
+      "type": "CPickList_full_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -144,7 +143,7 @@
       {
         "call_addr": "004d75b7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d7250",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004d7250",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +187,7 @@
       {
         "call_addr": "0051c253",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_0051c240",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_0051c240",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +198,7 @@
       {
         "call_addr": "0050e5cf",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050d640",
+        "caller": "core_menu.cpp_configureCustomKeyBindings_FUN_0050d640",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +209,7 @@
       {
         "call_addr": "0050c890",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050ba70",
+        "caller": "core_menu.cpp_configureSoundOptions_FUN_0050ba70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,16 +329,8 @@
       "line": 16,
       "match": "pCVar4[-4].",
       "severity": "mild",
-      "text": "*(byte ***)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;",
+      "text": "*(CPickList_full_vtable **)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005dc605",
-      "severity": "mild",
-      "text": "pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005dc605);",
-      "type": "undefined_data"
     },
     {
       "description": "Negative struct offset (wrong base type)",

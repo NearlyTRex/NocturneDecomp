@@ -7,7 +7,7 @@
 ; CShadowForest *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_00545e70 at 00545e83
+;   core_shadow.cpp_factoryFuncShadowForest_FUN_00545e70 at 00545e83
 ;
 ; Called Functions:
 ;   core_shadow.cpp_CShadow_ctor_FUN_00543500

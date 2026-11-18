@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 120
   },
   "cross_references": [
@@ -42,22 +40,22 @@
   },
   "function_calls": [
     {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0"
+    },
+    {
       "addr": "00503980",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_00503980"
-    },
-    {
-      "addr": "005035c0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005035c0"
     }
   ],
   "globals": [
     {
       "addr": "005dfc94",
-      "name": "DAT_005dfc94",
-      "type": "undefined4",
-      "value": null
+      "name": "g_MotionControllerAutoDetermineFrame",
+      "type": "float",
+      "value": "-1"
     }
   ],
   "param_estimates": {
@@ -185,14 +183,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

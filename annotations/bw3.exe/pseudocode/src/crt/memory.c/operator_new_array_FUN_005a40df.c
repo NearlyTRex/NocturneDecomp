@@ -1,14 +1,16 @@
 // Name: crt_memory.c_operator_new_array_FUN_005a40df
 // Address: 005a40df
 // Address Range: [[005a40df, 005a40ec]]
-// Convention: unknown
-// Signature: void crt_memory_c_operator_new_array_FUN_005a40df(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void * __cdecl crt_memory_c_operator_new_array_FUN_005a40df(uint size)
 
 #include "nocturne.h"
 
-void operator_new_array(uint param_1)
+void * __cdecl operator_new_array(uint size)
 
 {
-  operator_new(param_1);
-  return;
+  void *pvVar1;
+  
+  pvVar1 = operator_new(size);
+  return pvVar1;
 }

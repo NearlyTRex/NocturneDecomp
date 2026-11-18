@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00542b60(C3DSLight *this_ptr,CDemonLight *light,int apply_filter_flag)
 
 {
@@ -16,9 +14,9 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00542b60(C3DSLight *this_ptr
   int iVar3;
   
   if (light == (CDemonLight *)0x0) {
-    _DAT_01d71de0 = "..\\core\\setutil.cpp";
-    _DAT_01d71de4 = 0x351;
-    core_main_c_FUN_004e4330("C3DSLight::process - NULL CDemonLight pointer!");
+    g_CHAR_PTR_01d71de0 = "..\\core\\setutil.cpp";
+    g_INT_01d71de4 = 0x351;
+    core_main_c_displayErrorAndQuit_FUN_004e4330("C3DSLight::process - NULL CDemonLight pointer!");
   }
   if (this_ptr->filter_count != 0) {
     if (0.0 < this_ptr->filter_durations[this_ptr->current_filter_frame]) {
@@ -36,8 +34,8 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00542b60(C3DSLight *this_ptr
         }
       }
     }
-    iVar2 = _DAT_01c5fad0;
-    lVar1 = (longlong)_DAT_01c5fad0 * (longlong)(this_ptr->filter_vel).x;
+    iVar2 = g_GlobalDeltaTimeInt;
+    lVar1 = (longlong)g_GlobalDeltaTimeInt * (longlong)(this_ptr->filter_vel).x;
     iVar3 = (this_ptr->filter_vel).y;
     (this_ptr->filter_pos).x =
          (this_ptr->filter_pos).x + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

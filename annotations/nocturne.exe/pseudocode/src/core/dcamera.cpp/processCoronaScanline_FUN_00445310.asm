@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCorona *corona)
+; void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_00445310(int row,int x_start,int x_end,SCoronaLightEntry *corona)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   row
 ; int              Stack[0x8]:4   x_start
 ; int              Stack[0xc]:4   x_end
-; SCorona *        Stack[0x10]:4   corona
+; SCoronaLightEntry * Stack[0x10]:4   corona
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
@@ -22,12 +22,12 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_012b0660
-;   undefined4 DAT_014b8458
-;   undefined4 DAT_014b845c
-;   undefined4 DAT_014b8460
-;   undefined4 DAT_014b8464
-;   undefined4 DAT_014b8468
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
+;   CDemonGlobe* g_CurrentGlobe
+;   int g_CoronaVisibilityEnabled
+;   int g_CoronaTargetX
+;   int g_CoronaTargetY
+;   int g_CoronaTargetDepth
 ;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x44]      ; 00445355
     MOV dword ptr [ESP + 0x18],ECX      ; 00445359
     SHL EAX,0x2                         ; 0044535d
-    MOV CL,byte ptr [0x012b0660]        ; 00445360 | DAT_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 00445360 | g_CameraDownscaleIterations
     ADD EDX,EAX                         ; 00445366
     MOV EAX,dword ptr [ESP + 0x40]      ; 00445368
     MOV dword ptr [ESP + 0x10],EDX      ; 0044536c
@@ -96,13 +96,13 @@ section .text
     JBE 0x0044548e                      ; 004453ce
         ;   XREF to: 0044548e (CONDITIONAL_JUMP)  ; LAB_0044548e
     MOV EAX,dword ptr [ESP + 0x18]      ; 004453d4
-    MOV EDX,dword ptr [0x014b8458]      ; 004453d8 | DAT_014b8458
+    MOV EDX,dword ptr [0x014b8458]      ; 004453d8 | g_CurrentGlobe
     MOV EAX,dword ptr [EAX]             ; 004453de
     SUB EAX,dword ptr [EDX]             ; 004453e0
     CDQ                                 ; 004453e2
     XOR EAX,EDX                         ; 004453e3
     SUB EAX,EDX                         ; 004453e5
-    MOV EDX,dword ptr [0x014b8458]      ; 004453e7 | DAT_014b8458
+    MOV EDX,dword ptr [0x014b8458]      ; 004453e7 | g_CurrentGlobe
     MOV ESI,dword ptr [EDX + 0xc]       ; 004453ed
     MOV ECX,EAX                         ; 004453f0
     CMP EAX,ESI                         ; 004453f2
@@ -115,7 +115,7 @@ section .text
     CDQ                                 ; 00445406
     XOR EAX,EDX                         ; 00445407
     SUB EAX,EDX                         ; 00445409
-    MOV EDX,dword ptr [0x014b8458]      ; 0044540b | DAT_014b8458
+    MOV EDX,dword ptr [0x014b8458]      ; 0044540b | g_CurrentGlobe
     MOV EBP,dword ptr [EDX + 0xc]       ; 00445411
     MOV EBX,EAX                         ; 00445414
     CMP EAX,EBP                         ; 00445416
@@ -128,7 +128,7 @@ section .text
     CDQ                                 ; 00445426
     XOR EAX,EDX                         ; 00445427
     SUB EAX,EDX                         ; 00445429
-    MOV EDX,dword ptr [0x014b8458]      ; 0044542b | DAT_014b8458
+    MOV EDX,dword ptr [0x014b8458]      ; 0044542b | g_CurrentGlobe
     CMP EAX,dword ptr [EDX + 0xc]       ; 00445431
     JGE 0x0044548e                      ; 00445434
         ;   XREF to: 0044548e (CONDITIONAL_JUMP)  ; LAB_0044548e
@@ -145,12 +145,12 @@ section .text
     MOV ESI,dword ptr [ESP + 0x40]      ; 0044544e
     MOV ECX,dword ptr [ESP + 0x14]      ; 00445452
     MOV EBX,dword ptr [ESP + 0x44]      ; 00445456
-    MOV EAX,[0x014b845c]                ; 0044545a | DAT_014b845c
+    MOV EAX,[0x014b845c]                ; 0044545a | g_CoronaVisibilityEnabled
     MOV ECX,dword ptr [ECX]             ; 0044545f
     TEST EAX,EAX                        ; 00445461
     JNZ 0x00445571                      ; 00445463
         ;   XREF to: 00445571 (CONDITIONAL_JUMP)  ; LAB_00445571
-    MOV EAX,[0x014b8458]                ; 00445469 | DAT_014b8458
+    MOV EAX,[0x014b8458]                ; 00445469 | g_CurrentGlobe
         ;   Label: LAB_00445469
     MOV ECX,dword ptr [ESP + 0x8]       ; 0044546e
     MOV EDX,dword ptr [EAX + 0x10]      ; 00445472
@@ -169,7 +169,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 00445496
     MOV AL,byte ptr [ESP + 0x28]        ; 0044549a
     MOV ESI,dword ptr [ESP + 0x14]      ; 0044549e
-    MOV CL,byte ptr [0x012b0660]        ; 004454a2 | DAT_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 004454a2 | g_CameraDownscaleIterations
     LEA EBX,[EDX + 0x1]                 ; 004454a8
     ADD EDI,0x4                         ; 004454ab
     ADD EBP,0xc                         ; 004454ae
@@ -246,10 +246,10 @@ section .text
     POP ESI                             ; 0044556e
     POP EBX                             ; 0044556f
     RET                                 ; 00445570
-    MOV EBP,dword ptr [0x014b8460]      ; 00445571 | DAT_014b8460
+    MOV EBP,dword ptr [0x014b8460]      ; 00445571 | g_CoronaTargetX
         ;   Label: LAB_00445571
-    MOV EAX,[0x014b8464]                ; 00445577 | DAT_014b8464
-    MOV EDI,dword ptr [0x014b8468]      ; 0044557c | DAT_014b8468
+    MOV EAX,[0x014b8464]                ; 00445577 | g_CoronaTargetY
+    MOV EDI,dword ptr [0x014b8468]      ; 0044557c | g_CoronaTargetDepth
     XOR EDX,EDX                         ; 00445582
     MOV dword ptr [ESP],EAX             ; 00445584
     MOV dword ptr [ESP + 0x4],EDX       ; 00445587

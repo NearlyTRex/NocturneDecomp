@@ -1,0 +1,411 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 332,
+    "complexity_score": 167,
+    "cross_reference_count": 4,
+    "function_call_count": 12,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 127,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 459
+  },
+  "cross_references": [
+    {
+      "addr": "004831d0",
+      "from_addr": "00483412",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b800",
+      "from_addr": "0047ba5d",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c0f0",
+      "from_addr": "0047c6db",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b1f0",
+      "from_addr": "0047b403",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00484f20",
+    "address_range": [
+      [
+        "00484f20",
+        "00485230"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdButton_paint_FUN_00484f20",
+    "signature": "void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00484f20(CEdButton *this_ptr,int draw_border_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8e40",
+      "is_variadic": false,
+      "name": "crt_ctype.c_toupper_FUN_005b8e40"
+    },
+    {
+      "addr": "00402f30",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawHLine_FUN_00402f30"
+    },
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004a8df0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004ab530",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004ab530"
+    },
+    {
+      "addr": "004ab590",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharYOffset_FUN_004ab590"
+    },
+    {
+      "addr": "004aafb0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0"
+    },
+    {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
+      "addr": "004f9390",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawHLine_FUN_004f9390"
+    },
+    {
+      "addr": "004f8e20",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_004f8e20"
+    },
+    {
+      "addr": "00483ea0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_00483ea0"
+    },
+    {
+      "addr": "0047a590",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_drawDashedLine_FUN_0047a590"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c25590",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01c25f84",
+      "name": "g_INT_01c25f84",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c263f8",
+      "name": "g_UITextColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35838",
+      "name": "g_UCHAR_ARRAY_01c35838",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "01c35839",
+      "name": "g_UCHAR_ARRAY_01c35838+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3583a",
+      "name": "g_UCHAR_ARRAY_01c35838+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e4c",
+      "name": "g_INT_01c35e4c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c35e60",
+      "name": "g_INT_01c35e60",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0047ba5d",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00483412",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00483447",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047c6db",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047c0f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047b403",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047b41f",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.608695652173913,
+    "instruction_count": 276,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 49,
+      "BRANCH": 5,
+      "CALL": 16,
+      "CBRANCH": 17,
+      "COPY": 215,
+      "INT_ADD": 99,
+      "INT_AND": 290,
+      "INT_CARRY": 33,
+      "INT_EQUAL": 201,
+      "INT_LEFT": 12,
+      "INT_LESS": 23,
+      "INT_MULT": 4,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 42,
+      "INT_SBORROW": 26,
+      "INT_SCARRY": 37,
+      "INT_SLESS": 108,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 97,
+      "INT_XOR": 17,
+      "INT_ZEXT": 2,
+      "LOAD": 60,
+      "POPCOUNT": 96,
+      "RETURN": 3,
+      "STORE": 69
+    },
+    "pcode_op_count": 1548
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0049d580",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00486120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a65e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4355
+    },
+    "nocturne.exe": {
+      "addr": "00476f40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3234
+    }
+  },
+  "stack_frame": {
+    "frame_size": 232,
+    "local_size": 224,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_db",
+        "offset": -219,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdButton *"
+      },
+      {
+        "is_param": true,
+        "name": "draw_border_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 4,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00485009",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0048502a",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004850cb",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004850f8",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 52,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 91,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 65,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

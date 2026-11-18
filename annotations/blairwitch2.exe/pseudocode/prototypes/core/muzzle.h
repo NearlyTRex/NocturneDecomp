@@ -7,7 +7,7 @@
 
 // Original: core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360
 // Address: 0059d360
-void __cdecl CMuzzleEffect::init(CMuzzleEffect *this_ptr,CVector3f *param_2,undefined4 param_3);
+void __cdecl CMuzzleEffect::init(CMuzzleEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 
 // Original: core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420
 // Address: 0059d420
@@ -17,125 +17,125 @@ void __cdecl CMuzzleEffect::process(CMuzzleEffect *this_ptr);
 // Address: 0059d440
 void __cdecl CMuzzleEffect::render(CMuzzleEffect *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059d5f0
+// Original: core_muzzle.cpp_loadMuzzleEffectAssets_FUN_0059d5f0
 // Address: 0059d5f0
-void FUN_0059d5f0(void);
+void __cdecl loadMuzzleEffectAssets(void);
 
-// Original: core_muzzle.cpp_FUN_0059d610
+// Original: core_muzzle.cpp_SStateMachine_init_FUN_0059d610
 // Address: 0059d610
-void FUN_0059d610(int param_1);
+void __cdecl SStateMachine::init(SStateMachine *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059d650
+// Original: core_muzzle.cpp_SStateMachine_addState_FUN_0059d650
 // Address: 0059d650
-undefined4 FUN_0059d650(char *param_1,char *param_2);
+int __cdecl SStateMachine::addState(SStateMachine *this_ptr,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059d6f0
+// Original: core_muzzle.cpp_SStateMachine_addRefState_FUN_0059d6f0
 // Address: 0059d6f0
-undefined4 FUN_0059d6f0(char *param_1,char *param_2,char *param_3);
+int __cdecl SStateMachine::addRefState(SStateMachine *this_ptr,char *identifier,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059d7f0
+// Original: core_muzzle.cpp_SStateMachine_setRefState_FUN_0059d7f0
 // Address: 0059d7f0
-undefined4 FUN_0059d7f0(char *param_1,char *param_2,char *param_3);
+int __cdecl SStateMachine::setRefState(SStateMachine *this_ptr,char *identifier,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059d880
+// Original: core_muzzle.cpp_SStateMachine_setNextRefState_FUN_0059d880
 // Address: 0059d880
-undefined4 FUN_0059d880(int param_1,char *param_2);
+int __cdecl SStateMachine::setNextRefState(SStateMachine *this_ptr,char *identifier);
 
-// Original: core_muzzle.cpp_FUN_0059d8e0
+// Original: core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 // Address: 0059d8e0
-undefined4 FUN_0059d8e0(char *param_1,char *param_2);
+int __cdecl SStateMachine::setNextState(SStateMachine *this_ptr,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059d940
+// Original: core_muzzle.cpp_SStateMachine_setNextStateWrapper_FUN_0059d940
 // Address: 0059d940
-void FUN_0059d940(undefined4 param_1,undefined4 param_2);
+int __cdecl SStateMachine::setNextStateWrapper(SStateMachine *this_ptr,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059d960
+// Original: core_muzzle.cpp_SStateMachine_setNextStateIndex_FUN_0059d960
 // Address: 0059d960
-undefined4 FUN_0059d960(int param_1,int param_2);
+int __cdecl SStateMachine::setNextStateIndex(SStateMachine *this_ptr,int state_index);
 
-// Original: core_muzzle.cpp_FUN_0059d990
+// Original: core_muzzle.cpp_SStateMachine_setInitialState_FUN_0059d990
 // Address: 0059d990
-undefined4 FUN_0059d990(char *param_1,char *param_2);
+int __cdecl SStateMachine::setInitialState(SStateMachine *this_ptr,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059da20
+// Original: core_muzzle.cpp_SStateMachine_process_FUN_0059da20
 // Address: 0059da20
-void FUN_0059da20(int param_1,float param_2);
+void __cdecl SStateMachine::process(SStateMachine *this_ptr,float delta_time);
 
-// Original: core_muzzle.cpp_FUN_0059da70
+// Original: core_muzzle.cpp_SStateMachine_applyNextState_FUN_0059da70
 // Address: 0059da70
-void FUN_0059da70(int param_1);
+void __cdecl SStateMachine::applyNextState(SStateMachine *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059daa0
+// Original: core_muzzle.cpp_SStateMachine_isState_FUN_0059daa0
 // Address: 0059daa0
-undefined4 FUN_0059daa0(int param_1,char *param_2);
+int __cdecl SStateMachine::isState(SStateMachine *this_ptr,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059dae0
+// Original: core_muzzle.cpp_SStateMachine_isRefStateTarget_FUN_0059dae0
 // Address: 0059dae0
-undefined4 FUN_0059dae0(int param_1,char *param_2,char *param_3);
+int __cdecl SStateMachine::isRefStateTarget(SStateMachine *this_ptr,char *identifier,char *state_name);
 
-// Original: core_muzzle.cpp_FUN_0059db70
+// Original: core_muzzle.cpp_SStateMachine_getStateName_FUN_0059db70
 // Address: 0059db70
-int FUN_0059db70(int param_1);
+char * __cdecl SStateMachine::getStateName(SStateMachine *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059db90
+// Original: core_muzzle.cpp_SStateMachine_getInitialStateName_FUN_0059db90
 // Address: 0059db90
-int FUN_0059db90(int param_1);
+char * __cdecl SStateMachine::getInitialStateName(SStateMachine *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059dbe0
+// Original: core_muzzle.cpp_SStateMachine_getRefStateTarget_FUN_0059dbe0
 // Address: 0059dbe0
-undefined4 FUN_0059dbe0(int param_1,int param_2);
+char * __cdecl SStateMachine::getRefStateTarget(SStateMachine *this_ptr,int index);
 
-// Original: core_muzzle.cpp_FUN_0059dc00
+// Original: core_muzzle.cpp_SStateMachine_getRefStateIdentifier_FUN_0059dc00
 // Address: 0059dc00
-int FUN_0059dc00(int param_1,int param_2);
+char * __cdecl SStateMachine::getRefStateIdentifier(SStateMachine *this_ptr,int index);
 
-// Original: core_muzzle.cpp_FUN_0059dc70
+// Original: core_muzzle.cpp_SStateMachine_getRefStateCount_FUN_0059dc70
 // Address: 0059dc70
-undefined4 FUN_0059dc70(int param_1);
+int __cdecl SStateMachine::getRefStateCount(SStateMachine *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059dc80
+// Original: core_muzzle.cpp_SStateMachine_reset_FUN_0059dc80
 // Address: 0059dc80
-void FUN_0059dc80(int param_1);
+void __cdecl SStateMachine::reset(SStateMachine *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059dcb0
+// Original: core_muzzle.cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0
 // Address: 0059dcb0
-void FUN_0059dcb0(int param_1,undefined4 param_2);
+void __cdecl SStateMachine::setTransitionDelay(SStateMachine *this_ptr,float delay);
 
-// Original: core_muzzle.cpp_FUN_0059dce0
+// Original: core_muzzle.cpp_SStateMachine_isTransitionPending_FUN_0059dce0
 // Address: 0059dce0
-undefined4 FUN_0059dce0(int param_1);
+int __cdecl SStateMachine::isTransitionPending(SStateMachine *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059dd00
+// Original: core_muzzle.cpp_SFollowFormation_updateSlot_FUN_0059dd00
 // Address: 0059dd00
-void FUN_0059dd00(int *param_1,int *param_2);
+void __cdecl SFollowFormation::updateSlot(SFollowFormation *this_ptr,SFollowSlotStruct *slot);
 
-// Original: core_muzzle.cpp_FUN_0059ded0
+// Original: core_muzzle.cpp_SFollowFormation_ctor_FUN_0059ded0
 // Address: 0059ded0
-undefined4 * FUN_0059ded0(int param_1);
+SFollowFormation * __cdecl SFollowFormation::ctor(SFollowFormation *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059df70
+// Original: core_muzzle.cpp_SFollowFormation_dtor_FUN_0059df70
 // Address: 0059df70
-undefined4 FUN_0059df70(undefined4 param_1);
+SFollowFormation * __cdecl SFollowFormation::dtor(SFollowFormation *this_ptr,uint flags);
 
-// Original: core_muzzle.cpp_FUN_0059df80
+// Original: core_muzzle.cpp_SFollowFormation_setLeader_FUN_0059df80
 // Address: 0059df80
-void __cdecl FUN_0059df80(void);
+void __cdecl SFollowFormation::setLeader(SFollowFormation *this_ptr,CCharacter *leader);
 
-// Original: core_muzzle.cpp_FUN_0059df90
+// Original: core_muzzle.cpp_SFollowFormation_addFollower_FUN_0059df90
 // Address: 0059df90
-undefined4 FUN_0059df90(int *param_1,int param_2,int param_3);
+int __cdecl SFollowFormation::addFollower(SFollowFormation *this_ptr,CCharacter *follower,float follow_distance);
 
-// Original: core_muzzle.cpp_FUN_0059e0a0
+// Original: core_muzzle.cpp_SFollowFormation_findSlot_FUN_0059e0a0
 // Address: 0059e0a0
-int * FUN_0059e0a0(int *param_1,int param_2);
+SFollowSlotStruct * __cdecl SFollowFormation::findSlot(SFollowFormation *this_ptr,CCharacter *follower);
 
-// Original: core_muzzle.cpp_FUN_0059e0f0
+// Original: core_muzzle.cpp_SFollowFormation_getSlots_FUN_0059e0f0
 // Address: 0059e0f0
-int FUN_0059e0f0(int param_1);
+SFollowSlotStruct * __cdecl SFollowFormation::getSlots(SFollowFormation *this_ptr);
 
-// Original: core_muzzle.cpp_FUN_0059e110
+// Original: core_muzzle.cpp_SFollowFormation_process_FUN_0059e110
 // Address: 0059e110
-void FUN_0059e110(int *param_1,float param_2);
+void __cdecl SFollowFormation::process(SFollowFormation *this_ptr,float delta_time);
 
 // Original: core_muzzle.cpp_SFollowSlotStruct_ctor_FUN_0059e370
 // Address: 0059e370

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 147,
+    "complexity_score": 111,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 10,
+    "pseudocode_lines": 26,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [],
   "function": {
@@ -26,9 +25,9 @@
         "0058489c"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_vehicle.cpp_CVehicle_getBoundingBox_FUN_00584860",
-    "signature": "CBoundingBox3D * __cdecl core_vehicle_cpp_CVehicle_getBoundingBox_FUN_00584860(CVehicle *this_ptr,CBoundingBox3D *out_box)"
+    "signature": "CBoundingBox3D * __stack_esi core_vehicle_cpp_CVehicle_getBoundingBox_FUN_00584860(CVehicle *this_ptr,CBoundingBox3D *out_box)"
   },
   "function_calls": [
     {
@@ -43,7 +42,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "declared_stack_bytes": 8,
+    "declared_stack_bytes": 4,
     "estimated_params": 2,
     "matches_declared": true
   },
@@ -94,10 +93,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -106,13 +105,6 @@
         "offset": 4,
         "size": 4,
         "type": "CVehicle *"
-      },
-      {
-        "is_param": true,
-        "name": "out_box",
-        "offset": 8,
-        "size": 4,
-        "type": "CBoundingBox3D *"
       }
     ]
   },
@@ -135,48 +127,24 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CBoundingBox3D *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(CBoundingBox3D *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "pCVar3 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 26,
       "match": "(CBoundingBox3D *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
+      "line": 18,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
@@ -184,7 +152,7 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
+      "line": 26,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
@@ -192,7 +160,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 17,
+      "line": 16,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -200,7 +168,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 24,
+      "line": 23,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -218,7 +186,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 36,
         "vtable_addr": "005fd9f4"
       }

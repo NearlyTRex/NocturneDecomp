@@ -23,7 +23,7 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonLightInstance.volumetric_intensity
-;   undefined4 DAT_01d5ba14
+;   int g_INT_01d5ba14
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_0057b201
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0 ; 0057b202
         ;   XREF to: 004088f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(CDemonActor * this_ptr)
-    MOV EAX,[0x01d5ba14]                ; 0057b207 | DAT_01d5ba14
+    MOV EAX,[0x01d5ba14]                ; 0057b207 | g_INT_01d5ba14
     MOV EDX,dword ptr [EBX + 0x304]     ; 0057b20c
     MOV ESI,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0057b212
     ADD ESP,0x4                         ; 0057b219

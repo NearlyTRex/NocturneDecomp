@@ -23,11 +23,11 @@ DWORD FUN_005addd0(HMODULE param_1,LPWSTR param_2,DWORD param_3)
   if (lpFilename != (LPSTR)0x0) {
     DVar1 = GetModuleFileNameA(param_1,lpFilename,0x208);
     if (DVar1 == 0) {
-      FUN_005a3770(lpFilename);
+      debugFree(lpFilename);
       return 0;
     }
     iVar2 = MultiByteToWideChar(1,1,lpFilename,-1,param_2,param_3);
-    FUN_005a3770(lpFilename);
+    debugFree(lpFilename);
     if (iVar2 == 0) {
       return 0;
     }

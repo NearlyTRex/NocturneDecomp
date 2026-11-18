@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 33,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 55
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
   },
   "cross_references": [],
   "function": {
@@ -31,26 +29,26 @@
   "globals": [
     {
       "addr": "00623320",
-      "name": "DAT_00623320",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RecordingBitsPerSample",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "00623324",
-      "name": "DAT_00623324",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RecordingChannelCount",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "00623328",
-      "name": "DAT_00623328",
-      "type": "undefined4",
-      "value": null
+      "name": "g_RecordingSampleRate",
+      "type": "int",
+      "value": "0x2b11"
     },
     {
       "addr": "02c81040",
-      "name": "DAT_02c81040",
-      "type": "undefined4",
+      "name": "g_RecordingSamplesSigned",
+      "type": "int",
       "value": null
     }
   ],
@@ -140,14 +138,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

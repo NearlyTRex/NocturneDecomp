@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_mini3d_cpp_clampClippedPolygon_FUN_00515530(void)
 
 {
@@ -15,9 +13,9 @@ void __cdecl engine_mini3d_cpp_clampClippedPolygon_FUN_00515530(void)
   int iVar2;
   float *pfVar3;
   
-  pfVar3 = (float *)&DAT_01d247fc;
+  pfVar3 = &g_FLOAT_01d247fc;
   iVar2 = 0;
-  if (0 < _DAT_01d227f8) {
+  if (0 < g_INT_01d227f8) {
     do {
       if (ABS(pfVar3[2]) == 0.0) {
         *pfVar3 = 0.0;
@@ -47,7 +45,7 @@ void __cdecl engine_mini3d_cpp_clampClippedPolygon_FUN_00515530(void)
 LAB_0051555d:
       iVar2 = iVar2 + 1;
       pfVar3 = pfVar3 + 0x10;
-    } while (iVar2 < _DAT_01d227f8);
+    } while (iVar2 < g_INT_01d227f8);
   }
   return;
 }

@@ -1,0 +1,220 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "0051bf30",
+      "from_addr": "0051c073",
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ecca0",
+    "address_range": [
+      [
+        "004ecca0",
+        "004ecd45"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004ecca0",
+    "signature": "CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004ecca0(CHeroPlaceholder *this_ptr,EHeroType hero_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "004088b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0"
+    },
+    {
+      "addr": "0040c2b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c2b0"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "0051bd60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e4b9d",
+      "name": "s_core_hero_cpp_005e4b9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e4bae",
+      "name": "s_CHeroPlaceholder_createH_005e4bae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f650",
+      "name": "g_CDemonMission_PTR_0061f650",
+      "type": "CDemonMission*",
+      "value": "01d2c900"
+    },
+    {
+      "addr": "01d06b10",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "g_INT_01d1d404",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d2c900",
+      "name": "DAT_01d2c900",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051c073",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3275862068965516,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 50,
+      "INT_ADD": 26,
+      "INT_AND": 15,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 17,
+      "LOAD": 13,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 193
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d0a40",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d4be0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f3d80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.65
+    },
+    "nocturne.exe": {
+      "addr": "004b6080",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.65
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHeroPlaceholder *"
+      },
+      {
+        "is_param": true,
+        "name": "hero_type",
+        "offset": 8,
+        "size": 4,
+        "type": "EHeroType"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 28,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (pUVar2->vec).x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

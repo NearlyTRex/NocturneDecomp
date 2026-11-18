@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00439bf0(CZombieCow *this_ptr,undefined4 *param_2)
+; int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00439bf0(CZombieCow *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CZombieCow *     Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
+; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90

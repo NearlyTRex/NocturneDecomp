@@ -11,7 +11,7 @@ CBasicNPC * __cdecl core_basicnpc_cpp_factoryFuncBasicNPC_FUN_005a4780(void)
 {
   CBasicNPC *pCVar1;
   
-  pCVar1 = (CBasicNPC *)operator_new(0x11850);
+  pCVar1 = operator_new(0x11850);
   if (pCVar1 == (CBasicNPC *)0x0) {
     return (CBasicNPC *)0x0;
   }

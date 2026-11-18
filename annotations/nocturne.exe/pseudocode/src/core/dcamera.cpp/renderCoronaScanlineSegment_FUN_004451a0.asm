@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_012b0660
-;   undefined4 DAT_014b8458
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
+;   CDemonGlobe* g_CurrentGlobe
 ;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
@@ -51,7 +51,7 @@ section .text
     SHL EDX,0x2                         ; 004451f0
     ADD EAX,0x146ba10                   ; 004451f3
     ADD EAX,EDX                         ; 004451f8
-    MOV CL,byte ptr [0x012b0660]        ; 004451fa | DAT_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 004451fa | g_CameraDownscaleIterations
     MOV dword ptr [ESP + 0x4],EAX       ; 00445200
     MOV EAX,dword ptr [ESP + 0x24]      ; 00445204
     SHL ESI,CL                          ; 00445208
@@ -76,7 +76,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x4]       ; 00445239
     MOV EDI,dword ptr [ESP + 0x24]      ; 0044523d
     MOV EDX,dword ptr [ESP + 0x28]      ; 00445241
-    MOV CL,byte ptr [0x012b0660]        ; 00445245 | DAT_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 00445245 | g_CameraDownscaleIterations
     ADD EBX,0xc                         ; 0044524b
     INC EBP                             ; 0044524e
     ADD ESI,0x4                         ; 0044524f
@@ -98,7 +98,7 @@ section .text
     POP ESI                             ; 00445273
     POP EBX                             ; 00445274
     RET                                 ; 00445275
-    MOV ECX,dword ptr [0x014b8458]      ; 00445276 | DAT_014b8458
+    MOV ECX,dword ptr [0x014b8458]      ; 00445276 | g_CurrentGlobe
         ;   Label: LAB_00445276
     MOV ESI,dword ptr [EBX]             ; 0044527c
     MOV EDI,dword ptr [ECX]             ; 0044527e
@@ -110,7 +110,7 @@ section .text
     CMP EAX,dword ptr [ECX + 0xc]       ; 00445289
     JGE 0x00445234                      ; 0044528c
         ;   XREF to: 00445234 (CONDITIONAL_JUMP)  ; LAB_00445234
-    MOV EDI,dword ptr [0x014b8458]      ; 0044528e | DAT_014b8458
+    MOV EDI,dword ptr [0x014b8458]      ; 0044528e | g_CurrentGlobe
     MOV ECX,dword ptr [EBX + 0x4]       ; 00445294
     MOV EAX,dword ptr [EDI + 0x4]       ; 00445297
     SUB ECX,EAX                         ; 0044529a
@@ -121,7 +121,7 @@ section .text
     CMP EAX,dword ptr [EDI + 0xc]       ; 004452a3
     JGE 0x00445234                      ; 004452a6
         ;   XREF to: 00445234 (CONDITIONAL_JUMP)  ; LAB_00445234
-    MOV EAX,[0x014b8458]                ; 004452a8 | DAT_014b8458
+    MOV EAX,[0x014b8458]                ; 004452a8 | g_CurrentGlobe
     MOV EDI,dword ptr [EBX + 0x8]       ; 004452ad
     SUB EDI,dword ptr [EAX + 0x8]       ; 004452b0
     MOV dword ptr [ESP],EAX             ; 004452b3
@@ -138,7 +138,7 @@ section .text
     IMUL EDX,ECX                        ; 004452ce
     MOV EAX,EDI                         ; 004452d1
     IMUL EAX,EDI                        ; 004452d3
-    MOV ECX,dword ptr [0x014b8458]      ; 004452d6 | DAT_014b8458
+    MOV ECX,dword ptr [0x014b8458]      ; 004452d6 | g_CurrentGlobe
     ADD EDX,ESI                         ; 004452dc
     MOV ESI,dword ptr [ECX + 0x10]      ; 004452de
     ADD EAX,EDX                         ; 004452e1

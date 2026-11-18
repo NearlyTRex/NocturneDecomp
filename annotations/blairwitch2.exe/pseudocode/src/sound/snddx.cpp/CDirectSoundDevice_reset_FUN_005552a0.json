@@ -1,0 +1,178 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 104,
+    "complexity_score": 41,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 145
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005552a0",
+    "address_range": [
+      [
+        "005552a0",
+        "0055538b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005552a0",
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005552a0(CDirectSoundDevice *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00554ad0",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00554ad0"
+    },
+    {
+      "addr": "00554e50",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_00554e50"
+    },
+    {
+      "addr": "00553270",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_00553270"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a3b",
+      "name": "s_DirectSux_Unable_to_s_s_005e9a3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9af9",
+      "name": "s_Stop_secondary_sound_buf_005e9af9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9b15",
+      "name": "s_Stop_primary_sound_buffe_005e9b15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0264a5c8",
+      "name": "g_DirectSoundPrimaryBuffer",
+      "type": "IDirectSoundBuffer*",
+      "value": null
+    },
+    {
+      "addr": "0264a5cc",
+      "name": "g_DirectSoundSecondaryBuffer",
+      "type": "IDirectSoundBuffer*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.48051948051948,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 8,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 61,
+      "INT_ADD": 21,
+      "INT_AND": 52,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 46,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 23,
+      "INT_SUB": 29,
+      "INT_XOR": 5,
+      "LOAD": 10,
+      "POPCOUNT": 23,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 345
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00577cd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055ae40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ae4b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6832
+    },
+    "nocturne.exe": {
+      "addr": "0052a0d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6832
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 8,
+        "vtable_addr": "005fbcbc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

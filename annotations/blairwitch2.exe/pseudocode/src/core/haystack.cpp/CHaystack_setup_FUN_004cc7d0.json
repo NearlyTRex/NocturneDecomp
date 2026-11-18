@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 59,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 34,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 181
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 180
   },
   "cross_references": [],
   "function": {
@@ -149,103 +147,103 @@
     },
     {
       "addr": "01cede20",
-      "name": "DAT_01cede20",
-      "type": "undefined4",
+      "name": "g_HaystackIndices",
+      "type": "int[17]",
       "value": null
     },
     {
       "addr": "01cede24",
-      "name": "DAT_01cede24",
+      "name": "g_HaystackIndices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede28",
-      "name": "DAT_01cede28",
+      "name": "g_HaystackIndices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede2c",
-      "name": "DAT_01cede2c",
+      "name": "g_HaystackIndices[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede30",
-      "name": "DAT_01cede30",
+      "name": "g_HaystackIndices[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede34",
-      "name": "DAT_01cede34",
+      "name": "g_HaystackIndices[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede38",
-      "name": "DAT_01cede38",
+      "name": "g_HaystackIndices[6]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede3c",
-      "name": "DAT_01cede3c",
+      "name": "g_HaystackIndices[7]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede40",
-      "name": "DAT_01cede40",
+      "name": "g_HaystackIndices[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede44",
-      "name": "DAT_01cede44",
+      "name": "g_HaystackIndices[9]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede48",
-      "name": "DAT_01cede48",
+      "name": "g_HaystackIndices[10]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede4c",
-      "name": "DAT_01cede4c",
+      "name": "g_HaystackIndices[11]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede50",
-      "name": "DAT_01cede50",
+      "name": "g_HaystackIndices[12]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede54",
-      "name": "DAT_01cede54",
+      "name": "g_HaystackIndices[13]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede58",
-      "name": "DAT_01cede58",
+      "name": "g_HaystackIndices[14]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede5c",
-      "name": "DAT_01cede5c",
+      "name": "g_HaystackIndices[15]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cede60",
-      "name": "DAT_01cede60",
+      "name": "g_HaystackIndices[16]",
       "type": "undefined4",
       "value": null
     }
@@ -315,20 +313,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 8,
         "vtable_addr": "005f7f84"
       }

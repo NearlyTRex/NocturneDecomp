@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 40,
+    "complexity_score": 9,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 30
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
   },
   "cross_references": [],
   "function": {
@@ -48,13 +45,13 @@
   "globals": [
     {
       "addr": "01dd4488",
-      "name": "DAT_01dd4488",
-      "type": "undefined4",
+      "name": "g_NetworkReceivePacket",
+      "type": "UNetPacket",
       "value": null
     },
     {
       "addr": "01dd448c",
-      "name": "DAT_01dd448c",
+      "name": "g_NetworkReceivePacket+4",
       "type": "undefined4",
       "value": null
     }
@@ -123,22 +120,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01dd448c",
-      "severity": "mild",
-      "text": "DAT_01dd448c = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

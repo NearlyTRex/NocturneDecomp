@@ -53,9 +53,9 @@ void __cdecl CHag::startBurn(CHag *this_ptr,CVector3f *direction,float strength)
 // Address: 005aae80
 void __cdecl CHag::processBurnState(CHag *this_ptr,float delta_time);
 
-// Original: core_hellhag.cpp_FUN_005ab260
+// Original: core_hellhag.cpp_CHag_processAI_FUN_005ab260
 // Address: 005ab260
-void FUN_005ab260(int param_1,float param_2);
+void __cdecl CHag::processAI(CHag *this_ptr,float delta_time);
 
 // Original: core_hellhag.cpp_CHag_processDeathState_FUN_005ab760
 // Address: 005ab760

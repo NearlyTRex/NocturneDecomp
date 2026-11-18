@@ -47,7 +47,7 @@ int __cdecl CDirectSoundDevice::setMode(CDirectSoundDevice *this_ptr,int bits_pe
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50
 // Address: 005aed50
-int __cdecl CDirectSoundDevice::poll(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples);
+int __cdecl CDirectSoundDevice::poll(CDirectSoundDevice *this_ptr);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20
 // Address: 005aee20
@@ -87,7 +87,7 @@ void * __cdecl CDirectSoundDevice::lockSample(CDirectSoundDevice *this_ptr,int b
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320
 // Address: 005af320
-void __cdecl CDirectSoundDevice::unlockSample(CDirectSoundDevice *this_ptr,int buffer_id);
+void __cdecl CDirectSoundDevice::unlockSample(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
 // Address: 005af410
@@ -97,9 +97,9 @@ int __cdecl CDirectSoundDevice::allocateSfx(CDirectSoundDevice *this_ptr,int sam
 // Address: 005af720
 int __cdecl isValidSfxHandle(int sfx_handle);
 
-// Original: sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
+// Original: sound_snddx.cpp_CDirectSoundDevice_applySfxChanges_FUN_005af750
 // Address: 005af750
-int __cdecl CDirectSoundDevice::setSfxPos(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags);
+int __cdecl CDirectSoundDevice::applySfxChanges(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_005afcc0
 // Address: 005afcc0
@@ -121,9 +121,9 @@ void __cdecl CDirectSoundDevice::killSfx(CDirectSoundDevice *this_ptr,CSfxSlot *
 // Address: 005b0120
 int __cdecl directSoundEnumerationCallback(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
 
-// Original: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340
+// Original: sound_snddx.cpp_CDirectSoundDevice_setReverb_FUN_005b0340
 // Address: 005b0340
-void __cdecl CDirectSoundDevice::commitDeferredSettings(CDirectSoundDevice *this_ptr);
+void __cdecl CDirectSoundDevice::setReverb(CDirectSoundDevice *this_ptr,float volume,float decay_time,float damping);
 
 // Original: sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
 // Address: 005b0390

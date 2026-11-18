@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_font_cpp_getDefaultTextColor_FUN_00491140(void)
 
 {
-  return _DAT_01c70f70;
+  return g_DefaultTextColor;
 }

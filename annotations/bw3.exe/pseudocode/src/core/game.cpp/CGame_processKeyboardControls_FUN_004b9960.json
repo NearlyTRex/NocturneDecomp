@@ -1,0 +1,315 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 748,
+    "complexity_score": 248,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 14,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 248,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 996
+  },
+  "cross_references": [
+    {
+      "addr": "004b92e0",
+      "from_addr": "004b9331",
+      "name": "core_game.cpp_CGame_playerControls_FUN_004b92e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b97b0",
+      "from_addr": "004b97c8",
+      "name": "core_game.cpp_CGame_processJoystickControls_FUN_004b97b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba2e0",
+      "from_addr": "004ba2f4",
+      "name": "core_game.cpp_CGame_processMouseControls_FUN_004ba2e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b9960",
+    "address_range": [
+      [
+        "004b9960",
+        "004ba213"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_processKeyboardControls_FUN_004b9960",
+    "signature": "void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004b9960(CGame *this_ptr,SPlayerInput *player_control)"
+  },
+  "function_calls": [
+    {
+      "addr": "004dbc40",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_selectItem_FUN_004dbc40"
+    },
+    {
+      "addr": "004dbb40",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c2800",
+      "name": "g_FLOAT_005c2800",
+      "type": "float",
+      "value": "0.01000000"
+    },
+    {
+      "addr": "005c2804",
+      "name": "g_FLOAT_005c2804",
+      "type": "float",
+      "value": "-1"
+    },
+    {
+      "addr": "005c2808",
+      "name": "g_FLOAT_005c2808",
+      "type": "float",
+      "value": "0.25"
+    },
+    {
+      "addr": "005c280c",
+      "name": "g_FLOAT_005c280c",
+      "type": "float",
+      "value": "0.05000000"
+    },
+    {
+      "addr": "005c2810",
+      "name": "g_DOUBLE_005c2810",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "005c2818",
+      "name": "g_DOUBLE_005c2818",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "005c2820",
+      "name": "g_FLOAT_005c2820",
+      "type": "float",
+      "value": "-0.25"
+    },
+    {
+      "addr": "005c2824",
+      "name": "g_FLOAT_005c2824",
+      "type": "float",
+      "value": "0.1000000"
+    },
+    {
+      "addr": "005c2828",
+      "name": "g_DOUBLE_005c2828",
+      "type": "double",
+      "value": "0.200000000000000"
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "00600284",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "01d70a78"
+    },
+    {
+      "addr": "01d21620",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "g_INT_01d5ba14",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d70a78",
+      "name": "g_PTR_01d70a78",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004b9331",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_playerControls_FUN_004b92e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b97c8",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processJoystickControls_FUN_004b97b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ba2f4",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processMouseControls_FUN_004ba2e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.186356073211314,
+    "instruction_count": 601,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 30,
+      "BRANCH": 22,
+      "CALL": 9,
+      "CALLIND": 15,
+      "CBRANCH": 64,
+      "COPY": 1011,
+      "FLOAT2FLOAT": 91,
+      "FLOAT_ADD": 7,
+      "FLOAT_DIV": 11,
+      "FLOAT_EQUAL": 16,
+      "FLOAT_LESS": 16,
+      "FLOAT_MULT": 11,
+      "FLOAT_NAN": 32,
+      "FLOAT_SUB": 7,
+      "INT2FLOAT": 10,
+      "INT_ADD": 196,
+      "INT_AND": 296,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 194,
+      "INT_LEFT": 64,
+      "INT_LESS": 30,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 84,
+      "INT_OR": 80,
+      "INT_SBORROW": 30,
+      "INT_SCARRY": 35,
+      "INT_SLESS": 95,
+      "INT_SUB": 117,
+      "INT_XOR": 4,
+      "INT_ZEXT": 64,
+      "LOAD": 181,
+      "POPCOUNT": 95,
+      "RETURN": 2,
+      "STORE": 139
+    },
+    "pcode_op_count": 3117
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b76c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5066
+    },
+    "bw1.exe": {
+      "addr": "004d0ee0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6326
+    },
+    "nocedit.exe": {
+      "addr": "004dc3e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5484
+    },
+    "nocturne.exe": {
+      "addr": "0049ee30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5484
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_control",
+        "offset": 8,
+        "size": 4,
+        "type": "SPlayerInput *"
+      }
+    ]
+  },
+  "suspects": []
+}

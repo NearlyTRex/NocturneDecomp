@@ -12,7 +12,7 @@
 ;   int g_RelativeZ
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cc5174
+;   int g_MatrixStackIndex
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -21,14 +21,14 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01cc5174]      ; 004ceb90 | DAT_01cc5174
+    MOV EDX,dword ptr [0x01cc5174]      ; 004ceb90 | g_MatrixStackIndex
         ;   Label: engine_matrix.c_popMatrixRelativeOffset_FUN_004ceb90
     DEC EDX                             ; 004ceb96
-    MOV dword ptr [0x01cc5174],EDX      ; 004ceb97 | DAT_01cc5174
+    MOV dword ptr [0x01cc5174],EDX      ; 004ceb97 | g_MatrixStackIndex
     TEST EDX,EDX                        ; 004ceb9d
     JL 0x004cebcd                       ; 004ceb9f
         ;   XREF to: 004cebcd (CONDITIONAL_JUMP)  ; LAB_004cebcd
-    MOV EAX,[0x01cc5174]                ; 004ceba1 | DAT_01cc5174
+    MOV EAX,[0x01cc5174]                ; 004ceba1 | g_MatrixStackIndex
         ;   Label: LAB_004ceba1
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc52e0] ; 004ceba6
     MOV dword ptr [0x01c039b8],EDX      ; 004cebad | g_RelativeX

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005be810(int param_1)
+; void crt_unknown_c_FUN_005be810(_FILE *param_1)
 ;
 ;
 ; XREF[2]:
@@ -9,8 +9,8 @@
 ;   crt_unknown.c_FUN_005b8f9c at 005b9043
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02680160
-;   undefined4 DAT_02680164
+;   FileListNode* g_AllocatedListHead
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005be810
     MOV EBX,dword ptr [ESP + 0x8]       ; 005be811
     MOV EDX,0x2680160                   ; 005be815
-    MOV EAX,dword ptr [EDX]             ; 005be81a | DAT_02680160
+    MOV EAX,dword ptr [EDX]             ; 005be81a | g_AllocatedListHead
         ;   Label: LAB_005be81a
     TEST EAX,EAX                        ; 005be81c
     JZ 0x005be845                       ; 005be81e
@@ -38,8 +38,8 @@ section .text
     MOV byte ptr [EBX + 0xc],CL         ; 005be831
     MOV EBX,dword ptr [EAX]             ; 005be834
     MOV dword ptr [EDX],EBX             ; 005be836
-    MOV EDX,dword ptr [0x02680164]      ; 005be838 | DAT_02680164
-    MOV [0x02680164],EAX                ; 005be83e | DAT_02680164
+    MOV EDX,dword ptr [0x02680164]      ; 005be838 | g_FreeListHeadPointer
+    MOV [0x02680164],EAX                ; 005be83e | g_FreeListHeadPointer
     MOV dword ptr [EAX],EDX             ; 005be843
     POP EBX                             ; 005be845
         ;   Label: LAB_005be845

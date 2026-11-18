@@ -10,8 +10,7 @@ void __cdecl core_emitter_cpp_CEmitter_archive_FUN_00487990(CEmitter *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
-  core_actor_cpp_archiveInteger_FUN_0040b960
-            ((int *)&this_ptr->emitter_type,"?emitterType" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->emitter_type,"emitterType");
   core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->emitter_size,"emitterSize");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->event_on,"eventOn");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->event_off,"eventOff");

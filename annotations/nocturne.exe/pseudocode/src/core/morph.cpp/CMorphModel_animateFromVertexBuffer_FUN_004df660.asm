@@ -22,7 +22,7 @@
 ;   TerminatedCString s_CMorphModel_animate_inva_0058ab6c
 ;   TerminatedCString s_core_morph_cpp_0058ab96
 ;   TerminatedCString s_CMorphModel_animate_inva_0058aba8
-;   undefined4 DAT_005a0cc8
+;   float g_FLOAT_005a0cc8 = 0.00390625
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -96,13 +96,13 @@ section .text
     ADD EBX,0x4                         ; 004df6f9
     ADD EDX,0xc                         ; 004df6fc
     FILD dword ptr [EAX]                ; 004df6ff
-    FMUL float ptr [0x005a0cc8]         ; 004df701 | DAT_005a0cc8
+    FMUL float ptr [0x005a0cc8]         ; 004df701 | g_FLOAT_005a0cc8
     FSTP float ptr [EBX]                ; 004df707
     FILD dword ptr [EAX + 0x4]          ; 004df709
-    FMUL float ptr [0x005a0cc8]         ; 004df70c | DAT_005a0cc8
+    FMUL float ptr [0x005a0cc8]         ; 004df70c | g_FLOAT_005a0cc8
     FSTP float ptr [EBX + 0x4]          ; 004df712
     FILD dword ptr [EAX + 0x8]          ; 004df715
-    FMUL float ptr [0x005a0cc8]         ; 004df718 | DAT_005a0cc8
+    FMUL float ptr [0x005a0cc8]         ; 004df718 | g_FLOAT_005a0cc8
     FSTP float ptr [EBX + 0x8]          ; 004df71e
     ADD ESI,0x10                        ; 004df721
     CMP ECX,EBP                         ; 004df724

@@ -11,7 +11,7 @@ CStorm * __cdecl core_storm_cpp_factoryFuncStorm_FUN_00568a80(void)
 {
   CStorm *pCVar1;
   
-  pCVar1 = (CStorm *)operator_new(0x594);
+  pCVar1 = operator_new(0x594);
   if (pCVar1 == (CStorm *)0x0) {
     return (CStorm *)0x0;
   }

@@ -1,49 +1,50 @@
 // Name: engine_3d.c_drawLine3DFromIndices_FUN_00407db0
 // Address: 00407db0
 // Address Range: [[00407db0, 00407e22]]
-// Convention: unknown
-// Signature: void engine_3d_c_drawLine3DFromIndices_FUN_00407db0(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407db0(int vertex_index1,int vertex_index2)
 
 #include "nocturne.h"
 
-void engine_3d_c_drawLine3DFromIndices_FUN_00407db0(int param_1,int param_2)
+void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407db0(int vertex_index1,int vertex_index2)
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  SRenderVertex *pSVar2;
+  int *piVar3;
+  int *piVar4;
   SRenderVertex in_stack_ffffff38;
   SRenderVertex in_stack_ffffff68;
-  uint auStack_68 [12];
-  uint auStack_38 [12];
+  int aiStack_68 [12];
+  int aiStack_38 [12];
   
-  puVar2 = &DAT_0060b014 + param_1 * 0xc;
-  puVar3 = auStack_68;
+  pSVar2 = g_SRenderVertex_ARRAY_0060b014 + vertex_index1;
+  piVar3 = aiStack_68;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + 1;
-    puVar3 = puVar3 + 1;
+    *piVar3 = (pSVar2->projected_vertex).transformed_x;
+    pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_y;
+    piVar3 = piVar3 + 1;
   }
-  puVar2 = &DAT_0060b014 + param_2 * 0xc;
-  puVar3 = auStack_38;
+  pSVar2 = g_SRenderVertex_ARRAY_0060b014 + vertex_index2;
+  piVar3 = aiStack_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + 1;
-    puVar3 = puVar3 + 1;
+    *piVar3 = (pSVar2->projected_vertex).transformed_x;
+    pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_y;
+    piVar3 = piVar3 + 1;
   }
-  puVar2 = auStack_38;
-  puVar3 = (uint *)&stack0xffffff68;
+  piVar3 = aiStack_38;
+  piVar4 = (int *)&stack0xffffff68;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + 1;
-    puVar3 = puVar3 + 1;
+    *piVar4 = *piVar3;
+    piVar3 = piVar3 + 1;
+    piVar4 = piVar4 + 1;
   }
-  puVar2 = auStack_68;
-  puVar3 = (uint *)&stack0xffffff38;
+  piVar3 = aiStack_68;
+  piVar4 = (int *)&stack0xffffff38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + 1;
-    puVar3 = puVar3 + 1;
+    *piVar4 = *piVar3;
+    piVar3 = piVar3 + 1;
+    piVar4 = piVar4 + 1;
   }
   engine_3d_c_clipAndDrawLine3D_FUN_00407e30(in_stack_ffffff38,in_stack_ffffff68);
   return;

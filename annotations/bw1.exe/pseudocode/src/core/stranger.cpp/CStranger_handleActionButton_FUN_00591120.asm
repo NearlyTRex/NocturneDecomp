@@ -14,12 +14,12 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005910fc = 005911a9
-;   undefined4 s_eDoorMoveNone_returned_b_005f7020+1
+;   TerminatedCString s_eDoorMoveNone_returned_b_005f7021
 ;   TerminatedCString s_eDoorMoveNone_returned_b_005f705e
 ;   TerminatedCString s_CBodyPart_005f709b
 ;   TerminatedCString s_CBodyPart_005f70a6
-;   undefined4 DAT_005f70b1
-;   undefined4 DAT_005f70b9
+;   double g_DOUBLE_005f70b1 = 0.999900000000000
+;   double g_DOUBLE_005f70b9 = 0.990000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;
 ; Called Functions:
@@ -27,12 +27,12 @@
 ;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004ebc40
 ;   core_hero.cpp_CHero_tryInteract_FUN_004eb090
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0
+;   core_hero.cpp_CHero_tryPullLever_FUN_004eb660
+;   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240
-;   core_hero.cpp_FUN_004eb3e0
-;   core_hero.cpp_FUN_004eb660
-;   core_hero.cpp_FUN_004eb890
+;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_motion.cpp_FUN_00524a40
 ;   core_stranger.cpp_CStranger_tryClimbLadder_FUN_0058ce80
 ;   core_stranger.cpp_CStranger_tryDescendLadder_FUN_0058d3c0
 ;   core_stranger.cpp_CStranger_tryPickupObject_FUN_0058c260
@@ -76,27 +76,27 @@ section .text
     PUSH EAX                            ; 00591159
     LEA ESI,[EBX + 0x158]               ; 0059115a
     PUSH ESI                            ; 00591160
-    CALL core_motion.cpp_FUN_00524a40   ; 00591161
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00591161
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 00591166
     ADD ESP,0x8                         ; 0059116a
     PUSH 0x1                            ; 0059116d
     PUSH ESI                            ; 0059116f
-    CALL core_motion.cpp_FUN_00524a40   ; 00591170
-        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_00524a40()
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40 ; 00591170
+        ;   XREF to: 00524a40 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_00524a40(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00591175
     FLD float ptr [ESP + 0xc]           ; 00591179
     ADD ESP,0x8                         ; 0059117d
     FADD float ptr [ESP]                ; 00591180
-    FCOMP double ptr [0x005f70b1]       ; 00591183 | DAT_005f70b1
+    FCOMP double ptr [0x005f70b1]       ; 00591183 | g_DOUBLE_005f70b1
     FNSTSW AX                           ; 00591189
     SAHF                                ; 0059118b
     JBE 0x005911c8                      ; 0059118c
         ;   XREF to: 005911c8 (CONDITIONAL_JUMP)  ; LAB_005911c8
     PUSH 0x0                            ; 0059118e
     PUSH EBX                            ; 00591190
-    CALL core_hero.cpp_FUN_004eb3e0     ; 00591191
-        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb3e0()
+    CALL core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0 ; 00591191
+        ;   XREF to: 004eb3e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004eb3e0(CHero * this_ptr, int ignore_lock)
     ADD ESP,0x8                         ; 00591196
     CMP EAX,0x5                         ; 00591199
     JA 0x005912a8                       ; 0059119c
@@ -142,7 +142,7 @@ section .text
     RET                                 ; 00591204
     PUSH EDI                            ; 00591205
         ;   Label: LAB_00591205
-    PUSH 0x5f7021                       ; 00591206 | s_eDoorMoveNone_returned_b_005f7020+1
+    PUSH 0x5f7021                       ; 00591206 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV EAX,[0x0061abc0]                ; 0059120b | g_CEditorToolsPtr
     PUSH EAX                            ; 00591210
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00591211
@@ -246,8 +246,8 @@ section .text
     RET                                 ; 00591313
     PUSH EBX                            ; 00591314
         ;   Label: LAB_00591314
-    CALL core_hero.cpp_FUN_004eb890     ; 00591315
-        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb890()
+    CALL core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890 ; 00591315
+        ;   XREF to: 004eb890 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPushNearbyBox_FUN_004eb890(CHero * this_ptr)
     ADD ESP,0x4                         ; 0059131a
     LEA ESI,[EBX + 0x158]               ; 0059131d
     TEST EAX,EAX                        ; 00591323
@@ -284,14 +284,14 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0059135d
     FLD float ptr [ESP + 0xc]           ; 00591361
     ADD ESP,0x8                         ; 00591365
-    FCOMP double ptr [0x005f70b9]       ; 00591368 | DAT_005f70b9
+    FCOMP double ptr [0x005f70b9]       ; 00591368 | g_DOUBLE_005f70b9
     FNSTSW AX                           ; 0059136e
     SAHF                                ; 00591370
     JBE 0x00591331                      ; 00591371
         ;   XREF to: 00591331 (CONDITIONAL_JUMP)  ; LAB_00591331
     PUSH EBX                            ; 00591373
-    CALL core_hero.cpp_FUN_004eb660     ; 00591374
-        ;   XREF to: 004eb660 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004eb660(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryPullLever_FUN_004eb660 ; 00591374
+        ;   XREF to: 004eb660 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryPullLever_FUN_004eb660(CHero * this_ptr)
     ADD ESP,0x4                         ; 00591379
     TEST EAX,EAX                        ; 0059137c
     JNZ 0x0059139a                      ; 0059137e

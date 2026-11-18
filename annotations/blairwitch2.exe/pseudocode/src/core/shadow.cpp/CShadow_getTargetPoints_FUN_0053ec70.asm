@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_0053ec70(CShadow *this_ptr,undefined4 *param_2)
+; int __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_0053ec70(CShadow *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CShadow *        Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
+; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00546a90

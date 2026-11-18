@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_heroCanSee_005d3d1d
-;   undefined4 DAT_0061b4d0
+;   CEventList* g_CEventListPtr = 01c51d80
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0
@@ -31,7 +31,7 @@ section .text
     RET                                 ; 00415741
     PUSH 0x5d3d1d                       ; 00415742 | = "heroCanSee"
         ;   Label: LAB_00415742
-    MOV ECX,dword ptr [0x0061b4d0]      ; 00415747 | DAT_0061b4d0
+    MOV ECX,dword ptr [0x0061b4d0]      ; 00415747 | g_CEventListPtr
     PUSH ECX                            ; 0041574d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30 ; 0041574e
         ;   XREF to: 004a6c30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList * this_ptr, char * condition_expression)

@@ -7,8 +7,8 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004ee1a0 at 004ee3c9
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee76c
+;   core_menu.cpp_showOptionsScreen_FUN_004ee1a0 at 004ee3c9
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055ace0
 ;
 ; Called Functions:

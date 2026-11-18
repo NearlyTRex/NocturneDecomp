@@ -10,21 +10,21 @@
 ; Referenced Globals:
 ;   TerminatedCString s_werewolf_die_wav_005d942c
 ;   TerminatedCString s_werewolf_hurt_wav_005d943e
-;   undefined4 DAT_005d9451
-;   undefined4 DAT_005d9459
-;   undefined4 DAT_005d9461
-;   undefined4 DAT_005fc5a0
+;   double g_DOUBLE_005d9451 = 2
+;   double g_DOUBLE_005d9459 = 5
+;   double g_DOUBLE_005d9461 = -5
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_tawiscara.cpp_FUN_00595710
+;   core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -100,7 +100,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00596054
     FLD float ptr [EAX + 0x20]          ; 00596057
     FST double ptr [ESP]                ; 0059605a
-    FCOMP double ptr [0x005d9459]       ; 0059605d | DAT_005d9459
+    FCOMP double ptr [0x005d9459]       ; 0059605d | g_DOUBLE_005d9459
     FNSTSW AX                           ; 00596063
     SAHF                                ; 00596065
     JBE 0x00596167                      ; 00596066
@@ -145,8 +145,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 005960d4
         ;   Label: LAB_005960d4
     PUSH EDI                            ; 005960d7
-    CALL core_tawiscara.cpp_FUN_00595710 ; 005960d8
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710 ; 005960d8
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; void core_tawiscara.cpp_CTawiscara_playHowl_FUN_00595710(CTawiscara * this_ptr)
     ADD ESP,0x4                         ; 005960dd
     PUSH 0x1                            ; 005960e0
     PUSH 0x16                           ; 005960e2
@@ -171,7 +171,7 @@ section .text
         ;   Label: LAB_00596107
     ADD EAX,0x1c                        ; 0059610a
     FLD ST0                             ; 0059610d
-    FMUL double ptr [0x005d9451]        ; 0059610f | DAT_005d9451
+    FMUL double ptr [0x005d9451]        ; 0059610f | g_DOUBLE_005d9451
     PUSH EAX                            ; 00596115
     MOV ESI,dword ptr [EBP + 0x14]      ; 00596116
     LEA EDI,[ESP + 0xc]                 ; 00596119
@@ -179,8 +179,8 @@ section .text
     FSTP ST1                            ; 0059611e
     LEA ESI,[ESP + 0x1c]                ; 00596120
     FSTP float ptr [EAX + -0x18]        ; 00596124
-    CALL core_actor.cpp_FUN_00408b80    ; 00596127
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 00596127
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x1c]                ; 0059612c
     ADD ESP,0x8                         ; 00596130
     XOR EBX,EBX                         ; 00596133
@@ -196,7 +196,7 @@ section .text
     PUSH 0x0                            ; 00596146
     LEA EAX,[ESP + 0x1c]                ; 00596148
     PUSH EAX                            ; 0059614c
-    MOV ECX,dword ptr [0x005fc5a0]      ; 0059614d | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 0059614d | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 00596153
     INC EBX                             ; 00596154
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0 ; 00596155
@@ -209,7 +209,7 @@ section .text
         ;   XREF to: 00595fd0 (UNCONDITIONAL_JUMP)  ; LAB_00595fd0
     FLD double ptr [ESP]                ; 00596167
         ;   Label: LAB_00596167
-    FCOMP double ptr [0x005d9461]       ; 0059616a | DAT_005d9461
+    FCOMP double ptr [0x005d9461]       ; 0059616a | g_DOUBLE_005d9461
     FNSTSW AX                           ; 00596170
     SAHF                                ; 00596172
     JNC 0x00596076                      ; 00596173

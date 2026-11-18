@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005764b0(CCryptVessel *this_ptr)
 
 {
@@ -41,7 +39,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005764b0(CCryptVessel *this_
     *(uint *)((int)&stack0xffffffe8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
          *(uint *)(&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
     if (SQRT(fStack_18 * fStack_18 + fStack_20 * fStack_20 + fStack_1c * fStack_1c) <
-        (float)_DAT_005d7097) {
+        (float)0.5) {
       (pCVar2->position).x = (pCVar1->position).x;
       (this_ptr->base).location.position.y = (pCVar4->base).location.position.y;
       (this_ptr->base).location.position.z = (pCVar4->base).location.position.z;

@@ -7,15 +7,15 @@
 ; CElephantGun *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bd9dc
-;   undefined4 DAT_005bd9e0
-;   undefined4 DAT_005f2afc
-;   undefined4 DAT_005fc5a0
-;   undefined4 DAT_01bdd7e4
+;   float g_FLOAT_005bd9dc = 3.141593
+;   float g_FLOAT_005bd9e0 = 0.005555556
+;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
+;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
+;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
 ;   core_fire.cpp_CFireEffect_createLaserCone_FUN_004a2b10
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;
@@ -32,8 +32,8 @@ section .text
     SUB ESP,0xb0                        ; 004876d6
     AND ESP,0xfffffff8                  ; 004876dc
     MOV EBX,dword ptr [EBP + 0x14]      ; 004876df
-    MOV EDX,dword ptr [0x005f2afc]      ; 004876e2 | DAT_005f2afc
-    PUSH EDX                            ; 004876e8 | DAT_01bdd7e4
+    MOV EDX,dword ptr [0x005f2afc]      ; 004876e2 | g_CDemonRenderer_PTR_005f2afc
+    PUSH EDX                            ; 004876e8 | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540 ; 004876e9
         ;   XREF to: 0046d540 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004876ee
@@ -62,8 +62,8 @@ section .text
     PUSH EBX                            ; 00487726
     LEA ESI,[ESP + 0x14]                ; 00487727
     LEA EDI,[ESP + 0x8]                 ; 0048772b
-    CALL core_actor.cpp_FUN_00408b80    ; 0048772f
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0048772f
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     LEA ESI,[ESP + 0x14]                ; 00487734
     ADD ESP,0x8                         ; 00487738
     MOVSD ES:EDI,ESI                    ; 0048773b
@@ -79,8 +79,8 @@ section .text
     PUSH EBX                            ; 0048775a
     MOV dword ptr [ESP + 0x38],ECX      ; 0048775b
     MOV dword ptr [ESP + 0x3c],ECX      ; 0048775f
-    CALL core_actor.cpp_FUN_00408b00    ; 00487763
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 00487763
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 00487768
     LEA ESI,[ESP + 0x9c]                ; 0048776b
     FLD float ptr [ESP]                 ; 00487772
@@ -169,8 +169,8 @@ section .text
     FSTP float ptr [ESP + 0x50]         ; 0048786f
     FLD float ptr [EBX + 0x594]         ; 00487873
         ;   Label: LAB_00487873
-    FMUL float ptr [0x005bd9dc]         ; 00487879 | DAT_005bd9dc
-    FMUL float ptr [0x005bd9e0]         ; 0048787f | DAT_005bd9e0
+    FMUL float ptr [0x005bd9dc]         ; 00487879 | g_FLOAT_005bd9dc
+    FMUL float ptr [0x005bd9e0]         ; 0048787f | g_FLOAT_005bd9e0
     SUB ESP,0x4                         ; 00487885
     FSTP float ptr [ESP]                ; 00487888
     PUSH 0x0                            ; 0048788b
@@ -181,7 +181,7 @@ section .text
     PUSH EAX                            ; 0048789d
     LEA EAX,[ESP + 0x18]                ; 0048789e
     PUSH EAX                            ; 004878a2
-    MOV ECX,dword ptr [0x005fc5a0]      ; 004878a3 | DAT_005fc5a0
+    MOV ECX,dword ptr [0x005fc5a0]      ; 004878a3 | g_CFireEffect_PTR_005fc5a0
     PUSH ECX                            ; 004878a9
     LEA EDI,[ESP + 0x38]                ; 004878aa
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_004a2b10 ; 004878ae

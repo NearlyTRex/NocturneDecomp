@@ -6,12 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint * FUN_005c4a88(void)
 
 {
   uint *puVar1;
+  int dwTlsIndex;
   DWORD DVar2;
   uint *lpTlsValue;
   uint uVar3;
@@ -23,11 +22,11 @@ uint * FUN_005c4a88(void)
   bVar7 = 0;
   (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2d0)();
   DVar2 = GetCurrentThreadId();
-  for (puVar1 = _DAT_026810b0; (puVar1 != (uint *)0x0 && (DVar2 != puVar1[1]));
+  for (puVar1 = (uint *)g_PTR_026810b0; (puVar1 != (uint *)0x0 && (DVar2 != puVar1[1]));
       puVar1 = (uint *)*puVar1) {
   }
   if (puVar1[3] == 0) {
-    lpTlsValue = (uint *)calloc(1,0x000000F4);
+    lpTlsValue = (uint *)calloc(1,g_RuntimeBufferSize);
     if (lpTlsValue == (uint *)0x0) {
       FUN_005c1c20("Unable to resize thread-specific data\r\n",1);
     }
@@ -47,17 +46,17 @@ uint * FUN_005c4a88(void)
     puVar1[3] = 1;
   }
   else {
-    lpTlsValue = (uint *)realloc((void *)puVar1[2],0x000000F4);
+    lpTlsValue = (uint *)realloc((void *)puVar1[2],g_RuntimeBufferSize);
     if (lpTlsValue == (uint *)0x0) {
       FUN_005c1c20("Unable to resize thread-specific data\r\n",1);
     }
   }
   puVar1[2] = lpTlsValue;
-  lpTlsValue[0x3c] = 0x000000F4;
-  DVar2 = DAT_0061f2a0;
+  lpTlsValue[0x3c] = g_RuntimeBufferSize;
+  dwTlsIndex = g_INT_0061f2a0;
   *(byte *)((int)lpTlsValue + 0x52) = 1;
   *(byte *)((int)lpTlsValue + 0x53) = 0;
-  TlsSetValue(DVar2,lpTlsValue);
+  TlsSetValue(dwTlsIndex,lpTlsValue);
   (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2d4)();
   return lpTlsValue;
 }

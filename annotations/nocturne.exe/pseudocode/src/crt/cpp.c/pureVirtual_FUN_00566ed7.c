@@ -9,10 +9,10 @@
 void pureVirtual(void)
 
 {
-  if (DAT_005c1f4c != 0) {
+  if (g_PureVirtualCallFlag != 0) {
     return;
   }
-  DAT_005c1f4c = 1;
+  g_PureVirtualCallFlag = 1;
   reportPureVirtualError("pure virtual function called!",1);
   return;
 }

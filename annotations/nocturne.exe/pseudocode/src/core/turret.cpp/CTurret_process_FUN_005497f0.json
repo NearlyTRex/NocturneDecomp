@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 506,
+    "complexity_score": 481,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 191,
-    "suspect_count": 29,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "stack_alignment_array",
       "unrolled_memcpy"
     ],
@@ -150,9 +149,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "01cc4800",
@@ -224,13 +223,13 @@
       "addr": "0057e760",
       "by": "name",
       "class": "logic-change",
-      "ratio": 0.5463
+      "ratio": 0.9447
     },
     "bw1.exe": {
       "addr": "005a23b0",
       "by": "name",
       "class": "logic-change",
-      "ratio": 0.5463
+      "ratio": 0.9447
     },
     "nocedit.exe": {
       "addr": "005e2430",
@@ -481,22 +480,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x1c03a10 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 66,
-      "match": "0x1c03a10",
-      "severity": "moderate",
-      "text": "pCVar4 = 0x01C03A10;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c03a10 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 82,
-      "match": "0x1c03a10",
-      "severity": "moderate",
-      "text": "pCVar4 = 0x01C03A10;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",

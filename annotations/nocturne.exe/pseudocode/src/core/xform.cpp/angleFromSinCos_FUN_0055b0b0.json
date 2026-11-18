@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 45,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 126
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 125
   },
   "cross_references": [],
   "function": {
@@ -43,45 +41,45 @@
   "globals": [
     {
       "addr": "0059825e",
-      "name": "DAT_0059825e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_0059825e",
+      "type": "double",
+      "value": "0.707000000000000"
     },
     {
       "addr": "00598266",
-      "name": "DAT_00598266",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_00598266",
+      "type": "double",
+      "value": "-0.707000000000000"
     },
     {
       "addr": "0059826e",
-      "name": "DAT_0059826e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_0059826e",
+      "type": "double",
+      "value": "-1"
     },
     {
       "addr": "00598276",
-      "name": "DAT_00598276",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_00598276",
+      "type": "double",
+      "value": "3.14159265359000"
     },
     {
       "addr": "0059827e",
-      "name": "DAT_0059827e",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_0059827e",
+      "type": "double",
+      "value": "-3.14159265359000"
     },
     {
       "addr": "00598286",
-      "name": "DAT_00598286",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_00598286",
+      "type": "float",
+      "value": "6.283185"
     },
     {
       "addr": "0059828a",
-      "name": "DAT_0059828a",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059828a",
+      "type": "float",
+      "value": "-6.283185"
     }
   ],
   "param_estimates": {
@@ -209,14 +207,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

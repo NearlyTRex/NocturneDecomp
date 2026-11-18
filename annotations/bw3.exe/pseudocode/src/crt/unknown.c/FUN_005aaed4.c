@@ -29,7 +29,7 @@ int __cdecl FUN_005aaed4(char *filename,WatcomStat *file_info)
   
   bVar1 = false;
   if ((*filename == '\0') ||
-     (iVar3 = FUN_005aede0(filename,&DAT_005da884), iVar3 != 0)) {
+     (iVar3 = FUN_005aede0(filename,"*?"), iVar3 != 0)) {
     setErrno(1);
     iVar3 = -1;
   }
@@ -37,8 +37,8 @@ int __cdecl FUN_005aaed4(char *filename,WatcomStat *file_info)
     FUN_005acb10((char *)local_124,0x104);
     pcVar4 = _fullpath(&local_228,filename,0x104);
     if ((pcVar4 != (char *)0x0) &&
-       ((((((&DAT_006074b8)[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&
-         (local_226 == '\\')) && (local_225 == '\0')))) {
+       (((((g_CharacterClassificationTable[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')
+          ) && (local_226 == '\\')) && (local_225 == '\0')))) {
       bVar1 = true;
     }
     pcVar5 = (char *)FUN_005aca00(filename);
@@ -47,11 +47,11 @@ int __cdecl FUN_005aaed4(char *filename,WatcomStat *file_info)
       pcVar4 = filename + 2;
     }
     if ((((*pcVar4 == '\\') || (*pcVar4 == '/')) && (pcVar4[1] == '\0')) || (bVar1)) {
-      iVar3 = FUN_005a55b0(filename);
+      iVar3 = chdir(filename);
       if (iVar3 != 0) {
         return -1;
       }
-      FUN_005a55b0((char *)local_124);
+      chdir((char *)local_124);
       memset(&local_368,0,0x13e);
       local_368.dwFileAttributes = 0x10;
     }

@@ -52,7 +52,7 @@
 
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoundDevice *this_ptr,CSfxSlot *slot);
 int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
-void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340(CDirectSoundDevice *this_ptr);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_005b0340(CDirectSoundDevice *this_ptr,float volume,float decay_time,float damping);
 int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390(UINT device_id,SSoundDeviceInfo *device_info);
 CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(UINT device_id);
 void __cdecl sound_sndwav_cpp_staticInit_FUN_005b0670(void);
@@ -62,7 +62,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_005b0840(CWavOutDevice *thi
 int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_005b08f0(CWavOutDevice *this_ptr);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_005b09c0(CWavOutDevice *this_ptr);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size);
-int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice *this_ptr,short *output_buffer,int num_samples);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice *this_ptr);
 int __cdecl sound_sndwav_cpp_getWavInBufferSizeBytes_FUN_005b0c90(void);
 int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index);
 int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_005b0d70(CWavInDevice *this_ptr);
@@ -79,13 +79,13 @@ void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660(CWavOu
 void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top,double x_right,double y_right,double z_right);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680(CWavOutDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690(CWavOutDevice *this_ptr,double distance_in_feet);
-void __cdecl sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0(CWavOutDevice *this_ptr);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_setReverb_FUN_005b16a0(CWavOutDevice *this_ptr,float volume,float decay_time,float damping);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSample_FUN_005b16b0(CWavOutDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_005b16c0(CWavOutDevice *this_ptr,int buffer_id);
 void * __cdecl sound_sndwav_cpp_CWavOutDevice_lockSample_FUN_005b16d0(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
-void __cdecl sound_sndwav_cpp_CWavOutDevice_unlockSample_FUN_005b16e0(CWavOutDevice *this_ptr,int buffer_id);
+void __cdecl sound_sndwav_cpp_CWavOutDevice_unlockSample_FUN_005b16e0(CWavOutDevice *this_ptr,int buffer_id,int offset,int size);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_005b16f0(CWavOutDevice *this_ptr,int sample_buffer_id);
-int __cdecl sound_sndwav_cpp_CWavOutDevice_setSfxPos_FUN_005b1700(CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags);
+int __cdecl sound_sndwav_cpp_CWavOutDevice_applySfxChanges_FUN_005b1700(CWavOutDevice *this_ptr,CSfxSlot *slot,int update_flags);
 double __cdecl sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_005b1710(CWavOutDevice *this_ptr,CSfxSlot *slot);
 int __cdecl sound_sndwav_cpp_CWavOutDevice_startSfx_FUN_005b1730(CWavOutDevice *this_ptr,CSfxSlot *slot);
 void __cdecl sound_sndwav_cpp_CWavOutDevice_killSfx_FUN_005b1740(CWavOutDevice *this_ptr,CSfxSlot *slot);
@@ -120,7 +120,7 @@ void __cdecl core_sound_cpp_CSound_killSound_FUN_005b3b90(CSound *this_ptr,uint 
 float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(CSound *this_ptr,char *sound_name);
 int __cdecl core_sound_cpp_CSound_getReverbPresetCount_FUN_005b3c60(CSound *this_ptr);
 char * __cdecl core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(CSound *this_ptr,int sound_mode_index);
-void __cdecl core_sound_cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z);
+void __cdecl core_sound_cpp_CSound_setReverb_FUN_005b3c90(CSound *this_ptr,float volume,float decay_time,float damping);
 void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound *this_ptr,int index);
 int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound *this_ptr,char *title,int *selection_inout);
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_005b3dc0(CSound *this_ptr,float target_volume,float fade_time);

@@ -7,15 +7,15 @@
 ; CExorcism *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 s_wp_nomana_wav_005bdd64+2
+;   TerminatedCString s_wp_nomana_wav_005bdd66
 ;   TerminatedCString s_wp_exorcism_wav_5_005bdd74
-;   undefined4 DAT_005bdd8e
+;   double g_DOUBLE_005bdd8e = 1.5
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 DAT_006045f8
+;   CSound* g_CSound_PTR_006045f8 = 02cf5680
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_01c6e35c
+;   uint g_UINT_01c6e35c
 ;   undefined4 g_CFlameCanClassInfo.name_hash
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -26,17 +26,17 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_00408b80
-;   core_crate.cpp_FUN_004461c0
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408b00
+;   core_crate.cpp_CCrate_explode_FUN_004461c0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
-;   core_glass.cpp_FUN_004cc040
+;   core_glass.cpp_CGlass_shatter_FUN_004cc040
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
+;   core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
 ;   core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_0053ebd0
-;   core_setcolid.cpp_FUN_0053ccc0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0056ede0
 ;   core_trigger.cpp_CTrigger_applyDamage_FUN_0056ee20
@@ -72,8 +72,8 @@ section .text
     PUSH ECX                            ; 0048b062
     LEA ESI,[ESP + 0x88]                ; 0048b063
     LEA EDI,[ESP + 0x34]                ; 0048b06a
-    CALL core_actor.cpp_FUN_00408b80    ; 0048b06e
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80 ; 0048b06e
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408b80(CDemonActor * this_ptr, CVector3f * input_local_point, CVector3f * output_world_point)
     ADD ESP,0x8                         ; 0048b073
     LEA ESI,[ESP + 0x80]                ; 0048b076
     MOV EAX,dword ptr [EBP + 0x14]      ; 0048b07d
@@ -96,7 +96,7 @@ section .text
     CMP dword ptr [EAX + 0x59c],0x0     ; 0048b0ab
     JNZ 0x0048b484                      ; 0048b0b2
         ;   XREF to: 0048b484 (CONDITIONAL_JUMP)  ; LAB_0048b484
-    MOV EBX,dword ptr [0x01c6e35c]      ; 0048b0b8 | DAT_01c6e35c
+    MOV EBX,dword ptr [0x01c6e35c]      ; 0048b0b8 | g_UINT_01c6e35c
         ;   Label: LAB_0048b0b8
     PUSH EBX                            ; 0048b0be
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 0048b0bf
@@ -135,8 +135,8 @@ section .text
     PUSH ESI                            ; 0048b126
     LEA ESI,[ESP + 0x40]                ; 0048b127
     MOV dword ptr [ESP + 0x60],ECX      ; 0048b12b
-    CALL core_actor.cpp_FUN_00408b00    ; 0048b12f
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408b00 ; 0048b12f
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input, CVector3f * output)
     ADD ESP,0x8                         ; 0048b134
     LEA ESI,[ESP + 0x38]                ; 0048b137
     FLD float ptr [ESP + 0x2c]          ; 0048b13b
@@ -163,7 +163,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0048b178
     MOVSD ES:EDI,ESI                    ; 0048b179
     FLD float ptr [EAX + 0x2e8]         ; 0048b17a
-    FDIVR double ptr [0x005bdd8e]       ; 0048b180 | DAT_005bdd8e
+    FDIVR double ptr [0x005bdd8e]       ; 0048b180 | g_DOUBLE_005bdd8e
     FLD float ptr [ESP + 0x74]          ; 0048b186
     FXCH                                ; 0048b18a
     FSTP float ptr [ESP + 0xa4]         ; 0048b18c
@@ -238,8 +238,8 @@ section .text
     PUSH EAX                            ; 0048b26c
     MOV ECX,dword ptr [0x00603b28]      ; 0048b26d | g_CDemonSetPtr
     PUSH ECX                            ; 0048b273 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ccc0 ; 0048b274
-        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053ccc0()
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0 ; 0048b274
+        ;   XREF to: 0053ccc0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0053ccc0(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0xc0],EAX      ; 0048b279
     FLD float ptr [ESP + 0xc0]          ; 0048b280
     ADD ESP,0xc                         ; 0048b287
@@ -401,9 +401,9 @@ section .text
     LEA EAX,[ESP + 0x2c]                ; 0048b455
         ;   Label: LAB_0048b455
     PUSH EAX                            ; 0048b459
-    PUSH 0x5bdd66                       ; 0048b45a | s_wp_nomana_wav_005bdd64+2
+    PUSH 0x5bdd66                       ; 0048b45a | = "wp_nomana.wav"
     PUSH EBX                            ; 0048b45f
-    MOV EDI,dword ptr [0x006045f8]      ; 0048b460 | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0048b460 | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0048b466
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0048b467
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -431,12 +431,12 @@ section .text
     PUSH 0x5bdd74                       ; 0048b495 | = "wp_exorcism.wav @ .5"
     MOV ESI,dword ptr [EBP + 0x14]      ; 0048b49a
     PUSH ESI                            ; 0048b49d
-    MOV EDI,dword ptr [0x006045f8]      ; 0048b49e | DAT_006045f8
+    MOV EDI,dword ptr [0x006045f8]      ; 0048b49e | g_CSound_PTR_006045f8
     PUSH EDI                            ; 0048b4a4
     CALL core_sound.cpp_CSound_playActorSound_FUN_005609d0 ; 0048b4a5
         ;   XREF to: 005609d0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005609d0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0048b4aa
-    MOV [0x01c6e35c],EAX                ; 0048b4ad | DAT_01c6e35c
+    MOV [0x01c6e35c],EAX                ; 0048b4ad | g_UINT_01c6e35c
     JMP 0x0048b0cf                      ; 0048b4b2
         ;   XREF to: 0048b0cf (UNCONDITIONAL_JUMP)  ; LAB_0048b0cf
     PUSH ESI                            ; 0048b4b7
@@ -479,8 +479,8 @@ section .text
     ADD EAX,0x14d138                    ; 0048b507
     PUSH EAX                            ; 0048b50c | g_CDemonSetInstance.collision_impact_position.x
     PUSH ESI                            ; 0048b50d
-    CALL core_glass.cpp_FUN_004cc040    ; 0048b50e
-        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004cc040()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004cc040 ; 0048b50e
+        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004cc040(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 0048b513
     JMP 0x0048b581                      ; 0048b516
         ;   XREF to: 0048b581 (UNCONDITIONAL_JUMP)  ; LAB_0048b581
@@ -522,8 +522,8 @@ section .text
         ;   XREF to: 0048b581 (UNCONDITIONAL_JUMP)  ; LAB_0048b581
     PUSH EDI                            ; 0048b578
         ;   Label: LAB_0048b578
-    CALL core_crate.cpp_FUN_004461c0    ; 0048b579
-        ;   XREF to: 004461c0 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_FUN_004461c0(CCrate * this_ptr)
+    CALL core_crate.cpp_CCrate_explode_FUN_004461c0 ; 0048b579
+        ;   XREF to: 004461c0 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_explode_FUN_004461c0(CCrate * this_ptr)
     ADD ESP,0x4                         ; 0048b57e
     MOV ECX,dword ptr [ESP + 0xac]      ; 0048b581
         ;   Label: LAB_0048b581

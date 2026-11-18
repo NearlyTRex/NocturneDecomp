@@ -5,13 +5,17 @@
 // Function prototypes for engine/texture.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_texture.cpp_CTextureCache_ctor_FUN_00573940
+// Address: 00573940
+CTextureCache * __cdecl CTextureCache::ctor(CTextureCache *this_ptr);
+
 // Original: engine_texture.cpp_CTextureCache_reset_FUN_005739a0
 // Address: 005739a0
 void __cdecl CTextureCache::reset(CTextureCache *this_ptr);
 
-// Original: engine_texture.cpp_FUN_005739b0
+// Original: engine_texture.cpp_CTextureCache_freeTextures_FUN_005739b0
 // Address: 005739b0
-void __cdecl FUN_005739b0(CTextureCache *this_ptr);
+void __cdecl CTextureCache::freeTextures(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00573a60
 // Address: 00573a60
@@ -21,85 +25,85 @@ int __cdecl CTextureCache::findFreeSlot(CTextureCache *this_ptr);
 // Address: 00573b80
 int __cdecl CTextureCache::loadTexture(CTextureCache *this_ptr,char *texture_name);
 
-// Original: engine_texture.cpp_FUN_00574240
+// Original: engine_texture.cpp_CTextureCache_addPalettedTexture_FUN_00574240
 // Address: 00574240
-int FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6);
+int __cdecl CTextureCache::addPalettedTexture(CTextureCache *this_ptr,char *texture_name,int dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
 
-// Original: engine_texture.cpp_FUN_005742b0
+// Original: engine_texture.cpp_CTextureCache_addTrueColorTexture_FUN_005742b0
 // Address: 005742b0
-int FUN_005742b0(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4);
+int __cdecl CTextureCache::addTrueColorTexture(CTextureCache *this_ptr,char *texture_name,int dimension,uchar *true_color_data);
 
-// Original: engine_texture.cpp_FUN_00574310
+// Original: engine_texture.cpp_CTextureCache_replacePalettedTexture_FUN_00574310
 // Address: 00574310
-void FUN_00574310(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void __cdecl CTextureCache::replacePalettedTexture(CTextureCache *this_ptr,SMRGLTextureBasic *texture,int dimension,uchar *texture_data ,uchar *palette_data,uchar *opacity_data);
 
-// Original: engine_texture.cpp_FUN_005743e0
+// Original: engine_texture.cpp_CTextureCache_replaceTrueColorTexture_FUN_005743e0
 // Address: 005743e0
-void FUN_005743e0(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CTextureCache::replaceTrueColorTexture(CTextureCache *this_ptr,SMRGLTextureBasic *texture,int dimension,uchar *true_color_data);
 
-// Original: engine_texture.cpp_FUN_00574490
+// Original: engine_texture.cpp_CTextureCache_findTexture_FUN_00574490
 // Address: 00574490
-int FUN_00574490(int param_1,int param_2,char *param_3);
+int __cdecl CTextureCache::findTexture(CTextureCache *this_ptr,int hint_index,char *texture_name);
 
-// Original: engine_texture.cpp_FUN_00574520
+// Original: engine_texture.cpp_CTextureCache_setupTexture_FUN_00574520
 // Address: 00574520
-void FUN_00574520(int param_1,int param_2,int param_3);
+void __cdecl CTextureCache::setupTexture(CTextureCache *this_ptr,SMRGLTextureBasic *texture,int upload_mode);
 
-// Original: engine_texture.cpp_FUN_00574a00
+// Original: engine_texture.cpp_CTextureCache_selectTextureByHandle_FUN_00574a00
 // Address: 00574a00
-void FUN_00574a00(int param_1,int param_2);
+void __cdecl CTextureCache::selectTextureByHandle(CTextureCache *this_ptr,SMRGLTextureBasic *texture);
 
-// Original: engine_texture.cpp_FUN_00574a80
+// Original: engine_texture.cpp_CTextureCache_uploadTexture_FUN_00574a80
 // Address: 00574a80
-void FUN_00574a80(int param_1,int param_2);
+void __cdecl CTextureCache::uploadTexture(CTextureCache *this_ptr,SMRGLTextureBasic *texture);
 
 // Original: engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_00574af0
 // Address: 00574af0
 int __cdecl CTextureCache::getTextureCacheStats(CTextureCache *this_ptr,char *output_buffer);
 
-// Original: engine_texture.cpp_FUN_00574bc0
+// Original: engine_texture.cpp_CTextureCache_printTextureList_FUN_00574bc0
 // Address: 00574bc0
-void FUN_00574bc0(void);
+void __cdecl CTextureCache::printTextureList(CTextureCache *this_ptr,void *file,int dimension);
 
-// Original: engine_texture.cpp_FUN_00574ce0
+// Original: engine_texture.cpp_CTextureCache_renderAllTextures_FUN_00574ce0
 // Address: 00574ce0
-void FUN_00574ce0(int param_1);
+void __cdecl CTextureCache::renderAllTextures(CTextureCache *this_ptr);
 
-// Original: engine_texture.cpp_FUN_00574d50
+// Original: engine_texture.cpp_initTextureCache_FUN_00574d50
 // Address: 00574d50
-void FUN_00574d50(void);
+CTextureCache * __cdecl initTextureCache(void);
 
 // Original: engine_texture.cpp_freeTextureCache_FUN_00574db0
 // Address: 00574db0
 void __cdecl freeTextureCache(void);
 
-// Original: engine_texture.cpp_FUN_00574e00
+// Original: engine_texture.cpp_ensureTextureLoaded_FUN_00574e00
 // Address: 00574e00
-int FUN_00574e00(int param_1);
+SMRGLHeaderExtended * __cdecl ensureTextureLoaded(SMRGLTextureBasic *texture);
 
 // Original: engine_texture.cpp_loadTextureAndGetData_FUN_00574e80
 // Address: 00574e80
 SMRGLHeaderExtended * __cdecl loadTextureAndGetData(SMRGLTextureBasic *texture_info);
 
-// Original: engine_texture.cpp_FUN_00574ea0
+// Original: engine_texture.cpp_storePalettedTexture_FUN_00574ea0
 // Address: 00574ea0
-void FUN_00574ea0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl storePalettedTexture(SMRGLTextureBasic *texture,int dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
 
-// Original: engine_texture.cpp_FUN_00574f60
+// Original: engine_texture.cpp_storeTrueColorTexture_FUN_00574f60
 // Address: 00574f60
-void FUN_00574f60(void);
+void __cdecl storeTrueColorTexture(SMRGLTextureBasic *texture,int dimension,uchar *true_color_data);
 
-// Original: engine_texture.cpp_FUN_00575010
+// Original: engine_texture.cpp_clearTextureCache_FUN_00575010
 // Address: 00575010
-void FUN_00575010(void);
+void __cdecl clearTextureCache(void);
 
 // Original: engine_texture.cpp_updateTextureWithPalette_FUN_00575040
 // Address: 00575040
 void __cdecl updateTextureWithPalette(SMRGLTextureBasic *texture);
 
-// Original: engine_texture.cpp_FUN_00575070
+// Original: engine_texture.cpp_loadAndUpdateTexture_FUN_00575070
 // Address: 00575070
-void __cdecl FUN_00575070(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
+void __cdecl loadAndUpdateTexture(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 
 // Original: engine_texture.cpp_enableTextureFiltering_FUN_005750a0
 // Address: 005750a0
@@ -109,18 +113,18 @@ void __cdecl enableTextureFiltering(int enabled);
 // Address: 005750b0
 void __cdecl getTextureCacheStats(char *output_buffer);
 
-// Original: engine_texture.cpp_FUN_005750d0
+// Original: engine_texture.cpp_renderTextureAtlas_FUN_005750d0
 // Address: 005750d0
-void FUN_005750d0(void);
+void __cdecl renderTextureAtlas(void);
 
 // Original: engine_texture.cpp_getCurrentTexture_FUN_005750e0
 // Address: 005750e0
 SMRGLTextureBasic * __cdecl getCurrentTexture(void);
 
-// Original: engine_texture.cpp_FUN_00575140
+// Original: engine_texture.cpp_freezeTextureCache_FUN_00575140
 // Address: 00575140
-void FUN_00575140(void);
+void __cdecl freezeTextureCache(void);
 
-// Original: engine_texture.cpp_FUN_00575150
+// Original: engine_texture.cpp_cacheTextureAtFullSize_FUN_00575150
 // Address: 00575150
-void FUN_00575150(void);
+void __cdecl cacheTextureAtFullSize(SMRGLTextureBasic *texture,char *filename);

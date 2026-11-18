@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 91,
+    "complexity_score": 40,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 137
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -45,7 +42,7 @@
     {
       "addr": "004a1d00",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_004a1d00"
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004a1d00"
     },
     {
       "addr": "00445430",
@@ -56,8 +53,8 @@
   "globals": [
     {
       "addr": "005dcd8e",
-      "name": "DAT_005dcd8e",
-      "type": "undefined4",
+      "name": "s_s_005dcd8e",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -68,8 +65,8 @@
     },
     {
       "addr": "00626114",
-      "name": "DAT_00626114",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -80,14 +77,14 @@
     },
     {
       "addr": "01c56ecc",
-      "name": "DAT_01c56ecc",
-      "type": "undefined4",
+      "name": "g_EventDryRun",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c56ed0",
-      "name": "DAT_01c56ed0",
-      "type": "undefined4",
+      "name": "g_EventErrorMessageBuffer",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -205,38 +202,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "while (((&DAT_00626114)[(byte)(*command_string + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00626114",
-      "severity": "mild",
-      "text": "(((&DAT_00626114)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005dcd8e",
-      "severity": "mild",
-      "text": "engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,&DAT_005dcd8e);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

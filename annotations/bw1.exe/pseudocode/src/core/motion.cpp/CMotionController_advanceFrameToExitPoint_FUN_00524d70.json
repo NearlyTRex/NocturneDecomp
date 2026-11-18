@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 169,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
     "total_lines": 243
@@ -44,15 +43,15 @@
   "globals": [
     {
       "addr": "005eaf73",
-      "name": "DAT_005eaf73",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005eaf73",
+      "type": "double",
+      "value": "-0.000100000000000000"
     },
     {
       "addr": "005eaf7b",
-      "name": "DAT_005eaf7b",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005eaf7b",
+      "type": "double",
+      "value": "0.00100000000000000"
     }
   ],
   "param_estimates": {
@@ -118,6 +117,12 @@
     "pcode_op_count": 1048
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00503bd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8687
+    },
     "bw3.exe": {
       "addr": "004fc680",
       "by": "name",
@@ -255,14 +260,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
     },
     {
       "description": "Complex pointer cast",

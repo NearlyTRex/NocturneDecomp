@@ -20,10 +20,10 @@
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046bd80 at 0046bfd2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c37788
-;   undefined4 DAT_01e61b58
-;   undefined4 DAT_0264bbf8
-;   undefined4 DAT_0264bbfc
+;   int g_INT_01c37788
+;   int g_RenderedTriangleCount
+;   void* g_PTR_0264bbf8
+;   void* g_PTR_0264bbfc
 ;
 ; *****************************************************************************
 
@@ -38,16 +38,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 0055f957
     MOV EDX,dword ptr [ESP + 0x28]      ; 0055f95b
     MOV EBP,dword ptr [ESP + 0x2c]      ; 0055f95f
-    CMP dword ptr [0x01c37788],0x0      ; 0055f963 | DAT_01c37788
+    CMP dword ptr [0x01c37788],0x0      ; 0055f963 | g_INT_01c37788
     JZ 0x0055fa48                       ; 0055f96a
         ;   XREF to: 0055fa48 (CONDITIONAL_JUMP)  ; LAB_0055fa48
-    MOV EAX,[0x01e61b58]                ; 0055f970 | DAT_01e61b58
-    MOV ESI,dword ptr [0x0264bbfc]      ; 0055f975 | DAT_0264bbfc
+    MOV EAX,[0x01e61b58]                ; 0055f970 | g_RenderedTriangleCount
+    MOV ESI,dword ptr [0x0264bbfc]      ; 0055f975 | g_PTR_0264bbfc
     ADD EAX,EBP                         ; 0055f97b
     TEST ESI,ESI                        ; 0055f97d
     JNZ 0x0055fa64                      ; 0055f97f
         ;   XREF to: 0055fa64 (CONDITIONAL_JUMP)  ; LAB_0055fa64
-    MOV [0x01e61b58],EAX                ; 0055f985 | DAT_01e61b58
+    MOV [0x01e61b58],EAX                ; 0055f985 | g_RenderedTriangleCount
     XOR EDI,EDI                         ; 0055f98a
     TEST EBP,EBP                        ; 0055f98c
     JLE 0x0055fa39                      ; 0055f98e
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 0055fa23
     ADD ESI,0x4                         ; 0055fa24
     INC EDI                             ; 0055fa27
-    CALL dword ptr [0x0264bbf8]         ; 0055fa28 | DAT_0264bbf8
+    CALL dword ptr [0x0264bbf8]         ; 0055fa28 | g_PTR_0264bbf8
     ADD ESP,0xc                         ; 0055fa2e
     CMP EDI,EBP                         ; 0055fa31
     JL 0x0055f996                       ; 0055fa33
@@ -139,8 +139,8 @@ section .text
     PUSH EBP                            ; 0055fa69
     PUSH EDX                            ; 0055fa6a
     PUSH EBX                            ; 0055fa6b
-    MOV [0x01e61b58],EAX                ; 0055fa6c | DAT_01e61b58
-    CALL dword ptr [0x0264bbfc]         ; 0055fa71 | DAT_0264bbfc
+    MOV [0x01e61b58],EAX                ; 0055fa6c | g_RenderedTriangleCount
+    CALL dword ptr [0x0264bbfc]         ; 0055fa71 | g_PTR_0264bbfc
     ADD ESP,0x10                        ; 0055fa77
     MOV EDX,EAX                         ; 0055fa7a
     MOV EAX,EDX                         ; 0055fa7c

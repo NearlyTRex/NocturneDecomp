@@ -9,6 +9,6 @@
 void FUN_005c5cf8(void)
 
 {
-  (*(code *)PTR_crt_unknown_c_FUN_005c68a8_0061f7f4)();
+  (*(code *)g_PTR_0061f7f4)();
   return;
 }

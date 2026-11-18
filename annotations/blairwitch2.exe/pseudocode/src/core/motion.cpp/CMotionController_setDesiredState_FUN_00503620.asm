@@ -8,27 +8,27 @@
 ; int              Stack[0x8]:4   desired_state_index
 ; int              Stack[0xc]:4   force_immediate
 ;
-; XREF[162]:
+; XREF[163]:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040fffb
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410040 at 00410064
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040faba
+;   core_basicene.cpp_CBasicEnemy_processAlertState_FUN_0059ec10 at 0059ed1a
 ;   core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0 at 0059ebf8
 ;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f0c7
+;   core_basicene.cpp_CBasicEnemy_processNothingState_FUN_0059ebc0 at 0059ebce
+;   core_basicene.cpp_CBasicEnemy_processPatrolState_FUN_0059ee00 at 0059ef19
 ;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f49a
-;   core_basicene.cpp_FUN_0059ebc0 at 0059ebce
-;   core_basicene.cpp_FUN_0059ec10 at 0059ed1a
-;   core_basicene.cpp_FUN_0059ee00 at 0059ef19
 ;   core_basicnpc.cpp_CBasicNPC_processDeathState_FUN_005a48a0 at 005a48b8
-;   ... and 152 more
+;   ... and 153 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005dfc48
 ;   TerminatedCString s_CMotionController_setDes_005dfc5b
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_00503470
 ;   core_motion.cpp_CMotionController_reverseTransition_FUN_00503560
 ;
@@ -80,10 +80,10 @@ section .text
     MOV ECX,0x5dfc48                    ; 0050366b | = "..\\core\\motion.cpp"
     MOV EDI,0x2a4                       ; 00503670
     PUSH 0x5dfc5b                       ; 00503675 | = "CMotionController::setDesiredState - ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0050367a | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00503680 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 00503686
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 0050367a | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDI      ; 00503680 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00503686
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050368b
     POP EDI                             ; 0050368e
     JMP 0x00503634                      ; 0050368f

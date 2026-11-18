@@ -19,7 +19,7 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame
     g_CurrentLineNumber = 2188;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::gameSettingsChanged - should only call this in server mode");
   }
-  INT_02f7c8c4 = INT_02f7c8c4 + 1;
+  g_NetNextPlayerId = g_NetNextPlayerId + 1;
   iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar1 = iVar1 / 0x12;
   iVar2 = iVar1 - g_LastPingTime;
@@ -34,7 +34,7 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame
   if (0 < this_ptr->player_count) {
     do {
       if (iVar3 == this_ptr->local_player_index) {
-        this_ptr->players[iVar3].player_id = INT_02f7c8c4;
+        this_ptr->players[iVar3].player_id = g_NetNextPlayerId;
       }
       else {
         this_ptr->players[iVar3].last_update_time = (g_CurrentGameTime + iVar2) - 0x1e0000;

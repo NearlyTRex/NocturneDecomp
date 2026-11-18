@@ -21,7 +21,7 @@
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50 at 0049ce5b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005f4dcc
+;   float g_FLOAT_005f4dcc = 256
 ;
 ; *****************************************************************************
 
@@ -37,16 +37,16 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 00441cd9
     LEA EBX,[EBP + -0x20]               ; 00441cdc
     FLD float ptr [EAX]                 ; 00441cdf
-    FMUL float ptr [0x005f4dcc]         ; 00441ce1 | DAT_005f4dcc
+    FMUL float ptr [0x005f4dcc]         ; 00441ce1 | g_FLOAT_005f4dcc
     FISTP dword ptr [EBX]               ; 00441ce7
     FLD float ptr [EAX + 0x4]           ; 00441ce9
-    FMUL float ptr [0x005f4dcc]         ; 00441cec | DAT_005f4dcc
+    FMUL float ptr [0x005f4dcc]         ; 00441cec | g_FLOAT_005f4dcc
     FISTP dword ptr [EBX + 0x4]         ; 00441cf2
     FLD float ptr [EAX + 0x8]           ; 00441cf5
-    FMUL float ptr [0x005f4dcc]         ; 00441cf8 | DAT_005f4dcc
+    FMUL float ptr [0x005f4dcc]         ; 00441cf8 | g_FLOAT_005f4dcc
     FISTP dword ptr [EBX + 0x8]         ; 00441cfe
     FLD float ptr [EBP + 0x1c]          ; 00441d01
-    FLD float ptr [0x005f4dcc]          ; 00441d07 | DAT_005f4dcc
+    FLD float ptr [0x005f4dcc]          ; 00441d07 | g_FLOAT_005f4dcc
     FMULP                               ; 00441d0d
     FIST dword ptr [EBP + 0xfffffff8]   ; 00441d0f
     FISTP dword ptr [EBP + 0xfffffffc]  ; 00441d15

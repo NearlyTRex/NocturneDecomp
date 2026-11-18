@@ -13,15 +13,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005cfa40
 ;   TerminatedCString s_CKeyFramedModel_buildCol_005cfa53
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
-;   undefined4 DAT_0265370c
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
+;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
-;   crt_unknown.c_FUN_005b7fce
+;   crt_unknown.c_free_FUN_005b7fce
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0044f762
     MOV EDX,dword ptr [EBX + 0x358]     ; 0044f766
     PUSH EDX                            ; 0044f76c
-    CALL crt_unknown.c_FUN_005b7fce     ; 0044f76d
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
+    CALL crt_unknown.c_free_FUN_005b7fce ; 0044f76d
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005b7fce(void * ptr)
     MOV dword ptr [EBX + 0x358],0x0     ; 0044f772
     ADD ESP,0x4                         ; 0044f77c
     MOV ECX,dword ptr [EBX + 0x110]     ; 0044f77f
@@ -74,7 +74,7 @@ section .text
     SUB EAX,EDX                         ; 0044f7f5
     PUSH EAX                            ; 0044f7f7
     CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 0044f7f8
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005b8df8(uint size)
     ADD ESP,0x4                         ; 0044f7fd
     MOV dword ptr [EBX + 0x358],EAX     ; 0044f800
     TEST EAX,EAX                        ; 0044f806
@@ -83,12 +83,12 @@ section .text
     MOV EBP,0x5cfa40                    ; 0044f80a | = "..\\core\\dmodel.cpp"
     MOV EAX,0x470                       ; 0044f80f
     PUSH 0x5cfa53                       ; 0044f814 | = "CKeyFramedModel::buildCollisionTriLis..."
-    MOV dword ptr [0x01d046a0],EBP      ; 0044f819 | DAT_01d046a0
-    MOV [0x01d046a4],EAX                ; 0044f81f | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0044f824
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],EBP      ; 0044f819 | g_CHAR_PTR_01d046a0
+    MOV [0x01d046a4],EAX                ; 0044f81f | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044f824
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044f829
-    PUSH 0x265370c                      ; 0044f82c | DAT_0265370c
+    PUSH 0x265370c                      ; 0044f82c | g_ZeroVector
         ;   Label: LAB_0044f82c
     PUSH EBX                            ; 0044f831
     CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840 ; 0044f832

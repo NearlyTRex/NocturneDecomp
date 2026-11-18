@@ -18,15 +18,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ShotInvulnerable_005ef99c
 ;   TerminatedCString s_Death_005ef9ad
-;   undefined4 DAT_005ef9b7
-;   undefined4 DAT_006141f0
-;   undefined4 DAT_0061c068
+;   double g_DOUBLE_005ef9b7 = 0.200000000000000
+;   CEventList* g_CEventListPtr = 01c38bc0
+;   CSound* g_CSound_PTR_0061c068 = 0264b290
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
-;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00550b70
 ;
@@ -66,7 +66,7 @@ section .text
     LEA EAX,[EBX + 0x11543]             ; 0059f846
     PUSH EAX                            ; 0059f84c
     PUSH EBX                            ; 0059f84d
-    MOV EBP,dword ptr [0x0061c068]      ; 0059f84e | DAT_0061c068
+    MOV EBP,dword ptr [0x0061c068]      ; 0059f84e | g_CSound_PTR_0061c068
     PUSH EBP                            ; 0059f854
     CALL core_sound.cpp_CSound_playActorSound_FUN_0055ae50 ; 0059f855
         ;   XREF to: 0055ae50 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0055ae50(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
@@ -76,8 +76,8 @@ section .text
     ADD EBX,0x10af8                     ; 0059f862
     PUSH EBX                            ; 0059f868
     MOV dword ptr [EBX + 0xffff1ab0],0x0 ; 0059f869
-    CALL core_muzzle.cpp_FUN_0059d8e0   ; 0059f873
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0 ; 0059f873
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; int core_muzzle.cpp_SStateMachine_setNextState_FUN_0059d8e0(SStateMachine * this_ptr, char * state_name)
     ADD ESP,0x8                         ; 0059f878
         ;   Label: LAB_0059f878
     ADD ESP,0x4                         ; 0059f87b
@@ -89,7 +89,7 @@ section .text
     RET                                 ; 0059f882
     PUSH 0x5ef99c                       ; 0059f883 | = "ShotInvulnerable"
         ;   Label: LAB_0059f883
-    MOV EAX,[0x006141f0]                ; 0059f888 | DAT_006141f0
+    MOV EAX,[0x006141f0]                ; 0059f888 | g_CEventListPtr
     PUSH EAX                            ; 0059f88d
     CALL core_event.cpp_CEventList_executeCommands_FUN_004894f0 ; 0059f88e
         ;   XREF to: 004894f0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004894f0(CEventList * this_ptr, char * commands)
@@ -117,7 +117,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 0059f8ce
     FLD float ptr [ESP + 0x8]           ; 0059f8d2
     ADD ESP,0x8                         ; 0059f8d6
-    FCOMP double ptr [0x005ef9b7]       ; 0059f8d9 | DAT_005ef9b7
+    FCOMP double ptr [0x005ef9b7]       ; 0059f8d9 | g_DOUBLE_005ef9b7
     FNSTSW AX                           ; 0059f8df
     SAHF                                ; 0059f8e1
     JBE 0x0059f8ee                      ; 0059f8e2

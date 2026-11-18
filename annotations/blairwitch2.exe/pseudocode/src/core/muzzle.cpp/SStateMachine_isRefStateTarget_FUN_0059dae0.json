@@ -1,0 +1,176 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 21,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "005a0bd0",
+      "from_addr": "005a0f6d",
+      "name": "core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a2240",
+      "from_addr": "005a2440",
+      "name": "core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4d50",
+      "from_addr": "005a4dd9",
+      "name": "core_union.cpp_CUnion_processAI_FUN_005a4d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4330",
+      "from_addr": "005a43b5",
+      "name": "core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059dae0",
+    "address_range": [
+      [
+        "0059dae0",
+        "0059db4c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_muzzle.cpp_SStateMachine_isRefStateTarget_FUN_0059dae0",
+    "signature": "int __cdecl core_muzzle_cpp_SStateMachine_isRefStateTarget_FUN_0059dae0(SStateMachine *this_ptr,char *identifier,char *state_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "005a0f6d",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_CConfederate_processAI_FUN_005a0bd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005a2440",
+        "call_type": "direct",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processAI_FUN_005a2240",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005a43b5",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_CUnionZombie_processAI_FUN_005a4330",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005a4dd9",
+        "call_type": "direct",
+        "caller": "core_union.cpp_CUnion_processAI_FUN_005a4d50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1521739130434785,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 47,
+      "INT_ADD": 22,
+      "INT_AND": 39,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 14,
+      "INT_SUB": 12,
+      "INT_XOR": 3,
+      "LOAD": 16,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 237
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SStateMachine *"
+      },
+      {
+        "is_param": true,
+        "name": "identifier",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "state_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

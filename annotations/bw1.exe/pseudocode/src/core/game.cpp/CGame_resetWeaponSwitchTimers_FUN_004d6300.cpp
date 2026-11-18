@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004d6300(CGame *this_ptr)
 
 {
   core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
-            ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),0);
+            (&g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->inventory,0);
   return;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_0050f370(CNetGame *this_ptr,SSimFrame *sim_frame)
 
 {
@@ -21,9 +19,9 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_0050f370(CNetGam
   
   bVar7 = 0;
   if (this_ptr->local_player_index < 0) {
-    _DAT_01d046a0 = "..\\core\\netgame.cpp";
-    _DAT_01d046a4 = 0x9cd;
-    core_main_c_FUN_004e4500("CNetGame::applySimFrameHistory - I'm not in the player list!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
+    g_INT_01d046a4 = 0x9cd;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
   this_ptr->random_seed = sim_frame->random_seed;
   core_game_cpp_CGame_slamDT_FUN_004bd460(g_CGamePtr,sim_frame->delta_time);
@@ -32,7 +30,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_0050f370(CNetGam
     iVar4 = 0;
     pSVar3 = sim_frame;
     do {
-      piVar6 = (int *)(iVar4 + 0x1cedee4);
+      piVar6 = (int *)((int)g_CHero_PTR_ARRAY_01cedee4 + iVar4);
       iVar4 = iVar4 + 4;
       pSVar5 = pSVar3->player_input;
       piVar6 = (int *)(*piVar6 + 0x10a68);

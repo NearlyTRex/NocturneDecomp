@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 25,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 134
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -70,9 +68,9 @@
     },
     {
       "addr": "0059de84",
-      "name": "DAT_0059de84",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059de84",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005b761c",
@@ -94,26 +92,26 @@
     },
     {
       "addr": "01c78b04",
-      "name": "DAT_01c78b04",
-      "type": "undefined4",
+      "name": "g_IrisFadeType",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78b08",
-      "name": "DAT_01c78b08",
-      "type": "undefined4",
+      "name": "g_IrisFadeRadius",
+      "type": "float",
       "value": null
     },
     {
       "addr": "01c78b0c",
-      "name": "DAT_01c78b0c",
-      "type": "undefined4",
+      "name": "g_IrisFadeCenterX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78b10",
-      "name": "DAT_01c78b10",
-      "type": "undefined4",
+      "name": "g_IrisFadeCenterY",
+      "type": "int",
       "value": null
     }
   ],
@@ -205,6 +203,24 @@
     "pcode_op_count": 893
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004bb240",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6877
+    },
+    "bw1.exe": {
+      "addr": "004d6030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6877
+    },
+    "bw3.exe": {
+      "addr": "004bd620",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6877
+    },
     "nocedit.exe": {
       "addr": "004e0920",
       "by": "name",
@@ -228,14 +244,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

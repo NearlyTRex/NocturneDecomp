@@ -107,7 +107,7 @@ section .text
     ADD ESP,0x8                         ; 00517689
     MOV EAX,dword ptr [ESP]             ; 0051768c
         ;   Label: LAB_0051768c
-    MOV ESI,dword ptr [0x005be978]      ; 0051768f | DAT_005be978
+    MOV ESI,dword ptr [0x005be978]      ; 0051768f | g_CSkeletonVersion
     CMP EAX,ESI                         ; 00517695
     JG 0x0051796f                       ; 00517697
         ;   XREF to: 0051796f (CONDITIONAL_JUMP)  ; LAB_0051796f

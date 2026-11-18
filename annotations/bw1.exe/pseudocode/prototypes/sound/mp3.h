@@ -5,13 +5,21 @@
 // Function prototypes for sound/mp3.cpp
 // Generated from Ghidra function signatures
 
+// Original: sound_mp3.cpp_validateLayer2AllocationTable_FUN_00525690
+// Address: 00525690
+int __cdecl validateLayer2AllocationTable(SMpegFrame *frame);
+
+// Original: sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_005257d0
+// Address: 005257d0
+void * __cdecl getMpegLayer2AllocationTable(int layer,int mode_extension);
+
 // Original: sound_mp3.cpp_calculateMpegFrame_FUN_00525840
 // Address: 00525840
 void __cdecl calculateMpegFrame(SMpegFrame *frame);
 
-// Original: sound_mp3.cpp_FUN_00525ab0
+// Original: sound_mp3.cpp_CFileBitStream_init_FUN_00525ab0
 // Address: 00525ab0
-void FUN_00525ab0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl CFileBitStream::init(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 
 // Original: sound_mp3.cpp_CFileBitStream_readBit_FUN_00525be0
 // Address: 00525be0
@@ -169,9 +177,9 @@ CMP3Decoder * __cdecl CMP3Decoder::dtor(CMP3Decoder *this_ptr,uint flags);
 // Address: 0052aea0
 void __cdecl CMP3Decoder::openFile(CMP3Decoder *this_ptr,char *filename);
 
-// Original: sound_mp3.cpp_FUN_0052af80
+// Original: sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_0052af80
 // Address: 0052af80
-void FUN_0052af80(CMP3Decoder *param_1,_FILE *param_2,int param_3);
+int __cdecl CMP3Decoder::parseHeader(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size);
 
 // Original: sound_mp3.cpp_CMP3Decoder_free_FUN_0052b100
 // Address: 0052b100

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bmppuzzl_cpp_CChemPuzzle_render_FUN_00413d50(CChemPuzzle *this_ptr)
 
 {
@@ -26,12 +24,12 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_render_FUN_00413d50(CChemPuzzle *this
   }
   if (this_ptr->hovering != 0) {
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
-              (CAlphaBitmap_ARRAY_007e0010 + 4,_DAT_01c5fadc - this_ptr->cursor_offset_x[4],
-               _DAT_01c5fae0 - this_ptr->cursor_offset_y[4],0xffff);
+              (CAlphaBitmap_ARRAY_007e0010 + 4,g_MouseX - this_ptr->cursor_offset_x[4],
+               g_MouseY - this_ptr->cursor_offset_y[4],0xffff);
   }
   iVar2 = this_ptr->dropper_level;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
-            (CAlphaBitmap_ARRAY_007e0010 + iVar2,_DAT_01c5fadc - this_ptr->cursor_offset_x[iVar2],
-             _DAT_01c5fae0 - this_ptr->cursor_offset_y[iVar2],0xffff);
+            (CAlphaBitmap_ARRAY_007e0010 + iVar2,g_MouseX - this_ptr->cursor_offset_x[iVar2],
+             g_MouseY - this_ptr->cursor_offset_y[iVar2],0xffff);
   return;
 }

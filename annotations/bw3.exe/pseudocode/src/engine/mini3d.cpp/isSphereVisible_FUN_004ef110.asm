@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   radius
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c8185
-;   undefined4 DAT_01d76ca8
-;   undefined4 DAT_01d76cf4
-;   undefined4 DAT_01d76cfc
+;   float g_FLOAT_005c8185 = 1.333000
+;   float g_FLOAT_01d76ca8
+;   float g_FLOAT_01d76cf4
+;   void* g_PTR_01d76cfc
 ;
 ; *****************************************************************************
 
@@ -21,9 +21,9 @@ section .text
         ;   Label: engine_mini3d.cpp_isSphereVisible_FUN_004ef110
     MOV EAX,dword ptr [ESP + 0x20]      ; 004ef113
     FLD float ptr [ESP + 0x24]          ; 004ef117
-    FMUL float ptr [0x005c8185]         ; 004ef11b | DAT_005c8185
+    FMUL float ptr [0x005c8185]         ; 004ef11b | g_FLOAT_005c8185
     FLD float ptr [EAX]                 ; 004ef121
-    MOV EDX,dword ptr [0x01d76cfc]      ; 004ef123 | DAT_01d76cfc
+    MOV EDX,dword ptr [0x01d76cfc]      ; 004ef123 | g_PTR_01d76cfc
     FLD float ptr [EAX + 0x4]           ; 004ef129
     FXCH                                ; 004ef12c
     FSUB float ptr [EDX + 0x24]         ; 004ef12e
@@ -42,7 +42,7 @@ section .text
     FST float ptr [ESP + 0xc]           ; 004ef152
     FMUL float ptr [EDX + 0x20]         ; 004ef156
     FXCH ST2                            ; 004ef159
-    FMUL float ptr [0x01d76ca8]         ; 004ef15b | DAT_01d76ca8
+    FMUL float ptr [0x01d76ca8]         ; 004ef15b | g_FLOAT_01d76ca8
     FXCH ST2                            ; 004ef161
     FADDP                               ; 004ef163
     FXCH                                ; 004ef165
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 004ef213 (CONDITIONAL_JUMP)  ; LAB_004ef213
     FLD float ptr [ESP + 0x18]          ; 004ef180
     FSUB float ptr [ESP + 0x24]         ; 004ef184
-    FCOMP float ptr [0x01d76cf4]        ; 004ef188 | DAT_01d76cf4
+    FCOMP float ptr [0x01d76cf4]        ; 004ef188 | g_FLOAT_01d76cf4
     FNSTSW AX                           ; 004ef18e
     SAHF                                ; 004ef190
     JA 0x004ef213                       ; 004ef191

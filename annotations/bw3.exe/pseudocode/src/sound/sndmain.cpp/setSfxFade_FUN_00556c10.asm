@@ -12,9 +12,9 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_event.cpp_FUN_0048c2e0 at 0048e040
-;   core_game.cpp_FUN_004c4a60 at 004c4aa5
-;   core_game.cpp_FUN_004c4bc0 at 004c4c42
+;   core_event.cpp_CEventList_executeCommand_FUN_0048c2e0 at 0048e040
+;   core_game.cpp_CGame_playMusic_FUN_004c4a60 at 004c4aa5
+;   core_game.cpp_CGame_updateMusic_FUN_004c4bc0 at 004c4c42
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10

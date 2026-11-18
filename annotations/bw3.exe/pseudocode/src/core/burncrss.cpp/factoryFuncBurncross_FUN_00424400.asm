@@ -15,7 +15,7 @@ section .text
     PUSH 0x1acc                         ; 00424400
         ;   Label: core_burncrss.cpp_factoryFuncBurncross_FUN_00424400
     CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00424405
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005a3cb2(uint size)
     ADD ESP,0x4                         ; 0042440a
     TEST EAX,EAX                        ; 0042440d
     JNZ 0x00424412                      ; 0042440f

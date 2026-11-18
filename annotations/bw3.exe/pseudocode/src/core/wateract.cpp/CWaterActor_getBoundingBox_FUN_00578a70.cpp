@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00578a70(CWaterActor *this_ptr,CBoundingBox3D *out_box)
 
 {
@@ -20,10 +18,10 @@ CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00578a
   float fStack_c;
   float fStack_8;
   
-  fVar1 = (float)_DAT_005d7283;
+  fVar1 = (float)0.5;
   afStack_1c[1] = -0.1;
   afStack_1c[3] = (this_ptr->size).x * fVar1;
-  fStack_c = (this_ptr->size).y + (float)_DAT_005d728b;
+  fStack_c = (this_ptr->size).y + (float)0.10000000000000001;
   fStack_8 = (this_ptr->size).z * fVar1;
   afStack_1c[2] = -(this_ptr->size).z * fVar1;
   afStack_1c[0] = -(this_ptr->size).x * fVar1;

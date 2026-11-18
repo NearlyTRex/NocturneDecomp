@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4c64
-;   core_menu.cpp_FUN_004e85a0 at 004e8ec7
+;   core_menu.cpp_configureGraphicsOptions_FUN_004e85a0 at 004e8ec7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_brightness_005c72df
@@ -15,7 +15,7 @@
 ;   TerminatedCString s_s_3_Turn_down_the_bright_005c7366
 ;   TerminatedCString s_s_4_Turn_your_contrast_a_005c73b2
 ;   TerminatedCString s_You_re_done_with_calibra_005c73d8
-;   undefined4 DAT_01549ab4
+;   CBitFont* g_SmallEditorFont
 ;
 ; Called Functions:
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_004e8380
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004e84e9
     PUSH 0x58                           ; 004e84ec
-    MOV EDX,dword ptr [0x01549ab4]      ; 004e84ee | DAT_01549ab4
+    MOV EDX,dword ptr [0x01549ab4]      ; 004e84ee | g_SmallEditorFont
     PUSH EDX                            ; 004e84f4
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004e84f5
         ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)

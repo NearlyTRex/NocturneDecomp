@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 153,
+    "complexity_score": 122,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 3,
+    "suspect_types": [
+      "derived_field_index_pun",
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 230
+  },
+  "cross_references": [
+    {
+      "addr": "004f6f80",
+      "from_addr": "004f6fc6",
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6bf0",
+      "from_addr": "004f6c42",
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_004f6bf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053b460",
+    "address_range": [
+      [
+        "0053b460",
+        "0053b65d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0053b460",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0053b460(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007e2a14",
+      "name": "g_CBugsClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007e2cec",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bc48",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd894",
+      "name": "g_CTriggerClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0bcd8",
+      "name": "g_CWayPointClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004f6c42",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_004f6bf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f6fc6",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004f6f80",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.057377049180328,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CALLIND": 3,
+      "CBRANCH": 14,
+      "COPY": 98,
+      "INT_ADD": 80,
+      "INT_AND": 84,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 65,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 34,
+      "INT_SUB": 31,
+      "INT_XOR": 2,
+      "LOAD": 56,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 42
+    },
+    "pcode_op_count": 617
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00534820",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8095
+    },
+    "bw1.exe": {
+      "addr": "00555ad0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9345
+    },
+    "nocedit.exe": {
+      "addr": "00570fc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8095
+    },
+    "nocturne.exe": {
+      "addr": "0050e6b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8095
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 45,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if (((pCVar5 != (CDemonActor *)0x0) && (*(int *)(pCVar5[1].actor_name + 0x1c) == 4)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 76,
+      "match": "pCVar7 = (T *)pCVar7->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "'pCVar5[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x1c = 0x174, which is exactly offsetof(CActorDestination, dest_class[24]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar5)->dest_class[24] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[12], CBat::course_filename[28], CBodyPart::vertex_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 45,
+      "severity": "moderate",
+      "text": "if (((pCVar5 != (CDemonActor *)0x0) && (*(int *)(pCVar5[1].actor_name + 0x1c) == 4)) &&",
+      "type": "derived_field_index_pun"
+    }
+  ]
+}

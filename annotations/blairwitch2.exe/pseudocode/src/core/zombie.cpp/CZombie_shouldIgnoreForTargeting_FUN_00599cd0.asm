@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890
-;   core_motion.cpp_FUN_005035c0
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_zombie.cpp_CZombie_shouldIgnoreForTargeting_FUN_00599cd0
     ADD EAX,0x2b4                       ; 00599cd4
     PUSH EAX                            ; 00599cd9
-    CALL core_motion.cpp_FUN_005035c0   ; 00599cda
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0 ; 00599cda
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_005035c0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00599cdf
     ADD ESP,0x4                         ; 00599ce2
     CMP EAX,0xe                         ; 00599ce5

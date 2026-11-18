@@ -9,18 +9,18 @@
 CRifle * __cdecl core_rifle_cpp_CRifle_dtor_FUN_00528660(CRifle *this_ptr,uint flags)
 
 {
-  CRifle *pCVar1;
-  void *ptr;
+  CRifle *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CRifleTypeInfo);
-    FUN_005a30b6(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CRifleTypeInfo);
+    free(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CRifle *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
+  ptr = (CRifle *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_005a30c4(pCVar1);
-  return pCVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

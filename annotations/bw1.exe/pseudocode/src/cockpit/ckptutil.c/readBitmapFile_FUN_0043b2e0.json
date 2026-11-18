@@ -1,0 +1,284 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 127,
+    "complexity_score": 35,
+    "cross_reference_count": 3,
+    "function_call_count": 8,
+    "global_count": 9,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 162
+  },
+  "cross_references": [
+    {
+      "addr": "00537cb0",
+      "from_addr": "00537cc1",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537c30",
+      "from_addr": "00537c5e",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0cd0",
+      "from_addr": "004c0df9",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043b2e0",
+    "address_range": [
+      [
+        "0043b2e0",
+        "0043b428"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0043b2e0",
+    "signature": "void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0043b2e0(char *filename,void *buffer,int size)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "005c08d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "005a0dc0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0"
+    },
+    {
+      "addr": "005a08d0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0"
+    },
+    {
+      "addr": "005a0a50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+    },
+    {
+      "addr": "005a0fd0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
+    },
+    {
+      "addr": "005a0c10",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_005a0c10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d6620",
+      "name": "s_Unable_to_allocate_u_byt_005d6620",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6652",
+      "name": "s_cockpit_ckptutil_c_005d6652",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6668",
+      "name": "s_art_005d6668",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d666c",
+      "name": "s_Unable_to_open_bitmap_fi_005d666c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d668d",
+      "name": "s_cockpit_ckptutil_c_005d668d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66a3",
+      "name": "s_Unable_to_read_bitmap_fi_005d66a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66c4",
+      "name": "s_cockpit_ckptutil_c_005d66c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "g_INT_01d1d404",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004c0df9",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00537c5e",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00537cc1",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.656862745098039,
+    "instruction_count": 102,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 13,
+      "CBRANCH": 4,
+      "COPY": 74,
+      "INT_ADD": 31,
+      "INT_AND": 41,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 38,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 19,
+      "INT_SUB": 45,
+      "LOAD": 8,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "STORE": 43
+    },
+    "pcode_op_count": 373
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042c520",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9951
+    },
+    "bw3.exe": {
+      "addr": "00438ef0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00431870",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8788
+    },
+    "nocturne.exe": {
+      "addr": "0042d240",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8458
+    }
+  },
+  "stack_frame": {
+    "frame_size": 156,
+    "local_size": 144,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

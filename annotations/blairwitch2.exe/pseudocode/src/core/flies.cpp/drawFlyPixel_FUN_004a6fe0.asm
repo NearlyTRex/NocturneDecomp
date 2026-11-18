@@ -13,10 +13,10 @@
 ;   core_flies.cpp_drawFlyPixelClipped_FUN_004a7070 at 004a7099
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006141c0
-;   undefined4 DAT_01c35e60
-;   undefined4 DAT_01caf62c
-;   undefined4 DAT_01caf630
+;   int g_INT_006141c0 = 0x8
+;   int g_INT_01c35e60
+;   uint g_FlyBlendColor
+;   uint g_FlyInvBlendColor
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     CMP EBX,dword ptr [ECX + EDX*0x1]   ; 004a6ffe
     JBE 0x004a700c                      ; 004a7001
         ;   XREF to: 004a700c (CONDITIONAL_JUMP)  ; LAB_004a700c
-    CMP dword ptr [0x006141c0],0x20     ; 004a7003 | DAT_006141c0
+    CMP dword ptr [0x006141c0],0x20     ; 004a7003 | g_INT_006141c0
     JZ 0x004a7013                       ; 004a700a
         ;   XREF to: 004a7013 (CONDITIONAL_JUMP)  ; LAB_004a7013
     MOV ESP,EBP                         ; 004a700c
@@ -53,11 +53,11 @@ section .text
     ADD EAX,EDX                         ; 004a7019
     MOV dword ptr [EBP + -0x4],EAX      ; 004a701b
     MOV EDI,dword ptr [EBP + 0xfffffffc] ; 004a701e
-    MOVD MM0,dword ptr [0x01c35e60]     ; 004a7024 | DAT_01c35e60
+    MOVD MM0,dword ptr [0x01c35e60]     ; 004a7024 | g_INT_01c35e60
     PXOR MM7,MM7                        ; 004a702b
     MOVD MM1,dword ptr [EDI]            ; 004a702e
-    MOVD MM2,dword ptr [0x01caf62c]     ; 004a7031 | DAT_01caf62c
-    MOVD MM3,dword ptr [0x01caf630]     ; 004a7038 | DAT_01caf630
+    MOVD MM2,dword ptr [0x01caf62c]     ; 004a7031 | g_FlyBlendColor
+    MOVD MM3,dword ptr [0x01caf630]     ; 004a7038 | g_FlyInvBlendColor
     PUNPCKLBW MM0,MM7                   ; 004a703f
     PUNPCKLBW MM1,MM7                   ; 004a7042
     PUNPCKLBW MM2,MM7                   ; 004a7045

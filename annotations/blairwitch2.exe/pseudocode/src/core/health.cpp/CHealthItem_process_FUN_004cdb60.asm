@@ -8,16 +8,16 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d99bc
+;   float g_FLOAT_005d99bc = 0.5
 ;   CSimpleParticleSystem* g_CSimpleParticleSystemPtr = 026687b0
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
-;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00594380
+;   core_xform.cpp_eulerToQuaternion_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
+;   core_xform.cpp_transformVector3x4_FUN_00591530
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004cdb7b
     PUSH EAX                            ; 004cdb81
     CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 004cdb82
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float delta_time)
     FLD float ptr [EBX + 0x438]         ; 004cdb87
     FSUB float ptr [EBP + 0x92]         ; 004cdb8d
     ADD ESP,0x8                         ; 004cdb93
@@ -83,7 +83,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004cdbff
     MOVSD ES:EDI,ESI                    ; 004cdc00
     MOVSD ES:EDI,ESI                    ; 004cdc01
-    FLD float ptr [0x005d99bc]          ; 004cdc02 | DAT_005d99bc
+    FLD float ptr [0x005d99bc]          ; 004cdc02 | g_FLOAT_005d99bc
     FLD float ptr [EBP + -0x1a]         ; 004cdc08
     FMUL ST1                            ; 004cdc0b
     FLD float ptr [EBP + -0x16]         ; 004cdc0d
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 004cdc8b
     LEA ESI,[EBP + -0x36]               ; 004cdc8c
     LEA EDI,[EBP + -0x46]               ; 004cdc8f
-    CALL core_xform.cpp_FUN_00594380    ; 004cdc92
-        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00594380()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_00594380 ; 004cdc92
+        ;   XREF to: 00594380 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_00594380(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[EBP + -0x36]               ; 004cdc97
     LEA EAX,[EBP + -0x46]               ; 004cdc9a
     ADD ESP,0x4                         ; 004cdc9d
@@ -163,8 +163,8 @@ section .text
     PUSH EAX                            ; 004cdce0
     LEA ESI,[EBP + -0xe]                ; 004cdce1
     LEA EDI,[EBP + -0x2]                ; 004cdce4
-    CALL core_xform.cpp_FUN_00591530    ; 004cdce7
-        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591530()
+    CALL core_xform.cpp_transformVector3x4_FUN_00591530 ; 004cdce7
+        ;   XREF to: 00591530 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00591530(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[EBP + -0xe]                ; 004cdcec
     MOVSD ES:EDI,ESI                    ; 004cdcef
     MOVSD ES:EDI,ESI                    ; 004cdcf0
@@ -228,7 +228,7 @@ section .text
     PUSH 0x3f800000                     ; 004cdd87
     PUSH ECX                            ; 004cdd8c
     CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 004cdd8d
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, float lifetime, float alpha_start, float alpha_end, ...)
     ADD ESP,0x34                        ; 004cdd92
     LEA ESP,[EBP + 0x7a]                ; 004cdd95
     POP EBP                             ; 004cdd98

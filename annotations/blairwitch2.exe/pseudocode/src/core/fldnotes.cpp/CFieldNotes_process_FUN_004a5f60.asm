@@ -10,26 +10,26 @@
 ;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd980
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00616010
-;   undefined4 DAT_00616028
-;   undefined4 DAT_0061602c
-;   undefined4 DAT_00616040
+;   int g_INT_00616010 = 0x1
+;   int g_INT_00616028 = 0x262
+;   int g_INT_0061602c = 0x1c0
+;   int g_INT_00616040 = -0x1
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 DAT_00617dd4
-;   undefined4 DAT_01c2a37c
-;   undefined4 DAT_01c2a380
-;   undefined4 DAT_01c2a384
-;   undefined4 DAT_01cacb4c
-;   undefined4 DAT_01caf110
+;   CKeys* g_CKeysPtr = 01d02f84
+;   int g_MouseX
+;   int g_MouseY
+;   _BIT_INTEGER32 g_MouseButtonFlags
+;   int g_INT_01cacb4c
+;   int g_INT_01caf110
 ;   undefined4 CAlphaBitmap_01caf218.width
 ;   undefined4 CAlphaBitmap_01caf218.height
 ;   undefined4 g_STextViewInstance.pages
-;   undefined4 DAT_01caf488
+;   int g_INT_01caf488
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_flashlit.cpp_FUN_004a1bb0
-;   core_flashlit.cpp_FUN_004a1c60
+;   core_flashlit.cpp_hitTestPageArrows_FUN_004a1c60
+;   core_flashlit.cpp_hitTestSectionTab_FUN_004a1bb0
 ;   core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004a3a60
 ;   core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
@@ -42,7 +42,7 @@ section .text
         ;   Label: core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60
     PUSH ESI                            ; 004a5f61
     PUSH EBP                            ; 004a5f62
-    MOV EDX,dword ptr [0x01cacb4c]      ; 004a5f63 | DAT_01cacb4c
+    MOV EDX,dword ptr [0x01cacb4c]      ; 004a5f63 | g_INT_01cacb4c
     XOR EBX,EBX                         ; 004a5f69
     TEST EDX,EDX                        ; 004a5f6b
     JLE 0x004a5f90                      ; 004a5f6d
@@ -53,7 +53,7 @@ section .text
     CALL core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004a3a60 ; 004a5f75
         ;   XREF to: 004a3a60 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004a3a60(SNotesMap * this_ptr)
     INC EBX                             ; 004a5f7a
-    MOV ECX,dword ptr [0x01cacb4c]      ; 004a5f7b | DAT_01cacb4c
+    MOV ECX,dword ptr [0x01cacb4c]      ; 004a5f7b | g_INT_01cacb4c
     ADD ESP,0x4                         ; 004a5f81
     ADD ESI,0x970                       ; 004a5f84
     CMP EBX,ECX                         ; 004a5f8a
@@ -125,35 +125,35 @@ section .text
     MOV EAX,0x1                         ; 004a603c
     MOV ECX,0xffffffff                  ; 004a6041
     ADD ESP,0x4                         ; 004a6046
-    MOV dword ptr [0x01caf568],EBX      ; 004a6049 | DAT_01caf568
+    MOV dword ptr [0x01caf568],EBX      ; 004a6049 | g_INT_01caf568
     XOR EDX,EDX                         ; 004a604f
-    MOV [0x00616010],EAX                ; 004a6051 | DAT_00616010
-    MOV dword ptr [0x01caf488],EDX      ; 004a6056 | DAT_01caf488
+    MOV [0x00616010],EAX                ; 004a6051 | g_INT_00616010
+    MOV dword ptr [0x01caf488],EDX      ; 004a6056 | g_INT_01caf488
     XOR DH,DH                           ; 004a605c
-    MOV dword ptr [0x00616040],ECX      ; 004a605e | DAT_00616040
-    MOV byte ptr [0x01caf4a0],DH        ; 004a6064 | DAT_01caf4a0
+    MOV dword ptr [0x00616040],ECX      ; 004a605e | g_INT_00616040
+    MOV byte ptr [0x01caf4a0],DH        ; 004a6064 | g_CHAR_01caf4a0
     POP EBP                             ; 004a606a
     POP ESI                             ; 004a606b
     POP EBX                             ; 004a606c
     RET                                 ; 004a606d
     PUSH 0x200                          ; 004a606e
         ;   Label: LAB_004a606e
-    MOV EAX,[0x00617dd4]                ; 004a6073 | DAT_00617dd4
-    PUSH EAX                            ; 004a6078 | DAT_01d02f84
-    MOV EDX,dword ptr [EAX]             ; 004a6079 | DAT_01d02f84
+    MOV EAX,[0x00617dd4]                ; 004a6073 | g_CKeysPtr
+    PUSH EAX                            ; 004a6078 | g_PTR_01d02f84
+    MOV EDX,dword ptr [EAX]             ; 004a6079 | g_PTR_01d02f84
     CALL dword ptr [EDX + 0x4]          ; 004a607b
-    MOV AH,byte ptr [0x01c2a384]        ; 004a607e | DAT_01c2a384
+    MOV AH,byte ptr [0x01c2a384]        ; 004a607e | g_MouseButtonFlags
     ADD ESP,0x8                         ; 004a6084
     TEST AH,0x1                         ; 004a6087
     JZ 0x004a5fac                       ; 004a608a
         ;   XREF to: 004a5fac (CONDITIONAL_JUMP)  ; LAB_004a5fac
     PUSH EDI                            ; 004a6090
-    MOV EDI,dword ptr [0x01c2a380]      ; 004a6091 | DAT_01c2a380
+    MOV EDI,dword ptr [0x01c2a380]      ; 004a6091 | g_MouseY
     PUSH EDI                            ; 004a6097
-    MOV EBP,dword ptr [0x01c2a37c]      ; 004a6098 | DAT_01c2a37c
+    MOV EBP,dword ptr [0x01c2a37c]      ; 004a6098 | g_MouseX
     PUSH EBP                            ; 004a609e
-    CALL core_flashlit.cpp_FUN_004a1bb0 ; 004a609f
-        ;   XREF to: 004a1bb0 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a1bb0()
+    CALL core_flashlit.cpp_hitTestSectionTab_FUN_004a1bb0 ; 004a609f
+        ;   XREF to: 004a1bb0 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestSectionTab_FUN_004a1bb0(int x, int y)
     ADD ESP,0x8                         ; 004a60a4
     TEST EAX,EAX                        ; 004a60a7
     JL 0x004a60ca                       ; 004a60a9
@@ -165,32 +165,32 @@ section .text
     SHL EBX,0x2                         ; 004a60b9
     MOV EAX,EBX                         ; 004a60bc
     MOV EAX,dword ptr [EAX + EBX*0x4 + 0x1cabb34] ; 004a60be
-    MOV [0x01caf110],EAX                ; 004a60c5 | DAT_01caf110
-    MOV EAX,[0x01c2a380]                ; 004a60ca | DAT_01c2a380
+    MOV [0x01caf110],EAX                ; 004a60c5 | g_INT_01caf110
+    MOV EAX,[0x01c2a380]                ; 004a60ca | g_MouseY
         ;   Label: LAB_004a60ca
     PUSH EAX                            ; 004a60cf
-    MOV EDX,dword ptr [0x01c2a37c]      ; 004a60d0 | DAT_01c2a37c
+    MOV EDX,dword ptr [0x01c2a37c]      ; 004a60d0 | g_MouseX
     PUSH EDX                            ; 004a60d6
-    CALL core_flashlit.cpp_FUN_004a1c60 ; 004a60d7
-        ;   XREF to: 004a1c60 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a1c60()
-    MOV ECX,dword ptr [0x01caf110]      ; 004a60dc | DAT_01caf110
-    MOV EBX,dword ptr [0x01c2a37c]      ; 004a60e2 | DAT_01c2a37c
-    MOV ESI,dword ptr [0x01c2a380]      ; 004a60e8 | DAT_01c2a380
-    MOV EDI,dword ptr [0x00616028]      ; 004a60ee | DAT_00616028
+    CALL core_flashlit.cpp_hitTestPageArrows_FUN_004a1c60 ; 004a60d7
+        ;   XREF to: 004a1c60 (UNCONDITIONAL_CALL)  ; int core_flashlit.cpp_hitTestPageArrows_FUN_004a1c60(int x, int y)
+    MOV ECX,dword ptr [0x01caf110]      ; 004a60dc | g_INT_01caf110
+    MOV EBX,dword ptr [0x01c2a37c]      ; 004a60e2 | g_MouseX
+    MOV ESI,dword ptr [0x01c2a380]      ; 004a60e8 | g_MouseY
+    MOV EDI,dword ptr [0x00616028]      ; 004a60ee | g_INT_00616028
     ADD ECX,EAX                         ; 004a60f4
     ADD ESP,0x8                         ; 004a60f6
-    MOV dword ptr [0x01caf110],ECX      ; 004a60f9 | DAT_01caf110
+    MOV dword ptr [0x01caf110],ECX      ; 004a60f9 | g_INT_01caf110
     CMP EBX,EDI                         ; 004a60ff
     JGE 0x004a616a                      ; 004a6101
         ;   XREF to: 004a616a (CONDITIONAL_JUMP)  ; LAB_004a616a
-    MOV EBX,dword ptr [0x01c2a380]      ; 004a6103 | DAT_01c2a380
+    MOV EBX,dword ptr [0x01c2a380]      ; 004a6103 | g_MouseY
         ;   Label: LAB_004a6103
-    MOV EAX,[0x01caf110]                ; 004a6109 | DAT_01caf110
+    MOV EAX,[0x01caf110]                ; 004a6109 | g_INT_01caf110
     PUSH EBX                            ; 004a610e
     LEA EBX,[EAX*0x4 + 0x0]             ; 004a610f
     ADD EBX,EAX                         ; 004a6116
     SHL EBX,0x4                         ; 004a6118
-    MOV ESI,dword ptr [0x01c2a37c]      ; 004a611b | DAT_01c2a37c
+    MOV ESI,dword ptr [0x01c2a37c]      ; 004a611b | g_MouseX
     ADD EBX,EAX                         ; 004a6121
     MOV EAX,[0x01caf27c]                ; 004a6123 | g_STextViewInstance.pages
     SHL EBX,0x2                         ; 004a6128
@@ -203,9 +203,9 @@ section .text
     TEST EAX,EAX                        ; 004a6137
     JZ 0x004a615e                       ; 004a6139
         ;   XREF to: 004a615e (CONDITIONAL_JUMP)  ; LAB_004a615e
-    MOV EBX,dword ptr [0x01c2a380]      ; 004a613b | DAT_01c2a380
+    MOV EBX,dword ptr [0x01c2a380]      ; 004a613b | g_MouseY
     MOV EBP,dword ptr [EAX + 0x4]       ; 004a6141
-    MOV EDX,dword ptr [0x01c2a37c]      ; 004a6144 | DAT_01c2a37c
+    MOV EDX,dword ptr [0x01c2a37c]      ; 004a6144 | g_MouseX
     SUB EBX,EBP                         ; 004a614a
     MOV EDI,dword ptr [EAX]             ; 004a614c
     PUSH EBX                            ; 004a614e
@@ -216,14 +216,14 @@ section .text
     PUSH EAX                            ; 004a6157
     CALL dword ptr [ESI + 0x8]          ; 004a6158
     ADD ESP,0x10                        ; 004a615b
-    AND byte ptr [0x01c2a384],0xfe      ; 004a615e | DAT_01c2a384
+    AND byte ptr [0x01c2a384],0xfe      ; 004a615e | g_MouseButtonFlags
         ;   Label: LAB_004a615e
     POP EDI                             ; 004a6165
     POP EBP                             ; 004a6166
     POP ESI                             ; 004a6167
     POP EBX                             ; 004a6168
     RET                                 ; 004a6169
-    MOV EBP,dword ptr [0x0061602c]      ; 004a616a | DAT_0061602c
+    MOV EBP,dword ptr [0x0061602c]      ; 004a616a | g_INT_0061602c
         ;   Label: LAB_004a616a
     CMP ESI,EBP                         ; 004a6170
     JL 0x004a6103                       ; 004a6172

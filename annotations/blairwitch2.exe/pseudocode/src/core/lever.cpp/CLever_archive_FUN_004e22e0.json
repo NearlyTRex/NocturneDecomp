@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 89,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 230
@@ -68,8 +67,8 @@
   "globals": [
     {
       "addr": "005dbf5a",
-      "name": "s_modelName_005dbf59+1",
-      "type": "undefined4",
+      "name": "s_modelName_005dbf5a",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -164,8 +163,8 @@
     },
     {
       "addr": "007bc038",
-      "name": "DAT_007bc038",
-      "type": "undefined4",
+      "name": "g_ActorReadingMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -272,14 +271,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 == 1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 18,
       "match": "do {",
@@ -291,7 +282,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 220,
         "vtable_addr": "005f94a4"
       }

@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 23,
+    "complexity_score": 7,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 16
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
   },
   "cross_references": [
     {
@@ -44,20 +42,20 @@
   "globals": [
     {
       "addr": "01c51d38",
-      "name": "DAT_01c51d38",
-      "type": "undefined4",
+      "name": "g_CameraOriginX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d3c",
-      "name": "DAT_01c51d3c",
-      "type": "undefined4",
+      "name": "g_CameraOriginY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c51d40",
-      "name": "DAT_01c51d40",
-      "type": "undefined4",
+      "name": "g_CameraOriginZ",
+      "type": "int",
       "value": null
     }
   ],
@@ -160,14 +158,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 43,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 89
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -52,27 +50,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00432330",
+      "from_addr": "00432381",
+      "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00433fb0",
       "from_addr": "00433ff5",
       "name": "core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00433c60",
+      "from_addr": "00433d88",
+      "name": "core_charactr.cpp_CCharacter_processSmoking_FUN_00433c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0042b0e0",
       "from_addr": "0042b18a",
       "name": "core_charactr.cpp_CCharacter_setup_FUN_0042b0e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00432330",
-      "from_addr": "00432381",
-      "name": "core_charactr.cpp_FUN_00432330",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00433c60",
-      "from_addr": "00433d88",
-      "name": "core_charactr.cpp_FUN_00433c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -184,15 +182,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00518680",
-      "from_addr": "005186ad",
-      "name": "core_prye.cpp_CPrye_setup_FUN_00518680",
+      "addr": "0051ee10",
+      "from_addr": "0051f10d",
+      "name": "core_prye.cpp_CPrye_applyArmAimRotation_FUN_0051ee10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051ee10",
-      "from_addr": "0051f10d",
-      "name": "core_prye.cpp_FUN_0051ee10",
+      "addr": "00518680",
+      "from_addr": "005186ad",
+      "name": "core_prye.cpp_CPrye_setup_FUN_00518680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -204,19 +202,19 @@
     {
       "addr": "005365c0",
       "from_addr": "005365fa",
-      "name": "core_set.cpp_FUN_005365c0",
+      "name": "core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00536990",
       "from_addr": "005369d1",
-      "name": "core_set.cpp_FUN_00536990",
+      "name": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00543680",
       "from_addr": "005436ed",
-      "name": "core_shadow.cpp_FUN_00543680",
+      "name": "core_shadow.cpp_CShadow_setup_FUN_00543680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -290,7 +288,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "005a3260",
@@ -313,14 +311,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -363,7 +361,7 @@
       {
         "call_addr": "005365fa",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005365c0",
+        "caller": "core_set.cpp_CDemonSet_renderGogglesView_FUN_005365c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -374,7 +372,7 @@
       {
         "call_addr": "005369d1",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00536990",
+        "caller": "core_set.cpp_CDemonSet_renderMonsterVisionView_FUN_00536990",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -527,14 +525,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

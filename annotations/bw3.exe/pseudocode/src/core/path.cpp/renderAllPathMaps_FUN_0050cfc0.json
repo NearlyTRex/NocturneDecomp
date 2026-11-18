@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 64,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "suspect_count": 6,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 83
   },
@@ -32,7 +32,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     },
     {
       "addr": "0050c980",
@@ -43,20 +43,20 @@
   "globals": [
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01ec1518",
-      "name": "DAT_01ec1518",
-      "type": "undefined4",
+      "name": "g_PathMapCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -161,28 +161,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)g_PathMapList",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 19,
-      "match": "*(CPathMap **)(iVar1 + 0x1ec151c",
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(CPathMap **)((int)g_PathMapList",
       "severity": "moderate",
-      "text": "if ((int)((*(CPathMap **)(iVar1 + 0x1ec151c))->cached_world_position).x < 0x461c3c01) {",
-      "type": "raw_address_pointer_store"
+      "text": "if ((int)((*(CPathMap **)((int)g_PathMapList + iVar1))->cached_world_position).x < 0x461c3c01)",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 21,
-      "match": "*(CPathMap **)(iVar1 + 0x1ec151c",
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CPathMap **)((int)g_PathMapList",
       "severity": "moderate",
-      "text": "(*(CPathMap **)(iVar1 + 0x1ec151c),depth,red,green,fog);",
-      "type": "raw_address_pointer_store"
+      "text": "(*(CPathMap **)((int)g_PathMapList + iVar1),depth,red,green,fog);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)g_PathMapList",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)g_PathMapList",
+      "severity": "moderate",
+      "text": "if ((int)((*(CPathMap **)((int)g_PathMapList + iVar1))->cached_world_position).x < 0x461c3c01)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)g_PathMapList",
+      "severity": "moderate",
+      "text": "(*(CPathMap **)((int)g_PathMapList + iVar1),depth,red,green,fog);",
+      "type": "pointer_truncation"
     }
   ]
 }

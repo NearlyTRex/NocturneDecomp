@@ -15,8 +15,8 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005773f0(char *format,...)
   local_4 = &stack0x00000008;
   _vsprintf(local_404,format,(va_list_t)&local_4);
   local_4 = (byte *)0x0;
-  wincore_winrun_cpp_FUN_005b3a90("SOUND: ");
-  wincore_winrun_cpp_FUN_005b3a90(local_404);
-  wincore_winrun_cpp_FUN_005b3a90(&DAT_005f46c1);
+  wincore_winrun_cpp_outputDebugString_FUN_005b3a90("SOUND: ");
+  wincore_winrun_cpp_outputDebugString_FUN_005b3a90(local_404);
+  wincore_winrun_cpp_outputDebugString_FUN_005b3a90(&DAT_005f46c1);
   return;
 }

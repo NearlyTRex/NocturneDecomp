@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 62,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 175
+    "total_lines": 177
   },
   "cross_references": [],
   "function": {
@@ -71,21 +71,21 @@
     },
     {
       "addr": "005d5762",
-      "name": "DAT_005d5762",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005d5762",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "00614d30",
-      "name": "DAT_00614d30",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "01c3deb4"
     },
     {
       "addr": "0061c068",
-      "name": "DAT_0061c068",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CSound_PTR_0061c068",
+      "type": "CSound*",
+      "value": "0264b290"
     }
   ],
   "param_estimates": {
@@ -184,12 +184,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)g_ShellBounceSoundHandles",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_ShellBounceSoundHandles + iVar4));",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

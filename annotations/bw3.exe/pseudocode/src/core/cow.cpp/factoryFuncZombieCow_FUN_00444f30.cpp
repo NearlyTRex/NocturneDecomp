@@ -11,7 +11,7 @@ CZombieCow * __cdecl core_cow_cpp_factoryFuncZombieCow_FUN_00444f30(void)
 {
   CZombieCow *pCVar1;
   
-  pCVar1 = (CZombieCow *)operator_new(0xd088);
+  pCVar1 = operator_new(0xd088);
   if (pCVar1 == (CZombieCow *)0x0) {
     return (CZombieCow *)0x0;
   }

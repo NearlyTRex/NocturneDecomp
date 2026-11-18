@@ -9,20 +9,21 @@
 SPageResourceTwanaCharacter * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0(SPageResourceTwanaCharacter *this_ptr,uint flags)
 
 {
-  SPageResourceTwanaCharacter *pSVar1;
-  void *ptr;
+  SPageResourceTwanaCharacter *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_PageResource_TwanaCharacterTypeInfo);
-    FUN_005c0336(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_PageResource_TwanaCharacterTypeInfo)
+    ;
+    free(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).base.vtable = &g_SPageResourceTwanaCharacterVTable;
-  pSVar1 = (SPageResourceTwanaCharacter *)
-           core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004baad0(&this_ptr->base,1);
+  ptr = (SPageResourceTwanaCharacter *)
+        core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004baad0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pSVar1;
+    return ptr;
   }
-  FUN_005c0344(pSVar1);
-  return pSVar1;
+  debugFreeChecked(ptr);
+  return ptr;
 }

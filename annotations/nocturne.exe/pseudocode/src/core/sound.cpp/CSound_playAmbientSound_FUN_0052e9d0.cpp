@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(CSound *this_ptr,char *sound_name)
 
 {
   char cVar1;
   char *pcVar2;
   
-  core_sound_cpp_CSound_killSound_FUN_0052ebb0(this_ptr,_DAT_02dc9c90);
-  pcVar2 = &DAT_02dc9c68;
+  core_sound_cpp_CSound_killSound_FUN_0052ebb0(this_ptr,g_SoundAmbientSfxHandle);
+  pcVar2 = g_SoundAmbientSoundName;
   do {
     cVar1 = *sound_name;
     *pcVar2 = cVar1;
@@ -25,10 +23,11 @@ void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(CSound *this_pt
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  if (_DAT_02dc9c94 == 0) {
+  if (g_SoundAudioInitialized == 0) {
     return;
   }
-  _DAT_02dc9c90 =
-       core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSetPtr,&DAT_02dc9c68);
+  g_SoundAmbientSfxHandle =
+       core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSetPtr,g_SoundAmbientSoundName)
+  ;
   return;
 }

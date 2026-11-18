@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices)
 
 {
@@ -24,20 +22,20 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *
   int iVar11;
   CVector3f local_20 [2];
   
-  _DAT_01b7b748 = 0;
+  g_PVSReadyFlag = 0;
   if ((0 < visible_cube_count) && (visible_cube_indices != (int *)0x0)) {
-    _DAT_01b7b744 = visible_cube_count;
+    g_PVSDrawnCubeCount = visible_cube_count;
     if (20000 < visible_cube_count) {
       g_CurrentFilename = "..\\core\\dtrace.cpp";
       g_CurrentLineNumber = 2249;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::setPVS - Too many drawn cubes in pvs!");
     }
     iVar11 = 0;
-    if (0 < _DAT_01b7b744) {
-      pCVar10 = g_CVector3f_ARRAY_01b8efcc;
+    if (0 < g_PVSDrawnCubeCount) {
+      pCVar10 = g_PVSCubePositions;
       do {
         iVar5 = *visible_cube_indices;
-        *(CDemonCube **)(iVar11 * 4 + 0x1b7b74c) = this_ptr->cube_data + iVar5;
+        g_PVSCubePointers[iVar11] = this_ptr->cube_data + iVar5;
         iVar6 = (this_ptr->grid_coord).z;
         uVar8 = (longlong)iVar5 / (longlong)(this_ptr->grid_coord).z;
         uVar9 = (int)uVar8 >> 0x1f;
@@ -57,9 +55,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *
         pCVar10 = pCVar10 + 1;
         iVar11 = iVar11 + 1;
         visible_cube_indices = visible_cube_indices + 1;
-      } while (iVar11 < _DAT_01b7b744);
+      } while (iVar11 < g_PVSDrawnCubeCount);
     }
-    _DAT_01b7b748 = 1;
+    g_PVSReadyFlag = 1;
   }
   return;
 }

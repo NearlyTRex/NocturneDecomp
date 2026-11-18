@@ -13,19 +13,19 @@
 ;
 ; XREF[7]:
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 004260b2
-;   core_charactr.cpp_FUN_00432330 at 004329df
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330 at 004329df
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 0045539c
-;   core_prye.cpp_FUN_00522b00 at 005233bc
+;   core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00 at 005233bc
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 00560683
-;   core_sound.cpp_FUN_0055f6b0 at 0055f775
+;   core_sound.cpp_processTrainSounds_FUN_0055f6b0 at 0055f775
 ;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 005891fe
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00474400
-;   core_setcolid.cpp_FUN_0053d270
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00474400
+;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x18]      ; 0053cc00
     PUSH ECX                            ; 0053cc03
     PUSH 0x203b37c                      ; 0053cc04 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_00474400   ; 0053cc09
-        ;   XREF to: 00474400 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_FUN_00474400(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00474400 ; 0053cc09
+        ;   XREF to: 00474400 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00474400(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 0053cc0e
     TEST EAX,EAX                        ; 0053cc11
     JZ 0x0053cc21                       ; 0053cc13
@@ -67,8 +67,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0053cc2e
     PUSH 0xbf800000                     ; 0053cc31
     PUSH EDI                            ; 0053cc36
-    CALL core_setcolid.cpp_FUN_0053d270 ; 0053cc37
-        ;   XREF to: 0053d270 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053d270()
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270 ; 0053cc37
+        ;   XREF to: 0053d270 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0053d270(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0053cc3c
     FLD float ptr [ESP + 0x1c]          ; 0053cc40
     ADD ESP,0x14                        ; 0053cc44

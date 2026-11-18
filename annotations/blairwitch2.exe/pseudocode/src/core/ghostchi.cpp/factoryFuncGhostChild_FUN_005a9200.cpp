@@ -11,7 +11,7 @@ CGhostChild * __cdecl core_ghostchi_cpp_factoryFuncGhostChild_FUN_005a9200(void)
 {
   CGhostChild *pCVar1;
   
-  pCVar1 = (CGhostChild *)operator_new(0x11868);
+  pCVar1 = operator_new(0x11868);
   if (pCVar1 == (CGhostChild *)0x0) {
     return (CGhostChild *)0x0;
   }

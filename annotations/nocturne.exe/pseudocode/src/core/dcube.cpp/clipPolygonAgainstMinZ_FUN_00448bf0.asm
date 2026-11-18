@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00448be4 = 00448ca4
 ;   undefined1* PTR_caseD_3_00448bec = 00448c89
-;   undefined4 DAT_014b879c
-;   undefined4 DAT_014b8860
+;   int g_INT_014b879c
+;   int g_INT_014b8860
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 00448bf4
     SUB ESP,0x8                         ; 00448bf6
     AND ESP,0xfffffff8                  ; 00448bf9
-    MOV EBX,dword ptr [0x014b8860]      ; 00448bfc | DAT_014b8860
+    MOV EBX,dword ptr [0x014b8860]      ; 00448bfc | g_INT_014b8860
     MOV EDX,dword ptr [EBP + 0x14]      ; 00448c02
     MOV dword ptr [ESP],EDX             ; 00448c05
-    MOV EDX,dword ptr [0x014b879c]      ; 00448c08 | DAT_014b879c
+    MOV EDX,dword ptr [0x014b879c]      ; 00448c08 | g_INT_014b879c
     XOR EDI,EDI                         ; 00448c0e
     TEST EDX,EDX                        ; 00448c10
     JLE 0x00448c97                      ; 00448c12
         ;   XREF to: 00448c97 (CONDITIONAL_JUMP)  ; LAB_00448c97
     MOV ESI,0x14b87a0                   ; 00448c18
-    MOV EAX,[0x014b879c]                ; 00448c1d | DAT_014b879c
+    MOV EAX,[0x014b879c]                ; 00448c1d | g_INT_014b879c
         ;   Label: LAB_00448c1d
     LEA ECX,[EDI + 0x1]                 ; 00448c22
     CMP ECX,EAX                         ; 00448c25
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00448c85
     INC EBX                             ; 00448c88
         ;   Label: LAB_00448c88
-    MOV ECX,dword ptr [0x014b879c]      ; 00448c89 | DAT_014b879c
+    MOV ECX,dword ptr [0x014b879c]      ; 00448c89 | g_INT_014b879c
         ;   Label: caseD_3
     INC EDI                             ; 00448c8f
     ADD ESI,0xc                         ; 00448c90
     CMP EDI,ECX                         ; 00448c93
     JL 0x00448c1d                       ; 00448c95
         ;   XREF to: 00448c1d (CONDITIONAL_JUMP)  ; LAB_00448c1d
-    MOV dword ptr [0x014b8860],EBX      ; 00448c97 | DAT_014b8860
+    MOV dword ptr [0x014b8860],EBX      ; 00448c97 | g_INT_014b8860
         ;   Label: LAB_00448c97
     MOV ESP,EBP                         ; 00448c9d
     POP EBP                             ; 00448c9f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00448cc6
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00448cc7
     PUSH EAX                            ; 00448ccb
-    MOV dword ptr [0x014b8860],EBX      ; 00448ccc | DAT_014b8860
+    MOV dword ptr [0x014b8860],EBX      ; 00448ccc | g_INT_014b8860
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448cd2
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b8860]      ; 00448cd7 | DAT_014b8860
+    MOV EBX,dword ptr [0x014b8860]      ; 00448cd7 | g_INT_014b8860
     ADD ESP,0x2c                        ; 00448cdd
     JMP 0x00448c88                      ; 00448ce0
         ;   XREF to: 00448c88 (UNCONDITIONAL_JUMP)  ; LAB_00448c88
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 00448d22
     PUSH ECX                            ; 00448d26
     PUSH EDX                            ; 00448d27
-    MOV dword ptr [0x014b8860],EBX      ; 00448d28 | DAT_014b8860
+    MOV dword ptr [0x014b8860],EBX      ; 00448d28 | g_INT_014b8860
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448d2e
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b8860]      ; 00448d33 | DAT_014b8860
+    MOV EBX,dword ptr [0x014b8860]      ; 00448d33 | g_INT_014b8860
     ADD ESP,0x2c                        ; 00448d39
     JMP 0x00448c88                      ; 00448d3c
         ;   XREF to: 00448c88 (UNCONDITIONAL_JUMP)  ; LAB_00448c88

@@ -10,7 +10,7 @@
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ;
 ; XREF[22]:
-;   core_basicene.cpp_FUN_0059f740 at 0059f7e3
+;   core_basicene.cpp_CBasicEnemy_attackFromBone_FUN_0059f740 at 0059f7e3
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411de8
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004137e2
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418e6f
@@ -23,8 +23,8 @@
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2da9
-;   undefined4 DAT_005d2db1
+;   double g_DOUBLE_005d2da9 = 1.20000000000000
+;   double g_DOUBLE_005d2db1 = 0.25
 ;   CGore* g_CGorePtr = 01cb8284
 ;
 ; Called Functions:
@@ -77,11 +77,11 @@ section .text
     JNC 0x0048812c                      ; 00488160
         ;   XREF to: 0048812c (CONDITIONAL_JUMP)  ; LAB_0048812c
     FLD double ptr [ESP]                ; 00488162
-    FMUL double ptr [0x005d2da9]        ; 00488165 | DAT_005d2da9
-    FMUL double ptr [0x005d2db1]        ; 0048816b | DAT_005d2db1
+    FMUL double ptr [0x005d2da9]        ; 00488165 | g_DOUBLE_005d2da9
+    FMUL double ptr [0x005d2db1]        ; 0048816b | g_DOUBLE_005d2db1
     PUSH 0x0                            ; 00488171
     CALL crt_math.c_round_FUN_005b7ff0  ; 00488173
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005b7ff0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 00488178
     MOV EBX,dword ptr [ESP + 0x18]      ; 0048817c
     PUSH EBX                            ; 00488180

@@ -14,7 +14,7 @@
 ;   crt_unknown.c_FUN_00569040 at 0056927b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de5c30
+;   int g_MultibyteLocaleActive
 ;
 ; Called Functions:
 ;   crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0
@@ -720,7 +720,7 @@ section .text
     JZ 0x00569f7d                       ; 00569eba
         ;   XREF to: 00569f7d (CONDITIONAL_JUMP)  ; LAB_00569f7d
     MOV AL,byte ptr [ESP + 0x8]         ; 00569ec0
-    MOV EBP,dword ptr [0x02de5c30]      ; 00569ec4 | DAT_02de5c30
+    MOV EBP,dword ptr [0x02de5c30]      ; 00569ec4 | g_MultibyteLocaleActive
     MOV byte ptr [ESI],AL               ; 00569eca
     TEST EBP,EBP                        ; 00569ecc
     JZ 0x00569f7d                       ; 00569ece

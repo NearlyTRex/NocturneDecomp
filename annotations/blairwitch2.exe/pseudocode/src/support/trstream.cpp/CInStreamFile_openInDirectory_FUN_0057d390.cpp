@@ -15,7 +15,7 @@ int __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInS
   
   (**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);
   this_ptr->position = 0;
-  engine_dosio_cpp_FUN_00460910(&SStack_218,directory,filename);
+  engine_dosio_cpp_callRelativeFilePathHook_FUN_00460910(SStack_218.found_path,directory,filename);
   iVar1 = engine_dosio_cpp_findFile_FUN_00460980(&SStack_218);
   if (iVar1 != 0) {
     this_ptr->file_size = SStack_218.file_size;

@@ -295,7 +295,7 @@ section .text
         ;   XREF to: 004c130b (UNCONDITIONAL_JUMP)  ; LAB_004c130b
     LEA EAX,[EBX*0x4 + 0x0]             ; 004c146a
         ;   Label: LAB_004c146a
-    MOV ESI,dword ptr [0x02ddf9a8]      ; 004c1471 | g_CWeaponActorType_02ddf970.name_hash
+    MOV ESI,dword ptr [0x02ddf9a8]      ; 004c1471 | g_CWeaponClassInfo.name_hash
     ADD EAX,EDX                         ; 004c1477
     PUSH ESI                            ; 004c1479
     MOV EBP,dword ptr [EAX + 0xc]       ; 004c147a

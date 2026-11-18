@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 178,
+    "complexity_score": 124,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 20,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 98,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 99,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 364
+    "total_lines": 365
   },
   "cross_references": [
     {
@@ -120,92 +119,92 @@
     },
     {
       "addr": "005c5014",
-      "name": "DAT_005c5014",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_005c5014",
+      "type": "SRenderVertex[20000]",
       "value": null
     },
     {
       "addr": "005c502c",
-      "name": "DAT_005c502c",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5030",
-      "name": "DAT_005c5030",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5044",
-      "name": "DAT_005c5044",
+      "name": "g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c505c",
-      "name": "DAT_005c505c",
+      "name": "g_SRenderVertex_ARRAY_005c5014[1].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5060",
-      "name": "DAT_005c5060",
+      "name": "g_SRenderVertex_ARRAY_005c5014[1].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5074",
-      "name": "DAT_005c5074",
+      "name": "g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c508c",
-      "name": "DAT_005c508c",
+      "name": "g_SRenderVertex_ARRAY_005c5014[2].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5090",
-      "name": "DAT_005c5090",
+      "name": "g_SRenderVertex_ARRAY_005c5014[2].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c50a4",
-      "name": "DAT_005c50a4",
+      "name": "g_SRenderVertex_ARRAY_005c5014[3].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c50bc",
-      "name": "DAT_005c50bc",
+      "name": "g_SRenderVertex_ARRAY_005c5014[3].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c50c0",
-      "name": "DAT_005c50c0",
+      "name": "g_SRenderVertex_ARRAY_005c5014[3].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00780000",
-      "name": "DAT_00780000",
+      "name": "g_CHAR_ARRAY_0077d250+0x2db0",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007f7370",
-      "name": "DAT_007f7370",
-      "type": "undefined4",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
       "value": null
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -503,60 +502,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Raw hex literal 0x780000 matches address of g_CHAR_ARRAY_0077d250 (+11696 bytes into) (type char[145328]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 34,
+      "match": "0x780000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_005c5014[1].u = iVar1 + 0x780000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005c502c",
-      "severity": "mild",
-      "text": "DAT_005c502c = _DAT_005c505c + 0x80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005c502c",
-      "severity": "mild",
-      "text": "_DAT_005c50bc = DAT_005c502c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_005c5014",
-      "severity": "mild",
-      "text": "(_DAT_007f7370,(SRenderVertex *)&DAT_005c5014);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_005c5044",
-      "severity": "mild",
-      "text": "(_DAT_007f7370,(SRenderVertex *)&DAT_005c5044);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_005c5074",
-      "severity": "mild",
-      "text": "(_DAT_007f7370,(SRenderVertex *)&DAT_005c5074);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_005c50a4",
-      "severity": "mild",
-      "text": "(_DAT_007f7370,(SRenderVertex *)&DAT_005c50a4);",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0x780000 matches address of g_CHAR_ARRAY_0077d250 (+11696 bytes into) (type char[145328]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 35,
+      "match": "0x780000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_005c5014[0].v = iVar2 + 0x780000;",
+      "type": "raw_address_constant"
     }
   ]
 }

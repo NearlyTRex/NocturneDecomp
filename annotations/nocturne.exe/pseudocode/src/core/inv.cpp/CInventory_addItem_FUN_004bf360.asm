@@ -128,7 +128,7 @@ section .text
     CALL core_inv.cpp_getItemDescription_FUN_004bed10 ; 004bf436
         ;   XREF to: 004bed10 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004bed10(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004bf43b
-    MOV ESI,dword ptr [0x007641f4]      ; 004bf43e | g_CAmmoActorType_007641bc.name_hash
+    MOV ESI,dword ptr [0x007641f4]      ; 004bf43e | g_CAmmoClassInfo.name_hash
     PUSH ESI                            ; 004bf444
     PUSH EBX                            ; 004bf445
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004bf446
@@ -914,7 +914,7 @@ section .text
     TEST EAX,EAX                        ; 004bfadd
     JZ 0x004bfd0e                       ; 004bfadf
         ;   XREF to: 004bfd0e (CONDITIONAL_JUMP)  ; LAB_004bfd0e
-    MOV EDI,dword ptr [0x007641f4]      ; 004bfae5 | g_CAmmoActorType_007641bc.name_hash
+    MOV EDI,dword ptr [0x007641f4]      ; 004bfae5 | g_CAmmoClassInfo.name_hash
     PUSH EDI                            ; 004bfaeb
     PUSH ESI                            ; 004bfaec
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004bfaed
@@ -1186,7 +1186,7 @@ section .text
     TEST EAX,EAX                        ; 004bfd23
     JZ 0x004bfec4                       ; 004bfd25
         ;   XREF to: 004bfec4 (CONDITIONAL_JUMP)  ; LAB_004bfec4
-    MOV ESI,dword ptr [0x02ddf9a8]      ; 004bfd2b | g_CWeaponActorType_02ddf970.name_hash
+    MOV ESI,dword ptr [0x02ddf9a8]      ; 004bfd2b | g_CWeaponClassInfo.name_hash
     PUSH ESI                            ; 004bfd31
     PUSH EBX                            ; 004bfd32
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004bfd33
@@ -1410,7 +1410,7 @@ section .text
     POP EDI                             ; 004bff03
         ;   Label: LAB_004bff03
     PUSH EBX                            ; 004bff04
-    MOV ESI,dword ptr [0x014b9904]      ; 004bff05 | g_CBitFont_PTR_014b9904
+    MOV ESI,dword ptr [0x014b9904]      ; 004bff05 | g_SmallEditorFont
     PUSH ESI                            ; 004bff0b
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004bff0c
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
@@ -1419,7 +1419,7 @@ section .text
     FILD dword ptr [ESP + 0x320]        ; 004bff1b
     FMUL double ptr [0x00587161]        ; 004bff22 | DOUBLE_00587161
     FSTP float ptr [EBP + 0x344]        ; 004bff28
-    MOV EDI,dword ptr [0x007641f4]      ; 004bff2e | g_CAmmoActorType_007641bc.name_hash
+    MOV EDI,dword ptr [0x007641f4]      ; 004bff2e | g_CAmmoClassInfo.name_hash
         ;   Label: LAB_004bff2e
     PUSH EDI                            ; 004bff34
     MOV EAX,dword ptr [ESP + 0x340]     ; 004bff35
@@ -1444,7 +1444,7 @@ section .text
         ;   XREF to: 004bff9e (CONDITIONAL_JUMP)  ; LAB_004bff9e
     MOV ESI,EBP                         ; 004bff6d
     MOV dword ptr [ESP + 0x308],EBX     ; 004bff6f
-    MOV EDX,dword ptr [0x007641f4]      ; 004bff76 | g_CAmmoActorType_007641bc.name_hash
+    MOV EDX,dword ptr [0x007641f4]      ; 004bff76 | g_CAmmoClassInfo.name_hash
         ;   Label: LAB_004bff76
     PUSH EDX                            ; 004bff7c
     MOV ECX,dword ptr [ESI + 0xc]       ; 004bff7d
@@ -1473,7 +1473,7 @@ section .text
     TEST EAX,EAX                        ; 004bffb9
     JLE 0x004bffe3                      ; 004bffbb
         ;   XREF to: 004bffe3 (CONDITIONAL_JUMP)  ; LAB_004bffe3
-    MOV EDX,dword ptr [0x02ddf9a8]      ; 004bffbd | g_CWeaponActorType_02ddf970.name_hash
+    MOV EDX,dword ptr [0x02ddf9a8]      ; 004bffbd | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004bffbd
     PUSH EDX                            ; 004bffc3
     MOV ECX,dword ptr [ESI + 0xc]       ; 004bffc4
@@ -1505,7 +1505,7 @@ section .text
     TEST EBX,EBX                        ; 004c000b
     JLE 0x004c0036                      ; 004c000d
         ;   XREF to: 004c0036 (CONDITIONAL_JUMP)  ; LAB_004c0036
-    MOV EAX,[0x02ddf9a8]                ; 004c000f | g_CWeaponActorType_02ddf970.name_hash
+    MOV EAX,[0x02ddf9a8]                ; 004c000f | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004c000f
     PUSH EAX                            ; 004c0014
     MOV EDX,dword ptr [ESI + 0xc]       ; 004c0015
@@ -1654,7 +1654,7 @@ section .text
     CMP EAX,dword ptr [EDX + 0x310]     ; 004c01c5
     JNZ 0x004c002b                      ; 004c01cb
         ;   XREF to: 004c002b (CONDITIONAL_JUMP)  ; LAB_004c002b
-    MOV EDI,dword ptr [0x02dd1008]      ; 004c01d1 | g_CTommyGunActorType_02dd0fd0.name_hash
+    MOV EDI,dword ptr [0x02dd1008]      ; 004c01d1 | g_CTommyGunClassInfo.name_hash
     MOV EAX,dword ptr [EDX + 0x30c]     ; 004c01d7
     MOV ESI,dword ptr [EBX + 0x560]     ; 004c01dd
     PUSH EDI                            ; 004c01e3
@@ -1702,7 +1702,7 @@ section .text
     TEST EAX,EAX                        ; 004c025a
     JZ 0x004c02e8                       ; 004c025c
         ;   XREF to: 004c02e8 (CONDITIONAL_JUMP)  ; LAB_004c02e8
-    MOV ESI,dword ptr [0x02ddf9a8]      ; 004c0262 | g_CWeaponActorType_02ddf970.name_hash
+    MOV ESI,dword ptr [0x02ddf9a8]      ; 004c0262 | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004c0262
     PUSH ESI                            ; 004c0268
     MOV EDI,dword ptr [ESP + 0x340]     ; 004c0269
@@ -1726,7 +1726,7 @@ section .text
     MOV EBX,EDX                         ; 004c029d
     MOV dword ptr [EBP + 0x8],EAX       ; 004c029f
     CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0 ; 004c02a2
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * param_2)
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004d8cd0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004c02a7
     MOV EAX,EBX                         ; 004c02aa
     PUSH EBP                            ; 004c02ac
@@ -1806,7 +1806,7 @@ section .text
     POP ESI                             ; 004c0376
     POP EBX                             ; 004c0377
     RET                                 ; 004c0378
-    MOV EDX,dword ptr [0x01cc56dc]      ; 004c0379 | g_CMeleeActorType_01cc56a4.name_hash
+    MOV EDX,dword ptr [0x01cc56dc]      ; 004c0379 | g_CMeleeClassInfo.name_hash
         ;   Label: LAB_004c0379
     PUSH EDX                            ; 004c037f
     PUSH EAX                            ; 004c0380
@@ -1822,7 +1822,7 @@ section .text
     JLE 0x004c03dd                      ; 004c0398
         ;   XREF to: 004c03dd (CONDITIONAL_JUMP)  ; LAB_004c03dd
     MOV dword ptr [ESP + 0x314],EBP     ; 004c039a
-    MOV EAX,[0x02ddf9a8]                ; 004c03a1 | g_CWeaponActorType_02ddf970.name_hash
+    MOV EAX,[0x02ddf9a8]                ; 004c03a1 | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004c03a1
     PUSH EAX                            ; 004c03a6
     MOV EAX,dword ptr [ESP + 0x318]     ; 004c03a7
@@ -1852,7 +1852,7 @@ section .text
     JLE 0x004c043f                      ; 004c03eb
         ;   XREF to: 004c043f (CONDITIONAL_JUMP)  ; LAB_004c043f
     MOV dword ptr [ESP + 0x31c],EBP     ; 004c03ed
-    MOV ESI,dword ptr [0x007641f4]      ; 004c03f4 | g_CAmmoActorType_007641bc.name_hash
+    MOV ESI,dword ptr [0x007641f4]      ; 004c03f4 | g_CAmmoClassInfo.name_hash
         ;   Label: LAB_004c03f4
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004c03fa
     PUSH ESI                            ; 004c0401
@@ -1945,7 +1945,7 @@ section .text
     JNZ 0x004c03c4                      ; 004c04e4
         ;   XREF to: 004c03c4 (CONDITIONAL_JUMP)  ; LAB_004c03c4
     MOV EAX,dword ptr [EDI + 0x560]     ; 004c04ea
-    MOV EDI,dword ptr [0x02dd1008]      ; 004c04f0 | g_CTommyGunActorType_02dd0fd0.name_hash
+    MOV EDI,dword ptr [0x02dd1008]      ; 004c04f0 | g_CTommyGunClassInfo.name_hash
     MOV ESI,dword ptr [EBX + 0x560]     ; 004c04f6
     PUSH EDI                            ; 004c04fc
     ADD ESI,EAX                         ; 004c04fd

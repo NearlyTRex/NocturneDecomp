@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CCheesyCipher_setKey_FUN_00434d30 at 00434d42
-;   support_codec.cpp_FUN_00434d60 at 00434d66
+;   support_codec.cpp_CCheesyCipher_transformByte_FUN_00434d60 at 00434d66
 ;
 ; *****************************************************************************
 

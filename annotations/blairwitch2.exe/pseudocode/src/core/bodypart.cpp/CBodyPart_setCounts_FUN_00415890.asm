@@ -13,7 +13,7 @@
 ;   core_bodypart.cpp_CBodyPart_dtor_FUN_00415800 at 0041581b
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700 at 00416730
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004162b0 at 0041634e
-;   core_bodypart.cpp_FUN_004178c0 at 004178ec
+;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_004178c0 at 004178ec
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_00543490 at 005436ee
 ;
 ; Referenced Globals:
@@ -21,11 +21,11 @@
 ;   TerminatedCString s_CBodyPart_setCounts_out_005cbd6b
 ;   TerminatedCString s_core_bodypart_cpp_005cbdb0
 ;   TerminatedCString s_CBodyPart_setCounts_out_005cbdc5
-;   undefined4 DAT_01d046a0
-;   undefined4 DAT_01d046a4
+;   char* g_CHAR_PTR_01d046a0
+;   int g_INT_01d046a4
 ;
 ; Called Functions:
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   crt_memory.c_realloc_FUN_005b8ce0
 ;
 ; *****************************************************************************
@@ -101,10 +101,10 @@ section .text
     MOV ECX,0x5cbd56                    ; 00415964 | = "..\\core\\bodypart.cpp"
     MOV ESI,0xb2                        ; 00415969
     PUSH 0x5cbd6b                       ; 0041596e | = "CBodyPart::setCounts - out of memory ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00415973 | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00415979 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0041597f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 00415973 | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 00415979 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0041597f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00415984
     CMP dword ptr [EBX + 0x2dc],0x0     ; 00415987
         ;   Label: LAB_00415987
@@ -128,10 +128,10 @@ section .text
     MOV ECX,0x5cbdb0                    ; 004159ae | = "..\\core\\bodypart.cpp"
     MOV ESI,0xb7                        ; 004159b3
     PUSH 0x5cbdc5                       ; 004159b8 | = "CBodyPart::setCounts - out of memory ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004159bd | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004159c3 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 004159c9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV dword ptr [0x01d046a0],ECX      ; 004159bd | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],ESI      ; 004159c3 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004159c9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004159ce
     POP EBP                             ; 004159d1
     POP EDI                             ; 004159d2

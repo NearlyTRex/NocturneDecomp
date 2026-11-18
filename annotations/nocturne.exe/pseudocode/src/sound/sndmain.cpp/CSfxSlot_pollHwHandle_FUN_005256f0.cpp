@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this_ptr)
 
 {
   int iVar1;
-  uint uVar2;
+  uint update_flags;
   
   if (this_ptr->hardware_buffer_handle == 0) {
     return;
   }
-  if (_DAT_02dc8318 == (int *)0x0) {
+  if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr);
     return;
   }
@@ -26,7 +24,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this
     g_CurrentLineNumber = 2915;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::pollHwHandle - no sample?");
   }
-  iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,this_ptr);
+  iVar1 = (*g_CSoundDevicePtr->vtable->isSfxPlaying)(g_CSoundDevicePtr,this_ptr);
   if (iVar1 == 0) {
     if (this_ptr->sample->loops != 0) {
       sound_sndmain_cpp_logSoundError_FUN_00529980
@@ -35,24 +33,24 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this
     sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr);
     return;
   }
-  uVar2 = 0;
+  update_flags = 0;
   if (((this_ptr->options).flags & 1) == 0) {
     if ((this_ptr->options).position_format != 0) {
-      uVar2 = 2;
+      update_flags = 2;
     }
     if ((this_ptr->options).velocity_format != 0) {
-      uVar2 = uVar2 | 4;
-      if (uVar2 == 0) {
+      update_flags = update_flags | 4;
+      if (update_flags == 0) {
         return;
       }
       goto LAB_005257a3;
     }
   }
-  if (uVar2 == 0) {
+  if (update_flags == 0) {
     return;
   }
 LAB_005257a3:
-  iVar1 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,uVar2);
+  iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,update_flags);
   if (iVar1 != 0) {
     return;
   }

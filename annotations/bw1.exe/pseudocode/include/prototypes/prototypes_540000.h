@@ -10,7 +10,6 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonSet.h"
-#include "types/classes/CGame.h"
 #include "types/classes/CRifle.h"
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
@@ -49,9 +48,9 @@ int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_00541de0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00541e30(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_00542090(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_00542270(CScat *this_ptr,int hand_index);
-void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3);
-undefined4 core_scat_cpp_FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int param_3);
-void core_scat_cpp_FUN_00542f20(int param_1);
+void __cdecl core_scat_cpp_CScat_updateAiming_FUN_005424f0(CScat *this_ptr,float delta_time,int is_holstered);
+float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00542b90(CScat *this_ptr,CDemonActor *target,int is_current_target);
+void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_00542f20(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00543070(CScat *this_ptr,uint flags);
 void __cdecl core_script_cpp_staticInit_FUN_005430c0(void);
 int __cdecl core_script_cpp_validateActorVariableName_FUN_00543100(char *variable_name);
@@ -71,9 +70,9 @@ void __cdecl core_script_cpp_CScript_process_FUN_005437f0(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00543950(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005439b0(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_renderEditor_FUN_00543c00(CScript *this_ptr,int left,int top,int right,int bottom);
-undefined4 core_script_cpp_FUN_00543e00(CScript *param_1,char *param_2);
+int __cdecl core_script_cpp_CScript_loadScript_FUN_00543e00(CScript *this_ptr,char *filename);
 void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00543fd0(CScript *this_ptr);
-undefined * core_script_cpp_FUN_00544100(CScript *param_1,int *param_2,int param_3);
+char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_00544100(CScript *this_ptr,int *error_line_out,int min_error_line);
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_00544190(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00544310(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *time_remaining);
@@ -105,14 +104,14 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0054cc80(CSentinel *
 ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_0054ce10(CSentinel *this_ptr,SCollisionInfo *collision_info);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_0054cec0(void);
-CGame * core_set_cpp_FUN_0054cf40(void);
-void core_set_cpp_FUN_0054cf80(int param_1);
+void __cdecl core_set_cpp_updateHighlightedActors_FUN_0054cf40(void);
+void __cdecl core_set_cpp_applyActorFlatColor_FUN_0054cf80(CDemonActor *actor);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_0054d370(CDemonSet *this_ptr);
-CDemonSet * core_set_cpp_FUN_0054d3c0(CDemonSet *param_1,char *param_2);
+void __cdecl core_set_cpp_CDemonSet_load_FUN_0054d3c0(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(CDemonSet *this_ptr,float frustum_param,int render_mode);
-void core_set_cpp_FUN_0054e6a0(void);
+void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0054e6a0(CDemonSet *this_ptr,int light_index);
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet *this_ptr,int layer_flag);
 void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(CDemonSet *this_ptr,CDemonActor *actor);

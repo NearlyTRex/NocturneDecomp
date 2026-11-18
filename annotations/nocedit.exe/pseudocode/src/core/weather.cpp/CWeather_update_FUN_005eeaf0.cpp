@@ -57,7 +57,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_005eeaf0(CWeather *this_ptr)
   }
 LAB_005eeb1c:
   if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(UINT_03f96b40);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(g_RainSoundHandle);
     return;
   }
   iVar5 = 0;
@@ -140,9 +140,9 @@ LAB_005eeb1c:
       fVar9 = (float10)fscale(fVar8 + fVar5,fVar7);
       this_ptr->max_flash_interval = (float)fVar9;
     }
-    iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(UINT_03f96b40);
+    iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(g_RainSoundHandle);
     if (iVar7 == 0) {
-      UINT_03f96b40 =
+      g_RainSoundHandle =
            core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,this_ptr,"rain.wav @ .1");
       return;
     }

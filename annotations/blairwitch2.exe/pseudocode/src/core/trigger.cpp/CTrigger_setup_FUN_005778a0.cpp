@@ -11,15 +11,16 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005778a0(CTrigger *this_ptr)
 {
   char cVar1;
   ETriggerCause EVar2;
-  int iVar3;
+  CDemonMission *pCVar3;
+  int iVar4;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
-  iVar3 = 0x01D182F0;
+  pCVar3 = g_CDemonMission_PTR_00618170;
   (this_ptr->base).is_renderable = 0;
-  iVar3 = *(int *)(iVar3 + 0x1008);
+  iVar4 = pCVar3->is_in_editor;
   (this_ptr->base).collision_disabled = 1;
   EVar2 = this_ptr->trigger_cause;
-  (this_ptr->base).is_transparent = iVar3;
+  (this_ptr->base).is_transparent = iVar4;
   if (EVar2 == TRIGGER_CAUSE_LASER) {
     (this_ptr->base).collision_disabled = 0;
   }
@@ -31,12 +32,12 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005778a0(CTrigger *this_ptr)
   }
   this_ptr->event_flag = 0;
   this_ptr->cached_actor = (CDemonActor *)0x0;
-  iVar3 = _stricmp(this_ptr->on_event,(char *)0x5ecd76);
-  if (iVar3 == 0) {
+  iVar4 = _stricmp(this_ptr->on_event,"none");
+  if (iVar4 == 0) {
     this_ptr->on_event[0] = '\0';
   }
-  iVar3 = _stricmp(this_ptr->off_event,(char *)0x5ecd7b);
-  if (iVar3 == 0) {
+  iVar4 = _stricmp(this_ptr->off_event,"none");
+  if (iVar4 == 0) {
     this_ptr->off_event[0] = '\0';
   }
   cVar1 = this_ptr->on_event[0];

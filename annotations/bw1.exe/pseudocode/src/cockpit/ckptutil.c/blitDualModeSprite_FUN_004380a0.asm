@@ -15,12 +15,12 @@
 ;   cockpit_ckptutil.c_blitFullScreen_FUN_00438530 at 0043854e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0061b4a0
-;   undefined4 DAT_01c4354c
-;   undefined4 DAT_01c43550
+;   int g_INT_0061b4a0 = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_00437270
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EBP                            ; 004380a3
     SUB ESP,0x28                        ; 004380a4
     MOV EDI,dword ptr [ESP + 0x3c]      ; 004380a7
-    MOV EDX,dword ptr [0x01c4354c]      ; 004380ab | DAT_01c4354c
-    MOV EAX,[0x01c43550]                ; 004380b1 | DAT_01c43550
+    MOV EDX,dword ptr [0x01c4354c]      ; 004380ab | g_ScreenBufferArray
+    MOV EAX,[0x01c43550]                ; 004380b1 | g_ScreenBufferArray[1]
     SUB EAX,EDX                         ; 004380b6
     MOV dword ptr [ESP + 0xc],EAX       ; 004380b8
     TEST EDI,EDI                        ; 004380bc
@@ -47,13 +47,13 @@ section .text
     POP ESI                             ; 004380c5
     POP EBX                             ; 004380c6
     RET                                 ; 004380c7
-    CALL cockpit_ckptutil.c_FUN_00437270 ; 004380c8
-        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00437270()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270 ; 004380c8
+        ;   XREF to: 00437270 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00437270()
         ;   Label: LAB_004380c8
     MOV EDX,dword ptr [ESP + 0x50]      ; 004380cd
     MOV ESI,dword ptr [ESP + 0x48]      ; 004380d1
     MOV EBX,EDX                         ; 004380d5
-    MOV ECX,dword ptr [0x0061b4a0]      ; 004380d7 | DAT_0061b4a0
+    MOV ECX,dword ptr [0x0061b4a0]      ; 004380d7 | g_INT_0061b4a0
     SHL EBX,0x5                         ; 004380dd
     MOV EBP,EAX                         ; 004380e0
     ADD EBX,EDX                         ; 004380e2

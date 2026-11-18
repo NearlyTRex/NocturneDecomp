@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0052c1d0(uint timestamp)
 
 {
   uint uStack_10;
   
-  uStack_10 = (float)(int)(_DAT_01d51da0 - timestamp) * (float)_DAT_005eb5e8;
+  uStack_10 = (float)(int)(g_UINT_01d51da0 - timestamp) * (float)1.52587890625e-05;
   if (uStack_10 < 0.0) {
     uStack_10 = 0.0;
   }
-  if (uStack_10 <= (float)_DAT_005eb5f0) {
+  if (uStack_10 <= (float)30) {
     return uStack_10;
   }
   return 30.0;

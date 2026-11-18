@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 119,
+    "complexity_score": 69,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 8,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_constant",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
     "total_lines": 65
   },
@@ -52,115 +50,115 @@
   "globals": [
     {
       "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005f2afc",
+      "type": "CDemonRenderer*",
+      "value": "01bdd7e4"
     },
     {
       "addr": "0060b02c",
-      "name": "DAT_0060b02c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b030",
-      "name": "DAT_0060b030",
+      "name": "g_SRenderVertex_ARRAY_0060b014[0].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b05c",
-      "name": "DAT_0060b05c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b060",
-      "name": "DAT_0060b060",
+      "name": "g_SRenderVertex_ARRAY_0060b014[1].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b08c",
-      "name": "DAT_0060b08c",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b090",
-      "name": "DAT_0060b090",
+      "name": "g_SRenderVertex_ARRAY_0060b014[2].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0bc",
-      "name": "DAT_0060b0bc",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].u",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0060b0c0",
-      "name": "DAT_0060b0c0",
+      "name": "g_SRenderVertex_ARRAY_0060b014[3].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bdd7e4",
-      "name": "DAT_01bdd7e4",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bdd7e4",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01d22e4c",
-      "name": "DAT_01d22e4c",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.base.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e50",
-      "name": "DAT_01d22e50",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e54",
-      "name": "DAT_01d22e54",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e58",
-      "name": "DAT_01d22e58",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e5c",
-      "name": "DAT_01d22e5c",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e60",
-      "name": "DAT_01d22e60",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e64",
-      "name": "DAT_01d22e64",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e68",
-      "name": "DAT_01d22e68",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d22e6c",
-      "name": "DAT_01d22e6c",
+      "name": "g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[3]",
       "type": "undefined4",
       "value": null
     }
@@ -262,67 +260,35 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 13,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_0060b014[0].v = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 14,
-      "match": "DAT_0060b02c",
-      "severity": "mild",
-      "text": "DAT_0060b02c = 0x80000;",
-      "type": "undefined_data"
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_0060b014[1].u = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0060b090",
-      "severity": "mild",
-      "text": "DAT_0060b090 = 0x80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b030`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b030` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 15,
       "match": "0xf80000",
       "severity": "moderate",
-      "text": "_DAT_0060b030 = 0xf80000;",
+      "text": "g_SRenderVertex_ARRAY_0060b014[1].v = 0xf80000;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b05c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b05c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 16,
       "match": "0xf80000",
       "severity": "moderate",
-      "text": "_DAT_0060b05c = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b060`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b060` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 17,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "_DAT_0060b060 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0060b08c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0060b08c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 18,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "_DAT_0060b08c = 0xf80000;",
+      "text": "g_SRenderVertex_ARRAY_0060b014[2].u = 0xf80000;",
       "type": "raw_address_constant"
     }
   ]

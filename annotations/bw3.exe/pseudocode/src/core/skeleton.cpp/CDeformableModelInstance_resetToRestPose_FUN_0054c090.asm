@@ -8,7 +8,7 @@
 ;
 ; XREF[12]:
 ;   core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00 at 005a0bb3
-;   core_cloth.cpp_FUN_0043cb00 at 0043cf3f
+;   core_cloth.cpp_CCloth_setup_FUN_0043cb00 at 0043cf3f
 ;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 00598930
 ;   core_passngr.cpp_CPassenger_setup_FUN_0050a610 at 0050a63a
 ;   core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0 at 005276cf

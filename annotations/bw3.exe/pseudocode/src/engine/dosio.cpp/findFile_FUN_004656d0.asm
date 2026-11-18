@@ -7,14 +7,14 @@
 ; SFoundFileInfo * Stack[0x4]:4   context
 ;
 ; XREF[5]:
-;   engine_dosio.cpp_FUN_004659c0 at 00465a37
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0 at 00465816
+;   engine_dosio.cpp_getFile_FUN_004659c0 at 00465a37
 ;   engine_dosio.cpp_reopenFileStream_FUN_00465a80 at 00465b08
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 00569826
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 at 00573ffe
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b8517c
+;   int g_NumSearchHandlers
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_findFileNormally_FUN_00465730
@@ -29,7 +29,7 @@ section .text
     PUSH EDI                            ; 004656d2
     PUSH EBP                            ; 004656d3
     MOV EDI,dword ptr [ESP + 0x14]      ; 004656d4
-    MOV EDX,dword ptr [0x01b8517c]      ; 004656d8 | DAT_01b8517c
+    MOV EDX,dword ptr [0x01b8517c]      ; 004656d8 | g_NumSearchHandlers
     CMP EDX,0x1                         ; 004656de
     JL 0x00465710                       ; 004656e1
         ;   XREF to: 00465710 (CONDITIONAL_JUMP)  ; LAB_00465710
@@ -46,7 +46,7 @@ section .text
     TEST EAX,EAX                        ; 004656f7
     JNZ 0x0046571e                      ; 004656f9
         ;   XREF to: 0046571e (CONDITIONAL_JUMP)  ; LAB_0046571e
-    MOV EBP,dword ptr [0x01b8517c]      ; 004656fb | DAT_01b8517c
+    MOV EBP,dword ptr [0x01b8517c]      ; 004656fb | g_NumSearchHandlers
     INC ESI                             ; 00465701
     ADD EBX,0x4                         ; 00465702
     CMP ESI,EBP                         ; 00465705

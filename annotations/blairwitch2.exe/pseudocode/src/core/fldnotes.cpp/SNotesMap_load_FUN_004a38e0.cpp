@@ -6,14 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004a38e0(SNotesMap *this_ptr)
 
 {
   void *pvVar1;
   int iVar2;
   int iVar3;
+  int extraout_EAX;
   uint uVar4;
   uint uVar5;
   SNotesMapSet *pSVar6;
@@ -28,9 +27,9 @@ int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004a38e0(SNotesMap *this_ptr)
                      (this_ptr->saved_alpha,(this_ptr->image).width * (this_ptr->image).height);
   this_ptr->saved_alpha = pvVar1;
   if (pvVar1 == (void *)0x0) {
-    _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
-    _DAT_01d046a4 = 0x71e;
-    core_main_c_FUN_004e4500("Out of memory!");
+    g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
+    g_INT_01d046a4 = 0x71e;
+    core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
   }
   uVar4 = (this_ptr->image).height * (this_ptr->image).width;
   pcVar7 = (this_ptr->image).opa;
@@ -54,8 +53,9 @@ int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004a38e0(SNotesMap *this_ptr)
     iVar3 = 1;
   }
   engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(&this_ptr->reveal_mask,iVar2,iVar3);
-  iVar2 = engine_alphabit_cpp_FUN_0040dd20(&this_ptr->reveal_mask,0);
+  engine_alphabit_cpp_CAlphaBitmap_fillOpa_FUN_0040dd20(&this_ptr->reveal_mask,0);
   iVar3 = 0;
+  iVar2 = extraout_EAX;
   if (0 < this_ptr->set_count) {
     pSVar6 = this_ptr->sets;
     do {

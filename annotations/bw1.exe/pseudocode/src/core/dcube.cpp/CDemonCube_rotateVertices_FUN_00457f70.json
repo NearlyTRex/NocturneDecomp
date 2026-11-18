@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 363,
+    "complexity_score": 213,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 98,
-    "suspect_count": 23,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unresolved_funcptr",
       "warning_indirect_jump",
-      "warning_jumptable",
-      "warning_overlapping_globals"
+      "warning_jumptable"
     ],
     "total_lines": 326
   },
@@ -56,7 +54,7 @@
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_005030e0"
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
     },
     {
       "addr": "00483e20",
@@ -81,7 +79,7 @@
     {
       "addr": "00580173",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00580173"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_00580173"
     }
   ],
   "globals": [
@@ -105,74 +103,74 @@
     },
     {
       "addr": "005d7cff",
-      "name": "DAT_005d7cff",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CubeColorScaleFactor",
+      "type": "float",
+      "value": "127"
     },
     {
       "addr": "005fe660",
-      "name": "DAT_005fe660",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CubeWorldToScreenScale",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "00612560",
-      "name": "DAT_00612560",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_00612560",
+      "type": "CDemonRenderer*",
+      "value": "01bc120c"
     },
     {
       "addr": "0152bd3c",
-      "name": "DAT_0152bd3c",
-      "type": "undefined4",
+      "name": "g_StaticColorVector",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "0152bd40",
-      "name": "DAT_0152bd40",
+      "name": "g_StaticColorVector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0152bd44",
-      "name": "DAT_0152bd44",
+      "name": "g_StaticColorVector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0152bd48",
-      "name": "DAT_0152bd48",
-      "type": "undefined4",
+      "name": "g_ColorConstantsInitialized",
+      "type": "uchar",
       "value": null
     },
     {
       "addr": "01bc120c",
-      "name": "DAT_01bc120c",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01bc120c",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01bc1224",
-      "name": "DAT_01bc1224",
+      "name": "g_CDemonRenderer_01bc120c.advanced_culling_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1d400",
-      "name": "DAT_01d1d400",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "DAT_01d1d404",
-      "type": "undefined4",
+      "name": "g_INT_01d1d404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02c8af28",
-      "name": "DAT_02c8af28",
-      "type": "undefined4",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
       "value": null
     }
   ],
@@ -393,96 +391,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&DAT_02c8af28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02c8af28",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&DAT_02c8af28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "output = DAT_00612560->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "if (DAT_00612560->advanced_culling_enabled == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_0152bd48",
-      "severity": "mild",
-      "text": "if ((DAT_0152bd48 & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_0152bd48",
-      "severity": "mild",
-      "text": "DAT_0152bd48 = DAT_0152bd48 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_0152bd48",
-      "severity": "mild",
-      "text": "DAT_0152bd48 = DAT_0152bd48 | 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Jump table recovery failed",
-      "line": 70,
+      "line": 69,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x0045808e. Too many branches */",
@@ -490,7 +400,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 71,
+      "line": 70,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -498,7 +408,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
+      "line": 71,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)&PTR_LAB_00457f50 + local_24))();",
@@ -506,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(float *)((int)(pCVar2->triangle).vertices",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)(pCVar2->triangle).vertices + local_18 + 0xc);",
@@ -514,7 +424,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(float *)((int)(pCVar2->triangle).vertices",
       "severity": "moderate",
       "text": "local_38 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x10);",
@@ -522,47 +432,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(float *)((int)(pCVar2->triangle).vertices",
       "severity": "moderate",
       "text": "local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,local_30 & 0xff,local_2c & 0xff,local_28 & 0xff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices",
       "severity": "moderate",
       "text": "((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + local_18),",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&PTR_LAB_00457f50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)&PTR_LAB_00457f50",
       "severity": "moderate",
       "text": "(**(code **)((int)&PTR_LAB_00457f50 + local_24))();",
@@ -570,7 +456,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(**(code **)((int)&PTR_LAB_00457f50 + local_24))();",

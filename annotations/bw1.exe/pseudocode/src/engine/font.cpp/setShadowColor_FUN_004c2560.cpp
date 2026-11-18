@@ -7,31 +7,31 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004c2647) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl engine_font_cpp_setShadowColor_FUN_004c2560(uint red,uint green,uint blue)
 
 {
-  if (DAT_0061b4a0 != 8) {
-    if (DAT_0061b4a0 == 0x10) {
-      _DAT_01cc8cd2 =
-           (ushort)(blue / _DAT_01c4e9f0 << (DAT_01c4e9ec & 0x1f)) |
-           (ushort)(red / _DAT_01c4e9d8 << (DAT_01c4e9d4 & 0x1f)) |
-           (ushort)(green / _DAT_01c4e9e4 << (DAT_01c4e9e0 & 0x1f));
+  if (g_INT_0061b4a0 != 8) {
+    if (g_INT_0061b4a0 == 0x10) {
+      g_USHORT_01cc8cd2 =
+           (ushort)(blue / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f)) |
+           (ushort)(red / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
+           (ushort)(green / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f));
     }
-    else if (DAT_0061b4a0 == 0x20) {
-      _DAT_01cc8cd4 =
-           blue << (DAT_01c4e9ec & 0x1f) |
-           red << (DAT_01c4e9d4 & 0x1f) | green << (DAT_01c4e9e0 & 0x1f);
+    else if (g_INT_0061b4a0 == 0x20) {
+      g_ShadowColor32 =
+           blue << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           red << (g_RedBitPosition.bytes[0] & 0x1f) | green << (g_GreenBitPosition.bytes[0] & 0x1f)
+      ;
     }
     else {
-      _DAT_01d1d400 = "..\\engine\\font.cpp";
-      _DAT_01d1d404 = 0x4c0;
-      core_main_c_FUN_005030e0("Invalid bitsPerPixel in CBitFont::setTrueColor");
+      g_CHAR_PTR_01d1d400 = "..\\engine\\font.cpp";
+      g_INT_01d1d404 = 0x4c0;
+      core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid bitsPerPixel in CBitFont::setTrueColor");
     }
   }
-  _DAT_01cc8cdc = green;
-  _DAT_01cc8ce0 = blue;
-  _DAT_01cc8cd8 = red;
+  g_ShadowColorGreen = green;
+  g_ShadowColorBlue = blue;
+  g_ShadowColorRed = red;
   return;
 }

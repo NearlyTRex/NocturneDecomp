@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *this_ptr)
 
 {
@@ -34,9 +32,9 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *thi
   do {
     core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(this_ptr,&local_1c,corner_index);
     corner_index = corner_index + 1;
-    pCVar3->x = (int)ROUND(local_1c.x * _DAT_0059aa80);
-    pCVar3->y = (int)ROUND(local_1c.y * _DAT_0059aa80);
-    pCVar3->z = (int)ROUND(local_1c.z * _DAT_0059aa80);
+    pCVar3->x = (int)ROUND(local_1c.x * 256.0f);
+    pCVar3->y = (int)ROUND(local_1c.y * 256.0f);
+    pCVar3->z = (int)ROUND(local_1c.z * 256.0f);
     pCVar3 = pCVar3 + 1;
   } while ((int)corner_index < 8);
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(g_CDemonSetPtr,8,local_b0);
@@ -44,12 +42,12 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *thi
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
             (g_CDemonRenderer_PTR_005ae704,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,0);
-  local_28 = (int)ROUND((this_ptr->min).x * _DAT_0059aa80);
-  local_24 = (int)ROUND((this_ptr->min).y * _DAT_0059aa80);
-  local_20 = (int)ROUND((this_ptr->min).z * _DAT_0059aa80);
-  local_10 = (int)ROUND((this_ptr->max).x * _DAT_0059aa80);
-  local_c = (int)ROUND((this_ptr->max).y * _DAT_0059aa80);
-  local_8.i = (int)ROUND((this_ptr->max).z * _DAT_0059aa80);
+  local_28 = (int)ROUND((this_ptr->min).x * 256.0f);
+  local_24 = (int)ROUND((this_ptr->min).y * 256.0f);
+  local_20 = (int)ROUND((this_ptr->min).z * 256.0f);
+  local_10 = (int)ROUND((this_ptr->max).x * 256.0f);
+  local_c = (int)ROUND((this_ptr->max).y * 256.0f);
+  local_8.i = (int)ROUND((this_ptr->max).z * 256.0f);
   puVar2 = (uchar *)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                               (g_CDemonRenderer_PTR_005ae704);
   pCVar1 = g_CDemonRenderer_PTR_005ae704;

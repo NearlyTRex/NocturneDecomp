@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(CStranger *this_ptr,float delta_time)
 
 {
@@ -45,9 +43,9 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(CStrang
     }
   }
   iVar1 = this_ptr->turn_motion_index;
-  this_ptr->turn_motion_index = _DAT_02dc9fa0;
+  this_ptr->turn_motion_index = g_StrangerIndices[0x14];
   if (this_ptr->turn_angle < 0.0) {
-    this_ptr->turn_motion_index = _DAT_02dc9fa4;
+    this_ptr->turn_motion_index = g_StrangerIndices[0x15];
   }
   if (this_ptr->turn_blend_weight <= (float)0.20000000000000001) {
     this_ptr->turn_elapsed = 0.0;

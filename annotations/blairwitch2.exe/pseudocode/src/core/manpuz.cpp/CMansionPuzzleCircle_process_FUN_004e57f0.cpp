@@ -38,12 +38,12 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_004e57f0(CMansionP
     } while (iVar3 < 0xc);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_FUN_004e6240(this_ptr,iVar3);
+      core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240(this_ptr,iVar3);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0xc);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_FUN_004e7600(this_ptr,iVar3);
+      core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004e7600(this_ptr,iVar3);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 2);
     pCVar1 = &this_ptr->reflectors[1].rotation;

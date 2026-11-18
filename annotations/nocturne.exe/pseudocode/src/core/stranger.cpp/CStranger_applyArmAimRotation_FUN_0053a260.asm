@@ -48,11 +48,11 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00595967 = 0.000100000000000000
-;   undefined4 DAT_005a4508
-;   undefined4 DAT_02dc9f5c
-;   undefined4 DAT_02dc9f60
-;   undefined4 DAT_02dc9f64
-;   undefined4 DAT_02dc9f68
+;   CQuaternion4f g_IdentityQuaternion
+;   undefined4 g_StrangerIndices[3]
+;   undefined4 g_StrangerIndices[4]
+;   undefined4 g_StrangerIndices[5]
+;   undefined4 g_StrangerIndices[6]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
@@ -83,10 +83,10 @@ section .text
     JZ 0x0053a55d                       ; 0053a276
         ;   XREF to: 0053a55d (CONDITIONAL_JUMP)  ; LAB_0053a55d
     PUSH 0xbfc90fdb                     ; 0053a27c
-    MOV EAX,[0x02dc9f60]                ; 0053a281 | DAT_02dc9f60
+    MOV EAX,[0x02dc9f60]                ; 0053a281 | g_StrangerIndices[4]
     LEA ESI,[ESP + 0x8]                 ; 0053a286
     MOV dword ptr [ESP + 0x1c0],EAX     ; 0053a28a
-    MOV EAX,[0x02dc9f68]                ; 0053a291 | DAT_02dc9f68
+    MOV EAX,[0x02dc9f68]                ; 0053a291 | g_StrangerIndices[6]
     LEA EDI,[ESP + 0x18]                ; 0053a296
     MOV dword ptr [ESP + 0x1bc],EAX     ; 0053a29a
     CALL core_xform.cpp_quaternionFromAngleY_FUN_0055d4e0 ; 0053a2a1
@@ -212,7 +212,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053a41b
     MOVSD ES:EDI,ESI                    ; 0053a41c
     MOVSD ES:EDI,ESI                    ; 0053a41d
-    PUSH 0x5a4508                       ; 0053a41e | DAT_005a4508
+    PUSH 0x5a4508                       ; 0053a41e | g_IdentityQuaternion
     LEA ESI,[ESP + 0x150]               ; 0053a423
     LEA EDI,[ESP + 0x90]                ; 0053a42a
     CALL core_xform.cpp_slerpQuaternion_FUN_0055d2d0 ; 0053a431
@@ -313,10 +313,10 @@ section .text
     RET                                 ; 0053a55c
     PUSH 0x3fc90fdb                     ; 0053a55d
         ;   Label: LAB_0053a55d
-    MOV EAX,[0x02dc9f5c]                ; 0053a562 | DAT_02dc9f5c
+    MOV EAX,[0x02dc9f5c]                ; 0053a562 | g_StrangerIndices[3]
     LEA ESI,[ESP + 0xc8]                ; 0053a567
     MOV dword ptr [ESP + 0x1c0],EAX     ; 0053a56e
-    MOV EAX,[0x02dc9f64]                ; 0053a575 | DAT_02dc9f64
+    MOV EAX,[0x02dc9f64]                ; 0053a575 | g_StrangerIndices[5]
     LEA EDI,[ESP + 0x18]                ; 0053a57a
     MOV dword ptr [ESP + 0x1bc],EAX     ; 0053a57e
     CALL core_xform.cpp_quaternionFromAngleY_FUN_0055d4e0 ; 0053a585

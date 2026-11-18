@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e1a8a
-;   undefined4 DAT_005e1a92
-;   undefined4 DAT_006141f0
+;   double g_DOUBLE_005e1a8a = -1
+;   double g_DOUBLE_005e1a92 = 0.100000000000000
+;   CEventList* g_CEventListPtr = 01c38bc0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
@@ -37,7 +37,7 @@ section .text
     LEA EAX,[ESI + 0x494]               ; 00515ce5
         ;   Label: LAB_00515ce5
     PUSH EAX                            ; 00515ceb
-    MOV EBX,dword ptr [0x006141f0]      ; 00515cec | DAT_006141f0
+    MOV EBX,dword ptr [0x006141f0]      ; 00515cec | g_CEventListPtr
     PUSH EBX                            ; 00515cf2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00515cf3
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
@@ -56,7 +56,7 @@ section .text
     CALL core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0 ; 00515d24
         ;   XREF to: 005156d0 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0(CPendulum * this_ptr, float delta_time)
     FLD float ptr [ESI + 0x58c]         ; 00515d29
-    FMUL double ptr [0x005e1a8a]        ; 00515d2f | DAT_005e1a8a
+    FMUL double ptr [0x005e1a8a]        ; 00515d2f | g_DOUBLE_005e1a8a
     FMUL float ptr [ESI + 0x590]        ; 00515d35
     FLD1                                ; 00515d3b
     FLDL2E                              ; 00515d3d
@@ -68,7 +68,7 @@ section .text
     FSCALE                              ; 00515d49
     FSTP ST1                            ; 00515d4b
     ADD ESP,0x8                         ; 00515d4d
-    FCOMP double ptr [0x005e1a92]       ; 00515d50 | DAT_005e1a92
+    FCOMP double ptr [0x005e1a92]       ; 00515d50 | g_DOUBLE_005e1a92
     FNSTSW AX                           ; 00515d56
     SAHF                                ; 00515d58
     JBE 0x00515e27                      ; 00515d59
@@ -103,7 +103,7 @@ section .text
     LEA EAX,[ESI + 0x430]               ; 00515da4
         ;   Label: LAB_00515da4
     PUSH EAX                            ; 00515daa
-    MOV ECX,dword ptr [0x006141f0]      ; 00515dab | DAT_006141f0
+    MOV ECX,dword ptr [0x006141f0]      ; 00515dab | g_CEventListPtr
     PUSH ECX                            ; 00515db1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0048e340 ; 00515db2
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)

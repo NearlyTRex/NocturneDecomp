@@ -25,6 +25,17 @@ typedef struct FileEmbeddedData {
 } FileEmbeddedData;
 #pragma pack(pop)
 
+// Structure: FileListNode
+#pragma pack(push, 1)
+typedef struct FileListNode {
+    struct FileListNode* next;
+    struct _FILE* file_struct;
+    void* back_pointer;
+    uint flags;
+    char reserved[17];
+} FileListNode;
+#pragma pack(pop)
+
 // Function Definition: SCANF_GETC_FUNC
 typedef int SCANF_GETC_FUNC(struct scanf_state_t* state);
 

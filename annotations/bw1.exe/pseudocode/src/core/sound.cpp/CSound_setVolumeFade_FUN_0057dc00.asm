@@ -9,11 +9,11 @@
 ; float            Stack[0xc]:4   fade_time
 ;
 ; XREF[1]:
-;   core_event.cpp_FUN_004a1d00 at 004a38d9
+;   core_event.cpp_CEventList_executeCommand_FUN_004a1d00 at 004a38d9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c832ac
-;   undefined4 DAT_02c832b0
+;   float g_TargetVolumeMultiplier
+;   float g_VolumeFadeTimeRemaining
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 0057dc00
         ;   Label: core_sound.cpp_CSound_setVolumeFade_FUN_0057dc00
-    MOV [0x02c832ac],EAX                ; 0057dc04 | DAT_02c832ac
+    MOV [0x02c832ac],EAX                ; 0057dc04 | g_TargetVolumeMultiplier
     MOV EAX,dword ptr [ESP + 0xc]       ; 0057dc09
-    MOV [0x02c832b0],EAX                ; 0057dc0d | DAT_02c832b0
+    MOV [0x02c832b0],EAX                ; 0057dc0d | g_VolumeFadeTimeRemaining
     RET                                 ; 0057dc12
 

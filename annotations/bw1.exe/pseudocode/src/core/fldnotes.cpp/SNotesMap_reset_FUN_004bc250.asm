@@ -12,7 +12,7 @@
 ;   core_fldnotes.cpp_SNotesMap_dtor_FUN_004bc210 at 004bc216
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c09f0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     RET                                 ; 004bc2ad
     PUSH EDX                            ; 004bc2ae
         ;   Label: LAB_004bc2ae
-    CALL crt_unknown.c_FUN_005c09f0     ; 004bc2af
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 004bc2af
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 004bc2b4
     MOV dword ptr [EBX + 0x84],0x0      ; 004bc2b7
     POP EBX                             ; 004bc2c1

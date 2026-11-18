@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __esi engine_mini3d_cpp_getCameraRotation_FUN_004f2a00(CVector3f *output)
 
 {
-  float fVar1;
-  float fVar2;
+  int iVar1;
+  int iVar2;
   
-  fVar2 = _DAT_01d098c4;
-  fVar1 = _DAT_01d098c0;
-  output->x = _DAT_01d098bc;
-  output->y = fVar2;
-  output->z = fVar1;
+  iVar2 = g_INT_01d098c4;
+  iVar1 = g_INT_01d098c0;
+  output->x = (float)g_INT_01d098bc;
+  output->y = (float)iVar2;
+  output->z = (float)iVar1;
   return;
 }

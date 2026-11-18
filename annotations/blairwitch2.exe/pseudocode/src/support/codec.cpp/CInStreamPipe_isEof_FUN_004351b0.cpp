@@ -2,11 +2,11 @@
 // Address: 004351b0
 // Address Range: [[004351b0, 004351de]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CInStreamPipe_isEof_FUN_004351b0(CInStreamPipe *this_ptr)
+// Signature: int __cdecl support_codec_cpp_CInStreamPipe_isEof_FUN_004351b0(CInStreamPipe *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CInStreamPipe_isEof_FUN_004351b0(CInStreamPipe *this_ptr)
+int __cdecl support_codec_cpp_CInStreamPipe_isEof_FUN_004351b0(CInStreamPipe *this_ptr)
 
 {
   if (((this_ptr->buffer != (char *)0x0) && (this_ptr->codec != (CCodec *)0x0)) &&
@@ -16,5 +16,5 @@ uint __cdecl support_codec_cpp_CInStreamPipe_isEof_FUN_004351b0(CInStreamPipe *t
     }
     return this_ptr->codec_finished;
   }
-  return 0xffffffff;
+  return -1;
 }

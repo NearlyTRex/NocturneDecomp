@@ -13,7 +13,7 @@
 ;   crt_strstream.cpp_istrstream_ctor_FUN_00564f32 at 00564f5a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a49b8
+;   WatcomInheritanceLayout g_WatcomInheritanceLayout_005a49b8
 ;   void* PTR_crt_iostream.cpp_istream_dtor_FUN_0056b6e8_005a49c4 = 0056b6e8
 ;   void* PTR_crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_0056b6d0_005a49cc = 0056b6d0
 ;
@@ -43,7 +43,7 @@ section .text
     MOV EDX,dword ptr [EDX + 0x4]       ; 0056b6b0
     OR byte ptr [EDX + EAX*0x1 + 0xc],0x1 ; 0056b6b3
     RET                                 ; 0056b6b8
-    MOV dword ptr [EAX],0x5a49b8        ; 0056b6b9 | DAT_005a49b8
+    MOV dword ptr [EAX],0x5a49b8        ; 0056b6b9 | g_WatcomInheritanceLayout_005a49b8
         ;   Label: LAB_0056b6b9
     ADD EAX,0x10                        ; 0056b6bf
     PUSH EAX                            ; 0056b6c2

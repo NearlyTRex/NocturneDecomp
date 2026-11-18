@@ -13,7 +13,7 @@ void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0045d5b0(CActorDestinat
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
   if (g_CActorDestinationClassVersion < 2) {
-    core_actor_cpp_archiveString_FUN_0040b440(local_104,"?whoGoesHere" + 1);
+    core_actor_cpp_archiveString_FUN_0040b440(local_104,"whoGoesHere");
     this_ptr->dest_actor = (CDemonActor *)0x0;
   }
   core_actor_cpp_archiveString_FUN_0040b440(this_ptr->what_event,"whatEvent");

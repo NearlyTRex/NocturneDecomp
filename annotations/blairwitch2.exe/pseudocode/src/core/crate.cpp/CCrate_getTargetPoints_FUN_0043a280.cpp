@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_0043a280(CCrate *this_ptr,CVector3f *out_points_array)
 
 {
@@ -44,8 +42,8 @@ int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_0043a280(CCrate *this_ptr,
   afStack_24[(uint)bVar4 * -2 + 3] = afStack_24[(uint)bVar4 * -2];
   afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
        afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  fStack_10 = afStack_24[2] * _DAT_005ce1f3;
-  CStack_34.x = afStack_24[2] * _DAT_005ce1f3;
+  fStack_10 = afStack_24[2] * 0.5f;
+  CStack_34.x = afStack_24[2] * 0.5f;
   *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4) =
        *(uint *)(&stack0xfffffff4 + (uint)bVar4 * -8);
   *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =

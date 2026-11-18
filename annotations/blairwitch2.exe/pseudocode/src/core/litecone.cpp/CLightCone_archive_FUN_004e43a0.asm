@@ -7,7 +7,7 @@
 ; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005dc11a
+;   TerminatedCString s_fov_005dc11a
 ;   TerminatedCString s_falloff_005dc11e
 ;   TerminatedCString s_state_005dc126
 ;   TerminatedCString s_onEvent_005dc12c
@@ -31,7 +31,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040c330 ; 004e43a6
         ;   XREF to: 0040c330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c330(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004e43ab
-    PUSH 0x5dc11a                       ; 004e43ae | DAT_005dc11a
+    PUSH 0x5dc11a                       ; 004e43ae | = "fov"
     LEA EAX,[EBX + 0x2b4]               ; 004e43b3
     PUSH EAX                            ; 004e43b9
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004e43ba

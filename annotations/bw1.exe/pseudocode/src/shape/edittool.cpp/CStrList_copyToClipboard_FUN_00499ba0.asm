@@ -14,15 +14,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc566
 ;   TerminatedCString s_CStrList_copyToClipboard_005dc57c
-;   undefined4 DAT_005dc5bd
+;   TerminatedCString s_s_005dc5bd
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_memory.c_operator_new_array_FUN_005c1268
-;   crt_unknown.c_FUN_005c0336
+;   crt_unknown.c_free_FUN_005c0336
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00498290
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0
@@ -70,7 +70,7 @@ section .text
         ;   Label: LAB_00499be0
     PUSH EBP                            ; 00499be1
     CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 00499be2
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_array_FUN_005c1268(uint size)
     ADD ESP,0x4                         ; 00499be7
     MOV dword ptr [ESP],EAX             ; 00499bea
     TEST EAX,EAX                        ; 00499bed
@@ -82,10 +82,10 @@ section .text
     MOV ESI,0x5dc566                    ; 00499bf5 | = "..\\shape\\edittool.cpp"
     MOV EDI,0xd4a                       ; 00499bfa
     PUSH 0x5dc57c                       ; 00499bff | = "CStrList::copyToClipboard - out of me..."
-    MOV dword ptr [0x01d1d400],ESI      ; 00499c04 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00499c0a | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00499c10
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],ESI      ; 00499c04 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],EDI      ; 00499c0a | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00499c10
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00499c15
     MOV EDI,dword ptr [ESP]             ; 00499c18
         ;   Label: LAB_00499c18
@@ -101,7 +101,7 @@ section .text
         ;   XREF to: 004998a0 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00499c2a
     PUSH EAX                            ; 00499c2d
-    PUSH 0x5dc5bd                       ; 00499c2e | DAT_005dc5bd
+    PUSH 0x5dc5bd                       ; 00499c2e | = "%s\n"
     PUSH EDI                            ; 00499c33
     INC ESI                             ; 00499c34
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00499c35
@@ -126,8 +126,8 @@ section .text
     ADD ESP,0x8                         ; 00499c63
     MOV ESI,dword ptr [ESP]             ; 00499c66
     PUSH ESI                            ; 00499c69
-    CALL crt_unknown.c_FUN_005c0336     ; 00499c6a
-        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005c0336(void * ptr)
+    CALL crt_unknown.c_free_FUN_005c0336 ; 00499c6a
+        ;   XREF to: 005c0336 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_free_FUN_005c0336(void * ptr)
     ADD ESP,0x4                         ; 00499c6f
     ADD ESP,0x4                         ; 00499c72
     POP EBP                             ; 00499c75

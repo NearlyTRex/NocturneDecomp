@@ -27,7 +27,8 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
           iVar3 = _stricmp(pCVar1->create_event,"none");
           if ((iVar3 != 0) &&
              (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                (0x01C03A10,pCVar1->create_event), iVar3 == 0)) goto LAB_004d927a;
+                                (g_CEventListPtr,pCVar1->create_event), iVar3 == 0))
+          goto LAB_004d927a;
         }
         iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(pCVar1->create_prob);
         if (iVar3 == 0) {

@@ -17,7 +17,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004ea8b0(CMelee *this_ptr)
   pCVar2 = (CMelee *)core_weapon_cpp_CWeapon_ctor_FUN_005899d0(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CMeleeVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            (&(pCVar2->base).model,(char *)0x5dc915);
+            (&(pCVar2->base).model,"melee.kfm");
   (pCVar2->base).weapon_type = WEAPON_TYPE_UNUSED;
   pCVar2->ammo_type = AMMO_TYPE_NONE;
   (pCVar2->base).ammo_count = 0;

@@ -16,7 +16,8 @@ void __cdecl core_inv_cpp_CInventory_clear_FUN_004da860(CInventory *this_ptr)
   
   iVar1 = this_ptr->item_count;
   while (0 < iVar1) {
-    core_inv_cpp_FUN_004db8e0(this_ptr,this_ptr->items[0],this_ptr->preserve_items == 0);
+    core_inv_cpp_CInventory_removeItem_FUN_004db8e0
+              (this_ptr,this_ptr->items[0],(uint)(this_ptr->preserve_items == 0));
     iVar1 = this_ptr->item_count;
   }
   pCVar2 = this_ptr;

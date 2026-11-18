@@ -10,12 +10,12 @@
 ;   core_baron.cpp_CBaronWeapon_renderOpaque_FUN_00410500 at 00410505
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00612560
+;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
-;   core_box.cpp_FUN_004207b0
+;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;
@@ -45,8 +45,8 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 005ad6b3
     PUSH EAX                            ; 005ad6b7
     MOVSD.REP ES:EDI,ESI                ; 005ad6b8
-    CALL core_box.cpp_FUN_004207b0      ; 005ad6ba
-        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_004207b0()
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0 ; 005ad6ba
+        ;   XREF to: 004207b0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004207b0(CBoundingBox3D * this_ptr, int skip_shadow_test)
     ADD ESP,0x8                         ; 005ad6bf
     MOV ESI,EAX                         ; 005ad6c2
     TEST EAX,EAX                        ; 005ad6c4
@@ -64,7 +64,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0 ; 005ad6dc
         ;   XREF to: 004087f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005ad6e1
-    MOV EDX,dword ptr [0x00612560]      ; 005ad6e4 | DAT_00612560
+    MOV EDX,dword ptr [0x00612560]      ; 005ad6e4 | g_CDemonRenderer_PTR_00612560
     PUSH EDX                            ; 005ad6ea
     MOV dword ptr [EBX + 0x574],0x0     ; 005ad6eb
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60 ; 005ad6f5

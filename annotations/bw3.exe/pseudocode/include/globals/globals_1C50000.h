@@ -4,12 +4,22 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "defines.h"
+#include "system/winnt.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CEditorTools.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SWindow.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C50000
 // =============================================================================
+
+// CBitFont*
+extern CBitFont* g_CBitFont_PTR_01c5b0e0;
 
 // CDemonActorType
 extern CDemonActorType g_CDynamiteClassInfo;
@@ -17,6 +27,123 @@ extern CDemonActorType g_CElephantGunClassInfo;
 extern CDemonActorType g_CEmitterClassInfo;
 extern CDemonActorType g_CEnemyClassInfo;
 
+// CDemonTriangle[8]
+extern CDemonTriangle g_ClippedTriangleBuffer[8];
+
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
+
+// CVector3f
+extern CVector3f g_CVector3f_01c599cc;
+extern CVector3f g_CVector3f_01c59e78;
+extern CVector3f g_CVector3f_01c5a134;
+
+// CVector3f[16]
+extern CVector3f g_ClipBuffer1Vertices[16];
+extern CVector3f g_ClipBuffer2Vertices[16];
+extern CVector3f g_ClipBuffer3Vertices[16];
+extern CVector3f g_ClipBuffer4Vertices[16];
+extern CVector3f g_ClipBuffer5Vertices[16];
+
+// CVector3i
+extern CVector3i g_DebugCubeBasePoint;
+
+// SWindow[5]
+extern SWindow g_SWindow_ARRAY_01c5b108[5];
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_MouseButtonFlags;
+
+// byte
+extern byte g_BYTE_01c599d8;
+
+// char*
+extern char* g_ClipboardBackupText;
+
+// char[4000]
+extern char g_TextWrapBuffer[4000];
+
+// float
+extern float g_FLOAT_01c599e0;
+extern float g_FLOAT_01c599e8;
+extern float g_FLOAT_01c599ec;
+extern float g_FLOAT_01c599f4;
+extern float g_FLOAT_01c599f8;
+extern float g_FLOAT_01c59a00;
+extern float g_FLOAT_01c59e84;
+extern float g_FLOAT_01c59e8c;
+extern float g_FLOAT_01c59e90;
+extern float g_FLOAT_01c59e98;
+
+// float[2001]
+extern float g_FLOAT_ARRAY_01c5db8c[2001];
+
+// int
+extern int g_INT_01c599bc;
+extern int g_INT_01c599dc;
+extern int g_INT_01c59aa0;
+extern int g_ClipBuffer2VertexCount;
+extern int g_ClipBuffer3VertexCount;
+extern int g_INT_01c59cec;
+extern int g_ClipBuffer5VertexCount;
+extern int g_ClipOutputVertexCount;
+extern int g_WindowStackCount;
+extern int g_EditorFontMaxCharWidth;
+extern int g_INT_01c5bae4;
+extern int g_MouseCursorType;
+extern int g_INT_01c5baec;
+extern int g_WindowContentColor;
+extern int g_WindowBorderHighlightColor;
+extern int g_WindowBorderShadowColor;
+extern int g_TitleBarColor;
+extern int g_TitleBarFillColor;
+extern int g_WindowFontColor;
+extern int g_WarningTextColor;
+extern int g_ErrorTextColor;
+extern int g_SelectionColor;
+extern int g_TextColor;
+extern int g_CursorColor;
+extern int g_StatusTextColor;
+extern int g_WindowStatusTextColor;
+extern int g_DialogTextColor;
+extern int g_ActiveItemTextColor;
+extern int g_ProgressBarBackgroundColor;
+extern int g_ProgressBarFillColor;
+extern int g_ProgressBarBorderColor;
+extern int g_INT_01c5bb38;
+extern int g_AxisLabelTextColor;
+extern int g_EnabledTextColor;
+extern int g_DisabledTextColor;
+extern int g_INT_01c5bb48;
+extern int g_ConfirmedSelectionColor;
+extern int g_PickListSeparatorColor;
+extern int g_ShadowColor;
+extern int g_ScrollBarHighlightColor;
+extern int g_ButtonFaceColor;
+extern int g_UITextColor;
+extern int g_InsetColor;
+extern int g_HighlightColor;
+extern int g_BorderBackgroundColor;
+extern int g_LastClickTimestamp;
+extern int g_LastClickItemIndex;
+extern int g_ScrollAction;
+extern int g_ScrollTimer;
+extern int g_ScrollDelay;
+extern int g_DragStartMouseX;
+extern int g_DragStartMouseY;
+extern int g_DragStartScrollPos;
+extern int g_DragStartThumbPos;
+extern int g_GlobalDeltaTimeInt;
+extern int g_AnimationTimerValue;
+extern int g_MouseX;
+extern int g_MouseY;
+
+// int[2000]
+extern int g_INT_ARRAY_01c5bc4c[2000];
+
+// void*
+extern void* g_ActiveControl;
+
+// void*[GAME_SCREEN_MAX_HEIGHT]
+extern void* g_ScreenBufferArray[GAME_SCREEN_MAX_HEIGHT];
 

@@ -39,10 +39,10 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420 at 0054e449
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e4758
+;   float g_FLOAT_005e4758 = 256
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_00583260
+;   core_xform.cpp_transformVector3x4_FUN_00583260
 ;
 ; *****************************************************************************
 
@@ -106,8 +106,8 @@ section .text
     PUSH ESI                            ; 005488fa
     LEA ESI,[ESP + 0x50]                ; 005488fb
     LEA EDI,[ESP + 0x8]                 ; 005488ff
-    CALL core_xform.cpp_FUN_00583260    ; 00548903
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 00548903
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x50]                ; 00548908
     ADD ESP,0x8                         ; 0054890c
     MOVSD ES:EDI,ESI                    ; 0054890f
@@ -163,8 +163,8 @@ section .text
     PUSH EBX                            ; 0054899d
     LEA ESI,[ESP + 0x2c]                ; 0054899e
     LEA EDI,[ESP + 0x38]                ; 005489a2
-    CALL core_xform.cpp_FUN_00583260    ; 005489a6
-        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583260()
+    CALL core_xform.cpp_transformVector3x4_FUN_00583260 ; 005489a6
+        ;   XREF to: 00583260 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_00583260(CVector3f * input_vector, CMatrix3x4f * matrix, CVector3f * output_vector)
     LEA ESI,[ESP + 0x2c]                ; 005489ab
     LEA EBX,[ESP + 0x38]                ; 005489af
     ADD ESP,0x8                         ; 005489b3
@@ -186,13 +186,13 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 005489dd
     MOV ECX,dword ptr [ESP + 0x60]      ; 005489e1
     FLD float ptr [EAX]                 ; 005489e5
-    FMUL float ptr [0x005e4758]         ; 005489e7 | DAT_005e4758
+    FMUL float ptr [0x005e4758]         ; 005489e7 | g_FLOAT_005e4758
     FISTP dword ptr [EBX]               ; 005489ed
     FLD float ptr [EAX + 0x4]           ; 005489ef
-    FMUL float ptr [0x005e4758]         ; 005489f2 | DAT_005e4758
+    FMUL float ptr [0x005e4758]         ; 005489f2 | g_FLOAT_005e4758
     FISTP dword ptr [EBX + 0x4]         ; 005489f8
     FLD float ptr [EAX + 0x8]           ; 005489fb
-    FMUL float ptr [0x005e4758]         ; 005489fe | DAT_005e4758
+    FMUL float ptr [0x005e4758]         ; 005489fe | g_FLOAT_005e4758
     FISTP dword ptr [EBX + 0x8]         ; 00548a04
     LEA EDX,[EBX + 0xc]                 ; 00548a07
     ADD ECX,0x34                        ; 00548a0a

@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 20,
+    "complexity_score": 4,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 8
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 7
   },
   "cross_references": [
     {
       "addr": "00465400",
       "from_addr": "00465436",
-      "name": "core_dracbrid.cpp_FUN_00465400",
+      "name": "core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_00465400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ed260",
       "from_addr": "004ed972",
-      "name": "core_menu.cpp_FUN_004ed260",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_004ed260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055a1d0",
       "from_addr": "0055a239",
-      "name": "core_sound.cpp_FUN_0055a1d0",
+      "name": "core_sound.cpp_CSound_init_FUN_0055a1d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,8 +72,8 @@
   "globals": [
     {
       "addr": "02648e84",
-      "name": "DAT_02648e84",
-      "type": "undefined4",
+      "name": "g_SoundBusyFlag",
+      "type": "int",
       "value": null
     }
   ],
@@ -124,14 +122,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

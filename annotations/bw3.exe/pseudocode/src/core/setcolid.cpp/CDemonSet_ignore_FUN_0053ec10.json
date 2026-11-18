@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 29,
+    "complexity_score": 13,
     "cross_reference_count": 39,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 50
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -70,15 +68,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0042c230",
-      "from_addr": "0042c385",
-      "name": "core_charactr.cpp_FUN_0042c230",
+      "addr": "00432330",
+      "from_addr": "0043299f",
+      "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00432330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00432330",
-      "from_addr": "0043299f",
-      "name": "core_charactr.cpp_FUN_00432330",
+      "addr": "0042c230",
+      "from_addr": "0042c385",
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -132,7 +130,7 @@
     {
       "addr": "004c07b0",
       "from_addr": "004c11bf",
-      "name": "core_game.cpp_FUN_004c07b0",
+      "name": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -166,27 +164,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00522b00",
+      "from_addr": "00523386",
+      "name": "core_prye.cpp_CPrye_autoAimAtThreat_FUN_00522b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005220d0",
       "from_addr": "00522176",
       "name": "core_prye.cpp_CPrye_renderOpaque_FUN_005220d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00521880",
+      "from_addr": "00521c1d",
+      "name": "core_prye.cpp_CPrye_tryPlaceObject_FUN_00521880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00524170",
       "from_addr": "00524327",
       "name": "core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00521880",
-      "from_addr": "00521c1d",
-      "name": "core_prye.cpp_FUN_00521880",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00522b00",
-      "from_addr": "00523386",
-      "name": "core_prye.cpp_FUN_00522b00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -198,7 +196,7 @@
     {
       "addr": "005438d0",
       "from_addr": "00543bab",
-      "name": "core_shadow.cpp_FUN_005438d0",
+      "name": "core_shadow.cpp_CShadow_process_FUN_005438d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -266,7 +264,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     }
   ],
   "globals": [
@@ -284,14 +282,14 @@
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     }
   ],
@@ -301,7 +299,7 @@
       {
         "call_addr": "004c11bf",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -312,7 +310,7 @@
       {
         "call_addr": "004c1554",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -323,7 +321,7 @@
       {
         "call_addr": "004c2332",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -334,7 +332,7 @@
       {
         "call_addr": "004c2796",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -345,7 +343,7 @@
       {
         "call_addr": "004c2c42",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -356,7 +354,7 @@
       {
         "call_addr": "004c2f56",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -367,7 +365,7 @@
       {
         "call_addr": "004c300f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -378,7 +376,7 @@
       {
         "call_addr": "004c43b2",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004c07b0",
+        "caller": "core_game.cpp_CGame_processPointAndClickControls_FUN_004c07b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -400,7 +398,7 @@
       {
         "call_addr": "0042c385",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042c230",
+        "caller": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_0042c230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -490,14 +488,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

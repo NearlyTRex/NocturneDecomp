@@ -1,14 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_0059ae20(CTrash *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __stack_esi core_trash_cpp_CTrash_getBoundingBox_FUN_0059ae20(CTrash *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CTrash *         Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   out_box
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;
 ; *****************************************************************************
@@ -41,8 +40,8 @@ section .text
     PUSH EBP                            ; 0059ae65
     MOV dword ptr [ESP + 0x20],EDX      ; 0059ae66
     MOV dword ptr [ESP + 0x28],EDX      ; 0059ae6a
-    CALL core_actor.cpp_FUN_00408b00    ; 0059ae6e
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00 ; 0059ae6e
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408b00(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x38]                ; 0059ae73
     ADD ESP,0x8                         ; 0059ae77
     MOV ECX,0x6                         ; 0059ae7a

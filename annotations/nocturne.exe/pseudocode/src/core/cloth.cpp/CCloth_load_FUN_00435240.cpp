@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(CCloth *this_ptr,char *filename)
 
 {
@@ -150,9 +148,9 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(CCloth *this_ptr,char *filen
     do {
       piVar14 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);
       iVar16 = iVar16 + 1;
-      pCVar10->x = (float)*piVar14 * _DAT_0059b368;
-      pCVar10->y = (float)piVar14[1] * _DAT_0059b368;
-      pCVar10->z = (float)piVar14[2] * _DAT_0059b368;
+      pCVar10->x = (float)*piVar14 * 0.00390625f;
+      pCVar10->y = (float)piVar14[1] * 0.00390625f;
+      pCVar10->z = (float)piVar14[2] * 0.00390625f;
       pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);
       iVar11 = (this_ptr->model).vertex_count;
       iVar13 = iVar13 + 0xc;

@@ -10,12 +10,12 @@
 ;   engine_mini3d.cpp_kill_FUN_00511050 at 00511057
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c09f0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
+;   crt_unknown.c_debugFree_FUN_005c09f0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     AND EAX,0xff                        ; 00514cfc
     SUB EBX,EAX                         ; 00514d01
     PUSH EBX                            ; 00514d03
-    CALL crt_unknown.c_FUN_005c09f0     ; 00514d04
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    CALL crt_unknown.c_debugFree_FUN_005c09f0 ; 00514d04
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     ADD ESP,0x4                         ; 00514d09
     POP EBX                             ; 00514d0c
     RET                                 ; 00514d0d
@@ -41,10 +41,10 @@ section .text
         ;   Label: LAB_00514d0e
     MOV ECX,0xdfe                       ; 00514d13
     PUSH 0x5e8efd                       ; 00514d18
-    MOV dword ptr [0x01d1d400],EDX      ; 00514d1d | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00514d23 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00514d29
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00514d1d | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00514d23 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00514d29
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00514d2e
     JMP 0x00514cf9                      ; 00514d31
         ;   XREF to: 00514cf9 (UNCONDITIONAL_JUMP)  ; LAB_00514cf9

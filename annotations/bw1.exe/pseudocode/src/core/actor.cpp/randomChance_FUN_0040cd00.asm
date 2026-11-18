@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[58]:
+; XREF[59]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c9a2
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412170 at 0041221a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411b31
@@ -20,11 +20,11 @@
 ;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424c1f
 ;   core_bride.cpp_CBride_processDismemberment_FUN_004248e0 at 0042497f
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423fdc
-;   ... and 48 more
+;   ... and 49 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005d2eb1
-;   undefined4 DAT_005d2eb5
+;   float g_RandChanceScale = 0.00003051851
+;   float g_GenRandChanceScale = 5.960465E-8
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.is_processing
 ;
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 0040cb90 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040cb90()
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd16
     FILD dword ptr [ESP + 0x4]          ; 0040cd1a
-    FMUL float ptr [0x005d2eb5]         ; 0040cd1e | DAT_005d2eb5
+    FMUL float ptr [0x005d2eb5]         ; 0040cd1e | g_GenRandChanceScale
     FSTP float ptr [ESP]                ; 0040cd24
         ;   Label: LAB_0040cd24
     FLD float ptr [ESP]                 ; 0040cd27
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_0040cd3d
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd42
     FILD dword ptr [ESP + 0x4]          ; 0040cd46
-    FMUL float ptr [0x005d2eb1]         ; 0040cd4a | DAT_005d2eb1
+    FMUL float ptr [0x005d2eb1]         ; 0040cd4a | g_RandChanceScale
     JMP 0x0040cd24                      ; 0040cd50
         ;   XREF to: 0040cd24 (UNCONDITIONAL_JUMP)  ; LAB_0040cd24
 

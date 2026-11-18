@@ -14,7 +14,7 @@
 ;   engine_mini3d.cpp_clipAgainstPlane1_FUN_004f6430 at 004f64f6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d0d2b4
+;   int g_INT_01d0d2b4
 ;
 ; *****************************************************************************
 
@@ -45,7 +45,7 @@ section .text
     FSUB float ptr [EAX + 0x4]          ; 004f60c9
     FMUL float ptr [ESP]                ; 004f60cc
     FADD float ptr [EAX + 0x4]          ; 004f60cf
-    MOV EBX,dword ptr [0x01d0d2b4]      ; 004f60d2 | DAT_01d0d2b4
+    MOV EBX,dword ptr [0x01d0d2b4]      ; 004f60d2 | g_INT_01d0d2b4
     FSTP float ptr [ECX + 0x4]          ; 004f60d8
     TEST EBX,EBX                        ; 004f60db
     JZ 0x004f60e4                       ; 004f60dd

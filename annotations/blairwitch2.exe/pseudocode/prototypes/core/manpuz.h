@@ -35,7 +35,7 @@ void __cdecl CMansionPuzzleCircle::process(CMansionPuzzleCircle *this_ptr,float 
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getBoundingBox_FUN_004e5900
 // Address: 004e5900
-CBoundingBox3D * __cdecl CMansionPuzzleCircle::getBoundingBox(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CMansionPuzzleCircle::getBoundingBox(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getCollisionType_FUN_004e5960
 // Address: 004e5960
@@ -61,21 +61,21 @@ void __cdecl CMansionPuzzleCircle::onLaserHit(CMansionPuzzleCircle *this_ptr,SLa
 // Address: 004e6010
 void __cdecl CMansionPuzzleCircle::initPuzzleState(CMansionPuzzleCircle *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_004e6240
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004e6240
 // Address: 004e6240
-void FUN_004e6240(int param_1,int param_2);
+void __cdecl CMansionPuzzleCircle::updatePanelTransform(CMansionPuzzleCircle *this_ptr,int panel_index);
 
-// Original: core_manpuz.cpp_FUN_004e6340
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004e6340
 // Address: 004e6340
-void FUN_004e6340(int param_1,int param_2);
+void __cdecl CMansionPuzzleCircle::renderPanel(CMansionPuzzleCircle *this_ptr,int panel_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0
 // Address: 004e63c0
 void __cdecl CMansionPuzzleCircle::renderGem(CMansionPuzzleCircle *this_ptr,int gem_index);
 
-// Original: core_manpuz.cpp_FUN_004e6820
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004e6820
 // Address: 004e6820
-void __cdecl FUN_004e6820(CMansionPuzzleCircle *this_ptr,int reflector_index);
+void __cdecl CMansionPuzzleCircle::renderReflector(CMansionPuzzleCircle *this_ptr,int reflector_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004e68c0
 // Address: 004e68c0
@@ -125,9 +125,9 @@ int __cdecl CMansionPuzzleCircle::getPrevPanelIndex(CMansionPuzzleCircle *this_p
 // Address: 004e7580
 void __cdecl CMansionPuzzleCircle::updateReflector(CMansionPuzzleCircle *this_ptr,int reflector_index,float delta_time);
 
-// Original: core_manpuz.cpp_FUN_004e7600
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004e7600
 // Address: 004e7600
-void FUN_004e7600(int param_1,int param_2);
+void __cdecl CMansionPuzzleCircle::updateReflectorPosition(CMansionPuzzleCircle *this_ptr,int reflector_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004e76f0
 // Address: 004e76f0
@@ -159,7 +159,7 @@ void __cdecl CMirrorHack::process(CMirrorHack *this_ptr,float delta_time);
 
 // Original: core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_004e7900
 // Address: 004e7900
-CBoundingBox3D * __cdecl CMirrorHack::getBoundingBox(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __stack_esi CMirrorHack::getBoundingBox(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_manpuz.cpp_CMirrorHack_getCollisionType_FUN_004e7940
 // Address: 004e7940

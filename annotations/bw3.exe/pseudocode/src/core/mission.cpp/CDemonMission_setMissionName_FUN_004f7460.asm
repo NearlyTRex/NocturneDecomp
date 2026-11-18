@@ -11,7 +11,7 @@
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052ba43
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d882a0
+;   char g_CHAR_01d882a0
 ;   undefined4 DAT_01d882a1
 ;   undefined4 DAT_01d882a2
 ;   undefined4 DAT_01d882a3
@@ -25,10 +25,10 @@ section .text
     PUSH EDI                            ; 004f7461
     MOV ESI,dword ptr [ESP + 0x10]      ; 004f7462
     MOV EDI,0x1d882a0                   ; 004f7466
-    PUSH EDI                            ; 004f746b | DAT_01d882a0
+    PUSH EDI                            ; 004f746b | g_CHAR_01d882a0
     MOV AL,byte ptr [ESI]               ; 004f746c
         ;   Label: LAB_004f746c
-    MOV byte ptr [EDI],AL               ; 004f746e | DAT_01d882a0 | DAT_01d882a2
+    MOV byte ptr [EDI],AL               ; 004f746e | g_CHAR_01d882a0 | DAT_01d882a2
     CMP AL,0x0                          ; 004f7470
     JZ 0x004f7484                       ; 004f7472
         ;   XREF to: 004f7484 (CONDITIONAL_JUMP)  ; LAB_004f7484

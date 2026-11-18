@@ -45,6 +45,7 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_getPathMap.h"
 #include "types/funcdefs/CDemonActor_getTargetPoints.h"
 #include "types/funcdefs/CDemonActor_handleFootstep.h"
+#include "types/funcdefs/CDemonActor_markResourcesInUse.h"
 #include "types/funcdefs/CDemonActor_onDropped.h"
 #include "types/funcdefs/CDemonActor_onLaserHit.h"
 #include "types/funcdefs/CDemonActor_onPickup.h"
@@ -59,6 +60,7 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_processFootstep.h"
 #include "types/funcdefs/CDemonActor_processFootstepAtOffset.h"
 #include "types/funcdefs/CDemonActor_processMeleeHit.h"
+#include "types/funcdefs/CDemonActor_releaseResources.h"
 #include "types/funcdefs/CDemonActor_renderBackground.h"
 #include "types/funcdefs/CDemonActor_renderOpaque.h"
 #include "types/funcdefs/CDemonActor_renderTargetPoints.h"
@@ -73,17 +75,18 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_testLineIntersection.h"
 #include "types/funcdefs/CDemonActor_updateCollisionData.h"
 #include "types/funcdefs/CDemonActor_updateInteraction.h"
+#include "types/funcdefs/CDemonActor_vfunc0.h"
 #include "types/funcdefs/CDemonActor_vfunc1.h"
 
 // Structure: CDemonActor_vtable
 // Ghidra size: 0xe0 (224 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonActor_vtable {
-    CDemonActor_setup* setup; // 0x0
+    CDemonActor_vfunc0* vfunc0; // 0x0
     CDemonActor_vfunc1* vfunc1; // 0x4
     CDemonActor_setup* setup; // 0x8
-    CDemonActor_process* process; // 0xc
-    CDemonActor_renderOpaque* renderOpaque; // 0x10
+    CDemonActor_markResourcesInUse* markResourcesInUse; // 0xc
+    CDemonActor_releaseResources* releaseResources; // 0x10
     CDemonActor_process* process; // 0x14
     CDemonActor_renderOpaque* renderOpaque; // 0x18
     CDemonActor_renderTransparent* renderTransparent; // 0x1c

@@ -33,9 +33,9 @@ void __cdecl CBasicNPC::processStates(CBasicNPC *this_ptr,float delta_time,int m
 // Address: 005a48a0
 void __cdecl CBasicNPC::processDeathState(CBasicNPC *this_ptr,float delta_time);
 
-// Original: core_basicnpc.cpp_FUN_005a48d0
+// Original: core_basicnpc.cpp_CBasicNPC_processAI_FUN_005a48d0
 // Address: 005a48d0
-void FUN_005a48d0(int param_1);
+void __cdecl CBasicNPC::processAI(CBasicNPC *this_ptr,float delta_time);
 
 // Original: core_basicnpc.cpp_CBasicNPC_processMotionEvent_FUN_005a48f0
 // Address: 005a48f0

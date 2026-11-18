@@ -373,6 +373,43 @@ def test_a_failed_report_only_warns_and_the_rest_still_run(launches, capsys):
     assert "could not launch report_bad_instructions.py: no python" in capsys.readouterr().out
 
 
+# --- research refresh ----------------------------------------------------------------------------
+
+def test_research_needs_a_clean_full_export_of_every_program(launches, capsys):
+    ea.maybe_refresh_research(True, ea.CATEGORY_NAMES, 0, False)
+    ea.maybe_refresh_research(False, ea.CATEGORY_NAMES, 0, True)
+    ea.maybe_refresh_research(True, ["functions"], 0, True)
+    assert launches.commands == []
+    ea.maybe_refresh_research(True, ea.CATEGORY_NAMES, 1, True)
+    assert launches.commands == []
+    assert "an export failed; struct report and itinerary not refreshed" in capsys.readouterr().out
+
+
+def test_research_runs_the_struct_report_then_the_itinerary(launches, capsys):
+    ea.maybe_refresh_research(True, list(ea.CATEGORY_NAMES), 0, True)
+    root = os.path.dirname(os.path.dirname(SCRIPTS_DIR))
+    programs = []
+    for program in ("nocedit.exe", "nocturne.exe", "bw1.exe", "blairwitch2.exe", "bw3.exe"):
+        programs += ["--program", program]
+    assert launches.commands == [
+        [sys.executable, "-u", os.path.join(SCRIPTS_DIR, "struct_layout_report.py"),
+         "--out-dir", os.path.join(root, "research", "23-game_structs"), *programs],
+        [sys.executable, "-u", os.path.join(SCRIPTS_DIR, "recreation_itinerary.py")]]
+    assert "WARNING" not in capsys.readouterr().out
+
+
+def test_a_failed_research_step_only_warns_and_the_next_still_runs(launches, capsys):
+    launches.code = 4
+    ea.maybe_refresh_research(True, ea.CATEGORY_NAMES, 0, True)
+    assert len(launches.commands) == 2
+    out = capsys.readouterr().out
+    assert "struct_layout_report.py exited 4" in out
+    assert "recreation_itinerary.py exited 4" in out
+    launches.error = OSError("no python")
+    ea.maybe_refresh_research(True, ea.CATEGORY_NAMES, 0, True)
+    assert "could not launch recreation_itinerary.py: no python" in capsys.readouterr().out
+
+
 # --- main -----------------------------------------------------------------------------------------
 
 def run_main(monkeypatch, *argv):

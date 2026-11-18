@@ -9,11 +9,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005d239e
 ;   TerminatedCString s_CDemonActor_getActorType_005d23b0
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;
 ; *****************************************************************************
 
@@ -26,10 +26,10 @@ section .text
     MOV EDX,0x5d239e                    ; 00408806 | = "..\\core\\actor.cpp"
     MOV ECX,0x22b                       ; 0040880b
     PUSH 0x5d23b0                       ; 00408810 | = "CDemonActor::getActorType called for ..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00408815 | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0040881b | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 00408821
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 00408815 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 0040881b | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00408821
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 00408826
     XOR EAX,EAX                         ; 00408829
     POP EBX                             ; 0040882b

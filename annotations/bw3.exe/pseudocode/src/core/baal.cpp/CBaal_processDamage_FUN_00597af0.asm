@@ -9,9 +9,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_baal.cpp_FUN_00597be0
+;   core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
-;   core_enemy.cpp_FUN_0048a1b0
+;   core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;
@@ -40,8 +40,8 @@ section .text
         ;   XREF to: 00597b66 (CONDITIONAL_JUMP)  ; LAB_00597b66
     PUSH dword ptr [EDI + 0x4]          ; 00597b1f
     PUSH EBX                            ; 00597b22
-    CALL core_enemy.cpp_FUN_0048a1b0    ; 00597b23
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0 ; 00597b23
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testPainThreshold_FUN_0048a1b0(CEnemy * this_ptr, float damage)
     ADD ESP,0x8                         ; 00597b28
     TEST EAX,EAX                        ; 00597b2b
     JZ 0x00597b3c                       ; 00597b2d
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 00597b58 (CONDITIONAL_JUMP)  ; LAB_00597b58
     PUSH 0x0                            ; 00597b4d
     PUSH EBX                            ; 00597b4f
-    CALL core_baal.cpp_FUN_00597be0     ; 00597b50
-        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; undefined core_baal.cpp_FUN_00597be0()
+    CALL core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0 ; 00597b50
+        ;   XREF to: 00597be0 (UNCONDITIONAL_CALL)  ; void core_baal.cpp_CBaal_chooseRandomMotion_FUN_00597be0(CBaal * this_ptr, int allow_stand)
     ADD ESP,0x8                         ; 00597b55
     PUSH EDI                            ; 00597b58
         ;   Label: LAB_00597b58

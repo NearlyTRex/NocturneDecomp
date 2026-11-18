@@ -8,32 +8,32 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   undefined4 s_model_t_horn_wav_005edc86+1
+;   TerminatedCString s_model_t_horn_wav_005edc87
 ;   TerminatedCString s_core_vehicle_cpp_005edc99
 ;   TerminatedCString s_CMobster_process_Out_of_005edcad
 ;   TerminatedCString s_mobster3_dfm_005edcd0
 ;   TerminatedCString s_mobster4_dfm_005edcdd
 ;   TerminatedCString s_ext_modelt_fast_wav_005edcea
 ;   TerminatedCString s_skid_wav_005edd01
-;   undefined4 DAT_005edd0f
-;   undefined4 DAT_005edd13
-;   undefined4 DAT_005edd17
-;   undefined4 DAT_005edd1f
-;   undefined4 DAT_005edd27
-;   undefined4 DAT_005edd2f
-;   undefined4 DAT_00618170
+;   float g_FLOAT_005edd0f = 2
+;   float g_FLOAT_005edd13 = 3.700000
+;   float g_FLOAT_005edd17 = 1.570796
+;   double g_DOUBLE_005edd1f = 200
+;   double g_DOUBLE_005edd27 = 0.200000000000000
+;   double g_DOUBLE_005edd2f = 30
+;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   ... and 12 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_00408d30
-;   core_actor.cpp_FUN_00408de0
+;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30
+;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0
 ;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_course.cpp_CCourse_evaluate_FUN_00438c40
-;   core_main.c_FUN_004e4500
+;   core_main.c_displayErrorAndQuit_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
 ;   core_mobster.cpp_CMobster_ctor_FUN_004fd810
@@ -178,7 +178,7 @@ section .text
     FSTP float ptr [ESP + 0x148]        ; 005840ee
     LEA EAX,[EBX + 0xa20]               ; 005840f5
         ;   Label: LAB_005840f5
-    FLD float ptr [0x005edd0f]          ; 005840fb | DAT_005edd0f
+    FLD float ptr [0x005edd0f]          ; 005840fb | g_FLOAT_005edd0f
     FLD float ptr [EAX]                 ; 00584101
     FMUL ST1                            ; 00584103
     FLD float ptr [EAX + 0x4]           ; 00584105
@@ -211,8 +211,8 @@ section .text
     PUSH EBX                            ; 0058416c
     LEA ESI,[ESP + 0x10c]               ; 0058416d
     LEA EDI,[ESP + 0xa0]                ; 00584174
-    CALL core_actor.cpp_FUN_00408d30    ; 0058417b
-        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d30()
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30 ; 0058417b
+        ;   XREF to: 00408d30 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408d30(CDemonActor * this_ptr, CVector3f * input_vector, CVector3f * output_vector)
     LEA ESI,[ESP + 0x10c]               ; 00584180
     LEA EAX,[ESP + 0xa0]                ; 00584187
     ADD ESP,0x8                         ; 0058418e
@@ -258,9 +258,9 @@ section .text
     PUSH EBX                            ; 0058420f
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00584210
     FXCH                                ; 00584216
-    FADD float ptr [0x005edd13]         ; 00584218 | DAT_005edd13
+    FADD float ptr [0x005edd13]         ; 00584218 | g_FLOAT_005edd13
     FXCH                                ; 0058421e
-    FADD float ptr [0x005edd17]         ; 00584220 | DAT_005edd17
+    FADD float ptr [0x005edd17]         ; 00584220 | g_FLOAT_005edd17
     FXCH                                ; 00584226
     FSTP float ptr [EBX + 0x24]         ; 00584228
     FSTP float ptr [EBX + 0x34]         ; 0058422b
@@ -307,11 +307,11 @@ section .text
         ;   Label: LAB_005842bf
     JZ 0x005840f5                       ; 005842c5
         ;   XREF to: 005840f5 (CONDITIONAL_JUMP)  ; LAB_005840f5
-    MOV EAX,[0x0265370c]                ; 005842cb | DAT_0265370c
+    MOV EAX,[0x0265370c]                ; 005842cb | g_ZeroVector
     MOV dword ptr [EDX],EAX             ; 005842d0
-    MOV EAX,[0x02653710]                ; 005842d2 | DAT_02653710
+    MOV EAX,[0x02653710]                ; 005842d2 | g_ZeroVector.y
     MOV dword ptr [EDX + 0x4],EAX       ; 005842d7
-    MOV EAX,[0x02653714]                ; 005842da | DAT_02653714
+    MOV EAX,[0x02653714]                ; 005842da | g_ZeroVector.z
     MOV dword ptr [EDX + 0x8],EAX       ; 005842df
     JMP 0x005840f5                      ; 005842e2
         ;   XREF to: 005840f5 (UNCONDITIONAL_JUMP)  ; LAB_005840f5
@@ -356,8 +356,8 @@ section .text
     PUSH EBX                            ; 0058435e
     LEA ESI,[ESP + 0xf4]                ; 0058435f
     LEA EDI,[ESP + 0x124]               ; 00584366
-    CALL core_actor.cpp_FUN_00408de0    ; 0058436d
-        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408de0()
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0 ; 0058436d
+        ;   XREF to: 00408de0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408de0(CDemonActor * this_ptr, CVector3f * input_world_point, CVector3f * output_local_point)
     LEA ESI,[ESP + 0xf4]                ; 00584372
     ADD ESP,0x8                         ; 00584379
     MOVSD ES:EDI,ESI                    ; 0058437c
@@ -394,7 +394,7 @@ section .text
         ;   XREF to: 00584426 (CONDITIONAL_JUMP)  ; LAB_00584426
     FLD float ptr [ESP]                 ; 005843de
     FLD float ptr [ESP + 0x7c]          ; 005843e1
-    FADD double ptr [0x005edd2f]        ; 005843e5 | DAT_005edd2f
+    FADD double ptr [0x005edd2f]        ; 005843e5 | g_DOUBLE_005edd2f
     FCOMPP                              ; 005843eb
     FNSTSW AX                           ; 005843ed
     SAHF                                ; 005843ef
@@ -408,7 +408,7 @@ section .text
     TEST EAX,EAX                        ; 00584405
     JNZ 0x0058429d                      ; 00584407
         ;   XREF to: 0058429d (CONDITIONAL_JUMP)  ; LAB_0058429d
-    PUSH 0x5edc87                       ; 0058440d | s_model_t_horn_wav_005edc86+1
+    PUSH 0x5edc87                       ; 0058440d | = "model-t-horn?.wav"
     PUSH EBX                            ; 00584412
     CALL core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90 ; 00584413
         ;   XREF to: 00584d90 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90(CVehicle * this_ptr, char * sound_name)
@@ -464,7 +464,7 @@ section .text
     FLD float ptr [EBX + 0xa2c]         ; 005844ae
     FABS                                ; 005844b4
     ADD ESP,0x8                         ; 005844b6
-    FCOMP double ptr [0x005edd27]       ; 005844b9 | DAT_005edd27
+    FCOMP double ptr [0x005edd27]       ; 005844b9 | g_DOUBLE_005edd27
     FNSTSW AX                           ; 005844bf
     SAHF                                ; 005844c1
     JA 0x0058482a                       ; 005844c2
@@ -481,7 +481,7 @@ section .text
         ;   Label: LAB_005844d1
     LEA ECX,[EBX + 0x20]                ; 005844d8
     LEA ESI,[ESP + 0xc8]                ; 005844db
-    MOV EAX,[0x01cedef4]                ; 005844e2 | DAT_01cedef4
+    MOV EAX,[0x01cedef4]                ; 005844e2 | g_INT_01cedef4
     FLD float ptr [ECX]                 ; 005844e7
     FLD float ptr [ECX + 0x4]           ; 005844e9
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 005844ec
@@ -509,7 +509,7 @@ section .text
     FMUL ST0                            ; 0058453c
     FADDP                               ; 0058453e
     FSQRT                               ; 00584540
-    FCOMP double ptr [0x005edd1f]       ; 00584542 | DAT_005edd1f
+    FCOMP double ptr [0x005edd1f]       ; 00584542 | g_DOUBLE_005edd1f
     FNSTSW AX                           ; 00584548
     SAHF                                ; 0058454a
     JBE 0x00584476                      ; 0058454b
@@ -541,7 +541,7 @@ section .text
     PUSH 0x10bd0                        ; 005845b0
         ;   Label: LAB_005845b0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005845b5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005845ba
     TEST EAX,EAX                        ; 005845bd
     JZ 0x005845ca                       ; 005845bf
@@ -554,7 +554,7 @@ section .text
         ;   Label: LAB_005845ca
     MOV ESI,EAX                         ; 005845cf
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005845d1
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005845d6
     TEST EAX,EAX                        ; 005845d9
     JZ 0x005845e6                       ; 005845db
@@ -572,10 +572,10 @@ section .text
         ;   Label: LAB_005845f0
     MOV EDX,0x161                       ; 005845f5
     PUSH 0x5edcad                       ; 005845fa | = "CMobster::process - Out of memory!"
-    MOV [0x01d046a0],EAX                ; 005845ff | DAT_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00584604 | DAT_01d046a4
-    CALL core_main.c_FUN_004e4500       ; 0058460a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
+    MOV [0x01d046a0],EAX                ; 005845ff | g_CHAR_PTR_01d046a0
+    MOV dword ptr [0x01d046a4],EDX      ; 00584604 | g_INT_01d046a4
+    CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0058460a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0058460f
     PUSH 0x3f000000                     ; 00584612
         ;   Label: LAB_00584612
@@ -602,13 +602,13 @@ section .text
     MOV dword ptr [EBX + 0x11cc],ESI    ; 00584658
     PUSH ESI                            ; 0058465e
         ;   Label: LAB_0058465e
-    MOV EAX,[0x00618170]                ; 0058465f | DAT_00618170
+    MOV EAX,[0x00618170]                ; 0058465f | g_CDemonMission_PTR_00618170
     PUSH EAX                            ; 00584664 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 00584665
         ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0058466a
     PUSH EDI                            ; 0058466d
-    MOV EDX,dword ptr [0x00618170]      ; 0058466e | DAT_00618170
+    MOV EDX,dword ptr [0x00618170]      ; 0058466e | g_CDemonMission_PTR_00618170
     PUSH EDX                            ; 00584674 | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 00584675
         ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission * this_ptr, CDemonActor * actor)
@@ -671,16 +671,16 @@ section .text
     PUSH 0x1                            ; 00584708
     PUSH ESI                            ; 0058470a
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 0058470b
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time, ...)
     ADD ESP,0x14                        ; 00584710
     PUSH ESI                            ; 00584713
-    MOV ECX,dword ptr [0x00618170]      ; 00584714 | DAT_00618170
+    MOV ECX,dword ptr [0x00618170]      ; 00584714 | g_CDemonMission_PTR_00618170
     PUSH ECX                            ; 0058471a | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 0058471b
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00584720
     PUSH EDI                            ; 00584723
-    MOV ESI,dword ptr [0x00618170]      ; 00584724 | DAT_00618170
+    MOV ESI,dword ptr [0x00618170]      ; 00584724 | g_CDemonMission_PTR_00618170
     PUSH ESI                            ; 0058472a | DAT_01d182f0
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 0058472b
         ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)

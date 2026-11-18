@@ -11,16 +11,16 @@
 ;   core_actor.cpp_archiveMotionState_FUN_0040b870 at 0040b8a9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005eaf8b
+;   TerminatedCString s_anon_005eaf8b
 ;   TerminatedCString s_d_f_005eaf8d
 ;   TerminatedCString s_f_005eaf93
 ;   TerminatedCString s_core_motion_cpp_005eafa0
 ;   TerminatedCString s_CMotionController_load_e_005eafb3
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;
@@ -34,7 +34,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00525382
     MOV EDI,dword ptr [ESP + 0x10]      ; 00525386
     PUSH ESI                            ; 0052538a
-    PUSH 0x5eaf8b                       ; 0052538b | DAT_005eaf8b
+    PUSH 0x5eaf8b                       ; 0052538b | = " "
     PUSH EDI                            ; 00525390
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00525391
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
@@ -86,10 +86,10 @@ section .text
     MOV EDX,0x5eafa0                    ; 005253ef | = "..\\core\\motion.cpp"
     MOV ECX,0x57e                       ; 005253f4
     PUSH 0x5eafb3                       ; 005253f9 | = "CMotionController::load - error parsi..."
-    MOV dword ptr [0x01d1d400],EDX      ; 005253fe | DAT_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00525404 | DAT_01d1d404
-    CALL core_main.c_FUN_005030e0       ; 0052540a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    MOV dword ptr [0x01d1d400],EDX      ; 005253fe | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d404],ECX      ; 00525404 | g_INT_01d1d404
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052540a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052540f
     JMP 0x005253bf                      ; 00525412
         ;   XREF to: 005253bf (UNCONDITIONAL_JUMP)  ; LAB_005253bf

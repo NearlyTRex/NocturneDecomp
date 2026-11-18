@@ -18,11 +18,11 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01d1d400
-;   undefined4 DAT_01d1d404
+;   char* g_CHAR_PTR_01d1d400
+;   int g_INT_01d1d404
 ;
 ; Called Functions:
-;   core_main.c_FUN_005030e0
+;   core_main.c_displayErrorAndQuit_FUN_005030e0
 ;   core_script.cpp_CScript_resetDialogState_FUN_0054ae10
 ;   core_script.cpp_CScript_step_FUN_00544460
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
@@ -82,14 +82,14 @@ section .text
     MOV EBP,0x5efe6b                    ; 0054aeb2 | = "..\\core\\script.cpp"
     MOV EAX,0x102a                      ; 0054aeb7
     MOV EDI,dword ptr [EBX + 0x44]      ; 0054aebc
-    MOV [0x01d1d404],EAX                ; 0054aebf | DAT_01d1d404
+    MOV [0x01d1d404],EAX                ; 0054aebf | g_INT_01d1d404
     MOV EAX,dword ptr [EBX + 0x30]      ; 0054aec4
-    MOV dword ptr [0x01d1d400],EBP      ; 0054aec7 | DAT_01d1d400
+    MOV dword ptr [0x01d1d400],EBP      ; 0054aec7 | g_CHAR_PTR_01d1d400
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 0054aecd
     PUSH EDX                            ; 0054aed0
     PUSH 0x5efe7e                       ; 0054aed1 | = "Infinite loop detected trying to skip..."
-    CALL core_main.c_FUN_005030e0       ; 0054aed6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
+    CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0054aed6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0054aedb
     JMP 0x0054ae70                      ; 0054aede
         ;   XREF to: 0054ae70 (UNCONDITIONAL_JUMP)  ; LAB_0054ae70

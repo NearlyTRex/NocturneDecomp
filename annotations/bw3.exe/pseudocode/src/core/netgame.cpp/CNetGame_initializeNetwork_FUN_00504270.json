@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 57,
+    "complexity_score": 41,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 168
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 167
   },
   "cross_references": [
+    {
+      "addr": "00503f00",
+      "from_addr": "00503f77",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_00503f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00503fb0",
       "from_addr": "00504012",
       "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00503f00",
-      "from_addr": "00503f77",
-      "name": "core_netgame.cpp_FUN_00503f00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -96,14 +94,14 @@
     },
     {
       "addr": "01da6474",
-      "name": "DAT_01da6474",
-      "type": "undefined4",
+      "name": "g_LastPingTime",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01da6478",
-      "name": "DAT_01da6478",
-      "type": "undefined4",
+      "name": "g_UINT_01da6478",
+      "type": "uint",
       "value": null
     }
   ],
@@ -124,7 +122,7 @@
       {
         "call_addr": "00503f77",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_00503f00",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_00503f00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,14 +211,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

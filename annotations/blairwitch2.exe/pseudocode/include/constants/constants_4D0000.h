@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "prototypes/prototypes_4C0000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -81,8 +82,8 @@ static void* DAT_004D0394 = (void*)0x004D03CA; // caseD_0
 static void* DAT_004D0398 = (void*)0x004D0631; // caseD_9
 static void* DAT_004D039C = (void*)0x004D03CA; // caseD_0
 static void* DAT_004D03A0 = (void*)0x004D03CA; // caseD_0
-static void* DAT_004D0694 = (void*)0x004CEA10; // caseD_1
-static void* DAT_004D0698 = (void*)0x004CEA10; // caseD_1
+static void* DAT_004D0694 = (void*)core_hero_cpp_CHero_isInvulnerable_FUN_004cea10;
+static void* DAT_004D0698 = (void*)core_hero_cpp_CHero_isInvulnerable_FUN_004cea10;
 static void* DAT_004D069C = (void*)0x004D0717; // caseD_0
 static void* DAT_004D06A0 = (void*)0x004D0717; // caseD_0
 static void* DAT_004D06A4 = (void*)0x004D0717; // caseD_0

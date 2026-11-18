@@ -4,13 +4,8 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "globals.h"
 #include "constants.h"
-#include "prototypes/prototypes_400000.h"
-#include "prototypes/prototypes_410000.h"
 #include "prototypes/prototypes_4A0000.h"
-#include "prototypes/prototypes_4F0000.h"
-#include "prototypes/prototypes_590000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -35,7 +30,6 @@ static TerminatedCString s_CFlame_006108c8 = "$CFlame$$";
 static TerminatedCString s_CEnemy_006108d8 = "$CEnemy$$";
 static TerminatedCString s_CArmour_006108e8 = "$CArmour$$";
 static TerminatedCString s_CBackgroundActor_006108fc = "$CBackgroundActor$$";
-static TerminatedCString s_BLUEGLOW_RAW_0061091c = "BLUEGLOW.RAW";
 static TerminatedCString s_CBaron_00610934 = "$CBaron$$";
 static TerminatedCString s_CBaronWeapon_00610944 = "$CBaronWeapon$$";
 static TerminatedCString s_CBarrier_0061095c = "$CBarrier$$";
@@ -67,10 +61,7 @@ static TerminatedCString s_CKeyFramedModelInstance_00610bcc = "$CKeyFramedModelI
 static TerminatedCString s_SBug_00610bec = "$SBug$$";
 static TerminatedCString s_CCameraView_00610bf8 = "$CCameraView$$";
 static TerminatedCString s_CCarved_00610c10 = "$CCarved$$";
-static TerminatedCString s_BOLT1_RAW_00610c28 = "BOLT1.RAW";
-static TerminatedCString s_BOLT2_RAW_00610c40 = "BOLT2.RAW";
 static TerminatedCString s_noCollision_00610cd0 = "noCollision";
-static TerminatedCString s_CHAR2_RAW_00610ce4 = "CHAR2.RAW";
 static TerminatedCString s_SFire_00610d04 = "$SFire$$";
 static TerminatedCString s_CChain_00610d18 = "$CChain$$";
 static TerminatedCString s_SChainVertex_00610d28 = "$SChainVertex$$";
@@ -89,7 +80,6 @@ static TerminatedCString s_CCodec_006110c4 = "$CCodec$$";
 static TerminatedCString s_CColonel_006110d8 = "$CColonel$$";
 static TerminatedCString s_console_txt_00611108 = "console.txt";
 static TerminatedCString s_CConsole_00611124 = "$CConsole$$";
-static TerminatedCString s_BLUEGLOW_RAW_00611138 = "BLUEGLOW.RAW";
 static TerminatedCString s_CConstruct_00611150 = "$CConstruct$$";
 static TerminatedCString s_CPlatform_00611168 = "$CPlatform$$";
 static TerminatedCString s_CConveyor_0061117c = "$CConveyor$$";
@@ -99,21 +89,14 @@ static TerminatedCString s_CCrossbow_006111c0 = "$CCrossbow$$";
 static TerminatedCString s_CCurtain_006111d8 = "$CCurtain$$";
 static TerminatedCString s_SCurtainVertex_006111e8 = "$SCurtainVertex$$";
 static TerminatedCString s_SCollisionInfo_00611200 = "$SCollisionInfo$$";
-static TerminatedCString s_BACKGND_RAW_00611284 = "BACKGND.RAW";
+static TerminatedCString s_EFD_00611298 = "EFD";
 static TerminatedCString s_CDemonCamera_006112a0 = "$CDemonCamera$$";
 static TerminatedCString s_CDemnfolk_006112b8 = "$CDemnfolk$$";
 static TerminatedCString s_CActorDestination_006112d0 = "$CActorDestination$$";
 static TerminatedCString s_CFilterFX_00611364 = "$CFilterFX$$";
 static TerminatedCString s_CFilterCache_00611378 = "$CFilterCache$$";
-static TerminatedCString s_headlite_raw_00611390 = "headlite.raw";
-static TerminatedCString s_BLUEGLOW_RAW_00612260 = "BLUEGLOW.RAW";
 static TerminatedCString s_CDjien_0061227c = "$CDjien$$";
 static TerminatedCString s_SDjienBox_0061228c = "$SDjienBox$$";
-static TerminatedCString s_LITEFUZZ_RAW_006122b0 = "LITEFUZZ.RAW";
-static TerminatedCString s_SUNMARK_RAW_006122c8 = "SUNMARK.RAW";
-static TerminatedCString s_SUNCRAM_RAW_00612370 = "SUNCRAM.RAW";
-static TerminatedCString s_SUNCRAM_RAW_00612430 = "SUNCRAM.RAW";
-static TerminatedCString s_SUNCRAM_RAW_00612460 = "SUNCRAM.RAW";
 static TerminatedCString s_CDemonLight_00612494 = "$CDemonLight$$";
 static TerminatedCString s_CKeyFramedModel_006124b7 = "$CKeyFramedModel$$";
 static TerminatedCString s_CDoc_006124d4 = "$CDoc$$";
@@ -122,6 +105,7 @@ static TerminatedCString s_CDoor_006124fc = "$CDoor$$";
 static TerminatedCString s_CFileFinder_00612510 = "$CFileFinder$$";
 static TerminatedCString s_CDraculaBride_0061252c = "$CDraculaBride$$";
 static TerminatedCString s_SFreaky_00612544 = "$SFreaky$$";
+static TerminatedCString s_A_A_00612558 = "A+A";
 static TerminatedCString s_CDrip_006144b0 = "$CDrip$$";
 static TerminatedCString s_CDrone_006144c4 = "$CDrone$$";
 static TerminatedCString s_CDemonCube_0061ab74 = "$CDemonCube$$";
@@ -140,25 +124,10 @@ static TerminatedCString s_invulnerableFlag_0061b520 = "invulnerableFlag";
 static TerminatedCString s_CCharacter_0061b53e = "CCharacter";
 static TerminatedCString s_CFilmProjector_0061bf34 = "$CFilmProjector$$";
 static TerminatedCString s_CFilmReel_0061bf4c = "$CFilmReel$$";
-static TerminatedCString s_BHOLE_RAW_0061c3dc = "BHOLE.RAW";
-static TerminatedCString s_SPARK_RAW_0061c3f4 = "SPARK.RAW";
-static TerminatedCString s_BLUSPARK_RAW_0061c40c = "BLUSPARK.RAW";
-static TerminatedCString s_GRNSPARK_RAW_0061c424 = "GRNSPARK.RAW";
 static TerminatedCString s_SPARK2_RAW_0061c43c = "SPARK2.RAW";
-static TerminatedCString s_FIREFLY_RAW_0061c454 = "FIREFLY.RAW";
 static TerminatedCString s_SPARK_RAW_0061c46c = "SPARK.RAW";
 static TerminatedCString s_GRNSPARK_RAW_0061c484 = "GRNSPARK.RAW";
 static TerminatedCString s_SPARK2_RAW_0061c49c = "SPARK2.RAW";
-static TerminatedCString s_REDSPARK_RAW_0061c4b4 = "REDSPARK.RAW";
-static TerminatedCString s_LASER_RAW_0061c4cc = "LASER.RAW";
-static TerminatedCString s_BEAMFUZZ_RAW_0061c4e4 = "BEAMFUZZ.RAW";
-static TerminatedCString s_RETICLE_RAW_0061c4fc = "RETICLE.RAW";
-static TerminatedCString s_HEADLITE_RAW_0061c514 = "HEADLITE.RAW";
-static TerminatedCString s_BLAST1_RAW_0061ca9c = "BLAST1.RAW";
-static TerminatedCString s_BOLT1_RAW_0061cab4 = "BOLT1.RAW";
-static TerminatedCString s_BOLT2_RAW_0061cacc = "BOLT2.RAW";
-static TerminatedCString s_POPCORN_RAW_0061cb44 = "POPCORN.RAW";
-static TerminatedCString s_RAINDRP1_RAW_0061cb5c = "RAINDRP1.RAW";
 static TerminatedCString s_CRainDrop_0061cbb4 = "$CRainDrop$$";
 static TerminatedCString s_CPopcorn_0061cbd4 = "$CPopcorn$$";
 static TerminatedCString s_CShell_0061cbe4 = "$CShell$$";
@@ -180,12 +149,6 @@ static TerminatedCString s_CSpark_0061cd54 = "$CSpark$$";
 static TerminatedCString s_CStake_0061cd64 = "$CStake$$";
 static TerminatedCString s_CBulletHole_0061cd74 = "$CBulletHole$$";
 static TerminatedCString s_CSmokeParticle_0061cd94 = "$CSmokeParticle$$";
-static TerminatedCString s_GLOW1_RAW_0061cdb0 = "GLOW1.RAW";
-static TerminatedCString s_CAN0100_RAW_0061ce88 = "CAN0100.RAW";
-static TerminatedCString s_CAN1100_RAW_0061cf00 = "CAN1100.RAW";
-static TerminatedCString s_BF0100_RAW_0061cf48 = "BF0100.RAW";
-static TerminatedCString s_BF0100_RAW_0061d008 = "BF0100.RAW";
-static TerminatedCString s_BF0100_RAW_0061d0c8 = "BF0100.RAW";
 static TerminatedCString s_CFlameCan_0061d18c = "$CFlameCan$$";
 static TerminatedCString s_CFlameThrower_0061d1a4 = "$CFlameThrower$$";
 static TerminatedCString s_CFlashlight_0061d1c0 = "$CFlashlight$$";
@@ -202,12 +165,12 @@ static TerminatedCString s_PageResource_Text_0061d7d4 = "$PageResource_Text$$";
 static TerminatedCString s_TextView_0061d7f4 = "$TextView$$";
 static TerminatedCString s_NotesMap_0061d804 = "$NotesMap$$";
 static TerminatedCString s_NotesSection_0061d814 = "$NotesSection$$";
-static TerminatedCString s_BBWHITE_RAW_0061d830 = "BBWHITE.RAW";
 static TerminatedCString s_CFlies_0061d844 = "$CFlies$$";
 static TerminatedCString s_SFly_CFlies_0061d854 = "$SFly$:CFlies$$";
 static TerminatedCString s_CFrankenstienMachine_0061d86c = "$CFrankenstienMachine$$";
 static TerminatedCString s_CGabriella_0061d88c = "$CGabriella$$";
 static TerminatedCString s_save_SAVE_TMP_0061d978 = "save\\$$SAVE$$.TMP";
+static TerminatedCString s_EFD_0061d98c = "EFD";
 static TerminatedCString s_file_corrupt_0061d990 = "(file corrupt)";
 static TerminatedCString s_CIniFile_0061dbe4 = "$CIniFile$$";
 static TerminatedCString s_CGame_0061dbf4 = "$CGame$$";
@@ -217,42 +180,6 @@ static TerminatedCString s_CGhoul_0061dc38 = "$CGhoul$$";
 static TerminatedCString s_s_7YEARS_RAW_0061dc50 = "7YEARS.RAW";
 static TerminatedCString s_CGlass_0061dc64 = "$CGlass$$";
 static TerminatedCString s_CGoggles_0061dc78 = "$CGoggles$$";
-static TerminatedCString s_BGLOB_RAW_0061dcbc = "BGLOB.RAW";
-static TerminatedCString s_BVSP1_16_RAW_0061de9c = "BVSP1-16.RAW";
-static TerminatedCString s_BVSP2_16_RAW_0061e01c = "BVSP2-16.RAW";
-static TerminatedCString s_BVSP3_16_RAW_0061e19c = "BVSP3-16.RAW";
-static TerminatedCString s_BVSP4_16_RAW_0061e31c = "BVSP4-16.RAW";
-static TerminatedCString s_BPOL1_10_RAW_0061e40c = "BPOL1-10.RAW";
-static TerminatedCString s_BPOL1_11_RAW_0061e424 = "BPOL1-11.RAW";
-static TerminatedCString s_BPOL1_12_RAW_0061e43c = "BPOL1-12.RAW";
-static TerminatedCString s_BPOL1_13_RAW_0061e454 = "BPOL1-13.RAW";
-static TerminatedCString s_BPOL1_16_RAW_0061e49c = "BPOL1-16.RAW";
-static TerminatedCString s_BPOL1_24_RAW_0061e55c = "BPOL1-24.RAW";
-static TerminatedCString s_BPOL2_10_RAW_0061e6c4 = "BPOL2-10.RAW";
-static TerminatedCString s_BPOL2_11_RAW_0061e6dc = "BPOL2-11.RAW";
-static TerminatedCString s_BPOL2_12_RAW_0061e6f4 = "BPOL2-12.RAW";
-static TerminatedCString s_BPOL2_13_RAW_0061e70c = "BPOL2-13.RAW";
-static TerminatedCString s_BPOL2_14_RAW_0061e724 = "BPOL2-14.RAW";
-static TerminatedCString s_BPOL2_16_RAW_0061e754 = "BPOL2-16.RAW";
-static TerminatedCString s_BPOL2_19_RAW_0061e79c = "BPOL2-19.RAW";
-static TerminatedCString s_BPOL2_20_RAW_0061e7b4 = "BPOL2-20.RAW";
-static TerminatedCString s_BPOL2_21_RAW_0061e7cc = "BPOL2-21.RAW";
-static TerminatedCString s_BPOL2_22_RAW_0061e7e4 = "BPOL2-22.RAW";
-static TerminatedCString s_BPOL2_23_RAW_0061e7fc = "BPOL2-23.RAW";
-static TerminatedCString s_BPOL2_24_RAW_0061e814 = "BPOL2-24.RAW";
-static TerminatedCString s_BPOL2_26_RAW_0061e844 = "BPOL2-26.RAW";
-static TerminatedCString s_BPOL2_27_RAW_0061e85c = "BPOL2-27.RAW";
-static TerminatedCString s_BPOL3_16_RAW_0061ea0c = "BPOL3-16.RAW";
-static TerminatedCString s_BPOL3_24_RAW_0061eacc = "BPOL3-24.RAW";
-static TerminatedCString s_BPOL4_10_RAW_0061ec34 = "BPOL4-10.RAW";
-static TerminatedCString s_BPOL4_11_RAW_0061ec4c = "BPOL4-11.RAW";
-static TerminatedCString s_BPOL4_12_RAW_0061ec64 = "BPOL4-12.RAW";
-static TerminatedCString s_BPOL4_13_RAW_0061ec7c = "BPOL4-13.RAW";
-static TerminatedCString s_BPOL4_14_RAW_0061ec94 = "BPOL4-14.RAW";
-static TerminatedCString s_BPOL4_16_RAW_0061ecc4 = "BPOL4-16.RAW";
-static TerminatedCString s_BPOL4_20_RAW_0061ed24 = "BPOL4-20.RAW";
-static TerminatedCString s_BPOL4_24_RAW_0061ed84 = "BPOL4-24.RAW";
-static TerminatedCString s_FOOTSTEP_RAW_0061ee34 = "FOOTSTEP.RAW";
 static TerminatedCString s_CFootstep_0061ee48 = "$CFootstep$$";
 static TerminatedCString s_CBloodPool_0061ee5c = "$CBloodPool$$";
 static TerminatedCString s_CBloodSplat_0061ee70 = "$CBloodSplat$$";
@@ -283,7 +210,6 @@ static TerminatedCString s_Editor_0061f088 = "Editor";
 static TerminatedCString s_CKeyActor_0061f294 = "$CKeyActor$$";
 static TerminatedCString s_CLadder_0061f2b0 = "$CLadder$$";
 static TerminatedCString s_CLarva_0061f2c4 = "$CLarva$$";
-static TerminatedCString s_MOONGLOW_RAW_0061f2ec = "MOONGLOW.RAW";
 static TerminatedCString s_CLever_0061f304 = "$CLever$$";
 static TerminatedCString s_CLightGun_0061f328 = "$CLightGun$$";
 static TerminatedCString s_CLightPis_0061f340 = "$CLightPis$$";
@@ -293,7 +219,6 @@ static TerminatedCString s_CMirrorHack_0061f3d0 = "$CMirrorHack$$";
 static TerminatedCString s_SReflector_0061f3e4 = "$SReflector$$";
 static TerminatedCString s_SGem_0061f3f8 = "$SGem$$";
 static TerminatedCString s_SPanel_0061f404 = "$SPanel$$";
-static TerminatedCString s_SPARK_RAW_0061f41c = "SPARK.RAW";
 static TerminatedCString s_CMarquee_0061f430 = "$CMarquee$$";
 static TerminatedCString s_CMelee_0061f444 = "$CMelee$$";
 static TerminatedCString s_CMoon_0061f594 = "$CMoon$$";
@@ -313,77 +238,90 @@ static TerminatedCString s_CBoundingBox3D_0061f8bc = "$CBoundingBox3D$$";
 static TerminatedCString s_CMorphModel_0061f8d2 = "$CMorphModel$$";
 static TerminatedCString s_CMotionController_0061f8e5 = "$CMotionController$$";
 
-// undefined1 constants
-static undefined1 DAT_0061d98c = 0x45;
-static undefined1 DAT_0061d98d = 0x46;
+// char*[10] constants
+static char* g_CHAR_PTR_ARRAY_0061ef2c[10] = {
+    "CGabriella", "CSvetlana", "CStranger", "CScat",
+    "CBaron", "CIcePick", "CHaystack", "CColonel",
+    "CMoloch", "CDoc"
+};
+
+// char*[11] constants
+static char* g_CHAR_PTR_ARRAY_0061dac0[11] = {
+    "hq-act3.msn", "chicago1.msn", "speak.msn", "chicago2.msn",
+    "wworks.msn", "chicago3.msn", "theater.msn", "chicago4.msn",
+    "ware2.msn", "factory.msn", "intfact.msn"
+};
+
+// char*[4] constants
+static char* g_CHAR_PTR_ARRAY_0061daf4[4] = {"hq-act4.msn", "grave.msn", "mansion.msn", "hq-act4b.msn"};
+
+// char*[7] constants
+static char* g_CHAR_PTR_ARRAY_0061da8c[7] = {
+    "train.msn", "town.msn", "mine.msn", "trans.msn",
+    "temple.msn", "town2.msn", "hq-act2b.msn"
+};
+
+// double[17] constants
+static double g_MpegRequantizationScaleTable[17] = {
+    1.3333333333299999, 1.6000000000000001, 1.1428571428600001, 1.7777777777699999,
+    1.06666666666, 1.0322580645199999, 1.01587301587, 1.0078740157499999,
+    1.00392156863, 1.0019569471600001, 1.0009775171099999, 1.00048851979,
+    1.00024420024, 1.0001220852199999, 1.00006103888, 1.00003051851,
+    1.00001525902
+};
+static double g_MpegRequantizationOffsetTable[17] = {
+    0.5, 0.5, 0.25, 0.5,
+    0.125, 0.0625, 0.03125, 0.015625,
+    0.0078125, 0.00390625, 0.001953125, 0.0009765625,
+    0.00048828125, 0.00024414062999999998, 0.00012207031, 6.1035159999999999e-05,
+    3.0517579999999999e-05
+};
+
+// float constants
+static float g_MovieRecordingTargetFPS = 30.0f;
+static float g_FLOAT_0061f600 = 0.5f;
+static float g_FLOAT_0061f604 = 65535.0f;
+static float g_FLOAT_0061f608 = 65536.0f;
+static float g_FLOAT_0061f60c = 16777220.0f;
+static float g_FLOAT_0061f610 = 2.147484e+09f;
+
+// float[16][32] constants
+static float g_MpegSynthesisWindow[16][32] = {
+    {0.0f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -1.52590001e-05f, -3.05180001e-05f, -3.05180001e-05f, -3.05180001e-05f, -3.05180001e-05f, -4.57759998e-05f, -4.57759998e-05f, -6.10349998e-05f, -6.10349998e-05f, -7.62940035e-05f, -7.62940035e-05f, -9.15530036e-05f, -0.000106811996f, -0.000106811996f, -0.00012207f, -0.000137329f, -0.000152588007f, -0.000167847f, -0.000198363996f, -0.000213623003f, -0.000244141003f, -0.000259399007f, -0.000289916992f, -0.000320435007f, -0.000366210996f, -0.00039672901f},
+    {-0.000442504999f, -0.000473021995f, -0.000534058025f, -0.000579833984f, -0.000625610002f, -0.000686645973f, -0.000747681013f, -0.000808715995f, -0.000885009998f, -0.000961304002f, -0.00103759801f, -0.00111389195f, -0.00120544399f, -0.00129699695f, -0.00138855004f, -0.001480103f, -0.00158691395f, -0.00169372605f, -0.00178527797f, -0.00190734898f, -0.00201415992f, -0.00212097191f, -0.00224304199f, -0.00234985398f, -0.00245666504f, -0.00257873489f, -0.00268554711f, -0.00279235793f, -0.00289916992f, -0.00299072289f, -0.00308227492f, -0.00317382789f},
+    {0.00325012207f, 0.00332641602f, 0.00338745094f, 0.003433228f, 0.00346374488f, 0.00347900391f, 0.00347900391f, 0.00346374488f, 0.00341796898f, 0.00337219192f, 0.00328064011f, 0.00317382789f, 0.00305175805f, 0.0028839109f, 0.0027008059f, 0.00248718308f, 0.00222778297f, 0.00193786598f, 0.00161743199f, 0.00126647903f, 0.000869750977f, 0.000442504999f, -3.05180001e-05f, -0.000549315999f, -0.00109863305f, -0.00169372605f, -0.00233459496f, -0.00300598098f, -0.003723145f, -0.00448608398f, -0.0052947998f, -0.00611877395f},
+    {-0.00700378418f, -0.00791931245f, -0.00886535645f, -0.00984191895f, -0.010848999f, -0.0118865967f, -0.0129394531f, -0.0140228271f, -0.01512146f, -0.0162353516f, -0.0173492432f, -0.0184631348f, -0.0195770264f, -0.020690918f, -0.0217895508f, -0.022857666f, -0.0239105225f, -0.0249328613f, -0.0259094238f, -0.02684021f, -0.0277252197f, -0.0285339355f, -0.0292816162f, -0.0299377441f, -0.0305328369f, -0.0310058594f, -0.0313873291f, -0.0316619873f, -0.0318145752f, -0.0318450928f, -0.0317382812f, -0.0314788818f},
+    {0.0310821533f, 0.0305175781f, 0.0297851562f, 0.0288848877f, 0.0278015137f, 0.0265350342f, 0.0250854492f, 0.0234222412f, 0.0215759277f, 0.01953125f, 0.0172576904f, 0.0148010254f, 0.0121154794f, 0.00923156738f, 0.0061340332f, 0.00282287598f, -0.000686645973f, -0.00439453078f, -0.00831604004f, -0.0124206543f, -0.016708374f, -0.0211791992f, -0.0258178711f, -0.0306091309f, -0.0355529785f, -0.0406341553f, -0.0458374023f, -0.0511322021f, -0.0565338135f, -0.06199646f, -0.0675201416f, -0.073059082f},
+    {-0.07862854f, -0.0841827393f, -0.0897064209f, -0.0951690674f, -0.100540161f, -0.105819702f, -0.110946655f, -0.115921021f, -0.120697021f, -0.125259399f, -0.129562378f, -0.133590698f, -0.137298584f, -0.140670776f, -0.143676758f, -0.146255493f, -0.148422241f, -0.150115967f, -0.151306152f, -0.15196228f, -0.152069092f, -0.151596069f, -0.150497437f, -0.148773193f, -0.146362305f, -0.143264771f, -0.139450073f, -0.134887695f, -0.129577637f, -0.123474121f, -0.116577148f, -0.108856201f},
+    {0.100311279f, 0.090927124f, 0.0806884766f, 0.0695953369f, 0.0576171875f, 0.0447845459f, 0.0310821533f, 0.0165100098f, 0.001068115f, -0.0152282706f, -0.0323791504f, -0.0503540039f, -0.0691680908f, -0.0887756348f, -0.109161377f, -0.130310059f, -0.152206421f, -0.174789429f, -0.198059082f, -0.221984863f, -0.246505737f, -0.271591187f, -0.297210693f, -0.323318481f, -0.349868774f, -0.376800537f, -0.404083252f, -0.431655884f, -0.459472656f, -0.487472534f, -0.515609741f, -0.543823242f},
+    {-0.572036743f, -0.600219727f, -0.628295898f, -0.656219482f, -0.683914185f, -0.71131897f, -0.738372803f, -0.765029907f, -0.791213989f, -0.816864014f, -0.841949463f, -0.866363525f, -0.890090942f, -0.91305542f, -0.935195923f, -0.956481934f, -0.976852417f, -0.996246338f, -1.01461792f, -1.03193665f, -1.04815674f, -1.06321716f, -1.07711792f, -1.08978271f, -1.10121155f, -1.1113739f, -1.120224f, -1.12774658f, -1.13392639f, -1.13876343f, -1.14221191f, -1.14428711f},
+    {1.14498901f, 1.14428711f, 1.14221191f, 1.13876343f, 1.13392639f, 1.12774658f, 1.120224f, 1.1113739f, 1.10121155f, 1.08978271f, 1.07711792f, 1.06321716f, 1.04815674f, 1.03193665f, 1.01461792f, 0.996246338f, 0.976852417f, 0.956481934f, 0.935195923f, 0.91305542f, 0.890090942f, 0.866363525f, 0.841949463f, 0.816864014f, 0.791213989f, 0.765029907f, 0.738372803f, 0.71131897f, 0.683914185f, 0.656219482f, 0.628295898f, 0.600219727f},
+    {0.572036743f, 0.543823242f, 0.515609741f, 0.487472534f, 0.459472656f, 0.431655884f, 0.404083252f, 0.376800537f, 0.349868774f, 0.323318481f, 0.297210693f, 0.271591187f, 0.246505737f, 0.221984863f, 0.198059082f, 0.174789429f, 0.152206421f, 0.130310059f, 0.109161377f, 0.0887756348f, 0.0691680908f, 0.0503540039f, 0.0323791504f, 0.0152282706f, -0.001068115f, -0.0165100098f, -0.0310821533f, -0.0447845459f, -0.0576171875f, -0.0695953369f, -0.0806884766f, -0.090927124f},
+    {0.100311279f, 0.108856201f, 0.116577148f, 0.123474121f, 0.129577637f, 0.134887695f, 0.139450073f, 0.143264771f, 0.146362305f, 0.148773193f, 0.150497437f, 0.151596069f, 0.152069092f, 0.15196228f, 0.151306152f, 0.150115967f, 0.148422241f, 0.146255493f, 0.143676758f, 0.140670776f, 0.137298584f, 0.133590698f, 0.129562378f, 0.125259399f, 0.120697021f, 0.115921021f, 0.110946655f, 0.105819702f, 0.100540161f, 0.0951690674f, 0.0897064209f, 0.0841827393f},
+    {0.07862854f, 0.073059082f, 0.0675201416f, 0.06199646f, 0.0565338135f, 0.0511322021f, 0.0458374023f, 0.0406341553f, 0.0355529785f, 0.0306091309f, 0.0258178711f, 0.0211791992f, 0.016708374f, 0.0124206543f, 0.00831604004f, 0.00439453078f, 0.000686645973f, -0.00282287598f, -0.0061340332f, -0.00923156738f, -0.0121154794f, -0.0148010254f, -0.0172576904f, -0.01953125f, -0.0215759277f, -0.0234222412f, -0.0250854492f, -0.0265350342f, -0.0278015137f, -0.0288848877f, -0.0297851562f, -0.0305175781f},
+    {0.0310821533f, 0.0314788818f, 0.0317382812f, 0.0318450928f, 0.0318145752f, 0.0316619873f, 0.0313873291f, 0.0310058594f, 0.0305328369f, 0.0299377441f, 0.0292816162f, 0.0285339355f, 0.0277252197f, 0.02684021f, 0.0259094238f, 0.0249328613f, 0.0239105225f, 0.022857666f, 0.0217895508f, 0.020690918f, 0.0195770264f, 0.0184631348f, 0.0173492432f, 0.0162353516f, 0.01512146f, 0.0140228271f, 0.0129394531f, 0.0118865967f, 0.010848999f, 0.00984191895f, 0.00886535645f, 0.00791931245f},
+    {0.00700378418f, 0.00611877395f, 0.0052947998f, 0.00448608398f, 0.003723145f, 0.00300598098f, 0.00233459496f, 0.00169372605f, 0.00109863305f, 0.000549315999f, 3.05180001e-05f, -0.000442504999f, -0.000869750977f, -0.00126647903f, -0.00161743199f, -0.00193786598f, -0.00222778297f, -0.00248718308f, -0.0027008059f, -0.0028839109f, -0.00305175805f, -0.00317382789f, -0.00328064011f, -0.00337219192f, -0.00341796898f, -0.00346374488f, -0.00347900391f, -0.00347900391f, -0.00346374488f, -0.003433228f, -0.00338745094f, -0.00332641602f},
+    {0.00325012207f, 0.00317382789f, 0.00308227492f, 0.00299072289f, 0.00289916992f, 0.00279235793f, 0.00268554711f, 0.00257873489f, 0.00245666504f, 0.00234985398f, 0.00224304199f, 0.00212097191f, 0.00201415992f, 0.00190734898f, 0.00178527797f, 0.00169372605f, 0.00158691395f, 0.001480103f, 0.00138855004f, 0.00129699695f, 0.00120544399f, 0.00111389195f, 0.00103759801f, 0.000961304002f, 0.000885009998f, 0.000808715995f, 0.000747681013f, 0.000686645973f, 0.000625610002f, 0.000579833984f, 0.000534058025f, 0.000473021995f},
+    {0.000442504999f, 0.00039672901f, 0.000366210996f, 0.000320435007f, 0.000289916992f, 0.000259399007f, 0.000244141003f, 0.000213623003f, 0.000198363996f, 0.000167847f, 0.000152588007f, 0.000137329f, 0.00012207f, 0.000106811996f, 0.000106811996f, 9.15530036e-05f, 7.62940035e-05f, 7.62940035e-05f, 6.10349998e-05f, 6.10349998e-05f, 4.57759998e-05f, 4.57759998e-05f, 3.05180001e-05f, 3.05180001e-05f, 3.05180001e-05f, 3.05180001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f, 1.52590001e-05f}
+};
+
+// float[2][4] constants
+static float g_FootstepCornerMultipliers[2][4] = {
+    {1.0f, -1.0f, -1.0f, 1.0f},
+    {1.0f, 1.0f, -1.0f, -1.0f}
+};
+
+// float[6] constants
+static float g_MoveAwayAngleOffsets[6] = {
+    2.3561945f, 3.9269907f, 1.5707964f, 4.712389f,
+    0.78539819f, 5.497787f
+};
+
+// uchar[8] constants
+static uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+static uchar g_VoxelYBitMasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined1* constants
-static undefined1* DAT_006104F8 = (undefined1*)engine_3d_c_processCameraRelativePoint_FUN_004037e0;
-static undefined1* DAT_006104FC = (undefined1*)engine_3d_c_transformAndBufferVertices_FUN_00403840;
-static undefined1* DAT_00610500 = (undefined1*)engine_3d_c_processVertexLighting_FUN_004039f0;
-static undefined1* DAT_00610504 = (undefined1*)engine_3d_c_processTextureCoordinates_FUN_00403a50;
-static undefined1* DAT_00610508 = (undefined1*)engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403aa0;
-static undefined1* DAT_0061050C = (undefined1*)engine_3d_c_renderPolygonFogColorOp6_FUN_00403b70;
-static undefined1* DAT_00610510 = (undefined1*)engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403c90;
-static undefined1* DAT_00610514 = (undefined1*)engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00403d30;
-static undefined1* DAT_00610518 = (undefined1*)engine_3d_c_FUN_00403dd0;
-static undefined1* DAT_0061051C = (undefined1*)engine_3d_c_processPolygonColor_FUN_00403de0;
-static undefined1* DAT_00610520 = (undefined1*)engine_3d_c_FUN_00403dd0;
-static undefined1* DAT_00610524 = (undefined1*)engine_3d_c_FUN_00403dd0;
-static undefined1* DAT_00610528 = (undefined1*)engine_texture_cpp_FUN_00597a20;
-static undefined1* DAT_0061052C = (undefined1*)engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70;
-static undefined1* DAT_00610530 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00404070;
-static undefined1* DAT_00610534 = (undefined1*)engine_3d_c_FUN_00403dd0;
-static undefined1* DAT_00610538 = (undefined1*)engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00404120;
-static undefined1* DAT_0061053C = (undefined1*)engine_3d_c_FUN_00403dd0;
-static undefined1* DAT_00610540 = (undefined1*)engine_3d_c_badMRGLStruct_FUN_004037b0;
-static undefined1* DAT_00610544 = (undefined1*)engine_3d_c_setRelativeCoord_FUN_00404320;
-static undefined1* DAT_00610548 = (undefined1*)engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_00404370;
-static undefined1* DAT_0061054C = (undefined1*)engine_3d_c_drawLineStrip2D_FUN_00404440;
-static undefined1* DAT_00610550 = (undefined1*)engine_3d_c_FUN_00403dd0;
-static undefined1* DAT_00610554 = (undefined1*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560;
-static undefined1* DAT_00610558 = (undefined1*)engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404980;
-static undefined1* DAT_0061055C = (undefined1*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404b00;
-static undefined1* DAT_00610560 = (undefined1*)engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00404bf0;
-static undefined1* DAT_00610564 = (undefined1*)engine_3d_c_FUN_00403dd0;
-static undefined1* DAT_00610568 = (undefined1*)engine_3d_c_updateAnimatedTexture_FUN_00404f10;
-static undefined1* DAT_0061056C = (undefined1*)engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00404fc0;
-static undefined1* DAT_00610570 = (undefined1*)engine_3d_c_setVertexTextureU_FUN_004050c0;
-static undefined1* DAT_00610574 = (undefined1*)engine_keyframe_c_interpolateCubicKeyframes_FUN_004fcd30;
-static undefined1* DAT_00610578 = (undefined1*)engine_3d_c_renderPolygonDestReadBlendOp33_FUN_00405100;
-static undefined1* DAT_0061057C = (undefined1*)engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0;
-static undefined1* DAT_00610580 = (undefined1*)engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_004048e0;
-static undefined1* DAT_00610584 = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0;
-static undefined1* DAT_00610588 = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600;
-static undefined1* DAT_0061058C = (undefined1*)engine_boss_c_modelStructNotSupported1_FUN_0041d8f0;
-static undefined1* DAT_00610590 = (undefined1*)engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_00405720;
-static undefined1* DAT_00610594 = (undefined1*)engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405850;
-static undefined1* DAT_00610598 = (undefined1*)engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_004059a0;
-static undefined1* DAT_0061059C = (undefined1*)engine_3d_c_renderPolygonFogTexturedDepthOp42_FUN_00405b30;
-static undefined1* DAT_006105A0 = (undefined1*)engine_3d_c_renderPolygonTexturedDepthWriteOp43_FUN_00405bd0;
-static undefined1* DAT_006105A4 = (undefined1*)engine_3d_c_renderPolygonFogTexturedDepthWriteOp44_FUN_00405c70;
-static undefined1* DAT_006105A8 = (undefined1*)engine_3d_c_renderPolygonTexturedOp45_FUN_00405d10;
-static undefined1* DAT_006105AC = (undefined1*)engine_3d_c_renderPolygonTexturedOp46_FUN_00405db0;
-static undefined1* DAT_006105B0 = (undefined1*)engine_3d_c_renderPolygonTexturedDepthWriteOp47_FUN_00405e50;
-static undefined1* DAT_006105B4 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_00405ef0;
-static undefined1* DAT_006105B8 = (undefined1*)engine_3d_c_renderPolygonTexturedDepthLitOp49_FUN_00405fa0;
-static undefined1* DAT_006105BC = (undefined1*)engine_3d_c_renderPolygonTexturedNormalizedOp50_FUN_00406040;
-static undefined1* DAT_006105C0 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0;
-static undefined1* DAT_006105C4 = (undefined1*)engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406280;
-static undefined1* DAT_006105C8 = (undefined1*)engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_004058f0;
-static undefined1* DAT_006105CC = (undefined1*)engine_3d_c_renderPolygonGrayscaleLitOp54_FUN_00406520;
-static undefined1* DAT_006105D0 = (undefined1*)engine_3d_c_renderPolygonDestReadBlendDepthLitOp55_FUN_004065f0;
-static undefined1* DAT_006105D4 = (undefined1*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_004066b0;
-static undefined1* DAT_006105D8 = (undefined1*)engine_3d_c_renderPolygonFullEffectsLitOp57_FUN_00406990;
-static undefined1* DAT_006105DC = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c30;
-static undefined1* DAT_006105E0 = (undefined1*)engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406d70;
-static undefined1* DAT_006105E4 = (undefined1*)engine_3d_c_renderPolygonVertexAlphaLitOp60_FUN_00406a30;
-static undefined1* DAT_006105E8 = (undefined1*)engine_3d_c_setRenderAlphaFromBlock_FUN_00406bb0;
-static undefined1* DAT_006105EC = (undefined1*)engine_3d_c_renderPolygonSolidLitOp62_FUN_00406870;
-static undefined1* DAT_006105F0 = (undefined1*)engine_3d_c_renderPolygonBlendedLitOp63_FUN_00406ad0;
-static undefined1* DAT_006105F4 = (undefined1*)engine_texture_cpp_loadTextureAndGetData_FUN_00597aa0;
-static undefined1* DAT_006105F8 = (undefined1*)engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0;
-static undefined1* DAT_006105FC = (undefined1*)engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_004072c0;
 static undefined1* DAT_0061BEC0 = (undefined1*)0x004AB0A1; // LAB_004ab0a1
 static undefined1* DAT_0061BEC4 = (undefined1*)crt_unknown_c_FUN_004ab0c0;
 static undefined1* DAT_0061BEC8 = (undefined1*)0x004AB0B7; // LAB_004ab0b7
@@ -400,37 +338,6 @@ static undefined1* DAT_0061BF14 = (undefined1*)0x004AB17A; // LAB_004ab17a
 static undefined1* DAT_0061BF18 = (undefined1*)0x004AB184; // LAB_004ab184
 static undefined1* DAT_0061BF1C = (undefined1*)0x004AB172; // LAB_004ab172
 static undefined1* DAT_0061BF20 = (undefined1*)0x004AB16C; // LAB_004ab16c
-static undefined1* DAT_0061DA8C = (undefined1*)s_train_msn_005e36b6;
-static undefined1* DAT_0061DA90 = (undefined1*)s_town_msn_005e36c0;
-static undefined1* DAT_0061DA94 = (undefined1*)s_mine_msn_005e36c9;
-static undefined1* DAT_0061DA98 = (undefined1*)s_trans_msn_005e36d2;
-static undefined1* DAT_0061DA9C = (undefined1*)s_temple_msn_005e36dc;
-static undefined1* DAT_0061DAA0 = (undefined1*)s_town2_msn_005e36e7;
-static undefined1* DAT_0061DAA4 = (undefined1*)s_hq_act2b_msn_005e36f1;
-static undefined1* DAT_0061DAC0 = (undefined1*)s_hq_act3_msn_005e36fe;
-static undefined1* DAT_0061DAC4 = (undefined1*)s_chicago1_msn_005e370a;
-static undefined1* DAT_0061DAC8 = (undefined1*)s_speak_msn_005e3717;
-static undefined1* DAT_0061DACC = (undefined1*)s_chicago2_msn_005e3721;
-static undefined1* DAT_0061DAD0 = (undefined1*)s_wworks_msn_005e372e;
-static undefined1* DAT_0061DAD4 = (undefined1*)s_chicago3_msn_005e3739;
-static undefined1* DAT_0061DAD8 = (undefined1*)s_theater_msn_005e3746;
-static undefined1* DAT_0061DADC = (undefined1*)s_chicago4_msn_005e3752;
-static undefined1* DAT_0061DAE0 = (undefined1*)s_ware2_msn_005e375f;
-static undefined1* DAT_0061DAE4 = (undefined1*)s_factory_msn_005e3769;
-static undefined1* DAT_0061DAE8 = (undefined1*)s_intfact_msn_005e3775;
-static undefined1* DAT_0061DAF4 = (undefined1*)s_hq_act4_msn_005e3781;
-static undefined1* DAT_0061DAF8 = (undefined1*)s_grave_msn_005e378d;
-static undefined1* DAT_0061DAFC = (undefined1*)s_mansion_msn_005e3797;
-static undefined1* DAT_0061DB00 = (undefined1*)s_hq_act4b_msn_005e37a3;
-static undefined1* DAT_0061EF30 = (undefined1*)s_CSvetlana_005e4bef;
-static undefined1* DAT_0061EF34 = (undefined1*)s_CStranger_005e4bf9;
-static undefined1* DAT_0061EF38 = (undefined1*)s_CScat_005e4c03;
-static undefined1* DAT_0061EF3C = (undefined1*)s_CBaron_005e4c09;
-static undefined1* DAT_0061EF40 = (undefined1*)s_CIcePick_005e4c10;
-static undefined1* DAT_0061EF44 = (undefined1*)s_CHaystack_005e4c19;
-static undefined1* DAT_0061EF48 = (undefined1*)s_CColonel_005e4c23;
-static undefined1* DAT_0061EF4C = (undefined1*)s_CMoloch_005e4c2c;
-static undefined1* DAT_0061EF50 = (undefined1*)s_CDoc_005e4c34;
 static undefined1* DAT_0061F578 = (undefined1*)s_f0500_005e87a4;
 static undefined1* DAT_0061F57C = (undefined1*)s_f0700_005e87aa;
 static undefined1* DAT_0061F580 = (undefined1*)s_f0900_005e87b0;
@@ -467,128 +374,10 @@ static undefined1* DAT_0061F8A4 = (undefined1*)s_blair_00028_005ea5d2;
 static undefined1* DAT_0061F8A8 = (undefined1*)s_blair_00029_005ea5de;
 
 // undefined4 constants
-static undefined4 DAT_006104ec = 0x00000001;
-static undefined4 DAT_00611240 = 0x00000001;
-static undefined4 DAT_0061125c = 0xFFFFFFFF;
-static undefined4 DAT_00611260 = 0xFFFFFFFF;
-static undefined4 DAT_00611298 = 0x00444645;
 static undefined4 DAT_0061132c = 0x0152C3E8;
 static undefined4 DAT_0061134c = 0x0152C3E8;
-static undefined4 DAT_006113a4 = 0x00000100;
-static undefined4 DAT_006113ac = 0xFFFFFF92;
-static undefined4 DAT_006113b0 = 0x000000DD;
-static undefined4 DAT_006113b4 = 0xFFFFFFC0;
-static undefined4 DAT_00611688 = 0x00000003;
-static undefined4 DAT_0061168c = 0x00004219;
-static undefined4 DAT_00611690 = 0xFFFF0952;
-static undefined4 DAT_00611694 = 0x000011B5;
-static undefined4 DAT_00611698 = 0xFF0951BE;
-static undefined4 DAT_0061169c = 0x00000002;
-static undefined4 DAT_006116a0 = 0x00000001;
-static undefined4 DAT_006116ac = 0x00000003;
-static undefined4 DAT_006116b0 = 0x00003063;
-static undefined4 DAT_006116b4 = 0xFFFF0952;
-static undefined4 DAT_006116b8 = 0x00003063;
-static undefined4 DAT_006116bc = 0xFF0951BE;
-static undefined4 DAT_006116c0 = 0x00000001;
-static undefined4 DAT_006116c4 = 0x00000003;
-static undefined4 DAT_0061255c = 0x01BC120C;
-static undefined4 DAT_006144d0 = 0x01BEEFBC;
-static undefined4 DAT_00619b80 = 0x01000100;
-static undefined4 DAT_00619ba0 = 0x02000200;
-static undefined4 DAT_00619bc0 = 0x03000300;
-static undefined4 DAT_00619be0 = 0x04000400;
-static undefined4 DAT_00619c00 = 0x05000500;
-static undefined4 DAT_00619c20 = 0x06000600;
-static undefined4 DAT_00619c40 = 0x07000700;
-static undefined4 DAT_00619c60 = 0x08000800;
-static undefined4 DAT_00619c80 = 0x09000900;
-static undefined4 DAT_00619ca0 = 0x0A000A00;
-static undefined4 DAT_00619cc0 = 0x0B000B00;
-static undefined4 DAT_00619ce0 = 0x0C000C00;
-static undefined4 DAT_00619d00 = 0x0D000D00;
-static undefined4 DAT_00619d20 = 0x0E000E00;
-static undefined4 DAT_00619d40 = 0x0F000F00;
-static undefined4 DAT_00619d60 = 0x10001000;
-static undefined4 DAT_00619d80 = 0x11001100;
-static undefined4 DAT_00619da0 = 0x12001200;
-static undefined4 DAT_00619dc0 = 0x13001300;
-static undefined4 DAT_00619de0 = 0x14001400;
-static undefined4 DAT_00619e00 = 0x15001500;
-static undefined4 DAT_00619e20 = 0x16001600;
-static undefined4 DAT_00619e40 = 0x17001700;
-static undefined4 DAT_00619e60 = 0x18001800;
-static undefined4 DAT_00619e80 = 0x19001900;
-static undefined4 DAT_00619ea0 = 0x1A001A00;
-static undefined4 DAT_00619ec0 = 0x1B001B00;
-static undefined4 DAT_00619ee0 = 0x1C001C00;
-static undefined4 DAT_00619f00 = 0x1D001D00;
-static undefined4 DAT_00619f20 = 0x1E001E00;
-static undefined4 DAT_00619f40 = 0x1F001F00;
-static undefined4 DAT_00619f60 = 0x20002000;
-static undefined4 DAT_00619f80 = 0x21002100;
-static undefined4 DAT_00619fa0 = 0x22002200;
-static undefined4 DAT_00619fc0 = 0x23002300;
-static undefined4 DAT_00619fe0 = 0x24002400;
-static undefined4 DAT_0061a000 = 0x25002500;
-static undefined4 DAT_0061a020 = 0x26002600;
-static undefined4 DAT_0061a040 = 0x27002700;
-static undefined4 DAT_0061a060 = 0x28002800;
-static undefined4 DAT_0061a080 = 0x29002900;
-static undefined4 DAT_0061a0a0 = 0x2A002A00;
-static undefined4 DAT_0061a0c0 = 0x2B002B00;
-static undefined4 DAT_0061a0e0 = 0x2C002C00;
-static undefined4 DAT_0061a100 = 0x2D002D00;
-static undefined4 DAT_0061a120 = 0x2E002E00;
-static undefined4 DAT_0061a140 = 0x2F002F00;
-static undefined4 DAT_0061a160 = 0x30003000;
-static undefined4 DAT_0061a180 = 0x31003100;
-static undefined4 DAT_0061a1a0 = 0x32003200;
-static undefined4 DAT_0061a1c0 = 0x33003300;
-static undefined4 DAT_0061a1e0 = 0x34003400;
-static undefined4 DAT_0061a200 = 0x35003500;
-static undefined4 DAT_0061a220 = 0x36003600;
-static undefined4 DAT_0061a240 = 0x37003700;
-static undefined4 DAT_0061a260 = 0x38003800;
-static undefined4 DAT_0061a280 = 0x39003900;
-static undefined4 DAT_0061a2a0 = 0x3A003A00;
-static undefined4 DAT_0061a2c0 = 0x3B003B00;
-static undefined4 DAT_0061a2e0 = 0x3C003C00;
-static undefined4 DAT_0061a300 = 0x3D003D00;
-static undefined4 DAT_0061a320 = 0x3E003E00;
-static undefined4 DAT_0061a340 = 0x3F003F00;
-static undefined4 DAT_0061ab60 = 0x00000004;
-static undefined4 DAT_0061b4d0 = 0x01C51D80;
-static undefined4 DAT_0061b564 = 0x00000002;
-static undefined4 DAT_0061bf2c = 0x00000002;
-static undefined4 DAT_0061c010 = 0x01C57074;
-static undefined4 DAT_0061d2e8 = 0x0000004A;
-static undefined4 DAT_0061d2ec = 0x000001AE;
-static undefined4 DAT_0061d2f0 = 0x000001F4;
-static undefined4 DAT_0061d2f4 = 0x000001AE;
-static undefined4 DAT_0061d2f8 = 0x00000262;
-static undefined4 DAT_0061d2fc = 0x000001C0;
 static undefined4 DAT_0061d300 = 0x0000001F;
 static undefined4 DAT_0061d304 = 0x00000001;
-static undefined4 DAT_0061d96c = 0x00000040;
-static undefined4 DAT_0061d970 = 0x00000040;
-static undefined4 DAT_0061ee0c = 0x3F800000;
-static undefined4 DAT_0061ee10 = 0xBF800000;
-static undefined4 DAT_0061ee1c = 0x3F800000;
-static undefined4 DAT_0061ef24 = 0x00000002;
-static undefined4 DAT_0061f1a0 = 0x000000D0;
-static undefined4 DAT_0061f1a4 = 0x00000060;
-static undefined4 DAT_0061f2a4 = 0x01D1BCA0;
-static undefined4 DAT_0061f2e0 = 0x01D1BD1C;
-static undefined4 DAT_0061f650 = 0x01D2C900;
-
-// undefined8 constants
-static undefined8 DAT_006185f0 = 0x0008000800080008;
-static undefined8 DAT_006185f8 = 0x0004000400040004;
-static undefined8 DAT_00618600 = 0x000C000C000C000C;
-static undefined8 DAT_00618610 = 0x0040004000400040;
-static undefined8 DAT_00618618 = 0x0020002000200020;
-static undefined8 DAT_00618620 = 0x0060006000600060;
 
 // void* constants
 static void* DAT_0061BEA4 = (void*)0x004AB088; // caseD_1

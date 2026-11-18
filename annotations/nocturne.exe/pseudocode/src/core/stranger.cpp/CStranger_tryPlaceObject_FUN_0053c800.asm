@@ -54,8 +54,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CCrateActorType_0077bd40.name_hash
-;   undefined4 g_CActorDestinationActorType_014b8a1c.name_hash
+;   undefined4 g_CCrateClassInfo.name_hash
+;   undefined4 g_CActorDestinationClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -141,7 +141,7 @@ section .text
     JGE 0x0053ccbc                      ; 0053c8b9
         ;   XREF to: 0053ccbc (CONDITIONAL_JUMP)  ; LAB_0053ccbc
     MOV ESI,dword ptr [ESP + 0xcc]      ; 0053c8bf
-    MOV ECX,dword ptr [0x014b8a54]      ; 0053c8c6 | g_CActorDestinationActorType_014b8a1c.name_hash
+    MOV ECX,dword ptr [0x014b8a54]      ; 0053c8c6 | g_CActorDestinationClassInfo.name_hash
     ADD EAX,ESI                         ; 0053c8cc
     PUSH ECX                            ; 0053c8ce
     MOV EDI,dword ptr [EAX + 0x14cd70]  ; 0053c8cf | g_CDemonSetInstance.actors[0]
@@ -184,7 +184,7 @@ section .text
     JGE 0x0053ccbc                      ; 0053c952
         ;   XREF to: 0053ccbc (CONDITIONAL_JUMP)  ; LAB_0053ccbc
     MOV ECX,dword ptr [ESP + 0xd0]      ; 0053c958
-    MOV EDX,dword ptr [0x014b8a54]      ; 0053c95f | g_CActorDestinationActorType_014b8a1c.name_hash
+    MOV EDX,dword ptr [0x014b8a54]      ; 0053c95f | g_CActorDestinationClassInfo.name_hash
     ADD EAX,ECX                         ; 0053c965
     PUSH EDX                            ; 0053c967
     MOV ESI,dword ptr [EAX + 0x14cd70]  ; 0053c968 | g_CDemonSetInstance.actors[0]
@@ -650,7 +650,7 @@ section .text
     ADD EDI,0x4                         ; 0053cee1
     JMP 0x0053ce7e                      ; 0053cee4
         ;   XREF to: 0053ce7e (UNCONDITIONAL_JUMP)  ; LAB_0053ce7e
-    MOV EDX,dword ptr [0x0077bd78]      ; 0053cee6 | g_CCrateActorType_0077bd40.name_hash
+    MOV EDX,dword ptr [0x0077bd78]      ; 0053cee6 | g_CCrateClassInfo.name_hash
         ;   Label: LAB_0053cee6
     PUSH EDX                            ; 0053ceec
     MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 0053ceed | g_CDemonSetInstance.actors[0]

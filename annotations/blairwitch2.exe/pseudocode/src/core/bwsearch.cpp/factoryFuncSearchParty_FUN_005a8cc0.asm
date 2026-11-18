@@ -15,7 +15,7 @@ section .text
     PUSH 0x11850                        ; 005a8cc0
         ;   Label: core_bwsearch.cpp_factoryFuncSearchParty_FUN_005a8cc0
     CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a8cc5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005b8be2(uint size)
     ADD ESP,0x4                         ; 005a8cca
     TEST EAX,EAX                        ; 005a8ccd
     JNZ 0x005a8cd2                      ; 005a8ccf

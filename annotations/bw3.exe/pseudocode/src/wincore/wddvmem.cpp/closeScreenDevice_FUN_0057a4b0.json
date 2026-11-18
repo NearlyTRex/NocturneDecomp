@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 175,
+    "complexity_score": 105,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 12,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation",
+      "signed_shift_global_idiom"
     ],
     "total_lines": 112
   },
@@ -20,13 +20,13 @@
     {
       "addr": "004b6f30",
       "from_addr": "004b79ec",
-      "name": "core_game.cpp_FUN_004b6f30",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004b6f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bec20",
       "from_addr": "004bedf8",
-      "name": "core_game.cpp_FUN_004bec20",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004bec20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,7 +58,7 @@
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004e4330"
     }
   ],
   "globals": [
@@ -76,86 +76,86 @@
     },
     {
       "addr": "005fba18",
-      "name": "DAT_005fba18",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba18",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005fba1c",
-      "name": "DAT_005fba1c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba1c",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005fba20",
-      "name": "DAT_005fba20",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005fba20",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "0060b010",
-      "name": "DAT_0060b010",
-      "type": "undefined4",
+      "name": "g_PTR_0060b010",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "0072ffac",
-      "name": "DAT_0072ffac",
-      "type": "undefined4",
+      "name": "g_SoftwareZBuffer",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01c5faec",
-      "name": "DAT_01c5faec",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c5faf0",
-      "name": "DAT_01c5faf0",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c60dac",
-      "name": "DAT_01c60dac",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "01c6cee8",
-      "name": "DAT_01c6cee8",
-      "type": "undefined4",
+      "name": "g_INT_01c6cee8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
+      "name": "g_CHAR_PTR_01d71de0",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
+      "name": "g_INT_01d71de4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d0bce8",
-      "name": "DAT_02d0bce8",
-      "type": "undefined4",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02d0bcf4",
-      "name": "DAT_02d0bcf4",
-      "type": "undefined4",
+      "name": "g_FlipPending",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d0bcfc",
-      "name": "DAT_02d0bcfc",
-      "type": "undefined4",
+      "name": "g_INT_02d0bcfc",
+      "type": "int",
       "value": null
     }
   ],
@@ -231,100 +231,44 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (0 < DAT_005fba1c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "iVar4 = DAT_005fba20 >> 0x1f;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005fba20",
-      "severity": "mild",
-      "text": "iVar2 = DAT_005fba20 + iVar4 * -8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005fba18 * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_01c5faec",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01c5faec + iVar1) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_0060b010",
-      "severity": "mild",
-      "text": "DAT_0060b010 + DAT_005fba18 * iVar3 * ((int)(iVar2 - (uint)(iVar4 << 2 < 0)) >> 3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "DAT_0060b010 + DAT_005fba18 * iVar3 * ((int)(iVar2 - (uint)(iVar4 << 2 < 0)) >> 3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01c60dac",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01c60dac + iVar1) = DAT_0072ffac + iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0072ffac",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01c60dac + iVar1) = DAT_0072ffac + iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "} while (iVar3 < DAT_005fba1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(byte **)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*_DAT_02d0bce8 + 0x80))(_DAT_02d0bce8,0);",
-      "type": "unresolved_funcptr"
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(byte **)((int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar2) = g_SoftwareZBuffer + iVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(byte **)((int)g_ScreenBufferArray + iVar2) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(byte **)((int)g_ZBufferScanlineArray + iVar2) = g_SoftwareZBuffer + iVar6;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 19,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar5 = g_INT_005fba20 >> 0x1f;",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

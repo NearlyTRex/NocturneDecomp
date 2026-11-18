@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280(CSchnellGeist *this_ptr,float delta_time)
 
@@ -17,8 +16,9 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a328
   float fVar2;
   float fVar3;
   CDemonActor *pCVar4;
-  int iVar5;
-  SStateMachine *pSVar6;
+  SMotion *pSVar5;
+  int iVar6;
+  SStateMachine *this_ptr_01;
   
   pCVar4 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
   if (pCVar4 != (CDemonActor *)0x0) {
@@ -28,22 +28,22 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a328
     fVar3 = (this_ptr->base).base.base.base.location.position.z - (pCVar1->base).location.position.z
     ;
     this_ptr_00 = &(this_ptr->base).base.base.model;
-    iVar5 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    iVar5 = *(int *)(iVar5 + 0x24);
-    if (_DAT_005ff350 < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
-      pSVar6 = &(this_ptr->base).state_machine;
-      (this_ptr->base).attack_range = _DAT_005ff350;
-      core_muzzle_cpp_FUN_0059dcb0(pSVar6,0x3f000000);
-      core_muzzle_cpp_FUN_0059d8e0(pSVar6,"Chasing");
-      if (iVar5 == 10) {
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_005035c0(&this_ptr_00->base);
+    iVar6 = pSVar5->state_index;
+    if (5.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
+      this_ptr_01 = &(this_ptr->base).state_machine;
+      (this_ptr->base).attack_range = 5.0f;
+      core_muzzle_cpp_SStateMachine_setTransitionDelay_FUN_0059dcb0(this_ptr_01,0.5);
+      core_muzzle_cpp_SStateMachine_setNextState_FUN_0059d8e0(this_ptr_01,"Chasing");
+      if (iVar6 == 10) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
         return;
       }
     }
     else {
-      if (iVar5 == 10) {
-        iVar5 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
-        this_ptr->attack_variant = iVar5;
+      if (iVar6 == 10) {
+        iVar6 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
+        this_ptr->attack_variant = iVar6;
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
         return;
       }

@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl engine_mini3d_cpp_getColor_FUN_004f8f90(void)
 
 {
-  return _DAT_01d0d2e4;
+  return g_INT_01d0d2e4;
 }

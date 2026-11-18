@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004dd2f0(CInventory *this_ptr)
 
 {
-  if (this_ptr->owner != *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4)) {
+  if ((CHero *)this_ptr->owner != g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]) {
     return;
   }
   this_ptr->inventory_display_timer = 5.0;

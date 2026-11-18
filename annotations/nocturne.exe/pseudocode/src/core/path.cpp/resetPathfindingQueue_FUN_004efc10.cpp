@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_resetPathfindingQueue_FUN_004efc10(void)
 
 {
-  _DAT_01e4008c = 0;
-  _DAT_01e40090 = 0;
-  _DAT_01e4280c = 0;
+  g_PathfindingQueueHead = 0;
+  g_PathfindingQueueTail = 0;
+  g_PathfindingNodesExpanded = 0;
   return;
 }

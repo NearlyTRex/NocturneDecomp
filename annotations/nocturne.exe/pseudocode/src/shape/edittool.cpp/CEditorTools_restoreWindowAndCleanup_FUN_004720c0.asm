@@ -27,7 +27,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e952
 ;   TerminatedCString s_CEditorTools_closeWindow_0057e968
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01bcd07c
+;   int g_INT_01bcd07c
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CurrentFilename
@@ -47,10 +47,10 @@ section .text
     PUSH EDI                            ; 004720c2
     PUSH EBP                            ; 004720c3
     SUB ESP,0xc                         ; 004720c4
-    CMP dword ptr [0x01bcd07c],0x1      ; 004720c7 | DAT_01bcd07c
+    CMP dword ptr [0x01bcd07c],0x1      ; 004720c7 | g_INT_01bcd07c
     JL 0x004721b5                       ; 004720ce
         ;   XREF to: 004721b5 (CONDITIONAL_JUMP)  ; LAB_004721b5
-    MOV EDX,dword ptr [0x01bcd07c]      ; 004720d4 | DAT_01bcd07c
+    MOV EDX,dword ptr [0x01bcd07c]      ; 004720d4 | g_INT_01bcd07c
         ;   Label: LAB_004720d4
     DEC EDX                             ; 004720da
     MOV EAX,EDX                         ; 004720db

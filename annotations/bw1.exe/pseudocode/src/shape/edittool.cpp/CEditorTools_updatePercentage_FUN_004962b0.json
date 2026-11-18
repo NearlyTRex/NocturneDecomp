@@ -1,0 +1,711 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 498,
+    "complexity_score": 277,
+    "cross_reference_count": 4,
+    "function_call_count": 17,
+    "global_count": 28,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 152,
+    "suspect_count": 10,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "pointer_cast",
+      "raw_address_constant",
+      "sub84_truncation",
+      "warning_unreachable"
+    ],
+    "total_lines": 650
+  },
+  "cross_references": [
+    {
+      "addr": "0048aaf0",
+      "from_addr": "0048ac37",
+      "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_0048aaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052cab0",
+      "from_addr": "0052cc69",
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053bfc0",
+      "from_addr": "0053c18f",
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004961b0",
+      "from_addr": "00496270",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004962b0",
+    "address_range": [
+      [
+        "004962b0",
+        "00496832"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0",
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004962b0(CEditorTools *this_ptr,float current_progress,float total_progress)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_005030e0"
+    },
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "00402f30",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawHLine_FUN_00402f30"
+    },
+    {
+      "addr": "00403040",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawVLine_FUN_00403040"
+    },
+    {
+      "addr": "004031c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_004031c0"
+    },
+    {
+      "addr": "00403250",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403250"
+    },
+    {
+      "addr": "00406bd0",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406bd0"
+    },
+    {
+      "addr": "004c23a0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0"
+    },
+    {
+      "addr": "005182e0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawHLine_FUN_005182e0"
+    },
+    {
+      "addr": "00518290",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawRect_FUN_00518290"
+    },
+    {
+      "addr": "00518300",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawVLine_FUN_00518300"
+    },
+    {
+      "addr": "00518010",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillRect_FUN_00518010"
+    },
+    {
+      "addr": "00512320",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setAlpha_FUN_00512320"
+    },
+    {
+      "addr": "00517d50",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_00517d50"
+    },
+    {
+      "addr": "00496ee0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0"
+    },
+    {
+      "addr": "005acff0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005acff0"
+    },
+    {
+      "addr": "005b2420",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00480000",
+      "name": "DAT_00480000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dc044",
+      "name": "s_shape_edittool_cpp_005dc044",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc05a",
+      "name": "s_CEditorTools_updatePerce_005dc05a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc091",
+      "name": "s_d_complete_005dc091",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc09f",
+      "name": "s_d_02d_elapsed_approximat_005dc09f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc0d0",
+      "name": "g_PercentageMultiplier",
+      "type": "double",
+      "value": "100"
+    },
+    {
+      "addr": "005dc0d8",
+      "name": "g_DOUBLE_005dc0d8",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "005dc0e0",
+      "name": "g_TimeScalingFactor",
+      "type": "double",
+      "value": "8.47710503472222E-7"
+    },
+    {
+      "addr": "005dc0e8",
+      "name": "g_TimeDisplayThreshold",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "addr": "01c3eb50",
+      "name": "g_CBitFont_PTR_01c3eb50",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01c3eb5c",
+      "name": "g_WindowStackCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3f53c",
+      "name": "g_INT_01c3f53c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3f544",
+      "name": "g_INT_01c3f544",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3f578",
+      "name": "g_WindowStatusTextColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3f584",
+      "name": "g_ProgressBarBackgroundColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3f588",
+      "name": "g_ProgressBarFillColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3f58c",
+      "name": "g_ProgressBarBorderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c3f590",
+      "name": "g_INT_01c3f590",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f8",
+      "name": "g_UCHAR_ARRAY_01c4e9f8",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f9",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9fa",
+      "name": "g_UCHAR_ARRAY_01c4e9f8+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f008",
+      "name": "g_INT_01c4f008",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4f00c",
+      "name": "g_INT_01c4f00c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4f010",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4f014",
+      "name": "g_INT_01c4f014",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c4f020",
+      "name": "g_INT_01c4f020",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "g_CHAR_PTR_01d1d400",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "g_INT_01d1d404",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0052cc69",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052ce90",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00496270",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 15,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0053c18f",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_0053bfc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048ac37",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_0048aaf0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.314148681055156,
+    "instruction_count": 417,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 107,
+      "BOOL_OR": 10,
+      "BRANCH": 9,
+      "CALL": 27,
+      "CBRANCH": 19,
+      "COPY": 538,
+      "FLOAT2FLOAT": 22,
+      "FLOAT_ADD": 4,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 8,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 4,
+      "INT_ADD": 133,
+      "INT_AND": 479,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 233,
+      "INT_LEFT": 54,
+      "INT_LESS": 18,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 72,
+      "INT_OR": 133,
+      "INT_SBORROW": 25,
+      "INT_SCARRY": 27,
+      "INT_SDIV": 4,
+      "INT_SEXT": 4,
+      "INT_SLESS": 140,
+      "INT_SREM": 4,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 141,
+      "INT_XOR": 26,
+      "INT_ZEXT": 24,
+      "LOAD": 73,
+      "POPCOUNT": 106,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 124,
+      "SUBPIECE": 8,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 2633
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047dc40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047ee50",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a0530",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.37
+    },
+    "nocturne.exe": {
+      "addr": "00471760",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3854
+    }
+  },
+  "stack_frame": {
+    "frame_size": 112,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "current_progress",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "total_progress",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004962b9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004967b7) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496812) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c3eb60",
+      "severity": "moderate",
+      "text": "if (((int)ROUND(dVar8) != *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 0x1f0)) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c3eb60",
+      "severity": "moderate",
+      "text": "(0x47ffff < iVar5 - *(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar1 + 500))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c3eb60",
+      "severity": "moderate",
+      "text": "fVar4 = (float)(x1 - *(int *)((int)g_SWindow_ARRAY_01c3eb60 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 139,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar8),0),uVar10)) + 0.5)",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 139,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar8),0),uVar10)) + 0.5)",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c3eb60",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 0x1f0) = local_30;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c3eb60",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c3eb60 + iVar5 + 500) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex address 0x49669c assigned to bare local `uVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 133,
+      "match": "0x49669c",
+      "severity": "moderate",
+      "text": "uVar10 = 0x49669c;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

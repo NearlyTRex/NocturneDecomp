@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 27,
+    "complexity_score": 11,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 31
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
   },
   "cross_references": [
     {
       "addr": "004e4c70",
       "from_addr": "004e4cb4",
-      "name": "core_main.c_FUN_004e4c70",
+      "name": "core_main.c_finalizeGameSystems_FUN_004e4c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,14 +42,14 @@
     {
       "addr": "00460e10",
       "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_00460e10"
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10"
     }
   ],
   "globals": [
     {
       "addr": "01b4b848",
-      "name": "DAT_01b4b848",
-      "type": "undefined4",
+      "name": "g_KeyframeModelCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -61,7 +59,7 @@
       {
         "call_addr": "004e4cb4",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e4c70",
+        "caller": "core_main.c_finalizeGameSystems_FUN_004e4c70",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -146,14 +144,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex)
 
 {
@@ -16,29 +14,30 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(C
   CVector3i local_10;
   
   if (position == (CVector3f *)0x0) {
-    _DAT_01c38aec = position;
+    g_PerspectiveReciprocal = (int)position;
     return;
   }
-  if (_DAT_01467158 != 0) {
-    _DAT_01c38aec = (CVector3f *)0x0;
+  if (g_BackgroundSceneDepth != 0) {
+    g_PerspectiveReciprocal = 0;
     return;
   }
-  local_10.x = (int)ROUND(position->x * _DAT_005f4dcc);
-  local_10.y = (int)ROUND(position->y * _DAT_005f4dcc);
-  local_10.z = (int)ROUND(position->z * _DAT_005f4dcc);
-  _DAT_01c38aec =
-       (CVector3f *)
+  local_10.x = (int)ROUND(position->x * 256.0f);
+  local_10.y = (int)ROUND(position->y * 256.0f);
+  local_10.z = (int)ROUND(position->z * 256.0f);
+  g_PerspectiveReciprocal =
        (*((this_ptr->base).vtable)->getFogValueAtPosition)(this_ptr,&local_10,projected_vertex);
-  uVar1 = *(uint *)(&DAT_00b6639c + DAT_00609fac * 4) & 0xff;
-  if (DAT_006141c0 == 0x20) {
-    uVar2 = (*(uint *)(&DAT_00b6639c + DAT_00609fa4 * 4) & 0xff) << (DAT_01c35814 & 0x1f) |
-            (*(uint *)(&DAT_00b6639c + DAT_00609fa8 * 4) & 0xff) << (DAT_01c35820 & 0x1f);
-    uVar1 = uVar1 << (DAT_01c3582c & 0x1f);
+  uVar1 = g_LightmapTexturePalette[g_FogColorIndexB] & 0xff;
+  if (g_INT_006141c0 == 0x20) {
+    uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) <<
+            (g_RedBitPosition.bytes[0] & 0x1f) |
+            (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) <<
+            (g_GreenBitPosition.bytes[0] & 0x1f);
+    uVar1 = uVar1 << (g_BlueBitPosition.bytes[0] & 0x1f);
   }
   else {
-    uVar2 = (*(uint *)(&DAT_00b6639c + DAT_00609fa4 * 4) & 0xff) << 0x10 |
-            (*(uint *)(&DAT_00b6639c + DAT_00609fa8 * 4) & 0xff) << 8;
+    uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) << 0x10 |
+            (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) << 8;
   }
-  _DAT_01c38b5c = uVar2 | uVar1;
+  g_SolidColorMode = uVar2 | uVar1;
   return;
 }

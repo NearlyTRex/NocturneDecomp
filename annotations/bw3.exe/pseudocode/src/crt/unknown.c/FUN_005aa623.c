@@ -13,6 +13,6 @@ void FUN_005aa623(void)
   
                     /* WARNING: Could not recover jumptable at 0x005aa626. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*(code *)(&PTR_crt_unknown_c_FUN_005aa62d_00609f14)[in_EAX])();
+  (*(code *)(&g_PTR_00609f14)[in_EAX])();
   return;
 }

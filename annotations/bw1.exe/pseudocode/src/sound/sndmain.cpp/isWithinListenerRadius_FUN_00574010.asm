@@ -19,10 +19,10 @@
 ;   core_tvbat.cpp_CTVBat_process_FUN_005a4260 at 005a4e59
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c7fbf8
-;   undefined4 DAT_02c7fc08
-;   undefined4 DAT_02c7fc18
-;   undefined4 DAT_02c7fc88
+;   double g_DOUBLE_02c7fbf8
+;   double g_DOUBLE_02c7fc08
+;   double g_DOUBLE_02c7fc18
+;   int g_INT_02c7fc88
 ;
 ; *****************************************************************************
 
@@ -33,12 +33,12 @@ section .text
     RET                                 ; 00572b82
     FLD double ptr [ESP + 0x4]          ; 00574010
         ;   Label: sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010
-    MOV EAX,[0x02c7fc88]                ; 00574014 | DAT_02c7fc88
+    MOV EAX,[0x02c7fc88]                ; 00574014 | g_INT_02c7fc88
     FLD double ptr [ESP + 0xc]          ; 00574019
     FXCH                                ; 0057401d
-    FSUB double ptr [EAX*0x8 + 0x2c7fbf8] ; 0057401f | DAT_02c7fbf8
+    FSUB double ptr [EAX*0x8 + 0x2c7fbf8] ; 0057401f | g_DOUBLE_02c7fbf8
     FXCH                                ; 00574026
-    FSUB double ptr [EAX*0x8 + 0x2c7fc08] ; 00574028 | DAT_02c7fc08
+    FSUB double ptr [EAX*0x8 + 0x2c7fc08] ; 00574028 | g_DOUBLE_02c7fc08
     FXCH                                ; 0057402f
     FST double ptr [ESP + 0x4]          ; 00574031
     FMUL double ptr [ESP + 0x4]         ; 00574035
@@ -46,7 +46,7 @@ section .text
     FST double ptr [ESP + 0xc]          ; 0057403b
     FMUL double ptr [ESP + 0xc]         ; 0057403f
     FLD double ptr [ESP + 0x14]         ; 00574043
-    FSUB double ptr [EAX*0x8 + 0x2c7fc18] ; 00574047 | DAT_02c7fc18
+    FSUB double ptr [EAX*0x8 + 0x2c7fc18] ; 00574047 | g_DOUBLE_02c7fc18
     FXCH                                ; 0057404e
     FADDP ST2,ST0                       ; 00574050
     FST double ptr [ESP + 0x14]         ; 00574052

@@ -30,7 +30,7 @@
 ;   ... and 31 more
 ;
 ; Referenced Globals:
-;   undefined4 s_Bip01_L_Foot_005d5f2e+1
+;   TerminatedCString s_Bip01_L_Foot_005d5f2f
 ;   TerminatedCString s_Bip01_R_Foot_005d5f3c
 ;   TerminatedCString s_Bip01_L_Foot_005d5f49
 ;   TerminatedCString s_Bip01_R_Foot_005d5f56
@@ -71,7 +71,7 @@ section .text
     RET                                 ; 00434ab3
     PUSH 0x0                            ; 00434ab4
         ;   Label: LAB_00434ab4
-    PUSH 0x5d5f2f                       ; 00434ab6 | s_Bip01_L_Foot_005d5f2e+1
+    PUSH 0x5d5f2f                       ; 00434ab6 | = "Bip01 L Foot"
     PUSH ESI                            ; 00434abb
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30 ; 00434abc
         ;   XREF to: 00569f30 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(CDeformableModelInstance * this_ptr)

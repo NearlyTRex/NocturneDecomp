@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057e4ee = 5
 ;   float FLOAT_0057e4f6 = 0.5
-;   undefined4 DAT_0059c91c
-;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
+;   float g_FLOAT_0059c91c = 3.5
+;   CFireEffect* g_CFireEffectPtr = 01c08d04
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     FLD float ptr [EBP + 0x14]          ; 0046ee07
     FMUL double ptr [0x0057e4ee]        ; 0046ee0a | DOUBLE_0057e4ee
     FMUL double ptr [ESP]               ; 0046ee10
-    FDIV float ptr [0x0059c91c]         ; 0046ee13 | DAT_0059c91c
+    FDIV float ptr [0x0059c91c]         ; 0046ee13 | g_FLOAT_0059c91c
     SUB ESP,0x4                         ; 0046ee19
     FSTP float ptr [ESP]                ; 0046ee1c
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0046ee1f
@@ -156,7 +156,7 @@ section .text
     PUSH 0x0                            ; 0046ef0f
     LEA EAX,[ESP + 0x4c]                ; 0046ef11
     PUSH EAX                            ; 0046ef15
-    MOV EDX,dword ptr [0x005b80f0]      ; 0046ef16 | g_CFireEffect_PTR_005b80f0
+    MOV EDX,dword ptr [0x005b80f0]      ; 0046ef16 | g_CFireEffectPtr
     PUSH EDX                            ; 0046ef1c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0046ef1d
         ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)

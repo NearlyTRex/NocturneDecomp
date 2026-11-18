@@ -13,3 +13,6 @@
 // CSkeleton[40]
 extern CSkeleton g_SkeletonPool[40];
 
+// char[256]
+extern char g_CHAR_ARRAY_02802f5c[256];
+

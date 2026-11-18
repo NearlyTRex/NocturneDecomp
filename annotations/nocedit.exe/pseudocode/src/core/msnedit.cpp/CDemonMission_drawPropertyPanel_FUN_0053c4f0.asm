@@ -62,8 +62,8 @@ section .text
     ADD ESP,0x4                         ; 0053c50f
     MOV ESI,dword ptr [EBX + 0x28]      ; 0053c512
     XOR ECX,ECX                         ; 0053c515
-    MOV dword ptr [0x02f7c528],EDX      ; 0053c517 | INT_02f7c528
-    MOV dword ptr [0x02f7c538],ECX      ; 0053c51d | INT_02f7c538
+    MOV dword ptr [0x02f7c528],EDX      ; 0053c517 | g_MsnEditHoveredProperty
+    MOV dword ptr [0x02f7c538],ECX      ; 0053c51d | g_MsnEditMouseOverPanel
     TEST ESI,ESI                        ; 0053c523
     JNZ 0x0053c531                      ; 0053c525
         ;   XREF to: 0053c531 (CONDITIONAL_JUMP)  ; LAB_0053c531
@@ -165,8 +165,8 @@ section .text
     CALL core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0 ; 0053c649
         ;   XREF to: 0040e9c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0(CActorPropertyList * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 0053c64e
-    MOV [0x02f7c528],EAX                ; 0053c651 | INT_02f7c528
-    MOV EBX,dword ptr [0x02f7c528]      ; 0053c656 | INT_02f7c528
+    MOV [0x02f7c528],EAX                ; 0053c651 | g_MsnEditHoveredProperty
+    MOV EBX,dword ptr [0x02f7c528]      ; 0053c656 | g_MsnEditHoveredProperty
         ;   Label: LAB_0053c656
     PUSH EBX                            ; 0053c65c
     PUSH 0x2f7a024                      ; 0053c65d | g_MsnEditPropertyList

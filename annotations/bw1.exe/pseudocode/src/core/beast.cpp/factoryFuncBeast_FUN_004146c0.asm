@@ -15,7 +15,7 @@ section .text
     PUSH 0xc268                         ; 004146c0
         ;   Label: core_beast.cpp_factoryFuncBeast_FUN_004146c0
     CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004146c5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_005c0f32(uint size)
     ADD ESP,0x4                         ; 004146ca
     TEST EAX,EAX                        ; 004146cd
     JNZ 0x004146d2                      ; 004146cf

@@ -16,8 +16,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_00451130(CDemonCame
   int src_row;
 #endif
 
-  INT_00c199f8 = this_ptr->corona_blend_factor / 0x100 / 4;
-  _memset(g_CoronaBlurOutputBuffer,INT_00c199f8 & 0xff,0x12c00);
+  g_CoronaBlurFillValue = this_ptr->corona_blend_factor / 0x100 / 4;
+  _memset(g_CoronaBlurOutputBuffer,g_CoronaBlurFillValue & 0xff,0x12c00);
   if (1 < g_ImageBytesPerPixel) {
     core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160
               (this_ptr,g_ImageProcessingState1,g_ImageProcessingState2);
