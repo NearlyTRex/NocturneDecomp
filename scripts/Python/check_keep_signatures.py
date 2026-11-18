@@ -116,10 +116,10 @@ def check_keep(keep_path, base, checks):
             if not any(line.startswith(required) for line in keep_header):
                 problems.append(('header', 'missing %s' % required))
         for prefix in CARRIED_HEADERS:
-            raw_line = next((l for l in raw_header if l.startswith(prefix)), None)
+            raw_line = next((ln for ln in raw_header if ln.startswith(prefix)), None)
             if raw_line is None:
                 continue
-            keep_line = next((l for l in keep_header if l.startswith(prefix)), None)
+            keep_line = next((ln for ln in keep_header if ln.startswith(prefix)), None)
             if keep_line is None:
                 problems.append(('header', 'missing %s' % raw_line))
             elif keep_line != raw_line:
@@ -127,8 +127,8 @@ def check_keep(keep_path, base, checks):
                                  % (keep_line, raw_line)))
 
     if 'definition' in checks:
-        signature = next((l[len('// Signature: '):] for l in raw_header
-                          if l.startswith('// Signature: ')), None)
+        signature = next((ln[len('// Signature: '):] for ln in raw_header
+                          if ln.startswith('// Signature: ')), None)
         name = FUNCTION_NAME_RE.search(signature) if signature else None
         if name is not None:
             definition = find_definition(keep_text, name.group(1))
@@ -175,7 +175,7 @@ def format_report(results, keeps_seen, checks=CHECKS, relative_to=ROOT, summary_
     return '\n'.join(lines) + '\n'
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(
         description='Check every .keep against the export beside it (read-only).')
     parser.add_argument('--program', default='nocedit.exe',
@@ -185,7 +185,7 @@ def main():
                         help='which checks to run (default: all)')
     parser.add_argument('--summary', action='store_true',
                         help='print counts only')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     programs = PROGRAMS if args.program == 'all' else (args.program,)
     results = []

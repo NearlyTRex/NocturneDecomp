@@ -79,7 +79,13 @@ def sim_frames(path):
                         area = tok[5:]
                 actors[parts[2]] = (name, pos, area)
             elif frame is not None:
-                chars[parts[1]] = line.rstrip('\n')
+                # A kind that repeats within a frame (D damage, B burn lines)
+                # keeps every line, numbered in order, not just the last
+                key, n = parts[1], 1
+                while key in chars:
+                    n += 1
+                    key = f"{parts[1]}#{n}"
+                chars[key] = line.rstrip('\n')
     if frame is not None:
         yield frame, header, chars, actors, events
 
@@ -188,6 +194,9 @@ def diff_rng(host_path, guest_path):
     h, g = load(host_path), load(guest_path)
     print(f"  host draws {sum(len(v) for v in h.values())} in {len(h)} frames / "
           f"guest {sum(len(v) for v in g.values())} in {len(g)} frames")
+    if not h or not g:
+        print("  one of the traces has no draws")
+        return
 
     # Walk the frame NUMBERS, not the keys: a frame in which one machine drew
     # nothing has no lines at all and so no key, and intersecting the keys drops

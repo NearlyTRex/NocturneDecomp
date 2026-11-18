@@ -5,17 +5,17 @@ STRUCT QUALITY REPORT
 SUMMARY
 ----------------------------------------------------------------------
 Total structs:              504
-Fully clean structs:        493
-Structs with issues:        11
+Fully clean structs:        492
+Structs with issues:        12
 Unreferenced structs:       10
 
 Total fields:               3837
-Clean fields:               3824
+Clean fields:               3823
 Unknown (unk*) fields:      9
 Padding (pad*) fields:      2
 Reserved (reserved*) fields:2
-Default (field_*) fields:   0
-Overall field quality:      99.7%
+Default (field_*) fields:   1
+Overall field quality:      99.6%
 
 ======================================================================
 UNREFERENCED STRUCTS (10)
@@ -34,7 +34,7 @@ These structs are not referenced in any source or header file.
   SPod3Header                               /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (11)
+STRUCTS WITH PROBLEMATIC FIELDS (12)
 ----------------------------------------------------------------------
 
 SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
@@ -61,6 +61,10 @@ CBurncross                                 87.5% complete  (7/8 fields clean)
   Issues: 1 unknown
   Fields: unknown_598
 
+CConsole                                   88.9% complete  (8/9 fields clean)
+  Issues: 1 default
+  Fields: field_0x4
+
 CExternalRenderer                          90.0% complete  (9/10 fields clean)
   Issues: 1 reserved
   Fields: reserved
@@ -82,7 +86,7 @@ STextView                                  94.7% complete  (18/19 fields clean)
   Fields: unknown_0x30
 
 ======================================================================
-FULLY CLEAN STRUCTS (493)
+FULLY CLEAN STRUCTS (492)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -137,7 +141,6 @@ FULLY CLEAN STRUCTS (493)
   CCodec
   CColor3f
   CColor3i
-  CConsole
   CConstructBone
   CConstructRed
   CConstruct_full_vtable

@@ -5,16 +5,16 @@ STRUCT QUALITY REPORT
 SUMMARY
 ----------------------------------------------------------------------
 Total structs:              537
-Fully clean structs:        532
-Structs with issues:        5
+Fully clean structs:        531
+Structs with issues:        6
 Unreferenced structs:       10
 
 Total fields:               4095
-Clean fields:               4090
+Clean fields:               4089
 Unknown (unk*) fields:      1
 Padding (pad*) fields:      2
 Reserved (reserved*) fields:2
-Default (field_*) fields:   0
+Default (field_*) fields:   1
 Overall field quality:      99.9%
 
 ======================================================================
@@ -34,7 +34,7 @@ These structs are not referenced in any source or header file.
   SPod3Header                               /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (5)
+STRUCTS WITH PROBLEMATIC FIELDS (6)
 ----------------------------------------------------------------------
 
 SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
@@ -44,6 +44,10 @@ SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
 SNetworkAddr                               66.7% complete  (2/3 fields clean)
   Issues: 1 padding
   Fields: padding
+
+CConsole                                   88.9% complete  (8/9 fields clean)
+  Issues: 1 default
+  Fields: field_0x4
 
 CExternalRenderer                          90.0% complete  (9/10 fields clean)
   Issues: 1 reserved
@@ -58,7 +62,7 @@ STextView                                  94.7% complete  (18/19 fields clean)
   Fields: unknown_0x30
 
 ======================================================================
-FULLY CLEAN STRUCTS (532)
+FULLY CLEAN STRUCTS (531)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -120,7 +124,6 @@ FULLY CLEAN STRUCTS (532)
   CConfederateZombie
   CConfederateZombie_full_vtable
   CConfederateZombie_vtable
-  CConsole
   CConstruct
   CConveyor
   CCourse

@@ -96,7 +96,7 @@ from ghidra_annotations.annotations.pseudocode.pcode import (
     load_switch_table_data, load_noreturn_functions
 )
 from ghidra_annotations.annotations.pseudocode.callfixups import (
-    register_callfixups, clear_callfixups, generate_callfixups_file,
+    register_callfixups, generate_callfixups_file,
     callfixups_cache, CALLFIXUPS_FILENAME
 )
 from ghidra_annotations.annotations.pseudocode.proto import (

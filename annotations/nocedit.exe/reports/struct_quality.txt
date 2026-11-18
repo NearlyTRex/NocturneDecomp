@@ -5,17 +5,17 @@ STRUCT QUALITY REPORT
 SUMMARY
 ----------------------------------------------------------------------
 Total structs:              559
-Fully clean structs:        545
-Structs with issues:        14
+Fully clean structs:        547
+Structs with issues:        12
 Unreferenced structs:       13
 
 Total fields:               4207
-Clean fields:               4187
+Clean fields:               4190
 Unknown (unk*) fields:      10
-Padding (pad*) fields:      5
+Padding (pad*) fields:      2
 Reserved (reserved*) fields:5
 Default (field_*) fields:   0
-Overall field quality:      99.5%
+Overall field quality:      99.6%
 
 ======================================================================
 UNREFERENCED STRUCTS (13)
@@ -37,7 +37,7 @@ These structs are not referenced in any source or header file.
   SMRGLVertexBlock                          /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (14)
+STRUCTS WITH PROBLEMATIC FIELDS (12)
 ----------------------------------------------------------------------
 
 SVPHHeader                                 33.3% complete  (1/3 fields clean)
@@ -80,24 +80,16 @@ SEpdDirEntry                               80.0% complete  (4/5 fields clean)
   Issues: 1 unknown
   Fields: unk1
 
-CCramTex                                   89.5% complete  (17/19 fields clean)
-  Issues: 2 padding
-  Fields: padded_width, padded_height
-
 CExternalRenderer                          90.0% complete  (9/10 fields clean)
   Issues: 1 reserved
   Fields: reserved
-
-SCram                                      90.0% complete  (9/10 fields clean)
-  Issues: 1 padding
-  Fields: padding_size
 
 SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
   Issues: 1 padding
   Fields: padding
 
 ======================================================================
-FULLY CLEAN STRUCTS (545)
+FULLY CLEAN STRUCTS (547)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -163,6 +155,7 @@ FULLY CLEAN STRUCTS (545)
   CConveyor
   CCourse
   CCourseFrame
+  CCramTex
   CCrate
   CCrater
   CCrossbow
@@ -461,6 +454,7 @@ FULLY CLEAN STRUCTS (545)
   SCoronaLightCache
   SCoronaLightEntry
   SCounterBlock
+  SCram
   SCramRectangle
   SCurtainMeshData
   SCurtainVertex

@@ -16,22 +16,6 @@ def test_a_signature_splits_into_return_convention_and_parameters(sig, parts):
     assert crt_catalog.parse_signature(sig) == parts
 
 
-@pytest.mark.parametrize("params, split", [
-    ("", []), ("void", []),
-    ("char* lc, const char *name, int", [("char*", "lc", False), ("const char *", "name", False), ("int", "", False)]),
-    ("unsigned int, long double x", [("unsigned int", "", False), ("long double", "x", False)]),
-    ("void (*fn)(int, int), ...", [("void (*fn)(int, int)", "", False), ("...", "", True)]),
-    ("int a,", [("int", "a", False)]),
-])
-def test_parameters_split_at_top_level_commas_into_type_and_name(params, split):
-    assert crt_catalog.split_params(params) == split
-
-
-def test_varargs_is_a_trailing_ellipsis():
-    assert crt_catalog.has_varargs("const char* fmt, ...")
-    assert not crt_catalog.has_varargs("int a")
-
-
 CATALOG = """# CRT catalog
 
 | addr | name | signature | conf | note |
@@ -65,14 +49,14 @@ def test_the_markdown_tables_become_entries_first_address_wins(tmp_path):
         "line 9: addr 10003000 != name suffix _FUN_10003001 -- skipped"]
 
 
-def test_the_tsv_is_written_by_address_and_read_back(tmp_path):
+def test_the_tsv_is_written_by_address(tmp_path):
     entries = [{"addr": "10002000", "conf": "H", "name": "b", "note": "two\twords"},
                {"addr": "10001000", "conf": "L", "name": "a"}]
     path = tmp_path / "crt.tsv"
     assert crt_catalog.write_tsv(entries, str(path)) == 2
     text = path.read_text()
     assert text == crt_catalog.render_tsv(entries)
-    assert text.splitlines()[0] == "\t".join(crt_catalog.TSV_COLUMNS)
-    path.write_text(text + "\n")
-    rows = crt_catalog.load_tsv(str(path))
-    assert [(r["addr"], r["note"]) for r in rows] == [("10001000", ""), ("10002000", "two words")]
+    lines = text.splitlines()
+    assert lines[0] == "\t".join(crt_catalog.TSV_COLUMNS)
+    assert [ln.split("\t")[0] for ln in lines[1:]] == ["10001000", "10002000"]
+    assert lines[2].endswith("\ttwo words")

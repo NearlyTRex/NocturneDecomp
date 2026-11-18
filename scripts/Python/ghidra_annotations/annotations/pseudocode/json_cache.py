@@ -12,6 +12,9 @@ Features:
 - Cache-first lookup with disk I/O fallback
 - Type validation for loaded data
 
+The files are read before the export's cleanup deletes them, so one that cannot
+be read is warned about: its hand-made settings are about to be lost.
+
 Usage:
     # Create manager for per-function data stored under a JSON key
     proto_cache = JsonCacheManager('proto_overrides', json_key='proto_overrides',
@@ -32,7 +35,7 @@ Usage:
 
 import os
 import json
-from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.log import log_info, log_warning
 
 
 class JsonCacheManager:
@@ -44,21 +47,32 @@ class JsonCacheManager:
         Args:
             cache_name: Name for logging (e.g., 'proto_overrides')
             json_key: Key to extract from JSON (None = root-level array/object)
-            default_factory: Factory for default value (list or dict)
-            type_check: Optional type to validate (list or dict)
+            default_factory: Type of the data and its empty default (list or dict)
+            type_check: Type the data must have; default_factory unless given
         """
         self.cache_name = cache_name
         self.json_key = json_key
         self.default_factory = default_factory
-        self.type_check = type_check
+        self.type_check = type_check or default_factory
 
         # Global file cache
         self._global_cache = None
-        self._global_path = None
 
         # Per-function file cache
         self._cache = {}
-        self._cache_dir = None
+
+    def _read(self, json_path, key):
+        """The data under key (the whole file when key is None) if it has the
+        checked type, else None. An unreadable file is warned about."""
+        try:
+            with open(json_path, 'r') as f:
+                data = json.load(f)
+        except (OSError, ValueError) as e:
+            log_warning("Could not read %s from %s: %s" % (self.cache_name, json_path, e))
+            return None
+        if key is not None:
+            data = data.get(key) if isinstance(data, dict) else None
+        return data if isinstance(data, self.type_check) else None
 
     def preload_global(self, directory, filename):
         """Load global config file before cleanup.
@@ -77,25 +91,12 @@ class JsonCacheManager:
             Cached data, or empty default if not found
         """
         json_path = os.path.join(directory, filename)
-        self._global_path = json_path
         self._global_cache = self.default_factory()
-
         if os.path.exists(json_path):
-            try:
-                with open(json_path, 'r') as f:
-                    data = json.load(f)
-
-                # Global files use root-level data (no key extraction)
-                # Type validation
-                if self.type_check is not None and not isinstance(data, self.type_check):
-                    data = self.default_factory()
-
+            data = self._read(json_path, None)
+            if data is not None:
                 self._global_cache = data
-                count = len(data) if hasattr(data, '__len__') else 1
-                log_info("Preloaded %d %s from %s" % (count, self.cache_name, json_path))
-            except Exception as e:
-                log_info("Could not preload %s: %s" % (filename, str(e)))
-
+                log_info("Preloaded %d %s from %s" % (len(data), self.cache_name, json_path))
         return self._global_cache
 
     def preload_directory(self, base_dir):
@@ -108,39 +109,16 @@ class JsonCacheManager:
             base_dir: Directory containing function JSON files
         """
         self._cache = {}
-        self._cache_dir = base_dir
-
         if not base_dir or not os.path.exists(base_dir):
             return
-
-        try:
-            for root, dirs, files in os.walk(base_dir):
-                for filename in files:
-                    if filename.endswith('.json'):
-                        json_path = os.path.join(root, filename)
-                        try:
-                            with open(json_path, 'r') as f:
-                                data = json.load(f)
-
-                            # Extract from key if specified
-                            if self.json_key is not None:
-                                extracted = data.get(self.json_key)
-                            else:
-                                extracted = data
-
-                            # Type validation
-                            if self.type_check is not None:
-                                if not isinstance(extracted, self.type_check):
-                                    continue
-
-                            if extracted:
-                                count = len(extracted) if hasattr(extracted, '__len__') else 1
-                                log_info("Preloaded %d %s from %s" % (count, self.cache_name, json_path))
-                                self._cache[json_path] = extracted
-                        except Exception:
-                            pass
-        except Exception:
-            pass
+        for root, _dirs, files in os.walk(base_dir):
+            for filename in files:
+                if filename.endswith('.json'):
+                    json_path = os.path.join(root, filename)
+                    extracted = self._read(json_path, self.json_key)
+                    if extracted:
+                        log_info("Preloaded %d %s from %s" % (len(extracted), self.cache_name, json_path))
+                        self._cache[json_path] = extracted
 
     def load_for_function(self, json_path):
         """Load config from function JSON with cache fallback.
@@ -155,35 +133,13 @@ class JsonCacheManager:
         """
         if not json_path:
             return self.default_factory()
-
-        # Use cache if available
         if json_path in self._cache:
             return self._cache[json_path]
-
         # Fallback to file I/O (handles cache misses and path mismatches)
-        if not os.path.exists(json_path):
-            return self.default_factory()
-
-        try:
-            with open(json_path, 'r') as f:
-                data = json.load(f)
-
-            # Extract from key if specified
-            if self.json_key is not None:
-                extracted = data.get(self.json_key)
-            else:
-                extracted = data
-
-            # Type validation
-            if self.type_check is not None:
-                if not isinstance(extracted, self.type_check):
-                    return self.default_factory()
-
+        if os.path.exists(json_path):
+            extracted = self._read(json_path, self.json_key)
             if extracted:
                 return extracted
-        except Exception:
-            pass
-
         return self.default_factory()
 
     def set_cache(self, json_path, data):
@@ -203,26 +159,7 @@ class JsonCacheManager:
         """
         return self._global_cache if self._global_cache is not None else self.default_factory()
 
-    def get_global_path(self):
-        """Get path to global config file.
-
-        Returns:
-            Path string or None
-        """
-        return self._global_path
-
     def clear(self):
         """Clear all caches."""
         self._global_cache = None
-        self._global_path = None
         self._cache = {}
-        self._cache_dir = None
-
-    def iter_cached_items(self):
-        """Iterate over cached per-function entries.
-
-        Yields:
-            Tuples of (json_path, data) for each cached entry
-        """
-        for json_path, data in self._cache.items():
-            yield json_path, data

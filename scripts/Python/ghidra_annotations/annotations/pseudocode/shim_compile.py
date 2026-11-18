@@ -186,7 +186,8 @@ def verify_shims(shims_dir, include_dir, compiler=DEFAULT_COMPILER,
                 failed += 1
                 failed_files.append((rel_path, error))
 
-    return (passed, failed, failed_files)
+    # By path, not completion order, so the committed report is stable
+    return (passed, failed, sorted(failed_files))
 
 
 def verify_shims_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER,
@@ -244,12 +245,7 @@ def verify_shims_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER,
         extra_flags=sdl2_flags
     )
     total = passed + failed
-    if total == 0:
-        log_info("  No shim files found to verify")
-        return True
-
-    log_info("  Shim verification: %d/%d passed (%.1f%%)" % (
-        passed, total, (passed * 100.0 / total) if total > 0 else 0))
+    log_info("  Shim verification: %d/%d passed (%.1f%%)" % (passed, total, passed * 100.0 / total))
 
     # Write full compilation report if reports_dir provided
     if reports_dir:
@@ -265,7 +261,7 @@ def verify_shims_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER,
             f.write("Include directory: %s\n" % include_dir_display)
             f.write("SDL2 flags: %s\n\n" % ' '.join(sdl2_flags))
             f.write("Summary: %d passed, %d failed out of %d total (%.1f%% success)\n\n" % (
-                passed, failed, total, (passed * 100.0 / total) if total > 0 else 0))
+                passed, failed, total, passed * 100.0 / total))
             if failed > 0:
                 f.write("-" * 80 + "\n")
                 f.write("FAILED FILES (%d)\n" % failed)

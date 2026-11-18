@@ -172,6 +172,7 @@ class MemoryBlock:
         self.comment = None
         self.overlay = False
         self.block_type = "DEFAULT"
+        self.source_name = None
 
     def isInitialized(self):
         return self.initialized
@@ -205,6 +206,9 @@ class MemoryBlock:
 
     def setComment(self, comment):
         self.comment = comment
+
+    def setSourceName(self, source):
+        self.source_name = source
 
     def getName(self):
         return self.name
