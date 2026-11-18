@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,453
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        17 ( 0.3%)
+  Functions with type issues:        19 ( 0.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      17
+    Undefined types in variables:      19
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   199 functions
+  Excluded (.keep / MMX / by-value):   197 functions
     Wrong calling convention:          0
-    Undefined types in variables:      199
+    Undefined types in variables:      197
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -81,8 +81,13 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (17)
+Undefined types in variables (19)
 --------------------------------------------------------------------------------
+
+  CBugs_sampleGroundHeight
+    Address: 0x00425b70  File: core/bugs.cpp
+    Locals:  local_24 (undefined4)
+    Suggested: Resolve undefined types to concrete types
 
   CFireEffect_load
     Address: 0x004c9300  File: core/fire.cpp
@@ -169,6 +174,11 @@ Undefined types in variables (17)
     Locals:  local_10 (undefined4[4])
     Suggested: Resolve undefined types to concrete types
 
+  waitForMutexTimeout
+    Address: 0x005f4010  File: wincore/winrun.cpp
+    Locals:  local_8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
 ====================================================================================================
 EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES
 ====================================================================================================
@@ -178,7 +188,7 @@ manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (199)
+Undefined types - .keep overrides (197)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -761,11 +771,6 @@ Undefined types - .keep overrides (199)
     Locals:  local_10 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
-  CBugs_sampleGroundHeight
-    Address: 0x00425b70  File: core/bugs.cpp
-    Locals:  local_24 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CCharacter_ctor
     Address: 0x00427e20  File: core/charactr.cpp
     Locals:  local_c (undefined4[3])
@@ -1169,11 +1174,6 @@ Undefined types - .keep overrides (199)
   CSocket_sendSocketData
     Address: 0x005e1ca0  File: support/trisock.cpp
     Locals:  auStackY_1808 (undefined4[1521])
-    Suggested: Resolve undefined types to concrete types
-
-  waitForMutexTimeout
-    Address: 0x005f4010  File: wincore/winrun.cpp
-    Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------

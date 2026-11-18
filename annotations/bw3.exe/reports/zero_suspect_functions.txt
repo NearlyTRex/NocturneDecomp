@@ -54,6 +54,8 @@ annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_plotPixel_F
 annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/computeCohenSutherlandOutcode_FUN_00468830.cpp
 annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/getDashAnimationThreshold_FUN_004694c0.cpp
 annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/getDashLength_FUN_004694b0.cpp
+annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/setColorRGB_FUN_00467c80.cpp
+annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/setColor_FUN_00467a70.cpp
 annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/setCurrentFont_FUN_00467f20.cpp
 annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/setDashAnimationThreshold_FUN_004694e0.cpp
 annotations/bw3.exe/pseudocode/src/cockpit/drawsurf.cpp/setDashLength_FUN_004694d0.cpp
@@ -1016,8 +1018,13 @@ annotations/bw3.exe/pseudocode/src/core/flattn.cpp/setFlattenMatrix_FUN_004ad4d0
 annotations/bw3.exe/pseudocode/src/core/flattn.cpp/staticInit_FUN_004ad490.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CAlphaBitmap_arrdtor3_FUN_004ad410.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CAlphaBitmap_arrdtor6_FUN_004ad430.cpp
+annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_completeTask_FUN_004abcb0.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_ctor_FUN_004aa7d0.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_dtor_FUN_004aa7e0.cpp
+annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_enableEntry_FUN_004aba10.cpp
+annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_getEntryKind_FUN_004abb30.cpp
+annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_showMapAnnotation_FUN_004ab8f0.cpp
+annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/CFieldNotes_turnToEntry_FUN_004abb90.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/SNotesEntry_layout_FUN_004a9950.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/SNotesMap_arrdtor10_FUN_004ad450.cpp
 annotations/bw3.exe/pseudocode/src/core/fldnotes.cpp/SNotesMap_paginate_FUN_004aa6d0.cpp
@@ -1314,6 +1321,7 @@ annotations/bw3.exe/pseudocode/src/core/imp.cpp/staticInit_FUN_004d66a0.cpp
 annotations/bw3.exe/pseudocode/src/core/imp.cpp/staticInit_FUN_004d8280.cpp
 annotations/bw3.exe/pseudocode/src/core/inivar.cpp/readIniData_FUN_004d8e70.cpp
 annotations/bw3.exe/pseudocode/src/core/inivar.cpp/writeIniData_FUN_004d95c0.cpp
+annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_clear_FUN_004da440.cpp
 annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_dtor_FUN_004da420.cpp
 annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_getActiveLightGun_FUN_004dcda0.cpp
 annotations/bw3.exe/pseudocode/src/core/inv.cpp/CInventory_hasItemOfClass_FUN_004dba80.cpp
@@ -1817,6 +1825,7 @@ annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_findBone_FUN_0054
 annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_free_FUN_00547b90.cpp
 annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getBoneAngleAtFrame_FUN_00548120.cpp
 annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getHierarchyDistance_FUN_005481d0.cpp
+annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_loadStream_FUN_00547cb0.cpp
 annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/blendWeightCallback_FUN_0054bef0.cpp
 annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/calculateDistanceSquared_FUN_005504e0.cpp
 annotations/bw3.exe/pseudocode/src/core/skeleton.cpp/clearModelAndSkeletonInUseFlags_FUN_005503c0.cpp
@@ -2356,6 +2365,7 @@ annotations/bw3.exe/pseudocode/src/engine/font.cpp/getAlpha_FUN_004b37d0.cpp
 annotations/bw3.exe/pseudocode/src/engine/font.cpp/getDefaultTextColor_FUN_004b12e0.cpp
 annotations/bw3.exe/pseudocode/src/engine/font.cpp/packPixelNative_FUN_004b3780.cpp
 annotations/bw3.exe/pseudocode/src/engine/font.cpp/setDefaultTextColor_FUN_004b1300.cpp
+annotations/bw3.exe/pseudocode/src/engine/font.cpp/setShadowColor_FUN_004b11b0.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/CIniFile_ctor_FUN_004d8a20.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/CIniFile_dtor_FUN_004d8a50.cpp
 annotations/bw3.exe/pseudocode/src/engine/ini.cpp/CIniFile_getString_FUN_004d8b20.cpp
@@ -2578,6 +2588,7 @@ annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_calcX_FUN_004
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_copySelectionToClipboard_FUN_0047bca0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_deleteRange_FUN_0047bba0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_deleteSelection_FUN_0047bc10.cpp
+annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_draw_FUN_0047c050.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_handleKeyboardInput_FUN_0047bd50.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_insertChar_FUN_0047bb10.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CInputString_pasteFromClipboard_FUN_0047bcf0.cpp
@@ -2592,6 +2603,7 @@ annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_initializeDialog
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_insert_FUN_00484e30.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_isItemEnabled_FUN_00484ca0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_remove_FUN_00484eb0.cpp
+annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_renderDialog_FUN_004843d0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_setItemHotKey_FUN_00484d00.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_setSelectedResult_FUN_00483440.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/CPickList_swap_FUN_00485010.cpp
@@ -2621,6 +2633,8 @@ annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/drawDashedLine_FUN_0047b5e
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/drawSingleButtonPrompt_FUN_0047c8e0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/editorDrawHLine_FUN_0047b980.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/editorDrawVLine_FUN_0047b9b0.cpp
+annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/editorFillRectColor_FUN_0047b8e0.cpp
+annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/editorFillRectWithBorder_FUN_0047b7c0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/editorPlotPixel_FUN_0047b4e0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/editorSetAlpha_FUN_0047b9e0.cpp
 annotations/bw3.exe/pseudocode/src/shape/edittool.cpp/editorSetColor_FUN_0047b770.cpp
@@ -2696,6 +2710,7 @@ annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/audioThreadProc_FUN_00558d2
 annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/calculateDistanceGain_FUN_00552900.cpp
 annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/clearNextSfxFlagBits_FUN_00555f40.cpp
 annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/closeSoundDevice_FUN_005587e0.cpp
+annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/computeFFT_FUN_00550cc0.cpp
 annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/convert8BitAudioSignedness_FUN_00557910.cpp
 annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/countActiveSfx_FUN_00556f80.cpp
 annotations/bw3.exe/pseudocode/src/sound/sndmain.cpp/enableHwSoundMixing_FUN_005586f0.cpp
@@ -2874,6 +2889,7 @@ annotations/bw3.exe/pseudocode/src/support/trisock.cpp/getLocalHostInfo_FUN_0057
 annotations/bw3.exe/pseudocode/src/support/trisock.cpp/httpReaderReadLine_FUN_00570420.cpp
 annotations/bw3.exe/pseudocode/src/support/trisock.cpp/parseIPAddress_FUN_0056f4c0.cpp
 annotations/bw3.exe/pseudocode/src/support/trisock.cpp/parseIPComponents_FUN_0056f5c0.cpp
+annotations/bw3.exe/pseudocode/src/support/trisock.cpp/parseUrl_FUN_005709c0.cpp
 annotations/bw3.exe/pseudocode/src/support/trisock.cpp/staticInit_FUN_0056f460.cpp
 annotations/bw3.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_close_FUN_00573db0.cpp
 annotations/bw3.exe/pseudocode/src/support/trstream.cpp/CInStreamFile_copy_FUN_00573a10.cpp
@@ -2950,9 +2966,11 @@ annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/clearController_FUN_005824
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/clearKeypresses_FUN_00580770.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/clearMouseClicks_FUN_005809c0.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/closeThread_FUN_00581a20.cpp
+annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/createMainWindow_FUN_00581010.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/createMutex_FUN_00581920.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/createThread_FUN_005819b0.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/destroyMainWindow_FUN_00581060.cpp
+annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/displayMessageBoxAndQuit_FUN_00581300.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/doNothing2_FUN_00581cf0.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/drawCrosshair_FUN_005808d0.cpp
 annotations/bw3.exe/pseudocode/src/wincore/winrun.cpp/endPeriod_FUN_00580690.cpp

@@ -16,7 +16,7 @@ def test_the_report_is_written_beside_the_others_and_counts_the_redundant(tmp_pa
     assert kdr.generate_keep_drift_report(str(tmp_path / "src"), str(reports)) == 1
     text = (reports / kdr.REPORT_NAME).read_text()
     assert text.startswith("# How far each .keep is from the export beside it.")
-    assert "2 .keep files compared" in text and "core/a.cpp/g_FUN_00000002.keep.cpp" in text
+    assert "2 .keep files, each compared" in text and "core/a.cpp/g_FUN_00000002.keep.cpp" in text
     assert logged == ["1 of 2 .keep files are now identical to the export; see reports/keep_drift.txt"]
 
 

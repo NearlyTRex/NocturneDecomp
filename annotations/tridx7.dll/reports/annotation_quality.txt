@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          76
   Unnamed functions (FUN_):          37 (48.7%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        3 ( 3.9%)
+  Functions with type issues:        5 ( 6.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      3
+    Undefined types in variables:      5
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   17 functions
+  Excluded (.keep / MMX / by-value):   15 functions
     Wrong calling convention:          0
-    Undefined types in variables:      17
+    Undefined types in variables:      15
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -118,8 +118,13 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (3)
+Undefined types in variables (5)
 --------------------------------------------------------------------------------
+
+  APIDLLdrawPolyList2
+    Address: 0x10005130  File: dll/dx7.cpp
+    Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
 
   APIDLLmasterZBuffer
     Address: 0x10004e10  File: dll/dx7.cpp
@@ -129,6 +134,11 @@ Undefined types in variables (3)
   APIDLLrestoreZBuffer
     Address: 0x10004e90  File: dll/dx7.cpp
     Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  APIDLLdrawPolyList
+    Address: 0x10004f00  File: dll/dx7.cpp
+    Locals:  local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   APIDLLGetDisplayContext
@@ -145,7 +155,7 @@ manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (17)
+Undefined types - .keep overrides (15)
 --------------------------------------------------------------------------------
 
   initTextureCaches
@@ -183,19 +193,9 @@ Undefined types - .keep overrides (17)
     Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  APIDLLdrawPolyList2
-    Address: 0x10005130  File: dll/dx7.cpp
-    Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   APIDLLsetColorTable16
     Address: 0x10004b30  File: dll/dx7.cpp
     Locals:  local_7c (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  APIDLLdrawPolyList
-    Address: 0x10004f00  File: dll/dx7.cpp
-    Locals:  local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   APIDLLclearZBuffer

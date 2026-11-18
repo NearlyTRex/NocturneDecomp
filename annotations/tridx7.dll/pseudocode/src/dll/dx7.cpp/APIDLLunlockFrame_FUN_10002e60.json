@@ -1,15 +1,17 @@
 {
-  "compile_source": "keep.cpp",
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 15,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_noreturn"
+    ],
     "total_lines": 34
   },
   "cross_references": [],
@@ -87,17 +89,6 @@
     },
     "pcode_op_count": 49
   },
-  "resolved_suspects": [
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 14,
-      "match": "WARNING: Subroutine does not return",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    }
-  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -106,5 +97,15 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "callee": "dll_dx7_cpp_fatalError_FUN_10002340",
+      "description": "Subroutine marked as non-returning",
+      "line": 14,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ]
 }

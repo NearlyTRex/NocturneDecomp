@@ -10,15 +10,15 @@ Total functions: 6453
 Clean functions: 6453 (100.0%)
 Functions with suspects: 0 (0.0%)
 
-Total suspect patterns: 0
-Average suspects per function: 0.00
+Total suspect patterns: 53
+Average suspects per function: 0.01
 
 Virtual files: 216 total, 216 at 100%, 216 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3338, Average: 47.7
 
-Average complexity score: 47.7
+Average complexity score: 47.9
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,6 +28,8 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
+  warning_inlined_function  40
+  warning_unreachable       13
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -118,3 +120,24 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
+
+  warning_inlined_function (39 functions):
+    00425b70: core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70
+    0044cf20: core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20
+    004528e0: core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
+    00453640: core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640
+    00453700: core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700
+    00453fc0: core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0
+    0045d1d0: shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0
+    0046ae20: shape_design.c_sampleAndFilterPixel_FUN_0046ae20
+    00471360: core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
+    004765e0: core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
+    ... and 29 more
+
+  warning_unreachable (6 functions):
+    00487010: cockpit_drawsurf.cpp_setColor_FUN_00487010
+    00487220: cockpit_drawsurf.cpp_setColorRGB_FUN_00487220
+    004ce0f0: engine_font.cpp_setShadowColor_FUN_004ce0f0
+    004fd0e0: core_inv.cpp_CInventory_clear_FUN_004fd0e0
+    00554880: core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
+    005644e0: core_script.cpp_clearSelections_FUN_005644e0

@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 202
 Total functions: 4929
-Clean functions: 3114 (63.2%)
+Clean functions: 3122 (63.3%)
 Files at 100%: 16
 Files at 90%+: 18
 Files at 50%+: 180
@@ -360,6 +360,16 @@ FILES AT 50-89%
            - core_larva.cpp_CLarva_process_FUN_004c4970 (339 lines) [dropped_fyl2x, fast_sqrt_inline, inline_exp_idiom, self_copy_guard, stack_param, stack_ref, unknown_type, unrolled_memcpy, unrolled_memset, warning_unreachable]
            - core_larva.cpp_CLarva_getTargetPoints_FUN_004c54f0 (14 lines) [unrolled_memcpy]
            - core_larva.cpp_CLarva_dtor_FUN_004c5540 (32 lines) [negative_offset]
+   72.4% | wincore/winrun.cpp
+         21/29 clean, 8 remaining
+           - wincore_winrun.cpp_getNextKeypress_FUN_00558b00 (24 lines) [concat_reconstruction, undefined_type]
+           - wincore_winrun.cpp_enqueueInput_FUN_00558ba0 (13 lines) [displaced_global_access, wrong_global]
+           - wincore_winrun.cpp_drawCrosshair_FUN_00558c40 (43 lines) [signed_shift_global_idiom]
+           - wincore_winrun.cpp_processWindowMessages_FUN_005591c0 (26 lines) [pointer_cast]
+           - wincore_winrun.cpp_winMain_FUN_00559260 (126 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals]
+           - wincore_winrun.cpp_getRegistryStringValue_FUN_00559d20 (18 lines) [undefined_data]
+           - wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0 (27 lines) [undefined_data, unrolled_strlen]
+           - wincore_winrun.cpp_getJoystickState_FUN_00559eb0 (65 lines) [unresolved_funcptr]
    72.2% | core/dfilter.cpp
          13/18 clean, 5 remaining
            - core_dfilter.cpp_CFilterCache_free_FUN_0044bcd0 (20 lines) [shadow_pointer_walk]
@@ -392,6 +402,34 @@ FILES AT 50-89%
            - sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0052c460 (66 lines) [pointer_cast, signed_shift_global_idiom]
            - sound_sndwav.cpp_CWavOutDevice_poll_FUN_0052c640 (25 lines) [pointer_cast]
            - sound_sndwav.cpp_enumerateWavOutDevice_FUN_0052c6c0 (54 lines) [negative_offset, pointer_cast, pointer_truncation, unrolled_strcpy, unrolled_strlen]
+   71.4% | cockpit/drawsurf.cpp
+         65/91 clean, 26 remaining
+           - cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0 (62 lines) [pointer_cast, pointer_truncation]
+           - cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0045bc20 (42 lines) [pointer_cast, pointer_truncation]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0045bd50 (37 lines) [stack_param]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00 (29 lines) [stack_param]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 (24 lines) [stack_param]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_0045c050 (24 lines) [stack_param]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0 (63 lines) [unaffected_reg]
+           - cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440 (133 lines) [register_param]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730 (58 lines) [pointer_cast, pointer_truncation]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850 (91 lines) [pointer_cast, pointer_truncation]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50 (24 lines) [stack_param]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 (61 lines) [pointer_cast, pointer_truncation]
+           - cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110 (87 lines) [pointer_cast, pointer_truncation]
+           - cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310 (198 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_alignment_array]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_0045da90 (10 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_0045db60 (11 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_0045dc30 (10 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00 (11 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_0045ddd0 (10 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0 (11 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_0045df80 (11 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070 (11 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0045e130 (10 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_0045e1f0 (10 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280 (10 lines) [stack_ref]
+           - cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 (214 lines) [raw_address_constant, stack_param, stack_ref]
    71.4% | core/dirmat.cpp
          5/7 clean, 2 remaining
            - core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 (129 lines) [bitcast_double_pair, raw_address_constant, sub84_truncation]
@@ -418,6 +456,22 @@ FILES AT 50-89%
          5/7 clean, 2 remaining
            - core_texlist.cpp_CTextureList_load_FUN_00544950 (144 lines) [shadow_pointer_walk, unrolled_strchr, unrolled_strcpy, unrolled_strlen]
            - core_texlist.cpp_CTextureList_save_FUN_00544c10 (69 lines) [shadow_pointer_walk, unrolled_strchr, unrolled_strcpy]
+   71.4% | engine/font.cpp
+         35/49 clean, 14 remaining
+           - engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 (72 lines) [unrolled_strcpy]
+           - engine_font.cpp_CBitFont_drawTextF_FUN_00490b20 (9 lines) [stack_ref]
+           - engine_font.cpp_CBitFont_printF_FUN_00490c20 (8 lines) [stack_ref]
+           - engine_font.cpp_CBitFont_drawTextCenterF_FUN_00490d20 (9 lines) [stack_ref]
+           - engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 (10 lines) [stack_ref]
+           - engine_font.cpp_CBitFont_printCenterF_FUN_00490f50 (8 lines) [stack_ref]
+           - engine_font.cpp_drawAlphaBlendedPixels_FUN_00491160 (74 lines) [concat_reconstruction, nonstandard_int]
+           - engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 (177 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_strcpy]
+           - engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 (560 lines) [pointer_cast, pointer_truncation]
+           - engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 (57 lines) [unrolled_strchr]
+           - engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 (60 lines) [unrolled_strchr]
+           - engine_font.cpp_CBitFont_wrapText_FUN_00492f30 (81 lines) [unrolled_memcpy]
+           - engine_font.cpp_CBitFont_remapPalette_FUN_004931b0 (64 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, warning_unreachable]
+           - engine_font.cpp_CBitFont_showFontTest_FUN_004933c0 (101 lines) [unrolled_memcpy]
    71.4% | engine/prim.c
          15/21 clean, 6 remaining
            - engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 (29 lines) [sign_compare_idiom]
@@ -487,53 +541,6 @@ FILES AT 50-89%
            - core_gore.cpp_CGore_spawnFlies_FUN_004b0580 (37 lines) [unrolled_memcpy]
            - core_gore.cpp_CFootstep_ctor_FUN_004b09b0 (6 lines) [pointer_cast, pointer_truncation]
            - core_gore.cpp_CFootstep_dtor_FUN_004b09d0 (6 lines) [negative_offset]
-   69.4% | engine/font.cpp
-         34/49 clean, 15 remaining
-           - engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 (72 lines) [unrolled_strcpy]
-           - engine_font.cpp_CBitFont_drawTextF_FUN_00490b20 (9 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_printF_FUN_00490c20 (8 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_drawTextCenterF_FUN_00490d20 (9 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 (10 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_printCenterF_FUN_00490f50 (8 lines) [stack_ref]
-           - engine_font.cpp_setShadowColor_FUN_00490ff0 (28 lines) [warning_unreachable]
-           - engine_font.cpp_drawAlphaBlendedPixels_FUN_00491160 (74 lines) [concat_reconstruction, nonstandard_int]
-           - engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 (177 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_strcpy]
-           - engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 (560 lines) [pointer_cast, pointer_truncation]
-           - engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 (57 lines) [unrolled_strchr]
-           - engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 (60 lines) [unrolled_strchr]
-           - engine_font.cpp_CBitFont_wrapText_FUN_00492f30 (81 lines) [unrolled_memcpy]
-           - engine_font.cpp_CBitFont_remapPalette_FUN_004931b0 (64 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, warning_unreachable]
-           - engine_font.cpp_CBitFont_showFontTest_FUN_004933c0 (101 lines) [unrolled_memcpy]
-   69.2% | cockpit/drawsurf.cpp
-         63/91 clean, 28 remaining
-           - cockpit_drawsurf.cpp_setColor_FUN_0045b5f0 (53 lines) [warning_unreachable]
-           - cockpit_drawsurf.cpp_setColorRGB_FUN_0045b800 (40 lines) [warning_unreachable]
-           - cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0 (62 lines) [pointer_cast, pointer_truncation]
-           - cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0045bc20 (42 lines) [pointer_cast, pointer_truncation]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0045bd50 (37 lines) [stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00 (29 lines) [stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 (24 lines) [stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_0045c050 (24 lines) [stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0 (63 lines) [unaffected_reg]
-           - cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440 (133 lines) [register_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730 (58 lines) [pointer_cast, pointer_truncation]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850 (91 lines) [pointer_cast, pointer_truncation]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50 (24 lines) [stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 (61 lines) [pointer_cast, pointer_truncation]
-           - cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110 (87 lines) [pointer_cast, pointer_truncation]
-           - cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310 (198 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_alignment_array]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_0045da90 (10 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_0045db60 (11 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_0045dc30 (10 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0045dd00 (11 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_0045ddd0 (10 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0 (11 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_0045df80 (11 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070 (11 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0045e130 (10 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_0045e1f0 (10 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280 (10 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 (214 lines) [raw_address_constant, stack_param, stack_ref]
    69.2% | core/flame.cpp
          9/13 clean, 4 remaining
            - core_flame.cpp_CFlame_setup_FUN_0048d050 (23 lines) [undefined_data]
@@ -595,17 +602,6 @@ FILES AT 50-89%
            - shape_edittool.cpp_CEdButton_wasClicked_FUN_00476fd0 (33 lines) [pointer_truncation]
            - shape_edittool.cpp_CEdCheck_setupWithText_FUN_004771f0 (42 lines) [undefined_data, unrolled_strcpy]
            - shape_edittool.cpp_CEdCheck_handleInput_FUN_004774b0 (41 lines) [pointer_truncation]
-   69.0% | wincore/winrun.cpp
-         20/29 clean, 9 remaining
-           - wincore_winrun.cpp_getNextKeypress_FUN_00558b00 (24 lines) [concat_reconstruction, undefined_type]
-           - wincore_winrun.cpp_enqueueInput_FUN_00558ba0 (13 lines) [displaced_global_access, wrong_global]
-           - wincore_winrun.cpp_drawCrosshair_FUN_00558c40 (43 lines) [signed_shift_global_idiom]
-           - wincore_winrun.cpp_processWindowMessages_FUN_005591c0 (26 lines) [pointer_cast]
-           - wincore_winrun.cpp_winMain_FUN_00559260 (126 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals]
-           - wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500 (8 lines) [warning_noreturn]
-           - wincore_winrun.cpp_getRegistryStringValue_FUN_00559d20 (18 lines) [undefined_data]
-           - wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0 (27 lines) [undefined_data, unrolled_strlen]
-           - wincore_winrun.cpp_getJoystickState_FUN_00559eb0 (65 lines) [unresolved_funcptr]
    68.8% | core/emitter.cpp
          11/16 clean, 5 remaining
            - core_emitter.cpp_CEmitter_ctor_FUN_004783c0 (99 lines) [derived_field_index_pun, negative_offset, unrolled_strcpy]
@@ -669,6 +665,61 @@ FILES AT 50-89%
            - core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0 (23 lines) [unrolled_strcpy]
            - core_sound.cpp_CSound_setReverbPreset_FUN_0052ece0 (14 lines) [undefined_data]
            - core_sound.cpp_CSound_selectReverbPreset_FUN_0052ed40 (22 lines) [pointer_cast, pointer_truncation]
+   67.1% | sound/sndmain.cpp
+         108/161 clean, 53 remaining
+           - sound_sndmain.cpp_parseWavFile_FUN_00521830 (123 lines) [unknown_field]
+           - sound_sndmain.cpp_getActiveSfxCount_FUN_00521bf0 (24 lines) [pointer_cast]
+           - sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0 (46 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00521d80 (42 lines) [unrolled_strlen]
+           - sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 (214 lines) [sub84_truncation, unrolled_strlen]
+           - sound_sndmain.cpp_getSfxSample_FUN_00522480 (180 lines) [shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
+           - sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0 (123 lines) [shadow_pointer_walk, unrolled_strcpy]
+           - sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10 (32 lines) [pointer_cast]
+           - sound_sndmain.cpp_allocMixBuffers_FUN_00522f10 (53 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_freeMixBuffers_FUN_005230d0 (31 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_nextMixingBuffer_FUN_00523170 (99 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
+           - sound_sndmain.cpp_convertMixBufToOutput_FUN_00523330 (62 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_convertDoubleToFixed_FUN_005235b0 (14 lines) [bitcast_double_pair, unknown_field]
+           - sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610 (52 lines) [carry_arith_idiom, unknown_field, warning_deadcode_restart]
+           - sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750 (52 lines) [carry_arith_idiom, unknown_field, warning_deadcode_restart]
+           - sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0 (36 lines) [pointer_cast]
+           - sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10 (47 lines) [format_string_mismatch, pointer_truncation]
+           - sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 (222 lines) [raw_address_constant, unrolled_memcpy]
+           - sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410 (41 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0 (27 lines) [pointer_cast, shadow_pointer_walk]
+           - sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520 (62 lines) [bitcast_double_pair, shadow_pointer_walk]
+           - sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630 (51 lines) [shadow_pointer_walk]
+           - sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0 (23 lines) [pointer_cast]
+           - sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 (144 lines) [bitcast_double_pair, format_string_mismatch, shadow_pointer_walk, sub84_truncation, warning_overlapping_globals]
+           - sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 (359 lines) [bitcast_double_pair, pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, shadow_pointer_walk, sub84_truncation]
+           - sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 (51 lines) [pointer_truncation]
+           - sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870 (57 lines) [pointer_cast, pointer_truncation, unknown_field]
+           - sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80 (33 lines) [pointer_cast, pointer_truncation, raw_address_constant]
+           - sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0 (28 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_setNextSfxUserData_FUN_00526150 (10 lines) [raw_address_pointer_store]
+           - sound_sndmain.cpp_pushSfxOptions_FUN_00526340 (22 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - sound_sndmain.cpp_formatSfxOptionsToString_FUN_00526410 (65 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_startSfx_FUN_005265a0 (280 lines) [pointer_cast, pointer_truncation, preinc_loop_idiom, shadow_pointer_walk, stack_ref, unrolled_memcpy, unrolled_strcpy]
+           - sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0 (20 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 (33 lines) [bitcast_double_pair, sub84_truncation]
+           - sound_sndmain.cpp_getSfxOptions_FUN_00526dd0 (19 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - sound_sndmain.cpp_enableSfxChannel_FUN_00527410 (25 lines) [pointer_cast]
+           - sound_sndmain.cpp_getFirstActiveSfx_FUN_005274e0 (18 lines) [pointer_cast]
+           - sound_sndmain.cpp_getNextActiveSfx_FUN_00527520 (20 lines) [pointer_cast]
+           - sound_sndmain.cpp_formatActiveSounds_FUN_00527570 (24 lines) [pointer_cast]
+           - sound_sndmain.cpp_killSfxByName_FUN_005278e0 (22 lines) [pointer_cast]
+           - sound_sndmain.cpp_freeSampleByName_FUN_00527950 (23 lines) [pointer_cast, pointer_truncation]
+           - sound_sndmain.cpp_getSampleInfo_FUN_005279e0 (98 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
+           - sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 (76 lines) [bitcast_double_pair, pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, unknown_field]
+           - sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0 (20 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - sound_sndmain.cpp_audioThreadProc_FUN_00528670 (16 lines) [bitcast_double_pair, unknown_field]
+           - sound_sndmain.cpp_startSoundThread_FUN_005286d0 (40 lines) [bitcast_double_pair, sub84_truncation, unknown_field]
+           - sound_sndmain.cpp_processAudio_FUN_005288f0 (19 lines) [unaffected_reg]
+           - sound_sndmain.cpp_readIni_FUN_005289f0 (73 lines) [undefined_data]
+           - sound_sndmain.cpp_writeIni_FUN_00528c80 (62 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_strcpy]
+           - sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60 (170 lines) [bitcast_double_pair, sub84_truncation, warning_unreachable]
+           - sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 (164 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
+           - sound_sndmain.cpp_logSoundError_FUN_00529980 (10 lines) [stack_ref]
    66.7% | core/biggs.cpp
          8/12 clean, 4 remaining
            - core_biggs.cpp_CBiggs_ctor_FUN_00415370 (50 lines) [negative_offset, pointer_cast, pointer_truncation]
@@ -764,62 +815,6 @@ FILES AT 50-89%
    66.7% | engine/fpoly.c
          2/3 clean, 1 remaining
            - engine_fpoly.c_rasterizePolygonHardware_FUN_00494260 (165 lines) [shadow_pointer_walk]
-   66.5% | sound/sndmain.cpp
-         107/161 clean, 54 remaining
-           - sound_sndmain.cpp_computeFFT_FUN_005214e0 (105 lines) [warning_unreachable]
-           - sound_sndmain.cpp_parseWavFile_FUN_00521830 (123 lines) [unknown_field]
-           - sound_sndmain.cpp_getActiveSfxCount_FUN_00521bf0 (24 lines) [pointer_cast]
-           - sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0 (46 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00521d80 (42 lines) [unrolled_strlen]
-           - sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 (214 lines) [sub84_truncation, unrolled_strlen]
-           - sound_sndmain.cpp_getSfxSample_FUN_00522480 (180 lines) [shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
-           - sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0 (123 lines) [shadow_pointer_walk, unrolled_strcpy]
-           - sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10 (32 lines) [pointer_cast]
-           - sound_sndmain.cpp_allocMixBuffers_FUN_00522f10 (53 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_freeMixBuffers_FUN_005230d0 (31 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_nextMixingBuffer_FUN_00523170 (99 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
-           - sound_sndmain.cpp_convertMixBufToOutput_FUN_00523330 (62 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_convertDoubleToFixed_FUN_005235b0 (14 lines) [bitcast_double_pair, unknown_field]
-           - sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610 (52 lines) [carry_arith_idiom, unknown_field, warning_deadcode_restart]
-           - sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750 (52 lines) [carry_arith_idiom, unknown_field, warning_deadcode_restart]
-           - sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0 (36 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10 (47 lines) [format_string_mismatch, pointer_truncation]
-           - sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 (222 lines) [raw_address_constant, unrolled_memcpy]
-           - sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410 (41 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0 (27 lines) [pointer_cast, shadow_pointer_walk]
-           - sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520 (62 lines) [bitcast_double_pair, shadow_pointer_walk]
-           - sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630 (51 lines) [shadow_pointer_walk]
-           - sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0 (23 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 (144 lines) [bitcast_double_pair, format_string_mismatch, shadow_pointer_walk, sub84_truncation, warning_overlapping_globals]
-           - sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 (359 lines) [bitcast_double_pair, pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, shadow_pointer_walk, sub84_truncation]
-           - sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 (51 lines) [pointer_truncation]
-           - sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870 (57 lines) [pointer_cast, pointer_truncation, unknown_field]
-           - sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80 (33 lines) [pointer_cast, pointer_truncation, raw_address_constant]
-           - sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0 (28 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_setNextSfxUserData_FUN_00526150 (10 lines) [raw_address_pointer_store]
-           - sound_sndmain.cpp_pushSfxOptions_FUN_00526340 (22 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - sound_sndmain.cpp_formatSfxOptionsToString_FUN_00526410 (65 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_startSfx_FUN_005265a0 (280 lines) [pointer_cast, pointer_truncation, preinc_loop_idiom, shadow_pointer_walk, stack_ref, unrolled_memcpy, unrolled_strcpy]
-           - sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0 (20 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 (33 lines) [bitcast_double_pair, sub84_truncation]
-           - sound_sndmain.cpp_getSfxOptions_FUN_00526dd0 (19 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - sound_sndmain.cpp_enableSfxChannel_FUN_00527410 (25 lines) [pointer_cast]
-           - sound_sndmain.cpp_getFirstActiveSfx_FUN_005274e0 (18 lines) [pointer_cast]
-           - sound_sndmain.cpp_getNextActiveSfx_FUN_00527520 (20 lines) [pointer_cast]
-           - sound_sndmain.cpp_formatActiveSounds_FUN_00527570 (24 lines) [pointer_cast]
-           - sound_sndmain.cpp_killSfxByName_FUN_005278e0 (22 lines) [pointer_cast]
-           - sound_sndmain.cpp_freeSampleByName_FUN_00527950 (23 lines) [pointer_cast, pointer_truncation]
-           - sound_sndmain.cpp_getSampleInfo_FUN_005279e0 (98 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
-           - sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 (76 lines) [bitcast_double_pair, pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, unknown_field]
-           - sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0 (20 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - sound_sndmain.cpp_audioThreadProc_FUN_00528670 (16 lines) [bitcast_double_pair, unknown_field]
-           - sound_sndmain.cpp_startSoundThread_FUN_005286d0 (40 lines) [bitcast_double_pair, sub84_truncation, unknown_field]
-           - sound_sndmain.cpp_processAudio_FUN_005288f0 (19 lines) [unaffected_reg]
-           - sound_sndmain.cpp_readIni_FUN_005289f0 (73 lines) [undefined_data]
-           - sound_sndmain.cpp_writeIni_FUN_00528c80 (62 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_strcpy]
-           - sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60 (170 lines) [bitcast_double_pair, sub84_truncation, warning_unreachable]
-           - sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 (164 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, stack_param, stack_ref, unknown_field, unrolled_memcpy]
-           - sound_sndmain.cpp_logSoundError_FUN_00529980 (10 lines) [stack_ref]
    66.1% | core/event.cpp
          39/59 clean, 20 remaining
            - core_event.cpp_setEventError_FUN_0047a1e0 (18 lines) [unrolled_strcpy]
@@ -1111,6 +1106,12 @@ FILES AT 50-89%
            - core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00550370 (68 lines) [raw_address_constant, unrolled_strcpy]
            - core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_00550670 (14 lines) [unrolled_memcpy]
            - core_vessel.cpp_CCryptVessel_dtor_FUN_005506c0 (20 lines) [negative_offset, pointer_cast, pointer_truncation]
+   60.0% | core/course.cpp
+         6/10 clean, 4 remaining
+           - core_course.cpp_CCourse_load_FUN_0043b690 (44 lines) [pointer_cast]
+           - core_course.cpp_CCourse_free_FUN_0043b7c0 (12 lines) [negative_offset]
+           - core_course.cpp_CCourse_evaluate_FUN_0043b800 (31 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_course.cpp_CCourse_interpolate_FUN_0043b890 (135 lines) [bitcast_double_pair, pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_type_propagation]
    60.0% | core/elephant.cpp
          6/10 clean, 4 remaining
            - core_elephant.cpp_CElephantGun_process_FUN_004777a0 (30 lines) [stack_param, stack_ref, unrolled_memcpy]
@@ -1729,13 +1730,6 @@ FILES AT 50-89%
            - core_bride.cpp_CBride_getTargetPoints_FUN_00420e20 (27 lines) [unrolled_memcpy, warning_type_propagation]
            - core_bride.cpp_CBride_getTargetPoint_FUN_00420eb0 (25 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - core_bride.cpp_CBride_dtor_FUN_00420f20 (32 lines) [negative_offset]
-   50.0% | core/course.cpp
-         5/10 clean, 5 remaining
-           - core_course.cpp_CCourse_allocMemory_FUN_0043b610 (22 lines) [warning_unreachable]
-           - core_course.cpp_CCourse_load_FUN_0043b690 (44 lines) [pointer_cast]
-           - core_course.cpp_CCourse_free_FUN_0043b7c0 (12 lines) [negative_offset]
-           - core_course.cpp_CCourse_evaluate_FUN_0043b800 (31 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_course.cpp_CCourse_interpolate_FUN_0043b890 (135 lines) [bitcast_double_pair, pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, unrolled_memcpy, warning_type_propagation]
    50.0% | core/flies.cpp
          9/18 clean, 9 remaining
            - core_flies.cpp_CFlies_ctor_FUN_0048eef0 (23 lines) [derived_field_index_pun, pointer_cast, pointer_truncation]
@@ -1886,6 +1880,31 @@ FILES BELOW 50%
            - core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290 (62 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_0044b430 (45 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500 (59 lines) [pointer_cast]
+   45.2% | core/inv.cpp
+         19/42 clean, 23 remaining
+           - core_inv.cpp_CInventory_initialize_FUN_004bef10 (24 lines) [preinc_loop_idiom]
+           - core_inv.cpp_CInventory_addItem_FUN_004bf360 (1122 lines) [derived_field_index_pun, shadow_pointer_walk, suspect_float, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
+           - core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640 (38 lines) [shadow_pointer_walk, unrolled_strcpy]
+           - core_inv.cpp_CInventory_findItemByName_FUN_004c0710 (19 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_hasItemOfClass_FUN_004c0760 (19 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_removeItem_FUN_004c07b0 (34 lines) [pointer_stride_bytecount, shadow_pointer_walk]
+           - core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 (58 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_selectItem_FUN_004c0950 (58 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50 (59 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 (136 lines) [signed_shift_global_idiom]
+           - core_inv.cpp_CInventory_save_FUN_004c0fa0 (40 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_saveItems_FUN_004c1140 (19 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_load_FUN_004c1190 (105 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
+           - core_inv.cpp_CInventory_loadItems_FUN_004c14d0 (17 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_setupItems_FUN_004c1510 (20 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_select_FUN_004c1580 (127 lines) [derived_field_index_pun, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
+           - core_inv.cpp_CInventory_updateInventory_FUN_004c1850 (103 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20 (22 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150 (80 lines) [raw_address_constant]
+           - core_inv.cpp_CInventory_renderAllItems_FUN_004c2470 (381 lines) [concat_reconstruction, pointer_truncation, raw_address_constant, undefined_data, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
+           - core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0 (41 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280 (23 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_autoUseHealthItem_FUN_004c3350 (34 lines) [shadow_pointer_walk]
    45.0% | core/menu.cpp
          9/20 clean, 11 remaining
            - core_menu.cpp_renderAudioSpectrumBar_FUN_004cf2b0 (57 lines) [raw_address_constant, signed_shift_global_idiom]
@@ -1956,32 +1975,6 @@ FILES BELOW 50%
            - core_dlight.cpp_renderConeLightGeometry_FUN_00451b70 (159 lines) [raw_address_constant, unknown_field, unknown_type]
            - core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080 (23 lines) [raw_address_constant, wrong_global]
            - core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110 (162 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom]
-   42.9% | core/inv.cpp
-         18/42 clean, 24 remaining
-           - core_inv.cpp_CInventory_clear_FUN_004bee80 (22 lines) [warning_unreachable]
-           - core_inv.cpp_CInventory_initialize_FUN_004bef10 (24 lines) [preinc_loop_idiom]
-           - core_inv.cpp_CInventory_addItem_FUN_004bf360 (1122 lines) [derived_field_index_pun, shadow_pointer_walk, suspect_float, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
-           - core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004c0640 (38 lines) [shadow_pointer_walk, unrolled_strcpy]
-           - core_inv.cpp_CInventory_findItemByName_FUN_004c0710 (19 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_hasItemOfClass_FUN_004c0760 (19 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_removeItem_FUN_004c07b0 (34 lines) [pointer_stride_bytecount, shadow_pointer_walk]
-           - core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 (58 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_selectItem_FUN_004c0950 (58 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50 (59 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 (136 lines) [signed_shift_global_idiom]
-           - core_inv.cpp_CInventory_save_FUN_004c0fa0 (40 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_saveItems_FUN_004c1140 (19 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_load_FUN_004c1190 (105 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
-           - core_inv.cpp_CInventory_loadItems_FUN_004c14d0 (17 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_setupItems_FUN_004c1510 (20 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_select_FUN_004c1580 (127 lines) [derived_field_index_pun, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
-           - core_inv.cpp_CInventory_updateInventory_FUN_004c1850 (103 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20 (22 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150 (80 lines) [raw_address_constant]
-           - core_inv.cpp_CInventory_renderAllItems_FUN_004c2470 (381 lines) [concat_reconstruction, pointer_truncation, raw_address_constant, undefined_data, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
-           - core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0 (41 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280 (23 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_autoUseHealthItem_FUN_004c3350 (34 lines) [shadow_pointer_walk]
    42.6% | cockpit/ckptutil.c
          23/54 clean, 31 remaining
            - cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_0042cde0 (45 lines) [concat_reconstruction, pointer_cast]
@@ -2117,24 +2110,8 @@ FILES BELOW 50%
            - core_cloth.cpp_vectorLengthFast_FUN_004388d0 (4 lines) [fast_sqrt_inline]
            - core_cloth.cpp_applyLightAttenuation_FUN_00438900 (9 lines) [fast_inv_sqrt_inline]
            - core_cloth.cpp_SClothVertex_ctor_FUN_004389a0 (7 lines) [pointer_cast, pointer_truncation]
-   33.3% | core/ghoul.cpp
-         5/15 clean, 10 remaining
-           - core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0 (41 lines) [raw_address_constant, suspect_float]
-           - core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0 (77 lines) [warning_overlapping_globals]
-           - core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040 (67 lines) [pointer_cast]
-           - core_ghoul.cpp_CGhoul_process_FUN_004a9270 (1074 lines) [pointer_cast, pointer_truncation, raw_address_constant, self_copy_guard, stack_param, stack_ref, unresolved_funcptr, unrolled_memcpy, unrolled_memset, unrolled_strcpy]
-           - core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004aaf40 (68 lines) [unrolled_memcpy]
-           - core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004ab110 (25 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190 (102 lines) [warning_type_propagation]
-           - core_ghoul.cpp_CGhoul_processDamage_FUN_004ab450 (142 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk, suspect_float, unrolled_memcpy, warning_type_propagation]
-           - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004ab830 (90 lines) [unrolled_memcpy, warning_type_propagation]
-           - core_ghoul.cpp_CGhoul_dtor_FUN_004aba30 (32 lines) [negative_offset]
-   33.3% | core/slew.cpp
-         1/3 clean, 2 remaining
-           - core_slew.cpp_CSlew_init_FUN_0051f930 (11 lines) [unrolled_memset]
-           - core_slew.cpp_CSlew_processInput_FUN_0051f980 (100 lines) [unrolled_memset]
-   32.6% | core/dtrace.cpp
-         14/43 clean, 29 remaining
+   34.9% | core/dtrace.cpp
+         15/43 clean, 28 remaining
            - core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00467250 (15 lines) [alloc_magic_size]
            - core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004672a0 (27 lines) [pointer_cast]
            - core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330 (19 lines) [alloc_magic_size]
@@ -2154,7 +2131,6 @@ FILES BELOW 50%
            - core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40 (55 lines) [pointer_cast, pointer_truncation]
            - core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70 (24 lines) [pointer_cast, pointer_truncation]
            - core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0 (80 lines) [unknown_field]
-           - core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0 (116 lines) [warning_unreachable]
            - core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650 (43 lines) [pointer_cast, raw_address_constant, stack_alignment_array, stack_ref, sub84_truncation]
            - core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 (43 lines) [pointer_cast, raw_address_constant, stack_alignment_array, stack_ref, sub84_truncation]
            - core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0 (7 lines) [unrolled_memcpy]
@@ -2164,6 +2140,22 @@ FILES BELOW 50%
            - core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90 (80 lines) [unrolled_memcpy]
            - core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0046bfe0 (51 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref]
            - core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c100 (54 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref]
+   33.3% | core/ghoul.cpp
+         5/15 clean, 10 remaining
+           - core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0 (41 lines) [raw_address_constant, suspect_float]
+           - core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0 (77 lines) [warning_overlapping_globals]
+           - core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040 (67 lines) [pointer_cast]
+           - core_ghoul.cpp_CGhoul_process_FUN_004a9270 (1074 lines) [pointer_cast, pointer_truncation, raw_address_constant, self_copy_guard, stack_param, stack_ref, unresolved_funcptr, unrolled_memcpy, unrolled_memset, unrolled_strcpy]
+           - core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004aaf40 (68 lines) [unrolled_memcpy]
+           - core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004ab110 (25 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190 (102 lines) [warning_type_propagation]
+           - core_ghoul.cpp_CGhoul_processDamage_FUN_004ab450 (142 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk, suspect_float, unrolled_memcpy, warning_type_propagation]
+           - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004ab830 (90 lines) [unrolled_memcpy, warning_type_propagation]
+           - core_ghoul.cpp_CGhoul_dtor_FUN_004aba30 (32 lines) [negative_offset]
+   33.3% | core/slew.cpp
+         1/3 clean, 2 remaining
+           - core_slew.cpp_CSlew_init_FUN_0051f930 (11 lines) [unrolled_memset]
+           - core_slew.cpp_CSlew_processInput_FUN_0051f980 (100 lines) [unrolled_memset]
    32.1% | engine/clipper.c
          9/28 clean, 19 remaining
            - engine_clipper.c_interpolateVertexRightClip_FUN_00431530 (50 lines) [carry_arith_idiom, concat_reconstruction]
