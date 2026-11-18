@@ -17,7 +17,7 @@
 # generated headers. Those are exactly the ones this fixes.
 #
 # Report-first; --apply mutates + saves (via DomainFile.save, the only thing that
-# persists headless mutations).
+# persists headless mutations), after a .gar snapshot unless --no-snapshot.
 #
 # Usage (PyGhidra headless):
 #   python normalize_strings.py <project_dir> <project_name> [program_name]
@@ -32,13 +32,13 @@
 
 import os
 import re
+import subprocess
 import sys
 import argparse
+import traceback
 from collections import Counter
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
 
 # Ghidra's auto-generated string labels: s_<text>_<addr> for ASCII, u_<text>_<addr>
 # for unicode. Only these are throwaway and safe to replace. Every other name --
@@ -77,9 +77,7 @@ def scan_c_string_length(memory, addr):
             if memory.getByte(addr.add(i)) == 0:
                 return i + 1
     except MemoryAccessException:
-        return None
-    except Exception:
-        return None
+        pass
     return None
 
 
@@ -163,16 +161,16 @@ def plan(program, force=False, include_code=False):
             row["current"] = protected[0]
             continue
 
-        row["relabel"] = label not in names
+        # The label is right only when it is the one name here: a stale auto label
+        # left beside it would still be what the export reads as primary.
+        row["relabel"] = names != [label]
 
         if not is_unicode:
             length = scan_c_string_length(memory, addr)
             if length is None:
                 # No terminator in range -- do not touch the data type, but the
                 # label is still safe to fix.
-                row["action"] = RELABEL if row["relabel"] else OK
-                if not row["relabel"]:
-                    row["action"] = SKIP_UNTERMINATED
+                row["action"] = RELABEL if row["relabel"] else SKIP_UNTERMINATED
                 warnings.append("%s: no NUL terminator within %d bytes (label only)"
                                 % (addr, MAX_STRING_BYTES))
                 continue
@@ -191,7 +189,7 @@ def plan(program, force=False, include_code=False):
         elif row["relabel"]:
             row["action"] = RELABEL
         elif is_unicode:
-            row["action"] = SKIP_UNICODE if dt_name != "TerminatedCString" else OK
+            row["action"] = SKIP_UNICODE
         else:
             row["action"] = OK
 
@@ -199,7 +197,10 @@ def plan(program, force=False, include_code=False):
 
 
 def apply_rows(program, rows, progress_every=500):
-    """Apply every mutating row. Returns (retyped, relabeled)."""
+    """Apply every mutating row. Returns (retyped, relabeled).
+
+    One transaction for the lot: an error rolls every row back and is raised.
+    """
     from ghidra.program.model.data import DataUtilities, TerminatedStringDataType
     from ghidra.program.model.symbol import SourceType
     from ghidra_annotations.util.namespace import get_or_create_namespace
@@ -214,7 +215,7 @@ def apply_rows(program, rows, progress_every=500):
     done = 0
 
     tx = program.startTransaction("Normalize strings")
-    ok = True
+    ok = False
     try:
         for r in todo:
             addr = r["_addr"]
@@ -227,29 +228,26 @@ def apply_rows(program, rows, progress_every=500):
                 retyped += 1
 
             if r["relabel"]:
+                kept = False
                 for sym in list(symbol_table.getSymbols(addr)):
-                    if str(sym.getName()) != r["label"]:
-                        try:
-                            symbol_table.removeSymbolSpecial(sym)
-                        except Exception:
-                            pass
-                symbol_table.createLabel(addr, r["label"], namespace,
-                                         SourceType.USER_DEFINED)
+                    if str(sym.getName()) == r["label"]:
+                        kept = True
+                    else:
+                        symbol_table.removeSymbolSpecial(sym)
+                if not kept:
+                    symbol_table.createLabel(addr, r["label"], namespace,
+                                             SourceType.USER_DEFINED)
                 relabeled += 1
 
             done += 1
             if progress_every and done % progress_every == 0:
                 print("  ... %d/%d" % (done, len(todo)))
                 sys.stdout.flush()
-    except Exception as e:
-        ok = False
-        print("ERROR during apply: %s" % e)
-        import traceback
-        traceback.print_exc()
+        ok = True
     finally:
         program.endTransaction(tx, ok)
 
-    return (retyped, relabeled) if ok else (0, 0)
+    return retyped, relabeled
 
 
 def write_report(out_path, program_name, rows, warnings, applied, sample=25):
@@ -285,7 +283,42 @@ def write_report(out_path, program_name, rows, warnings, applied, sample=25):
     return counts
 
 
-def main():
+def run(program, args, out_path):
+    """Report, and with --apply normalize and save."""
+    print("Planning...")
+    rows, warnings = plan(program, force=args.force, include_code=args.include_code)
+
+    counts = write_report(out_path, args.program_name, rows, warnings, args.apply)
+    print("\n=== plan (%d defined strings) ===" % len(rows))
+    for action in ACTION_ORDER:
+        if counts[action]:
+            print("  %-16s %d" % (action, counts[action]))
+    if warnings:
+        print("  %-16s %d" % ("warnings", len(warnings)))
+    print("Report written to: %s" % out_path)
+
+    n_todo = sum(counts[a] for a in MUTATING)
+    if not args.apply:
+        print("\n[dry-run] re-run with --apply to execute.")
+    elif not n_todo:
+        print("\nNothing to normalize.")
+    else:
+        from ghidra.util.task import ConsoleTaskMonitor
+        print("\n[apply] normalizing %d string(s)..." % n_todo)
+        retyped, relabeled = apply_rows(program, rows)
+        print("Retyped %d, relabeled %d. Saving program database..." % (retyped, relabeled))
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("Saved.")
+
+
+def snapshot(args):
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-normalize-strings"]
+    print("Snapshot: %s" % " ".join(cmd))
+    return subprocess.call(cmd) == 0
+
+
+def main(argv=None):
     p = argparse.ArgumentParser(
         description="Normalize defined strings to TerminatedCString with "
                     "C-compatible labels (batch Shift+L).")
@@ -300,53 +333,32 @@ def main():
                    help="Also normalize string data that sits in an executable block "
                         "(default: skipped as mis-analysis)")
     p.add_argument("--out", default=None)
-    args = p.parse_args()
+    p.add_argument("--no-snapshot", action="store_true", help="--apply without a .gar snapshot first")
+    args = p.parse_args(argv)
 
     project_path = os.path.abspath(args.project_path)
     out_path = args.out or ("%s_string_normalization.txt" % args.program_name)
+
+    if args.apply and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
+        os._exit(1)
 
     import pyghidra
     print("Starting PyGhidra...")
     pyghidra.start()
     print("Opening %s/%s :: %s" % (project_path, args.project_name, args.program_name))
 
-    code = 0
+    code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as program:
-            print("Planning...")
-            rows, warnings = plan(program, force=args.force,
-                                  include_code=args.include_code)
-
-            counts = write_report(out_path, args.program_name, rows, warnings, args.apply)
-            print("\n=== plan (%d defined strings) ===" % len(rows))
-            for action in ACTION_ORDER:
-                if counts[action]:
-                    print("  %-16s %d" % (action, counts[action]))
-            if warnings:
-                print("  %-16s %d" % ("warnings", len(warnings)))
-            print("Report written to: %s" % out_path)
-
-            n_todo = sum(counts[a] for a in MUTATING)
-            if args.apply and n_todo:
-                print("\n[apply] normalizing %d string(s)..." % n_todo)
-                retyped, relabeled = apply_rows(program, rows)
-                if retyped or relabeled:
-                    from ghidra.util.task import ConsoleTaskMonitor
-                    print("Retyped %d, relabeled %d. Saving program database..."
-                          % (retyped, relabeled))
-                    program.getDomainFile().save(ConsoleTaskMonitor())
-                    print("Saved.")
-            elif args.apply:
-                print("\nNothing to normalize.")
-            else:
-                print("\n[dry-run] re-run with --apply to execute.")
-        project.close()
+            run(program, args, out_path)
+        code = 0
     except Exception as e:
-        print("ERROR: %s" % str(e))
-        import traceback
+        print("ERROR: %s" % e)
         traceback.print_exc()
-        code = 1
+    finally:
+        project.close()
 
     # os._exit() skips stdio buffer flushing; without this, redirected/piped
     # output is lost. Flush explicitly before the hard exit (the JVM can hang

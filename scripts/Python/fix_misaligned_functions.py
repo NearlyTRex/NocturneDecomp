@@ -68,13 +68,17 @@ Usage:
 """
 
 import argparse
+import bisect
 import os
 import re
+import subprocess
 import sys
-from collections import Counter, defaultdict
+import traceback
+from collections import Counter
+
+import delete_function as df
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(os.path.dirname(THIS_DIR))
 
 # First instructions that cannot begin a function. Each entry is (regex, why).
 # Derived empirically from nocturne.exe: every one of these was verified to sit
@@ -110,7 +114,7 @@ def instr_text(ins):
     return re.sub(r'\s+', ' ', str(ins)).strip()
 
 
-def tu_of(program, func):
+def tu_of(func):
     """Translation unit from the function's name prefix, for --tu filtering."""
     m = re.match(r'^([A-Za-z0-9]+)_([A-Za-z0-9_]+\.(?:cpp|c|h))_', func.getName())
     return f"{m.group(1)}/{m.group(2)}" if m else "?"
@@ -133,16 +137,21 @@ def incoming(program, entry):
 
 def terminal_target(program, func):
     """Address the block's last instruction unconditionally jumps to, if any."""
-    lst = program.getListing()
     last = None
-    for ins in lst.getInstructions(func.getBody(), True):
+    for ins in program.getListing().getInstructions(func.getBody(), True):
         last = ins
-    if last is None:
-        return None
-    if not str(last.getMnemonicString()).upper().startswith("JMP"):
+    if last is None or not str(last.getMnemonicString()).upper().startswith("JMP"):
         return None
     flows = last.getFlows()
     return flows[0] if flows else None
+
+
+def computed_jumps(program, func):
+    """The addresses each computed (jump-table) jump in the function dispatches to."""
+    for ins in program.getListing().getInstructions(func.getBody(), True):
+        ft = ins.getFlowType()
+        if ft.isJump() and ft.isComputed():
+            yield from ins.getFlows()
 
 
 MAX_ADOPT_DISTANCE = 0x2000
@@ -200,14 +209,11 @@ def derive_true_entry(program, func, anchors):
             return None, (f"{true_addr} is labelled {nm} -- this is a case body "
                           f"of another switch, not a function start")
     hi = func.getBody().getMaxAddress().getOffset()
-    for ins in program.getListing().getInstructions(prev.getBody(), True):
-        ft = ins.getFlowType()
-        if ft.isJump() and ft.isComputed():
-            for t in ins.getFlows():
-                if end < t.getOffset() <= hi:
-                    return None, (f"{prev.getName()} dispatches a switch to "
-                                  f"{t} inside this block -- it is that "
-                                  f"function's case body, not a function")
+    for t in computed_jumps(program, prev):
+        if end < t.getOffset() <= hi:
+            return None, (f"{prev.getName()} dispatches a switch to "
+                          f"{t} inside this block -- it is that "
+                          f"function's case body, not a function")
 
     return true_addr, (f"{prev.getName()} ends at {end:08x}; true entry "
                        f"{end + 1:08x} (+{shift} byte phase shift)")
@@ -248,16 +254,9 @@ def derive_padding_entry(program, func):
 def computed_jump_targets(program, func, cache):
     """Offsets a function's computed (jump-table) jumps dispatch to."""
     key = func.getEntryPoint().getOffset()
-    if key in cache:
-        return cache[key]
-    out = set()
-    for ins in program.getListing().getInstructions(func.getBody(), True):
-        ft = ins.getFlowType()
-        if ft.isJump() and ft.isComputed():
-            for t in ins.getFlows():
-                out.add(t.getOffset())
-    cache[key] = out
-    return out
+    if key not in cache:
+        cache[key] = {t.getOffset() for t in computed_jumps(program, func)}
+    return cache[key]
 
 
 def find_owner(program, func, suspects, anchors, jt_cache):
@@ -319,10 +318,11 @@ def find_owner(program, func, suspects, anchors, jt_cache):
 
 
 def preceding_anchor(anchors, addr):
-    """Greatest non-suspect function whose entry precedes addr."""
-    import bisect
-    off = addr.getOffset()
-    i = bisect.bisect_left([a[0] for a in anchors], off)
+    """Greatest non-suspect function whose entry precedes addr.
+
+    anchors is [(entry offset, function)] sorted; (offset,) sorts before every
+    pair at that offset, so the search never compares two functions."""
+    i = bisect.bisect_left(anchors, (addr.getOffset(),))
     return anchors[i - 1][1] if i > 0 else None
 
 
@@ -345,11 +345,11 @@ def scan(program, args):
         why = impossible_reason(instr_text(ins))
         if why is None:
             continue
-        if args.tu and tu_of(program, func) != args.tu:
+        tu = tu_of(func)
+        if args.tu and tu != args.tu:
             continue
         suspects[entry] = {"func": func, "name": name, "entry": entry,
-                           "first": instr_text(ins), "why": why,
-                           "tu": tu_of(program, func)}
+                           "first": instr_text(ins), "why": why, "tu": tu}
 
     # Pass 2: guards and owner resolution. Owner lookup must know the whole
     # suspect set, so that one bogus block never adopts another.
@@ -443,37 +443,11 @@ def report(rows, args):
 
 
 def snapshot(args):
-    """Take a .gar before mutating. Reuses snapshot_project.py, which needs no JVM."""
-    sys.path.insert(0, THIS_DIR)
-    import snapshot_project as sp
-    name = args.project_name
-    gpr = os.path.join(args.project_dir, name + ".gpr")
-    rep = os.path.join(args.project_dir, name + ".rep")
-    if not (os.path.exists(gpr) and os.path.isdir(rep)):
-        sys.exit(f"ERROR: cannot snapshot -- {gpr} or {rep} missing")
-    # choose_out_path does not default the date itself -- passing None names the
-    # archive "<name>_None_...", which sorts wrong and hides when it was taken.
-    import datetime
-    today = datetime.date.today().strftime("%Y_%m_%d")
-    out = sp.choose_out_path(args.project_dir, name, today, "pre-misaligned-fix")
-    entries = sp.collect_entries(gpr, rep, name)
-    comment = "Ghidra archive file for %s project." % name
-    sp.write_archive(out, entries, comment)
-    sp.verify_archive(out, entries, comment)
-    print(f"Snapshot written: {out}")
-    return out
-
-
-def _disassemble(program, addr):
-    from ghidra.app.cmd.disassemble import DisassembleCommand
-    from ghidra.util.task import ConsoleTaskMonitor
-    return DisassembleCommand(addr, None, True).applyTo(program, ConsoleTaskMonitor())
-
-
-def _create_function(program, addr):
-    from ghidra.app.cmd.function import CreateFunctionCmd
-    from ghidra.util.task import ConsoleTaskMonitor
-    return CreateFunctionCmd(addr).applyTo(program, ConsoleTaskMonitor())
+    """Take a .gar before mutating; True when it was written."""
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           args.project_dir, args.project_name, "--tag", "pre-misaligned-fix"]
+    print(f"Snapshot: {' '.join(cmd)}")
+    return subprocess.call(cmd) == 0
 
 
 def apply_rows(program, rows):
@@ -491,9 +465,9 @@ def apply_rows(program, rows):
     show up there as FLOW_UNDEFINED (HIGH) -- flowing into undefined bytes --
     which is precisely the input that tool is built for.
     """
+    from ghidra.app.cmd.disassemble import DisassembleCommand
     from ghidra.app.cmd.function import CreateFunctionCmd
     from ghidra.util.task import ConsoleTaskMonitor
-    import delete_function as df
 
     fm = program.getFunctionManager()
     lst = program.getListing()
@@ -507,8 +481,7 @@ def apply_rows(program, rows):
     for r in [x for x in rows if x["action"] == "REBASE"]:
         name, entry, true_entry = r["name"], r["entry"], r["true_entry"]
         try:
-            body = r["func"].getBody()
-            hi = body.getMaxAddress()
+            hi = r["func"].getBody().getMaxAddress()
             if not fm.removeFunction(entry):
                 failed.append((name, "removeFunction returned False"))
                 continue
@@ -519,8 +492,12 @@ def apply_rows(program, rows):
             # decoded out of the padding itself, or they stay as fake code.
             lo = true_entry if true_entry.getOffset() < entry.getOffset() else entry
             lst.clearCodeUnits(lo, hi, False)
-            _disassemble(program, true_entry)
-            _create_function(program, true_entry)
+            DisassembleCommand(true_entry, None, True).applyTo(program, monitor)
+            # The old function is gone by now: a refused create loses it, so the
+            # pass must not be kept
+            if not CreateFunctionCmd(true_entry).applyTo(program, monitor):
+                failed.append((name, f"rebase: no function could be created at {true_entry}"))
+                continue
             rebased += 1
         except Exception as exc:
             failed.append((name, f"rebase: {exc}"))
@@ -565,26 +542,33 @@ def redisassemble_jump_targets(program, owners, failed):
     This is why the targets must be re-read AFTER the clear: they are the true
     case addresses, which is exactly what the mis-declared entries were NOT.
     """
+    for owner in owners:
+        try:
+            redisassemble(program, undefined_case_targets(program, owner))
+        except Exception as exc:
+            failed.append((owner.getName(), f"redisassemble: {exc}"))
+
+
+def undefined_case_targets(program, func):
+    """The function's jump-table targets that are not instructions, in address
+    order. An EXTERNAL target is an import, not code in this image."""
+    lst = program.getListing()
+    targets = {t for t in computed_jumps(program, func)
+               if t.isMemoryAddress() and lst.getInstructionAt(t) is None}
+    return sorted(targets, key=lambda a: a.getOffset())
+
+
+def redisassemble(program, targets):
+    """Decode each target from its own boundary, unless following the flow from
+    an earlier one already has."""
     from ghidra.app.cmd.disassemble import DisassembleCommand
     from ghidra.util.task import ConsoleTaskMonitor
     monitor = ConsoleTaskMonitor()
     lst = program.getListing()
-    for owner in owners:
-        try:
-            targets = set()
-            for ins in lst.getInstructions(owner.getBody(), True):
-                ft = ins.getFlowType()
-                if ft.isJump() and ft.isComputed():
-                    for t in ins.getFlows():
-                        targets.add(t)
-            for t in sorted(targets, key=lambda a: a.getOffset()):
-                if t.isExternalAddress() or not t.isMemoryAddress():
-                    continue
-                if lst.getInstructionAt(t) is None:
-                    lst.clearCodeUnits(t, t, False)
-                    DisassembleCommand(t, None, True).applyTo(program, monitor)
-        except Exception as exc:
-            failed.append((owner.getName(), f"redisassemble: {exc}"))
+    for t in targets:
+        if lst.getInstructionAt(t) is None:
+            lst.clearCodeUnits(t, t, False)
+            DisassembleCommand(t, None, True).applyTo(program, monitor)
 
 
 def repair_jumptables(program, args):
@@ -598,27 +582,14 @@ def repair_jumptables(program, args):
     from ghidra.app.cmd.function import CreateFunctionCmd
     from ghidra.util.task import ConsoleTaskMonitor
 
-    fm = program.getFunctionManager()
-    lst = program.getListing()
     monitor = ConsoleTaskMonitor()
-
     broken = []
-    for func in fm.getFunctions(True):
+    for func in program.getFunctionManager().getFunctions(True):
         if func.isThunk() or func.isExternal():
             continue
-        bad = []
-        for ins in lst.getInstructions(func.getBody(), True):
-            ft = ins.getFlowType()
-            if ft.isJump() and ft.isComputed():
-                for t in ins.getFlows():
-                    # EXTERNAL:xxxx targets are import thunks, not code in this
-                    # image -- there is nothing local to disassemble.
-                    if t.isExternalAddress() or not t.isMemoryAddress():
-                        continue
-                    if lst.getInstructionAt(t) is None:
-                        bad.append(t)
+        bad = undefined_case_targets(program, func)
         if bad:
-            broken.append((func, sorted(set(bad), key=lambda a: a.getOffset())))
+            broken.append((func, bad))
 
     print("=" * 78)
     print(f"JUMP-TABLE CASE BODIES THAT ARE NOT CODE  ({args.program})")
@@ -637,25 +608,90 @@ def repair_jumptables(program, args):
     try:
         for func, bad in broken:
             try:
-                for t in bad:
-                    lst.clearCodeUnits(t, t, False)
-                    from ghidra.app.cmd.disassemble import DisassembleCommand
-                    DisassembleCommand(t, None, True).applyTo(program, monitor)
+                redisassemble(program, bad)
                 CreateFunctionCmd.fixupFunctionBody(program, func, monitor)
                 fixed += 1
             except Exception as exc:
                 failed.append((func.getName(), str(exc)))
     finally:
-        program.endTransaction(tx, True)
-    program.getDomainFile().save(ConsoleTaskMonitor())
+        # A failure can leave a case cleared but not decoded: keep none of it
+        program.endTransaction(tx, not failed)
     print(f"\nrepaired {fixed} function(s); failed {len(failed)}")
     for n, e in failed:
         print(f"  FAILED {n}: {e}")
+    if failed:
+        print("Rolled back; nothing saved.")
+        return 1
+    program.getDomainFile().save(monitor)
     print("Saved.")
+    return 0
+
+
+def apply_passes(program, rows, args):
+    """Fix, rescan and fix again until nothing is actionable. A pass that fails
+    is rolled back and ends the run; the passes before it stand. Returns the
+    exit code."""
+    from ghidra.util.task import ConsoleTaskMonitor
+
+    # Iterate: rebasing a switch owner turns it into a real function, which lets
+    # the NEXT pass resolve the case bodies that were ORPHAN only because their
+    # owner was itself a suspect. One pass can never fix a chain; convergence is
+    # the whole point.
+    tot_reb = tot_rem = kept = 0
+    failed = []
+    for npass in range(1, args.max_passes + 1):
+        if npass > 1:
+            rows = scan(program, args)
+            todo = [r for r in rows if r["action"] in ("REBASE", "REMOVE")]
+            if not todo:
+                print(f"\n=== pass {npass}: converged, nothing left ===")
+                break
+            print(f"\n=== pass {npass}: {len(todo)} newly actionable ===")
+            for r in todo[:args.show]:
+                print(f"    {r['action']:7} {r['entry']}  {r['name']}")
+        tx = program.startTransaction(f"misaligned entries pass {npass}")
+        fail = None                     # stays None if apply_rows raises: roll back too
+        try:
+            reb, rem, cle, own, fail = apply_rows(program, rows)
+        finally:
+            program.endTransaction(tx, fail == [])
+        if fail:
+            failed = fail
+            print(f"  pass {npass}: failed {len(fail)}; rolled back, not iterating further")
+            break
+        kept += 1
+        tot_reb += reb
+        tot_rem += rem
+        print(f"  pass {npass}: rebased {reb}, removed {rem}, "
+              f"cleared {cle}, owners re-fixed {own}")
+    print(f"\nTOTAL rebased {tot_reb}, removed {tot_rem}, failed {len(failed)}")
+    for n, e in failed:
+        print(f"  FAILED {n}: {e}")
+    if kept:
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("Saved.")
+        print("\nQA gate: validate_function_ranges.py, "
+              "fix_function_boundaries.py, then re-export.")
     return 1 if failed else 0
 
 
-def main():
+def run(program, args):
+    """Report, and with --apply fix; or --repair-jumptables. Returns the exit code."""
+    if args.repair_jumptables:
+        return repair_jumptables(program, args)
+    rows = scan(program, args)
+    report(rows, args)
+    todo = [r for r in rows if r["action"] in ("REBASE", "REMOVE")]
+    if not args.apply:
+        print(f"\n[dry-run] re-run with --apply to fix {len(todo)} entr(ies)")
+        return 0
+    if not todo:
+        print("\nNothing to apply.")
+        return 0
+    return apply_passes(program, rows, args)
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("project_dir")
@@ -676,79 +712,26 @@ def main():
                          "are undefined bytes, re-disassemble them and re-absorb. "
                          "Heals a program where the cases were cleared but never "
                          "re-decoded. Implies --apply semantics; snapshots first.")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
     args.project_dir = os.path.abspath(args.project_dir)
 
-    if (args.apply or args.repair_jumptables) and not args.no_snapshot:
-        snapshot(args)
+    if (args.apply or args.repair_jumptables) and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
+        os._exit(1)
 
     import pyghidra
     pyghidra.start()
-    from ghidra.util.task import ConsoleTaskMonitor
 
     project = pyghidra.open_project(args.project_dir, args.project_name)
-    code = 0
+    code = 1
     try:
         with pyghidra.program_context(project, "/" + args.program) as program:
-            if args.repair_jumptables:
-                code = repair_jumptables(program, args)
-                raise SystemExit(code)
-            rows = scan(program, args)
-            report(rows, args)
-
-            todo = [r for r in rows if r["action"] in ("REBASE", "REMOVE")]
-            if not args.apply:
-                print(f"\n[dry-run] re-run with --apply to fix {len(todo)} entr(ies)")
-            elif not todo:
-                print("\nNothing to apply.")
-            else:
-                # Iterate: rebasing a switch owner turns it into a real function,
-                # which lets the NEXT pass resolve the case bodies that were
-                # ORPHAN only because their owner was itself a suspect. One pass
-                # can never fix a chain; convergence is the whole point.
-                tot_reb = tot_rem = 0
-                failed = []
-                for npass in range(1, args.max_passes + 1):
-                    if npass > 1:
-                        rows = scan(program, args)
-                        todo = [r for r in rows if r["action"] in ("REBASE", "REMOVE")]
-                        if not todo:
-                            print(f"\n=== pass {npass}: converged, nothing left ===")
-                            break
-                        print(f"\n=== pass {npass}: {len(todo)} newly actionable ===")
-                        for r in todo[:args.show]:
-                            print(f"    {r['action']:7} {r['entry']}  {r['name']}")
-                    tx = program.startTransaction(f"misaligned entries pass {npass}")
-                    try:
-                        reb, rem, cle, own, fail = apply_rows(program, rows)
-                    finally:
-                        program.endTransaction(tx, True)
-                    tot_reb += reb
-                    tot_rem += rem
-                    failed += fail
-                    print(f"  pass {npass}: rebased {reb}, removed {rem}, "
-                          f"cleared {cle}, owners re-fixed {own}, failed {len(fail)}")
-                    if fail:
-                        print("  stopping: a pass failed, not iterating further")
-                        break
-                print(f"\nTOTAL rebased {tot_reb}, removed {tot_rem}, failed {len(failed)}")
-                for n, e in failed:
-                    print(f"  FAILED {n}: {e}")
-                program.getDomainFile().save(ConsoleTaskMonitor())
-                print("Saved.")
-                print("\nQA gate: validate_function_ranges.py, "
-                      "fix_function_boundaries.py, then re-export.")
-                code = 1 if failed else 0
+            code = run(program, args)
     except Exception as exc:
         print(f"ERROR: {exc}")
-        import traceback
         traceback.print_exc()
-        code = 1
     finally:
-        try:
-            project.close()
-        except Exception:
-            pass
+        project.close()
 
     sys.stdout.flush()
     sys.stderr.flush()

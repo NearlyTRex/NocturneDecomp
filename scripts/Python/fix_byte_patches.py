@@ -27,14 +27,24 @@ Usage:
 
     # List available groups
     python3 fix_byte_patches.py <project_dir> <project_name> <program_name> --list-groups
+
+--apply is all or nothing: if any patch's original bytes do not match, the
+transaction is rolled back and the tool exits 1, so a cave is never left
+half-wired (a redirect JMP applied, its cave not). It takes a .gar snapshot
+first unless --no-snapshot.
 """
 
-import os
-import sys
-import json
 import argparse
 import difflib
+import json
+import os
 import re
+import struct
+import subprocess
+import sys
+import traceback
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def group_applies_to(group, program_name):
@@ -73,9 +83,9 @@ def load_patches(json_path, group_filter=None, program_name=None):
                 'patched': bytes.fromhex(patch['patched']),
                 'description': patch['description'],
             }
-            assert len(p['original']) == len(p['patched']), \
-                "Patch '%s': original and patched must be same length (%d vs %d)" % (
-                    p['name'], len(p['original']), len(p['patched']))
+            if len(p['original']) != len(p['patched']):
+                raise ValueError("Patch '%s': original and patched must be same length (%d vs %d)" % (
+                    p['name'], len(p['original']), len(p['patched'])))
             patches.append(p)
     return patches
 
@@ -180,12 +190,11 @@ def clear_and_disassemble(program, addr_int, length):
     cmd.applyTo(program)
 
 
-def _diagnose_mismatch(addr, original, patched, current):
+def _diagnose_mismatch(addr, original, current):
     """Produce a human-readable diagnosis for a byte mismatch."""
     # Check if the site has a JMP (E9) at the start — likely a previous cave patch
     if len(current) >= 5 and current[0] == 0xe9:
-        import struct as _struct
-        jmp_rel = _struct.unpack_from('<i', bytes(current), 1)[0]
+        jmp_rel = struct.unpack_from('<i', current, 1)[0]
         jmp_target = addr + 5 + jmp_rel
         return ("already patched (different cave) — site has JMP to 0x%x" % jmp_target)
 
@@ -201,14 +210,10 @@ def _diagnose_mismatch(addr, original, patched, current):
                 "another patch or function already uses this space" % (
                     non_cc, addr + non_cc))
 
-    # Check if it's partially patched (starts with original but diverges)
-    match_len = 0
-    for o, c in zip(original, current):
-        if o == c:
-            match_len += 1
-        else:
-            break
-    if match_len > 0 and match_len < len(original):
+    # Check if it's partially patched (starts with original but diverges);
+    # current differs from original somewhere, so a first difference exists
+    match_len = next(i for i, (o, c) in enumerate(zip(original, current)) if o != c)
+    if match_len > 0:
         return ("partial mismatch at 0x%x — first %d bytes match, "
                 "diverges at offset %d" % (addr, match_len, match_len))
 
@@ -230,14 +235,14 @@ def apply_patch(program, patch, dry_run=True):
     if current == patched:
         return True, "already patched"
     if current != original:
-        return False, _diagnose_mismatch(addr, original, patched, current)
+        return False, _diagnose_mismatch(addr, original, current)
 
     if not dry_run:
+        # clear_and_disassemble clears the code units again before re-decoding;
+        # the bytes must be free of them before they are written, too
         space = program.getAddressFactory().getDefaultAddressSpace()
         ghidra_addr = space.getAddress(addr)
-        end_addr = ghidra_addr.add(len(patched) - 1)
-        program.getListing().clearCodeUnits(ghidra_addr, end_addr, False)
-
+        program.getListing().clearCodeUnits(ghidra_addr, ghidra_addr.add(len(patched) - 1), False)
         write_bytes(program, addr, patched)
         clear_and_disassemble(program, addr, len(patched))
 
@@ -285,8 +290,12 @@ def count_artifacts(code):
     return artifacts
 
 
-def run_test_mode(prog, patches, clear_thunks=None):
-    """Test mode: apply ALL patches in one transaction, then decompile each affected function."""
+def run_test_mode(prog, patches, clear_thunks=None, body_extensions=None):
+    """Test mode: apply ALL patches in one transaction, then decompile each affected function.
+
+    The body extensions go in too, or the decompiler would not follow a patched
+    site's JMP into its cave and the AFTER code would leave the cave out.
+    """
     from collections import OrderedDict
     fm = prog.getFunctionManager()
     space = prog.getAddressFactory().getDefaultAddressSpace()
@@ -338,6 +347,9 @@ def run_test_mode(prog, patches, clear_thunks=None):
             if not ok:
                 print("  SKIP %s: %s" % (p['name'], msg))
                 all_ok = False
+
+        if body_extensions:
+            apply_function_body_extensions(prog, body_extensions)
 
         # Clear thunk status on patched functions
         if clear_thunks:
@@ -474,47 +486,65 @@ def apply_function_body_extensions(prog, extensions):
             ext['cave_start'] + ext['cave_size'] - 1, ext['cave_size']))
 
 
+def check_or_patch(prog, patches, dry_run):
+    """Verify (and unless dry_run, write) each patch. -> number that did not match."""
+    failed = 0
+    current_group = None
+    for patch in patches:
+        if patch['group'] != current_group:
+            current_group = patch['group']
+            print("\n[%s]" % current_group)
+        print("  %s (0x%x):" % (patch['name'], patch['address']), end=" ")
+        ok, msg = apply_patch(prog, patch, dry_run=dry_run)
+        print(msg)
+        if not ok:
+            failed += 1
+    return failed
+
+
 def run_apply_or_dry(prog, patches, dry_run, cave_comments=None,
                      body_extensions=None, clear_thunks=None):
-    """Apply or dry-run all patches."""
-    if not dry_run:
-        tx_id = prog.startTransaction("Apply byte patches")
-
-    try:
-        current_group = None
-        for patch in patches:
-            if patch['group'] != current_group:
-                current_group = patch['group']
-                print("\n[%s]" % current_group)
-            print("  %s (0x%x):" % (patch['name'], patch['address']), end=" ")
-            ok, msg = apply_patch(prog, patch, dry_run=dry_run)
-            print(msg)
-            if not ok:
-                print("    WARNING: %s" % msg)
-
-        # Apply cave comment updates
-        if not dry_run and cave_comments:
-            apply_cave_comments(prog, cave_comments)
-
-        # Extend function bodies to include cave ranges
-        if not dry_run and body_extensions:
-            apply_function_body_extensions(prog, body_extensions)
-
-        # Clear thunk status on patched functions
-        if not dry_run and clear_thunks:
-            apply_clear_thunks(prog, clear_thunks)
-    finally:
-        if not dry_run:
-            prog.endTransaction(tx_id, True)
-
-    if not dry_run:
-        prog.save("Applied byte patches", None)
-        print("\nChanges saved.")
-    else:
+    """Apply or dry-run all patches. -> exit code: 1 when any patch did not match."""
+    if dry_run:
+        failed = check_or_patch(prog, patches, dry_run=True)
         print("\n(Dry run - no changes made. Use --apply to patch.)")
+        if failed:
+            print("%d patch(es) do not match the program." % failed)
+        return 1 if failed else 0
+
+    tx_id = prog.startTransaction("Apply byte patches")
+    failed = 1
+    try:
+        failed = check_or_patch(prog, patches, dry_run=False)
+        if not failed:
+            if cave_comments:
+                apply_cave_comments(prog, cave_comments)
+            # Extend function bodies to include cave ranges
+            if body_extensions:
+                apply_function_body_extensions(prog, body_extensions)
+            # Clear thunk status on patched functions
+            if clear_thunks:
+                apply_clear_thunks(prog, clear_thunks)
+    finally:
+        prog.endTransaction(tx_id, not failed)
+
+    if failed:
+        print("\n%d patch(es) do not match the program - rolled back, nothing saved." % failed)
+        return 1
+    from ghidra.util.task import ConsoleTaskMonitor
+    prog.getDomainFile().save(ConsoleTaskMonitor())
+    print("\nChanges saved.")
+    return 0
 
 
-def main():
+def snapshot(args):
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-byte-patches"]
+    print("Snapshot: %s" % " ".join(cmd))
+    return subprocess.call(cmd) == 0
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser(
         description="Generic byte patcher for Ghidra programs",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -532,15 +562,12 @@ def main():
                         help="List available patch groups and exit")
     parser.add_argument("--patches-file", type=str, default=None,
                         help="Path to byte_patches.json (default: alongside this script)")
+    parser.add_argument("--no-snapshot", action="store_true",
+                        help="--apply without a .gar snapshot first")
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
-    # Locate patches JSON
-    if args.patches_file:
-        json_path = args.patches_file
-    else:
-        json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'byte_patches.json')
-
+    json_path = args.patches_file or os.path.join(THIS_DIR, 'byte_patches.json')
     if not os.path.exists(json_path):
         print("ERROR: Patches file not found: %s" % json_path)
         sys.exit(1)
@@ -556,12 +583,12 @@ def main():
         print("No patches found%s." % (" for group '%s'" % args.group if args.group else ""))
         sys.exit(1)
 
-    try:
-        import pyghidra
-    except ImportError:
-        print("ERROR: pyghidra is not installed.")
+    apply = args.apply and not args.test
+    if apply and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
         sys.exit(1)
 
+    import pyghidra
     print("Starting PyGhidra...")
     pyghidra.start()
 
@@ -583,24 +610,27 @@ def main():
     clear_thunks = load_clear_thunks(json_path, group_filter=args.group,
                                      program_name=args.program_name)
 
-    exit_code = 0
+    exit_code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as prog:
             if args.test:
-                run_test_mode(prog, patches, clear_thunks=clear_thunks)
+                run_test_mode(prog, patches, clear_thunks=clear_thunks,
+                              body_extensions=body_extensions)
+                exit_code = 0
             else:
-                run_apply_or_dry(prog, patches, dry_run=not args.apply,
-                                 cave_comments=cave_comments,
-                                 body_extensions=body_extensions,
-                                 clear_thunks=clear_thunks)
-        project.close()
+                exit_code = run_apply_or_dry(prog, patches, dry_run=not apply,
+                                             cave_comments=cave_comments,
+                                             body_extensions=body_extensions,
+                                             clear_thunks=clear_thunks)
     except Exception as e:
-        print("ERROR: %s" % str(e))
-        import traceback
+        print("ERROR: %s" % e)
         traceback.print_exc()
-        exit_code = 1
+    finally:
+        project.close()
 
+    sys.stdout.flush()
+    sys.stderr.flush()
     os._exit(exit_code)
 
 

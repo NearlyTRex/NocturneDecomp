@@ -27,7 +27,7 @@ from ghidra_annotations.annotations.pseudocode.decompiler import (
 )
 from ghidra_annotations.annotations.pseudocode.assembly import build_global_symbols_map
 from ghidra_annotations.annotations.pseudocode.globals import (
-    extract_globals_and_constants, generate_constants_file,
+    extract_globals_and_constants, generate_constants_file, constant_range_dependencies,
     generate_globals_file, generate_globals_header_file,
     split_data_by_address_range, generate_globals_cpp_file,
     build_write_xref_addresses, generate_prototypes_header_file,
@@ -1374,6 +1374,7 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
         main_constants_content.append("// CONSTANTS - Master Include")
         main_constants_content.append("// =============================================================================")
         main_constants_content.append("")
+        const_range_deps = constant_range_dependencies(const_ranges)
         for range_key in sorted(const_ranges.keys()):
             range_filename = "constants_%s.h" % range_key.replace("0x", "")
             main_constants_content.append("#include \"constants/%s\"" % range_filename)
@@ -1387,7 +1388,7 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
 
             # Generate individual range file in constants/
             range_content = generate_constants_file(
-                const_ranges[range_key], type_to_path_map, needed_proto_ranges)
+                const_ranges[range_key], type_to_path_map, needed_proto_ranges, const_range_deps[range_key])
             range_path = os.path.join(constants_dir, range_filename)
             write_header_file(range_path, range_content)
             log_info("Created constants range file: %s with %d constants" % (range_filename, len(const_ranges[range_key])))

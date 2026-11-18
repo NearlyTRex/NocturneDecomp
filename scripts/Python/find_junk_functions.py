@@ -37,19 +37,20 @@ Usage:
 import argparse
 import json
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 
+from capstone import Cs, CS_ARCH_X86, CS_MODE_32
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import sibling_match as sm
-
-try:
-    from capstone import Cs, CS_ARCH_X86, CS_MODE_32
-except ImportError:
-    sys.exit("capstone is required: pip install capstone")
+import sibling_match as sm  # noqa: E402
 
 _MD = Cs(CS_ARCH_X86, CS_MODE_32)
+
+# Any hex number in an operand, bare or inside a memory reference
+_HEX_RE = re.compile(r'0x[0-9a-f]+')
 
 # Instructions that end a flow of control. A body whose last instruction is not
 # one of these either falls through or was cut short.
@@ -82,12 +83,8 @@ def decode(image, func):
     whichever function borrowed the space, not that function's code.
     """
     out = []
-    for b in sorted((b for b in (func.get("body") or [])),
-                    key=lambda b: b.get("start", "")):
-        try:
-            start, end = int(b["start"], 16), int(b["end"], 16)
-        except (KeyError, ValueError):
-            return None
+    for b in sorted(func.get("body") or [], key=lambda b: b["start"]):
+        start, end = int(b["start"], 16), int(b["end"], 16)
         if image.in_cave(start):
             continue
         off = image.va2off(start)
@@ -109,8 +106,6 @@ def falls_into_ret(image, ins, entries):
     Alignment padding may sit between the two, so no-ops are stepped over
     before looking for the neighbour.
     """
-    if not ins:
-        return False
     pos = ins[-1].address + ins[-1].size
     for _ in range(16):                       # bounded: padding runs are short
         nxt = entries.get(pos)
@@ -142,11 +137,16 @@ def is_assert_stub(ins):
     return len(stores) >= 2
 
 
-def classify(image, func, refs, matched, entries):
-    ins = decode(image, func)
-    addr = func.get("addr", "").lower()
-    nrefs = refs.get(int(addr, 16), 0) if addr else 0
+def classify(image, func, refs, entries):
+    nrefs = refs.get(int(func["addr"], 16), 0)
+    # An import thunk is real by definition, and the export records its body as
+    # one byte, which decodes to nothing: without this nocedit's ~170 thunks,
+    # which game code reaches through the IAT pointers and so never references,
+    # came out EMPTY and unreferenced -- deletion candidates.
+    if func.get("thunk"):
+        return "THUNK", nrefs, ""
 
+    ins = decode(image, func)
     if ins is None:
         return "UNREADABLE", nrefs, ""
     if not ins:
@@ -156,29 +156,26 @@ def classify(image, func, refs, matched, entries):
     text = " ; ".join(("%s %s" % (i.mnemonic, i.op_str)).strip() for i in ins[:4])
     nbytes = sum(i.size for i in ins)
 
-    if body and all(is_noop(i) for i in body):
-        return "NOOP", nrefs, text
     if all(i.mnemonic in ("nop", "int3") for i in ins):
         return "PADDING", nrefs, text
+    if body and all(is_noop(i) for i in body):
+        return "NOOP", nrefs, text
 
     # One instruction, no terminator, tiny, and its operand is an address in
     # this image: the decoder almost certainly started mid-instruction.
     if len(ins) == 1 and ins[0].mnemonic not in TERMINATORS and nbytes <= TINY_BYTES:
-        for tok in ins[0].op_str.replace(",", " ").split():
-            try:
-                value = int(tok, 16) if tok.startswith("0x") else None
-            except ValueError:
-                value = None
-            if value is not None and image.is_mapped_va(value):
-                return "MISALIGNED", nrefs, text
+        if any(image.is_mapped_va(int(h, 16)) for h in _HEX_RE.findall(ins[0].op_str)):
+            return "MISALIGNED", nrefs, text
         return "STUB", nrefs, text
 
     if (ins[-1].mnemonic not in TERMINATORS and not is_assert_stub(ins)
             and not falls_into_ret(image, ins, entries)):
+        # Some instruction is neither a no-op nor a RET, or NOOP took it above,
+        # so stepping back over trailing padding always stops on one.
         k = len(ins)
-        while k > 0 and is_noop(ins[k - 1]):
+        while is_noop(ins[k - 1]):
             k -= 1
-        if k == 0 or ins[k - 1].mnemonic not in TERMINATORS:
+        if ins[k - 1].mnemonic not in TERMINATORS:
             tail = " ; ".join(("%s %s" % (i.mnemonic, i.op_str)).strip()
                               for i in ins[max(0, k - 2):k])
             return "FALLS_THROUGH", nrefs, tail
@@ -190,7 +187,7 @@ def classify(image, func, refs, matched, entries):
 JUNK = ("EMPTY", "PADDING", "NOOP", "MISALIGNED", "STUB", "UNREADABLE")
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--program", default="nocturne.exe")
@@ -199,7 +196,7 @@ def main():
                     help="also report junk-shaped functions that have references")
     ap.add_argument("--addresses-only", action="store_true",
                     help="print bare addresses, for delete_function.py")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     image = sm.Image(args.program)
 
@@ -207,29 +204,22 @@ def main():
     for x in image.xrefs:
         try:
             refs[int(x["to"], 16)] += 1
-        except (KeyError, ValueError):
-            continue
+        except ValueError:
+            continue                          # a stack reference, Stack[0x4]
 
     matched = set()
     if args.mapping:
         with open(args.mapping) as fh:
             matched = {p["b"].lower() for p in json.load(fh).get("pairs", [])}
 
-    entries = {}
-    for f in image.functions:
-        try:
-            entries[int(f["addr"], 16)] = f
-        except (KeyError, ValueError):
-            continue
+    entries = {int(f["addr"], 16): f for f in image.functions}
 
     counts = Counter()
     rows = defaultdict(list)
     for f in image.functions:
-        addr = f.get("addr", "").lower()
-        verdict, nrefs, text = classify(image, f, refs, matched, entries)
+        addr = f["addr"].lower()
+        verdict, nrefs, text = classify(image, f, refs, entries)
         counts[verdict] += 1
-        if verdict == "OK":
-            continue
         rows[verdict].append((addr, f.get("name", ""), nrefs,
                               addr in matched, text))
 

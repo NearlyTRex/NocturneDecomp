@@ -14,127 +14,79 @@ Example:
     python verify_globals.py annotations/nocedit.exe/pseudocode
 """
 
-import os
-import sys
-import subprocess
 import argparse
+import importlib.util
+import os
+import re
+import subprocess
+import sys
+from concurrent.futures import ThreadPoolExecutor
 
-# Add script directory to path for package imports
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ghidra_annotations.annotations.pseudocode.compiler_config import (
-    DEFAULT_COMPILER, DEFAULT_COMPILE_FLAGS
-)
-from pathlib import Path
-from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def _load_compiler_config():
+    # By file, not through the ghidra_annotations package, whose __init__
+    # imports the exporters and with them Ghidra's API.
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ghidra_annotations', 'annotations',
+                        'pseudocode', 'compiler_config.py')
+    spec = importlib.util.spec_from_file_location('_compiler_config', path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+_config = _load_compiler_config()
+DEFAULT_COMPILER = _config.DEFAULT_COMPILER
+DEFAULT_COMPILE_FLAGS = _config.DEFAULT_COMPILE_FLAGS
 
 
 def find_cpp_files(src_dir, skip_dirs=None, skip_files=None):
-    """Find all .cpp files in the source directory.
-
-    Args:
-        src_dir: Base source directory
-        skip_dirs: List of directory names to skip
-        skip_files: List of file patterns to skip
-    """
-    if skip_dirs is None:
-        skip_dirs = []
-    if skip_files is None:
-        skip_files = []
-
+    """All .cpp files under src_dir, sorted, less skipped directories and file names."""
+    skip_dirs = skip_dirs or []
+    skip_files = skip_files or []
     cpp_files = []
-    for root, dirs, files in os.walk(src_dir):
+    for root, _dirs, files in os.walk(src_dir):
         rel_root = os.path.relpath(root, src_dir)
-
-        # Skip specified directories
-        skip_this = False
-        for skip_dir in skip_dirs:
-            if rel_root == skip_dir or rel_root.startswith(skip_dir + os.sep):
-                skip_this = True
-                break
-        if skip_this:
+        if any(rel_root == d or rel_root.startswith(d + os.sep) for d in skip_dirs):
             continue
-
-        for f in files:
-            if f.endswith('.cpp'):
-                if f in skip_files:
-                    continue
-                cpp_files.append(os.path.join(root, f))
+        cpp_files += [os.path.join(root, f) for f in files if f.endswith('.cpp') and f not in skip_files]
     return sorted(cpp_files)
 
 
 def compile_cpp_file(cpp_path, include_dir, compiler=DEFAULT_COMPILER):
     """Try to compile a single cpp file.
 
-    Args:
-        cpp_path: Path to the cpp file
-        include_dir: Include directory for -I flag
-        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
-
     Returns:
         Tuple of (success, error_message)
     """
+    cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, cpp_path]
     try:
-        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, cpp_path]
-
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=60
-        )
-
-        if result.returncode == 0:
-            return (True, None)
-        else:
-            errors = result.stderr.strip()
-            return (False, errors)
-
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
     except subprocess.TimeoutExpired:
         return (False, "Compilation timed out")
-    except FileNotFoundError:
-        return (False, "Compiler '%s' not found" % compiler)
+    except OSError as e:
+        return (False, "Compiler '%s' could not run: %s" % (compiler, e))
+    if result.returncode == 0:
+        return (True, None)
+    return (False, result.stderr.strip())
 
 
 def parse_error_message(error_msg):
-    """Parse compiler error message to extract key info."""
-    lines = error_msg.split('\n')
+    """The error lines of a compiler's output, a missing type shortened to its name."""
     issues = []
-
-    for line in lines:
-        # Skip warning-only lines
-        if 'warning:' in line.lower() and 'error:' not in line.lower():
+    for line in error_msg.split('\n'):
+        if 'error:' not in line.lower():
             continue
-        if 'error:' in line.lower():
-            # Try to extract the error type
-            import re
-            if 'unknown type name' in line:
-                match = re.search(r"unknown type name '(\w+)'", line)
-                if match:
-                    issues.append("Missing type: %s" % match.group(1))
-                else:
-                    issues.append(line.strip())
-            elif 'undeclared' in line:
-                issues.append(line.strip())
-            elif 'expected' in line:
-                issues.append(line.strip())
-            else:
-                issues.append(line.strip())
-
-    return issues if issues else [error_msg[:200]]
+        match = re.search(r"unknown type name '(\w+)'", line)
+        issues.append("Missing type: %s" % match.group(1) if match else line.strip())
+    return issues or [error_msg[:200]]
 
 
-def verify_globals(src_dir, include_dir, verbose=False, stop_on_error=False, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=None, skip_files=None):
+def verify_globals(src_dir, include_dir, verbose=False, stop_on_error=False, compiler=DEFAULT_COMPILER,
+                   max_workers=4, skip_dirs=None, skip_files=None):
     """Verify all globals cpp files in the source directory.
 
-    Args:
-        src_dir: Path to src/globals directory
-        include_dir: Path to include directory
-        verbose: Print verbose output
-        stop_on_error: Stop on first error
-        compiler: Compiler to use
-        max_workers: Number of parallel compilation jobs
-        skip_dirs: List of directories to skip
-        skip_files: List of files to skip
+    Files compile in parallel unless stop_on_error asks for one at a time; either
+    way they are reported in path order.
 
     Returns:
         Tuple of (passed_count, failed_count, failed_files)
@@ -151,67 +103,36 @@ def verify_globals(src_dir, include_dir, verbose=False, stop_on_error=False, com
     print("-" * 60)
 
     passed = 0
-    failed = 0
     failed_files = []
 
-    # Process files
-    if max_workers > 1 and not stop_on_error:
-        # Parallel processing
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            futures = {
-                executor.submit(compile_cpp_file, f, include_dir, compiler): f
-                for f in cpp_files
-            }
+    def check(path):
+        return compile_cpp_file(path, include_dir, compiler)
 
-            for future in as_completed(futures):
-                cpp_file = futures[future]
-                rel_path = os.path.relpath(cpp_file, src_dir)
-
-                try:
-                    success, error = future.result()
-                except Exception as e:
-                    success, error = False, str(e)
-
-                if success:
-                    passed += 1
-                    if verbose:
-                        print("  OK: %s" % rel_path)
-                else:
-                    failed += 1
-                    failed_files.append((rel_path, error))
-                    print("FAIL: %s" % rel_path)
-                    if verbose:
-                        issues = parse_error_message(error)
-                        for issue in issues[:5]:
-                            print("      %s" % issue)
-    else:
-        # Sequential processing
-        for cpp_file in cpp_files:
+    with ThreadPoolExecutor(max_workers=max(1, max_workers)) as executor:
+        if stop_on_error:
+            results = map(check, cpp_files)
+        else:
+            results = executor.map(check, cpp_files)
+        for cpp_file, (success, error) in zip(cpp_files, results):
             rel_path = os.path.relpath(cpp_file, src_dir)
-
-            success, error = compile_cpp_file(cpp_file, include_dir, compiler)
-
             if success:
                 passed += 1
                 if verbose:
                     print("  OK: %s" % rel_path)
-            else:
-                failed += 1
-                failed_files.append((rel_path, error))
-                print("FAIL: %s" % rel_path)
-                if verbose:
-                    issues = parse_error_message(error)
-                    for issue in issues[:5]:
-                        print("      %s" % issue)
+                continue
+            failed_files.append((rel_path, error))
+            print("FAIL: %s" % rel_path)
+            if verbose:
+                for issue in parse_error_message(error)[:5]:
+                    print("      %s" % issue)
+            if stop_on_error:
+                print("\nStopping on first error.")
+                break
 
-                if stop_on_error:
-                    print("\nStopping on first error.")
-                    break
-
-    return (passed, failed, failed_files)
+    return (passed, len(failed_files), failed_files)
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(
         description='Verify that generated globals cpp files are compilable'
     )
@@ -260,19 +181,15 @@ def main():
         help='Skip this file (can be used multiple times)'
     )
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
-    # Derive paths
     include_dir = os.path.join(args.pseudocode_dir, 'include')
     globals_src_dir = os.path.join(args.pseudocode_dir, 'src', 'globals')
 
-    if not os.path.isdir(globals_src_dir):
-        print("Error: %s is not a directory" % globals_src_dir)
-        sys.exit(1)
-
-    if not os.path.isdir(include_dir):
-        print("Error: %s is not a directory" % include_dir)
-        sys.exit(1)
+    for required in (globals_src_dir, include_dir):
+        if not os.path.isdir(required):
+            print("Error: %s is not a directory" % required)
+            return 1
 
     passed, failed, failed_files = verify_globals(
         globals_src_dir,
@@ -288,24 +205,23 @@ def main():
     print("-" * 60)
     print("Results: %d passed, %d failed" % (passed, failed))
 
-    if failed > 0:
-        print("\nFailed files:")
-        for rel_path, _ in failed_files:
-            print("  - %s" % rel_path)
-
-        if args.show_errors:
-            print("\n" + "=" * 60)
-            print("DETAILED ERRORS")
-            print("=" * 60)
-            for rel_path, error in failed_files:
-                print("\n--- %s ---" % rel_path)
-                print(error if error else "(no error message)")
-
-        sys.exit(1)
-    else:
+    if not failed:
         print("\nAll globals compiled successfully!")
-        sys.exit(0)
+        return 0
+
+    print("\nFailed files:")
+    for rel_path, _ in failed_files:
+        print("  - %s" % rel_path)
+
+    if args.show_errors:
+        print("\n" + "=" * 60)
+        print("DETAILED ERRORS")
+        print("=" * 60)
+        for rel_path, error in failed_files:
+            print("\n--- %s ---" % rel_path)
+            print(error or "(no error message)")
+    return 1
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

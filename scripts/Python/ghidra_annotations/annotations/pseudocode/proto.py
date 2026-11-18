@@ -138,12 +138,9 @@ USAGE
 
 import os
 import json
-from ghidra_annotations.util.log import log_info, log_error
+from ghidra_annotations.util.log import log_info, log_warning
 from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 
-
-# Default proto overrides - define in annotations/<program>/pseudocode/proto_overrides.json
-DEFAULT_PROTO_OVERRIDES = []
 
 # Filename for proto overrides JSON
 PROTO_OVERRIDES_FILENAME = "proto_overrides.json"
@@ -180,21 +177,13 @@ def generate_proto_overrides_file(pseudocode_dir):
         Path to the generated file
     """
     proto_overrides_path = os.path.join(pseudocode_dir, PROTO_OVERRIDES_FILENAME)
+    proto_overrides = list(proto_cache.get_global_cache())
 
-    # Start with defaults, then merge cached overrides
-    proto_overrides = list(DEFAULT_PROTO_OVERRIDES)
-    cached = proto_cache.get_global_cache()
-    if cached:
-        proto_overrides.extend(cached)
-
-    # Write the merged proto overrides as a plain array
-    try:
-        with open(proto_overrides_path, 'w') as f:
-            json.dump(proto_overrides, f, indent=2)
-            f.write("\n")
-        log_info("Generated %s with %d proto overrides" % (proto_overrides_path, len(proto_overrides)))
-    except Exception as e:
-        log_info("Failed to write proto_overrides.json: %s" % str(e))
+    # Write the cached proto overrides as a plain array
+    with open(proto_overrides_path, 'w') as f:
+        json.dump(proto_overrides, f, indent=2)
+        f.write("\n")
+    log_info("Generated %s with %d proto overrides" % (proto_overrides_path, len(proto_overrides)))
     return proto_overrides_path
 
 
@@ -209,16 +198,19 @@ def load_proto_overrides_json(json_path):
         json_path: Path to proto_overrides.json
 
     Returns:
-        List of override definitions, or empty list if not found
+        List of override definitions; empty, with a warning, when the file cannot be read
+        or is not a list
     """
-    if not json_path or not os.path.exists(json_path):
-        return []
     try:
         with open(json_path, 'r') as f:
-            return json.load(f)
-    except Exception as e:
-        log_info("Failed to load proto_overrides from %s: %s" % (json_path, str(e)))
-    return []
+            data = json.load(f)
+    except (OSError, ValueError) as e:
+        log_warning("Could not read proto_overrides from %s: %s" % (json_path, e))
+        return []
+    if not isinstance(data, list):
+        log_warning("%s is not a list of proto overrides" % json_path)
+        return []
+    return data
 
 
 def parse_signature_with_cparser(sig_str, dtm):
@@ -271,11 +263,7 @@ def resolve_type(type_str, dtm):
 
     # Handle pointers
     if type_str.endswith('*'):
-        base_type_str = type_str[:-1].strip()
-        base_type = resolve_type(base_type_str, dtm)
-        if base_type:
-            return PointerDataType(base_type)
-        return PointerDataType()  # void*
+        return PointerDataType(resolve_type(type_str[:-1], dtm))
 
     # Basic types
     type_map = {
@@ -293,16 +281,11 @@ def resolve_type(type_str, dtm):
     if type_str.lower() in type_map:
         return type_map[type_str.lower()]
 
-    # Try to find in DataTypeManager
-    try:
-        found = dtm.getDataType("/" + type_str)
-        if found:
-            return found
-    except Exception:
-        pass
-
-    log_info("Could not resolve type: %s" % type_str)
-    return IntegerDataType.dataType  # Fallback
+    found = dtm.getDataType("/" + type_str)
+    if found:
+        return found
+    log_warning("Could not resolve proto override type %r; using int" % type_str)
+    return IntegerDataType.dataType
 
 
 def build_function_signature(override_def, dtm):
@@ -318,49 +301,24 @@ def build_function_signature(override_def, dtm):
     from ghidra.program.model.data import (
         FunctionDefinitionDataType, ParameterDefinitionImpl
     )
+    from ghidra.util.exception import InvalidInputException
 
+    if 'signature' in override_def:
+        return parse_signature_with_cparser(override_def['signature'], dtm)
+
+    # Build from explicit fields
+    func_def = FunctionDefinitionDataType("override_sig")
+    func_def.setReturnType(resolve_type(override_def.get('return_type', 'void'), dtm))
+    func_def.setArguments([
+        ParameterDefinitionImpl(param.get('name', 'param_%d' % i), resolve_type(param.get('type', 'int'), dtm), None)
+        for i, param in enumerate(override_def.get('params', []))])
+    func_def.setVarArgs(override_def.get('varargs', False))
+    calling_conv = override_def.get('calling_convention', '__cdecl')
     try:
-        if 'signature' in override_def:
-            # Parse signature string using CParser
-            sig_str = override_def['signature']
-            return parse_signature_with_cparser(sig_str, dtm)
-        else:
-            # Build from explicit fields
-            return_type_str = override_def.get('return_type', 'void')
-            params = override_def.get('params', [])
-            calling_conv = override_def.get('calling_convention', '__cdecl')
-            varargs = override_def.get('varargs', False)
-
-            # Create function definition
-            func_def = FunctionDefinitionDataType("override_sig")
-
-            # Set return type
-            ret_type = resolve_type(return_type_str, dtm)
-            if ret_type:
-                func_def.setReturnType(ret_type)
-
-            # Build parameter list
-            param_defs = []
-            for i, param in enumerate(params):
-                param_type_str = param.get('type', 'int')
-                param_name = param.get('name', 'param_%d' % i)
-                param_type = resolve_type(param_type_str, dtm)
-                if param_type:
-                    param_defs.append(ParameterDefinitionImpl(param_name, param_type, None))
-
-            func_def.setArguments(param_defs)
-            func_def.setVarArgs(varargs)
-
-            # Set calling convention
-            if calling_conv:
-                try:
-                    func_def.setCallingConvention(calling_conv)
-                except Exception:
-                    pass  # Use default if convention not recognized
-            return func_def
-    except Exception as e:
-        log_info("Failed to build function signature: %s" % str(e))
-        return None
+        func_def.setCallingConvention(calling_conv)
+    except InvalidInputException:
+        log_warning("Unknown calling convention %r in a proto override; keeping the default" % calling_conv)
+    return func_def
 
 
 def register_proto_overrides(annotations_dir=None):
@@ -380,14 +338,9 @@ def register_proto_overrides(annotations_dir=None):
     _pending_proto_overrides = []
 
     # Find proto_overrides.json - accept either directory or direct path
-    if annotations_dir:
-        if annotations_dir.endswith('.json'):
-            json_path = annotations_dir
-        else:
-            json_path = os.path.join(annotations_dir, PROTO_OVERRIDES_FILENAME)
-    else:
-        json_path = None
-
+    json_path = annotations_dir
+    if json_path and not json_path.endswith('.json'):
+        json_path = os.path.join(json_path, PROTO_OVERRIDES_FILENAME)
     if not json_path or not os.path.exists(json_path):
         log_info("No proto_overrides.json found at %s" % json_path)
         return 0
@@ -398,18 +351,16 @@ def register_proto_overrides(annotations_dir=None):
 
     log_info("Loading proto overrides from %s" % json_path)
 
-    # Validate and cache overrides
+    # Validate and cache overrides: a signature string, or the explicit
+    # return_type/params form the module docstring describes
     for override_def in overrides_list:
-        addr_str = override_def.get('address')
-        if not addr_str:
-            log_info("Proto override missing 'address' field")
+        if not isinstance(override_def, dict) or not override_def.get('address'):
+            log_warning("Proto override without an 'address': %r" % (override_def,))
             continue
-
-        sig_str = override_def.get('signature')
-        if not sig_str:
-            log_info("Proto override at %s missing 'signature' field" % addr_str)
+        if not (override_def.get('signature') or 'params' in override_def or 'return_type' in override_def):
+            log_warning("Proto override at %s has neither a 'signature' nor 'return_type'/'params'"
+                        % override_def['address'])
             continue
-
         _pending_proto_overrides.append(override_def)
 
     log_info("Loaded %d proto overrides (call apply_proto_overrides to register)" % len(_pending_proto_overrides))
@@ -427,7 +378,6 @@ def apply_proto_overrides(program):
     Returns:
         Number of proto overrides registered
     """
-    global _pending_proto_overrides
     from ghidra.program.model.pcode import HighFunction
 
     # Clear any existing registered overrides
@@ -442,18 +392,13 @@ def apply_proto_overrides(program):
     registered_count = 0
 
     for override_def in _pending_proto_overrides:
-        addr_str = override_def.get('address')
-        sig_str = override_def.get('signature')
+        addr_str = override_def['address']
 
-        # Parse address
+        # Hex, with or without 0x
         try:
-            if addr_str.startswith('0x'):
-                addr_str_clean = addr_str[2:]
-            else:
-                addr_str_clean = addr_str
-            call_addr = addr_factory.getDefaultAddressSpace().getAddress(int(addr_str_clean, 16))
-        except Exception as e:
-            log_info("Invalid address '%s': %s" % (addr_str, str(e)))
+            call_addr = addr_factory.getDefaultAddressSpace().getAddress(int(addr_str, 16))
+        except (TypeError, ValueError) as e:
+            log_warning("Invalid proto override address %r: %s" % (addr_str, e))
             continue
 
         # Build signature
@@ -472,10 +417,3 @@ def apply_proto_overrides(program):
 
     log_info("Registered %d proto overrides" % registered_count)
     return registered_count
-
-
-def clear_proto_overrides():
-    """Clear all registered proto overrides and the cache."""
-    from ghidra.program.model.pcode import HighFunction
-    HighFunction.clearProtoOverrides()
-    proto_cache.clear()

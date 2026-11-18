@@ -425,6 +425,9 @@ class Data:
     def isDefined(self):
         return self.defined
 
+    def hasStringValue(self):
+        return isinstance(self.data_type, ghidra_fake.AbstractStringDataType)
+
     def contains(self, address):
         return 0 <= address.getOffset() - self.address.getOffset() < self.length
 
@@ -448,11 +451,18 @@ class Listing:
     def getInstructionAt(self, address):
         return self.instructions.get(address)
 
-    # The instructions in the set's ranges, in address order
-    def getInstructions(self, address_set, forward):
+    # The instruction with the greatest address below this one, or None
+    def getInstructionBefore(self, address):
+        below = [a for a in self.instructions if a.getOffset() < address.getOffset()]
+        return self.instructions[max(below, key = lambda a: a.getOffset())] if below else None
+
+    # Ghidra's overloads: (forward) over the whole program, or the instructions in the
+    # set's ranges; in address order
+    def getInstructions(self, *set_and_forward):
+        *address_set, forward = set_and_forward
         return [i for a, i in sorted(self.instructions.items(), key = lambda item: item[0].getOffset(),
                                      reverse = not forward)
-                if any(lo <= a.getOffset() <= hi for lo, hi in address_set.ranges)]
+                if not address_set or any(lo <= a.getOffset() <= hi for lo, hi in address_set[0].ranges)]
 
     def getDataContaining(self, address):
         return next((data for data in self.data.values() if data.contains(address)), None)
@@ -739,6 +749,12 @@ class RefType:
 
     def isFlow(self):
         return self.name in self.FLOWS
+
+    def isData(self):
+        return self.name in ("DATA", "READ", "WRITE", "READ_WRITE")
+
+    def getName(self):
+        return self.name
 
     def __str__(self):
         return self.name

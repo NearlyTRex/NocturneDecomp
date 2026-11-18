@@ -33,19 +33,20 @@
 #   python3 -u shift_struct_fields.py <ABS_project_path> <project_name> \
 #           [program_name] [--base CDemonActor] [--any-hole] [--apply]
 #
+# --apply takes a .gar snapshot first unless --no-snapshot.
+#
 #@author NearlyTRex
 #@category Annotations
 
 import argparse
 import json
 import os
+import subprocess
 import sys
+import traceback
 from collections import Counter
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
-
 REPO_ROOT = os.path.dirname(os.path.dirname(THIS_DIR))
 
 
@@ -176,7 +177,130 @@ def close_hole(struct, offset, size):
                                % (struct.getName(), offset, before, after))
 
 
-def main():
+VERDICTS = ("EXACT", "PARTIAL", "BASE_SHRINK", "TRAILING?", "REFUSE", "NO_RTTI")
+APPLIED = ("EXACT", "PARTIAL", "BASE_SHRINK")
+
+
+def candidates(dtm, any_hole, base):
+    """The non-packed structures to plan: with --any-hole all of them, otherwise
+    those whose first field is `base` of the given type."""
+    from ghidra.program.model.data import Structure
+    out = []
+    it = dtm.getAllStructures()
+    while it.hasNext():
+        s = it.next()
+        if not isinstance(s, Structure):
+            continue
+        if s.isPackingEnabled():
+            continue          # packing recomputes offsets itself
+        if not any_hole:
+            comps = [c for c in s.getComponents() if not is_undefined(c)]
+            if not comps or comps[0].getFieldName() != "base":
+                continue
+            bt = comps[0].getDataType()
+            if bt.getName() != base:
+                continue
+        out.append(s)
+    return out
+
+
+def shift_rounds(program, args, rtti, lines):
+    """Plan, and with --apply close, round after round until nothing changes.
+
+    Returns ({structure: its last verdict}, structures closed). A structure is
+    planned again each round until it has no gap, so only its last verdict is
+    what it ended as.
+    """
+    final = {}
+    applied_total = 0
+    dtm = program.getDataTypeManager()
+    for rnd in range(1, args.max_rounds + 1):
+        plans = []
+        for s in candidates(dtm, args.any_hole, args.base):
+            p = plan_struct(s, rtti, not args.any_hole, args.allow_base_shrink)
+            if p:
+                plans.append((s, p))
+        if not plans:
+            break
+
+        header = "== round %d: %d structure(s) with a gap ==" % (rnd, len(plans))
+        print(header)
+        lines.append(header)
+
+        changed = 0
+        for s, p in sorted(plans, key=lambda t: t[1]["name"]):
+            note = ""
+            if p["verdict"] == "PARTIAL":
+                note = "  residual %+d (another root)" % p["residual"]
+            elif p["verdict"] == "TRAILING?":
+                note = "  trailing filler, %+d off -- not closed" % p["residual"]
+            row = ("  %-9s %-26s %6d -> %-6d rtti=%-6s hole %d@%d%s"
+                   % (p["verdict"], p["name"], p["current"], p["new_len"],
+                      p["rtti"] if p["rtti"] is not None else "-",
+                      p["size"], p["offset"], note))
+            print(row)
+            lines.append(row)
+            final[p["name"]] = p["verdict"]
+
+            if args.apply and p["verdict"] in APPLIED:
+                close_hole(s, p["offset"], p["size"])
+                changed += 1
+                applied_total += 1
+
+        if not args.apply or not changed:
+            break
+    return final, applied_total
+
+
+def run(program, args, rtti, out_path):
+    """Shift, summarise, report, and save what --apply closed."""
+    lines = []
+    tx = program.startTransaction("Shift subclass fields") if args.apply else None
+    ok = False
+    try:
+        final, applied_total = shift_rounds(program, args, rtti, lines)
+        ok = True
+    finally:
+        if tx is not None:
+            program.endTransaction(tx, ok)
+
+    counts = Counter(final.values())
+    print("\n=== summary ===")
+    for verdict in VERDICTS:
+        if counts[verdict]:
+            print("  %-8s %d" % (verdict, counts[verdict]))
+    if counts["REFUSE"]:
+        print("  REFUSE means closing the gap would take the structure "
+              "below its recorded size; not applied.")
+    if counts["TRAILING?"]:
+        print("  TRAILING? is filler at the end of a structure that "
+              "would not land exactly on the recorded size, so it "
+              "cannot be told apart from a deliberate length; "
+              "not applied.")
+
+    with open(out_path, "w") as fh:
+        fh.write("\n".join(lines) + "\n")
+    print("Report written to: %s" % out_path)
+
+    if args.apply and applied_total:
+        from ghidra.util.task import ConsoleTaskMonitor
+        print("Applied %d hole(s). Saving..." % applied_total)
+        # project.save() alone silently discards program mutations.
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("Saved.")
+    elif not args.apply:
+        print("\n[dry-run] re-run with --apply to execute.")
+    return counts
+
+
+def snapshot(args):
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-struct-shift"]
+    print("Snapshot: %s" % " ".join(cmd))
+    return subprocess.call(cmd) == 0
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description="Close base-class-resize gaps in subclass layouts.")
     ap.add_argument("project_path")
@@ -194,7 +318,8 @@ def main():
     ap.add_argument("--max-rounds", type=int, default=8)
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--out", default=None)
-    args = ap.parse_args()
+    ap.add_argument("--no-snapshot", action="store_true", help="--apply without a .gar snapshot first")
+    args = ap.parse_args(argv)
 
     rtti = load_rtti_sizes(args.program_name)
     if not rtti:
@@ -205,129 +330,24 @@ def main():
     project_path = os.path.abspath(args.project_path)
     out_path = args.out or ("%s_struct_shift.txt" % args.program_name)
 
+    if args.apply and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
+        os._exit(1)
+
     import pyghidra
     print("Starting PyGhidra...")
     pyghidra.start()
-    code = 0
-    lines = []
+    code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as program:
-            dtm = program.getDataTypeManager()
-
-            def candidates():
-                from ghidra.program.model.data import Structure
-                out = []
-                it = dtm.getAllStructures()
-                while it.hasNext():
-                    s = it.next()
-                    if not isinstance(s, Structure):
-                        continue
-                    if s.isPackingEnabled():
-                        continue          # packing recomputes offsets itself
-                    if not args.any_hole:
-                        comps = [c for c in s.getComponents()
-                                 if not is_undefined(c)]
-                        if not comps or comps[0].getFieldName() != "base":
-                            continue
-                        bt = comps[0].getDataType()
-                        if bt is None or bt.getName() != args.base:
-                            continue
-                    out.append(s)
-                return out
-
-            counts = Counter()
-            applied_total = 0
-            tx = None
-            try:
-                if args.apply:
-                    tx = program.startTransaction("Shift subclass fields")
-
-                for rnd in range(1, args.max_rounds + 1):
-                    plans = []
-                    for s in candidates():
-                        p = plan_struct(s, rtti, not args.any_hole,
-                                        args.allow_base_shrink)
-                        if p:
-                            plans.append((s, p))
-                    if not plans:
-                        break
-
-                    header = "== round %d: %d structure(s) with a gap ==" % (
-                        rnd, len(plans))
-                    print(header)
-                    lines.append(header)
-
-                    changed = 0
-                    for s, p in sorted(plans, key=lambda t: t[1]["name"]):
-                        note = ""
-                        if p["verdict"] == "PARTIAL":
-                            note = "  residual %+d (another root)" % p["residual"]
-                        elif p["verdict"] == "TRAILING?":
-                            note = ("  trailing filler, %+d off -- not closed"
-                                    % p["residual"])
-                        row = ("  %-9s %-26s %6d -> %-6d rtti=%-6s hole %d@%d%s"
-                               % (p["verdict"], p["name"], p["current"],
-                                  p["new_len"],
-                                  p["rtti"] if p["rtti"] is not None else "-",
-                                  p["size"], p["offset"], note))
-                        print(row)
-                        lines.append(row)
-                        counts[p["verdict"]] += 1
-
-                        if args.apply and p["verdict"] in ("EXACT", "PARTIAL",
-                                                           "BASE_SHRINK"):
-                            close_hole(s, p["offset"], p["size"])
-                            if s.getLength() != p["new_len"]:
-                                raise RuntimeError(
-                                    "%s: expected length %d, got %d"
-                                    % (p["name"], p["new_len"], s.getLength()))
-                            changed += 1
-                            applied_total += 1
-
-                    if not args.apply or not changed:
-                        break
-            except Exception as e:
-                if tx is not None:
-                    program.endTransaction(tx, False)
-                    tx = None
-                raise
-            finally:
-                if tx is not None:
-                    program.endTransaction(tx, True)
-
-            print("\n=== summary ===")
-            for verdict in ("EXACT", "PARTIAL", "BASE_SHRINK", "TRAILING?",
-                            "REFUSE", "NO_RTTI"):
-                if counts[verdict]:
-                    print("  %-8s %d" % (verdict, counts[verdict]))
-            if counts["REFUSE"]:
-                print("  REFUSE means closing the gap would take the structure "
-                      "below its recorded size; not applied.")
-            if counts["TRAILING?"]:
-                print("  TRAILING? is filler at the end of a structure that "
-                      "would not land exactly on the recorded size, so it "
-                      "cannot be told apart from a deliberate length; "
-                      "not applied.")
-
-            with open(out_path, "w") as fh:
-                fh.write("\n".join(lines) + "\n")
-            print("Report written to: %s" % out_path)
-
-            if args.apply and applied_total:
-                from ghidra.util.task import ConsoleTaskMonitor
-                print("Applied %d structure(s). Saving..." % applied_total)
-                # project.save() alone silently discards program mutations.
-                program.getDomainFile().save(ConsoleTaskMonitor())
-                print("Saved.")
-            elif not args.apply:
-                print("\n[dry-run] re-run with --apply to execute.")
-        project.close()
+            run(program, args, rtti, out_path)
+        code = 0
     except Exception as e:
         print("ERROR: %s" % e)
-        import traceback
         traceback.print_exc()
-        code = 1
+    finally:
+        project.close()
     sys.stdout.flush()
     sys.stderr.flush()
     os._exit(code)

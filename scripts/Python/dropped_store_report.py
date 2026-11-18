@@ -57,11 +57,12 @@ longer declares it under that name.
 
 Usage:  python3 scripts/Python/dropped_store_report.py <src-root> [<src-root>...]
 """
+import argparse
+import glob
 import json
 import os
 import re
 import sys
-import glob
 from collections import defaultdict
 
 PTR = {'byte': 1, 'word': 2, 'dword': 4, 'qword': 8, 'tbyte': 10,
@@ -93,17 +94,13 @@ def _disp(sign, val):
 
 def unreferenced_locals(src_path):
     """Names declared in the leading decl block and never mentioned again."""
-    src = open(src_path, encoding='utf-8', errors='replace').read()
+    with open(src_path, encoding='utf-8', errors='replace') as f:
+        src = f.read()
     lines = src.split('\n')
-    try:
-        start = next(i for i, l in enumerate(lines) if l.strip() == '{')
-    except StopIteration:
+    start = next((i for i, ln in enumerate(lines) if ln.strip() == '{'), None)
+    if start is None:
         return set()
-    body = None
-    for i in range(start + 1, len(lines)):
-        if lines[i].strip() == '':
-            body = i
-            break
+    body = next((i for i in range(start + 1, len(lines)) if lines[i].strip() == ''), None)
     if body is None:
         return set()
     out = set()
@@ -127,12 +124,15 @@ def scan(pcode_path):
     pending = []          # LEA'd bases handed to the call being set up
     seq = -1
 
-    for line in open(pcode_path, encoding='utf-8', errors='replace'):
+    with open(pcode_path, encoding='utf-8', errors='replace') as f:
+        pcode_lines = f.read().split('\n')
+    for line in pcode_lines:
         m = LINE.match(line.strip())
         if not m:
             continue
+        # the line is stripped, so the text after '#' is never empty
         addr, delta, asm = m.group(1), int(m.group(2)), m.group(3)
-        mnem = asm.split()[0] if asm.split() else ''
+        mnem = asm.split()[0]
         seq += 1
 
         if mnem == 'CALL':
@@ -143,13 +143,13 @@ def scan(pcode_path):
                        if r in ('EBX', 'ESI', 'EDI', 'EBP')}
             continue
 
-        l = LEA_ESP.match(asm)
-        if l:
-            base_of[l.group(1)] = delta + _disp(l.group(2), l.group(3))
+        lea = LEA_ESP.match(asm)
+        if lea:
+            base_of[lea.group(1)] = delta + _disp(lea.group(2), lea.group(3))
             continue
-        l = LEA_REG.match(asm)
-        if l and l.group(2) in base_of:
-            base_of[l.group(1)] = base_of[l.group(2)] + _disp(l.group(3), l.group(4))
+        lea = LEA_REG.match(asm)
+        if lea and lea.group(2) in base_of:
+            base_of[lea.group(1)] = base_of[lea.group(2)] + _disp(lea.group(3), lea.group(4))
             continue
 
         mr = MOV_RR.match(asm)
@@ -186,23 +186,20 @@ def scan(pcode_path):
 
         # any other definition of a register drops the base it was holding
         if mnem in ('MOV', 'POP', 'ADD', 'SUB', 'XOR', 'AND', 'OR', 'MOVZX', 'MOVSX'):
-            tgt = asm.split()[1].rstrip(',') if len(asm.split()) > 1 else ''
-            base_of.pop(tgt, None)
+            base_of.pop(asm.split()[1].rstrip(','), None)
 
     return writes, reads, arg_escapes
 
 
 def analyse(json_path):
     base = json_path[:-5]
-    src = None
-    for ext in ('.cpp', '.c'):
-        if os.path.exists(base + ext):
-            src = base + ext
+    src = next((base + ext for ext in ('.cpp', '.c') if os.path.exists(base + ext)), None)
     if not src or not os.path.exists(base + '.pcode'):
         return []
     try:
-        data = json.load(open(json_path))
-    except Exception:
+        with open(json_path, encoding='utf-8') as f:
+            data = json.load(f)
+    except (OSError, ValueError):
         return []
 
     variables = [v for v in ((data.get('stack_frame') or {}).get('variables') or [])
@@ -255,9 +252,12 @@ def analyse(json_path):
     return hits
 
 
-def main(roots):
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('roots', nargs='+', metavar='src-root')
+    args = ap.parse_args(argv)
     all_hits = []
-    for root in roots:
+    for root in args.roots:
         for json_path in glob.glob(os.path.join(root, '**', '*.json'), recursive=True):
             all_hits.extend(analyse(json_path))
 
@@ -277,7 +277,4 @@ def main(roots):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print(__doc__)
-        sys.exit(2)
-    main(sys.argv[1:])
+    sys.exit(main())

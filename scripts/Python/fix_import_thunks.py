@@ -116,7 +116,13 @@ Usage:
 import argparse
 import os
 import struct
+import subprocess
 import sys
+import traceback
+
+import sibling_match
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # --------------------------------------------------------------------------
 # Ordinal maps. See ORDINAL IMPORTS above for how these were corroborated.
@@ -187,7 +193,8 @@ ORDINAL_PROTOTYPES = {
 # --------------------------------------------------------------------------
 def parse_pe_imports(path):
     """-> (image_base, {stub_target_va: (dll, name, ordinal_or_None)}, raw_bytes, va_to_off)."""
-    data = open(path, "rb").read()
+    with open(path, "rb") as fh:
+        data = fh.read()
     pe = struct.unpack_from("<I", data, 0x3C)[0]
     if data[pe:pe + 4] != b"PE\0\0":
         raise ValueError("%s: not a PE" % path)
@@ -243,7 +250,8 @@ def find_stub_table(data, r2f, base, iat, text_start_rva=0x1000):
     end_off = r2f(lo_slot - base)
     blob = data[start_off:end_off]
     out = []
-    for i in range(len(blob) - 6):
+    # a stub may end on the blob's last byte
+    for i in range(len(blob) - 5):
         if blob[i] == 0xFF and blob[i + 1] == 0x25:
             tgt = struct.unpack_from("<I", blob, i + 2)[0]
             if tgt in iat:
@@ -254,7 +262,9 @@ def find_stub_table(data, r2f, base, iat, text_start_rva=0x1000):
 
 
 def contiguous_run(stubs):
-    """Largest run of stubs on an exact 6-byte stride."""
+    """Largest run of stubs on an exact 6-byte stride ([] for none)."""
+    if not stubs:
+        return []
     best = cur = [stubs[0]]
     for s in stubs[1:]:
         if s[0] == cur[-1][0] + 6:
@@ -301,23 +311,25 @@ def verify_pe_matches(program, base, data, r2f, sample_va):
 def external_for(program, dll, api, ordinal):
     """Find the ExternalLocation for one import. Match on the ORIGINAL imported
     name (Ordinal_N / the ASCII name), never on the current label - the label is
-    exactly what may be wrong."""
-    em = program.getExternalManager()
+    exactly what may be wrong.
+
+    Already-renamed ordinal externals keep their original name; a NAME import
+    never renamed has none, so its label is the name to match."""
     want_original = "Ordinal_%d" % ordinal if ordinal is not None else api
+    for lib, loc in external_locations(program):
+        orig = loc.getOriginalImportedName()
+        if lib.upper() == dll and (orig == want_original or (orig is None and loc.getLabel() == want_original)):
+            return loc
+    return None
+
+
+def external_locations(program):
+    """Every (library, ExternalLocation) in the program."""
+    em = program.getExternalManager()
     for lib in em.getExternalLibraryNames():
-        if lib.upper() != dll:
-            continue
         it = em.getExternalLocations(lib)
         while it.hasNext():
-            loc = it.next()
-            orig = loc.getOriginalImportedName()
-            if orig == want_original or (orig is None and loc.getLabel() == want_original):
-                return loc
-            # already-renamed ordinal externals keep their original name; a
-            # renamed NAME import loses it, so fall back to the label.
-            if ordinal is None and orig is None and loc.getLabel() == api:
-                return loc
-    return None
+            yield lib, it.next()
 
 
 # --------------------------------------------------------------------------
@@ -329,15 +341,10 @@ def external_for(program, dll, api, ordinal):
 # applied, no types. The archive is the authoritative source for both, and it
 # also carries the typedefs (LPTOP_LEVEL_EXCEPTION_FILTER, SIZE_T, ...) that a
 # straight sibling copy of the type *names* would not resolve.
-_ARCHIVE_CACHE = {}
-
-
 def open_prototype_archive(path):
     """-> {api_name: FunctionDefinitionDataType} from a .gdt, or {} if absent."""
-    if path in _ARCHIVE_CACHE:
-        return _ARCHIVE_CACHE[path]
     defs = {}
-    if path and os.path.exists(path):
+    if os.path.exists(path):
         from ghidra.program.model.data import FileDataTypeManager, FunctionDefinition
         from java.io import File
         dtm = FileDataTypeManager.openFileArchive(File(path), False)
@@ -348,19 +355,16 @@ def open_prototype_archive(path):
                 defs.setdefault(dt.getName(), dt)
         print("  prototype archive: %d function definition(s) from %s"
               % (len(defs), os.path.basename(path)))
-    _ARCHIVE_CACHE[path] = defs
     return defs
 
 
 def is_untyped(sig):
     """A signature that tells a caller nothing."""
-    if sig is None:
-        return True
     return ("undefined" in sig) or (sig.startswith("void ") and "(void)" in sig)
 
 
-def build_signature(program, api, ext_func, archive=None):
-    """Return (FunctionDefinitionDataType, source) for `api`, or (None, None).
+def build_signature(program, api, archive):
+    """Return the FunctionDefinitionDataType for `api`, or None.
 
     Order: the curated ordinal table first (ordinal imports carry no name, so
     the archive cannot find them), then Ghidra's Win32 archive.
@@ -368,10 +372,8 @@ def build_signature(program, api, ext_func, archive=None):
     if api in ORDINAL_PROTOTYPES:
         fd = _build_from_table(program, api)
         if fd is not None:
-            return fd, "ordinal-table"
-    if archive and api in archive:
-        return archive[api], "win32-archive"
-    return None, None
+            return fd
+    return archive.get(api)
 
 
 def _build_from_table(program, api):
@@ -414,10 +416,8 @@ def _build_from_table(program, api):
     return fd
 
 
-def plan(program, prog_name, stubs, args, archive=None):
+def plan(program, stubs, args, archive):
     """Build the change list. Pure analysis - no mutation."""
-    from ghidra.program.model.symbol import SymbolType
-
     fm = program.getFunctionManager()
     rm = program.getReferenceManager()
     space = program.getAddressFactory().getDefaultAddressSpace()
@@ -460,21 +460,17 @@ def plan(program, prog_name, stubs, args, archive=None):
             if row not in rows["ext_rename"]:
                 rows["ext_rename"].append(row)
 
-        if loc is not None:
-            ef = loc.getFunction()
-            proto = ef.getSignature().getPrototypeString() if ef else None
-            if ef is not None and is_untyped(proto):
-                have = (api in ORDINAL_PROTOTYPES) or (archive and api in archive)
-                row = {"addr": str(loc.getExternalSpaceAddress()), "api": api,
-                       "current": proto,
-                       "source": "ordinal-table" if api in ORDINAL_PROTOTYPES else "win32-archive"}
-                if have:
-                    if row not in rows["ext_sig"]:
-                        rows["ext_sig"].append(row)
-                else:
-                    r = {"addr": row["addr"], "api": api, "current": proto}
-                    if r not in rows["no_prototype"]:
-                        rows["no_prototype"].append(r)
+        ef = loc.getFunction() if loc is not None else None
+        proto = ef.getSignature().getPrototypeString() if ef is not None else None
+        if ef is not None and is_untyped(proto):
+            row = {"addr": str(loc.getExternalSpaceAddress()), "api": api, "current": proto}
+            if api in ORDINAL_PROTOTYPES or api in archive:
+                row["source"] = "ordinal-table" if api in ORDINAL_PROTOTYPES else "win32-archive"
+                key = "ext_sig"
+            else:
+                key = "no_prototype"
+            if row not in rows[key]:
+                rows[key].append(row)
 
         entry = {"addr": "%08x" % va, "want": want, "dll": dll, "api": api,
                  "ordinal": ordinal, "have": f.getName() if f else None}
@@ -521,15 +517,22 @@ def report(prog_name, rows, span, stubs, args):
     print("\n  already correct                        %4d" % len(rows["ok_thunk"]))
 
 
-def apply_plan(program, rows, span, stubs, args, archive=None):
+def external_at(program, addr):
+    """The ExternalLocation whose EXTERNAL-space address prints as `addr`. The plan
+    took `addr` from one, so it is there."""
+    return next(loc for _lib, loc in external_locations(program)
+                if str(loc.getExternalSpaceAddress()) == addr)
+
+
+def apply_plan(program, rows, span, stubs, archive):
+    """Apply one pass in one transaction. -> stats; stats["error"] when it rolled back."""
     from ghidra.app.cmd.disassemble import DisassembleCommand
-    from ghidra.app.cmd.function import CreateFunctionCmd
+    from ghidra.app.cmd.function import ApplyFunctionSignatureCmd, CreateFunctionCmd
     from ghidra.program.model.symbol import SourceType
     from ghidra.util.task import ConsoleTaskMonitor
 
     monitor = ConsoleTaskMonitor()
     fm = program.getFunctionManager()
-    listing = program.getListing()
     space = program.getAddressFactory().getDefaultAddressSpace()
     lo, hi = span
 
@@ -539,63 +542,35 @@ def apply_plan(program, rows, span, stubs, args, archive=None):
     try:
         # 1. externals first - the thunk inherits from them
         for x in rows["ext_rename"]:
-            loc = None
-            em = program.getExternalManager()
-            for lib in em.getExternalLibraryNames():
-                if lib.upper() != x["dll"]:
-                    continue
-                it = em.getExternalLocations(lib)
-                while it.hasNext():
-                    c = it.next()
-                    if str(c.getExternalSpaceAddress()) == x["addr"]:
-                        loc = c
-                        break
-            if loc is None:
-                stats["failed"] += 1
-                continue
+            loc = external_at(program, x["addr"])
             loc.setName(loc.getParentNameSpace(), x["want"], SourceType.USER_DEFINED)
             stats["ext_renamed"] += 1
 
         for x in rows["ext_sig"]:
-            em = program.getExternalManager()
-            target = None
-            for lib in em.getExternalLibraryNames():
-                it = em.getExternalLocations(lib)
-                while it.hasNext():
-                    c = it.next()
-                    if str(c.getExternalSpaceAddress()) == x["addr"]:
-                        target = c
-                        break
-            if target is None or target.getFunction() is None:
-                stats["failed"] += 1
-                continue
-            fd, _src = build_signature(program, x["api"], target.getFunction(), archive)
-            if fd is None:
-                stats["failed"] += 1
-                continue
-            from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
-            cmd = ApplyFunctionSignatureCmd(
-                target.getFunction().getEntryPoint(), fd, SourceType.USER_DEFINED)
-            if cmd.applyTo(program, monitor):
+            ext_func = external_at(program, x["addr"]).getFunction()
+            fd = build_signature(program, x["api"], archive)
+            if fd is not None and ApplyFunctionSignatureCmd(
+                    ext_func.getEntryPoint(), fd, SourceType.USER_DEFINED).applyTo(program, monitor):
                 stats["ext_typed"] += 1
             else:
                 stats["failed"] += 1
 
-        # 2. remove squatters and clear the whole table so the phase is right
+        # 2. remove squatters and clear the whole table so the phase is right,
+        # then decode every stub again: the clear took the code of the thunks
+        # that stay as well as the squatters'
         for x in rows["delete"]:
             a = space.getAddress(int(x["addr"], 16))
-            f = fm.getFunctionAt(a)
-            if f is None:
-                continue
-            name = f.getName()
-            if fm.removeFunction(a):
-                for sym in program.getSymbolTable().getSymbols(a):
-                    if sym.getName() == name and str(sym.getSymbolType()) != "Function":
-                        sym.delete()
-                stats["deleted"] += 1
+            name = fm.getFunctionAt(a).getName()
+            fm.removeFunction(a)
+            for sym in program.getSymbolTable().getSymbols(a):
+                if sym.getName() == name and str(sym.getSymbolType()) != "Function":
+                    sym.delete()
+            stats["deleted"] += 1
 
         if rows["delete"]:
-            listing.clearCodeUnits(space.getAddress(lo), space.getAddress(hi), False)
+            program.getListing().clearCodeUnits(space.getAddress(lo), space.getAddress(hi), False)
+            for va, *_ in stubs:
+                DisassembleCommand(space.getAddress(va), None, True).applyTo(program, monitor)
 
         # 3. one 6-byte thunk per stub, on the grid
         for x in rows["create"] + rows["rename_thunk"]:
@@ -617,26 +592,64 @@ def apply_plan(program, rows, span, stubs, args, archive=None):
     except Exception as e:
         ok = False
         print("ERROR during apply: %s" % e)
-        import traceback
         traceback.print_exc()
     finally:
         program.endTransaction(tx, ok)
 
     print("\n  applied: %s" % ", ".join("%s=%d" % kv for kv in sorted(stats.items())))
-    return ok and any(v for k, v in stats.items() if k != "failed")
+    if not ok:
+        print("  rolled back.")
+        stats["error"] = True
+    return stats
+
+
+def wrote_something(stats):
+    return not stats.get("error") and any(v for k, v in stats.items() if k != "failed")
+
+
+def fix_program(program, prog_name, stubs, args, archive):
+    """Plan, report and (with --apply) rebuild one program's table. -> exit code."""
+    rows, span = plan(program, stubs, args, archive)
+    report(prog_name, rows, span, stubs, args)
+    if not args.apply:
+        print("\n  [dry-run] re-run with --apply to execute.")
+        return 0
+
+    stats = apply_plan(program, rows, span, stubs, archive)
+    wrote, failed = wrote_something(stats), stats["failed"]
+    # Renaming an EXTERNAL changes the name displayed by every thunk that has
+    # no primary symbol of its own, so a pass can create work for the next
+    # one. Iterate to a fixpoint, and stop at a pass that rolled back.
+    for extra in range(2, args.max_passes + 1):
+        if stats.get("error"):
+            break
+        rows, span = plan(program, stubs, args, archive)
+        pending = sum(len(rows[k]) for k in
+                      ("delete", "create", "rename_thunk", "ext_rename", "ext_sig"))
+        if not pending:
+            break
+        print("\n  -- pass %d: %d row(s) still pending --" % (extra, pending))
+        stats = apply_plan(program, rows, span, stubs, archive)
+        wrote = wrote_something(stats) or wrote
+        failed = stats["failed"]
+    if wrote:
+        from ghidra.util.task import ConsoleTaskMonitor
+        print("  saving %s ..." % prog_name)
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("  saved.")
+    else:
+        print("  nothing written for %s" % prog_name)
+    return 1 if stats.get("error") or failed else 0
 
 
 def snapshot(args):
-    import subprocess
-    here = os.path.dirname(os.path.abspath(__file__))
-    tool = os.path.join(here, "snapshot_project.py")
-    cmd = [sys.executable, tool, os.path.abspath(args.project_path),
-           args.project_name, "--tag", "pre-import-thunks"]
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-import-thunks"]
     print("Snapshot: %s" % " ".join(cmd))
     return subprocess.call(cmd) == 0
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("project_path")
@@ -655,15 +668,13 @@ def main():
     ap.add_argument("--force", action="store_true",
                     help="delete squatters even when they have incoming refs (DANGEROUS)")
     ap.add_argument("--no-snapshot", action="store_true")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     def pe_for(prog_name):
         # The md5-matched copy under bin/ (sibling_match.find_program_exe), unless
         # --pe-dir names a folder to take the file from by name.
         if args.pe_dir:
             return os.path.join(args.pe_dir, prog_name)
-        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        import sibling_match
         try:
             return sibling_match.find_program_exe(prog_name)
         except FileNotFoundError as e:
@@ -671,7 +682,7 @@ def main():
             return ""
 
     if args.apply and not args.no_snapshot and not snapshot(args):
-        print("Snapshot failed - refusing to mutate.")
+        print("Snapshot failed - refusing to mutate.", flush=True)
         os._exit(1)
 
     import pyghidra
@@ -697,42 +708,25 @@ def main():
                 continue
             base, iat, data, r2f = parse_pe_imports(pe_path)
             stubs = contiguous_run(find_stub_table(data, r2f, base, iat))
+            if not stubs:
+                print("!! %s: no import-thunk table in the PE - skipped" % prog_name)
+                continue
 
             with pyghidra.program_context(project, "/" + prog_name) as program:
                 if not verify_pe_matches(program, base, data, r2f, stubs[0][0]):
                     print("!! %s: on-disk PE does not match program memory - skipped" % prog_name)
                     code = 1
                     continue
-                rows, span = plan(program, prog_name, stubs, args, archive)
-                report(prog_name, rows, span, stubs, args)
-                if args.apply:
-                    wrote = apply_plan(program, rows, span, stubs, args, archive)
-                    # Renaming an EXTERNAL changes the name displayed by every
-                    # thunk that has no primary symbol of its own, so a pass can
-                    # create work for the next one. Iterate to a fixpoint.
-                    for extra in range(2, args.max_passes + 1):
-                        rows, span = plan(program, prog_name, stubs, args, archive)
-                        pending = sum(len(rows[k]) for k in
-                                      ("delete", "create", "rename_thunk", "ext_rename", "ext_sig"))
-                        if not pending:
-                            break
-                        print("\n  -- pass %d: %d row(s) still pending --" % (extra, pending))
-                        wrote = apply_plan(program, rows, span, stubs, args, archive) or wrote
-                    if wrote:
-                        from ghidra.util.task import ConsoleTaskMonitor
-                        print("  saving %s ..." % prog_name)
-                        program.getDomainFile().save(ConsoleTaskMonitor())
-                        print("  saved.")
-                    else:
-                        print("  nothing written for %s" % prog_name)
-                else:
-                    print("\n  [dry-run] re-run with --apply to execute.")
-        project.close()
+                code = fix_program(program, prog_name, stubs, args, archive) or code
     except Exception as e:
         print("ERROR: %s" % e)
-        import traceback
         traceback.print_exc()
         code = 1
+    finally:
+        project.close()
+
+    sys.stdout.flush()
+    sys.stderr.flush()
     os._exit(code)
 
 

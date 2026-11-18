@@ -18,6 +18,7 @@
 from __future__ import annotations
 
 import argparse
+import glob
 import importlib.util
 import os
 import re
@@ -26,6 +27,9 @@ import sys
 import types
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+ANNOTATIONS = os.path.join(REPO_ROOT, 'annotations')
+# The program an ad-hoc file outside annotations/<exe>/ is checked against
+DEFAULT_PROGRAM = 'nocedit.exe'
 PSEUDOCODE_DIR = os.path.join(
     REPO_ROOT, 'scripts', 'Python', 'ghidra_annotations',
     'annotations', 'pseudocode',
@@ -94,8 +98,8 @@ _GLOBAL_EXTERN_RE = re.compile(
     r'^\s*extern\s+(.*?)\s*([A-Za-z_]\w*)\s*(\[[^;]*\])?\s*;\s*$')
 
 
-def build_global_ptr_intervals(repo_root):
-    """Parse include/globals/*.h into (0, 0, name, gtype) tuples.
+def build_global_ptr_intervals(program):
+    """Parse one program's include/globals/*.h into (0, 0, name, gtype) tuples.
 
     The full export gets global types from Ghidra and feeds them to the
     pointer_truncation detector via build_global_interval_map(); outside the
@@ -104,19 +108,16 @@ def build_global_ptr_intervals(repo_root):
     identify_pointer_truncation_suspects, which decides pointer-ness from
     `'*' in gtype` / `'[' in gtype`. Without this, bare pointer-typed globals
     (`(int)g_SomeVoidPtr`) slip past the source-text harness.
+
+    Only the program's own headers count: the siblings type the same global
+    names differently (a vtable struct in one, `void*[6]` in another).
     """
-    import glob as _glob
     intervals = []
     seen = set()
-    pattern = os.path.join(
-        repo_root, 'annotations', '*', 'pseudocode', 'include', 'globals',
-        '*.h')
-    for hdr in _glob.glob(pattern):
-        try:
-            with open(hdr, 'r') as f:
-                lines = f.read().split('\n')
-        except OSError:
-            continue
+    pattern = os.path.join(ANNOTATIONS, program, 'pseudocode', 'include', 'globals', '*.h')
+    for hdr in sorted(glob.glob(pattern)):
+        with open(hdr, 'r') as f:
+            lines = f.read().split('\n')
         for line in lines:
             m = _GLOBAL_EXTERN_RE.match(line)
             if not m:
@@ -148,7 +149,7 @@ def _sibling_asm(path):
     try:
         with open(base + '.asm', 'r') as f:
             return f.read()
-    except (IOError, OSError):
+    except OSError:
         return ''
 
 
@@ -165,7 +166,7 @@ def _regenerated_cpp(path):
             try:
                 with open(sibling, 'r') as f:
                     return f.read()
-            except (IOError, OSError):
+            except OSError:
                 return ''
     return ''
 
@@ -175,7 +176,8 @@ def run_detectors(susp, code, struct_layout_map=None,
                   asm_code=None, enum_value_map=None, cpp_code=None):
     """Run the source-text-only content detectors on `code`.
 
-    Mirrors detect_content_suspects() but with no func_globals / func_calls —
+    Mirrors detect_content_suspects() (a test keeps the two lists in step) but
+    with no func_globals / func_calls —
     those require Ghidra-extracted state that isn't available outside the
     export pipeline. `global_interval_map`, when supplied (built from the
     committed globals headers by build_global_ptr_intervals), gives the
@@ -201,12 +203,14 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_unrolled_memcpy_index_form(code))
     found.extend(susp.identify_unrolled_field_copy(code, struct_layout_map))
     found.extend(susp.identify_partial_struct_copy(code, struct_layout_map))
+    found.extend(susp.identify_unrolled_offset_copy(code))
     found.extend(susp.identify_cascade_constant_fill(code))
     found.extend(susp.identify_self_copy_guard(code))
     found.extend(susp.identify_dropped_self_copy(code))
     found.extend(susp.identify_tautological_addr_guard(code))
     found.extend(susp.identify_signed_shift_global_idiom(code))
     found.extend(susp.identify_concat_reconstruction(code))
+    found.extend(susp.identify_sibling_array_undersized(code))
     found.extend(susp.identify_pointer_cast_multiline(code))
     found.extend(susp.identify_int_address_arithmetic(code))
     found.extend(susp.identify_int_address_arithmetic_multiline(code))
@@ -359,6 +363,43 @@ def report_file(path, suspects, cppcheck_diags, show_omitted):
     return total_visible
 
 
+def program_of(path):
+    """The program whose types and globals a file is checked against.
+
+    A file under annotations/<exe>/ belongs to <exe>; anything else, or an
+    <exe> with no data types, is checked against DEFAULT_PROGRAM, the shipping
+    decomp, rather than whichever program a glob happens to return first.
+    """
+    relative = os.path.relpath(os.path.abspath(path), ANNOTATIONS)
+    program = relative.split(os.sep)[0]
+    if relative.startswith(os.pardir) or not os.path.isfile(_data_types_path(program)):
+        return DEFAULT_PROGRAM
+    return program
+
+
+def _data_types_path(program):
+    return os.path.join(ANNOTATIONS, program, 'data_types', 'data_types.json')
+
+
+def program_maps(susp, program):
+    """(struct layout, struct size, enum value, global interval) maps for one program.
+
+    These must NOT be shared across binaries. The siblings reuse struct and
+    global names with different layouts and types, and tridx7 doesn't define
+    the game types at all, so taking whichever path glob happened to return
+    first silently checked nocedit sources against tridx7's type universe —
+    every type-aware detector (struct_field_overrun, mem_magic_size,
+    alloc_magic_size, stale_struct_offset_64bit, unrolled_field_copy,
+    pointer_truncation, subfield_vector_pun, partial_struct_copy) then found
+    no matching struct and reported nothing.
+    """
+    data_types = _data_types_path(program)
+    if not os.path.isfile(data_types):
+        return {}, {}, {}, build_global_ptr_intervals(program)
+    return (susp.build_struct_layout_map(data_types), susp.build_struct_size_map(data_types),
+            susp.build_enum_value_map(data_types), build_global_ptr_intervals(program))
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(
         description='Run source-text suspect detectors on a .cpp file.')
@@ -373,60 +414,25 @@ def main(argv=None):
     args = p.parse_args(argv)
 
     susp = _load_suspects_module()
+    maps = {}
 
-    # Struct layout/size and enum value maps for the type-aware detectors,
-    # resolved per file from the binary that owns it
-    # (annotations/<exe>/data_types.json).
-    #
-    # These must NOT be shared across binaries. The siblings reuse struct names
-    # with different layouts, and tridx7 doesn't define the game types at all,
-    # so taking whichever path glob happened to return first silently checked
-    # nocedit sources against tridx7's type universe — every type-aware
-    # detector (struct_field_overrun, mem_magic_size, alloc_magic_size,
-    # stale_struct_offset_64bit, unrolled_field_copy, pointer_truncation,
-    # subfield_vector_pun, partial_struct_copy) then found no matching struct
-    # and reported nothing.
-    import glob as _glob
-    _dt_cache = {}
-
-    def _maps_for(path):
-        exe = None
-        parts = os.path.abspath(path).split(os.sep)
-        if 'annotations' in parts:
-            i = parts.index('annotations')
-            if i + 1 < len(parts):
-                exe = parts[i + 1]
-        if exe not in _dt_cache:
-            dt = os.path.join(REPO_ROOT, 'annotations', exe or '',
-                              'data_types', 'data_types.json')
-            if not os.path.isfile(dt):
-                # Not under annotations/<exe>/ (ad-hoc file) — prefer the
-                # shipping decomp's types over an arbitrary glob hit.
-                cands = sorted(_glob.glob(os.path.join(
-                    REPO_ROOT, 'annotations', '*', 'data_types',
-                    'data_types.json')))
-                pref = [c for c in cands if 'nocedit.exe' in c]
-                dt = (pref or cands or [None])[0]
-            _dt_cache[exe] = (
-                (susp.build_struct_layout_map(dt),
-                 susp.build_struct_size_map(dt),
-                 susp.build_enum_value_map(dt)) if dt else ({}, {}, {}))
-        return _dt_cache[exe]
-
-    # Global pointer types for the pointer_truncation detector, parsed from the
-    # committed include/globals/*.h headers (the export pipeline sources these
-    # from Ghidra; here the headers are the source of truth).
-    global_interval_map = build_global_ptr_intervals(REPO_ROOT)
+    def maps_for(path):
+        program = program_of(path)
+        if program not in maps:
+            maps[program] = program_maps(susp, program)
+        return maps[program]
 
     cppcheck_warned_missing = False
     total_visible = 0
+    missing = 0
     for path in args.files:
         if not os.path.isfile(path):
             print("  ERROR         %s — not found" % path)
+            missing += 1
             continue
         with open(path, 'r') as f:
             code = f.read()
-        struct_layout_map, struct_size_map, enum_value_map = _maps_for(path)
+        struct_layout_map, struct_size_map, enum_value_map, global_interval_map = maps_for(path)
         suspects = run_detectors(susp, code, struct_layout_map,
                                  global_interval_map, struct_size_map,
                                  _sibling_asm(path), enum_value_map,
@@ -448,8 +454,9 @@ def main(argv=None):
 
     if len(args.files) > 1:
         print("\nTotal: %d finding(s) across %d file(s)" % (
-            total_visible, len(args.files)))
+            total_visible, len(args.files) - missing))
+    return 1 if missing else 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

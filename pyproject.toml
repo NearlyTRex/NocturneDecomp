@@ -37,60 +37,19 @@ sealed_programs = [
 # [tool.ruff.lint.per-file-ignores], and unit/meta/test_uncovered_lists.py checks
 # the three agree.
 coverage_omit_allowed = [
-    "scripts/Python/add_missing_string_references.py",
-    "scripts/Python/audit_ghidra_fixups.py",
-    "scripts/Python/check_authentic_flags.py",
-    "scripts/Python/delete_function.py",
-    "scripts/Python/dethunk_function.py",
-    "scripts/Python/diff_sibling_layout.py",
-    "scripts/Python/dropped_store_report.py",
-    "scripts/Python/extract_line_pins.py",
-    "scripts/Python/find_code_caves.py",
-    "scripts/Python/find_junk_functions.py",
-    "scripts/Python/find_render_sim_writes.py",
-    "scripts/Python/fix_byte_patches.py",
-    "scripts/Python/fix_ctor_dtor_returns.py",
-    "scripts/Python/fix_import_thunks.py",
-    "scripts/Python/fix_misaligned_functions.py",
-    "scripts/Python/fix_vtable_structs.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/actor_cast_report.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/adj_report.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/analysis.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/asm_transform.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/chunk_transform.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/dat_report.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/decompiler_fixes.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/exporter.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/function_compile.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/functions.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/globals.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/header_compile.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/intrinsics.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/output.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/parallel.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/pass_by_value.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/pcode.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/proto.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis_suspects.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/strings.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/assembly.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/content.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/stack.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/_structtypes.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/transforms.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/vtable_calls.py",
-    "scripts/Python/map_destructor_pairs.py",
-    "scripts/Python/map_factory_pairs.py",
-    "scripts/Python/map_vtable_slots.py",
-    "scripts/Python/name_functions_from_file_literals.py",
-    "scripts/Python/normalize_strings.py",
-    "scripts/Python/scaffold_recreation.py",
-    "scripts/Python/shift_struct_fields.py",
-    "scripts/Python/test_suspects.py",
-    "scripts/Python/verify_globals.py",
-    "scripts/Python/verify_headers.py",
 ]
 
 [tool.coverage.run]
@@ -104,60 +63,19 @@ patch = ["subprocess"]
 # coverage_omit_allowed with it; the meta suite checks the three lists agree. The
 # list only shrinks.
 omit = [
-    "scripts/Python/add_missing_string_references.py",
-    "scripts/Python/audit_ghidra_fixups.py",
-    "scripts/Python/check_authentic_flags.py",
-    "scripts/Python/delete_function.py",
-    "scripts/Python/dethunk_function.py",
-    "scripts/Python/diff_sibling_layout.py",
-    "scripts/Python/dropped_store_report.py",
-    "scripts/Python/extract_line_pins.py",
-    "scripts/Python/find_code_caves.py",
-    "scripts/Python/find_junk_functions.py",
-    "scripts/Python/find_render_sim_writes.py",
-    "scripts/Python/fix_byte_patches.py",
-    "scripts/Python/fix_ctor_dtor_returns.py",
-    "scripts/Python/fix_import_thunks.py",
-    "scripts/Python/fix_misaligned_functions.py",
-    "scripts/Python/fix_vtable_structs.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/actor_cast_report.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/adj_report.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/analysis.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/asm_transform.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/chunk_transform.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/dat_report.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/decompiler_fixes.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/exporter.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/function_compile.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/functions.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/globals.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/header_compile.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/intrinsics.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/output.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/parallel.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/pass_by_value.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/pcode.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/proto.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis_suspects.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/strings.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/assembly.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/content.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/stack.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/_structtypes.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/transforms.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode/vtable_calls.py",
-    "scripts/Python/map_destructor_pairs.py",
-    "scripts/Python/map_factory_pairs.py",
-    "scripts/Python/map_vtable_slots.py",
-    "scripts/Python/name_functions_from_file_literals.py",
-    "scripts/Python/normalize_strings.py",
-    "scripts/Python/scaffold_recreation.py",
-    "scripts/Python/shift_struct_fields.py",
-    "scripts/Python/test_suspects.py",
-    "scripts/Python/verify_globals.py",
-    "scripts/Python/verify_headers.py",
 ]
 
 [tool.coverage.report]
@@ -176,57 +94,16 @@ select = ["E4", "E7", "E9", "F"]
 
 [tool.ruff.lint.per-file-ignores]
 # Not yet cleaned up; mirrors [tool.coverage.run] omit, and shrinks with it
-"scripts/Python/add_missing_string_references.py" = ["E", "F"]
-"scripts/Python/audit_ghidra_fixups.py" = ["E", "F"]
-"scripts/Python/check_authentic_flags.py" = ["E", "F"]
-"scripts/Python/delete_function.py" = ["E", "F"]
-"scripts/Python/dethunk_function.py" = ["E", "F"]
-"scripts/Python/diff_sibling_layout.py" = ["E", "F"]
-"scripts/Python/dropped_store_report.py" = ["E", "F"]
-"scripts/Python/extract_line_pins.py" = ["E", "F"]
-"scripts/Python/find_code_caves.py" = ["E", "F"]
-"scripts/Python/find_junk_functions.py" = ["E", "F"]
-"scripts/Python/find_render_sim_writes.py" = ["E", "F"]
-"scripts/Python/fix_byte_patches.py" = ["E", "F"]
-"scripts/Python/fix_ctor_dtor_returns.py" = ["E", "F"]
-"scripts/Python/fix_import_thunks.py" = ["E", "F"]
-"scripts/Python/fix_misaligned_functions.py" = ["E", "F"]
-"scripts/Python/fix_vtable_structs.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/actor_cast_report.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/adj_report.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/analysis.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/asm_transform.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/chunk_transform.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/dat_report.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/decompiler_fixes.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/exporter.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/function_compile.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/functions.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/globals.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/header_compile.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/intrinsics.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/output.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/parallel.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/pass_by_value.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/pcode.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/proto.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/static_analysis_suspects.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/strings.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/assembly.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/content.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/stack.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/_structtypes.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/transforms.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode/vtable_calls.py" = ["E", "F"]
-"scripts/Python/map_destructor_pairs.py" = ["E", "F"]
-"scripts/Python/map_factory_pairs.py" = ["E", "F"]
-"scripts/Python/map_vtable_slots.py" = ["E", "F"]
-"scripts/Python/name_functions_from_file_literals.py" = ["E", "F"]
-"scripts/Python/normalize_strings.py" = ["E", "F"]
-"scripts/Python/scaffold_recreation.py" = ["E", "F"]
-"scripts/Python/shift_struct_fields.py" = ["E", "F"]
-"scripts/Python/test_suspects.py" = ["E", "F"]
-"scripts/Python/verify_globals.py" = ["E", "F"]
-"scripts/Python/verify_headers.py" = ["E", "F"]

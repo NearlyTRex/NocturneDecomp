@@ -67,9 +67,10 @@ import struct
 import sys
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
+sys.path.insert(0, THIS_DIR)
 REPO = os.path.dirname(os.path.dirname(THIS_DIR))
+
+import sibling_match as sm  # noqa: E402
 
 DCALL_STRUCT = "WatcomDestructorCall"
 
@@ -87,7 +88,7 @@ def _buckets(program, category):
 
 
 def typed_globals(program):
-    """addr -> (class_name, is_array).
+    """addr -> (class_name, element count): 1 for a single object.
 
     Both applied_structs and applied_arrays are consulted. Omitting arrays is
     what makes this signal look useless: it is precisely the array destructors
@@ -114,14 +115,13 @@ def source_names(program):
     """
     out = {}
     for rec in _buckets(program, "functions"):
-        if isinstance(rec, dict) and rec.get("addr") and rec.get("name"):
+        if rec.get("addr") and rec.get("name"):
             out[rec["addr"].lower()] = rec["name"]
     return out
 
 
 def destructors(program, verbose=False):
-    """(class_name, is_array) -> set of destructor addresses, from the registry."""
-    import sibling_match as sm
+    """(class_name, element count) -> set of destructor addresses, from the registry."""
     img = sm.Image(program)
     types = typed_globals(program)
     out, total, untyped = {}, 0, 0
@@ -209,7 +209,7 @@ def report(res, show):
             print(f"    {cls:26} x{cnt} a={aa} b={bb}")
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--from-program", dest="a_prog", default="nocedit.exe")
@@ -220,7 +220,7 @@ def main():
     ap.add_argument("--fail-on-conflict", action="store_true",
                     help="exit non-zero if the mapping contradicts the registry")
     ap.add_argument("-q", "--quiet", action="store_true")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     res = analyse(args.a_prog, args.b_prog, args.mapping, verbose=not args.quiet)
     report(res, args.show)

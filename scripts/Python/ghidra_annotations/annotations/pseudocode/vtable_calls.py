@@ -1,7 +1,7 @@
 """
 Second-pass module to find vtable calls from decompiled pseudocode and analyze parameters.
 
-Scans .cpp files for patterns like:
+Scans function files for patterns like:
 - (*this_ptr->vtable->methodName)(...)  - class method calling virtual method on self
 - (*g_GlobalPtr->vtable->methodName)(...) - calling virtual method on global object
 
@@ -11,10 +11,29 @@ Then analyzes the assembly of those callers to count PUSHes and estimate paramet
 import os
 import re
 import json
-from collections import defaultdict
+from collections import Counter, defaultdict
 
-from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.log import log_info, log_warning
 from ghidra_annotations.annotations.pseudocode.functions import load_vtable_bucket_files
+
+# The function files the build compiles; the build skips these reference-only
+# variants (cmake/sources.cmake), so their calls are not the program's calls
+FUNCTION_FILE_EXTENSIONS = ('.cpp', '.c')
+REFERENCE_ONLY_VARIANTS = ('.mmx.', '.byval.', '.chunked.')
+
+# (*object->vtable->method)(
+VTABLE_CALL_RE = re.compile(
+    r'\(\*\s*'
+    r'([a-zA-Z_][a-zA-Z0-9_]*)'   # object name (this_ptr, g_CKeysPtr, etc.)
+    r'\s*->\s*vtable\s*->\s*'
+    r'([a-zA-Z_][a-zA-Z0-9_]*)'   # method name
+    r'\s*\)\s*\('
+)
+# The function's own signature: returnType funcName(... this_ptr ...)
+THIS_SIGNATURE_RE = re.compile(r'^[a-zA-Z_][a-zA-Z0-9_\s\*]*\s+\w+\s*\([^)]*this_ptr[^)]*\)', re.MULTILINE)
+CLASS_PART_RE = re.compile(r'C[A-Z]')
+ADD_ESP_RE = re.compile(r'ADD\s+ESP,\s*(0x[0-9a-f]+|\d+)', re.IGNORECASE)
+CALL_ADDR_RE = re.compile(r';\s*([0-9a-fA-F]+)')
 
 
 def extract_class_from_global(global_name):
@@ -25,11 +44,8 @@ def extract_class_from_global(global_name):
         g_CDemonMissionPtr -> CDemonMission
         g_DirectDrawObject -> None (not a C++ class)
     """
-    # Pattern: g_CClassName or g_CClassNamePtr or g_CClassNameInstance
     match = re.match(r'g_(C[A-Z][a-zA-Z0-9]*?)(?:Ptr|Instance)?$', global_name)
-    if match:
-        return match.group(1)
-    return None
+    return match.group(1) if match else None
 
 
 def extract_class_from_this_ptr_type(func_signature):
@@ -39,15 +55,15 @@ def extract_class_from_this_ptr_type(func_signature):
         "void CPoly_method(CPoly * this_ptr)" -> CPoly
         "int CKeys_isKeyDown(CKeys * this_ptr, int key)" -> CKeys
     """
-    # Look for ClassName * this_ptr pattern
     match = re.search(r'(C[A-Z][a-zA-Z0-9]*)\s*\*\s*this_ptr', func_signature)
-    if match:
-        return match.group(1)
-    return None
+    return match.group(1) if match else None
 
 
-def find_vtable_calls_in_file(cpp_path):
-    """Find all vtable calls in a single .cpp pseudocode file.
+def find_vtable_calls_in_file(path):
+    """Find all vtable calls in one function file.
+
+    Only the function's own this_ptr counts as a call on its class: a local
+    such as this_ptr_00 is some other object.
 
     Returns:
         List of dicts with:
@@ -56,140 +72,85 @@ def find_vtable_calls_in_file(cpp_path):
         - call_type: 'this_ptr' or 'global'
         - global_name: Name of global (if call_type is 'global')
     """
-    try:
-        with open(cpp_path, 'r', encoding='utf-8', errors='ignore') as f:
-            content = f.read()
-    except Exception:
-        return []
+    with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+        content = f.read()
+
+    sig_match = THIS_SIGNATURE_RE.search(content)
+    this_ptr_class = extract_class_from_this_ptr_type(sig_match.group(0)) if sig_match else None
 
     calls = []
-
-    # Pattern for vtable calls: (*something->vtable->methodName)(
-    # Captures: the object expression and the method name
-    vtable_pattern = re.compile(
-        r'\(\*\s*'                    # (*
-        r'([a-zA-Z_][a-zA-Z0-9_]*)'   # object name (this_ptr, g_CKeysPtr, etc.)
-        r'\s*->\s*vtable\s*->\s*'     # ->vtable->
-        r'([a-zA-Z_][a-zA-Z0-9_]*)'   # method name
-        r'\s*\)\s*\('                 # )(
-    )
-
-    # Extract function signature from the file (usually at the top)
-    # Pattern: returnType funcName(params)
-    sig_match = re.search(r'^[a-zA-Z_][a-zA-Z0-9_\s\*]*\s+\w+\s*\([^)]*this_ptr[^)]*\)',
-                          content, re.MULTILINE)
-    this_ptr_class = None
-    if sig_match:
-        this_ptr_class = extract_class_from_this_ptr_type(sig_match.group(0))
-
-    for match in vtable_pattern.finditer(content):
-        obj_name = match.group(1)
-        method_name = match.group(2)
-
-        if obj_name == 'this_ptr' or obj_name.startswith('this_ptr'):
+    for match in VTABLE_CALL_RE.finditer(content):
+        obj_name, method_name = match.group(1), match.group(2)
+        if obj_name == 'this_ptr':
             if this_ptr_class:
-                calls.append({
-                    'method_name': method_name,
-                    'caller_class': this_ptr_class,
-                    'call_type': 'this_ptr',
-                    'global_name': None
-                })
-        elif obj_name.startswith('g_'):
-            # Global pointer
+                calls.append({'method_name': method_name, 'caller_class': this_ptr_class,
+                              'call_type': 'this_ptr', 'global_name': None})
+        else:
             global_class = extract_class_from_global(obj_name)
             if global_class:
-                calls.append({
-                    'method_name': method_name,
-                    'caller_class': global_class,
-                    'call_type': 'global',
-                    'global_name': obj_name
-                })
-
+                calls.append({'method_name': method_name, 'caller_class': global_class,
+                              'call_type': 'global', 'global_name': obj_name})
     return calls
 
 
+def compiled_function_files(files):
+    """The (caller name, filename) of each function file the build compiles:
+    a .keep wins over its export, and reference-only variants are left out."""
+    for filename in files:
+        stem, ext = os.path.splitext(filename)
+        if ext not in FUNCTION_FILE_EXTENSIONS or any(v in filename for v in REFERENCE_ONLY_VARIANTS):
+            continue
+        if stem.endswith('.keep'):
+            yield stem[:-len('.keep')], filename
+        elif stem + '.keep' + ext not in files:
+            yield stem, filename
+
+
 def scan_pseudocode_directory(pseudocode_dir):
-    """Scan all .cpp files in the pseudocode directory for vtable calls.
+    """Scan all compiled function files in the pseudocode directory for vtable calls.
 
     Returns:
         Dict mapping (class_name, method_name) -> set of caller function names
     """
-    # Map: (class, method) -> set of unique caller functions
     vtable_call_map = defaultdict(set)
-
-    for root, dirs, files in os.walk(pseudocode_dir):
-        for filename in files:
-            if not filename.endswith('.cpp'):
-                continue
-
-            # Skip .mmx/.byval variants - generated but not compiled
-            if '.mmx.' in filename or '.byval.' in filename:
-                continue
-            # Prefer .keep.cpp: skip regular .cpp if a .keep.cpp exists
-            if not '.keep.' in filename:
-                keep_version = filename.replace('.cpp', '.keep.cpp')
-                if keep_version in files:
-                    continue
-
-            cpp_path = os.path.join(root, filename)
-
-            caller_name = filename.replace('.keep.cpp', '').replace('.cpp', '')
-
-            calls = find_vtable_calls_in_file(cpp_path)
-
-            for call in calls:
-                key = (call['caller_class'], call['method_name'])
-                vtable_call_map[key].add(caller_name)
-
+    for root, _dirs, files in os.walk(pseudocode_dir):
+        for caller_name, filename in compiled_function_files(files):
+            for call in find_vtable_calls_in_file(os.path.join(root, filename)):
+                vtable_call_map[(call['caller_class'], call['method_name'])].add(caller_name)
     return vtable_call_map
+
+
+def class_of_function(func_name):
+    """The class a function name carries: its first CName part, or None."""
+    return next((part for part in func_name.split('_') if CLASS_PART_RE.match(part)), None)
 
 
 def load_vtable_method_map(vtables_dir):
     """Load vtable data from bucket files and build a map of (class, method) -> function address.
 
+    Each slot is keyed by the class its own function name carries, so a derived
+    class's overrides are found whichever class's function fills the first slot.
+
     Args:
         vtables_dir: Path to vtables directory containing vtables_bucket_*.json files
 
     Returns:
-        Dict mapping (class_name, method_name) -> func_addr
+        Dict mapping (class_name, method_name) -> {'func_addr', 'offset'}
     """
     method_map = {}
-    vtables = load_vtable_bucket_files(vtables_dir)
-
-    for vtable in vtables:
-        functions = vtable.get('functions', [])
-        if not functions:
-            continue
-
-        # Extract class name from first function
-        first_func = functions[0].get('func_name', '')
-        class_name = None
-        parts = first_func.split('_')
-        for part in parts:
-            if part.startswith('C') and len(part) > 1 and part[1].isupper():
-                class_name = part
-                break
-
-        if not class_name:
-            continue
-
-        # Map each method to its function address and offset
-        for func_entry in functions:
+    for vtable in load_vtable_bucket_files(vtables_dir):
+        for func_entry in vtable.get('functions', []):
             func_name = func_entry.get('func_name', '')
-            func_addr = func_entry.get('func_addr', '')
-            offset = func_entry.get('offset', 0)
-
-            # Extract method name from function name
+            class_name = class_of_function(func_name)
+            if not class_name:
+                continue
             # e.g., "core_actor.cpp_CDemonActor_setup_FUN_00408bb0" -> "setup"
-            # Look for pattern: ClassName_methodName_FUN_
             method_match = re.search(rf'{class_name}_([a-zA-Z][a-zA-Z0-9]*)_FUN_', func_name)
             if method_match:
-                method_name = method_match.group(1)
-                method_map[(class_name, method_name)] = {
-                    'func_addr': func_addr,
-                    'offset': offset
+                method_map[(class_name, method_match.group(1))] = {
+                    'func_addr': func_entry.get('func_addr', ''),
+                    'offset': func_entry.get('offset', 0),
                 }
-
     return method_map
 
 
@@ -208,47 +169,34 @@ def build_indirect_caller_map(pseudocode_dir, vtables_dir):
             'possible_callers': list of caller function names
         }
     """
-    # Scan pseudocode for vtable calls
     vtable_calls = scan_pseudocode_directory(pseudocode_dir)
-
-    # Load vtable method mapping
     method_map = load_vtable_method_map(vtables_dir)
 
-    # Build reverse map: func_addr -> caller info
     indirect_caller_map = {}
-
     for (class_name, method_name), callers in vtable_calls.items():
         method_info = method_map.get((class_name, method_name))
         if method_info:
-            func_addr = method_info['func_addr']
-            indirect_caller_map[func_addr] = {
+            indirect_caller_map[method_info['func_addr']] = {
                 'class_name': class_name,
                 'method_name': method_name,
                 'vtable_offset': method_info['offset'],
                 'possible_callers': sorted(callers)
             }
-
     return indirect_caller_map
 
 
-def save_indirect_caller_map(indirect_caller_map, output_path):
-    """Save the indirect caller map to a JSON file."""
-    with open(output_path, 'w') as f:
-        json.dump(indirect_caller_map, f, indent=2, sort_keys=True)
+def index_asm_files(pseudocode_dir):
+    """{function name: path of its .asm}, the first found for each name."""
+    index = {}
+    for root, _dirs, files in os.walk(pseudocode_dir):
+        for filename in files:
+            if filename.endswith('.asm'):
+                index.setdefault(filename[:-len('.asm')], os.path.join(root, filename))
+    return index
 
 
-def find_asm_file_for_function(pseudocode_dir, func_name):
-    """Find the .asm file for a given function name.
-
-    Returns the full path to the .asm file or None if not found.
-    """
-    asm_filename = func_name + '.asm'
-
-    for root, dirs, files in os.walk(pseudocode_dir):
-        if asm_filename in files:
-            return os.path.join(root, asm_filename)
-
-    return None
+def _int_literal(text):
+    return int(text, 16) if text.lower().startswith('0x') else int(text)
 
 
 def analyze_indirect_call_in_asm(asm_path, vtable_offset):
@@ -258,131 +206,86 @@ def analyze_indirect_call_in_asm(asm_path, vtable_offset):
         CALL dword ptr [reg + offset]
         CALL dword ptr [reg]  (for offset 0)
 
-    Then counts PUSHes before the call.
+    The caller's ADD ESP,N after the call gives the argument bytes; without one,
+    the PUSHes before the call are counted.
 
     Returns:
         List of dicts with estimated_params for each call site found
     """
-    try:
-        with open(asm_path, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
-    except Exception:
-        return []
+    with open(asm_path, 'r', encoding='utf-8', errors='ignore') as f:
+        lines = f.readlines()
+
+    if vtable_offset == 0:
+        call_pattern = re.compile(r'CALL\s+dword\s+ptr\s+\[\s*[A-Z]+\s*\]', re.IGNORECASE)
+    else:
+        call_pattern = re.compile(r'CALL\s+dword\s+ptr\s+\[\s*[A-Z]+\s*\+\s*(0x[0-9a-f]+|\d+)\s*\]',
+                                  re.IGNORECASE)
 
     results = []
-
-    # Pattern for indirect calls
-    # CALL dword ptr [EAX + 0x10] or CALL dword ptr [EDX]
-    if vtable_offset == 0:
-        call_pattern = re.compile(
-            r'CALL\s+dword\s+ptr\s+\[\s*([A-Z]+)\s*\]',
-            re.IGNORECASE
-        )
-    else:
-        call_pattern = re.compile(
-            r'CALL\s+dword\s+ptr\s+\[\s*[A-Z]+\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
-            re.IGNORECASE
-        )
-
     for i, line in enumerate(lines):
         match = call_pattern.search(line)
-        if not match:
+        if not match or (vtable_offset != 0 and _int_literal(match.group(1)) != vtable_offset):
             continue
-
-        # For non-zero offset, verify it matches
-        if vtable_offset != 0:
-            offset_str = match.group(1)
-            try:
-                found_offset = int(offset_str, 16) if offset_str.lower().startswith('0x') else int(offset_str)
-                if found_offset != vtable_offset:
-                    continue
-            except ValueError:
-                continue
 
         # Primary method: scan FORWARD for ADD ESP,N (handles early pushes)
         stack_params = None
         method = 'push_count'
-        for j in range(i + 1, min(len(lines), i + 15)):
-            next_line = lines[j].strip().upper()
-            # Stop at boundaries
-            if any(x in next_line for x in ['CALL ', 'RET', 'RETN']):
+        for next_line in lines[i + 1:i + 15]:
+            next_line = next_line.strip()
+            upper = next_line.upper()
+            if 'CALL ' in upper or 'RET' in upper or upper.startswith('PUSH '):
                 break
-            if next_line.startswith('PUSH '):
-                break
-            add_match = re.match(r'ADD\s+ESP,\s*(0x[0-9A-Fa-f]+|\d+)', next_line)
+            add_match = ADD_ESP_RE.match(next_line)
             if add_match:
-                val_str = add_match.group(1)
-                stack_bytes = int(val_str, 16) if val_str.lower().startswith('0x') else int(val_str)
-                stack_params = stack_bytes // 4
+                stack_params = _int_literal(add_match.group(1)) // 4
                 method = 'add_esp'
                 break
 
         # Fallback: count PUSHes before this call (scan backward)
         if stack_params is None:
-            push_count = 0
-            for j in range(i - 1, max(0, i - 30), -1):
-                prev_line = lines[j].strip().upper()
-
-                # Stop at function boundaries or other calls
-                if any(x in prev_line for x in ['CALL ', 'RET', 'RETN', 'JMP ']):
+            stack_params = 0
+            for prev_line in reversed(lines[max(0, i - 29):i]):
+                upper = prev_line.strip().upper()
+                if any(x in upper for x in ('CALL ', 'RET', 'JMP ')):
                     break
+                if upper.startswith('PUSH '):
+                    stack_params += 1
 
-                if prev_line.startswith('PUSH '):
-                    push_count += 1
-            stack_params = push_count
-
-        # Extract call address from the line if available
-        addr_match = re.search(r';\s*([0-9a-fA-F]+)', line)
-        call_addr = addr_match.group(1) if addr_match else 'unknown'
-
+        addr_match = CALL_ADDR_RE.search(line)
         results.append({
-            'call_addr': call_addr,
+            'call_addr': addr_match.group(1) if addr_match else 'unknown',
             'estimated_params': stack_params,
             'method': method,
             'line_num': i + 1
         })
-
     return results
 
 
-def analyze_callers_for_params(pseudocode_dir, callers, vtable_offset):
+def analyze_callers_for_params(asm_index, callers, vtable_offset):
     """Analyze assembly of caller functions to estimate parameters.
 
     Args:
-        pseudocode_dir: Base directory for pseudocode/asm files
+        asm_index: {function name: .asm path}, from index_asm_files
         callers: List of caller function names
         vtable_offset: The vtable offset being called
 
     Returns:
-        Dict with parameter analysis results
+        Dict with parameter analysis results, or None when no call site was found
     """
     all_estimates = []
     caller_details = []
-
     for caller_name in callers:
-        asm_path = find_asm_file_for_function(pseudocode_dir, caller_name)
+        asm_path = asm_index.get(caller_name)
         if not asm_path:
             continue
-
-        call_sites = analyze_indirect_call_in_asm(asm_path, vtable_offset)
-
-        for site in call_sites:
+        for site in analyze_indirect_call_in_asm(asm_path, vtable_offset):
             all_estimates.append(site['estimated_params'])
-            caller_details.append({
-                'caller': caller_name,
-                'estimated_params': site['estimated_params']
-            })
+            caller_details.append({'caller': caller_name, 'estimated_params': site['estimated_params']})
 
     if not all_estimates:
         return None
-
-    # Find most common parameter count
-    from collections import Counter
-    count_freq = Counter(all_estimates)
-    most_common_params, most_common_count = count_freq.most_common(1)[0]
-
     return {
-        'estimated_params': most_common_params,
+        'estimated_params': Counter(all_estimates).most_common(1)[0][0],
         'param_estimates': sorted(set(all_estimates)),
         'call_site_count': len(all_estimates),
         'caller_details': caller_details[:10]  # Limit to 10 for JSON size
@@ -404,61 +307,43 @@ def update_function_json_files(pseudocode_dir, vtables_dir):
     log_info("Building indirect caller map from pseudocode...")
     indirect_map = build_indirect_caller_map(pseudocode_dir, vtables_dir)
     log_info("Found %d virtual methods with identified callers" % len(indirect_map))
+    asm_index = index_asm_files(pseudocode_dir)
 
-    # Walk through all JSON files and update them
     updated_count = 0
     analyzed_count = 0
-
-    for root, dirs, files in os.walk(pseudocode_dir):
+    for root, _dirs, files in os.walk(pseudocode_dir):
         for filename in files:
             if not filename.endswith('.json'):
                 continue
-
             json_path = os.path.join(root, filename)
-
             try:
                 with open(json_path, 'r') as f:
                     data = json.load(f)
-            except Exception:
+            except (OSError, ValueError) as e:
+                log_warning("Could not read %s for its indirect callers: %s" % (json_path, e))
                 continue
 
-            # Get function address from the JSON
-            func_addr = data.get('function', {}).get('address', '')
-            if not func_addr:
+            caller_info = indirect_map.get(data.get('function', {}).get('address', ''))
+            if not caller_info:
                 continue
 
-            # Check if this function has indirect callers
-            caller_info = indirect_map.get(func_addr)
+            callers = caller_info['possible_callers']
+            vtable_offset = caller_info['vtable_offset']
+            indirect_info = {
+                'method_name': caller_info['method_name'],
+                'vtable_offset': vtable_offset,
+                'possible_callers': callers,
+            }
+            param_analysis = analyze_callers_for_params(asm_index, callers, vtable_offset)
+            if param_analysis:
+                indirect_info['param_analysis'] = param_analysis
+                analyzed_count += 1
+            data['possible_indirect_callers'] = indirect_info
 
-            if caller_info:
-                callers = caller_info['possible_callers']
-                vtable_offset = caller_info['vtable_offset']
-
-                # Analyze assembly of callers to estimate parameters
-                param_analysis = analyze_callers_for_params(
-                    pseudocode_dir, callers, vtable_offset)
-
-                # Build the indirect callers info
-                indirect_info = {
-                    'method_name': caller_info['method_name'],
-                    'vtable_offset': vtable_offset,
-                    'possible_callers': callers,
-                }
-
-                if param_analysis:
-                    indirect_info['param_analysis'] = param_analysis
-                    analyzed_count += 1
-
-                data['possible_indirect_callers'] = indirect_info
-
-                # Write back
-                with open(json_path, 'w') as f:
-                    json.dump(data, f, indent=2, sort_keys=True)
-
-                updated_count += 1
+            with open(json_path, 'w') as f:
+                json.dump(data, f, indent=2, sort_keys=True)
+            updated_count += 1
 
     log_info("Updated %d JSON files with possible_indirect_callers" % updated_count)
     log_info("  - %d with parameter analysis from assembly" % analyzed_count)
     return updated_count
-
-

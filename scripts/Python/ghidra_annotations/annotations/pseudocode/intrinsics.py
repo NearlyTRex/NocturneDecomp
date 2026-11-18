@@ -3,8 +3,51 @@
 # This module is the SINGLE SOURCE OF TRUTH for intrinsic definitions
 
 import os
-from ghidra_annotations.util import make_dirs, with_generated_notice
+from ghidra_annotations.util import make_dirs, with_generated_notice, write_if_changed
 from ghidra_annotations.util.log import log_info
+
+# Width in bits of each fixed-width type the macros cast through
+_TYPE_BITS = {"uint8_t": 8, "uint16_t": 16, "uint32_t": 32, "uint64_t": 64}
+
+
+def _low_bits_mask(bits):
+    return "0x%XULL" % ((1 << bits) - 1)
+
+
+def concat_macro(hi_size, lo_size, result_type, lo_type):
+    """`#define CONCATxy(hi, lo)` as Ghidra means it: exactly x + y bytes.
+
+    The operands are often wider C values than their byte counts (a sign-
+    extended char, an int standing for 3 bytes), so the low part is masked to
+    its own width and the result to x + y bytes, or a nested CONCAT would carry
+    the extra bits into its neighbour. Past 8 bytes only the low 8 survive, which
+    are the low part's: the high part lies wholly above them.
+    """
+    name = "CONCAT%d%d" % (hi_size, lo_size)
+    lo_bits = lo_size * 8
+    if lo_bits >= 64:
+        return "#define %s(hi, lo) ((%s)(%s)(lo))" % (name, result_type, lo_type)
+    lo_expr = "(%s)(lo)" % lo_type
+    if lo_bits < _TYPE_BITS[lo_type]:
+        lo_expr = "(%s & %s)" % (lo_expr, _low_bits_mask(lo_bits))
+    body = "((%s)(hi) << %d) | %s" % (result_type, lo_bits, lo_expr)
+    total_bits = (hi_size + lo_size) * 8
+    if total_bits < _TYPE_BITS[result_type]:
+        body = "(%s) & %s" % (body, _low_bits_mask(total_bits))
+    return "#define %s(hi, lo) ((%s)(%s))" % (name, result_type, body)
+
+
+def subpiece_macros(inp_size, out_size, result_type):
+    """`SUBxy(x)` and `SUBxy(x, offset)`: y bytes of x, from the bottom or from
+    byte `offset`, masked when y is narrower than the type that holds it."""
+    name = "SUB%d%d" % (inp_size, out_size)
+    out_bits = out_size * 8
+    mask = " & %s" % _low_bits_mask(out_bits) if out_bits < _TYPE_BITS[result_type] else ""
+    return [
+        "#define _%s_1(x) ((%s)(x)%s)" % (name, result_type, mask),
+        "#define _%s_2(x, off) ((%s)((x) >> ((off) * 8))%s)" % (name, result_type, mask),
+        "#define %s(...) _SUB_GET_MACRO(__VA_ARGS__, _%s_2, _%s_1)(__VA_ARGS__)" % (name, name, name),
+    ]
 
 
 def get_carry_intrinsics():
@@ -114,16 +157,16 @@ def get_subpiece_intrinsics():
     """Return list of SUB (subpiece/truncation) intrinsics.
 
     SUBxy(val) extracts the low y bytes from an x-byte value.
-    Returns tuple of (input_size, output_size, result_type, mask or None).
+    Returns tuple of (input_size, output_size, result_type).
     """
     return [
-        # (input_size, output_size, result_type, mask)
-        (4, 1, "uint8_t", None),          # SUB41 - truncate 4-byte to 1-byte
-        (4, 2, "uint16_t", None),         # SUB42 - truncate 4-byte to 2-byte
-        (8, 2, "uint16_t", None),         # SUB82 - truncate 8-byte to 2-byte
-        (8, 4, "uint32_t", None),         # SUB84 - truncate 8-byte to 4-byte
-        (8, 6, "uint64_t", "0xFFFFFFFFFFFFULL"),  # SUB86 - truncate 8-byte to 6-byte
-        (10, 4, "uint32_t", None),        # SUB104 - truncate float10 to 4-byte
+        # (input_size, output_size, result_type)
+        (4, 1, "uint8_t"),          # SUB41 - truncate 4-byte to 1-byte
+        (4, 2, "uint16_t"),         # SUB42 - truncate 4-byte to 2-byte
+        (8, 2, "uint16_t"),         # SUB82 - truncate 8-byte to 2-byte
+        (8, 4, "uint32_t"),         # SUB84 - truncate 8-byte to 4-byte
+        (8, 6, "uint64_t"),         # SUB86 - truncate 8-byte to 6-byte
+        (10, 4, "uint32_t"),        # SUB104 - truncate float10 to 4-byte
     ]
 
 
@@ -426,54 +469,6 @@ def get_portable_mmx_lines():
     return lines
 
 
-def get_all_intrinsic_names():
-    """Return set of all intrinsic names defined.
-
-    Used to check if an identifier in decompiled code is an intrinsic.
-    """
-    names = set()
-
-    # Carry/borrow intrinsics
-    for size in [1, 2, 4, 8]:
-        names.add(f"CARRY{size}")
-        names.add(f"SCARRY{size}")
-        names.add(f"BORROW{size}")
-        names.add(f"SBORROW{size}")
-
-    # Concat intrinsics
-    for hi, lo, _, _ in get_concat_intrinsics():
-        names.add(f"CONCAT{hi}{lo}")
-
-    # Subpiece intrinsics
-    for inp, out, _, _ in get_subpiece_intrinsics():
-        names.add(f"SUB{inp}{out}")
-
-    # ZEXT intrinsics
-    for inp, out, _, _ in get_zext_intrinsics():
-        names.add(f"ZEXT{inp}{out}")
-
-    # FPU intrinsics
-    names.update(get_fpu_intrinsics().keys())
-
-    # MMX intrinsics
-    names.update(get_mmx_intrinsics().keys())
-
-    # CPUID intrinsics
-    for name, _, _ in get_cpuid_intrinsics():
-        names.add(name)
-
-    # Math intrinsics
-    names.update(["ROUND", "TRUNC", "ABS", "SQRT", "NAN", "INF", "FLOOR", "CEIL"])
-
-    # Sync intrinsics
-    names.update(["LOCK", "UNLOCK"])
-
-    # Offset pointer intrinsics
-    names.add("ADJ")
-
-    return names
-
-
 def generate_intrinsics_header():
     """Generate the complete intrinsics.h header content.
 
@@ -508,9 +503,11 @@ def generate_intrinsics_header():
     lines.append("// CARRY - Unsigned carry (addition overflow)")
     lines.append("// =============================================================================")
     lines.append("// CARRY(a, b) returns 1 if (a + b) would overflow unsigned")
+    lines.append("// The sum is cast back to the type: a narrower one is promoted to int, and")
+    lines.append("// its sum would never wrap.")
     lines.append("")
-    for size, (utype, name) in sorted(get_carry_intrinsics().items()):
-        lines.append(f"#define {name}(a, b) (({utype})(a) + ({utype})(b) < ({utype})(a))")
+    for _, (utype, name) in sorted(get_carry_intrinsics().items()):
+        lines.append(f"#define {name}(a, b) (({utype})(({utype})(a) + ({utype})(b)) < ({utype})(a))")
     lines.append("")
 
     # SCARRY - signed addition overflow
@@ -518,11 +515,13 @@ def generate_intrinsics_header():
     lines.append("// SCARRY - Signed carry (addition overflow)")
     lines.append("// =============================================================================")
     lines.append("// SCARRY(a, b) returns 1 if (a + b) would overflow signed")
+    lines.append("// The sum is taken unsigned and cast back, as SBORROW's difference is: a")
+    lines.append("// narrower sum would never wrap, and a signed one that does is undefined.")
     lines.append("")
-    for size, (stype, utype, name) in sorted(get_scarry_intrinsics().items()):
+    for _, (stype, utype, name) in sorted(get_scarry_intrinsics().items()):
         lines.append(f"#define {name}(a, b) \\")
         lines.append(f"    (((({stype})(a) ^ ({stype})(b)) >= 0) && \\")
-        lines.append(f"     ((({stype})(a) ^ (({stype})(a) + ({stype})(b))) < 0))")
+        lines.append(f"     ((({stype})(a) ^ ({stype})(({utype})(a) + ({utype})(b))) < 0))")
     lines.append("")
 
     # BORROW - unsigned subtraction underflow
@@ -531,7 +530,7 @@ def generate_intrinsics_header():
     lines.append("// =============================================================================")
     lines.append("// BORROW(a, b) returns 1 if (a - b) would underflow unsigned")
     lines.append("")
-    for size, (utype, name) in sorted(get_borrow_intrinsics().items()):
+    for _, (utype, name) in sorted(get_borrow_intrinsics().items()):
         lines.append(f"#define {name}(a, b) (({utype})(a) < ({utype})(b))")
     lines.append("")
 
@@ -542,7 +541,7 @@ def generate_intrinsics_header():
     lines.append("// SBORROW(a, b) returns 1 if (a - b) would overflow signed")
     lines.append("// Overflow occurs when signs of a and b differ, and sign of result differs from a")
     lines.append("")
-    for size, (stype, utype, name) in sorted(get_sborrow_intrinsics().items()):
+    for _, (stype, utype, name) in sorted(get_sborrow_intrinsics().items()):
         lines.append(f"#define {name}(a, b) \\")
         lines.append(f"    (((({stype})(a) ^ ({stype})(b)) < 0) && \\")
         lines.append(f"     ((({stype})(a) ^ ({stype})(({utype})(a) - ({utype})(b))) < 0))")
@@ -553,11 +552,11 @@ def generate_intrinsics_header():
     lines.append("// CONCAT - Concatenate values into larger type")
     lines.append("// =============================================================================")
     lines.append("// CONCATxy(hi, lo) concatenates x-byte hi value with y-byte lo value")
+    lines.append("// lo is masked to y bytes and the result to x + y, whatever wider value")
+    lines.append("// the decompile passes for them")
     lines.append("")
     for hi_size, lo_size, result_type, lo_type in get_concat_intrinsics():
-        lo_bits = lo_size * 8
-        name = f"CONCAT{hi_size}{lo_size}"
-        lines.append(f"#define {name}(hi, lo) ((({result_type})(hi) << {lo_bits}) | (({lo_type})(lo)))")
+        lines.append(concat_macro(hi_size, lo_size, result_type, lo_type))
     lines.append("")
 
     # Bitcast helpers for FPU double/float reconstruction
@@ -608,14 +607,8 @@ def generate_intrinsics_header():
     lines.append("// Helper macros for optional offset argument")
     lines.append("#define _SUB_GET_MACRO(_1, _2, NAME, ...) NAME")
     lines.append("")
-    for inp_size, out_size, result_type, mask in get_subpiece_intrinsics():
-        name = f"SUB{inp_size}{out_size}"
-        # One-arg version: extract low bytes
-        lines.append(f"#define _{name}_1(x) (({result_type})(x))")
-        # Two-arg version: extract bytes at offset
-        lines.append(f"#define _{name}_2(x, off) (({result_type})((x) >> ((off) * 8)))")
-        # Dispatcher macro
-        lines.append(f"#define {name}(...) _SUB_GET_MACRO(__VA_ARGS__, _{name}_2, _{name}_1)(__VA_ARGS__)")
+    for inp_size, out_size, result_type in get_subpiece_intrinsics():
+        lines.extend(subpiece_macros(inp_size, out_size, result_type))
     lines.append("")
 
     # ZEXT - zero extension
@@ -642,9 +635,9 @@ def generate_intrinsics_header():
             lines.append(f"#define {fpu_name}(x) {c_func}")
         elif num_args == 1:
             lines.append(f"#define {fpu_name}(x) {c_func}(x)")
-        elif num_args == 2:
+        else:
             lines.append(f"#define {fpu_name}(y, x) {c_func}(y, x)")
-        lines.append(f"#endif")
+        lines.append("#endif")
     lines.append("")
 
     # MMX intrinsics
@@ -667,14 +660,12 @@ def generate_intrinsics_header():
     lines.append("")
     lines.append("// Two-operand MMX intrinsics")
     for name in MMX_TWO_OPERAND:
-        func, desc = mmx[name]
-        lines.append(f"#define {name}(a, b) (uint64_t){func}((__m64)(a), (__m64)(b))")
+        lines.append(f"#define {name}(a, b) (uint64_t){mmx[name][0]}((__m64)(a), (__m64)(b))")
     lines.append("")
 
     lines.append("// Shift MMX intrinsics (value, count)")
     for name in MMX_SHIFTS:
-        func, desc = mmx[name]
-        lines.append(f"#define {name}(a, count) (uint64_t){func}((__m64)(a), (count))")
+        lines.append(f"#define {name}(a, count) (uint64_t){mmx[name][0]}((__m64)(a), (count))")
     lines.append("")
 
     lines.append("// MMX state")
@@ -768,7 +759,7 @@ def generate_intrinsics_header():
     lines.append("")
 
     # Generate individual CPUID wrapper macros
-    for name, leaf, desc in get_cpuid_intrinsics():
+    for name, _, desc in get_cpuid_intrinsics():
         lines.append(f"// {desc}")
         lines.append(f"#define {name}(x) _cpuid_intrinsic(x)")
     lines.append("")
@@ -882,11 +873,12 @@ def write_intrinsics_header(pseudocode_dir):
     intrinsics_path = os.path.join(system_dir, "intrinsics.h")
     content = generate_intrinsics_header()
 
+    # Only when the text changed: nocturne.h's PCH records each header's mtime,
+    # so rewriting the same bytes would void every cached function compile
     try:
-        with open(intrinsics_path, 'w') as f:
-            f.write(with_generated_notice(content))
-        log_info("Generated intrinsics header: %s" % intrinsics_path)
-        return intrinsics_path
-    except Exception as e:
+        write_if_changed(intrinsics_path, with_generated_notice(content))
+    except OSError as e:
         log_info("Failed to write intrinsics header: %s" % str(e))
         return None
+    log_info("Generated intrinsics header: %s" % intrinsics_path)
+    return intrinsics_path

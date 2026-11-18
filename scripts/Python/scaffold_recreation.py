@@ -390,7 +390,7 @@ class Model:
 
     def ancestors(self, name):
         chain, p = [], self.parent(name)
-        while p and p not in chain:
+        while p and p != name and p not in chain:
             chain.insert(0, p)
             p = self.parent(p)
         return chain
@@ -485,6 +485,19 @@ class Declarations:
 
     def types_only(self, params):
         return [self.type_ref(p["type"]) for p in params]
+
+    def signature(self, f):
+        """(ret, params, types) for `f`, all or nothing: a function left out as
+        unmappable leaves no include or forward declaration behind."""
+        saved = set(self.system_includes), set(self.fwd_modules), set(self.headers)
+        try:
+            ret = self.type_ref(f["ret"])
+            params = self.parameters(f.get("params", []), f.get("variadic"))
+            types = self.types_only(f.get("params", [])) + (["..."] if f.get("variadic") else [])
+        except Unmappable:
+            self.system_includes, self.fwd_modules, self.headers = saved
+            raise
+        return ret, params, types
 
 
 def void_pointer_count(f):
@@ -581,15 +594,12 @@ class Scaffold:
                                         "slots": [{"addr": None, "offset": o, "pure": True} for o in sorted(shared)]}
 
     def slot_method(self, slot):
-        f = self.model.functions.get(slot["addr"])
-        return f
+        return self.model.functions.get(slot["addr"])
 
     def introducer(self, cls, offset):
-        for c in self.model.ancestors(cls) + [cls]:
-            table = self.vtable_of.get(c)
-            if table and any(s["offset"] == offset for s in table["slots"]):
-                return c
-        return cls
+        """The highest class whose table holds `offset`; `cls` itself holds every offset asked about."""
+        return next(c for c in self.model.ancestors(cls) + [cls]
+                    if any(s["offset"] == offset for s in self.vtable_of.get(c, {}).get("slots", [])))
 
     def struct_slot_name(self, intro, offset):
         """The slot's field name in Ghidra's <intro>_vtable struct, if it has one.
@@ -708,7 +718,11 @@ class Scaffold:
         whose signatures use it, so a lower module never names a higher one.
         """
         homes = {name: MATH_HOME for name in self.model.types if MATH_TYPE.match(name)}
-        homes.update(PLATFORM_TYPES)
+        for name, home in PLATFORM_TYPES.items():
+            if name in self.model.types:
+                homes[name] = home
+            else:
+                self.report["platform type missing from the export (renamed in Ghidra?)"].append(name)
         for cls in self.classes:
             if cls in homes:
                 continue
@@ -765,7 +779,7 @@ class Scaffold:
 
     # -- rendering --------------------------------------------------------
 
-    def render(self, emit):
+    def render(self, emit, root=OUTPUT):
         self.plan_virtuals()
         self.plan_funcdefs()
         polymorphic = {c for c in self.classes
@@ -775,7 +789,7 @@ class Scaffold:
                 self.render_class(cls, polymorphic, emit)
         for tu in sorted(self.free):
             self.render_tu(tu, emit)
-        self.render_fwd(emit)
+        self.render_fwd(emit, root)
 
     def plan_funcdefs(self):
         for name, t in self.model.types.items():
@@ -786,6 +800,19 @@ class Scaffold:
                 self.funcdef_alias[name] = ("%s::%s" % (owner, rest), self.header_files[owner])
             else:
                 self.funcdef_alias[name] = (name, self.tu_header(self.type_home[name]))
+        # A funcdef whose own `using` cannot be spelled gets no alias, so whatever names it is
+        # left out as unmappable instead of naming an alias that is never declared. Dropping one
+        # can strand a funcdef that names it, hence the repeat.
+        dropped = True
+        while dropped:
+            dropped = False
+            for name, (alias, header) in sorted(self.funcdef_alias.items()):
+                try:
+                    self.funcdef_using(Declarations(self, module_of(header)), name, alias)
+                except Unmappable as exc:
+                    del self.funcdef_alias[name]
+                    self.report["left out: unmappable type"].append("funcdef %s (%s)" % (name, exc))
+                    dropped = True
 
     def funcdef_using(self, decls, name, alias):
         t = self.model.types[name]
@@ -794,11 +821,9 @@ class Scaffold:
             params.append("...")
         return "using %s = %s(%s);" % (alias, decls.type_ref(t["ret"]), ", ".join(params))
 
-    def method_entry(self, decls, cls, f, name=None, virtual=None):
+    def method_entry(self, decls, f, name=None, virtual=None):
         name = name or f["method"]
-        ret = decls.type_ref(f["ret"])
-        params = decls.parameters(f.get("params", []), f.get("variadic"))
-        types = decls.types_only(f.get("params", [])) + (["..."] if f.get("variadic") else [])
+        ret, params, types = decls.signature(f)
         static = not f.get("receiver")
         return {"name": name, "ret": ret, "params": params, "types": types,
                 "static": static, "virtual": virtual, "addr": f["addr"]}
@@ -852,7 +877,7 @@ class Scaffold:
                     self.report["override typed differently from its base (Ghidra signature)"].append(
                         "%s vs %s" % (f["name"], source["name"]))
             try:
-                entry = self.method_entry(decls, cls, source, name=name, virtual=kind)
+                entry = self.method_entry(decls, source, name=name, virtual=kind)
             except Unmappable as exc:
                 self.report["left out: unmappable type"].append("%s (%s)" % (source["name"], exc))
                 continue
@@ -881,7 +906,7 @@ class Scaffold:
                 if is_copy_assignment(f):
                     continue
                 if re.match(r"^ctor\d*$", method):
-                    entry = self.method_entry(decls, cls, f)
+                    entry = self.method_entry(decls, f)
                     key = ("ctor", tuple(entry["types"]))
                     if key not in seen:
                         seen.add(key)
@@ -891,7 +916,7 @@ class Scaffold:
                 elif f["addr"] in self.model.copy_ctors:
                     copy_ctor = True
                 elif self.model.is_public(f):
-                    entry = self.method_entry(decls, cls, f)
+                    entry = self.method_entry(decls, f)
                     key = (entry["name"], tuple(entry["types"]))
                     if key not in seen:
                         seen.add(key)
@@ -919,10 +944,7 @@ class Scaffold:
                 lines.append("")
         for alias_name, (alias, header) in sorted(self.funcdef_alias.items()):
             if header == path and alias.startswith(cls + "::"):
-                try:
-                    lines.append("    " + self.funcdef_using(decls, alias_name, alias.split("::", 1)[1]))
-                except Unmappable as exc:
-                    self.report["left out: unmappable type"].append("funcdef %s (%s)" % (alias_name, exc))
+                lines.append("    " + self.funcdef_using(decls, alias_name, alias.split("::", 1)[1]))
         if lines:
             lines.append("")
         for e in ctors:
@@ -981,19 +1003,14 @@ class Scaffold:
         lines, seen, entries = [], set(), []
         for alias_name, (alias, header) in sorted(self.funcdef_alias.items()):
             if header == path and "::" not in alias:
-                try:
-                    lines.append(self.funcdef_using(decls, alias_name, alias))
-                except Unmappable as exc:
-                    self.report["left out: unmappable type"].append("funcdef %s (%s)" % (alias_name, exc))
+                lines.append(self.funcdef_using(decls, alias_name, alias))
         if lines:
             lines.append("")
         for f in sorted(self.free[tu], key=lambda f: f["addr"]):
             if not self.model.is_public(f):
                 continue
             try:
-                ret = decls.type_ref(f["ret"])
-                params = decls.parameters(f.get("params", []), f.get("variadic"))
-                types = decls.types_only(f.get("params", [])) + (["..."] if f.get("variadic") else [])
+                ret, params, types = decls.signature(f)
             except Unmappable as exc:
                 self.report["left out: unmappable type"].append("%s (%s)" % (f["name"], exc))
                 continue
@@ -1024,7 +1041,7 @@ class Scaffold:
         out += ["namespace nocturne::%s {" % module, ""] + body + ["", "} // namespace nocturne::%s" % module]
         return "\n".join(out) + "\n"
 
-    def render_fwd(self, emit):
+    def render_fwd(self, emit, root):
         by_module = collections.defaultdict(list)
         for name, home in self.type_home.items():
             kind = self.model.types[name]["kind"]
@@ -1032,7 +1049,7 @@ class Scaffold:
                 by_module[module_of(home)].append(name)
         for module, names in sorted(by_module.items()):
             if module == PLATFORM_MODULE:
-                self.check_platform_fwd(names)
+                self.check_platform_fwd(names, root)
                 continue
             lines, needs_cstdint = [], False
             hand_written = HAND_WRITTEN_CLASSES.get(module, {})
@@ -1047,19 +1064,19 @@ class Scaffold:
                     lines.append("enum class %s : %s;" % (name, width))
                     needs_cstdint = True
                 else:
-                    keyword = {"class": "class", "struct": "struct", "union": "union"}[t["kind"]]
-                    if name in self.classes:
-                        keyword = "struct" if t["kind"] == "struct" else "class"
-                    lines.append("%s %s;" % (keyword, name))
+                    lines.append("%s %s;" % (t["kind"], name))
             out = ["#pragma once", ""]
             if needs_cstdint:
                 out += ["#include <cstdint>", ""]
             out += ["namespace nocturne::%s {" % module, ""] + lines + ["", "} // namespace nocturne::%s" % module]
             emit(os.path.join(module, "fwd.h"), "\n".join(out) + "\n")
 
-    def check_platform_fwd(self, names):
-        path = os.path.join(OUTPUT, PLATFORM_MODULE, "fwd.h")
-        text = open(path).read() if os.path.exists(path) else ""
+    def check_platform_fwd(self, names, root):
+        path = os.path.join(root, PLATFORM_MODULE, "fwd.h")
+        text = ""
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                text = f.read()
         for name in sorted(names):
             if not re.search(r"\b(class|struct|union|enum class)\s+%s\b" % re.escape(name), text):
                 self.report["homed in platform/ but not declared in platform/fwd.h"].append(name)
@@ -1121,31 +1138,41 @@ class Scaffold:
 
 
 def stale_files(root, planned):
-    """Generated-shaped files under the module trees that nothing plans any more.
+    """Generated files under the module trees that nothing plans any more.
 
     Only headers and interface tests are candidates; implementation files,
     platform/, the hand-written directories and fwd.h, which also declares
     classes added by hand, are never touched. Neither is a header the
     recreation's own code includes, nor a test whose implementation file
-    exists: both are ported code the scaffold never planned.
+    exists: both are ported code the scaffold never planned. A test is an
+    interface test only in the shape the scaffold writes, including nothing
+    of the project's but the header it mirrors, and it goes only with that
+    header.
     """
     included = included_headers(root)
-    stale = []
-    for module in MODULE_LAYERS:
-        if module == PLATFORM_MODULE:
-            continue
-        for base in (module, os.path.join("tests", module)):
-            for dirpath, _, filenames in os.walk(os.path.join(root, base)):
+
+    def candidates(base, suffix):
+        for module in MODULE_LAYERS:
+            if module == PLATFORM_MODULE:
+                continue
+            for dirpath, _, filenames in os.walk(os.path.join(root, base, module)):
                 for name in filenames:
                     relpath = os.path.relpath(os.path.join(dirpath, name), root)
-                    generated = (name.endswith(".h") and name != "fwd.h") or name.endswith("_test.cpp")
-                    tested = name.endswith("_test.cpp") and os.path.exists(
-                        os.path.join(root, tested_source(relpath)))
-                    hand_written = (os.path.dirname(relpath) in HAND_WRITTEN_DIRS
-                                    or relpath in included or tested)
-                    if generated and relpath not in planned and not hand_written:
-                        stale.append(relpath)
-    return sorted(stale)
+                    if (name.endswith(suffix) and name != "fwd.h" and relpath not in planned
+                            and os.path.dirname(relpath) not in HAND_WRITTEN_DIRS):
+                        yield relpath
+
+    headers = {h for h in candidates("", ".h") if h not in included}
+    tests = set()
+    for relpath in candidates("tests", "_test.cpp"):
+        header = tested_source(relpath)[:-len(".cpp")] + ".h"
+        if os.path.exists(os.path.join(root, tested_source(relpath))) or header in planned:
+            continue
+        with open(os.path.join(root, relpath), encoding="utf-8") as f:
+            project_includes = re.findall(r'^#include "([^"]+)"', f.read(), re.M)
+        if project_includes == [header] and (header in headers or not os.path.exists(os.path.join(root, header))):
+            tests.add(relpath)
+    return sorted(headers | tests)
 
 
 def tested_source(relpath):
@@ -1183,14 +1210,14 @@ def find_clang_format():
     return shutil.which("clang-format-%s" % version)
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--report-only", action="store_true", help="print the report, write nothing")
     parser.add_argument("--force", action="store_true", help="overwrite files that already exist")
     parser.add_argument("--prune", action="store_true",
                         help="delete generated headers and tests the scaffold no longer plans")
     parser.add_argument("--output", default=OUTPUT, help="recreation root (default: %(default)s)")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     model = Model()
     scaffold = Scaffold(model)
@@ -1209,11 +1236,13 @@ def main():
             f.write(text)
         written.append(relpath)
 
-    scaffold.render(emit)
+    scaffold.render(emit, args.output)
     stale = stale_files(args.output, set(planned))
+    pruned = []
     if args.prune and not args.report_only:
         for relpath in stale:
             os.remove(os.path.join(args.output, relpath))
+        pruned = stale
     elif stale:
         model.report["stale generated files (remove with --prune)"].extend(stale)
     if written:
@@ -1230,7 +1259,7 @@ def main():
     print("in scope: %d functions, %d classes" % (len(model.in_scope), len(scaffold.classes)))
     print("files: %d headers, %d tests" % (len(headers), len(tests)))
     if not args.report_only:
-        print("written: %d, skipped (exists): %d" % (len(written), len(skipped)))
+        print("written: %d, skipped (exists): %d, pruned: %d" % (len(written), len(skipped), len(pruned)))
     for section, items in sorted(model.report.items()):
         print("\n## %s (%d)" % (section, len(items)))
         for item in sorted(items):

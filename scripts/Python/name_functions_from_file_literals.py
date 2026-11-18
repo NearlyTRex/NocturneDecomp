@@ -12,7 +12,8 @@
 # exporter files pseudocode on disk. It renames ONLY bare `FUN_<hex>` functions;
 # anything already carrying a real name is reported and left untouched.
 #
-# Report-first; --apply mutates + saves.
+# Report-first; --apply mutates + saves, after a .gar snapshot unless --no-snapshot.
+# The report is written after the renames, so a rename Ghidra refused shows as FAILED.
 #
 # Usage (PyGhidra headless):
 #   python name_functions_from_file_literals.py <project_dir> <project_name> [program_name]
@@ -27,9 +28,13 @@
 
 import os
 import re
+import subprocess
 import sys
 import argparse
+import traceback
 from collections import Counter, defaultdict
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # A __FILE__ literal as MSVC/Watcom emitted it: "..\<dir>\<file>.c" / ".cpp".
 FILE_LITERAL_RE = re.compile(r'^\.\.[\\/](.+\.(?:c|cpp))$', re.IGNORECASE)
@@ -107,6 +112,7 @@ def plan(program, literals, excluded):
 
     # func entry -> {source path: [referencing addresses]}
     hits = defaultdict(lambda: defaultdict(list))
+    funcs = {}
 
     # Pass A: real references, from anywhere in the program.
     for addr_str, rel in literals.items():
@@ -116,6 +122,7 @@ def plan(program, literals, excluded):
             func = fm.getFunctionContaining(from_addr)
             if func is None:
                 continue  # referenced from a data table, not from code
+            funcs[func.getEntryPoint()] = func
             hits[func.getEntryPoint()][rel].append(str(from_addr))
 
     # Pass B: bare immediates inside bare FUN_* bodies.
@@ -135,15 +142,13 @@ def plan(program, literals, excluded):
                     if rel is None:
                         continue
                     site = str(instr.getAddress())
+                    funcs[entry] = func
                     if site not in hits[entry][rel]:
                         hits[entry][rel].append(site)
 
     rows = []
     for entry, by_file in hits.items():
-        func = fm.getFunctionAt(entry)
-        if func is None:
-            continue
-        current = func.getName()
+        current = funcs[entry].getName()
         files = sorted(by_file)
         row = {
             "addr": "%08x" % entry.getOffset(),
@@ -168,28 +173,27 @@ def plan(program, literals, excluded):
 
 
 def apply(program, rows):
-    """Apply RENAME rows. Returns count actually renamed."""
+    """Apply RENAME rows. Returns count actually renamed.
+
+    A name Ghidra refuses turns its row FAILED; any other error rolls every
+    rename back and is raised.
+    """
     from ghidra.program.model.symbol import SourceType
+    from ghidra.util.exception import DuplicateNameException, InvalidInputException
     fm = program.getFunctionManager()
     space = program.getAddressFactory().getDefaultAddressSpace()
 
     renamed = 0
     tx = program.startTransaction("Name functions from __FILE__ literals")
-    ok = True
+    ok = False
     try:
         for r in rows:
             if r["action"] != "RENAME":
                 continue
             func = fm.getFunctionAt(space.getAddress(int(r["addr"], 16)))
-            if func is None:
-                r["action"] = "NO-FUNCTION"  # raced/removed since planning
-                continue
-            if not BARE_FUN_RE.match(func.getName()):
-                r["action"] = "NAMED"  # renamed out from under us since planning
-                continue
             try:
                 func.setName(r["name"], SourceType.USER_DEFINED)
-            except Exception as e:
+            except (DuplicateNameException, InvalidInputException) as e:
                 r["action"] = "FAILED"
                 r["error"] = str(e)
                 print("  FAILED %s  %s -> %s: %s"
@@ -197,17 +201,13 @@ def apply(program, rows):
                 continue
             renamed += 1
             print("  RENAME %s  %s -> %s" % (r["addr"], r["current"], r["name"]))
-    except Exception as e:
-        ok = False
-        print("ERROR during apply: %s" % e)
-        import traceback
-        traceback.print_exc()
+        ok = True
     finally:
         program.endTransaction(tx, ok)
-    return renamed if ok else 0
+    return renamed
 
 
-ACTIONS = ("RENAME", "AMBIGUOUS", "EXCLUDED", "FAILED", "NO-FUNCTION", "NAMED")
+ACTIONS = ("RENAME", "AMBIGUOUS", "EXCLUDED", "FAILED", "NAMED")
 
 
 def write_report(out_path, program_name, rows, literals, skipped, excluded, applied):
@@ -256,7 +256,47 @@ def write_report(out_path, program_name, rows, literals, skipped, excluded, appl
     return counts
 
 
-def main():
+def run(program, args, excluded, out_path):
+    """Plan, rename with --apply, then report; saves when anything was renamed."""
+    print("Scanning defined strings for __FILE__ literals...")
+    literals, skipped = collect_file_literals(program)
+    print("  %d literal(s) across %d source file(s)"
+          % (len(literals), len(set(literals.values()))))
+
+    rows = plan(program, literals, excluded)
+    n_rename = sum(1 for r in rows if r["action"] == "RENAME")
+    renamed = 0
+    if args.apply and n_rename:
+        print("\n[apply] renaming %d function(s)..." % n_rename)
+        renamed = apply(program, rows)
+
+    counts = write_report(out_path, args.program_name, rows, literals,
+                          skipped, sorted(excluded), args.apply)
+    print("\n=== %s ===" % ("result" if args.apply else "plan"))
+    for action in ACTIONS:
+        if counts[action]:
+            print("  %-12s %d" % (action, counts[action]))
+    print("Report written to: %s" % out_path)
+
+    if not args.apply:
+        print("\n[dry-run] re-run with --apply to execute.")
+    elif not n_rename:
+        print("\nNothing to rename.")
+    elif renamed:
+        from ghidra.util.task import ConsoleTaskMonitor
+        print("Renamed %d. Saving program database..." % renamed)
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("Saved.")
+
+
+def snapshot(args):
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-file-literal-names"]
+    print("Snapshot: %s" % " ".join(cmd))
+    return subprocess.call(cmd) == 0
+
+
+def main(argv=None):
     p = argparse.ArgumentParser(
         description="Name bare FUN_* functions from the __FILE__ literals they reference.")
     p.add_argument("project_path")
@@ -270,7 +310,8 @@ def main():
     p.add_argument("--apply", action="store_true",
                    help="Rename + save the program (default: report only)")
     p.add_argument("--out", default=None)
-    args = p.parse_args()
+    p.add_argument("--no-snapshot", action="store_true", help="--apply without a .gar snapshot first")
+    args = p.parse_args(argv)
 
     excluded = set(args.exclude)
     if not args.no_default_excludes:
@@ -279,49 +320,26 @@ def main():
     project_path = os.path.abspath(args.project_path)
     out_path = args.out or ("%s_file_literal_naming.txt" % args.program_name)
 
+    if args.apply and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
+        os._exit(1)
+
     import pyghidra
     print("Starting PyGhidra...")
     pyghidra.start()
     print("Opening %s/%s :: %s" % (project_path, args.project_name, args.program_name))
 
-    code = 0
+    code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as program:
-            print("Scanning defined strings for __FILE__ literals...")
-            literals, skipped = collect_file_literals(program)
-            print("  %d literal(s) across %d source file(s)"
-                  % (len(literals), len(set(literals.values()))))
-
-            rows = plan(program, literals, excluded)
-            counts = write_report(out_path, args.program_name, rows, literals,
-                                  skipped, sorted(excluded), args.apply)
-
-            print("\n=== plan ===")
-            for action in ACTIONS:
-                if counts[action]:
-                    print("  %-12s %d" % (action, counts[action]))
-            print("Report written to: %s" % out_path)
-
-            n_rename = counts["RENAME"]
-            if args.apply and n_rename:
-                print("\n[apply] renaming %d function(s)..." % n_rename)
-                renamed = apply(program, rows)
-                if renamed:
-                    from ghidra.util.task import ConsoleTaskMonitor
-                    print("Renamed %d. Saving program database..." % renamed)
-                    program.getDomainFile().save(ConsoleTaskMonitor())
-                    print("Saved.")
-            elif args.apply:
-                print("\nNothing to rename.")
-            else:
-                print("\n[dry-run] re-run with --apply to execute.")
-        project.close()
+            run(program, args, excluded, out_path)
+        code = 0
     except Exception as e:
-        print("ERROR: %s" % str(e))
-        import traceback
+        print("ERROR: %s" % e)
         traceback.print_exc()
-        code = 1
+    finally:
+        project.close()
 
     # os._exit() skips stdio buffer flushing; without this, redirected/piped
     # output is lost. Flush explicitly before the hard exit (the JVM can hang

@@ -94,6 +94,43 @@ _SFO_LOCAL_ASSIGN_RE = re.compile(r'^([A-Za-z_]\w*)\s*=\s*(.+?);\s*$')
 
 
 
+def _data_types_path(pseudocode_src_dir):
+    """data_types.json for a pseudocode src dir, or None outside a pseudocode/ tree.
+
+    pseudocode_src_dir is .../<exe>/pseudocode/src (or below it), and
+    data_types.json is .../<exe>/data_types/data_types.json. The walk up stops
+    at the root, whose dirname is itself.
+    """
+    base = pseudocode_src_dir
+    while base and os.path.basename(base) != 'pseudocode':
+        parent = os.path.dirname(base)
+        if parent == base:
+            return None
+        base = parent
+    if not base:
+        return None
+    return os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
+
+
+def _load_data_types(data_types_path):
+    """data_types.json as a dict, or None if it is missing or unreadable."""
+    try:
+        with open(data_types_path) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
+def _cached(cache, build, pseudocode_src_dir):
+    """build(data_types.json path) for a pseudocode src dir, once per path."""
+    path = _data_types_path(pseudocode_src_dir)
+    if path not in cache:
+        cache[path] = build(path) if path else {}
+    return cache[path]
+
+
+
+
 def build_struct_layout_map(data_types_path):
     """Parse data_types.json into a per-struct field layout.
 
@@ -102,10 +139,8 @@ def build_struct_layout_map(data_types_path):
     element count (None for non-array fields). Returns {} if the file is
     missing or unreadable.
     """
-    try:
-        with open(data_types_path) as f:
-            data = json.load(f)
-    except (IOError, ValueError):
+    data = _load_data_types(data_types_path)
+    if data is None:
         return {}
     layout = {}
     for section in ('structs', 'unions'):
@@ -157,15 +192,7 @@ def get_struct_layout_map(pseudocode_src_dir):
     pseudocode_src_dir is .../<exe>/pseudocode/src, data_types.json is at
     .../<exe>/data_types/data_types.json.
     """
-    base = pseudocode_src_dir
-    while base and os.path.basename(base) != 'pseudocode':
-        base = os.path.dirname(base)
-    path = None
-    if base:
-        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
-    if path not in _struct_layout_cache:
-        _struct_layout_cache[path] = build_struct_layout_map(path) if path else {}
-    return _struct_layout_cache[path]
+    return _cached(_struct_layout_cache, build_struct_layout_map, pseudocode_src_dir)
 
 
 
@@ -178,10 +205,8 @@ def build_struct_size_map(data_types_path):
     a magic allocation stride that equals sizeof(T). Returns {} if the file is
     missing or unreadable.
     """
-    try:
-        with open(data_types_path) as f:
-            data = json.load(f)
-    except (IOError, ValueError):
+    data = _load_data_types(data_types_path)
+    if data is None:
         return {}
     sizes = {}
     for section in ('structs', 'unions'):
@@ -197,15 +222,7 @@ def build_struct_size_map(data_types_path):
 
 def get_struct_size_map(pseudocode_src_dir):
     """Cached struct/union name -> size map, located like get_struct_layout_map."""
-    base = pseudocode_src_dir
-    while base and os.path.basename(base) != 'pseudocode':
-        base = os.path.dirname(base)
-    path = None
-    if base:
-        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
-    if path not in _struct_size_cache:
-        _struct_size_cache[path] = build_struct_size_map(path) if path else {}
-    return _struct_size_cache[path]
+    return _cached(_struct_size_cache, build_struct_size_map, pseudocode_src_dir)
 
 
 
@@ -218,10 +235,8 @@ def build_enum_value_map(data_types_path):
     names still carries the constant the binary uses there. Returns {} if the
     file is missing or unreadable.
     """
-    try:
-        with open(data_types_path) as f:
-            data = json.load(f)
-    except (IOError, ValueError):
+    data = _load_data_types(data_types_path)
+    if data is None:
         return {}
     enums = {}
     for entry in data.get('enums', []):
@@ -242,33 +257,41 @@ def build_enum_value_map(data_types_path):
 
 def get_enum_value_map(pseudocode_src_dir):
     """Cached enum name -> {enumerator: value} map, located like get_struct_layout_map."""
-    base = pseudocode_src_dir
-    while base and os.path.basename(base) != 'pseudocode':
-        base = os.path.dirname(base)
-    path = None
-    if base:
-        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
-    if path not in _enum_value_cache:
-        _enum_value_cache[path] = build_enum_value_map(path) if path else {}
-    return _enum_value_cache[path]
+    return _cached(_enum_value_cache, build_enum_value_map, pseudocode_src_dir)
 
 
+
+
+def _sfo_param_list(code):
+    """The parameter list text of the function in code, or None.
+
+    From the exported header's `// Signature:` line when there is one (a .cpp
+    or .keep on disk), else from the C definition before the body's first '{'
+    (the decompiled text the export scans, which has no header). The
+    definition may wrap over several lines.
+    """
+    for line in code.split('\n'):
+        m = _SFO_SIG_RE.search(line)
+        if m:
+            return m.group(1)
+    brace = code.find('{')
+    if brace < 0:
+        return None
+    head = ' '.join(ln for ln in code[:brace].split('\n') if not ln.lstrip().startswith(('//', '#')))
+    m = re.search(r'\(([^()]*)\)\s*$', head)
+    return re.sub(r'\s+', ' ', m.group(1)) if m else None
 
 
 def _sfo_resolve_var_types(code):
     """Map identifier -> declared struct type name (pointer/value, deref'd)."""
     var_types = {}
+    params = _sfo_param_list(code)
+    for part in (params or '').split(','):
+        part = part.strip()
+        pm = _SFO_PTR_PARAM_RE.match(part) or _SFO_VAL_PARAM_RE.match(part)
+        if pm:
+            var_types[pm.group(2)] = pm.group(1)
     lines = code.split('\n')
-    for line in lines:
-        m = _SFO_SIG_RE.search(line)
-        if not m:
-            continue
-        for part in m.group(1).split(','):
-            part = part.strip()
-            pm = _SFO_PTR_PARAM_RE.match(part) or _SFO_VAL_PARAM_RE.match(part)
-            if pm:
-                var_types[pm.group(2)] = pm.group(1)
-        break
     for line in lines:
         m = _SFO_DECL_RE.match(line) or _SFO_VALDECL_RE.match(line)
         if m and m.group(1) not in _SFO_NON_TYPE_KEYWORDS:
@@ -276,6 +299,38 @@ def _sfo_resolve_var_types(code):
     return var_types
 
 
+
+
+def _subscript_end(p, pos):
+    """Index just past the `[...]` that opens at p[pos], or None if it never closes."""
+    depth = 0
+    for j in range(pos, len(p)):
+        if p[j] == '[':
+            depth += 1
+        elif p[j] == ']':
+            depth -= 1
+            if depth == 0:
+                return j + 1
+    return None
+
+
+def _field_step(p, pos):
+    """(field name, index after it) for the `->name` / `.name` step at p[pos], else None."""
+    if p[pos:pos + 2] == '->':
+        pos += 2
+    elif p[pos] == '.':
+        pos += 1
+    else:
+        return None
+    fm = re.match(r'[A-Za-z_]\w*', p[pos:])
+    if not fm:
+        return None
+    return fm.group(0), pos + fm.end()
+
+
+def _find_field(layout, struct_name, field_name):
+    """The layout entry for struct_name.field_name, or None."""
+    return next((fl for fl in layout.get(struct_name) or () if fl['name'] == field_name), None)
 
 
 def resolve_access_path_type(path, var_types, layout):
@@ -303,44 +358,47 @@ def resolve_access_path_type(path, var_types, layout):
         return None
     pos = m.end()
     while pos < len(p):
-        ch = p[pos]
-        if ch == '[':
-            depth = 0
-            j = pos
-            while j < len(p):
-                if p[j] == '[':
-                    depth += 1
-                elif p[j] == ']':
-                    depth -= 1
-                    if depth == 0:
-                        break
-                j += 1
-            if j >= len(p):
+        if p[pos] == '[':
+            pos = _subscript_end(p, pos)
+            if pos is None:
                 return None
-            pos = j + 1
-        elif p[pos:pos + 2] == '->' or ch == '.':
-            pos += 2 if p[pos:pos + 2] == '->' else 1
-            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
-            if not fm:
-                return None
-            flds = layout.get(cur)
-            if not flds:
-                return None
-            ftype = None
-            for fl in flds:
-                if fl.get('name') == fm.group(0):
-                    ftype = fl.get('type')
-                    break
-            if not ftype:
-                return None
-            cur = ftype
-            pos += fm.end()
-        else:
-            # Leading '(', '*', or any other token -> give up (conservative).
+            continue
+        # Leading '(', '*', or any other token -> give up (conservative).
+        step = _field_step(p, pos)
+        if step is None:
             return None
+        fld = _find_field(layout, cur, step[0])
+        if fld is None or not fld.get('type'):
+            return None
+        cur, pos = fld['type'], step[1]
     return cur
 
 
+
+
+def _sfo_int(literal):
+    """An integer literal's value: hex with 0x, else decimal (a leading 0 is not octal here)."""
+    return int(literal, 16) if literal[:2].lower() == '0x' else int(literal)
+
+
+def _top_level_terms(expr, ops):
+    """Split expr at the top-level operators in `ops`, never at the '-' of '->'.
+
+    Returns the stripped, non-empty terms.
+    """
+    depth, term, terms = 0, '', []
+    for i, ch in enumerate(expr):
+        if ch in '([':
+            depth += 1
+        elif ch in ')]':
+            depth -= 1
+        elif ch in ops and depth == 0 and expr[i:i + 2] != '->':
+            terms.append(term)
+            term = ''
+            continue
+        term += ch
+    terms.append(term)
+    return [t.strip() for t in terms if t.strip()]
 
 
 def _sfo_index_const(idx_expr):
@@ -352,28 +410,9 @@ def _sfo_index_const(idx_expr):
     """
     const = 0
     has_var = False
-    depth = 0
-    term = ''
-    terms = []
-    for ch in idx_expr:
-        if ch in '([':
-            depth += 1
-            term += ch
-        elif ch in ')]':
-            depth -= 1
-            term += ch
-        elif ch == '+' and depth == 0:
-            terms.append(term)
-            term = ''
-        else:
-            term += ch
-    terms.append(term)
-    for t in terms:
-        t = t.strip()
-        if not t:
-            continue
+    for t in _top_level_terms(idx_expr, '+'):
         if _SFO_INT_RE.match(t):
-            const += int(t, 0)
+            const += _sfo_int(t)
         elif _SFO_IDENT_RE.search(t):
             has_var = True
     return const, has_var
@@ -390,21 +429,7 @@ def _sfo_strip_cast(expr):
 
 def _sfo_top_terms(expr):
     """Split an expression into its top-level '+'/'-' separated terms."""
-    depth, term, terms = 0, '', []
-    for ch in expr:
-        if ch in '([':
-            depth += 1
-            term += ch
-        elif ch in ')]':
-            depth -= 1
-            term += ch
-        elif ch in '+-' and depth == 0:
-            terms.append(term)
-            term = ''
-        else:
-            term += ch
-    terms.append(term)
-    return [t.strip() for t in terms if t.strip()]
+    return _top_level_terms(expr, '+-')
 
 
 
@@ -418,27 +443,10 @@ def _sfo_split_ptr_const(expr):
     offset (a different artifact class), so it stays glued to its term and the
     term fails to resolve as a field (no false flag).
     """
-    depth, term, terms = 0, '', []
-    for ch in expr:
-        if ch in '([':
-            depth += 1
-            term += ch
-        elif ch in ')]':
-            depth -= 1
-            term += ch
-        elif ch == '+' and depth == 0:
-            terms.append(term)
-            term = ''
-        else:
-            term += ch
-    terms.append(term)
     const, base_terms = 0, []
-    for t in terms:
-        t = t.strip()
-        if not t:
-            continue
+    for t in _top_level_terms(expr, '+'):
         if _SFO_INT_RE.match(t):
-            const += int(t, 0)
+            const += _sfo_int(t)
         else:
             base_terms.append(t)
     if len(base_terms) != 1:
@@ -446,6 +454,35 @@ def _sfo_split_ptr_const(expr):
     return (base_terms[0], const)
 
 
+
+
+def _sfo_path_steps(path, var_types, layout):
+    """Shared front of the two field-path resolvers.
+
+    Strips one pointer cast and a leading '&', drops parens that merely group
+    a sub-path ('(a->b).c' == 'a->b.c') and bails if real arithmetic (not the
+    '-' of '->') leaks in. Returns (p, had_amp, root_type, pos after the root)
+    or None.
+    """
+    if not path or not layout:
+        return None
+    p = _sfo_strip_cast(path)
+    had_amp = p[:1] == '&'
+    if had_amp:
+        p = p[1:].strip()
+    if '(' in p:
+        bare = p.replace('(', '').replace(')', '')
+        if re.search(r'[+\-*/%]', bare.replace('->', '')):
+            return None
+        p = bare
+    p = re.sub(r'\s+', '', p)
+    m = re.match(r'[A-Za-z_]\w*', p)
+    if not m:
+        return None
+    root = var_types.get(m.group(0))
+    if not root:
+        return None
+    return p, had_amp, root, m.end()
 
 
 def _sfo_field_extent(path, var_types, layout):
@@ -459,53 +496,31 @@ def _sfo_field_extent(path, var_types, layout):
     arithmetic / a walk of the *pointed-to* buffer, NOT a struct base-shift —
     callers must not flag those. Handles a leading pointer cast and parens that
     merely group a sub-path (`(a->b).c`). Returns None on any unresolved
-    root/field, a subscript, or an unexpected token (None = "don't know").
+    root/field, a subscript, an unexpected token, or a '->' after the first
+    step: that hop leaves the root's object, so no offset within the root
+    struct describes the field (None = "don't know").
     """
-    if not path or not layout:
+    front = _sfo_path_steps(path, var_types, layout)
+    if front is None:
         return None
-    p = _sfo_strip_cast(path)
-    had_amp = p[:1] == '&'
-    if had_amp:
-        p = p[1:].strip()
-    if '(' in p:
-        # Grouping parens around a sub-path are safe to drop ('(a->b).c' ==
-        # 'a->b.c'); bail if real arithmetic (not the '-' of '->') leaks in.
-        bare = p.replace('(', '').replace(')', '')
-        if re.search(r'[+\-*/%]', bare.replace('->', '')):
-            return None
-        p = bare
-    p = re.sub(r'\s+', '', p)
-    m = re.match(r'[A-Za-z_]\w*', p)
-    if not m:
-        return None
-    root_struct = var_types.get(m.group(0))
-    if not root_struct:
-        return None
+    p, had_amp, root_struct, pos = front
     cur = root_struct
-    offset, final_len, final_is_array, pos = 0, None, False, m.end()
+    offset, fld = 0, None
     while pos < len(p):
-        if p[pos:pos + 2] == '->' or p[pos] == '.':
-            pos += 2 if p[pos:pos + 2] == '->' else 1
-            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
-            if not fm:
-                return None
-            flds = layout.get(cur)
-            if not flds:
-                return None
-            fld = next((fl for fl in flds if fl['name'] == fm.group(0)), None)
-            if fld is None:
-                return None
-            offset += fld['offset']
-            final_len = fld['len']
-            final_is_array = fld.get('n') is not None
-            cur = fld.get('type')
-            pos += fm.end()
-        else:
-            # A subscript or any other token: bail (conservative).
+        if fld is not None and p[pos:pos + 2] == '->':
             return None
-    if final_len is None:
+        # A subscript or any other token: bail (conservative).
+        step = _field_step(p, pos)
+        if step is None:
+            return None
+        fld = _find_field(layout, cur, step[0])
+        if fld is None:
+            return None
+        offset += fld['offset']
+        cur, pos = fld.get('type'), step[1]
+    if fld is None:
         return None
-    return (root_struct, offset, final_len, had_amp or final_is_array)
+    return (root_struct, offset, fld['len'], had_amp or fld.get('n') is not None)
 
 
 
@@ -515,7 +530,7 @@ def _sfo_field_owner_offset(path, var_types, layout):
     field, plus that field's offset WITHIN that owner.
 
     Unlike `_sfo_field_extent` (which accumulates a root-relative offset and so
-    becomes meaningless once the path crosses a pointer hop), this returns the
+    gives up once the path crosses a pointer hop), this returns the
     innermost owning struct and the final field's offset inside it — exactly
     what a `base + CONST` walk needs when `base` is `struct_ptr->field`: the
     walk indexes elements of `owner` and CONST is a field offset inside one
@@ -528,67 +543,30 @@ def _sfo_field_owner_offset(path, var_types, layout):
     an array, which decays); a bare scalar/pointer field's value + CONST walks
     the pointed-to buffer, not the struct, so callers must skip those.
     """
-    if not path or not layout:
+    front = _sfo_path_steps(path, var_types, layout)
+    if front is None:
         return None
-    p = _sfo_strip_cast(path)
-    had_amp = p[:1] == '&'
-    if had_amp:
-        p = p[1:].strip()
-    if '(' in p:
-        # Grouping parens around a sub-path are safe to drop ('(a->b).c' ==
-        # 'a->b.c'); bail if real arithmetic (not the '-' of '->') leaks in.
-        bare = p.replace('(', '').replace(')', '')
-        if re.search(r'[+\-*/%]', bare.replace('->', '')):
-            return None
-        p = bare
-    p = re.sub(r'\s+', '', p)
-    m = re.match(r'[A-Za-z_]\w*', p)
-    if not m:
-        return None
-    cur = var_types.get(m.group(0))
-    if not cur:
-        return None
-    owner, field_off, final_len = None, None, None
-    final_is_array, final_is_ptr, pos = False, False, m.end()
+    p, had_amp, cur, pos = front
+    owner, fld = None, None
     while pos < len(p):
-        ch = p[pos]
-        if ch == '[':
-            depth, j = 0, pos
-            while j < len(p):
-                if p[j] == '[':
-                    depth += 1
-                elif p[j] == ']':
-                    depth -= 1
-                    if depth == 0:
-                        break
-                j += 1
-            if j >= len(p):
+        if p[pos] == '[':
+            pos = _subscript_end(p, pos)  # element step: type/owner/offset unchanged
+            if pos is None:
                 return None
-            pos = j + 1  # element step: type/owner/offset unchanged
-        elif p[pos:pos + 2] == '->' or ch == '.':
-            pos += 2 if p[pos:pos + 2] == '->' else 1
-            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
-            if not fm:
-                return None
-            flds = layout.get(cur)
-            if not flds:
-                return None
-            fld = next((fl for fl in flds if fl['name'] == fm.group(0)), None)
-            if fld is None:
-                return None
-            owner = cur
-            field_off = fld['offset']
-            final_len = fld['len']
-            final_is_array = fld.get('n') is not None
-            final_is_ptr = bool(fld.get('is_ptr'))
-            cur = fld.get('type')
-            pos += fm.end()
-        else:
-            # Leading '*' or any other token -> give up (conservative).
+            continue
+        # Leading '*' or any other token -> give up (conservative).
+        step = _field_step(p, pos)
+        if step is None:
             return None
-    if owner is None or final_len is None:
+        fld = _find_field(layout, cur, step[0])
+        if fld is None:
+            return None
+        owner = cur
+        cur, pos = fld.get('type'), step[1]
+    if owner is None:
         return None
-    return (owner, field_off, final_len, had_amp or final_is_array, final_is_ptr)
+    return (owner, fld['offset'], fld['len'], had_amp or fld.get('n') is not None,
+            bool(fld.get('is_ptr')))
 
 
 
@@ -596,17 +574,92 @@ def _sfo_field_owner_offset(path, var_types, layout):
 def _sfo_field_at_offset(layout, struct_name, off):
     """Return the field of `struct_name` whose [offset, offset+len) contains
     `off` (innermost/smallest when several overlap, e.g. unions), or None."""
-    flds = layout.get(struct_name)
-    if not flds:
-        return None
     best = None
-    for fl in flds:
+    for fl in layout.get(struct_name) or ():
         if fl['offset'] <= off < fl['offset'] + fl['len']:
             if best is None or fl['len'] < best['len']:
                 best = fl
     return best
 
 
+
+
+_SFO_SIGNED_INT_RE = re.compile(r'^(-?)\s*(0x[0-9a-fA-F]+|\d+)$')
+
+
+def _sfo_signed_terms(expr):
+    """expr's top-level terms with their signs: 'a + -4 - 8' -> [(1, 'a'), (-1, '4'), (-1, '8')]."""
+    signed, sign, depth, term = [], 1, 0, ''
+    for i, ch in enumerate(expr):
+        if ch in '([':
+            depth += 1
+        elif ch in ')]':
+            depth -= 1
+        elif (ch in '+-' and depth == 0 and expr[i:i + 2] != '->'
+              and not term.rstrip().endswith(('*', '/', '%'))):  # i * -4 is one term
+            if term.strip():
+                signed.append((sign, term.strip()))
+                sign = 1
+            if ch == '-':
+                sign = -sign
+            term = ''
+            continue
+        term += ch
+    if term.strip():
+        signed.append((sign, term.strip()))
+    return signed
+
+
+def _sfo_local_field_bases(code, var_types, layout):
+    """Each local's assignments, in line order, as the field its pointer came from.
+
+    `p = obj.field + var + -4;` derives p from obj.field's extent, 4 bytes
+    before the field (the variable part is unknown and taken as 0); `p =
+    other;` derives it from nothing. A walk, `p = p + 4;`, keeps whatever p
+    pointed into, so it records nothing.
+
+    Returns {local: [(line_no, (extent, byte delta) or None)]}.
+    """
+    bases = {}
+    for line_no, line in enumerate(code.split('\n'), 1):
+        s = line.strip()
+        if s.startswith(('//', '/*')):
+            continue
+        am = _SFO_LOCAL_ASSIGN_RE.match(s)
+        if not am:
+            continue
+        terms = _sfo_signed_terms(am.group(2))
+        if (1, am.group(1)) in terms:
+            continue
+        delta = sum(sign * _sfo_int(m.group(2)) for sign, m in
+                    ((sign, _SFO_SIGNED_INT_RE.match(t)) for sign, t in terms) if m)
+        ext = next(filter(None, (_sfo_field_extent(t, var_types, layout)
+                                 for sign, t in terms if sign == 1)), None)
+        bases.setdefault(am.group(1), []).append((line_no, (ext, delta) if ext else None))
+    return bases
+
+
+def _sfo_local_base_at(bases, name, line_no):
+    """(extent, byte delta) `name` was last derived from before line_no, or None."""
+    base = None
+    for at, assigned in bases.get(name, ()):
+        if at >= line_no:
+            break
+        base = assigned
+    return base
+
+
+def _sfo_deref_inner(line, start):
+    """The text between the '(' ending at `start` and its matching ')', or None."""
+    depth = 1
+    for j in range(start, len(line)):
+        if line[j] == '(':
+            depth += 1
+        elif line[j] == ')':
+            depth -= 1
+            if depth == 0:
+                return line[start:j]
+    return None
 
 
 def _sfo_field_base_deref_overruns(code, var_types, layout, seen):
@@ -630,71 +683,42 @@ def _sfo_field_base_deref_overruns(code, var_types, layout, seen):
     out = []
     if not layout:
         return out
-    # Map locals to the field their pointer was derived from.
-    local_field_base = {}
-    for line in code.split('\n'):
-        s = line.strip()
-        if s.startswith('//') or s.startswith('/*') or s.startswith('*'):
-            continue
-        am = _SFO_LOCAL_ASSIGN_RE.match(s)
-        if not am:
-            continue
-        for term in _sfo_top_terms(am.group(2)):
-            ext = _sfo_field_extent(term, var_types, layout)
-            if ext:
-                local_field_base[am.group(1)] = ext
-                break
+    local_field_base = _sfo_local_field_bases(code, var_types, layout)
     # Scan cast-derefs.
     for line_no, line in enumerate(code.split('\n'), 1):
         s = line.strip()
-        if s.startswith('//') or s.startswith('/*'):
+        if s.startswith(('//', '/*')):
             continue
         for dm in _SFO_DEREF_START_RE.finditer(line):
-            start, depth, j = dm.end(), 1, dm.end()
-            while j < len(line):
-                if line[j] == '(':
-                    depth += 1
-                elif line[j] == ')':
-                    depth -= 1
-                    if depth == 0:
-                        break
-                j += 1
-            if depth != 0:
-                continue
-            split = _sfo_split_ptr_const(line[start:j])
-            if not split:
+            inner = _sfo_deref_inner(line, dm.end())
+            split = _sfo_split_ptr_const(inner) if inner is not None else None
+            if not split or not split[1]:
                 continue
             base_expr, const = split
-            if const <= 0:
-                continue
-            ext = None
-            bm = re.match(r'^([A-Za-z_]\w*)$', base_expr.strip())
-            if bm and bm.group(1) in local_field_base:
-                ext = local_field_base[bm.group(1)]
-            if ext is None:
-                ext = _sfo_field_extent(base_expr, var_types, layout)
+            # A local carries the byte delta its assignment added to the field
+            ext, delta = (_sfo_local_base_at(local_field_base, base_expr, line_no)
+                          or (_sfo_field_extent(base_expr, var_types, layout), 0))
             if ext is None:
                 continue
             root_struct, foff, flen, addr = ext
+            reach = delta + const  # bytes past the base field's start
             # Only an array (decays to its address) or an explicit `&field`
             # forms a struct-base pointer. A scalar/pointer field's value plus
             # an offset walks elsewhere (the pointed-to buffer, or a mistyped
             # handle), not the struct — never a base-shift.
-            if not addr:
-                continue
-            if const < flen:
-                continue  # stays within the base field — ordinary access
-            sib = _sfo_field_at_offset(layout, root_struct, foff + const)
+            if not addr or reach < flen:
+                continue  # not a base pointer, or stays within the base field
+            sib = _sfo_field_at_offset(layout, root_struct, foff + reach)
             if sib is None or sib['offset'] == foff:
                 continue
-            key = ('sfo_deref', line_no, base_expr.strip(), const)
+            key = ('sfo_deref', line_no, base_expr, const)
             if key in seen:
                 continue
             seen.add(key)
             out.append({
                 'line': line_no,
                 'type': 'struct_field_overrun',
-                'match': '*(...)(%s + 0x%x)' % (base_expr.strip(), const),
+                'match': '*(...)(%s + 0x%x)' % (base_expr, const),
                 'text': s[:120],
                 'description': (
                     '*(...)(%s + 0x%x): the pointer is based on a field at '
@@ -702,9 +726,8 @@ def _sfo_field_base_deref_overruns(code, var_types, layout, seen):
                     'lands in field %s (offset 0x%x). Ghidra anchored on the '
                     'wrong field — rewrite as direct access to %s (#15 '
                     'base-shift; forms an out-of-array pointer, trips UBSan).'
-                    % (base_expr.strip(), const, foff, flen, root_struct,
-                       const, sib['name'], sib['offset'], sib['name'])),
-                'severity': SUSPECT_SEVERITY.get('struct_field_overrun',
-                                                 'moderate'),
+                    % (base_expr, const, foff, flen, root_struct,
+                       reach, sib['name'], sib['offset'], sib['name'])),
+                'severity': SUSPECT_SEVERITY['struct_field_overrun'],
             })
     return out

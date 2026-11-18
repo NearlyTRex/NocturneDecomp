@@ -35,22 +35,20 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-try:
-    from capstone import Cs, CS_ARCH_X86, CS_MODE_32
-except ImportError:
-    sys.exit("capstone is required: pip install capstone")
+from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import sibling_match as sm
-from compare_sibling_struct_sizes import (DeltaModel, load_layouts,
+import sibling_match as sm  # noqa: E402
+from compare_sibling_struct_sizes import (DeltaModel, load_layouts,  # noqa: E402
                                           load_type_info_sizes, resolve_layout_alias)
 
 _MD = Cs(CS_ARCH_X86, CS_MODE_32)
 _MD.detail = False
 
 # A displacement off a register that is not the stack pointer.
-_FIELD_OP = re.compile(r"\[(?!esp|ebp)(e[a-z]{2}) \+ (0x[0-9a-f]+)\]")
+# Capstone writes a displacement under 10 in decimal: [ecx + 4], [ecx + 0xc].
+_FIELD_OP = re.compile(r"\[(?!esp|ebp)(e[a-z]{2}) \+ (0x[0-9a-f]+|[0-9])\]")
 _CLASS_TOKEN = re.compile(r"_(C[A-Z][A-Za-z0-9]*)_")
 
 
@@ -153,7 +151,10 @@ def collect(mapping, a_img, b_img, cls, size, show_pairs=False):
     return seen
 
 
-def report(cls, size, delta, seen):
+def report(cls, size, delta, seen, layouts):
+    def label(off):
+        return field_path(layouts, cls, off) or "?"
+
     print("=" * 80)
     print("%s  nocedit 0x%x (%d)  ->  nocturne %d   must lose %d bytes"
           % (cls, size, size, size - delta, delta))
@@ -180,7 +181,7 @@ def report(cls, size, delta, seen):
             shift = "%+d" % (target - off)
             tgt = "0x%x" % target
         print("  0x%-8x %-12s %-9s %d/%-6d %s"
-              % (off, tgt, shift, n, total, FIELDS.get(off) or "?"))
+              % (off, tgt, shift, n, total, label(off)))
 
     # The removal window: the first offset that moved, and the last one below it
     # that did not. Taking the global max of unshifted offsets instead would
@@ -193,7 +194,7 @@ def report(cls, size, delta, seen):
     if removed:
         print("  fields with NO counterpart in nocturne (initialised in nocedit only):")
         for off, _, n, _ in removed:
-            print("      0x%-6x  %s   (%d sighting(s))" % (off, FIELDS.get(off) or "?", n))
+            print("      0x%-6x  %s   (%d sighting(s))" % (off, label(off), n))
     if last_stable is not None and first_moved is not None:
         print("  removal window: after 0x%x (last unshifted) and at/before 0x%x (first shifted)"
               % (last_stable, first_moved))
@@ -291,7 +292,7 @@ def propose(cls, layouts, delta, window):
     return out
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("mapping")
@@ -302,7 +303,7 @@ def main():
     parser.add_argument("--to-program", default="nocturne.exe")
     parser.add_argument("--show-pairs", action="store_true",
                         help="list the method pairs that contributed")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     with open(args.mapping) as handle:
         mapping = json.load(handle)
@@ -331,7 +332,6 @@ def main():
 
     a_img, b_img = sm.Image(mapping["from"]), sm.Image(mapping["to"])
 
-    global FIELDS
     for cls in targets:
         entry = layouts.get(cls)
         if not entry:
@@ -339,11 +339,8 @@ def main():
             print("%s: no layout in %s\n" % (cls, args.from_program))
             continue
         size = entry["len"]
-        FIELDS = {}
-        for off in range(0, size, 4):
-            FIELDS[off] = field_path(layouts, cls, off)
         seen = collect(mapping, a_img, b_img, cls, size, args.show_pairs)
-        window = report(cls, size, truth.get(cls, 0), seen)
+        window = report(cls, size, truth.get(cls, 0), seen, layouts)
         ideas = propose(cls, layouts, truth.get(cls, 0), window)
         if ideas:
             print("  candidate edits that account for exactly %d bytes:" % truth.get(cls, 0))

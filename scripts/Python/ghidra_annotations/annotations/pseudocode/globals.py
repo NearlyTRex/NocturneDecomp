@@ -2116,13 +2116,50 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
     return globals_list, constants_list
 
 
-def generate_constants_file(constants_list, type_to_path_map=None, needed_prototype_ranges=None):
+_STRING_LITERAL_RE = re.compile(r'"(?:\\.|[^"\\])*"')
+_IDENTIFIER_RE = re.compile(r'\b[A-Za-z_]\w*\b')
+
+
+def _initializer_code(initializer):
+    """An initializer with its string literals emptied, so their text is not read as names."""
+    return _STRING_LITERAL_RE.sub('""', str(initializer))
+
+
+def constant_range_dependencies(const_ranges):
+    """Which other constants ranges each range's initializers name.
+
+    A range header includes exactly these, never the master constants.h: that
+    pulls in every range, and a later one pointing back into this header's own
+    strings would then come before their definitions.
+
+    Args:
+        const_ranges: {range key: [constant entries]}
+
+    Returns:
+        {range key: set of other range keys}
+    """
+    owner = {const['name']: key for key, consts in const_ranges.items() for const in consts}
+    deps = {}
+    for key, consts in const_ranges.items():
+        deps[key] = set()
+        for const in consts:
+            if not const.get('initializer'):
+                continue
+            for name in _IDENTIFIER_RE.findall(_initializer_code(const['initializer'])):
+                if owner.get(name, key) != key:
+                    deps[key].add(owner[name])
+    return deps
+
+
+def generate_constants_file(constants_list, type_to_path_map=None, needed_prototype_ranges=None,
+                            needed_constant_ranges=None):
     """Generate a header file with constant definitions.
 
     Args:
         constants_list: List of constant entries
         type_to_path_map: Optional map of type names to header paths for includes
         needed_prototype_ranges: Optional set of prototype range keys to include
+        needed_constant_ranges: Optional set of other constants range keys to include
 
     Returns:
         Header file content as a string
@@ -2135,7 +2172,7 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
     basetypes = get_types_needing_basetypes()
     needs_math_h = False
     needs_globals_h = False
-    needs_constants_h = False
+    needed_constant_ranges = needed_constant_ranges or set()
 
     if constants_list:
         for const in constants_list:
@@ -2151,14 +2188,12 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
                 init_val = str(const['initializer'])
                 if 'INFINITY' in init_val or 'NAN' in init_val:
                     needs_math_h = True
-                # Check if initializer references a global variable (& prefix or g_ prefix)
-                if init_val.startswith('&') or 'g_' in init_val:
+                # A global's address (&x anywhere, as in (void*)&INT_x) or a g_ name
+                code = _initializer_code(init_val)
+                if '&' in code or re.search(r'\bg_', code):
                     needs_globals_h = True
-                # Check if initializer references a string constant (s_ or STR_ prefix)
-                if 's_' in init_val or 'STR_' in init_val:
-                    needs_constants_h = True
 
-    if needed_includes or needs_math_h or needs_globals_h or needs_constants_h or needed_prototype_ranges:
+    if needed_includes or needs_math_h or needs_globals_h or needed_constant_ranges or needed_prototype_ranges:
         content.append("")
         content.append("// Dependencies")
         # Put math.h first if needed (for INFINITY/NAN macros)
@@ -2171,9 +2206,9 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
         # Include globals.h if any initializer references global variables
         if needs_globals_h:
             content.append('#include "globals.h"')
-        # Include constants.h if any initializer references string constants from other files
-        if needs_constants_h:
-            content.append('#include "constants.h"')
+        # The other constants ranges whose names the initializers use
+        for range_key in sorted(needed_constant_ranges):
+            content.append('#include "constants/constants_%s.h"' % range_key.replace("0x", ""))
         # Include prototype headers for referenced functions
         if needed_prototype_ranges:
             for range_key in sorted(needed_prototype_ranges):

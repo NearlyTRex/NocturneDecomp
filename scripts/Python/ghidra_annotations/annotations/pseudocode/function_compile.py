@@ -69,7 +69,7 @@ def build_nocturne_pch(include_dir, compiler=DEFAULT_COMPILER, timeout=180):
 def _hash_file_bytes(path, chunk=65536):
     """sha256 hash of a file's bytes (truncated to 16 hex chars). Empty
     string if the file doesn't exist or can't be read."""
-    if not path or not os.path.exists(path):
+    if not path:
         return ''
     h = hashlib.sha256()
     try:
@@ -114,36 +114,15 @@ def _cache_path_for(src_dir):
     return os.path.join(os.path.dirname(src_dir), '.compile_cache.json')
 
 
-def _load_compile_cache(cache_path, function_files, src_dir):
-    """Load the sidecar cache, or migrate from per-JSON `compile_hash`
-    fields written by older exports. Migration keeps the first run after
-    this change warm instead of forcing a full cold rebuild.
-
-    Returns a dict keyed by `os.path.relpath(json_path, src_dir)`.
-    """
-    if os.path.exists(cache_path):
-        try:
-            with open(cache_path, 'r') as f:
-                return json.load(f) or {}
-        except (OSError, ValueError):
-            return {}
-    cache = {}
-    for func_info in function_files:
-        try:
-            with open(func_info['json_path'], 'r') as f:
-                data = json.load(f)
-        except (OSError, ValueError):
-            continue
-        cs = data.get('compilation_status') or {}
-        h = cs.get('compile_hash')
-        if h and cs.get('success'):
-            key = os.path.relpath(func_info['json_path'], src_dir)
-            cache[key] = {
-                'compile_hash': h,
-                'errors': cs.get('errors', []),
-                'warnings': cs.get('warnings', []),
-            }
-    return cache
+def _load_compile_cache(cache_path):
+    """Load the sidecar cache, keyed by `os.path.relpath(json_path, src_dir)`.
+    A missing or unreadable one is an empty cache: every function compiles."""
+    try:
+        with open(cache_path, 'r') as f:
+            cache = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    return cache if isinstance(cache, dict) else {}
 
 
 def _save_compile_cache(cache_path, cache):
@@ -208,10 +187,10 @@ def normalize_path_in_message(message, repo_dir):
     """Replace absolute paths in message with paths relative to repo_dir."""
     if not message or not repo_dir:
         return message
-    # Handle both with and without trailing slash
-    repo_with_slash = repo_dir.rstrip('/') + '/'
-    result = message.replace(repo_with_slash, '')
-    return result.replace(repo_dir, '')
+    # The path inside the repo loses its prefix, and the bare root goes too,
+    # however repo_dir ends
+    repo = repo_dir.rstrip('/')
+    return message.replace(repo + '/', '').replace(repo, '')
 
 
 # =============================================================================
@@ -299,12 +278,12 @@ ERROR_CATEGORIES = {
         r"undefined reference to",
         r"unresolved external",
     ],
-    # Type incompatibility and conversion issues
+    # Type incompatibility and conversion issues ("no matching function for
+    # call" is an overload failure, below)
     'incompatible_types': [
         r"incompatible",
         r"cannot convert",
         r"invalid conversion",
-        r"no matching function",
         r"could not convert",
         r"invalid operands",
     ],
@@ -377,7 +356,7 @@ ERROR_CATEGORIES = {
         r"cast from pointer to smaller type",
     ],
     # Member access on non-struct type (wrong local/field type in Ghidra)
-    'type_error': [
+    'member_access_error': [
         r"member reference base type .* is not a structure or union",
         r"is not a structure or union",
         r"called object type .* is not a function",
@@ -412,8 +391,6 @@ def categorize_error(error_msg):
     if not error_msg:
         return 'other'
 
-    error_lower = error_msg.lower()
-
     for category, patterns in ERROR_CATEGORIES.items():
         for pattern in patterns:
             if re.search(pattern, error_msg, re.IGNORECASE):
@@ -426,12 +403,19 @@ def categorize_error(error_msg):
 # Error Parsing
 # =============================================================================
 
-def parse_error_output(stderr, cpp_path):
+# clang++/g++ diagnostics: file:line[:col]: error|fatal error|warning|note: message.
+# A missing header is a "fatal error", which a bare `error:` would not match.
+_DIAGNOSTIC_RE = re.compile(
+    r'^([^:]+):(\d+):(?:(\d+):)?\s*(?:fatal\s+)?(error|warning|note):\s*(.*)$',
+    re.MULTILINE
+)
+
+
+def parse_error_output(stderr):
     """Parse compiler error output into structured format.
 
     Args:
         stderr: Standard error output from compiler
-        cpp_path: Path to the compiled file (for path normalization)
 
     Returns:
         Tuple of (errors: list[dict], warnings: list[dict])
@@ -442,24 +426,10 @@ def parse_error_output(stderr, cpp_path):
     if not stderr:
         return (errors, warnings)
 
-    # Get basename for matching
-    cpp_basename = os.path.basename(cpp_path)
-    cpp_dir = os.path.dirname(cpp_path)
-
-    # Regex to match clang++/g++ error/warning format:
-    # file:line:col: error: message
-    # file:line:col: warning: message
-    # file:line: error: message
-    pattern = re.compile(
-        r'^([^:]+):(\d+):(?:(\d+):)?\s*(error|warning|note):\s*(.*)$',
-        re.MULTILINE
-    )
-
-    for match in pattern.finditer(stderr):
-        file_path = match.group(1)
+    for match in _DIAGNOSTIC_RE.finditer(stderr):
         line = int(match.group(2))
         column = int(match.group(3)) if match.group(3) else 0
-        msg_type = match.group(4).lower()
+        msg_type = match.group(4)
         message = match.group(5).strip()
 
         # Skip notes (they're context for errors/warnings)
@@ -475,31 +445,19 @@ def parse_error_output(stderr, cpp_path):
 
         if msg_type == 'error':
             errors.append(entry)
-        elif msg_type == 'warning':
+        else:
             warnings.append(entry)
 
-    # If no structured errors found but stderr has content, create a generic error
+    # No placed error but stderr says something (a linker or driver failure):
+    # report its first `error:` line, else its first line, cut to 500 chars
     if not errors and stderr.strip():
-        # Look for any line containing 'error'
-        for line in stderr.split('\n'):
-            if 'error:' in line.lower():
-                errors.append({
-                    'line': 0,
-                    'column': 0,
-                    'message': line.strip(),
-                    'category': categorize_error(line),
-                })
-                break
-
-        # If still no errors, use first non-empty line
-        if not errors:
-            first_line = stderr.strip().split('\n')[0]
-            errors.append({
-                'line': 0,
-                'column': 0,
-                'message': first_line[:500],  # Limit length
-                'category': 'other',
-            })
+        error_line = next((ln for ln in stderr.split('\n') if 'error:' in ln.lower()), None)
+        if error_line is not None:
+            entry = _unplaced_error(error_line.strip())
+            entry['category'] = categorize_error(error_line)
+        else:
+            entry = _unplaced_error(stderr.strip().split('\n')[0][:500])
+        errors.append(entry)
 
     return (errors, warnings)
 
@@ -564,39 +522,24 @@ def compile_function_cpp(cpp_path, include_dir, compiler=DEFAULT_COMPILER,
         if repo_dir:
             stderr = normalize_path_in_message(stderr, repo_dir)
 
-        if proc_result.returncode == 0:
-            result['success'] = True
-            # Still parse warnings
-            _, warnings = parse_error_output(stderr, cpp_path)
-            result['warnings'] = warnings
-        else:
-            errors, warnings = parse_error_output(stderr, cpp_path)
-            result['errors'] = errors
-            result['warnings'] = warnings
+        errors, warnings = parse_error_output(stderr)
+        result['success'] = proc_result.returncode == 0
+        # A clean exit still reports its warnings; its errors list stays empty
+        result['errors'] = [] if result['success'] else errors
+        result['warnings'] = warnings
 
     except subprocess.TimeoutExpired:
-        result['errors'] = [{
-            'line': 0,
-            'column': 0,
-            'message': 'Compilation timed out after %ds' % timeout,
-            'category': 'other',
-        }]
+        result['errors'] = [_unplaced_error('Compilation timed out after %ds' % timeout)]
     except FileNotFoundError:
-        result['errors'] = [{
-            'line': 0,
-            'column': 0,
-            'message': "Compiler '%s' not found" % compiler,
-            'category': 'other',
-        }]
-    except Exception as e:
-        result['errors'] = [{
-            'line': 0,
-            'column': 0,
-            'message': 'Compilation error: %s' % str(e),
-            'category': 'other',
-        }]
+        result['errors'] = [_unplaced_error("Compiler '%s' not found" % compiler)]
+    except OSError as e:
+        result['errors'] = [_unplaced_error('Compilation error: %s' % str(e))]
 
     return result
+
+
+def _unplaced_error(message):
+    return {'line': 0, 'column': 0, 'message': message, 'category': 'other'}
 
 
 # =============================================================================
@@ -610,40 +553,33 @@ def load_function_info_from_json(json_path):
         json_path: Path to the function JSON file
 
     Returns:
-        Dict with 'name', 'address', 'json_path', 'cpp_path' or None on error
+        Dict with 'name', 'address', 'json_path', 'cpp_path', or None when the
+        file is unreadable, is not a function record, or has no source beside it
     """
     try:
         with open(json_path, 'r') as f:
             data = json.load(f)
-
-        func_info = data.get('function', {})
-        func_name = func_info.get('name', '')
-        func_addr = func_info.get('address', '')
-
-        if not func_name:
-            return None
-
-        # Derive source path from json path - prefer .keep > .cpp/.c
-        # .mmx/.byval/.chunked variants are generated but not compiled
-        base_path = json_path[:-5]  # Remove '.json'
-        _SRC_EXTENSIONS = (
-            '.keep.cpp', '.keep.c',
-            '.cpp', '.c',
-        )
-        src_path = base_path + '.cpp'  # Default fallback
-        for ext in _SRC_EXTENSIONS:
-            if os.path.exists(base_path + ext):
-                src_path = base_path + ext
-                break
-
-        return {
-            'name': func_name,
-            'address': func_addr,
-            'json_path': json_path,
-            'cpp_path': src_path,
-        }
-    except Exception:
+    except (OSError, ValueError):
         return None
+    func_info = data.get('function') if isinstance(data, dict) else None
+    if not isinstance(func_info, dict) or not func_info.get('name'):
+        return None
+
+    # The source compiled is the keep if there is one, else the export's own;
+    # the .mmx/.byval/.chunked variants are generated but not compiled
+    base_path = json_path[:-len('.json')]
+    for ext in _SRC_EXTENSIONS:
+        if os.path.exists(base_path + ext):
+            return {
+                'name': func_info['name'],
+                'address': func_info.get('address', ''),
+                'json_path': json_path,
+                'cpp_path': base_path + ext,
+            }
+    return None
+
+
+_SRC_EXTENSIONS = ('.keep.cpp', '.keep.c', '.cpp', '.c')
 
 
 def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_threads=8,
@@ -670,24 +606,16 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
 
     results = {}
 
-    # Find all .json files (which represent functions)
+    # Find all .json files (which represent functions), leaving out the
+    # skipped top-level directories
     function_files = []
     for root, dirs, files in os.walk(src_dir):
-        # Skip specified directories
-        rel_root = os.path.relpath(root, src_dir)
-        skip_this = False
-        for skip_dir in skip_dirs:
-            if rel_root == skip_dir or rel_root.startswith(skip_dir + os.sep):
-                skip_this = True
-                break
-        if skip_this:
-            continue
-
+        if root == src_dir:
+            dirs[:] = [d for d in dirs if d not in skip_dirs]
         for f in files:
             if f.endswith('.json'):
-                json_path = os.path.join(root, f)
-                func_info = load_function_info_from_json(json_path)
-                if func_info and os.path.exists(func_info['cpp_path']):
+                func_info = load_function_info_from_json(os.path.join(root, f))
+                if func_info:
                     function_files.append(func_info)
 
     if not function_files:
@@ -714,6 +642,9 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
     if pch_path:
         log_info("Using precompiled header: %s" %
                  os.path.relpath(pch_path, include_dir))
+    # The PCH's hash is the only record of the headers in a cache key, so
+    # without one (its build failed) nothing is reused or stored: a header
+    # change since the last export could otherwise keep a stale success.
     pch_sig = _hash_file_bytes(pch_path)
     flags_sig = _flags_signature()
 
@@ -730,11 +661,11 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
     # across machines — PCH bytes embed clang version/sysroot/build stamps,
     # so the hash itself is per-machine.
     cache_path = _cache_path_for(src_dir)
-    compile_cache = _load_compile_cache(cache_path, function_files, src_dir)
+    compile_cache = _load_compile_cache(cache_path)
     pending_compile = []  # (func_info, cache_key, cache_key_path) tuples to actually compile
     cache_hits = 0
     for func_info in function_files:
-        cache_key = _compile_cache_key(func_info['cpp_path'], pch_sig, flags_sig)
+        cache_key = _compile_cache_key(func_info['cpp_path'], pch_sig, flags_sig) if pch_sig else ''
         cache_key_path = os.path.relpath(func_info['json_path'], src_dir)
         cached = _lookup_cached_compile_result(compile_cache, cache_key_path, cache_key)
         if cached is not None:
@@ -756,8 +687,8 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
 
     completed = cache_hits
 
-    pending_json_updates = []
     if pending_compile:
+        pending_json_updates = []
         with ThreadPoolExecutor(max_workers=num_threads) as executor:
             # Submit compilation tasks
             future_to_func = {}
@@ -770,25 +701,7 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
             for future in as_completed(future_to_func):
                 func_info, cache_key, cache_key_path = future_to_func[future]
                 func_name = func_info['name']
-
-                try:
-                    compile_result = future.result()
-                    compilation_status = {
-                        'success': compile_result['success'],
-                        'errors': compile_result['errors'],
-                        'warnings': compile_result['warnings'],
-                    }
-                except Exception as e:
-                    compilation_status = {
-                        'success': False,
-                        'errors': [{
-                            'line': 0,
-                            'column': 0,
-                            'message': 'Exception: %s' % str(e),
-                            'category': 'other',
-                        }],
-                        'warnings': [],
-                    }
+                compilation_status = future.result()
 
                 # Update sidecar cache on success so the next export can skip
                 # this function if the source/flags/PCH are unchanged. Drop
@@ -821,20 +734,12 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
                 if completed % 100 == 0:
                     log_info("  Compiled %d/%d functions..." % (completed, total))
 
-    # Batch update JSON files in parallel after all compilations complete
-    if pending_json_updates:
+        # Batch update JSON files in parallel after all compilations complete
         log_info("  Updating %d JSON files with compilation status..." % len(pending_json_updates))
+        # A failed write logs itself and returns False
         with ThreadPoolExecutor(max_workers=num_threads) as json_executor:
-            json_futures = [
-                json_executor.submit(update_function_json_with_compilation, json_path, status)
-                for json_path, status in pending_json_updates
-            ]
-            # Wait for all JSON updates to complete
-            for future in as_completed(json_futures):
-                try:
-                    future.result()
-                except Exception:
-                    pass  # Errors already logged in update function
+            list(json_executor.map(lambda update: update_function_json_with_compilation(*update),
+                                   pending_json_updates))
 
     # Persist the sidecar cache so the next export can short-circuit
     # unchanged functions. Best-effort — failures don't block the export.
@@ -877,43 +782,9 @@ def update_function_json_with_compilation(json_path, compilation_status):
 
         return True
 
-    except Exception as e:
+    except (OSError, ValueError) as e:
         log_info("Failed to update %s with compilation status: %s" % (json_path, str(e)))
         return False
-
-
-def update_all_function_jsons(src_dir, compilation_results):
-    """Update all function JSON files with compilation status.
-
-    Args:
-        src_dir: Source directory containing function files
-        compilation_results: Dict from compile_all_functions()
-
-    Returns:
-        Tuple of (updated_count, failed_count)
-    """
-    updated = 0
-    failed = 0
-
-    for func_name, result in compilation_results.items():
-        cpp_path = result.get('cpp_path')
-        if not cpp_path:
-            continue
-
-        # Derive JSON path from cpp path (strip variant suffix, then extension)
-        json_path = re.sub(r'\.(keep|mmx|byval)\.(cpp|c)$', '.json', cpp_path)
-        if not json_path.endswith('.json'):
-            json_path = re.sub(r'\.(cpp|c)$', '.json', json_path)
-        if not os.path.exists(json_path):
-            continue
-
-        if update_function_json_with_compilation(json_path, result):
-            updated += 1
-        else:
-            failed += 1
-
-    log_info("Updated %d function JSON files with compilation status (%d failed)" % (updated, failed))
-    return (updated, failed)
 
 
 # =============================================================================
